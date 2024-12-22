@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SetInboxFavouritedOptionsToJSON = exports.SetInboxFavouritedOptionsFromJSONTyped = exports.SetInboxFavouritedOptionsFromJSON = void 0;
+exports.instanceOfSetInboxFavouritedOptions = instanceOfSetInboxFavouritedOptions;
+exports.SetInboxFavouritedOptionsFromJSON = SetInboxFavouritedOptionsFromJSON;
+exports.SetInboxFavouritedOptionsFromJSONTyped = SetInboxFavouritedOptionsFromJSONTyped;
+exports.SetInboxFavouritedOptionsToJSON = SetInboxFavouritedOptionsToJSON;
+exports.SetInboxFavouritedOptionsToJSONTyped = SetInboxFavouritedOptionsToJSONTyped;
+/**
+ * Check if a given object implements the SetInboxFavouritedOptions interface.
+ */
+function instanceOfSetInboxFavouritedOptions(value) {
+    if (!('state' in value) || value['state'] === undefined)
+        return false;
+    return true;
+}
 function SetInboxFavouritedOptionsFromJSON(json) {
     return SetInboxFavouritedOptionsFromJSONTyped(json, false);
 }
-exports.SetInboxFavouritedOptionsFromJSON = SetInboxFavouritedOptionsFromJSON;
 function SetInboxFavouritedOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        state: json['state'],
+        'state': json['state'],
     };
 }
-exports.SetInboxFavouritedOptionsFromJSONTyped = SetInboxFavouritedOptionsFromJSONTyped;
-function SetInboxFavouritedOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SetInboxFavouritedOptionsToJSON(json) {
+    return SetInboxFavouritedOptionsToJSONTyped(json, false);
+}
+function SetInboxFavouritedOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        state: value.state,
+        'state': value['state'],
     };
 }
-exports.SetInboxFavouritedOptionsToJSON = SetInboxFavouritedOptionsToJSON;

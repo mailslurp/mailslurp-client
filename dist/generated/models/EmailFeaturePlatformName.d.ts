@@ -30,20 +30,25 @@ export interface EmailFeaturePlatformName {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum EmailFeaturePlatformNameSlugEnum {
-    android = "android",
-    desktop_app = "desktop-app",
-    desktop_webmail = "desktop-webmail",
-    ios = "ios",
-    macos = "macos",
-    mobile_webmail = "mobile-webmail",
-    outlook_com = "outlook-com",
-    webmail = "webmail",
-    windows = "windows",
-    windows_mail = "windows-mail"
-}
+export declare const EmailFeaturePlatformNameSlugEnum: {
+    readonly android: "android";
+    readonly desktop_app: "desktop-app";
+    readonly desktop_webmail: "desktop-webmail";
+    readonly ios: "ios";
+    readonly macos: "macos";
+    readonly mobile_webmail: "mobile-webmail";
+    readonly outlook_com: "outlook-com";
+    readonly webmail: "webmail";
+    readonly windows: "windows";
+    readonly windows_mail: "windows-mail";
+};
+export type EmailFeaturePlatformNameSlugEnum = typeof EmailFeaturePlatformNameSlugEnum[keyof typeof EmailFeaturePlatformNameSlugEnum];
+/**
+ * Check if a given object implements the EmailFeaturePlatformName interface.
+ */
+export declare function instanceOfEmailFeaturePlatformName(value: object): value is EmailFeaturePlatformName;
 export declare function EmailFeaturePlatformNameFromJSON(json: any): EmailFeaturePlatformName;
 export declare function EmailFeaturePlatformNameFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeaturePlatformName;
-export declare function EmailFeaturePlatformNameToJSON(value?: EmailFeaturePlatformName | null): any;
+export declare function EmailFeaturePlatformNameToJSON(json: any): EmailFeaturePlatformName;
+export declare function EmailFeaturePlatformNameToJSONTyped(value?: EmailFeaturePlatformName | null, ignoreDiscriminator?: boolean): any;

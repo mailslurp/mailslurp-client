@@ -42,13 +42,18 @@ export interface PhonePlanDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum PhonePlanDtoPhoneCountryEnum {
-    US = "US",
-    GB = "GB",
-    AU = "AU"
-}
+export declare const PhonePlanDtoPhoneCountryEnum: {
+    readonly US: "US";
+    readonly GB: "GB";
+    readonly AU: "AU";
+};
+export type PhonePlanDtoPhoneCountryEnum = typeof PhonePlanDtoPhoneCountryEnum[keyof typeof PhonePlanDtoPhoneCountryEnum];
+/**
+ * Check if a given object implements the PhonePlanDto interface.
+ */
+export declare function instanceOfPhonePlanDto(value: object): value is PhonePlanDto;
 export declare function PhonePlanDtoFromJSON(json: any): PhonePlanDto;
 export declare function PhonePlanDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanDto;
-export declare function PhonePlanDtoToJSON(value?: PhonePlanDto | null): any;
+export declare function PhonePlanDtoToJSON(json: any): PhonePlanDto;
+export declare function PhonePlanDtoToJSONTyped(value?: PhonePlanDto | null, ignoreDiscriminator?: boolean): any;

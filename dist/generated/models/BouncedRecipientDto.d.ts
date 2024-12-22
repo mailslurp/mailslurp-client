@@ -70,6 +70,11 @@ export interface BouncedRecipientDto {
      */
     createdAt: Date;
 }
+/**
+ * Check if a given object implements the BouncedRecipientDto interface.
+ */
+export declare function instanceOfBouncedRecipientDto(value: object): value is BouncedRecipientDto;
 export declare function BouncedRecipientDtoFromJSON(json: any): BouncedRecipientDto;
 export declare function BouncedRecipientDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): BouncedRecipientDto;
-export declare function BouncedRecipientDtoToJSON(value?: BouncedRecipientDto | null): any;
+export declare function BouncedRecipientDtoToJSON(json: any): BouncedRecipientDto;
+export declare function BouncedRecipientDtoToJSONTyped(value?: BouncedRecipientDto | null, ignoreDiscriminator?: boolean): any;

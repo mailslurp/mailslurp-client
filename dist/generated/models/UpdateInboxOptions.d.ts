@@ -29,10 +29,10 @@ export interface UpdateInboxOptions {
     description?: string | null;
     /**
      * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof UpdateInboxOptions
      */
-    tags?: Array<string> | null;
+    tags?: Array<string | null> | null;
     /**
      * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
      * @type {Date}
@@ -46,6 +46,11 @@ export interface UpdateInboxOptions {
      */
     favourite?: boolean | null;
 }
+/**
+ * Check if a given object implements the UpdateInboxOptions interface.
+ */
+export declare function instanceOfUpdateInboxOptions(value: object): value is UpdateInboxOptions;
 export declare function UpdateInboxOptionsFromJSON(json: any): UpdateInboxOptions;
 export declare function UpdateInboxOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateInboxOptions;
-export declare function UpdateInboxOptionsToJSON(value?: UpdateInboxOptions | null): any;
+export declare function UpdateInboxOptionsToJSON(json: any): UpdateInboxOptions;
+export declare function UpdateInboxOptionsToJSONTyped(value?: UpdateInboxOptions | null, ignoreDiscriminator?: boolean): any;

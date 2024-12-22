@@ -13,39 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsPreviewToJSON = exports.SmsPreviewFromJSONTyped = exports.SmsPreviewFromJSON = void 0;
+exports.instanceOfSmsPreview = instanceOfSmsPreview;
+exports.SmsPreviewFromJSON = SmsPreviewFromJSON;
+exports.SmsPreviewFromJSONTyped = SmsPreviewFromJSONTyped;
+exports.SmsPreviewToJSON = SmsPreviewToJSON;
+exports.SmsPreviewToJSONTyped = SmsPreviewToJSONTyped;
+/**
+ * Check if a given object implements the SmsPreview interface.
+ */
+function instanceOfSmsPreview(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('body' in value) || value['body'] === undefined)
+        return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined)
+        return false;
+    if (!('fromNumber' in value) || value['fromNumber'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function SmsPreviewFromJSON(json) {
     return SmsPreviewFromJSONTyped(json, false);
 }
-exports.SmsPreviewFromJSON = SmsPreviewFromJSON;
 function SmsPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        body: json['body'],
-        phoneNumber: json['phoneNumber'],
-        fromNumber: json['fromNumber'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'body': json['body'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.SmsPreviewFromJSONTyped = SmsPreviewFromJSONTyped;
-function SmsPreviewToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SmsPreviewToJSON(json) {
+    return SmsPreviewToJSONTyped(json, false);
+}
+function SmsPreviewToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        body: value.body,
-        phoneNumber: value.phoneNumber,
-        fromNumber: value.fromNumber,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'body': value['body'],
+        'phoneNumber': value['phoneNumber'],
+        'fromNumber': value['fromNumber'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.SmsPreviewToJSON = SmsPreviewToJSON;

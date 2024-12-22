@@ -12,61 +12,72 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Sender object containing from email address and from personal name if provided in address
  * @export
  * @interface Sender
  */
 export interface Sender {
-  /**
-   *
-   * @type {string}
-   * @memberof Sender
-   */
-  rawValue: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Sender
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Sender
-   */
-  name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Sender
+     */
+    rawValue: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Sender
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Sender
+     */
+    name?: string;
+}
+
+/**
+ * Check if a given object implements the Sender interface.
+ */
+export function instanceOfSender(value: object): value is Sender {
+    if (!('rawValue' in value) || value['rawValue'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    return true;
 }
 
 export function SenderFromJSON(json: any): Sender {
-  return SenderFromJSONTyped(json, false);
+    return SenderFromJSONTyped(json, false);
 }
 
-export function SenderFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): Sender {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    rawValue: json['rawValue'],
-    emailAddress: json['emailAddress'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-  };
+export function SenderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sender {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'rawValue': json['rawValue'],
+        'emailAddress': json['emailAddress'],
+        'name': json['name'] == null ? undefined : json['name'],
+    };
 }
 
-export function SenderToJSON(value?: Sender | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    rawValue: value.rawValue,
-    emailAddress: value.emailAddress,
-    name: value.name,
-  };
+export function SenderToJSON(json: any): Sender {
+    return SenderToJSONTyped(json, false);
 }
+
+export function SenderToJSONTyped(value?: Sender | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'rawValue': value['rawValue'],
+        'emailAddress': value['emailAddress'],
+        'name': value['name'],
+    };
+}
+

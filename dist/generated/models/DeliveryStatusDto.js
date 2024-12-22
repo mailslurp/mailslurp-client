@@ -13,66 +13,71 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliveryStatusDtoToJSON = exports.DeliveryStatusDtoFromJSONTyped = exports.DeliveryStatusDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfDeliveryStatusDto = instanceOfDeliveryStatusDto;
+exports.DeliveryStatusDtoFromJSON = DeliveryStatusDtoFromJSON;
+exports.DeliveryStatusDtoFromJSONTyped = DeliveryStatusDtoFromJSONTyped;
+exports.DeliveryStatusDtoToJSON = DeliveryStatusDtoToJSON;
+exports.DeliveryStatusDtoToJSONTyped = DeliveryStatusDtoToJSONTyped;
+/**
+ * Check if a given object implements the DeliveryStatusDto interface.
+ */
+function instanceOfDeliveryStatusDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    return true;
+}
 function DeliveryStatusDtoFromJSON(json) {
     return DeliveryStatusDtoFromJSONTyped(json, false);
 }
-exports.DeliveryStatusDtoFromJSON = DeliveryStatusDtoFromJSON;
 function DeliveryStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
-        remoteMtaIp: !(0, runtime_1.exists)(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        reportingMta: !(0, runtime_1.exists)(json, 'reportingMta')
-            ? undefined
-            : json['reportingMta'],
-        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
-        smtpResponse: !(0, runtime_1.exists)(json, 'smtpResponse')
-            ? undefined
-            : json['smtpResponse'],
-        smtpStatusCode: !(0, runtime_1.exists)(json, 'smtpStatusCode')
-            ? undefined
-            : json['smtpStatusCode'],
-        processingTimeMillis: !(0, runtime_1.exists)(json, 'processingTimeMillis')
-            ? undefined
-            : json['processingTimeMillis'],
-        received: !(0, runtime_1.exists)(json, 'received')
-            ? undefined
-            : new Date(json['received']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'sentId': json['sentId'] == null ? undefined : json['sentId'],
+        'remoteMtaIp': json['remoteMtaIp'] == null ? undefined : json['remoteMtaIp'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'reportingMta': json['reportingMta'] == null ? undefined : json['reportingMta'],
+        'recipients': json['recipients'] == null ? undefined : json['recipients'],
+        'smtpResponse': json['smtpResponse'] == null ? undefined : json['smtpResponse'],
+        'smtpStatusCode': json['smtpStatusCode'] == null ? undefined : json['smtpStatusCode'],
+        'processingTimeMillis': json['processingTimeMillis'] == null ? undefined : json['processingTimeMillis'],
+        'received': json['received'] == null ? undefined : (new Date(json['received'])),
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
-exports.DeliveryStatusDtoFromJSONTyped = DeliveryStatusDtoFromJSONTyped;
-function DeliveryStatusDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DeliveryStatusDtoToJSON(json) {
+    return DeliveryStatusDtoToJSONTyped(json, false);
+}
+function DeliveryStatusDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        sentId: value.sentId,
-        remoteMtaIp: value.remoteMtaIp,
-        inboxId: value.inboxId,
-        reportingMta: value.reportingMta,
-        recipients: value.recipients,
-        smtpResponse: value.smtpResponse,
-        smtpStatusCode: value.smtpStatusCode,
-        processingTimeMillis: value.processingTimeMillis,
-        received: value.received === undefined ? undefined : value.received.toISOString(),
-        subject: value.subject,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'sentId': value['sentId'],
+        'remoteMtaIp': value['remoteMtaIp'],
+        'inboxId': value['inboxId'],
+        'reportingMta': value['reportingMta'],
+        'recipients': value['recipients'],
+        'smtpResponse': value['smtpResponse'],
+        'smtpStatusCode': value['smtpStatusCode'],
+        'processingTimeMillis': value['processingTimeMillis'],
+        'received': value['received'] == null ? undefined : ((value['received']).toISOString()),
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
     };
 }
-exports.DeliveryStatusDtoToJSON = DeliveryStatusDtoToJSON;

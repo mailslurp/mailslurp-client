@@ -12,74 +12,83 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailFeaturePlatformName
  */
 export interface EmailFeaturePlatformName {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeaturePlatformName
-   */
-  slug: EmailFeaturePlatformNameSlugEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeaturePlatformName
-   */
-  name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeaturePlatformName
+     */
+    slug: EmailFeaturePlatformNameSlugEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeaturePlatformName
+     */
+    name: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum EmailFeaturePlatformNameSlugEnum {
-  android = 'android',
-  desktop_app = 'desktop-app',
-  desktop_webmail = 'desktop-webmail',
-  ios = 'ios',
-  macos = 'macos',
-  mobile_webmail = 'mobile-webmail',
-  outlook_com = 'outlook-com',
-  webmail = 'webmail',
-  windows = 'windows',
-  windows_mail = 'windows-mail',
+export const EmailFeaturePlatformNameSlugEnum = {
+    android: 'android',
+    desktop_app: 'desktop-app',
+    desktop_webmail: 'desktop-webmail',
+    ios: 'ios',
+    macos: 'macos',
+    mobile_webmail: 'mobile-webmail',
+    outlook_com: 'outlook-com',
+    webmail: 'webmail',
+    windows: 'windows',
+    windows_mail: 'windows-mail'
+} as const;
+export type EmailFeaturePlatformNameSlugEnum = typeof EmailFeaturePlatformNameSlugEnum[keyof typeof EmailFeaturePlatformNameSlugEnum];
+
+
+/**
+ * Check if a given object implements the EmailFeaturePlatformName interface.
+ */
+export function instanceOfEmailFeaturePlatformName(value: object): value is EmailFeaturePlatformName {
+    if (!('slug' in value) || value['slug'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    return true;
 }
 
-export function EmailFeaturePlatformNameFromJSON(
-  json: any
-): EmailFeaturePlatformName {
-  return EmailFeaturePlatformNameFromJSONTyped(json, false);
+export function EmailFeaturePlatformNameFromJSON(json: any): EmailFeaturePlatformName {
+    return EmailFeaturePlatformNameFromJSONTyped(json, false);
 }
 
-export function EmailFeaturePlatformNameFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailFeaturePlatformName {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    slug: json['slug'],
-    name: json['name'],
-  };
+export function EmailFeaturePlatformNameFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeaturePlatformName {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'slug': json['slug'],
+        'name': json['name'],
+    };
 }
 
-export function EmailFeaturePlatformNameToJSON(
-  value?: EmailFeaturePlatformName | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    slug: value.slug,
-    name: value.name,
-  };
+export function EmailFeaturePlatformNameToJSON(json: any): EmailFeaturePlatformName {
+    return EmailFeaturePlatformNameToJSONTyped(json, false);
 }
+
+export function EmailFeaturePlatformNameToJSONTyped(value?: EmailFeaturePlatformName | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'slug': value['slug'],
+        'name': value['name'],
+    };
+}
+

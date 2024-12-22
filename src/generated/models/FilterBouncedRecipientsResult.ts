@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Remaining recipients that were filtered to remove bounced recipients
  * @export
  * @interface FilterBouncedRecipientsResult
  */
 export interface FilterBouncedRecipientsResult {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof FilterBouncedRecipientsResult
-   */
-  filteredRecipients: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof FilterBouncedRecipientsResult
+     */
+    filteredRecipients: Array<string>;
 }
 
-export function FilterBouncedRecipientsResultFromJSON(
-  json: any
-): FilterBouncedRecipientsResult {
-  return FilterBouncedRecipientsResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the FilterBouncedRecipientsResult interface.
+ */
+export function instanceOfFilterBouncedRecipientsResult(value: object): value is FilterBouncedRecipientsResult {
+    if (!('filteredRecipients' in value) || value['filteredRecipients'] === undefined) return false;
+    return true;
 }
 
-export function FilterBouncedRecipientsResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): FilterBouncedRecipientsResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    filteredRecipients: json['filteredRecipients'],
-  };
+export function FilterBouncedRecipientsResultFromJSON(json: any): FilterBouncedRecipientsResult {
+    return FilterBouncedRecipientsResultFromJSONTyped(json, false);
 }
 
-export function FilterBouncedRecipientsResultToJSON(
-  value?: FilterBouncedRecipientsResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    filteredRecipients: value.filteredRecipients,
-  };
+export function FilterBouncedRecipientsResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilterBouncedRecipientsResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'filteredRecipients': json['filteredRecipients'],
+    };
 }
+
+export function FilterBouncedRecipientsResultToJSON(json: any): FilterBouncedRecipientsResult {
+    return FilterBouncedRecipientsResultToJSONTyped(json, false);
+}
+
+export function FilterBouncedRecipientsResultToJSONTyped(value?: FilterBouncedRecipientsResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'filteredRecipients': value['filteredRecipients'],
+    };
+}
+

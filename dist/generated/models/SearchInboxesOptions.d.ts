@@ -32,7 +32,7 @@ export interface SearchInboxesOptions {
      * @type {string}
      * @memberof SearchInboxesOptions
      */
-    sortDirection?: SearchInboxesOptionsSortDirectionEnum;
+    sortDirection?: SearchInboxesOptionsSortDirectionEnum | null;
     /**
      * Optionally filter results for favourites only
      * @type {boolean}
@@ -68,13 +68,13 @@ export interface SearchInboxesOptions {
      * @type {string}
      * @memberof SearchInboxesOptions
      */
-    inboxType?: SearchInboxesOptionsInboxTypeEnum;
+    inboxType?: SearchInboxesOptionsInboxTypeEnum | null;
     /**
      * Optional filter by inbox function
      * @type {string}
      * @memberof SearchInboxesOptions
      */
-    inboxFunction?: SearchInboxesOptionsInboxFunctionEnum;
+    inboxFunction?: SearchInboxesOptionsInboxFunctionEnum | null;
     /**
      * Optional domain ID filter
      * @type {string}
@@ -84,30 +84,37 @@ export interface SearchInboxesOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum SearchInboxesOptionsSortDirectionEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const SearchInboxesOptionsSortDirectionEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type SearchInboxesOptionsSortDirectionEnum = typeof SearchInboxesOptionsSortDirectionEnum[keyof typeof SearchInboxesOptionsSortDirectionEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum SearchInboxesOptionsInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const SearchInboxesOptionsInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type SearchInboxesOptionsInboxTypeEnum = typeof SearchInboxesOptionsInboxTypeEnum[keyof typeof SearchInboxesOptionsInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum SearchInboxesOptionsInboxFunctionEnum {
-    ALIAS = "ALIAS",
-    THREAD = "THREAD",
-    CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
-}
+export declare const SearchInboxesOptionsInboxFunctionEnum: {
+    readonly ALIAS: "ALIAS";
+    readonly THREAD: "THREAD";
+    readonly CATCH_ALL: "CATCH_ALL";
+    readonly CONNECTOR: "CONNECTOR";
+    readonly ACCOUNT: "ACCOUNT";
+    readonly GUEST: "GUEST";
+};
+export type SearchInboxesOptionsInboxFunctionEnum = typeof SearchInboxesOptionsInboxFunctionEnum[keyof typeof SearchInboxesOptionsInboxFunctionEnum];
+/**
+ * Check if a given object implements the SearchInboxesOptions interface.
+ */
+export declare function instanceOfSearchInboxesOptions(value: object): value is SearchInboxesOptions;
 export declare function SearchInboxesOptionsFromJSON(json: any): SearchInboxesOptions;
 export declare function SearchInboxesOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchInboxesOptions;
-export declare function SearchInboxesOptionsToJSON(value?: SearchInboxesOptions | null): any;
+export declare function SearchInboxesOptionsToJSON(json: any): SearchInboxesOptions;
+export declare function SearchInboxesOptionsToJSONTyped(value?: SearchInboxesOptions | null, ignoreDiscriminator?: boolean): any;

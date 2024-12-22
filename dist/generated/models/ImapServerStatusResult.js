@@ -13,33 +13,38 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerStatusResultToJSON = exports.ImapServerStatusResultFromJSONTyped = exports.ImapServerStatusResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfImapServerStatusResult = instanceOfImapServerStatusResult;
+exports.ImapServerStatusResultFromJSON = ImapServerStatusResultFromJSON;
+exports.ImapServerStatusResultFromJSONTyped = ImapServerStatusResultFromJSONTyped;
+exports.ImapServerStatusResultToJSON = ImapServerStatusResultToJSON;
+exports.ImapServerStatusResultToJSONTyped = ImapServerStatusResultToJSONTyped;
+var ImapMailboxStatus_1 = require("./ImapMailboxStatus");
+/**
+ * Check if a given object implements the ImapServerStatusResult interface.
+ */
+function instanceOfImapServerStatusResult(value) {
+    return true;
+}
 function ImapServerStatusResultFromJSON(json) {
     return ImapServerStatusResultFromJSONTyped(json, false);
 }
-exports.ImapServerStatusResultFromJSON = ImapServerStatusResultFromJSON;
 function ImapServerStatusResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        result: !(0, runtime_1.exists)(json, 'result')
-            ? undefined
-            : (0, _1.ImapMailboxStatusFromJSON)(json['result']),
+        'result': json['result'] == null ? undefined : (0, ImapMailboxStatus_1.ImapMailboxStatusFromJSON)(json['result']),
     };
 }
-exports.ImapServerStatusResultFromJSONTyped = ImapServerStatusResultFromJSONTyped;
-function ImapServerStatusResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapServerStatusResultToJSON(json) {
+    return ImapServerStatusResultToJSONTyped(json, false);
+}
+function ImapServerStatusResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        result: (0, _1.ImapMailboxStatusToJSON)(value.result),
+        'result': (0, ImapMailboxStatus_1.ImapMailboxStatusToJSON)(value['result']),
     };
 }
-exports.ImapServerStatusResultToJSON = ImapServerStatusResultToJSON;

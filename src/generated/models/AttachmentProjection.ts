@@ -12,105 +12,131 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Email attachment data
  * @export
  * @interface AttachmentProjection
  */
 export interface AttachmentProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  userId: string;
-  /**
-   * Content ID of attachment.
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  contentId?: string | null;
-  /**
-   * Attachment ID
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  attachmentId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  name?: string | null;
-  /**
-   * Content length of attachment in bytes
-   * @type {number}
-   * @memberof AttachmentProjection
-   */
-  contentLength?: number | null;
-  /**
-   * Content type of attachment.
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  contentType?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    updatedAt: Date;
+    /**
+     * Inbox ID
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    inboxId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    userId: string;
+    /**
+     * Content ID of attachment.
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    contentId?: string | null;
+    /**
+     * Attachment ID
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    attachmentId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    name?: string | null;
+    /**
+     * ID
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    id: string;
+    /**
+     * Content length of attachment in bytes
+     * @type {number}
+     * @memberof AttachmentProjection
+     */
+    contentLength?: number | null;
+    /**
+     * Content type of attachment.
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    contentType?: string | null;
+}
+
+/**
+ * Check if a given object implements the AttachmentProjection interface.
+ */
+export function instanceOfAttachmentProjection(value: object): value is AttachmentProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('attachmentId' in value) || value['attachmentId'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function AttachmentProjectionFromJSON(json: any): AttachmentProjection {
-  return AttachmentProjectionFromJSONTyped(json, false);
+    return AttachmentProjectionFromJSONTyped(json, false);
 }
 
-export function AttachmentProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AttachmentProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    userId: json['userId'],
-    contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
-    attachmentId: json['attachmentId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    contentLength: !exists(json, 'contentLength')
-      ? undefined
-      : json['contentLength'],
-    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
-  };
+export function AttachmentProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'],
+        'contentId': json['contentId'] == null ? undefined : json['contentId'],
+        'attachmentId': json['attachmentId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
+        'contentLength': json['contentLength'] == null ? undefined : json['contentLength'],
+        'contentType': json['contentType'] == null ? undefined : json['contentType'],
+    };
 }
 
-export function AttachmentProjectionToJSON(
-  value?: AttachmentProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    userId: value.userId,
-    contentId: value.contentId,
-    attachmentId: value.attachmentId,
-    name: value.name,
-    contentLength: value.contentLength,
-    contentType: value.contentType,
-  };
+export function AttachmentProjectionToJSON(json: any): AttachmentProjection {
+    return AttachmentProjectionToJSONTyped(json, false);
 }
+
+export function AttachmentProjectionToJSONTyped(value?: AttachmentProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'contentId': value['contentId'],
+        'attachmentId': value['attachmentId'],
+        'name': value['name'],
+        'id': value['id'],
+        'contentLength': value['contentLength'],
+        'contentType': value['contentType'],
+    };
+}
+

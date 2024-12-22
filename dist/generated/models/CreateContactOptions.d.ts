@@ -35,16 +35,16 @@ export interface CreateContactOptions {
     company?: string | null;
     /**
      * Set of email addresses belonging to the contact
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof CreateContactOptions
      */
-    emailAddresses?: Array<string> | null;
+    emailAddresses?: Array<string | null> | null;
     /**
      * Tags that can be used to search and group contacts
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof CreateContactOptions
      */
-    tags?: Array<string> | null;
+    tags?: Array<string | null> | null;
     /**
      *
      * @type {object}
@@ -70,6 +70,11 @@ export interface CreateContactOptions {
      */
     verifyEmailAddresses?: boolean | null;
 }
+/**
+ * Check if a given object implements the CreateContactOptions interface.
+ */
+export declare function instanceOfCreateContactOptions(value: object): value is CreateContactOptions;
 export declare function CreateContactOptionsFromJSON(json: any): CreateContactOptions;
 export declare function CreateContactOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateContactOptions;
-export declare function CreateContactOptionsToJSON(value?: CreateContactOptions | null): any;
+export declare function CreateContactOptionsToJSON(json: any): CreateContactOptions;
+export declare function CreateContactOptionsToJSONTyped(value?: CreateContactOptions | null, ignoreDiscriminator?: boolean): any;

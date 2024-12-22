@@ -13,60 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorProjectionToJSON = exports.ConnectorProjectionFromJSONTyped = exports.ConnectorProjectionFromJSON = exports.ConnectorProjectionSyncScheduleTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfConnectorProjection = instanceOfConnectorProjection;
+exports.ConnectorProjectionFromJSON = ConnectorProjectionFromJSON;
+exports.ConnectorProjectionFromJSONTyped = ConnectorProjectionFromJSONTyped;
+exports.ConnectorProjectionToJSON = ConnectorProjectionToJSON;
+exports.ConnectorProjectionToJSONTyped = ConnectorProjectionToJSONTyped;
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the ConnectorProjection interface.
  */
-var ConnectorProjectionSyncScheduleTypeEnum;
-(function (ConnectorProjectionSyncScheduleTypeEnum) {
-    ConnectorProjectionSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(ConnectorProjectionSyncScheduleTypeEnum = exports.ConnectorProjectionSyncScheduleTypeEnum || (exports.ConnectorProjectionSyncScheduleTypeEnum = {}));
+function instanceOfConnectorProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function ConnectorProjectionFromJSON(json) {
     return ConnectorProjectionFromJSONTyped(json, false);
 }
-exports.ConnectorProjectionFromJSON = ConnectorProjectionFromJSON;
 function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
-        inboxId: json['inboxId'],
-        userId: json['userId'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
-        syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-        syncScheduleType: json['syncScheduleType'],
-        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
-            ? undefined
-            : json['syncInterval'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
+        'inboxId': json['inboxId'],
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
     };
 }
-exports.ConnectorProjectionFromJSONTyped = ConnectorProjectionFromJSONTyped;
-function ConnectorProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ConnectorProjectionToJSON(json) {
+    return ConnectorProjectionToJSONTyped(json, false);
+}
+function ConnectorProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        enabled: value.enabled,
-        inboxId: value.inboxId,
-        userId: value.userId,
-        emailAddress: value.emailAddress,
-        syncEnabled: value.syncEnabled,
-        syncScheduleType: value.syncScheduleType,
-        syncInterval: value.syncInterval,
-        name: value.name,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'enabled': value['enabled'],
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'name': value['name'],
+        'id': value['id'],
     };
 }
-exports.ConnectorProjectionToJSON = ConnectorProjectionToJSON;

@@ -12,98 +12,110 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * BOUNCE_RECIPIENT webhook payload. Sent to your webhook url endpoint via HTTP POST when an email caused a bounce to occur for a recipient. Save the recipient to a ban list of your server and avoid email them again.
  * @export
  * @interface WebhookBounceRecipientPayload
  */
 export interface WebhookBounceRecipientPayload {
-  /**
-   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-   * @type {string}
-   * @memberof WebhookBounceRecipientPayload
-   */
-  messageId: string;
-  /**
-   * ID of webhook entity being triggered
-   * @type {string}
-   * @memberof WebhookBounceRecipientPayload
-   */
-  webhookId: string;
-  /**
-   * Name of the event type webhook is being triggered for.
-   * @type {string}
-   * @memberof WebhookBounceRecipientPayload
-   */
-  eventName: WebhookBounceRecipientPayloadEventNameEnum;
-  /**
-   * Name of the webhook being triggered
-   * @type {string}
-   * @memberof WebhookBounceRecipientPayload
-   */
-  webhookName?: string | null;
-  /**
-   * Email address that caused a bounce. Make note of the address and try not to message it again to preserve your reputation.
-   * @type {string}
-   * @memberof WebhookBounceRecipientPayload
-   */
-  recipient: string;
+    /**
+     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+     * @type {string}
+     * @memberof WebhookBounceRecipientPayload
+     */
+    messageId: string;
+    /**
+     * ID of webhook entity being triggered
+     * @type {string}
+     * @memberof WebhookBounceRecipientPayload
+     */
+    webhookId: string;
+    /**
+     * Name of the event type webhook is being triggered for.
+     * @type {string}
+     * @memberof WebhookBounceRecipientPayload
+     */
+    eventName: WebhookBounceRecipientPayloadEventNameEnum;
+    /**
+     * Name of the webhook being triggered
+     * @type {string}
+     * @memberof WebhookBounceRecipientPayload
+     */
+    webhookName?: string | null;
+    /**
+     * Email address that caused a bounce. Make note of the address and try not to message it again to preserve your reputation.
+     * @type {string}
+     * @memberof WebhookBounceRecipientPayload
+     */
+    recipient: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookBounceRecipientPayloadEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
+export const WebhookBounceRecipientPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+} as const;
+export type WebhookBounceRecipientPayloadEventNameEnum = typeof WebhookBounceRecipientPayloadEventNameEnum[keyof typeof WebhookBounceRecipientPayloadEventNameEnum];
+
+
+/**
+ * Check if a given object implements the WebhookBounceRecipientPayload interface.
+ */
+export function instanceOfWebhookBounceRecipientPayload(value: object): value is WebhookBounceRecipientPayload {
+    if (!('messageId' in value) || value['messageId'] === undefined) return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined) return false;
+    if (!('eventName' in value) || value['eventName'] === undefined) return false;
+    if (!('recipient' in value) || value['recipient'] === undefined) return false;
+    return true;
 }
 
-export function WebhookBounceRecipientPayloadFromJSON(
-  json: any
-): WebhookBounceRecipientPayload {
-  return WebhookBounceRecipientPayloadFromJSONTyped(json, false);
+export function WebhookBounceRecipientPayloadFromJSON(json: any): WebhookBounceRecipientPayload {
+    return WebhookBounceRecipientPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookBounceRecipientPayloadFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookBounceRecipientPayload {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    messageId: json['messageId'],
-    webhookId: json['webhookId'],
-    eventName: json['eventName'],
-    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
-    recipient: json['recipient'],
-  };
+export function WebhookBounceRecipientPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookBounceRecipientPayload {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+        'recipient': json['recipient'],
+    };
 }
 
-export function WebhookBounceRecipientPayloadToJSON(
-  value?: WebhookBounceRecipientPayload | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    messageId: value.messageId,
-    webhookId: value.webhookId,
-    eventName: value.eventName,
-    webhookName: value.webhookName,
-    recipient: value.recipient,
-  };
+export function WebhookBounceRecipientPayloadToJSON(json: any): WebhookBounceRecipientPayload {
+    return WebhookBounceRecipientPayloadToJSONTyped(json, false);
 }
+
+export function WebhookBounceRecipientPayloadToJSONTyped(value?: WebhookBounceRecipientPayload | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'eventName': value['eventName'],
+        'webhookName': value['webhookName'],
+        'recipient': value['recipient'],
+    };
+}
+

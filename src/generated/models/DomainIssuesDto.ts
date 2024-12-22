@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface DomainIssuesDto
  */
 export interface DomainIssuesDto {
-  /**
-   *
-   * @type {boolean}
-   * @memberof DomainIssuesDto
-   */
-  hasIssues: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DomainIssuesDto
+     */
+    hasIssues: boolean;
+}
+
+/**
+ * Check if a given object implements the DomainIssuesDto interface.
+ */
+export function instanceOfDomainIssuesDto(value: object): value is DomainIssuesDto {
+    if (!('hasIssues' in value) || value['hasIssues'] === undefined) return false;
+    return true;
 }
 
 export function DomainIssuesDtoFromJSON(json: any): DomainIssuesDto {
-  return DomainIssuesDtoFromJSONTyped(json, false);
+    return DomainIssuesDtoFromJSONTyped(json, false);
 }
 
-export function DomainIssuesDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainIssuesDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    hasIssues: json['hasIssues'],
-  };
+export function DomainIssuesDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainIssuesDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'hasIssues': json['hasIssues'],
+    };
 }
 
-export function DomainIssuesDtoToJSON(value?: DomainIssuesDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    hasIssues: value.hasIssues,
-  };
+export function DomainIssuesDtoToJSON(json: any): DomainIssuesDto {
+    return DomainIssuesDtoToJSONTyped(json, false);
 }
+
+export function DomainIssuesDtoToJSONTyped(value?: DomainIssuesDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'hasIssues': value['hasIssues'],
+    };
+}
+

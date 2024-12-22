@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentMatchOptionsToJSON = exports.ContentMatchOptionsFromJSONTyped = exports.ContentMatchOptionsFromJSON = void 0;
+exports.instanceOfContentMatchOptions = instanceOfContentMatchOptions;
+exports.ContentMatchOptionsFromJSON = ContentMatchOptionsFromJSON;
+exports.ContentMatchOptionsFromJSONTyped = ContentMatchOptionsFromJSONTyped;
+exports.ContentMatchOptionsToJSON = ContentMatchOptionsToJSON;
+exports.ContentMatchOptionsToJSONTyped = ContentMatchOptionsToJSONTyped;
+/**
+ * Check if a given object implements the ContentMatchOptions interface.
+ */
+function instanceOfContentMatchOptions(value) {
+    if (!('pattern' in value) || value['pattern'] === undefined)
+        return false;
+    return true;
+}
 function ContentMatchOptionsFromJSON(json) {
     return ContentMatchOptionsFromJSONTyped(json, false);
 }
-exports.ContentMatchOptionsFromJSON = ContentMatchOptionsFromJSON;
 function ContentMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        pattern: json['pattern'],
+        'pattern': json['pattern'],
     };
 }
-exports.ContentMatchOptionsFromJSONTyped = ContentMatchOptionsFromJSONTyped;
-function ContentMatchOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ContentMatchOptionsToJSON(json) {
+    return ContentMatchOptionsToJSONTyped(json, false);
+}
+function ContentMatchOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        pattern: value.pattern,
+        'pattern': value['pattern'],
     };
 }
-exports.ContentMatchOptionsToJSON = ContentMatchOptionsToJSON;

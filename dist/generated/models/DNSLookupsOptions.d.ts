@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DNSLookupOptions } from './';
+import type { DNSLookupOptions } from './DNSLookupOptions';
 /**
  * Options for multiple DNS queries
  * @export
@@ -23,6 +23,11 @@ export interface DNSLookupsOptions {
      */
     lookups: Array<DNSLookupOptions>;
 }
+/**
+ * Check if a given object implements the DNSLookupsOptions interface.
+ */
+export declare function instanceOfDNSLookupsOptions(value: object): value is DNSLookupsOptions;
 export declare function DNSLookupsOptionsFromJSON(json: any): DNSLookupsOptions;
 export declare function DNSLookupsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DNSLookupsOptions;
-export declare function DNSLookupsOptionsToJSON(value?: DNSLookupsOptions | null): any;
+export declare function DNSLookupsOptionsToJSON(json: any): DNSLookupsOptions;
+export declare function DNSLookupsOptionsToJSONTyped(value?: DNSLookupsOptions | null, ignoreDiscriminator?: boolean): any;

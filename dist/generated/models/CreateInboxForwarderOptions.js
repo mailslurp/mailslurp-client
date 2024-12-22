@@ -13,44 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxForwarderOptionsToJSON = exports.CreateInboxForwarderOptionsFromJSONTyped = exports.CreateInboxForwarderOptionsFromJSON = exports.CreateInboxForwarderOptionsFieldEnum = void 0;
+exports.CreateInboxForwarderOptionsFieldEnum = void 0;
+exports.instanceOfCreateInboxForwarderOptions = instanceOfCreateInboxForwarderOptions;
+exports.CreateInboxForwarderOptionsFromJSON = CreateInboxForwarderOptionsFromJSON;
+exports.CreateInboxForwarderOptionsFromJSONTyped = CreateInboxForwarderOptionsFromJSONTyped;
+exports.CreateInboxForwarderOptionsToJSON = CreateInboxForwarderOptionsToJSON;
+exports.CreateInboxForwarderOptionsToJSONTyped = CreateInboxForwarderOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var CreateInboxForwarderOptionsFieldEnum;
-(function (CreateInboxForwarderOptionsFieldEnum) {
-    CreateInboxForwarderOptionsFieldEnum["RECIPIENTS"] = "RECIPIENTS";
-    CreateInboxForwarderOptionsFieldEnum["SENDER"] = "SENDER";
-    CreateInboxForwarderOptionsFieldEnum["SUBJECT"] = "SUBJECT";
-    CreateInboxForwarderOptionsFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
-})(CreateInboxForwarderOptionsFieldEnum = exports.CreateInboxForwarderOptionsFieldEnum || (exports.CreateInboxForwarderOptionsFieldEnum = {}));
+exports.CreateInboxForwarderOptionsFieldEnum = {
+    RECIPIENTS: 'RECIPIENTS',
+    SENDER: 'SENDER',
+    SUBJECT: 'SUBJECT',
+    ATTACHMENTS: 'ATTACHMENTS'
+};
+/**
+ * Check if a given object implements the CreateInboxForwarderOptions interface.
+ */
+function instanceOfCreateInboxForwarderOptions(value) {
+    if (!('field' in value) || value['field'] === undefined)
+        return false;
+    if (!('match' in value) || value['match'] === undefined)
+        return false;
+    if (!('forwardToRecipients' in value) || value['forwardToRecipients'] === undefined)
+        return false;
+    return true;
+}
 function CreateInboxForwarderOptionsFromJSON(json) {
     return CreateInboxForwarderOptionsFromJSONTyped(json, false);
 }
-exports.CreateInboxForwarderOptionsFromJSON = CreateInboxForwarderOptionsFromJSON;
 function CreateInboxForwarderOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        field: json['field'],
-        match: json['match'],
-        forwardToRecipients: json['forwardToRecipients'],
+        'field': json['field'],
+        'match': json['match'],
+        'forwardToRecipients': json['forwardToRecipients'],
     };
 }
-exports.CreateInboxForwarderOptionsFromJSONTyped = CreateInboxForwarderOptionsFromJSONTyped;
-function CreateInboxForwarderOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateInboxForwarderOptionsToJSON(json) {
+    return CreateInboxForwarderOptionsToJSONTyped(json, false);
+}
+function CreateInboxForwarderOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        field: value.field,
-        match: value.match,
-        forwardToRecipients: value.forwardToRecipients,
+        'field': value['field'],
+        'match': value['match'],
+        'forwardToRecipients': value['forwardToRecipients'],
     };
 }
-exports.CreateInboxForwarderOptionsToJSON = CreateInboxForwarderOptionsToJSON;

@@ -28,6 +28,11 @@ export interface EmailTextLinesResult {
      */
     body: string;
 }
+/**
+ * Check if a given object implements the EmailTextLinesResult interface.
+ */
+export declare function instanceOfEmailTextLinesResult(value: object): value is EmailTextLinesResult;
 export declare function EmailTextLinesResultFromJSON(json: any): EmailTextLinesResult;
 export declare function EmailTextLinesResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailTextLinesResult;
-export declare function EmailTextLinesResultToJSON(value?: EmailTextLinesResult | null): any;
+export declare function EmailTextLinesResultToJSON(json: any): EmailTextLinesResult;
+export declare function EmailTextLinesResultToJSONTyped(value?: EmailTextLinesResult | null, ignoreDiscriminator?: boolean): any;

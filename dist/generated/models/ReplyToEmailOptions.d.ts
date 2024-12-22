@@ -41,11 +41,11 @@ export interface ReplyToEmailOptions {
     replyTo?: string | null;
     /**
      * Optional custom headers
-     * @type {{ [key: string]: string; }}
+     * @type {{ [key: string]: string | null; }}
      * @memberof ReplyToEmailOptions
      */
     customHeaders?: {
-        [key: string]: string;
+        [key: string]: string | null;
     } | null;
     /**
      * The charset that your message should be sent with. Optional. Default is UTF-8
@@ -55,17 +55,17 @@ export interface ReplyToEmailOptions {
     charset?: string | null;
     /**
      * List of uploaded attachments to send with the reply. Optional.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ReplyToEmailOptions
      */
-    attachments?: Array<string> | null;
+    attachments?: Array<string | null> | null;
     /**
      * Template variables if using a template
-     * @type {{ [key: string]: object; }}
+     * @type {{ [key: string]: object | null; }}
      * @memberof ReplyToEmailOptions
      */
     templateVariables?: {
-        [key: string]: object;
+        [key: string]: object | null;
     } | null;
     /**
      * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
@@ -78,7 +78,7 @@ export interface ReplyToEmailOptions {
      * @type {string}
      * @memberof ReplyToEmailOptions
      */
-    sendStrategy?: ReplyToEmailOptionsSendStrategyEnum;
+    sendStrategy?: ReplyToEmailOptionsSendStrategyEnum | null;
     /**
      * Optionally use inbox name as display name for sender email address
      * @type {boolean}
@@ -94,11 +94,16 @@ export interface ReplyToEmailOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ReplyToEmailOptionsSendStrategyEnum {
-    SINGLE_MESSAGE = "SINGLE_MESSAGE"
-}
+export declare const ReplyToEmailOptionsSendStrategyEnum: {
+    readonly SINGLE_MESSAGE: "SINGLE_MESSAGE";
+};
+export type ReplyToEmailOptionsSendStrategyEnum = typeof ReplyToEmailOptionsSendStrategyEnum[keyof typeof ReplyToEmailOptionsSendStrategyEnum];
+/**
+ * Check if a given object implements the ReplyToEmailOptions interface.
+ */
+export declare function instanceOfReplyToEmailOptions(value: object): value is ReplyToEmailOptions;
 export declare function ReplyToEmailOptionsFromJSON(json: any): ReplyToEmailOptions;
 export declare function ReplyToEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyToEmailOptions;
-export declare function ReplyToEmailOptionsToJSON(value?: ReplyToEmailOptions | null): any;
+export declare function ReplyToEmailOptionsToJSON(json: any): ReplyToEmailOptions;
+export declare function ReplyToEmailOptionsToJSONTyped(value?: ReplyToEmailOptions | null, ignoreDiscriminator?: boolean): any;

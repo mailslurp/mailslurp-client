@@ -12,53 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Email body content parts for multipart mime message. Will override body.
  * @export
  * @interface SendEmailBodyPart
  */
 export interface SendEmailBodyPart {
-  /**
-   *
-   * @type {string}
-   * @memberof SendEmailBodyPart
-   */
-  contentType: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendEmailBodyPart
-   */
-  contentBody: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendEmailBodyPart
+     */
+    contentType: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendEmailBodyPart
+     */
+    contentBody: string;
+}
+
+/**
+ * Check if a given object implements the SendEmailBodyPart interface.
+ */
+export function instanceOfSendEmailBodyPart(value: object): value is SendEmailBodyPart {
+    if (!('contentType' in value) || value['contentType'] === undefined) return false;
+    if (!('contentBody' in value) || value['contentBody'] === undefined) return false;
+    return true;
 }
 
 export function SendEmailBodyPartFromJSON(json: any): SendEmailBodyPart {
-  return SendEmailBodyPartFromJSONTyped(json, false);
+    return SendEmailBodyPartFromJSONTyped(json, false);
 }
 
-export function SendEmailBodyPartFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SendEmailBodyPart {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    contentType: json['contentType'],
-    contentBody: json['contentBody'],
-  };
+export function SendEmailBodyPartFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendEmailBodyPart {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'contentType': json['contentType'],
+        'contentBody': json['contentBody'],
+    };
 }
 
-export function SendEmailBodyPartToJSON(value?: SendEmailBodyPart | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    contentType: value.contentType,
-    contentBody: value.contentBody,
-  };
+export function SendEmailBodyPartToJSON(json: any): SendEmailBodyPart {
+    return SendEmailBodyPartToJSONTyped(json, false);
 }
+
+export function SendEmailBodyPartToJSONTyped(value?: SendEmailBodyPart | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'contentType': value['contentType'],
+        'contentBody': value['contentBody'],
+    };
+}
+

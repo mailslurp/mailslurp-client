@@ -72,10 +72,10 @@ export interface PageThreadProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageThreadProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}

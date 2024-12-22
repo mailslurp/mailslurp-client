@@ -13,30 +13,37 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailContentPartResultToJSON = exports.EmailContentPartResultFromJSONTyped = exports.EmailContentPartResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfEmailContentPartResult = instanceOfEmailContentPartResult;
+exports.EmailContentPartResultFromJSON = EmailContentPartResultFromJSON;
+exports.EmailContentPartResultFromJSONTyped = EmailContentPartResultFromJSONTyped;
+exports.EmailContentPartResultToJSON = EmailContentPartResultToJSON;
+exports.EmailContentPartResultToJSONTyped = EmailContentPartResultToJSONTyped;
+/**
+ * Check if a given object implements the EmailContentPartResult interface.
+ */
+function instanceOfEmailContentPartResult(value) {
+    return true;
+}
 function EmailContentPartResultFromJSON(json) {
     return EmailContentPartResultFromJSONTyped(json, false);
 }
-exports.EmailContentPartResultFromJSON = EmailContentPartResultFromJSON;
 function EmailContentPartResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        content: !(0, runtime_1.exists)(json, 'content') ? undefined : json['content'],
+        'content': json['content'] == null ? undefined : json['content'],
     };
 }
-exports.EmailContentPartResultFromJSONTyped = EmailContentPartResultFromJSONTyped;
-function EmailContentPartResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailContentPartResultToJSON(json) {
+    return EmailContentPartResultToJSONTyped(json, false);
+}
+function EmailContentPartResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        content: value.content,
+        'content': value['content'],
     };
 }
-exports.EmailContentPartResultToJSON = EmailContentPartResultToJSON;

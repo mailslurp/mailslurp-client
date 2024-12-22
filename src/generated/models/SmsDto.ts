@@ -12,101 +12,135 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SmsDto
  */
 export interface SmsDto {
-  /**
-   *
-   * @type {string}
-   * @memberof SmsDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsDto
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsDto
-   */
-  fromNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsDto
-   */
-  body: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SmsDto
-   */
-  read: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof SmsDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof SmsDto
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsDto
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsDto
+     */
+    fromNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsDto
+     */
+    toNumber?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SmsDto
+     */
+    favourite: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsDto
+     */
+    body: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SmsDto
+     */
+    read: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SmsDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SmsDto
+     */
+    updatedAt: Date;
+}
+
+/**
+ * Check if a given object implements the SmsDto interface.
+ */
+export function instanceOfSmsDto(value: object): value is SmsDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined) return false;
+    if (!('fromNumber' in value) || value['fromNumber'] === undefined) return false;
+    if (!('favourite' in value) || value['favourite'] === undefined) return false;
+    if (!('body' in value) || value['body'] === undefined) return false;
+    if (!('read' in value) || value['read'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    return true;
 }
 
 export function SmsDtoFromJSON(json: any): SmsDto {
-  return SmsDtoFromJSONTyped(json, false);
+    return SmsDtoFromJSONTyped(json, false);
 }
 
-export function SmsDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmsDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    phoneNumber: json['phoneNumber'],
-    fromNumber: json['fromNumber'],
-    body: json['body'],
-    read: json['read'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function SmsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'toNumber': json['toNumber'] == null ? undefined : json['toNumber'],
+        'favourite': json['favourite'],
+        'body': json['body'],
+        'read': json['read'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
-export function SmsDtoToJSON(value?: SmsDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    phoneNumber: value.phoneNumber,
-    fromNumber: value.fromNumber,
-    body: value.body,
-    read: value.read,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function SmsDtoToJSON(json: any): SmsDto {
+    return SmsDtoToJSONTyped(json, false);
 }
+
+export function SmsDtoToJSONTyped(value?: SmsDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'phoneNumber': value['phoneNumber'],
+        'fromNumber': value['fromNumber'],
+        'toNumber': value['toNumber'],
+        'favourite': value['favourite'],
+        'body': value['body'],
+        'read': value['read'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+    };
+}
+

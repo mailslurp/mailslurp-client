@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxRulesetDto, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { InboxRulesetDto } from './InboxRulesetDto';
 /**
  * Paginated inbox ruleset results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageInboxRulesetDto {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageInboxRulesetDto
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageInboxRulesetDto {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageInboxRulesetDto interface.
+ */
+export declare function instanceOfPageInboxRulesetDto(value: object): value is PageInboxRulesetDto;
 export declare function PageInboxRulesetDtoFromJSON(json: any): PageInboxRulesetDto;
 export declare function PageInboxRulesetDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxRulesetDto;
-export declare function PageInboxRulesetDtoToJSON(value?: PageInboxRulesetDto | null): any;
+export declare function PageInboxRulesetDtoToJSON(json: any): PageInboxRulesetDto;
+export declare function PageInboxRulesetDtoToJSONTyped(value?: PageInboxRulesetDto | null, ignoreDiscriminator?: boolean): any;

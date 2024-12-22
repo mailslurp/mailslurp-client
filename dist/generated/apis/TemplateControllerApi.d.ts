@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateTemplateOptions, PageTemplateProjection, TemplateDto, TemplatePreview, TemplateProjection } from '../models';
+import type { CreateTemplateOptions, PageTemplateProjection, TemplateDto, TemplatePreview, TemplateProjection } from '../models/index';
 export interface CreateTemplateRequest {
     createTemplateOptions: CreateTemplateOptions;
 }
@@ -45,88 +45,88 @@ export declare class TemplateControllerApi extends runtime.BaseAPI {
      * Create an email template with variables for use with templated transactional emails.
      * Create a Template
      */
-    createTemplateRaw(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>>;
+    createTemplateRaw(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TemplateDto>>;
     /**
      * Create an email template with variables for use with templated transactional emails.
      * Create a Template
      */
-    createTemplate(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
+    createTemplate(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TemplateDto>;
     /**
      * Delete template
      * Delete email template
      */
-    deleteTemplateRaw(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteTemplateRaw(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete template
      * Delete email template
      */
-    deleteTemplate(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteTemplate(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get all templates in paginated format
      * List templates
      */
-    getAllTemplatesRaw(requestParameters: GetAllTemplatesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTemplateProjection>>;
+    getAllTemplatesRaw(requestParameters: GetAllTemplatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageTemplateProjection>>;
     /**
      * Get all templates in paginated format
      * List templates
      */
-    getAllTemplates(requestParameters: GetAllTemplatesRequest, initOverrides?: RequestInit): Promise<PageTemplateProjection>;
+    getAllTemplates(requestParameters?: GetAllTemplatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageTemplateProjection>;
     /**
      * Get email template
      * Get template
      */
-    getTemplateRaw(requestParameters: GetTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>>;
+    getTemplateRaw(requestParameters: GetTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TemplateDto>>;
     /**
      * Get email template
      * Get template
      */
-    getTemplate(requestParameters: GetTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
+    getTemplate(requestParameters: GetTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TemplateDto>;
     /**
      * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
      * Get template preview HTML
      */
-    getTemplatePreviewHtmlRaw(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    getTemplatePreviewHtmlRaw(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
      * Get template preview HTML
      */
-    getTemplatePreviewHtml(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit): Promise<string>;
+    getTemplatePreviewHtml(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
      * Get template preview Json
      */
-    getTemplatePreviewJsonRaw(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplatePreview>>;
+    getTemplatePreviewJsonRaw(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TemplatePreview>>;
     /**
      * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
      * Get template preview Json
      */
-    getTemplatePreviewJson(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit): Promise<TemplatePreview>;
+    getTemplatePreviewJson(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TemplatePreview>;
     /**
      * Get all templates
      * List templates
      */
-    getTemplatesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<TemplateProjection>>>;
+    getTemplatesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TemplateProjection>>>;
     /**
      * Get all templates
      * List templates
      */
-    getTemplates(initOverrides?: RequestInit): Promise<Array<TemplateProjection>>;
+    getTemplates(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TemplateProjection>>;
     /**
      * Update email template
      * Update template
      */
-    updateTemplateRaw(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>>;
+    updateTemplateRaw(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TemplateDto>>;
     /**
      * Update email template
      * Update template
      */
-    updateTemplate(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
+    updateTemplate(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TemplateDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllTemplatesSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllTemplatesSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllTemplatesSortEnum = typeof GetAllTemplatesSortEnum[keyof typeof GetAllTemplatesSortEnum];

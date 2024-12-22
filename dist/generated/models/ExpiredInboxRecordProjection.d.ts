@@ -40,6 +40,11 @@ export interface ExpiredInboxRecordProjection {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the ExpiredInboxRecordProjection interface.
+ */
+export declare function instanceOfExpiredInboxRecordProjection(value: object): value is ExpiredInboxRecordProjection;
 export declare function ExpiredInboxRecordProjectionFromJSON(json: any): ExpiredInboxRecordProjection;
 export declare function ExpiredInboxRecordProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxRecordProjection;
-export declare function ExpiredInboxRecordProjectionToJSON(value?: ExpiredInboxRecordProjection | null): any;
+export declare function ExpiredInboxRecordProjectionToJSON(json: any): ExpiredInboxRecordProjection;
+export declare function ExpiredInboxRecordProjectionToJSONTyped(value?: ExpiredInboxRecordProjection | null, ignoreDiscriminator?: boolean): any;

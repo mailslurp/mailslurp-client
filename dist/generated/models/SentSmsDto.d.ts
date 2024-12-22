@@ -82,6 +82,11 @@ export interface SentSmsDto {
      */
     updatedAt: Date;
 }
+/**
+ * Check if a given object implements the SentSmsDto interface.
+ */
+export declare function instanceOfSentSmsDto(value: object): value is SentSmsDto;
 export declare function SentSmsDtoFromJSON(json: any): SentSmsDto;
 export declare function SentSmsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentSmsDto;
-export declare function SentSmsDtoToJSON(value?: SentSmsDto | null): any;
+export declare function SentSmsDtoToJSON(json: any): SentSmsDto;
+export declare function SentSmsDtoToJSONTyped(value?: SentSmsDto | null, ignoreDiscriminator?: boolean): any;

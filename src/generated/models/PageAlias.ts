@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { PageableObject } from './PageableObject';
 import {
-  AliasProjection,
-  AliasProjectionFromJSON,
-  AliasProjectionFromJSONTyped,
-  AliasProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-} from './';
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PageableObjectToJSONTyped,
+} from './PageableObject';
+import type { SortObject } from './SortObject';
+import {
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    SortObjectToJSONTyped,
+} from './SortObject';
+import type { AliasProjection } from './AliasProjection';
+import {
+    AliasProjectionFromJSON,
+    AliasProjectionFromJSONTyped,
+    AliasProjectionToJSON,
+    AliasProjectionToJSONTyped,
+} from './AliasProjection';
 
 /**
  * Paginated email alias results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -34,127 +41,129 @@ import {
  * @interface PageAlias
  */
 export interface PageAlias {
-  /**
-   *
-   * @type {Array<AliasProjection>}
-   * @memberof PageAlias
-   */
-  content?: Array<AliasProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageAlias
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAlias
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAlias
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageAlias
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAlias
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageAlias
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAlias
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAlias
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageAlias
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageAlias
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<AliasProjection>}
+     * @memberof PageAlias
+     */
+    content?: Array<AliasProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageAlias
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageAlias
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageAlias
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageAlias
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageAlias
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageAlias
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageAlias
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageAlias
+     */
+    number?: number;
+    /**
+     * 
+     * @type {Array<SortObject>}
+     * @memberof PageAlias
+     */
+    sort?: Array<SortObject>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageAlias
+     */
+    empty?: boolean;
+}
+
+/**
+ * Check if a given object implements the PageAlias interface.
+ */
+export function instanceOfPageAlias(value: object): value is PageAlias {
+    if (!('totalPages' in value) || value['totalPages'] === undefined) return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
 export function PageAliasFromJSON(json: any): PageAlias {
-  return PageAliasFromJSONTyped(json, false);
+    return PageAliasFromJSONTyped(json, false);
 }
 
-export function PageAliasFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageAlias {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(AliasProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageAliasFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageAlias {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'] == null ? undefined : ((json['content'] as Array<any>).map(AliasProjectionFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : ((json['sort'] as Array<any>).map(SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
+    };
 }
 
-export function PageAliasToJSON(value?: PageAlias | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(AliasProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
-    totalElements: value.totalElements,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageAliasToJSON(json: any): PageAlias {
+    return PageAliasToJSONTyped(json, false);
 }
+
+export function PageAliasToJSONTyped(value?: PageAlias | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'] == null ? undefined : ((value['content'] as Array<any>).map(AliasProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : ((value['sort'] as Array<any>).map(SortObjectToJSON)),
+        'empty': value['empty'],
+    };
+}
+

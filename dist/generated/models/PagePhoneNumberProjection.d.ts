@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, PhoneNumberProjection, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { PhoneNumberProjection } from './PhoneNumberProjection';
+import type { SortObject } from './SortObject';
 /**
  * Paginated phone numbers. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PagePhoneNumberProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PagePhoneNumberProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PagePhoneNumberProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PagePhoneNumberProjection interface.
+ */
+export declare function instanceOfPagePhoneNumberProjection(value: object): value is PagePhoneNumberProjection;
 export declare function PagePhoneNumberProjectionFromJSON(json: any): PagePhoneNumberProjection;
 export declare function PagePhoneNumberProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PagePhoneNumberProjection;
-export declare function PagePhoneNumberProjectionToJSON(value?: PagePhoneNumberProjection | null): any;
+export declare function PagePhoneNumberProjectionToJSON(json: any): PagePhoneNumberProjection;
+export declare function PagePhoneNumberProjectionToJSONTyped(value?: PagePhoneNumberProjection | null, ignoreDiscriminator?: boolean): any;

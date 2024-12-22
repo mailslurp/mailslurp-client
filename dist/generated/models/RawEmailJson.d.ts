@@ -22,6 +22,11 @@ export interface RawEmailJson {
      */
     content: string;
 }
+/**
+ * Check if a given object implements the RawEmailJson interface.
+ */
+export declare function instanceOfRawEmailJson(value: object): value is RawEmailJson;
 export declare function RawEmailJsonFromJSON(json: any): RawEmailJson;
 export declare function RawEmailJsonFromJSONTyped(json: any, ignoreDiscriminator: boolean): RawEmailJson;
-export declare function RawEmailJsonToJSON(value?: RawEmailJson | null): any;
+export declare function RawEmailJsonToJSON(json: any): RawEmailJson;
+export declare function RawEmailJsonToJSONTyped(value?: RawEmailJson | null, ignoreDiscriminator?: boolean): any;

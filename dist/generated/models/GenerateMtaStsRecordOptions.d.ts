@@ -54,20 +54,25 @@ export interface GenerateMtaStsRecordOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateMtaStsRecordOptionsVersionEnum {
-    STSv1 = "STSv1"
-}
+export declare const GenerateMtaStsRecordOptionsVersionEnum: {
+    readonly STSv1: "STSv1";
+};
+export type GenerateMtaStsRecordOptionsVersionEnum = typeof GenerateMtaStsRecordOptionsVersionEnum[keyof typeof GenerateMtaStsRecordOptionsVersionEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateMtaStsRecordOptionsModeEnum {
-    TESTING = "TESTING",
-    ENFORCE = "ENFORCE",
-    NONE = "NONE"
-}
+export declare const GenerateMtaStsRecordOptionsModeEnum: {
+    readonly TESTING: "TESTING";
+    readonly ENFORCE: "ENFORCE";
+    readonly NONE: "NONE";
+};
+export type GenerateMtaStsRecordOptionsModeEnum = typeof GenerateMtaStsRecordOptionsModeEnum[keyof typeof GenerateMtaStsRecordOptionsModeEnum];
+/**
+ * Check if a given object implements the GenerateMtaStsRecordOptions interface.
+ */
+export declare function instanceOfGenerateMtaStsRecordOptions(value: object): value is GenerateMtaStsRecordOptions;
 export declare function GenerateMtaStsRecordOptionsFromJSON(json: any): GenerateMtaStsRecordOptions;
 export declare function GenerateMtaStsRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateMtaStsRecordOptions;
-export declare function GenerateMtaStsRecordOptionsToJSON(value?: GenerateMtaStsRecordOptions | null): any;
+export declare function GenerateMtaStsRecordOptionsToJSON(json: any): GenerateMtaStsRecordOptions;
+export declare function GenerateMtaStsRecordOptionsToJSONTyped(value?: GenerateMtaStsRecordOptions | null, ignoreDiscriminator?: boolean): any;

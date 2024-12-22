@@ -13,32 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTrackingPixelOptionsToJSON = exports.CreateTrackingPixelOptionsFromJSONTyped = exports.CreateTrackingPixelOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfCreateTrackingPixelOptions = instanceOfCreateTrackingPixelOptions;
+exports.CreateTrackingPixelOptionsFromJSON = CreateTrackingPixelOptionsFromJSON;
+exports.CreateTrackingPixelOptionsFromJSONTyped = CreateTrackingPixelOptionsFromJSONTyped;
+exports.CreateTrackingPixelOptionsToJSON = CreateTrackingPixelOptionsToJSON;
+exports.CreateTrackingPixelOptionsToJSONTyped = CreateTrackingPixelOptionsToJSONTyped;
+/**
+ * Check if a given object implements the CreateTrackingPixelOptions interface.
+ */
+function instanceOfCreateTrackingPixelOptions(value) {
+    return true;
+}
 function CreateTrackingPixelOptionsFromJSON(json) {
     return CreateTrackingPixelOptionsFromJSONTyped(json, false);
 }
-exports.CreateTrackingPixelOptionsFromJSON = CreateTrackingPixelOptionsFromJSON;
 function CreateTrackingPixelOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'recipient': json['recipient'] == null ? undefined : json['recipient'],
     };
 }
-exports.CreateTrackingPixelOptionsFromJSONTyped = CreateTrackingPixelOptionsFromJSONTyped;
-function CreateTrackingPixelOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateTrackingPixelOptionsToJSON(json) {
+    return CreateTrackingPixelOptionsToJSONTyped(json, false);
+}
+function CreateTrackingPixelOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        recipient: value.recipient,
+        'name': value['name'],
+        'recipient': value['recipient'],
     };
 }
-exports.CreateTrackingPixelOptionsToJSON = CreateTrackingPixelOptionsToJSON;

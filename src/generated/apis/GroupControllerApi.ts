@@ -12,635 +12,478 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
-import {
+import type {
   CreateGroupOptions,
-  CreateGroupOptionsFromJSON,
-  CreateGroupOptionsToJSON,
   GroupContactsDto,
-  GroupContactsDtoFromJSON,
-  GroupContactsDtoToJSON,
   GroupDto,
-  GroupDtoFromJSON,
-  GroupDtoToJSON,
   GroupProjection,
-  GroupProjectionFromJSON,
-  GroupProjectionToJSON,
   PageContactProjection,
-  PageContactProjectionFromJSON,
-  PageContactProjectionToJSON,
   PageGroupProjection,
-  PageGroupProjectionFromJSON,
-  PageGroupProjectionToJSON,
   UpdateGroupContacts,
-  UpdateGroupContactsFromJSON,
-  UpdateGroupContactsToJSON,
-} from '../models';
+} from '../models/index';
+import {
+    CreateGroupOptionsFromJSON,
+    CreateGroupOptionsToJSON,
+    GroupContactsDtoFromJSON,
+    GroupContactsDtoToJSON,
+    GroupDtoFromJSON,
+    GroupDtoToJSON,
+    GroupProjectionFromJSON,
+    GroupProjectionToJSON,
+    PageContactProjectionFromJSON,
+    PageContactProjectionToJSON,
+    PageGroupProjectionFromJSON,
+    PageGroupProjectionToJSON,
+    UpdateGroupContactsFromJSON,
+    UpdateGroupContactsToJSON,
+} from '../models/index';
 
 export interface AddContactsToGroupRequest {
-  groupId: string;
-  updateGroupContacts: UpdateGroupContacts;
+    groupId: string;
+    updateGroupContacts: UpdateGroupContacts;
 }
 
 export interface CreateGroupRequest {
-  createGroupOptions: CreateGroupOptions;
+    createGroupOptions: CreateGroupOptions;
 }
 
 export interface DeleteGroupRequest {
-  groupId: string;
+    groupId: string;
 }
 
 export interface GetAllGroupsRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllGroupsSortEnum;
-  since?: Date;
-  before?: Date;
+    page?: number;
+    size?: number;
+    sort?: GetAllGroupsSortEnum;
+    since?: Date;
+    before?: Date;
 }
 
 export interface GetGroupRequest {
-  groupId: string;
+    groupId: string;
 }
 
 export interface GetGroupWithContactsRequest {
-  groupId: string;
+    groupId: string;
 }
 
 export interface GetGroupWithContactsPaginatedRequest {
-  groupId: string;
-  page?: number;
-  size?: number;
-  sort?: GetGroupWithContactsPaginatedSortEnum;
-  since?: Date;
-  before?: Date;
+    groupId: string;
+    page?: number;
+    size?: number;
+    sort?: GetGroupWithContactsPaginatedSortEnum;
+    since?: Date;
+    before?: Date;
 }
 
 export interface RemoveContactsFromGroupRequest {
-  groupId: string;
-  updateGroupContacts: UpdateGroupContacts;
+    groupId: string;
+    updateGroupContacts: UpdateGroupContacts;
 }
 
 /**
- *
+ * 
  */
 export class GroupControllerApi extends runtime.BaseAPI {
-  /**
-   * Add contacts to a group
-   */
-  async addContactsToGroupRaw(
-    requestParameters: AddContactsToGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<GroupContactsDto>> {
-    if (
-      requestParameters.groupId === null ||
-      requestParameters.groupId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling addContactsToGroup.'
-      );
+
+    /**
+     * Add contacts to a group
+     */
+    async addContactsToGroupRaw(requestParameters: AddContactsToGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupContactsDto>> {
+        if (requestParameters['groupId'] == null) {
+            throw new runtime.RequiredError(
+                'groupId',
+                'Required parameter "groupId" was null or undefined when calling addContactsToGroup().'
+            );
+        }
+
+        if (requestParameters['updateGroupContacts'] == null) {
+            throw new runtime.RequiredError(
+                'updateGroupContacts',
+                'Required parameter "updateGroupContacts" was null or undefined when calling addContactsToGroup().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups/{groupId}/contacts`.replace(`{${"groupId"}}`, encodeURIComponent(String(requestParameters['groupId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateGroupContactsToJSON(requestParameters['updateGroupContacts']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GroupContactsDtoFromJSON(jsonValue));
     }
 
-    if (
-      requestParameters.updateGroupContacts === null ||
-      requestParameters.updateGroupContacts === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'updateGroupContacts',
-        'Required parameter requestParameters.updateGroupContacts was null or undefined when calling addContactsToGroup.'
-      );
+    /**
+     * Add contacts to a group
+     */
+    async addContactsToGroup(requestParameters: AddContactsToGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupContactsDto> {
+        const response = await this.addContactsToGroupRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Create a group
+     */
+    async createGroupRaw(requestParameters: CreateGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupDto>> {
+        if (requestParameters['createGroupOptions'] == null) {
+            throw new runtime.RequiredError(
+                'createGroupOptions',
+                'Required parameter "createGroupOptions" was null or undefined when calling createGroup().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    headerParameters['Content-Type'] = 'application/json';
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateGroupOptionsToJSON(requestParameters['createGroupOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GroupDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/groups/{groupId}/contacts`.replace(
-          `{${'groupId'}}`,
-          encodeURIComponent(String(requestParameters.groupId))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: UpdateGroupContactsToJSON(requestParameters.updateGroupContacts),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      GroupContactsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Add contacts to a group
-   */
-  async addContactsToGroup(
-    requestParameters: AddContactsToGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<GroupContactsDto> {
-    const response = await this.addContactsToGroupRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Create a group
-   */
-  async createGroupRaw(
-    requestParameters: CreateGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<GroupDto>> {
-    if (
-      requestParameters.createGroupOptions === null ||
-      requestParameters.createGroupOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createGroupOptions',
-        'Required parameter requestParameters.createGroupOptions was null or undefined when calling createGroup.'
-      );
+    /**
+     * Create a group
+     */
+    async createGroup(requestParameters: CreateGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupDto> {
+        const response = await this.createGroupRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Delete group
+     */
+    async deleteGroupRaw(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['groupId'] == null) {
+            throw new runtime.RequiredError(
+                'groupId',
+                'Required parameter "groupId" was null or undefined when calling deleteGroup().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    headerParameters['Content-Type'] = 'application/json';
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups/{groupId}`.replace(`{${"groupId"}}`, encodeURIComponent(String(requestParameters['groupId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/groups`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateGroupOptionsToJSON(requestParameters.createGroupOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      GroupDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Create a group
-   */
-  async createGroup(
-    requestParameters: CreateGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<GroupDto> {
-    const response = await this.createGroupRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Delete group
-   */
-  async deleteGroupRaw(
-    requestParameters: DeleteGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.groupId === null ||
-      requestParameters.groupId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling deleteGroup.'
-      );
+    /**
+     * Delete group
+     */
+    async deleteGroup(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteGroupRaw(requestParameters, initOverrides);
     }
 
-    const queryParameters: any = {};
+    /**
+     * Get all Contact Groups in paginated format
+     */
+    async getAllGroupsRaw(requestParameters: GetAllGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageGroupProjection>> {
+        const queryParameters: any = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups/paginated`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageGroupProjectionFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/groups/{groupId}`.replace(
-          `{${'groupId'}}`,
-          encodeURIComponent(String(requestParameters.groupId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Delete group
-   */
-  async deleteGroup(
-    requestParameters: DeleteGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteGroupRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Get all Contact Groups in paginated format
-   */
-  async getAllGroupsRaw(
-    requestParameters: GetAllGroupsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageGroupProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+    /**
+     * Get all Contact Groups in paginated format
+     */
+    async getAllGroups(requestParameters: GetAllGroupsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageGroupProjection> {
+        const response = await this.getAllGroupsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Get group
+     */
+    async getGroupRaw(requestParameters: GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupDto>> {
+        if (requestParameters['groupId'] == null) {
+            throw new runtime.RequiredError(
+                'groupId',
+                'Required parameter "groupId" was null or undefined when calling getGroup().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups/{groupId}`.replace(`{${"groupId"}}`, encodeURIComponent(String(requestParameters['groupId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GroupDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Get group
+     */
+    async getGroup(requestParameters: GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupDto> {
+        const response = await this.getGroupRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    /**
+     * Get group and contacts belonging to it
+     */
+    async getGroupWithContactsRaw(requestParameters: GetGroupWithContactsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupContactsDto>> {
+        if (requestParameters['groupId'] == null) {
+            throw new runtime.RequiredError(
+                'groupId',
+                'Required parameter "groupId" was null or undefined when calling getGroupWithContacts().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups/{groupId}/contacts`.replace(`{${"groupId"}}`, encodeURIComponent(String(requestParameters['groupId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GroupContactsDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
+    /**
+     * Get group and contacts belonging to it
+     */
+    async getGroupWithContacts(requestParameters: GetGroupWithContactsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupContactsDto> {
+        const response = await this.getGroupWithContactsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Get group and paginated contacts belonging to it
+     */
+    async getGroupWithContactsPaginatedRaw(requestParameters: GetGroupWithContactsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageContactProjection>> {
+        if (requestParameters['groupId'] == null) {
+            throw new runtime.RequiredError(
+                'groupId',
+                'Required parameter "groupId" was null or undefined when calling getGroupWithContactsPaginated().'
+            );
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups/{groupId}/contacts-paginated`.replace(`{${"groupId"}}`, encodeURIComponent(String(requestParameters['groupId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageContactProjectionFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/groups/paginated`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageGroupProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get all Contact Groups in paginated format
-   */
-  async getAllGroups(
-    requestParameters: GetAllGroupsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageGroupProjection> {
-    const response = await this.getAllGroupsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get group
-   */
-  async getGroupRaw(
-    requestParameters: GetGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<GroupDto>> {
-    if (
-      requestParameters.groupId === null ||
-      requestParameters.groupId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling getGroup.'
-      );
+    /**
+     * Get group and paginated contacts belonging to it
+     */
+    async getGroupWithContactsPaginated(requestParameters: GetGroupWithContactsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageContactProjection> {
+        const response = await this.getGroupWithContactsPaginatedRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Get all groups
+     */
+    async getGroupsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<GroupProjection>>> {
+        const queryParameters: any = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(GroupProjectionFromJSON));
     }
 
-    const response = await this.request(
-      {
-        path: `/groups/{groupId}`.replace(
-          `{${'groupId'}}`,
-          encodeURIComponent(String(requestParameters.groupId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      GroupDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get group
-   */
-  async getGroup(
-    requestParameters: GetGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<GroupDto> {
-    const response = await this.getGroupRaw(requestParameters, initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get group and contacts belonging to it
-   */
-  async getGroupWithContactsRaw(
-    requestParameters: GetGroupWithContactsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<GroupContactsDto>> {
-    if (
-      requestParameters.groupId === null ||
-      requestParameters.groupId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling getGroupWithContacts.'
-      );
+    /**
+     * Get all groups
+     */
+    async getGroups(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<GroupProjection>> {
+        const response = await this.getGroupsRaw(initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Remove contacts from a group
+     */
+    async removeContactsFromGroupRaw(requestParameters: RemoveContactsFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupContactsDto>> {
+        if (requestParameters['groupId'] == null) {
+            throw new runtime.RequiredError(
+                'groupId',
+                'Required parameter "groupId" was null or undefined when calling removeContactsFromGroup().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (requestParameters['updateGroupContacts'] == null) {
+            throw new runtime.RequiredError(
+                'updateGroupContacts',
+                'Required parameter "updateGroupContacts" was null or undefined when calling removeContactsFromGroup().'
+            );
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/groups/{groupId}/contacts`.replace(`{${"groupId"}}`, encodeURIComponent(String(requestParameters['groupId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateGroupContactsToJSON(requestParameters['updateGroupContacts']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GroupContactsDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/groups/{groupId}/contacts`.replace(
-          `{${'groupId'}}`,
-          encodeURIComponent(String(requestParameters.groupId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      GroupContactsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get group and contacts belonging to it
-   */
-  async getGroupWithContacts(
-    requestParameters: GetGroupWithContactsRequest,
-    initOverrides?: RequestInit
-  ): Promise<GroupContactsDto> {
-    const response = await this.getGroupWithContactsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get group and paginated contacts belonging to it
-   */
-  async getGroupWithContactsPaginatedRaw(
-    requestParameters: GetGroupWithContactsPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageContactProjection>> {
-    if (
-      requestParameters.groupId === null ||
-      requestParameters.groupId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling getGroupWithContactsPaginated.'
-      );
+    /**
+     * Remove contacts from a group
+     */
+    async removeContactsFromGroup(requestParameters: RemoveContactsFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupContactsDto> {
+        const response = await this.removeContactsFromGroupRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/groups/{groupId}/contacts-paginated`.replace(
-          `{${'groupId'}}`,
-          encodeURIComponent(String(requestParameters.groupId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageContactProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get group and paginated contacts belonging to it
-   */
-  async getGroupWithContactsPaginated(
-    requestParameters: GetGroupWithContactsPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageContactProjection> {
-    const response = await this.getGroupWithContactsPaginatedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get all groups
-   */
-  async getGroupsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<GroupProjection>>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/groups`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(GroupProjectionFromJSON)
-    );
-  }
-
-  /**
-   * Get all groups
-   */
-  async getGroups(
-    initOverrides?: RequestInit
-  ): Promise<Array<GroupProjection>> {
-    const response = await this.getGroupsRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Remove contacts from a group
-   */
-  async removeContactsFromGroupRaw(
-    requestParameters: RemoveContactsFromGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<GroupContactsDto>> {
-    if (
-      requestParameters.groupId === null ||
-      requestParameters.groupId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling removeContactsFromGroup.'
-      );
-    }
-
-    if (
-      requestParameters.updateGroupContacts === null ||
-      requestParameters.updateGroupContacts === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'updateGroupContacts',
-        'Required parameter requestParameters.updateGroupContacts was null or undefined when calling removeContactsFromGroup.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/groups/{groupId}/contacts`.replace(
-          `{${'groupId'}}`,
-          encodeURIComponent(String(requestParameters.groupId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-        body: UpdateGroupContactsToJSON(requestParameters.updateGroupContacts),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      GroupContactsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Remove contacts from a group
-   */
-  async removeContactsFromGroup(
-    requestParameters: RemoveContactsFromGroupRequest,
-    initOverrides?: RequestInit
-  ): Promise<GroupContactsDto> {
-    const response = await this.removeContactsFromGroupRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllGroupsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetAllGroupsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetAllGroupsSortEnum = typeof GetAllGroupsSortEnum[keyof typeof GetAllGroupsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetGroupWithContactsPaginatedSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetGroupWithContactsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetGroupWithContactsPaginatedSortEnum = typeof GetGroupWithContactsPaginatedSortEnum[keyof typeof GetGroupWithContactsPaginatedSortEnum];

@@ -12,113 +12,122 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Tracking pixel data
  * @export
  * @interface TrackingPixelProjection
  */
 export interface TrackingPixelProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof TrackingPixelProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof TrackingPixelProjection
-   */
-  inboxId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TrackingPixelProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TrackingPixelProjection
-   */
-  sentEmailId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TrackingPixelProjection
-   */
-  recipient?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof TrackingPixelProjection
-   */
-  seen: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof TrackingPixelProjection
-   */
-  seenAt?: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof TrackingPixelProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TrackingPixelProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TrackingPixelProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    inboxId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    sentEmailId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    recipient?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TrackingPixelProjection
+     */
+    seen: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TrackingPixelProjection
+     */
+    seenAt?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    id: string;
 }
 
-export function TrackingPixelProjectionFromJSON(
-  json: any
-): TrackingPixelProjection {
-  return TrackingPixelProjectionFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the TrackingPixelProjection interface.
+ */
+export function instanceOfTrackingPixelProjection(value: object): value is TrackingPixelProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('seen' in value) || value['seen'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
-export function TrackingPixelProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TrackingPixelProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    userId: json['userId'],
-    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
-    seen: json['seen'],
-    seenAt: !exists(json, 'seenAt') ? undefined : new Date(json['seenAt']),
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function TrackingPixelProjectionFromJSON(json: any): TrackingPixelProjection {
+    return TrackingPixelProjectionFromJSONTyped(json, false);
 }
 
-export function TrackingPixelProjectionToJSON(
-  value?: TrackingPixelProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    inboxId: value.inboxId,
-    userId: value.userId,
-    sentEmailId: value.sentEmailId,
-    recipient: value.recipient,
-    seen: value.seen,
-    seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
-    name: value.name,
-    id: value.id,
-  };
+export function TrackingPixelProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackingPixelProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'],
+        'sentEmailId': json['sentEmailId'] == null ? undefined : json['sentEmailId'],
+        'recipient': json['recipient'] == null ? undefined : json['recipient'],
+        'seen': json['seen'],
+        'seenAt': json['seenAt'] == null ? undefined : (new Date(json['seenAt'])),
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
+
+export function TrackingPixelProjectionToJSON(json: any): TrackingPixelProjection {
+    return TrackingPixelProjectionToJSONTyped(json, false);
+}
+
+export function TrackingPixelProjectionToJSONTyped(value?: TrackingPixelProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'sentEmailId': value['sentEmailId'],
+        'recipient': value['recipient'],
+        'seen': value['seen'],
+        'seenAt': value['seenAt'] == null ? undefined : ((value['seenAt']).toISOString()),
+        'name': value['name'],
+        'id': value['id'],
+    };
+}
+

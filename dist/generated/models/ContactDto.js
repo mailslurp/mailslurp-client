@@ -13,52 +13,65 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContactDtoToJSON = exports.ContactDtoFromJSONTyped = exports.ContactDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfContactDto = instanceOfContactDto;
+exports.ContactDtoFromJSON = ContactDtoFromJSON;
+exports.ContactDtoFromJSONTyped = ContactDtoFromJSONTyped;
+exports.ContactDtoToJSON = ContactDtoToJSON;
+exports.ContactDtoToJSONTyped = ContactDtoToJSONTyped;
+/**
+ * Check if a given object implements the ContactDto interface.
+ */
+function instanceOfContactDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('emailAddresses' in value) || value['emailAddresses'] === undefined)
+        return false;
+    if (!('tags' in value) || value['tags'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function ContactDtoFromJSON(json) {
     return ContactDtoFromJSONTyped(json, false);
 }
-exports.ContactDtoFromJSON = ContactDtoFromJSON;
 function ContactDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
-        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
-        emailAddresses: json['emailAddresses'],
-        primaryEmailAddress: !(0, runtime_1.exists)(json, 'primaryEmailAddress')
-            ? undefined
-            : json['primaryEmailAddress'],
-        tags: json['tags'],
-        metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
-        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'groupId': json['groupId'] == null ? undefined : json['groupId'],
+        'firstName': json['firstName'] == null ? undefined : json['firstName'],
+        'lastName': json['lastName'] == null ? undefined : json['lastName'],
+        'company': json['company'] == null ? undefined : json['company'],
+        'emailAddresses': json['emailAddresses'],
+        'primaryEmailAddress': json['primaryEmailAddress'] == null ? undefined : json['primaryEmailAddress'],
+        'tags': json['tags'],
+        'metaData': json['metaData'] == null ? undefined : json['metaData'],
+        'optOut': json['optOut'] == null ? undefined : json['optOut'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.ContactDtoFromJSONTyped = ContactDtoFromJSONTyped;
-function ContactDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ContactDtoToJSON(json) {
+    return ContactDtoToJSONTyped(json, false);
+}
+function ContactDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        groupId: value.groupId,
-        firstName: value.firstName,
-        lastName: value.lastName,
-        company: value.company,
-        emailAddresses: value.emailAddresses,
-        primaryEmailAddress: value.primaryEmailAddress,
-        tags: value.tags,
-        metaData: value.metaData,
-        optOut: value.optOut,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'groupId': value['groupId'],
+        'firstName': value['firstName'],
+        'lastName': value['lastName'],
+        'company': value['company'],
+        'emailAddresses': value['emailAddresses'],
+        'primaryEmailAddress': value['primaryEmailAddress'],
+        'tags': value['tags'],
+        'metaData': value['metaData'],
+        'optOut': value['optOut'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.ContactDtoToJSON = ContactDtoToJSON;

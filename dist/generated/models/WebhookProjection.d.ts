@@ -44,7 +44,19 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
+    userId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
     eventName?: WebhookProjectionEventNameEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    healthStatus?: WebhookProjectionHealthStatusEnum;
     /**
      *
      * @type {string}
@@ -63,23 +75,49 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    username?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    password?: string;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookProjectionEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const WebhookProjectionEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type WebhookProjectionEventNameEnum = typeof WebhookProjectionEventNameEnum[keyof typeof WebhookProjectionEventNameEnum];
+/**
+ * @export
+ */
+export declare const WebhookProjectionHealthStatusEnum: {
+    readonly HEALTHY: "HEALTHY";
+    readonly UNHEALTHY: "UNHEALTHY";
+};
+export type WebhookProjectionHealthStatusEnum = typeof WebhookProjectionHealthStatusEnum[keyof typeof WebhookProjectionHealthStatusEnum];
+/**
+ * Check if a given object implements the WebhookProjection interface.
+ */
+export declare function instanceOfWebhookProjection(value: object): value is WebhookProjection;
 export declare function WebhookProjectionFromJSON(json: any): WebhookProjection;
 export declare function WebhookProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookProjection;
-export declare function WebhookProjectionToJSON(value?: WebhookProjection | null): any;
+export declare function WebhookProjectionToJSON(json: any): WebhookProjection;
+export declare function WebhookProjectionToJSONTyped(value?: WebhookProjection | null, ignoreDiscriminator?: boolean): any;

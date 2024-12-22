@@ -22,6 +22,11 @@ export interface SetInboxFavouritedOptions {
      */
     state: boolean;
 }
+/**
+ * Check if a given object implements the SetInboxFavouritedOptions interface.
+ */
+export declare function instanceOfSetInboxFavouritedOptions(value: object): value is SetInboxFavouritedOptions;
 export declare function SetInboxFavouritedOptionsFromJSON(json: any): SetInboxFavouritedOptions;
 export declare function SetInboxFavouritedOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SetInboxFavouritedOptions;
-export declare function SetInboxFavouritedOptionsToJSON(value?: SetInboxFavouritedOptions | null): any;
+export declare function SetInboxFavouritedOptionsToJSON(json: any): SetInboxFavouritedOptions;
+export declare function SetInboxFavouritedOptionsToJSONTyped(value?: SetInboxFavouritedOptions | null, ignoreDiscriminator?: boolean): any;

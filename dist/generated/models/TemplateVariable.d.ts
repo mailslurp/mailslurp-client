@@ -30,11 +30,16 @@ export interface TemplateVariable {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum TemplateVariableVariableTypeEnum {
-    STRING = "STRING"
-}
+export declare const TemplateVariableVariableTypeEnum: {
+    readonly STRING: "STRING";
+};
+export type TemplateVariableVariableTypeEnum = typeof TemplateVariableVariableTypeEnum[keyof typeof TemplateVariableVariableTypeEnum];
+/**
+ * Check if a given object implements the TemplateVariable interface.
+ */
+export declare function instanceOfTemplateVariable(value: object): value is TemplateVariable;
 export declare function TemplateVariableFromJSON(json: any): TemplateVariable;
 export declare function TemplateVariableFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateVariable;
-export declare function TemplateVariableToJSON(value?: TemplateVariable | null): any;
+export declare function TemplateVariableToJSON(json: any): TemplateVariable;
+export declare function TemplateVariableToJSONTyped(value?: TemplateVariable | null, ignoreDiscriminator?: boolean): any;

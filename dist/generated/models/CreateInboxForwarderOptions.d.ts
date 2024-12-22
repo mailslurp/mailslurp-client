@@ -36,14 +36,19 @@ export interface CreateInboxForwarderOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateInboxForwarderOptionsFieldEnum {
-    RECIPIENTS = "RECIPIENTS",
-    SENDER = "SENDER",
-    SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
-}
+export declare const CreateInboxForwarderOptionsFieldEnum: {
+    readonly RECIPIENTS: "RECIPIENTS";
+    readonly SENDER: "SENDER";
+    readonly SUBJECT: "SUBJECT";
+    readonly ATTACHMENTS: "ATTACHMENTS";
+};
+export type CreateInboxForwarderOptionsFieldEnum = typeof CreateInboxForwarderOptionsFieldEnum[keyof typeof CreateInboxForwarderOptionsFieldEnum];
+/**
+ * Check if a given object implements the CreateInboxForwarderOptions interface.
+ */
+export declare function instanceOfCreateInboxForwarderOptions(value: object): value is CreateInboxForwarderOptions;
 export declare function CreateInboxForwarderOptionsFromJSON(json: any): CreateInboxForwarderOptions;
 export declare function CreateInboxForwarderOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxForwarderOptions;
-export declare function CreateInboxForwarderOptionsToJSON(value?: CreateInboxForwarderOptions | null): any;
+export declare function CreateInboxForwarderOptionsToJSON(json: any): CreateInboxForwarderOptions;
+export declare function CreateInboxForwarderOptionsToJSONTyped(value?: CreateInboxForwarderOptions | null, ignoreDiscriminator?: boolean): any;

@@ -13,74 +13,84 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserInfoDtoToJSON = exports.UserInfoDtoFromJSONTyped = exports.UserInfoDtoFromJSON = exports.UserInfoDtoAccountTypeEnum = exports.UserInfoDtoSubscriptionTypeEnum = exports.UserInfoDtoAccountStateEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.UserInfoDtoAccountTypeEnum = exports.UserInfoDtoSubscriptionTypeEnum = exports.UserInfoDtoAccountStateEnum = void 0;
+exports.instanceOfUserInfoDto = instanceOfUserInfoDto;
+exports.UserInfoDtoFromJSON = UserInfoDtoFromJSON;
+exports.UserInfoDtoFromJSONTyped = UserInfoDtoFromJSONTyped;
+exports.UserInfoDtoToJSON = UserInfoDtoToJSON;
+exports.UserInfoDtoToJSONTyped = UserInfoDtoToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var UserInfoDtoAccountStateEnum;
-(function (UserInfoDtoAccountStateEnum) {
-    UserInfoDtoAccountStateEnum["FROZEN"] = "FROZEN";
-    UserInfoDtoAccountStateEnum["ACTIVE"] = "ACTIVE";
-})(UserInfoDtoAccountStateEnum = exports.UserInfoDtoAccountStateEnum || (exports.UserInfoDtoAccountStateEnum = {}));
+exports.UserInfoDtoAccountStateEnum = {
+    FROZEN: 'FROZEN',
+    ACTIVE: 'ACTIVE'
+};
 /**
  * @export
- * @enum {string}
  */
-var UserInfoDtoSubscriptionTypeEnum;
-(function (UserInfoDtoSubscriptionTypeEnum) {
-    UserInfoDtoSubscriptionTypeEnum["PRO_MONTHLY"] = "PRO_MONTHLY";
-    UserInfoDtoSubscriptionTypeEnum["STARTER"] = "STARTER";
-    UserInfoDtoSubscriptionTypeEnum["PRO"] = "PRO";
-    UserInfoDtoSubscriptionTypeEnum["TEAM"] = "TEAM";
-    UserInfoDtoSubscriptionTypeEnum["ENTERPRISE"] = "ENTERPRISE";
-})(UserInfoDtoSubscriptionTypeEnum = exports.UserInfoDtoSubscriptionTypeEnum || (exports.UserInfoDtoSubscriptionTypeEnum = {}));
+exports.UserInfoDtoSubscriptionTypeEnum = {
+    PRO_MONTHLY: 'PRO_MONTHLY',
+    STARTER: 'STARTER',
+    PRO: 'PRO',
+    TEAM: 'TEAM',
+    ENTERPRISE: 'ENTERPRISE'
+};
 /**
  * @export
- * @enum {string}
  */
-var UserInfoDtoAccountTypeEnum;
-(function (UserInfoDtoAccountTypeEnum) {
-    UserInfoDtoAccountTypeEnum["SOLO"] = "SOLO";
-    UserInfoDtoAccountTypeEnum["CHILD_SOLO"] = "CHILD_SOLO";
-    UserInfoDtoAccountTypeEnum["CHILD_TEAM"] = "CHILD_TEAM";
-    UserInfoDtoAccountTypeEnum["CHILD_ADMIN"] = "CHILD_ADMIN";
-})(UserInfoDtoAccountTypeEnum = exports.UserInfoDtoAccountTypeEnum || (exports.UserInfoDtoAccountTypeEnum = {}));
+exports.UserInfoDtoAccountTypeEnum = {
+    SOLO: 'SOLO',
+    CHILD_SOLO: 'CHILD_SOLO',
+    CHILD_TEAM: 'CHILD_TEAM',
+    CHILD_ADMIN: 'CHILD_ADMIN'
+};
+/**
+ * Check if a given object implements the UserInfoDto interface.
+ */
+function instanceOfUserInfoDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('accountState' in value) || value['accountState'] === undefined)
+        return false;
+    if (!('accountType' in value) || value['accountType'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function UserInfoDtoFromJSON(json) {
     return UserInfoDtoFromJSONTyped(json, false);
 }
-exports.UserInfoDtoFromJSON = UserInfoDtoFromJSON;
 function UserInfoDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        emailAddress: json['emailAddress'],
-        accountState: json['accountState'],
-        subscriptionType: !(0, runtime_1.exists)(json, 'subscriptionType')
-            ? undefined
-            : json['subscriptionType'],
-        accountType: json['accountType'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+        'accountState': json['accountState'],
+        'subscriptionType': json['subscriptionType'] == null ? undefined : json['subscriptionType'],
+        'accountType': json['accountType'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.UserInfoDtoFromJSONTyped = UserInfoDtoFromJSONTyped;
-function UserInfoDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UserInfoDtoToJSON(json) {
+    return UserInfoDtoToJSONTyped(json, false);
+}
+function UserInfoDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        emailAddress: value.emailAddress,
-        accountState: value.accountState,
-        subscriptionType: value.subscriptionType,
-        accountType: value.accountType,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'emailAddress': value['emailAddress'],
+        'accountState': value['accountState'],
+        'subscriptionType': value['subscriptionType'],
+        'accountType': value['accountType'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.UserInfoDtoToJSON = UserInfoDtoToJSON;

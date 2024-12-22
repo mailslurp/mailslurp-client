@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mx.mailslurp.com` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
+ * Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mxslurp.click` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
  * @export
  * @interface InboxDto
  */
@@ -26,7 +26,7 @@ export interface InboxDto {
      * @type {string}
      * @memberof InboxDto
      */
-    userId?: string | null;
+    userId: string | null;
     /**
      * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
      * @type {Date}
@@ -59,10 +59,10 @@ export interface InboxDto {
     emailAddress: string;
     /**
      * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
-     * @type {string}
+     * @type {Date}
      * @memberof InboxDto
      */
-    expiresAt?: string | null;
+    expiresAt?: Date | null;
     /**
      * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
      * @type {boolean}
@@ -71,16 +71,16 @@ export interface InboxDto {
     favourite: boolean;
     /**
      * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof InboxDto
      */
-    tags?: Array<string> | null;
+    tags?: Array<string | null> | null;
     /**
      * Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
      * @type {string}
      * @memberof InboxDto
      */
-    inboxType?: InboxDtoInboxTypeEnum;
+    inboxType?: InboxDtoInboxTypeEnum | null;
     /**
      * Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.
      * @type {boolean}
@@ -98,26 +98,45 @@ export interface InboxDto {
      * @type {string}
      * @memberof InboxDto
      */
-    functionsAs?: InboxDtoFunctionsAsEnum;
+    functionsAs?: InboxDtoFunctionsAsEnum | null;
+    /**
+     * Local part of email addresses before the @ symbol
+     * @type {string}
+     * @memberof InboxDto
+     */
+    localPart?: string | null;
+    /**
+     * Domain name of the email address
+     * @type {string}
+     * @memberof InboxDto
+     */
+    domain?: string | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxDtoInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const InboxDtoInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type InboxDtoInboxTypeEnum = typeof InboxDtoInboxTypeEnum[keyof typeof InboxDtoInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxDtoFunctionsAsEnum {
-    ALIAS = "ALIAS",
-    THREAD = "THREAD",
-    CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
-}
+export declare const InboxDtoFunctionsAsEnum: {
+    readonly ALIAS: "ALIAS";
+    readonly THREAD: "THREAD";
+    readonly CATCH_ALL: "CATCH_ALL";
+    readonly CONNECTOR: "CONNECTOR";
+    readonly ACCOUNT: "ACCOUNT";
+    readonly GUEST: "GUEST";
+};
+export type InboxDtoFunctionsAsEnum = typeof InboxDtoFunctionsAsEnum[keyof typeof InboxDtoFunctionsAsEnum];
+/**
+ * Check if a given object implements the InboxDto interface.
+ */
+export declare function instanceOfInboxDto(value: object): value is InboxDto;
 export declare function InboxDtoFromJSON(json: any): InboxDto;
 export declare function InboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxDto;
-export declare function InboxDtoToJSON(value?: InboxDto | null): any;
+export declare function InboxDtoToJSON(json: any): InboxDto;
+export declare function InboxDtoToJSONTyped(value?: InboxDto | null, ignoreDiscriminator?: boolean): any;

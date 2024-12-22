@@ -13,30 +13,37 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAliasOptionsToJSON = exports.UpdateAliasOptionsFromJSONTyped = exports.UpdateAliasOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfUpdateAliasOptions = instanceOfUpdateAliasOptions;
+exports.UpdateAliasOptionsFromJSON = UpdateAliasOptionsFromJSON;
+exports.UpdateAliasOptionsFromJSONTyped = UpdateAliasOptionsFromJSONTyped;
+exports.UpdateAliasOptionsToJSON = UpdateAliasOptionsToJSON;
+exports.UpdateAliasOptionsToJSONTyped = UpdateAliasOptionsToJSONTyped;
+/**
+ * Check if a given object implements the UpdateAliasOptions interface.
+ */
+function instanceOfUpdateAliasOptions(value) {
+    return true;
+}
 function UpdateAliasOptionsFromJSON(json) {
     return UpdateAliasOptionsFromJSONTyped(json, false);
 }
-exports.UpdateAliasOptionsFromJSON = UpdateAliasOptionsFromJSON;
 function UpdateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
-exports.UpdateAliasOptionsFromJSONTyped = UpdateAliasOptionsFromJSONTyped;
-function UpdateAliasOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UpdateAliasOptionsToJSON(json) {
+    return UpdateAliasOptionsToJSONTyped(json, false);
+}
+function UpdateAliasOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
+        'name': value['name'],
     };
 }
-exports.UpdateAliasOptionsToJSON = UpdateAliasOptionsToJSON;

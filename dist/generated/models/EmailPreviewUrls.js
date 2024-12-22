@@ -13,33 +13,47 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailPreviewUrlsToJSON = exports.EmailPreviewUrlsFromJSONTyped = exports.EmailPreviewUrlsFromJSON = void 0;
+exports.instanceOfEmailPreviewUrls = instanceOfEmailPreviewUrls;
+exports.EmailPreviewUrlsFromJSON = EmailPreviewUrlsFromJSON;
+exports.EmailPreviewUrlsFromJSONTyped = EmailPreviewUrlsFromJSONTyped;
+exports.EmailPreviewUrlsToJSON = EmailPreviewUrlsToJSON;
+exports.EmailPreviewUrlsToJSONTyped = EmailPreviewUrlsToJSONTyped;
+/**
+ * Check if a given object implements the EmailPreviewUrls interface.
+ */
+function instanceOfEmailPreviewUrls(value) {
+    if (!('rawSmtpMessageUrl' in value) || value['rawSmtpMessageUrl'] === undefined)
+        return false;
+    if (!('plainHtmlBodyUrl' in value) || value['plainHtmlBodyUrl'] === undefined)
+        return false;
+    if (!('origin' in value) || value['origin'] === undefined)
+        return false;
+    return true;
+}
 function EmailPreviewUrlsFromJSON(json) {
     return EmailPreviewUrlsFromJSONTyped(json, false);
 }
-exports.EmailPreviewUrlsFromJSON = EmailPreviewUrlsFromJSON;
 function EmailPreviewUrlsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
-        plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
-        origin: json['origin'],
+        'rawSmtpMessageUrl': json['rawSmtpMessageUrl'],
+        'plainHtmlBodyUrl': json['plainHtmlBodyUrl'],
+        'origin': json['origin'],
     };
 }
-exports.EmailPreviewUrlsFromJSONTyped = EmailPreviewUrlsFromJSONTyped;
-function EmailPreviewUrlsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailPreviewUrlsToJSON(json) {
+    return EmailPreviewUrlsToJSONTyped(json, false);
+}
+function EmailPreviewUrlsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        rawSmtpMessageUrl: value.rawSmtpMessageUrl,
-        plainHtmlBodyUrl: value.plainHtmlBodyUrl,
-        origin: value.origin,
+        'rawSmtpMessageUrl': value['rawSmtpMessageUrl'],
+        'plainHtmlBodyUrl': value['plainHtmlBodyUrl'],
+        'origin': value['origin'],
     };
 }
-exports.EmailPreviewUrlsToJSON = EmailPreviewUrlsToJSON;

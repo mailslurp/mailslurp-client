@@ -12,57 +12,62 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for creating a tracking pixel for email open tracking
  * @export
  * @interface CreateTrackingPixelOptions
  */
 export interface CreateTrackingPixelOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof CreateTrackingPixelOptions
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateTrackingPixelOptions
-   */
-  recipient?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateTrackingPixelOptions
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateTrackingPixelOptions
+     */
+    recipient?: string | null;
 }
 
-export function CreateTrackingPixelOptionsFromJSON(
-  json: any
-): CreateTrackingPixelOptions {
-  return CreateTrackingPixelOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the CreateTrackingPixelOptions interface.
+ */
+export function instanceOfCreateTrackingPixelOptions(value: object): value is CreateTrackingPixelOptions {
+    return true;
 }
 
-export function CreateTrackingPixelOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateTrackingPixelOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
-  };
+export function CreateTrackingPixelOptionsFromJSON(json: any): CreateTrackingPixelOptions {
+    return CreateTrackingPixelOptionsFromJSONTyped(json, false);
 }
 
-export function CreateTrackingPixelOptionsToJSON(
-  value?: CreateTrackingPixelOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    recipient: value.recipient,
-  };
+export function CreateTrackingPixelOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTrackingPixelOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'] == null ? undefined : json['name'],
+        'recipient': json['recipient'] == null ? undefined : json['recipient'],
+    };
 }
+
+export function CreateTrackingPixelOptionsToJSON(json: any): CreateTrackingPixelOptions {
+    return CreateTrackingPixelOptionsToJSONTyped(json, false);
+}
+
+export function CreateTrackingPixelOptionsToJSONTyped(value?: CreateTrackingPixelOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'recipient': value['recipient'],
+    };
+}
+

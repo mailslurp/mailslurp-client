@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailPreview, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { EmailPreview } from './EmailPreview';
 /**
  * Paginated email preview results. EmailProjections and EmailPreviews are essentially the same but have legacy naming issues. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls. For emails there are several methods for fetching message bodies and attachments.
  * @export
@@ -72,10 +74,10 @@ export interface PageEmailPreview {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageEmailPreview
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageEmailPreview {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageEmailPreview interface.
+ */
+export declare function instanceOfPageEmailPreview(value: object): value is PageEmailPreview;
 export declare function PageEmailPreviewFromJSON(json: any): PageEmailPreview;
 export declare function PageEmailPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageEmailPreview;
-export declare function PageEmailPreviewToJSON(value?: PageEmailPreview | null): any;
+export declare function PageEmailPreviewToJSON(json: any): PageEmailPreview;
+export declare function PageEmailPreviewToJSONTyped(value?: PageEmailPreview | null, ignoreDiscriminator?: boolean): any;

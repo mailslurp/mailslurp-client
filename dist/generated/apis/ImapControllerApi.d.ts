@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ImapServerFetchResult, ImapServerGetResult, ImapServerListOptions, ImapServerListResult, ImapServerSearchOptions, ImapServerSearchResult, ImapServerStatusOptions, ImapServerStatusResult, ImapUpdateFlagsOptions } from '../models';
+import type { ImapServerFetchResult, ImapServerGetResult, ImapServerListOptions, ImapServerListResult, ImapServerMailboxResult, ImapServerSearchOptions, ImapServerSearchResult, ImapServerStatusOptions, ImapServerStatusResult, ImapUpdateFlagsOptions } from '../models/index';
 export interface ImapServerFetchRequest {
     seqNum: number;
     inboxId?: string;
@@ -22,6 +22,9 @@ export interface ImapServerGetRequest {
 export interface ImapServerListRequest {
     imapServerListOptions: ImapServerListOptions;
     inboxId?: string;
+}
+export interface ImapServerMailboxRequest {
+    name: string;
 }
 export interface ImapServerSearchRequest {
     imapServerSearchOptions: ImapServerSearchOptions;
@@ -42,49 +45,57 @@ export declare class ImapControllerApi extends runtime.BaseAPI {
     /**
      * Fetch message in an inbox
      */
-    imapServerFetchRaw(requestParameters: ImapServerFetchRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapServerFetchResult>>;
+    imapServerFetchRaw(requestParameters: ImapServerFetchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapServerFetchResult>>;
     /**
      * Fetch message in an inbox
      */
-    imapServerFetch(requestParameters: ImapServerFetchRequest, initOverrides?: RequestInit): Promise<ImapServerFetchResult>;
+    imapServerFetch(requestParameters: ImapServerFetchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapServerFetchResult>;
     /**
      * Get a message by email ID
      */
-    imapServerGetRaw(requestParameters: ImapServerGetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapServerGetResult>>;
+    imapServerGetRaw(requestParameters: ImapServerGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapServerGetResult>>;
     /**
      * Get a message by email ID
      */
-    imapServerGet(requestParameters: ImapServerGetRequest, initOverrides?: RequestInit): Promise<ImapServerGetResult>;
+    imapServerGet(requestParameters: ImapServerGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapServerGetResult>;
     /**
      * List messages in an inbox
      */
-    imapServerListRaw(requestParameters: ImapServerListRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapServerListResult>>;
+    imapServerListRaw(requestParameters: ImapServerListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapServerListResult>>;
     /**
      * List messages in an inbox
      */
-    imapServerList(requestParameters: ImapServerListRequest, initOverrides?: RequestInit): Promise<ImapServerListResult>;
+    imapServerList(requestParameters: ImapServerListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapServerListResult>;
+    /**
+     * Create a new mailbox if possible
+     */
+    imapServerMailboxRaw(requestParameters: ImapServerMailboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapServerMailboxResult>>;
+    /**
+     * Create a new mailbox if possible
+     */
+    imapServerMailbox(requestParameters: ImapServerMailboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapServerMailboxResult>;
     /**
      * Search messages in an inbox
      */
-    imapServerSearchRaw(requestParameters: ImapServerSearchRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapServerSearchResult>>;
+    imapServerSearchRaw(requestParameters: ImapServerSearchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapServerSearchResult>>;
     /**
      * Search messages in an inbox
      */
-    imapServerSearch(requestParameters: ImapServerSearchRequest, initOverrides?: RequestInit): Promise<ImapServerSearchResult>;
+    imapServerSearch(requestParameters: ImapServerSearchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapServerSearchResult>;
     /**
      * Get status for mailbox
      */
-    imapServerStatusRaw(requestParameters: ImapServerStatusRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapServerStatusResult>>;
+    imapServerStatusRaw(requestParameters: ImapServerStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapServerStatusResult>>;
     /**
      * Get status for mailbox
      */
-    imapServerStatus(requestParameters: ImapServerStatusRequest, initOverrides?: RequestInit): Promise<ImapServerStatusResult>;
+    imapServerStatus(requestParameters: ImapServerStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapServerStatusResult>;
     /**
      * Update message flags
      */
-    imapServerUpdateFlagsRaw(requestParameters: ImapServerUpdateFlagsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    imapServerUpdateFlagsRaw(requestParameters: ImapServerUpdateFlagsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Update message flags
      */
-    imapServerUpdateFlags(requestParameters: ImapServerUpdateFlagsRequest, initOverrides?: RequestInit): Promise<void>;
+    imapServerUpdateFlags(requestParameters: ImapServerUpdateFlagsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

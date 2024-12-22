@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DomainNameRecord } from './DomainNameRecord';
 import {
-  DomainNameRecord,
-  DomainNameRecordFromJSON,
-  DomainNameRecordFromJSONTyped,
-  DomainNameRecordToJSON,
-} from './';
+    DomainNameRecordFromJSON,
+    DomainNameRecordFromJSONTyped,
+    DomainNameRecordToJSON,
+    DomainNameRecordToJSONTyped,
+} from './DomainNameRecord';
 
 /**
  * Domain plus verification records and status
@@ -26,151 +27,165 @@ import {
  * @interface DomainDto
  */
 export interface DomainDto {
-  /**
-   *
-   * @type {string}
-   * @memberof DomainDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DomainDto
-   */
-  userId: string;
-  /**
-   * Custom domain name
-   * @type {string}
-   * @memberof DomainDto
-   */
-  domain: string;
-  /**
-   * Verification tokens
-   * @type {string}
-   * @memberof DomainDto
-   */
-  verificationToken: string;
-  /**
-   * Unique token DKIM tokens
-   * @type {Array<string>}
-   * @memberof DomainDto
-   */
-  dkimTokens: Array<string>;
-  /**
-   * If the domain is missing records then show which pairs are missing.
-   * @type {string}
-   * @memberof DomainDto
-   */
-  missingRecordsMessage?: string | null;
-  /**
-   * Whether the domain has missing required records. If true then see the domain in the dashboard app.
-   * @type {boolean}
-   * @memberof DomainDto
-   */
-  hasMissingRecords: boolean;
-  /**
-   * Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.
-   * @type {boolean}
-   * @memberof DomainDto
-   */
-  isVerified: boolean;
-  /**
-   * List of DNS domain name records (C, MX, TXT) etc that you must add to the DNS server associated with your domain provider.
-   * @type {Array<DomainNameRecord>}
-   * @memberof DomainDto
-   */
-  domainNameRecords: Array<DomainNameRecord>;
-  /**
-   * The optional catch all inbox that will receive emails sent to the domain that cannot be matched.
-   * @type {string}
-   * @memberof DomainDto
-   */
-  catchAllInboxId?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof DomainDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof DomainDto
-   */
-  updatedAt: Date;
-  /**
-   * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
-   * @type {string}
-   * @memberof DomainDto
-   */
-  domainType: DomainDtoDomainTypeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainDto
+     */
+    userId: string;
+    /**
+     * Custom domain name
+     * @type {string}
+     * @memberof DomainDto
+     */
+    domain: string;
+    /**
+     * Verification tokens
+     * @type {string}
+     * @memberof DomainDto
+     */
+    verificationToken: string;
+    /**
+     * Unique token DKIM tokens
+     * @type {Array<string>}
+     * @memberof DomainDto
+     */
+    dkimTokens: Array<string>;
+    /**
+     * If the domain is missing records then show which pairs are missing.
+     * @type {string}
+     * @memberof DomainDto
+     */
+    missingRecordsMessage?: string | null;
+    /**
+     * Whether the domain has missing required records. If true then see the domain in the dashboard app.
+     * @type {boolean}
+     * @memberof DomainDto
+     */
+    hasMissingRecords: boolean;
+    /**
+     * Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.
+     * @type {boolean}
+     * @memberof DomainDto
+     */
+    isVerified: boolean;
+    /**
+     * List of DNS domain name records (C, MX, TXT) etc that you must add to the DNS server associated with your domain provider.
+     * @type {Array<DomainNameRecord>}
+     * @memberof DomainDto
+     */
+    domainNameRecords: Array<DomainNameRecord>;
+    /**
+     * The optional catch all inbox that will receive emails sent to the domain that cannot be matched.
+     * @type {string}
+     * @memberof DomainDto
+     */
+    catchAllInboxId?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof DomainDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof DomainDto
+     */
+    updatedAt: Date;
+    /**
+     * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+     * @type {string}
+     * @memberof DomainDto
+     */
+    domainType: DomainDtoDomainTypeEnum;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum DomainDtoDomainTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_DOMAIN = 'SMTP_DOMAIN',
+export const DomainDtoDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+} as const;
+export type DomainDtoDomainTypeEnum = typeof DomainDtoDomainTypeEnum[keyof typeof DomainDtoDomainTypeEnum];
+
+
+/**
+ * Check if a given object implements the DomainDto interface.
+ */
+export function instanceOfDomainDto(value: object): value is DomainDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('domain' in value) || value['domain'] === undefined) return false;
+    if (!('verificationToken' in value) || value['verificationToken'] === undefined) return false;
+    if (!('dkimTokens' in value) || value['dkimTokens'] === undefined) return false;
+    if (!('hasMissingRecords' in value) || value['hasMissingRecords'] === undefined) return false;
+    if (!('isVerified' in value) || value['isVerified'] === undefined) return false;
+    if (!('domainNameRecords' in value) || value['domainNameRecords'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('domainType' in value) || value['domainType'] === undefined) return false;
+    return true;
 }
 
 export function DomainDtoFromJSON(json: any): DomainDto {
-  return DomainDtoFromJSONTyped(json, false);
+    return DomainDtoFromJSONTyped(json, false);
 }
 
-export function DomainDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    domain: json['domain'],
-    verificationToken: json['verificationToken'],
-    dkimTokens: json['dkimTokens'],
-    missingRecordsMessage: !exists(json, 'missingRecordsMessage')
-      ? undefined
-      : json['missingRecordsMessage'],
-    hasMissingRecords: json['hasMissingRecords'],
-    isVerified: json['isVerified'],
-    domainNameRecords: (json['domainNameRecords'] as Array<any>).map(
-      DomainNameRecordFromJSON
-    ),
-    catchAllInboxId: !exists(json, 'catchAllInboxId')
-      ? undefined
-      : json['catchAllInboxId'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    domainType: json['domainType'],
-  };
+export function DomainDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'domain': json['domain'],
+        'verificationToken': json['verificationToken'],
+        'dkimTokens': json['dkimTokens'],
+        'missingRecordsMessage': json['missingRecordsMessage'] == null ? undefined : json['missingRecordsMessage'],
+        'hasMissingRecords': json['hasMissingRecords'],
+        'isVerified': json['isVerified'],
+        'domainNameRecords': ((json['domainNameRecords'] as Array<any>).map(DomainNameRecordFromJSON)),
+        'catchAllInboxId': json['catchAllInboxId'] == null ? undefined : json['catchAllInboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'domainType': json['domainType'],
+    };
 }
 
-export function DomainDtoToJSON(value?: DomainDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    domain: value.domain,
-    verificationToken: value.verificationToken,
-    dkimTokens: value.dkimTokens,
-    missingRecordsMessage: value.missingRecordsMessage,
-    hasMissingRecords: value.hasMissingRecords,
-    isVerified: value.isVerified,
-    domainNameRecords: (value.domainNameRecords as Array<any>).map(
-      DomainNameRecordToJSON
-    ),
-    catchAllInboxId: value.catchAllInboxId,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    domainType: value.domainType,
-  };
+export function DomainDtoToJSON(json: any): DomainDto {
+    return DomainDtoToJSONTyped(json, false);
 }
+
+export function DomainDtoToJSONTyped(value?: DomainDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'domain': value['domain'],
+        'verificationToken': value['verificationToken'],
+        'dkimTokens': value['dkimTokens'],
+        'missingRecordsMessage': value['missingRecordsMessage'],
+        'hasMissingRecords': value['hasMissingRecords'],
+        'isVerified': value['isVerified'],
+        'domainNameRecords': ((value['domainNameRecords'] as Array<any>).map(DomainNameRecordToJSON)),
+        'catchAllInboxId': value['catchAllInboxId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'domainType': value['domainType'],
+    };
+}
+

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Options for creating a domain to use with MailSlurp. You must have ownership access to this domain in order to verify it. Domains will not function correctly until the domain has been verified. See https://www.mailslurp.com/guides/custom-domains for help. Domains can be either `HTTP` or `SMTP` type. The type of domain determines which inboxes can be used with it. `SMTP` inboxes use a mail server running `mx.mailslurp.com` while `HTTP` inboxes are handled by AWS SES.
+ * Options for creating a domain to use with MailSlurp. You must have ownership access to this domain in order to verify it. Domains will not function correctly until the domain has been verified. See https://www.mailslurp.com/guides/custom-domains for help. Domains can be either `HTTP` or `SMTP` type. The type of domain determines which inboxes can be used with it. `SMTP` inboxes use a mail server running `mxslurp.click` while `HTTP` inboxes are handled by AWS SES.
  * @export
  * @interface CreateDomainOptions
  */
@@ -38,16 +38,21 @@ export interface CreateDomainOptions {
      * @type {string}
      * @memberof CreateDomainOptions
      */
-    domainType?: CreateDomainOptionsDomainTypeEnum;
+    domainType?: CreateDomainOptionsDomainTypeEnum | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateDomainOptionsDomainTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_DOMAIN = "SMTP_DOMAIN"
-}
+export declare const CreateDomainOptionsDomainTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_DOMAIN: "SMTP_DOMAIN";
+};
+export type CreateDomainOptionsDomainTypeEnum = typeof CreateDomainOptionsDomainTypeEnum[keyof typeof CreateDomainOptionsDomainTypeEnum];
+/**
+ * Check if a given object implements the CreateDomainOptions interface.
+ */
+export declare function instanceOfCreateDomainOptions(value: object): value is CreateDomainOptions;
 export declare function CreateDomainOptionsFromJSON(json: any): CreateDomainOptions;
 export declare function CreateDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateDomainOptions;
-export declare function CreateDomainOptionsToJSON(value?: CreateDomainOptions | null): any;
+export declare function CreateDomainOptionsToJSON(json: any): CreateDomainOptions;
+export declare function CreateDomainOptionsToJSONTyped(value?: CreateDomainOptions | null, ignoreDiscriminator?: boolean): any;

@@ -22,6 +22,11 @@ export interface DescribeDomainOptions {
      */
     domain: string;
 }
+/**
+ * Check if a given object implements the DescribeDomainOptions interface.
+ */
+export declare function instanceOfDescribeDomainOptions(value: object): value is DescribeDomainOptions;
 export declare function DescribeDomainOptionsFromJSON(json: any): DescribeDomainOptions;
 export declare function DescribeDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DescribeDomainOptions;
-export declare function DescribeDomainOptionsToJSON(value?: DescribeDomainOptions | null): any;
+export declare function DescribeDomainOptionsToJSON(json: any): DescribeDomainOptions;
+export declare function DescribeDomainOptionsToJSONTyped(value?: DescribeDomainOptions | null, ignoreDiscriminator?: boolean): any;

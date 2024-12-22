@@ -12,65 +12,73 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Result of validating a list of email addresses
  * @export
  * @interface ValidateEmailAddressListResult
  */
 export interface ValidateEmailAddressListResult {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ValidateEmailAddressListResult
-   */
-  validEmailAddresses: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ValidateEmailAddressListResult
-   */
-  invalidEmailAddresses: Array<string>;
-  /**
-   *
-   * @type {{ [key: string]: boolean; }}
-   * @memberof ValidateEmailAddressListResult
-   */
-  resultMapEmailAddressIsValid: { [key: string]: boolean };
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ValidateEmailAddressListResult
+     */
+    validEmailAddresses: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ValidateEmailAddressListResult
+     */
+    invalidEmailAddresses: Array<string>;
+    /**
+     * 
+     * @type {{ [key: string]: boolean; }}
+     * @memberof ValidateEmailAddressListResult
+     */
+    resultMapEmailAddressIsValid: { [key: string]: boolean; };
 }
 
-export function ValidateEmailAddressListResultFromJSON(
-  json: any
-): ValidateEmailAddressListResult {
-  return ValidateEmailAddressListResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the ValidateEmailAddressListResult interface.
+ */
+export function instanceOfValidateEmailAddressListResult(value: object): value is ValidateEmailAddressListResult {
+    if (!('validEmailAddresses' in value) || value['validEmailAddresses'] === undefined) return false;
+    if (!('invalidEmailAddresses' in value) || value['invalidEmailAddresses'] === undefined) return false;
+    if (!('resultMapEmailAddressIsValid' in value) || value['resultMapEmailAddressIsValid'] === undefined) return false;
+    return true;
 }
 
-export function ValidateEmailAddressListResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ValidateEmailAddressListResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    validEmailAddresses: json['validEmailAddresses'],
-    invalidEmailAddresses: json['invalidEmailAddresses'],
-    resultMapEmailAddressIsValid: json['resultMapEmailAddressIsValid'],
-  };
+export function ValidateEmailAddressListResultFromJSON(json: any): ValidateEmailAddressListResult {
+    return ValidateEmailAddressListResultFromJSONTyped(json, false);
 }
 
-export function ValidateEmailAddressListResultToJSON(
-  value?: ValidateEmailAddressListResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    validEmailAddresses: value.validEmailAddresses,
-    invalidEmailAddresses: value.invalidEmailAddresses,
-    resultMapEmailAddressIsValid: value.resultMapEmailAddressIsValid,
-  };
+export function ValidateEmailAddressListResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidateEmailAddressListResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'validEmailAddresses': json['validEmailAddresses'],
+        'invalidEmailAddresses': json['invalidEmailAddresses'],
+        'resultMapEmailAddressIsValid': json['resultMapEmailAddressIsValid'],
+    };
 }
+
+export function ValidateEmailAddressListResultToJSON(json: any): ValidateEmailAddressListResult {
+    return ValidateEmailAddressListResultToJSONTyped(json, false);
+}
+
+export function ValidateEmailAddressListResultToJSONTyped(value?: ValidateEmailAddressListResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'validEmailAddresses': value['validEmailAddresses'],
+        'invalidEmailAddresses': value['invalidEmailAddresses'],
+        'resultMapEmailAddressIsValid': value['resultMapEmailAddressIsValid'],
+    };
+}
+

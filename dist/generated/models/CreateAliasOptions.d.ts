@@ -52,6 +52,11 @@ export interface CreateAliasOptions {
      */
     verifyEmailAddress?: boolean | null;
 }
+/**
+ * Check if a given object implements the CreateAliasOptions interface.
+ */
+export declare function instanceOfCreateAliasOptions(value: object): value is CreateAliasOptions;
 export declare function CreateAliasOptionsFromJSON(json: any): CreateAliasOptions;
 export declare function CreateAliasOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateAliasOptions;
-export declare function CreateAliasOptionsToJSON(value?: CreateAliasOptions | null): any;
+export declare function CreateAliasOptionsToJSON(json: any): CreateAliasOptions;
+export declare function CreateAliasOptionsToJSONTyped(value?: CreateAliasOptions | null, ignoreDiscriminator?: boolean): any;

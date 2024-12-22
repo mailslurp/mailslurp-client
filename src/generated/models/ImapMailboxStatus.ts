@@ -12,133 +12,153 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ImapMailboxStatus
  */
 export interface ImapMailboxStatus {
-  /**
-   * The mailbox name.
-   * @type {string}
-   * @memberof ImapMailboxStatus
-   */
-  name: string;
-  /**
-   * True if the mailbox is open in read-only mode.
-   * @type {boolean}
-   * @memberof ImapMailboxStatus
-   */
-  readOnly: boolean;
-  /**
-   * Results map
-   * @type {object}
-   * @memberof ImapMailboxStatus
-   */
-  items: object | null;
-  /**
-   * The mailbox flags.
-   * @type {Array<string>}
-   * @memberof ImapMailboxStatus
-   */
-  flags: Array<string> | null;
-  /**
-   * The mailbox permanent flags.
-   * @type {Array<string>}
-   * @memberof ImapMailboxStatus
-   */
-  permanentFlags: Array<string> | null;
-  /**
-   * The sequence number of the first unseen message in the mailbox.
-   * @type {number}
-   * @memberof ImapMailboxStatus
-   */
-  unseenSeqNum: number;
-  /**
-   * The number of messages in this mailbox.
-   * @type {number}
-   * @memberof ImapMailboxStatus
-   */
-  messages: number;
-  /**
-   * The number of messages not seen since the last time the mailbox was opened.
-   * @type {number}
-   * @memberof ImapMailboxStatus
-   */
-  recent: number;
-  /**
-   * The number of unread messages.
-   * @type {number}
-   * @memberof ImapMailboxStatus
-   */
-  unseen: number;
-  /**
-   * The next UID.
-   * @type {number}
-   * @memberof ImapMailboxStatus
-   */
-  uidNext: number;
-  /**
-   * Together with a UID, it is a unique identifier for a message. Must be greater than or equal to 1.
-   * @type {number}
-   * @memberof ImapMailboxStatus
-   */
-  uidValidity: number;
-  /**
-   * Per-mailbox limit of message size. Set only if server supports the APPENDLIMIT extension
-   * @type {number}
-   * @memberof ImapMailboxStatus
-   */
-  appendLimit?: number | null;
+    /**
+     * The mailbox name.
+     * @type {string}
+     * @memberof ImapMailboxStatus
+     */
+    name: string;
+    /**
+     * True if the mailbox is open in read-only mode.
+     * @type {boolean}
+     * @memberof ImapMailboxStatus
+     */
+    readOnly: boolean;
+    /**
+     * Results map
+     * @type {object}
+     * @memberof ImapMailboxStatus
+     */
+    items: object | null;
+    /**
+     * The mailbox flags.
+     * @type {Array<string | null>}
+     * @memberof ImapMailboxStatus
+     */
+    flags: Array<string | null> | null;
+    /**
+     * The mailbox permanent flags.
+     * @type {Array<string | null>}
+     * @memberof ImapMailboxStatus
+     */
+    permanentFlags: Array<string | null> | null;
+    /**
+     * The sequence number of the first unseen message in the mailbox.
+     * @type {number}
+     * @memberof ImapMailboxStatus
+     */
+    unseenSeqNum: number;
+    /**
+     * The number of messages in this mailbox.
+     * @type {number}
+     * @memberof ImapMailboxStatus
+     */
+    messages: number;
+    /**
+     * The number of messages not seen since the last time the mailbox was opened.
+     * @type {number}
+     * @memberof ImapMailboxStatus
+     */
+    recent: number;
+    /**
+     * The number of unread messages.
+     * @type {number}
+     * @memberof ImapMailboxStatus
+     */
+    unseen: number;
+    /**
+     * The next UID.
+     * @type {number}
+     * @memberof ImapMailboxStatus
+     */
+    uidNext: number;
+    /**
+     * Together with a UID, it is a unique identifier for a message. Must be greater than or equal to 1.
+     * @type {number}
+     * @memberof ImapMailboxStatus
+     */
+    uidValidity: number;
+    /**
+     * Per-mailbox limit of message size. Set only if server supports the APPENDLIMIT extension
+     * @type {number}
+     * @memberof ImapMailboxStatus
+     */
+    appendLimit?: number | null;
+}
+
+/**
+ * Check if a given object implements the ImapMailboxStatus interface.
+ */
+export function instanceOfImapMailboxStatus(value: object): value is ImapMailboxStatus {
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('readOnly' in value) || value['readOnly'] === undefined) return false;
+    if (!('items' in value) || value['items'] === undefined) return false;
+    if (!('flags' in value) || value['flags'] === undefined) return false;
+    if (!('permanentFlags' in value) || value['permanentFlags'] === undefined) return false;
+    if (!('unseenSeqNum' in value) || value['unseenSeqNum'] === undefined) return false;
+    if (!('messages' in value) || value['messages'] === undefined) return false;
+    if (!('recent' in value) || value['recent'] === undefined) return false;
+    if (!('unseen' in value) || value['unseen'] === undefined) return false;
+    if (!('uidNext' in value) || value['uidNext'] === undefined) return false;
+    if (!('uidValidity' in value) || value['uidValidity'] === undefined) return false;
+    return true;
 }
 
 export function ImapMailboxStatusFromJSON(json: any): ImapMailboxStatus {
-  return ImapMailboxStatusFromJSONTyped(json, false);
+    return ImapMailboxStatusFromJSONTyped(json, false);
 }
 
-export function ImapMailboxStatusFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapMailboxStatus {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    readOnly: json['readOnly'],
-    items: json['items'],
-    flags: json['flags'],
-    permanentFlags: json['permanentFlags'],
-    unseenSeqNum: json['unseenSeqNum'],
-    messages: json['messages'],
-    recent: json['recent'],
-    unseen: json['unseen'],
-    uidNext: json['uidNext'],
-    uidValidity: json['uidValidity'],
-    appendLimit: !exists(json, 'appendLimit') ? undefined : json['appendLimit'],
-  };
+export function ImapMailboxStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapMailboxStatus {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'readOnly': json['readOnly'],
+        'items': json['items'],
+        'flags': json['flags'] == null ? null : json['flags'],
+        'permanentFlags': json['permanentFlags'] == null ? null : json['permanentFlags'],
+        'unseenSeqNum': json['unseenSeqNum'],
+        'messages': json['messages'],
+        'recent': json['recent'],
+        'unseen': json['unseen'],
+        'uidNext': json['uidNext'],
+        'uidValidity': json['uidValidity'],
+        'appendLimit': json['appendLimit'] == null ? undefined : json['appendLimit'],
+    };
 }
 
-export function ImapMailboxStatusToJSON(value?: ImapMailboxStatus | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    readOnly: value.readOnly,
-    items: value.items,
-    flags: value.flags,
-    permanentFlags: value.permanentFlags,
-    unseenSeqNum: value.unseenSeqNum,
-    messages: value.messages,
-    recent: value.recent,
-    unseen: value.unseen,
-    uidNext: value.uidNext,
-    uidValidity: value.uidValidity,
-    appendLimit: value.appendLimit,
-  };
+export function ImapMailboxStatusToJSON(json: any): ImapMailboxStatus {
+    return ImapMailboxStatusToJSONTyped(json, false);
 }
+
+export function ImapMailboxStatusToJSONTyped(value?: ImapMailboxStatus | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'readOnly': value['readOnly'],
+        'items': value['items'],
+        'flags': value['flags'],
+        'permanentFlags': value['permanentFlags'],
+        'unseenSeqNum': value['unseenSeqNum'],
+        'messages': value['messages'],
+        'recent': value['recent'],
+        'unseen': value['unseen'],
+        'uidNext': value['uidNext'],
+        'uidValidity': value['uidValidity'],
+        'appendLimit': value['appendLimit'],
+    };
+}
+

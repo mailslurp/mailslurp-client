@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DNSLookupOptions } from './DNSLookupOptions';
 import {
-  DNSLookupOptions,
-  DNSLookupOptionsFromJSON,
-  DNSLookupOptionsFromJSONTyped,
-  DNSLookupOptionsToJSON,
-} from './';
+    DNSLookupOptionsFromJSON,
+    DNSLookupOptionsFromJSONTyped,
+    DNSLookupOptionsToJSON,
+    DNSLookupOptionsToJSONTyped,
+} from './DNSLookupOptions';
 
 /**
  * Options for multiple DNS queries
@@ -26,38 +27,48 @@ import {
  * @interface DNSLookupsOptions
  */
 export interface DNSLookupsOptions {
-  /**
-   *
-   * @type {Array<DNSLookupOptions>}
-   * @memberof DNSLookupsOptions
-   */
-  lookups: Array<DNSLookupOptions>;
+    /**
+     * 
+     * @type {Array<DNSLookupOptions>}
+     * @memberof DNSLookupsOptions
+     */
+    lookups: Array<DNSLookupOptions>;
+}
+
+/**
+ * Check if a given object implements the DNSLookupsOptions interface.
+ */
+export function instanceOfDNSLookupsOptions(value: object): value is DNSLookupsOptions {
+    if (!('lookups' in value) || value['lookups'] === undefined) return false;
+    return true;
 }
 
 export function DNSLookupsOptionsFromJSON(json: any): DNSLookupsOptions {
-  return DNSLookupsOptionsFromJSONTyped(json, false);
+    return DNSLookupsOptionsFromJSONTyped(json, false);
 }
 
-export function DNSLookupsOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DNSLookupsOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    lookups: (json['lookups'] as Array<any>).map(DNSLookupOptionsFromJSON),
-  };
+export function DNSLookupsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DNSLookupsOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'lookups': ((json['lookups'] as Array<any>).map(DNSLookupOptionsFromJSON)),
+    };
 }
 
-export function DNSLookupsOptionsToJSON(value?: DNSLookupsOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    lookups: (value.lookups as Array<any>).map(DNSLookupOptionsToJSON),
-  };
+export function DNSLookupsOptionsToJSON(json: any): DNSLookupsOptions {
+    return DNSLookupsOptionsToJSONTyped(json, false);
 }
+
+export function DNSLookupsOptionsToJSONTyped(value?: DNSLookupsOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'lookups': ((value['lookups'] as Array<any>).map(DNSLookupOptionsToJSON)),
+    };
+}
+

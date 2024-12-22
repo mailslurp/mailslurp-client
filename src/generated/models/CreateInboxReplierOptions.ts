@@ -12,160 +12,165 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for creating an inbox replier. Repliers can be attached to inboxes and send automated responses when an inbound email matches given criteria.
  * @export
  * @interface CreateInboxReplierOptions
  */
 export interface CreateInboxReplierOptions {
-  /**
-   * Inbox ID to attach replier to
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  inboxId: string;
-  /**
-   * Name for replier
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  name?: string | null;
-  /**
-   * Field to match against to trigger inbox replier for inbound email
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  field: CreateInboxReplierOptionsFieldEnum;
-  /**
-   * String or wildcard style match for field specified when evaluating reply rules. Use `*` to match anything.
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  match: string;
-  /**
-   * Reply-to email address when sending replying
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  replyTo?: string | null;
-  /**
-   * Subject override when replying to email
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  subject?: string | null;
-  /**
-   * Send email from address
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  from?: string | null;
-  /**
-   * Email reply charset
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  charset?: string | null;
-  /**
-   * Ignore sender replyTo when responding. Send directly to the sender if enabled.
-   * @type {boolean}
-   * @memberof CreateInboxReplierOptions
-   */
-  ignoreReplyTo?: boolean | null;
-  /**
-   * Send HTML email
-   * @type {boolean}
-   * @memberof CreateInboxReplierOptions
-   */
-  isHTML?: boolean | null;
-  /**
-   * Email body for reply
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  body?: string | null;
-  /**
-   * ID of template to use when sending a reply
-   * @type {string}
-   * @memberof CreateInboxReplierOptions
-   */
-  templateId?: string | null;
-  /**
-   * Template variable values
-   * @type {{ [key: string]: object; }}
-   * @memberof CreateInboxReplierOptions
-   */
-  templateVariables?: { [key: string]: object } | null;
+    /**
+     * Inbox ID to attach replier to
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    inboxId?: string;
+    /**
+     * Name for replier
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    name?: string | null;
+    /**
+     * Field to match against to trigger inbox replier for inbound email
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    field: CreateInboxReplierOptionsFieldEnum;
+    /**
+     * String or wildcard style match for field specified when evaluating reply rules. Use `*` to match anything.
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    match: string;
+    /**
+     * Reply-to email address when sending replying
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    replyTo?: string | null;
+    /**
+     * Subject override when replying to email
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    subject?: string | null;
+    /**
+     * Send email from address
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    from?: string | null;
+    /**
+     * Email reply charset
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    charset?: string | null;
+    /**
+     * Ignore sender replyTo when responding. Send directly to the sender if enabled.
+     * @type {boolean}
+     * @memberof CreateInboxReplierOptions
+     */
+    ignoreReplyTo?: boolean | null;
+    /**
+     * Send HTML email
+     * @type {boolean}
+     * @memberof CreateInboxReplierOptions
+     */
+    isHTML?: boolean | null;
+    /**
+     * Email body for reply
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    body?: string | null;
+    /**
+     * ID of template to use when sending a reply
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    templateId?: string | null;
+    /**
+     * Template variable values
+     * @type {{ [key: string]: object | null; }}
+     * @memberof CreateInboxReplierOptions
+     */
+    templateVariables?: { [key: string]: object | null; } | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum CreateInboxReplierOptionsFieldEnum {
-  RECIPIENTS = 'RECIPIENTS',
-  SENDER = 'SENDER',
-  SUBJECT = 'SUBJECT',
-  ATTACHMENTS = 'ATTACHMENTS',
+export const CreateInboxReplierOptionsFieldEnum = {
+    RECIPIENTS: 'RECIPIENTS',
+    SENDER: 'SENDER',
+    SUBJECT: 'SUBJECT',
+    ATTACHMENTS: 'ATTACHMENTS'
+} as const;
+export type CreateInboxReplierOptionsFieldEnum = typeof CreateInboxReplierOptionsFieldEnum[keyof typeof CreateInboxReplierOptionsFieldEnum];
+
+
+/**
+ * Check if a given object implements the CreateInboxReplierOptions interface.
+ */
+export function instanceOfCreateInboxReplierOptions(value: object): value is CreateInboxReplierOptions {
+    if (!('field' in value) || value['field'] === undefined) return false;
+    if (!('match' in value) || value['match'] === undefined) return false;
+    return true;
 }
 
-export function CreateInboxReplierOptionsFromJSON(
-  json: any
-): CreateInboxReplierOptions {
-  return CreateInboxReplierOptionsFromJSONTyped(json, false);
+export function CreateInboxReplierOptionsFromJSON(json: any): CreateInboxReplierOptions {
+    return CreateInboxReplierOptionsFromJSONTyped(json, false);
 }
 
-export function CreateInboxReplierOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateInboxReplierOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: json['inboxId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
-    replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    charset: !exists(json, 'charset') ? undefined : json['charset'],
-    ignoreReplyTo: !exists(json, 'ignoreReplyTo')
-      ? undefined
-      : json['ignoreReplyTo'],
-    isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
-    body: !exists(json, 'body') ? undefined : json['body'],
-    templateId: !exists(json, 'templateId') ? undefined : json['templateId'],
-    templateVariables: !exists(json, 'templateVariables')
-      ? undefined
-      : json['templateVariables'],
-  };
+export function CreateInboxReplierOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxReplierOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'ignoreReplyTo': json['ignoreReplyTo'] == null ? undefined : json['ignoreReplyTo'],
+        'isHTML': json['isHTML'] == null ? undefined : json['isHTML'],
+        'body': json['body'] == null ? undefined : json['body'],
+        'templateId': json['templateId'] == null ? undefined : json['templateId'],
+        'templateVariables': json['templateVariables'] == null ? undefined : json['templateVariables'],
+    };
 }
 
-export function CreateInboxReplierOptionsToJSON(
-  value?: CreateInboxReplierOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    name: value.name,
-    field: value.field,
-    match: value.match,
-    replyTo: value.replyTo,
-    subject: value.subject,
-    from: value.from,
-    charset: value.charset,
-    ignoreReplyTo: value.ignoreReplyTo,
-    isHTML: value.isHTML,
-    body: value.body,
-    templateId: value.templateId,
-    templateVariables: value.templateVariables,
-  };
+export function CreateInboxReplierOptionsToJSON(json: any): CreateInboxReplierOptions {
+    return CreateInboxReplierOptionsToJSONTyped(json, false);
 }
+
+export function CreateInboxReplierOptionsToJSONTyped(value?: CreateInboxReplierOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxId': value['inboxId'],
+        'name': value['name'],
+        'field': value['field'],
+        'match': value['match'],
+        'replyTo': value['replyTo'],
+        'subject': value['subject'],
+        'from': value['from'],
+        'charset': value['charset'],
+        'ignoreReplyTo': value['ignoreReplyTo'],
+        'isHTML': value['isHTML'],
+        'body': value['body'],
+        'templateId': value['templateId'],
+        'templateVariables': value['templateVariables'],
+    };
+}
+

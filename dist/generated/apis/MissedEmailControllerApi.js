@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -89,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetAllUnknownMissedEmailsSortEnum = exports.GetAllMissedEmailsSortEnum = exports.MissedEmailControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -103,47 +113,49 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
      */
     MissedEmailControllerApi.prototype.getAllMissedEmailsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/missed-emails",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageMissedEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/missed-emails",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageMissedEmailProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -151,9 +163,10 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
     /**
      * Get all MissedEmails in paginated format
      */
-    MissedEmailControllerApi.prototype.getAllMissedEmails = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    MissedEmailControllerApi.prototype.getAllMissedEmails = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllMissedEmailsRaw(requestParameters, initOverrides)];
@@ -171,47 +184,49 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
      */
     MissedEmailControllerApi.prototype.getAllUnknownMissedEmailsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/missed-emails/unknown",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageUnknownMissedEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/missed-emails/unknown",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageUnknownMissedEmailProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -220,9 +235,10 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * Get all unknown missed emails in paginated format
      */
-    MissedEmailControllerApi.prototype.getAllUnknownMissedEmails = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    MissedEmailControllerApi.prototype.getAllUnknownMissedEmails = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllUnknownMissedEmailsRaw(requestParameters, initOverrides)];
@@ -240,30 +256,31 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
      */
     MissedEmailControllerApi.prototype.getMissedEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.missedEmailId === null ||
-                            requestParameters.missedEmailId === undefined) {
-                            throw new runtime.RequiredError('missedEmailId', 'Required parameter requestParameters.missedEmailId was null or undefined when calling getMissedEmail.');
+                        if (requestParameters['missedEmailId'] == null) {
+                            throw new runtime.RequiredError('missedEmailId', 'Required parameter "missedEmailId" was null or undefined when calling getMissedEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/missed-emails/{missedEmailId}".replace("{".concat('missedEmailId', "}"), encodeURIComponent(String(requestParameters.missedEmailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.MissedEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/missed-emails/{missedEmailId}".replace("{".concat("missedEmailId", "}"), encodeURIComponent(String(requestParameters['missedEmailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.MissedEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -292,23 +309,27 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
      */
     MissedEmailControllerApi.prototype.restoreMissedEmailsRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/missed-emails/restore",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/missed-emails/restore",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -336,45 +357,46 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
      */
     MissedEmailControllerApi.prototype.waitForNthMissedEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.index === null ||
-                            requestParameters.index === undefined) {
-                            throw new runtime.RequiredError('index', 'Required parameter requestParameters.index was null or undefined when calling waitForNthMissedEmail.');
+                        if (requestParameters['index'] == null) {
+                            throw new runtime.RequiredError('index', 'Required parameter "index" was null or undefined when calling waitForNthMissedEmail().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
-                        if (requestParameters.timeout !== undefined) {
-                            queryParameters['timeout'] = requestParameters.timeout;
+                        if (requestParameters['timeout'] != null) {
+                            queryParameters['timeout'] = requestParameters['timeout'];
                         }
-                        if (requestParameters.index !== undefined) {
-                            queryParameters['index'] = requestParameters.index;
+                        if (requestParameters['index'] != null) {
+                            queryParameters['index'] = requestParameters['index'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/missed-emails/waitForNthMissedEmail",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.MissedEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/missed-emails/waitForNthMissedEmail",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.MissedEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -402,19 +424,15 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
 exports.MissedEmailControllerApi = MissedEmailControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var GetAllMissedEmailsSortEnum;
-(function (GetAllMissedEmailsSortEnum) {
-    GetAllMissedEmailsSortEnum["ASC"] = "ASC";
-    GetAllMissedEmailsSortEnum["DESC"] = "DESC";
-})(GetAllMissedEmailsSortEnum = exports.GetAllMissedEmailsSortEnum || (exports.GetAllMissedEmailsSortEnum = {}));
+exports.GetAllMissedEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllUnknownMissedEmailsSortEnum;
-(function (GetAllUnknownMissedEmailsSortEnum) {
-    GetAllUnknownMissedEmailsSortEnum["ASC"] = "ASC";
-    GetAllUnknownMissedEmailsSortEnum["DESC"] = "DESC";
-})(GetAllUnknownMissedEmailsSortEnum = exports.GetAllUnknownMissedEmailsSortEnum || (exports.GetAllUnknownMissedEmailsSortEnum = {}));
+exports.GetAllUnknownMissedEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};

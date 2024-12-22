@@ -22,6 +22,11 @@ export interface EmailScreenshotResult {
      */
     base64EncodedImage: string;
 }
+/**
+ * Check if a given object implements the EmailScreenshotResult interface.
+ */
+export declare function instanceOfEmailScreenshotResult(value: object): value is EmailScreenshotResult;
 export declare function EmailScreenshotResultFromJSON(json: any): EmailScreenshotResult;
 export declare function EmailScreenshotResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailScreenshotResult;
-export declare function EmailScreenshotResultToJSON(value?: EmailScreenshotResult | null): any;
+export declare function EmailScreenshotResultToJSON(json: any): EmailScreenshotResult;
+export declare function EmailScreenshotResultToJSONTyped(value?: EmailScreenshotResult | null, ignoreDiscriminator?: boolean): any;

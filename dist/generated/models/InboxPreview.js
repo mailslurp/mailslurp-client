@@ -13,74 +13,96 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
+exports.instanceOfInboxPreview = instanceOfInboxPreview;
+exports.InboxPreviewFromJSON = InboxPreviewFromJSON;
+exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
+exports.InboxPreviewToJSON = InboxPreviewToJSON;
+exports.InboxPreviewToJSONTyped = InboxPreviewToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var InboxPreviewInboxTypeEnum;
-(function (InboxPreviewInboxTypeEnum) {
-    InboxPreviewInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    InboxPreviewInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(InboxPreviewInboxTypeEnum = exports.InboxPreviewInboxTypeEnum || (exports.InboxPreviewInboxTypeEnum = {}));
+exports.InboxPreviewInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var InboxPreviewFunctionsAsEnum;
-(function (InboxPreviewFunctionsAsEnum) {
-    InboxPreviewFunctionsAsEnum["ALIAS"] = "ALIAS";
-    InboxPreviewFunctionsAsEnum["THREAD"] = "THREAD";
-    InboxPreviewFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
-    InboxPreviewFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
-})(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {}));
+exports.InboxPreviewFunctionsAsEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+};
+/**
+ * Check if a given object implements the InboxPreview interface.
+ */
+function instanceOfInboxPreview(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('favourite' in value) || value['favourite'] === undefined)
+        return false;
+    if (!('teamAccess' in value) || value['teamAccess'] === undefined)
+        return false;
+    if (!('virtualInbox' in value) || value['virtualInbox'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    return true;
+}
 function InboxPreviewFromJSON(json) {
     return InboxPreviewFromJSONTyped(json, false);
 }
-exports.InboxPreviewFromJSON = InboxPreviewFromJSON;
 function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
-        createdAt: new Date(json['createdAt']),
-        favourite: json['favourite'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        teamAccess: json['teamAccess'],
-        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        virtualInbox: json['virtualInbox'],
-        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
-        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        'id': json['id'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'emailAddress': json['emailAddress'],
+        'createdAt': (new Date(json['createdAt'])),
+        'favourite': json['favourite'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
+        'teamAccess': json['teamAccess'],
+        'inboxType': json['inboxType'] == null ? undefined : json['inboxType'],
+        'virtualInbox': json['virtualInbox'],
+        'expiresAt': json['expiresAt'] == null ? undefined : (new Date(json['expiresAt'])),
+        'functionsAs': json['functionsAs'] == null ? undefined : json['functionsAs'],
+        'userId': json['userId'],
+        'description': json['description'] == null ? undefined : json['description'],
     };
 }
-exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
-function InboxPreviewToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxPreviewToJSON(json) {
+    return InboxPreviewToJSONTyped(json, false);
+}
+function InboxPreviewToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        domainId: value.domainId,
-        emailAddress: value.emailAddress,
-        createdAt: value.createdAt.toISOString(),
-        favourite: value.favourite,
-        name: value.name,
-        tags: value.tags,
-        teamAccess: value.teamAccess,
-        inboxType: value.inboxType,
-        virtualInbox: value.virtualInbox,
-        expiresAt: value.expiresAt,
-        functionsAs: value.functionsAs,
+        'id': value['id'],
+        'domainId': value['domainId'],
+        'emailAddress': value['emailAddress'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'favourite': value['favourite'],
+        'name': value['name'],
+        'tags': value['tags'],
+        'teamAccess': value['teamAccess'],
+        'inboxType': value['inboxType'],
+        'virtualInbox': value['virtualInbox'],
+        'expiresAt': value['expiresAt'] == null ? undefined : (value['expiresAt'].toISOString()),
+        'functionsAs': value['functionsAs'],
+        'userId': value['userId'],
+        'description': value['description'],
     };
 }
-exports.InboxPreviewToJSON = InboxPreviewToJSON;

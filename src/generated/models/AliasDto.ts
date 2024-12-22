@@ -12,145 +12,139 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Email alias representation
  * @export
  * @interface AliasDto
  */
 export interface AliasDto {
-  /**
-   *
-   * @type {string}
-   * @memberof AliasDto
-   */
-  id: string;
-  /**
-   * The alias's email address for receiving email
-   * @type {string}
-   * @memberof AliasDto
-   */
-  emailAddress: string;
-  /**
-   * The underlying email address that is hidden and will received forwarded email
-   * @type {string}
-   * @memberof AliasDto
-   */
-  maskedEmailAddress?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasDto
-   */
-  userId: string;
-  /**
-   * Inbox that is associated with the alias
-   * @type {string}
-   * @memberof AliasDto
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasDto
-   */
-  name?: string | null;
-  /**
-   * If alias will generate response threads or not when email are received by it
-   * @type {boolean}
-   * @memberof AliasDto
-   */
-  useThreads?: boolean | null;
-  /**
-   * Has the alias been verified. You must verify an alias if the masked email address has not yet been verified by your account
-   * @type {boolean}
-   * @memberof AliasDto
-   */
-  isVerified: boolean;
-  /**
-   * Domain ID associated with the alias
-   * @type {string}
-   * @memberof AliasDto
-   */
-  domainId?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasDto
-   */
-  createdAt?: Date | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasDto
-   */
-  updatedAt?: Date | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasDto
+     */
+    id: string;
+    /**
+     * The alias's email address for receiving email
+     * @type {string}
+     * @memberof AliasDto
+     */
+    emailAddress: string;
+    /**
+     * The underlying email address that is hidden and will received forwarded email
+     * @type {string}
+     * @memberof AliasDto
+     */
+    maskedEmailAddress?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasDto
+     */
+    userId: string;
+    /**
+     * Inbox that is associated with the alias
+     * @type {string}
+     * @memberof AliasDto
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasDto
+     */
+    name?: string | null;
+    /**
+     * If alias will generate response threads or not when email are received by it
+     * @type {boolean}
+     * @memberof AliasDto
+     */
+    useThreads?: boolean | null;
+    /**
+     * Has the alias been verified. You must verify an alias if the masked email address has not yet been verified by your account
+     * @type {boolean}
+     * @memberof AliasDto
+     */
+    isVerified: boolean;
+    /**
+     * Domain ID associated with the alias
+     * @type {string}
+     * @memberof AliasDto
+     */
+    domainId?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AliasDto
+     */
+    createdAt?: Date | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AliasDto
+     */
+    updatedAt?: Date | null;
+}
+
+/**
+ * Check if a given object implements the AliasDto interface.
+ */
+export function instanceOfAliasDto(value: object): value is AliasDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('isVerified' in value) || value['isVerified'] === undefined) return false;
+    return true;
 }
 
 export function AliasDtoFromJSON(json: any): AliasDto {
-  return AliasDtoFromJSONTyped(json, false);
+    return AliasDtoFromJSONTyped(json, false);
 }
 
-export function AliasDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AliasDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    emailAddress: json['emailAddress'],
-    maskedEmailAddress: !exists(json, 'maskedEmailAddress')
-      ? undefined
-      : json['maskedEmailAddress'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
-    isVerified: json['isVerified'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    createdAt: !exists(json, 'createdAt')
-      ? undefined
-      : json['createdAt'] === null
-      ? null
-      : new Date(json['createdAt']),
-    updatedAt: !exists(json, 'updatedAt')
-      ? undefined
-      : json['updatedAt'] === null
-      ? null
-      : new Date(json['updatedAt']),
-  };
+export function AliasDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+        'maskedEmailAddress': json['maskedEmailAddress'] == null ? undefined : json['maskedEmailAddress'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'useThreads': json['useThreads'] == null ? undefined : json['useThreads'],
+        'isVerified': json['isVerified'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'createdAt': json['createdAt'] == null ? undefined : (new Date(json['createdAt'])),
+        'updatedAt': json['updatedAt'] == null ? undefined : (new Date(json['updatedAt'])),
+    };
 }
 
-export function AliasDtoToJSON(value?: AliasDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    emailAddress: value.emailAddress,
-    maskedEmailAddress: value.maskedEmailAddress,
-    userId: value.userId,
-    inboxId: value.inboxId,
-    name: value.name,
-    useThreads: value.useThreads,
-    isVerified: value.isVerified,
-    domainId: value.domainId,
-    createdAt:
-      value.createdAt === undefined
-        ? undefined
-        : value.createdAt === null
-        ? null
-        : value.createdAt.toISOString(),
-    updatedAt:
-      value.updatedAt === undefined
-        ? undefined
-        : value.updatedAt === null
-        ? null
-        : value.updatedAt.toISOString(),
-  };
+export function AliasDtoToJSON(json: any): AliasDto {
+    return AliasDtoToJSONTyped(json, false);
 }
+
+export function AliasDtoToJSONTyped(value?: AliasDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'emailAddress': value['emailAddress'],
+        'maskedEmailAddress': value['maskedEmailAddress'],
+        'userId': value['userId'],
+        'inboxId': value['inboxId'],
+        'name': value['name'],
+        'useThreads': value['useThreads'],
+        'isVerified': value['isVerified'],
+        'domainId': value['domainId'],
+        'createdAt': value['createdAt'] == null ? undefined : ((value['createdAt'] as any).toISOString()),
+        'updatedAt': value['updatedAt'] == null ? undefined : ((value['updatedAt'] as any).toISOString()),
+    };
+}
+

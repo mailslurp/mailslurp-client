@@ -22,6 +22,11 @@ export interface TemplatePreview {
      */
     preview: string;
 }
+/**
+ * Check if a given object implements the TemplatePreview interface.
+ */
+export declare function instanceOfTemplatePreview(value: object): value is TemplatePreview;
 export declare function TemplatePreviewFromJSON(json: any): TemplatePreview;
 export declare function TemplatePreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplatePreview;
-export declare function TemplatePreviewToJSON(value?: TemplatePreview | null): any;
+export declare function TemplatePreviewToJSON(json: any): TemplatePreview;
+export declare function TemplatePreviewToJSONTyped(value?: TemplatePreview | null, ignoreDiscriminator?: boolean): any;

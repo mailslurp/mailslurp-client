@@ -13,35 +13,51 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NameServerRecordToJSON = exports.NameServerRecordFromJSONTyped = exports.NameServerRecordFromJSON = void 0;
+exports.instanceOfNameServerRecord = instanceOfNameServerRecord;
+exports.NameServerRecordFromJSON = NameServerRecordFromJSON;
+exports.NameServerRecordFromJSONTyped = NameServerRecordFromJSONTyped;
+exports.NameServerRecordToJSON = NameServerRecordToJSON;
+exports.NameServerRecordToJSONTyped = NameServerRecordToJSONTyped;
+/**
+ * Check if a given object implements the NameServerRecord interface.
+ */
+function instanceOfNameServerRecord(value) {
+    if (!('raw' in value) || value['raw'] === undefined)
+        return false;
+    if (!('recordType' in value) || value['recordType'] === undefined)
+        return false;
+    if (!('priority' in value) || value['priority'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function NameServerRecordFromJSON(json) {
     return NameServerRecordFromJSONTyped(json, false);
 }
-exports.NameServerRecordFromJSON = NameServerRecordFromJSON;
 function NameServerRecordFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        raw: json['raw'],
-        recordType: json['recordType'],
-        priority: json['priority'],
-        value: json['value'],
+        'raw': json['raw'],
+        'recordType': json['recordType'],
+        'priority': json['priority'],
+        'value': json['value'],
     };
 }
-exports.NameServerRecordFromJSONTyped = NameServerRecordFromJSONTyped;
-function NameServerRecordToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function NameServerRecordToJSON(json) {
+    return NameServerRecordToJSONTyped(json, false);
+}
+function NameServerRecordToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        raw: value.raw,
-        recordType: value.recordType,
-        priority: value.priority,
-        value: value.value,
+        'raw': value['raw'],
+        'recordType': value['recordType'],
+        'priority': value['priority'],
+        'value': value['value'],
     };
 }
-exports.NameServerRecordToJSON = NameServerRecordToJSON;

@@ -12,135 +12,202 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ConnectorImapConnectionDto
  */
 export interface ConnectorImapConnectionDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorImapConnectionDto
-   */
-  connectorId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorImapConnectionDto
-   */
-  imapHost?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorImapConnectionDto
-   */
-  imapPort?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorImapConnectionDto
-   */
-  imapUsername?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorImapConnectionDto
-   */
-  imapPassword?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorImapConnectionDto
-   */
-  imapSsl?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorImapConnectionDto
-   */
-  selectFolder?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorImapConnectionDto
-   */
-  searchTerms?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorImapConnectionDto
-   */
-  enabled?: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorImapConnectionDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorImapConnectionDto
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    connectorId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    imapHost: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ConnectorImapConnectionDto
+     */
+    imapPort?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    imapUsername?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    imapPassword?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorImapConnectionDto
+     */
+    imapSsl?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    selectFolder?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    searchTerms?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorImapConnectionDto
+     */
+    startTls?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    proxyHost?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ConnectorImapConnectionDto
+     */
+    proxyPort?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorImapConnectionDto
+     */
+    proxyEnabled?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    localHostName?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ConnectorImapConnectionDto
+     */
+    mechanisms?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ConnectorImapConnectionDto
+     */
+    sslProtocols?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    sslTrust?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorImapConnectionDto
+     */
+    enabled?: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ConnectorImapConnectionDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    id: string;
 }
 
-export function ConnectorImapConnectionDtoFromJSON(
-  json: any
-): ConnectorImapConnectionDto {
-  return ConnectorImapConnectionDtoFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the ConnectorImapConnectionDto interface.
+ */
+export function instanceOfConnectorImapConnectionDto(value: object): value is ConnectorImapConnectionDto {
+    if (!('connectorId' in value) || value['connectorId'] === undefined) return false;
+    if (!('imapHost' in value) || value['imapHost'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
-export function ConnectorImapConnectionDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorImapConnectionDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    connectorId: json['connectorId'],
-    imapHost: !exists(json, 'imapHost') ? undefined : json['imapHost'],
-    imapPort: !exists(json, 'imapPort') ? undefined : json['imapPort'],
-    imapUsername: !exists(json, 'imapUsername')
-      ? undefined
-      : json['imapUsername'],
-    imapPassword: !exists(json, 'imapPassword')
-      ? undefined
-      : json['imapPassword'],
-    imapSsl: !exists(json, 'imapSsl') ? undefined : json['imapSsl'],
-    selectFolder: !exists(json, 'selectFolder')
-      ? undefined
-      : json['selectFolder'],
-    searchTerms: !exists(json, 'searchTerms') ? undefined : json['searchTerms'],
-    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-    createdAt: new Date(json['createdAt']),
-    id: json['id'],
-  };
+export function ConnectorImapConnectionDtoFromJSON(json: any): ConnectorImapConnectionDto {
+    return ConnectorImapConnectionDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorImapConnectionDtoToJSON(
-  value?: ConnectorImapConnectionDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    connectorId: value.connectorId,
-    imapHost: value.imapHost,
-    imapPort: value.imapPort,
-    imapUsername: value.imapUsername,
-    imapPassword: value.imapPassword,
-    imapSsl: value.imapSsl,
-    selectFolder: value.selectFolder,
-    searchTerms: value.searchTerms,
-    enabled: value.enabled,
-    createdAt: value.createdAt.toISOString(),
-    id: value.id,
-  };
+export function ConnectorImapConnectionDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorImapConnectionDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'connectorId': json['connectorId'],
+        'imapHost': json['imapHost'],
+        'imapPort': json['imapPort'] == null ? undefined : json['imapPort'],
+        'imapUsername': json['imapUsername'] == null ? undefined : json['imapUsername'],
+        'imapPassword': json['imapPassword'] == null ? undefined : json['imapPassword'],
+        'imapSsl': json['imapSsl'] == null ? undefined : json['imapSsl'],
+        'selectFolder': json['selectFolder'] == null ? undefined : json['selectFolder'],
+        'searchTerms': json['searchTerms'] == null ? undefined : json['searchTerms'],
+        'startTls': json['startTls'] == null ? undefined : json['startTls'],
+        'proxyHost': json['proxyHost'] == null ? undefined : json['proxyHost'],
+        'proxyPort': json['proxyPort'] == null ? undefined : json['proxyPort'],
+        'proxyEnabled': json['proxyEnabled'] == null ? undefined : json['proxyEnabled'],
+        'localHostName': json['localHostName'] == null ? undefined : json['localHostName'],
+        'mechanisms': json['mechanisms'] == null ? undefined : json['mechanisms'],
+        'sslProtocols': json['sslProtocols'] == null ? undefined : json['sslProtocols'],
+        'sslTrust': json['sslTrust'] == null ? undefined : json['sslTrust'],
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
+        'createdAt': (new Date(json['createdAt'])),
+        'id': json['id'],
+    };
 }
+
+export function ConnectorImapConnectionDtoToJSON(json: any): ConnectorImapConnectionDto {
+    return ConnectorImapConnectionDtoToJSONTyped(json, false);
+}
+
+export function ConnectorImapConnectionDtoToJSONTyped(value?: ConnectorImapConnectionDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'connectorId': value['connectorId'],
+        'imapHost': value['imapHost'],
+        'imapPort': value['imapPort'],
+        'imapUsername': value['imapUsername'],
+        'imapPassword': value['imapPassword'],
+        'imapSsl': value['imapSsl'],
+        'selectFolder': value['selectFolder'],
+        'searchTerms': value['searchTerms'],
+        'startTls': value['startTls'],
+        'proxyHost': value['proxyHost'],
+        'proxyPort': value['proxyPort'],
+        'proxyEnabled': value['proxyEnabled'],
+        'localHostName': value['localHostName'],
+        'mechanisms': value['mechanisms'],
+        'sslProtocols': value['sslProtocols'],
+        'sslTrust': value['sslTrust'],
+        'enabled': value['enabled'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'id': value['id'],
+    };
+}
+

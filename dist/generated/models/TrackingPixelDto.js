@@ -13,54 +13,63 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrackingPixelDtoToJSON = exports.TrackingPixelDtoFromJSONTyped = exports.TrackingPixelDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfTrackingPixelDto = instanceOfTrackingPixelDto;
+exports.TrackingPixelDtoFromJSON = TrackingPixelDtoFromJSON;
+exports.TrackingPixelDtoFromJSONTyped = TrackingPixelDtoFromJSONTyped;
+exports.TrackingPixelDtoToJSON = TrackingPixelDtoToJSON;
+exports.TrackingPixelDtoToJSONTyped = TrackingPixelDtoToJSONTyped;
+/**
+ * Check if a given object implements the TrackingPixelDto interface.
+ */
+function instanceOfTrackingPixelDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('seen' in value) || value['seen'] === undefined)
+        return false;
+    if (!('html' in value) || value['html'] === undefined)
+        return false;
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function TrackingPixelDtoFromJSON(json) {
     return TrackingPixelDtoFromJSONTyped(json, false);
 }
-exports.TrackingPixelDtoFromJSON = TrackingPixelDtoFromJSON;
 function TrackingPixelDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        seen: json['seen'],
-        recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
-        html: json['html'],
-        url: json['url'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-        seenAt: !(0, runtime_1.exists)(json, 'seenAt')
-            ? undefined
-            : json['seenAt'] === null
-                ? null
-                : new Date(json['seenAt']),
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'seen': json['seen'],
+        'recipient': json['recipient'] == null ? undefined : json['recipient'],
+        'html': json['html'],
+        'url': json['url'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'sentEmailId': json['sentEmailId'] == null ? undefined : json['sentEmailId'],
+        'seenAt': json['seenAt'] == null ? undefined : (new Date(json['seenAt'])),
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.TrackingPixelDtoFromJSONTyped = TrackingPixelDtoFromJSONTyped;
-function TrackingPixelDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TrackingPixelDtoToJSON(json) {
+    return TrackingPixelDtoToJSONTyped(json, false);
+}
+function TrackingPixelDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        seen: value.seen,
-        recipient: value.recipient,
-        html: value.html,
-        url: value.url,
-        inboxId: value.inboxId,
-        sentEmailId: value.sentEmailId,
-        seenAt: value.seenAt === undefined
-            ? undefined
-            : value.seenAt === null
-                ? null
-                : value.seenAt.toISOString(),
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'seen': value['seen'],
+        'recipient': value['recipient'],
+        'html': value['html'],
+        'url': value['url'],
+        'inboxId': value['inboxId'],
+        'sentEmailId': value['sentEmailId'],
+        'seenAt': value['seenAt'] == null ? undefined : (value['seenAt'].toISOString()),
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.TrackingPixelDtoToJSON = TrackingPixelDtoToJSON;

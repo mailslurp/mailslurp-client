@@ -22,6 +22,11 @@ export interface UpdateDomainOptions {
      */
     catchAllInboxId?: string | null;
 }
+/**
+ * Check if a given object implements the UpdateDomainOptions interface.
+ */
+export declare function instanceOfUpdateDomainOptions(value: object): value is UpdateDomainOptions;
 export declare function UpdateDomainOptionsFromJSON(json: any): UpdateDomainOptions;
 export declare function UpdateDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateDomainOptions;
-export declare function UpdateDomainOptionsToJSON(value?: UpdateDomainOptions | null): any;
+export declare function UpdateDomainOptionsToJSON(json: any): UpdateDomainOptions;
+export declare function UpdateDomainOptionsToJSONTyped(value?: UpdateDomainOptions | null, ignoreDiscriminator?: boolean): any;

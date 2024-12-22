@@ -12,54 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { ImapEmailProjection } from './ImapEmailProjection';
 import {
-  ImapEmailProjection,
-  ImapEmailProjectionFromJSON,
-  ImapEmailProjectionFromJSONTyped,
-  ImapEmailProjectionToJSON,
-} from './';
+    ImapEmailProjectionFromJSON,
+    ImapEmailProjectionFromJSONTyped,
+    ImapEmailProjectionToJSON,
+    ImapEmailProjectionToJSONTyped,
+} from './ImapEmailProjection';
 
 /**
- *
+ * 
  * @export
  * @interface ImapServerListResult
  */
 export interface ImapServerListResult {
-  /**
-   *
-   * @type {Array<ImapEmailProjection>}
-   * @memberof ImapServerListResult
-   */
-  results: Array<ImapEmailProjection>;
+    /**
+     * 
+     * @type {Array<ImapEmailProjection>}
+     * @memberof ImapServerListResult
+     */
+    results: Array<ImapEmailProjection>;
+}
+
+/**
+ * Check if a given object implements the ImapServerListResult interface.
+ */
+export function instanceOfImapServerListResult(value: object): value is ImapServerListResult {
+    if (!('results' in value) || value['results'] === undefined) return false;
+    return true;
 }
 
 export function ImapServerListResultFromJSON(json: any): ImapServerListResult {
-  return ImapServerListResultFromJSONTyped(json, false);
+    return ImapServerListResultFromJSONTyped(json, false);
 }
 
-export function ImapServerListResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerListResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    results: (json['results'] as Array<any>).map(ImapEmailProjectionFromJSON),
-  };
+export function ImapServerListResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerListResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'results': ((json['results'] as Array<any>).map(ImapEmailProjectionFromJSON)),
+    };
 }
 
-export function ImapServerListResultToJSON(
-  value?: ImapServerListResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    results: (value.results as Array<any>).map(ImapEmailProjectionToJSON),
-  };
+export function ImapServerListResultToJSON(json: any): ImapServerListResult {
+    return ImapServerListResultToJSONTyped(json, false);
 }
+
+export function ImapServerListResultToJSONTyped(value?: ImapServerListResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'results': ((value['results'] as Array<any>).map(ImapEmailProjectionToJSON)),
+    };
+}
+

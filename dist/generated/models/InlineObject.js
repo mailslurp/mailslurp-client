@@ -13,24 +13,20 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InlineObjectToJSON = exports.InlineObjectFromJSONTyped = exports.InlineObjectFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.InlineObjectFromJSON = InlineObjectFromJSON;
+exports.InlineObjectFromJSONTyped = InlineObjectFromJSONTyped;
+exports.InlineObjectToJSON = InlineObjectToJSON;
 function InlineObjectFromJSON(json) {
     return InlineObjectFromJSONTyped(json, false);
 }
-exports.InlineObjectFromJSON = InlineObjectFromJSON;
 function InlineObjectFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
     }
     return {
-        contentTypeHeader: !(0, runtime_1.exists)(json, 'contentTypeHeader')
-            ? undefined
-            : json['contentTypeHeader'],
         file: json['file'],
     };
 }
-exports.InlineObjectFromJSONTyped = InlineObjectFromJSONTyped;
 function InlineObjectToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,8 +35,6 @@ function InlineObjectToJSON(value) {
         return null;
     }
     return {
-        contentTypeHeader: value.contentTypeHeader,
         file: value.file,
     };
 }
-exports.InlineObjectToJSON = InlineObjectToJSON;

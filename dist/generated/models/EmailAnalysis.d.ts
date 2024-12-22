@@ -46,6 +46,11 @@ export interface EmailAnalysis {
      */
     dmarcVerdict?: string | null;
 }
+/**
+ * Check if a given object implements the EmailAnalysis interface.
+ */
+export declare function instanceOfEmailAnalysis(value: object): value is EmailAnalysis;
 export declare function EmailAnalysisFromJSON(json: any): EmailAnalysis;
 export declare function EmailAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailAnalysis;
-export declare function EmailAnalysisToJSON(value?: EmailAnalysis | null): any;
+export declare function EmailAnalysisToJSON(json: any): EmailAnalysis;
+export declare function EmailAnalysisToJSONTyped(value?: EmailAnalysis | null, ignoreDiscriminator?: boolean): any;

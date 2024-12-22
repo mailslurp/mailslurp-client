@@ -46,6 +46,7 @@ import {
   WaitForControllerApi,
   WebhookControllerApi,
   InboxReplierControllerApi,
+  GuestPortalControllerApi,
 } from './generated';
 
 export * from './generated';
@@ -136,6 +137,7 @@ export class MailSlurp {
   public readonly inboxForwarderController: InboxForwarderControllerApi;
   public readonly trackingController: TrackingControllerApi;
   public readonly bounceController: BounceControllerApi;
+  public readonly guestPortalController: GuestPortalControllerApi;
 
   /**
    * Create a new MailSlurp instance.
@@ -192,6 +194,7 @@ export class MailSlurp {
     this.inboxReplierController = new InboxReplierControllerApi(...args);
     this.trackingController = new TrackingControllerApi(...args);
     this.bounceController = new BounceControllerApi(...args);
+    this.guestPortalController = new GuestPortalControllerApi(...args);
   }
 
   /**

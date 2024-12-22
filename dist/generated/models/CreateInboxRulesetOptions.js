@@ -13,52 +13,63 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxRulesetOptionsToJSON = exports.CreateInboxRulesetOptionsFromJSONTyped = exports.CreateInboxRulesetOptionsFromJSON = exports.CreateInboxRulesetOptionsActionEnum = exports.CreateInboxRulesetOptionsScopeEnum = void 0;
+exports.CreateInboxRulesetOptionsActionEnum = exports.CreateInboxRulesetOptionsScopeEnum = void 0;
+exports.instanceOfCreateInboxRulesetOptions = instanceOfCreateInboxRulesetOptions;
+exports.CreateInboxRulesetOptionsFromJSON = CreateInboxRulesetOptionsFromJSON;
+exports.CreateInboxRulesetOptionsFromJSONTyped = CreateInboxRulesetOptionsFromJSONTyped;
+exports.CreateInboxRulesetOptionsToJSON = CreateInboxRulesetOptionsToJSON;
+exports.CreateInboxRulesetOptionsToJSONTyped = CreateInboxRulesetOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var CreateInboxRulesetOptionsScopeEnum;
-(function (CreateInboxRulesetOptionsScopeEnum) {
-    CreateInboxRulesetOptionsScopeEnum["RECEIVING_EMAILS"] = "RECEIVING_EMAILS";
-    CreateInboxRulesetOptionsScopeEnum["SENDING_EMAILS"] = "SENDING_EMAILS";
-})(CreateInboxRulesetOptionsScopeEnum = exports.CreateInboxRulesetOptionsScopeEnum || (exports.CreateInboxRulesetOptionsScopeEnum = {}));
+exports.CreateInboxRulesetOptionsScopeEnum = {
+    RECEIVING_EMAILS: 'RECEIVING_EMAILS',
+    SENDING_EMAILS: 'SENDING_EMAILS'
+};
 /**
  * @export
- * @enum {string}
  */
-var CreateInboxRulesetOptionsActionEnum;
-(function (CreateInboxRulesetOptionsActionEnum) {
-    CreateInboxRulesetOptionsActionEnum["BLOCK"] = "BLOCK";
-    CreateInboxRulesetOptionsActionEnum["ALLOW"] = "ALLOW";
-    CreateInboxRulesetOptionsActionEnum["FILTER_REMOVE"] = "FILTER_REMOVE";
-})(CreateInboxRulesetOptionsActionEnum = exports.CreateInboxRulesetOptionsActionEnum || (exports.CreateInboxRulesetOptionsActionEnum = {}));
+exports.CreateInboxRulesetOptionsActionEnum = {
+    BLOCK: 'BLOCK',
+    ALLOW: 'ALLOW',
+    FILTER_REMOVE: 'FILTER_REMOVE'
+};
+/**
+ * Check if a given object implements the CreateInboxRulesetOptions interface.
+ */
+function instanceOfCreateInboxRulesetOptions(value) {
+    if (!('scope' in value) || value['scope'] === undefined)
+        return false;
+    if (!('action' in value) || value['action'] === undefined)
+        return false;
+    if (!('target' in value) || value['target'] === undefined)
+        return false;
+    return true;
+}
 function CreateInboxRulesetOptionsFromJSON(json) {
     return CreateInboxRulesetOptionsFromJSONTyped(json, false);
 }
-exports.CreateInboxRulesetOptionsFromJSON = CreateInboxRulesetOptionsFromJSON;
 function CreateInboxRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        scope: json['scope'],
-        action: json['action'],
-        target: json['target'],
+        'scope': json['scope'],
+        'action': json['action'],
+        'target': json['target'],
     };
 }
-exports.CreateInboxRulesetOptionsFromJSONTyped = CreateInboxRulesetOptionsFromJSONTyped;
-function CreateInboxRulesetOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateInboxRulesetOptionsToJSON(json) {
+    return CreateInboxRulesetOptionsToJSONTyped(json, false);
+}
+function CreateInboxRulesetOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        scope: value.scope,
-        action: value.action,
-        target: value.target,
+        'scope': value['scope'],
+        'action': value['action'],
+        'target': value['target'],
     };
 }
-exports.CreateInboxRulesetOptionsToJSON = CreateInboxRulesetOptionsToJSON;

@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxForwarderDto, PageableObject, SortObject } from './';
+import type { InboxForwarderDto } from './InboxForwarderDto';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
 /**
  * Paginated inbox forwarder results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageInboxForwarderDto {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageInboxForwarderDto
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageInboxForwarderDto {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageInboxForwarderDto interface.
+ */
+export declare function instanceOfPageInboxForwarderDto(value: object): value is PageInboxForwarderDto;
 export declare function PageInboxForwarderDtoFromJSON(json: any): PageInboxForwarderDto;
 export declare function PageInboxForwarderDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxForwarderDto;
-export declare function PageInboxForwarderDtoToJSON(value?: PageInboxForwarderDto | null): any;
+export declare function PageInboxForwarderDtoToJSON(json: any): PageInboxForwarderDto;
+export declare function PageInboxForwarderDtoToJSONTyped(value?: PageInboxForwarderDto | null, ignoreDiscriminator?: boolean): any;

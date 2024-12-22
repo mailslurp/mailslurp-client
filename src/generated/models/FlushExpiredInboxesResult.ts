@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Result from calling expire on any inboxes that have applicable expiration dates given current time.
  * @export
  * @interface FlushExpiredInboxesResult
  */
 export interface FlushExpiredInboxesResult {
-  /**
-   * Inbox IDs affected by expiration
-   * @type {Array<string>}
-   * @memberof FlushExpiredInboxesResult
-   */
-  inboxIds: Array<string>;
-  /**
-   * DateTime to filter inboxes so that those expiring before this time are expired
-   * @type {Date}
-   * @memberof FlushExpiredInboxesResult
-   */
-  expireBefore: Date;
+    /**
+     * Inbox IDs affected by expiration
+     * @type {Array<string>}
+     * @memberof FlushExpiredInboxesResult
+     */
+    inboxIds: Array<string>;
+    /**
+     * DateTime to filter inboxes so that those expiring before this time are expired
+     * @type {Date}
+     * @memberof FlushExpiredInboxesResult
+     */
+    expireBefore: Date;
 }
 
-export function FlushExpiredInboxesResultFromJSON(
-  json: any
-): FlushExpiredInboxesResult {
-  return FlushExpiredInboxesResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the FlushExpiredInboxesResult interface.
+ */
+export function instanceOfFlushExpiredInboxesResult(value: object): value is FlushExpiredInboxesResult {
+    if (!('inboxIds' in value) || value['inboxIds'] === undefined) return false;
+    if (!('expireBefore' in value) || value['expireBefore'] === undefined) return false;
+    return true;
 }
 
-export function FlushExpiredInboxesResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): FlushExpiredInboxesResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxIds: json['inboxIds'],
-    expireBefore: new Date(json['expireBefore']),
-  };
+export function FlushExpiredInboxesResultFromJSON(json: any): FlushExpiredInboxesResult {
+    return FlushExpiredInboxesResultFromJSONTyped(json, false);
 }
 
-export function FlushExpiredInboxesResultToJSON(
-  value?: FlushExpiredInboxesResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxIds: value.inboxIds,
-    expireBefore: value.expireBefore.toISOString(),
-  };
+export function FlushExpiredInboxesResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlushExpiredInboxesResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxIds': json['inboxIds'],
+        'expireBefore': (new Date(json['expireBefore'])),
+    };
 }
+
+export function FlushExpiredInboxesResultToJSON(json: any): FlushExpiredInboxesResult {
+    return FlushExpiredInboxesResultToJSONTyped(json, false);
+}
+
+export function FlushExpiredInboxesResultToJSONTyped(value?: FlushExpiredInboxesResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxIds': value['inboxIds'],
+        'expireBefore': ((value['expireBefore']).toISOString()),
+    };
+}
+

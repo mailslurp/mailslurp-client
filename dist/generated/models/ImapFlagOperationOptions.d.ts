@@ -30,13 +30,18 @@ export interface ImapFlagOperationOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ImapFlagOperationOptionsFlagOperationEnum {
-    SET_FLAGS = "SET_FLAGS",
-    ADD_FLAGS = "ADD_FLAGS",
-    REMOVE_FLAGS = "REMOVE_FLAGS"
-}
+export declare const ImapFlagOperationOptionsFlagOperationEnum: {
+    readonly SET_FLAGS: "SET_FLAGS";
+    readonly ADD_FLAGS: "ADD_FLAGS";
+    readonly REMOVE_FLAGS: "REMOVE_FLAGS";
+};
+export type ImapFlagOperationOptionsFlagOperationEnum = typeof ImapFlagOperationOptionsFlagOperationEnum[keyof typeof ImapFlagOperationOptionsFlagOperationEnum];
+/**
+ * Check if a given object implements the ImapFlagOperationOptions interface.
+ */
+export declare function instanceOfImapFlagOperationOptions(value: object): value is ImapFlagOperationOptions;
 export declare function ImapFlagOperationOptionsFromJSON(json: any): ImapFlagOperationOptions;
 export declare function ImapFlagOperationOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapFlagOperationOptions;
-export declare function ImapFlagOperationOptionsToJSON(value?: ImapFlagOperationOptions | null): any;
+export declare function ImapFlagOperationOptionsToJSON(json: any): ImapFlagOperationOptions;
+export declare function ImapFlagOperationOptionsToJSONTyped(value?: ImapFlagOperationOptions | null, ignoreDiscriminator?: boolean): any;

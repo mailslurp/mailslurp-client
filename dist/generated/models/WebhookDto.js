@@ -13,101 +13,123 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookDtoToJSON = exports.WebhookDtoFromJSONTyped = exports.WebhookDtoFromJSON = exports.WebhookDtoEventNameEnum = exports.WebhookDtoMethodEnum = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.WebhookDtoHealthStatusEnum = exports.WebhookDtoEventNameEnum = exports.WebhookDtoMethodEnum = void 0;
+exports.instanceOfWebhookDto = instanceOfWebhookDto;
+exports.WebhookDtoFromJSON = WebhookDtoFromJSON;
+exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
+exports.WebhookDtoToJSON = WebhookDtoToJSON;
+exports.WebhookDtoToJSONTyped = WebhookDtoToJSONTyped;
+var WebhookHeaders_1 = require("./WebhookHeaders");
 /**
  * @export
- * @enum {string}
  */
-var WebhookDtoMethodEnum;
-(function (WebhookDtoMethodEnum) {
-    WebhookDtoMethodEnum["POST"] = "POST";
-    WebhookDtoMethodEnum["DELETE"] = "DELETE";
-    WebhookDtoMethodEnum["GET"] = "GET";
-    WebhookDtoMethodEnum["PUT"] = "PUT";
-    WebhookDtoMethodEnum["PATCH"] = "PATCH";
-    WebhookDtoMethodEnum["HEAD"] = "HEAD";
-    WebhookDtoMethodEnum["OPTIONS"] = "OPTIONS";
-    WebhookDtoMethodEnum["TRACE"] = "TRACE";
-})(WebhookDtoMethodEnum = exports.WebhookDtoMethodEnum || (exports.WebhookDtoMethodEnum = {}));
+exports.WebhookDtoMethodEnum = {
+    POST: 'POST',
+    DELETE: 'DELETE',
+    GET: 'GET',
+    PUT: 'PUT',
+    PATCH: 'PATCH',
+    HEAD: 'HEAD',
+    OPTIONS: 'OPTIONS',
+    TRACE: 'TRACE'
+};
 /**
  * @export
- * @enum {string}
  */
-var WebhookDtoEventNameEnum;
-(function (WebhookDtoEventNameEnum) {
-    WebhookDtoEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
-    WebhookDtoEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
-    WebhookDtoEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
-    WebhookDtoEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
-    WebhookDtoEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
-    WebhookDtoEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-    WebhookDtoEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
-    WebhookDtoEventNameEnum["BOUNCE"] = "BOUNCE";
-    WebhookDtoEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
-    WebhookDtoEventNameEnum["NEW_SMS"] = "NEW_SMS";
-})(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {}));
+exports.WebhookDtoEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+};
+/**
+ * @export
+ */
+exports.WebhookDtoHealthStatusEnum = {
+    HEALTHY: 'HEALTHY',
+    UNHEALTHY: 'UNHEALTHY'
+};
+/**
+ * Check if a given object implements the WebhookDto interface.
+ */
+function instanceOfWebhookDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('basicAuth' in value) || value['basicAuth'] === undefined)
+        return false;
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    if (!('method' in value) || value['method'] === undefined)
+        return false;
+    if (!('payloadJsonSchema' in value) || value['payloadJsonSchema'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    return true;
+}
 function WebhookDtoFromJSON(json) {
     return WebhookDtoFromJSONTyped(json, false);
 }
-exports.WebhookDtoFromJSON = WebhookDtoFromJSON;
 function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        basicAuth: json['basicAuth'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
-            ? undefined
-            : json['requestBodyTemplate'],
-        url: json['url'],
-        method: json['method'],
-        payloadJsonSchema: json['payloadJsonSchema'],
-        createdAt: json['createdAt'] === null ? null : new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        requestHeaders: !(0, runtime_1.exists)(json, 'requestHeaders')
-            ? undefined
-            : (0, _1.WebhookHeadersFromJSON)(json['requestHeaders']),
-        ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
-            ? undefined
-            : json['ignoreInsecureSslCertificates'],
-        useStaticIpRange: !(0, runtime_1.exists)(json, 'useStaticIpRange')
-            ? undefined
-            : json['useStaticIpRange'],
+        'id': json['id'],
+        'userId': json['userId'],
+        'basicAuth': json['basicAuth'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'phoneId': json['phoneId'] == null ? undefined : json['phoneId'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'requestBodyTemplate': json['requestBodyTemplate'] == null ? undefined : json['requestBodyTemplate'],
+        'url': json['url'],
+        'method': json['method'],
+        'payloadJsonSchema': json['payloadJsonSchema'],
+        'createdAt': (json['createdAt'] == null ? null : new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'eventName': json['eventName'] == null ? undefined : json['eventName'],
+        'requestHeaders': json['requestHeaders'] == null ? undefined : (0, WebhookHeaders_1.WebhookHeadersFromJSON)(json['requestHeaders']),
+        'ignoreInsecureSslCertificates': json['ignoreInsecureSslCertificates'] == null ? undefined : json['ignoreInsecureSslCertificates'],
+        'useStaticIpRange': json['useStaticIpRange'] == null ? undefined : json['useStaticIpRange'],
+        'healthStatus': json['healthStatus'] == null ? undefined : json['healthStatus'],
     };
 }
-exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
-function WebhookDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookDtoToJSON(json) {
+    return WebhookDtoToJSONTyped(json, false);
+}
+function WebhookDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        basicAuth: value.basicAuth,
-        name: value.name,
-        phoneId: value.phoneId,
-        inboxId: value.inboxId,
-        requestBodyTemplate: value.requestBodyTemplate,
-        url: value.url,
-        method: value.method,
-        payloadJsonSchema: value.payloadJsonSchema,
-        createdAt: value.createdAt === null ? null : value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        eventName: value.eventName,
-        requestHeaders: (0, _1.WebhookHeadersToJSON)(value.requestHeaders),
-        ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
-        useStaticIpRange: value.useStaticIpRange,
+        'id': value['id'],
+        'userId': value['userId'],
+        'basicAuth': value['basicAuth'],
+        'name': value['name'],
+        'phoneId': value['phoneId'],
+        'inboxId': value['inboxId'],
+        'requestBodyTemplate': value['requestBodyTemplate'],
+        'url': value['url'],
+        'method': value['method'],
+        'payloadJsonSchema': value['payloadJsonSchema'],
+        'createdAt': (value['createdAt'] == null ? null : value['createdAt'].toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'eventName': value['eventName'],
+        'requestHeaders': (0, WebhookHeaders_1.WebhookHeadersToJSON)(value['requestHeaders']),
+        'ignoreInsecureSslCertificates': value['ignoreInsecureSslCertificates'],
+        'useStaticIpRange': value['useStaticIpRange'],
+        'healthStatus': value['healthStatus'],
     };
 }
-exports.WebhookDtoToJSON = WebhookDtoToJSON;

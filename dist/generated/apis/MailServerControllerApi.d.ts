@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { DNSLookupOptions, DNSLookupResults, DNSLookupsOptions, DescribeDomainOptions, DescribeMailServerDomainResult, EmailVerificationResult, IPAddressResult, VerifyEmailAddressOptions } from '../models';
+import type { DNSLookupOptions, DNSLookupResults, DNSLookupsOptions, DescribeDomainOptions, DescribeMailServerDomainResult, EmailVerificationResult, IPAddressResult, VerifyEmailAddressOptions } from '../models/index';
 export interface DescribeMailServerDomainRequest {
     describeDomainOptions: DescribeDomainOptions;
 }
@@ -33,41 +33,43 @@ export declare class MailServerControllerApi extends runtime.BaseAPI {
     /**
      * Get DNS Mail Server records for a domain
      */
-    describeMailServerDomainRaw(requestParameters: DescribeMailServerDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DescribeMailServerDomainResult>>;
+    describeMailServerDomainRaw(requestParameters: DescribeMailServerDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DescribeMailServerDomainResult>>;
     /**
      * Get DNS Mail Server records for a domain
      */
-    describeMailServerDomain(requestParameters: DescribeMailServerDomainRequest, initOverrides?: RequestInit): Promise<DescribeMailServerDomainResult>;
+    describeMailServerDomain(requestParameters: DescribeMailServerDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DescribeMailServerDomainResult>;
     /**
      * Lookup DNS records for a domain
      */
-    getDnsLookupRaw(requestParameters: GetDnsLookupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DNSLookupResults>>;
+    getDnsLookupRaw(requestParameters: GetDnsLookupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DNSLookupResults>>;
     /**
      * Lookup DNS records for a domain
      */
-    getDnsLookup(requestParameters: GetDnsLookupRequest, initOverrides?: RequestInit): Promise<DNSLookupResults>;
+    getDnsLookup(requestParameters: GetDnsLookupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DNSLookupResults>;
     /**
      * Lookup DNS records for multiple domains
      */
-    getDnsLookupsRaw(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DNSLookupResults>>;
+    getDnsLookupsRaw(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DNSLookupResults>>;
     /**
      * Lookup DNS records for multiple domains
      */
-    getDnsLookups(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit): Promise<DNSLookupResults>;
+    getDnsLookups(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DNSLookupResults>;
     /**
      * Get IP address for a domain
      */
-    getIpAddressRaw(requestParameters: GetIpAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<IPAddressResult>>;
+    getIpAddressRaw(requestParameters: GetIpAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IPAddressResult>>;
     /**
      * Get IP address for a domain
      */
-    getIpAddress(requestParameters: GetIpAddressRequest, initOverrides?: RequestInit): Promise<IPAddressResult>;
+    getIpAddress(requestParameters: GetIpAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IPAddressResult>;
     /**
      * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
+     * @deprecated
      */
-    verifyEmailAddressRaw(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailVerificationResult>>;
+    verifyEmailAddressRaw(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailVerificationResult>>;
     /**
      * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
+     * @deprecated
      */
-    verifyEmailAddress(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit): Promise<EmailVerificationResult>;
+    verifyEmailAddress(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailVerificationResult>;
 }

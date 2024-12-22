@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BasicAuthOptionsToJSON = exports.BasicAuthOptionsFromJSONTyped = exports.BasicAuthOptionsFromJSON = void 0;
+exports.instanceOfBasicAuthOptions = instanceOfBasicAuthOptions;
+exports.BasicAuthOptionsFromJSON = BasicAuthOptionsFromJSON;
+exports.BasicAuthOptionsFromJSONTyped = BasicAuthOptionsFromJSONTyped;
+exports.BasicAuthOptionsToJSON = BasicAuthOptionsToJSON;
+exports.BasicAuthOptionsToJSONTyped = BasicAuthOptionsToJSONTyped;
+/**
+ * Check if a given object implements the BasicAuthOptions interface.
+ */
+function instanceOfBasicAuthOptions(value) {
+    if (!('username' in value) || value['username'] === undefined)
+        return false;
+    if (!('password' in value) || value['password'] === undefined)
+        return false;
+    return true;
+}
 function BasicAuthOptionsFromJSON(json) {
     return BasicAuthOptionsFromJSONTyped(json, false);
 }
-exports.BasicAuthOptionsFromJSON = BasicAuthOptionsFromJSON;
 function BasicAuthOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        username: json['username'],
-        password: json['password'],
+        'username': json['username'],
+        'password': json['password'],
     };
 }
-exports.BasicAuthOptionsFromJSONTyped = BasicAuthOptionsFromJSONTyped;
-function BasicAuthOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function BasicAuthOptionsToJSON(json) {
+    return BasicAuthOptionsToJSONTyped(json, false);
+}
+function BasicAuthOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        username: value.username,
-        password: value.password,
+        'username': value['username'],
+        'password': value['password'],
     };
 }
-exports.BasicAuthOptionsToJSON = BasicAuthOptionsToJSON;

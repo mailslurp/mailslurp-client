@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ImapMailboxStatus } from './';
+import type { ImapMailboxStatus } from './ImapMailboxStatus';
 /**
  *
  * @export
@@ -23,6 +23,11 @@ export interface ImapServerStatusResult {
      */
     result?: ImapMailboxStatus | null;
 }
+/**
+ * Check if a given object implements the ImapServerStatusResult interface.
+ */
+export declare function instanceOfImapServerStatusResult(value: object): value is ImapServerStatusResult;
 export declare function ImapServerStatusResultFromJSON(json: any): ImapServerStatusResult;
 export declare function ImapServerStatusResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerStatusResult;
-export declare function ImapServerStatusResultToJSON(value?: ImapServerStatusResult | null): any;
+export declare function ImapServerStatusResultToJSON(json: any): ImapServerStatusResult;
+export declare function ImapServerStatusResultToJSONTyped(value?: ImapServerStatusResult | null, ignoreDiscriminator?: boolean): any;

@@ -13,68 +13,92 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainDtoToJSON = exports.DomainDtoFromJSONTyped = exports.DomainDtoFromJSON = exports.DomainDtoDomainTypeEnum = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.DomainDtoDomainTypeEnum = void 0;
+exports.instanceOfDomainDto = instanceOfDomainDto;
+exports.DomainDtoFromJSON = DomainDtoFromJSON;
+exports.DomainDtoFromJSONTyped = DomainDtoFromJSONTyped;
+exports.DomainDtoToJSON = DomainDtoToJSON;
+exports.DomainDtoToJSONTyped = DomainDtoToJSONTyped;
+var DomainNameRecord_1 = require("./DomainNameRecord");
 /**
  * @export
- * @enum {string}
  */
-var DomainDtoDomainTypeEnum;
-(function (DomainDtoDomainTypeEnum) {
-    DomainDtoDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    DomainDtoDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(DomainDtoDomainTypeEnum = exports.DomainDtoDomainTypeEnum || (exports.DomainDtoDomainTypeEnum = {}));
+exports.DomainDtoDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+};
+/**
+ * Check if a given object implements the DomainDto interface.
+ */
+function instanceOfDomainDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('domain' in value) || value['domain'] === undefined)
+        return false;
+    if (!('verificationToken' in value) || value['verificationToken'] === undefined)
+        return false;
+    if (!('dkimTokens' in value) || value['dkimTokens'] === undefined)
+        return false;
+    if (!('hasMissingRecords' in value) || value['hasMissingRecords'] === undefined)
+        return false;
+    if (!('isVerified' in value) || value['isVerified'] === undefined)
+        return false;
+    if (!('domainNameRecords' in value) || value['domainNameRecords'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    if (!('domainType' in value) || value['domainType'] === undefined)
+        return false;
+    return true;
+}
 function DomainDtoFromJSON(json) {
     return DomainDtoFromJSONTyped(json, false);
 }
-exports.DomainDtoFromJSON = DomainDtoFromJSON;
 function DomainDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        domain: json['domain'],
-        verificationToken: json['verificationToken'],
-        dkimTokens: json['dkimTokens'],
-        missingRecordsMessage: !(0, runtime_1.exists)(json, 'missingRecordsMessage')
-            ? undefined
-            : json['missingRecordsMessage'],
-        hasMissingRecords: json['hasMissingRecords'],
-        isVerified: json['isVerified'],
-        domainNameRecords: json['domainNameRecords'].map(_1.DomainNameRecordFromJSON),
-        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
-            ? undefined
-            : json['catchAllInboxId'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        domainType: json['domainType'],
+        'id': json['id'],
+        'userId': json['userId'],
+        'domain': json['domain'],
+        'verificationToken': json['verificationToken'],
+        'dkimTokens': json['dkimTokens'],
+        'missingRecordsMessage': json['missingRecordsMessage'] == null ? undefined : json['missingRecordsMessage'],
+        'hasMissingRecords': json['hasMissingRecords'],
+        'isVerified': json['isVerified'],
+        'domainNameRecords': (json['domainNameRecords'].map(DomainNameRecord_1.DomainNameRecordFromJSON)),
+        'catchAllInboxId': json['catchAllInboxId'] == null ? undefined : json['catchAllInboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'domainType': json['domainType'],
     };
 }
-exports.DomainDtoFromJSONTyped = DomainDtoFromJSONTyped;
-function DomainDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DomainDtoToJSON(json) {
+    return DomainDtoToJSONTyped(json, false);
+}
+function DomainDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        domain: value.domain,
-        verificationToken: value.verificationToken,
-        dkimTokens: value.dkimTokens,
-        missingRecordsMessage: value.missingRecordsMessage,
-        hasMissingRecords: value.hasMissingRecords,
-        isVerified: value.isVerified,
-        domainNameRecords: value.domainNameRecords.map(_1.DomainNameRecordToJSON),
-        catchAllInboxId: value.catchAllInboxId,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        domainType: value.domainType,
+        'id': value['id'],
+        'userId': value['userId'],
+        'domain': value['domain'],
+        'verificationToken': value['verificationToken'],
+        'dkimTokens': value['dkimTokens'],
+        'missingRecordsMessage': value['missingRecordsMessage'],
+        'hasMissingRecords': value['hasMissingRecords'],
+        'isVerified': value['isVerified'],
+        'domainNameRecords': (value['domainNameRecords'].map(DomainNameRecord_1.DomainNameRecordToJSON)),
+        'catchAllInboxId': value['catchAllInboxId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'domainType': value['domainType'],
     };
 }
-exports.DomainDtoToJSON = DomainDtoToJSON;

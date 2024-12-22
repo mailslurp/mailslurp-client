@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SmsProjection, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { SmsProjection } from './SmsProjection';
 /**
  * Paginated SMS messages. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageSmsProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageSmsProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageSmsProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageSmsProjection interface.
+ */
+export declare function instanceOfPageSmsProjection(value: object): value is PageSmsProjection;
 export declare function PageSmsProjectionFromJSON(json: any): PageSmsProjection;
 export declare function PageSmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageSmsProjection;
-export declare function PageSmsProjectionToJSON(value?: PageSmsProjection | null): any;
+export declare function PageSmsProjectionToJSON(json: any): PageSmsProjection;
+export declare function PageSmsProjectionToJSONTyped(value?: PageSmsProjection | null, ignoreDiscriminator?: boolean): any;

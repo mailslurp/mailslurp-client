@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { NameServerRecord } from './';
+import type { NameServerRecord } from './NameServerRecord';
 /**
  * Name Server lookup result
  * @export
@@ -35,6 +35,11 @@ export interface DescribeMailServerDomainResult {
      */
     message?: string | null;
 }
+/**
+ * Check if a given object implements the DescribeMailServerDomainResult interface.
+ */
+export declare function instanceOfDescribeMailServerDomainResult(value: object): value is DescribeMailServerDomainResult;
 export declare function DescribeMailServerDomainResultFromJSON(json: any): DescribeMailServerDomainResult;
 export declare function DescribeMailServerDomainResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): DescribeMailServerDomainResult;
-export declare function DescribeMailServerDomainResultToJSON(value?: DescribeMailServerDomainResult | null): any;
+export declare function DescribeMailServerDomainResultToJSON(json: any): DescribeMailServerDomainResult;
+export declare function DescribeMailServerDomainResultToJSONTyped(value?: DescribeMailServerDomainResult | null, ignoreDiscriminator?: boolean): any;

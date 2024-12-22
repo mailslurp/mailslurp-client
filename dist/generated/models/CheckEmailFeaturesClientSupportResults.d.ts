@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailFeatureSupportResult } from './';
+import type { EmailFeatureSupportResult } from './EmailFeatureSupportResult';
 /**
  *
  * @export
@@ -23,6 +23,11 @@ export interface CheckEmailFeaturesClientSupportResults {
      */
     result: EmailFeatureSupportResult;
 }
+/**
+ * Check if a given object implements the CheckEmailFeaturesClientSupportResults interface.
+ */
+export declare function instanceOfCheckEmailFeaturesClientSupportResults(value: object): value is CheckEmailFeaturesClientSupportResults;
 export declare function CheckEmailFeaturesClientSupportResultsFromJSON(json: any): CheckEmailFeaturesClientSupportResults;
 export declare function CheckEmailFeaturesClientSupportResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailFeaturesClientSupportResults;
-export declare function CheckEmailFeaturesClientSupportResultsToJSON(value?: CheckEmailFeaturesClientSupportResults | null): any;
+export declare function CheckEmailFeaturesClientSupportResultsToJSON(json: any): CheckEmailFeaturesClientSupportResults;
+export declare function CheckEmailFeaturesClientSupportResultsToJSONTyped(value?: CheckEmailFeaturesClientSupportResults | null, ignoreDiscriminator?: boolean): any;

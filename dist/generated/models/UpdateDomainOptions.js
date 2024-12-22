@@ -13,32 +13,37 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDomainOptionsToJSON = exports.UpdateDomainOptionsFromJSONTyped = exports.UpdateDomainOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfUpdateDomainOptions = instanceOfUpdateDomainOptions;
+exports.UpdateDomainOptionsFromJSON = UpdateDomainOptionsFromJSON;
+exports.UpdateDomainOptionsFromJSONTyped = UpdateDomainOptionsFromJSONTyped;
+exports.UpdateDomainOptionsToJSON = UpdateDomainOptionsToJSON;
+exports.UpdateDomainOptionsToJSONTyped = UpdateDomainOptionsToJSONTyped;
+/**
+ * Check if a given object implements the UpdateDomainOptions interface.
+ */
+function instanceOfUpdateDomainOptions(value) {
+    return true;
+}
 function UpdateDomainOptionsFromJSON(json) {
     return UpdateDomainOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDomainOptionsFromJSON = UpdateDomainOptionsFromJSON;
 function UpdateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
-            ? undefined
-            : json['catchAllInboxId'],
+        'catchAllInboxId': json['catchAllInboxId'] == null ? undefined : json['catchAllInboxId'],
     };
 }
-exports.UpdateDomainOptionsFromJSONTyped = UpdateDomainOptionsFromJSONTyped;
-function UpdateDomainOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UpdateDomainOptionsToJSON(json) {
+    return UpdateDomainOptionsToJSONTyped(json, false);
+}
+function UpdateDomainOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        catchAllInboxId: value.catchAllInboxId,
+        'catchAllInboxId': value['catchAllInboxId'],
     };
 }
-exports.UpdateDomainOptionsToJSON = UpdateDomainOptionsToJSON;

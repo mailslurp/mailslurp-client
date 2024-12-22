@@ -17,6 +17,12 @@
 export interface BounceProjection {
     /**
      *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    subject?: string | null;
+    /**
+     *
      * @type {Date}
      * @memberof BounceProjection
      */
@@ -44,14 +50,13 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    subject?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof BounceProjection
-     */
     id?: string;
 }
+/**
+ * Check if a given object implements the BounceProjection interface.
+ */
+export declare function instanceOfBounceProjection(value: object): value is BounceProjection;
 export declare function BounceProjectionFromJSON(json: any): BounceProjection;
 export declare function BounceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceProjection;
-export declare function BounceProjectionToJSON(value?: BounceProjection | null): any;
+export declare function BounceProjectionToJSON(json: any): BounceProjection;
+export declare function BounceProjectionToJSONTyped(value?: BounceProjection | null, ignoreDiscriminator?: boolean): any;

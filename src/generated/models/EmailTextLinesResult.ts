@@ -12,55 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Parsed text of an email
  * @export
  * @interface EmailTextLinesResult
  */
 export interface EmailTextLinesResult {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailTextLinesResult
-   */
-  lines: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailTextLinesResult
-   */
-  body: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof EmailTextLinesResult
+     */
+    lines: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailTextLinesResult
+     */
+    body: string;
+}
+
+/**
+ * Check if a given object implements the EmailTextLinesResult interface.
+ */
+export function instanceOfEmailTextLinesResult(value: object): value is EmailTextLinesResult {
+    if (!('lines' in value) || value['lines'] === undefined) return false;
+    if (!('body' in value) || value['body'] === undefined) return false;
+    return true;
 }
 
 export function EmailTextLinesResultFromJSON(json: any): EmailTextLinesResult {
-  return EmailTextLinesResultFromJSONTyped(json, false);
+    return EmailTextLinesResultFromJSONTyped(json, false);
 }
 
-export function EmailTextLinesResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailTextLinesResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    lines: json['lines'],
-    body: json['body'],
-  };
+export function EmailTextLinesResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailTextLinesResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'lines': json['lines'],
+        'body': json['body'],
+    };
 }
 
-export function EmailTextLinesResultToJSON(
-  value?: EmailTextLinesResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    lines: value.lines,
-    body: value.body,
-  };
+export function EmailTextLinesResultToJSON(json: any): EmailTextLinesResult {
+    return EmailTextLinesResultToJSONTyped(json, false);
 }
+
+export function EmailTextLinesResultToJSONTyped(value?: EmailTextLinesResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'lines': value['lines'],
+        'body': value['body'],
+    };
+}
+

@@ -13,32 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateGroupOptionsToJSON = exports.CreateGroupOptionsFromJSONTyped = exports.CreateGroupOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfCreateGroupOptions = instanceOfCreateGroupOptions;
+exports.CreateGroupOptionsFromJSON = CreateGroupOptionsFromJSON;
+exports.CreateGroupOptionsFromJSONTyped = CreateGroupOptionsFromJSONTyped;
+exports.CreateGroupOptionsToJSON = CreateGroupOptionsToJSON;
+exports.CreateGroupOptionsToJSONTyped = CreateGroupOptionsToJSONTyped;
+/**
+ * Check if a given object implements the CreateGroupOptions interface.
+ */
+function instanceOfCreateGroupOptions(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    return true;
+}
 function CreateGroupOptionsFromJSON(json) {
     return CreateGroupOptionsFromJSONTyped(json, false);
 }
-exports.CreateGroupOptionsFromJSON = CreateGroupOptionsFromJSON;
 function CreateGroupOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'name': json['name'],
+        'description': json['description'] == null ? undefined : json['description'],
     };
 }
-exports.CreateGroupOptionsFromJSONTyped = CreateGroupOptionsFromJSONTyped;
-function CreateGroupOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateGroupOptionsToJSON(json) {
+    return CreateGroupOptionsToJSONTyped(json, false);
+}
+function CreateGroupOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        description: value.description,
+        'name': value['name'],
+        'description': value['description'],
     };
 }
-exports.CreateGroupOptionsToJSON = CreateGroupOptionsToJSON;

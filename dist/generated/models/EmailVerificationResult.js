@@ -13,38 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailVerificationResultToJSON = exports.EmailVerificationResultFromJSONTyped = exports.EmailVerificationResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfEmailVerificationResult = instanceOfEmailVerificationResult;
+exports.EmailVerificationResultFromJSON = EmailVerificationResultFromJSON;
+exports.EmailVerificationResultFromJSONTyped = EmailVerificationResultFromJSONTyped;
+exports.EmailVerificationResultToJSON = EmailVerificationResultToJSON;
+exports.EmailVerificationResultToJSONTyped = EmailVerificationResultToJSONTyped;
+/**
+ * Check if a given object implements the EmailVerificationResult interface.
+ */
+function instanceOfEmailVerificationResult(value) {
+    if (!('domainName' in value) || value['domainName'] === undefined)
+        return false;
+    if (!('port' in value) || value['port'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('isValid' in value) || value['isValid'] === undefined)
+        return false;
+    return true;
+}
 function EmailVerificationResultFromJSON(json) {
     return EmailVerificationResultFromJSONTyped(json, false);
 }
-exports.EmailVerificationResultFromJSON = EmailVerificationResultFromJSON;
 function EmailVerificationResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        domainName: json['domainName'],
-        port: json['port'],
-        emailAddress: json['emailAddress'],
-        isValid: json['isValid'],
-        error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
+        'domainName': json['domainName'],
+        'port': json['port'],
+        'emailAddress': json['emailAddress'],
+        'isValid': json['isValid'],
+        'error': json['error'] == null ? undefined : json['error'],
     };
 }
-exports.EmailVerificationResultFromJSONTyped = EmailVerificationResultFromJSONTyped;
-function EmailVerificationResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailVerificationResultToJSON(json) {
+    return EmailVerificationResultToJSONTyped(json, false);
+}
+function EmailVerificationResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        domainName: value.domainName,
-        port: value.port,
-        emailAddress: value.emailAddress,
-        isValid: value.isValid,
-        error: value.error,
+        'domainName': value['domainName'],
+        'port': value['port'],
+        'emailAddress': value['emailAddress'],
+        'isValid': value['isValid'],
+        'error': value['error'],
     };
 }
-exports.EmailVerificationResultToJSON = EmailVerificationResultToJSON;

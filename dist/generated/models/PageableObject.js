@@ -13,41 +13,48 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageableObjectToJSON = exports.PageableObjectFromJSONTyped = exports.PageableObjectFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfPageableObject = instanceOfPageableObject;
+exports.PageableObjectFromJSON = PageableObjectFromJSON;
+exports.PageableObjectFromJSONTyped = PageableObjectFromJSONTyped;
+exports.PageableObjectToJSON = PageableObjectToJSON;
+exports.PageableObjectToJSONTyped = PageableObjectToJSONTyped;
+var SortObject_1 = require("./SortObject");
+/**
+ * Check if a given object implements the PageableObject interface.
+ */
+function instanceOfPageableObject(value) {
+    return true;
+}
 function PageableObjectFromJSON(json) {
     return PageableObjectFromJSONTyped(json, false);
 }
-exports.PageableObjectFromJSON = PageableObjectFromJSON;
 function PageableObjectFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        pageNumber: !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
-        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
-        paged: !(0, runtime_1.exists)(json, 'paged') ? undefined : json['paged'],
-        unpaged: !(0, runtime_1.exists)(json, 'unpaged') ? undefined : json['unpaged'],
-        offset: !(0, runtime_1.exists)(json, 'offset') ? undefined : json['offset'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
+        'pageSize': json['pageSize'] == null ? undefined : json['pageSize'],
+        'paged': json['paged'] == null ? undefined : json['paged'],
+        'pageNumber': json['pageNumber'] == null ? undefined : json['pageNumber'],
+        'unpaged': json['unpaged'] == null ? undefined : json['unpaged'],
+        'offset': json['offset'] == null ? undefined : json['offset'],
+        'sort': json['sort'] == null ? undefined : (json['sort'].map(SortObject_1.SortObjectFromJSON)),
     };
 }
-exports.PageableObjectFromJSONTyped = PageableObjectFromJSONTyped;
-function PageableObjectToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function PageableObjectToJSON(json) {
+    return PageableObjectToJSONTyped(json, false);
+}
+function PageableObjectToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        pageNumber: value.pageNumber,
-        pageSize: value.pageSize,
-        paged: value.paged,
-        unpaged: value.unpaged,
-        offset: value.offset,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
+        'pageSize': value['pageSize'],
+        'paged': value['paged'],
+        'pageNumber': value['pageNumber'],
+        'unpaged': value['unpaged'],
+        'offset': value['offset'],
+        'sort': value['sort'] == null ? undefined : (value['sort'].map(SortObject_1.SortObjectToJSON)),
     };
 }
-exports.PageableObjectToJSON = PageableObjectToJSON;

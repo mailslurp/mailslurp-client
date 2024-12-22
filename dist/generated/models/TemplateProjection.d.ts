@@ -46,6 +46,11 @@ export interface TemplateProjection {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the TemplateProjection interface.
+ */
+export declare function instanceOfTemplateProjection(value: object): value is TemplateProjection;
 export declare function TemplateProjectionFromJSON(json: any): TemplateProjection;
 export declare function TemplateProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateProjection;
-export declare function TemplateProjectionToJSON(value?: TemplateProjection | null): any;
+export declare function TemplateProjectionToJSON(json: any): TemplateProjection;
+export declare function TemplateProjectionToJSONTyped(value?: TemplateProjection | null, ignoreDiscriminator?: boolean): any;

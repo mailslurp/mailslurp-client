@@ -12,81 +12,88 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Unknown missed email projection
  * @export
  * @interface UnknownMissedEmailProjection
  */
 export interface UnknownMissedEmailProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof UnknownMissedEmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof UnknownMissedEmailProjection
-   */
-  to?: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof UnknownMissedEmailProjection
-   */
-  subject?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof UnknownMissedEmailProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof UnknownMissedEmailProjection
-   */
-  from?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    subject?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof UnknownMissedEmailProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof UnknownMissedEmailProjection
+     */
+    to?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    from?: string;
 }
 
-export function UnknownMissedEmailProjectionFromJSON(
-  json: any
-): UnknownMissedEmailProjection {
-  return UnknownMissedEmailProjectionFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the UnknownMissedEmailProjection interface.
+ */
+export function instanceOfUnknownMissedEmailProjection(value: object): value is UnknownMissedEmailProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
-export function UnknownMissedEmailProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UnknownMissedEmailProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    to: !exists(json, 'to') ? undefined : json['to'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    id: json['id'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-  };
+export function UnknownMissedEmailProjectionFromJSON(json: any): UnknownMissedEmailProjection {
+    return UnknownMissedEmailProjectionFromJSONTyped(json, false);
 }
 
-export function UnknownMissedEmailProjectionToJSON(
-  value?: UnknownMissedEmailProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    to: value.to,
-    subject: value.subject,
-    id: value.id,
-    from: value.from,
-  };
+export function UnknownMissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnknownMissedEmailProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'to': json['to'] == null ? undefined : json['to'],
+        'id': json['id'],
+        'from': json['from'] == null ? undefined : json['from'],
+    };
 }
+
+export function UnknownMissedEmailProjectionToJSON(json: any): UnknownMissedEmailProjection {
+    return UnknownMissedEmailProjectionToJSONTyped(json, false);
+}
+
+export function UnknownMissedEmailProjectionToJSONTyped(value?: UnknownMissedEmailProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'to': value['to'],
+        'id': value['id'],
+        'from': value['from'],
+    };
+}
+

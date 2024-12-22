@@ -13,44 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SpellingIssueToJSON = exports.SpellingIssueFromJSONTyped = exports.SpellingIssueFromJSON = exports.SpellingIssueSeverityEnum = void 0;
+exports.SpellingIssueSeverityEnum = void 0;
+exports.instanceOfSpellingIssue = instanceOfSpellingIssue;
+exports.SpellingIssueFromJSON = SpellingIssueFromJSON;
+exports.SpellingIssueFromJSONTyped = SpellingIssueFromJSONTyped;
+exports.SpellingIssueToJSON = SpellingIssueToJSON;
+exports.SpellingIssueToJSONTyped = SpellingIssueToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var SpellingIssueSeverityEnum;
-(function (SpellingIssueSeverityEnum) {
-    SpellingIssueSeverityEnum["Warning"] = "Warning";
-    SpellingIssueSeverityEnum["Error"] = "Error";
-})(SpellingIssueSeverityEnum = exports.SpellingIssueSeverityEnum || (exports.SpellingIssueSeverityEnum = {}));
+exports.SpellingIssueSeverityEnum = {
+    Warning: 'Warning',
+    Error: 'Error'
+};
+/**
+ * Check if a given object implements the SpellingIssue interface.
+ */
+function instanceOfSpellingIssue(value) {
+    if (!('group' in value) || value['group'] === undefined)
+        return false;
+    if (!('suggestion' in value) || value['suggestion'] === undefined)
+        return false;
+    if (!('severity' in value) || value['severity'] === undefined)
+        return false;
+    if (!('message' in value) || value['message'] === undefined)
+        return false;
+    return true;
+}
 function SpellingIssueFromJSON(json) {
     return SpellingIssueFromJSONTyped(json, false);
 }
-exports.SpellingIssueFromJSON = SpellingIssueFromJSON;
 function SpellingIssueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        group: json['group'],
-        suggestion: json['suggestion'],
-        severity: json['severity'],
-        message: json['message'],
+        'group': json['group'],
+        'suggestion': json['suggestion'],
+        'severity': json['severity'],
+        'message': json['message'],
     };
 }
-exports.SpellingIssueFromJSONTyped = SpellingIssueFromJSONTyped;
-function SpellingIssueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SpellingIssueToJSON(json) {
+    return SpellingIssueToJSONTyped(json, false);
+}
+function SpellingIssueToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        group: value.group,
-        suggestion: value.suggestion,
-        severity: value.severity,
-        message: value.message,
+        'group': value['group'],
+        'suggestion': value['suggestion'],
+        'severity': value['severity'],
+        'message': value['message'],
     };
 }
-exports.SpellingIssueToJSON = SpellingIssueToJSON;

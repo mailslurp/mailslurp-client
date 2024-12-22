@@ -28,6 +28,11 @@ export interface EmailHtmlDto {
      */
     body?: string;
 }
+/**
+ * Check if a given object implements the EmailHtmlDto interface.
+ */
+export declare function instanceOfEmailHtmlDto(value: object): value is EmailHtmlDto;
 export declare function EmailHtmlDtoFromJSON(json: any): EmailHtmlDto;
 export declare function EmailHtmlDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailHtmlDto;
-export declare function EmailHtmlDtoToJSON(value?: EmailHtmlDto | null): any;
+export declare function EmailHtmlDtoToJSON(json: any): EmailHtmlDto;
+export declare function EmailHtmlDtoToJSONTyped(value?: EmailHtmlDto | null, ignoreDiscriminator?: boolean): any;

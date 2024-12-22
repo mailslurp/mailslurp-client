@@ -13,74 +13,100 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
+exports.instanceOfOrganizationInboxProjection = instanceOfOrganizationInboxProjection;
+exports.OrganizationInboxProjectionFromJSON = OrganizationInboxProjectionFromJSON;
+exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
+exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;
+exports.OrganizationInboxProjectionToJSONTyped = OrganizationInboxProjectionToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var OrganizationInboxProjectionInboxTypeEnum;
-(function (OrganizationInboxProjectionInboxTypeEnum) {
-    OrganizationInboxProjectionInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    OrganizationInboxProjectionInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(OrganizationInboxProjectionInboxTypeEnum = exports.OrganizationInboxProjectionInboxTypeEnum || (exports.OrganizationInboxProjectionInboxTypeEnum = {}));
+exports.OrganizationInboxProjectionInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var OrganizationInboxProjectionFunctionsAsEnum;
-(function (OrganizationInboxProjectionFunctionsAsEnum) {
-    OrganizationInboxProjectionFunctionsAsEnum["ALIAS"] = "ALIAS";
-    OrganizationInboxProjectionFunctionsAsEnum["THREAD"] = "THREAD";
-    OrganizationInboxProjectionFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
-    OrganizationInboxProjectionFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
-})(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {}));
+exports.OrganizationInboxProjectionFunctionsAsEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+};
+/**
+ * Check if a given object implements the OrganizationInboxProjection interface.
+ */
+function instanceOfOrganizationInboxProjection(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('favourite' in value) || value['favourite'] === undefined)
+        return false;
+    if (!('teamAccess' in value) || value['teamAccess'] === undefined)
+        return false;
+    if (!('readOnly' in value) || value['readOnly'] === undefined)
+        return false;
+    if (!('virtualInbox' in value) || value['virtualInbox'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    return true;
+}
 function OrganizationInboxProjectionFromJSON(json) {
     return OrganizationInboxProjectionFromJSONTyped(json, false);
 }
-exports.OrganizationInboxProjectionFromJSON = OrganizationInboxProjectionFromJSON;
 function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        createdAt: new Date(json['createdAt']),
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
-        favourite: json['favourite'],
-        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        teamAccess: json['teamAccess'],
-        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        readOnly: json['readOnly'],
-        virtualInbox: json['virtualInbox'],
-        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        'id': json['id'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'name': json['name'] == null ? undefined : json['name'],
+        'emailAddress': json['emailAddress'],
+        'favourite': json['favourite'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
+        'teamAccess': json['teamAccess'],
+        'inboxType': json['inboxType'] == null ? undefined : json['inboxType'],
+        'readOnly': json['readOnly'],
+        'virtualInbox': json['virtualInbox'],
+        'functionsAs': json['functionsAs'] == null ? undefined : json['functionsAs'],
+        'userId': json['userId'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'expiresAt': json['expiresAt'] == null ? undefined : (new Date(json['expiresAt'])),
     };
 }
-exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
-function OrganizationInboxProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function OrganizationInboxProjectionToJSON(json) {
+    return OrganizationInboxProjectionToJSONTyped(json, false);
+}
+function OrganizationInboxProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        domainId: value.domainId,
-        createdAt: value.createdAt.toISOString(),
-        name: value.name,
-        emailAddress: value.emailAddress,
-        favourite: value.favourite,
-        tags: value.tags,
-        teamAccess: value.teamAccess,
-        inboxType: value.inboxType,
-        readOnly: value.readOnly,
-        virtualInbox: value.virtualInbox,
-        functionsAs: value.functionsAs,
+        'id': value['id'],
+        'domainId': value['domainId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'name': value['name'],
+        'emailAddress': value['emailAddress'],
+        'favourite': value['favourite'],
+        'tags': value['tags'],
+        'teamAccess': value['teamAccess'],
+        'inboxType': value['inboxType'],
+        'readOnly': value['readOnly'],
+        'virtualInbox': value['virtualInbox'],
+        'functionsAs': value['functionsAs'],
+        'userId': value['userId'],
+        'description': value['description'],
+        'expiresAt': value['expiresAt'] == null ? undefined : (value['expiresAt'].toISOString()),
     };
 }
-exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

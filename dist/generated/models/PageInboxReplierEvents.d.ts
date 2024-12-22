@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxReplierEventProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { InboxReplierEventProjection } from './InboxReplierEventProjection';
 /**
  * Paginated inbox replier events. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageInboxReplierEvents {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageInboxReplierEvents
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageInboxReplierEvents {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageInboxReplierEvents interface.
+ */
+export declare function instanceOfPageInboxReplierEvents(value: object): value is PageInboxReplierEvents;
 export declare function PageInboxReplierEventsFromJSON(json: any): PageInboxReplierEvents;
 export declare function PageInboxReplierEventsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxReplierEvents;
-export declare function PageInboxReplierEventsToJSON(value?: PageInboxReplierEvents | null): any;
+export declare function PageInboxReplierEventsToJSON(json: any): PageInboxReplierEvents;
+export declare function PageInboxReplierEventsToJSONTyped(value?: PageInboxReplierEvents | null, ignoreDiscriminator?: boolean): any;

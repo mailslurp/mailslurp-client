@@ -13,33 +13,38 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReplyForSmsToJSON = exports.ReplyForSmsFromJSONTyped = exports.ReplyForSmsFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfReplyForSms = instanceOfReplyForSms;
+exports.ReplyForSmsFromJSON = ReplyForSmsFromJSON;
+exports.ReplyForSmsFromJSONTyped = ReplyForSmsFromJSONTyped;
+exports.ReplyForSmsToJSON = ReplyForSmsToJSON;
+exports.ReplyForSmsToJSONTyped = ReplyForSmsToJSONTyped;
+var SentSmsDto_1 = require("./SentSmsDto");
+/**
+ * Check if a given object implements the ReplyForSms interface.
+ */
+function instanceOfReplyForSms(value) {
+    return true;
+}
 function ReplyForSmsFromJSON(json) {
     return ReplyForSmsFromJSONTyped(json, false);
 }
-exports.ReplyForSmsFromJSON = ReplyForSmsFromJSON;
 function ReplyForSmsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        reply: !(0, runtime_1.exists)(json, 'reply')
-            ? undefined
-            : (0, _1.SentSmsDtoFromJSON)(json['reply']),
+        'reply': json['reply'] == null ? undefined : (0, SentSmsDto_1.SentSmsDtoFromJSON)(json['reply']),
     };
 }
-exports.ReplyForSmsFromJSONTyped = ReplyForSmsFromJSONTyped;
-function ReplyForSmsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ReplyForSmsToJSON(json) {
+    return ReplyForSmsToJSONTyped(json, false);
+}
+function ReplyForSmsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        reply: (0, _1.SentSmsDtoToJSON)(value.reply),
+        'reply': (0, SentSmsDto_1.SentSmsDtoToJSON)(value['reply']),
     };
 }
-exports.ReplyForSmsToJSON = ReplyForSmsToJSON;

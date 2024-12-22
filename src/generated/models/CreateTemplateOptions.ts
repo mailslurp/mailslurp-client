@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Create template options
  * @export
  * @interface CreateTemplateOptions
  */
 export interface CreateTemplateOptions {
-  /**
-   * Name of template
-   * @type {string}
-   * @memberof CreateTemplateOptions
-   */
-  name: string;
-  /**
-   * Template content. Can include moustache style variables such as {{var_name}}
-   * @type {string}
-   * @memberof CreateTemplateOptions
-   */
-  content: string;
+    /**
+     * Name of template
+     * @type {string}
+     * @memberof CreateTemplateOptions
+     */
+    name: string;
+    /**
+     * Template content. Can include moustache style variables such as {{var_name}}
+     * @type {string}
+     * @memberof CreateTemplateOptions
+     */
+    content: string;
 }
 
-export function CreateTemplateOptionsFromJSON(
-  json: any
-): CreateTemplateOptions {
-  return CreateTemplateOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the CreateTemplateOptions interface.
+ */
+export function instanceOfCreateTemplateOptions(value: object): value is CreateTemplateOptions {
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('content' in value) || value['content'] === undefined) return false;
+    return true;
 }
 
-export function CreateTemplateOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateTemplateOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    content: json['content'],
-  };
+export function CreateTemplateOptionsFromJSON(json: any): CreateTemplateOptions {
+    return CreateTemplateOptionsFromJSONTyped(json, false);
 }
 
-export function CreateTemplateOptionsToJSON(
-  value?: CreateTemplateOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    content: value.content,
-  };
+export function CreateTemplateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTemplateOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'content': json['content'],
+    };
 }
+
+export function CreateTemplateOptionsToJSON(json: any): CreateTemplateOptions {
+    return CreateTemplateOptionsToJSONTyped(json, false);
+}
+
+export function CreateTemplateOptionsToJSONTyped(value?: CreateTemplateOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'content': value['content'],
+    };
+}
+

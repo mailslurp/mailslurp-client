@@ -42,12 +42,17 @@ export interface ImageIssue {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ImageIssueSeverityEnum {
-    Warning = "Warning",
-    Error = "Error"
-}
+export declare const ImageIssueSeverityEnum: {
+    readonly Warning: "Warning";
+    readonly Error: "Error";
+};
+export type ImageIssueSeverityEnum = typeof ImageIssueSeverityEnum[keyof typeof ImageIssueSeverityEnum];
+/**
+ * Check if a given object implements the ImageIssue interface.
+ */
+export declare function instanceOfImageIssue(value: object): value is ImageIssue;
 export declare function ImageIssueFromJSON(json: any): ImageIssue;
 export declare function ImageIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImageIssue;
-export declare function ImageIssueToJSON(value?: ImageIssue | null): any;
+export declare function ImageIssueToJSON(json: any): ImageIssue;
+export declare function ImageIssueToJSONTyped(value?: ImageIssue | null, ignoreDiscriminator?: boolean): any;

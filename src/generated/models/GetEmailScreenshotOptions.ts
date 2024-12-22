@@ -12,57 +12,62 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options taking a screenshot capture of a rendered email
  * @export
  * @interface GetEmailScreenshotOptions
  */
 export interface GetEmailScreenshotOptions {
-  /**
-   * Window height in pixels
-   * @type {number}
-   * @memberof GetEmailScreenshotOptions
-   */
-  height?: number | null;
-  /**
-   * Window width in pixels
-   * @type {number}
-   * @memberof GetEmailScreenshotOptions
-   */
-  width?: number | null;
+    /**
+     * Window height in pixels
+     * @type {number}
+     * @memberof GetEmailScreenshotOptions
+     */
+    height?: number | null;
+    /**
+     * Window width in pixels
+     * @type {number}
+     * @memberof GetEmailScreenshotOptions
+     */
+    width?: number | null;
 }
 
-export function GetEmailScreenshotOptionsFromJSON(
-  json: any
-): GetEmailScreenshotOptions {
-  return GetEmailScreenshotOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the GetEmailScreenshotOptions interface.
+ */
+export function instanceOfGetEmailScreenshotOptions(value: object): value is GetEmailScreenshotOptions {
+    return true;
 }
 
-export function GetEmailScreenshotOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GetEmailScreenshotOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    height: !exists(json, 'height') ? undefined : json['height'],
-    width: !exists(json, 'width') ? undefined : json['width'],
-  };
+export function GetEmailScreenshotOptionsFromJSON(json: any): GetEmailScreenshotOptions {
+    return GetEmailScreenshotOptionsFromJSONTyped(json, false);
 }
 
-export function GetEmailScreenshotOptionsToJSON(
-  value?: GetEmailScreenshotOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    height: value.height,
-    width: value.width,
-  };
+export function GetEmailScreenshotOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetEmailScreenshotOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'height': json['height'] == null ? undefined : json['height'],
+        'width': json['width'] == null ? undefined : json['width'],
+    };
 }
+
+export function GetEmailScreenshotOptionsToJSON(json: any): GetEmailScreenshotOptions {
+    return GetEmailScreenshotOptionsToJSONTyped(json, false);
+}
+
+export function GetEmailScreenshotOptionsToJSONTyped(value?: GetEmailScreenshotOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'height': value['height'],
+        'width': value['width'],
+    };
+}
+

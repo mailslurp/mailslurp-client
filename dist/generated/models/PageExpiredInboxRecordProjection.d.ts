@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ExpiredInboxRecordProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { ExpiredInboxRecordProjection } from './ExpiredInboxRecordProjection';
+import type { SortObject } from './SortObject';
 /**
  * Paginated expired inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageExpiredInboxRecordProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageExpiredInboxRecordProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageExpiredInboxRecordProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageExpiredInboxRecordProjection interface.
+ */
+export declare function instanceOfPageExpiredInboxRecordProjection(value: object): value is PageExpiredInboxRecordProjection;
 export declare function PageExpiredInboxRecordProjectionFromJSON(json: any): PageExpiredInboxRecordProjection;
 export declare function PageExpiredInboxRecordProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageExpiredInboxRecordProjection;
-export declare function PageExpiredInboxRecordProjectionToJSON(value?: PageExpiredInboxRecordProjection | null): any;
+export declare function PageExpiredInboxRecordProjectionToJSON(json: any): PageExpiredInboxRecordProjection;
+export declare function PageExpiredInboxRecordProjectionToJSONTyped(value?: PageExpiredInboxRecordProjection | null, ignoreDiscriminator?: boolean): any;

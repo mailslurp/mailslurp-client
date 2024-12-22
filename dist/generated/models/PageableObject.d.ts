@@ -9,19 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { SortObject } from './';
+import type { SortObject } from './SortObject';
 /**
  *
  * @export
  * @interface PageableObject
  */
 export interface PageableObject {
-    /**
-     *
-     * @type {number}
-     * @memberof PageableObject
-     */
-    pageNumber?: number;
     /**
      *
      * @type {number}
@@ -36,6 +30,12 @@ export interface PageableObject {
     paged?: boolean;
     /**
      *
+     * @type {number}
+     * @memberof PageableObject
+     */
+    pageNumber?: number;
+    /**
+     *
      * @type {boolean}
      * @memberof PageableObject
      */
@@ -48,11 +48,16 @@ export interface PageableObject {
     offset?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageableObject
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
 }
+/**
+ * Check if a given object implements the PageableObject interface.
+ */
+export declare function instanceOfPageableObject(value: object): value is PageableObject;
 export declare function PageableObjectFromJSON(json: any): PageableObject;
 export declare function PageableObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageableObject;
-export declare function PageableObjectToJSON(value?: PageableObject | null): any;
+export declare function PageableObjectToJSON(json: any): PageableObject;
+export declare function PageableObjectToJSONTyped(value?: PageableObject | null, ignoreDiscriminator?: boolean): any;

@@ -12,612 +12,475 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
-import {
+import type {
   CreateDomainOptions,
-  CreateDomainOptionsFromJSON,
-  CreateDomainOptionsToJSON,
   DomainDto,
-  DomainDtoFromJSON,
-  DomainDtoToJSON,
   DomainGroupsDto,
-  DomainGroupsDtoFromJSON,
-  DomainGroupsDtoToJSON,
   DomainIssuesDto,
-  DomainIssuesDtoFromJSON,
-  DomainIssuesDtoToJSON,
   DomainPreview,
-  DomainPreviewFromJSON,
-  DomainPreviewToJSON,
   InboxDto,
-  InboxDtoFromJSON,
-  InboxDtoToJSON,
   UpdateDomainOptions,
-  UpdateDomainOptionsFromJSON,
-  UpdateDomainOptionsToJSON,
-} from '../models';
+} from '../models/index';
+import {
+    CreateDomainOptionsFromJSON,
+    CreateDomainOptionsToJSON,
+    DomainDtoFromJSON,
+    DomainDtoToJSON,
+    DomainGroupsDtoFromJSON,
+    DomainGroupsDtoToJSON,
+    DomainIssuesDtoFromJSON,
+    DomainIssuesDtoToJSON,
+    DomainPreviewFromJSON,
+    DomainPreviewToJSON,
+    InboxDtoFromJSON,
+    InboxDtoToJSON,
+    UpdateDomainOptionsFromJSON,
+    UpdateDomainOptionsToJSON,
+} from '../models/index';
 
 export interface AddDomainWildcardCatchAllRequest {
-  id: string;
+    id: string;
 }
 
 export interface CreateDomainRequest {
-  createDomainOptions: CreateDomainOptions;
+    createDomainOptions: CreateDomainOptions;
 }
 
 export interface DeleteDomainRequest {
-  id: string;
+    id: string;
 }
 
 export interface GetAvailableDomainsRequest {
-  inboxType?: GetAvailableDomainsInboxTypeEnum;
+    inboxType?: GetAvailableDomainsInboxTypeEnum;
 }
 
 export interface GetDomainRequest {
-  id: string;
-  checkForErrors?: boolean;
+    id: string;
+    checkForErrors?: boolean;
 }
 
 export interface GetDomainWildcardCatchAllInboxRequest {
-  id: string;
+    id: string;
 }
 
 export interface GetMailSlurpDomainsRequest {
-  inboxType?: GetMailSlurpDomainsInboxTypeEnum;
+    inboxType?: GetMailSlurpDomainsInboxTypeEnum;
 }
 
 export interface UpdateDomainRequest {
-  id: string;
-  updateDomainOptions: UpdateDomainOptions;
+    id: string;
+    updateDomainOptions: UpdateDomainOptions;
 }
 
 /**
- *
+ * 
  */
 export class DomainControllerApi extends runtime.BaseAPI {
-  /**
-   * Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
-   * Add catch all wild card inbox to domain
-   */
-  async addDomainWildcardCatchAllRaw(
-    requestParameters: AddDomainWildcardCatchAllRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DomainDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling addDomainWildcardCatchAll.'
-      );
+
+    /**
+     * Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
+     * Add catch all wild card inbox to domain
+     */
+    async addDomainWildcardCatchAllRaw(requestParameters: AddDomainWildcardCatchAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling addDomainWildcardCatchAll().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains/{id}/wildcard`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DomainDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
+     * Add catch all wild card inbox to domain
+     */
+    async addDomainWildcardCatchAll(requestParameters: AddDomainWildcardCatchAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto> {
+        const response = await this.addDomainWildcardCatchAllRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/{id}/wildcard`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider\'s DNS setup to verify the domain.
+     * Create Domain
+     */
+    async createDomainRaw(requestParameters: CreateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>> {
+        if (requestParameters['createDomainOptions'] == null) {
+            throw new runtime.RequiredError(
+                'createDomainOptions',
+                'Required parameter "createDomainOptions" was null or undefined when calling createDomain().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DomainDtoFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
-   * Add catch all wild card inbox to domain
-   */
-  async addDomainWildcardCatchAll(
-    requestParameters: AddDomainWildcardCatchAllRequest,
-    initOverrides?: RequestInit
-  ): Promise<DomainDto> {
-    const response = await this.addDomainWildcardCatchAllRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider\'s DNS setup to verify the domain.
-   * Create Domain
-   */
-  async createDomainRaw(
-    requestParameters: CreateDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DomainDto>> {
-    if (
-      requestParameters.createDomainOptions === null ||
-      requestParameters.createDomainOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createDomainOptions',
-        'Required parameter requestParameters.createDomainOptions was null or undefined when calling createDomain.'
-      );
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateDomainOptionsToJSON(requestParameters['createDomainOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DomainDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider\'s DNS setup to verify the domain.
+     * Create Domain
+     */
+    async createDomain(requestParameters: CreateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto> {
+        const response = await this.createDomainRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/domains`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateDomainOptionsToJSON(requestParameters.createDomainOptions),
-      },
-      initOverrides
-    );
+    /**
+     * Delete a domain. This will disable any existing inboxes that use this domain.
+     * Delete a domain
+     */
+    async deleteDomainRaw(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling deleteDomain().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DomainDtoFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider\'s DNS setup to verify the domain.
-   * Create Domain
-   */
-  async createDomain(
-    requestParameters: CreateDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<DomainDto> {
-    const response = await this.createDomainRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete a domain. This will disable any existing inboxes that use this domain.
-   * Delete a domain
-   */
-  async deleteDomainRaw(
-    requestParameters: DeleteDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<string>>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling deleteDomain.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete a domain. This will disable any existing inboxes that use this domain.
+     * Delete a domain
+     */
+    async deleteDomain(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>> {
+        const response = await this.deleteDomainRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * List all domains available for use with email address creation
+     * Get all usable domains
+     */
+    async getAvailableDomainsRaw(requestParameters: GetAvailableDomainsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainGroupsDto>> {
+        const queryParameters: any = {};
 
-    return new runtime.JSONApiResponse<any>(response);
-  }
+        if (requestParameters['inboxType'] != null) {
+            queryParameters['inboxType'] = requestParameters['inboxType'];
+        }
 
-  /**
-   * Delete a domain. This will disable any existing inboxes that use this domain.
-   * Delete a domain
-   */
-  async deleteDomain(
-    requestParameters: DeleteDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<string>> {
-    const response = await this.deleteDomainRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * List all domains available for use with email address creation
-   * Get all usable domains
-   */
-  async getAvailableDomainsRaw(
-    requestParameters: GetAvailableDomainsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DomainGroupsDto>> {
-    const queryParameters: any = {};
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-    if (requestParameters.inboxType !== undefined) {
-      queryParameters['inboxType'] = requestParameters.inboxType;
+        const response = await this.request({
+            path: `/domains/available-domains`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DomainGroupsDtoFromJSON(jsonValue));
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * List all domains available for use with email address creation
+     * Get all usable domains
+     */
+    async getAvailableDomains(requestParameters: GetAvailableDomainsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainGroupsDto> {
+        const response = await this.getAvailableDomainsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/available-domains`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Returns domain verification status and tokens for a given domain
+     * Get a domain
+     */
+    async getDomainRaw(requestParameters: GetDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling getDomain().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DomainGroupsDtoFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * List all domains available for use with email address creation
-   * Get all usable domains
-   */
-  async getAvailableDomains(
-    requestParameters: GetAvailableDomainsRequest,
-    initOverrides?: RequestInit
-  ): Promise<DomainGroupsDto> {
-    const response = await this.getAvailableDomainsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        if (requestParameters['checkForErrors'] != null) {
+            queryParameters['checkForErrors'] = requestParameters['checkForErrors'];
+        }
 
-  /**
-   * Returns domain verification status and tokens for a given domain
-   * Get a domain
-   */
-  async getDomainRaw(
-    requestParameters: GetDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DomainDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getDomain.'
-      );
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DomainDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    if (requestParameters.checkForErrors !== undefined) {
-      queryParameters['checkForErrors'] = requestParameters.checkForErrors;
+    /**
+     * Returns domain verification status and tokens for a given domain
+     * Get a domain
+     */
+    async getDomain(requestParameters: GetDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto> {
+        const response = await this.getDomainRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * List domain issues for domains you have created
+     * Get domain issues
+     */
+    async getDomainIssuesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainIssuesDto>> {
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains/issues`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DomainIssuesDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DomainDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns domain verification status and tokens for a given domain
-   * Get a domain
-   */
-  async getDomain(
-    requestParameters: GetDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<DomainDto> {
-    const response = await this.getDomainRaw(requestParameters, initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * List domain issues for domains you have created
-   * Get domain issues
-   */
-  async getDomainIssuesRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DomainIssuesDto>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * List domain issues for domains you have created
+     * Get domain issues
+     */
+    async getDomainIssues(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainIssuesDto> {
+        const response = await this.getDomainIssuesRaw(initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/issues`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get the catch all inbox for a domain for missed emails
+     * Get catch all wild card inbox for domain
+     */
+    async getDomainWildcardCatchAllInboxRaw(requestParameters: GetDomainWildcardCatchAllInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling getDomainWildcardCatchAllInbox().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DomainIssuesDtoFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * List domain issues for domains you have created
-   * Get domain issues
-   */
-  async getDomainIssues(initOverrides?: RequestInit): Promise<DomainIssuesDto> {
-    const response = await this.getDomainIssuesRaw(initOverrides);
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Get the catch all inbox for a domain for missed emails
-   * Get catch all wild card inbox for domain
-   */
-  async getDomainWildcardCatchAllInboxRaw(
-    requestParameters: GetDomainWildcardCatchAllInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getDomainWildcardCatchAllInbox.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains/{id}/wildcard`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get the catch all inbox for a domain for missed emails
+     * Get catch all wild card inbox for domain
+     */
+    async getDomainWildcardCatchAllInbox(requestParameters: GetDomainWildcardCatchAllInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto> {
+        const response = await this.getDomainWildcardCatchAllInboxRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/{id}/wildcard`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * List all custom domains you have created
+     * Get domains
+     */
+    async getDomainsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<DomainPreview>>> {
+        const queryParameters: any = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Get the catch all inbox for a domain for missed emails
-   * Get catch all wild card inbox for domain
-   */
-  async getDomainWildcardCatchAllInbox(
-    requestParameters: GetDomainWildcardCatchAllInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.getDomainWildcardCatchAllInboxRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-  /**
-   * List all custom domains you have created
-   * Get domains
-   */
-  async getDomainsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<DomainPreview>>> {
-    const queryParameters: any = {};
+        const response = await this.request({
+            path: `/domains`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(DomainPreviewFromJSON));
     }
 
-    const response = await this.request(
-      {
-        path: `/domains`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(DomainPreviewFromJSON)
-    );
-  }
-
-  /**
-   * List all custom domains you have created
-   * Get domains
-   */
-  async getDomains(initOverrides?: RequestInit): Promise<Array<DomainPreview>> {
-    const response = await this.getDomainsRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * List all MailSlurp domains used with non-custom email addresses
-   * Get MailSlurp domains
-   */
-  async getMailSlurpDomainsRaw(
-    requestParameters: GetMailSlurpDomainsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DomainGroupsDto>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxType !== undefined) {
-      queryParameters['inboxType'] = requestParameters.inboxType;
+    /**
+     * List all custom domains you have created
+     * Get domains
+     */
+    async getDomains(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<DomainPreview>> {
+        const response = await this.getDomainsRaw(initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * List all MailSlurp domains used with non-custom email addresses
+     * Get MailSlurp domains
+     */
+    async getMailSlurpDomainsRaw(requestParameters: GetMailSlurpDomainsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainGroupsDto>> {
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters['inboxType'] != null) {
+            queryParameters['inboxType'] = requestParameters['inboxType'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains/mailslurp-domains`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DomainGroupsDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/mailslurp-domains`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DomainGroupsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List all MailSlurp domains used with non-custom email addresses
-   * Get MailSlurp domains
-   */
-  async getMailSlurpDomains(
-    requestParameters: GetMailSlurpDomainsRequest,
-    initOverrides?: RequestInit
-  ): Promise<DomainGroupsDto> {
-    const response = await this.getMailSlurpDomainsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
-   * Update a domain
-   */
-  async updateDomainRaw(
-    requestParameters: UpdateDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DomainDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling updateDomain.'
-      );
+    /**
+     * List all MailSlurp domains used with non-custom email addresses
+     * Get MailSlurp domains
+     */
+    async getMailSlurpDomains(requestParameters: GetMailSlurpDomainsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainGroupsDto> {
+        const response = await this.getMailSlurpDomainsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (
-      requestParameters.updateDomainOptions === null ||
-      requestParameters.updateDomainOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'updateDomainOptions',
-        'Required parameter requestParameters.updateDomainOptions was null or undefined when calling updateDomain.'
-      );
+    /**
+     * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
+     * Update a domain
+     */
+    async updateDomainRaw(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling updateDomain().'
+            );
+        }
+
+        if (requestParameters['updateDomainOptions'] == null) {
+            throw new runtime.RequiredError(
+                'updateDomainOptions',
+                'Required parameter "updateDomainOptions" was null or undefined when calling updateDomain().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/domains/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateDomainOptionsToJSON(requestParameters['updateDomainOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DomainDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
+     * Update a domain
+     */
+    async updateDomain(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto> {
+        const response = await this.updateDomainRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/domains/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: UpdateDomainOptionsToJSON(requestParameters.updateDomainOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DomainDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
-   * Update a domain
-   */
-  async updateDomain(
-    requestParameters: UpdateDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<DomainDto> {
-    const response = await this.updateDomainRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
  * @export
- * @enum {string}
  */
-export enum GetAvailableDomainsInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
-}
+export const GetAvailableDomainsInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+} as const;
+export type GetAvailableDomainsInboxTypeEnum = typeof GetAvailableDomainsInboxTypeEnum[keyof typeof GetAvailableDomainsInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetMailSlurpDomainsInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
-}
+export const GetMailSlurpDomainsInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+} as const;
+export type GetMailSlurpDomainsInboxTypeEnum = typeof GetMailSlurpDomainsInboxTypeEnum[keyof typeof GetMailSlurpDomainsInboxTypeEnum];

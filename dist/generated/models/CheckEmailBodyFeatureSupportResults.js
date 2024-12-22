@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailBodyFeatureSupportResultsToJSON = exports.CheckEmailBodyFeatureSupportResultsFromJSONTyped = exports.CheckEmailBodyFeatureSupportResultsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfCheckEmailBodyFeatureSupportResults = instanceOfCheckEmailBodyFeatureSupportResults;
+exports.CheckEmailBodyFeatureSupportResultsFromJSON = CheckEmailBodyFeatureSupportResultsFromJSON;
+exports.CheckEmailBodyFeatureSupportResultsFromJSONTyped = CheckEmailBodyFeatureSupportResultsFromJSONTyped;
+exports.CheckEmailBodyFeatureSupportResultsToJSON = CheckEmailBodyFeatureSupportResultsToJSON;
+exports.CheckEmailBodyFeatureSupportResultsToJSONTyped = CheckEmailBodyFeatureSupportResultsToJSONTyped;
+var EmailFeatureSupportResult_1 = require("./EmailFeatureSupportResult");
+/**
+ * Check if a given object implements the CheckEmailBodyFeatureSupportResults interface.
+ */
+function instanceOfCheckEmailBodyFeatureSupportResults(value) {
+    if (!('result' in value) || value['result'] === undefined)
+        return false;
+    return true;
+}
 function CheckEmailBodyFeatureSupportResultsFromJSON(json) {
     return CheckEmailBodyFeatureSupportResultsFromJSONTyped(json, false);
 }
-exports.CheckEmailBodyFeatureSupportResultsFromJSON = CheckEmailBodyFeatureSupportResultsFromJSON;
 function CheckEmailBodyFeatureSupportResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        result: (0, _1.EmailFeatureSupportResultFromJSON)(json['result']),
+        'result': (0, EmailFeatureSupportResult_1.EmailFeatureSupportResultFromJSON)(json['result']),
     };
 }
-exports.CheckEmailBodyFeatureSupportResultsFromJSONTyped = CheckEmailBodyFeatureSupportResultsFromJSONTyped;
-function CheckEmailBodyFeatureSupportResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CheckEmailBodyFeatureSupportResultsToJSON(json) {
+    return CheckEmailBodyFeatureSupportResultsToJSONTyped(json, false);
+}
+function CheckEmailBodyFeatureSupportResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        result: (0, _1.EmailFeatureSupportResultToJSON)(value.result),
+        'result': (0, EmailFeatureSupportResult_1.EmailFeatureSupportResultToJSON)(value['result']),
     };
 }
-exports.CheckEmailBodyFeatureSupportResultsToJSON = CheckEmailBodyFeatureSupportResultsToJSON;

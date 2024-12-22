@@ -9,12 +9,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { Sender } from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
 /**
  *
  * @export
  * @interface SentEmailProjection
  */
 export interface SentEmailProjection {
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {Date}
@@ -29,34 +37,28 @@ export interface SentEmailProjection {
     id: string;
     /**
      *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    bcc: Array<string>;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    cc: Array<string>;
-    /**
-     *
-     * @type {boolean}
-     * @memberof SentEmailProjection
-     */
-    virtualSend: boolean;
-    /**
-     *
      * @type {string}
      * @memberof SentEmailProjection
      */
-    from?: string;
+    from?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Sender}
      * @memberof SentEmailProjection
      */
-    subject?: string;
+    sender?: Sender | null;
+    /**
+     *
+     * @type {EmailRecipients}
+     * @memberof SentEmailProjection
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof SentEmailProjection
+     */
+    attachments?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -74,20 +76,67 @@ export interface SentEmailProjection {
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    attachments: Array<string>;
+    to: Array<string>;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    to: Array<string>;
+    cc: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    bcc: Array<string>;
     /**
      *
      * @type {string}
      * @memberof SentEmailProjection
      */
-    bodyMD5Hash?: string;
+    messageId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    inReplyTo?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyExcerpt?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    textExcerpt?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyMD5Hash?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SentEmailProjection
+     */
+    virtualSend: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    threadId?: string | null;
 }
+/**
+ * Check if a given object implements the SentEmailProjection interface.
+ */
+export declare function instanceOfSentEmailProjection(value: object): value is SentEmailProjection;
 export declare function SentEmailProjectionFromJSON(json: any): SentEmailProjection;
 export declare function SentEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailProjection;
-export declare function SentEmailProjectionToJSON(value?: SentEmailProjection | null): any;
+export declare function SentEmailProjectionToJSON(json: any): SentEmailProjection;
+export declare function SentEmailProjectionToJSONTyped(value?: SentEmailProjection | null, ignoreDiscriminator?: boolean): any;

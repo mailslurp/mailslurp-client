@@ -13,50 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateContactOptionsToJSON = exports.CreateContactOptionsFromJSONTyped = exports.CreateContactOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfCreateContactOptions = instanceOfCreateContactOptions;
+exports.CreateContactOptionsFromJSON = CreateContactOptionsFromJSON;
+exports.CreateContactOptionsFromJSONTyped = CreateContactOptionsFromJSONTyped;
+exports.CreateContactOptionsToJSON = CreateContactOptionsToJSON;
+exports.CreateContactOptionsToJSONTyped = CreateContactOptionsToJSONTyped;
+/**
+ * Check if a given object implements the CreateContactOptions interface.
+ */
+function instanceOfCreateContactOptions(value) {
+    return true;
+}
 function CreateContactOptionsFromJSON(json) {
     return CreateContactOptionsFromJSONTyped(json, false);
 }
-exports.CreateContactOptionsFromJSON = CreateContactOptionsFromJSON;
 function CreateContactOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
-        emailAddresses: !(0, runtime_1.exists)(json, 'emailAddresses')
-            ? undefined
-            : json['emailAddresses'],
-        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
-        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
-        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
-        verifyEmailAddresses: !(0, runtime_1.exists)(json, 'verifyEmailAddresses')
-            ? undefined
-            : json['verifyEmailAddresses'],
+        'firstName': json['firstName'] == null ? undefined : json['firstName'],
+        'lastName': json['lastName'] == null ? undefined : json['lastName'],
+        'company': json['company'] == null ? undefined : json['company'],
+        'emailAddresses': json['emailAddresses'] == null ? undefined : json['emailAddresses'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
+        'metaData': json['metaData'] == null ? undefined : json['metaData'],
+        'optOut': json['optOut'] == null ? undefined : json['optOut'],
+        'groupId': json['groupId'] == null ? undefined : json['groupId'],
+        'verifyEmailAddresses': json['verifyEmailAddresses'] == null ? undefined : json['verifyEmailAddresses'],
     };
 }
-exports.CreateContactOptionsFromJSONTyped = CreateContactOptionsFromJSONTyped;
-function CreateContactOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateContactOptionsToJSON(json) {
+    return CreateContactOptionsToJSONTyped(json, false);
+}
+function CreateContactOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        firstName: value.firstName,
-        lastName: value.lastName,
-        company: value.company,
-        emailAddresses: value.emailAddresses,
-        tags: value.tags,
-        metaData: value.metaData,
-        optOut: value.optOut,
-        groupId: value.groupId,
-        verifyEmailAddresses: value.verifyEmailAddresses,
+        'firstName': value['firstName'],
+        'lastName': value['lastName'],
+        'company': value['company'],
+        'emailAddresses': value['emailAddresses'],
+        'tags': value['tags'],
+        'metaData': value['metaData'],
+        'optOut': value['optOut'],
+        'groupId': value['groupId'],
+        'verifyEmailAddresses': value['verifyEmailAddresses'],
     };
 }
-exports.CreateContactOptionsToJSON = CreateContactOptionsToJSON;

@@ -12,54 +12,62 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { FakeEmailDto } from './FakeEmailDto';
 import {
-  FakeEmailDto,
-  FakeEmailDtoFromJSON,
-  FakeEmailDtoFromJSONTyped,
-  FakeEmailDtoToJSON,
-} from './';
+    FakeEmailDtoFromJSON,
+    FakeEmailDtoFromJSONTyped,
+    FakeEmailDtoToJSON,
+    FakeEmailDtoToJSONTyped,
+} from './FakeEmailDto';
 
 /**
- *
+ * 
  * @export
  * @interface FakeEmailResult
  */
 export interface FakeEmailResult {
-  /**
-   *
-   * @type {FakeEmailDto}
-   * @memberof FakeEmailResult
-   */
-  email?: FakeEmailDto;
+    /**
+     * 
+     * @type {FakeEmailDto}
+     * @memberof FakeEmailResult
+     */
+    email?: FakeEmailDto;
+}
+
+/**
+ * Check if a given object implements the FakeEmailResult interface.
+ */
+export function instanceOfFakeEmailResult(value: object): value is FakeEmailResult {
+    return true;
 }
 
 export function FakeEmailResultFromJSON(json: any): FakeEmailResult {
-  return FakeEmailResultFromJSONTyped(json, false);
+    return FakeEmailResultFromJSONTyped(json, false);
 }
 
-export function FakeEmailResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): FakeEmailResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    email: !exists(json, 'email')
-      ? undefined
-      : FakeEmailDtoFromJSON(json['email']),
-  };
+export function FakeEmailResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'email': json['email'] == null ? undefined : FakeEmailDtoFromJSON(json['email']),
+    };
 }
 
-export function FakeEmailResultToJSON(value?: FakeEmailResult | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    email: FakeEmailDtoToJSON(value.email),
-  };
+export function FakeEmailResultToJSON(json: any): FakeEmailResult {
+    return FakeEmailResultToJSONTyped(json, false);
 }
+
+export function FakeEmailResultToJSONTyped(value?: FakeEmailResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'email': FakeEmailDtoToJSON(value['email']),
+    };
+}
+

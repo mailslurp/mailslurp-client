@@ -12,144 +12,164 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * NEW_SMS webhook payload. Sent to your webhook url endpoint via HTTP POST when an sms is received by the phone number that your webhook is attached to. Use the SMS ID to fetch the full SMS details.
  * @export
  * @interface WebhookNewSmsPayload
  */
 export interface WebhookNewSmsPayload {
-  /**
-   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  messageId: string;
-  /**
-   * ID of webhook entity being triggered
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  webhookId: string;
-  /**
-   * Name of the event type webhook is being triggered for.
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  eventName: WebhookNewSmsPayloadEventNameEnum;
-  /**
-   * Name of the webhook being triggered
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  webhookName?: string | null;
-  /**
-   * ID of SMS message
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  smsId: string;
-  /**
-   * User ID of event
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  userId: string;
-  /**
-   * ID of phone number receiving SMS
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  phoneNumber: string;
-  /**
-   * Recipient phone number
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  toNumber: string;
-  /**
-   * Sender phone number
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  fromNumber: string;
-  /**
-   * SMS message body
-   * @type {string}
-   * @memberof WebhookNewSmsPayload
-   */
-  body: string;
-  /**
-   * SMS has been read
-   * @type {boolean}
-   * @memberof WebhookNewSmsPayload
-   */
-  read: boolean;
+    /**
+     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    messageId: string;
+    /**
+     * ID of webhook entity being triggered
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    webhookId: string;
+    /**
+     * Name of the event type webhook is being triggered for.
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    eventName: WebhookNewSmsPayloadEventNameEnum;
+    /**
+     * Name of the webhook being triggered
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    webhookName?: string | null;
+    /**
+     * ID of SMS message
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    smsId: string;
+    /**
+     * User ID of event
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    userId: string;
+    /**
+     * ID of phone number receiving SMS
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    phoneNumber: string;
+    /**
+     * Recipient phone number
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    toNumber: string;
+    /**
+     * Sender phone number
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    fromNumber: string;
+    /**
+     * SMS message body
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    body: string;
+    /**
+     * SMS has been read
+     * @type {boolean}
+     * @memberof WebhookNewSmsPayload
+     */
+    read: boolean;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookNewSmsPayloadEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
+export const WebhookNewSmsPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+} as const;
+export type WebhookNewSmsPayloadEventNameEnum = typeof WebhookNewSmsPayloadEventNameEnum[keyof typeof WebhookNewSmsPayloadEventNameEnum];
+
+
+/**
+ * Check if a given object implements the WebhookNewSmsPayload interface.
+ */
+export function instanceOfWebhookNewSmsPayload(value: object): value is WebhookNewSmsPayload {
+    if (!('messageId' in value) || value['messageId'] === undefined) return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined) return false;
+    if (!('eventName' in value) || value['eventName'] === undefined) return false;
+    if (!('smsId' in value) || value['smsId'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined) return false;
+    if (!('toNumber' in value) || value['toNumber'] === undefined) return false;
+    if (!('fromNumber' in value) || value['fromNumber'] === undefined) return false;
+    if (!('body' in value) || value['body'] === undefined) return false;
+    if (!('read' in value) || value['read'] === undefined) return false;
+    return true;
 }
 
 export function WebhookNewSmsPayloadFromJSON(json: any): WebhookNewSmsPayload {
-  return WebhookNewSmsPayloadFromJSONTyped(json, false);
+    return WebhookNewSmsPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookNewSmsPayloadFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookNewSmsPayload {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    messageId: json['messageId'],
-    webhookId: json['webhookId'],
-    eventName: json['eventName'],
-    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
-    smsId: json['smsId'],
-    userId: json['userId'],
-    phoneNumber: json['phoneNumber'],
-    toNumber: json['toNumber'],
-    fromNumber: json['fromNumber'],
-    body: json['body'],
-    read: json['read'],
-  };
+export function WebhookNewSmsPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookNewSmsPayload {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+        'smsId': json['smsId'],
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'toNumber': json['toNumber'],
+        'fromNumber': json['fromNumber'],
+        'body': json['body'],
+        'read': json['read'],
+    };
 }
 
-export function WebhookNewSmsPayloadToJSON(
-  value?: WebhookNewSmsPayload | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    messageId: value.messageId,
-    webhookId: value.webhookId,
-    eventName: value.eventName,
-    webhookName: value.webhookName,
-    smsId: value.smsId,
-    userId: value.userId,
-    phoneNumber: value.phoneNumber,
-    toNumber: value.toNumber,
-    fromNumber: value.fromNumber,
-    body: value.body,
-    read: value.read,
-  };
+export function WebhookNewSmsPayloadToJSON(json: any): WebhookNewSmsPayload {
+    return WebhookNewSmsPayloadToJSONTyped(json, false);
 }
+
+export function WebhookNewSmsPayloadToJSONTyped(value?: WebhookNewSmsPayload | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'eventName': value['eventName'],
+        'webhookName': value['webhookName'],
+        'smsId': value['smsId'],
+        'userId': value['userId'],
+        'phoneNumber': value['phoneNumber'],
+        'toNumber': value['toNumber'],
+        'fromNumber': value['fromNumber'],
+        'body': value['body'],
+        'read': value['read'],
+    };
+}
+

@@ -12,83 +12,98 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for matching emails in an inbox. Each match option object contains a `field`, `should` and `value` property. Together they form logical conditions such as `SUBJECT` should `CONTAIN` value.
  * @export
  * @interface MatchOption
  */
 export interface MatchOption {
-  /**
-   * Fields of an email object that can be used to filter results
-   * @type {string}
-   * @memberof MatchOption
-   */
-  field: MatchOptionFieldEnum;
-  /**
-   * How the value of the email field specified should be compared to the value given in the match options.
-   * @type {string}
-   * @memberof MatchOption
-   */
-  should: MatchOptionShouldEnum;
-  /**
-   * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
-   * @type {string}
-   * @memberof MatchOption
-   */
-  value: string;
+    /**
+     * Fields of an email object that can be used to filter results
+     * @type {string}
+     * @memberof MatchOption
+     */
+    field: MatchOptionFieldEnum;
+    /**
+     * How the value of the email field specified should be compared to the value given in the match options.
+     * @type {string}
+     * @memberof MatchOption
+     */
+    should: MatchOptionShouldEnum;
+    /**
+     * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
+     * @type {string}
+     * @memberof MatchOption
+     */
+    value: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum MatchOptionFieldEnum {
-  SUBJECT = 'SUBJECT',
-  TO = 'TO',
-  BCC = 'BCC',
-  CC = 'CC',
-  FROM = 'FROM',
-  HEADERS = 'HEADERS',
-}
+export const MatchOptionFieldEnum = {
+    SUBJECT: 'SUBJECT',
+    TO: 'TO',
+    BCC: 'BCC',
+    CC: 'CC',
+    FROM: 'FROM',
+    HEADERS: 'HEADERS'
+} as const;
+export type MatchOptionFieldEnum = typeof MatchOptionFieldEnum[keyof typeof MatchOptionFieldEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum MatchOptionShouldEnum {
-  MATCH = 'MATCH',
-  CONTAIN = 'CONTAIN',
-  EQUAL = 'EQUAL',
+export const MatchOptionShouldEnum = {
+    MATCH: 'MATCH',
+    CONTAIN: 'CONTAIN',
+    EQUAL: 'EQUAL'
+} as const;
+export type MatchOptionShouldEnum = typeof MatchOptionShouldEnum[keyof typeof MatchOptionShouldEnum];
+
+
+/**
+ * Check if a given object implements the MatchOption interface.
+ */
+export function instanceOfMatchOption(value: object): value is MatchOption {
+    if (!('field' in value) || value['field'] === undefined) return false;
+    if (!('should' in value) || value['should'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
+    return true;
 }
 
 export function MatchOptionFromJSON(json: any): MatchOption {
-  return MatchOptionFromJSONTyped(json, false);
+    return MatchOptionFromJSONTyped(json, false);
 }
 
-export function MatchOptionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): MatchOption {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    field: json['field'],
-    should: json['should'],
-    value: json['value'],
-  };
+export function MatchOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MatchOption {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'field': json['field'],
+        'should': json['should'],
+        'value': json['value'],
+    };
 }
 
-export function MatchOptionToJSON(value?: MatchOption | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    field: value.field,
-    should: value.should,
-    value: value.value,
-  };
+export function MatchOptionToJSON(json: any): MatchOption {
+    return MatchOptionToJSONTyped(json, false);
 }
+
+export function MatchOptionToJSONTyped(value?: MatchOption | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'field': value['field'],
+        'should': value['should'],
+        'value': value['value'],
+    };
+}
+

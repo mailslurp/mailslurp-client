@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupMtaStsDomainOptionsToJSON = exports.LookupMtaStsDomainOptionsFromJSONTyped = exports.LookupMtaStsDomainOptionsFromJSON = void 0;
+exports.instanceOfLookupMtaStsDomainOptions = instanceOfLookupMtaStsDomainOptions;
+exports.LookupMtaStsDomainOptionsFromJSON = LookupMtaStsDomainOptionsFromJSON;
+exports.LookupMtaStsDomainOptionsFromJSONTyped = LookupMtaStsDomainOptionsFromJSONTyped;
+exports.LookupMtaStsDomainOptionsToJSON = LookupMtaStsDomainOptionsToJSON;
+exports.LookupMtaStsDomainOptionsToJSONTyped = LookupMtaStsDomainOptionsToJSONTyped;
+/**
+ * Check if a given object implements the LookupMtaStsDomainOptions interface.
+ */
+function instanceOfLookupMtaStsDomainOptions(value) {
+    if (!('host' in value) || value['host'] === undefined)
+        return false;
+    return true;
+}
 function LookupMtaStsDomainOptionsFromJSON(json) {
     return LookupMtaStsDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupMtaStsDomainOptionsFromJSON = LookupMtaStsDomainOptionsFromJSON;
 function LookupMtaStsDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        host: json['host'],
+        'host': json['host'],
     };
 }
-exports.LookupMtaStsDomainOptionsFromJSONTyped = LookupMtaStsDomainOptionsFromJSONTyped;
-function LookupMtaStsDomainOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function LookupMtaStsDomainOptionsToJSON(json) {
+    return LookupMtaStsDomainOptionsToJSONTyped(json, false);
+}
+function LookupMtaStsDomainOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        host: value.host,
+        'host': value['host'],
     };
 }
-exports.LookupMtaStsDomainOptionsToJSON = LookupMtaStsDomainOptionsToJSON;

@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SortObject, UnknownMissedEmailProjection } from './';
+import type { PageableObject } from './PageableObject';
+import type { UnknownMissedEmailProjection } from './UnknownMissedEmailProjection';
+import type { SortObject } from './SortObject';
 /**
  * Paginated unknown MissedEmail results. Unknown missed emails are emails that were sent to MailSlurp /Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageUnknownMissedEmailProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageUnknownMissedEmailProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageUnknownMissedEmailProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageUnknownMissedEmailProjection interface.
+ */
+export declare function instanceOfPageUnknownMissedEmailProjection(value: object): value is PageUnknownMissedEmailProjection;
 export declare function PageUnknownMissedEmailProjectionFromJSON(json: any): PageUnknownMissedEmailProjection;
 export declare function PageUnknownMissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageUnknownMissedEmailProjection;
-export declare function PageUnknownMissedEmailProjectionToJSON(value?: PageUnknownMissedEmailProjection | null): any;
+export declare function PageUnknownMissedEmailProjectionToJSON(json: any): PageUnknownMissedEmailProjection;
+export declare function PageUnknownMissedEmailProjectionToJSONTyped(value?: PageUnknownMissedEmailProjection | null, ignoreDiscriminator?: boolean): any;

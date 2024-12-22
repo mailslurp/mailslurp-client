@@ -13,43 +13,51 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureSupportFlagsToJSON = exports.EmailFeatureSupportFlagsFromJSONTyped = exports.EmailFeatureSupportFlagsFromJSON = exports.EmailFeatureSupportFlagsStatusEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.EmailFeatureSupportFlagsStatusEnum = void 0;
+exports.instanceOfEmailFeatureSupportFlags = instanceOfEmailFeatureSupportFlags;
+exports.EmailFeatureSupportFlagsFromJSON = EmailFeatureSupportFlagsFromJSON;
+exports.EmailFeatureSupportFlagsFromJSONTyped = EmailFeatureSupportFlagsFromJSONTyped;
+exports.EmailFeatureSupportFlagsToJSON = EmailFeatureSupportFlagsToJSON;
+exports.EmailFeatureSupportFlagsToJSONTyped = EmailFeatureSupportFlagsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var EmailFeatureSupportFlagsStatusEnum;
-(function (EmailFeatureSupportFlagsStatusEnum) {
-    EmailFeatureSupportFlagsStatusEnum["SUPPORTED"] = "SUPPORTED";
-    EmailFeatureSupportFlagsStatusEnum["PARTIAL"] = "PARTIAL";
-    EmailFeatureSupportFlagsStatusEnum["NOT_SUPPORTED"] = "NOT_SUPPORTED";
-    EmailFeatureSupportFlagsStatusEnum["UNKNOWN"] = "UNKNOWN";
-})(EmailFeatureSupportFlagsStatusEnum = exports.EmailFeatureSupportFlagsStatusEnum || (exports.EmailFeatureSupportFlagsStatusEnum = {}));
+exports.EmailFeatureSupportFlagsStatusEnum = {
+    SUPPORTED: 'SUPPORTED',
+    PARTIAL: 'PARTIAL',
+    NOT_SUPPORTED: 'NOT_SUPPORTED',
+    UNKNOWN: 'UNKNOWN'
+};
+/**
+ * Check if a given object implements the EmailFeatureSupportFlags interface.
+ */
+function instanceOfEmailFeatureSupportFlags(value) {
+    if (!('status' in value) || value['status'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeatureSupportFlagsFromJSON(json) {
     return EmailFeatureSupportFlagsFromJSONTyped(json, false);
 }
-exports.EmailFeatureSupportFlagsFromJSON = EmailFeatureSupportFlagsFromJSON;
 function EmailFeatureSupportFlagsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        status: json['status'],
-        notes: !(0, runtime_1.exists)(json, 'notes') ? undefined : json['notes'],
+        'status': json['status'],
+        'notes': json['notes'] == null ? undefined : new Set(json['notes']),
     };
 }
-exports.EmailFeatureSupportFlagsFromJSONTyped = EmailFeatureSupportFlagsFromJSONTyped;
-function EmailFeatureSupportFlagsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeatureSupportFlagsToJSON(json) {
+    return EmailFeatureSupportFlagsToJSONTyped(json, false);
+}
+function EmailFeatureSupportFlagsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        status: value.status,
-        notes: value.notes,
+        'status': value['status'],
+        'notes': value['notes'] == null ? undefined : Array.from(value['notes']),
     };
 }
-exports.EmailFeatureSupportFlagsToJSON = EmailFeatureSupportFlagsToJSON;

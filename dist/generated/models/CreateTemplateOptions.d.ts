@@ -28,6 +28,11 @@ export interface CreateTemplateOptions {
      */
     content: string;
 }
+/**
+ * Check if a given object implements the CreateTemplateOptions interface.
+ */
+export declare function instanceOfCreateTemplateOptions(value: object): value is CreateTemplateOptions;
 export declare function CreateTemplateOptionsFromJSON(json: any): CreateTemplateOptions;
 export declare function CreateTemplateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTemplateOptions;
-export declare function CreateTemplateOptionsToJSON(value?: CreateTemplateOptions | null): any;
+export declare function CreateTemplateOptionsToJSON(json: any): CreateTemplateOptions;
+export declare function CreateTemplateOptionsToJSONTyped(value?: CreateTemplateOptions | null, ignoreDiscriminator?: boolean): any;

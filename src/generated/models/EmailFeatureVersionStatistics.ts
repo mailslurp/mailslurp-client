@@ -12,64 +12,72 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { EmailFeatureSupportFlags } from './EmailFeatureSupportFlags';
 import {
-  EmailFeatureSupportFlags,
-  EmailFeatureSupportFlagsFromJSON,
-  EmailFeatureSupportFlagsFromJSONTyped,
-  EmailFeatureSupportFlagsToJSON,
-} from './';
+    EmailFeatureSupportFlagsFromJSON,
+    EmailFeatureSupportFlagsFromJSONTyped,
+    EmailFeatureSupportFlagsToJSON,
+    EmailFeatureSupportFlagsToJSONTyped,
+} from './EmailFeatureSupportFlags';
 
 /**
- *
+ * 
  * @export
  * @interface EmailFeatureVersionStatistics
  */
 export interface EmailFeatureVersionStatistics {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureVersionStatistics
-   */
-  version: string;
-  /**
-   *
-   * @type {EmailFeatureSupportFlags}
-   * @memberof EmailFeatureVersionStatistics
-   */
-  supportFlags: EmailFeatureSupportFlags;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureVersionStatistics
+     */
+    version: string;
+    /**
+     * 
+     * @type {EmailFeatureSupportFlags}
+     * @memberof EmailFeatureVersionStatistics
+     */
+    supportFlags: EmailFeatureSupportFlags;
 }
 
-export function EmailFeatureVersionStatisticsFromJSON(
-  json: any
-): EmailFeatureVersionStatistics {
-  return EmailFeatureVersionStatisticsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the EmailFeatureVersionStatistics interface.
+ */
+export function instanceOfEmailFeatureVersionStatistics(value: object): value is EmailFeatureVersionStatistics {
+    if (!('version' in value) || value['version'] === undefined) return false;
+    if (!('supportFlags' in value) || value['supportFlags'] === undefined) return false;
+    return true;
 }
 
-export function EmailFeatureVersionStatisticsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailFeatureVersionStatistics {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    version: json['version'],
-    supportFlags: EmailFeatureSupportFlagsFromJSON(json['supportFlags']),
-  };
+export function EmailFeatureVersionStatisticsFromJSON(json: any): EmailFeatureVersionStatistics {
+    return EmailFeatureVersionStatisticsFromJSONTyped(json, false);
 }
 
-export function EmailFeatureVersionStatisticsToJSON(
-  value?: EmailFeatureVersionStatistics | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    version: value.version,
-    supportFlags: EmailFeatureSupportFlagsToJSON(value.supportFlags),
-  };
+export function EmailFeatureVersionStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureVersionStatistics {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'version': json['version'],
+        'supportFlags': EmailFeatureSupportFlagsFromJSON(json['supportFlags']),
+    };
 }
+
+export function EmailFeatureVersionStatisticsToJSON(json: any): EmailFeatureVersionStatistics {
+    return EmailFeatureVersionStatisticsToJSONTyped(json, false);
+}
+
+export function EmailFeatureVersionStatisticsToJSONTyped(value?: EmailFeatureVersionStatistics | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'version': value['version'],
+        'supportFlags': EmailFeatureSupportFlagsToJSON(value['supportFlags']),
+    };
+}
+

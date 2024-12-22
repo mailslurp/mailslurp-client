@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AliasProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { AliasProjection } from './AliasProjection';
 /**
  * Paginated email alias results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageAlias {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageAlias
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageAlias {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageAlias interface.
+ */
+export declare function instanceOfPageAlias(value: object): value is PageAlias;
 export declare function PageAliasFromJSON(json: any): PageAlias;
 export declare function PageAliasFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageAlias;
-export declare function PageAliasToJSON(value?: PageAlias | null): any;
+export declare function PageAliasToJSON(json: any): PageAlias;
+export declare function PageAliasToJSONTyped(value?: PageAlias | null, ignoreDiscriminator?: boolean): any;

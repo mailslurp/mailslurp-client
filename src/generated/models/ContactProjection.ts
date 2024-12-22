@@ -12,113 +12,120 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Email contact for address book
  * @export
  * @interface ContactProjection
  */
 export interface ContactProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof ContactProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  emailAddress?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ContactProjection
-   */
-  emailAddresses?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  firstName?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  lastName?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  company?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ContactProjection
-   */
-  optOut?: boolean | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  groupId?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ContactProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    emailAddress?: string | null;
+    /**
+     * 
+     * @type {Array<string | null>}
+     * @memberof ContactProjection
+     */
+    emailAddresses?: Array<string | null> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    firstName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    lastName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    company?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ContactProjection
+     */
+    optOut?: boolean | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    groupId?: string | null;
+}
+
+/**
+ * Check if a given object implements the ContactProjection interface.
+ */
+export function instanceOfContactProjection(value: object): value is ContactProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function ContactProjectionFromJSON(json: any): ContactProjection {
-  return ContactProjectionFromJSONTyped(json, false);
+    return ContactProjectionFromJSONTyped(json, false);
 }
 
-export function ContactProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ContactProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
-    emailAddresses: !exists(json, 'emailAddresses')
-      ? undefined
-      : json['emailAddresses'],
-    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
-    lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
-    company: !exists(json, 'company') ? undefined : json['company'],
-    optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
-    id: json['id'],
-    groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
-  };
+export function ContactProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContactProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'emailAddresses': json['emailAddresses'] == null ? undefined : json['emailAddresses'],
+        'firstName': json['firstName'] == null ? undefined : json['firstName'],
+        'lastName': json['lastName'] == null ? undefined : json['lastName'],
+        'company': json['company'] == null ? undefined : json['company'],
+        'optOut': json['optOut'] == null ? undefined : json['optOut'],
+        'id': json['id'],
+        'groupId': json['groupId'] == null ? undefined : json['groupId'],
+    };
 }
 
-export function ContactProjectionToJSON(value?: ContactProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    emailAddress: value.emailAddress,
-    emailAddresses: value.emailAddresses,
-    firstName: value.firstName,
-    lastName: value.lastName,
-    company: value.company,
-    optOut: value.optOut,
-    id: value.id,
-    groupId: value.groupId,
-  };
+export function ContactProjectionToJSON(json: any): ContactProjection {
+    return ContactProjectionToJSONTyped(json, false);
 }
+
+export function ContactProjectionToJSONTyped(value?: ContactProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'emailAddress': value['emailAddress'],
+        'emailAddresses': value['emailAddresses'],
+        'firstName': value['firstName'],
+        'lastName': value['lastName'],
+        'company': value['company'],
+        'optOut': value['optOut'],
+        'id': value['id'],
+        'groupId': value['groupId'],
+    };
+}
+

@@ -12,79 +12,91 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Email template data
  * @export
  * @interface TemplateProjection
  */
 export interface TemplateProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof TemplateProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof TemplateProjection
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof TemplateProjection
-   */
-  variables: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof TemplateProjection
-   */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TemplateProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TemplateProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TemplateProjection
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof TemplateProjection
+     */
+    variables: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof TemplateProjection
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TemplateProjection
+     */
+    id: string;
+}
+
+/**
+ * Check if a given object implements the TemplateProjection interface.
+ */
+export function instanceOfTemplateProjection(value: object): value is TemplateProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('variables' in value) || value['variables'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function TemplateProjectionFromJSON(json: any): TemplateProjection {
-  return TemplateProjectionFromJSONTyped(json, false);
+    return TemplateProjectionFromJSONTyped(json, false);
 }
 
-export function TemplateProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TemplateProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    variables: json['variables'],
-    name: json['name'],
-    id: json['id'],
-  };
+export function TemplateProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'variables': json['variables'],
+        'name': json['name'],
+        'id': json['id'],
+    };
 }
 
-export function TemplateProjectionToJSON(
-  value?: TemplateProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    variables: value.variables,
-    name: value.name,
-    id: value.id,
-  };
+export function TemplateProjectionToJSON(json: any): TemplateProjection {
+    return TemplateProjectionToJSONTyped(json, false);
 }
+
+export function TemplateProjectionToJSONTyped(value?: TemplateProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'variables': value['variables'],
+        'name': value['name'],
+        'id': value['id'],
+    };
+}
+

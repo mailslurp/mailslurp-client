@@ -12,92 +12,106 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DNSLookupResult } from './DNSLookupResult';
 import {
-  DNSLookupOptions,
-  DNSLookupOptionsFromJSON,
-  DNSLookupOptionsFromJSONTyped,
-  DNSLookupOptionsToJSON,
-  DNSLookupResult,
-  DNSLookupResultFromJSON,
-  DNSLookupResultFromJSONTyped,
-  DNSLookupResultToJSON,
-} from './';
+    DNSLookupResultFromJSON,
+    DNSLookupResultFromJSONTyped,
+    DNSLookupResultToJSON,
+    DNSLookupResultToJSONTyped,
+} from './DNSLookupResult';
+import type { DNSLookupOptions } from './DNSLookupOptions';
+import {
+    DNSLookupOptionsFromJSON,
+    DNSLookupOptionsFromJSONTyped,
+    DNSLookupOptionsToJSON,
+    DNSLookupOptionsToJSONTyped,
+} from './DNSLookupOptions';
 
 /**
- *
+ * 
  * @export
  * @interface LookupBimiDomainResults
  */
 export interface LookupBimiDomainResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof LookupBimiDomainResults
-   */
-  valid: boolean;
-  /**
-   *
-   * @type {DNSLookupOptions}
-   * @memberof LookupBimiDomainResults
-   */
-  query: DNSLookupOptions;
-  /**
-   *
-   * @type {Array<DNSLookupResult>}
-   * @memberof LookupBimiDomainResults
-   */
-  records: Array<DNSLookupResult>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupBimiDomainResults
-   */
-  errors: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupBimiDomainResults
-   */
-  warnings: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof LookupBimiDomainResults
+     */
+    valid: boolean;
+    /**
+     * 
+     * @type {DNSLookupOptions}
+     * @memberof LookupBimiDomainResults
+     */
+    query: DNSLookupOptions;
+    /**
+     * 
+     * @type {Array<DNSLookupResult>}
+     * @memberof LookupBimiDomainResults
+     */
+    records: Array<DNSLookupResult>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupBimiDomainResults
+     */
+    errors: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupBimiDomainResults
+     */
+    warnings: Array<string>;
 }
 
-export function LookupBimiDomainResultsFromJSON(
-  json: any
-): LookupBimiDomainResults {
-  return LookupBimiDomainResultsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the LookupBimiDomainResults interface.
+ */
+export function instanceOfLookupBimiDomainResults(value: object): value is LookupBimiDomainResults {
+    if (!('valid' in value) || value['valid'] === undefined) return false;
+    if (!('query' in value) || value['query'] === undefined) return false;
+    if (!('records' in value) || value['records'] === undefined) return false;
+    if (!('errors' in value) || value['errors'] === undefined) return false;
+    if (!('warnings' in value) || value['warnings'] === undefined) return false;
+    return true;
 }
 
-export function LookupBimiDomainResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupBimiDomainResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    valid: json['valid'],
-    query: DNSLookupOptionsFromJSON(json['query']),
-    records: (json['records'] as Array<any>).map(DNSLookupResultFromJSON),
-    errors: json['errors'],
-    warnings: json['warnings'],
-  };
+export function LookupBimiDomainResultsFromJSON(json: any): LookupBimiDomainResults {
+    return LookupBimiDomainResultsFromJSONTyped(json, false);
 }
 
-export function LookupBimiDomainResultsToJSON(
-  value?: LookupBimiDomainResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    valid: value.valid,
-    query: DNSLookupOptionsToJSON(value.query),
-    records: (value.records as Array<any>).map(DNSLookupResultToJSON),
-    errors: value.errors,
-    warnings: value.warnings,
-  };
+export function LookupBimiDomainResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupBimiDomainResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'valid': json['valid'],
+        'query': DNSLookupOptionsFromJSON(json['query']),
+        'records': ((json['records'] as Array<any>).map(DNSLookupResultFromJSON)),
+        'errors': json['errors'],
+        'warnings': json['warnings'],
+    };
 }
+
+export function LookupBimiDomainResultsToJSON(json: any): LookupBimiDomainResults {
+    return LookupBimiDomainResultsToJSONTyped(json, false);
+}
+
+export function LookupBimiDomainResultsToJSONTyped(value?: LookupBimiDomainResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'valid': value['valid'],
+        'query': DNSLookupOptionsToJSON(value['query']),
+        'records': ((value['records'] as Array<any>).map(DNSLookupResultToJSON)),
+        'errors': value['errors'],
+        'warnings': value['warnings'],
+    };
+}
+

@@ -13,11 +13,12 @@ MailSlurp JS
 - [AbstractWebhookPayloadEventNameEnum](enums/AbstractWebhookPayloadEventNameEnum.md)
 - [ConditionOptionConditionEnum](enums/ConditionOptionConditionEnum.md)
 - [ConditionOptionValueEnum](enums/ConditionOptionValueEnum.md)
-- [ConnectorDtoSyncScheduleTypeEnum](enums/ConnectorDtoSyncScheduleTypeEnum.md)
-- [ConnectorProjectionSyncScheduleTypeEnum](enums/ConnectorProjectionSyncScheduleTypeEnum.md)
-- [ConnectorSyncEventDtoSyncStatusEnum](enums/ConnectorSyncEventDtoSyncStatusEnum.md)
-- [ConnectorSyncEventProjectionSyncStatusEnum](enums/ConnectorSyncEventProjectionSyncStatusEnum.md)
-- [CreateConnectorOptionsSyncScheduleTypeEnum](enums/CreateConnectorOptionsSyncScheduleTypeEnum.md)
+- [ConnectorEventDtoEventTypeEnum](enums/ConnectorEventDtoEventTypeEnum.md)
+- [ConnectorEventDtoStatusEnum](enums/ConnectorEventDtoStatusEnum.md)
+- [ConnectorEventProjectionEventTypeEnum](enums/ConnectorEventProjectionEventTypeEnum.md)
+- [ConnectorEventProjectionStatusEnum](enums/ConnectorEventProjectionStatusEnum.md)
+- [ConnectorSyncSettingsDtoSyncScheduleTypeEnum](enums/ConnectorSyncSettingsDtoSyncScheduleTypeEnum.md)
+- [CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum](enums/CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum.md)
 - [CreateDomainOptionsDomainTypeEnum](enums/CreateDomainOptionsDomainTypeEnum.md)
 - [CreateEmergencyAddressOptionsIsoCountryCodeEnum](enums/CreateEmergencyAddressOptionsIsoCountryCodeEnum.md)
 - [CreateInboxDtoInboxTypeEnum](enums/CreateInboxDtoInboxTypeEnum.md)
@@ -74,9 +75,11 @@ MailSlurp JS
 - [GetAliasesSortEnum](enums/GetAliasesSortEnum.md)
 - [GetAllAccountWebhooksEventTypeEnum](enums/GetAllAccountWebhooksEventTypeEnum.md)
 - [GetAllAccountWebhooksSortEnum](enums/GetAllAccountWebhooksSortEnum.md)
-- [GetAllConnectorSyncEventsSortEnum](enums/GetAllConnectorSyncEventsSortEnum.md)
+- [GetAllConnectorEventsEventTypeEnum](enums/GetAllConnectorEventsEventTypeEnum.md)
+- [GetAllConnectorEventsSortEnum](enums/GetAllConnectorEventsSortEnum.md)
 - [GetAllContactsSortEnum](enums/GetAllContactsSortEnum.md)
 - [GetAllGroupsSortEnum](enums/GetAllGroupsSortEnum.md)
+- [GetAllGuestPortalUsersSortEnum](enums/GetAllGuestPortalUsersSortEnum.md)
 - [GetAllInboxForwarderEventsSortEnum](enums/GetAllInboxForwarderEventsSortEnum.md)
 - [GetAllInboxesInboxFunctionEnum](enums/GetAllInboxesInboxFunctionEnum.md)
 - [GetAllInboxesInboxTypeEnum](enums/GetAllInboxesInboxTypeEnum.md)
@@ -99,7 +102,8 @@ MailSlurp JS
 - [GetBouncedEmailsSortEnum](enums/GetBouncedEmailsSortEnum.md)
 - [GetBouncedRecipientsSortEnum](enums/GetBouncedRecipientsSortEnum.md)
 - [GetComplaintsSortEnum](enums/GetComplaintsSortEnum.md)
-- [GetConnectorSyncEventsSortEnum](enums/GetConnectorSyncEventsSortEnum.md)
+- [GetConnectorEventsEventTypeEnum](enums/GetConnectorEventsEventTypeEnum.md)
+- [GetConnectorEventsSortEnum](enums/GetConnectorEventsSortEnum.md)
 - [GetConnectorsSortEnum](enums/GetConnectorsSortEnum.md)
 - [GetDeliveryStatusesByInboxIdSortEnum](enums/GetDeliveryStatusesByInboxIdSortEnum.md)
 - [GetEmailsOffsetPaginatedSortEnum](enums/GetEmailsOffsetPaginatedSortEnum.md)
@@ -108,6 +112,7 @@ MailSlurp JS
 - [GetExpiredInboxesSortEnum](enums/GetExpiredInboxesSortEnum.md)
 - [GetExportLinkExportTypeEnum](enums/GetExportLinkExportTypeEnum.md)
 - [GetGroupWithContactsPaginatedSortEnum](enums/GetGroupWithContactsPaginatedSortEnum.md)
+- [GetGuestPortalUsersSortEnum](enums/GetGuestPortalUsersSortEnum.md)
 - [GetInboxEmailsPaginatedSortEnum](enums/GetInboxEmailsPaginatedSortEnum.md)
 - [GetInboxForwarderEventsSortEnum](enums/GetInboxForwarderEventsSortEnum.md)
 - [GetInboxForwardersSortEnum](enums/GetInboxForwardersSortEnum.md)
@@ -164,6 +169,7 @@ MailSlurp JS
 - [PhoneNumberDtoPhoneCountryEnum](enums/PhoneNumberDtoPhoneCountryEnum.md)
 - [PhoneNumberProjectionPhoneCountryEnum](enums/PhoneNumberProjectionPhoneCountryEnum.md)
 - [PhonePlanDtoPhoneCountryEnum](enums/PhonePlanDtoPhoneCountryEnum.md)
+- [ProviderSettingsMailProviderEnum](enums/ProviderSettingsMailProviderEnum.md)
 - [ReplyToAliasEmailOptionsSendStrategyEnum](enums/ReplyToAliasEmailOptionsSendStrategyEnum.md)
 - [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
 - [ScheduledJobDtoStatusEnum](enums/ScheduledJobDtoStatusEnum.md)
@@ -228,6 +234,7 @@ MailSlurp JS
 - [ExportControllerApi](classes/ExportControllerApi.md)
 - [FormControllerApi](classes/FormControllerApi.md)
 - [GroupControllerApi](classes/GroupControllerApi.md)
+- [GuestPortalControllerApi](classes/GuestPortalControllerApi.md)
 - [ImapControllerApi](classes/ImapControllerApi.md)
 - [InboxControllerApi](classes/InboxControllerApi.md)
 - [InboxForwarderControllerApi](classes/InboxForwarderControllerApi.md)
@@ -289,16 +296,17 @@ MailSlurp JS
 - [ConditionOption](interfaces/ConditionOption.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
 - [ConnectorDto](interfaces/ConnectorDto.md)
+- [ConnectorEventDto](interfaces/ConnectorEventDto.md)
+- [ConnectorEventProjection](interfaces/ConnectorEventProjection.md)
 - [ConnectorImapConnectionDto](interfaces/ConnectorImapConnectionDto.md)
+- [ConnectorImapConnectionTestResult](interfaces/ConnectorImapConnectionTestResult.md)
 - [ConnectorProjection](interfaces/ConnectorProjection.md)
+- [ConnectorProviderSettingsDto](interfaces/ConnectorProviderSettingsDto.md)
 - [ConnectorSmtpConnectionDto](interfaces/ConnectorSmtpConnectionDto.md)
-- [ConnectorSyncEventDto](interfaces/ConnectorSyncEventDto.md)
-- [ConnectorSyncEventProjection](interfaces/ConnectorSyncEventProjection.md)
+- [ConnectorSmtpConnectionTestResult](interfaces/ConnectorSmtpConnectionTestResult.md)
 - [ConnectorSyncRequestResult](interfaces/ConnectorSyncRequestResult.md)
-- [ConnectorSyncRequestResultException](interfaces/ConnectorSyncRequestResultException.md)
-- [ConnectorSyncRequestResultExceptionCause](interfaces/ConnectorSyncRequestResultExceptionCause.md)
-- [ConnectorSyncRequestResultExceptionCauseStackTrace](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
 - [ConnectorSyncResult](interfaces/ConnectorSyncResult.md)
+- [ConnectorSyncSettingsDto](interfaces/ConnectorSyncSettingsDto.md)
 - [Consume](interfaces/Consume.md)
 - [ContactDto](interfaces/ContactDto.md)
 - [ContactProjection](interfaces/ContactProjection.md)
@@ -313,6 +321,10 @@ MailSlurp JS
 - [CreateConnectorRequest](interfaces/CreateConnectorRequest.md)
 - [CreateConnectorSmtpConnectionOptions](interfaces/CreateConnectorSmtpConnectionOptions.md)
 - [CreateConnectorSmtpConnectionRequest](interfaces/CreateConnectorSmtpConnectionRequest.md)
+- [CreateConnectorSyncSettingsOptions](interfaces/CreateConnectorSyncSettingsOptions.md)
+- [CreateConnectorSyncSettingsRequest](interfaces/CreateConnectorSyncSettingsRequest.md)
+- [CreateConnectorWithOptions](interfaces/CreateConnectorWithOptions.md)
+- [CreateConnectorWithOptionsRequest](interfaces/CreateConnectorWithOptionsRequest.md)
 - [CreateContactOptions](interfaces/CreateContactOptions.md)
 - [CreateContactRequest](interfaces/CreateContactRequest.md)
 - [CreateDomainOptions](interfaces/CreateDomainOptions.md)
@@ -321,6 +333,8 @@ MailSlurp JS
 - [CreateEmergencyAddressRequest](interfaces/CreateEmergencyAddressRequest.md)
 - [CreateGroupOptions](interfaces/CreateGroupOptions.md)
 - [CreateGroupRequest](interfaces/CreateGroupRequest.md)
+- [CreateGuestPortalRequest](interfaces/CreateGuestPortalRequest.md)
+- [CreateGuestPortalUserRequest](interfaces/CreateGuestPortalUserRequest.md)
 - [CreateInboxDto](interfaces/CreateInboxDto.md)
 - [CreateInboxForwarderOptions](interfaces/CreateInboxForwarderOptions.md)
 - [CreateInboxReplierOptions](interfaces/CreateInboxReplierOptions.md)
@@ -332,6 +346,8 @@ MailSlurp JS
 - [CreateNewInboxForwarderRequest](interfaces/CreateNewInboxForwarderRequest.md)
 - [CreateNewInboxReplierRequest](interfaces/CreateNewInboxReplierRequest.md)
 - [CreateNewInboxRulesetRequest](interfaces/CreateNewInboxRulesetRequest.md)
+- [CreatePortalOptions](interfaces/CreatePortalOptions.md)
+- [CreatePortalUserOptions](interfaces/CreatePortalUserOptions.md)
 - [CreateRandomInboxRequest](interfaces/CreateRandomInboxRequest.md)
 - [CreateTemplateOptions](interfaces/CreateTemplateOptions.md)
 - [CreateTemplateRequest](interfaces/CreateTemplateRequest.md)
@@ -354,6 +370,7 @@ MailSlurp JS
 - [DeleteConnectorImapConnectionRequest](interfaces/DeleteConnectorImapConnectionRequest.md)
 - [DeleteConnectorRequest](interfaces/DeleteConnectorRequest.md)
 - [DeleteConnectorSmtpConnectionRequest](interfaces/DeleteConnectorSmtpConnectionRequest.md)
+- [DeleteConnectorSyncSettingsRequest](interfaces/DeleteConnectorSyncSettingsRequest.md)
 - [DeleteContactRequest](interfaces/DeleteContactRequest.md)
 - [DeleteDomainRequest](interfaces/DeleteDomainRequest.md)
 - [DeleteEmailAddressRequest](interfaces/DeleteEmailAddressRequest.md)
@@ -396,6 +413,7 @@ MailSlurp JS
 - [DownloadBodyRequest](interfaces/DownloadBodyRequest.md)
 - [Email](interfaces/Email.md)
 - [EmailAnalysis](interfaces/EmailAnalysis.md)
+- [EmailAvailableResult](interfaces/EmailAvailableResult.md)
 - [EmailContentMatchResult](interfaces/EmailContentMatchResult.md)
 - [EmailContentPartResult](interfaces/EmailContentPartResult.md)
 - [EmailFeatureCategoryName](interfaces/EmailFeatureCategoryName.md)
@@ -457,9 +475,10 @@ MailSlurp JS
 - [GetAliasThreadsRequest](interfaces/GetAliasThreadsRequest.md)
 - [GetAliasesRequest](interfaces/GetAliasesRequest.md)
 - [GetAllAccountWebhooksRequest](interfaces/GetAllAccountWebhooksRequest.md)
-- [GetAllConnectorSyncEventsRequest](interfaces/GetAllConnectorSyncEventsRequest.md)
+- [GetAllConnectorEventsRequest](interfaces/GetAllConnectorEventsRequest.md)
 - [GetAllContactsRequest](interfaces/GetAllContactsRequest.md)
 - [GetAllGroupsRequest](interfaces/GetAllGroupsRequest.md)
+- [GetAllGuestPortalUsersRequest](interfaces/GetAllGuestPortalUsersRequest.md)
 - [GetAllInboxForwarderEventsRequest](interfaces/GetAllInboxForwarderEventsRequest.md)
 - [GetAllInboxesOffsetPaginatedRequest](interfaces/GetAllInboxesOffsetPaginatedRequest.md)
 - [GetAllInboxesRequest](interfaces/GetAllInboxesRequest.md)
@@ -482,9 +501,15 @@ MailSlurp JS
 - [GetBouncedRecipientsRequest](interfaces/GetBouncedRecipientsRequest.md)
 - [GetComplaintRequest](interfaces/GetComplaintRequest.md)
 - [GetComplaintsRequest](interfaces/GetComplaintsRequest.md)
+- [GetConnectorByEmailAddressRequest](interfaces/GetConnectorByEmailAddressRequest.md)
+- [GetConnectorByInboxIdRequest](interfaces/GetConnectorByInboxIdRequest.md)
+- [GetConnectorByNameRequest](interfaces/GetConnectorByNameRequest.md)
+- [GetConnectorEventRequest](interfaces/GetConnectorEventRequest.md)
+- [GetConnectorEventsRequest](interfaces/GetConnectorEventsRequest.md)
+- [GetConnectorImapConnectionRequest](interfaces/GetConnectorImapConnectionRequest.md)
 - [GetConnectorRequest](interfaces/GetConnectorRequest.md)
-- [GetConnectorSyncEventRequest](interfaces/GetConnectorSyncEventRequest.md)
-- [GetConnectorSyncEventsRequest](interfaces/GetConnectorSyncEventsRequest.md)
+- [GetConnectorSmtpConnectionRequest](interfaces/GetConnectorSmtpConnectionRequest.md)
+- [GetConnectorSyncSettingsRequest](interfaces/GetConnectorSyncSettingsRequest.md)
 - [GetConnectorsRequest](interfaces/GetConnectorsRequest.md)
 - [GetContactRequest](interfaces/GetContactRequest.md)
 - [GetContactVCardRequest](interfaces/GetContactVCardRequest.md)
@@ -496,6 +521,7 @@ MailSlurp JS
 - [GetEmailAttachmentsRequest](interfaces/GetEmailAttachmentsRequest.md)
 - [GetEmailContentMatchRequest](interfaces/GetEmailContentMatchRequest.md)
 - [GetEmailContentPartRequest](interfaces/GetEmailContentPartRequest.md)
+- [GetEmailCountRequest](interfaces/GetEmailCountRequest.md)
 - [GetEmailHTMLJsonRequest](interfaces/GetEmailHTMLJsonRequest.md)
 - [GetEmailHTMLQueryRequest](interfaces/GetEmailHTMLQueryRequest.md)
 - [GetEmailHTMLRequest](interfaces/GetEmailHTMLRequest.md)
@@ -521,6 +547,10 @@ MailSlurp JS
 - [GetGroupRequest](interfaces/GetGroupRequest.md)
 - [GetGroupWithContactsPaginatedRequest](interfaces/GetGroupWithContactsPaginatedRequest.md)
 - [GetGroupWithContactsRequest](interfaces/GetGroupWithContactsRequest.md)
+- [GetGuestPortalRequest](interfaces/GetGuestPortalRequest.md)
+- [GetGuestPortalUserByIdRequest](interfaces/GetGuestPortalUserByIdRequest.md)
+- [GetGuestPortalUserRequest](interfaces/GetGuestPortalUserRequest.md)
+- [GetGuestPortalUsersRequest](interfaces/GetGuestPortalUsersRequest.md)
 - [GetImapAccessRequest](interfaces/GetImapAccessRequest.md)
 - [GetImapSmtpAccessEnvRequest](interfaces/GetImapSmtpAccessEnvRequest.md)
 - [GetImapSmtpAccessRequest](interfaces/GetImapSmtpAccessRequest.md)
@@ -538,6 +568,7 @@ MailSlurp JS
 - [GetInboxRequest](interfaces/GetInboxRequest.md)
 - [GetInboxRulesetRequest](interfaces/GetInboxRulesetRequest.md)
 - [GetInboxRulesetsRequest](interfaces/GetInboxRulesetsRequest.md)
+- [GetInboxSentCountRequest](interfaces/GetInboxSentCountRequest.md)
 - [GetInboxSentEmailsRequest](interfaces/GetInboxSentEmailsRequest.md)
 - [GetInboxWebhooksPaginatedRequest](interfaces/GetInboxWebhooksPaginatedRequest.md)
 - [GetInboxesRequest](interfaces/GetInboxesRequest.md)
@@ -595,6 +626,10 @@ MailSlurp JS
 - [GroupContactsDto](interfaces/GroupContactsDto.md)
 - [GroupDto](interfaces/GroupDto.md)
 - [GroupProjection](interfaces/GroupProjection.md)
+- [GuestPortalDto](interfaces/GuestPortalDto.md)
+- [GuestPortalUserCreateDto](interfaces/GuestPortalUserCreateDto.md)
+- [GuestPortalUserDto](interfaces/GuestPortalUserDto.md)
+- [GuestPortalUserProjection](interfaces/GuestPortalUserProjection.md)
 - [HTMLValidationResult](interfaces/HTMLValidationResult.md)
 - [IPAddressResult](interfaces/IPAddressResult.md)
 - [ImageIssue](interfaces/ImageIssue.md)
@@ -610,6 +645,8 @@ MailSlurp JS
 - [ImapServerListOptions](interfaces/ImapServerListOptions.md)
 - [ImapServerListRequest](interfaces/ImapServerListRequest.md)
 - [ImapServerListResult](interfaces/ImapServerListResult.md)
+- [ImapServerMailboxRequest](interfaces/ImapServerMailboxRequest.md)
+- [ImapServerMailboxResult](interfaces/ImapServerMailboxResult.md)
 - [ImapServerSearchOptions](interfaces/ImapServerSearchOptions.md)
 - [ImapServerSearchRequest](interfaces/ImapServerSearchRequest.md)
 - [ImapServerSearchResult](interfaces/ImapServerSearchResult.md)
@@ -638,6 +675,7 @@ MailSlurp JS
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
 - [InlineObject](interfaces/InlineObject.md)
+- [IsEmailAddressAvailableRequest](interfaces/IsEmailAddressAvailableRequest.md)
 - [JSONSchemaDto](interfaces/JSONSchemaDto.md)
 - [LinkIssue](interfaces/LinkIssue.md)
 - [ListInboxRulesetsRequest](interfaces/ListInboxRulesetsRequest.md)
@@ -664,6 +702,10 @@ MailSlurp JS
 - [MissedEmailProjection](interfaces/MissedEmailProjection.md)
 - [NameServerRecord](interfaces/NameServerRecord.md)
 - [NewFakeEmailAddressResult](interfaces/NewFakeEmailAddressResult.md)
+- [OptionalConnectorDto](interfaces/OptionalConnectorDto.md)
+- [OptionalConnectorImapConnectionDto](interfaces/OptionalConnectorImapConnectionDto.md)
+- [OptionalConnectorSmtpConnectionDto](interfaces/OptionalConnectorSmtpConnectionDto.md)
+- [OptionalConnectorSyncSettingsDto](interfaces/OptionalConnectorSyncSettingsDto.md)
 - [OrganizationInboxProjection](interfaces/OrganizationInboxProjection.md)
 - [PageAlias](interfaces/PageAlias.md)
 - [PageAttachmentEntity](interfaces/PageAttachmentEntity.md)
@@ -671,7 +713,7 @@ MailSlurp JS
 - [PageBouncedRecipients](interfaces/PageBouncedRecipients.md)
 - [PageComplaint](interfaces/PageComplaint.md)
 - [PageConnector](interfaces/PageConnector.md)
-- [PageConnectorSyncEvents](interfaces/PageConnectorSyncEvents.md)
+- [PageConnectorEvents](interfaces/PageConnectorEvents.md)
 - [PageContactProjection](interfaces/PageContactProjection.md)
 - [PageDeliveryStatus](interfaces/PageDeliveryStatus.md)
 - [PageEmailPreview](interfaces/PageEmailPreview.md)
@@ -679,6 +721,7 @@ MailSlurp JS
 - [PageEmailValidationRequest](interfaces/PageEmailValidationRequest.md)
 - [PageExpiredInboxRecordProjection](interfaces/PageExpiredInboxRecordProjection.md)
 - [PageGroupProjection](interfaces/PageGroupProjection.md)
+- [PageGuestPortalUsers](interfaces/PageGuestPortalUsers.md)
 - [PageInboxForwarderDto](interfaces/PageInboxForwarderDto.md)
 - [PageInboxForwarderEvents](interfaces/PageInboxForwarderEvents.md)
 - [PageInboxProjection](interfaces/PageInboxProjection.md)
@@ -703,6 +746,7 @@ MailSlurp JS
 - [PhoneNumberDto](interfaces/PhoneNumberDto.md)
 - [PhoneNumberProjection](interfaces/PhoneNumberProjection.md)
 - [PhonePlanDto](interfaces/PhonePlanDto.md)
+- [ProviderSettings](interfaces/ProviderSettings.md)
 - [RawEmailJson](interfaces/RawEmailJson.md)
 - [Recipient](interfaces/Recipient.md)
 - [RedriveWebhookResultRequest](interfaces/RedriveWebhookResultRequest.md)
@@ -727,6 +771,7 @@ MailSlurp JS
 - [SendAliasEmailRequest](interfaces/SendAliasEmailRequest.md)
 - [SendEmailAndConfirmRequest](interfaces/SendEmailAndConfirmRequest.md)
 - [SendEmailBodyPart](interfaces/SendEmailBodyPart.md)
+- [SendEmailFromConnectorRequest](interfaces/SendEmailFromConnectorRequest.md)
 - [SendEmailOptions](interfaces/SendEmailOptions.md)
 - [SendEmailQueryRequest](interfaces/SendEmailQueryRequest.md)
 - [SendEmailRequest](interfaces/SendEmailRequest.md)
@@ -761,6 +806,10 @@ MailSlurp JS
 - [TemplatePreview](interfaces/TemplatePreview.md)
 - [TemplateProjection](interfaces/TemplateProjection.md)
 - [TemplateVariable](interfaces/TemplateVariable.md)
+- [TestConnectorImapConnectionOptionsRequest](interfaces/TestConnectorImapConnectionOptionsRequest.md)
+- [TestConnectorImapConnectionRequest](interfaces/TestConnectorImapConnectionRequest.md)
+- [TestConnectorSmtpConnectionOptionsRequest](interfaces/TestConnectorSmtpConnectionOptionsRequest.md)
+- [TestConnectorSmtpConnectionRequest](interfaces/TestConnectorSmtpConnectionRequest.md)
 - [TestInboxForwarderRequest](interfaces/TestInboxForwarderRequest.md)
 - [TestInboxForwardersForInboxRequest](interfaces/TestInboxForwardersForInboxRequest.md)
 - [TestInboxRulesetReceivingOptions](interfaces/TestInboxRulesetReceivingOptions.md)
@@ -785,15 +834,21 @@ MailSlurp JS
 - [UnseenErrorCountDto](interfaces/UnseenErrorCountDto.md)
 - [UpdateAliasOptions](interfaces/UpdateAliasOptions.md)
 - [UpdateAliasRequest](interfaces/UpdateAliasRequest.md)
+- [UpdateConnectorImapConnectionRequest](interfaces/UpdateConnectorImapConnectionRequest.md)
 - [UpdateConnectorRequest](interfaces/UpdateConnectorRequest.md)
+- [UpdateConnectorSmtpConnectionRequest](interfaces/UpdateConnectorSmtpConnectionRequest.md)
 - [UpdateDomainOptions](interfaces/UpdateDomainOptions.md)
 - [UpdateDomainRequest](interfaces/UpdateDomainRequest.md)
 - [UpdateGroupContacts](interfaces/UpdateGroupContacts.md)
+- [UpdateImapAccessOptions](interfaces/UpdateImapAccessOptions.md)
+- [UpdateImapAccessRequest](interfaces/UpdateImapAccessRequest.md)
 - [UpdateInboxForwarderRequest](interfaces/UpdateInboxForwarderRequest.md)
 - [UpdateInboxOptions](interfaces/UpdateInboxOptions.md)
 - [UpdateInboxReplierOptions](interfaces/UpdateInboxReplierOptions.md)
 - [UpdateInboxReplierRequest](interfaces/UpdateInboxReplierRequest.md)
 - [UpdateInboxRequest](interfaces/UpdateInboxRequest.md)
+- [UpdateSmtpAccessOptions](interfaces/UpdateSmtpAccessOptions.md)
+- [UpdateSmtpAccessRequest](interfaces/UpdateSmtpAccessRequest.md)
 - [UpdateTemplateRequest](interfaces/UpdateTemplateRequest.md)
 - [UpdateWebhookHeadersRequest](interfaces/UpdateWebhookHeadersRequest.md)
 - [UploadAttachmentBytesRequest](interfaces/UploadAttachmentBytesRequest.md)
@@ -934,36 +989,39 @@ MailSlurp JS
 - [ConnectorDtoFromJSON](README.md#connectordtofromjson)
 - [ConnectorDtoFromJSONTyped](README.md#connectordtofromjsontyped)
 - [ConnectorDtoToJSON](README.md#connectordtotojson)
+- [ConnectorEventDtoFromJSON](README.md#connectoreventdtofromjson)
+- [ConnectorEventDtoFromJSONTyped](README.md#connectoreventdtofromjsontyped)
+- [ConnectorEventDtoToJSON](README.md#connectoreventdtotojson)
+- [ConnectorEventProjectionFromJSON](README.md#connectoreventprojectionfromjson)
+- [ConnectorEventProjectionFromJSONTyped](README.md#connectoreventprojectionfromjsontyped)
+- [ConnectorEventProjectionToJSON](README.md#connectoreventprojectiontojson)
 - [ConnectorImapConnectionDtoFromJSON](README.md#connectorimapconnectiondtofromjson)
 - [ConnectorImapConnectionDtoFromJSONTyped](README.md#connectorimapconnectiondtofromjsontyped)
 - [ConnectorImapConnectionDtoToJSON](README.md#connectorimapconnectiondtotojson)
+- [ConnectorImapConnectionTestResultFromJSON](README.md#connectorimapconnectiontestresultfromjson)
+- [ConnectorImapConnectionTestResultFromJSONTyped](README.md#connectorimapconnectiontestresultfromjsontyped)
+- [ConnectorImapConnectionTestResultToJSON](README.md#connectorimapconnectiontestresulttojson)
 - [ConnectorProjectionFromJSON](README.md#connectorprojectionfromjson)
 - [ConnectorProjectionFromJSONTyped](README.md#connectorprojectionfromjsontyped)
 - [ConnectorProjectionToJSON](README.md#connectorprojectiontojson)
+- [ConnectorProviderSettingsDtoFromJSON](README.md#connectorprovidersettingsdtofromjson)
+- [ConnectorProviderSettingsDtoFromJSONTyped](README.md#connectorprovidersettingsdtofromjsontyped)
+- [ConnectorProviderSettingsDtoToJSON](README.md#connectorprovidersettingsdtotojson)
 - [ConnectorSmtpConnectionDtoFromJSON](README.md#connectorsmtpconnectiondtofromjson)
 - [ConnectorSmtpConnectionDtoFromJSONTyped](README.md#connectorsmtpconnectiondtofromjsontyped)
 - [ConnectorSmtpConnectionDtoToJSON](README.md#connectorsmtpconnectiondtotojson)
-- [ConnectorSyncEventDtoFromJSON](README.md#connectorsynceventdtofromjson)
-- [ConnectorSyncEventDtoFromJSONTyped](README.md#connectorsynceventdtofromjsontyped)
-- [ConnectorSyncEventDtoToJSON](README.md#connectorsynceventdtotojson)
-- [ConnectorSyncEventProjectionFromJSON](README.md#connectorsynceventprojectionfromjson)
-- [ConnectorSyncEventProjectionFromJSONTyped](README.md#connectorsynceventprojectionfromjsontyped)
-- [ConnectorSyncEventProjectionToJSON](README.md#connectorsynceventprojectiontojson)
-- [ConnectorSyncRequestResultExceptionCauseFromJSON](README.md#connectorsyncrequestresultexceptioncausefromjson)
-- [ConnectorSyncRequestResultExceptionCauseFromJSONTyped](README.md#connectorsyncrequestresultexceptioncausefromjsontyped)
-- [ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON](README.md#connectorsyncrequestresultexceptioncausestacktracefromjson)
-- [ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped](README.md#connectorsyncrequestresultexceptioncausestacktracefromjsontyped)
-- [ConnectorSyncRequestResultExceptionCauseStackTraceToJSON](README.md#connectorsyncrequestresultexceptioncausestacktracetojson)
-- [ConnectorSyncRequestResultExceptionCauseToJSON](README.md#connectorsyncrequestresultexceptioncausetojson)
-- [ConnectorSyncRequestResultExceptionFromJSON](README.md#connectorsyncrequestresultexceptionfromjson)
-- [ConnectorSyncRequestResultExceptionFromJSONTyped](README.md#connectorsyncrequestresultexceptionfromjsontyped)
-- [ConnectorSyncRequestResultExceptionToJSON](README.md#connectorsyncrequestresultexceptiontojson)
+- [ConnectorSmtpConnectionTestResultFromJSON](README.md#connectorsmtpconnectiontestresultfromjson)
+- [ConnectorSmtpConnectionTestResultFromJSONTyped](README.md#connectorsmtpconnectiontestresultfromjsontyped)
+- [ConnectorSmtpConnectionTestResultToJSON](README.md#connectorsmtpconnectiontestresulttojson)
 - [ConnectorSyncRequestResultFromJSON](README.md#connectorsyncrequestresultfromjson)
 - [ConnectorSyncRequestResultFromJSONTyped](README.md#connectorsyncrequestresultfromjsontyped)
 - [ConnectorSyncRequestResultToJSON](README.md#connectorsyncrequestresulttojson)
 - [ConnectorSyncResultFromJSON](README.md#connectorsyncresultfromjson)
 - [ConnectorSyncResultFromJSONTyped](README.md#connectorsyncresultfromjsontyped)
 - [ConnectorSyncResultToJSON](README.md#connectorsyncresulttojson)
+- [ConnectorSyncSettingsDtoFromJSON](README.md#connectorsyncsettingsdtofromjson)
+- [ConnectorSyncSettingsDtoFromJSONTyped](README.md#connectorsyncsettingsdtofromjsontyped)
+- [ConnectorSyncSettingsDtoToJSON](README.md#connectorsyncsettingsdtotojson)
 - [ContactDtoFromJSON](README.md#contactdtofromjson)
 - [ContactDtoFromJSONTyped](README.md#contactdtofromjsontyped)
 - [ContactDtoToJSON](README.md#contactdtotojson)
@@ -988,6 +1046,12 @@ MailSlurp JS
 - [CreateConnectorSmtpConnectionOptionsFromJSON](README.md#createconnectorsmtpconnectionoptionsfromjson)
 - [CreateConnectorSmtpConnectionOptionsFromJSONTyped](README.md#createconnectorsmtpconnectionoptionsfromjsontyped)
 - [CreateConnectorSmtpConnectionOptionsToJSON](README.md#createconnectorsmtpconnectionoptionstojson)
+- [CreateConnectorSyncSettingsOptionsFromJSON](README.md#createconnectorsyncsettingsoptionsfromjson)
+- [CreateConnectorSyncSettingsOptionsFromJSONTyped](README.md#createconnectorsyncsettingsoptionsfromjsontyped)
+- [CreateConnectorSyncSettingsOptionsToJSON](README.md#createconnectorsyncsettingsoptionstojson)
+- [CreateConnectorWithOptionsFromJSON](README.md#createconnectorwithoptionsfromjson)
+- [CreateConnectorWithOptionsFromJSONTyped](README.md#createconnectorwithoptionsfromjsontyped)
+- [CreateConnectorWithOptionsToJSON](README.md#createconnectorwithoptionstojson)
 - [CreateContactOptionsFromJSON](README.md#createcontactoptionsfromjson)
 - [CreateContactOptionsFromJSONTyped](README.md#createcontactoptionsfromjsontyped)
 - [CreateContactOptionsToJSON](README.md#createcontactoptionstojson)
@@ -1012,6 +1076,12 @@ MailSlurp JS
 - [CreateInboxRulesetOptionsFromJSON](README.md#createinboxrulesetoptionsfromjson)
 - [CreateInboxRulesetOptionsFromJSONTyped](README.md#createinboxrulesetoptionsfromjsontyped)
 - [CreateInboxRulesetOptionsToJSON](README.md#createinboxrulesetoptionstojson)
+- [CreatePortalOptionsFromJSON](README.md#createportaloptionsfromjson)
+- [CreatePortalOptionsFromJSONTyped](README.md#createportaloptionsfromjsontyped)
+- [CreatePortalOptionsToJSON](README.md#createportaloptionstojson)
+- [CreatePortalUserOptionsFromJSON](README.md#createportaluseroptionsfromjson)
+- [CreatePortalUserOptionsFromJSONTyped](README.md#createportaluseroptionsfromjsontyped)
+- [CreatePortalUserOptionsToJSON](README.md#createportaluseroptionstojson)
 - [CreateTemplateOptionsFromJSON](README.md#createtemplateoptionsfromjson)
 - [CreateTemplateOptionsFromJSONTyped](README.md#createtemplateoptionsfromjsontyped)
 - [CreateTemplateOptionsToJSON](README.md#createtemplateoptionstojson)
@@ -1069,6 +1139,9 @@ MailSlurp JS
 - [EmailAnalysisFromJSON](README.md#emailanalysisfromjson)
 - [EmailAnalysisFromJSONTyped](README.md#emailanalysisfromjsontyped)
 - [EmailAnalysisToJSON](README.md#emailanalysistojson)
+- [EmailAvailableResultFromJSON](README.md#emailavailableresultfromjson)
+- [EmailAvailableResultFromJSONTyped](README.md#emailavailableresultfromjsontyped)
+- [EmailAvailableResultToJSON](README.md#emailavailableresulttojson)
 - [EmailContentMatchResultFromJSON](README.md#emailcontentmatchresultfromjson)
 - [EmailContentMatchResultFromJSONTyped](README.md#emailcontentmatchresultfromjsontyped)
 - [EmailContentMatchResultToJSON](README.md#emailcontentmatchresulttojson)
@@ -1225,6 +1298,18 @@ MailSlurp JS
 - [GroupProjectionFromJSON](README.md#groupprojectionfromjson)
 - [GroupProjectionFromJSONTyped](README.md#groupprojectionfromjsontyped)
 - [GroupProjectionToJSON](README.md#groupprojectiontojson)
+- [GuestPortalDtoFromJSON](README.md#guestportaldtofromjson)
+- [GuestPortalDtoFromJSONTyped](README.md#guestportaldtofromjsontyped)
+- [GuestPortalDtoToJSON](README.md#guestportaldtotojson)
+- [GuestPortalUserCreateDtoFromJSON](README.md#guestportalusercreatedtofromjson)
+- [GuestPortalUserCreateDtoFromJSONTyped](README.md#guestportalusercreatedtofromjsontyped)
+- [GuestPortalUserCreateDtoToJSON](README.md#guestportalusercreatedtotojson)
+- [GuestPortalUserDtoFromJSON](README.md#guestportaluserdtofromjson)
+- [GuestPortalUserDtoFromJSONTyped](README.md#guestportaluserdtofromjsontyped)
+- [GuestPortalUserDtoToJSON](README.md#guestportaluserdtotojson)
+- [GuestPortalUserProjectionFromJSON](README.md#guestportaluserprojectionfromjson)
+- [GuestPortalUserProjectionFromJSONTyped](README.md#guestportaluserprojectionfromjsontyped)
+- [GuestPortalUserProjectionToJSON](README.md#guestportaluserprojectiontojson)
 - [HTMLValidationResultFromJSON](README.md#htmlvalidationresultfromjson)
 - [HTMLValidationResultFromJSONTyped](README.md#htmlvalidationresultfromjsontyped)
 - [HTMLValidationResultToJSON](README.md#htmlvalidationresulttojson)
@@ -1261,6 +1346,9 @@ MailSlurp JS
 - [ImapServerListResultFromJSON](README.md#imapserverlistresultfromjson)
 - [ImapServerListResultFromJSONTyped](README.md#imapserverlistresultfromjsontyped)
 - [ImapServerListResultToJSON](README.md#imapserverlistresulttojson)
+- [ImapServerMailboxResultFromJSON](README.md#imapservermailboxresultfromjson)
+- [ImapServerMailboxResultFromJSONTyped](README.md#imapservermailboxresultfromjsontyped)
+- [ImapServerMailboxResultToJSON](README.md#imapservermailboxresulttojson)
 - [ImapServerSearchOptionsFromJSON](README.md#imapserversearchoptionsfromjson)
 - [ImapServerSearchOptionsFromJSONTyped](README.md#imapserversearchoptionsfromjsontyped)
 - [ImapServerSearchOptionsToJSON](README.md#imapserversearchoptionstojson)
@@ -1387,6 +1475,18 @@ MailSlurp JS
 - [NewFakeEmailAddressResultFromJSON](README.md#newfakeemailaddressresultfromjson)
 - [NewFakeEmailAddressResultFromJSONTyped](README.md#newfakeemailaddressresultfromjsontyped)
 - [NewFakeEmailAddressResultToJSON](README.md#newfakeemailaddressresulttojson)
+- [OptionalConnectorDtoFromJSON](README.md#optionalconnectordtofromjson)
+- [OptionalConnectorDtoFromJSONTyped](README.md#optionalconnectordtofromjsontyped)
+- [OptionalConnectorDtoToJSON](README.md#optionalconnectordtotojson)
+- [OptionalConnectorImapConnectionDtoFromJSON](README.md#optionalconnectorimapconnectiondtofromjson)
+- [OptionalConnectorImapConnectionDtoFromJSONTyped](README.md#optionalconnectorimapconnectiondtofromjsontyped)
+- [OptionalConnectorImapConnectionDtoToJSON](README.md#optionalconnectorimapconnectiondtotojson)
+- [OptionalConnectorSmtpConnectionDtoFromJSON](README.md#optionalconnectorsmtpconnectiondtofromjson)
+- [OptionalConnectorSmtpConnectionDtoFromJSONTyped](README.md#optionalconnectorsmtpconnectiondtofromjsontyped)
+- [OptionalConnectorSmtpConnectionDtoToJSON](README.md#optionalconnectorsmtpconnectiondtotojson)
+- [OptionalConnectorSyncSettingsDtoFromJSON](README.md#optionalconnectorsyncsettingsdtofromjson)
+- [OptionalConnectorSyncSettingsDtoFromJSONTyped](README.md#optionalconnectorsyncsettingsdtofromjsontyped)
+- [OptionalConnectorSyncSettingsDtoToJSON](README.md#optionalconnectorsyncsettingsdtotojson)
 - [OrganizationInboxProjectionFromJSON](README.md#organizationinboxprojectionfromjson)
 - [OrganizationInboxProjectionFromJSONTyped](README.md#organizationinboxprojectionfromjsontyped)
 - [OrganizationInboxProjectionToJSON](README.md#organizationinboxprojectiontojson)
@@ -1405,11 +1505,11 @@ MailSlurp JS
 - [PageComplaintFromJSON](README.md#pagecomplaintfromjson)
 - [PageComplaintFromJSONTyped](README.md#pagecomplaintfromjsontyped)
 - [PageComplaintToJSON](README.md#pagecomplainttojson)
+- [PageConnectorEventsFromJSON](README.md#pageconnectoreventsfromjson)
+- [PageConnectorEventsFromJSONTyped](README.md#pageconnectoreventsfromjsontyped)
+- [PageConnectorEventsToJSON](README.md#pageconnectoreventstojson)
 - [PageConnectorFromJSON](README.md#pageconnectorfromjson)
 - [PageConnectorFromJSONTyped](README.md#pageconnectorfromjsontyped)
-- [PageConnectorSyncEventsFromJSON](README.md#pageconnectorsynceventsfromjson)
-- [PageConnectorSyncEventsFromJSONTyped](README.md#pageconnectorsynceventsfromjsontyped)
-- [PageConnectorSyncEventsToJSON](README.md#pageconnectorsynceventstojson)
 - [PageConnectorToJSON](README.md#pageconnectortojson)
 - [PageContactProjectionFromJSON](README.md#pagecontactprojectionfromjson)
 - [PageContactProjectionFromJSONTyped](README.md#pagecontactprojectionfromjsontyped)
@@ -1432,6 +1532,9 @@ MailSlurp JS
 - [PageGroupProjectionFromJSON](README.md#pagegroupprojectionfromjson)
 - [PageGroupProjectionFromJSONTyped](README.md#pagegroupprojectionfromjsontyped)
 - [PageGroupProjectionToJSON](README.md#pagegroupprojectiontojson)
+- [PageGuestPortalUsersFromJSON](README.md#pageguestportalusersfromjson)
+- [PageGuestPortalUsersFromJSONTyped](README.md#pageguestportalusersfromjsontyped)
+- [PageGuestPortalUsersToJSON](README.md#pageguestportaluserstojson)
 - [PageInboxForwarderDtoFromJSON](README.md#pageinboxforwarderdtofromjson)
 - [PageInboxForwarderDtoFromJSONTyped](README.md#pageinboxforwarderdtofromjsontyped)
 - [PageInboxForwarderDtoToJSON](README.md#pageinboxforwarderdtotojson)
@@ -1504,6 +1607,9 @@ MailSlurp JS
 - [PhonePlanDtoFromJSON](README.md#phoneplandtofromjson)
 - [PhonePlanDtoFromJSONTyped](README.md#phoneplandtofromjsontyped)
 - [PhonePlanDtoToJSON](README.md#phoneplandtotojson)
+- [ProviderSettingsFromJSON](README.md#providersettingsfromjson)
+- [ProviderSettingsFromJSONTyped](README.md#providersettingsfromjsontyped)
+- [ProviderSettingsToJSON](README.md#providersettingstojson)
 - [RawEmailJsonFromJSON](README.md#rawemailjsonfromjson)
 - [RawEmailJsonFromJSONTyped](README.md#rawemailjsonfromjsontyped)
 - [RawEmailJsonToJSON](README.md#rawemailjsontojson)
@@ -1648,12 +1754,18 @@ MailSlurp JS
 - [UpdateGroupContactsFromJSON](README.md#updategroupcontactsfromjson)
 - [UpdateGroupContactsFromJSONTyped](README.md#updategroupcontactsfromjsontyped)
 - [UpdateGroupContactsToJSON](README.md#updategroupcontactstojson)
+- [UpdateImapAccessOptionsFromJSON](README.md#updateimapaccessoptionsfromjson)
+- [UpdateImapAccessOptionsFromJSONTyped](README.md#updateimapaccessoptionsfromjsontyped)
+- [UpdateImapAccessOptionsToJSON](README.md#updateimapaccessoptionstojson)
 - [UpdateInboxOptionsFromJSON](README.md#updateinboxoptionsfromjson)
 - [UpdateInboxOptionsFromJSONTyped](README.md#updateinboxoptionsfromjsontyped)
 - [UpdateInboxOptionsToJSON](README.md#updateinboxoptionstojson)
 - [UpdateInboxReplierOptionsFromJSON](README.md#updateinboxreplieroptionsfromjson)
 - [UpdateInboxReplierOptionsFromJSONTyped](README.md#updateinboxreplieroptionsfromjsontyped)
 - [UpdateInboxReplierOptionsToJSON](README.md#updateinboxreplieroptionstojson)
+- [UpdateSmtpAccessOptionsFromJSON](README.md#updatesmtpaccessoptionsfromjson)
+- [UpdateSmtpAccessOptionsFromJSONTyped](README.md#updatesmtpaccessoptionsfromjsontyped)
+- [UpdateSmtpAccessOptionsToJSON](README.md#updatesmtpaccessoptionstojson)
 - [UploadAttachmentOptionsFromJSON](README.md#uploadattachmentoptionsfromjson)
 - [UploadAttachmentOptionsFromJSONTyped](README.md#uploadattachmentoptionsfromjsontyped)
 - [UploadAttachmentOptionsToJSON](README.md#uploadattachmentoptionstojson)
@@ -3015,6 +3127,104 @@ ___
 
 ___
 
+### ConnectorEventDtoFromJSON
+
+▸ **ConnectorEventDtoFromJSON**(`json`): [`ConnectorEventDto`](interfaces/ConnectorEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorEventDto`](interfaces/ConnectorEventDto.md)
+
+___
+
+### ConnectorEventDtoFromJSONTyped
+
+▸ **ConnectorEventDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorEventDto`](interfaces/ConnectorEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorEventDto`](interfaces/ConnectorEventDto.md)
+
+___
+
+### ConnectorEventDtoToJSON
+
+▸ **ConnectorEventDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorEventDto`](interfaces/ConnectorEventDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorEventProjectionFromJSON
+
+▸ **ConnectorEventProjectionFromJSON**(`json`): [`ConnectorEventProjection`](interfaces/ConnectorEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorEventProjection`](interfaces/ConnectorEventProjection.md)
+
+___
+
+### ConnectorEventProjectionFromJSONTyped
+
+▸ **ConnectorEventProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorEventProjection`](interfaces/ConnectorEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorEventProjection`](interfaces/ConnectorEventProjection.md)
+
+___
+
+### ConnectorEventProjectionToJSON
+
+▸ **ConnectorEventProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorEventProjection`](interfaces/ConnectorEventProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ConnectorImapConnectionDtoFromJSON
 
 ▸ **ConnectorImapConnectionDtoFromJSON**(`json`): [`ConnectorImapConnectionDto`](interfaces/ConnectorImapConnectionDto.md)
@@ -3057,6 +3267,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ConnectorImapConnectionDto`](interfaces/ConnectorImapConnectionDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorImapConnectionTestResultFromJSON
+
+▸ **ConnectorImapConnectionTestResultFromJSON**(`json`): [`ConnectorImapConnectionTestResult`](interfaces/ConnectorImapConnectionTestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorImapConnectionTestResult`](interfaces/ConnectorImapConnectionTestResult.md)
+
+___
+
+### ConnectorImapConnectionTestResultFromJSONTyped
+
+▸ **ConnectorImapConnectionTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorImapConnectionTestResult`](interfaces/ConnectorImapConnectionTestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorImapConnectionTestResult`](interfaces/ConnectorImapConnectionTestResult.md)
+
+___
+
+### ConnectorImapConnectionTestResultToJSON
+
+▸ **ConnectorImapConnectionTestResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorImapConnectionTestResult`](interfaces/ConnectorImapConnectionTestResult.md) |
 
 #### Returns
 
@@ -3113,6 +3372,55 @@ ___
 
 ___
 
+### ConnectorProviderSettingsDtoFromJSON
+
+▸ **ConnectorProviderSettingsDtoFromJSON**(`json`): [`ConnectorProviderSettingsDto`](interfaces/ConnectorProviderSettingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorProviderSettingsDto`](interfaces/ConnectorProviderSettingsDto.md)
+
+___
+
+### ConnectorProviderSettingsDtoFromJSONTyped
+
+▸ **ConnectorProviderSettingsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorProviderSettingsDto`](interfaces/ConnectorProviderSettingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorProviderSettingsDto`](interfaces/ConnectorProviderSettingsDto.md)
+
+___
+
+### ConnectorProviderSettingsDtoToJSON
+
+▸ **ConnectorProviderSettingsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorProviderSettingsDto`](interfaces/ConnectorProviderSettingsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ConnectorSmtpConnectionDtoFromJSON
 
 ▸ **ConnectorSmtpConnectionDtoFromJSON**(`json`): [`ConnectorSmtpConnectionDto`](interfaces/ConnectorSmtpConnectionDto.md)
@@ -3162,58 +3470,9 @@ ___
 
 ___
 
-### ConnectorSyncEventDtoFromJSON
+### ConnectorSmtpConnectionTestResultFromJSON
 
-▸ **ConnectorSyncEventDtoFromJSON**(`json`): [`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
-
-___
-
-### ConnectorSyncEventDtoFromJSONTyped
-
-▸ **ConnectorSyncEventDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
-
-___
-
-### ConnectorSyncEventDtoToJSON
-
-▸ **ConnectorSyncEventDtoToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### ConnectorSyncEventProjectionFromJSON
-
-▸ **ConnectorSyncEventProjectionFromJSON**(`json`): [`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+▸ **ConnectorSmtpConnectionTestResultFromJSON**(`json`): [`ConnectorSmtpConnectionTestResult`](interfaces/ConnectorSmtpConnectionTestResult.md)
 
 #### Parameters
 
@@ -3223,13 +3482,13 @@ ___
 
 #### Returns
 
-[`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+[`ConnectorSmtpConnectionTestResult`](interfaces/ConnectorSmtpConnectionTestResult.md)
 
 ___
 
-### ConnectorSyncEventProjectionFromJSONTyped
+### ConnectorSmtpConnectionTestResultFromJSONTyped
 
-▸ **ConnectorSyncEventProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+▸ **ConnectorSmtpConnectionTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSmtpConnectionTestResult`](interfaces/ConnectorSmtpConnectionTestResult.md)
 
 #### Parameters
 
@@ -3240,166 +3499,19 @@ ___
 
 #### Returns
 
-[`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+[`ConnectorSmtpConnectionTestResult`](interfaces/ConnectorSmtpConnectionTestResult.md)
 
 ___
 
-### ConnectorSyncEventProjectionToJSON
+### ConnectorSmtpConnectionTestResultToJSON
 
-▸ **ConnectorSyncEventProjectionToJSON**(`value?`): `any`
+▸ **ConnectorSmtpConnectionTestResultToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### ConnectorSyncRequestResultExceptionCauseFromJSON
-
-▸ **ConnectorSyncRequestResultExceptionCauseFromJSON**(`json`): [`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
-
-___
-
-### ConnectorSyncRequestResultExceptionCauseFromJSONTyped
-
-▸ **ConnectorSyncRequestResultExceptionCauseFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
-
-___
-
-### ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON
-
-▸ **ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON**(`json`): [`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
-
-___
-
-### ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped
-
-▸ **ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
-
-___
-
-### ConnectorSyncRequestResultExceptionCauseStackTraceToJSON
-
-▸ **ConnectorSyncRequestResultExceptionCauseStackTraceToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### ConnectorSyncRequestResultExceptionCauseToJSON
-
-▸ **ConnectorSyncRequestResultExceptionCauseToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### ConnectorSyncRequestResultExceptionFromJSON
-
-▸ **ConnectorSyncRequestResultExceptionFromJSON**(`json`): [`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
-
-___
-
-### ConnectorSyncRequestResultExceptionFromJSONTyped
-
-▸ **ConnectorSyncRequestResultExceptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
-
-___
-
-### ConnectorSyncRequestResultExceptionToJSON
-
-▸ **ConnectorSyncRequestResultExceptionToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md) |
+| `value?` | [`ConnectorSmtpConnectionTestResult`](interfaces/ConnectorSmtpConnectionTestResult.md) |
 
 #### Returns
 
@@ -3498,6 +3610,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ConnectorSyncResult`](interfaces/ConnectorSyncResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncSettingsDtoFromJSON
+
+▸ **ConnectorSyncSettingsDtoFromJSON**(`json`): [`ConnectorSyncSettingsDto`](interfaces/ConnectorSyncSettingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncSettingsDto`](interfaces/ConnectorSyncSettingsDto.md)
+
+___
+
+### ConnectorSyncSettingsDtoFromJSONTyped
+
+▸ **ConnectorSyncSettingsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncSettingsDto`](interfaces/ConnectorSyncSettingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncSettingsDto`](interfaces/ConnectorSyncSettingsDto.md)
+
+___
+
+### ConnectorSyncSettingsDtoToJSON
+
+▸ **ConnectorSyncSettingsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncSettingsDto`](interfaces/ConnectorSyncSettingsDto.md) |
 
 #### Returns
 
@@ -3897,6 +4058,104 @@ ___
 
 ___
 
+### CreateConnectorSyncSettingsOptionsFromJSON
+
+▸ **CreateConnectorSyncSettingsOptionsFromJSON**(`json`): [`CreateConnectorSyncSettingsOptions`](interfaces/CreateConnectorSyncSettingsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateConnectorSyncSettingsOptions`](interfaces/CreateConnectorSyncSettingsOptions.md)
+
+___
+
+### CreateConnectorSyncSettingsOptionsFromJSONTyped
+
+▸ **CreateConnectorSyncSettingsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateConnectorSyncSettingsOptions`](interfaces/CreateConnectorSyncSettingsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateConnectorSyncSettingsOptions`](interfaces/CreateConnectorSyncSettingsOptions.md)
+
+___
+
+### CreateConnectorSyncSettingsOptionsToJSON
+
+▸ **CreateConnectorSyncSettingsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateConnectorSyncSettingsOptions`](interfaces/CreateConnectorSyncSettingsOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateConnectorWithOptionsFromJSON
+
+▸ **CreateConnectorWithOptionsFromJSON**(`json`): [`CreateConnectorWithOptions`](interfaces/CreateConnectorWithOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateConnectorWithOptions`](interfaces/CreateConnectorWithOptions.md)
+
+___
+
+### CreateConnectorWithOptionsFromJSONTyped
+
+▸ **CreateConnectorWithOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateConnectorWithOptions`](interfaces/CreateConnectorWithOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateConnectorWithOptions`](interfaces/CreateConnectorWithOptions.md)
+
+___
+
+### CreateConnectorWithOptionsToJSON
+
+▸ **CreateConnectorWithOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateConnectorWithOptions`](interfaces/CreateConnectorWithOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### CreateContactOptionsFromJSON
 
 ▸ **CreateContactOptionsFromJSON**(`json`): [`CreateContactOptions`](interfaces/CreateContactOptions.md)
@@ -4282,6 +4541,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreatePortalOptionsFromJSON
+
+▸ **CreatePortalOptionsFromJSON**(`json`): [`CreatePortalOptions`](interfaces/CreatePortalOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreatePortalOptions`](interfaces/CreatePortalOptions.md)
+
+___
+
+### CreatePortalOptionsFromJSONTyped
+
+▸ **CreatePortalOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreatePortalOptions`](interfaces/CreatePortalOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreatePortalOptions`](interfaces/CreatePortalOptions.md)
+
+___
+
+### CreatePortalOptionsToJSON
+
+▸ **CreatePortalOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreatePortalOptions`](interfaces/CreatePortalOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreatePortalUserOptionsFromJSON
+
+▸ **CreatePortalUserOptionsFromJSON**(`json`): [`CreatePortalUserOptions`](interfaces/CreatePortalUserOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreatePortalUserOptions`](interfaces/CreatePortalUserOptions.md)
+
+___
+
+### CreatePortalUserOptionsFromJSONTyped
+
+▸ **CreatePortalUserOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreatePortalUserOptions`](interfaces/CreatePortalUserOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreatePortalUserOptions`](interfaces/CreatePortalUserOptions.md)
+
+___
+
+### CreatePortalUserOptionsToJSON
+
+▸ **CreatePortalUserOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreatePortalUserOptions`](interfaces/CreatePortalUserOptions.md) |
 
 #### Returns
 
@@ -5213,6 +5570,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`EmailAnalysis`](interfaces/EmailAnalysis.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailAvailableResultFromJSON
+
+▸ **EmailAvailableResultFromJSON**(`json`): [`EmailAvailableResult`](interfaces/EmailAvailableResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailAvailableResult`](interfaces/EmailAvailableResult.md)
+
+___
+
+### EmailAvailableResultFromJSONTyped
+
+▸ **EmailAvailableResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailAvailableResult`](interfaces/EmailAvailableResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailAvailableResult`](interfaces/EmailAvailableResult.md)
+
+___
+
+### EmailAvailableResultToJSON
+
+▸ **EmailAvailableResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailAvailableResult`](interfaces/EmailAvailableResult.md) |
 
 #### Returns
 
@@ -7768,6 +8174,202 @@ ___
 
 ___
 
+### GuestPortalDtoFromJSON
+
+▸ **GuestPortalDtoFromJSON**(`json`): [`GuestPortalDto`](interfaces/GuestPortalDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GuestPortalDto`](interfaces/GuestPortalDto.md)
+
+___
+
+### GuestPortalDtoFromJSONTyped
+
+▸ **GuestPortalDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GuestPortalDto`](interfaces/GuestPortalDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GuestPortalDto`](interfaces/GuestPortalDto.md)
+
+___
+
+### GuestPortalDtoToJSON
+
+▸ **GuestPortalDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GuestPortalDto`](interfaces/GuestPortalDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GuestPortalUserCreateDtoFromJSON
+
+▸ **GuestPortalUserCreateDtoFromJSON**(`json`): [`GuestPortalUserCreateDto`](interfaces/GuestPortalUserCreateDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GuestPortalUserCreateDto`](interfaces/GuestPortalUserCreateDto.md)
+
+___
+
+### GuestPortalUserCreateDtoFromJSONTyped
+
+▸ **GuestPortalUserCreateDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GuestPortalUserCreateDto`](interfaces/GuestPortalUserCreateDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GuestPortalUserCreateDto`](interfaces/GuestPortalUserCreateDto.md)
+
+___
+
+### GuestPortalUserCreateDtoToJSON
+
+▸ **GuestPortalUserCreateDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GuestPortalUserCreateDto`](interfaces/GuestPortalUserCreateDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GuestPortalUserDtoFromJSON
+
+▸ **GuestPortalUserDtoFromJSON**(`json`): [`GuestPortalUserDto`](interfaces/GuestPortalUserDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GuestPortalUserDto`](interfaces/GuestPortalUserDto.md)
+
+___
+
+### GuestPortalUserDtoFromJSONTyped
+
+▸ **GuestPortalUserDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GuestPortalUserDto`](interfaces/GuestPortalUserDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GuestPortalUserDto`](interfaces/GuestPortalUserDto.md)
+
+___
+
+### GuestPortalUserDtoToJSON
+
+▸ **GuestPortalUserDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GuestPortalUserDto`](interfaces/GuestPortalUserDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GuestPortalUserProjectionFromJSON
+
+▸ **GuestPortalUserProjectionFromJSON**(`json`): [`GuestPortalUserProjection`](interfaces/GuestPortalUserProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GuestPortalUserProjection`](interfaces/GuestPortalUserProjection.md)
+
+___
+
+### GuestPortalUserProjectionFromJSONTyped
+
+▸ **GuestPortalUserProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GuestPortalUserProjection`](interfaces/GuestPortalUserProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GuestPortalUserProjection`](interfaces/GuestPortalUserProjection.md)
+
+___
+
+### GuestPortalUserProjectionToJSON
+
+▸ **GuestPortalUserProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GuestPortalUserProjection`](interfaces/GuestPortalUserProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### HTMLValidationResultFromJSON
 
 ▸ **HTMLValidationResultFromJSON**(`json`): [`HTMLValidationResult`](interfaces/HTMLValidationResult.md)
@@ -8349,6 +8951,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ImapServerListResult`](interfaces/ImapServerListResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerMailboxResultFromJSON
+
+▸ **ImapServerMailboxResultFromJSON**(`json`): [`ImapServerMailboxResult`](interfaces/ImapServerMailboxResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerMailboxResult`](interfaces/ImapServerMailboxResult.md)
+
+___
+
+### ImapServerMailboxResultFromJSONTyped
+
+▸ **ImapServerMailboxResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerMailboxResult`](interfaces/ImapServerMailboxResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerMailboxResult`](interfaces/ImapServerMailboxResult.md)
+
+___
+
+### ImapServerMailboxResultToJSON
+
+▸ **ImapServerMailboxResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerMailboxResult`](interfaces/ImapServerMailboxResult.md) |
 
 #### Returns
 
@@ -10414,6 +11065,202 @@ ___
 
 ___
 
+### OptionalConnectorDtoFromJSON
+
+▸ **OptionalConnectorDtoFromJSON**(`json`): [`OptionalConnectorDto`](interfaces/OptionalConnectorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptionalConnectorDto`](interfaces/OptionalConnectorDto.md)
+
+___
+
+### OptionalConnectorDtoFromJSONTyped
+
+▸ **OptionalConnectorDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptionalConnectorDto`](interfaces/OptionalConnectorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptionalConnectorDto`](interfaces/OptionalConnectorDto.md)
+
+___
+
+### OptionalConnectorDtoToJSON
+
+▸ **OptionalConnectorDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptionalConnectorDto`](interfaces/OptionalConnectorDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### OptionalConnectorImapConnectionDtoFromJSON
+
+▸ **OptionalConnectorImapConnectionDtoFromJSON**(`json`): [`OptionalConnectorImapConnectionDto`](interfaces/OptionalConnectorImapConnectionDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptionalConnectorImapConnectionDto`](interfaces/OptionalConnectorImapConnectionDto.md)
+
+___
+
+### OptionalConnectorImapConnectionDtoFromJSONTyped
+
+▸ **OptionalConnectorImapConnectionDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptionalConnectorImapConnectionDto`](interfaces/OptionalConnectorImapConnectionDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptionalConnectorImapConnectionDto`](interfaces/OptionalConnectorImapConnectionDto.md)
+
+___
+
+### OptionalConnectorImapConnectionDtoToJSON
+
+▸ **OptionalConnectorImapConnectionDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptionalConnectorImapConnectionDto`](interfaces/OptionalConnectorImapConnectionDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### OptionalConnectorSmtpConnectionDtoFromJSON
+
+▸ **OptionalConnectorSmtpConnectionDtoFromJSON**(`json`): [`OptionalConnectorSmtpConnectionDto`](interfaces/OptionalConnectorSmtpConnectionDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptionalConnectorSmtpConnectionDto`](interfaces/OptionalConnectorSmtpConnectionDto.md)
+
+___
+
+### OptionalConnectorSmtpConnectionDtoFromJSONTyped
+
+▸ **OptionalConnectorSmtpConnectionDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptionalConnectorSmtpConnectionDto`](interfaces/OptionalConnectorSmtpConnectionDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptionalConnectorSmtpConnectionDto`](interfaces/OptionalConnectorSmtpConnectionDto.md)
+
+___
+
+### OptionalConnectorSmtpConnectionDtoToJSON
+
+▸ **OptionalConnectorSmtpConnectionDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptionalConnectorSmtpConnectionDto`](interfaces/OptionalConnectorSmtpConnectionDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### OptionalConnectorSyncSettingsDtoFromJSON
+
+▸ **OptionalConnectorSyncSettingsDtoFromJSON**(`json`): [`OptionalConnectorSyncSettingsDto`](interfaces/OptionalConnectorSyncSettingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptionalConnectorSyncSettingsDto`](interfaces/OptionalConnectorSyncSettingsDto.md)
+
+___
+
+### OptionalConnectorSyncSettingsDtoFromJSONTyped
+
+▸ **OptionalConnectorSyncSettingsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptionalConnectorSyncSettingsDto`](interfaces/OptionalConnectorSyncSettingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptionalConnectorSyncSettingsDto`](interfaces/OptionalConnectorSyncSettingsDto.md)
+
+___
+
+### OptionalConnectorSyncSettingsDtoToJSON
+
+▸ **OptionalConnectorSyncSettingsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptionalConnectorSyncSettingsDto`](interfaces/OptionalConnectorSyncSettingsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### OrganizationInboxProjectionFromJSON
 
 ▸ **OrganizationInboxProjectionFromJSON**(`json`): [`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md)
@@ -10708,6 +11555,55 @@ ___
 
 ___
 
+### PageConnectorEventsFromJSON
+
+▸ **PageConnectorEventsFromJSON**(`json`): [`PageConnectorEvents`](interfaces/PageConnectorEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageConnectorEvents`](interfaces/PageConnectorEvents.md)
+
+___
+
+### PageConnectorEventsFromJSONTyped
+
+▸ **PageConnectorEventsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageConnectorEvents`](interfaces/PageConnectorEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageConnectorEvents`](interfaces/PageConnectorEvents.md)
+
+___
+
+### PageConnectorEventsToJSON
+
+▸ **PageConnectorEventsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageConnectorEvents`](interfaces/PageConnectorEvents.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PageConnectorFromJSON
 
 ▸ **PageConnectorFromJSON**(`json`): [`PageConnector`](interfaces/PageConnector.md)
@@ -10738,55 +11634,6 @@ ___
 #### Returns
 
 [`PageConnector`](interfaces/PageConnector.md)
-
-___
-
-### PageConnectorSyncEventsFromJSON
-
-▸ **PageConnectorSyncEventsFromJSON**(`json`): [`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
-
-___
-
-### PageConnectorSyncEventsFromJSONTyped
-
-▸ **PageConnectorSyncEventsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
-
-___
-
-### PageConnectorSyncEventsToJSON
-
-▸ **PageConnectorSyncEventsToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md) |
-
-#### Returns
-
-`any`
 
 ___
 
@@ -11142,6 +11989,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageGroupProjection`](interfaces/PageGroupProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageGuestPortalUsersFromJSON
+
+▸ **PageGuestPortalUsersFromJSON**(`json`): [`PageGuestPortalUsers`](interfaces/PageGuestPortalUsers.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageGuestPortalUsers`](interfaces/PageGuestPortalUsers.md)
+
+___
+
+### PageGuestPortalUsersFromJSONTyped
+
+▸ **PageGuestPortalUsersFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageGuestPortalUsers`](interfaces/PageGuestPortalUsers.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageGuestPortalUsers`](interfaces/PageGuestPortalUsers.md)
+
+___
+
+### PageGuestPortalUsersToJSON
+
+▸ **PageGuestPortalUsersToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageGuestPortalUsers`](interfaces/PageGuestPortalUsers.md) |
 
 #### Returns
 
@@ -12318,6 +13214,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PhonePlanDto`](interfaces/PhonePlanDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ProviderSettingsFromJSON
+
+▸ **ProviderSettingsFromJSON**(`json`): [`ProviderSettings`](interfaces/ProviderSettings.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ProviderSettings`](interfaces/ProviderSettings.md)
+
+___
+
+### ProviderSettingsFromJSONTyped
+
+▸ **ProviderSettingsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ProviderSettings`](interfaces/ProviderSettings.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ProviderSettings`](interfaces/ProviderSettings.md)
+
+___
+
+### ProviderSettingsToJSON
+
+▸ **ProviderSettingsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ProviderSettings`](interfaces/ProviderSettings.md) |
 
 #### Returns
 
@@ -14677,6 +15622,55 @@ ___
 
 ___
 
+### UpdateImapAccessOptionsFromJSON
+
+▸ **UpdateImapAccessOptionsFromJSON**(`json`): [`UpdateImapAccessOptions`](interfaces/UpdateImapAccessOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UpdateImapAccessOptions`](interfaces/UpdateImapAccessOptions.md)
+
+___
+
+### UpdateImapAccessOptionsFromJSONTyped
+
+▸ **UpdateImapAccessOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateImapAccessOptions`](interfaces/UpdateImapAccessOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UpdateImapAccessOptions`](interfaces/UpdateImapAccessOptions.md)
+
+___
+
+### UpdateImapAccessOptionsToJSON
+
+▸ **UpdateImapAccessOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UpdateImapAccessOptions`](interfaces/UpdateImapAccessOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### UpdateInboxOptionsFromJSON
 
 ▸ **UpdateInboxOptionsFromJSON**(`json`): [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md)
@@ -14768,6 +15762,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`UpdateInboxReplierOptions`](interfaces/UpdateInboxReplierOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### UpdateSmtpAccessOptionsFromJSON
+
+▸ **UpdateSmtpAccessOptionsFromJSON**(`json`): [`UpdateSmtpAccessOptions`](interfaces/UpdateSmtpAccessOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UpdateSmtpAccessOptions`](interfaces/UpdateSmtpAccessOptions.md)
+
+___
+
+### UpdateSmtpAccessOptionsFromJSONTyped
+
+▸ **UpdateSmtpAccessOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateSmtpAccessOptions`](interfaces/UpdateSmtpAccessOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UpdateSmtpAccessOptions`](interfaces/UpdateSmtpAccessOptions.md)
+
+___
+
+### UpdateSmtpAccessOptionsToJSON
+
+▸ **UpdateSmtpAccessOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UpdateSmtpAccessOptions`](interfaces/UpdateSmtpAccessOptions.md) |
 
 #### Returns
 

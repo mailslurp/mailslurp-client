@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { MissedEmailProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { MissedEmailProjection } from './MissedEmailProjection';
 /**
  * Paginated MissedEmail results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageMissedEmailProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageMissedEmailProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageMissedEmailProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageMissedEmailProjection interface.
+ */
+export declare function instanceOfPageMissedEmailProjection(value: object): value is PageMissedEmailProjection;
 export declare function PageMissedEmailProjectionFromJSON(json: any): PageMissedEmailProjection;
 export declare function PageMissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageMissedEmailProjection;
-export declare function PageMissedEmailProjectionToJSON(value?: PageMissedEmailProjection | null): any;
+export declare function PageMissedEmailProjectionToJSON(json: any): PageMissedEmailProjection;
+export declare function PageMissedEmailProjectionToJSONTyped(value?: PageMissedEmailProjection | null, ignoreDiscriminator?: boolean): any;

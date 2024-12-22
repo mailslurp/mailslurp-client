@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTemplateOptionsToJSON = exports.CreateTemplateOptionsFromJSONTyped = exports.CreateTemplateOptionsFromJSON = void 0;
+exports.instanceOfCreateTemplateOptions = instanceOfCreateTemplateOptions;
+exports.CreateTemplateOptionsFromJSON = CreateTemplateOptionsFromJSON;
+exports.CreateTemplateOptionsFromJSONTyped = CreateTemplateOptionsFromJSONTyped;
+exports.CreateTemplateOptionsToJSON = CreateTemplateOptionsToJSON;
+exports.CreateTemplateOptionsToJSONTyped = CreateTemplateOptionsToJSONTyped;
+/**
+ * Check if a given object implements the CreateTemplateOptions interface.
+ */
+function instanceOfCreateTemplateOptions(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('content' in value) || value['content'] === undefined)
+        return false;
+    return true;
+}
 function CreateTemplateOptionsFromJSON(json) {
     return CreateTemplateOptionsFromJSONTyped(json, false);
 }
-exports.CreateTemplateOptionsFromJSON = CreateTemplateOptionsFromJSON;
 function CreateTemplateOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        content: json['content'],
+        'name': json['name'],
+        'content': json['content'],
     };
 }
-exports.CreateTemplateOptionsFromJSONTyped = CreateTemplateOptionsFromJSONTyped;
-function CreateTemplateOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateTemplateOptionsToJSON(json) {
+    return CreateTemplateOptionsToJSONTyped(json, false);
+}
+function CreateTemplateOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        content: value.content,
+        'name': value['name'],
+        'content': value['content'],
     };
 }
-exports.CreateTemplateOptionsToJSON = CreateTemplateOptionsToJSON;

@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailTextLinesResultToJSON = exports.EmailTextLinesResultFromJSONTyped = exports.EmailTextLinesResultFromJSON = void 0;
+exports.instanceOfEmailTextLinesResult = instanceOfEmailTextLinesResult;
+exports.EmailTextLinesResultFromJSON = EmailTextLinesResultFromJSON;
+exports.EmailTextLinesResultFromJSONTyped = EmailTextLinesResultFromJSONTyped;
+exports.EmailTextLinesResultToJSON = EmailTextLinesResultToJSON;
+exports.EmailTextLinesResultToJSONTyped = EmailTextLinesResultToJSONTyped;
+/**
+ * Check if a given object implements the EmailTextLinesResult interface.
+ */
+function instanceOfEmailTextLinesResult(value) {
+    if (!('lines' in value) || value['lines'] === undefined)
+        return false;
+    if (!('body' in value) || value['body'] === undefined)
+        return false;
+    return true;
+}
 function EmailTextLinesResultFromJSON(json) {
     return EmailTextLinesResultFromJSONTyped(json, false);
 }
-exports.EmailTextLinesResultFromJSON = EmailTextLinesResultFromJSON;
 function EmailTextLinesResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        lines: json['lines'],
-        body: json['body'],
+        'lines': json['lines'],
+        'body': json['body'],
     };
 }
-exports.EmailTextLinesResultFromJSONTyped = EmailTextLinesResultFromJSONTyped;
-function EmailTextLinesResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailTextLinesResultToJSON(json) {
+    return EmailTextLinesResultToJSONTyped(json, false);
+}
+function EmailTextLinesResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        lines: value.lines,
-        body: value.body,
+        'lines': value['lines'],
+        'body': value['body'],
     };
 }
-exports.EmailTextLinesResultToJSON = EmailTextLinesResultToJSON;

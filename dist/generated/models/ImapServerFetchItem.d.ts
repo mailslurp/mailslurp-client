@@ -46,6 +46,11 @@ export interface ImapServerFetchItem {
      */
     read: boolean;
 }
+/**
+ * Check if a given object implements the ImapServerFetchItem interface.
+ */
+export declare function instanceOfImapServerFetchItem(value: object): value is ImapServerFetchItem;
 export declare function ImapServerFetchItemFromJSON(json: any): ImapServerFetchItem;
 export declare function ImapServerFetchItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerFetchItem;
-export declare function ImapServerFetchItemToJSON(value?: ImapServerFetchItem | null): any;
+export declare function ImapServerFetchItemToJSON(json: any): ImapServerFetchItem;
+export declare function ImapServerFetchItemToJSONTyped(value?: ImapServerFetchItem | null, ignoreDiscriminator?: boolean): any;

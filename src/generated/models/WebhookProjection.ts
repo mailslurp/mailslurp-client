@@ -12,120 +12,176 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Representation of a webhook
  * @export
  * @interface WebhookProjection
  */
 export interface WebhookProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookProjection
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  url: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  inboxId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  eventName?: WebhookProjectionEventNameEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  phoneNumberId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof WebhookProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof WebhookProjection
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    url: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    inboxId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    eventName?: WebhookProjectionEventNameEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    healthStatus?: WebhookProjectionHealthStatusEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    phoneNumberId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    username?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    password?: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookProjectionEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
+export const WebhookProjectionEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+} as const;
+export type WebhookProjectionEventNameEnum = typeof WebhookProjectionEventNameEnum[keyof typeof WebhookProjectionEventNameEnum];
+
+/**
+ * @export
+ */
+export const WebhookProjectionHealthStatusEnum = {
+    HEALTHY: 'HEALTHY',
+    UNHEALTHY: 'UNHEALTHY'
+} as const;
+export type WebhookProjectionHealthStatusEnum = typeof WebhookProjectionHealthStatusEnum[keyof typeof WebhookProjectionHealthStatusEnum];
+
+
+/**
+ * Check if a given object implements the WebhookProjection interface.
+ */
+export function instanceOfWebhookProjection(value: object): value is WebhookProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('url' in value) || value['url'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function WebhookProjectionFromJSON(json: any): WebhookProjection {
-  return WebhookProjectionFromJSONTyped(json, false);
+    return WebhookProjectionFromJSONTyped(json, false);
 }
 
-export function WebhookProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    url: json['url'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
-    phoneNumberId: !exists(json, 'phoneNumberId')
-      ? undefined
-      : json['phoneNumberId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function WebhookProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'url': json['url'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'],
+        'eventName': json['eventName'] == null ? undefined : json['eventName'],
+        'healthStatus': json['healthStatus'] == null ? undefined : json['healthStatus'],
+        'phoneNumberId': json['phoneNumberId'] == null ? undefined : json['phoneNumberId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
+        'username': json['username'] == null ? undefined : json['username'],
+        'password': json['password'] == null ? undefined : json['password'],
+    };
 }
 
-export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    url: value.url,
-    inboxId: value.inboxId,
-    eventName: value.eventName,
-    phoneNumberId: value.phoneNumberId,
-    name: value.name,
-    id: value.id,
-  };
+export function WebhookProjectionToJSON(json: any): WebhookProjection {
+    return WebhookProjectionToJSONTyped(json, false);
 }
+
+export function WebhookProjectionToJSONTyped(value?: WebhookProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'url': value['url'],
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'eventName': value['eventName'],
+        'healthStatus': value['healthStatus'],
+        'phoneNumberId': value['phoneNumberId'],
+        'name': value['name'],
+        'id': value['id'],
+        'username': value['username'],
+        'password': value['password'],
+    };
+}
+

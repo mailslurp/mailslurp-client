@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for testing an inbox forwarder against a value
  * @export
  * @interface InboxForwarderTestOptions
  */
 export interface InboxForwarderTestOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderTestOptions
-   */
-  testValue: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderTestOptions
+     */
+    testValue: string;
 }
 
-export function InboxForwarderTestOptionsFromJSON(
-  json: any
-): InboxForwarderTestOptions {
-  return InboxForwarderTestOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the InboxForwarderTestOptions interface.
+ */
+export function instanceOfInboxForwarderTestOptions(value: object): value is InboxForwarderTestOptions {
+    if (!('testValue' in value) || value['testValue'] === undefined) return false;
+    return true;
 }
 
-export function InboxForwarderTestOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxForwarderTestOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    testValue: json['testValue'],
-  };
+export function InboxForwarderTestOptionsFromJSON(json: any): InboxForwarderTestOptions {
+    return InboxForwarderTestOptionsFromJSONTyped(json, false);
 }
 
-export function InboxForwarderTestOptionsToJSON(
-  value?: InboxForwarderTestOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    testValue: value.testValue,
-  };
+export function InboxForwarderTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderTestOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'testValue': json['testValue'],
+    };
 }
+
+export function InboxForwarderTestOptionsToJSON(json: any): InboxForwarderTestOptions {
+    return InboxForwarderTestOptionsToJSONTyped(json, false);
+}
+
+export function InboxForwarderTestOptionsToJSONTyped(value?: InboxForwarderTestOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'testValue': value['testValue'],
+    };
+}
+

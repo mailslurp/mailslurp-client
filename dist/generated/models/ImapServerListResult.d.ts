@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ImapEmailProjection } from './';
+import type { ImapEmailProjection } from './ImapEmailProjection';
 /**
  *
  * @export
@@ -23,6 +23,11 @@ export interface ImapServerListResult {
      */
     results: Array<ImapEmailProjection>;
 }
+/**
+ * Check if a given object implements the ImapServerListResult interface.
+ */
+export declare function instanceOfImapServerListResult(value: object): value is ImapServerListResult;
 export declare function ImapServerListResultFromJSON(json: any): ImapServerListResult;
 export declare function ImapServerListResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerListResult;
-export declare function ImapServerListResultToJSON(value?: ImapServerListResult | null): any;
+export declare function ImapServerListResultToJSON(json: any): ImapServerListResult;
+export declare function ImapServerListResultToJSONTyped(value?: ImapServerListResult | null, ignoreDiscriminator?: boolean): any;

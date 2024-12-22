@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -89,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetInboxRulesetsSortEnum = exports.InboxRulesetControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -104,35 +114,36 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.createNewInboxRulesetRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.createInboxRulesetOptions === null ||
-                            requestParameters.createInboxRulesetOptions === undefined) {
-                            throw new runtime.RequiredError('createInboxRulesetOptions', 'Required parameter requestParameters.createInboxRulesetOptions was null or undefined when calling createNewInboxRuleset.');
+                        if (requestParameters['createInboxRulesetOptions'] == null) {
+                            throw new runtime.RequiredError('createInboxRulesetOptions', 'Required parameter "createInboxRulesetOptions" was null or undefined when calling createNewInboxRuleset().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.CreateInboxRulesetOptionsToJSON)(requestParameters.createInboxRulesetOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxRulesetDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.CreateInboxRulesetOptionsToJSON)(requestParameters['createInboxRulesetOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxRulesetDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -161,26 +172,30 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.deleteInboxRulesetRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.id === null || requestParameters.id === undefined) {
-                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling deleteInboxRuleset.');
+                        if (requestParameters['id'] == null) {
+                            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling deleteInboxRuleset().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters['id']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -208,26 +223,30 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.deleteInboxRulesetsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -237,8 +256,9 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      * Delete inbox rulesets. Accepts optional inboxId filter.
      * Delete inbox rulesets
      */
-    InboxRulesetControllerApi.prototype.deleteInboxRulesets = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxRulesetControllerApi.prototype.deleteInboxRulesets = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteInboxRulesetsRaw(requestParameters, initOverrides)];
@@ -255,29 +275,31 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.getInboxRulesetRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.id === null || requestParameters.id === undefined) {
-                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getInboxRuleset.');
+                        if (requestParameters['id'] == null) {
+                            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling getInboxRuleset().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxRulesetDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters['id']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxRulesetDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -306,47 +328,49 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.getInboxRulesetsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxRulesetDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxRulesetDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -355,9 +379,10 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      * List all rulesets attached to an inbox
      * List inbox rulesets
      */
-    InboxRulesetControllerApi.prototype.getInboxRulesets = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxRulesetControllerApi.prototype.getInboxRulesets = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getInboxRulesetsRaw(requestParameters, initOverrides)];
@@ -375,35 +400,36 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.testInboxRulesetRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.id === null || requestParameters.id === undefined) {
-                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling testInboxRuleset.');
+                        if (requestParameters['id'] == null) {
+                            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling testInboxRuleset().');
                         }
-                        if (requestParameters.inboxRulesetTestOptions === null ||
-                            requestParameters.inboxRulesetTestOptions === undefined) {
-                            throw new runtime.RequiredError('inboxRulesetTestOptions', 'Required parameter requestParameters.inboxRulesetTestOptions was null or undefined when calling testInboxRuleset.');
+                        if (requestParameters['inboxRulesetTestOptions'] == null) {
+                            throw new runtime.RequiredError('inboxRulesetTestOptions', 'Required parameter "inboxRulesetTestOptions" was null or undefined when calling testInboxRuleset().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets/{id}/test".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.InboxRulesetTestOptionsToJSON)(requestParameters.inboxRulesetTestOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxRulesetTestResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets/{id}/test".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters['id']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.InboxRulesetTestOptionsToJSON)(requestParameters['inboxRulesetTestOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxRulesetTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -432,32 +458,33 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.testInboxRulesetReceivingRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.testInboxRulesetReceivingOptions === null ||
-                            requestParameters.testInboxRulesetReceivingOptions === undefined) {
-                            throw new runtime.RequiredError('testInboxRulesetReceivingOptions', 'Required parameter requestParameters.testInboxRulesetReceivingOptions was null or undefined when calling testInboxRulesetReceiving.');
+                        if (requestParameters['testInboxRulesetReceivingOptions'] == null) {
+                            throw new runtime.RequiredError('testInboxRulesetReceivingOptions', 'Required parameter "testInboxRulesetReceivingOptions" was null or undefined when calling testInboxRulesetReceiving().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets/test-receiving",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.TestInboxRulesetReceivingOptionsToJSON)(requestParameters.testInboxRulesetReceivingOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.TestInboxRulesetReceivingResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets/test-receiving",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.TestInboxRulesetReceivingOptionsToJSON)(requestParameters['testInboxRulesetReceivingOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.TestInboxRulesetReceivingResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -486,32 +513,33 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.testInboxRulesetSendingRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.testInboxRulesetSendingOptions === null ||
-                            requestParameters.testInboxRulesetSendingOptions === undefined) {
-                            throw new runtime.RequiredError('testInboxRulesetSendingOptions', 'Required parameter requestParameters.testInboxRulesetSendingOptions was null or undefined when calling testInboxRulesetSending.');
+                        if (requestParameters['testInboxRulesetSendingOptions'] == null) {
+                            throw new runtime.RequiredError('testInboxRulesetSendingOptions', 'Required parameter "testInboxRulesetSendingOptions" was null or undefined when calling testInboxRulesetSending().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets/test-sending",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.TestInboxRulesetSendingOptionsToJSON)(requestParameters.testInboxRulesetSendingOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.TestInboxRulesetSendingResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets/test-sending",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.TestInboxRulesetSendingOptionsToJSON)(requestParameters['testInboxRulesetSendingOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.TestInboxRulesetSendingResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -540,39 +568,39 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.testInboxRulesetsForInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling testInboxRulesetsForInbox.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling testInboxRulesetsForInbox().');
                         }
-                        if (requestParameters.inboxRulesetTestOptions === null ||
-                            requestParameters.inboxRulesetTestOptions === undefined) {
-                            throw new runtime.RequiredError('inboxRulesetTestOptions', 'Required parameter requestParameters.inboxRulesetTestOptions was null or undefined when calling testInboxRulesetsForInbox.');
+                        if (requestParameters['inboxRulesetTestOptions'] == null) {
+                            throw new runtime.RequiredError('inboxRulesetTestOptions', 'Required parameter "inboxRulesetTestOptions" was null or undefined when calling testInboxRulesetsForInbox().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets",
-                                method: 'PUT',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.InboxRulesetTestOptionsToJSON)(requestParameters.inboxRulesetTestOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxRulesetTestResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets",
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.InboxRulesetTestOptionsToJSON)(requestParameters['inboxRulesetTestOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxRulesetTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -601,32 +629,33 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
      */
     InboxRulesetControllerApi.prototype.testNewInboxRulesetRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.testNewInboxRulesetOptions === null ||
-                            requestParameters.testNewInboxRulesetOptions === undefined) {
-                            throw new runtime.RequiredError('testNewInboxRulesetOptions', 'Required parameter requestParameters.testNewInboxRulesetOptions was null or undefined when calling testNewInboxRuleset.');
+                        if (requestParameters['testNewInboxRulesetOptions'] == null) {
+                            throw new runtime.RequiredError('testNewInboxRulesetOptions', 'Required parameter "testNewInboxRulesetOptions" was null or undefined when calling testNewInboxRuleset().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/rulesets",
-                                method: 'PATCH',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.TestNewInboxRulesetOptionsToJSON)(requestParameters.testNewInboxRulesetOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxRulesetTestResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/rulesets",
+                            method: 'PATCH',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.TestNewInboxRulesetOptionsToJSON)(requestParameters['testNewInboxRulesetOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxRulesetTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -654,10 +683,8 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
 exports.InboxRulesetControllerApi = InboxRulesetControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var GetInboxRulesetsSortEnum;
-(function (GetInboxRulesetsSortEnum) {
-    GetInboxRulesetsSortEnum["ASC"] = "ASC";
-    GetInboxRulesetsSortEnum["DESC"] = "DESC";
-})(GetInboxRulesetsSortEnum = exports.GetInboxRulesetsSortEnum || (exports.GetInboxRulesetsSortEnum = {}));
+exports.GetInboxRulesetsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};

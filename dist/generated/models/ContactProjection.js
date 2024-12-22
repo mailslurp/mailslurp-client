@@ -13,50 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContactProjectionToJSON = exports.ContactProjectionFromJSONTyped = exports.ContactProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfContactProjection = instanceOfContactProjection;
+exports.ContactProjectionFromJSON = ContactProjectionFromJSON;
+exports.ContactProjectionFromJSONTyped = ContactProjectionFromJSONTyped;
+exports.ContactProjectionToJSON = ContactProjectionToJSON;
+exports.ContactProjectionToJSONTyped = ContactProjectionToJSONTyped;
+/**
+ * Check if a given object implements the ContactProjection interface.
+ */
+function instanceOfContactProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function ContactProjectionFromJSON(json) {
     return ContactProjectionFromJSONTyped(json, false);
 }
-exports.ContactProjectionFromJSON = ContactProjectionFromJSON;
 function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
-        emailAddresses: !(0, runtime_1.exists)(json, 'emailAddresses')
-            ? undefined
-            : json['emailAddresses'],
-        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
-        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
-        id: json['id'],
-        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'emailAddresses': json['emailAddresses'] == null ? undefined : json['emailAddresses'],
+        'firstName': json['firstName'] == null ? undefined : json['firstName'],
+        'lastName': json['lastName'] == null ? undefined : json['lastName'],
+        'company': json['company'] == null ? undefined : json['company'],
+        'optOut': json['optOut'] == null ? undefined : json['optOut'],
+        'id': json['id'],
+        'groupId': json['groupId'] == null ? undefined : json['groupId'],
     };
 }
-exports.ContactProjectionFromJSONTyped = ContactProjectionFromJSONTyped;
-function ContactProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ContactProjectionToJSON(json) {
+    return ContactProjectionToJSONTyped(json, false);
+}
+function ContactProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        emailAddress: value.emailAddress,
-        emailAddresses: value.emailAddresses,
-        firstName: value.firstName,
-        lastName: value.lastName,
-        company: value.company,
-        optOut: value.optOut,
-        id: value.id,
-        groupId: value.groupId,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'emailAddress': value['emailAddress'],
+        'emailAddresses': value['emailAddresses'],
+        'firstName': value['firstName'],
+        'lastName': value['lastName'],
+        'company': value['company'],
+        'optOut': value['optOut'],
+        'id': value['id'],
+        'groupId': value['groupId'],
     };
 }
-exports.ContactProjectionToJSON = ContactProjectionToJSON;

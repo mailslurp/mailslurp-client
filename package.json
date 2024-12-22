@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Official client for MailSlurp Email and SMS API. Create email addresses and phone numbers in Javascript without a mail server. Send and receive real emails in applications or tests.",
-  "version": "15.20.2",
+  "version": "16.0.0",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
@@ -21,6 +21,7 @@
   "repository": "https://github.com/mailslurp/mailslurp-client",
   "scripts": {
     "build": "tsc --outDir dist/",
+    "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build",
     "integration": "jest",
     "validate": "npx check-md",
@@ -31,69 +32,32 @@
     "readme": "node --trace-deprecation --abort-on-uncaught-exception -r ts-node/register scripts/readme.ts"
   },
   "dependencies": {
-    "cross-fetch": "^3.1.5",
-    "es6-promise": "^4.2.8",
-    "url": "^0.11.0"
+    "caniuse-lite": "^1.0.30001690",
+    "cross-fetch": "^4.1.0",
+    "es6-promise": "^4.2.8"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.1",
     "@types/debug": "^4.1.7",
-    "@types/express": "^4.17.21",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.3",
+    "@types/express": "^4.17.13",
+    "@vitest/coverage-istanbul": "^2.1.8",
     "body-parser": "^1.20.1",
-    "express": "^4.19.2",
-    "fast-glob": "^3.2.11",
-    "jest": "^29.4.2",
-    "jest-diff": "^29.4.2",
-    "jest-junit": "^15.0.0",
-    "markdownlint-cli": "^0.31.1",
-    "prettier": "^2.4.1",
-    "remark": "^14.0.1",
-    "remark-cli": "^10.0.0",
-    "remark-validate-links": "^11.0.1",
-    "ts-jest": "^29.0.5",
-    "ts-node": "^10.9.1",
-    "typedoc": "^0.23.25",
-    "typedoc-plugin-markdown": "^3.14.0",
-    "typedoc-plugin-mdn-links": "^2.0.2",
-    "typescript": "^4.9.5"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>"
-    ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/test/.*|(\\.|/))(test|spec|use)\\.tsx?$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "reporters": [
-      "default",
-      [
-        "jest-junit",
-        {
-          "outputDirectory": "test-results"
-        }
-      ]
-    ],
-    "testTimeout": 120000,
-    "testResultsProcessor": "jest-junit",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "<rootDir>/dist/**/*.js"
-    ],
-    "coverageReporters": [
-      "text",
-      "html"
-    ]
+    "dotenv": "^16.4.7",
+    "express": "^4.18.2",
+    "fast-glob": "^3.3.2",
+    "markdownlint-cli": "^0.43.0",
+    "npm-check-updates": "^17.1.12",
+    "prettier": "^3.4.2",
+    "remark": "^15.0.1",
+    "remark-cli": "^12.0.1",
+    "remark-validate-links": "^13.0.2",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.27.5",
+    "typedoc-plugin-markdown": "^4.3.3",
+    "typedoc-plugin-mdn-links": "^4.0.6",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
   },
   "check-md": {
     "cwd": "./docs",

@@ -13,38 +13,56 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplateDtoToJSON = exports.TemplateDtoFromJSONTyped = exports.TemplateDtoFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfTemplateDto = instanceOfTemplateDto;
+exports.TemplateDtoFromJSON = TemplateDtoFromJSON;
+exports.TemplateDtoFromJSONTyped = TemplateDtoFromJSONTyped;
+exports.TemplateDtoToJSON = TemplateDtoToJSON;
+exports.TemplateDtoToJSONTyped = TemplateDtoToJSONTyped;
+var TemplateVariable_1 = require("./TemplateVariable");
+/**
+ * Check if a given object implements the TemplateDto interface.
+ */
+function instanceOfTemplateDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('variables' in value) || value['variables'] === undefined)
+        return false;
+    if (!('content' in value) || value['content'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function TemplateDtoFromJSON(json) {
     return TemplateDtoFromJSONTyped(json, false);
 }
-exports.TemplateDtoFromJSON = TemplateDtoFromJSON;
 function TemplateDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        name: json['name'],
-        variables: json['variables'].map(_1.TemplateVariableFromJSON),
-        content: json['content'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'name': json['name'],
+        'variables': (json['variables'].map(TemplateVariable_1.TemplateVariableFromJSON)),
+        'content': json['content'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.TemplateDtoFromJSONTyped = TemplateDtoFromJSONTyped;
-function TemplateDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TemplateDtoToJSON(json) {
+    return TemplateDtoToJSONTyped(json, false);
+}
+function TemplateDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        name: value.name,
-        variables: value.variables.map(_1.TemplateVariableToJSON),
-        content: value.content,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'name': value['name'],
+        'variables': (value['variables'].map(TemplateVariable_1.TemplateVariableToJSON)),
+        'content': value['content'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.TemplateDtoToJSON = TemplateDtoToJSON;

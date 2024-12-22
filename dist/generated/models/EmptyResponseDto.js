@@ -13,30 +13,37 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmptyResponseDtoToJSON = exports.EmptyResponseDtoFromJSONTyped = exports.EmptyResponseDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfEmptyResponseDto = instanceOfEmptyResponseDto;
+exports.EmptyResponseDtoFromJSON = EmptyResponseDtoFromJSON;
+exports.EmptyResponseDtoFromJSONTyped = EmptyResponseDtoFromJSONTyped;
+exports.EmptyResponseDtoToJSON = EmptyResponseDtoToJSON;
+exports.EmptyResponseDtoToJSONTyped = EmptyResponseDtoToJSONTyped;
+/**
+ * Check if a given object implements the EmptyResponseDto interface.
+ */
+function instanceOfEmptyResponseDto(value) {
+    return true;
+}
 function EmptyResponseDtoFromJSON(json) {
     return EmptyResponseDtoFromJSONTyped(json, false);
 }
-exports.EmptyResponseDtoFromJSON = EmptyResponseDtoFromJSON;
 function EmptyResponseDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'message': json['message'] == null ? undefined : json['message'],
     };
 }
-exports.EmptyResponseDtoFromJSONTyped = EmptyResponseDtoFromJSONTyped;
-function EmptyResponseDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmptyResponseDtoToJSON(json) {
+    return EmptyResponseDtoToJSONTyped(json, false);
+}
+function EmptyResponseDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        message: value.message,
+        'message': value['message'],
     };
 }
-exports.EmptyResponseDtoToJSON = EmptyResponseDtoToJSON;

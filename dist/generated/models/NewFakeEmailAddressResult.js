@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewFakeEmailAddressResultToJSON = exports.NewFakeEmailAddressResultFromJSONTyped = exports.NewFakeEmailAddressResultFromJSON = void 0;
+exports.instanceOfNewFakeEmailAddressResult = instanceOfNewFakeEmailAddressResult;
+exports.NewFakeEmailAddressResultFromJSON = NewFakeEmailAddressResultFromJSON;
+exports.NewFakeEmailAddressResultFromJSONTyped = NewFakeEmailAddressResultFromJSONTyped;
+exports.NewFakeEmailAddressResultToJSON = NewFakeEmailAddressResultToJSON;
+exports.NewFakeEmailAddressResultToJSONTyped = NewFakeEmailAddressResultToJSONTyped;
+/**
+ * Check if a given object implements the NewFakeEmailAddressResult interface.
+ */
+function instanceOfNewFakeEmailAddressResult(value) {
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    return true;
+}
 function NewFakeEmailAddressResultFromJSON(json) {
     return NewFakeEmailAddressResultFromJSONTyped(json, false);
 }
-exports.NewFakeEmailAddressResultFromJSON = NewFakeEmailAddressResultFromJSON;
 function NewFakeEmailAddressResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        emailAddress: json['emailAddress'],
+        'emailAddress': json['emailAddress'],
     };
 }
-exports.NewFakeEmailAddressResultFromJSONTyped = NewFakeEmailAddressResultFromJSONTyped;
-function NewFakeEmailAddressResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function NewFakeEmailAddressResultToJSON(json) {
+    return NewFakeEmailAddressResultToJSONTyped(json, false);
+}
+function NewFakeEmailAddressResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        emailAddress: value.emailAddress,
+        'emailAddress': value['emailAddress'],
     };
 }
-exports.NewFakeEmailAddressResultToJSON = NewFakeEmailAddressResultToJSON;

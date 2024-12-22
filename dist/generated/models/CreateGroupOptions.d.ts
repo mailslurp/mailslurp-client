@@ -28,6 +28,11 @@ export interface CreateGroupOptions {
      */
     description?: string | null;
 }
+/**
+ * Check if a given object implements the CreateGroupOptions interface.
+ */
+export declare function instanceOfCreateGroupOptions(value: object): value is CreateGroupOptions;
 export declare function CreateGroupOptionsFromJSON(json: any): CreateGroupOptions;
 export declare function CreateGroupOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateGroupOptions;
-export declare function CreateGroupOptionsToJSON(value?: CreateGroupOptions | null): any;
+export declare function CreateGroupOptionsToJSON(json: any): CreateGroupOptions;
+export declare function CreateGroupOptionsToJSONTyped(value?: CreateGroupOptions | null, ignoreDiscriminator?: boolean): any;

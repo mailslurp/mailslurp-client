@@ -12,191 +12,153 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
-import {
+import type {
   BulkSendEmailOptions,
-  BulkSendEmailOptionsFromJSON,
-  BulkSendEmailOptionsToJSON,
   InboxDto,
-  InboxDtoFromJSON,
-  InboxDtoToJSON,
-} from '../models';
+} from '../models/index';
+import {
+    BulkSendEmailOptionsFromJSON,
+    BulkSendEmailOptionsToJSON,
+    InboxDtoFromJSON,
+    InboxDtoToJSON,
+} from '../models/index';
 
 export interface BulkCreateInboxesRequest {
-  count: number;
+    count: number;
 }
 
 export interface BulkDeleteInboxesRequest {
-  requestBody: Array<string>;
+    requestBody: Array<string>;
 }
 
 export interface BulkSendEmailsRequest {
-  bulkSendEmailOptions: BulkSendEmailOptions;
+    bulkSendEmailOptions: BulkSendEmailOptions;
 }
 
 /**
- *
+ * 
  */
 export class BulkActionsControllerApi extends runtime.BaseAPI {
-  /**
-   * Bulk create Inboxes (email addresses)
-   */
-  async bulkCreateInboxesRaw(
-    requestParameters: BulkCreateInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<InboxDto>>> {
-    if (
-      requestParameters.count === null ||
-      requestParameters.count === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'count',
-        'Required parameter requestParameters.count was null or undefined when calling bulkCreateInboxes.'
-      );
+
+    /**
+     * Bulk create Inboxes (email addresses)
+     */
+    async bulkCreateInboxesRaw(requestParameters: BulkCreateInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<InboxDto>>> {
+        if (requestParameters['count'] == null) {
+            throw new runtime.RequiredError(
+                'count',
+                'Required parameter "count" was null or undefined when calling bulkCreateInboxes().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['count'] != null) {
+            queryParameters['count'] = requestParameters['count'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/bulk/inboxes`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(InboxDtoFromJSON));
     }
 
-    const queryParameters: any = {};
-
-    if (requestParameters.count !== undefined) {
-      queryParameters['count'] = requestParameters.count;
+    /**
+     * Bulk create Inboxes (email addresses)
+     */
+    async bulkCreateInboxes(requestParameters: BulkCreateInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<InboxDto>> {
+        const response = await this.bulkCreateInboxesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Bulk Delete Inboxes
+     */
+    async bulkDeleteInboxesRaw(requestParameters: BulkDeleteInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['requestBody'] == null) {
+            throw new runtime.RequiredError(
+                'requestBody',
+                'Required parameter "requestBody" was null or undefined when calling bulkDeleteInboxes().'
+            );
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/bulk/inboxes`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+            body: requestParameters['requestBody'],
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/bulk/inboxes`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(InboxDtoFromJSON)
-    );
-  }
-
-  /**
-   * Bulk create Inboxes (email addresses)
-   */
-  async bulkCreateInboxes(
-    requestParameters: BulkCreateInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<InboxDto>> {
-    const response = await this.bulkCreateInboxesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Bulk Delete Inboxes
-   */
-  async bulkDeleteInboxesRaw(
-    requestParameters: BulkDeleteInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.requestBody === null ||
-      requestParameters.requestBody === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'requestBody',
-        'Required parameter requestParameters.requestBody was null or undefined when calling bulkDeleteInboxes.'
-      );
+    /**
+     * Bulk Delete Inboxes
+     */
+    async bulkDeleteInboxes(requestParameters: BulkDeleteInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.bulkDeleteInboxesRaw(requestParameters, initOverrides);
     }
 
-    const queryParameters: any = {};
+    /**
+     * Bulk Send Emails
+     */
+    async bulkSendEmailsRaw(requestParameters: BulkSendEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['bulkSendEmailOptions'] == null) {
+            throw new runtime.RequiredError(
+                'bulkSendEmailOptions',
+                'Required parameter "bulkSendEmailOptions" was null or undefined when calling bulkSendEmails().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    headerParameters['Content-Type'] = 'application/json';
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/bulk/send`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: BulkSendEmailOptionsToJSON(requestParameters['bulkSendEmailOptions']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/bulk/inboxes`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-        body: requestParameters.requestBody,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Bulk Delete Inboxes
-   */
-  async bulkDeleteInboxes(
-    requestParameters: BulkDeleteInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.bulkDeleteInboxesRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Bulk Send Emails
-   */
-  async bulkSendEmailsRaw(
-    requestParameters: BulkSendEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.bulkSendEmailOptions === null ||
-      requestParameters.bulkSendEmailOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'bulkSendEmailOptions',
-        'Required parameter requestParameters.bulkSendEmailOptions was null or undefined when calling bulkSendEmails.'
-      );
+    /**
+     * Bulk Send Emails
+     */
+    async bulkSendEmails(requestParameters: BulkSendEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.bulkSendEmailsRaw(requestParameters, initOverrides);
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/bulk/send`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: BulkSendEmailOptionsToJSON(
-          requestParameters.bulkSendEmailOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Bulk Send Emails
-   */
-  async bulkSendEmails(
-    requestParameters: BulkSendEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.bulkSendEmailsRaw(requestParameters, initOverrides);
-  }
 }

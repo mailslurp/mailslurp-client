@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { Sender } from './Sender';
 import {
-  EmailAnalysis,
-  EmailAnalysisFromJSON,
-  EmailAnalysisFromJSONTyped,
-  EmailAnalysisToJSON,
-  EmailRecipients,
-  EmailRecipientsFromJSON,
-  EmailRecipientsFromJSONTyped,
-  EmailRecipientsToJSON,
-  Sender,
-  SenderFromJSON,
-  SenderFromJSONTyped,
-  SenderToJSON,
-} from './';
+    SenderFromJSON,
+    SenderFromJSONTyped,
+    SenderToJSON,
+    SenderToJSONTyped,
+} from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
+import {
+    EmailRecipientsFromJSON,
+    EmailRecipientsFromJSONTyped,
+    EmailRecipientsToJSON,
+    EmailRecipientsToJSONTyped,
+} from './EmailRecipients';
+import type { EmailAnalysis } from './EmailAnalysis';
+import {
+    EmailAnalysisFromJSON,
+    EmailAnalysisFromJSONTyped,
+    EmailAnalysisToJSON,
+    EmailAnalysisToJSONTyped,
+} from './EmailAnalysis';
 
 /**
  * Email entity (also known as EmailDto). When an SMTP email message is received by MailSlurp it is parsed. The body and attachments are written to disk and the fields such as to, from, subject etc are stored in a database. The `body` contains the email content. If you want the original SMTP message see the `getRawEmail` endpoints. The attachments can be fetched using the AttachmentController
@@ -34,278 +41,328 @@ import {
  * @interface Email
  */
 export interface Email {
-  /**
-   * ID of the email entity
-   * @type {string}
-   * @memberof Email
-   */
-  id: string;
-  /**
-   * ID of user that email belongs to
-   * @type {string}
-   * @memberof Email
-   */
-  userId: string;
-  /**
-   * ID of the inbox that received the email
-   * @type {string}
-   * @memberof Email
-   */
-  inboxId: string;
-  /**
-   * ID of the domain that received the email
-   * @type {string}
-   * @memberof Email
-   */
-  domainId?: string | null;
-  /**
-   * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
-   * @type {Array<string>}
-   * @memberof Email
-   */
-  to: Array<string>;
-  /**
-   * Who the email was sent from. An email address - see fromName for the sender name.
-   * @type {string}
-   * @memberof Email
-   */
-  from?: string | null;
-  /**
-   *
-   * @type {Sender}
-   * @memberof Email
-   */
-  sender?: Sender | null;
-  /**
-   *
-   * @type {EmailRecipients}
-   * @memberof Email
-   */
-  recipients?: EmailRecipients | null;
-  /**
-   * The `replyTo` field on the received email message
-   * @type {string}
-   * @memberof Email
-   */
-  replyTo?: string | null;
-  /**
-   * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
-   * @type {Array<string>}
-   * @memberof Email
-   */
-  cc?: Array<string> | null;
-  /**
-   * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
-   * @type {Array<string>}
-   * @memberof Email
-   */
-  bcc?: Array<string> | null;
-  /**
-   * Collection of SMTP headers attached to email
-   * @type {{ [key: string]: string; }}
-   * @memberof Email
-   */
-  headers?: { [key: string]: string } | null;
-  /**
-   * Multi-value map of SMTP headers attached to email
-   * @type {{ [key: string]: Array<string>; }}
-   * @memberof Email
-   */
-  headersMap?: { [key: string]: Array<string> } | null;
-  /**
-   * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
-   * @type {Array<string>}
-   * @memberof Email
-   */
-  attachments?: Array<string> | null;
-  /**
-   * The subject line of the email message as specified by SMTP subject header
-   * @type {string}
-   * @memberof Email
-   */
-  subject?: string | null;
-  /**
-   * The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.
-   * @type {string}
-   * @memberof Email
-   */
-  body?: string | null;
-  /**
-   * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
-   * @type {string}
-   * @memberof Email
-   */
-  bodyExcerpt?: string | null;
-  /**
-   * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
-   * @type {string}
-   * @memberof Email
-   */
-  textExcerpt?: string | null;
-  /**
-   * A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
-   * @type {string}
-   * @memberof Email
-   */
-  bodyMD5Hash?: string | null;
-  /**
-   * Is the email body content type HTML?
-   * @type {boolean}
-   * @memberof Email
-   */
-  isHTML?: boolean | null;
-  /**
-   * Detected character set of the email body such as UTF-8
-   * @type {string}
-   * @memberof Email
-   */
-  charset?: string | null;
-  /**
-   *
-   * @type {EmailAnalysis}
-   * @memberof Email
-   */
-  analysis?: EmailAnalysis | null;
-  /**
-   * When was the email received by MailSlurp
-   * @type {Date}
-   * @memberof Email
-   */
-  createdAt: Date;
-  /**
-   * When was the email last updated
-   * @type {Date}
-   * @memberof Email
-   */
-  updatedAt: Date;
-  /**
-   * Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
-   * @type {boolean}
-   * @memberof Email
-   */
-  read: boolean;
-  /**
-   * Can the email be accessed by organization team members
-   * @type {boolean}
-   * @memberof Email
-   */
-  teamAccess: boolean;
-  /**
-   * Is the email body content type x-amp-html Amp4Email?
-   * @type {boolean}
-   * @memberof Email
-   */
-  isXAmpHtml?: boolean | null;
-  /**
-   * A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.
-   * @type {Array<string>}
-   * @memberof Email
-   */
-  bodyPartContentTypes?: Array<string> | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof Email
-   */
-  html?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof Email
-   */
-  xampHtml?: boolean;
+    /**
+     * ID of the email entity
+     * @type {string}
+     * @memberof Email
+     */
+    id: string;
+    /**
+     * ID of user that email belongs to
+     * @type {string}
+     * @memberof Email
+     */
+    userId: string;
+    /**
+     * ID of the inbox that received the email
+     * @type {string}
+     * @memberof Email
+     */
+    inboxId: string;
+    /**
+     * ID of the domain that received the email
+     * @type {string}
+     * @memberof Email
+     */
+    domainId?: string | null;
+    /**
+     * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
+     * @type {Array<string>}
+     * @memberof Email
+     */
+    to: Array<string>;
+    /**
+     * Who the email was sent from. An email address - see fromName for the sender name.
+     * @type {string}
+     * @memberof Email
+     */
+    from?: string | null;
+    /**
+     * 
+     * @type {Sender}
+     * @memberof Email
+     */
+    sender?: Sender | null;
+    /**
+     * 
+     * @type {EmailRecipients}
+     * @memberof Email
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     * The `replyTo` field on the received email message
+     * @type {string}
+     * @memberof Email
+     */
+    replyTo?: string | null;
+    /**
+     * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
+     * @type {Array<string | null>}
+     * @memberof Email
+     */
+    cc?: Array<string | null> | null;
+    /**
+     * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
+     * @type {Array<string | null>}
+     * @memberof Email
+     */
+    bcc?: Array<string | null> | null;
+    /**
+     * Collection of SMTP headers attached to email
+     * @type {{ [key: string]: string | null; }}
+     * @memberof Email
+     * @deprecated
+     */
+    headers?: { [key: string]: string | null; } | null;
+    /**
+     * Multi-value map of SMTP headers attached to email
+     * @type {{ [key: string]: Array<string | null> | null; }}
+     * @memberof Email
+     */
+    headersMap?: { [key: string]: Array<string | null> | null; } | null;
+    /**
+     * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
+     * @type {Array<string | null>}
+     * @memberof Email
+     */
+    attachments?: Array<string | null> | null;
+    /**
+     * The subject line of the email message as specified by SMTP subject header
+     * @type {string}
+     * @memberof Email
+     */
+    subject?: string | null;
+    /**
+     * The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.
+     * @type {string}
+     * @memberof Email
+     */
+    body?: string | null;
+    /**
+     * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
+     * @type {string}
+     * @memberof Email
+     */
+    bodyExcerpt?: string | null;
+    /**
+     * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+     * @type {string}
+     * @memberof Email
+     */
+    textExcerpt?: string | null;
+    /**
+     * A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
+     * @type {string}
+     * @memberof Email
+     */
+    bodyMD5Hash?: string | null;
+    /**
+     * Is the email body content type HTML?
+     * @type {boolean}
+     * @memberof Email
+     */
+    isHTML?: boolean | null;
+    /**
+     * Detected character set of the email body such as UTF-8
+     * @type {string}
+     * @memberof Email
+     */
+    charset?: string | null;
+    /**
+     * 
+     * @type {EmailAnalysis}
+     * @memberof Email
+     */
+    analysis?: EmailAnalysis | null;
+    /**
+     * When was the email received by MailSlurp
+     * @type {Date}
+     * @memberof Email
+     */
+    createdAt: Date;
+    /**
+     * When was the email last updated
+     * @type {Date}
+     * @memberof Email
+     */
+    updatedAt: Date;
+    /**
+     * Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
+     * @type {boolean}
+     * @memberof Email
+     */
+    read: boolean;
+    /**
+     * Can the email be accessed by organization team members
+     * @type {boolean}
+     * @memberof Email
+     */
+    teamAccess: boolean;
+    /**
+     * Is the email body content type x-amp-html Amp4Email?
+     * @type {boolean}
+     * @memberof Email
+     */
+    isXAmpHtml?: boolean | null;
+    /**
+     * A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.
+     * @type {Array<string | null>}
+     * @memberof Email
+     */
+    bodyPartContentTypes?: Array<string | null> | null;
+    /**
+     * UID used by external IMAP server to identify email
+     * @type {string}
+     * @memberof Email
+     */
+    externalId?: string | null;
+    /**
+     * RFC 5322 Message-ID header value without angle brackets.
+     * @type {string}
+     * @memberof Email
+     */
+    messageId?: string | null;
+    /**
+     * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+     * @type {string}
+     * @memberof Email
+     */
+    threadId?: string | null;
+    /**
+     * Parsed value of In-Reply-To header. A Message-ID in a thread.
+     * @type {string}
+     * @memberof Email
+     */
+    inReplyTo?: string | null;
+    /**
+     * Is email favourited
+     * @type {boolean}
+     * @memberof Email
+     */
+    favourite?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Email
+     */
+    html?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Email
+     */
+    xampHtml?: boolean;
+}
+
+/**
+ * Check if a given object implements the Email interface.
+ */
+export function instanceOfEmail(value: object): value is Email {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('to' in value) || value['to'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('read' in value) || value['read'] === undefined) return false;
+    if (!('teamAccess' in value) || value['teamAccess'] === undefined) return false;
+    return true;
 }
 
 export function EmailFromJSON(json: any): Email {
-  return EmailFromJSONTyped(json, false);
+    return EmailFromJSONTyped(json, false);
 }
 
-export function EmailFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): Email {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    to: json['to'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    sender: !exists(json, 'sender')
-      ? undefined
-      : SenderFromJSON(json['sender']),
-    recipients: !exists(json, 'recipients')
-      ? undefined
-      : EmailRecipientsFromJSON(json['recipients']),
-    replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
-    cc: !exists(json, 'cc') ? undefined : json['cc'],
-    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
-    headers: !exists(json, 'headers') ? undefined : json['headers'],
-    headersMap: !exists(json, 'headersMap') ? undefined : json['headersMap'],
-    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    body: !exists(json, 'body') ? undefined : json['body'],
-    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-    isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
-    charset: !exists(json, 'charset') ? undefined : json['charset'],
-    analysis: !exists(json, 'analysis')
-      ? undefined
-      : EmailAnalysisFromJSON(json['analysis']),
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    read: json['read'],
-    teamAccess: json['teamAccess'],
-    isXAmpHtml: !exists(json, 'isXAmpHtml') ? undefined : json['isXAmpHtml'],
-    bodyPartContentTypes: !exists(json, 'bodyPartContentTypes')
-      ? undefined
-      : json['bodyPartContentTypes'],
-    html: !exists(json, 'html') ? undefined : json['html'],
-    xampHtml: !exists(json, 'xampHtml') ? undefined : json['xampHtml'],
-  };
+export function EmailFromJSONTyped(json: any, ignoreDiscriminator: boolean): Email {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'to': json['to'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'sender': json['sender'] == null ? undefined : SenderFromJSON(json['sender']),
+        'recipients': json['recipients'] == null ? undefined : EmailRecipientsFromJSON(json['recipients']),
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'cc': json['cc'] == null ? undefined : json['cc'],
+        'bcc': json['bcc'] == null ? undefined : json['bcc'],
+        'headers': json['headers'] == null ? undefined : json['headers'],
+        'headersMap': json['headersMap'] == null ? undefined : json['headersMap'],
+        'attachments': json['attachments'] == null ? undefined : json['attachments'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'body': json['body'] == null ? undefined : json['body'],
+        'bodyExcerpt': json['bodyExcerpt'] == null ? undefined : json['bodyExcerpt'],
+        'textExcerpt': json['textExcerpt'] == null ? undefined : json['textExcerpt'],
+        'bodyMD5Hash': json['bodyMD5Hash'] == null ? undefined : json['bodyMD5Hash'],
+        'isHTML': json['isHTML'] == null ? undefined : json['isHTML'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'analysis': json['analysis'] == null ? undefined : EmailAnalysisFromJSON(json['analysis']),
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'read': json['read'],
+        'teamAccess': json['teamAccess'],
+        'isXAmpHtml': json['isXAmpHtml'] == null ? undefined : json['isXAmpHtml'],
+        'bodyPartContentTypes': json['bodyPartContentTypes'] == null ? undefined : json['bodyPartContentTypes'],
+        'externalId': json['externalId'] == null ? undefined : json['externalId'],
+        'messageId': json['messageId'] == null ? undefined : json['messageId'],
+        'threadId': json['threadId'] == null ? undefined : json['threadId'],
+        'inReplyTo': json['inReplyTo'] == null ? undefined : json['inReplyTo'],
+        'favourite': json['favourite'] == null ? undefined : json['favourite'],
+        'html': json['html'] == null ? undefined : json['html'],
+        'xampHtml': json['xampHtml'] == null ? undefined : json['xampHtml'],
+    };
 }
 
-export function EmailToJSON(value?: Email | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    inboxId: value.inboxId,
-    domainId: value.domainId,
-    to: value.to,
-    from: value.from,
-    sender: SenderToJSON(value.sender),
-    recipients: EmailRecipientsToJSON(value.recipients),
-    replyTo: value.replyTo,
-    cc: value.cc,
-    bcc: value.bcc,
-    headers: value.headers,
-    headersMap: value.headersMap,
-    attachments: value.attachments,
-    subject: value.subject,
-    body: value.body,
-    bodyExcerpt: value.bodyExcerpt,
-    textExcerpt: value.textExcerpt,
-    bodyMD5Hash: value.bodyMD5Hash,
-    isHTML: value.isHTML,
-    charset: value.charset,
-    analysis: EmailAnalysisToJSON(value.analysis),
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    read: value.read,
-    teamAccess: value.teamAccess,
-    isXAmpHtml: value.isXAmpHtml,
-    bodyPartContentTypes: value.bodyPartContentTypes,
-    html: value.html,
-    xampHtml: value.xampHtml,
-  };
+export function EmailToJSON(json: any): Email {
+    return EmailToJSONTyped(json, false);
 }
+
+export function EmailToJSONTyped(value?: Email | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'inboxId': value['inboxId'],
+        'domainId': value['domainId'],
+        'to': value['to'],
+        'from': value['from'],
+        'sender': SenderToJSON(value['sender']),
+        'recipients': EmailRecipientsToJSON(value['recipients']),
+        'replyTo': value['replyTo'],
+        'cc': value['cc'],
+        'bcc': value['bcc'],
+        'headers': value['headers'],
+        'headersMap': value['headersMap'],
+        'attachments': value['attachments'],
+        'subject': value['subject'],
+        'body': value['body'],
+        'bodyExcerpt': value['bodyExcerpt'],
+        'textExcerpt': value['textExcerpt'],
+        'bodyMD5Hash': value['bodyMD5Hash'],
+        'isHTML': value['isHTML'],
+        'charset': value['charset'],
+        'analysis': EmailAnalysisToJSON(value['analysis']),
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'read': value['read'],
+        'teamAccess': value['teamAccess'],
+        'isXAmpHtml': value['isXAmpHtml'],
+        'bodyPartContentTypes': value['bodyPartContentTypes'],
+        'externalId': value['externalId'],
+        'messageId': value['messageId'],
+        'threadId': value['threadId'],
+        'inReplyTo': value['inReplyTo'],
+        'favourite': value['favourite'],
+        'html': value['html'],
+        'xampHtml': value['xampHtml'],
+    };
+}
+

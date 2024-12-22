@@ -36,21 +36,26 @@ export interface SmsMatchOption {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum SmsMatchOptionFieldEnum {
-    BODY = "BODY",
-    FROM = "FROM"
-}
+export declare const SmsMatchOptionFieldEnum: {
+    readonly BODY: "BODY";
+    readonly FROM: "FROM";
+};
+export type SmsMatchOptionFieldEnum = typeof SmsMatchOptionFieldEnum[keyof typeof SmsMatchOptionFieldEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum SmsMatchOptionShouldEnum {
-    MATCH = "MATCH",
-    CONTAIN = "CONTAIN",
-    EQUAL = "EQUAL"
-}
+export declare const SmsMatchOptionShouldEnum: {
+    readonly MATCH: "MATCH";
+    readonly CONTAIN: "CONTAIN";
+    readonly EQUAL: "EQUAL";
+};
+export type SmsMatchOptionShouldEnum = typeof SmsMatchOptionShouldEnum[keyof typeof SmsMatchOptionShouldEnum];
+/**
+ * Check if a given object implements the SmsMatchOption interface.
+ */
+export declare function instanceOfSmsMatchOption(value: object): value is SmsMatchOption;
 export declare function SmsMatchOptionFromJSON(json: any): SmsMatchOption;
 export declare function SmsMatchOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsMatchOption;
-export declare function SmsMatchOptionToJSON(value?: SmsMatchOption | null): any;
+export declare function SmsMatchOptionToJSON(json: any): SmsMatchOption;
+export declare function SmsMatchOptionToJSONTyped(value?: SmsMatchOption | null, ignoreDiscriminator?: boolean): any;

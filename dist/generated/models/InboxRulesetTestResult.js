@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxRulesetTestResultToJSON = exports.InboxRulesetTestResultFromJSONTyped = exports.InboxRulesetTestResultFromJSON = void 0;
+exports.instanceOfInboxRulesetTestResult = instanceOfInboxRulesetTestResult;
+exports.InboxRulesetTestResultFromJSON = InboxRulesetTestResultFromJSON;
+exports.InboxRulesetTestResultFromJSONTyped = InboxRulesetTestResultFromJSONTyped;
+exports.InboxRulesetTestResultToJSON = InboxRulesetTestResultToJSON;
+exports.InboxRulesetTestResultToJSONTyped = InboxRulesetTestResultToJSONTyped;
+/**
+ * Check if a given object implements the InboxRulesetTestResult interface.
+ */
+function instanceOfInboxRulesetTestResult(value) {
+    if (!('rulesetMatches' in value) || value['rulesetMatches'] === undefined)
+        return false;
+    if (!('matches' in value) || value['matches'] === undefined)
+        return false;
+    return true;
+}
 function InboxRulesetTestResultFromJSON(json) {
     return InboxRulesetTestResultFromJSONTyped(json, false);
 }
-exports.InboxRulesetTestResultFromJSON = InboxRulesetTestResultFromJSON;
 function InboxRulesetTestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        rulesetMatches: json['rulesetMatches'],
-        matches: json['matches'],
+        'rulesetMatches': json['rulesetMatches'],
+        'matches': json['matches'],
     };
 }
-exports.InboxRulesetTestResultFromJSONTyped = InboxRulesetTestResultFromJSONTyped;
-function InboxRulesetTestResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxRulesetTestResultToJSON(json) {
+    return InboxRulesetTestResultToJSONTyped(json, false);
+}
+function InboxRulesetTestResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        rulesetMatches: value.rulesetMatches,
-        matches: value.matches,
+        'rulesetMatches': value['rulesetMatches'],
+        'matches': value['matches'],
     };
 }
-exports.InboxRulesetTestResultToJSON = InboxRulesetTestResultToJSON;

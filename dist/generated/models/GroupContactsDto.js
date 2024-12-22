@@ -13,32 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupContactsDtoToJSON = exports.GroupContactsDtoFromJSONTyped = exports.GroupContactsDtoFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfGroupContactsDto = instanceOfGroupContactsDto;
+exports.GroupContactsDtoFromJSON = GroupContactsDtoFromJSON;
+exports.GroupContactsDtoFromJSONTyped = GroupContactsDtoFromJSONTyped;
+exports.GroupContactsDtoToJSON = GroupContactsDtoToJSON;
+exports.GroupContactsDtoToJSONTyped = GroupContactsDtoToJSONTyped;
+var ContactDto_1 = require("./ContactDto");
+var GroupDto_1 = require("./GroupDto");
+/**
+ * Check if a given object implements the GroupContactsDto interface.
+ */
+function instanceOfGroupContactsDto(value) {
+    if (!('group' in value) || value['group'] === undefined)
+        return false;
+    if (!('contacts' in value) || value['contacts'] === undefined)
+        return false;
+    return true;
+}
 function GroupContactsDtoFromJSON(json) {
     return GroupContactsDtoFromJSONTyped(json, false);
 }
-exports.GroupContactsDtoFromJSON = GroupContactsDtoFromJSON;
 function GroupContactsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        group: (0, _1.GroupDtoFromJSON)(json['group']),
-        contacts: json['contacts'].map(_1.ContactDtoFromJSON),
+        'group': (0, GroupDto_1.GroupDtoFromJSON)(json['group']),
+        'contacts': (json['contacts'].map(ContactDto_1.ContactDtoFromJSON)),
     };
 }
-exports.GroupContactsDtoFromJSONTyped = GroupContactsDtoFromJSONTyped;
-function GroupContactsDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GroupContactsDtoToJSON(json) {
+    return GroupContactsDtoToJSONTyped(json, false);
+}
+function GroupContactsDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        group: (0, _1.GroupDtoToJSON)(value.group),
-        contacts: value.contacts.map(_1.ContactDtoToJSON),
+        'group': (0, GroupDto_1.GroupDtoToJSON)(value['group']),
+        'contacts': (value['contacts'].map(ContactDto_1.ContactDtoToJSON)),
     };
 }
-exports.GroupContactsDtoToJSON = GroupContactsDtoToJSON;

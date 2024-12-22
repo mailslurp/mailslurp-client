@@ -13,36 +13,49 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupProjectionToJSON = exports.GroupProjectionFromJSONTyped = exports.GroupProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfGroupProjection = instanceOfGroupProjection;
+exports.GroupProjectionFromJSON = GroupProjectionFromJSON;
+exports.GroupProjectionFromJSONTyped = GroupProjectionFromJSONTyped;
+exports.GroupProjectionToJSON = GroupProjectionToJSON;
+exports.GroupProjectionToJSONTyped = GroupProjectionToJSONTyped;
+/**
+ * Check if a given object implements the GroupProjection interface.
+ */
+function instanceOfGroupProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function GroupProjectionFromJSON(json) {
     return GroupProjectionFromJSONTyped(json, false);
 }
-exports.GroupProjectionFromJSON = GroupProjectionFromJSON;
 function GroupProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        name: json['name'],
-        id: json['id'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'createdAt': (new Date(json['createdAt'])),
+        'name': json['name'],
+        'id': json['id'],
+        'description': json['description'] == null ? undefined : json['description'],
     };
 }
-exports.GroupProjectionFromJSONTyped = GroupProjectionFromJSONTyped;
-function GroupProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GroupProjectionToJSON(json) {
+    return GroupProjectionToJSONTyped(json, false);
+}
+function GroupProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        name: value.name,
-        id: value.id,
-        description: value.description,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'name': value['name'],
+        'id': value['id'],
+        'description': value['description'],
     };
 }
-exports.GroupProjectionToJSON = GroupProjectionToJSON;

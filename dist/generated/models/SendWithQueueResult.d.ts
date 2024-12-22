@@ -76,6 +76,11 @@ export interface SendWithQueueResult {
      */
     updatedAt: Date;
 }
+/**
+ * Check if a given object implements the SendWithQueueResult interface.
+ */
+export declare function instanceOfSendWithQueueResult(value: object): value is SendWithQueueResult;
 export declare function SendWithQueueResultFromJSON(json: any): SendWithQueueResult;
 export declare function SendWithQueueResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendWithQueueResult;
-export declare function SendWithQueueResultToJSON(value?: SendWithQueueResult | null): any;
+export declare function SendWithQueueResultToJSON(json: any): SendWithQueueResult;
+export declare function SendWithQueueResultToJSONTyped(value?: SendWithQueueResult | null, ignoreDiscriminator?: boolean): any;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageThreadProjectionToJSON = exports.PageThreadProjectionFromJSONTyped = exports.PageThreadProjectionFromJSON = void 0;
+exports.PageThreadProjectionFromJSON = PageThreadProjectionFromJSON;
+exports.PageThreadProjectionFromJSONTyped = PageThreadProjectionFromJSONTyped;
+exports.PageThreadProjectionToJSON = PageThreadProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageThreadProjectionFromJSON(json) {
     return PageThreadProjectionFromJSONTyped(json, false);
 }
-exports.PageThreadProjectionFromJSON = PageThreadProjectionFromJSON;
 function PageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,11 +41,12 @@ function PageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
         size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
         number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
+        sort: !(0, runtime_1.exists)(json, 'sort')
+            ? undefined
+            : json['sort'].map(_1.SortObjectFromJSON),
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageThreadProjectionFromJSONTyped = PageThreadProjectionFromJSONTyped;
 function PageThreadProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,8 +66,9 @@ function PageThreadProjectionToJSON(value) {
         first: value.first,
         size: value.size,
         number: value.number,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
+        sort: value.sort === undefined
+            ? undefined
+            : value.sort.map(_1.SortObjectToJSON),
         empty: value.empty,
     };
 }
-exports.PageThreadProjectionToJSON = PageThreadProjectionToJSON;

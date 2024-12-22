@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailFeatureSupportFlags } from './';
+import type { EmailFeatureSupportFlags } from './EmailFeatureSupportFlags';
 /**
  *
  * @export
@@ -29,6 +29,11 @@ export interface EmailFeatureVersionStatistics {
      */
     supportFlags: EmailFeatureSupportFlags;
 }
+/**
+ * Check if a given object implements the EmailFeatureVersionStatistics interface.
+ */
+export declare function instanceOfEmailFeatureVersionStatistics(value: object): value is EmailFeatureVersionStatistics;
 export declare function EmailFeatureVersionStatisticsFromJSON(json: any): EmailFeatureVersionStatistics;
 export declare function EmailFeatureVersionStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureVersionStatistics;
-export declare function EmailFeatureVersionStatisticsToJSON(value?: EmailFeatureVersionStatistics | null): any;
+export declare function EmailFeatureVersionStatisticsToJSON(json: any): EmailFeatureVersionStatistics;
+export declare function EmailFeatureVersionStatisticsToJSONTyped(value?: EmailFeatureVersionStatistics | null, ignoreDiscriminator?: boolean): any;

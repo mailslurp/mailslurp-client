@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailAnalysis, EmailRecipients, Sender } from './';
+import type { Sender } from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
+import type { EmailAnalysis } from './EmailAnalysis';
 /**
  * Email entity (also known as EmailDto). When an SMTP email message is received by MailSlurp it is parsed. The body and attachments are written to disk and the fields such as to, from, subject etc are stored in a database. The `body` contains the email content. If you want the original SMTP message see the `getRawEmail` endpoints. The attachments can be fetched using the AttachmentController
  * @export
@@ -72,38 +74,39 @@ export interface Email {
     replyTo?: string | null;
     /**
      * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof Email
      */
-    cc?: Array<string> | null;
+    cc?: Array<string | null> | null;
     /**
      * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof Email
      */
-    bcc?: Array<string> | null;
+    bcc?: Array<string | null> | null;
     /**
      * Collection of SMTP headers attached to email
-     * @type {{ [key: string]: string; }}
+     * @type {{ [key: string]: string | null; }}
      * @memberof Email
+     * @deprecated
      */
     headers?: {
-        [key: string]: string;
+        [key: string]: string | null;
     } | null;
     /**
      * Multi-value map of SMTP headers attached to email
-     * @type {{ [key: string]: Array<string>; }}
+     * @type {{ [key: string]: Array<string | null> | null; }}
      * @memberof Email
      */
     headersMap?: {
-        [key: string]: Array<string>;
+        [key: string]: Array<string | null> | null;
     } | null;
     /**
      * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof Email
      */
-    attachments?: Array<string> | null;
+    attachments?: Array<string | null> | null;
     /**
      * The subject line of the email message as specified by SMTP subject header
      * @type {string}
@@ -184,10 +187,40 @@ export interface Email {
     isXAmpHtml?: boolean | null;
     /**
      * A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof Email
      */
-    bodyPartContentTypes?: Array<string> | null;
+    bodyPartContentTypes?: Array<string | null> | null;
+    /**
+     * UID used by external IMAP server to identify email
+     * @type {string}
+     * @memberof Email
+     */
+    externalId?: string | null;
+    /**
+     * RFC 5322 Message-ID header value without angle brackets.
+     * @type {string}
+     * @memberof Email
+     */
+    messageId?: string | null;
+    /**
+     * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+     * @type {string}
+     * @memberof Email
+     */
+    threadId?: string | null;
+    /**
+     * Parsed value of In-Reply-To header. A Message-ID in a thread.
+     * @type {string}
+     * @memberof Email
+     */
+    inReplyTo?: string | null;
+    /**
+     * Is email favourited
+     * @type {boolean}
+     * @memberof Email
+     */
+    favourite?: boolean | null;
     /**
      *
      * @type {boolean}
@@ -201,6 +234,11 @@ export interface Email {
      */
     xampHtml?: boolean;
 }
+/**
+ * Check if a given object implements the Email interface.
+ */
+export declare function instanceOfEmail(value: object): value is Email;
 export declare function EmailFromJSON(json: any): Email;
 export declare function EmailFromJSONTyped(json: any, ignoreDiscriminator: boolean): Email;
-export declare function EmailToJSON(value?: Email | null): any;
+export declare function EmailToJSON(json: any): Email;
+export declare function EmailToJSONTyped(value?: Email | null, ignoreDiscriminator?: boolean): any;

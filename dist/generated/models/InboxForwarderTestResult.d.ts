@@ -30,6 +30,11 @@ export interface InboxForwarderTestResult {
      */
     doesMatch: boolean;
 }
+/**
+ * Check if a given object implements the InboxForwarderTestResult interface.
+ */
+export declare function instanceOfInboxForwarderTestResult(value: object): value is InboxForwarderTestResult;
 export declare function InboxForwarderTestResultFromJSON(json: any): InboxForwarderTestResult;
 export declare function InboxForwarderTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderTestResult;
-export declare function InboxForwarderTestResultToJSON(value?: InboxForwarderTestResult | null): any;
+export declare function InboxForwarderTestResultToJSON(json: any): InboxForwarderTestResult;
+export declare function InboxForwarderTestResultToJSONTyped(value?: InboxForwarderTestResult | null, ignoreDiscriminator?: boolean): any;

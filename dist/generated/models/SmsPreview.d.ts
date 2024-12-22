@@ -52,6 +52,11 @@ export interface SmsPreview {
      */
     createdAt: Date;
 }
+/**
+ * Check if a given object implements the SmsPreview interface.
+ */
+export declare function instanceOfSmsPreview(value: object): value is SmsPreview;
 export declare function SmsPreviewFromJSON(json: any): SmsPreview;
 export declare function SmsPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsPreview;
-export declare function SmsPreviewToJSON(value?: SmsPreview | null): any;
+export declare function SmsPreviewToJSON(json: any): SmsPreview;
+export declare function SmsPreviewToJSONTyped(value?: SmsPreview | null, ignoreDiscriminator?: boolean): any;

@@ -13,57 +13,74 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateMtaStsRecordOptionsToJSON = exports.GenerateMtaStsRecordOptionsFromJSONTyped = exports.GenerateMtaStsRecordOptionsFromJSON = exports.GenerateMtaStsRecordOptionsModeEnum = exports.GenerateMtaStsRecordOptionsVersionEnum = void 0;
+exports.GenerateMtaStsRecordOptionsModeEnum = exports.GenerateMtaStsRecordOptionsVersionEnum = void 0;
+exports.instanceOfGenerateMtaStsRecordOptions = instanceOfGenerateMtaStsRecordOptions;
+exports.GenerateMtaStsRecordOptionsFromJSON = GenerateMtaStsRecordOptionsFromJSON;
+exports.GenerateMtaStsRecordOptionsFromJSONTyped = GenerateMtaStsRecordOptionsFromJSONTyped;
+exports.GenerateMtaStsRecordOptionsToJSON = GenerateMtaStsRecordOptionsToJSON;
+exports.GenerateMtaStsRecordOptionsToJSONTyped = GenerateMtaStsRecordOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var GenerateMtaStsRecordOptionsVersionEnum;
-(function (GenerateMtaStsRecordOptionsVersionEnum) {
-    GenerateMtaStsRecordOptionsVersionEnum["STSv1"] = "STSv1";
-})(GenerateMtaStsRecordOptionsVersionEnum = exports.GenerateMtaStsRecordOptionsVersionEnum || (exports.GenerateMtaStsRecordOptionsVersionEnum = {}));
+exports.GenerateMtaStsRecordOptionsVersionEnum = {
+    STSv1: 'STSv1'
+};
 /**
  * @export
- * @enum {string}
  */
-var GenerateMtaStsRecordOptionsModeEnum;
-(function (GenerateMtaStsRecordOptionsModeEnum) {
-    GenerateMtaStsRecordOptionsModeEnum["TESTING"] = "TESTING";
-    GenerateMtaStsRecordOptionsModeEnum["ENFORCE"] = "ENFORCE";
-    GenerateMtaStsRecordOptionsModeEnum["NONE"] = "NONE";
-})(GenerateMtaStsRecordOptionsModeEnum = exports.GenerateMtaStsRecordOptionsModeEnum || (exports.GenerateMtaStsRecordOptionsModeEnum = {}));
+exports.GenerateMtaStsRecordOptionsModeEnum = {
+    TESTING: 'TESTING',
+    ENFORCE: 'ENFORCE',
+    NONE: 'NONE'
+};
+/**
+ * Check if a given object implements the GenerateMtaStsRecordOptions interface.
+ */
+function instanceOfGenerateMtaStsRecordOptions(value) {
+    if (!('host' in value) || value['host'] === undefined)
+        return false;
+    if (!('version' in value) || value['version'] === undefined)
+        return false;
+    if (!('mode' in value) || value['mode'] === undefined)
+        return false;
+    if (!('ttl' in value) || value['ttl'] === undefined)
+        return false;
+    if (!('maxAgeSeconds' in value) || value['maxAgeSeconds'] === undefined)
+        return false;
+    if (!('mxRecords' in value) || value['mxRecords'] === undefined)
+        return false;
+    return true;
+}
 function GenerateMtaStsRecordOptionsFromJSON(json) {
     return GenerateMtaStsRecordOptionsFromJSONTyped(json, false);
 }
-exports.GenerateMtaStsRecordOptionsFromJSON = GenerateMtaStsRecordOptionsFromJSON;
 function GenerateMtaStsRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        host: json['host'],
-        version: json['version'],
-        mode: json['mode'],
-        ttl: json['ttl'],
-        maxAgeSeconds: json['maxAgeSeconds'],
-        mxRecords: json['mxRecords'],
+        'host': json['host'],
+        'version': json['version'],
+        'mode': json['mode'],
+        'ttl': json['ttl'],
+        'maxAgeSeconds': json['maxAgeSeconds'],
+        'mxRecords': json['mxRecords'],
     };
 }
-exports.GenerateMtaStsRecordOptionsFromJSONTyped = GenerateMtaStsRecordOptionsFromJSONTyped;
-function GenerateMtaStsRecordOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GenerateMtaStsRecordOptionsToJSON(json) {
+    return GenerateMtaStsRecordOptionsToJSONTyped(json, false);
+}
+function GenerateMtaStsRecordOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        host: value.host,
-        version: value.version,
-        mode: value.mode,
-        ttl: value.ttl,
-        maxAgeSeconds: value.maxAgeSeconds,
-        mxRecords: value.mxRecords,
+        'host': value['host'],
+        'version': value['version'],
+        'mode': value['mode'],
+        'ttl': value['ttl'],
+        'maxAgeSeconds': value['maxAgeSeconds'],
+        'mxRecords': value['mxRecords'],
     };
 }
-exports.GenerateMtaStsRecordOptionsToJSON = GenerateMtaStsRecordOptionsToJSON;

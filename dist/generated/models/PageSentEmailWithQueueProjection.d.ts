@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SendWithQueueResult, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SendWithQueueResult } from './SendWithQueueResult';
+import type { SortObject } from './SortObject';
 /**
  * Paginated sent email results for emails sent with queue. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageSentEmailWithQueueProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageSentEmailWithQueueProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageSentEmailWithQueueProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageSentEmailWithQueueProjection interface.
+ */
+export declare function instanceOfPageSentEmailWithQueueProjection(value: object): value is PageSentEmailWithQueueProjection;
 export declare function PageSentEmailWithQueueProjectionFromJSON(json: any): PageSentEmailWithQueueProjection;
 export declare function PageSentEmailWithQueueProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageSentEmailWithQueueProjection;
-export declare function PageSentEmailWithQueueProjectionToJSON(value?: PageSentEmailWithQueueProjection | null): any;
+export declare function PageSentEmailWithQueueProjectionToJSON(json: any): PageSentEmailWithQueueProjection;
+export declare function PageSentEmailWithQueueProjectionToJSONTyped(value?: PageSentEmailWithQueueProjection | null, ignoreDiscriminator?: boolean): any;

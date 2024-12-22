@@ -28,6 +28,11 @@ export interface CreateTrackingPixelOptions {
      */
     recipient?: string | null;
 }
+/**
+ * Check if a given object implements the CreateTrackingPixelOptions interface.
+ */
+export declare function instanceOfCreateTrackingPixelOptions(value: object): value is CreateTrackingPixelOptions;
 export declare function CreateTrackingPixelOptionsFromJSON(json: any): CreateTrackingPixelOptions;
 export declare function CreateTrackingPixelOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTrackingPixelOptions;
-export declare function CreateTrackingPixelOptionsToJSON(value?: CreateTrackingPixelOptions | null): any;
+export declare function CreateTrackingPixelOptionsToJSON(json: any): CreateTrackingPixelOptions;
+export declare function CreateTrackingPixelOptionsToJSONTyped(value?: CreateTrackingPixelOptions | null, ignoreDiscriminator?: boolean): any;

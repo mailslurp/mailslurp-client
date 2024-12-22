@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailScreenshotResultToJSON = exports.EmailScreenshotResultFromJSONTyped = exports.EmailScreenshotResultFromJSON = void 0;
+exports.instanceOfEmailScreenshotResult = instanceOfEmailScreenshotResult;
+exports.EmailScreenshotResultFromJSON = EmailScreenshotResultFromJSON;
+exports.EmailScreenshotResultFromJSONTyped = EmailScreenshotResultFromJSONTyped;
+exports.EmailScreenshotResultToJSON = EmailScreenshotResultToJSON;
+exports.EmailScreenshotResultToJSONTyped = EmailScreenshotResultToJSONTyped;
+/**
+ * Check if a given object implements the EmailScreenshotResult interface.
+ */
+function instanceOfEmailScreenshotResult(value) {
+    if (!('base64EncodedImage' in value) || value['base64EncodedImage'] === undefined)
+        return false;
+    return true;
+}
 function EmailScreenshotResultFromJSON(json) {
     return EmailScreenshotResultFromJSONTyped(json, false);
 }
-exports.EmailScreenshotResultFromJSON = EmailScreenshotResultFromJSON;
 function EmailScreenshotResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        base64EncodedImage: json['base64EncodedImage'],
+        'base64EncodedImage': json['base64EncodedImage'],
     };
 }
-exports.EmailScreenshotResultFromJSONTyped = EmailScreenshotResultFromJSONTyped;
-function EmailScreenshotResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailScreenshotResultToJSON(json) {
+    return EmailScreenshotResultToJSONTyped(json, false);
+}
+function EmailScreenshotResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        base64EncodedImage: value.base64EncodedImage,
+        'base64EncodedImage': value['base64EncodedImage'],
     };
 }
-exports.EmailScreenshotResultToJSON = EmailScreenshotResultToJSON;

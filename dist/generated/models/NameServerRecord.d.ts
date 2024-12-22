@@ -40,6 +40,11 @@ export interface NameServerRecord {
      */
     value: string;
 }
+/**
+ * Check if a given object implements the NameServerRecord interface.
+ */
+export declare function instanceOfNameServerRecord(value: object): value is NameServerRecord;
 export declare function NameServerRecordFromJSON(json: any): NameServerRecord;
 export declare function NameServerRecordFromJSONTyped(json: any, ignoreDiscriminator: boolean): NameServerRecord;
-export declare function NameServerRecordToJSON(value?: NameServerRecord | null): any;
+export declare function NameServerRecordToJSON(json: any): NameServerRecord;
+export declare function NameServerRecordToJSONTyped(value?: NameServerRecord | null, ignoreDiscriminator?: boolean): any;

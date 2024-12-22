@@ -17,6 +17,12 @@
 export interface UnknownMissedEmailProjection {
     /**
      *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    subject?: string;
+    /**
+     *
      * @type {Date}
      * @memberof UnknownMissedEmailProjection
      */
@@ -32,12 +38,6 @@ export interface UnknownMissedEmailProjection {
      * @type {string}
      * @memberof UnknownMissedEmailProjection
      */
-    subject?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
     id: string;
     /**
      *
@@ -46,6 +46,11 @@ export interface UnknownMissedEmailProjection {
      */
     from?: string;
 }
+/**
+ * Check if a given object implements the UnknownMissedEmailProjection interface.
+ */
+export declare function instanceOfUnknownMissedEmailProjection(value: object): value is UnknownMissedEmailProjection;
 export declare function UnknownMissedEmailProjectionFromJSON(json: any): UnknownMissedEmailProjection;
 export declare function UnknownMissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnknownMissedEmailProjection;
-export declare function UnknownMissedEmailProjectionToJSON(value?: UnknownMissedEmailProjection | null): any;
+export declare function UnknownMissedEmailProjectionToJSON(json: any): UnknownMissedEmailProjection;
+export declare function UnknownMissedEmailProjectionToJSONTyped(value?: UnknownMissedEmailProjection | null, ignoreDiscriminator?: boolean): any;

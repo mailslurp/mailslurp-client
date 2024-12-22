@@ -13,32 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerListOptionsToJSON = exports.ImapServerListOptionsFromJSONTyped = exports.ImapServerListOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfImapServerListOptions = instanceOfImapServerListOptions;
+exports.ImapServerListOptionsFromJSON = ImapServerListOptionsFromJSON;
+exports.ImapServerListOptionsFromJSONTyped = ImapServerListOptionsFromJSONTyped;
+exports.ImapServerListOptionsToJSON = ImapServerListOptionsToJSON;
+exports.ImapServerListOptionsToJSONTyped = ImapServerListOptionsToJSONTyped;
+/**
+ * Check if a given object implements the ImapServerListOptions interface.
+ */
+function instanceOfImapServerListOptions(value) {
+    return true;
+}
 function ImapServerListOptionsFromJSON(json) {
     return ImapServerListOptionsFromJSONTyped(json, false);
 }
-exports.ImapServerListOptionsFromJSON = ImapServerListOptionsFromJSON;
 function ImapServerListOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        uidSet: !(0, runtime_1.exists)(json, 'uidSet') ? undefined : json['uidSet'],
-        seqSet: !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
+        'uidSet': json['uidSet'] == null ? undefined : json['uidSet'],
+        'seqSet': json['seqSet'] == null ? undefined : json['seqSet'],
     };
 }
-exports.ImapServerListOptionsFromJSONTyped = ImapServerListOptionsFromJSONTyped;
-function ImapServerListOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapServerListOptionsToJSON(json) {
+    return ImapServerListOptionsToJSONTyped(json, false);
+}
+function ImapServerListOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        uidSet: value.uidSet,
-        seqSet: value.seqSet,
+        'uidSet': value['uidSet'],
+        'seqSet': value['seqSet'],
     };
 }
-exports.ImapServerListOptionsToJSON = ImapServerListOptionsToJSON;

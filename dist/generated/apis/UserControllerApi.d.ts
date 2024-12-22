@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { UserInfoDto } from '../models';
+import type { UserInfoDto } from '../models/index';
 export interface GetJsonPropertyAsStringRequest {
     property: string;
     body: object | null;
@@ -22,17 +22,17 @@ export declare class UserControllerApi extends runtime.BaseAPI {
     /**
      * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
-    getJsonPropertyAsStringRaw(requestParameters: GetJsonPropertyAsStringRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    getJsonPropertyAsStringRaw(requestParameters: GetJsonPropertyAsStringRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
-    getJsonPropertyAsString(requestParameters: GetJsonPropertyAsStringRequest, initOverrides?: RequestInit): Promise<string>;
+    getJsonPropertyAsString(requestParameters: GetJsonPropertyAsStringRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Get account information for your user
      */
-    getUserInfoRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UserInfoDto>>;
+    getUserInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserInfoDto>>;
     /**
      * Get account information for your user
      */
-    getUserInfo(initOverrides?: RequestInit): Promise<UserInfoDto>;
+    getUserInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserInfoDto>;
 }

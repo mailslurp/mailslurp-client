@@ -12,53 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * IP Address look up result for a given domain / hostname
  * @export
  * @interface IPAddressResult
  */
 export interface IPAddressResult {
-  /**
-   *
-   * @type {string}
-   * @memberof IPAddressResult
-   */
-  address: string;
-  /**
-   *
-   * @type {string}
-   * @memberof IPAddressResult
-   */
-  hostname: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IPAddressResult
+     */
+    address: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IPAddressResult
+     */
+    hostname: string;
+}
+
+/**
+ * Check if a given object implements the IPAddressResult interface.
+ */
+export function instanceOfIPAddressResult(value: object): value is IPAddressResult {
+    if (!('address' in value) || value['address'] === undefined) return false;
+    if (!('hostname' in value) || value['hostname'] === undefined) return false;
+    return true;
 }
 
 export function IPAddressResultFromJSON(json: any): IPAddressResult {
-  return IPAddressResultFromJSONTyped(json, false);
+    return IPAddressResultFromJSONTyped(json, false);
 }
 
-export function IPAddressResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): IPAddressResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    address: json['address'],
-    hostname: json['hostname'],
-  };
+export function IPAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): IPAddressResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'address': json['address'],
+        'hostname': json['hostname'],
+    };
 }
 
-export function IPAddressResultToJSON(value?: IPAddressResult | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    address: value.address,
-    hostname: value.hostname,
-  };
+export function IPAddressResultToJSON(json: any): IPAddressResult {
+    return IPAddressResultToJSONTyped(json, false);
 }
+
+export function IPAddressResultToJSONTyped(value?: IPAddressResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'address': value['address'],
+        'hostname': value['hostname'],
+    };
+}
+

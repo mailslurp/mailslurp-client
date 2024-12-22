@@ -13,39 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailValidationRequestDtoToJSON = exports.EmailValidationRequestDtoFromJSONTyped = exports.EmailValidationRequestDtoFromJSON = void 0;
+exports.instanceOfEmailValidationRequestDto = instanceOfEmailValidationRequestDto;
+exports.EmailValidationRequestDtoFromJSON = EmailValidationRequestDtoFromJSON;
+exports.EmailValidationRequestDtoFromJSONTyped = EmailValidationRequestDtoFromJSONTyped;
+exports.EmailValidationRequestDtoToJSON = EmailValidationRequestDtoToJSON;
+exports.EmailValidationRequestDtoToJSONTyped = EmailValidationRequestDtoToJSONTyped;
+/**
+ * Check if a given object implements the EmailValidationRequestDto interface.
+ */
+function instanceOfEmailValidationRequestDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('isValid' in value) || value['isValid'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    return true;
+}
 function EmailValidationRequestDtoFromJSON(json) {
     return EmailValidationRequestDtoFromJSONTyped(json, false);
 }
-exports.EmailValidationRequestDtoFromJSON = EmailValidationRequestDtoFromJSON;
 function EmailValidationRequestDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        emailAddress: json['emailAddress'],
-        isValid: json['isValid'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'],
+        'isValid': json['isValid'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
-exports.EmailValidationRequestDtoFromJSONTyped = EmailValidationRequestDtoFromJSONTyped;
-function EmailValidationRequestDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailValidationRequestDtoToJSON(json) {
+    return EmailValidationRequestDtoToJSONTyped(json, false);
+}
+function EmailValidationRequestDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        emailAddress: value.emailAddress,
-        isValid: value.isValid,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'isValid': value['isValid'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
     };
 }
-exports.EmailValidationRequestDtoToJSON = EmailValidationRequestDtoToJSON;

@@ -42,12 +42,17 @@ export interface LinkIssue {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum LinkIssueSeverityEnum {
-    Warning = "Warning",
-    Error = "Error"
-}
+export declare const LinkIssueSeverityEnum: {
+    readonly Warning: "Warning";
+    readonly Error: "Error";
+};
+export type LinkIssueSeverityEnum = typeof LinkIssueSeverityEnum[keyof typeof LinkIssueSeverityEnum];
+/**
+ * Check if a given object implements the LinkIssue interface.
+ */
+export declare function instanceOfLinkIssue(value: object): value is LinkIssue;
 export declare function LinkIssueFromJSON(json: any): LinkIssue;
 export declare function LinkIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): LinkIssue;
-export declare function LinkIssueToJSON(value?: LinkIssue | null): any;
+export declare function LinkIssueToJSON(json: any): LinkIssue;
+export declare function LinkIssueToJSONTyped(value?: LinkIssue | null, ignoreDiscriminator?: boolean): any;

@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Domain record description
  * @export
  * @interface DescribeDomainOptions
  */
 export interface DescribeDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof DescribeDomainOptions
-   */
-  domain: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DescribeDomainOptions
+     */
+    domain: string;
 }
 
-export function DescribeDomainOptionsFromJSON(
-  json: any
-): DescribeDomainOptions {
-  return DescribeDomainOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the DescribeDomainOptions interface.
+ */
+export function instanceOfDescribeDomainOptions(value: object): value is DescribeDomainOptions {
+    if (!('domain' in value) || value['domain'] === undefined) return false;
+    return true;
 }
 
-export function DescribeDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DescribeDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domain: json['domain'],
-  };
+export function DescribeDomainOptionsFromJSON(json: any): DescribeDomainOptions {
+    return DescribeDomainOptionsFromJSONTyped(json, false);
 }
 
-export function DescribeDomainOptionsToJSON(
-  value?: DescribeDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domain: value.domain,
-  };
+export function DescribeDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DescribeDomainOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'domain': json['domain'],
+    };
 }
+
+export function DescribeDomainOptionsToJSON(json: any): DescribeDomainOptions {
+    return DescribeDomainOptionsToJSONTyped(json, false);
+}
+
+export function DescribeDomainOptionsToJSONTyped(value?: DescribeDomainOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'domain': value['domain'],
+    };
+}
+

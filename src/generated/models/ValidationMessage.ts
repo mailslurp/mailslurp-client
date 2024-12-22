@@ -12,53 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Optional warnings resulting from HTML validation
  * @export
  * @interface ValidationMessage
  */
 export interface ValidationMessage {
-  /**
-   *
-   * @type {number}
-   * @memberof ValidationMessage
-   */
-  lineNumber: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ValidationMessage
-   */
-  message?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ValidationMessage
+     */
+    lineNumber: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ValidationMessage
+     */
+    message?: string;
+}
+
+/**
+ * Check if a given object implements the ValidationMessage interface.
+ */
+export function instanceOfValidationMessage(value: object): value is ValidationMessage {
+    if (!('lineNumber' in value) || value['lineNumber'] === undefined) return false;
+    return true;
 }
 
 export function ValidationMessageFromJSON(json: any): ValidationMessage {
-  return ValidationMessageFromJSONTyped(json, false);
+    return ValidationMessageFromJSONTyped(json, false);
 }
 
-export function ValidationMessageFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ValidationMessage {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    lineNumber: json['lineNumber'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-  };
+export function ValidationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationMessage {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'lineNumber': json['lineNumber'],
+        'message': json['message'] == null ? undefined : json['message'],
+    };
 }
 
-export function ValidationMessageToJSON(value?: ValidationMessage | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    lineNumber: value.lineNumber,
-    message: value.message,
-  };
+export function ValidationMessageToJSON(json: any): ValidationMessage {
+    return ValidationMessageToJSONTyped(json, false);
 }
+
+export function ValidationMessageToJSONTyped(value?: ValidationMessage | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'lineNumber': value['lineNumber'],
+        'message': value['message'],
+    };
+}
+

@@ -38,6 +38,12 @@ export interface InboxForwarderEventDto {
      * @type {string}
      * @memberof InboxForwarderEventDto
      */
+    sentId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
     userId?: string | null;
     /**
      *
@@ -56,7 +62,7 @@ export interface InboxForwarderEventDto {
      * @type {string}
      * @memberof InboxForwarderEventDto
      */
-    status?: InboxForwarderEventDtoStatusEnum;
+    status?: InboxForwarderEventDtoStatusEnum | null;
     /**
      *
      * @type {Date}
@@ -66,12 +72,17 @@ export interface InboxForwarderEventDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxForwarderEventDtoStatusEnum {
-    SUCCESS = "SUCCESS",
-    FAILURE = "FAILURE"
-}
+export declare const InboxForwarderEventDtoStatusEnum: {
+    readonly SUCCESS: "SUCCESS";
+    readonly FAILURE: "FAILURE";
+};
+export type InboxForwarderEventDtoStatusEnum = typeof InboxForwarderEventDtoStatusEnum[keyof typeof InboxForwarderEventDtoStatusEnum];
+/**
+ * Check if a given object implements the InboxForwarderEventDto interface.
+ */
+export declare function instanceOfInboxForwarderEventDto(value: object): value is InboxForwarderEventDto;
 export declare function InboxForwarderEventDtoFromJSON(json: any): InboxForwarderEventDto;
 export declare function InboxForwarderEventDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderEventDto;
-export declare function InboxForwarderEventDtoToJSON(value?: InboxForwarderEventDto | null): any;
+export declare function InboxForwarderEventDtoToJSON(json: any): InboxForwarderEventDto;
+export declare function InboxForwarderEventDtoToJSONTyped(value?: InboxForwarderEventDto | null, ignoreDiscriminator?: boolean): any;

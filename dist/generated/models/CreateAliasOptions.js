@@ -13,42 +13,51 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAliasOptionsToJSON = exports.CreateAliasOptionsFromJSONTyped = exports.CreateAliasOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfCreateAliasOptions = instanceOfCreateAliasOptions;
+exports.CreateAliasOptionsFromJSON = CreateAliasOptionsFromJSON;
+exports.CreateAliasOptionsFromJSONTyped = CreateAliasOptionsFromJSONTyped;
+exports.CreateAliasOptionsToJSON = CreateAliasOptionsToJSON;
+exports.CreateAliasOptionsToJSONTyped = CreateAliasOptionsToJSONTyped;
+/**
+ * Check if a given object implements the CreateAliasOptions interface.
+ */
+function instanceOfCreateAliasOptions(value) {
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('useThreads' in value) || value['useThreads'] === undefined)
+        return false;
+    return true;
+}
 function CreateAliasOptionsFromJSON(json) {
     return CreateAliasOptionsFromJSONTyped(json, false);
 }
-exports.CreateAliasOptionsFromJSON = CreateAliasOptionsFromJSON;
 function CreateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        emailAddress: json['emailAddress'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        useThreads: json['useThreads'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        verifyEmailAddress: !(0, runtime_1.exists)(json, 'verifyEmailAddress')
-            ? undefined
-            : json['verifyEmailAddress'],
+        'emailAddress': json['emailAddress'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'useThreads': json['useThreads'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'verifyEmailAddress': json['verifyEmailAddress'] == null ? undefined : json['verifyEmailAddress'],
     };
 }
-exports.CreateAliasOptionsFromJSONTyped = CreateAliasOptionsFromJSONTyped;
-function CreateAliasOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateAliasOptionsToJSON(json) {
+    return CreateAliasOptionsToJSONTyped(json, false);
+}
+function CreateAliasOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        emailAddress: value.emailAddress,
-        inboxId: value.inboxId,
-        name: value.name,
-        useThreads: value.useThreads,
-        domainId: value.domainId,
-        verifyEmailAddress: value.verifyEmailAddress,
+        'emailAddress': value['emailAddress'],
+        'inboxId': value['inboxId'],
+        'name': value['name'],
+        'useThreads': value['useThreads'],
+        'domainId': value['domainId'],
+        'verifyEmailAddress': value['verifyEmailAddress'],
     };
 }
-exports.CreateAliasOptionsToJSON = CreateAliasOptionsToJSON;

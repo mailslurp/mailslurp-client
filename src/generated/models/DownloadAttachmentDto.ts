@@ -12,65 +12,73 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Content of attachment
  * @export
  * @interface DownloadAttachmentDto
  */
 export interface DownloadAttachmentDto {
-  /**
-   * Base64 encoded string of attachment bytes. Decode the base64 encoded string to get the raw contents. If the file has a content type such as `text/html` you can read the contents directly by converting it to string using `utf-8` encoding.
-   * @type {string}
-   * @memberof DownloadAttachmentDto
-   */
-  base64FileContents: string;
-  /**
-   * Content type of attachment. Examples are `image/png`, `application/msword`, `text/csv` etc.
-   * @type {string}
-   * @memberof DownloadAttachmentDto
-   */
-  contentType: string;
-  /**
-   * Size in bytes of attachment content
-   * @type {number}
-   * @memberof DownloadAttachmentDto
-   */
-  sizeBytes: number;
+    /**
+     * Base64 encoded string of attachment bytes. Decode the base64 encoded string to get the raw contents. If the file has a content type such as `text/html` you can read the contents directly by converting it to string using `utf-8` encoding.
+     * @type {string}
+     * @memberof DownloadAttachmentDto
+     */
+    base64FileContents: string;
+    /**
+     * Content type of attachment. Examples are `image/png`, `application/msword`, `text/csv` etc.
+     * @type {string}
+     * @memberof DownloadAttachmentDto
+     */
+    contentType: string;
+    /**
+     * Size in bytes of attachment content
+     * @type {number}
+     * @memberof DownloadAttachmentDto
+     */
+    sizeBytes: number;
 }
 
-export function DownloadAttachmentDtoFromJSON(
-  json: any
-): DownloadAttachmentDto {
-  return DownloadAttachmentDtoFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the DownloadAttachmentDto interface.
+ */
+export function instanceOfDownloadAttachmentDto(value: object): value is DownloadAttachmentDto {
+    if (!('base64FileContents' in value) || value['base64FileContents'] === undefined) return false;
+    if (!('contentType' in value) || value['contentType'] === undefined) return false;
+    if (!('sizeBytes' in value) || value['sizeBytes'] === undefined) return false;
+    return true;
 }
 
-export function DownloadAttachmentDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DownloadAttachmentDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    base64FileContents: json['base64FileContents'],
-    contentType: json['contentType'],
-    sizeBytes: json['sizeBytes'],
-  };
+export function DownloadAttachmentDtoFromJSON(json: any): DownloadAttachmentDto {
+    return DownloadAttachmentDtoFromJSONTyped(json, false);
 }
 
-export function DownloadAttachmentDtoToJSON(
-  value?: DownloadAttachmentDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    base64FileContents: value.base64FileContents,
-    contentType: value.contentType,
-    sizeBytes: value.sizeBytes,
-  };
+export function DownloadAttachmentDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DownloadAttachmentDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'base64FileContents': json['base64FileContents'],
+        'contentType': json['contentType'],
+        'sizeBytes': json['sizeBytes'],
+    };
 }
+
+export function DownloadAttachmentDtoToJSON(json: any): DownloadAttachmentDto {
+    return DownloadAttachmentDtoToJSONTyped(json, false);
+}
+
+export function DownloadAttachmentDtoToJSONTyped(value?: DownloadAttachmentDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'base64FileContents': value['base64FileContents'],
+        'contentType': value['contentType'],
+        'sizeBytes': value['sizeBytes'],
+    };
+}
+

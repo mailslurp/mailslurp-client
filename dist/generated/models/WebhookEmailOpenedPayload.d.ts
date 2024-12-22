@@ -72,20 +72,26 @@ export interface WebhookEmailOpenedPayload {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookEmailOpenedPayloadEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const WebhookEmailOpenedPayloadEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type WebhookEmailOpenedPayloadEventNameEnum = typeof WebhookEmailOpenedPayloadEventNameEnum[keyof typeof WebhookEmailOpenedPayloadEventNameEnum];
+/**
+ * Check if a given object implements the WebhookEmailOpenedPayload interface.
+ */
+export declare function instanceOfWebhookEmailOpenedPayload(value: object): value is WebhookEmailOpenedPayload;
 export declare function WebhookEmailOpenedPayloadFromJSON(json: any): WebhookEmailOpenedPayload;
 export declare function WebhookEmailOpenedPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookEmailOpenedPayload;
-export declare function WebhookEmailOpenedPayloadToJSON(value?: WebhookEmailOpenedPayload | null): any;
+export declare function WebhookEmailOpenedPayloadToJSON(json: any): WebhookEmailOpenedPayload;
+export declare function WebhookEmailOpenedPayloadToJSONTyped(value?: WebhookEmailOpenedPayload | null, ignoreDiscriminator?: boolean): any;

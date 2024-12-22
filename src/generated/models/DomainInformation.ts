@@ -12,70 +12,84 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface DomainInformation
  */
 export interface DomainInformation {
-  /**
-   *
-   * @type {string}
-   * @memberof DomainInformation
-   */
-  domainName: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof DomainInformation
-   */
-  verified: boolean;
-  /**
-   * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
-   * @type {string}
-   * @memberof DomainInformation
-   */
-  domainType: DomainInformationDomainTypeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainInformation
+     */
+    domainName: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DomainInformation
+     */
+    verified: boolean;
+    /**
+     * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+     * @type {string}
+     * @memberof DomainInformation
+     */
+    domainType: DomainInformationDomainTypeEnum;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum DomainInformationDomainTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_DOMAIN = 'SMTP_DOMAIN',
+export const DomainInformationDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+} as const;
+export type DomainInformationDomainTypeEnum = typeof DomainInformationDomainTypeEnum[keyof typeof DomainInformationDomainTypeEnum];
+
+
+/**
+ * Check if a given object implements the DomainInformation interface.
+ */
+export function instanceOfDomainInformation(value: object): value is DomainInformation {
+    if (!('domainName' in value) || value['domainName'] === undefined) return false;
+    if (!('verified' in value) || value['verified'] === undefined) return false;
+    if (!('domainType' in value) || value['domainType'] === undefined) return false;
+    return true;
 }
 
 export function DomainInformationFromJSON(json: any): DomainInformation {
-  return DomainInformationFromJSONTyped(json, false);
+    return DomainInformationFromJSONTyped(json, false);
 }
 
-export function DomainInformationFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainInformation {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domainName: json['domainName'],
-    verified: json['verified'],
-    domainType: json['domainType'],
-  };
+export function DomainInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainInformation {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'domainName': json['domainName'],
+        'verified': json['verified'],
+        'domainType': json['domainType'],
+    };
 }
 
-export function DomainInformationToJSON(value?: DomainInformation | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domainName: value.domainName,
-    verified: value.verified,
-    domainType: value.domainType,
-  };
+export function DomainInformationToJSON(json: any): DomainInformation {
+    return DomainInformationToJSONTyped(json, false);
 }
+
+export function DomainInformationToJSONTyped(value?: DomainInformation | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'domainName': value['domainName'],
+        'verified': value['verified'],
+        'domainType': value['domainType'],
+    };
+}
+

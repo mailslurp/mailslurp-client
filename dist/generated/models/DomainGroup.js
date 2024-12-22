@@ -13,42 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainGroupToJSON = exports.DomainGroupFromJSONTyped = exports.DomainGroupFromJSON = exports.DomainGroupLabelEnum = void 0;
-var _1 = require("./");
+exports.DomainGroupLabelEnum = void 0;
+exports.instanceOfDomainGroup = instanceOfDomainGroup;
+exports.DomainGroupFromJSON = DomainGroupFromJSON;
+exports.DomainGroupFromJSONTyped = DomainGroupFromJSONTyped;
+exports.DomainGroupToJSON = DomainGroupToJSON;
+exports.DomainGroupToJSONTyped = DomainGroupToJSONTyped;
+var DomainInformation_1 = require("./DomainInformation");
 /**
  * @export
- * @enum {string}
  */
-var DomainGroupLabelEnum;
-(function (DomainGroupLabelEnum) {
-    DomainGroupLabelEnum["DEFAULT"] = "DEFAULT";
-    DomainGroupLabelEnum["DOMAIN_POOL"] = "DOMAIN_POOL";
-    DomainGroupLabelEnum["CUSTOM"] = "CUSTOM";
-})(DomainGroupLabelEnum = exports.DomainGroupLabelEnum || (exports.DomainGroupLabelEnum = {}));
+exports.DomainGroupLabelEnum = {
+    DEFAULT: 'DEFAULT',
+    DOMAIN_POOL: 'DOMAIN_POOL',
+    CUSTOM: 'CUSTOM'
+};
+/**
+ * Check if a given object implements the DomainGroup interface.
+ */
+function instanceOfDomainGroup(value) {
+    if (!('label' in value) || value['label'] === undefined)
+        return false;
+    if (!('domains' in value) || value['domains'] === undefined)
+        return false;
+    return true;
+}
 function DomainGroupFromJSON(json) {
     return DomainGroupFromJSONTyped(json, false);
 }
-exports.DomainGroupFromJSON = DomainGroupFromJSON;
 function DomainGroupFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        label: json['label'],
-        domains: json['domains'].map(_1.DomainInformationFromJSON),
+        'label': json['label'],
+        'domains': (json['domains'].map(DomainInformation_1.DomainInformationFromJSON)),
     };
 }
-exports.DomainGroupFromJSONTyped = DomainGroupFromJSONTyped;
-function DomainGroupToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DomainGroupToJSON(json) {
+    return DomainGroupToJSONTyped(json, false);
+}
+function DomainGroupToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        label: value.label,
-        domains: value.domains.map(_1.DomainInformationToJSON),
+        'label': value['label'],
+        'domains': (value['domains'].map(DomainInformation_1.DomainInformationToJSON)),
     };
 }
-exports.DomainGroupToJSON = DomainGroupToJSON;

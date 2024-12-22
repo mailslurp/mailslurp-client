@@ -13,58 +13,97 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailProjectionToJSON = exports.EmailProjectionFromJSONTyped = exports.EmailProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfEmailProjection = instanceOfEmailProjection;
+exports.EmailProjectionFromJSON = EmailProjectionFromJSON;
+exports.EmailProjectionFromJSONTyped = EmailProjectionFromJSONTyped;
+exports.EmailProjectionToJSON = EmailProjectionToJSON;
+exports.EmailProjectionToJSONTyped = EmailProjectionToJSONTyped;
+var Sender_1 = require("./Sender");
+var EmailRecipients_1 = require("./EmailRecipients");
+/**
+ * Check if a given object implements the EmailProjection interface.
+ */
+function instanceOfEmailProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('to' in value) || value['to'] === undefined)
+        return false;
+    if (!('read' in value) || value['read'] === undefined)
+        return false;
+    if (!('teamAccess' in value) || value['teamAccess'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('from' in value) || value['from'] === undefined)
+        return false;
+    return true;
+}
 function EmailProjectionFromJSON(json) {
     return EmailProjectionFromJSONTyped(json, false);
 }
-exports.EmailProjectionFromJSON = EmailProjectionFromJSON;
 function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        inboxId: json['inboxId'],
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        to: json['to'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        read: json['read'],
-        bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-        teamAccess: json['teamAccess'],
-        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-        textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        id: json['id'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'sender': json['sender'] == null ? undefined : (0, Sender_1.SenderFromJSON)(json['sender']),
+        'recipients': json['recipients'] == null ? undefined : (0, EmailRecipients_1.EmailRecipientsFromJSON)(json['recipients']),
+        'attachments': json['attachments'] == null ? undefined : json['attachments'],
+        'inboxId': json['inboxId'],
+        'to': json['to'],
+        'cc': json['cc'] == null ? undefined : json['cc'],
+        'bcc': json['bcc'] == null ? undefined : json['bcc'],
+        'messageId': json['messageId'] == null ? undefined : json['messageId'],
+        'favourite': json['favourite'] == null ? undefined : json['favourite'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'plusAddress': json['plusAddress'] == null ? undefined : json['plusAddress'],
+        'inReplyTo': json['inReplyTo'] == null ? undefined : json['inReplyTo'],
+        'read': json['read'],
+        'bodyExcerpt': json['bodyExcerpt'] == null ? undefined : json['bodyExcerpt'],
+        'bodyPartContentTypes': json['bodyPartContentTypes'] == null ? undefined : json['bodyPartContentTypes'],
+        'textExcerpt': json['textExcerpt'] == null ? undefined : json['textExcerpt'],
+        'bodyMD5Hash': json['bodyMD5Hash'] == null ? undefined : json['bodyMD5Hash'],
+        'teamAccess': json['teamAccess'],
+        'id': json['id'],
+        'threadId': json['threadId'] == null ? undefined : json['threadId'],
+        'from': json['from'],
     };
 }
-exports.EmailProjectionFromJSONTyped = EmailProjectionFromJSONTyped;
-function EmailProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailProjectionToJSON(json) {
+    return EmailProjectionToJSONTyped(json, false);
+}
+function EmailProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        inboxId: value.inboxId,
-        attachments: value.attachments,
-        to: value.to,
-        domainId: value.domainId,
-        bcc: value.bcc,
-        cc: value.cc,
-        read: value.read,
-        bodyExcerpt: value.bodyExcerpt,
-        teamAccess: value.teamAccess,
-        bodyMD5Hash: value.bodyMD5Hash,
-        textExcerpt: value.textExcerpt,
-        subject: value.subject,
-        id: value.id,
-        from: value.from,
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'sender': (0, Sender_1.SenderToJSON)(value['sender']),
+        'recipients': (0, EmailRecipients_1.EmailRecipientsToJSON)(value['recipients']),
+        'attachments': value['attachments'],
+        'inboxId': value['inboxId'],
+        'to': value['to'],
+        'cc': value['cc'],
+        'bcc': value['bcc'],
+        'messageId': value['messageId'],
+        'favourite': value['favourite'],
+        'domainId': value['domainId'],
+        'plusAddress': value['plusAddress'],
+        'inReplyTo': value['inReplyTo'],
+        'read': value['read'],
+        'bodyExcerpt': value['bodyExcerpt'],
+        'bodyPartContentTypes': value['bodyPartContentTypes'],
+        'textExcerpt': value['textExcerpt'],
+        'bodyMD5Hash': value['bodyMD5Hash'],
+        'teamAccess': value['teamAccess'],
+        'id': value['id'],
+        'threadId': value['threadId'],
+        'from': value['from'],
     };
 }
-exports.EmailProjectionToJSON = EmailProjectionToJSON;

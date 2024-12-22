@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface TestPhoneNumberOptions
  */
 export interface TestPhoneNumberOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof TestPhoneNumberOptions
-   */
-  message: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestPhoneNumberOptions
+     */
+    message: string;
 }
 
-export function TestPhoneNumberOptionsFromJSON(
-  json: any
-): TestPhoneNumberOptions {
-  return TestPhoneNumberOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the TestPhoneNumberOptions interface.
+ */
+export function instanceOfTestPhoneNumberOptions(value: object): value is TestPhoneNumberOptions {
+    if (!('message' in value) || value['message'] === undefined) return false;
+    return true;
 }
 
-export function TestPhoneNumberOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestPhoneNumberOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    message: json['message'],
-  };
+export function TestPhoneNumberOptionsFromJSON(json: any): TestPhoneNumberOptions {
+    return TestPhoneNumberOptionsFromJSONTyped(json, false);
 }
 
-export function TestPhoneNumberOptionsToJSON(
-  value?: TestPhoneNumberOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    message: value.message,
-  };
+export function TestPhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestPhoneNumberOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'message': json['message'],
+    };
 }
+
+export function TestPhoneNumberOptionsToJSON(json: any): TestPhoneNumberOptions {
+    return TestPhoneNumberOptionsToJSONTyped(json, false);
+}
+
+export function TestPhoneNumberOptionsToJSONTyped(value?: TestPhoneNumberOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'message': value['message'],
+    };
+}
+

@@ -22,6 +22,11 @@ export interface InboxExistsDto {
      */
     _exists: boolean;
 }
+/**
+ * Check if a given object implements the InboxExistsDto interface.
+ */
+export declare function instanceOfInboxExistsDto(value: object): value is InboxExistsDto;
 export declare function InboxExistsDtoFromJSON(json: any): InboxExistsDto;
 export declare function InboxExistsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxExistsDto;
-export declare function InboxExistsDtoToJSON(value?: InboxExistsDto | null): any;
+export declare function InboxExistsDtoToJSON(json: any): InboxExistsDto;
+export declare function InboxExistsDtoToJSONTyped(value?: InboxExistsDto | null, ignoreDiscriminator?: boolean): any;

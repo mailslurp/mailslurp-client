@@ -12,53 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * User image
  * @export
  * @interface GravatarUrl
  */
 export interface GravatarUrl {
-  /**
-   *
-   * @type {string}
-   * @memberof GravatarUrl
-   */
-  url: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GravatarUrl
-   */
-  hash: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GravatarUrl
+     */
+    url: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GravatarUrl
+     */
+    hash: string;
+}
+
+/**
+ * Check if a given object implements the GravatarUrl interface.
+ */
+export function instanceOfGravatarUrl(value: object): value is GravatarUrl {
+    if (!('url' in value) || value['url'] === undefined) return false;
+    if (!('hash' in value) || value['hash'] === undefined) return false;
+    return true;
 }
 
 export function GravatarUrlFromJSON(json: any): GravatarUrl {
-  return GravatarUrlFromJSONTyped(json, false);
+    return GravatarUrlFromJSONTyped(json, false);
 }
 
-export function GravatarUrlFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GravatarUrl {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    url: json['url'],
-    hash: json['hash'],
-  };
+export function GravatarUrlFromJSONTyped(json: any, ignoreDiscriminator: boolean): GravatarUrl {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'url': json['url'],
+        'hash': json['hash'],
+    };
 }
 
-export function GravatarUrlToJSON(value?: GravatarUrl | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    url: value.url,
-    hash: value.hash,
-  };
+export function GravatarUrlToJSON(json: any): GravatarUrl {
+    return GravatarUrlToJSONTyped(json, false);
 }
+
+export function GravatarUrlToJSONTyped(value?: GravatarUrl | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'url': value['url'],
+        'hash': value['hash'],
+    };
+}
+

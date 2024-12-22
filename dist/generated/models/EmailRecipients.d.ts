@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Recipient } from './';
+import type { Recipient } from './Recipient';
 /**
  * The `To`,`CC`,`BCC` recipients stored in object form with email address and name accessible.
  * @export
@@ -35,6 +35,11 @@ export interface EmailRecipients {
      */
     bcc?: Array<Recipient>;
 }
+/**
+ * Check if a given object implements the EmailRecipients interface.
+ */
+export declare function instanceOfEmailRecipients(value: object): value is EmailRecipients;
 export declare function EmailRecipientsFromJSON(json: any): EmailRecipients;
 export declare function EmailRecipientsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailRecipients;
-export declare function EmailRecipientsToJSON(value?: EmailRecipients | null): any;
+export declare function EmailRecipientsToJSON(json: any): EmailRecipients;
+export declare function EmailRecipientsToJSONTyped(value?: EmailRecipients | null, ignoreDiscriminator?: boolean): any;

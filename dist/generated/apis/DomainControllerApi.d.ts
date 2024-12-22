@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateDomainOptions, DomainDto, DomainGroupsDto, DomainIssuesDto, DomainPreview, InboxDto, UpdateDomainOptions } from '../models';
+import type { CreateDomainOptions, DomainDto, DomainGroupsDto, DomainIssuesDto, DomainPreview, InboxDto, UpdateDomainOptions } from '../models/index';
 export interface AddDomainWildcardCatchAllRequest {
     id: string;
 }
@@ -45,116 +45,116 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      * Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
      * Add catch all wild card inbox to domain
      */
-    addDomainWildcardCatchAllRaw(requestParameters: AddDomainWildcardCatchAllRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainDto>>;
+    addDomainWildcardCatchAllRaw(requestParameters: AddDomainWildcardCatchAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>>;
     /**
      * Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
      * Add catch all wild card inbox to domain
      */
-    addDomainWildcardCatchAll(requestParameters: AddDomainWildcardCatchAllRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+    addDomainWildcardCatchAll(requestParameters: AddDomainWildcardCatchAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto>;
     /**
      * Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider\'s DNS setup to verify the domain.
      * Create Domain
      */
-    createDomainRaw(requestParameters: CreateDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainDto>>;
+    createDomainRaw(requestParameters: CreateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>>;
     /**
      * Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider\'s DNS setup to verify the domain.
      * Create Domain
      */
-    createDomain(requestParameters: CreateDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+    createDomain(requestParameters: CreateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto>;
     /**
      * Delete a domain. This will disable any existing inboxes that use this domain.
      * Delete a domain
      */
-    deleteDomainRaw(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    deleteDomainRaw(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
     /**
      * Delete a domain. This will disable any existing inboxes that use this domain.
      * Delete a domain
      */
-    deleteDomain(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    deleteDomain(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
     /**
      * List all domains available for use with email address creation
      * Get all usable domains
      */
-    getAvailableDomainsRaw(requestParameters: GetAvailableDomainsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainGroupsDto>>;
+    getAvailableDomainsRaw(requestParameters: GetAvailableDomainsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainGroupsDto>>;
     /**
      * List all domains available for use with email address creation
      * Get all usable domains
      */
-    getAvailableDomains(requestParameters: GetAvailableDomainsRequest, initOverrides?: RequestInit): Promise<DomainGroupsDto>;
+    getAvailableDomains(requestParameters?: GetAvailableDomainsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainGroupsDto>;
     /**
      * Returns domain verification status and tokens for a given domain
      * Get a domain
      */
-    getDomainRaw(requestParameters: GetDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainDto>>;
+    getDomainRaw(requestParameters: GetDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>>;
     /**
      * Returns domain verification status and tokens for a given domain
      * Get a domain
      */
-    getDomain(requestParameters: GetDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+    getDomain(requestParameters: GetDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto>;
     /**
      * List domain issues for domains you have created
      * Get domain issues
      */
-    getDomainIssuesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainIssuesDto>>;
+    getDomainIssuesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainIssuesDto>>;
     /**
      * List domain issues for domains you have created
      * Get domain issues
      */
-    getDomainIssues(initOverrides?: RequestInit): Promise<DomainIssuesDto>;
+    getDomainIssues(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainIssuesDto>;
     /**
      * Get the catch all inbox for a domain for missed emails
      * Get catch all wild card inbox for domain
      */
-    getDomainWildcardCatchAllInboxRaw(requestParameters: GetDomainWildcardCatchAllInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>>;
+    getDomainWildcardCatchAllInboxRaw(requestParameters: GetDomainWildcardCatchAllInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>>;
     /**
      * Get the catch all inbox for a domain for missed emails
      * Get catch all wild card inbox for domain
      */
-    getDomainWildcardCatchAllInbox(requestParameters: GetDomainWildcardCatchAllInboxRequest, initOverrides?: RequestInit): Promise<InboxDto>;
+    getDomainWildcardCatchAllInbox(requestParameters: GetDomainWildcardCatchAllInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto>;
     /**
      * List all custom domains you have created
      * Get domains
      */
-    getDomainsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<DomainPreview>>>;
+    getDomainsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<DomainPreview>>>;
     /**
      * List all custom domains you have created
      * Get domains
      */
-    getDomains(initOverrides?: RequestInit): Promise<Array<DomainPreview>>;
+    getDomains(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<DomainPreview>>;
     /**
      * List all MailSlurp domains used with non-custom email addresses
      * Get MailSlurp domains
      */
-    getMailSlurpDomainsRaw(requestParameters: GetMailSlurpDomainsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainGroupsDto>>;
+    getMailSlurpDomainsRaw(requestParameters: GetMailSlurpDomainsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainGroupsDto>>;
     /**
      * List all MailSlurp domains used with non-custom email addresses
      * Get MailSlurp domains
      */
-    getMailSlurpDomains(requestParameters: GetMailSlurpDomainsRequest, initOverrides?: RequestInit): Promise<DomainGroupsDto>;
+    getMailSlurpDomains(requestParameters?: GetMailSlurpDomainsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainGroupsDto>;
     /**
      * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
      * Update a domain
      */
-    updateDomainRaw(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainDto>>;
+    updateDomainRaw(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DomainDto>>;
     /**
      * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
      * Update a domain
      */
-    updateDomain(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+    updateDomain(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DomainDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAvailableDomainsInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const GetAvailableDomainsInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type GetAvailableDomainsInboxTypeEnum = typeof GetAvailableDomainsInboxTypeEnum[keyof typeof GetAvailableDomainsInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetMailSlurpDomainsInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const GetMailSlurpDomainsInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type GetMailSlurpDomainsInboxTypeEnum = typeof GetMailSlurpDomainsInboxTypeEnum[keyof typeof GetMailSlurpDomainsInboxTypeEnum];

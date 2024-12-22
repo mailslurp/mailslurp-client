@@ -13,59 +13,64 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageConnectorToJSON = exports.PageConnectorFromJSONTyped = exports.PageConnectorFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfPageConnector = instanceOfPageConnector;
+exports.PageConnectorFromJSON = PageConnectorFromJSON;
+exports.PageConnectorFromJSONTyped = PageConnectorFromJSONTyped;
+exports.PageConnectorToJSON = PageConnectorToJSON;
+exports.PageConnectorToJSONTyped = PageConnectorToJSONTyped;
+var PageableObject_1 = require("./PageableObject");
+var ConnectorProjection_1 = require("./ConnectorProjection");
+var SortObject_1 = require("./SortObject");
+/**
+ * Check if a given object implements the PageConnector interface.
+ */
+function instanceOfPageConnector(value) {
+    if (!('totalPages' in value) || value['totalPages'] === undefined)
+        return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined)
+        return false;
+    return true;
+}
 function PageConnectorFromJSON(json) {
     return PageConnectorFromJSONTyped(json, false);
 }
-exports.PageConnectorFromJSON = PageConnectorFromJSON;
 function PageConnectorFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        content: !(0, runtime_1.exists)(json, 'content')
-            ? undefined
-            : json['content'].map(_1.ConnectorProjectionFromJSON),
-        pageable: !(0, runtime_1.exists)(json, 'pageable')
-            ? undefined
-            : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        totalPages: json['totalPages'],
-        totalElements: json['totalElements'],
-        last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
-            ? undefined
-            : json['numberOfElements'],
-        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
-        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
-        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
-        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        'content': json['content'] == null ? undefined : (json['content'].map(ConnectorProjection_1.ConnectorProjectionFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : (0, PageableObject_1.PageableObjectFromJSON)(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : (json['sort'].map(SortObject_1.SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
     };
 }
-exports.PageConnectorFromJSONTyped = PageConnectorFromJSONTyped;
-function PageConnectorToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function PageConnectorToJSON(json) {
+    return PageConnectorToJSONTyped(json, false);
+}
+function PageConnectorToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        content: value.content === undefined
-            ? undefined
-            : value.content.map(_1.ConnectorProjectionToJSON),
-        pageable: (0, _1.PageableObjectToJSON)(value.pageable),
-        totalPages: value.totalPages,
-        totalElements: value.totalElements,
-        last: value.last,
-        numberOfElements: value.numberOfElements,
-        first: value.first,
-        size: value.size,
-        number: value.number,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
-        empty: value.empty,
+        'content': value['content'] == null ? undefined : (value['content'].map(ConnectorProjection_1.ConnectorProjectionToJSON)),
+        'pageable': (0, PageableObject_1.PageableObjectToJSON)(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : (value['sort'].map(SortObject_1.SortObjectToJSON)),
+        'empty': value['empty'],
     };
 }
-exports.PageConnectorToJSON = PageConnectorToJSON;

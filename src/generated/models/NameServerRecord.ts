@@ -12,69 +12,82 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Name Server Record
  * @export
  * @interface NameServerRecord
  */
 export interface NameServerRecord {
-  /**
-   *
-   * @type {string}
-   * @memberof NameServerRecord
-   */
-  raw: string;
-  /**
-   *
-   * @type {string}
-   * @memberof NameServerRecord
-   */
-  recordType: string;
-  /**
-   *
-   * @type {string}
-   * @memberof NameServerRecord
-   */
-  priority: string;
-  /**
-   *
-   * @type {string}
-   * @memberof NameServerRecord
-   */
-  value: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof NameServerRecord
+     */
+    raw: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof NameServerRecord
+     */
+    recordType: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof NameServerRecord
+     */
+    priority: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof NameServerRecord
+     */
+    value: string;
+}
+
+/**
+ * Check if a given object implements the NameServerRecord interface.
+ */
+export function instanceOfNameServerRecord(value: object): value is NameServerRecord {
+    if (!('raw' in value) || value['raw'] === undefined) return false;
+    if (!('recordType' in value) || value['recordType'] === undefined) return false;
+    if (!('priority' in value) || value['priority'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
+    return true;
 }
 
 export function NameServerRecordFromJSON(json: any): NameServerRecord {
-  return NameServerRecordFromJSONTyped(json, false);
+    return NameServerRecordFromJSONTyped(json, false);
 }
 
-export function NameServerRecordFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): NameServerRecord {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    raw: json['raw'],
-    recordType: json['recordType'],
-    priority: json['priority'],
-    value: json['value'],
-  };
+export function NameServerRecordFromJSONTyped(json: any, ignoreDiscriminator: boolean): NameServerRecord {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'raw': json['raw'],
+        'recordType': json['recordType'],
+        'priority': json['priority'],
+        'value': json['value'],
+    };
 }
 
-export function NameServerRecordToJSON(value?: NameServerRecord | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    raw: value.raw,
-    recordType: value.recordType,
-    priority: value.priority,
-    value: value.value,
-  };
+export function NameServerRecordToJSON(json: any): NameServerRecord {
+    return NameServerRecordToJSONTyped(json, false);
 }
+
+export function NameServerRecordToJSONTyped(value?: NameServerRecord | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'raw': value['raw'],
+        'recordType': value['recordType'],
+        'priority': value['priority'],
+        'value': value['value'],
+    };
+}
+

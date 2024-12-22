@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DeliveryStatusDto, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { DeliveryStatusDto } from './DeliveryStatusDto';
+import type { SortObject } from './SortObject';
 /**
  * Paginated delivery status results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageDeliveryStatus {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageDeliveryStatus
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageDeliveryStatus {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageDeliveryStatus interface.
+ */
+export declare function instanceOfPageDeliveryStatus(value: object): value is PageDeliveryStatus;
 export declare function PageDeliveryStatusFromJSON(json: any): PageDeliveryStatus;
 export declare function PageDeliveryStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageDeliveryStatus;
-export declare function PageDeliveryStatusToJSON(value?: PageDeliveryStatus | null): any;
+export declare function PageDeliveryStatusToJSON(json: any): PageDeliveryStatus;
+export declare function PageDeliveryStatusToJSONTyped(value?: PageDeliveryStatus | null, ignoreDiscriminator?: boolean): any;

@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface LookupMtaStsDomainOptions
  */
 export interface LookupMtaStsDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof LookupMtaStsDomainOptions
-   */
-  host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupMtaStsDomainOptions
+     */
+    host: string;
 }
 
-export function LookupMtaStsDomainOptionsFromJSON(
-  json: any
-): LookupMtaStsDomainOptions {
-  return LookupMtaStsDomainOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the LookupMtaStsDomainOptions interface.
+ */
+export function instanceOfLookupMtaStsDomainOptions(value: object): value is LookupMtaStsDomainOptions {
+    if (!('host' in value) || value['host'] === undefined) return false;
+    return true;
 }
 
-export function LookupMtaStsDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupMtaStsDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-  };
+export function LookupMtaStsDomainOptionsFromJSON(json: any): LookupMtaStsDomainOptions {
+    return LookupMtaStsDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupMtaStsDomainOptionsToJSON(
-  value?: LookupMtaStsDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-  };
+export function LookupMtaStsDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupMtaStsDomainOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+    };
 }
+
+export function LookupMtaStsDomainOptionsToJSON(json: any): LookupMtaStsDomainOptions {
+    return LookupMtaStsDomainOptionsToJSONTyped(json, false);
+}
+
+export function LookupMtaStsDomainOptionsToJSONTyped(value?: LookupMtaStsDomainOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'host': value['host'],
+    };
+}
+

@@ -13,41 +13,63 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsProjectionToJSON = exports.SmsProjectionFromJSONTyped = exports.SmsProjectionFromJSON = void 0;
+exports.instanceOfSmsProjection = instanceOfSmsProjection;
+exports.SmsProjectionFromJSON = SmsProjectionFromJSON;
+exports.SmsProjectionFromJSONTyped = SmsProjectionFromJSONTyped;
+exports.SmsProjectionToJSON = SmsProjectionToJSON;
+exports.SmsProjectionToJSONTyped = SmsProjectionToJSONTyped;
+/**
+ * Check if a given object implements the SmsProjection interface.
+ */
+function instanceOfSmsProjection(value) {
+    if (!('body' in value) || value['body'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined)
+        return false;
+    if (!('fromNumber' in value) || value['fromNumber'] === undefined)
+        return false;
+    if (!('read' in value) || value['read'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function SmsProjectionFromJSON(json) {
     return SmsProjectionFromJSONTyped(json, false);
 }
-exports.SmsProjectionFromJSON = SmsProjectionFromJSON;
 function SmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        body: json['body'],
-        createdAt: new Date(json['createdAt']),
-        userId: json['userId'],
-        phoneNumber: json['phoneNumber'],
-        fromNumber: json['fromNumber'],
-        read: json['read'],
-        id: json['id'],
+        'body': json['body'],
+        'createdAt': (new Date(json['createdAt'])),
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'read': json['read'],
+        'id': json['id'],
     };
 }
-exports.SmsProjectionFromJSONTyped = SmsProjectionFromJSONTyped;
-function SmsProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SmsProjectionToJSON(json) {
+    return SmsProjectionToJSONTyped(json, false);
+}
+function SmsProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        body: value.body,
-        createdAt: value.createdAt.toISOString(),
-        userId: value.userId,
-        phoneNumber: value.phoneNumber,
-        fromNumber: value.fromNumber,
-        read: value.read,
-        id: value.id,
+        'body': value['body'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'userId': value['userId'],
+        'phoneNumber': value['phoneNumber'],
+        'fromNumber': value['fromNumber'],
+        'read': value['read'],
+        'id': value['id'],
     };
 }
-exports.SmsProjectionToJSON = SmsProjectionToJSON;

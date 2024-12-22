@@ -28,6 +28,11 @@ export interface EmailContentMatchResult {
      */
     matches: Array<string>;
 }
+/**
+ * Check if a given object implements the EmailContentMatchResult interface.
+ */
+export declare function instanceOfEmailContentMatchResult(value: object): value is EmailContentMatchResult;
 export declare function EmailContentMatchResultFromJSON(json: any): EmailContentMatchResult;
 export declare function EmailContentMatchResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailContentMatchResult;
-export declare function EmailContentMatchResultToJSON(value?: EmailContentMatchResult | null): any;
+export declare function EmailContentMatchResultToJSON(json: any): EmailContentMatchResult;
+export declare function EmailContentMatchResultToJSONTyped(value?: EmailContentMatchResult | null, ignoreDiscriminator?: boolean): any;

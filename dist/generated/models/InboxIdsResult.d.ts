@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxIdItem } from './';
+import type { InboxIdItem } from './InboxIdItem';
 /**
  * List of inbox IDs and email addresses
  * @export
@@ -23,6 +23,11 @@ export interface InboxIdsResult {
      */
     inboxIds: Array<InboxIdItem>;
 }
+/**
+ * Check if a given object implements the InboxIdsResult interface.
+ */
+export declare function instanceOfInboxIdsResult(value: object): value is InboxIdsResult;
 export declare function InboxIdsResultFromJSON(json: any): InboxIdsResult;
 export declare function InboxIdsResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxIdsResult;
-export declare function InboxIdsResultToJSON(value?: InboxIdsResult | null): any;
+export declare function InboxIdsResultToJSON(json: any): InboxIdsResult;
+export declare function InboxIdsResultToJSONTyped(value?: InboxIdsResult | null, ignoreDiscriminator?: boolean): any;

@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { WebhookHeaderNameValue } from './';
+import type { WebhookHeaderNameValue } from './WebhookHeaderNameValue';
 /**
  * Webhook HTTP headers to include with each request from MailSlurp to your server
  * @export
@@ -23,6 +23,11 @@ export interface WebhookHeaders {
      */
     headers: Array<WebhookHeaderNameValue>;
 }
+/**
+ * Check if a given object implements the WebhookHeaders interface.
+ */
+export declare function instanceOfWebhookHeaders(value: object): value is WebhookHeaders;
 export declare function WebhookHeadersFromJSON(json: any): WebhookHeaders;
 export declare function WebhookHeadersFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookHeaders;
-export declare function WebhookHeadersToJSON(value?: WebhookHeaders | null): any;
+export declare function WebhookHeadersToJSON(json: any): WebhookHeaders;
+export declare function WebhookHeadersToJSONTyped(value?: WebhookHeaders | null, ignoreDiscriminator?: boolean): any;

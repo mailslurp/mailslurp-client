@@ -13,48 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeaturePlatformNameToJSON = exports.EmailFeaturePlatformNameFromJSONTyped = exports.EmailFeaturePlatformNameFromJSON = exports.EmailFeaturePlatformNameSlugEnum = void 0;
+exports.EmailFeaturePlatformNameSlugEnum = void 0;
+exports.instanceOfEmailFeaturePlatformName = instanceOfEmailFeaturePlatformName;
+exports.EmailFeaturePlatformNameFromJSON = EmailFeaturePlatformNameFromJSON;
+exports.EmailFeaturePlatformNameFromJSONTyped = EmailFeaturePlatformNameFromJSONTyped;
+exports.EmailFeaturePlatformNameToJSON = EmailFeaturePlatformNameToJSON;
+exports.EmailFeaturePlatformNameToJSONTyped = EmailFeaturePlatformNameToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var EmailFeaturePlatformNameSlugEnum;
-(function (EmailFeaturePlatformNameSlugEnum) {
-    EmailFeaturePlatformNameSlugEnum["android"] = "android";
-    EmailFeaturePlatformNameSlugEnum["desktop_app"] = "desktop-app";
-    EmailFeaturePlatformNameSlugEnum["desktop_webmail"] = "desktop-webmail";
-    EmailFeaturePlatformNameSlugEnum["ios"] = "ios";
-    EmailFeaturePlatformNameSlugEnum["macos"] = "macos";
-    EmailFeaturePlatformNameSlugEnum["mobile_webmail"] = "mobile-webmail";
-    EmailFeaturePlatformNameSlugEnum["outlook_com"] = "outlook-com";
-    EmailFeaturePlatformNameSlugEnum["webmail"] = "webmail";
-    EmailFeaturePlatformNameSlugEnum["windows"] = "windows";
-    EmailFeaturePlatformNameSlugEnum["windows_mail"] = "windows-mail";
-})(EmailFeaturePlatformNameSlugEnum = exports.EmailFeaturePlatformNameSlugEnum || (exports.EmailFeaturePlatformNameSlugEnum = {}));
+exports.EmailFeaturePlatformNameSlugEnum = {
+    android: 'android',
+    desktop_app: 'desktop-app',
+    desktop_webmail: 'desktop-webmail',
+    ios: 'ios',
+    macos: 'macos',
+    mobile_webmail: 'mobile-webmail',
+    outlook_com: 'outlook-com',
+    webmail: 'webmail',
+    windows: 'windows',
+    windows_mail: 'windows-mail'
+};
+/**
+ * Check if a given object implements the EmailFeaturePlatformName interface.
+ */
+function instanceOfEmailFeaturePlatformName(value) {
+    if (!('slug' in value) || value['slug'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeaturePlatformNameFromJSON(json) {
     return EmailFeaturePlatformNameFromJSONTyped(json, false);
 }
-exports.EmailFeaturePlatformNameFromJSON = EmailFeaturePlatformNameFromJSON;
 function EmailFeaturePlatformNameFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        slug: json['slug'],
-        name: json['name'],
+        'slug': json['slug'],
+        'name': json['name'],
     };
 }
-exports.EmailFeaturePlatformNameFromJSONTyped = EmailFeaturePlatformNameFromJSONTyped;
-function EmailFeaturePlatformNameToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeaturePlatformNameToJSON(json) {
+    return EmailFeaturePlatformNameToJSONTyped(json, false);
+}
+function EmailFeaturePlatformNameToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        slug: value.slug,
-        name: value.name,
+        'slug': value['slug'],
+        'name': value['name'],
     };
 }
-exports.EmailFeaturePlatformNameToJSON = EmailFeaturePlatformNameToJSON;

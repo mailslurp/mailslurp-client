@@ -6,7 +6,7 @@ import MailSlurp, {
   WaitForEmailCountSortEnum,
 } from '../dist';
 
-jest.setTimeout(120_000);
+
 describe('wait for', () => {
   const config = { apiKey: process.env.API_KEY };
 

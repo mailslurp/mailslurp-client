@@ -28,6 +28,11 @@ export interface GravatarUrl {
      */
     hash: string;
 }
+/**
+ * Check if a given object implements the GravatarUrl interface.
+ */
+export declare function instanceOfGravatarUrl(value: object): value is GravatarUrl;
 export declare function GravatarUrlFromJSON(json: any): GravatarUrl;
 export declare function GravatarUrlFromJSONTyped(json: any, ignoreDiscriminator: boolean): GravatarUrl;
-export declare function GravatarUrlToJSON(value?: GravatarUrl | null): any;
+export declare function GravatarUrlToJSON(json: any): GravatarUrl;
+export declare function GravatarUrlToJSONTyped(value?: GravatarUrl | null, ignoreDiscriminator?: boolean): any;

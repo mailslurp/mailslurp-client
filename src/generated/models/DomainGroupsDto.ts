@@ -12,52 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DomainGroup } from './DomainGroup';
 import {
-  DomainGroup,
-  DomainGroupFromJSON,
-  DomainGroupFromJSONTyped,
-  DomainGroupToJSON,
-} from './';
+    DomainGroupFromJSON,
+    DomainGroupFromJSONTyped,
+    DomainGroupToJSON,
+    DomainGroupToJSONTyped,
+} from './DomainGroup';
 
 /**
- *
+ * 
  * @export
  * @interface DomainGroupsDto
  */
 export interface DomainGroupsDto {
-  /**
-   *
-   * @type {Array<DomainGroup>}
-   * @memberof DomainGroupsDto
-   */
-  domainGroups: Array<DomainGroup>;
+    /**
+     * 
+     * @type {Array<DomainGroup>}
+     * @memberof DomainGroupsDto
+     */
+    domainGroups: Array<DomainGroup>;
+}
+
+/**
+ * Check if a given object implements the DomainGroupsDto interface.
+ */
+export function instanceOfDomainGroupsDto(value: object): value is DomainGroupsDto {
+    if (!('domainGroups' in value) || value['domainGroups'] === undefined) return false;
+    return true;
 }
 
 export function DomainGroupsDtoFromJSON(json: any): DomainGroupsDto {
-  return DomainGroupsDtoFromJSONTyped(json, false);
+    return DomainGroupsDtoFromJSONTyped(json, false);
 }
 
-export function DomainGroupsDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainGroupsDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domainGroups: (json['domainGroups'] as Array<any>).map(DomainGroupFromJSON),
-  };
+export function DomainGroupsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainGroupsDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'domainGroups': ((json['domainGroups'] as Array<any>).map(DomainGroupFromJSON)),
+    };
 }
 
-export function DomainGroupsDtoToJSON(value?: DomainGroupsDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domainGroups: (value.domainGroups as Array<any>).map(DomainGroupToJSON),
-  };
+export function DomainGroupsDtoToJSON(json: any): DomainGroupsDto {
+    return DomainGroupsDtoToJSONTyped(json, false);
 }
+
+export function DomainGroupsDtoToJSONTyped(value?: DomainGroupsDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'domainGroups': ((value['domainGroups'] as Array<any>).map(DomainGroupToJSON)),
+    };
+}
+

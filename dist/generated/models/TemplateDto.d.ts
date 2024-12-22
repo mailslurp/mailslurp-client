@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TemplateVariable } from './';
+import type { TemplateVariable } from './TemplateVariable';
 /**
  * Email template
  * @export
@@ -47,6 +47,11 @@ export interface TemplateDto {
      */
     createdAt: Date;
 }
+/**
+ * Check if a given object implements the TemplateDto interface.
+ */
+export declare function instanceOfTemplateDto(value: object): value is TemplateDto;
 export declare function TemplateDtoFromJSON(json: any): TemplateDto;
 export declare function TemplateDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateDto;
-export declare function TemplateDtoToJSON(value?: TemplateDto | null): any;
+export declare function TemplateDtoToJSON(json: any): TemplateDto;
+export declare function TemplateDtoToJSONTyped(value?: TemplateDto | null, ignoreDiscriminator?: boolean): any;

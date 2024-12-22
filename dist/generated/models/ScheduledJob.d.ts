@@ -78,15 +78,20 @@ export interface ScheduledJob {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScheduledJobStatusEnum {
-    SUBMITTED = "SUBMITTED",
-    COMPLETED = "COMPLETED",
-    ABORTED = "ABORTED",
-    FAILED = "FAILED",
-    CANCELLED = "CANCELLED"
-}
+export declare const ScheduledJobStatusEnum: {
+    readonly SUBMITTED: "SUBMITTED";
+    readonly COMPLETED: "COMPLETED";
+    readonly ABORTED: "ABORTED";
+    readonly FAILED: "FAILED";
+    readonly CANCELLED: "CANCELLED";
+};
+export type ScheduledJobStatusEnum = typeof ScheduledJobStatusEnum[keyof typeof ScheduledJobStatusEnum];
+/**
+ * Check if a given object implements the ScheduledJob interface.
+ */
+export declare function instanceOfScheduledJob(value: object): value is ScheduledJob;
 export declare function ScheduledJobFromJSON(json: any): ScheduledJob;
 export declare function ScheduledJobFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScheduledJob;
-export declare function ScheduledJobToJSON(value?: ScheduledJob | null): any;
+export declare function ScheduledJobToJSON(json: any): ScheduledJob;
+export declare function ScheduledJobToJSONTyped(value?: ScheduledJob | null, ignoreDiscriminator?: boolean): any;

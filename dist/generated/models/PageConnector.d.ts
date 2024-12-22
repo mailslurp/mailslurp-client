@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ConnectorProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { ConnectorProjection } from './ConnectorProjection';
+import type { SortObject } from './SortObject';
 /**
  * Paginated inbox connectors. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageConnector {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageConnector
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageConnector {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageConnector interface.
+ */
+export declare function instanceOfPageConnector(value: object): value is PageConnector;
 export declare function PageConnectorFromJSON(json: any): PageConnector;
 export declare function PageConnectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageConnector;
-export declare function PageConnectorToJSON(value?: PageConnector | null): any;
+export declare function PageConnectorToJSON(json: any): PageConnector;
+export declare function PageConnectorToJSONTyped(value?: PageConnector | null, ignoreDiscriminator?: boolean): any;

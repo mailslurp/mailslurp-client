@@ -13,52 +13,63 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsMatchOptionToJSON = exports.SmsMatchOptionFromJSONTyped = exports.SmsMatchOptionFromJSON = exports.SmsMatchOptionShouldEnum = exports.SmsMatchOptionFieldEnum = void 0;
+exports.SmsMatchOptionShouldEnum = exports.SmsMatchOptionFieldEnum = void 0;
+exports.instanceOfSmsMatchOption = instanceOfSmsMatchOption;
+exports.SmsMatchOptionFromJSON = SmsMatchOptionFromJSON;
+exports.SmsMatchOptionFromJSONTyped = SmsMatchOptionFromJSONTyped;
+exports.SmsMatchOptionToJSON = SmsMatchOptionToJSON;
+exports.SmsMatchOptionToJSONTyped = SmsMatchOptionToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var SmsMatchOptionFieldEnum;
-(function (SmsMatchOptionFieldEnum) {
-    SmsMatchOptionFieldEnum["BODY"] = "BODY";
-    SmsMatchOptionFieldEnum["FROM"] = "FROM";
-})(SmsMatchOptionFieldEnum = exports.SmsMatchOptionFieldEnum || (exports.SmsMatchOptionFieldEnum = {}));
+exports.SmsMatchOptionFieldEnum = {
+    BODY: 'BODY',
+    FROM: 'FROM'
+};
 /**
  * @export
- * @enum {string}
  */
-var SmsMatchOptionShouldEnum;
-(function (SmsMatchOptionShouldEnum) {
-    SmsMatchOptionShouldEnum["MATCH"] = "MATCH";
-    SmsMatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
-    SmsMatchOptionShouldEnum["EQUAL"] = "EQUAL";
-})(SmsMatchOptionShouldEnum = exports.SmsMatchOptionShouldEnum || (exports.SmsMatchOptionShouldEnum = {}));
+exports.SmsMatchOptionShouldEnum = {
+    MATCH: 'MATCH',
+    CONTAIN: 'CONTAIN',
+    EQUAL: 'EQUAL'
+};
+/**
+ * Check if a given object implements the SmsMatchOption interface.
+ */
+function instanceOfSmsMatchOption(value) {
+    if (!('field' in value) || value['field'] === undefined)
+        return false;
+    if (!('should' in value) || value['should'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function SmsMatchOptionFromJSON(json) {
     return SmsMatchOptionFromJSONTyped(json, false);
 }
-exports.SmsMatchOptionFromJSON = SmsMatchOptionFromJSON;
 function SmsMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        field: json['field'],
-        should: json['should'],
-        value: json['value'],
+        'field': json['field'],
+        'should': json['should'],
+        'value': json['value'],
     };
 }
-exports.SmsMatchOptionFromJSONTyped = SmsMatchOptionFromJSONTyped;
-function SmsMatchOptionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SmsMatchOptionToJSON(json) {
+    return SmsMatchOptionToJSONTyped(json, false);
+}
+function SmsMatchOptionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        field: value.field,
-        should: value.should,
-        value: value.value,
+        'field': value['field'],
+        'should': value['should'],
+        'value': value['value'],
     };
 }
-exports.SmsMatchOptionToJSON = SmsMatchOptionToJSON;

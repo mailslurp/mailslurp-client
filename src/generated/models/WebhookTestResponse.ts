@@ -12,55 +12,62 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Response from webhook test request
  * @export
  * @interface WebhookTestResponse
  */
 export interface WebhookTestResponse {
-  /**
-   *
-   * @type {number}
-   * @memberof WebhookTestResponse
-   */
-  statusCode?: number | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookTestResponse
-   */
-  message?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof WebhookTestResponse
+     */
+    statusCode?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookTestResponse
+     */
+    message?: string | null;
+}
+
+/**
+ * Check if a given object implements the WebhookTestResponse interface.
+ */
+export function instanceOfWebhookTestResponse(value: object): value is WebhookTestResponse {
+    return true;
 }
 
 export function WebhookTestResponseFromJSON(json: any): WebhookTestResponse {
-  return WebhookTestResponseFromJSONTyped(json, false);
+    return WebhookTestResponseFromJSONTyped(json, false);
 }
 
-export function WebhookTestResponseFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookTestResponse {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    statusCode: !exists(json, 'statusCode') ? undefined : json['statusCode'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-  };
+export function WebhookTestResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestResponse {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'statusCode': json['statusCode'] == null ? undefined : json['statusCode'],
+        'message': json['message'] == null ? undefined : json['message'],
+    };
 }
 
-export function WebhookTestResponseToJSON(
-  value?: WebhookTestResponse | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    statusCode: value.statusCode,
-    message: value.message,
-  };
+export function WebhookTestResponseToJSON(json: any): WebhookTestResponse {
+    return WebhookTestResponseToJSONTyped(json, false);
 }
+
+export function WebhookTestResponseToJSONTyped(value?: WebhookTestResponse | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'statusCode': value['statusCode'],
+        'message': value['message'],
+    };
+}
+

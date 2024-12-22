@@ -13,36 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SimpleSendEmailOptionsToJSON = exports.SimpleSendEmailOptionsFromJSONTyped = exports.SimpleSendEmailOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfSimpleSendEmailOptions = instanceOfSimpleSendEmailOptions;
+exports.SimpleSendEmailOptionsFromJSON = SimpleSendEmailOptionsFromJSON;
+exports.SimpleSendEmailOptionsFromJSONTyped = SimpleSendEmailOptionsFromJSONTyped;
+exports.SimpleSendEmailOptionsToJSON = SimpleSendEmailOptionsToJSON;
+exports.SimpleSendEmailOptionsToJSONTyped = SimpleSendEmailOptionsToJSONTyped;
+/**
+ * Check if a given object implements the SimpleSendEmailOptions interface.
+ */
+function instanceOfSimpleSendEmailOptions(value) {
+    if (!('to' in value) || value['to'] === undefined)
+        return false;
+    return true;
+}
 function SimpleSendEmailOptionsFromJSON(json) {
     return SimpleSendEmailOptionsFromJSONTyped(json, false);
 }
-exports.SimpleSendEmailOptionsFromJSON = SimpleSendEmailOptionsFromJSON;
 function SimpleSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        senderId: !(0, runtime_1.exists)(json, 'senderId') ? undefined : json['senderId'],
-        to: json['to'],
-        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'senderId': json['senderId'] == null ? undefined : json['senderId'],
+        'to': json['to'],
+        'body': json['body'] == null ? undefined : json['body'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
     };
 }
-exports.SimpleSendEmailOptionsFromJSONTyped = SimpleSendEmailOptionsFromJSONTyped;
-function SimpleSendEmailOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SimpleSendEmailOptionsToJSON(json) {
+    return SimpleSendEmailOptionsToJSONTyped(json, false);
+}
+function SimpleSendEmailOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        senderId: value.senderId,
-        to: value.to,
-        body: value.body,
-        subject: value.subject,
+        'senderId': value['senderId'],
+        'to': value['to'],
+        'body': value['body'],
+        'subject': value['subject'],
     };
 }
-exports.SimpleSendEmailOptionsToJSON = SimpleSendEmailOptionsToJSON;

@@ -22,6 +22,11 @@ export interface ContentMatchOptions {
      */
     pattern: string;
 }
+/**
+ * Check if a given object implements the ContentMatchOptions interface.
+ */
+export declare function instanceOfContentMatchOptions(value: object): value is ContentMatchOptions;
 export declare function ContentMatchOptionsFromJSON(json: any): ContentMatchOptions;
 export declare function ContentMatchOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContentMatchOptions;
-export declare function ContentMatchOptionsToJSON(value?: ContentMatchOptions | null): any;
+export declare function ContentMatchOptionsToJSON(json: any): ContentMatchOptions;
+export declare function ContentMatchOptionsToJSONTyped(value?: ContentMatchOptions | null, ignoreDiscriminator?: boolean): any;

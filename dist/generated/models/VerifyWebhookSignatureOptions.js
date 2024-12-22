@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyWebhookSignatureOptionsToJSON = exports.VerifyWebhookSignatureOptionsFromJSONTyped = exports.VerifyWebhookSignatureOptionsFromJSON = void 0;
+exports.instanceOfVerifyWebhookSignatureOptions = instanceOfVerifyWebhookSignatureOptions;
+exports.VerifyWebhookSignatureOptionsFromJSON = VerifyWebhookSignatureOptionsFromJSON;
+exports.VerifyWebhookSignatureOptionsFromJSONTyped = VerifyWebhookSignatureOptionsFromJSONTyped;
+exports.VerifyWebhookSignatureOptionsToJSON = VerifyWebhookSignatureOptionsToJSON;
+exports.VerifyWebhookSignatureOptionsToJSONTyped = VerifyWebhookSignatureOptionsToJSONTyped;
+/**
+ * Check if a given object implements the VerifyWebhookSignatureOptions interface.
+ */
+function instanceOfVerifyWebhookSignatureOptions(value) {
+    if (!('messageId' in value) || value['messageId'] === undefined)
+        return false;
+    if (!('signature' in value) || value['signature'] === undefined)
+        return false;
+    return true;
+}
 function VerifyWebhookSignatureOptionsFromJSON(json) {
     return VerifyWebhookSignatureOptionsFromJSONTyped(json, false);
 }
-exports.VerifyWebhookSignatureOptionsFromJSON = VerifyWebhookSignatureOptionsFromJSON;
 function VerifyWebhookSignatureOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        signature: json['signature'],
+        'messageId': json['messageId'],
+        'signature': json['signature'],
     };
 }
-exports.VerifyWebhookSignatureOptionsFromJSONTyped = VerifyWebhookSignatureOptionsFromJSONTyped;
-function VerifyWebhookSignatureOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function VerifyWebhookSignatureOptionsToJSON(json) {
+    return VerifyWebhookSignatureOptionsToJSONTyped(json, false);
+}
+function VerifyWebhookSignatureOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        messageId: value.messageId,
-        signature: value.signature,
+        'messageId': value['messageId'],
+        'signature': value['signature'],
     };
 }
-exports.VerifyWebhookSignatureOptionsToJSON = VerifyWebhookSignatureOptionsToJSON;

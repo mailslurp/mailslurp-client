@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendEmailBodyPartToJSON = exports.SendEmailBodyPartFromJSONTyped = exports.SendEmailBodyPartFromJSON = void 0;
+exports.instanceOfSendEmailBodyPart = instanceOfSendEmailBodyPart;
+exports.SendEmailBodyPartFromJSON = SendEmailBodyPartFromJSON;
+exports.SendEmailBodyPartFromJSONTyped = SendEmailBodyPartFromJSONTyped;
+exports.SendEmailBodyPartToJSON = SendEmailBodyPartToJSON;
+exports.SendEmailBodyPartToJSONTyped = SendEmailBodyPartToJSONTyped;
+/**
+ * Check if a given object implements the SendEmailBodyPart interface.
+ */
+function instanceOfSendEmailBodyPart(value) {
+    if (!('contentType' in value) || value['contentType'] === undefined)
+        return false;
+    if (!('contentBody' in value) || value['contentBody'] === undefined)
+        return false;
+    return true;
+}
 function SendEmailBodyPartFromJSON(json) {
     return SendEmailBodyPartFromJSONTyped(json, false);
 }
-exports.SendEmailBodyPartFromJSON = SendEmailBodyPartFromJSON;
 function SendEmailBodyPartFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        contentType: json['contentType'],
-        contentBody: json['contentBody'],
+        'contentType': json['contentType'],
+        'contentBody': json['contentBody'],
     };
 }
-exports.SendEmailBodyPartFromJSONTyped = SendEmailBodyPartFromJSONTyped;
-function SendEmailBodyPartToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SendEmailBodyPartToJSON(json) {
+    return SendEmailBodyPartToJSONTyped(json, false);
+}
+function SendEmailBodyPartToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        contentType: value.contentType,
-        contentBody: value.contentBody,
+        'contentType': value['contentType'],
+        'contentBody': value['contentBody'],
     };
 }
-exports.SendEmailBodyPartToJSON = SendEmailBodyPartToJSON;

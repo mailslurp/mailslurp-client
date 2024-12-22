@@ -30,14 +30,19 @@ export interface EmailFeatureSupportStatusPercentage {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum EmailFeatureSupportStatusPercentageStatusEnum {
-    SUPPORTED = "SUPPORTED",
-    PARTIAL = "PARTIAL",
-    NOT_SUPPORTED = "NOT_SUPPORTED",
-    UNKNOWN = "UNKNOWN"
-}
+export declare const EmailFeatureSupportStatusPercentageStatusEnum: {
+    readonly SUPPORTED: "SUPPORTED";
+    readonly PARTIAL: "PARTIAL";
+    readonly NOT_SUPPORTED: "NOT_SUPPORTED";
+    readonly UNKNOWN: "UNKNOWN";
+};
+export type EmailFeatureSupportStatusPercentageStatusEnum = typeof EmailFeatureSupportStatusPercentageStatusEnum[keyof typeof EmailFeatureSupportStatusPercentageStatusEnum];
+/**
+ * Check if a given object implements the EmailFeatureSupportStatusPercentage interface.
+ */
+export declare function instanceOfEmailFeatureSupportStatusPercentage(value: object): value is EmailFeatureSupportStatusPercentage;
 export declare function EmailFeatureSupportStatusPercentageFromJSON(json: any): EmailFeatureSupportStatusPercentage;
 export declare function EmailFeatureSupportStatusPercentageFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureSupportStatusPercentage;
-export declare function EmailFeatureSupportStatusPercentageToJSON(value?: EmailFeatureSupportStatusPercentage | null): any;
+export declare function EmailFeatureSupportStatusPercentageToJSON(json: any): EmailFeatureSupportStatusPercentage;
+export declare function EmailFeatureSupportStatusPercentageToJSONTyped(value?: EmailFeatureSupportStatusPercentage | null, ignoreDiscriminator?: boolean): any;

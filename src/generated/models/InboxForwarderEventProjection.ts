@@ -12,114 +12,130 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Inbox forwarder event
  * @export
  * @interface InboxForwarderEventProjection
  */
 export interface InboxForwarderEventProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof InboxForwarderEventProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  emailId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  userId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  forwarderId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  message?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  id?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  status?: InboxForwarderEventProjectionStatusEnum;
+    /**
+     * 
+     * @type {Date}
+     * @memberof InboxForwarderEventProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    emailId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    userId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    sentId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    forwarderId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    message?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    id?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    status?: InboxForwarderEventProjectionStatusEnum | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum InboxForwarderEventProjectionStatusEnum {
-  SUCCESS = 'SUCCESS',
-  FAILURE = 'FAILURE',
+export const InboxForwarderEventProjectionStatusEnum = {
+    SUCCESS: 'SUCCESS',
+    FAILURE: 'FAILURE'
+} as const;
+export type InboxForwarderEventProjectionStatusEnum = typeof InboxForwarderEventProjectionStatusEnum[keyof typeof InboxForwarderEventProjectionStatusEnum];
+
+
+/**
+ * Check if a given object implements the InboxForwarderEventProjection interface.
+ */
+export function instanceOfInboxForwarderEventProjection(value: object): value is InboxForwarderEventProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
-export function InboxForwarderEventProjectionFromJSON(
-  json: any
-): InboxForwarderEventProjection {
-  return InboxForwarderEventProjectionFromJSONTyped(json, false);
+export function InboxForwarderEventProjectionFromJSON(json: any): InboxForwarderEventProjection {
+    return InboxForwarderEventProjectionFromJSONTyped(json, false);
 }
 
-export function InboxForwarderEventProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxForwarderEventProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
-    forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-    status: !exists(json, 'status') ? undefined : json['status'],
-  };
+export function InboxForwarderEventProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderEventProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'emailId': json['emailId'] == null ? undefined : json['emailId'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'sentId': json['sentId'] == null ? undefined : json['sentId'],
+        'forwarderId': json['forwarderId'] == null ? undefined : json['forwarderId'],
+        'message': json['message'] == null ? undefined : json['message'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'status': json['status'] == null ? undefined : json['status'],
+    };
 }
 
-export function InboxForwarderEventProjectionToJSON(
-  value?: InboxForwarderEventProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    emailId: value.emailId,
-    inboxId: value.inboxId,
-    userId: value.userId,
-    forwarderId: value.forwarderId,
-    message: value.message,
-    id: value.id,
-    status: value.status,
-  };
+export function InboxForwarderEventProjectionToJSON(json: any): InboxForwarderEventProjection {
+    return InboxForwarderEventProjectionToJSONTyped(json, false);
 }
+
+export function InboxForwarderEventProjectionToJSONTyped(value?: InboxForwarderEventProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'emailId': value['emailId'],
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'sentId': value['sentId'],
+        'forwarderId': value['forwarderId'],
+        'message': value['message'],
+        'id': value['id'],
+        'status': value['status'],
+    };
+}
+

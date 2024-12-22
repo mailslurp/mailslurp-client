@@ -12,165 +12,182 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Missed email
  * @export
  * @interface MissedEmailDto
  */
 export interface MissedEmailDto {
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  userId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  bodyExcerpt?: string | null;
-  /**
-   *
-   * @type {number}
-   * @memberof MissedEmailDto
-   */
-  attachmentCount: number;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  from?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  rawUrl?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  rawKey?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailDto
-   */
-  rawBucket?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof MissedEmailDto
-   */
-  canRestore?: boolean | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof MissedEmailDto
-   */
-  to: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof MissedEmailDto
-   */
-  cc: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof MissedEmailDto
-   */
-  bcc: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof MissedEmailDto
-   */
-  inboxIds: Array<string>;
-  /**
-   *
-   * @type {Date}
-   * @memberof MissedEmailDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof MissedEmailDto
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    userId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    subject?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    bodyExcerpt?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof MissedEmailDto
+     */
+    attachmentCount: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    from?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    rawUrl?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    rawKey?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailDto
+     */
+    rawBucket?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MissedEmailDto
+     */
+    canRestore?: boolean | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof MissedEmailDto
+     */
+    to: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof MissedEmailDto
+     */
+    cc: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof MissedEmailDto
+     */
+    bcc: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof MissedEmailDto
+     */
+    inboxIds: Array<string>;
+    /**
+     * 
+     * @type {Date}
+     * @memberof MissedEmailDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof MissedEmailDto
+     */
+    updatedAt: Date;
+}
+
+/**
+ * Check if a given object implements the MissedEmailDto interface.
+ */
+export function instanceOfMissedEmailDto(value: object): value is MissedEmailDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('attachmentCount' in value) || value['attachmentCount'] === undefined) return false;
+    if (!('to' in value) || value['to'] === undefined) return false;
+    if (!('cc' in value) || value['cc'] === undefined) return false;
+    if (!('bcc' in value) || value['bcc'] === undefined) return false;
+    if (!('inboxIds' in value) || value['inboxIds'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    return true;
 }
 
 export function MissedEmailDtoFromJSON(json: any): MissedEmailDto {
-  return MissedEmailDtoFromJSONTyped(json, false);
+    return MissedEmailDtoFromJSONTyped(json, false);
 }
 
-export function MissedEmailDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): MissedEmailDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-    attachmentCount: json['attachmentCount'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    rawUrl: !exists(json, 'rawUrl') ? undefined : json['rawUrl'],
-    rawKey: !exists(json, 'rawKey') ? undefined : json['rawKey'],
-    rawBucket: !exists(json, 'rawBucket') ? undefined : json['rawBucket'],
-    canRestore: !exists(json, 'canRestore') ? undefined : json['canRestore'],
-    to: json['to'],
-    cc: json['cc'],
-    bcc: json['bcc'],
-    inboxIds: json['inboxIds'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function MissedEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): MissedEmailDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'bodyExcerpt': json['bodyExcerpt'] == null ? undefined : json['bodyExcerpt'],
+        'attachmentCount': json['attachmentCount'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'rawUrl': json['rawUrl'] == null ? undefined : json['rawUrl'],
+        'rawKey': json['rawKey'] == null ? undefined : json['rawKey'],
+        'rawBucket': json['rawBucket'] == null ? undefined : json['rawBucket'],
+        'canRestore': json['canRestore'] == null ? undefined : json['canRestore'],
+        'to': json['to'],
+        'cc': json['cc'],
+        'bcc': json['bcc'],
+        'inboxIds': json['inboxIds'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
-export function MissedEmailDtoToJSON(value?: MissedEmailDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    subject: value.subject,
-    bodyExcerpt: value.bodyExcerpt,
-    attachmentCount: value.attachmentCount,
-    from: value.from,
-    rawUrl: value.rawUrl,
-    rawKey: value.rawKey,
-    rawBucket: value.rawBucket,
-    canRestore: value.canRestore,
-    to: value.to,
-    cc: value.cc,
-    bcc: value.bcc,
-    inboxIds: value.inboxIds,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function MissedEmailDtoToJSON(json: any): MissedEmailDto {
+    return MissedEmailDtoToJSONTyped(json, false);
 }
+
+export function MissedEmailDtoToJSONTyped(value?: MissedEmailDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'subject': value['subject'],
+        'bodyExcerpt': value['bodyExcerpt'],
+        'attachmentCount': value['attachmentCount'],
+        'from': value['from'],
+        'rawUrl': value['rawUrl'],
+        'rawKey': value['rawKey'],
+        'rawBucket': value['rawBucket'],
+        'canRestore': value['canRestore'],
+        'to': value['to'],
+        'cc': value['cc'],
+        'bcc': value['bcc'],
+        'inboxIds': value['inboxIds'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+    };
+}
+

@@ -34,6 +34,11 @@ export interface EmailPreviewUrls {
      */
     origin: string;
 }
+/**
+ * Check if a given object implements the EmailPreviewUrls interface.
+ */
+export declare function instanceOfEmailPreviewUrls(value: object): value is EmailPreviewUrls;
 export declare function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls;
 export declare function EmailPreviewUrlsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreviewUrls;
-export declare function EmailPreviewUrlsToJSON(value?: EmailPreviewUrls | null): any;
+export declare function EmailPreviewUrlsToJSON(json: any): EmailPreviewUrls;
+export declare function EmailPreviewUrlsToJSONTyped(value?: EmailPreviewUrls | null, ignoreDiscriminator?: boolean): any;

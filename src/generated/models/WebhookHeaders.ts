@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { WebhookHeaderNameValue } from './WebhookHeaderNameValue';
 import {
-  WebhookHeaderNameValue,
-  WebhookHeaderNameValueFromJSON,
-  WebhookHeaderNameValueFromJSONTyped,
-  WebhookHeaderNameValueToJSON,
-} from './';
+    WebhookHeaderNameValueFromJSON,
+    WebhookHeaderNameValueFromJSONTyped,
+    WebhookHeaderNameValueToJSON,
+    WebhookHeaderNameValueToJSONTyped,
+} from './WebhookHeaderNameValue';
 
 /**
  * Webhook HTTP headers to include with each request from MailSlurp to your server
@@ -26,40 +27,48 @@ import {
  * @interface WebhookHeaders
  */
 export interface WebhookHeaders {
-  /**
-   * List of header name value pairs to include with webhook requests
-   * @type {Array<WebhookHeaderNameValue>}
-   * @memberof WebhookHeaders
-   */
-  headers: Array<WebhookHeaderNameValue>;
+    /**
+     * List of header name value pairs to include with webhook requests
+     * @type {Array<WebhookHeaderNameValue>}
+     * @memberof WebhookHeaders
+     */
+    headers: Array<WebhookHeaderNameValue>;
+}
+
+/**
+ * Check if a given object implements the WebhookHeaders interface.
+ */
+export function instanceOfWebhookHeaders(value: object): value is WebhookHeaders {
+    if (!('headers' in value) || value['headers'] === undefined) return false;
+    return true;
 }
 
 export function WebhookHeadersFromJSON(json: any): WebhookHeaders {
-  return WebhookHeadersFromJSONTyped(json, false);
+    return WebhookHeadersFromJSONTyped(json, false);
 }
 
-export function WebhookHeadersFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookHeaders {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    headers: (json['headers'] as Array<any>).map(
-      WebhookHeaderNameValueFromJSON
-    ),
-  };
+export function WebhookHeadersFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookHeaders {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'headers': ((json['headers'] as Array<any>).map(WebhookHeaderNameValueFromJSON)),
+    };
 }
 
-export function WebhookHeadersToJSON(value?: WebhookHeaders | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    headers: (value.headers as Array<any>).map(WebhookHeaderNameValueToJSON),
-  };
+export function WebhookHeadersToJSON(json: any): WebhookHeaders {
+    return WebhookHeadersToJSONTyped(json, false);
 }
+
+export function WebhookHeadersToJSONTyped(value?: WebhookHeaders | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'headers': ((value['headers'] as Array<any>).map(WebhookHeaderNameValueToJSON)),
+    };
+}
+

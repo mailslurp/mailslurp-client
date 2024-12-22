@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ImageIssue, LinkIssue, SpellingIssue } from './';
+import type { SpellingIssue } from './SpellingIssue';
+import type { ImageIssue } from './ImageIssue';
+import type { LinkIssue } from './LinkIssue';
 /**
  *
  * @export
@@ -41,6 +43,11 @@ export interface CheckEmailBodyResults {
      */
     spellingIssues: Array<SpellingIssue>;
 }
+/**
+ * Check if a given object implements the CheckEmailBodyResults interface.
+ */
+export declare function instanceOfCheckEmailBodyResults(value: object): value is CheckEmailBodyResults;
 export declare function CheckEmailBodyResultsFromJSON(json: any): CheckEmailBodyResults;
 export declare function CheckEmailBodyResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailBodyResults;
-export declare function CheckEmailBodyResultsToJSON(value?: CheckEmailBodyResults | null): any;
+export declare function CheckEmailBodyResultsToJSON(json: any): CheckEmailBodyResults;
+export declare function CheckEmailBodyResultsToJSONTyped(value?: CheckEmailBodyResults | null, ignoreDiscriminator?: boolean): any;

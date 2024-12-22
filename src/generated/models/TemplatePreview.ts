@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface TemplatePreview
  */
 export interface TemplatePreview {
-  /**
-   *
-   * @type {string}
-   * @memberof TemplatePreview
-   */
-  preview: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TemplatePreview
+     */
+    preview: string;
+}
+
+/**
+ * Check if a given object implements the TemplatePreview interface.
+ */
+export function instanceOfTemplatePreview(value: object): value is TemplatePreview {
+    if (!('preview' in value) || value['preview'] === undefined) return false;
+    return true;
 }
 
 export function TemplatePreviewFromJSON(json: any): TemplatePreview {
-  return TemplatePreviewFromJSONTyped(json, false);
+    return TemplatePreviewFromJSONTyped(json, false);
 }
 
-export function TemplatePreviewFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TemplatePreview {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    preview: json['preview'],
-  };
+export function TemplatePreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplatePreview {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'preview': json['preview'],
+    };
 }
 
-export function TemplatePreviewToJSON(value?: TemplatePreview | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    preview: value.preview,
-  };
+export function TemplatePreviewToJSON(json: any): TemplatePreview {
+    return TemplatePreviewToJSONTyped(json, false);
 }
+
+export function TemplatePreviewToJSONTyped(value?: TemplatePreview | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'preview': value['preview'],
+    };
+}
+

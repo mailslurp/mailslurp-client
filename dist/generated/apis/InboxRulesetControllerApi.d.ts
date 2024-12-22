@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxRulesetOptions, InboxRulesetDto, InboxRulesetTestOptions, InboxRulesetTestResult, PageInboxRulesetDto, TestInboxRulesetReceivingOptions, TestInboxRulesetReceivingResult, TestInboxRulesetSendingOptions, TestInboxRulesetSendingResult, TestNewInboxRulesetOptions } from '../models';
+import type { CreateInboxRulesetOptions, InboxRulesetDto, InboxRulesetTestOptions, InboxRulesetTestResult, PageInboxRulesetDto, TestInboxRulesetReceivingOptions, TestInboxRulesetReceivingResult, TestInboxRulesetSendingOptions, TestInboxRulesetSendingResult, TestNewInboxRulesetOptions } from '../models/index';
 export interface CreateNewInboxRulesetRequest {
     createInboxRulesetOptions: CreateInboxRulesetOptions;
     inboxId?: string;
@@ -58,108 +58,108 @@ export declare class InboxRulesetControllerApi extends runtime.BaseAPI {
      * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
      * Create an inbox ruleset
      */
-    createNewInboxRulesetRaw(requestParameters: CreateNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetDto>>;
+    createNewInboxRulesetRaw(requestParameters: CreateNewInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxRulesetDto>>;
     /**
      * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
      * Create an inbox ruleset
      */
-    createNewInboxRuleset(requestParameters: CreateNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetDto>;
+    createNewInboxRuleset(requestParameters: CreateNewInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxRulesetDto>;
     /**
      * Delete inbox ruleset
      * Delete an inbox ruleset
      */
-    deleteInboxRulesetRaw(requestParameters: DeleteInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteInboxRulesetRaw(requestParameters: DeleteInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete inbox ruleset
      * Delete an inbox ruleset
      */
-    deleteInboxRuleset(requestParameters: DeleteInboxRulesetRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteInboxRuleset(requestParameters: DeleteInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete inbox rulesets. Accepts optional inboxId filter.
      * Delete inbox rulesets
      */
-    deleteInboxRulesetsRaw(requestParameters: DeleteInboxRulesetsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteInboxRulesetsRaw(requestParameters: DeleteInboxRulesetsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete inbox rulesets. Accepts optional inboxId filter.
      * Delete inbox rulesets
      */
-    deleteInboxRulesets(requestParameters: DeleteInboxRulesetsRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteInboxRulesets(requestParameters?: DeleteInboxRulesetsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get inbox ruleset
      * Get an inbox ruleset
      */
-    getInboxRulesetRaw(requestParameters: GetInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetDto>>;
+    getInboxRulesetRaw(requestParameters: GetInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxRulesetDto>>;
     /**
      * Get inbox ruleset
      * Get an inbox ruleset
      */
-    getInboxRuleset(requestParameters: GetInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetDto>;
+    getInboxRuleset(requestParameters: GetInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxRulesetDto>;
     /**
      * List all rulesets attached to an inbox
      * List inbox rulesets
      */
-    getInboxRulesetsRaw(requestParameters: GetInboxRulesetsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxRulesetDto>>;
+    getInboxRulesetsRaw(requestParameters: GetInboxRulesetsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxRulesetDto>>;
     /**
      * List all rulesets attached to an inbox
      * List inbox rulesets
      */
-    getInboxRulesets(requestParameters: GetInboxRulesetsRequest, initOverrides?: RequestInit): Promise<PageInboxRulesetDto>;
+    getInboxRulesets(requestParameters?: GetInboxRulesetsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxRulesetDto>;
     /**
      * Test an inbox ruleset
      * Test an inbox ruleset
      */
-    testInboxRulesetRaw(requestParameters: TestInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetTestResult>>;
+    testInboxRulesetRaw(requestParameters: TestInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxRulesetTestResult>>;
     /**
      * Test an inbox ruleset
      * Test an inbox ruleset
      */
-    testInboxRuleset(requestParameters: TestInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult>;
+    testInboxRuleset(requestParameters: TestInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxRulesetTestResult>;
     /**
      * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
      * Test receiving with inbox rulesets
      */
-    testInboxRulesetReceivingRaw(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TestInboxRulesetReceivingResult>>;
+    testInboxRulesetReceivingRaw(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TestInboxRulesetReceivingResult>>;
     /**
      * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
      * Test receiving with inbox rulesets
      */
-    testInboxRulesetReceiving(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit): Promise<TestInboxRulesetReceivingResult>;
+    testInboxRulesetReceiving(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TestInboxRulesetReceivingResult>;
     /**
      * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
      * Test sending with inbox rulesets
      */
-    testInboxRulesetSendingRaw(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TestInboxRulesetSendingResult>>;
+    testInboxRulesetSendingRaw(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TestInboxRulesetSendingResult>>;
     /**
      * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
      * Test sending with inbox rulesets
      */
-    testInboxRulesetSending(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit): Promise<TestInboxRulesetSendingResult>;
+    testInboxRulesetSending(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TestInboxRulesetSendingResult>;
     /**
      * Test inbox rulesets for inbox
      * Test inbox rulesets for inbox
      */
-    testInboxRulesetsForInboxRaw(requestParameters: TestInboxRulesetsForInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetTestResult>>;
+    testInboxRulesetsForInboxRaw(requestParameters: TestInboxRulesetsForInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxRulesetTestResult>>;
     /**
      * Test inbox rulesets for inbox
      * Test inbox rulesets for inbox
      */
-    testInboxRulesetsForInbox(requestParameters: TestInboxRulesetsForInboxRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult>;
+    testInboxRulesetsForInbox(requestParameters: TestInboxRulesetsForInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxRulesetTestResult>;
     /**
      * Test new inbox ruleset
      * Test new inbox ruleset
      */
-    testNewInboxRulesetRaw(requestParameters: TestNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetTestResult>>;
+    testNewInboxRulesetRaw(requestParameters: TestNewInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxRulesetTestResult>>;
     /**
      * Test new inbox ruleset
      * Test new inbox ruleset
      */
-    testNewInboxRuleset(requestParameters: TestNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult>;
+    testNewInboxRuleset(requestParameters: TestNewInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxRulesetTestResult>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetInboxRulesetsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetInboxRulesetsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetInboxRulesetsSortEnum = typeof GetInboxRulesetsSortEnum[keyof typeof GetInboxRulesetsSortEnum];

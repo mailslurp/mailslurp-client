@@ -28,6 +28,11 @@ export interface InboxIdItem {
      */
     emailAddress: string;
 }
+/**
+ * Check if a given object implements the InboxIdItem interface.
+ */
+export declare function instanceOfInboxIdItem(value: object): value is InboxIdItem;
 export declare function InboxIdItemFromJSON(json: any): InboxIdItem;
 export declare function InboxIdItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxIdItem;
-export declare function InboxIdItemToJSON(value?: InboxIdItem | null): any;
+export declare function InboxIdItemToJSON(json: any): InboxIdItem;
+export declare function InboxIdItemToJSONTyped(value?: InboxIdItem | null, ignoreDiscriminator?: boolean): any;

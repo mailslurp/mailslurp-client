@@ -22,6 +22,11 @@ export interface ExportLink {
      */
     downloadLink: string;
 }
+/**
+ * Check if a given object implements the ExportLink interface.
+ */
+export declare function instanceOfExportLink(value: object): value is ExportLink;
 export declare function ExportLinkFromJSON(json: any): ExportLink;
 export declare function ExportLinkFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportLink;
-export declare function ExportLinkToJSON(value?: ExportLink | null): any;
+export declare function ExportLinkToJSON(json: any): ExportLink;
+export declare function ExportLinkToJSONTyped(value?: ExportLink | null, ignoreDiscriminator?: boolean): any;

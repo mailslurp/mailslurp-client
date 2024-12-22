@@ -12,80 +12,78 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { ConnectorSyncResult } from './ConnectorSyncResult';
 import {
-  ConnectorSyncRequestResultException,
-  ConnectorSyncRequestResultExceptionFromJSON,
-  ConnectorSyncRequestResultExceptionFromJSONTyped,
-  ConnectorSyncRequestResultExceptionToJSON,
-  ConnectorSyncResult,
-  ConnectorSyncResultFromJSON,
-  ConnectorSyncResultFromJSONTyped,
-  ConnectorSyncResultToJSON,
-} from './';
+    ConnectorSyncResultFromJSON,
+    ConnectorSyncResultFromJSONTyped,
+    ConnectorSyncResultToJSON,
+    ConnectorSyncResultToJSONTyped,
+} from './ConnectorSyncResult';
 
 /**
- *
+ * 
  * @export
  * @interface ConnectorSyncRequestResult
  */
 export interface ConnectorSyncRequestResult {
-  /**
-   *
-   * @type {ConnectorSyncResult}
-   * @memberof ConnectorSyncRequestResult
-   */
-  syncResult?: ConnectorSyncResult;
-  /**
-   *
-   * @type {ConnectorSyncRequestResultException}
-   * @memberof ConnectorSyncRequestResult
-   */
-  exception?: ConnectorSyncRequestResultException;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSyncRequestResult
-   */
-  eventId?: string;
+    /**
+     * 
+     * @type {ConnectorSyncResult}
+     * @memberof ConnectorSyncRequestResult
+     */
+    syncResult?: ConnectorSyncResult;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSyncRequestResult
+     */
+    exception?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSyncRequestResult
+     */
+    eventId?: string;
 }
 
-export function ConnectorSyncRequestResultFromJSON(
-  json: any
-): ConnectorSyncRequestResult {
-  return ConnectorSyncRequestResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the ConnectorSyncRequestResult interface.
+ */
+export function instanceOfConnectorSyncRequestResult(value: object): value is ConnectorSyncRequestResult {
+    return true;
 }
 
-export function ConnectorSyncRequestResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorSyncRequestResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    syncResult: !exists(json, 'syncResult')
-      ? undefined
-      : ConnectorSyncResultFromJSON(json['syncResult']),
-    exception: !exists(json, 'exception')
-      ? undefined
-      : ConnectorSyncRequestResultExceptionFromJSON(json['exception']),
-    eventId: !exists(json, 'eventId') ? undefined : json['eventId'],
-  };
+export function ConnectorSyncRequestResultFromJSON(json: any): ConnectorSyncRequestResult {
+    return ConnectorSyncRequestResultFromJSONTyped(json, false);
 }
 
-export function ConnectorSyncRequestResultToJSON(
-  value?: ConnectorSyncRequestResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    syncResult: ConnectorSyncResultToJSON(value.syncResult),
-    exception: ConnectorSyncRequestResultExceptionToJSON(value.exception),
-    eventId: value.eventId,
-  };
+export function ConnectorSyncRequestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSyncRequestResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'syncResult': json['syncResult'] == null ? undefined : ConnectorSyncResultFromJSON(json['syncResult']),
+        'exception': json['exception'] == null ? undefined : json['exception'],
+        'eventId': json['eventId'] == null ? undefined : json['eventId'],
+    };
 }
+
+export function ConnectorSyncRequestResultToJSON(json: any): ConnectorSyncRequestResult {
+    return ConnectorSyncRequestResultToJSONTyped(json, false);
+}
+
+export function ConnectorSyncRequestResultToJSONTyped(value?: ConnectorSyncRequestResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'syncResult': ConnectorSyncResultToJSON(value['syncResult']),
+        'exception': value['exception'],
+        'eventId': value['eventId'],
+    };
+}
+

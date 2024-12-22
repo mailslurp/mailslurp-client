@@ -54,12 +54,17 @@ export interface ExportOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ExportOptionsOutputFormatEnum {
-    DEFAULT = "CSV_DEFAULT",
-    EXCEL = "CSV_EXCEL"
-}
+export declare const ExportOptionsOutputFormatEnum: {
+    readonly DEFAULT: "CSV_DEFAULT";
+    readonly EXCEL: "CSV_EXCEL";
+};
+export type ExportOptionsOutputFormatEnum = typeof ExportOptionsOutputFormatEnum[keyof typeof ExportOptionsOutputFormatEnum];
+/**
+ * Check if a given object implements the ExportOptions interface.
+ */
+export declare function instanceOfExportOptions(value: object): value is ExportOptions;
 export declare function ExportOptionsFromJSON(json: any): ExportOptions;
 export declare function ExportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportOptions;
-export declare function ExportOptionsToJSON(value?: ExportOptions | null): any;
+export declare function ExportOptionsToJSON(json: any): ExportOptions;
+export declare function ExportOptionsToJSONTyped(value?: ExportOptions | null, ignoreDiscriminator?: boolean): any;

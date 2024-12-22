@@ -12,57 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Result of retrying all failed webhook
  * @export
  * @interface WebhookRedriveAllResult
  */
 export interface WebhookRedriveAllResult {
-  /**
-   *
-   * @type {boolean}
-   * @memberof WebhookRedriveAllResult
-   */
-  success: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookRedriveAllResult
-   */
-  message?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof WebhookRedriveAllResult
+     */
+    success: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookRedriveAllResult
+     */
+    message?: string | null;
 }
 
-export function WebhookRedriveAllResultFromJSON(
-  json: any
-): WebhookRedriveAllResult {
-  return WebhookRedriveAllResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the WebhookRedriveAllResult interface.
+ */
+export function instanceOfWebhookRedriveAllResult(value: object): value is WebhookRedriveAllResult {
+    if (!('success' in value) || value['success'] === undefined) return false;
+    return true;
 }
 
-export function WebhookRedriveAllResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookRedriveAllResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    success: json['success'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-  };
+export function WebhookRedriveAllResultFromJSON(json: any): WebhookRedriveAllResult {
+    return WebhookRedriveAllResultFromJSONTyped(json, false);
 }
 
-export function WebhookRedriveAllResultToJSON(
-  value?: WebhookRedriveAllResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    success: value.success,
-    message: value.message,
-  };
+export function WebhookRedriveAllResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookRedriveAllResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'success': json['success'],
+        'message': json['message'] == null ? undefined : json['message'],
+    };
 }
+
+export function WebhookRedriveAllResultToJSON(json: any): WebhookRedriveAllResult {
+    return WebhookRedriveAllResultToJSONTyped(json, false);
+}
+
+export function WebhookRedriveAllResultToJSONTyped(value?: WebhookRedriveAllResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'success': value['success'],
+        'message': value['message'],
+    };
+}
+

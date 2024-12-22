@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Number of unread entities
  * @export
  * @interface UnreadCount
  */
 export interface UnreadCount {
-  /**
-   *
-   * @type {number}
-   * @memberof UnreadCount
-   */
-  count: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UnreadCount
+     */
+    count: number;
+}
+
+/**
+ * Check if a given object implements the UnreadCount interface.
+ */
+export function instanceOfUnreadCount(value: object): value is UnreadCount {
+    if (!('count' in value) || value['count'] === undefined) return false;
+    return true;
 }
 
 export function UnreadCountFromJSON(json: any): UnreadCount {
-  return UnreadCountFromJSONTyped(json, false);
+    return UnreadCountFromJSONTyped(json, false);
 }
 
-export function UnreadCountFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UnreadCount {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    count: json['count'],
-  };
+export function UnreadCountFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnreadCount {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'count': json['count'],
+    };
 }
 
-export function UnreadCountToJSON(value?: UnreadCount | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    count: value.count,
-  };
+export function UnreadCountToJSON(json: any): UnreadCount {
+    return UnreadCountToJSONTyped(json, false);
 }
+
+export function UnreadCountToJSONTyped(value?: UnreadCount | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'count': value['count'],
+    };
+}
+

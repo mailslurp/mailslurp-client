@@ -35,10 +35,10 @@ export interface BouncedEmailDto {
     notificationType: string;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof BouncedEmailDto
      */
-    sentToRecipients?: Array<string> | null;
+    sentToRecipients?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -59,10 +59,10 @@ export interface BouncedEmailDto {
     bounceType?: string | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof BouncedEmailDto
      */
-    bounceRecipients?: Array<string> | null;
+    bounceRecipients?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -88,6 +88,11 @@ export interface BouncedEmailDto {
      */
     createdAt: Date;
 }
+/**
+ * Check if a given object implements the BouncedEmailDto interface.
+ */
+export declare function instanceOfBouncedEmailDto(value: object): value is BouncedEmailDto;
 export declare function BouncedEmailDtoFromJSON(json: any): BouncedEmailDto;
 export declare function BouncedEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): BouncedEmailDto;
-export declare function BouncedEmailDtoToJSON(value?: BouncedEmailDto | null): any;
+export declare function BouncedEmailDtoToJSON(json: any): BouncedEmailDto;
+export declare function BouncedEmailDtoToJSONTyped(value?: BouncedEmailDto | null, ignoreDiscriminator?: boolean): any;

@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestInboxRulesetSendingResultToJSON = exports.TestInboxRulesetSendingResultFromJSONTyped = exports.TestInboxRulesetSendingResultFromJSON = void 0;
+exports.instanceOfTestInboxRulesetSendingResult = instanceOfTestInboxRulesetSendingResult;
+exports.TestInboxRulesetSendingResultFromJSON = TestInboxRulesetSendingResultFromJSON;
+exports.TestInboxRulesetSendingResultFromJSONTyped = TestInboxRulesetSendingResultFromJSONTyped;
+exports.TestInboxRulesetSendingResultToJSON = TestInboxRulesetSendingResultToJSON;
+exports.TestInboxRulesetSendingResultToJSONTyped = TestInboxRulesetSendingResultToJSONTyped;
+/**
+ * Check if a given object implements the TestInboxRulesetSendingResult interface.
+ */
+function instanceOfTestInboxRulesetSendingResult(value) {
+    if (!('canSend' in value) || value['canSend'] === undefined)
+        return false;
+    return true;
+}
 function TestInboxRulesetSendingResultFromJSON(json) {
     return TestInboxRulesetSendingResultFromJSONTyped(json, false);
 }
-exports.TestInboxRulesetSendingResultFromJSON = TestInboxRulesetSendingResultFromJSON;
 function TestInboxRulesetSendingResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        canSend: json['canSend'],
+        'canSend': json['canSend'],
     };
 }
-exports.TestInboxRulesetSendingResultFromJSONTyped = TestInboxRulesetSendingResultFromJSONTyped;
-function TestInboxRulesetSendingResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TestInboxRulesetSendingResultToJSON(json) {
+    return TestInboxRulesetSendingResultToJSONTyped(json, false);
+}
+function TestInboxRulesetSendingResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        canSend: value.canSend,
+        'canSend': value['canSend'],
     };
 }
-exports.TestInboxRulesetSendingResultToJSON = TestInboxRulesetSendingResultToJSON;

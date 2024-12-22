@@ -13,131 +13,146 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateTlsReportingRecordResultsToJSON = exports.GenerateTlsReportingRecordResultsFromJSONTyped = exports.GenerateTlsReportingRecordResultsFromJSON = exports.GenerateTlsReportingRecordResultsTypeEnum = void 0;
+exports.GenerateTlsReportingRecordResultsTypeEnum = void 0;
+exports.instanceOfGenerateTlsReportingRecordResults = instanceOfGenerateTlsReportingRecordResults;
+exports.GenerateTlsReportingRecordResultsFromJSON = GenerateTlsReportingRecordResultsFromJSON;
+exports.GenerateTlsReportingRecordResultsFromJSONTyped = GenerateTlsReportingRecordResultsFromJSONTyped;
+exports.GenerateTlsReportingRecordResultsToJSON = GenerateTlsReportingRecordResultsToJSON;
+exports.GenerateTlsReportingRecordResultsToJSONTyped = GenerateTlsReportingRecordResultsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var GenerateTlsReportingRecordResultsTypeEnum;
-(function (GenerateTlsReportingRecordResultsTypeEnum) {
-    GenerateTlsReportingRecordResultsTypeEnum["A"] = "A";
-    GenerateTlsReportingRecordResultsTypeEnum["NS"] = "NS";
-    GenerateTlsReportingRecordResultsTypeEnum["MD"] = "MD";
-    GenerateTlsReportingRecordResultsTypeEnum["MF"] = "MF";
-    GenerateTlsReportingRecordResultsTypeEnum["CNAME"] = "CNAME";
-    GenerateTlsReportingRecordResultsTypeEnum["SOA"] = "SOA";
-    GenerateTlsReportingRecordResultsTypeEnum["MB"] = "MB";
-    GenerateTlsReportingRecordResultsTypeEnum["MG"] = "MG";
-    GenerateTlsReportingRecordResultsTypeEnum["MR"] = "MR";
-    GenerateTlsReportingRecordResultsTypeEnum["NULL"] = "NULL";
-    GenerateTlsReportingRecordResultsTypeEnum["WKS"] = "WKS";
-    GenerateTlsReportingRecordResultsTypeEnum["PTR"] = "PTR";
-    GenerateTlsReportingRecordResultsTypeEnum["HINFO"] = "HINFO";
-    GenerateTlsReportingRecordResultsTypeEnum["MINFO"] = "MINFO";
-    GenerateTlsReportingRecordResultsTypeEnum["MX"] = "MX";
-    GenerateTlsReportingRecordResultsTypeEnum["TXT"] = "TXT";
-    GenerateTlsReportingRecordResultsTypeEnum["RP"] = "RP";
-    GenerateTlsReportingRecordResultsTypeEnum["AFSDB"] = "AFSDB";
-    GenerateTlsReportingRecordResultsTypeEnum["X25"] = "X25";
-    GenerateTlsReportingRecordResultsTypeEnum["ISDN"] = "ISDN";
-    GenerateTlsReportingRecordResultsTypeEnum["RT"] = "RT";
-    GenerateTlsReportingRecordResultsTypeEnum["NSAP"] = "NSAP";
-    GenerateTlsReportingRecordResultsTypeEnum["NSAP_PTR"] = "NSAP_PTR";
-    GenerateTlsReportingRecordResultsTypeEnum["SIG"] = "SIG";
-    GenerateTlsReportingRecordResultsTypeEnum["KEY"] = "KEY";
-    GenerateTlsReportingRecordResultsTypeEnum["PX"] = "PX";
-    GenerateTlsReportingRecordResultsTypeEnum["GPOS"] = "GPOS";
-    GenerateTlsReportingRecordResultsTypeEnum["AAAA"] = "AAAA";
-    GenerateTlsReportingRecordResultsTypeEnum["LOC"] = "LOC";
-    GenerateTlsReportingRecordResultsTypeEnum["NXT"] = "NXT";
-    GenerateTlsReportingRecordResultsTypeEnum["EID"] = "EID";
-    GenerateTlsReportingRecordResultsTypeEnum["NIMLOC"] = "NIMLOC";
-    GenerateTlsReportingRecordResultsTypeEnum["SRV"] = "SRV";
-    GenerateTlsReportingRecordResultsTypeEnum["ATMA"] = "ATMA";
-    GenerateTlsReportingRecordResultsTypeEnum["NAPTR"] = "NAPTR";
-    GenerateTlsReportingRecordResultsTypeEnum["KX"] = "KX";
-    GenerateTlsReportingRecordResultsTypeEnum["CERT"] = "CERT";
-    GenerateTlsReportingRecordResultsTypeEnum["A6"] = "A6";
-    GenerateTlsReportingRecordResultsTypeEnum["DNAME"] = "DNAME";
-    GenerateTlsReportingRecordResultsTypeEnum["SINK"] = "SINK";
-    GenerateTlsReportingRecordResultsTypeEnum["OPT"] = "OPT";
-    GenerateTlsReportingRecordResultsTypeEnum["APL"] = "APL";
-    GenerateTlsReportingRecordResultsTypeEnum["DS"] = "DS";
-    GenerateTlsReportingRecordResultsTypeEnum["SSHFP"] = "SSHFP";
-    GenerateTlsReportingRecordResultsTypeEnum["IPSECKEY"] = "IPSECKEY";
-    GenerateTlsReportingRecordResultsTypeEnum["RRSIG"] = "RRSIG";
-    GenerateTlsReportingRecordResultsTypeEnum["NSEC"] = "NSEC";
-    GenerateTlsReportingRecordResultsTypeEnum["DNSKEY"] = "DNSKEY";
-    GenerateTlsReportingRecordResultsTypeEnum["DHCID"] = "DHCID";
-    GenerateTlsReportingRecordResultsTypeEnum["NSEC3"] = "NSEC3";
-    GenerateTlsReportingRecordResultsTypeEnum["NSEC3PARAM"] = "NSEC3PARAM";
-    GenerateTlsReportingRecordResultsTypeEnum["TLSA"] = "TLSA";
-    GenerateTlsReportingRecordResultsTypeEnum["SMIMEA"] = "SMIMEA";
-    GenerateTlsReportingRecordResultsTypeEnum["HIP"] = "HIP";
-    GenerateTlsReportingRecordResultsTypeEnum["NINFO"] = "NINFO";
-    GenerateTlsReportingRecordResultsTypeEnum["RKEY"] = "RKEY";
-    GenerateTlsReportingRecordResultsTypeEnum["TALINK"] = "TALINK";
-    GenerateTlsReportingRecordResultsTypeEnum["CDS"] = "CDS";
-    GenerateTlsReportingRecordResultsTypeEnum["CDNSKEY"] = "CDNSKEY";
-    GenerateTlsReportingRecordResultsTypeEnum["OPENPGPKEY"] = "OPENPGPKEY";
-    GenerateTlsReportingRecordResultsTypeEnum["CSYNC"] = "CSYNC";
-    GenerateTlsReportingRecordResultsTypeEnum["ZONEMD"] = "ZONEMD";
-    GenerateTlsReportingRecordResultsTypeEnum["SVCB"] = "SVCB";
-    GenerateTlsReportingRecordResultsTypeEnum["HTTPS"] = "HTTPS";
-    GenerateTlsReportingRecordResultsTypeEnum["SPF"] = "SPF";
-    GenerateTlsReportingRecordResultsTypeEnum["UINFO"] = "UINFO";
-    GenerateTlsReportingRecordResultsTypeEnum["UID"] = "UID";
-    GenerateTlsReportingRecordResultsTypeEnum["GID"] = "GID";
-    GenerateTlsReportingRecordResultsTypeEnum["UNSPEC"] = "UNSPEC";
-    GenerateTlsReportingRecordResultsTypeEnum["NID"] = "NID";
-    GenerateTlsReportingRecordResultsTypeEnum["L32"] = "L32";
-    GenerateTlsReportingRecordResultsTypeEnum["L64"] = "L64";
-    GenerateTlsReportingRecordResultsTypeEnum["LP"] = "LP";
-    GenerateTlsReportingRecordResultsTypeEnum["EUI48"] = "EUI48";
-    GenerateTlsReportingRecordResultsTypeEnum["EUI64"] = "EUI64";
-    GenerateTlsReportingRecordResultsTypeEnum["TKEY"] = "TKEY";
-    GenerateTlsReportingRecordResultsTypeEnum["TSIG"] = "TSIG";
-    GenerateTlsReportingRecordResultsTypeEnum["IXFR"] = "IXFR";
-    GenerateTlsReportingRecordResultsTypeEnum["AXFR"] = "AXFR";
-    GenerateTlsReportingRecordResultsTypeEnum["MAILB"] = "MAILB";
-    GenerateTlsReportingRecordResultsTypeEnum["MAILA"] = "MAILA";
-    GenerateTlsReportingRecordResultsTypeEnum["ANY"] = "ANY";
-    GenerateTlsReportingRecordResultsTypeEnum["URI"] = "URI";
-    GenerateTlsReportingRecordResultsTypeEnum["CAA"] = "CAA";
-    GenerateTlsReportingRecordResultsTypeEnum["AVC"] = "AVC";
-    GenerateTlsReportingRecordResultsTypeEnum["DOA"] = "DOA";
-    GenerateTlsReportingRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
-    GenerateTlsReportingRecordResultsTypeEnum["TA"] = "TA";
-    GenerateTlsReportingRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateTlsReportingRecordResultsTypeEnum = exports.GenerateTlsReportingRecordResultsTypeEnum || (exports.GenerateTlsReportingRecordResultsTypeEnum = {}));
+exports.GenerateTlsReportingRecordResultsTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+};
+/**
+ * Check if a given object implements the GenerateTlsReportingRecordResults interface.
+ */
+function instanceOfGenerateTlsReportingRecordResults(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('type' in value) || value['type'] === undefined)
+        return false;
+    if (!('ttl' in value) || value['ttl'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function GenerateTlsReportingRecordResultsFromJSON(json) {
     return GenerateTlsReportingRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateTlsReportingRecordResultsFromJSON = GenerateTlsReportingRecordResultsFromJSON;
 function GenerateTlsReportingRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        type: json['type'],
-        ttl: json['ttl'],
-        value: json['value'],
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
     };
 }
-exports.GenerateTlsReportingRecordResultsFromJSONTyped = GenerateTlsReportingRecordResultsFromJSONTyped;
-function GenerateTlsReportingRecordResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GenerateTlsReportingRecordResultsToJSON(json) {
+    return GenerateTlsReportingRecordResultsToJSONTyped(json, false);
+}
+function GenerateTlsReportingRecordResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        type: value.type,
-        ttl: value.ttl,
-        value: value.value,
+        'name': value['name'],
+        'type': value['type'],
+        'ttl': value['ttl'],
+        'value': value['value'],
     };
 }
-exports.GenerateTlsReportingRecordResultsToJSON = GenerateTlsReportingRecordResultsToJSON;

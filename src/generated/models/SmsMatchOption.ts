@@ -12,79 +12,94 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for matching SMS messages in a phone number. Each match option object contains a `field`, `should` and `value` property. Together they form logical conditions such as `BODY` should `CONTAIN` value.
  * @export
  * @interface SmsMatchOption
  */
 export interface SmsMatchOption {
-  /**
-   * Fields of an SMS object that can be used to filter results
-   * @type {string}
-   * @memberof SmsMatchOption
-   */
-  field: SmsMatchOptionFieldEnum;
-  /**
-   * How the value of the email field specified should be compared to the value given in the match options.
-   * @type {string}
-   * @memberof SmsMatchOption
-   */
-  should: SmsMatchOptionShouldEnum;
-  /**
-   * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
-   * @type {string}
-   * @memberof SmsMatchOption
-   */
-  value: string;
+    /**
+     * Fields of an SMS object that can be used to filter results
+     * @type {string}
+     * @memberof SmsMatchOption
+     */
+    field: SmsMatchOptionFieldEnum;
+    /**
+     * How the value of the email field specified should be compared to the value given in the match options.
+     * @type {string}
+     * @memberof SmsMatchOption
+     */
+    should: SmsMatchOptionShouldEnum;
+    /**
+     * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
+     * @type {string}
+     * @memberof SmsMatchOption
+     */
+    value: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum SmsMatchOptionFieldEnum {
-  BODY = 'BODY',
-  FROM = 'FROM',
-}
+export const SmsMatchOptionFieldEnum = {
+    BODY: 'BODY',
+    FROM: 'FROM'
+} as const;
+export type SmsMatchOptionFieldEnum = typeof SmsMatchOptionFieldEnum[keyof typeof SmsMatchOptionFieldEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum SmsMatchOptionShouldEnum {
-  MATCH = 'MATCH',
-  CONTAIN = 'CONTAIN',
-  EQUAL = 'EQUAL',
+export const SmsMatchOptionShouldEnum = {
+    MATCH: 'MATCH',
+    CONTAIN: 'CONTAIN',
+    EQUAL: 'EQUAL'
+} as const;
+export type SmsMatchOptionShouldEnum = typeof SmsMatchOptionShouldEnum[keyof typeof SmsMatchOptionShouldEnum];
+
+
+/**
+ * Check if a given object implements the SmsMatchOption interface.
+ */
+export function instanceOfSmsMatchOption(value: object): value is SmsMatchOption {
+    if (!('field' in value) || value['field'] === undefined) return false;
+    if (!('should' in value) || value['should'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
+    return true;
 }
 
 export function SmsMatchOptionFromJSON(json: any): SmsMatchOption {
-  return SmsMatchOptionFromJSONTyped(json, false);
+    return SmsMatchOptionFromJSONTyped(json, false);
 }
 
-export function SmsMatchOptionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmsMatchOption {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    field: json['field'],
-    should: json['should'],
-    value: json['value'],
-  };
+export function SmsMatchOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsMatchOption {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'field': json['field'],
+        'should': json['should'],
+        'value': json['value'],
+    };
 }
 
-export function SmsMatchOptionToJSON(value?: SmsMatchOption | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    field: value.field,
-    should: value.should,
-    value: value.value,
-  };
+export function SmsMatchOptionToJSON(json: any): SmsMatchOption {
+    return SmsMatchOptionToJSONTyped(json, false);
 }
+
+export function SmsMatchOptionToJSONTyped(value?: SmsMatchOption | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'field': value['field'],
+        'should': value['should'],
+        'value': value['value'],
+    };
+}
+

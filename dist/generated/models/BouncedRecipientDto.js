@@ -13,48 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BouncedRecipientDtoToJSON = exports.BouncedRecipientDtoFromJSONTyped = exports.BouncedRecipientDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfBouncedRecipientDto = instanceOfBouncedRecipientDto;
+exports.BouncedRecipientDtoFromJSON = BouncedRecipientDtoFromJSON;
+exports.BouncedRecipientDtoFromJSONTyped = BouncedRecipientDtoFromJSONTyped;
+exports.BouncedRecipientDtoToJSON = BouncedRecipientDtoToJSON;
+exports.BouncedRecipientDtoToJSONTyped = BouncedRecipientDtoToJSONTyped;
+/**
+ * Check if a given object implements the BouncedRecipientDto interface.
+ */
+function instanceOfBouncedRecipientDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('recipient' in value) || value['recipient'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function BouncedRecipientDtoFromJSON(json) {
     return BouncedRecipientDtoFromJSONTyped(json, false);
 }
-exports.BouncedRecipientDtoFromJSON = BouncedRecipientDtoFromJSON;
 function BouncedRecipientDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-        recipient: json['recipient'],
-        diagnosticCode: !(0, runtime_1.exists)(json, 'diagnosticCode')
-            ? undefined
-            : json['diagnosticCode'],
-        action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
-        bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
-        status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'sentEmailId': json['sentEmailId'] == null ? undefined : json['sentEmailId'],
+        'recipient': json['recipient'],
+        'diagnosticCode': json['diagnosticCode'] == null ? undefined : json['diagnosticCode'],
+        'action': json['action'] == null ? undefined : json['action'],
+        'bounceType': json['bounceType'] == null ? undefined : json['bounceType'],
+        'status': json['status'] == null ? undefined : json['status'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.BouncedRecipientDtoFromJSONTyped = BouncedRecipientDtoFromJSONTyped;
-function BouncedRecipientDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function BouncedRecipientDtoToJSON(json) {
+    return BouncedRecipientDtoToJSONTyped(json, false);
+}
+function BouncedRecipientDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        sentEmailId: value.sentEmailId,
-        recipient: value.recipient,
-        diagnosticCode: value.diagnosticCode,
-        action: value.action,
-        bounceType: value.bounceType,
-        status: value.status,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'sentEmailId': value['sentEmailId'],
+        'recipient': value['recipient'],
+        'diagnosticCode': value['diagnosticCode'],
+        'action': value['action'],
+        'bounceType': value['bounceType'],
+        'status': value['status'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.BouncedRecipientDtoToJSON = BouncedRecipientDtoToJSON;

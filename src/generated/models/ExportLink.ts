@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Export download link
  * @export
  * @interface ExportLink
  */
 export interface ExportLink {
-  /**
-   *
-   * @type {string}
-   * @memberof ExportLink
-   */
-  downloadLink: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportLink
+     */
+    downloadLink: string;
+}
+
+/**
+ * Check if a given object implements the ExportLink interface.
+ */
+export function instanceOfExportLink(value: object): value is ExportLink {
+    if (!('downloadLink' in value) || value['downloadLink'] === undefined) return false;
+    return true;
 }
 
 export function ExportLinkFromJSON(json: any): ExportLink {
-  return ExportLinkFromJSONTyped(json, false);
+    return ExportLinkFromJSONTyped(json, false);
 }
 
-export function ExportLinkFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ExportLink {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    downloadLink: json['downloadLink'],
-  };
+export function ExportLinkFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportLink {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'downloadLink': json['downloadLink'],
+    };
 }
 
-export function ExportLinkToJSON(value?: ExportLink | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    downloadLink: value.downloadLink,
-  };
+export function ExportLinkToJSON(json: any): ExportLink {
+    return ExportLinkToJSONTyped(json, false);
 }
+
+export function ExportLinkToJSONTyped(value?: ExportLink | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'downloadLink': value['downloadLink'],
+    };
+}
+

@@ -86,7 +86,7 @@ export interface WebhookResultDto {
      * @type {string}
      * @memberof WebhookResultDto
      */
-    resultType?: WebhookResultDtoResultTypeEnum;
+    resultType?: WebhookResultDtoResultTypeEnum | null;
     /**
      *
      * @type {Date}
@@ -138,44 +138,50 @@ export interface WebhookResultDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookResultDtoHttpMethodEnum {
-    POST = "POST",
-    DELETE = "DELETE",
-    GET = "GET",
-    PUT = "PUT",
-    PATCH = "PATCH",
-    HEAD = "HEAD",
-    OPTIONS = "OPTIONS",
-    TRACE = "TRACE"
-}
+export declare const WebhookResultDtoHttpMethodEnum: {
+    readonly POST: "POST";
+    readonly DELETE: "DELETE";
+    readonly GET: "GET";
+    readonly PUT: "PUT";
+    readonly PATCH: "PATCH";
+    readonly HEAD: "HEAD";
+    readonly OPTIONS: "OPTIONS";
+    readonly TRACE: "TRACE";
+};
+export type WebhookResultDtoHttpMethodEnum = typeof WebhookResultDtoHttpMethodEnum[keyof typeof WebhookResultDtoHttpMethodEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookResultDtoWebhookEventEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const WebhookResultDtoWebhookEventEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type WebhookResultDtoWebhookEventEnum = typeof WebhookResultDtoWebhookEventEnum[keyof typeof WebhookResultDtoWebhookEventEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookResultDtoResultTypeEnum {
-    BAD_RESPONSE = "BAD_RESPONSE",
-    EXCEPTION = "EXCEPTION",
-    SUCCESS = "SUCCESS",
-    REDRIVEN = "REDRIVEN"
-}
+export declare const WebhookResultDtoResultTypeEnum: {
+    readonly BAD_RESPONSE: "BAD_RESPONSE";
+    readonly EXCEPTION: "EXCEPTION";
+    readonly SUCCESS: "SUCCESS";
+    readonly REDRIVEN: "REDRIVEN";
+};
+export type WebhookResultDtoResultTypeEnum = typeof WebhookResultDtoResultTypeEnum[keyof typeof WebhookResultDtoResultTypeEnum];
+/**
+ * Check if a given object implements the WebhookResultDto interface.
+ */
+export declare function instanceOfWebhookResultDto(value: object): value is WebhookResultDto;
 export declare function WebhookResultDtoFromJSON(json: any): WebhookResultDto;
 export declare function WebhookResultDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookResultDto;
-export declare function WebhookResultDtoToJSON(value?: WebhookResultDto | null): any;
+export declare function WebhookResultDtoToJSON(json: any): WebhookResultDto;
+export declare function WebhookResultDtoToJSONTyped(value?: WebhookResultDto | null, ignoreDiscriminator?: boolean): any;

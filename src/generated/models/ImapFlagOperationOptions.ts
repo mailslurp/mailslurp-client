@@ -12,67 +12,76 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * IMAP operation flags
  * @export
  * @interface ImapFlagOperationOptions
  */
 export interface ImapFlagOperationOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof ImapFlagOperationOptions
-   */
-  flagOperation: ImapFlagOperationOptionsFlagOperationEnum;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ImapFlagOperationOptions
-   */
-  flags: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImapFlagOperationOptions
+     */
+    flagOperation: ImapFlagOperationOptionsFlagOperationEnum;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ImapFlagOperationOptions
+     */
+    flags: Array<string>;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum ImapFlagOperationOptionsFlagOperationEnum {
-  SET_FLAGS = 'SET_FLAGS',
-  ADD_FLAGS = 'ADD_FLAGS',
-  REMOVE_FLAGS = 'REMOVE_FLAGS',
+export const ImapFlagOperationOptionsFlagOperationEnum = {
+    SET_FLAGS: 'SET_FLAGS',
+    ADD_FLAGS: 'ADD_FLAGS',
+    REMOVE_FLAGS: 'REMOVE_FLAGS'
+} as const;
+export type ImapFlagOperationOptionsFlagOperationEnum = typeof ImapFlagOperationOptionsFlagOperationEnum[keyof typeof ImapFlagOperationOptionsFlagOperationEnum];
+
+
+/**
+ * Check if a given object implements the ImapFlagOperationOptions interface.
+ */
+export function instanceOfImapFlagOperationOptions(value: object): value is ImapFlagOperationOptions {
+    if (!('flagOperation' in value) || value['flagOperation'] === undefined) return false;
+    if (!('flags' in value) || value['flags'] === undefined) return false;
+    return true;
 }
 
-export function ImapFlagOperationOptionsFromJSON(
-  json: any
-): ImapFlagOperationOptions {
-  return ImapFlagOperationOptionsFromJSONTyped(json, false);
+export function ImapFlagOperationOptionsFromJSON(json: any): ImapFlagOperationOptions {
+    return ImapFlagOperationOptionsFromJSONTyped(json, false);
 }
 
-export function ImapFlagOperationOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapFlagOperationOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    flagOperation: json['flagOperation'],
-    flags: json['flags'],
-  };
+export function ImapFlagOperationOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapFlagOperationOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'flagOperation': json['flagOperation'],
+        'flags': json['flags'],
+    };
 }
 
-export function ImapFlagOperationOptionsToJSON(
-  value?: ImapFlagOperationOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    flagOperation: value.flagOperation,
-    flags: value.flags,
-  };
+export function ImapFlagOperationOptionsToJSON(json: any): ImapFlagOperationOptions {
+    return ImapFlagOperationOptionsToJSONTyped(json, false);
 }
+
+export function ImapFlagOperationOptionsToJSONTyped(value?: ImapFlagOperationOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'flagOperation': value['flagOperation'],
+        'flags': value['flags'],
+    };
+}
+

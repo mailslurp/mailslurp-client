@@ -28,6 +28,11 @@ export interface FlushExpiredInboxesResult {
      */
     expireBefore: Date;
 }
+/**
+ * Check if a given object implements the FlushExpiredInboxesResult interface.
+ */
+export declare function instanceOfFlushExpiredInboxesResult(value: object): value is FlushExpiredInboxesResult;
 export declare function FlushExpiredInboxesResultFromJSON(json: any): FlushExpiredInboxesResult;
 export declare function FlushExpiredInboxesResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FlushExpiredInboxesResult;
-export declare function FlushExpiredInboxesResultToJSON(value?: FlushExpiredInboxesResult | null): any;
+export declare function FlushExpiredInboxesResultToJSON(json: any): FlushExpiredInboxesResult;
+export declare function FlushExpiredInboxesResultToJSONTyped(value?: FlushExpiredInboxesResult | null, ignoreDiscriminator?: boolean): any;

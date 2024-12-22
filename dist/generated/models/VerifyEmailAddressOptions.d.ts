@@ -40,6 +40,11 @@ export interface VerifyEmailAddressOptions {
      */
     port?: number | null;
 }
+/**
+ * Check if a given object implements the VerifyEmailAddressOptions interface.
+ */
+export declare function instanceOfVerifyEmailAddressOptions(value: object): value is VerifyEmailAddressOptions;
 export declare function VerifyEmailAddressOptionsFromJSON(json: any): VerifyEmailAddressOptions;
 export declare function VerifyEmailAddressOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyEmailAddressOptions;
-export declare function VerifyEmailAddressOptionsToJSON(value?: VerifyEmailAddressOptions | null): any;
+export declare function VerifyEmailAddressOptionsToJSON(json: any): VerifyEmailAddressOptions;
+export declare function VerifyEmailAddressOptionsToJSONTyped(value?: VerifyEmailAddressOptions | null, ignoreDiscriminator?: boolean): any;

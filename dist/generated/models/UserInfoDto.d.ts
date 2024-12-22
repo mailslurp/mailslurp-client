@@ -54,33 +54,38 @@ export interface UserInfoDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum UserInfoDtoAccountStateEnum {
-    FROZEN = "FROZEN",
-    ACTIVE = "ACTIVE"
-}
+export declare const UserInfoDtoAccountStateEnum: {
+    readonly FROZEN: "FROZEN";
+    readonly ACTIVE: "ACTIVE";
+};
+export type UserInfoDtoAccountStateEnum = typeof UserInfoDtoAccountStateEnum[keyof typeof UserInfoDtoAccountStateEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum UserInfoDtoSubscriptionTypeEnum {
-    PRO_MONTHLY = "PRO_MONTHLY",
-    STARTER = "STARTER",
-    PRO = "PRO",
-    TEAM = "TEAM",
-    ENTERPRISE = "ENTERPRISE"
-}
+export declare const UserInfoDtoSubscriptionTypeEnum: {
+    readonly PRO_MONTHLY: "PRO_MONTHLY";
+    readonly STARTER: "STARTER";
+    readonly PRO: "PRO";
+    readonly TEAM: "TEAM";
+    readonly ENTERPRISE: "ENTERPRISE";
+};
+export type UserInfoDtoSubscriptionTypeEnum = typeof UserInfoDtoSubscriptionTypeEnum[keyof typeof UserInfoDtoSubscriptionTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum UserInfoDtoAccountTypeEnum {
-    SOLO = "SOLO",
-    CHILD_SOLO = "CHILD_SOLO",
-    CHILD_TEAM = "CHILD_TEAM",
-    CHILD_ADMIN = "CHILD_ADMIN"
-}
+export declare const UserInfoDtoAccountTypeEnum: {
+    readonly SOLO: "SOLO";
+    readonly CHILD_SOLO: "CHILD_SOLO";
+    readonly CHILD_TEAM: "CHILD_TEAM";
+    readonly CHILD_ADMIN: "CHILD_ADMIN";
+};
+export type UserInfoDtoAccountTypeEnum = typeof UserInfoDtoAccountTypeEnum[keyof typeof UserInfoDtoAccountTypeEnum];
+/**
+ * Check if a given object implements the UserInfoDto interface.
+ */
+export declare function instanceOfUserInfoDto(value: object): value is UserInfoDto;
 export declare function UserInfoDtoFromJSON(json: any): UserInfoDto;
 export declare function UserInfoDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserInfoDto;
-export declare function UserInfoDtoToJSON(value?: UserInfoDto | null): any;
+export declare function UserInfoDtoToJSON(json: any): UserInfoDto;
+export declare function UserInfoDtoToJSONTyped(value?: UserInfoDto | null, ignoreDiscriminator?: boolean): any;

@@ -12,81 +12,100 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface AccountBounceBlockDto
  */
 export interface AccountBounceBlockDto {
-  /**
-   *
-   * @type {boolean}
-   * @memberof AccountBounceBlockDto
-   */
-  isSendingBlocked: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof AccountBounceBlockDto
-   */
-  bounceCount: number;
-  /**
-   *
-   * @type {number}
-   * @memberof AccountBounceBlockDto
-   */
-  bounceCountToday: number;
-  /**
-   *
-   * @type {number}
-   * @memberof AccountBounceBlockDto
-   */
-  maximumDailyBounces: number;
-  /**
-   *
-   * @type {number}
-   * @memberof AccountBounceBlockDto
-   */
-  maximumAccountBounces: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AccountBounceBlockDto
+     */
+    isFrozen: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AccountBounceBlockDto
+     */
+    isSendingBlocked: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof AccountBounceBlockDto
+     */
+    bounceCount: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof AccountBounceBlockDto
+     */
+    bounceCountToday: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof AccountBounceBlockDto
+     */
+    maximumDailyBounces: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof AccountBounceBlockDto
+     */
+    maximumAccountBounces: number;
 }
 
-export function AccountBounceBlockDtoFromJSON(
-  json: any
-): AccountBounceBlockDto {
-  return AccountBounceBlockDtoFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the AccountBounceBlockDto interface.
+ */
+export function instanceOfAccountBounceBlockDto(value: object): value is AccountBounceBlockDto {
+    if (!('isFrozen' in value) || value['isFrozen'] === undefined) return false;
+    if (!('isSendingBlocked' in value) || value['isSendingBlocked'] === undefined) return false;
+    if (!('bounceCount' in value) || value['bounceCount'] === undefined) return false;
+    if (!('bounceCountToday' in value) || value['bounceCountToday'] === undefined) return false;
+    if (!('maximumDailyBounces' in value) || value['maximumDailyBounces'] === undefined) return false;
+    if (!('maximumAccountBounces' in value) || value['maximumAccountBounces'] === undefined) return false;
+    return true;
 }
 
-export function AccountBounceBlockDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AccountBounceBlockDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    isSendingBlocked: json['isSendingBlocked'],
-    bounceCount: json['bounceCount'],
-    bounceCountToday: json['bounceCountToday'],
-    maximumDailyBounces: json['maximumDailyBounces'],
-    maximumAccountBounces: json['maximumAccountBounces'],
-  };
+export function AccountBounceBlockDtoFromJSON(json: any): AccountBounceBlockDto {
+    return AccountBounceBlockDtoFromJSONTyped(json, false);
 }
 
-export function AccountBounceBlockDtoToJSON(
-  value?: AccountBounceBlockDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    isSendingBlocked: value.isSendingBlocked,
-    bounceCount: value.bounceCount,
-    bounceCountToday: value.bounceCountToday,
-    maximumDailyBounces: value.maximumDailyBounces,
-    maximumAccountBounces: value.maximumAccountBounces,
-  };
+export function AccountBounceBlockDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountBounceBlockDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'isFrozen': json['isFrozen'],
+        'isSendingBlocked': json['isSendingBlocked'],
+        'bounceCount': json['bounceCount'],
+        'bounceCountToday': json['bounceCountToday'],
+        'maximumDailyBounces': json['maximumDailyBounces'],
+        'maximumAccountBounces': json['maximumAccountBounces'],
+    };
 }
+
+export function AccountBounceBlockDtoToJSON(json: any): AccountBounceBlockDto {
+    return AccountBounceBlockDtoToJSONTyped(json, false);
+}
+
+export function AccountBounceBlockDtoToJSONTyped(value?: AccountBounceBlockDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'isFrozen': value['isFrozen'],
+        'isSendingBlocked': value['isSendingBlocked'],
+        'bounceCount': value['bounceCount'],
+        'bounceCountToday': value['bounceCountToday'],
+        'maximumDailyBounces': value['maximumDailyBounces'],
+        'maximumAccountBounces': value['maximumAccountBounces'],
+    };
+}
+

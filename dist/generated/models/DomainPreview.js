@@ -13,53 +13,69 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainPreviewToJSON = exports.DomainPreviewFromJSONTyped = exports.DomainPreviewFromJSON = exports.DomainPreviewDomainTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.DomainPreviewDomainTypeEnum = void 0;
+exports.instanceOfDomainPreview = instanceOfDomainPreview;
+exports.DomainPreviewFromJSON = DomainPreviewFromJSON;
+exports.DomainPreviewFromJSONTyped = DomainPreviewFromJSONTyped;
+exports.DomainPreviewToJSON = DomainPreviewToJSON;
+exports.DomainPreviewToJSONTyped = DomainPreviewToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var DomainPreviewDomainTypeEnum;
-(function (DomainPreviewDomainTypeEnum) {
-    DomainPreviewDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    DomainPreviewDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(DomainPreviewDomainTypeEnum = exports.DomainPreviewDomainTypeEnum || (exports.DomainPreviewDomainTypeEnum = {}));
+exports.DomainPreviewDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+};
+/**
+ * Check if a given object implements the DomainPreview interface.
+ */
+function instanceOfDomainPreview(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('domain' in value) || value['domain'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('domainType' in value) || value['domainType'] === undefined)
+        return false;
+    if (!('isVerified' in value) || value['isVerified'] === undefined)
+        return false;
+    if (!('hasMissingRecords' in value) || value['hasMissingRecords'] === undefined)
+        return false;
+    return true;
+}
 function DomainPreviewFromJSON(json) {
     return DomainPreviewFromJSONTyped(json, false);
 }
-exports.DomainPreviewFromJSON = DomainPreviewFromJSON;
 function DomainPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        domain: json['domain'],
-        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
-            ? undefined
-            : json['catchAllInboxId'],
-        createdAt: new Date(json['createdAt']),
-        domainType: json['domainType'],
-        isVerified: json['isVerified'],
-        hasMissingRecords: json['hasMissingRecords'],
+        'id': json['id'],
+        'domain': json['domain'],
+        'catchAllInboxId': json['catchAllInboxId'] == null ? undefined : json['catchAllInboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'domainType': json['domainType'],
+        'isVerified': json['isVerified'],
+        'hasMissingRecords': json['hasMissingRecords'],
     };
 }
-exports.DomainPreviewFromJSONTyped = DomainPreviewFromJSONTyped;
-function DomainPreviewToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DomainPreviewToJSON(json) {
+    return DomainPreviewToJSONTyped(json, false);
+}
+function DomainPreviewToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        domain: value.domain,
-        catchAllInboxId: value.catchAllInboxId,
-        createdAt: value.createdAt.toISOString(),
-        domainType: value.domainType,
-        isVerified: value.isVerified,
-        hasMissingRecords: value.hasMissingRecords,
+        'id': value['id'],
+        'domain': value['domain'],
+        'catchAllInboxId': value['catchAllInboxId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'domainType': value['domainType'],
+        'isVerified': value['isVerified'],
+        'hasMissingRecords': value['hasMissingRecords'],
     };
 }
-exports.DomainPreviewToJSON = DomainPreviewToJSON;

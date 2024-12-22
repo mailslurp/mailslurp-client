@@ -70,6 +70,11 @@ export interface ImapAccessDetails {
      */
     imapMailbox: string;
 }
+/**
+ * Check if a given object implements the ImapAccessDetails interface.
+ */
+export declare function instanceOfImapAccessDetails(value: object): value is ImapAccessDetails;
 export declare function ImapAccessDetailsFromJSON(json: any): ImapAccessDetails;
 export declare function ImapAccessDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapAccessDetails;
-export declare function ImapAccessDetailsToJSON(value?: ImapAccessDetails | null): any;
+export declare function ImapAccessDetailsToJSON(json: any): ImapAccessDetails;
+export declare function ImapAccessDetailsToJSONTyped(value?: ImapAccessDetails | null, ignoreDiscriminator?: boolean): any;

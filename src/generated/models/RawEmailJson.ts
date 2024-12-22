@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Content in raw format
  * @export
  * @interface RawEmailJson
  */
 export interface RawEmailJson {
-  /**
-   *
-   * @type {string}
-   * @memberof RawEmailJson
-   */
-  content: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RawEmailJson
+     */
+    content: string;
+}
+
+/**
+ * Check if a given object implements the RawEmailJson interface.
+ */
+export function instanceOfRawEmailJson(value: object): value is RawEmailJson {
+    if (!('content' in value) || value['content'] === undefined) return false;
+    return true;
 }
 
 export function RawEmailJsonFromJSON(json: any): RawEmailJson {
-  return RawEmailJsonFromJSONTyped(json, false);
+    return RawEmailJsonFromJSONTyped(json, false);
 }
 
-export function RawEmailJsonFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): RawEmailJson {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: json['content'],
-  };
+export function RawEmailJsonFromJSONTyped(json: any, ignoreDiscriminator: boolean): RawEmailJson {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'],
+    };
 }
 
-export function RawEmailJsonToJSON(value?: RawEmailJson | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content: value.content,
-  };
+export function RawEmailJsonToJSON(json: any): RawEmailJson {
+    return RawEmailJsonToJSONTyped(json, false);
 }
+
+export function RawEmailJsonToJSONTyped(value?: RawEmailJson | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'],
+    };
+}
+

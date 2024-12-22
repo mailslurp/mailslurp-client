@@ -22,6 +22,11 @@ export interface NewFakeEmailAddressResult {
      */
     emailAddress: string;
 }
+/**
+ * Check if a given object implements the NewFakeEmailAddressResult interface.
+ */
+export declare function instanceOfNewFakeEmailAddressResult(value: object): value is NewFakeEmailAddressResult;
 export declare function NewFakeEmailAddressResultFromJSON(json: any): NewFakeEmailAddressResult;
 export declare function NewFakeEmailAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewFakeEmailAddressResult;
-export declare function NewFakeEmailAddressResultToJSON(value?: NewFakeEmailAddressResult | null): any;
+export declare function NewFakeEmailAddressResultToJSON(json: any): NewFakeEmailAddressResult;
+export declare function NewFakeEmailAddressResultToJSONTyped(value?: NewFakeEmailAddressResult | null, ignoreDiscriminator?: boolean): any;

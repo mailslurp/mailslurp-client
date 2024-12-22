@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -89,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetSmsMessagesPaginatedSortEnum = exports.SmsControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -104,27 +114,30 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.deleteSmsMessageRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.smsId === null ||
-                            requestParameters.smsId === undefined) {
-                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling deleteSmsMessage.');
+                        if (requestParameters['smsId'] == null) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter "smsId" was null or undefined when calling deleteSmsMessage().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms/{smsId}".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms/{smsId}".replace("{".concat("smsId", "}"), encodeURIComponent(String(requestParameters['smsId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -152,26 +165,30 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.deleteSmsMessagesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.phoneNumberId !== undefined) {
-                            queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+                        if (requestParameters['phoneNumberId'] != null) {
+                            queryParameters['phoneNumberId'] = requestParameters['phoneNumberId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -181,8 +198,9 @@ var SmsControllerApi = /** @class */ (function (_super) {
      * Delete all SMS messages or all messages for a given phone number
      * Delete all SMS messages
      */
-    SmsControllerApi.prototype.deleteSmsMessages = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    SmsControllerApi.prototype.deleteSmsMessages = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteSmsMessagesRaw(requestParameters, initOverrides)];
@@ -199,30 +217,31 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.getReplyForSmsMessageRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.smsId === null ||
-                            requestParameters.smsId === undefined) {
-                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling getReplyForSmsMessage.');
+                        if (requestParameters['smsId'] == null) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter "smsId" was null or undefined when calling getReplyForSmsMessage().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms/{smsId}/reply".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ReplyForSmsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms/{smsId}/reply".replace("{".concat("smsId", "}"), encodeURIComponent(String(requestParameters['smsId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ReplyForSmsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -251,26 +270,28 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.getSmsCountRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms/count",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CountDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms/count",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CountDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -299,30 +320,31 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.getSmsMessageRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.smsId === null ||
-                            requestParameters.smsId === undefined) {
-                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling getSmsMessage.');
+                        if (requestParameters['smsId'] == null) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter "smsId" was null or undefined when calling getSmsMessage().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms/{smsId}".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SmsDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms/{smsId}".replace("{".concat("smsId", "}"), encodeURIComponent(String(requestParameters['smsId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SmsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -351,47 +373,52 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.getSmsMessagesPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.phoneNumber !== undefined) {
-                            queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+                        if (requestParameters['phoneNumber'] != null) {
+                            queryParameters['phoneNumber'] = requestParameters['phoneNumber'];
                         }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.unreadOnly !== undefined) {
-                            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
+                        if (requestParameters['unreadOnly'] != null) {
+                            queryParameters['unreadOnly'] = requestParameters['unreadOnly'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['search'] != null) {
+                            queryParameters['search'] = requestParameters['search'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageSmsProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageSmsProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -400,9 +427,10 @@ var SmsControllerApi = /** @class */ (function (_super) {
      * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
      * Get all SMS messages in all phone numbers in paginated form. .
      */
-    SmsControllerApi.prototype.getSmsMessagesPaginated = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    SmsControllerApi.prototype.getSmsMessagesPaginated = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getSmsMessagesPaginatedRaw(requestParameters, initOverrides)];
@@ -420,26 +448,28 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.getUnreadSmsCountRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms/unreadCount",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.UnreadCountFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms/unreadCount",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.UnreadCountFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -468,36 +498,36 @@ var SmsControllerApi = /** @class */ (function (_super) {
      */
     SmsControllerApi.prototype.replyToSmsMessageRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.smsId === null ||
-                            requestParameters.smsId === undefined) {
-                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling replyToSmsMessage.');
+                        if (requestParameters['smsId'] == null) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter "smsId" was null or undefined when calling replyToSmsMessage().');
                         }
-                        if (requestParameters.smsReplyOptions === null ||
-                            requestParameters.smsReplyOptions === undefined) {
-                            throw new runtime.RequiredError('smsReplyOptions', 'Required parameter requestParameters.smsReplyOptions was null or undefined when calling replyToSmsMessage.');
+                        if (requestParameters['smsReplyOptions'] == null) {
+                            throw new runtime.RequiredError('smsReplyOptions', 'Required parameter "smsReplyOptions" was null or undefined when calling replyToSmsMessage().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms/{smsId}/reply".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SmsReplyOptionsToJSON)(requestParameters.smsReplyOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentSmsDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms/{smsId}/reply".replace("{".concat("smsId", "}"), encodeURIComponent(String(requestParameters['smsId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SmsReplyOptionsToJSON)(requestParameters['smsReplyOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SentSmsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -520,15 +550,68 @@ var SmsControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     */
+    SmsControllerApi.prototype.setSmsFavouritedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['smsId'] == null) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter "smsId" was null or undefined when calling setSmsFavourited().');
+                        }
+                        if (requestParameters['favourited'] == null) {
+                            throw new runtime.RequiredError('favourited', 'Required parameter "favourited" was null or undefined when calling setSmsFavourited().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['favourited'] != null) {
+                            queryParameters['favourited'] = requestParameters['favourited'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sms/{smsId}/favourite".replace("{".concat("smsId", "}"), encodeURIComponent(String(requestParameters['smsId']))),
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SmsDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    SmsControllerApi.prototype.setSmsFavourited = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.setSmsFavouritedRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     return SmsControllerApi;
 }(runtime.BaseAPI));
 exports.SmsControllerApi = SmsControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var GetSmsMessagesPaginatedSortEnum;
-(function (GetSmsMessagesPaginatedSortEnum) {
-    GetSmsMessagesPaginatedSortEnum["ASC"] = "ASC";
-    GetSmsMessagesPaginatedSortEnum["DESC"] = "DESC";
-})(GetSmsMessagesPaginatedSortEnum = exports.GetSmsMessagesPaginatedSortEnum || (exports.GetSmsMessagesPaginatedSortEnum = {}));
+exports.GetSmsMessagesPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};

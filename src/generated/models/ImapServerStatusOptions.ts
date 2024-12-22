@@ -12,70 +12,77 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ImapServerStatusOptions
  */
 export interface ImapServerStatusOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof ImapServerStatusOptions
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ImapServerStatusOptions
-   */
-  statusItems?: Array<ImapServerStatusOptionsStatusItemsEnum>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImapServerStatusOptions
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {Array<string | null>}
+     * @memberof ImapServerStatusOptions
+     */
+    statusItems?: Array<ImapServerStatusOptionsStatusItemsEnum | null> | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum ImapServerStatusOptionsStatusItemsEnum {
-  MESSAGES = 'MESSAGES',
-  RECENT = 'RECENT',
-  UIDNEXT = 'UIDNEXT',
-  UIDVALIDITY = 'UIDVALIDITY',
-  UNSEEN = 'UNSEEN',
-  APPENDLIMIT = 'APPENDLIMIT',
+export const ImapServerStatusOptionsStatusItemsEnum = {
+    MESSAGES: 'MESSAGES',
+    RECENT: 'RECENT',
+    UIDNEXT: 'UIDNEXT',
+    UIDVALIDITY: 'UIDVALIDITY',
+    UNSEEN: 'UNSEEN',
+    APPENDLIMIT: 'APPENDLIMIT'
+} as const;
+export type ImapServerStatusOptionsStatusItemsEnum = typeof ImapServerStatusOptionsStatusItemsEnum[keyof typeof ImapServerStatusOptionsStatusItemsEnum];
+
+
+/**
+ * Check if a given object implements the ImapServerStatusOptions interface.
+ */
+export function instanceOfImapServerStatusOptions(value: object): value is ImapServerStatusOptions {
+    return true;
 }
 
-export function ImapServerStatusOptionsFromJSON(
-  json: any
-): ImapServerStatusOptions {
-  return ImapServerStatusOptionsFromJSONTyped(json, false);
+export function ImapServerStatusOptionsFromJSON(json: any): ImapServerStatusOptions {
+    return ImapServerStatusOptionsFromJSONTyped(json, false);
 }
 
-export function ImapServerStatusOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerStatusOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    statusItems: !exists(json, 'statusItems') ? undefined : json['statusItems'],
-  };
+export function ImapServerStatusOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerStatusOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'] == null ? undefined : json['name'],
+        'statusItems': json['statusItems'] == null ? undefined : json['statusItems'],
+    };
 }
 
-export function ImapServerStatusOptionsToJSON(
-  value?: ImapServerStatusOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    statusItems: value.statusItems,
-  };
+export function ImapServerStatusOptionsToJSON(json: any): ImapServerStatusOptions {
+    return ImapServerStatusOptionsToJSONTyped(json, false);
 }
+
+export function ImapServerStatusOptionsToJSONTyped(value?: ImapServerStatusOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'statusItems': value['statusItems'],
+    };
+}
+

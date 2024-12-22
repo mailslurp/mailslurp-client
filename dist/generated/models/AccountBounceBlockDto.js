@@ -13,37 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountBounceBlockDtoToJSON = exports.AccountBounceBlockDtoFromJSONTyped = exports.AccountBounceBlockDtoFromJSON = void 0;
+exports.instanceOfAccountBounceBlockDto = instanceOfAccountBounceBlockDto;
+exports.AccountBounceBlockDtoFromJSON = AccountBounceBlockDtoFromJSON;
+exports.AccountBounceBlockDtoFromJSONTyped = AccountBounceBlockDtoFromJSONTyped;
+exports.AccountBounceBlockDtoToJSON = AccountBounceBlockDtoToJSON;
+exports.AccountBounceBlockDtoToJSONTyped = AccountBounceBlockDtoToJSONTyped;
+/**
+ * Check if a given object implements the AccountBounceBlockDto interface.
+ */
+function instanceOfAccountBounceBlockDto(value) {
+    if (!('isFrozen' in value) || value['isFrozen'] === undefined)
+        return false;
+    if (!('isSendingBlocked' in value) || value['isSendingBlocked'] === undefined)
+        return false;
+    if (!('bounceCount' in value) || value['bounceCount'] === undefined)
+        return false;
+    if (!('bounceCountToday' in value) || value['bounceCountToday'] === undefined)
+        return false;
+    if (!('maximumDailyBounces' in value) || value['maximumDailyBounces'] === undefined)
+        return false;
+    if (!('maximumAccountBounces' in value) || value['maximumAccountBounces'] === undefined)
+        return false;
+    return true;
+}
 function AccountBounceBlockDtoFromJSON(json) {
     return AccountBounceBlockDtoFromJSONTyped(json, false);
 }
-exports.AccountBounceBlockDtoFromJSON = AccountBounceBlockDtoFromJSON;
 function AccountBounceBlockDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        isSendingBlocked: json['isSendingBlocked'],
-        bounceCount: json['bounceCount'],
-        bounceCountToday: json['bounceCountToday'],
-        maximumDailyBounces: json['maximumDailyBounces'],
-        maximumAccountBounces: json['maximumAccountBounces'],
+        'isFrozen': json['isFrozen'],
+        'isSendingBlocked': json['isSendingBlocked'],
+        'bounceCount': json['bounceCount'],
+        'bounceCountToday': json['bounceCountToday'],
+        'maximumDailyBounces': json['maximumDailyBounces'],
+        'maximumAccountBounces': json['maximumAccountBounces'],
     };
 }
-exports.AccountBounceBlockDtoFromJSONTyped = AccountBounceBlockDtoFromJSONTyped;
-function AccountBounceBlockDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function AccountBounceBlockDtoToJSON(json) {
+    return AccountBounceBlockDtoToJSONTyped(json, false);
+}
+function AccountBounceBlockDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        isSendingBlocked: value.isSendingBlocked,
-        bounceCount: value.bounceCount,
-        bounceCountToday: value.bounceCountToday,
-        maximumDailyBounces: value.maximumDailyBounces,
-        maximumAccountBounces: value.maximumAccountBounces,
+        'isFrozen': value['isFrozen'],
+        'isSendingBlocked': value['isSendingBlocked'],
+        'bounceCount': value['bounceCount'],
+        'bounceCountToday': value['bounceCountToday'],
+        'maximumDailyBounces': value['maximumDailyBounces'],
+        'maximumAccountBounces': value['maximumAccountBounces'],
     };
 }
-exports.AccountBounceBlockDtoToJSON = AccountBounceBlockDtoToJSON;

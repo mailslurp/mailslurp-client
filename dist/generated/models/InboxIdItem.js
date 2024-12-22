@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxIdItemToJSON = exports.InboxIdItemFromJSONTyped = exports.InboxIdItemFromJSON = void 0;
+exports.instanceOfInboxIdItem = instanceOfInboxIdItem;
+exports.InboxIdItemFromJSON = InboxIdItemFromJSON;
+exports.InboxIdItemFromJSONTyped = InboxIdItemFromJSONTyped;
+exports.InboxIdItemToJSON = InboxIdItemToJSON;
+exports.InboxIdItemToJSONTyped = InboxIdItemToJSONTyped;
+/**
+ * Check if a given object implements the InboxIdItem interface.
+ */
+function instanceOfInboxIdItem(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    return true;
+}
 function InboxIdItemFromJSON(json) {
     return InboxIdItemFromJSONTyped(json, false);
 }
-exports.InboxIdItemFromJSON = InboxIdItemFromJSON;
 function InboxIdItemFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        emailAddress: json['emailAddress'],
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
     };
 }
-exports.InboxIdItemFromJSONTyped = InboxIdItemFromJSONTyped;
-function InboxIdItemToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxIdItemToJSON(json) {
+    return InboxIdItemToJSONTyped(json, false);
+}
+function InboxIdItemToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        emailAddress: value.emailAddress,
+        'id': value['id'],
+        'emailAddress': value['emailAddress'],
     };
 }
-exports.InboxIdItemToJSON = InboxIdItemToJSON;

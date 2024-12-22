@@ -12,185 +12,198 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface GenerateMtaStsRecordResults
  */
 export interface GenerateMtaStsRecordResults {
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordResults
-   */
-  name: string;
-  /**
-   * Domain Name Server Record Types
-   * @type {string}
-   * @memberof GenerateMtaStsRecordResults
-   */
-  type: GenerateMtaStsRecordResultsTypeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateMtaStsRecordResults
-   */
-  ttl: number;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordResults
-   */
-  value: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordResults
-   */
-  wellKnownValue: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordResults
-   */
-  wellKnownUrl: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordResults
+     */
+    name: string;
+    /**
+     * Domain Name Server Record Types
+     * @type {string}
+     * @memberof GenerateMtaStsRecordResults
+     */
+    type: GenerateMtaStsRecordResultsTypeEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateMtaStsRecordResults
+     */
+    ttl: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordResults
+     */
+    value: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordResults
+     */
+    wellKnownValue: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordResults
+     */
+    wellKnownUrl: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateMtaStsRecordResultsTypeEnum {
-  A = 'A',
-  NS = 'NS',
-  MD = 'MD',
-  MF = 'MF',
-  CNAME = 'CNAME',
-  SOA = 'SOA',
-  MB = 'MB',
-  MG = 'MG',
-  MR = 'MR',
-  NULL = 'NULL',
-  WKS = 'WKS',
-  PTR = 'PTR',
-  HINFO = 'HINFO',
-  MINFO = 'MINFO',
-  MX = 'MX',
-  TXT = 'TXT',
-  RP = 'RP',
-  AFSDB = 'AFSDB',
-  X25 = 'X25',
-  ISDN = 'ISDN',
-  RT = 'RT',
-  NSAP = 'NSAP',
-  NSAP_PTR = 'NSAP_PTR',
-  SIG = 'SIG',
-  KEY = 'KEY',
-  PX = 'PX',
-  GPOS = 'GPOS',
-  AAAA = 'AAAA',
-  LOC = 'LOC',
-  NXT = 'NXT',
-  EID = 'EID',
-  NIMLOC = 'NIMLOC',
-  SRV = 'SRV',
-  ATMA = 'ATMA',
-  NAPTR = 'NAPTR',
-  KX = 'KX',
-  CERT = 'CERT',
-  A6 = 'A6',
-  DNAME = 'DNAME',
-  SINK = 'SINK',
-  OPT = 'OPT',
-  APL = 'APL',
-  DS = 'DS',
-  SSHFP = 'SSHFP',
-  IPSECKEY = 'IPSECKEY',
-  RRSIG = 'RRSIG',
-  NSEC = 'NSEC',
-  DNSKEY = 'DNSKEY',
-  DHCID = 'DHCID',
-  NSEC3 = 'NSEC3',
-  NSEC3PARAM = 'NSEC3PARAM',
-  TLSA = 'TLSA',
-  SMIMEA = 'SMIMEA',
-  HIP = 'HIP',
-  NINFO = 'NINFO',
-  RKEY = 'RKEY',
-  TALINK = 'TALINK',
-  CDS = 'CDS',
-  CDNSKEY = 'CDNSKEY',
-  OPENPGPKEY = 'OPENPGPKEY',
-  CSYNC = 'CSYNC',
-  ZONEMD = 'ZONEMD',
-  SVCB = 'SVCB',
-  HTTPS = 'HTTPS',
-  SPF = 'SPF',
-  UINFO = 'UINFO',
-  UID = 'UID',
-  GID = 'GID',
-  UNSPEC = 'UNSPEC',
-  NID = 'NID',
-  L32 = 'L32',
-  L64 = 'L64',
-  LP = 'LP',
-  EUI48 = 'EUI48',
-  EUI64 = 'EUI64',
-  TKEY = 'TKEY',
-  TSIG = 'TSIG',
-  IXFR = 'IXFR',
-  AXFR = 'AXFR',
-  MAILB = 'MAILB',
-  MAILA = 'MAILA',
-  ANY = 'ANY',
-  URI = 'URI',
-  CAA = 'CAA',
-  AVC = 'AVC',
-  DOA = 'DOA',
-  AMTRELAY = 'AMTRELAY',
-  TA = 'TA',
-  DLV = 'DLV',
+export const GenerateMtaStsRecordResultsTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+} as const;
+export type GenerateMtaStsRecordResultsTypeEnum = typeof GenerateMtaStsRecordResultsTypeEnum[keyof typeof GenerateMtaStsRecordResultsTypeEnum];
+
+
+/**
+ * Check if a given object implements the GenerateMtaStsRecordResults interface.
+ */
+export function instanceOfGenerateMtaStsRecordResults(value: object): value is GenerateMtaStsRecordResults {
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('type' in value) || value['type'] === undefined) return false;
+    if (!('ttl' in value) || value['ttl'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
+    if (!('wellKnownValue' in value) || value['wellKnownValue'] === undefined) return false;
+    if (!('wellKnownUrl' in value) || value['wellKnownUrl'] === undefined) return false;
+    return true;
 }
 
-export function GenerateMtaStsRecordResultsFromJSON(
-  json: any
-): GenerateMtaStsRecordResults {
-  return GenerateMtaStsRecordResultsFromJSONTyped(json, false);
+export function GenerateMtaStsRecordResultsFromJSON(json: any): GenerateMtaStsRecordResults {
+    return GenerateMtaStsRecordResultsFromJSONTyped(json, false);
 }
 
-export function GenerateMtaStsRecordResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateMtaStsRecordResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    type: json['type'],
-    ttl: json['ttl'],
-    value: json['value'],
-    wellKnownValue: json['wellKnownValue'],
-    wellKnownUrl: json['wellKnownUrl'],
-  };
+export function GenerateMtaStsRecordResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateMtaStsRecordResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
+        'wellKnownValue': json['wellKnownValue'],
+        'wellKnownUrl': json['wellKnownUrl'],
+    };
 }
 
-export function GenerateMtaStsRecordResultsToJSON(
-  value?: GenerateMtaStsRecordResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    type: value.type,
-    ttl: value.ttl,
-    value: value.value,
-    wellKnownValue: value.wellKnownValue,
-    wellKnownUrl: value.wellKnownUrl,
-  };
+export function GenerateMtaStsRecordResultsToJSON(json: any): GenerateMtaStsRecordResults {
+    return GenerateMtaStsRecordResultsToJSONTyped(json, false);
 }
+
+export function GenerateMtaStsRecordResultsToJSONTyped(value?: GenerateMtaStsRecordResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'type': value['type'],
+        'ttl': value['ttl'],
+        'value': value['value'],
+        'wellKnownValue': value['wellKnownValue'],
+        'wellKnownUrl': value['wellKnownUrl'],
+    };
+}
+

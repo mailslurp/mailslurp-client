@@ -12,81 +12,91 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface GenerateBimiRecordOptions
  */
 export interface GenerateBimiRecordOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateBimiRecordOptions
-   */
-  domain: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateBimiRecordOptions
-   */
-  version: GenerateBimiRecordOptionsVersionEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateBimiRecordOptions
-   */
-  logoUrl: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateBimiRecordOptions
-   */
-  vmcUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateBimiRecordOptions
+     */
+    domain: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateBimiRecordOptions
+     */
+    version: GenerateBimiRecordOptionsVersionEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateBimiRecordOptions
+     */
+    logoUrl: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateBimiRecordOptions
+     */
+    vmcUrl?: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateBimiRecordOptionsVersionEnum {
-  BIMI1 = 'BIMI1',
+export const GenerateBimiRecordOptionsVersionEnum = {
+    BIMI1: 'BIMI1'
+} as const;
+export type GenerateBimiRecordOptionsVersionEnum = typeof GenerateBimiRecordOptionsVersionEnum[keyof typeof GenerateBimiRecordOptionsVersionEnum];
+
+
+/**
+ * Check if a given object implements the GenerateBimiRecordOptions interface.
+ */
+export function instanceOfGenerateBimiRecordOptions(value: object): value is GenerateBimiRecordOptions {
+    if (!('domain' in value) || value['domain'] === undefined) return false;
+    if (!('version' in value) || value['version'] === undefined) return false;
+    if (!('logoUrl' in value) || value['logoUrl'] === undefined) return false;
+    return true;
 }
 
-export function GenerateBimiRecordOptionsFromJSON(
-  json: any
-): GenerateBimiRecordOptions {
-  return GenerateBimiRecordOptionsFromJSONTyped(json, false);
+export function GenerateBimiRecordOptionsFromJSON(json: any): GenerateBimiRecordOptions {
+    return GenerateBimiRecordOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateBimiRecordOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateBimiRecordOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domain: json['domain'],
-    version: json['version'],
-    logoUrl: json['logoUrl'],
-    vmcUrl: !exists(json, 'vmcUrl') ? undefined : json['vmcUrl'],
-  };
+export function GenerateBimiRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateBimiRecordOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'domain': json['domain'],
+        'version': json['version'],
+        'logoUrl': json['logoUrl'],
+        'vmcUrl': json['vmcUrl'] == null ? undefined : json['vmcUrl'],
+    };
 }
 
-export function GenerateBimiRecordOptionsToJSON(
-  value?: GenerateBimiRecordOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domain: value.domain,
-    version: value.version,
-    logoUrl: value.logoUrl,
-    vmcUrl: value.vmcUrl,
-  };
+export function GenerateBimiRecordOptionsToJSON(json: any): GenerateBimiRecordOptions {
+    return GenerateBimiRecordOptionsToJSONTyped(json, false);
 }
+
+export function GenerateBimiRecordOptionsToJSONTyped(value?: GenerateBimiRecordOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'domain': value['domain'],
+        'version': value['version'],
+        'logoUrl': value['logoUrl'],
+        'vmcUrl': value['vmcUrl'],
+    };
+}
+

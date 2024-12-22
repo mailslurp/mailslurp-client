@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ImapServerFetchItem } from './';
+import type { ImapServerFetchItem } from './ImapServerFetchItem';
 /**
  * IMAP fetch email result
  * @export
@@ -23,6 +23,11 @@ export interface ImapServerFetchResult {
      */
     result?: ImapServerFetchItem | null;
 }
+/**
+ * Check if a given object implements the ImapServerFetchResult interface.
+ */
+export declare function instanceOfImapServerFetchResult(value: object): value is ImapServerFetchResult;
 export declare function ImapServerFetchResultFromJSON(json: any): ImapServerFetchResult;
 export declare function ImapServerFetchResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerFetchResult;
-export declare function ImapServerFetchResultToJSON(value?: ImapServerFetchResult | null): any;
+export declare function ImapServerFetchResultToJSON(json: any): ImapServerFetchResult;
+export declare function ImapServerFetchResultToJSONTyped(value?: ImapServerFetchResult | null, ignoreDiscriminator?: boolean): any;

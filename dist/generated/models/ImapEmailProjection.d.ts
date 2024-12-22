@@ -46,6 +46,11 @@ export interface ImapEmailProjection {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the ImapEmailProjection interface.
+ */
+export declare function instanceOfImapEmailProjection(value: object): value is ImapEmailProjection;
 export declare function ImapEmailProjectionFromJSON(json: any): ImapEmailProjection;
 export declare function ImapEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapEmailProjection;
-export declare function ImapEmailProjectionToJSON(value?: ImapEmailProjection | null): any;
+export declare function ImapEmailProjectionToJSON(json: any): ImapEmailProjection;
+export declare function ImapEmailProjectionToJSONTyped(value?: ImapEmailProjection | null, ignoreDiscriminator?: boolean): any;

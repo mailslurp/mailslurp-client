@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -89,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateRandomInboxInboxTypeEnum = exports.CreateNewEmailAddressInboxTypeEnum = exports.CommonActionsControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -104,71 +114,73 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      */
     CommonActionsControllerApi.prototype.createNewEmailAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.allowTeamAccess !== undefined) {
-                            queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
+                        if (requestParameters['allowTeamAccess'] != null) {
+                            queryParameters['allowTeamAccess'] = requestParameters['allowTeamAccess'];
                         }
-                        if (requestParameters.useDomainPool !== undefined) {
-                            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+                        if (requestParameters['useDomainPool'] != null) {
+                            queryParameters['useDomainPool'] = requestParameters['useDomainPool'];
                         }
-                        if (requestParameters.expiresAt !== undefined) {
-                            queryParameters['expiresAt'] = requestParameters.expiresAt.toISOString();
+                        if (requestParameters['expiresAt'] != null) {
+                            queryParameters['expiresAt'] = requestParameters['expiresAt'].toISOString();
                         }
-                        if (requestParameters.expiresIn !== undefined) {
-                            queryParameters['expiresIn'] = requestParameters.expiresIn;
+                        if (requestParameters['expiresIn'] != null) {
+                            queryParameters['expiresIn'] = requestParameters['expiresIn'];
                         }
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        if (requestParameters['emailAddress'] != null) {
+                            queryParameters['emailAddress'] = requestParameters['emailAddress'];
                         }
-                        if (requestParameters.inboxType !== undefined) {
-                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        if (requestParameters['inboxType'] != null) {
+                            queryParameters['inboxType'] = requestParameters['inboxType'];
                         }
-                        if (requestParameters.description !== undefined) {
-                            queryParameters['description'] = requestParameters.description;
+                        if (requestParameters['description'] != null) {
+                            queryParameters['description'] = requestParameters['description'];
                         }
-                        if (requestParameters.name !== undefined) {
-                            queryParameters['name'] = requestParameters.name;
+                        if (requestParameters['name'] != null) {
+                            queryParameters['name'] = requestParameters['name'];
                         }
-                        if (requestParameters.tags) {
-                            queryParameters['tags'] = requestParameters.tags;
+                        if (requestParameters['tags'] != null) {
+                            queryParameters['tags'] = requestParameters['tags'];
                         }
-                        if (requestParameters.favourite !== undefined) {
-                            queryParameters['favourite'] = requestParameters.favourite;
+                        if (requestParameters['favourite'] != null) {
+                            queryParameters['favourite'] = requestParameters['favourite'];
                         }
-                        if (requestParameters.virtualInbox !== undefined) {
-                            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+                        if (requestParameters['virtualInbox'] != null) {
+                            queryParameters['virtualInbox'] = requestParameters['virtualInbox'];
                         }
-                        if (requestParameters.useShortAddress !== undefined) {
-                            queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+                        if (requestParameters['useShortAddress'] != null) {
+                            queryParameters['useShortAddress'] = requestParameters['useShortAddress'];
                         }
-                        if (requestParameters.domainName !== undefined) {
-                            queryParameters['domainName'] = requestParameters.domainName;
+                        if (requestParameters['domainName'] != null) {
+                            queryParameters['domainName'] = requestParameters['domainName'];
                         }
-                        if (requestParameters.domainId !== undefined) {
-                            queryParameters['domainId'] = requestParameters.domainId;
+                        if (requestParameters['domainId'] != null) {
+                            queryParameters['domainId'] = requestParameters['domainId'];
                         }
-                        if (requestParameters.prefix !== undefined) {
-                            queryParameters['prefix'] = requestParameters.prefix;
+                        if (requestParameters['prefix'] != null) {
+                            queryParameters['prefix'] = requestParameters['prefix'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/newEmailAddress",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/newEmailAddress",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -177,9 +189,10 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    CommonActionsControllerApi.prototype.createNewEmailAddress = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    CommonActionsControllerApi.prototype.createNewEmailAddress = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.createNewEmailAddressRaw(requestParameters, initOverrides)];
@@ -197,71 +210,73 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      */
     CommonActionsControllerApi.prototype.createRandomInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.allowTeamAccess !== undefined) {
-                            queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
+                        if (requestParameters['allowTeamAccess'] != null) {
+                            queryParameters['allowTeamAccess'] = requestParameters['allowTeamAccess'];
                         }
-                        if (requestParameters.useDomainPool !== undefined) {
-                            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+                        if (requestParameters['useDomainPool'] != null) {
+                            queryParameters['useDomainPool'] = requestParameters['useDomainPool'];
                         }
-                        if (requestParameters.expiresAt !== undefined) {
-                            queryParameters['expiresAt'] = requestParameters.expiresAt.toISOString();
+                        if (requestParameters['expiresAt'] != null) {
+                            queryParameters['expiresAt'] = requestParameters['expiresAt'].toISOString();
                         }
-                        if (requestParameters.expiresIn !== undefined) {
-                            queryParameters['expiresIn'] = requestParameters.expiresIn;
+                        if (requestParameters['expiresIn'] != null) {
+                            queryParameters['expiresIn'] = requestParameters['expiresIn'];
                         }
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        if (requestParameters['emailAddress'] != null) {
+                            queryParameters['emailAddress'] = requestParameters['emailAddress'];
                         }
-                        if (requestParameters.inboxType !== undefined) {
-                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        if (requestParameters['inboxType'] != null) {
+                            queryParameters['inboxType'] = requestParameters['inboxType'];
                         }
-                        if (requestParameters.description !== undefined) {
-                            queryParameters['description'] = requestParameters.description;
+                        if (requestParameters['description'] != null) {
+                            queryParameters['description'] = requestParameters['description'];
                         }
-                        if (requestParameters.name !== undefined) {
-                            queryParameters['name'] = requestParameters.name;
+                        if (requestParameters['name'] != null) {
+                            queryParameters['name'] = requestParameters['name'];
                         }
-                        if (requestParameters.tags) {
-                            queryParameters['tags'] = requestParameters.tags;
+                        if (requestParameters['tags'] != null) {
+                            queryParameters['tags'] = requestParameters['tags'];
                         }
-                        if (requestParameters.favourite !== undefined) {
-                            queryParameters['favourite'] = requestParameters.favourite;
+                        if (requestParameters['favourite'] != null) {
+                            queryParameters['favourite'] = requestParameters['favourite'];
                         }
-                        if (requestParameters.virtualInbox !== undefined) {
-                            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+                        if (requestParameters['virtualInbox'] != null) {
+                            queryParameters['virtualInbox'] = requestParameters['virtualInbox'];
                         }
-                        if (requestParameters.useShortAddress !== undefined) {
-                            queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+                        if (requestParameters['useShortAddress'] != null) {
+                            queryParameters['useShortAddress'] = requestParameters['useShortAddress'];
                         }
-                        if (requestParameters.domainName !== undefined) {
-                            queryParameters['domainName'] = requestParameters.domainName;
+                        if (requestParameters['domainName'] != null) {
+                            queryParameters['domainName'] = requestParameters['domainName'];
                         }
-                        if (requestParameters.domainId !== undefined) {
-                            queryParameters['domainId'] = requestParameters.domainId;
+                        if (requestParameters['domainId'] != null) {
+                            queryParameters['domainId'] = requestParameters['domainId'];
                         }
-                        if (requestParameters.prefix !== undefined) {
-                            queryParameters['prefix'] = requestParameters.prefix;
+                        if (requestParameters['prefix'] != null) {
+                            queryParameters['prefix'] = requestParameters['prefix'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/createInbox",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/createInbox",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -270,9 +285,10 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    CommonActionsControllerApi.prototype.createRandomInbox = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    CommonActionsControllerApi.prototype.createRandomInbox = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.createRandomInboxRaw(requestParameters, initOverrides)];
@@ -290,30 +306,33 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      */
     CommonActionsControllerApi.prototype.deleteEmailAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling deleteEmailAddress.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling deleteEmailAddress().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/deleteEmailAddress",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/deleteEmailAddress",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -341,30 +360,33 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      */
     CommonActionsControllerApi.prototype.emptyInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling emptyInbox.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling emptyInbox().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emptyInbox",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emptyInbox",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -392,38 +414,42 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      */
     CommonActionsControllerApi.prototype.sendEmailQueryRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.to === null || requestParameters.to === undefined) {
-                            throw new runtime.RequiredError('to', 'Required parameter requestParameters.to was null or undefined when calling sendEmailQuery.');
+                        if (requestParameters['to'] == null) {
+                            throw new runtime.RequiredError('to', 'Required parameter "to" was null or undefined when calling sendEmailQuery().');
                         }
                         queryParameters = {};
-                        if (requestParameters.senderId !== undefined) {
-                            queryParameters['senderId'] = requestParameters.senderId;
+                        if (requestParameters['senderId'] != null) {
+                            queryParameters['senderId'] = requestParameters['senderId'];
                         }
-                        if (requestParameters.to !== undefined) {
-                            queryParameters['to'] = requestParameters.to;
+                        if (requestParameters['to'] != null) {
+                            queryParameters['to'] = requestParameters['to'];
                         }
-                        if (requestParameters.body !== undefined) {
-                            queryParameters['body'] = requestParameters.body;
+                        if (requestParameters['body'] != null) {
+                            queryParameters['body'] = requestParameters['body'];
                         }
-                        if (requestParameters.subject !== undefined) {
-                            queryParameters['subject'] = requestParameters.subject;
+                        if (requestParameters['subject'] != null) {
+                            queryParameters['subject'] = requestParameters['subject'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sendEmailQuery",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sendEmailQuery",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -451,29 +477,32 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      */
     CommonActionsControllerApi.prototype.sendEmailSimpleRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.simpleSendEmailOptions === null ||
-                            requestParameters.simpleSendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('simpleSendEmailOptions', 'Required parameter requestParameters.simpleSendEmailOptions was null or undefined when calling sendEmailSimple.');
+                        if (requestParameters['simpleSendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('simpleSendEmailOptions', 'Required parameter "simpleSendEmailOptions" was null or undefined when calling sendEmailSimple().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sendEmail",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SimpleSendEmailOptionsToJSON)(requestParameters.simpleSendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/sendEmail",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SimpleSendEmailOptionsToJSON)(requestParameters['simpleSendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -500,19 +529,15 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
 exports.CommonActionsControllerApi = CommonActionsControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var CreateNewEmailAddressInboxTypeEnum;
-(function (CreateNewEmailAddressInboxTypeEnum) {
-    CreateNewEmailAddressInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    CreateNewEmailAddressInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(CreateNewEmailAddressInboxTypeEnum = exports.CreateNewEmailAddressInboxTypeEnum || (exports.CreateNewEmailAddressInboxTypeEnum = {}));
+exports.CreateNewEmailAddressInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var CreateRandomInboxInboxTypeEnum;
-(function (CreateRandomInboxInboxTypeEnum) {
-    CreateRandomInboxInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    CreateRandomInboxInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(CreateRandomInboxInboxTypeEnum = exports.CreateRandomInboxInboxTypeEnum || (exports.CreateRandomInboxInboxTypeEnum = {}));
+exports.CreateRandomInboxInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};

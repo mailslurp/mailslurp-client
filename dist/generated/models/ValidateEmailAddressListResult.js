@@ -13,33 +13,47 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidateEmailAddressListResultToJSON = exports.ValidateEmailAddressListResultFromJSONTyped = exports.ValidateEmailAddressListResultFromJSON = void 0;
+exports.instanceOfValidateEmailAddressListResult = instanceOfValidateEmailAddressListResult;
+exports.ValidateEmailAddressListResultFromJSON = ValidateEmailAddressListResultFromJSON;
+exports.ValidateEmailAddressListResultFromJSONTyped = ValidateEmailAddressListResultFromJSONTyped;
+exports.ValidateEmailAddressListResultToJSON = ValidateEmailAddressListResultToJSON;
+exports.ValidateEmailAddressListResultToJSONTyped = ValidateEmailAddressListResultToJSONTyped;
+/**
+ * Check if a given object implements the ValidateEmailAddressListResult interface.
+ */
+function instanceOfValidateEmailAddressListResult(value) {
+    if (!('validEmailAddresses' in value) || value['validEmailAddresses'] === undefined)
+        return false;
+    if (!('invalidEmailAddresses' in value) || value['invalidEmailAddresses'] === undefined)
+        return false;
+    if (!('resultMapEmailAddressIsValid' in value) || value['resultMapEmailAddressIsValid'] === undefined)
+        return false;
+    return true;
+}
 function ValidateEmailAddressListResultFromJSON(json) {
     return ValidateEmailAddressListResultFromJSONTyped(json, false);
 }
-exports.ValidateEmailAddressListResultFromJSON = ValidateEmailAddressListResultFromJSON;
 function ValidateEmailAddressListResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        validEmailAddresses: json['validEmailAddresses'],
-        invalidEmailAddresses: json['invalidEmailAddresses'],
-        resultMapEmailAddressIsValid: json['resultMapEmailAddressIsValid'],
+        'validEmailAddresses': json['validEmailAddresses'],
+        'invalidEmailAddresses': json['invalidEmailAddresses'],
+        'resultMapEmailAddressIsValid': json['resultMapEmailAddressIsValid'],
     };
 }
-exports.ValidateEmailAddressListResultFromJSONTyped = ValidateEmailAddressListResultFromJSONTyped;
-function ValidateEmailAddressListResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ValidateEmailAddressListResultToJSON(json) {
+    return ValidateEmailAddressListResultToJSONTyped(json, false);
+}
+function ValidateEmailAddressListResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        validEmailAddresses: value.validEmailAddresses,
-        invalidEmailAddresses: value.invalidEmailAddresses,
-        resultMapEmailAddressIsValid: value.resultMapEmailAddressIsValid,
+        'validEmailAddresses': value['validEmailAddresses'],
+        'invalidEmailAddresses': value['invalidEmailAddresses'],
+        'resultMapEmailAddressIsValid': value['resultMapEmailAddressIsValid'],
     };
 }
-exports.ValidateEmailAddressListResultToJSON = ValidateEmailAddressListResultToJSON;

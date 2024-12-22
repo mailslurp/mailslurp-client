@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DNSLookupOptions, DNSLookupResult } from './';
+import type { DNSLookupResult } from './DNSLookupResult';
+import type { DNSLookupOptions } from './DNSLookupOptions';
 /**
  *
  * @export
@@ -47,6 +48,11 @@ export interface LookupTlsReportingDomainResults {
      */
     warnings: Array<string>;
 }
+/**
+ * Check if a given object implements the LookupTlsReportingDomainResults interface.
+ */
+export declare function instanceOfLookupTlsReportingDomainResults(value: object): value is LookupTlsReportingDomainResults;
 export declare function LookupTlsReportingDomainResultsFromJSON(json: any): LookupTlsReportingDomainResults;
 export declare function LookupTlsReportingDomainResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupTlsReportingDomainResults;
-export declare function LookupTlsReportingDomainResultsToJSON(value?: LookupTlsReportingDomainResults | null): any;
+export declare function LookupTlsReportingDomainResultsToJSON(json: any): LookupTlsReportingDomainResults;
+export declare function LookupTlsReportingDomainResultsToJSONTyped(value?: LookupTlsReportingDomainResults | null, ignoreDiscriminator?: boolean): any;

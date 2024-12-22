@@ -60,28 +60,33 @@ export interface InboxRulesetDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxRulesetDtoScopeEnum {
-    RECEIVING_EMAILS = "RECEIVING_EMAILS",
-    SENDING_EMAILS = "SENDING_EMAILS"
-}
+export declare const InboxRulesetDtoScopeEnum: {
+    readonly RECEIVING_EMAILS: "RECEIVING_EMAILS";
+    readonly SENDING_EMAILS: "SENDING_EMAILS";
+};
+export type InboxRulesetDtoScopeEnum = typeof InboxRulesetDtoScopeEnum[keyof typeof InboxRulesetDtoScopeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxRulesetDtoActionEnum {
-    BLOCK = "BLOCK",
-    ALLOW = "ALLOW",
-    FILTER_REMOVE = "FILTER_REMOVE"
-}
+export declare const InboxRulesetDtoActionEnum: {
+    readonly BLOCK: "BLOCK";
+    readonly ALLOW: "ALLOW";
+    readonly FILTER_REMOVE: "FILTER_REMOVE";
+};
+export type InboxRulesetDtoActionEnum = typeof InboxRulesetDtoActionEnum[keyof typeof InboxRulesetDtoActionEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxRulesetDtoHandlerEnum {
-    EXCEPTION = "EXCEPTION"
-}
+export declare const InboxRulesetDtoHandlerEnum: {
+    readonly EXCEPTION: "EXCEPTION";
+};
+export type InboxRulesetDtoHandlerEnum = typeof InboxRulesetDtoHandlerEnum[keyof typeof InboxRulesetDtoHandlerEnum];
+/**
+ * Check if a given object implements the InboxRulesetDto interface.
+ */
+export declare function instanceOfInboxRulesetDto(value: object): value is InboxRulesetDto;
 export declare function InboxRulesetDtoFromJSON(json: any): InboxRulesetDto;
 export declare function InboxRulesetDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRulesetDto;
-export declare function InboxRulesetDtoToJSON(value?: InboxRulesetDto | null): any;
+export declare function InboxRulesetDtoToJSON(json: any): InboxRulesetDto;
+export declare function InboxRulesetDtoToJSONTyped(value?: InboxRulesetDto | null, ignoreDiscriminator?: boolean): any;

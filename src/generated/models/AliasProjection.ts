@@ -12,101 +12,116 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Representation of a alias
  * @export
  * @interface AliasProjection
  */
 export interface AliasProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof AliasProjection
-   */
-  useThreads?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AliasProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AliasProjection
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AliasProjection
+     */
+    useThreads?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    id: string;
+}
+
+/**
+ * Check if a given object implements the AliasProjection interface.
+ */
+export function instanceOfAliasProjection(value: object): value is AliasProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function AliasProjectionFromJSON(json: any): AliasProjection {
-  return AliasProjectionFromJSONTyped(json, false);
+    return AliasProjectionFromJSONTyped(json, false);
 }
 
-export function AliasProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AliasProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    inboxId: json['inboxId'],
-    userId: json['userId'],
-    emailAddress: json['emailAddress'],
-    useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'inboxId': json['inboxId'],
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'],
+        'useThreads': json['useThreads'] == null ? undefined : json['useThreads'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
 
-export function AliasProjectionToJSON(value?: AliasProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    inboxId: value.inboxId,
-    userId: value.userId,
-    emailAddress: value.emailAddress,
-    useThreads: value.useThreads,
-    name: value.name,
-    id: value.id,
-  };
+export function AliasProjectionToJSON(json: any): AliasProjection {
+    return AliasProjectionToJSONTyped(json, false);
 }
+
+export function AliasProjectionToJSONTyped(value?: AliasProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'useThreads': value['useThreads'],
+        'name': value['name'],
+        'id': value['id'],
+    };
+}
+

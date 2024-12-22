@@ -13,51 +13,63 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookTestRequestToJSON = exports.WebhookTestRequestFromJSONTyped = exports.WebhookTestRequestFromJSON = exports.WebhookTestRequestMethodEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.WebhookTestRequestMethodEnum = void 0;
+exports.instanceOfWebhookTestRequest = instanceOfWebhookTestRequest;
+exports.WebhookTestRequestFromJSON = WebhookTestRequestFromJSON;
+exports.WebhookTestRequestFromJSONTyped = WebhookTestRequestFromJSONTyped;
+exports.WebhookTestRequestToJSON = WebhookTestRequestToJSON;
+exports.WebhookTestRequestToJSONTyped = WebhookTestRequestToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var WebhookTestRequestMethodEnum;
-(function (WebhookTestRequestMethodEnum) {
-    WebhookTestRequestMethodEnum["POST"] = "POST";
-    WebhookTestRequestMethodEnum["DELETE"] = "DELETE";
-    WebhookTestRequestMethodEnum["GET"] = "GET";
-    WebhookTestRequestMethodEnum["PUT"] = "PUT";
-    WebhookTestRequestMethodEnum["PATCH"] = "PATCH";
-    WebhookTestRequestMethodEnum["HEAD"] = "HEAD";
-    WebhookTestRequestMethodEnum["OPTIONS"] = "OPTIONS";
-    WebhookTestRequestMethodEnum["TRACE"] = "TRACE";
-})(WebhookTestRequestMethodEnum = exports.WebhookTestRequestMethodEnum || (exports.WebhookTestRequestMethodEnum = {}));
+exports.WebhookTestRequestMethodEnum = {
+    POST: 'POST',
+    DELETE: 'DELETE',
+    GET: 'GET',
+    PUT: 'PUT',
+    PATCH: 'PATCH',
+    HEAD: 'HEAD',
+    OPTIONS: 'OPTIONS',
+    TRACE: 'TRACE'
+};
+/**
+ * Check if a given object implements the WebhookTestRequest interface.
+ */
+function instanceOfWebhookTestRequest(value) {
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    if (!('method' in value) || value['method'] === undefined)
+        return false;
+    if (!('headers' in value) || value['headers'] === undefined)
+        return false;
+    return true;
+}
 function WebhookTestRequestFromJSON(json) {
     return WebhookTestRequestFromJSONTyped(json, false);
 }
-exports.WebhookTestRequestFromJSON = WebhookTestRequestFromJSON;
 function WebhookTestRequestFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        url: json['url'],
-        method: json['method'],
-        headers: json['headers'],
-        payload: !(0, runtime_1.exists)(json, 'payload') ? undefined : json['payload'],
+        'url': json['url'],
+        'method': json['method'],
+        'headers': json['headers'],
+        'payload': json['payload'] == null ? undefined : json['payload'],
     };
 }
-exports.WebhookTestRequestFromJSONTyped = WebhookTestRequestFromJSONTyped;
-function WebhookTestRequestToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookTestRequestToJSON(json) {
+    return WebhookTestRequestToJSONTyped(json, false);
+}
+function WebhookTestRequestToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        url: value.url,
-        method: value.method,
-        headers: value.headers,
-        payload: value.payload,
+        'url': value['url'],
+        'method': value['method'],
+        'headers': value['headers'],
+        'payload': value['payload'],
     };
 }
-exports.WebhookTestRequestToJSON = WebhookTestRequestToJSON;

@@ -12,25 +12,17 @@ SortObject
 
 ### Properties
 
-- [empty](SortObject.md#empty)
-- [sorted](SortObject.md#sorted)
-- [unsorted](SortObject.md#unsorted)
+- [ascending](SortObject.md#ascending)
+- [direction](SortObject.md#direction)
+- [ignoreCase](SortObject.md#ignorecase)
+- [nullHandling](SortObject.md#nullhandling)
+- [property](SortObject.md#property)
 
 ## Properties
 
-### empty
+### ascending
 
-• `Optional` **empty**: `boolean`
-
-**`Memberof`**
-
-SortObject
-
-___
-
-### sorted
-
-• `Optional` **sorted**: `boolean`
+• `Optional` **ascending**: `boolean`
 
 **`Memberof`**
 
@@ -38,9 +30,39 @@ SortObject
 
 ___
 
-### unsorted
+### direction
 
-• `Optional` **unsorted**: `boolean`
+• `Optional` **direction**: `string`
+
+**`Memberof`**
+
+SortObject
+
+___
+
+### ignoreCase
+
+• `Optional` **ignoreCase**: `boolean`
+
+**`Memberof`**
+
+SortObject
+
+___
+
+### nullHandling
+
+• `Optional` **nullHandling**: `string`
+
+**`Memberof`**
+
+SortObject
+
+___
+
+### property
+
+• `Optional` **property**: `string`
 
 **`Memberof`**
 

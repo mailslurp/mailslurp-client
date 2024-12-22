@@ -13,47 +13,64 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberProjectionToJSON = exports.PhoneNumberProjectionFromJSONTyped = exports.PhoneNumberProjectionFromJSON = exports.PhoneNumberProjectionPhoneCountryEnum = void 0;
+exports.PhoneNumberProjectionPhoneCountryEnum = void 0;
+exports.instanceOfPhoneNumberProjection = instanceOfPhoneNumberProjection;
+exports.PhoneNumberProjectionFromJSON = PhoneNumberProjectionFromJSON;
+exports.PhoneNumberProjectionFromJSONTyped = PhoneNumberProjectionFromJSONTyped;
+exports.PhoneNumberProjectionToJSON = PhoneNumberProjectionToJSON;
+exports.PhoneNumberProjectionToJSONTyped = PhoneNumberProjectionToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var PhoneNumberProjectionPhoneCountryEnum;
-(function (PhoneNumberProjectionPhoneCountryEnum) {
-    PhoneNumberProjectionPhoneCountryEnum["US"] = "US";
-    PhoneNumberProjectionPhoneCountryEnum["GB"] = "GB";
-    PhoneNumberProjectionPhoneCountryEnum["AU"] = "AU";
-})(PhoneNumberProjectionPhoneCountryEnum = exports.PhoneNumberProjectionPhoneCountryEnum || (exports.PhoneNumberProjectionPhoneCountryEnum = {}));
+exports.PhoneNumberProjectionPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+};
+/**
+ * Check if a given object implements the PhoneNumberProjection interface.
+ */
+function instanceOfPhoneNumberProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined)
+        return false;
+    if (!('phoneCountry' in value) || value['phoneCountry'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function PhoneNumberProjectionFromJSON(json) {
     return PhoneNumberProjectionFromJSONTyped(json, false);
 }
-exports.PhoneNumberProjectionFromJSON = PhoneNumberProjectionFromJSON;
 function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        userId: json['userId'],
-        phoneNumber: json['phoneNumber'],
-        phoneCountry: json['phoneCountry'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'phoneCountry': json['phoneCountry'],
+        'id': json['id'],
     };
 }
-exports.PhoneNumberProjectionFromJSONTyped = PhoneNumberProjectionFromJSONTyped;
-function PhoneNumberProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function PhoneNumberProjectionToJSON(json) {
+    return PhoneNumberProjectionToJSONTyped(json, false);
+}
+function PhoneNumberProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        userId: value.userId,
-        phoneNumber: value.phoneNumber,
-        phoneCountry: value.phoneCountry,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'userId': value['userId'],
+        'phoneNumber': value['phoneNumber'],
+        'phoneCountry': value['phoneCountry'],
+        'id': value['id'],
     };
 }
-exports.PhoneNumberProjectionToJSON = PhoneNumberProjectionToJSON;

@@ -13,46 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ComplaintToJSON = exports.ComplaintFromJSONTyped = exports.ComplaintFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfComplaint = instanceOfComplaint;
+exports.ComplaintFromJSON = ComplaintFromJSON;
+exports.ComplaintFromJSONTyped = ComplaintFromJSONTyped;
+exports.ComplaintToJSON = ComplaintToJSON;
+exports.ComplaintToJSONTyped = ComplaintToJSONTyped;
+/**
+ * Check if a given object implements the Complaint interface.
+ */
+function instanceOfComplaint(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('complaintRecipient' in value) || value['complaintRecipient'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    return true;
+}
 function ComplaintFromJSON(json) {
     return ComplaintFromJSONTyped(json, false);
 }
-exports.ComplaintFromJSON = ComplaintFromJSON;
 function ComplaintFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        eventType: !(0, runtime_1.exists)(json, 'eventType') ? undefined : json['eventType'],
-        mailSource: !(0, runtime_1.exists)(json, 'mailSource') ? undefined : json['mailSource'],
-        mailMessageId: !(0, runtime_1.exists)(json, 'mailMessageId')
-            ? undefined
-            : json['mailMessageId'],
-        complaintRecipient: json['complaintRecipient'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'eventType': json['eventType'] == null ? undefined : json['eventType'],
+        'mailSource': json['mailSource'] == null ? undefined : json['mailSource'],
+        'mailMessageId': json['mailMessageId'] == null ? undefined : json['mailMessageId'],
+        'complaintRecipient': json['complaintRecipient'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
-exports.ComplaintFromJSONTyped = ComplaintFromJSONTyped;
-function ComplaintToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ComplaintToJSON(json) {
+    return ComplaintToJSONTyped(json, false);
+}
+function ComplaintToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        eventType: value.eventType,
-        mailSource: value.mailSource,
-        mailMessageId: value.mailMessageId,
-        complaintRecipient: value.complaintRecipient,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'eventType': value['eventType'],
+        'mailSource': value['mailSource'],
+        'mailMessageId': value['mailMessageId'],
+        'complaintRecipient': value['complaintRecipient'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
     };
 }
-exports.ComplaintToJSON = ComplaintToJSON;

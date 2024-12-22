@@ -19,6 +19,7 @@ AttachmentProjection
 - [contentLength](AttachmentProjection.md#contentlength)
 - [contentType](AttachmentProjection.md#contenttype)
 - [createdAt](AttachmentProjection.md#createdat)
+- [id](AttachmentProjection.md#id)
 - [name](AttachmentProjection.md#name)
 - [updatedAt](AttachmentProjection.md#updatedat)
 - [userId](AttachmentProjection.md#userid)
@@ -76,6 +77,18 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+AttachmentProjection
+
+___
+
+### id
+
+• **id**: `string`
+
+ID
 
 **`Memberof`**
 

@@ -34,6 +34,11 @@ export interface ExpiredInboxDto {
      */
     emailAddress: string;
 }
+/**
+ * Check if a given object implements the ExpiredInboxDto interface.
+ */
+export declare function instanceOfExpiredInboxDto(value: object): value is ExpiredInboxDto;
 export declare function ExpiredInboxDtoFromJSON(json: any): ExpiredInboxDto;
 export declare function ExpiredInboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxDto;
-export declare function ExpiredInboxDtoToJSON(value?: ExpiredInboxDto | null): any;
+export declare function ExpiredInboxDtoToJSON(json: any): ExpiredInboxDto;
+export declare function ExpiredInboxDtoToJSONTyped(value?: ExpiredInboxDto | null, ignoreDiscriminator?: boolean): any;

@@ -12,53 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Links found in HTML
  * @export
  * @interface EmailLinksResult
  */
 export interface EmailLinksResult {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailLinksResult
-   */
-  links: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailLinksResult
-   */
-  body: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof EmailLinksResult
+     */
+    links: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailLinksResult
+     */
+    body: string;
+}
+
+/**
+ * Check if a given object implements the EmailLinksResult interface.
+ */
+export function instanceOfEmailLinksResult(value: object): value is EmailLinksResult {
+    if (!('links' in value) || value['links'] === undefined) return false;
+    if (!('body' in value) || value['body'] === undefined) return false;
+    return true;
 }
 
 export function EmailLinksResultFromJSON(json: any): EmailLinksResult {
-  return EmailLinksResultFromJSONTyped(json, false);
+    return EmailLinksResultFromJSONTyped(json, false);
 }
 
-export function EmailLinksResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailLinksResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    links: json['links'],
-    body: json['body'],
-  };
+export function EmailLinksResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailLinksResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'links': json['links'],
+        'body': json['body'],
+    };
 }
 
-export function EmailLinksResultToJSON(value?: EmailLinksResult | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    links: value.links,
-    body: value.body,
-  };
+export function EmailLinksResultToJSON(json: any): EmailLinksResult {
+    return EmailLinksResultToJSONTyped(json, false);
 }
+
+export function EmailLinksResultToJSONTyped(value?: EmailLinksResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'links': value['links'],
+        'body': value['body'],
+    };
+}
+

@@ -12,81 +12,86 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or dynamic error message
  * @export
  * @interface EmailAnalysis
  */
 export interface EmailAnalysis {
-  /**
-   * Verdict of spam ranking analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  spamVerdict?: string | null;
-  /**
-   * Verdict of virus scan analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  virusVerdict?: string | null;
-  /**
-   * Verdict of Send Policy Framework record spoofing analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  spfVerdict?: string | null;
-  /**
-   * Verdict of DomainKeys Identified Mail analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  dkimVerdict?: string | null;
-  /**
-   * Verdict of Domain-based Message Authentication Reporting and Conformance analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  dmarcVerdict?: string | null;
+    /**
+     * Verdict of spam ranking analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    spamVerdict?: string | null;
+    /**
+     * Verdict of virus scan analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    virusVerdict?: string | null;
+    /**
+     * Verdict of Send Policy Framework record spoofing analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    spfVerdict?: string | null;
+    /**
+     * Verdict of DomainKeys Identified Mail analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    dkimVerdict?: string | null;
+    /**
+     * Verdict of Domain-based Message Authentication Reporting and Conformance analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    dmarcVerdict?: string | null;
+}
+
+/**
+ * Check if a given object implements the EmailAnalysis interface.
+ */
+export function instanceOfEmailAnalysis(value: object): value is EmailAnalysis {
+    return true;
 }
 
 export function EmailAnalysisFromJSON(json: any): EmailAnalysis {
-  return EmailAnalysisFromJSONTyped(json, false);
+    return EmailAnalysisFromJSONTyped(json, false);
 }
 
-export function EmailAnalysisFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailAnalysis {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    spamVerdict: !exists(json, 'spamVerdict') ? undefined : json['spamVerdict'],
-    virusVerdict: !exists(json, 'virusVerdict')
-      ? undefined
-      : json['virusVerdict'],
-    spfVerdict: !exists(json, 'spfVerdict') ? undefined : json['spfVerdict'],
-    dkimVerdict: !exists(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
-    dmarcVerdict: !exists(json, 'dmarcVerdict')
-      ? undefined
-      : json['dmarcVerdict'],
-  };
+export function EmailAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailAnalysis {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'spamVerdict': json['spamVerdict'] == null ? undefined : json['spamVerdict'],
+        'virusVerdict': json['virusVerdict'] == null ? undefined : json['virusVerdict'],
+        'spfVerdict': json['spfVerdict'] == null ? undefined : json['spfVerdict'],
+        'dkimVerdict': json['dkimVerdict'] == null ? undefined : json['dkimVerdict'],
+        'dmarcVerdict': json['dmarcVerdict'] == null ? undefined : json['dmarcVerdict'],
+    };
 }
 
-export function EmailAnalysisToJSON(value?: EmailAnalysis | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    spamVerdict: value.spamVerdict,
-    virusVerdict: value.virusVerdict,
-    spfVerdict: value.spfVerdict,
-    dkimVerdict: value.dkimVerdict,
-    dmarcVerdict: value.dmarcVerdict,
-  };
+export function EmailAnalysisToJSON(json: any): EmailAnalysis {
+    return EmailAnalysisToJSONTyped(json, false);
 }
+
+export function EmailAnalysisToJSONTyped(value?: EmailAnalysis | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'spamVerdict': value['spamVerdict'],
+        'virusVerdict': value['virusVerdict'],
+        'spfVerdict': value['spfVerdict'],
+        'dkimVerdict': value['dkimVerdict'],
+        'dmarcVerdict': value['dmarcVerdict'],
+    };
+}
+

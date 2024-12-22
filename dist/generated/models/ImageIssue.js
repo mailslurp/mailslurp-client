@@ -13,47 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImageIssueToJSON = exports.ImageIssueFromJSONTyped = exports.ImageIssueFromJSON = exports.ImageIssueSeverityEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.ImageIssueSeverityEnum = void 0;
+exports.instanceOfImageIssue = instanceOfImageIssue;
+exports.ImageIssueFromJSON = ImageIssueFromJSON;
+exports.ImageIssueFromJSONTyped = ImageIssueFromJSONTyped;
+exports.ImageIssueToJSON = ImageIssueToJSON;
+exports.ImageIssueToJSONTyped = ImageIssueToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var ImageIssueSeverityEnum;
-(function (ImageIssueSeverityEnum) {
-    ImageIssueSeverityEnum["Warning"] = "Warning";
-    ImageIssueSeverityEnum["Error"] = "Error";
-})(ImageIssueSeverityEnum = exports.ImageIssueSeverityEnum || (exports.ImageIssueSeverityEnum = {}));
+exports.ImageIssueSeverityEnum = {
+    Warning: 'Warning',
+    Error: 'Error'
+};
+/**
+ * Check if a given object implements the ImageIssue interface.
+ */
+function instanceOfImageIssue(value) {
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    if (!('severity' in value) || value['severity'] === undefined)
+        return false;
+    if (!('message' in value) || value['message'] === undefined)
+        return false;
+    return true;
+}
 function ImageIssueFromJSON(json) {
     return ImageIssueFromJSONTyped(json, false);
 }
-exports.ImageIssueFromJSON = ImageIssueFromJSON;
 function ImageIssueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        url: json['url'],
-        responseStatus: !(0, runtime_1.exists)(json, 'responseStatus')
-            ? undefined
-            : json['responseStatus'],
-        severity: json['severity'],
-        message: json['message'],
+        'url': json['url'],
+        'responseStatus': json['responseStatus'] == null ? undefined : json['responseStatus'],
+        'severity': json['severity'],
+        'message': json['message'],
     };
 }
-exports.ImageIssueFromJSONTyped = ImageIssueFromJSONTyped;
-function ImageIssueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImageIssueToJSON(json) {
+    return ImageIssueToJSONTyped(json, false);
+}
+function ImageIssueToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        url: value.url,
-        responseStatus: value.responseStatus,
-        severity: value.severity,
-        message: value.message,
+        'url': value['url'],
+        'responseStatus': value['responseStatus'],
+        'severity': value['severity'],
+        'message': value['message'],
     };
 }
-exports.ImageIssueToJSON = ImageIssueToJSON;

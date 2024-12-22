@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DomainGroup } from './';
+import type { DomainGroup } from './DomainGroup';
 /**
  *
  * @export
@@ -23,6 +23,11 @@ export interface DomainGroupsDto {
      */
     domainGroups: Array<DomainGroup>;
 }
+/**
+ * Check if a given object implements the DomainGroupsDto interface.
+ */
+export declare function instanceOfDomainGroupsDto(value: object): value is DomainGroupsDto;
 export declare function DomainGroupsDtoFromJSON(json: any): DomainGroupsDto;
 export declare function DomainGroupsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainGroupsDto;
-export declare function DomainGroupsDtoToJSON(value?: DomainGroupsDto | null): any;
+export declare function DomainGroupsDtoToJSON(json: any): DomainGroupsDto;
+export declare function DomainGroupsDtoToJSONTyped(value?: DomainGroupsDto | null, ignoreDiscriminator?: boolean): any;

@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { WebhookTestRequest, WebhookTestResponse } from './';
+import type { WebhookTestRequest } from './WebhookTestRequest';
+import type { WebhookTestResponse } from './WebhookTestResponse';
 /**
  * Results of testing a webhook
  * @export
@@ -35,6 +36,11 @@ export interface WebhookTestResult {
      */
     request: WebhookTestRequest;
 }
+/**
+ * Check if a given object implements the WebhookTestResult interface.
+ */
+export declare function instanceOfWebhookTestResult(value: object): value is WebhookTestResult;
 export declare function WebhookTestResultFromJSON(json: any): WebhookTestResult;
 export declare function WebhookTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestResult;
-export declare function WebhookTestResultToJSON(value?: WebhookTestResult | null): any;
+export declare function WebhookTestResultToJSON(json: any): WebhookTestResult;
+export declare function WebhookTestResultToJSONTyped(value?: WebhookTestResult | null, ignoreDiscriminator?: boolean): any;

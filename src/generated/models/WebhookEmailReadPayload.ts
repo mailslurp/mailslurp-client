@@ -12,122 +12,137 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * EMAIL_READ webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is read. This happens when an email is requested in full from the API or a user views the email in the dashboard.
  * @export
  * @interface WebhookEmailReadPayload
  */
 export interface WebhookEmailReadPayload {
-  /**
-   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-   * @type {string}
-   * @memberof WebhookEmailReadPayload
-   */
-  messageId: string;
-  /**
-   * ID of webhook entity being triggered
-   * @type {string}
-   * @memberof WebhookEmailReadPayload
-   */
-  webhookId: string;
-  /**
-   * Name of the event type webhook is being triggered for.
-   * @type {string}
-   * @memberof WebhookEmailReadPayload
-   */
-  eventName: WebhookEmailReadPayloadEventNameEnum;
-  /**
-   * Name of the webhook being triggered
-   * @type {string}
-   * @memberof WebhookEmailReadPayload
-   */
-  webhookName?: string | null;
-  /**
-   * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
-   * @type {string}
-   * @memberof WebhookEmailReadPayload
-   */
-  emailId: string;
-  /**
-   * Id of the inbox
-   * @type {string}
-   * @memberof WebhookEmailReadPayload
-   */
-  inboxId: string;
-  /**
-   * Is the email read
-   * @type {boolean}
-   * @memberof WebhookEmailReadPayload
-   */
-  emailIsRead: boolean;
-  /**
-   * Date time of event creation
-   * @type {Date}
-   * @memberof WebhookEmailReadPayload
-   */
-  createdAt: Date;
+    /**
+     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    messageId: string;
+    /**
+     * ID of webhook entity being triggered
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    webhookId: string;
+    /**
+     * Name of the event type webhook is being triggered for.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    eventName: WebhookEmailReadPayloadEventNameEnum;
+    /**
+     * Name of the webhook being triggered
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    webhookName?: string | null;
+    /**
+     * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    emailId: string;
+    /**
+     * Id of the inbox
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    inboxId: string;
+    /**
+     * Is the email read
+     * @type {boolean}
+     * @memberof WebhookEmailReadPayload
+     */
+    emailIsRead: boolean;
+    /**
+     * Date time of event creation
+     * @type {Date}
+     * @memberof WebhookEmailReadPayload
+     */
+    createdAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookEmailReadPayloadEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
+export const WebhookEmailReadPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+} as const;
+export type WebhookEmailReadPayloadEventNameEnum = typeof WebhookEmailReadPayloadEventNameEnum[keyof typeof WebhookEmailReadPayloadEventNameEnum];
+
+
+/**
+ * Check if a given object implements the WebhookEmailReadPayload interface.
+ */
+export function instanceOfWebhookEmailReadPayload(value: object): value is WebhookEmailReadPayload {
+    if (!('messageId' in value) || value['messageId'] === undefined) return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined) return false;
+    if (!('eventName' in value) || value['eventName'] === undefined) return false;
+    if (!('emailId' in value) || value['emailId'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('emailIsRead' in value) || value['emailIsRead'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
-export function WebhookEmailReadPayloadFromJSON(
-  json: any
-): WebhookEmailReadPayload {
-  return WebhookEmailReadPayloadFromJSONTyped(json, false);
+export function WebhookEmailReadPayloadFromJSON(json: any): WebhookEmailReadPayload {
+    return WebhookEmailReadPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookEmailReadPayloadFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookEmailReadPayload {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    messageId: json['messageId'],
-    webhookId: json['webhookId'],
-    eventName: json['eventName'],
-    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
-    emailId: json['emailId'],
-    inboxId: json['inboxId'],
-    emailIsRead: json['emailIsRead'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function WebhookEmailReadPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookEmailReadPayload {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+        'emailId': json['emailId'],
+        'inboxId': json['inboxId'],
+        'emailIsRead': json['emailIsRead'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function WebhookEmailReadPayloadToJSON(
-  value?: WebhookEmailReadPayload | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    messageId: value.messageId,
-    webhookId: value.webhookId,
-    eventName: value.eventName,
-    webhookName: value.webhookName,
-    emailId: value.emailId,
-    inboxId: value.inboxId,
-    emailIsRead: value.emailIsRead,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function WebhookEmailReadPayloadToJSON(json: any): WebhookEmailReadPayload {
+    return WebhookEmailReadPayloadToJSONTyped(json, false);
 }
+
+export function WebhookEmailReadPayloadToJSONTyped(value?: WebhookEmailReadPayload | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'eventName': value['eventName'],
+        'webhookName': value['webhookName'],
+        'emailId': value['emailId'],
+        'inboxId': value['inboxId'],
+        'emailIsRead': value['emailIsRead'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

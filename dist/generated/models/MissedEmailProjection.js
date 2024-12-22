@@ -13,38 +13,49 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MissedEmailProjectionToJSON = exports.MissedEmailProjectionFromJSONTyped = exports.MissedEmailProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfMissedEmailProjection = instanceOfMissedEmailProjection;
+exports.MissedEmailProjectionFromJSON = MissedEmailProjectionFromJSON;
+exports.MissedEmailProjectionFromJSONTyped = MissedEmailProjectionFromJSONTyped;
+exports.MissedEmailProjectionToJSON = MissedEmailProjectionToJSON;
+exports.MissedEmailProjectionToJSONTyped = MissedEmailProjectionToJSONTyped;
+/**
+ * Check if a given object implements the MissedEmailProjection interface.
+ */
+function instanceOfMissedEmailProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function MissedEmailProjectionFromJSON(json) {
     return MissedEmailProjectionFromJSONTyped(json, false);
 }
-exports.MissedEmailProjectionFromJSON = MissedEmailProjectionFromJSON;
 function MissedEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        id: json['id'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'id': json['id'],
+        'from': json['from'] == null ? undefined : json['from'],
     };
 }
-exports.MissedEmailProjectionFromJSONTyped = MissedEmailProjectionFromJSONTyped;
-function MissedEmailProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function MissedEmailProjectionToJSON(json) {
+    return MissedEmailProjectionToJSONTyped(json, false);
+}
+function MissedEmailProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        userId: value.userId,
-        subject: value.subject,
-        id: value.id,
-        from: value.from,
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'userId': value['userId'],
+        'id': value['id'],
+        'from': value['from'],
     };
 }
-exports.MissedEmailProjectionToJSON = MissedEmailProjectionToJSON;

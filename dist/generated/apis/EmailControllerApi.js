@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -87,9 +97,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum = exports.EmailControllerApi = void 0;
+exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum = exports.GetEmailThreadsSortEnum = exports.GetEmailThreadItemsSortEnum = exports.EmailControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -104,36 +114,36 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.applyImapFlagOperationRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling applyImapFlagOperation.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling applyImapFlagOperation().');
                         }
-                        if (requestParameters.imapFlagOperationOptions === null ||
-                            requestParameters.imapFlagOperationOptions === undefined) {
-                            throw new runtime.RequiredError('imapFlagOperationOptions', 'Required parameter requestParameters.imapFlagOperationOptions was null or undefined when calling applyImapFlagOperation.');
+                        if (requestParameters['imapFlagOperationOptions'] == null) {
+                            throw new runtime.RequiredError('imapFlagOperationOptions', 'Required parameter "imapFlagOperationOptions" was null or undefined when calling applyImapFlagOperation().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/imap-flag-operation".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.ImapFlagOperationOptionsToJSON)(requestParameters.imapFlagOperationOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailPreviewFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/imap-flag-operation".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.ImapFlagOperationOptionsToJSON)(requestParameters['imapFlagOperationOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailPreviewFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -162,39 +172,39 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.canSendRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling canSend.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling canSend().');
                         }
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling canSend.');
+                        if (requestParameters['sendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter "sendEmailOptions" was null or undefined when calling canSend().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/can-send",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CanSendEmailResultsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/can-send",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendEmailOptionsToJSON)(requestParameters['sendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CanSendEmailResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -223,30 +233,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.checkEmailBodyRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling checkEmailBody.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling checkEmailBody().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/check-email-body".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CheckEmailBodyResultsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/check-email-body".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CheckEmailBodyResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -275,30 +286,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.checkEmailBodyFeatureSupportRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling checkEmailBodyFeatureSupport.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling checkEmailBodyFeatureSupport().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/check-email-body-feature-support".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CheckEmailBodyFeatureSupportResultsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/check-email-body-feature-support".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CheckEmailBodyFeatureSupportResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -327,32 +339,33 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.checkEmailClientSupportRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.checkEmailClientSupportOptions === null ||
-                            requestParameters.checkEmailClientSupportOptions === undefined) {
-                            throw new runtime.RequiredError('checkEmailClientSupportOptions', 'Required parameter requestParameters.checkEmailClientSupportOptions was null or undefined when calling checkEmailClientSupport.');
+                        if (requestParameters['checkEmailClientSupportOptions'] == null) {
+                            throw new runtime.RequiredError('checkEmailClientSupportOptions', 'Required parameter "checkEmailClientSupportOptions" was null or undefined when calling checkEmailClientSupport().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/check-email-client-support",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.CheckEmailClientSupportOptionsToJSON)(requestParameters.checkEmailClientSupportOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CheckEmailClientSupportResultsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/check-email-client-support",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.CheckEmailClientSupportOptionsToJSON)(requestParameters['checkEmailClientSupportOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CheckEmailClientSupportResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -381,23 +394,27 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.deleteAllEmailsRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -425,27 +442,30 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.deleteEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling deleteEmail.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling deleteEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -473,37 +493,43 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.downloadAttachmentRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling downloadAttachment.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling downloadAttachment().');
                         }
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
-                            throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling downloadAttachment.');
+                        if (requestParameters['attachmentId'] == null) {
+                            throw new runtime.RequiredError('attachmentId', 'Required parameter "attachmentId" was null or undefined when calling downloadAttachment().');
                         }
                         queryParameters = {};
-                        if (requestParameters.apiKey !== undefined) {
-                            queryParameters['apiKey'] = requestParameters.apiKey;
+                        if (requestParameters['apiKey'] != null) {
+                            queryParameters['apiKey'] = requestParameters['apiKey'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/attachments/{attachmentId}"
-                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId)))
-                                    .replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/attachments/{attachmentId}".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))).replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters['attachmentId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        if (this.isJsonMime(response.headers.get('content-type'))) {
+                            return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        }
+                        else {
+                            return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
@@ -532,36 +558,34 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.downloadAttachmentBase64Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling downloadAttachmentBase64.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling downloadAttachmentBase64().');
                         }
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
-                            throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling downloadAttachmentBase64.');
+                        if (requestParameters['attachmentId'] == null) {
+                            throw new runtime.RequiredError('attachmentId', 'Required parameter "attachmentId" was null or undefined when calling downloadAttachmentBase64().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/attachments/{attachmentId}/base64"
-                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId)))
-                                    .replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.DownloadAttachmentDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/attachments/{attachmentId}/base64".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))).replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters['attachmentId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.DownloadAttachmentDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -590,28 +614,37 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.downloadBodyRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling downloadBody.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling downloadBody().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/body".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/body".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        if (this.isJsonMime(response.headers.get('content-type'))) {
+                            return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        }
+                        else {
+                            return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
@@ -640,28 +673,37 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.downloadBodyBytesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling downloadBodyBytes.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling downloadBodyBytes().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/body-bytes".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/body-bytes".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        if (this.isJsonMime(response.headers.get('content-type'))) {
+                            return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        }
+                        else {
+                            return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
@@ -690,36 +732,36 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.forwardEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling forwardEmail.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling forwardEmail().');
                         }
-                        if (requestParameters.forwardEmailOptions === null ||
-                            requestParameters.forwardEmailOptions === undefined) {
-                            throw new runtime.RequiredError('forwardEmailOptions', 'Required parameter requestParameters.forwardEmailOptions was null or undefined when calling forwardEmail.');
+                        if (requestParameters['forwardEmailOptions'] == null) {
+                            throw new runtime.RequiredError('forwardEmailOptions', 'Required parameter "forwardEmailOptions" was null or undefined when calling forwardEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/forward".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.ForwardEmailOptionsToJSON)(requestParameters.forwardEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/forward".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.ForwardEmailOptionsToJSON)(requestParameters['forwardEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SentEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -748,36 +790,34 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getAttachmentMetaDataRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getAttachmentMetaData.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getAttachmentMetaData().');
                         }
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
-                            throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling getAttachmentMetaData.');
+                        if (requestParameters['attachmentId'] == null) {
+                            throw new runtime.RequiredError('attachmentId', 'Required parameter "attachmentId" was null or undefined when calling getAttachmentMetaData().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/attachments/{attachmentId}/metadata"
-                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId)))
-                                    .replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AttachmentMetaDataFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/attachments/{attachmentId}/metadata".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))).replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters['attachmentId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.AttachmentMetaDataFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -806,33 +846,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmail.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmail().');
                         }
                         queryParameters = {};
-                        if (requestParameters.decode !== undefined) {
-                            queryParameters['decode'] = requestParameters.decode;
-                        }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -861,30 +899,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailAttachmentsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailAttachments.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailAttachments().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/attachments".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.AttachmentMetaDataFromJSON);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/attachments".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(index_1.AttachmentMetaDataFromJSON); })];
                 }
             });
         });
@@ -913,36 +952,36 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailContentMatchRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailContentMatch.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailContentMatch().');
                         }
-                        if (requestParameters.contentMatchOptions === null ||
-                            requestParameters.contentMatchOptions === undefined) {
-                            throw new runtime.RequiredError('contentMatchOptions', 'Required parameter requestParameters.contentMatchOptions was null or undefined when calling getEmailContentMatch.');
+                        if (requestParameters['contentMatchOptions'] == null) {
+                            throw new runtime.RequiredError('contentMatchOptions', 'Required parameter "contentMatchOptions" was null or undefined when calling getEmailContentMatch().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/contentMatch".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.ContentMatchOptionsToJSON)(requestParameters.contentMatchOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailContentMatchResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/contentMatch".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.ContentMatchOptionsToJSON)(requestParameters['contentMatchOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailContentMatchResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -971,37 +1010,43 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailContentPartRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailContentPart.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailContentPart().');
                         }
-                        if (requestParameters.contentType === null ||
-                            requestParameters.contentType === undefined) {
-                            throw new runtime.RequiredError('contentType', 'Required parameter requestParameters.contentType was null or undefined when calling getEmailContentPart.');
+                        if (requestParameters['contentType'] == null) {
+                            throw new runtime.RequiredError('contentType', 'Required parameter "contentType" was null or undefined when calling getEmailContentPart().');
                         }
                         queryParameters = {};
-                        if (requestParameters.contentType !== undefined) {
-                            queryParameters['contentType'] = requestParameters.contentType;
+                        if (requestParameters['contentType'] != null) {
+                            queryParameters['contentType'] = requestParameters['contentType'];
+                        }
+                        if (requestParameters['strict'] != null) {
+                            queryParameters['strict'] = requestParameters['strict'];
+                        }
+                        if (requestParameters['index'] != null) {
+                            queryParameters['index'] = requestParameters['index'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/contentPart".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailContentPartResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/contentPart".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailContentPartResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1025,30 +1070,72 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get email count
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
      */
-    EmailControllerApi.prototype.getEmailCountRaw = function (initOverrides) {
+    EmailControllerApi.prototype.getEmailContentPartContentRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailContentPartContent().');
+                        }
+                        if (requestParameters['contentType'] == null) {
+                            throw new runtime.RequiredError('contentType', 'Required parameter "contentType" was null or undefined when calling getEmailContentPartContent().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['contentType'] != null) {
+                            queryParameters['contentType'] = requestParameters['contentType'];
+                        }
+                        if (requestParameters['strict'] != null) {
+                            queryParameters['strict'] = requestParameters['strict'];
+                        }
+                        if (requestParameters['index'] != null) {
+                            queryParameters['index'] = requestParameters['index'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/contentPart/raw".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        if (this.isJsonMime(response.headers.get('content-type'))) {
+                            return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        }
+                        else {
+                            return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
+     */
+    EmailControllerApi.prototype.getEmailContentPartContent = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/emails/count",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getEmailContentPartContentRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CountDtoFromJSON)(jsonValue);
-                            })];
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -1056,12 +1143,47 @@ var EmailControllerApi = /** @class */ (function (_super) {
     /**
      * Get email count
      */
-    EmailControllerApi.prototype.getEmailCount = function (initOverrides) {
+    EmailControllerApi.prototype.getEmailCountRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/emails/count",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CountDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Get email count
+     */
+    EmailControllerApi.prototype.getEmailCount = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getEmailCountRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.getEmailCountRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1076,34 +1198,40 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailHTMLRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailHTML.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailHTML().');
                         }
                         queryParameters = {};
-                        if (requestParameters.decode !== undefined) {
-                            queryParameters['decode'] = requestParameters.decode;
-                        }
-                        if (requestParameters.replaceCidImages !== undefined) {
-                            queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
+                        if (requestParameters['replaceCidImages'] != null) {
+                            queryParameters['replaceCidImages'] = requestParameters['replaceCidImages'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/html".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/html".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        if (this.isJsonMime(response.headers.get('content-type'))) {
+                            return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        }
+                        else {
+                            return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
@@ -1132,36 +1260,34 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailHTMLJsonRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailHTMLJson.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailHTMLJson().');
                         }
                         queryParameters = {};
-                        if (requestParameters.decode !== undefined) {
-                            queryParameters['decode'] = requestParameters.decode;
-                        }
-                        if (requestParameters.replaceCidImages !== undefined) {
-                            queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
+                        if (requestParameters['replaceCidImages'] != null) {
+                            queryParameters['replaceCidImages'] = requestParameters['replaceCidImages'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/html/json".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailHtmlDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/html/json".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailHtmlDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1190,37 +1316,37 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailHTMLQueryRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailHTMLQuery.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailHTMLQuery().');
                         }
-                        if (requestParameters.htmlSelector === null ||
-                            requestParameters.htmlSelector === undefined) {
-                            throw new runtime.RequiredError('htmlSelector', 'Required parameter requestParameters.htmlSelector was null or undefined when calling getEmailHTMLQuery.');
+                        if (requestParameters['htmlSelector'] == null) {
+                            throw new runtime.RequiredError('htmlSelector', 'Required parameter "htmlSelector" was null or undefined when calling getEmailHTMLQuery().');
                         }
                         queryParameters = {};
-                        if (requestParameters.htmlSelector !== undefined) {
-                            queryParameters['htmlSelector'] = requestParameters.htmlSelector;
+                        if (requestParameters['htmlSelector'] != null) {
+                            queryParameters['htmlSelector'] = requestParameters['htmlSelector'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/htmlQuery".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailTextLinesResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/htmlQuery".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailTextLinesResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1249,30 +1375,34 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailLinksRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailLinks.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailLinks().');
                         }
                         queryParameters = {};
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        if (requestParameters['selector'] != null) {
+                            queryParameters['selector'] = requestParameters['selector'];
                         }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/links".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailLinksResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/links".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailLinksResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1301,30 +1431,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailPreviewURLsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailPreviewURLs.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailPreviewURLs().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/urls".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailPreviewUrlsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/urls".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailPreviewUrlsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1353,36 +1484,36 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailScreenshotAsBase64Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailScreenshotAsBase64.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailScreenshotAsBase64().');
                         }
-                        if (requestParameters.getEmailScreenshotOptions === null ||
-                            requestParameters.getEmailScreenshotOptions === undefined) {
-                            throw new runtime.RequiredError('getEmailScreenshotOptions', 'Required parameter requestParameters.getEmailScreenshotOptions was null or undefined when calling getEmailScreenshotAsBase64.');
+                        if (requestParameters['getEmailScreenshotOptions'] == null) {
+                            throw new runtime.RequiredError('getEmailScreenshotOptions', 'Required parameter "getEmailScreenshotOptions" was null or undefined when calling getEmailScreenshotAsBase64().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/screenshot/base64".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.GetEmailScreenshotOptionsToJSON)(requestParameters.getEmailScreenshotOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailScreenshotResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/screenshot/base64".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.GetEmailScreenshotOptionsToJSON)(requestParameters['getEmailScreenshotOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailScreenshotResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1411,33 +1542,35 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailScreenshotAsBinaryRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailScreenshotAsBinary.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailScreenshotAsBinary().');
                         }
-                        if (requestParameters.getEmailScreenshotOptions === null ||
-                            requestParameters.getEmailScreenshotOptions === undefined) {
-                            throw new runtime.RequiredError('getEmailScreenshotOptions', 'Required parameter requestParameters.getEmailScreenshotOptions was null or undefined when calling getEmailScreenshotAsBinary.');
+                        if (requestParameters['getEmailScreenshotOptions'] == null) {
+                            throw new runtime.RequiredError('getEmailScreenshotOptions', 'Required parameter "getEmailScreenshotOptions" was null or undefined when calling getEmailScreenshotAsBinary().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/screenshot/binary".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.GetEmailScreenshotOptionsToJSON)(requestParameters.getEmailScreenshotOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/screenshot/binary".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.GetEmailScreenshotOptionsToJSON)(requestParameters['getEmailScreenshotOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -1460,42 +1593,98 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    EmailControllerApi.prototype.getEmailSummaryRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailSummary().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['decode'] != null) {
+                            queryParameters['decode'] = requestParameters['decode'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/summary".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailPreviewFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    EmailControllerApi.prototype.getEmailSummary = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailSummaryRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
     EmailControllerApi.prototype.getEmailTextLinesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailTextLines.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getEmailTextLines().');
                         }
                         queryParameters = {};
-                        if (requestParameters.decodeHtmlEntities !== undefined) {
-                            queryParameters['decodeHtmlEntities'] =
-                                requestParameters.decodeHtmlEntities;
+                        if (requestParameters['decodeHtmlEntities'] != null) {
+                            queryParameters['decodeHtmlEntities'] = requestParameters['decodeHtmlEntities'];
                         }
-                        if (requestParameters.lineSeparator !== undefined) {
-                            queryParameters['lineSeparator'] = requestParameters.lineSeparator;
+                        if (requestParameters['lineSeparator'] != null) {
+                            queryParameters['lineSeparator'] = requestParameters['lineSeparator'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/textLines".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailTextLinesResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/textLines".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailTextLinesResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1519,55 +1708,182 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
-     * Get all emails in all inboxes in paginated form. Email API list all.
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
      */
-    EmailControllerApi.prototype.getEmailsOffsetPaginatedRaw = function (requestParameters, initOverrides) {
+    EmailControllerApi.prototype.getEmailThreadRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['threadId'] == null) {
+                            throw new runtime.RequiredError('threadId', 'Required parameter "threadId" was null or undefined when calling getEmailThread().');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/threads/{threadId}".replace("{".concat("threadId", "}"), encodeURIComponent(String(requestParameters['threadId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailThreadDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
+     */
+    EmailControllerApi.prototype.getEmailThread = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        if (requestParameters.inboxId) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
-                        }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
-                        }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
-                        }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
-                        }
-                        if (requestParameters.unreadOnly !== undefined) {
-                            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
-                        }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
-                        }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
-                        }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
-                        }
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/offset-paginated",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getEmailThreadRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    EmailControllerApi.prototype.getEmailThreadItemsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['threadId'] == null) {
+                            throw new runtime.RequiredError('threadId', 'Required parameter "threadId" was null or undefined when calling getEmailThreadItems().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/threads/{threadId}/items".replace("{".concat("threadId", "}"), encodeURIComponent(String(requestParameters['threadId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailThreadItemsDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    EmailControllerApi.prototype.getEmailThreadItems = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailThreadItemsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    EmailControllerApi.prototype.getEmailThreadsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters['htmlSelector'] != null) {
+                            queryParameters['htmlSelector'] = requestParameters['htmlSelector'];
+                        }
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+                        }
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
+                        }
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/threads",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailThreadProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    EmailControllerApi.prototype.getEmailThreads = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailThreadsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -1576,9 +1892,75 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
-    EmailControllerApi.prototype.getEmailsOffsetPaginated = function (requestParameters, initOverrides) {
+    EmailControllerApi.prototype.getEmailsOffsetPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
+                        }
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['unreadOnly'] != null) {
+                            queryParameters['unreadOnly'] = requestParameters['unreadOnly'];
+                        }
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+                        }
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
+                        }
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['favourited'] != null) {
+                            queryParameters['favourited'] = requestParameters['favourited'];
+                        }
+                        if (requestParameters['syncConnectors'] != null) {
+                            queryParameters['syncConnectors'] = requestParameters['syncConnectors'];
+                        }
+                        if (requestParameters['plusAddressId'] != null) {
+                            queryParameters['plusAddressId'] = requestParameters['plusAddressId'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/offset-paginated",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Get all emails in all inboxes in paginated form. Email API list all.
+     */
+    EmailControllerApi.prototype.getEmailsOffsetPaginated = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getEmailsOffsetPaginatedRaw(requestParameters, initOverrides)];
@@ -1596,50 +1978,61 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getEmailsPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.unreadOnly !== undefined) {
-                            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
+                        if (requestParameters['unreadOnly'] != null) {
+                            queryParameters['unreadOnly'] = requestParameters['unreadOnly'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['syncConnectors'] != null) {
+                            queryParameters['syncConnectors'] = requestParameters['syncConnectors'];
+                        }
+                        if (requestParameters['plusAddressId'] != null) {
+                            queryParameters['plusAddressId'] = requestParameters['plusAddressId'];
+                        }
+                        if (requestParameters['favourited'] != null) {
+                            queryParameters['favourited'] = requestParameters['favourited'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1648,9 +2041,10 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
-    EmailControllerApi.prototype.getEmailsPaginated = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    EmailControllerApi.prototype.getEmailsPaginated = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getEmailsPaginatedRaw(requestParameters, initOverrides)];
@@ -1667,36 +2061,37 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getGravatarUrlForEmailAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null ||
-                            requestParameters.emailAddress === undefined) {
-                            throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getGravatarUrlForEmailAddress.');
+                        if (requestParameters['emailAddress'] == null) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter "emailAddress" was null or undefined when calling getGravatarUrlForEmailAddress().');
                         }
                         queryParameters = {};
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        if (requestParameters['emailAddress'] != null) {
+                            queryParameters['emailAddress'] = requestParameters['emailAddress'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/gravatarFor",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GravatarUrlFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/gravatarFor",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.GravatarUrlFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1724,29 +2119,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getLatestEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxIds) {
-                            queryParameters['inboxIds'] = requestParameters.inboxIds;
+                        if (requestParameters['inboxIds'] != null) {
+                            queryParameters['inboxIds'] = requestParameters['inboxIds'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/latest",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/latest",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1755,9 +2152,10 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in all inboxes. Most recently received.
      */
-    EmailControllerApi.prototype.getLatestEmail = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    EmailControllerApi.prototype.getLatestEmail = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getLatestEmailRaw(requestParameters, initOverrides)];
@@ -1775,33 +2173,34 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getLatestEmailInInbox1Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox1.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getLatestEmailInInbox1().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/latestIn",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/latestIn",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1830,50 +2229,61 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getOrganizationEmailsPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.unreadOnly !== undefined) {
-                            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
+                        if (requestParameters['unreadOnly'] != null) {
+                            queryParameters['unreadOnly'] = requestParameters['unreadOnly'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['syncConnectors'] != null) {
+                            queryParameters['syncConnectors'] = requestParameters['syncConnectors'];
+                        }
+                        if (requestParameters['favourited'] != null) {
+                            queryParameters['favourited'] = requestParameters['favourited'];
+                        }
+                        if (requestParameters['plusAddressId'] != null) {
+                            queryParameters['plusAddressId'] = requestParameters['plusAddressId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/organization",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/organization",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1882,9 +2292,10 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all organization emails. List team or shared test email accounts
      */
-    EmailControllerApi.prototype.getOrganizationEmailsPaginated = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    EmailControllerApi.prototype.getOrganizationEmailsPaginated = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getOrganizationEmailsPaginatedRaw(requestParameters, initOverrides)];
@@ -1902,27 +2313,30 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getRawEmailContentsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getRawEmailContents.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getRawEmailContents().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/raw".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/raw".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -1950,30 +2364,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getRawEmailJsonRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getRawEmailJson.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling getRawEmailJson().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/raw/json".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.RawEmailJsonFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/raw/json".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.RawEmailJsonFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2002,29 +2417,31 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getUnreadEmailCountRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/unreadCount",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.UnreadCountFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/unreadCount",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.UnreadCountFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2033,9 +2450,10 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread email count
      */
-    EmailControllerApi.prototype.getUnreadEmailCount = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    EmailControllerApi.prototype.getUnreadEmailCount = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getUnreadEmailCountRaw(requestParameters, initOverrides)];
@@ -2053,29 +2471,33 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.markAllAsReadRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.read !== undefined) {
-                            queryParameters['read'] = requestParameters.read;
+                        if (requestParameters['read'] != null) {
+                            queryParameters['read'] = requestParameters['read'];
                         }
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/read",
-                                method: 'PATCH',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/read",
+                            method: 'PATCH',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -2085,8 +2507,9 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
      * Mark all emails as read or unread
      */
-    EmailControllerApi.prototype.markAllAsRead = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    EmailControllerApi.prototype.markAllAsRead = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.markAllAsReadRaw(requestParameters, initOverrides)];
@@ -2103,33 +2526,34 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.markAsReadRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling markAsRead.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling markAsRead().');
                         }
                         queryParameters = {};
-                        if (requestParameters.read !== undefined) {
-                            queryParameters['read'] = requestParameters.read;
+                        if (requestParameters['read'] != null) {
+                            queryParameters['read'] = requestParameters['read'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/read".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'PATCH',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailPreviewFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/read".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'PATCH',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailPreviewFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2158,36 +2582,36 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.replyToEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling replyToEmail.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling replyToEmail().');
                         }
-                        if (requestParameters.replyToEmailOptions === null ||
-                            requestParameters.replyToEmailOptions === undefined) {
-                            throw new runtime.RequiredError('replyToEmailOptions', 'Required parameter requestParameters.replyToEmailOptions was null or undefined when calling replyToEmail.');
+                        if (requestParameters['replyToEmailOptions'] == null) {
+                            throw new runtime.RequiredError('replyToEmailOptions', 'Required parameter "replyToEmailOptions" was null or undefined when calling replyToEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'PUT',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.ReplyToEmailOptionsToJSON)(requestParameters.replyToEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.ReplyToEmailOptionsToJSON)(requestParameters['replyToEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SentEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2216,32 +2640,42 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.searchEmailsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.searchEmailsOptions === null ||
-                            requestParameters.searchEmailsOptions === undefined) {
-                            throw new runtime.RequiredError('searchEmailsOptions', 'Required parameter requestParameters.searchEmailsOptions was null or undefined when calling searchEmails.');
+                        if (requestParameters['searchEmailsOptions'] == null) {
+                            throw new runtime.RequiredError('searchEmailsOptions', 'Required parameter "searchEmailsOptions" was null or undefined when calling searchEmails().');
                         }
                         queryParameters = {};
+                        if (requestParameters['syncConnectors'] != null) {
+                            queryParameters['syncConnectors'] = requestParameters['syncConnectors'];
+                        }
+                        if (requestParameters['favourited'] != null) {
+                            queryParameters['favourited'] = requestParameters['favourited'];
+                        }
+                        if (requestParameters['plusAddressId'] != null) {
+                            queryParameters['plusAddressId'] = requestParameters['plusAddressId'];
+                        }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/search",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SearchEmailsOptionsToJSON)(requestParameters.searchEmailsOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/search",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SearchEmailsOptionsToJSON)(requestParameters['searchEmailsOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2270,38 +2704,41 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.sendEmailSourceOptionalRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailSourceOptional.');
+                        if (requestParameters['sendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter "sendEmailOptions" was null or undefined when calling sendEmailSourceOptional().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
-                        if (requestParameters.useDomainPool !== undefined) {
-                            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+                        if (requestParameters['useDomainPool'] != null) {
+                            queryParameters['useDomainPool'] = requestParameters['useDomainPool'];
                         }
-                        if (requestParameters.virtualSend !== undefined) {
-                            queryParameters['virtualSend'] = requestParameters.virtualSend;
+                        if (requestParameters['virtualSend'] != null) {
+                            queryParameters['virtualSend'] = requestParameters['virtualSend'];
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendEmailOptionsToJSON)(requestParameters['sendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -2324,35 +2761,93 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    EmailControllerApi.prototype.setEmailFavouritedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling setEmailFavourited().');
+                        }
+                        if (requestParameters['favourited'] == null) {
+                            throw new runtime.RequiredError('favourited', 'Required parameter "favourited" was null or undefined when calling setEmailFavourited().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['favourited'] != null) {
+                            queryParameters['favourited'] = requestParameters['favourited'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/favourite".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    EmailControllerApi.prototype.setEmailFavourited = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.setEmailFavouritedRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
      * Validate email HTML contents
      */
     EmailControllerApi.prototype.validateEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling validateEmail.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling validateEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/validate".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ValidationDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/emails/{emailId}/validate".replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ValidationDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2380,28 +2875,36 @@ var EmailControllerApi = /** @class */ (function (_super) {
 exports.EmailControllerApi = EmailControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var GetEmailsOffsetPaginatedSortEnum;
-(function (GetEmailsOffsetPaginatedSortEnum) {
-    GetEmailsOffsetPaginatedSortEnum["ASC"] = "ASC";
-    GetEmailsOffsetPaginatedSortEnum["DESC"] = "DESC";
-})(GetEmailsOffsetPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum || (exports.GetEmailsOffsetPaginatedSortEnum = {}));
+exports.GetEmailThreadItemsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetEmailsPaginatedSortEnum;
-(function (GetEmailsPaginatedSortEnum) {
-    GetEmailsPaginatedSortEnum["ASC"] = "ASC";
-    GetEmailsPaginatedSortEnum["DESC"] = "DESC";
-})(GetEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum || (exports.GetEmailsPaginatedSortEnum = {}));
+exports.GetEmailThreadsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetOrganizationEmailsPaginatedSortEnum;
-(function (GetOrganizationEmailsPaginatedSortEnum) {
-    GetOrganizationEmailsPaginatedSortEnum["ASC"] = "ASC";
-    GetOrganizationEmailsPaginatedSortEnum["DESC"] = "DESC";
-})(GetOrganizationEmailsPaginatedSortEnum = exports.GetOrganizationEmailsPaginatedSortEnum || (exports.GetOrganizationEmailsPaginatedSortEnum = {}));
+exports.GetEmailsOffsetPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetEmailsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetOrganizationEmailsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};

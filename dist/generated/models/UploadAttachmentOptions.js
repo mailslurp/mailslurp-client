@@ -13,36 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UploadAttachmentOptionsToJSON = exports.UploadAttachmentOptionsFromJSONTyped = exports.UploadAttachmentOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfUploadAttachmentOptions = instanceOfUploadAttachmentOptions;
+exports.UploadAttachmentOptionsFromJSON = UploadAttachmentOptionsFromJSON;
+exports.UploadAttachmentOptionsFromJSONTyped = UploadAttachmentOptionsFromJSONTyped;
+exports.UploadAttachmentOptionsToJSON = UploadAttachmentOptionsToJSON;
+exports.UploadAttachmentOptionsToJSONTyped = UploadAttachmentOptionsToJSONTyped;
+/**
+ * Check if a given object implements the UploadAttachmentOptions interface.
+ */
+function instanceOfUploadAttachmentOptions(value) {
+    if (!('base64Contents' in value) || value['base64Contents'] === undefined)
+        return false;
+    return true;
+}
 function UploadAttachmentOptionsFromJSON(json) {
     return UploadAttachmentOptionsFromJSONTyped(json, false);
 }
-exports.UploadAttachmentOptionsFromJSON = UploadAttachmentOptionsFromJSON;
 function UploadAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
-        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
-        filename: !(0, runtime_1.exists)(json, 'filename') ? undefined : json['filename'],
-        base64Contents: json['base64Contents'],
+        'contentId': json['contentId'] == null ? undefined : json['contentId'],
+        'contentType': json['contentType'] == null ? undefined : json['contentType'],
+        'filename': json['filename'] == null ? undefined : json['filename'],
+        'base64Contents': json['base64Contents'],
     };
 }
-exports.UploadAttachmentOptionsFromJSONTyped = UploadAttachmentOptionsFromJSONTyped;
-function UploadAttachmentOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UploadAttachmentOptionsToJSON(json) {
+    return UploadAttachmentOptionsToJSONTyped(json, false);
+}
+function UploadAttachmentOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        contentId: value.contentId,
-        contentType: value.contentType,
-        filename: value.filename,
-        base64Contents: value.base64Contents,
+        'contentId': value['contentId'],
+        'contentType': value['contentType'],
+        'filename': value['filename'],
+        'base64Contents': value['base64Contents'],
     };
 }
-exports.UploadAttachmentOptionsToJSON = UploadAttachmentOptionsToJSON;

@@ -60,12 +60,17 @@ export interface DomainPreview {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum DomainPreviewDomainTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_DOMAIN = "SMTP_DOMAIN"
-}
+export declare const DomainPreviewDomainTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_DOMAIN: "SMTP_DOMAIN";
+};
+export type DomainPreviewDomainTypeEnum = typeof DomainPreviewDomainTypeEnum[keyof typeof DomainPreviewDomainTypeEnum];
+/**
+ * Check if a given object implements the DomainPreview interface.
+ */
+export declare function instanceOfDomainPreview(value: object): value is DomainPreview;
 export declare function DomainPreviewFromJSON(json: any): DomainPreview;
 export declare function DomainPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainPreview;
-export declare function DomainPreviewToJSON(value?: DomainPreview | null): any;
+export declare function DomainPreviewToJSON(json: any): DomainPreview;
+export declare function DomainPreviewToJSONTyped(value?: DomainPreview | null, ignoreDiscriminator?: boolean): any;

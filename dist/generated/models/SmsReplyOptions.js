@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsReplyOptionsToJSON = exports.SmsReplyOptionsFromJSONTyped = exports.SmsReplyOptionsFromJSON = void 0;
+exports.instanceOfSmsReplyOptions = instanceOfSmsReplyOptions;
+exports.SmsReplyOptionsFromJSON = SmsReplyOptionsFromJSON;
+exports.SmsReplyOptionsFromJSONTyped = SmsReplyOptionsFromJSONTyped;
+exports.SmsReplyOptionsToJSON = SmsReplyOptionsToJSON;
+exports.SmsReplyOptionsToJSONTyped = SmsReplyOptionsToJSONTyped;
+/**
+ * Check if a given object implements the SmsReplyOptions interface.
+ */
+function instanceOfSmsReplyOptions(value) {
+    if (!('body' in value) || value['body'] === undefined)
+        return false;
+    return true;
+}
 function SmsReplyOptionsFromJSON(json) {
     return SmsReplyOptionsFromJSONTyped(json, false);
 }
-exports.SmsReplyOptionsFromJSON = SmsReplyOptionsFromJSON;
 function SmsReplyOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        body: json['body'],
+        'body': json['body'],
     };
 }
-exports.SmsReplyOptionsFromJSONTyped = SmsReplyOptionsFromJSONTyped;
-function SmsReplyOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SmsReplyOptionsToJSON(json) {
+    return SmsReplyOptionsToJSONTyped(json, false);
+}
+function SmsReplyOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        body: value.body,
+        'body': value['body'],
     };
 }
-exports.SmsReplyOptionsToJSON = SmsReplyOptionsToJSON;

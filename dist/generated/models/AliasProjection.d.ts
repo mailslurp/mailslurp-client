@@ -64,6 +64,11 @@ export interface AliasProjection {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the AliasProjection interface.
+ */
+export declare function instanceOfAliasProjection(value: object): value is AliasProjection;
 export declare function AliasProjectionFromJSON(json: any): AliasProjection;
 export declare function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection;
-export declare function AliasProjectionToJSON(value?: AliasProjection | null): any;
+export declare function AliasProjectionToJSON(json: any): AliasProjection;
+export declare function AliasProjectionToJSONTyped(value?: AliasProjection | null, ignoreDiscriminator?: boolean): any;

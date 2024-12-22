@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Results of inbox forwarder test
  * @export
  * @interface InboxForwarderTestResult
  */
 export interface InboxForwarderTestResult {
-  /**
-   *
-   * @type {{ [key: string]: boolean; }}
-   * @memberof InboxForwarderTestResult
-   */
-  matches: { [key: string]: boolean };
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxForwarderTestResult
-   */
-  doesMatch: boolean;
+    /**
+     * 
+     * @type {{ [key: string]: boolean; }}
+     * @memberof InboxForwarderTestResult
+     */
+    matches: { [key: string]: boolean; };
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxForwarderTestResult
+     */
+    doesMatch: boolean;
 }
 
-export function InboxForwarderTestResultFromJSON(
-  json: any
-): InboxForwarderTestResult {
-  return InboxForwarderTestResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the InboxForwarderTestResult interface.
+ */
+export function instanceOfInboxForwarderTestResult(value: object): value is InboxForwarderTestResult {
+    if (!('matches' in value) || value['matches'] === undefined) return false;
+    if (!('doesMatch' in value) || value['doesMatch'] === undefined) return false;
+    return true;
 }
 
-export function InboxForwarderTestResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxForwarderTestResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    matches: json['matches'],
-    doesMatch: json['doesMatch'],
-  };
+export function InboxForwarderTestResultFromJSON(json: any): InboxForwarderTestResult {
+    return InboxForwarderTestResultFromJSONTyped(json, false);
 }
 
-export function InboxForwarderTestResultToJSON(
-  value?: InboxForwarderTestResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    matches: value.matches,
-    doesMatch: value.doesMatch,
-  };
+export function InboxForwarderTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderTestResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'matches': json['matches'],
+        'doesMatch': json['doesMatch'],
+    };
 }
+
+export function InboxForwarderTestResultToJSON(json: any): InboxForwarderTestResult {
+    return InboxForwarderTestResultToJSONTyped(json, false);
+}
+
+export function InboxForwarderTestResultToJSONTyped(value?: InboxForwarderTestResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'matches': value['matches'],
+        'doesMatch': value['doesMatch'],
+    };
+}
+

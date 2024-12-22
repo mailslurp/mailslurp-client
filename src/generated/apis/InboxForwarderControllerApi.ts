@@ -12,968 +12,739 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
-import {
+import type {
   CreateInboxForwarderOptions,
-  CreateInboxForwarderOptionsFromJSON,
-  CreateInboxForwarderOptionsToJSON,
   InboxForwarderDto,
-  InboxForwarderDtoFromJSON,
-  InboxForwarderDtoToJSON,
   InboxForwarderEventDto,
-  InboxForwarderEventDtoFromJSON,
-  InboxForwarderEventDtoToJSON,
   InboxForwarderTestOptions,
-  InboxForwarderTestOptionsFromJSON,
-  InboxForwarderTestOptionsToJSON,
   InboxForwarderTestResult,
-  InboxForwarderTestResultFromJSON,
-  InboxForwarderTestResultToJSON,
   PageInboxForwarderDto,
-  PageInboxForwarderDtoFromJSON,
-  PageInboxForwarderDtoToJSON,
   PageInboxForwarderEvents,
-  PageInboxForwarderEventsFromJSON,
-  PageInboxForwarderEventsToJSON,
   TestNewInboxForwarderOptions,
-  TestNewInboxForwarderOptionsFromJSON,
-  TestNewInboxForwarderOptionsToJSON,
-} from '../models';
+} from '../models/index';
+import {
+    CreateInboxForwarderOptionsFromJSON,
+    CreateInboxForwarderOptionsToJSON,
+    InboxForwarderDtoFromJSON,
+    InboxForwarderDtoToJSON,
+    InboxForwarderEventDtoFromJSON,
+    InboxForwarderEventDtoToJSON,
+    InboxForwarderTestOptionsFromJSON,
+    InboxForwarderTestOptionsToJSON,
+    InboxForwarderTestResultFromJSON,
+    InboxForwarderTestResultToJSON,
+    PageInboxForwarderDtoFromJSON,
+    PageInboxForwarderDtoToJSON,
+    PageInboxForwarderEventsFromJSON,
+    PageInboxForwarderEventsToJSON,
+    TestNewInboxForwarderOptionsFromJSON,
+    TestNewInboxForwarderOptionsToJSON,
+} from '../models/index';
 
 export interface CreateNewInboxForwarderRequest {
-  inboxId: string;
-  createInboxForwarderOptions: CreateInboxForwarderOptions;
+    createInboxForwarderOptions: CreateInboxForwarderOptions;
+    inboxId?: string;
 }
 
 export interface DeleteInboxForwarderRequest {
-  id: string;
+    id: string;
 }
 
 export interface DeleteInboxForwardersRequest {
-  inboxId?: string;
+    inboxId?: string;
 }
 
 export interface GetAllInboxForwarderEventsRequest {
-  page?: number;
-  size?: number;
-  inboxId?: string;
-  sort?: GetAllInboxForwarderEventsSortEnum;
+    page?: number;
+    size?: number;
+    inboxId?: string;
+    emailId?: string;
+    sentId?: string;
+    sort?: GetAllInboxForwarderEventsSortEnum;
 }
 
 export interface GetForwarderEventRequest {
-  eventId: string;
+    eventId: string;
 }
 
 export interface GetInboxForwarderRequest {
-  id: string;
+    id: string;
 }
 
 export interface GetInboxForwarderEventRequest {
-  id: string;
-  eventId: string;
+    id: string;
+    eventId: string;
 }
 
 export interface GetInboxForwarderEventsRequest {
-  id: string;
-  page?: number;
-  size?: number;
-  sort?: GetInboxForwarderEventsSortEnum;
+    id: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxForwarderEventsSortEnum;
 }
 
 export interface GetInboxForwardersRequest {
-  inboxId?: string;
-  page?: number;
-  size?: number;
-  sort?: GetInboxForwardersSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
+    inboxId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxForwardersSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
 }
 
 export interface TestInboxForwarderRequest {
-  id: string;
-  inboxForwarderTestOptions: InboxForwarderTestOptions;
+    id: string;
+    inboxForwarderTestOptions: InboxForwarderTestOptions;
 }
 
 export interface TestInboxForwardersForInboxRequest {
-  inboxId: string;
-  inboxForwarderTestOptions: InboxForwarderTestOptions;
+    inboxId: string;
+    inboxForwarderTestOptions: InboxForwarderTestOptions;
 }
 
 export interface TestNewInboxForwarderRequest {
-  testNewInboxForwarderOptions: TestNewInboxForwarderOptions;
+    testNewInboxForwarderOptions: TestNewInboxForwarderOptions;
 }
 
 export interface UpdateInboxForwarderRequest {
-  id: string;
-  createInboxForwarderOptions: CreateInboxForwarderOptions;
+    id: string;
+    createInboxForwarderOptions: CreateInboxForwarderOptions;
 }
 
 /**
- *
+ * 
  */
 export class InboxForwarderControllerApi extends runtime.BaseAPI {
-  /**
-   * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-   * Create an inbox forwarder
-   */
-  async createNewInboxForwarderRaw(
-    requestParameters: CreateNewInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling createNewInboxForwarder.'
-      );
+
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * Create an inbox forwarder
+     */
+    async createNewInboxForwarderRaw(requestParameters: CreateNewInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderDto>> {
+        if (requestParameters['createInboxForwarderOptions'] == null) {
+            throw new runtime.RequiredError(
+                'createInboxForwarderOptions',
+                'Required parameter "createInboxForwarderOptions" was null or undefined when calling createNewInboxForwarder().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateInboxForwarderOptionsToJSON(requestParameters['createInboxForwarderOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderDtoFromJSON(jsonValue));
     }
 
-    if (
-      requestParameters.createInboxForwarderOptions === null ||
-      requestParameters.createInboxForwarderOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createInboxForwarderOptions',
-        'Required parameter requestParameters.createInboxForwarderOptions was null or undefined when calling createNewInboxForwarder.'
-      );
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * Create an inbox forwarder
+     */
+    async createNewInboxForwarder(requestParameters: CreateNewInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderDto> {
+        const response = await this.createNewInboxForwarderRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Delete inbox forwarder
+     * Delete an inbox forwarder
+     */
+    async deleteInboxForwarderRaw(requestParameters: DeleteInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling deleteInboxForwarder().'
+            );
+        }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete inbox forwarder
+     * Delete an inbox forwarder
+     */
+    async deleteInboxForwarder(requestParameters: DeleteInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteInboxForwarderRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateInboxForwarderOptionsToJSON(
-          requestParameters.createInboxForwarderOptions
-        ),
-      },
-      initOverrides
-    );
+    /**
+     * Delete inbox forwarders. Accepts optional inboxId filter.
+     * Delete inbox forwarders
+     */
+    async deleteInboxForwardersRaw(requestParameters: DeleteInboxForwardersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderDtoFromJSON(jsonValue)
-    );
-  }
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
 
-  /**
-   * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-   * Create an inbox forwarder
-   */
-  async createNewInboxForwarder(
-    requestParameters: CreateNewInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderDto> {
-    const response = await this.createNewInboxForwarderRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete inbox forwarder
-   * Delete an inbox forwarder
-   */
-  async deleteInboxForwarderRaw(
-    requestParameters: DeleteInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling deleteInboxForwarder.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete inbox forwarders. Accepts optional inboxId filter.
+     * Delete inbox forwarders
+     */
+    async deleteInboxForwarders(requestParameters: DeleteInboxForwardersRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteInboxForwardersRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get all inbox forwarder events
+     * Get all inbox forwarder events
+     */
+    async getAllInboxForwarderEventsRaw(requestParameters: GetAllInboxForwarderEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxForwarderEvents>> {
+        const queryParameters: any = {};
 
-    return new runtime.VoidApiResponse(response);
-  }
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
 
-  /**
-   * Delete inbox forwarder
-   * Delete an inbox forwarder
-   */
-  async deleteInboxForwarder(
-    requestParameters: DeleteInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteInboxForwarderRaw(requestParameters, initOverrides);
-  }
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
 
-  /**
-   * Delete inbox forwarders. Accepts optional inboxId filter.
-   * Delete inbox forwarders
-   */
-  async deleteInboxForwardersRaw(
-    requestParameters: DeleteInboxForwardersRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+        if (requestParameters['emailId'] != null) {
+            queryParameters['emailId'] = requestParameters['emailId'];
+        }
+
+        if (requestParameters['sentId'] != null) {
+            queryParameters['sentId'] = requestParameters['sentId'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders/events`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxForwarderEventsFromJSON(jsonValue));
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get all inbox forwarder events
+     * Get all inbox forwarder events
+     */
+    async getAllInboxForwarderEvents(requestParameters: GetAllInboxForwarderEventsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxForwarderEvents> {
+        const response = await this.getAllInboxForwarderEventsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get forwarder event
+     * Get a forwarder event
+     */
+    async getForwarderEventRaw(requestParameters: GetForwarderEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderEventDto>> {
+        if (requestParameters['eventId'] == null) {
+            throw new runtime.RequiredError(
+                'eventId',
+                'Required parameter "eventId" was null or undefined when calling getForwarderEvent().'
+            );
+        }
 
-    return new runtime.VoidApiResponse(response);
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Delete inbox forwarders. Accepts optional inboxId filter.
-   * Delete inbox forwarders
-   */
-  async deleteInboxForwarders(
-    requestParameters: DeleteInboxForwardersRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteInboxForwardersRaw(requestParameters, initOverrides);
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Get all inbox forwarder events
-   * Get all inbox forwarder events
-   */
-  async getAllInboxForwarderEventsRaw(
-    requestParameters: GetAllInboxForwarderEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxForwarderEvents>> {
-    const queryParameters: any = {};
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+        const response = await this.request({
+            path: `/forwarders/events/{eventId}`.replace(`{${"eventId"}}`, encodeURIComponent(String(requestParameters['eventId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderEventDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Get forwarder event
+     * Get a forwarder event
+     */
+    async getForwarderEvent(requestParameters: GetForwarderEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderEventDto> {
+        const response = await this.getForwarderEventRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+    /**
+     * Get inbox forwarder
+     * Get an inbox forwarder
+     */
+    async getInboxForwarderRaw(requestParameters: GetInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderDto>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling getInboxForwarder().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Get inbox forwarder
+     * Get an inbox forwarder
+     */
+    async getInboxForwarder(requestParameters: GetInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderDto> {
+        const response = await this.getInboxForwarderRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Get inbox forwarder event
+     * Get an inbox forwarder event
+     */
+    async getInboxForwarderEventRaw(requestParameters: GetInboxForwarderEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderEventDto>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling getInboxForwarderEvent().'
+            );
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters['eventId'] == null) {
+            throw new runtime.RequiredError(
+                'eventId',
+                'Required parameter "eventId" was null or undefined when calling getInboxForwarderEvent().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders/{id}/events/{eventId}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))).replace(`{${"eventId"}}`, encodeURIComponent(String(requestParameters['eventId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderEventDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders/events`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxForwarderEventsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get all inbox forwarder events
-   * Get all inbox forwarder events
-   */
-  async getAllInboxForwarderEvents(
-    requestParameters: GetAllInboxForwarderEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxForwarderEvents> {
-    const response = await this.getAllInboxForwarderEventsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get forwarder event
-   * Get a forwarder event
-   */
-  async getForwarderEventRaw(
-    requestParameters: GetForwarderEventRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderEventDto>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'eventId',
-        'Required parameter requestParameters.eventId was null or undefined when calling getForwarderEvent.'
-      );
+    /**
+     * Get inbox forwarder event
+     * Get an inbox forwarder event
+     */
+    async getInboxForwarderEvent(requestParameters: GetInboxForwarderEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderEventDto> {
+        const response = await this.getInboxForwarderEventRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Get inbox forwarder events
+     * Get an inbox forwarder event list
+     */
+    async getInboxForwarderEventsRaw(requestParameters: GetInboxForwarderEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxForwarderEvents>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling getInboxForwarderEvents().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders/{id}/events`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxForwarderEventsFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders/events/{eventId}`.replace(
-          `{${'eventId'}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderEventDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get forwarder event
-   * Get a forwarder event
-   */
-  async getForwarderEvent(
-    requestParameters: GetForwarderEventRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderEventDto> {
-    const response = await this.getForwarderEventRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get inbox forwarder
-   * Get an inbox forwarder
-   */
-  async getInboxForwarderRaw(
-    requestParameters: GetInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getInboxForwarder.'
-      );
+    /**
+     * Get inbox forwarder events
+     * Get an inbox forwarder event list
+     */
+    async getInboxForwarderEvents(requestParameters: GetInboxForwarderEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxForwarderEvents> {
+        const response = await this.getInboxForwarderEventsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * List all forwarders attached to an inbox
+     * List inbox forwarders
+     */
+    async getInboxForwardersRaw(requestParameters: GetInboxForwardersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxForwarderDto>> {
+        const queryParameters: any = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxForwarderDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get inbox forwarder
-   * Get an inbox forwarder
-   */
-  async getInboxForwarder(
-    requestParameters: GetInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderDto> {
-    const response = await this.getInboxForwarderRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get inbox forwarder event
-   * Get an inbox forwarder event
-   */
-  async getInboxForwarderEventRaw(
-    requestParameters: GetInboxForwarderEventRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderEventDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getInboxForwarderEvent.'
-      );
+    /**
+     * List all forwarders attached to an inbox
+     * List inbox forwarders
+     */
+    async getInboxForwarders(requestParameters: GetInboxForwardersRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxForwarderDto> {
+        const response = await this.getInboxForwardersRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'eventId',
-        'Required parameter requestParameters.eventId was null or undefined when calling getInboxForwarderEvent.'
-      );
+    /**
+     * Test an inbox forwarder
+     * Test an inbox forwarder
+     */
+    async testInboxForwarderRaw(requestParameters: TestInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderTestResult>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling testInboxForwarder().'
+            );
+        }
+
+        if (requestParameters['inboxForwarderTestOptions'] == null) {
+            throw new runtime.RequiredError(
+                'inboxForwarderTestOptions',
+                'Required parameter "inboxForwarderTestOptions" was null or undefined when calling testInboxForwarder().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders/{id}/test`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: InboxForwarderTestOptionsToJSON(requestParameters['inboxForwarderTestOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderTestResultFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Test an inbox forwarder
+     * Test an inbox forwarder
+     */
+    async testInboxForwarder(requestParameters: TestInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderTestResult> {
+        const response = await this.testInboxForwarderRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders/{id}/events/{eventId}`
-          .replace(
-            `{${'id'}}`,
-            encodeURIComponent(String(requestParameters.id))
-          )
-          .replace(
-            `{${'eventId'}}`,
-            encodeURIComponent(String(requestParameters.eventId))
-          ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Test inbox forwarders for inbox
+     * Test inbox forwarders for inbox
+     */
+    async testInboxForwardersForInboxRaw(requestParameters: TestInboxForwardersForInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderTestResult>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling testInboxForwardersForInbox().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderEventDtoFromJSON(jsonValue)
-    );
-  }
+        if (requestParameters['inboxForwarderTestOptions'] == null) {
+            throw new runtime.RequiredError(
+                'inboxForwarderTestOptions',
+                'Required parameter "inboxForwarderTestOptions" was null or undefined when calling testInboxForwardersForInbox().'
+            );
+        }
 
-  /**
-   * Get inbox forwarder event
-   * Get an inbox forwarder event
-   */
-  async getInboxForwarderEvent(
-    requestParameters: GetInboxForwarderEventRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderEventDto> {
-    const response = await this.getInboxForwarderEventRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Get inbox forwarder events
-   * Get an inbox forwarder event list
-   */
-  async getInboxForwarderEventsRaw(
-    requestParameters: GetInboxForwarderEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxForwarderEvents>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getInboxForwarderEvents.'
-      );
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders`,
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: InboxForwarderTestOptionsToJSON(requestParameters['inboxForwarderTestOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderTestResultFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+    /**
+     * Test inbox forwarders for inbox
+     * Test inbox forwarders for inbox
+     */
+    async testInboxForwardersForInbox(requestParameters: TestInboxForwardersForInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderTestResult> {
+        const response = await this.testInboxForwardersForInboxRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Test new inbox forwarder
+     * Test new inbox forwarder
+     */
+    async testNewInboxForwarderRaw(requestParameters: TestNewInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderTestResult>> {
+        if (requestParameters['testNewInboxForwarderOptions'] == null) {
+            throw new runtime.RequiredError(
+                'testNewInboxForwarderOptions',
+                'Required parameter "testNewInboxForwarderOptions" was null or undefined when calling testNewInboxForwarder().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders`,
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TestNewInboxForwarderOptionsToJSON(requestParameters['testNewInboxForwarderOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderTestResultFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Test new inbox forwarder
+     * Test new inbox forwarder
+     */
+    async testNewInboxForwarder(requestParameters: TestNewInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderTestResult> {
+        const response = await this.testNewInboxForwarderRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Update inbox forwarder
+     * Update an inbox forwarder
+     */
+    async updateInboxForwarderRaw(requestParameters: UpdateInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxForwarderDto>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling updateInboxForwarder().'
+            );
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters['createInboxForwarderOptions'] == null) {
+            throw new runtime.RequiredError(
+                'createInboxForwarderOptions',
+                'Required parameter "createInboxForwarderOptions" was null or undefined when calling updateInboxForwarder().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/forwarders/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateInboxForwarderOptionsToJSON(requestParameters['createInboxForwarderOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxForwarderDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/forwarders/{id}/events`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxForwarderEventsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get inbox forwarder events
-   * Get an inbox forwarder event list
-   */
-  async getInboxForwarderEvents(
-    requestParameters: GetInboxForwarderEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxForwarderEvents> {
-    const response = await this.getInboxForwarderEventsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List all forwarders attached to an inbox
-   * List inbox forwarders
-   */
-  async getInboxForwardersRaw(
-    requestParameters: GetInboxForwardersRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxForwarderDto>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+    /**
+     * Update inbox forwarder
+     * Update an inbox forwarder
+     */
+    async updateInboxForwarder(requestParameters: UpdateInboxForwarderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxForwarderDto> {
+        const response = await this.updateInboxForwarderRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/forwarders`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxForwarderDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List all forwarders attached to an inbox
-   * List inbox forwarders
-   */
-  async getInboxForwarders(
-    requestParameters: GetInboxForwardersRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxForwarderDto> {
-    const response = await this.getInboxForwardersRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Test an inbox forwarder
-   * Test an inbox forwarder
-   */
-  async testInboxForwarderRaw(
-    requestParameters: TestInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderTestResult>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling testInboxForwarder.'
-      );
-    }
-
-    if (
-      requestParameters.inboxForwarderTestOptions === null ||
-      requestParameters.inboxForwarderTestOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxForwarderTestOptions',
-        'Required parameter requestParameters.inboxForwarderTestOptions was null or undefined when calling testInboxForwarder.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/forwarders/{id}/test`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: InboxForwarderTestOptionsToJSON(
-          requestParameters.inboxForwarderTestOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderTestResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Test an inbox forwarder
-   * Test an inbox forwarder
-   */
-  async testInboxForwarder(
-    requestParameters: TestInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderTestResult> {
-    const response = await this.testInboxForwarderRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Test inbox forwarders for inbox
-   * Test inbox forwarders for inbox
-   */
-  async testInboxForwardersForInboxRaw(
-    requestParameters: TestInboxForwardersForInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderTestResult>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling testInboxForwardersForInbox.'
-      );
-    }
-
-    if (
-      requestParameters.inboxForwarderTestOptions === null ||
-      requestParameters.inboxForwarderTestOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxForwarderTestOptions',
-        'Required parameter requestParameters.inboxForwarderTestOptions was null or undefined when calling testInboxForwardersForInbox.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/forwarders`,
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: InboxForwarderTestOptionsToJSON(
-          requestParameters.inboxForwarderTestOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderTestResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Test inbox forwarders for inbox
-   * Test inbox forwarders for inbox
-   */
-  async testInboxForwardersForInbox(
-    requestParameters: TestInboxForwardersForInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderTestResult> {
-    const response = await this.testInboxForwardersForInboxRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Test new inbox forwarder
-   * Test new inbox forwarder
-   */
-  async testNewInboxForwarderRaw(
-    requestParameters: TestNewInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderTestResult>> {
-    if (
-      requestParameters.testNewInboxForwarderOptions === null ||
-      requestParameters.testNewInboxForwarderOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'testNewInboxForwarderOptions',
-        'Required parameter requestParameters.testNewInboxForwarderOptions was null or undefined when calling testNewInboxForwarder.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/forwarders`,
-        method: 'PATCH',
-        headers: headerParameters,
-        query: queryParameters,
-        body: TestNewInboxForwarderOptionsToJSON(
-          requestParameters.testNewInboxForwarderOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderTestResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Test new inbox forwarder
-   * Test new inbox forwarder
-   */
-  async testNewInboxForwarder(
-    requestParameters: TestNewInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderTestResult> {
-    const response = await this.testNewInboxForwarderRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Update inbox forwarder
-   * Update an inbox forwarder
-   */
-  async updateInboxForwarderRaw(
-    requestParameters: UpdateInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxForwarderDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling updateInboxForwarder.'
-      );
-    }
-
-    if (
-      requestParameters.createInboxForwarderOptions === null ||
-      requestParameters.createInboxForwarderOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createInboxForwarderOptions',
-        'Required parameter requestParameters.createInboxForwarderOptions was null or undefined when calling updateInboxForwarder.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/forwarders/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateInboxForwarderOptionsToJSON(
-          requestParameters.createInboxForwarderOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxForwarderDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update inbox forwarder
-   * Update an inbox forwarder
-   */
-  async updateInboxForwarder(
-    requestParameters: UpdateInboxForwarderRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxForwarderDto> {
-    const response = await this.updateInboxForwarderRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllInboxForwarderEventsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetAllInboxForwarderEventsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetAllInboxForwarderEventsSortEnum = typeof GetAllInboxForwarderEventsSortEnum[keyof typeof GetAllInboxForwarderEventsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetInboxForwarderEventsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxForwarderEventsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxForwarderEventsSortEnum = typeof GetInboxForwarderEventsSortEnum[keyof typeof GetInboxForwarderEventsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetInboxForwardersSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxForwardersSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxForwardersSortEnum = typeof GetInboxForwardersSortEnum[keyof typeof GetInboxForwardersSortEnum];

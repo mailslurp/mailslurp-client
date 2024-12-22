@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailValidationRequestDto, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { EmailValidationRequestDto } from './EmailValidationRequestDto';
 /**
  * Paginated email validation request records. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageEmailValidationRequest {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageEmailValidationRequest
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageEmailValidationRequest {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageEmailValidationRequest interface.
+ */
+export declare function instanceOfPageEmailValidationRequest(value: object): value is PageEmailValidationRequest;
 export declare function PageEmailValidationRequestFromJSON(json: any): PageEmailValidationRequest;
 export declare function PageEmailValidationRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageEmailValidationRequest;
-export declare function PageEmailValidationRequestToJSON(value?: PageEmailValidationRequest | null): any;
+export declare function PageEmailValidationRequestToJSON(json: any): PageEmailValidationRequest;
+export declare function PageEmailValidationRequestToJSONTyped(value?: PageEmailValidationRequest | null, ignoreDiscriminator?: boolean): any;

@@ -12,56 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { EmailFeatureSupportResult } from './EmailFeatureSupportResult';
 import {
-  EmailFeatureSupportResult,
-  EmailFeatureSupportResultFromJSON,
-  EmailFeatureSupportResultFromJSONTyped,
-  EmailFeatureSupportResultToJSON,
-} from './';
+    EmailFeatureSupportResultFromJSON,
+    EmailFeatureSupportResultFromJSONTyped,
+    EmailFeatureSupportResultToJSON,
+    EmailFeatureSupportResultToJSONTyped,
+} from './EmailFeatureSupportResult';
 
 /**
- *
+ * 
  * @export
  * @interface CheckEmailFeaturesClientSupportResults
  */
 export interface CheckEmailFeaturesClientSupportResults {
-  /**
-   *
-   * @type {EmailFeatureSupportResult}
-   * @memberof CheckEmailFeaturesClientSupportResults
-   */
-  result: EmailFeatureSupportResult;
+    /**
+     * 
+     * @type {EmailFeatureSupportResult}
+     * @memberof CheckEmailFeaturesClientSupportResults
+     */
+    result: EmailFeatureSupportResult;
 }
 
-export function CheckEmailFeaturesClientSupportResultsFromJSON(
-  json: any
-): CheckEmailFeaturesClientSupportResults {
-  return CheckEmailFeaturesClientSupportResultsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the CheckEmailFeaturesClientSupportResults interface.
+ */
+export function instanceOfCheckEmailFeaturesClientSupportResults(value: object): value is CheckEmailFeaturesClientSupportResults {
+    if (!('result' in value) || value['result'] === undefined) return false;
+    return true;
 }
 
-export function CheckEmailFeaturesClientSupportResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CheckEmailFeaturesClientSupportResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    result: EmailFeatureSupportResultFromJSON(json['result']),
-  };
+export function CheckEmailFeaturesClientSupportResultsFromJSON(json: any): CheckEmailFeaturesClientSupportResults {
+    return CheckEmailFeaturesClientSupportResultsFromJSONTyped(json, false);
 }
 
-export function CheckEmailFeaturesClientSupportResultsToJSON(
-  value?: CheckEmailFeaturesClientSupportResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    result: EmailFeatureSupportResultToJSON(value.result),
-  };
+export function CheckEmailFeaturesClientSupportResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailFeaturesClientSupportResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'result': EmailFeatureSupportResultFromJSON(json['result']),
+    };
 }
+
+export function CheckEmailFeaturesClientSupportResultsToJSON(json: any): CheckEmailFeaturesClientSupportResults {
+    return CheckEmailFeaturesClientSupportResultsToJSONTyped(json, false);
+}
+
+export function CheckEmailFeaturesClientSupportResultsToJSONTyped(value?: CheckEmailFeaturesClientSupportResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'result': EmailFeatureSupportResultToJSON(value['result']),
+    };
+}
+

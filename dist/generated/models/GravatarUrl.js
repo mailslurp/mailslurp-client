@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GravatarUrlToJSON = exports.GravatarUrlFromJSONTyped = exports.GravatarUrlFromJSON = void 0;
+exports.instanceOfGravatarUrl = instanceOfGravatarUrl;
+exports.GravatarUrlFromJSON = GravatarUrlFromJSON;
+exports.GravatarUrlFromJSONTyped = GravatarUrlFromJSONTyped;
+exports.GravatarUrlToJSON = GravatarUrlToJSON;
+exports.GravatarUrlToJSONTyped = GravatarUrlToJSONTyped;
+/**
+ * Check if a given object implements the GravatarUrl interface.
+ */
+function instanceOfGravatarUrl(value) {
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    if (!('hash' in value) || value['hash'] === undefined)
+        return false;
+    return true;
+}
 function GravatarUrlFromJSON(json) {
     return GravatarUrlFromJSONTyped(json, false);
 }
-exports.GravatarUrlFromJSON = GravatarUrlFromJSON;
 function GravatarUrlFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        url: json['url'],
-        hash: json['hash'],
+        'url': json['url'],
+        'hash': json['hash'],
     };
 }
-exports.GravatarUrlFromJSONTyped = GravatarUrlFromJSONTyped;
-function GravatarUrlToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GravatarUrlToJSON(json) {
+    return GravatarUrlToJSONTyped(json, false);
+}
+function GravatarUrlToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        url: value.url,
-        hash: value.hash,
+        'url': value['url'],
+        'hash': value['hash'],
     };
 }
-exports.GravatarUrlToJSON = GravatarUrlToJSON;

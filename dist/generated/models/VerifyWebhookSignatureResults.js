@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyWebhookSignatureResultsToJSON = exports.VerifyWebhookSignatureResultsFromJSONTyped = exports.VerifyWebhookSignatureResultsFromJSON = void 0;
+exports.instanceOfVerifyWebhookSignatureResults = instanceOfVerifyWebhookSignatureResults;
+exports.VerifyWebhookSignatureResultsFromJSON = VerifyWebhookSignatureResultsFromJSON;
+exports.VerifyWebhookSignatureResultsFromJSONTyped = VerifyWebhookSignatureResultsFromJSONTyped;
+exports.VerifyWebhookSignatureResultsToJSON = VerifyWebhookSignatureResultsToJSON;
+exports.VerifyWebhookSignatureResultsToJSONTyped = VerifyWebhookSignatureResultsToJSONTyped;
+/**
+ * Check if a given object implements the VerifyWebhookSignatureResults interface.
+ */
+function instanceOfVerifyWebhookSignatureResults(value) {
+    if (!('isValid' in value) || value['isValid'] === undefined)
+        return false;
+    return true;
+}
 function VerifyWebhookSignatureResultsFromJSON(json) {
     return VerifyWebhookSignatureResultsFromJSONTyped(json, false);
 }
-exports.VerifyWebhookSignatureResultsFromJSON = VerifyWebhookSignatureResultsFromJSON;
 function VerifyWebhookSignatureResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        isValid: json['isValid'],
+        'isValid': json['isValid'],
     };
 }
-exports.VerifyWebhookSignatureResultsFromJSONTyped = VerifyWebhookSignatureResultsFromJSONTyped;
-function VerifyWebhookSignatureResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function VerifyWebhookSignatureResultsToJSON(json) {
+    return VerifyWebhookSignatureResultsToJSONTyped(json, false);
+}
+function VerifyWebhookSignatureResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        isValid: value.isValid,
+        'isValid': value['isValid'],
     };
 }
-exports.VerifyWebhookSignatureResultsToJSON = VerifyWebhookSignatureResultsToJSON;

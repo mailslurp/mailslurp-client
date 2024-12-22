@@ -82,6 +82,11 @@ export interface AliasDto {
      */
     updatedAt?: Date | null;
 }
+/**
+ * Check if a given object implements the AliasDto interface.
+ */
+export declare function instanceOfAliasDto(value: object): value is AliasDto;
 export declare function AliasDtoFromJSON(json: any): AliasDto;
 export declare function AliasDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasDto;
-export declare function AliasDtoToJSON(value?: AliasDto | null): any;
+export declare function AliasDtoToJSON(json: any): AliasDto;
+export declare function AliasDtoToJSONTyped(value?: AliasDto | null, ignoreDiscriminator?: boolean): any;

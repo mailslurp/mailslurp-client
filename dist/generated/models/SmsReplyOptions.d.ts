@@ -22,6 +22,11 @@ export interface SmsReplyOptions {
      */
     body: string;
 }
+/**
+ * Check if a given object implements the SmsReplyOptions interface.
+ */
+export declare function instanceOfSmsReplyOptions(value: object): value is SmsReplyOptions;
 export declare function SmsReplyOptionsFromJSON(json: any): SmsReplyOptions;
 export declare function SmsReplyOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsReplyOptions;
-export declare function SmsReplyOptionsToJSON(value?: SmsReplyOptions | null): any;
+export declare function SmsReplyOptionsToJSON(json: any): SmsReplyOptions;
+export declare function SmsReplyOptionsToJSONTyped(value?: SmsReplyOptions | null, ignoreDiscriminator?: boolean): any;

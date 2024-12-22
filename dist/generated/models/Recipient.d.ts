@@ -34,6 +34,11 @@ export interface Recipient {
      */
     name?: string | null;
 }
+/**
+ * Check if a given object implements the Recipient interface.
+ */
+export declare function instanceOfRecipient(value: object): value is Recipient;
 export declare function RecipientFromJSON(json: any): Recipient;
 export declare function RecipientFromJSONTyped(json: any, ignoreDiscriminator: boolean): Recipient;
-export declare function RecipientToJSON(value?: Recipient | null): any;
+export declare function RecipientToJSON(json: any): Recipient;
+export declare function RecipientToJSONTyped(value?: Recipient | null, ignoreDiscriminator?: boolean): any;

@@ -12,80 +12,92 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ImageIssue
  */
 export interface ImageIssue {
-  /**
-   *
-   * @type {string}
-   * @memberof ImageIssue
-   */
-  url: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ImageIssue
-   */
-  responseStatus?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ImageIssue
-   */
-  severity: ImageIssueSeverityEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof ImageIssue
-   */
-  message: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImageIssue
+     */
+    url: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ImageIssue
+     */
+    responseStatus?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImageIssue
+     */
+    severity: ImageIssueSeverityEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImageIssue
+     */
+    message: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum ImageIssueSeverityEnum {
-  Warning = 'Warning',
-  Error = 'Error',
+export const ImageIssueSeverityEnum = {
+    Warning: 'Warning',
+    Error: 'Error'
+} as const;
+export type ImageIssueSeverityEnum = typeof ImageIssueSeverityEnum[keyof typeof ImageIssueSeverityEnum];
+
+
+/**
+ * Check if a given object implements the ImageIssue interface.
+ */
+export function instanceOfImageIssue(value: object): value is ImageIssue {
+    if (!('url' in value) || value['url'] === undefined) return false;
+    if (!('severity' in value) || value['severity'] === undefined) return false;
+    if (!('message' in value) || value['message'] === undefined) return false;
+    return true;
 }
 
 export function ImageIssueFromJSON(json: any): ImageIssue {
-  return ImageIssueFromJSONTyped(json, false);
+    return ImageIssueFromJSONTyped(json, false);
 }
 
-export function ImageIssueFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImageIssue {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    url: json['url'],
-    responseStatus: !exists(json, 'responseStatus')
-      ? undefined
-      : json['responseStatus'],
-    severity: json['severity'],
-    message: json['message'],
-  };
+export function ImageIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImageIssue {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'url': json['url'],
+        'responseStatus': json['responseStatus'] == null ? undefined : json['responseStatus'],
+        'severity': json['severity'],
+        'message': json['message'],
+    };
 }
 
-export function ImageIssueToJSON(value?: ImageIssue | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    url: value.url,
-    responseStatus: value.responseStatus,
-    severity: value.severity,
-    message: value.message,
-  };
+export function ImageIssueToJSON(json: any): ImageIssue {
+    return ImageIssueToJSONTyped(json, false);
 }
+
+export function ImageIssueToJSONTyped(value?: ImageIssue | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'url': value['url'],
+        'responseStatus': value['responseStatus'],
+        'severity': value['severity'],
+        'message': value['message'],
+    };
+}
+

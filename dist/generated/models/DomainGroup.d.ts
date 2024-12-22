@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DomainInformation } from './';
+import type { DomainInformation } from './DomainInformation';
 /**
  *
  * @export
@@ -31,13 +31,18 @@ export interface DomainGroup {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum DomainGroupLabelEnum {
-    DEFAULT = "DEFAULT",
-    DOMAIN_POOL = "DOMAIN_POOL",
-    CUSTOM = "CUSTOM"
-}
+export declare const DomainGroupLabelEnum: {
+    readonly DEFAULT: "DEFAULT";
+    readonly DOMAIN_POOL: "DOMAIN_POOL";
+    readonly CUSTOM: "CUSTOM";
+};
+export type DomainGroupLabelEnum = typeof DomainGroupLabelEnum[keyof typeof DomainGroupLabelEnum];
+/**
+ * Check if a given object implements the DomainGroup interface.
+ */
+export declare function instanceOfDomainGroup(value: object): value is DomainGroup;
 export declare function DomainGroupFromJSON(json: any): DomainGroup;
 export declare function DomainGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainGroup;
-export declare function DomainGroupToJSON(value?: DomainGroup | null): any;
+export declare function DomainGroupToJSON(json: any): DomainGroup;
+export declare function DomainGroupToJSONTyped(value?: DomainGroup | null, ignoreDiscriminator?: boolean): any;

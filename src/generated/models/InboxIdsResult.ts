@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { InboxIdItem } from './InboxIdItem';
 import {
-  InboxIdItem,
-  InboxIdItemFromJSON,
-  InboxIdItemFromJSONTyped,
-  InboxIdItemToJSON,
-} from './';
+    InboxIdItemFromJSON,
+    InboxIdItemFromJSONTyped,
+    InboxIdItemToJSON,
+    InboxIdItemToJSONTyped,
+} from './InboxIdItem';
 
 /**
  * List of inbox IDs and email addresses
@@ -26,38 +27,48 @@ import {
  * @interface InboxIdsResult
  */
 export interface InboxIdsResult {
-  /**
-   *
-   * @type {Array<InboxIdItem>}
-   * @memberof InboxIdsResult
-   */
-  inboxIds: Array<InboxIdItem>;
+    /**
+     * 
+     * @type {Array<InboxIdItem>}
+     * @memberof InboxIdsResult
+     */
+    inboxIds: Array<InboxIdItem>;
+}
+
+/**
+ * Check if a given object implements the InboxIdsResult interface.
+ */
+export function instanceOfInboxIdsResult(value: object): value is InboxIdsResult {
+    if (!('inboxIds' in value) || value['inboxIds'] === undefined) return false;
+    return true;
 }
 
 export function InboxIdsResultFromJSON(json: any): InboxIdsResult {
-  return InboxIdsResultFromJSONTyped(json, false);
+    return InboxIdsResultFromJSONTyped(json, false);
 }
 
-export function InboxIdsResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxIdsResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxIds: (json['inboxIds'] as Array<any>).map(InboxIdItemFromJSON),
-  };
+export function InboxIdsResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxIdsResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxIds': ((json['inboxIds'] as Array<any>).map(InboxIdItemFromJSON)),
+    };
 }
 
-export function InboxIdsResultToJSON(value?: InboxIdsResult | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxIds: (value.inboxIds as Array<any>).map(InboxIdItemToJSON),
-  };
+export function InboxIdsResultToJSON(json: any): InboxIdsResult {
+    return InboxIdsResultToJSONTyped(json, false);
 }
+
+export function InboxIdsResultToJSONTyped(value?: InboxIdsResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxIds': ((value['inboxIds'] as Array<any>).map(InboxIdItemToJSON)),
+    };
+}
+

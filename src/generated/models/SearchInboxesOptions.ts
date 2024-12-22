@@ -12,176 +12,167 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SearchInboxesOptions
  */
 export interface SearchInboxesOptions {
-  /**
-   * Optional page index in list pagination
-   * @type {number}
-   * @memberof SearchInboxesOptions
-   */
-  pageIndex?: number | null;
-  /**
-   * Optional page size in list pagination
-   * @type {number}
-   * @memberof SearchInboxesOptions
-   */
-  pageSize?: number | null;
-  /**
-   * Optional createdAt sort direction ASC or DESC
-   * @type {string}
-   * @memberof SearchInboxesOptions
-   */
-  sortDirection?: SearchInboxesOptionsSortDirectionEnum;
-  /**
-   * Optionally filter results for favourites only
-   * @type {boolean}
-   * @memberof SearchInboxesOptions
-   */
-  favourite?: boolean | null;
-  /**
-   * Optionally filter by search words partial matching ID, tags, name, and email address
-   * @type {string}
-   * @memberof SearchInboxesOptions
-   */
-  search?: string | null;
-  /**
-   * Optionally filter by tags. Will return inboxes that include given tags
-   * @type {string}
-   * @memberof SearchInboxesOptions
-   */
-  tag?: string | null;
-  /**
-   * Optional filter by created after given date time
-   * @type {Date}
-   * @memberof SearchInboxesOptions
-   */
-  since?: Date | null;
-  /**
-   * Optional filter by created before given date time
-   * @type {Date}
-   * @memberof SearchInboxesOptions
-   */
-  before?: Date | null;
-  /**
-   * Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
-   * @type {string}
-   * @memberof SearchInboxesOptions
-   */
-  inboxType?: SearchInboxesOptionsInboxTypeEnum;
-  /**
-   * Optional filter by inbox function
-   * @type {string}
-   * @memberof SearchInboxesOptions
-   */
-  inboxFunction?: SearchInboxesOptionsInboxFunctionEnum;
-  /**
-   * Optional domain ID filter
-   * @type {string}
-   * @memberof SearchInboxesOptions
-   */
-  domainId?: string | null;
+    /**
+     * Optional page index in list pagination
+     * @type {number}
+     * @memberof SearchInboxesOptions
+     */
+    pageIndex?: number | null;
+    /**
+     * Optional page size in list pagination
+     * @type {number}
+     * @memberof SearchInboxesOptions
+     */
+    pageSize?: number | null;
+    /**
+     * Optional createdAt sort direction ASC or DESC
+     * @type {string}
+     * @memberof SearchInboxesOptions
+     */
+    sortDirection?: SearchInboxesOptionsSortDirectionEnum | null;
+    /**
+     * Optionally filter results for favourites only
+     * @type {boolean}
+     * @memberof SearchInboxesOptions
+     */
+    favourite?: boolean | null;
+    /**
+     * Optionally filter by search words partial matching ID, tags, name, and email address
+     * @type {string}
+     * @memberof SearchInboxesOptions
+     */
+    search?: string | null;
+    /**
+     * Optionally filter by tags. Will return inboxes that include given tags
+     * @type {string}
+     * @memberof SearchInboxesOptions
+     */
+    tag?: string | null;
+    /**
+     * Optional filter by created after given date time
+     * @type {Date}
+     * @memberof SearchInboxesOptions
+     */
+    since?: Date | null;
+    /**
+     * Optional filter by created before given date time
+     * @type {Date}
+     * @memberof SearchInboxesOptions
+     */
+    before?: Date | null;
+    /**
+     * Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
+     * @type {string}
+     * @memberof SearchInboxesOptions
+     */
+    inboxType?: SearchInboxesOptionsInboxTypeEnum | null;
+    /**
+     * Optional filter by inbox function
+     * @type {string}
+     * @memberof SearchInboxesOptions
+     */
+    inboxFunction?: SearchInboxesOptionsInboxFunctionEnum | null;
+    /**
+     * Optional domain ID filter
+     * @type {string}
+     * @memberof SearchInboxesOptions
+     */
+    domainId?: string | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum SearchInboxesOptionsSortDirectionEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const SearchInboxesOptionsSortDirectionEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type SearchInboxesOptionsSortDirectionEnum = typeof SearchInboxesOptionsSortDirectionEnum[keyof typeof SearchInboxesOptionsSortDirectionEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum SearchInboxesOptionsInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
-}
+export const SearchInboxesOptionsInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+} as const;
+export type SearchInboxesOptionsInboxTypeEnum = typeof SearchInboxesOptionsInboxTypeEnum[keyof typeof SearchInboxesOptionsInboxTypeEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum SearchInboxesOptionsInboxFunctionEnum {
-  ALIAS = 'ALIAS',
-  THREAD = 'THREAD',
-  CATCH_ALL = 'CATCH_ALL',
-  CONNECTOR = 'CONNECTOR',
+export const SearchInboxesOptionsInboxFunctionEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+} as const;
+export type SearchInboxesOptionsInboxFunctionEnum = typeof SearchInboxesOptionsInboxFunctionEnum[keyof typeof SearchInboxesOptionsInboxFunctionEnum];
+
+
+/**
+ * Check if a given object implements the SearchInboxesOptions interface.
+ */
+export function instanceOfSearchInboxesOptions(value: object): value is SearchInboxesOptions {
+    return true;
 }
 
 export function SearchInboxesOptionsFromJSON(json: any): SearchInboxesOptions {
-  return SearchInboxesOptionsFromJSONTyped(json, false);
+    return SearchInboxesOptionsFromJSONTyped(json, false);
 }
 
-export function SearchInboxesOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SearchInboxesOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    pageIndex: !exists(json, 'pageIndex') ? undefined : json['pageIndex'],
-    pageSize: !exists(json, 'pageSize') ? undefined : json['pageSize'],
-    sortDirection: !exists(json, 'sortDirection')
-      ? undefined
-      : json['sortDirection'],
-    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
-    search: !exists(json, 'search') ? undefined : json['search'],
-    tag: !exists(json, 'tag') ? undefined : json['tag'],
-    since: !exists(json, 'since')
-      ? undefined
-      : json['since'] === null
-      ? null
-      : new Date(json['since']),
-    before: !exists(json, 'before')
-      ? undefined
-      : json['before'] === null
-      ? null
-      : new Date(json['before']),
-    inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
-    inboxFunction: !exists(json, 'inboxFunction')
-      ? undefined
-      : json['inboxFunction'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-  };
+export function SearchInboxesOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchInboxesOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'pageIndex': json['pageIndex'] == null ? undefined : json['pageIndex'],
+        'pageSize': json['pageSize'] == null ? undefined : json['pageSize'],
+        'sortDirection': json['sortDirection'] == null ? undefined : json['sortDirection'],
+        'favourite': json['favourite'] == null ? undefined : json['favourite'],
+        'search': json['search'] == null ? undefined : json['search'],
+        'tag': json['tag'] == null ? undefined : json['tag'],
+        'since': json['since'] == null ? undefined : (new Date(json['since'])),
+        'before': json['before'] == null ? undefined : (new Date(json['before'])),
+        'inboxType': json['inboxType'] == null ? undefined : json['inboxType'],
+        'inboxFunction': json['inboxFunction'] == null ? undefined : json['inboxFunction'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+    };
 }
 
-export function SearchInboxesOptionsToJSON(
-  value?: SearchInboxesOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    pageIndex: value.pageIndex,
-    pageSize: value.pageSize,
-    sortDirection: value.sortDirection,
-    favourite: value.favourite,
-    search: value.search,
-    tag: value.tag,
-    since:
-      value.since === undefined
-        ? undefined
-        : value.since === null
-        ? null
-        : value.since.toISOString(),
-    before:
-      value.before === undefined
-        ? undefined
-        : value.before === null
-        ? null
-        : value.before.toISOString(),
-    inboxType: value.inboxType,
-    inboxFunction: value.inboxFunction,
-    domainId: value.domainId,
-  };
+export function SearchInboxesOptionsToJSON(json: any): SearchInboxesOptions {
+    return SearchInboxesOptionsToJSONTyped(json, false);
 }
+
+export function SearchInboxesOptionsToJSONTyped(value?: SearchInboxesOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'pageIndex': value['pageIndex'],
+        'pageSize': value['pageSize'],
+        'sortDirection': value['sortDirection'],
+        'favourite': value['favourite'],
+        'search': value['search'],
+        'tag': value['tag'],
+        'since': value['since'] == null ? undefined : ((value['since'] as any).toISOString()),
+        'before': value['before'] == null ? undefined : ((value['before'] as any).toISOString()),
+        'inboxType': value['inboxType'],
+        'inboxFunction': value['inboxFunction'],
+        'domainId': value['domainId'],
+    };
+}
+

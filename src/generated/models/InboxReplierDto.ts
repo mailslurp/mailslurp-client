@@ -12,162 +12,177 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Inbox replier. Will automatically reply to inbound emails that match given field for an inbox.
  * @export
  * @interface InboxReplierDto
  */
 export interface InboxReplierDto {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  field: InboxReplierDtoFieldEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  match: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  replyTo?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  from?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  charset?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxReplierDto
-   */
-  isHTML: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  templateId?: string | null;
-  /**
-   *
-   * @type {{ [key: string]: object; }}
-   * @memberof InboxReplierDto
-   */
-  templateVariables?: { [key: string]: object } | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxReplierDto
-   */
-  ignoreReplyTo: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof InboxReplierDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    field: InboxReplierDtoFieldEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    match: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    replyTo?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    subject?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    from?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    charset?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxReplierDto
+     */
+    isHTML: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    templateId?: string | null;
+    /**
+     * 
+     * @type {{ [key: string]: object | null; }}
+     * @memberof InboxReplierDto
+     */
+    templateVariables?: { [key: string]: object | null; } | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxReplierDto
+     */
+    ignoreReplyTo: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof InboxReplierDto
+     */
+    createdAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum InboxReplierDtoFieldEnum {
-  RECIPIENTS = 'RECIPIENTS',
-  SENDER = 'SENDER',
-  SUBJECT = 'SUBJECT',
-  ATTACHMENTS = 'ATTACHMENTS',
+export const InboxReplierDtoFieldEnum = {
+    RECIPIENTS: 'RECIPIENTS',
+    SENDER: 'SENDER',
+    SUBJECT: 'SUBJECT',
+    ATTACHMENTS: 'ATTACHMENTS'
+} as const;
+export type InboxReplierDtoFieldEnum = typeof InboxReplierDtoFieldEnum[keyof typeof InboxReplierDtoFieldEnum];
+
+
+/**
+ * Check if a given object implements the InboxReplierDto interface.
+ */
+export function instanceOfInboxReplierDto(value: object): value is InboxReplierDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('field' in value) || value['field'] === undefined) return false;
+    if (!('match' in value) || value['match'] === undefined) return false;
+    if (!('isHTML' in value) || value['isHTML'] === undefined) return false;
+    if (!('ignoreReplyTo' in value) || value['ignoreReplyTo'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function InboxReplierDtoFromJSON(json: any): InboxReplierDto {
-  return InboxReplierDtoFromJSONTyped(json, false);
+    return InboxReplierDtoFromJSONTyped(json, false);
 }
 
-export function InboxReplierDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxReplierDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    inboxId: json['inboxId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
-    replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    charset: !exists(json, 'charset') ? undefined : json['charset'],
-    isHTML: json['isHTML'],
-    templateId: !exists(json, 'templateId') ? undefined : json['templateId'],
-    templateVariables: !exists(json, 'templateVariables')
-      ? undefined
-      : json['templateVariables'],
-    ignoreReplyTo: json['ignoreReplyTo'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function InboxReplierDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxReplierDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'isHTML': json['isHTML'],
+        'templateId': json['templateId'] == null ? undefined : json['templateId'],
+        'templateVariables': json['templateVariables'] == null ? undefined : json['templateVariables'],
+        'ignoreReplyTo': json['ignoreReplyTo'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function InboxReplierDtoToJSON(value?: InboxReplierDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    name: value.name,
-    field: value.field,
-    match: value.match,
-    replyTo: value.replyTo,
-    subject: value.subject,
-    from: value.from,
-    charset: value.charset,
-    isHTML: value.isHTML,
-    templateId: value.templateId,
-    templateVariables: value.templateVariables,
-    ignoreReplyTo: value.ignoreReplyTo,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function InboxReplierDtoToJSON(json: any): InboxReplierDto {
+    return InboxReplierDtoToJSONTyped(json, false);
 }
+
+export function InboxReplierDtoToJSONTyped(value?: InboxReplierDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'inboxId': value['inboxId'],
+        'name': value['name'],
+        'field': value['field'],
+        'match': value['match'],
+        'replyTo': value['replyTo'],
+        'subject': value['subject'],
+        'from': value['from'],
+        'charset': value['charset'],
+        'isHTML': value['isHTML'],
+        'templateId': value['templateId'],
+        'templateVariables': value['templateVariables'],
+        'ignoreReplyTo': value['ignoreReplyTo'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

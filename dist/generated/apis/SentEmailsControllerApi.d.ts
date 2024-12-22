@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { DeliveryStatusDto, EmailPreviewUrls, PageDeliveryStatus, PageSentEmailProjection, PageSentEmailWithQueueProjection, PageTrackingPixelProjection, RawEmailJson, SentEmailDto } from '../models';
+import type { DeliveryStatusDto, EmailPreviewUrls, PageDeliveryStatus, PageSentEmailProjection, PageSentEmailWithQueueProjection, PageTrackingPixelProjection, RawEmailJson, SentEmailDto } from '../models/index';
 export interface DeleteSentEmailRequest {
     id: string;
 }
@@ -104,191 +104,191 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
     /**
      * Delete all sent email receipts
      */
-    deleteAllSentEmailsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllSentEmailsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete all sent email receipts
      */
-    deleteAllSentEmails(initOverrides?: RequestInit): Promise<void>;
+    deleteAllSentEmails(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete sent email receipt
      */
-    deleteSentEmailRaw(requestParameters: DeleteSentEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteSentEmailRaw(requestParameters: DeleteSentEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete sent email receipt
      */
-    deleteSentEmail(requestParameters: DeleteSentEmailRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteSentEmail(requestParameters: DeleteSentEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get all sent email tracking pixels in paginated form
      */
-    getAllSentTrackingPixelsRaw(requestParameters: GetAllSentTrackingPixelsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTrackingPixelProjection>>;
+    getAllSentTrackingPixelsRaw(requestParameters: GetAllSentTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageTrackingPixelProjection>>;
     /**
      * Get all sent email tracking pixels in paginated form
      */
-    getAllSentTrackingPixels(requestParameters: GetAllSentTrackingPixelsRequest, initOverrides?: RequestInit): Promise<PageTrackingPixelProjection>;
+    getAllSentTrackingPixels(requestParameters?: GetAllSentTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageTrackingPixelProjection>;
     /**
      * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
      * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawSentEmailContentsRaw(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    getRawSentEmailContentsRaw(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
      * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawSentEmailContents(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<void>;
+    getRawSentEmailContents(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
      * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
      */
-    getRawSentEmailJsonRaw(requestParameters: GetRawSentEmailJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<RawEmailJson>>;
+    getRawSentEmailJsonRaw(requestParameters: GetRawSentEmailJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RawEmailJson>>;
     /**
      * Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
      * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
      */
-    getRawSentEmailJson(requestParameters: GetRawSentEmailJsonRequest, initOverrides?: RequestInit): Promise<RawEmailJson>;
+    getRawSentEmailJson(requestParameters: GetRawSentEmailJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RawEmailJson>;
     /**
      * Get a sent email delivery status
      */
-    getSentDeliveryStatusRaw(requestParameters: GetSentDeliveryStatusRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliveryStatusDto>>;
+    getSentDeliveryStatusRaw(requestParameters: GetSentDeliveryStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeliveryStatusDto>>;
     /**
      * Get a sent email delivery status
      */
-    getSentDeliveryStatus(requestParameters: GetSentDeliveryStatusRequest, initOverrides?: RequestInit): Promise<DeliveryStatusDto>;
+    getSentDeliveryStatus(requestParameters: GetSentDeliveryStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeliveryStatusDto>;
     /**
      * Get all sent email delivery statuses
      */
-    getSentDeliveryStatusesRaw(requestParameters: GetSentDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageDeliveryStatus>>;
+    getSentDeliveryStatusesRaw(requestParameters: GetSentDeliveryStatusesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageDeliveryStatus>>;
     /**
      * Get all sent email delivery statuses
      */
-    getSentDeliveryStatuses(requestParameters: GetSentDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<PageDeliveryStatus>;
+    getSentDeliveryStatuses(requestParameters?: GetSentDeliveryStatusesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageDeliveryStatus>;
     /**
      * Get all sent email delivery statuses
      */
-    getSentDeliveryStatusesBySentIdRaw(requestParameters: GetSentDeliveryStatusesBySentIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageDeliveryStatus>>;
+    getSentDeliveryStatusesBySentIdRaw(requestParameters: GetSentDeliveryStatusesBySentIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageDeliveryStatus>>;
     /**
      * Get all sent email delivery statuses
      */
-    getSentDeliveryStatusesBySentId(requestParameters: GetSentDeliveryStatusesBySentIdRequest, initOverrides?: RequestInit): Promise<PageDeliveryStatus>;
+    getSentDeliveryStatusesBySentId(requestParameters: GetSentDeliveryStatusesBySentIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageDeliveryStatus>;
     /**
      * Get sent email receipt
      */
-    getSentEmailRaw(requestParameters: GetSentEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    getSentEmailRaw(requestParameters: GetSentEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>>;
     /**
      * Get sent email receipt
      */
-    getSentEmail(requestParameters: GetSentEmailRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    getSentEmail(requestParameters: GetSentEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto>;
     /**
      * Get sent email HTML content
      */
-    getSentEmailHTMLContentRaw(requestParameters: GetSentEmailHTMLContentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    getSentEmailHTMLContentRaw(requestParameters: GetSentEmailHTMLContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Get sent email HTML content
      */
-    getSentEmailHTMLContent(requestParameters: GetSentEmailHTMLContentRequest, initOverrides?: RequestInit): Promise<string>;
+    getSentEmailHTMLContent(requestParameters: GetSentEmailHTMLContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
      * Get sent email URL for viewing in browser or downloading
      */
-    getSentEmailPreviewURLsRaw(requestParameters: GetSentEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreviewUrls>>;
+    getSentEmailPreviewURLsRaw(requestParameters: GetSentEmailPreviewURLsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailPreviewUrls>>;
     /**
      * Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
      * Get sent email URL for viewing in browser or downloading
      */
-    getSentEmailPreviewURLs(requestParameters: GetSentEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<EmailPreviewUrls>;
+    getSentEmailPreviewURLs(requestParameters: GetSentEmailPreviewURLsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailPreviewUrls>;
     /**
      * Get all tracking pixels for a sent email in paginated form
      */
-    getSentEmailTrackingPixelsRaw(requestParameters: GetSentEmailTrackingPixelsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTrackingPixelProjection>>;
+    getSentEmailTrackingPixelsRaw(requestParameters: GetSentEmailTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageTrackingPixelProjection>>;
     /**
      * Get all tracking pixels for a sent email in paginated form
      */
-    getSentEmailTrackingPixels(requestParameters: GetSentEmailTrackingPixelsRequest, initOverrides?: RequestInit): Promise<PageTrackingPixelProjection>;
+    getSentEmailTrackingPixels(requestParameters: GetSentEmailTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageTrackingPixelProjection>;
     /**
      * Get all sent emails in paginated form
      */
-    getSentEmailsRaw(requestParameters: GetSentEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentEmailProjection>>;
+    getSentEmailsRaw(requestParameters: GetSentEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageSentEmailProjection>>;
     /**
      * Get all sent emails in paginated form
      */
-    getSentEmails(requestParameters: GetSentEmailsRequest, initOverrides?: RequestInit): Promise<PageSentEmailProjection>;
+    getSentEmails(requestParameters?: GetSentEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageSentEmailProjection>;
     /**
      * Get results of email sent with queues in paginated form
      */
-    getSentEmailsWithQueueResultsRaw(requestParameters: GetSentEmailsWithQueueResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentEmailWithQueueProjection>>;
+    getSentEmailsWithQueueResultsRaw(requestParameters: GetSentEmailsWithQueueResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageSentEmailWithQueueProjection>>;
     /**
      * Get results of email sent with queues in paginated form
      */
-    getSentEmailsWithQueueResults(requestParameters: GetSentEmailsWithQueueResultsRequest, initOverrides?: RequestInit): Promise<PageSentEmailWithQueueProjection>;
+    getSentEmailsWithQueueResults(requestParameters?: GetSentEmailsWithQueueResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageSentEmailWithQueueProjection>;
     /**
      * Get all sent organization emails in paginated form
      */
-    getSentOrganizationEmailsRaw(requestParameters: GetSentOrganizationEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentEmailProjection>>;
+    getSentOrganizationEmailsRaw(requestParameters: GetSentOrganizationEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageSentEmailProjection>>;
     /**
      * Get all sent organization emails in paginated form
      */
-    getSentOrganizationEmails(requestParameters: GetSentOrganizationEmailsRequest, initOverrides?: RequestInit): Promise<PageSentEmailProjection>;
+    getSentOrganizationEmails(requestParameters?: GetSentOrganizationEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageSentEmailProjection>;
     /**
      * Wait for delivery statuses
      */
-    waitForDeliveryStatusesRaw(requestParameters: WaitForDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliveryStatusDto>>;
+    waitForDeliveryStatusesRaw(requestParameters: WaitForDeliveryStatusesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeliveryStatusDto>>;
     /**
      * Wait for delivery statuses
      */
-    waitForDeliveryStatuses(requestParameters: WaitForDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<DeliveryStatusDto>;
+    waitForDeliveryStatuses(requestParameters?: WaitForDeliveryStatusesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeliveryStatusDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllSentTrackingPixelsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllSentTrackingPixelsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllSentTrackingPixelsSortEnum = typeof GetAllSentTrackingPixelsSortEnum[keyof typeof GetAllSentTrackingPixelsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetSentDeliveryStatusesSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetSentDeliveryStatusesSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetSentDeliveryStatusesSortEnum = typeof GetSentDeliveryStatusesSortEnum[keyof typeof GetSentDeliveryStatusesSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetSentDeliveryStatusesBySentIdSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetSentDeliveryStatusesBySentIdSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetSentDeliveryStatusesBySentIdSortEnum = typeof GetSentDeliveryStatusesBySentIdSortEnum[keyof typeof GetSentDeliveryStatusesBySentIdSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetSentEmailTrackingPixelsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetSentEmailTrackingPixelsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetSentEmailTrackingPixelsSortEnum = typeof GetSentEmailTrackingPixelsSortEnum[keyof typeof GetSentEmailTrackingPixelsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetSentEmailsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetSentEmailsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetSentEmailsSortEnum = typeof GetSentEmailsSortEnum[keyof typeof GetSentEmailsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetSentEmailsWithQueueResultsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetSentEmailsWithQueueResultsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetSentEmailsWithQueueResultsSortEnum = typeof GetSentEmailsWithQueueResultsSortEnum[keyof typeof GetSentEmailsWithQueueResultsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetSentOrganizationEmailsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetSentOrganizationEmailsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetSentOrganizationEmailsSortEnum = typeof GetSentOrganizationEmailsSortEnum[keyof typeof GetSentOrganizationEmailsSortEnum];

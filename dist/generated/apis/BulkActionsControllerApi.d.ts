@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { BulkSendEmailOptions, InboxDto } from '../models';
+import type { BulkSendEmailOptions, InboxDto } from '../models/index';
 export interface BulkCreateInboxesRequest {
     count: number;
 }
@@ -27,25 +27,25 @@ export declare class BulkActionsControllerApi extends runtime.BaseAPI {
     /**
      * Bulk create Inboxes (email addresses)
      */
-    bulkCreateInboxesRaw(requestParameters: BulkCreateInboxesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<InboxDto>>>;
+    bulkCreateInboxesRaw(requestParameters: BulkCreateInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<InboxDto>>>;
     /**
      * Bulk create Inboxes (email addresses)
      */
-    bulkCreateInboxes(requestParameters: BulkCreateInboxesRequest, initOverrides?: RequestInit): Promise<Array<InboxDto>>;
+    bulkCreateInboxes(requestParameters: BulkCreateInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<InboxDto>>;
     /**
      * Bulk Delete Inboxes
      */
-    bulkDeleteInboxesRaw(requestParameters: BulkDeleteInboxesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    bulkDeleteInboxesRaw(requestParameters: BulkDeleteInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Bulk Delete Inboxes
      */
-    bulkDeleteInboxes(requestParameters: BulkDeleteInboxesRequest, initOverrides?: RequestInit): Promise<void>;
+    bulkDeleteInboxes(requestParameters: BulkDeleteInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Bulk Send Emails
      */
-    bulkSendEmailsRaw(requestParameters: BulkSendEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    bulkSendEmailsRaw(requestParameters: BulkSendEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Bulk Send Emails
      */
-    bulkSendEmails(requestParameters: BulkSendEmailsRequest, initOverrides?: RequestInit): Promise<void>;
+    bulkSendEmails(requestParameters: BulkSendEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

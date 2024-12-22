@@ -38,6 +38,12 @@ export interface ConnectorDto {
      * @type {string}
      * @memberof ConnectorDto
      */
+    emailAddress?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorDto
+     */
     userId: string;
     /**
      *
@@ -47,48 +53,16 @@ export interface ConnectorDto {
     inboxId: string;
     /**
      *
-     * @type {boolean}
-     * @memberof ConnectorDto
-     */
-    syncEnabled: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorDto
-     */
-    syncScheduleType?: ConnectorDtoSyncScheduleTypeEnum;
-    /**
-     *
-     * @type {number}
-     * @memberof ConnectorDto
-     */
-    syncInterval?: number | null;
-    /**
-     *
-     * @type {boolean}
-     * @memberof ConnectorDto
-     */
-    hasImapConnection: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof ConnectorDto
-     */
-    hasSmtpConnection: boolean;
-    /**
-     *
      * @type {Date}
      * @memberof ConnectorDto
      */
     createdAt: Date;
 }
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the ConnectorDto interface.
  */
-export declare enum ConnectorDtoSyncScheduleTypeEnum {
-    INTERVAL = "INTERVAL"
-}
+export declare function instanceOfConnectorDto(value: object): value is ConnectorDto;
 export declare function ConnectorDtoFromJSON(json: any): ConnectorDto;
 export declare function ConnectorDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorDto;
-export declare function ConnectorDtoToJSON(value?: ConnectorDto | null): any;
+export declare function ConnectorDtoToJSON(json: any): ConnectorDto;
+export declare function ConnectorDtoToJSONTyped(value?: ConnectorDto | null, ignoreDiscriminator?: boolean): any;

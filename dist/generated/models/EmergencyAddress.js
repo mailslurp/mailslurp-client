@@ -13,64 +13,94 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmergencyAddressToJSON = exports.EmergencyAddressFromJSONTyped = exports.EmergencyAddressFromJSON = exports.EmergencyAddressPhoneCountryEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.EmergencyAddressPhoneCountryEnum = void 0;
+exports.instanceOfEmergencyAddress = instanceOfEmergencyAddress;
+exports.EmergencyAddressFromJSON = EmergencyAddressFromJSON;
+exports.EmergencyAddressFromJSONTyped = EmergencyAddressFromJSONTyped;
+exports.EmergencyAddressToJSON = EmergencyAddressToJSON;
+exports.EmergencyAddressToJSONTyped = EmergencyAddressToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var EmergencyAddressPhoneCountryEnum;
-(function (EmergencyAddressPhoneCountryEnum) {
-    EmergencyAddressPhoneCountryEnum["US"] = "US";
-    EmergencyAddressPhoneCountryEnum["GB"] = "GB";
-    EmergencyAddressPhoneCountryEnum["AU"] = "AU";
-})(EmergencyAddressPhoneCountryEnum = exports.EmergencyAddressPhoneCountryEnum || (exports.EmergencyAddressPhoneCountryEnum = {}));
+exports.EmergencyAddressPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+};
+/**
+ * Check if a given object implements the EmergencyAddress interface.
+ */
+function instanceOfEmergencyAddress(value) {
+    if (!('sid' in value) || value['sid'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('displayName' in value) || value['displayName'] === undefined)
+        return false;
+    if (!('customerName' in value) || value['customerName'] === undefined)
+        return false;
+    if (!('address1' in value) || value['address1'] === undefined)
+        return false;
+    if (!('city' in value) || value['city'] === undefined)
+        return false;
+    if (!('region' in value) || value['region'] === undefined)
+        return false;
+    if (!('postalCode' in value) || value['postalCode'] === undefined)
+        return false;
+    if (!('phoneCountry' in value) || value['phoneCountry'] === undefined)
+        return false;
+    if (!('accountSid' in value) || value['accountSid'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    return true;
+}
 function EmergencyAddressFromJSON(json) {
     return EmergencyAddressFromJSONTyped(json, false);
 }
-exports.EmergencyAddressFromJSON = EmergencyAddressFromJSON;
 function EmergencyAddressFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        sid: json['sid'],
-        userId: json['userId'],
-        displayName: json['displayName'],
-        customerName: json['customerName'],
-        address1: json['address1'],
-        city: json['city'],
-        region: json['region'],
-        postalCode: json['postalCode'],
-        phoneCountry: json['phoneCountry'],
-        accountSid: json['accountSid'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'] == null ? undefined : json['id'],
+        'sid': json['sid'],
+        'userId': json['userId'],
+        'displayName': json['displayName'],
+        'customerName': json['customerName'],
+        'address1': json['address1'],
+        'city': json['city'],
+        'region': json['region'],
+        'postalCode': json['postalCode'],
+        'phoneCountry': json['phoneCountry'],
+        'accountSid': json['accountSid'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
-exports.EmergencyAddressFromJSONTyped = EmergencyAddressFromJSONTyped;
-function EmergencyAddressToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmergencyAddressToJSON(json) {
+    return EmergencyAddressToJSONTyped(json, false);
+}
+function EmergencyAddressToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        sid: value.sid,
-        userId: value.userId,
-        displayName: value.displayName,
-        customerName: value.customerName,
-        address1: value.address1,
-        city: value.city,
-        region: value.region,
-        postalCode: value.postalCode,
-        phoneCountry: value.phoneCountry,
-        accountSid: value.accountSid,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value['id'],
+        'sid': value['sid'],
+        'userId': value['userId'],
+        'displayName': value['displayName'],
+        'customerName': value['customerName'],
+        'address1': value['address1'],
+        'city': value['city'],
+        'region': value['region'],
+        'postalCode': value['postalCode'],
+        'phoneCountry': value['phoneCountry'],
+        'accountSid': value['accountSid'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
     };
 }
-exports.EmergencyAddressToJSON = EmergencyAddressToJSON;

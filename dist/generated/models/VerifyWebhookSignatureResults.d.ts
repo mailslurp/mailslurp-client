@@ -22,6 +22,11 @@ export interface VerifyWebhookSignatureResults {
      */
     isValid: boolean;
 }
+/**
+ * Check if a given object implements the VerifyWebhookSignatureResults interface.
+ */
+export declare function instanceOfVerifyWebhookSignatureResults(value: object): value is VerifyWebhookSignatureResults;
 export declare function VerifyWebhookSignatureResultsFromJSON(json: any): VerifyWebhookSignatureResults;
 export declare function VerifyWebhookSignatureResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyWebhookSignatureResults;
-export declare function VerifyWebhookSignatureResultsToJSON(value?: VerifyWebhookSignatureResults | null): any;
+export declare function VerifyWebhookSignatureResultsToJSON(json: any): VerifyWebhookSignatureResults;
+export declare function VerifyWebhookSignatureResultsToJSONTyped(value?: VerifyWebhookSignatureResults | null, ignoreDiscriminator?: boolean): any;

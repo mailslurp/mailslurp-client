@@ -28,6 +28,12 @@ export interface AttachmentProjection {
      */
     updatedAt: Date;
     /**
+     * Inbox ID
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    inboxId?: string;
+    /**
      *
      * @type {string}
      * @memberof AttachmentProjection
@@ -52,6 +58,12 @@ export interface AttachmentProjection {
      */
     name?: string | null;
     /**
+     * ID
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    id: string;
+    /**
      * Content length of attachment in bytes
      * @type {number}
      * @memberof AttachmentProjection
@@ -64,6 +76,11 @@ export interface AttachmentProjection {
      */
     contentType?: string | null;
 }
+/**
+ * Check if a given object implements the AttachmentProjection interface.
+ */
+export declare function instanceOfAttachmentProjection(value: object): value is AttachmentProjection;
 export declare function AttachmentProjectionFromJSON(json: any): AttachmentProjection;
 export declare function AttachmentProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentProjection;
-export declare function AttachmentProjectionToJSON(value?: AttachmentProjection | null): any;
+export declare function AttachmentProjectionToJSON(json: any): AttachmentProjection;
+export declare function AttachmentProjectionToJSONTyped(value?: AttachmentProjection | null, ignoreDiscriminator?: boolean): any;

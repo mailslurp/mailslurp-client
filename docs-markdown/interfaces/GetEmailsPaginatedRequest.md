@@ -13,6 +13,7 @@
 - [since](GetEmailsPaginatedRequest.md#since)
 - [size](GetEmailsPaginatedRequest.md#size)
 - [sort](GetEmailsPaginatedRequest.md#sort)
+- [syncConnectors](GetEmailsPaginatedRequest.md#syncconnectors)
 - [unreadOnly](GetEmailsPaginatedRequest.md#unreadonly)
 
 ## Properties
@@ -56,6 +57,12 @@ ___
 ### sort
 
 • `Optional` **sort**: [`GetEmailsPaginatedSortEnum`](../enums/GetEmailsPaginatedSortEnum.md)
+
+___
+
+### syncConnectors
+
+• `Optional` **syncConnectors**: `boolean`
 
 ___
 

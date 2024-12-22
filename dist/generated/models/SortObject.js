@@ -13,34 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SortObjectToJSON = exports.SortObjectFromJSONTyped = exports.SortObjectFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfSortObject = instanceOfSortObject;
+exports.SortObjectFromJSON = SortObjectFromJSON;
+exports.SortObjectFromJSONTyped = SortObjectFromJSONTyped;
+exports.SortObjectToJSON = SortObjectToJSON;
+exports.SortObjectToJSONTyped = SortObjectToJSONTyped;
+/**
+ * Check if a given object implements the SortObject interface.
+ */
+function instanceOfSortObject(value) {
+    return true;
+}
 function SortObjectFromJSON(json) {
     return SortObjectFromJSONTyped(json, false);
 }
-exports.SortObjectFromJSON = SortObjectFromJSON;
 function SortObjectFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        sorted: !(0, runtime_1.exists)(json, 'sorted') ? undefined : json['sorted'],
-        unsorted: !(0, runtime_1.exists)(json, 'unsorted') ? undefined : json['unsorted'],
-        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        'direction': json['direction'] == null ? undefined : json['direction'],
+        'nullHandling': json['nullHandling'] == null ? undefined : json['nullHandling'],
+        'ascending': json['ascending'] == null ? undefined : json['ascending'],
+        'property': json['property'] == null ? undefined : json['property'],
+        'ignoreCase': json['ignoreCase'] == null ? undefined : json['ignoreCase'],
     };
 }
-exports.SortObjectFromJSONTyped = SortObjectFromJSONTyped;
-function SortObjectToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SortObjectToJSON(json) {
+    return SortObjectToJSONTyped(json, false);
+}
+function SortObjectToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        sorted: value.sorted,
-        unsorted: value.unsorted,
-        empty: value.empty,
+        'direction': value['direction'],
+        'nullHandling': value['nullHandling'],
+        'ascending': value['ascending'],
+        'property': value['property'],
+        'ignoreCase': value['ignoreCase'],
     };
 }
-exports.SortObjectToJSON = SortObjectToJSON;

@@ -13,42 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureCategoryNameToJSON = exports.EmailFeatureCategoryNameFromJSONTyped = exports.EmailFeatureCategoryNameFromJSON = exports.EmailFeatureCategoryNameSlugEnum = void 0;
+exports.EmailFeatureCategoryNameSlugEnum = void 0;
+exports.instanceOfEmailFeatureCategoryName = instanceOfEmailFeatureCategoryName;
+exports.EmailFeatureCategoryNameFromJSON = EmailFeatureCategoryNameFromJSON;
+exports.EmailFeatureCategoryNameFromJSONTyped = EmailFeatureCategoryNameFromJSONTyped;
+exports.EmailFeatureCategoryNameToJSON = EmailFeatureCategoryNameToJSON;
+exports.EmailFeatureCategoryNameToJSONTyped = EmailFeatureCategoryNameToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var EmailFeatureCategoryNameSlugEnum;
-(function (EmailFeatureCategoryNameSlugEnum) {
-    EmailFeatureCategoryNameSlugEnum["css"] = "css";
-    EmailFeatureCategoryNameSlugEnum["html"] = "html";
-    EmailFeatureCategoryNameSlugEnum["image"] = "image";
-    EmailFeatureCategoryNameSlugEnum["others"] = "others";
-})(EmailFeatureCategoryNameSlugEnum = exports.EmailFeatureCategoryNameSlugEnum || (exports.EmailFeatureCategoryNameSlugEnum = {}));
+exports.EmailFeatureCategoryNameSlugEnum = {
+    css: 'css',
+    html: 'html',
+    image: 'image',
+    others: 'others'
+};
+/**
+ * Check if a given object implements the EmailFeatureCategoryName interface.
+ */
+function instanceOfEmailFeatureCategoryName(value) {
+    if (!('slug' in value) || value['slug'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeatureCategoryNameFromJSON(json) {
     return EmailFeatureCategoryNameFromJSONTyped(json, false);
 }
-exports.EmailFeatureCategoryNameFromJSON = EmailFeatureCategoryNameFromJSON;
 function EmailFeatureCategoryNameFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        slug: json['slug'],
-        name: json['name'],
+        'slug': json['slug'],
+        'name': json['name'],
     };
 }
-exports.EmailFeatureCategoryNameFromJSONTyped = EmailFeatureCategoryNameFromJSONTyped;
-function EmailFeatureCategoryNameToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeatureCategoryNameToJSON(json) {
+    return EmailFeatureCategoryNameToJSONTyped(json, false);
+}
+function EmailFeatureCategoryNameToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        slug: value.slug,
-        name: value.name,
+        'slug': value['slug'],
+        'name': value['name'],
     };
 }
-exports.EmailFeatureCategoryNameToJSON = EmailFeatureCategoryNameToJSON;

@@ -48,20 +48,26 @@ export interface WebhookBounceRecipientPayload {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookBounceRecipientPayloadEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const WebhookBounceRecipientPayloadEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type WebhookBounceRecipientPayloadEventNameEnum = typeof WebhookBounceRecipientPayloadEventNameEnum[keyof typeof WebhookBounceRecipientPayloadEventNameEnum];
+/**
+ * Check if a given object implements the WebhookBounceRecipientPayload interface.
+ */
+export declare function instanceOfWebhookBounceRecipientPayload(value: object): value is WebhookBounceRecipientPayload;
 export declare function WebhookBounceRecipientPayloadFromJSON(json: any): WebhookBounceRecipientPayload;
 export declare function WebhookBounceRecipientPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookBounceRecipientPayload;
-export declare function WebhookBounceRecipientPayloadToJSON(value?: WebhookBounceRecipientPayload | null): any;
+export declare function WebhookBounceRecipientPayloadToJSON(json: any): WebhookBounceRecipientPayload;
+export declare function WebhookBounceRecipientPayloadToJSONTyped(value?: WebhookBounceRecipientPayload | null, ignoreDiscriminator?: boolean): any;

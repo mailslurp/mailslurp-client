@@ -13,76 +13,100 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxDtoToJSON = exports.InboxDtoFromJSONTyped = exports.InboxDtoFromJSON = exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
+exports.instanceOfInboxDto = instanceOfInboxDto;
+exports.InboxDtoFromJSON = InboxDtoFromJSON;
+exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
+exports.InboxDtoToJSON = InboxDtoToJSON;
+exports.InboxDtoToJSONTyped = InboxDtoToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var InboxDtoInboxTypeEnum;
-(function (InboxDtoInboxTypeEnum) {
-    InboxDtoInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    InboxDtoInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(InboxDtoInboxTypeEnum = exports.InboxDtoInboxTypeEnum || (exports.InboxDtoInboxTypeEnum = {}));
+exports.InboxDtoInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var InboxDtoFunctionsAsEnum;
-(function (InboxDtoFunctionsAsEnum) {
-    InboxDtoFunctionsAsEnum["ALIAS"] = "ALIAS";
-    InboxDtoFunctionsAsEnum["THREAD"] = "THREAD";
-    InboxDtoFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
-    InboxDtoFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
-})(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {}));
+exports.InboxDtoFunctionsAsEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+};
+/**
+ * Check if a given object implements the InboxDto interface.
+ */
+function instanceOfInboxDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('favourite' in value) || value['favourite'] === undefined)
+        return false;
+    if (!('readOnly' in value) || value['readOnly'] === undefined)
+        return false;
+    if (!('virtualInbox' in value) || value['virtualInbox'] === undefined)
+        return false;
+    return true;
+}
 function InboxDtoFromJSON(json) {
     return InboxDtoFromJSONTyped(json, false);
 }
-exports.InboxDtoFromJSON = InboxDtoFromJSON;
 function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        createdAt: new Date(json['createdAt']),
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        emailAddress: json['emailAddress'],
-        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
-        favourite: json['favourite'],
-        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        readOnly: json['readOnly'],
-        virtualInbox: json['virtualInbox'],
-        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        'id': json['id'],
+        'userId': json['userId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'name': json['name'] == null ? undefined : json['name'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'emailAddress': json['emailAddress'],
+        'expiresAt': json['expiresAt'] == null ? undefined : (new Date(json['expiresAt'])),
+        'favourite': json['favourite'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
+        'inboxType': json['inboxType'] == null ? undefined : json['inboxType'],
+        'readOnly': json['readOnly'],
+        'virtualInbox': json['virtualInbox'],
+        'functionsAs': json['functionsAs'] == null ? undefined : json['functionsAs'],
+        'localPart': json['localPart'] == null ? undefined : json['localPart'],
+        'domain': json['domain'] == null ? undefined : json['domain'],
     };
 }
-exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
-function InboxDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxDtoToJSON(json) {
+    return InboxDtoToJSONTyped(json, false);
+}
+function InboxDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        createdAt: value.createdAt.toISOString(),
-        name: value.name,
-        domainId: value.domainId,
-        description: value.description,
-        emailAddress: value.emailAddress,
-        expiresAt: value.expiresAt,
-        favourite: value.favourite,
-        tags: value.tags,
-        inboxType: value.inboxType,
-        readOnly: value.readOnly,
-        virtualInbox: value.virtualInbox,
-        functionsAs: value.functionsAs,
+        'id': value['id'],
+        'userId': value['userId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'name': value['name'],
+        'domainId': value['domainId'],
+        'description': value['description'],
+        'emailAddress': value['emailAddress'],
+        'expiresAt': value['expiresAt'] == null ? undefined : (value['expiresAt'].toISOString()),
+        'favourite': value['favourite'],
+        'tags': value['tags'],
+        'inboxType': value['inboxType'],
+        'readOnly': value['readOnly'],
+        'virtualInbox': value['virtualInbox'],
+        'functionsAs': value['functionsAs'],
+        'localPart': value['localPart'],
+        'domain': value['domain'],
     };
 }
-exports.InboxDtoToJSON = InboxDtoToJSON;

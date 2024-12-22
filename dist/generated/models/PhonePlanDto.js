@@ -13,45 +13,60 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePlanDtoToJSON = exports.PhonePlanDtoFromJSONTyped = exports.PhonePlanDtoFromJSON = exports.PhonePlanDtoPhoneCountryEnum = void 0;
+exports.PhonePlanDtoPhoneCountryEnum = void 0;
+exports.instanceOfPhonePlanDto = instanceOfPhonePlanDto;
+exports.PhonePlanDtoFromJSON = PhonePlanDtoFromJSON;
+exports.PhonePlanDtoFromJSONTyped = PhonePlanDtoFromJSONTyped;
+exports.PhonePlanDtoToJSON = PhonePlanDtoToJSON;
+exports.PhonePlanDtoToJSONTyped = PhonePlanDtoToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var PhonePlanDtoPhoneCountryEnum;
-(function (PhonePlanDtoPhoneCountryEnum) {
-    PhonePlanDtoPhoneCountryEnum["US"] = "US";
-    PhonePlanDtoPhoneCountryEnum["GB"] = "GB";
-    PhonePlanDtoPhoneCountryEnum["AU"] = "AU";
-})(PhonePlanDtoPhoneCountryEnum = exports.PhonePlanDtoPhoneCountryEnum || (exports.PhonePlanDtoPhoneCountryEnum = {}));
+exports.PhonePlanDtoPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+};
+/**
+ * Check if a given object implements the PhonePlanDto interface.
+ */
+function instanceOfPhonePlanDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('phoneCountry' in value) || value['phoneCountry'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function PhonePlanDtoFromJSON(json) {
     return PhonePlanDtoFromJSONTyped(json, false);
 }
-exports.PhonePlanDtoFromJSON = PhonePlanDtoFromJSON;
 function PhonePlanDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        phoneCountry: json['phoneCountry'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'phoneCountry': json['phoneCountry'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.PhonePlanDtoFromJSONTyped = PhonePlanDtoFromJSONTyped;
-function PhonePlanDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function PhonePlanDtoToJSON(json) {
+    return PhonePlanDtoToJSONTyped(json, false);
+}
+function PhonePlanDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        phoneCountry: value.phoneCountry,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'phoneCountry': value['phoneCountry'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.PhonePlanDtoToJSON = PhonePlanDtoToJSON;

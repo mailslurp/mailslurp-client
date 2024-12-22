@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FlushExpiredInboxesResultToJSON = exports.FlushExpiredInboxesResultFromJSONTyped = exports.FlushExpiredInboxesResultFromJSON = void 0;
+exports.instanceOfFlushExpiredInboxesResult = instanceOfFlushExpiredInboxesResult;
+exports.FlushExpiredInboxesResultFromJSON = FlushExpiredInboxesResultFromJSON;
+exports.FlushExpiredInboxesResultFromJSONTyped = FlushExpiredInboxesResultFromJSONTyped;
+exports.FlushExpiredInboxesResultToJSON = FlushExpiredInboxesResultToJSON;
+exports.FlushExpiredInboxesResultToJSONTyped = FlushExpiredInboxesResultToJSONTyped;
+/**
+ * Check if a given object implements the FlushExpiredInboxesResult interface.
+ */
+function instanceOfFlushExpiredInboxesResult(value) {
+    if (!('inboxIds' in value) || value['inboxIds'] === undefined)
+        return false;
+    if (!('expireBefore' in value) || value['expireBefore'] === undefined)
+        return false;
+    return true;
+}
 function FlushExpiredInboxesResultFromJSON(json) {
     return FlushExpiredInboxesResultFromJSONTyped(json, false);
 }
-exports.FlushExpiredInboxesResultFromJSON = FlushExpiredInboxesResultFromJSON;
 function FlushExpiredInboxesResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxIds: json['inboxIds'],
-        expireBefore: new Date(json['expireBefore']),
+        'inboxIds': json['inboxIds'],
+        'expireBefore': (new Date(json['expireBefore'])),
     };
 }
-exports.FlushExpiredInboxesResultFromJSONTyped = FlushExpiredInboxesResultFromJSONTyped;
-function FlushExpiredInboxesResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function FlushExpiredInboxesResultToJSON(json) {
+    return FlushExpiredInboxesResultToJSONTyped(json, false);
+}
+function FlushExpiredInboxesResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxIds: value.inboxIds,
-        expireBefore: value.expireBefore.toISOString(),
+        'inboxIds': value['inboxIds'],
+        'expireBefore': ((value['expireBefore']).toISOString()),
     };
 }
-exports.FlushExpiredInboxesResultToJSON = FlushExpiredInboxesResultToJSON;

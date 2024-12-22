@@ -13,56 +13,67 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MatchOptionToJSON = exports.MatchOptionFromJSONTyped = exports.MatchOptionFromJSON = exports.MatchOptionShouldEnum = exports.MatchOptionFieldEnum = void 0;
+exports.MatchOptionShouldEnum = exports.MatchOptionFieldEnum = void 0;
+exports.instanceOfMatchOption = instanceOfMatchOption;
+exports.MatchOptionFromJSON = MatchOptionFromJSON;
+exports.MatchOptionFromJSONTyped = MatchOptionFromJSONTyped;
+exports.MatchOptionToJSON = MatchOptionToJSON;
+exports.MatchOptionToJSONTyped = MatchOptionToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var MatchOptionFieldEnum;
-(function (MatchOptionFieldEnum) {
-    MatchOptionFieldEnum["SUBJECT"] = "SUBJECT";
-    MatchOptionFieldEnum["TO"] = "TO";
-    MatchOptionFieldEnum["BCC"] = "BCC";
-    MatchOptionFieldEnum["CC"] = "CC";
-    MatchOptionFieldEnum["FROM"] = "FROM";
-    MatchOptionFieldEnum["HEADERS"] = "HEADERS";
-})(MatchOptionFieldEnum = exports.MatchOptionFieldEnum || (exports.MatchOptionFieldEnum = {}));
+exports.MatchOptionFieldEnum = {
+    SUBJECT: 'SUBJECT',
+    TO: 'TO',
+    BCC: 'BCC',
+    CC: 'CC',
+    FROM: 'FROM',
+    HEADERS: 'HEADERS'
+};
 /**
  * @export
- * @enum {string}
  */
-var MatchOptionShouldEnum;
-(function (MatchOptionShouldEnum) {
-    MatchOptionShouldEnum["MATCH"] = "MATCH";
-    MatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
-    MatchOptionShouldEnum["EQUAL"] = "EQUAL";
-})(MatchOptionShouldEnum = exports.MatchOptionShouldEnum || (exports.MatchOptionShouldEnum = {}));
+exports.MatchOptionShouldEnum = {
+    MATCH: 'MATCH',
+    CONTAIN: 'CONTAIN',
+    EQUAL: 'EQUAL'
+};
+/**
+ * Check if a given object implements the MatchOption interface.
+ */
+function instanceOfMatchOption(value) {
+    if (!('field' in value) || value['field'] === undefined)
+        return false;
+    if (!('should' in value) || value['should'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function MatchOptionFromJSON(json) {
     return MatchOptionFromJSONTyped(json, false);
 }
-exports.MatchOptionFromJSON = MatchOptionFromJSON;
 function MatchOptionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        field: json['field'],
-        should: json['should'],
-        value: json['value'],
+        'field': json['field'],
+        'should': json['should'],
+        'value': json['value'],
     };
 }
-exports.MatchOptionFromJSONTyped = MatchOptionFromJSONTyped;
-function MatchOptionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function MatchOptionToJSON(json) {
+    return MatchOptionToJSONTyped(json, false);
+}
+function MatchOptionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        field: value.field,
-        should: value.should,
-        value: value.value,
+        'field': value['field'],
+        'should': value['should'],
+        'value': value['value'],
     };
 }
-exports.MatchOptionToJSON = MatchOptionToJSON;

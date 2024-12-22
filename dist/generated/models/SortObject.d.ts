@@ -17,23 +17,40 @@
 export interface SortObject {
     /**
      *
-     * @type {boolean}
+     * @type {string}
      * @memberof SortObject
      */
-    sorted?: boolean;
+    direction?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SortObject
+     */
+    nullHandling?: string;
     /**
      *
      * @type {boolean}
      * @memberof SortObject
      */
-    unsorted?: boolean;
+    ascending?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof SortObject
+     */
+    property?: string;
     /**
      *
      * @type {boolean}
      * @memberof SortObject
      */
-    empty?: boolean;
+    ignoreCase?: boolean;
 }
+/**
+ * Check if a given object implements the SortObject interface.
+ */
+export declare function instanceOfSortObject(value: object): value is SortObject;
 export declare function SortObjectFromJSON(json: any): SortObject;
 export declare function SortObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): SortObject;
-export declare function SortObjectToJSON(value?: SortObject | null): any;
+export declare function SortObjectToJSON(json: any): SortObject;
+export declare function SortObjectToJSONTyped(value?: SortObject | null, ignoreDiscriminator?: boolean): any;

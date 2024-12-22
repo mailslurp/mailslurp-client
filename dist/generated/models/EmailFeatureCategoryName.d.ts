@@ -30,14 +30,19 @@ export interface EmailFeatureCategoryName {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum EmailFeatureCategoryNameSlugEnum {
-    css = "css",
-    html = "html",
-    image = "image",
-    others = "others"
-}
+export declare const EmailFeatureCategoryNameSlugEnum: {
+    readonly css: "css";
+    readonly html: "html";
+    readonly image: "image";
+    readonly others: "others";
+};
+export type EmailFeatureCategoryNameSlugEnum = typeof EmailFeatureCategoryNameSlugEnum[keyof typeof EmailFeatureCategoryNameSlugEnum];
+/**
+ * Check if a given object implements the EmailFeatureCategoryName interface.
+ */
+export declare function instanceOfEmailFeatureCategoryName(value: object): value is EmailFeatureCategoryName;
 export declare function EmailFeatureCategoryNameFromJSON(json: any): EmailFeatureCategoryName;
 export declare function EmailFeatureCategoryNameFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureCategoryName;
-export declare function EmailFeatureCategoryNameToJSON(value?: EmailFeatureCategoryName | null): any;
+export declare function EmailFeatureCategoryNameToJSON(json: any): EmailFeatureCategoryName;
+export declare function EmailFeatureCategoryNameToJSONTyped(value?: EmailFeatureCategoryName | null, ignoreDiscriminator?: boolean): any;

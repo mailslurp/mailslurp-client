@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BounceRecipientProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { BounceRecipientProjection } from './BounceRecipientProjection';
 /**
  * Paginated bounced recipients. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageBouncedRecipients {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageBouncedRecipients
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageBouncedRecipients {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageBouncedRecipients interface.
+ */
+export declare function instanceOfPageBouncedRecipients(value: object): value is PageBouncedRecipients;
 export declare function PageBouncedRecipientsFromJSON(json: any): PageBouncedRecipients;
 export declare function PageBouncedRecipientsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageBouncedRecipients;
-export declare function PageBouncedRecipientsToJSON(value?: PageBouncedRecipients | null): any;
+export declare function PageBouncedRecipientsToJSON(json: any): PageBouncedRecipients;
+export declare function PageBouncedRecipientsToJSONTyped(value?: PageBouncedRecipients | null, ignoreDiscriminator?: boolean): any;

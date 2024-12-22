@@ -12,61 +12,73 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Expired inbox
  * @export
  * @interface ExpiredInboxDto
  */
 export interface ExpiredInboxDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxDto
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxDto
-   */
-  emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxDto
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxDto
+     */
+    emailAddress: string;
+}
+
+/**
+ * Check if a given object implements the ExpiredInboxDto interface.
+ */
+export function instanceOfExpiredInboxDto(value: object): value is ExpiredInboxDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    return true;
 }
 
 export function ExpiredInboxDtoFromJSON(json: any): ExpiredInboxDto {
-  return ExpiredInboxDtoFromJSONTyped(json, false);
+    return ExpiredInboxDtoFromJSONTyped(json, false);
 }
 
-export function ExpiredInboxDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ExpiredInboxDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    inboxId: json['inboxId'],
-    emailAddress: json['emailAddress'],
-  };
+export function ExpiredInboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'inboxId': json['inboxId'],
+        'emailAddress': json['emailAddress'],
+    };
 }
 
-export function ExpiredInboxDtoToJSON(value?: ExpiredInboxDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    emailAddress: value.emailAddress,
-  };
+export function ExpiredInboxDtoToJSON(json: any): ExpiredInboxDto {
+    return ExpiredInboxDtoToJSONTyped(json, false);
 }
+
+export function ExpiredInboxDtoToJSONTyped(value?: ExpiredInboxDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'inboxId': value['inboxId'],
+        'emailAddress': value['emailAddress'],
+    };
+}
+

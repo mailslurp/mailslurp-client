@@ -12,53 +12,62 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailHtmlDto
  */
 export interface EmailHtmlDto {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailHtmlDto
-   */
-  subject?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailHtmlDto
-   */
-  body?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailHtmlDto
+     */
+    subject?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailHtmlDto
+     */
+    body?: string;
+}
+
+/**
+ * Check if a given object implements the EmailHtmlDto interface.
+ */
+export function instanceOfEmailHtmlDto(value: object): value is EmailHtmlDto {
+    return true;
 }
 
 export function EmailHtmlDtoFromJSON(json: any): EmailHtmlDto {
-  return EmailHtmlDtoFromJSONTyped(json, false);
+    return EmailHtmlDtoFromJSONTyped(json, false);
 }
 
-export function EmailHtmlDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailHtmlDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    body: !exists(json, 'body') ? undefined : json['body'],
-  };
+export function EmailHtmlDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailHtmlDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'body': json['body'] == null ? undefined : json['body'],
+    };
 }
 
-export function EmailHtmlDtoToJSON(value?: EmailHtmlDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    subject: value.subject,
-    body: value.body,
-  };
+export function EmailHtmlDtoToJSON(json: any): EmailHtmlDto {
+    return EmailHtmlDtoToJSONTyped(json, false);
 }
+
+export function EmailHtmlDtoToJSONTyped(value?: EmailHtmlDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'subject': value['subject'],
+        'body': value['body'],
+    };
+}
+

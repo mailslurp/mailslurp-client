@@ -10,9 +10,12 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult } from '../models';
+import type { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult } from '../models/index';
 export interface CheckEmailFeaturesClientSupportRequest {
     checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
+}
+export interface DeleteNewFakeEmailAddressRequest {
+    emailAddress: string;
 }
 export interface GenerateBimiRecordRequest {
     generateBimiRecordOptions: GenerateBimiRecordOptions;
@@ -26,7 +29,13 @@ export interface GenerateMtaStsRecordRequest {
 export interface GenerateTlsReportingRecordRequest {
     generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
 }
+export interface GetFakeEmailByEmailAddressRequest {
+    emailAddress: string;
+}
 export interface GetFakeEmailByIdRequest {
+    id: string;
+}
+export interface GetFakeEmailRawRequest {
     id: string;
 }
 export interface GetFakeEmailsForAddressRequest {
@@ -52,93 +61,113 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
     /**
      * Check email client support for email HTML and CSS features
      */
-    checkEmailFeaturesClientSupportRaw(requestParameters: CheckEmailFeaturesClientSupportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailFeaturesClientSupportResults>>;
+    checkEmailFeaturesClientSupportRaw(requestParameters: CheckEmailFeaturesClientSupportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CheckEmailFeaturesClientSupportResults>>;
     /**
      * Check email client support for email HTML and CSS features
      */
-    checkEmailFeaturesClientSupport(requestParameters: CheckEmailFeaturesClientSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailFeaturesClientSupportResults>;
+    checkEmailFeaturesClientSupport(requestParameters: CheckEmailFeaturesClientSupportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CheckEmailFeaturesClientSupportResults>;
     /**
      * Create a new email address using the fake email domains
      */
-    createNewFakeEmailAddressRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<NewFakeEmailAddressResult>>;
+    createNewFakeEmailAddressRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NewFakeEmailAddressResult>>;
     /**
      * Create a new email address using the fake email domains
      */
-    createNewFakeEmailAddress(initOverrides?: RequestInit): Promise<NewFakeEmailAddressResult>;
+    createNewFakeEmailAddress(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NewFakeEmailAddressResult>;
+    /**
+     * Delete a fake email address using the fake email domains
+     */
+    deleteNewFakeEmailAddressRaw(requestParameters: DeleteNewFakeEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a fake email address using the fake email domains
+     */
+    deleteNewFakeEmailAddress(requestParameters: DeleteNewFakeEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create a BIMI record policy
      */
-    generateBimiRecordRaw(requestParameters: GenerateBimiRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateBimiRecordResults>>;
+    generateBimiRecordRaw(requestParameters: GenerateBimiRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateBimiRecordResults>>;
     /**
      * Create a BIMI record policy
      */
-    generateBimiRecord(requestParameters: GenerateBimiRecordRequest, initOverrides?: RequestInit): Promise<GenerateBimiRecordResults>;
+    generateBimiRecord(requestParameters: GenerateBimiRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateBimiRecordResults>;
     /**
      * Create a DMARC record policy
      */
-    generateDmarcRecordRaw(requestParameters: GenerateDmarcRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateDmarcRecordResults>>;
+    generateDmarcRecordRaw(requestParameters: GenerateDmarcRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateDmarcRecordResults>>;
     /**
      * Create a DMARC record policy
      */
-    generateDmarcRecord(requestParameters: GenerateDmarcRecordRequest, initOverrides?: RequestInit): Promise<GenerateDmarcRecordResults>;
+    generateDmarcRecord(requestParameters: GenerateDmarcRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateDmarcRecordResults>;
     /**
      * Create a TLS reporting record policy
      */
-    generateMtaStsRecordRaw(requestParameters: GenerateMtaStsRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateMtaStsRecordResults>>;
+    generateMtaStsRecordRaw(requestParameters: GenerateMtaStsRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateMtaStsRecordResults>>;
     /**
      * Create a TLS reporting record policy
      */
-    generateMtaStsRecord(requestParameters: GenerateMtaStsRecordRequest, initOverrides?: RequestInit): Promise<GenerateMtaStsRecordResults>;
+    generateMtaStsRecord(requestParameters: GenerateMtaStsRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateMtaStsRecordResults>;
     /**
      * Create a TLS reporting record policy
      */
-    generateTlsReportingRecordRaw(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateTlsReportingRecordResults>>;
+    generateTlsReportingRecordRaw(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateTlsReportingRecordResults>>;
     /**
      * Create a TLS reporting record policy
      */
-    generateTlsReportingRecord(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit): Promise<GenerateTlsReportingRecordResults>;
+    generateTlsReportingRecord(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateTlsReportingRecordResults>;
     /**
      */
-    getFakeEmailByIdRaw(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<FakeEmailResult>>;
+    getFakeEmailByEmailAddressRaw(requestParameters: GetFakeEmailByEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<FakeEmailResult>>;
     /**
      */
-    getFakeEmailById(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<FakeEmailResult>;
+    getFakeEmailByEmailAddress(requestParameters: GetFakeEmailByEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<FakeEmailResult>;
     /**
      */
-    getFakeEmailsForAddressRaw(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<FakeEmailPreview>>>;
+    getFakeEmailByIdRaw(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<FakeEmailResult>>;
     /**
      */
-    getFakeEmailsForAddress(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<Array<FakeEmailPreview>>;
+    getFakeEmailById(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<FakeEmailResult>;
+    /**
+     */
+    getFakeEmailRawRaw(requestParameters: GetFakeEmailRawRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    /**
+     */
+    getFakeEmailRaw(requestParameters: GetFakeEmailRawRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    /**
+     */
+    getFakeEmailsForAddressRaw(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<FakeEmailPreview>>>;
+    /**
+     */
+    getFakeEmailsForAddress(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<FakeEmailPreview>>;
     /**
      * Lookup a BIMI record policy
      */
-    lookupBimiDomainRaw(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupBimiDomainResults>>;
+    lookupBimiDomainRaw(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LookupBimiDomainResults>>;
     /**
      * Lookup a BIMI record policy
      */
-    lookupBimiDomain(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit): Promise<LookupBimiDomainResults>;
+    lookupBimiDomain(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupBimiDomainResults>;
     /**
      * Lookup a DMARC record policy
      */
-    lookupDmarcDomainRaw(requestParameters: LookupDmarcDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupDmarcDomainResults>>;
+    lookupDmarcDomainRaw(requestParameters: LookupDmarcDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LookupDmarcDomainResults>>;
     /**
      * Lookup a DMARC record policy
      */
-    lookupDmarcDomain(requestParameters: LookupDmarcDomainRequest, initOverrides?: RequestInit): Promise<LookupDmarcDomainResults>;
+    lookupDmarcDomain(requestParameters: LookupDmarcDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupDmarcDomainResults>;
     /**
      * Lookup a MTA-STS domain policy
      */
-    lookupMtaStsDomainRaw(requestParameters: LookupMtaStsDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupMtaStsDomainResults>>;
+    lookupMtaStsDomainRaw(requestParameters: LookupMtaStsDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LookupMtaStsDomainResults>>;
     /**
      * Lookup a MTA-STS domain policy
      */
-    lookupMtaStsDomain(requestParameters: LookupMtaStsDomainRequest, initOverrides?: RequestInit): Promise<LookupMtaStsDomainResults>;
+    lookupMtaStsDomain(requestParameters: LookupMtaStsDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupMtaStsDomainResults>;
     /**
      * Lookup a TLS reporting domain policy
      */
-    lookupTlsReportingDomainRaw(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupTlsReportingDomainResults>>;
+    lookupTlsReportingDomainRaw(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LookupTlsReportingDomainResults>>;
     /**
      * Lookup a TLS reporting domain policy
      */
-    lookupTlsReportingDomain(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<LookupTlsReportingDomainResults>;
+    lookupTlsReportingDomain(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupTlsReportingDomainResults>;
 }

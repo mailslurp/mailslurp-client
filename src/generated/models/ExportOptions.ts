@@ -12,116 +12,106 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for exporting user data
  * @export
  * @interface ExportOptions
  */
 export interface ExportOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof ExportOptions
-   */
-  outputFormat: ExportOptionsOutputFormatEnum;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ExportOptions
-   */
-  excludePreviouslyExported?: boolean | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof ExportOptions
-   */
-  createdEarliestTime?: Date | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof ExportOptions
-   */
-  createdOldestTime?: Date | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ExportOptions
-   */
-  filter?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ExportOptions
-   */
-  listSeparatorToken?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportOptions
+     */
+    outputFormat: ExportOptionsOutputFormatEnum;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExportOptions
+     */
+    excludePreviouslyExported?: boolean | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ExportOptions
+     */
+    createdEarliestTime?: Date | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ExportOptions
+     */
+    createdOldestTime?: Date | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportOptions
+     */
+    filter?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportOptions
+     */
+    listSeparatorToken?: string | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum ExportOptionsOutputFormatEnum {
-  DEFAULT = 'CSV_DEFAULT',
-  EXCEL = 'CSV_EXCEL',
+export const ExportOptionsOutputFormatEnum = {
+    DEFAULT: 'CSV_DEFAULT',
+    EXCEL: 'CSV_EXCEL'
+} as const;
+export type ExportOptionsOutputFormatEnum = typeof ExportOptionsOutputFormatEnum[keyof typeof ExportOptionsOutputFormatEnum];
+
+
+/**
+ * Check if a given object implements the ExportOptions interface.
+ */
+export function instanceOfExportOptions(value: object): value is ExportOptions {
+    if (!('outputFormat' in value) || value['outputFormat'] === undefined) return false;
+    return true;
 }
 
 export function ExportOptionsFromJSON(json: any): ExportOptions {
-  return ExportOptionsFromJSONTyped(json, false);
+    return ExportOptionsFromJSONTyped(json, false);
 }
 
-export function ExportOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ExportOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    outputFormat: json['outputFormat'],
-    excludePreviouslyExported: !exists(json, 'excludePreviouslyExported')
-      ? undefined
-      : json['excludePreviouslyExported'],
-    createdEarliestTime: !exists(json, 'createdEarliestTime')
-      ? undefined
-      : json['createdEarliestTime'] === null
-      ? null
-      : new Date(json['createdEarliestTime']),
-    createdOldestTime: !exists(json, 'createdOldestTime')
-      ? undefined
-      : json['createdOldestTime'] === null
-      ? null
-      : new Date(json['createdOldestTime']),
-    filter: !exists(json, 'filter') ? undefined : json['filter'],
-    listSeparatorToken: !exists(json, 'listSeparatorToken')
-      ? undefined
-      : json['listSeparatorToken'],
-  };
+export function ExportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'outputFormat': json['outputFormat'],
+        'excludePreviouslyExported': json['excludePreviouslyExported'] == null ? undefined : json['excludePreviouslyExported'],
+        'createdEarliestTime': json['createdEarliestTime'] == null ? undefined : (new Date(json['createdEarliestTime'])),
+        'createdOldestTime': json['createdOldestTime'] == null ? undefined : (new Date(json['createdOldestTime'])),
+        'filter': json['filter'] == null ? undefined : json['filter'],
+        'listSeparatorToken': json['listSeparatorToken'] == null ? undefined : json['listSeparatorToken'],
+    };
 }
 
-export function ExportOptionsToJSON(value?: ExportOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    outputFormat: value.outputFormat,
-    excludePreviouslyExported: value.excludePreviouslyExported,
-    createdEarliestTime:
-      value.createdEarliestTime === undefined
-        ? undefined
-        : value.createdEarliestTime === null
-        ? null
-        : value.createdEarliestTime.toISOString(),
-    createdOldestTime:
-      value.createdOldestTime === undefined
-        ? undefined
-        : value.createdOldestTime === null
-        ? null
-        : value.createdOldestTime.toISOString(),
-    filter: value.filter,
-    listSeparatorToken: value.listSeparatorToken,
-  };
+export function ExportOptionsToJSON(json: any): ExportOptions {
+    return ExportOptionsToJSONTyped(json, false);
 }
+
+export function ExportOptionsToJSONTyped(value?: ExportOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'outputFormat': value['outputFormat'],
+        'excludePreviouslyExported': value['excludePreviouslyExported'],
+        'createdEarliestTime': value['createdEarliestTime'] == null ? undefined : ((value['createdEarliestTime'] as any).toISOString()),
+        'createdOldestTime': value['createdOldestTime'] == null ? undefined : ((value['createdOldestTime'] as any).toISOString()),
+        'filter': value['filter'],
+        'listSeparatorToken': value['listSeparatorToken'],
+    };
+}
+

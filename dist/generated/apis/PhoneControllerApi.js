@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -89,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.PhoneControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -102,32 +112,33 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.createEmergencyAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.createEmergencyAddressOptions === null ||
-                            requestParameters.createEmergencyAddressOptions === undefined) {
-                            throw new runtime.RequiredError('createEmergencyAddressOptions', 'Required parameter requestParameters.createEmergencyAddressOptions was null or undefined when calling createEmergencyAddress.');
+                        if (requestParameters['createEmergencyAddressOptions'] == null) {
+                            throw new runtime.RequiredError('createEmergencyAddressOptions', 'Required parameter "createEmergencyAddressOptions" was null or undefined when calling createEmergencyAddress().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/emergency-addresses",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.CreateEmergencyAddressOptionsToJSON)(requestParameters.createEmergencyAddressOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmergencyAddressFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/emergency-addresses",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.CreateEmergencyAddressOptionsToJSON)(requestParameters['createEmergencyAddressOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmergencyAddressFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -152,30 +163,31 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.deleteEmergencyAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.addressId === null ||
-                            requestParameters.addressId === undefined) {
-                            throw new runtime.RequiredError('addressId', 'Required parameter requestParameters.addressId was null or undefined when calling deleteEmergencyAddress.');
+                        if (requestParameters['addressId'] == null) {
+                            throw new runtime.RequiredError('addressId', 'Required parameter "addressId" was null or undefined when calling deleteEmergencyAddress().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/emergency-addresses/{addressId}".replace("{".concat('addressId', "}"), encodeURIComponent(String(requestParameters.addressId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmptyResponseDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/emergency-addresses/{addressId}".replace("{".concat("addressId", "}"), encodeURIComponent(String(requestParameters['addressId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmptyResponseDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -200,27 +212,30 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.deletePhoneNumberRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.phoneNumberId === null ||
-                            requestParameters.phoneNumberId === undefined) {
-                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling deletePhoneNumber.');
+                        if (requestParameters['phoneNumberId'] == null) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter "phoneNumberId" was null or undefined when calling deletePhoneNumber().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneNumberId}".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/numbers/{phoneNumberId}".replace("{".concat("phoneNumberId", "}"), encodeURIComponent(String(requestParameters['phoneNumberId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -244,30 +259,31 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.getEmergencyAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.addressId === null ||
-                            requestParameters.addressId === undefined) {
-                            throw new runtime.RequiredError('addressId', 'Required parameter requestParameters.addressId was null or undefined when calling getEmergencyAddress.');
+                        if (requestParameters['addressId'] == null) {
+                            throw new runtime.RequiredError('addressId', 'Required parameter "addressId" was null or undefined when calling getEmergencyAddress().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/emergency-addresses/{addressId}".replace("{".concat('addressId', "}"), encodeURIComponent(String(requestParameters.addressId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmergencyAddressFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/emergency-addresses/{addressId}".replace("{".concat("addressId", "}"), encodeURIComponent(String(requestParameters['addressId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmergencyAddressFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -292,26 +308,28 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.getEmergencyAddressesRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/emergency-addresses",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.EmergencyAddressDtoFromJSON);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/emergency-addresses",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(index_1.EmergencyAddressDtoFromJSON); })];
                 }
             });
         });
@@ -336,30 +354,31 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.getPhoneNumberRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.phoneNumberId === null ||
-                            requestParameters.phoneNumberId === undefined) {
-                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneNumber.');
+                        if (requestParameters['phoneNumberId'] == null) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter "phoneNumberId" was null or undefined when calling getPhoneNumber().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneNumberId}".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PhoneNumberDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/numbers/{phoneNumberId}".replace("{".concat("phoneNumberId", "}"), encodeURIComponent(String(requestParameters['phoneNumberId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PhoneNumberDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -384,53 +403,62 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.getPhoneNumbersRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.phoneCountry !== undefined) {
-                            queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+                        if (requestParameters['phoneCountry'] != null) {
+                            queryParameters['phoneCountry'] = requestParameters['phoneCountry'];
                         }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['search'] != null) {
+                            queryParameters['search'] = requestParameters['search'];
+                        }
+                        if (requestParameters['include'] != null) {
+                            queryParameters['include'] = requestParameters['include'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/numbers",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PagePhoneNumberProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/numbers",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PagePhoneNumberProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
     };
     /**
      */
-    PhoneControllerApi.prototype.getPhoneNumbers = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    PhoneControllerApi.prototype.getPhoneNumbers = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getPhoneNumbersRaw(requestParameters, initOverrides)];
@@ -446,26 +474,28 @@ var PhoneControllerApi = /** @class */ (function (_super) {
      */
     PhoneControllerApi.prototype.getPhonePlansRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/plans",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.PhonePlanDtoFromJSON);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/plans",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(index_1.PhonePlanDtoFromJSON); })];
                 }
             });
         });
@@ -488,39 +518,144 @@ var PhoneControllerApi = /** @class */ (function (_super) {
     };
     /**
      */
-    PhoneControllerApi.prototype.testPhoneNumberSendSmsRaw = function (requestParameters, initOverrides) {
+    PhoneControllerApi.prototype.getPhonePlansAvailabilityRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/plans/availability",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PhonePlanAvailabilityFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.getPhonePlansAvailability = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhonePlansAvailabilityRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    PhoneControllerApi.prototype.setPhoneFavouritedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.phoneNumberId === null ||
-                            requestParameters.phoneNumberId === undefined) {
-                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling testPhoneNumberSendSms.');
+                        if (requestParameters['phoneNumberId'] == null) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter "phoneNumberId" was null or undefined when calling setPhoneFavourited().');
                         }
-                        if (requestParameters.testPhoneNumberOptions === null ||
-                            requestParameters.testPhoneNumberOptions === undefined) {
-                            throw new runtime.RequiredError('testPhoneNumberOptions', 'Required parameter requestParameters.testPhoneNumberOptions was null or undefined when calling testPhoneNumberSendSms.');
+                        if (requestParameters['setPhoneFavouritedOptions'] == null) {
+                            throw new runtime.RequiredError('setPhoneFavouritedOptions', 'Required parameter "setPhoneFavouritedOptions" was null or undefined when calling setPhoneFavourited().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (requestParameters.xTestId !== undefined &&
-                            requestParameters.xTestId !== null) {
-                            headerParameters['x-test-id'] = String(requestParameters.xTestId);
-                        }
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneNumberId}/test".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.TestPhoneNumberOptionsToJSON)(requestParameters.testPhoneNumberOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/numbers/{phoneNumberId}/favourite".replace("{".concat("phoneNumberId", "}"), encodeURIComponent(String(requestParameters['phoneNumberId']))),
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SetPhoneFavouritedOptionsToJSON)(requestParameters['setPhoneFavouritedOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PhoneNumberDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    PhoneControllerApi.prototype.setPhoneFavourited = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.setPhoneFavouritedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.testPhoneNumberSendSmsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['phoneNumberId'] == null) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter "phoneNumberId" was null or undefined when calling testPhoneNumberSendSms().');
+                        }
+                        if (requestParameters['testPhoneNumberOptions'] == null) {
+                            throw new runtime.RequiredError('testPhoneNumberOptions', 'Required parameter "testPhoneNumberOptions" was null or undefined when calling testPhoneNumberSendSms().');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters['xTestId'] != null) {
+                            headerParameters['x-test-id'] = String(requestParameters['xTestId']);
+                        }
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/phone/numbers/{phoneNumberId}/test".replace("{".concat("phoneNumberId", "}"), encodeURIComponent(String(requestParameters['phoneNumberId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.TestPhoneNumberOptionsToJSON)(requestParameters['testPhoneNumberOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -545,20 +680,16 @@ var PhoneControllerApi = /** @class */ (function (_super) {
 exports.PhoneControllerApi = PhoneControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var GetPhoneNumbersPhoneCountryEnum;
-(function (GetPhoneNumbersPhoneCountryEnum) {
-    GetPhoneNumbersPhoneCountryEnum["US"] = "US";
-    GetPhoneNumbersPhoneCountryEnum["GB"] = "GB";
-    GetPhoneNumbersPhoneCountryEnum["AU"] = "AU";
-})(GetPhoneNumbersPhoneCountryEnum = exports.GetPhoneNumbersPhoneCountryEnum || (exports.GetPhoneNumbersPhoneCountryEnum = {}));
+exports.GetPhoneNumbersPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetPhoneNumbersSortEnum;
-(function (GetPhoneNumbersSortEnum) {
-    GetPhoneNumbersSortEnum["ASC"] = "ASC";
-    GetPhoneNumbersSortEnum["DESC"] = "DESC";
-})(GetPhoneNumbersSortEnum = exports.GetPhoneNumbersSortEnum || (exports.GetPhoneNumbersSortEnum = {}));
+exports.GetPhoneNumbersSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};

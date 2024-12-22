@@ -28,6 +28,11 @@ export interface InboxByEmailAddressResult {
      */
     _exists: boolean;
 }
+/**
+ * Check if a given object implements the InboxByEmailAddressResult interface.
+ */
+export declare function instanceOfInboxByEmailAddressResult(value: object): value is InboxByEmailAddressResult;
 export declare function InboxByEmailAddressResultFromJSON(json: any): InboxByEmailAddressResult;
 export declare function InboxByEmailAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxByEmailAddressResult;
-export declare function InboxByEmailAddressResultToJSON(value?: InboxByEmailAddressResult | null): any;
+export declare function InboxByEmailAddressResultToJSON(json: any): InboxByEmailAddressResult;
+export declare function InboxByEmailAddressResultToJSONTyped(value?: InboxByEmailAddressResult | null, ignoreDiscriminator?: boolean): any;

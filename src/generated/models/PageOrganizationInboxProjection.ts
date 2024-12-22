@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { PageableObject } from './PageableObject';
 import {
-  OrganizationInboxProjection,
-  OrganizationInboxProjectionFromJSON,
-  OrganizationInboxProjectionFromJSONTyped,
-  OrganizationInboxProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-} from './';
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PageableObjectToJSONTyped,
+} from './PageableObject';
+import type { SortObject } from './SortObject';
+import {
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    SortObjectToJSONTyped,
+} from './SortObject';
+import type { OrganizationInboxProjection } from './OrganizationInboxProjection';
+import {
+    OrganizationInboxProjectionFromJSON,
+    OrganizationInboxProjectionFromJSONTyped,
+    OrganizationInboxProjectionToJSON,
+    OrganizationInboxProjectionToJSONTyped,
+} from './OrganizationInboxProjection';
 
 /**
  * Paginated organization inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -34,133 +41,129 @@ import {
  * @interface PageOrganizationInboxProjection
  */
 export interface PageOrganizationInboxProjection {
-  /**
-   *
-   * @type {Array<OrganizationInboxProjection>}
-   * @memberof PageOrganizationInboxProjection
-   */
-  content?: Array<OrganizationInboxProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageOrganizationInboxProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageOrganizationInboxProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageOrganizationInboxProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageOrganizationInboxProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageOrganizationInboxProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageOrganizationInboxProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageOrganizationInboxProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageOrganizationInboxProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageOrganizationInboxProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageOrganizationInboxProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<OrganizationInboxProjection>}
+     * @memberof PageOrganizationInboxProjection
+     */
+    content?: Array<OrganizationInboxProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageOrganizationInboxProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageOrganizationInboxProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageOrganizationInboxProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageOrganizationInboxProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageOrganizationInboxProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageOrganizationInboxProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageOrganizationInboxProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageOrganizationInboxProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {Array<SortObject>}
+     * @memberof PageOrganizationInboxProjection
+     */
+    sort?: Array<SortObject>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageOrganizationInboxProjection
+     */
+    empty?: boolean;
 }
 
-export function PageOrganizationInboxProjectionFromJSON(
-  json: any
-): PageOrganizationInboxProjection {
-  return PageOrganizationInboxProjectionFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the PageOrganizationInboxProjection interface.
+ */
+export function instanceOfPageOrganizationInboxProjection(value: object): value is PageOrganizationInboxProjection {
+    if (!('totalPages' in value) || value['totalPages'] === undefined) return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
-export function PageOrganizationInboxProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageOrganizationInboxProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(
-          OrganizationInboxProjectionFromJSON
-        ),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageOrganizationInboxProjectionFromJSON(json: any): PageOrganizationInboxProjection {
+    return PageOrganizationInboxProjectionFromJSONTyped(json, false);
 }
 
-export function PageOrganizationInboxProjectionToJSON(
-  value?: PageOrganizationInboxProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(OrganizationInboxProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
-    totalElements: value.totalElements,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageOrganizationInboxProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageOrganizationInboxProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'] == null ? undefined : ((json['content'] as Array<any>).map(OrganizationInboxProjectionFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : ((json['sort'] as Array<any>).map(SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
+    };
 }
+
+export function PageOrganizationInboxProjectionToJSON(json: any): PageOrganizationInboxProjection {
+    return PageOrganizationInboxProjectionToJSONTyped(json, false);
+}
+
+export function PageOrganizationInboxProjectionToJSONTyped(value?: PageOrganizationInboxProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'] == null ? undefined : ((value['content'] as Array<any>).map(OrganizationInboxProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : ((value['sort'] as Array<any>).map(SortObjectToJSON)),
+        'empty': value['empty'],
+    };
+}
+

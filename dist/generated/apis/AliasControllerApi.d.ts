@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AliasDto, CreateAliasOptions, PageAlias, PageEmailProjection, PageThreadProjection, ReplyToAliasEmailOptions, SendEmailOptions, SentEmailDto, ThreadProjection, UpdateAliasOptions } from '../models';
+import type { AliasDto, AliasThreadProjection, CreateAliasOptions, PageAlias, PageAliasThreadProjection, PageEmailProjection, ReplyToAliasEmailOptions, SendEmailOptions, SentEmailDto, UpdateAliasOptions } from '../models/index';
 export interface CreateAliasRequest {
     createAliasOptions: CreateAliasOptions;
 }
@@ -75,138 +75,138 @@ export declare class AliasControllerApi extends runtime.BaseAPI {
      * Email aliases use a MailSlurp randomly generated email address (or a custom domain inbox that you provide) to mask or proxy a real email address. Emails sent to the alias address will be forwarded to the hidden email address it was created for. If you want to send a reply use the threadId attached
      * Create an email alias. Must be verified by clicking link inside verification email that will be sent to the address. Once verified the alias will be active.
      */
-    createAliasRaw(requestParameters: CreateAliasRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AliasDto>>;
+    createAliasRaw(requestParameters: CreateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AliasDto>>;
     /**
      * Email aliases use a MailSlurp randomly generated email address (or a custom domain inbox that you provide) to mask or proxy a real email address. Emails sent to the alias address will be forwarded to the hidden email address it was created for. If you want to send a reply use the threadId attached
      * Create an email alias. Must be verified by clicking link inside verification email that will be sent to the address. Once verified the alias will be active.
      */
-    createAlias(requestParameters: CreateAliasRequest, initOverrides?: RequestInit): Promise<AliasDto>;
+    createAlias(requestParameters: CreateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AliasDto>;
     /**
      * Delete an email alias
      */
-    deleteAliasRaw(requestParameters: DeleteAliasRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAliasRaw(requestParameters: DeleteAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete an email alias
      */
-    deleteAlias(requestParameters: DeleteAliasRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteAlias(requestParameters: DeleteAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get an email alias by ID
      * Get an email alias
      */
-    getAliasRaw(requestParameters: GetAliasRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AliasDto>>;
+    getAliasRaw(requestParameters: GetAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AliasDto>>;
     /**
      * Get an email alias by ID
      * Get an email alias
      */
-    getAlias(requestParameters: GetAliasRequest, initOverrides?: RequestInit): Promise<AliasDto>;
+    getAlias(requestParameters: GetAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AliasDto>;
     /**
      * Get paginated emails for an alias by ID
      * Get emails for an alias
      */
-    getAliasEmailsRaw(requestParameters: GetAliasEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
+    getAliasEmailsRaw(requestParameters: GetAliasEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailProjection>>;
     /**
      * Get paginated emails for an alias by ID
      * Get emails for an alias
      */
-    getAliasEmails(requestParameters: GetAliasEmailsRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
+    getAliasEmails(requestParameters: GetAliasEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailProjection>;
     /**
      * Returns threads created for an email alias in paginated form
      * Get threads created for an alias
      */
-    getAliasThreadsRaw(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageThreadProjection>>;
+    getAliasThreadsRaw(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageAliasThreadProjection>>;
     /**
      * Returns threads created for an email alias in paginated form
      * Get threads created for an alias
      */
-    getAliasThreads(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit): Promise<PageThreadProjection>;
+    getAliasThreads(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageAliasThreadProjection>;
     /**
      * Get all email aliases in paginated form
      * Get all email aliases you have created
      */
-    getAliasesRaw(requestParameters: GetAliasesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAlias>>;
+    getAliasesRaw(requestParameters: GetAliasesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageAlias>>;
     /**
      * Get all email aliases in paginated form
      * Get all email aliases you have created
      */
-    getAliases(requestParameters: GetAliasesRequest, initOverrides?: RequestInit): Promise<PageAlias>;
+    getAliases(requestParameters?: GetAliasesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageAlias>;
     /**
      * Return a thread associated with an alias
      * Get a thread
      */
-    getThreadRaw(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ThreadProjection>>;
+    getThreadRaw(requestParameters: GetThreadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AliasThreadProjection>>;
     /**
      * Return a thread associated with an alias
      * Get a thread
      */
-    getThread(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<ThreadProjection>;
+    getThread(requestParameters: GetThreadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AliasThreadProjection>;
     /**
      * Returns threads created for all aliases in paginated form
      * Get all threads
      */
-    getThreadsPaginatedRaw(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageThreadProjection>>;
+    getThreadsPaginatedRaw(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageAliasThreadProjection>>;
     /**
      * Returns threads created for all aliases in paginated form
      * Get all threads
      */
-    getThreadsPaginated(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<PageThreadProjection>;
+    getThreadsPaginated(requestParameters?: GetThreadsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageAliasThreadProjection>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * Reply to an email
      */
-    replyToAliasEmailRaw(requestParameters: ReplyToAliasEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    replyToAliasEmailRaw(requestParameters: ReplyToAliasEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * Reply to an email
      */
-    replyToAliasEmail(requestParameters: ReplyToAliasEmailRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    replyToAliasEmail(requestParameters: ReplyToAliasEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto>;
     /**
      * Send an email from an alias. Replies to the email will be forwarded to the alias masked email address
      * Send an email from an alias inbox
      */
-    sendAliasEmailRaw(requestParameters: SendAliasEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    sendAliasEmailRaw(requestParameters: SendAliasEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>>;
     /**
      * Send an email from an alias. Replies to the email will be forwarded to the alias masked email address
      * Send an email from an alias inbox
      */
-    sendAliasEmail(requestParameters: SendAliasEmailRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    sendAliasEmail(requestParameters: SendAliasEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto>;
     /**
      * Update an email alias
      */
-    updateAliasRaw(requestParameters: UpdateAliasRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AliasDto>>;
+    updateAliasRaw(requestParameters: UpdateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AliasDto>>;
     /**
      * Update an email alias
      */
-    updateAlias(requestParameters: UpdateAliasRequest, initOverrides?: RequestInit): Promise<AliasDto>;
+    updateAlias(requestParameters: UpdateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AliasDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAliasEmailsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAliasEmailsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAliasEmailsSortEnum = typeof GetAliasEmailsSortEnum[keyof typeof GetAliasEmailsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAliasThreadsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAliasThreadsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAliasThreadsSortEnum = typeof GetAliasThreadsSortEnum[keyof typeof GetAliasThreadsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAliasesSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAliasesSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAliasesSortEnum = typeof GetAliasesSortEnum[keyof typeof GetAliasesSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetThreadsPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetThreadsPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetThreadsPaginatedSortEnum = typeof GetThreadsPaginatedSortEnum[keyof typeof GetThreadsPaginatedSortEnum];

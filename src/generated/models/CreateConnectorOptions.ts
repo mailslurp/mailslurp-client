@@ -12,103 +12,70 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for creating an inbox connection with an external mail provider
  * @export
  * @interface CreateConnectorOptions
  */
 export interface CreateConnectorOptions {
-  /**
-   * Enable automatic background sync
-   * @type {boolean}
-   * @memberof CreateConnectorOptions
-   */
-  syncEnabled?: boolean | null;
-  /**
-   * Sync schedule type
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  syncScheduleType?: CreateConnectorOptionsSyncScheduleTypeEnum;
-  /**
-   * Sync interval in minutes
-   * @type {number}
-   * @memberof CreateConnectorOptions
-   */
-  syncInterval?: number | null;
-  /**
-   * Name of connector
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  name?: string | null;
-  /**
-   * Email address of external inbox
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  emailAddress?: string | null;
-  /**
-   * Is connector enabled
-   * @type {boolean}
-   * @memberof CreateConnectorOptions
-   */
-  enabled?: boolean | null;
+    /**
+     * Name of connector
+     * @type {string}
+     * @memberof CreateConnectorOptions
+     */
+    name?: string | null;
+    /**
+     * Email address of external inbox
+     * @type {string}
+     * @memberof CreateConnectorOptions
+     */
+    emailAddress?: string | null;
+    /**
+     * Is connector enabled
+     * @type {boolean}
+     * @memberof CreateConnectorOptions
+     */
+    enabled?: boolean | null;
 }
 
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the CreateConnectorOptions interface.
  */
-export enum CreateConnectorOptionsSyncScheduleTypeEnum {
-  INTERVAL = 'INTERVAL',
+export function instanceOfCreateConnectorOptions(value: object): value is CreateConnectorOptions {
+    return true;
 }
 
-export function CreateConnectorOptionsFromJSON(
-  json: any
-): CreateConnectorOptions {
-  return CreateConnectorOptionsFromJSONTyped(json, false);
+export function CreateConnectorOptionsFromJSON(json: any): CreateConnectorOptions {
+    return CreateConnectorOptionsFromJSONTyped(json, false);
 }
 
-export function CreateConnectorOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateConnectorOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-    syncScheduleType: !exists(json, 'syncScheduleType')
-      ? undefined
-      : json['syncScheduleType'],
-    syncInterval: !exists(json, 'syncInterval')
-      ? undefined
-      : json['syncInterval'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
-    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-  };
+export function CreateConnectorOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'] == null ? undefined : json['name'],
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
+    };
 }
 
-export function CreateConnectorOptionsToJSON(
-  value?: CreateConnectorOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    syncEnabled: value.syncEnabled,
-    syncScheduleType: value.syncScheduleType,
-    syncInterval: value.syncInterval,
-    name: value.name,
-    emailAddress: value.emailAddress,
-    enabled: value.enabled,
-  };
+export function CreateConnectorOptionsToJSON(json: any): CreateConnectorOptions {
+    return CreateConnectorOptionsToJSONTyped(json, false);
 }
+
+export function CreateConnectorOptionsToJSONTyped(value?: CreateConnectorOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'emailAddress': value['emailAddress'],
+        'enabled': value['enabled'],
+    };
+}
+

@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DNSLookupResult } from './DNSLookupResult';
 import {
-  DNSLookupResult,
-  DNSLookupResultFromJSON,
-  DNSLookupResultFromJSONTyped,
-  DNSLookupResultToJSON,
-} from './';
+    DNSLookupResultFromJSON,
+    DNSLookupResultFromJSONTyped,
+    DNSLookupResultToJSON,
+    DNSLookupResultToJSONTyped,
+} from './DNSLookupResult';
 
 /**
  * Results of query on domain name servers
@@ -26,38 +27,48 @@ import {
  * @interface DNSLookupResults
  */
 export interface DNSLookupResults {
-  /**
-   *
-   * @type {Array<DNSLookupResult>}
-   * @memberof DNSLookupResults
-   */
-  results: Array<DNSLookupResult>;
+    /**
+     * 
+     * @type {Array<DNSLookupResult>}
+     * @memberof DNSLookupResults
+     */
+    results: Array<DNSLookupResult>;
+}
+
+/**
+ * Check if a given object implements the DNSLookupResults interface.
+ */
+export function instanceOfDNSLookupResults(value: object): value is DNSLookupResults {
+    if (!('results' in value) || value['results'] === undefined) return false;
+    return true;
 }
 
 export function DNSLookupResultsFromJSON(json: any): DNSLookupResults {
-  return DNSLookupResultsFromJSONTyped(json, false);
+    return DNSLookupResultsFromJSONTyped(json, false);
 }
 
-export function DNSLookupResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DNSLookupResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    results: (json['results'] as Array<any>).map(DNSLookupResultFromJSON),
-  };
+export function DNSLookupResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DNSLookupResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'results': ((json['results'] as Array<any>).map(DNSLookupResultFromJSON)),
+    };
 }
 
-export function DNSLookupResultsToJSON(value?: DNSLookupResults | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    results: (value.results as Array<any>).map(DNSLookupResultToJSON),
-  };
+export function DNSLookupResultsToJSON(json: any): DNSLookupResults {
+    return DNSLookupResultsToJSONTyped(json, false);
 }
+
+export function DNSLookupResultsToJSONTyped(value?: DNSLookupResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'results': ((value['results'] as Array<any>).map(DNSLookupResultToJSON)),
+    };
+}
+

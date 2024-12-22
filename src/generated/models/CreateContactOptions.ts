@@ -12,115 +12,118 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for creating an email contact in address book
  * @export
  * @interface CreateContactOptions
  */
 export interface CreateContactOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof CreateContactOptions
-   */
-  firstName?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateContactOptions
-   */
-  lastName?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateContactOptions
-   */
-  company?: string | null;
-  /**
-   * Set of email addresses belonging to the contact
-   * @type {Array<string>}
-   * @memberof CreateContactOptions
-   */
-  emailAddresses?: Array<string> | null;
-  /**
-   * Tags that can be used to search and group contacts
-   * @type {Array<string>}
-   * @memberof CreateContactOptions
-   */
-  tags?: Array<string> | null;
-  /**
-   *
-   * @type {object}
-   * @memberof CreateContactOptions
-   */
-  metaData?: object | null;
-  /**
-   * Has the user explicitly or implicitly opted out of being contacted? If so MailSlurp will ignore them in all actions.
-   * @type {boolean}
-   * @memberof CreateContactOptions
-   */
-  optOut?: boolean | null;
-  /**
-   * Group IDs that contact belongs to
-   * @type {string}
-   * @memberof CreateContactOptions
-   */
-  groupId?: string | null;
-  /**
-   * Whether to validate contact email address exists
-   * @type {boolean}
-   * @memberof CreateContactOptions
-   */
-  verifyEmailAddresses?: boolean | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateContactOptions
+     */
+    firstName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateContactOptions
+     */
+    lastName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateContactOptions
+     */
+    company?: string | null;
+    /**
+     * Set of email addresses belonging to the contact
+     * @type {Array<string | null>}
+     * @memberof CreateContactOptions
+     */
+    emailAddresses?: Array<string | null> | null;
+    /**
+     * Tags that can be used to search and group contacts
+     * @type {Array<string | null>}
+     * @memberof CreateContactOptions
+     */
+    tags?: Array<string | null> | null;
+    /**
+     * 
+     * @type {object}
+     * @memberof CreateContactOptions
+     */
+    metaData?: object | null;
+    /**
+     * Has the user explicitly or implicitly opted out of being contacted? If so MailSlurp will ignore them in all actions.
+     * @type {boolean}
+     * @memberof CreateContactOptions
+     */
+    optOut?: boolean | null;
+    /**
+     * Group IDs that contact belongs to
+     * @type {string}
+     * @memberof CreateContactOptions
+     */
+    groupId?: string | null;
+    /**
+     * Whether to validate contact email address exists
+     * @type {boolean}
+     * @memberof CreateContactOptions
+     */
+    verifyEmailAddresses?: boolean | null;
+}
+
+/**
+ * Check if a given object implements the CreateContactOptions interface.
+ */
+export function instanceOfCreateContactOptions(value: object): value is CreateContactOptions {
+    return true;
 }
 
 export function CreateContactOptionsFromJSON(json: any): CreateContactOptions {
-  return CreateContactOptionsFromJSONTyped(json, false);
+    return CreateContactOptionsFromJSONTyped(json, false);
 }
 
-export function CreateContactOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateContactOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
-    lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
-    company: !exists(json, 'company') ? undefined : json['company'],
-    emailAddresses: !exists(json, 'emailAddresses')
-      ? undefined
-      : json['emailAddresses'],
-    tags: !exists(json, 'tags') ? undefined : json['tags'],
-    metaData: !exists(json, 'metaData') ? undefined : json['metaData'],
-    optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
-    groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
-    verifyEmailAddresses: !exists(json, 'verifyEmailAddresses')
-      ? undefined
-      : json['verifyEmailAddresses'],
-  };
+export function CreateContactOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateContactOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'firstName': json['firstName'] == null ? undefined : json['firstName'],
+        'lastName': json['lastName'] == null ? undefined : json['lastName'],
+        'company': json['company'] == null ? undefined : json['company'],
+        'emailAddresses': json['emailAddresses'] == null ? undefined : json['emailAddresses'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
+        'metaData': json['metaData'] == null ? undefined : json['metaData'],
+        'optOut': json['optOut'] == null ? undefined : json['optOut'],
+        'groupId': json['groupId'] == null ? undefined : json['groupId'],
+        'verifyEmailAddresses': json['verifyEmailAddresses'] == null ? undefined : json['verifyEmailAddresses'],
+    };
 }
 
-export function CreateContactOptionsToJSON(
-  value?: CreateContactOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    firstName: value.firstName,
-    lastName: value.lastName,
-    company: value.company,
-    emailAddresses: value.emailAddresses,
-    tags: value.tags,
-    metaData: value.metaData,
-    optOut: value.optOut,
-    groupId: value.groupId,
-    verifyEmailAddresses: value.verifyEmailAddresses,
-  };
+export function CreateContactOptionsToJSON(json: any): CreateContactOptions {
+    return CreateContactOptionsToJSONTyped(json, false);
 }
+
+export function CreateContactOptionsToJSONTyped(value?: CreateContactOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'firstName': value['firstName'],
+        'lastName': value['lastName'],
+        'company': value['company'],
+        'emailAddresses': value['emailAddresses'],
+        'tags': value['tags'],
+        'metaData': value['metaData'],
+        'optOut': value['optOut'],
+        'groupId': value['groupId'],
+        'verifyEmailAddresses': value['verifyEmailAddresses'],
+    };
+}
+

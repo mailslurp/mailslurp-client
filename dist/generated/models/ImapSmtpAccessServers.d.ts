@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ServerEndpoints } from './';
+import type { ServerEndpoints } from './ServerEndpoints';
 /**
  * IMAP and SMTP server endpoints for MailSlurp
  * @export
@@ -41,6 +41,11 @@ export interface ImapSmtpAccessServers {
      */
     secureSmtpServer: ServerEndpoints;
 }
+/**
+ * Check if a given object implements the ImapSmtpAccessServers interface.
+ */
+export declare function instanceOfImapSmtpAccessServers(value: object): value is ImapSmtpAccessServers;
 export declare function ImapSmtpAccessServersFromJSON(json: any): ImapSmtpAccessServers;
 export declare function ImapSmtpAccessServersFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapSmtpAccessServers;
-export declare function ImapSmtpAccessServersToJSON(value?: ImapSmtpAccessServers | null): any;
+export declare function ImapSmtpAccessServersToJSON(json: any): ImapSmtpAccessServers;
+export declare function ImapSmtpAccessServersToJSONTyped(value?: ImapSmtpAccessServers | null, ignoreDiscriminator?: boolean): any;

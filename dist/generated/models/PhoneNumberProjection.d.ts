@@ -48,13 +48,18 @@ export interface PhoneNumberProjection {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum PhoneNumberProjectionPhoneCountryEnum {
-    US = "US",
-    GB = "GB",
-    AU = "AU"
-}
+export declare const PhoneNumberProjectionPhoneCountryEnum: {
+    readonly US: "US";
+    readonly GB: "GB";
+    readonly AU: "AU";
+};
+export type PhoneNumberProjectionPhoneCountryEnum = typeof PhoneNumberProjectionPhoneCountryEnum[keyof typeof PhoneNumberProjectionPhoneCountryEnum];
+/**
+ * Check if a given object implements the PhoneNumberProjection interface.
+ */
+export declare function instanceOfPhoneNumberProjection(value: object): value is PhoneNumberProjection;
 export declare function PhoneNumberProjectionFromJSON(json: any): PhoneNumberProjection;
 export declare function PhoneNumberProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberProjection;
-export declare function PhoneNumberProjectionToJSON(value?: PhoneNumberProjection | null): any;
+export declare function PhoneNumberProjectionToJSON(json: any): PhoneNumberProjection;
+export declare function PhoneNumberProjectionToJSONTyped(value?: PhoneNumberProjection | null, ignoreDiscriminator?: boolean): any;

@@ -12,85 +12,100 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SmsPreview
  */
 export interface SmsPreview {
-  /**
-   *
-   * @type {string}
-   * @memberof SmsPreview
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsPreview
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsPreview
-   */
-  body: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsPreview
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsPreview
-   */
-  fromNumber: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof SmsPreview
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsPreview
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsPreview
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsPreview
+     */
+    body: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsPreview
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsPreview
+     */
+    fromNumber: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SmsPreview
+     */
+    createdAt: Date;
+}
+
+/**
+ * Check if a given object implements the SmsPreview interface.
+ */
+export function instanceOfSmsPreview(value: object): value is SmsPreview {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('body' in value) || value['body'] === undefined) return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined) return false;
+    if (!('fromNumber' in value) || value['fromNumber'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function SmsPreviewFromJSON(json: any): SmsPreview {
-  return SmsPreviewFromJSONTyped(json, false);
+    return SmsPreviewFromJSONTyped(json, false);
 }
 
-export function SmsPreviewFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmsPreview {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    body: json['body'],
-    phoneNumber: json['phoneNumber'],
-    fromNumber: json['fromNumber'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function SmsPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsPreview {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'body': json['body'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function SmsPreviewToJSON(value?: SmsPreview | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    body: value.body,
-    phoneNumber: value.phoneNumber,
-    fromNumber: value.fromNumber,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function SmsPreviewToJSON(json: any): SmsPreview {
+    return SmsPreviewToJSONTyped(json, false);
 }
+
+export function SmsPreviewToJSONTyped(value?: SmsPreview | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'body': value['body'],
+        'phoneNumber': value['phoneNumber'],
+        'fromNumber': value['fromNumber'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

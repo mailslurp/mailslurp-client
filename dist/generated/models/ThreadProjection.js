@@ -13,31 +13,31 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ThreadProjectionToJSON = exports.ThreadProjectionFromJSONTyped = exports.ThreadProjectionFromJSON = void 0;
+exports.ThreadProjectionFromJSON = ThreadProjectionFromJSON;
+exports.ThreadProjectionFromJSONTyped = ThreadProjectionFromJSONTyped;
+exports.ThreadProjectionToJSON = ThreadProjectionToJSON;
 var runtime_1 = require("../runtime");
 function ThreadProjectionFromJSON(json) {
     return ThreadProjectionFromJSONTyped(json, false);
 }
-exports.ThreadProjectionFromJSON = ThreadProjectionFromJSON;
 function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        inboxId: json['inboxId'],
         userId: json['userId'],
+        inboxId: json['inboxId'],
         to: json['to'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         aliasId: json['aliasId'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
     };
 }
-exports.ThreadProjectionFromJSONTyped = ThreadProjectionFromJSONTyped;
 function ThreadProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,17 +46,16 @@ function ThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        inboxId: value.inboxId,
         userId: value.userId,
+        inboxId: value.inboxId,
         to: value.to,
         bcc: value.bcc,
         cc: value.cc,
         aliasId: value.aliasId,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
         subject: value.subject,
         name: value.name,
         id: value.id,
     };
 }
-exports.ThreadProjectionToJSON = ThreadProjectionToJSON;

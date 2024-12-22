@@ -22,6 +22,11 @@ export interface EmailContentPartResult {
      */
     content?: string | null;
 }
+/**
+ * Check if a given object implements the EmailContentPartResult interface.
+ */
+export declare function instanceOfEmailContentPartResult(value: object): value is EmailContentPartResult;
 export declare function EmailContentPartResultFromJSON(json: any): EmailContentPartResult;
 export declare function EmailContentPartResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailContentPartResult;
-export declare function EmailContentPartResultToJSON(value?: EmailContentPartResult | null): any;
+export declare function EmailContentPartResultToJSON(json: any): EmailContentPartResult;
+export declare function EmailContentPartResultToJSONTyped(value?: EmailContentPartResult | null, ignoreDiscriminator?: boolean): any;

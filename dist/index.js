@@ -23,8 +23,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -75,7 +75,9 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.wrapResult = exports.wrapException = exports.MailSlurp = void 0;
+exports.MailSlurp = void 0;
+exports.wrapException = wrapException;
+exports.wrapResult = wrapResult;
 require('es6-promise').polyfill();
 require('cross-fetch/polyfill');
 var generated_1 = require("./generated");
@@ -169,6 +171,7 @@ var MailSlurp = /** @class */ (function () {
         this.inboxReplierController = new (generated_1.InboxReplierControllerApi.bind.apply(generated_1.InboxReplierControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.guestPortalController = new (generated_1.GuestPortalControllerApi.bind.apply(generated_1.GuestPortalControllerApi, __spreadArray([void 0], __read(args), false)))();
     }
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
@@ -467,10 +470,10 @@ var MailSlurp = /** @class */ (function () {
      * @param {string} inboxId Id of inbox that emails belongs to
      * @param {Object} GetMessagesOptions see `GetMessagesOptions` details
      */
-    MailSlurp.prototype.getEmails = function (inboxId, args) {
-        if (args === void 0) { args = {}; }
-        return __awaiter(this, void 0, void 0, function () {
+    MailSlurp.prototype.getEmails = function (inboxId_1) {
+        return __awaiter(this, arguments, void 0, function (inboxId, args) {
             var _this = this;
+            if (args === void 0) { args = {}; }
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
                         return _this.inboxController.getEmails({
@@ -624,7 +627,6 @@ function wrapException(fn) {
         });
     });
 }
-exports.wrapException = wrapException;
 function wrapResult(fn) {
     return __awaiter(this, void 0, void 0, function () {
         var content, e_2, statusCode, message, _a;
@@ -662,5 +664,4 @@ function wrapResult(fn) {
         });
     });
 }
-exports.wrapResult = wrapResult;
 exports.default = MailSlurp;

@@ -12,53 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Inbox ID and email address pair
  * @export
  * @interface InboxIdItem
  */
 export interface InboxIdItem {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxIdItem
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxIdItem
-   */
-  emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxIdItem
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxIdItem
+     */
+    emailAddress: string;
+}
+
+/**
+ * Check if a given object implements the InboxIdItem interface.
+ */
+export function instanceOfInboxIdItem(value: object): value is InboxIdItem {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    return true;
 }
 
 export function InboxIdItemFromJSON(json: any): InboxIdItem {
-  return InboxIdItemFromJSONTyped(json, false);
+    return InboxIdItemFromJSONTyped(json, false);
 }
 
-export function InboxIdItemFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxIdItem {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    emailAddress: json['emailAddress'],
-  };
+export function InboxIdItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxIdItem {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+    };
 }
 
-export function InboxIdItemToJSON(value?: InboxIdItem | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    emailAddress: value.emailAddress,
-  };
+export function InboxIdItemToJSON(json: any): InboxIdItem {
+    return InboxIdItemToJSONTyped(json, false);
 }
+
+export function InboxIdItemToJSONTyped(value?: InboxIdItem | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'emailAddress': value['emailAddress'],
+    };
+}
+

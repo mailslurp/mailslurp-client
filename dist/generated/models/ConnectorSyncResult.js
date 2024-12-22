@@ -13,32 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncResultToJSON = exports.ConnectorSyncResultFromJSONTyped = exports.ConnectorSyncResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfConnectorSyncResult = instanceOfConnectorSyncResult;
+exports.ConnectorSyncResultFromJSON = ConnectorSyncResultFromJSON;
+exports.ConnectorSyncResultFromJSONTyped = ConnectorSyncResultFromJSONTyped;
+exports.ConnectorSyncResultToJSON = ConnectorSyncResultToJSON;
+exports.ConnectorSyncResultToJSONTyped = ConnectorSyncResultToJSONTyped;
+/**
+ * Check if a given object implements the ConnectorSyncResult interface.
+ */
+function instanceOfConnectorSyncResult(value) {
+    if (!('emailSyncCount' in value) || value['emailSyncCount'] === undefined)
+        return false;
+    return true;
+}
 function ConnectorSyncResultFromJSON(json) {
     return ConnectorSyncResultFromJSONTyped(json, false);
 }
-exports.ConnectorSyncResultFromJSON = ConnectorSyncResultFromJSON;
 function ConnectorSyncResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        emailSyncCount: json['emailSyncCount'],
-        logLines: !(0, runtime_1.exists)(json, 'logLines') ? undefined : json['logLines'],
+        'emailSyncCount': json['emailSyncCount'],
+        'logs': json['logs'] == null ? undefined : json['logs'],
+        'emailIds': json['emailIds'] == null ? undefined : json['emailIds'],
     };
 }
-exports.ConnectorSyncResultFromJSONTyped = ConnectorSyncResultFromJSONTyped;
-function ConnectorSyncResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ConnectorSyncResultToJSON(json) {
+    return ConnectorSyncResultToJSONTyped(json, false);
+}
+function ConnectorSyncResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        emailSyncCount: value.emailSyncCount,
-        logLines: value.logLines,
+        'emailSyncCount': value['emailSyncCount'],
+        'logs': value['logs'],
+        'emailIds': value['emailIds'],
     };
 }
-exports.ConnectorSyncResultToJSON = ConnectorSyncResultToJSON;

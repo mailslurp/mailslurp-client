@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookHeaderNameValueToJSON = exports.WebhookHeaderNameValueFromJSONTyped = exports.WebhookHeaderNameValueFromJSON = void 0;
+exports.instanceOfWebhookHeaderNameValue = instanceOfWebhookHeaderNameValue;
+exports.WebhookHeaderNameValueFromJSON = WebhookHeaderNameValueFromJSON;
+exports.WebhookHeaderNameValueFromJSONTyped = WebhookHeaderNameValueFromJSONTyped;
+exports.WebhookHeaderNameValueToJSON = WebhookHeaderNameValueToJSON;
+exports.WebhookHeaderNameValueToJSONTyped = WebhookHeaderNameValueToJSONTyped;
+/**
+ * Check if a given object implements the WebhookHeaderNameValue interface.
+ */
+function instanceOfWebhookHeaderNameValue(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function WebhookHeaderNameValueFromJSON(json) {
     return WebhookHeaderNameValueFromJSONTyped(json, false);
 }
-exports.WebhookHeaderNameValueFromJSON = WebhookHeaderNameValueFromJSON;
 function WebhookHeaderNameValueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        value: json['value'],
+        'name': json['name'],
+        'value': json['value'],
     };
 }
-exports.WebhookHeaderNameValueFromJSONTyped = WebhookHeaderNameValueFromJSONTyped;
-function WebhookHeaderNameValueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookHeaderNameValueToJSON(json) {
+    return WebhookHeaderNameValueToJSONTyped(json, false);
+}
+function WebhookHeaderNameValueToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        value: value.value,
+        'name': value['name'],
+        'value': value['value'],
     };
 }
-exports.WebhookHeaderNameValueToJSON = WebhookHeaderNameValueToJSON;

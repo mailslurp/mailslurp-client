@@ -12,104 +12,120 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Inbox forwarder. Describes how an inbox will forward matching emails to designated recipients.
  * @export
  * @interface InboxForwarderDto
  */
 export interface InboxForwarderDto {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderDto
-   */
-  inboxId: string;
-  /**
-   * Name of inbox forwarder
-   * @type {string}
-   * @memberof InboxForwarderDto
-   */
-  name?: string | null;
-  /**
-   * Which field to match against
-   * @type {string}
-   * @memberof InboxForwarderDto
-   */
-  field: InboxForwarderDtoFieldEnum;
-  /**
-   * Wild-card type pattern to apply to field
-   * @type {string}
-   * @memberof InboxForwarderDto
-   */
-  match: string;
-  /**
-   * Who to send forwarded email to
-   * @type {Array<string>}
-   * @memberof InboxForwarderDto
-   */
-  forwardToRecipients: Array<string>;
-  /**
-   *
-   * @type {Date}
-   * @memberof InboxForwarderDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    inboxId?: string | null;
+    /**
+     * Name of inbox forwarder
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    name?: string | null;
+    /**
+     * Which field to match against
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    field: InboxForwarderDtoFieldEnum;
+    /**
+     * Wild-card type pattern to apply to field
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    match: string;
+    /**
+     * Who to send forwarded email to
+     * @type {Array<string>}
+     * @memberof InboxForwarderDto
+     */
+    forwardToRecipients: Array<string>;
+    /**
+     * 
+     * @type {Date}
+     * @memberof InboxForwarderDto
+     */
+    createdAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum InboxForwarderDtoFieldEnum {
-  RECIPIENTS = 'RECIPIENTS',
-  SENDER = 'SENDER',
-  SUBJECT = 'SUBJECT',
-  ATTACHMENTS = 'ATTACHMENTS',
+export const InboxForwarderDtoFieldEnum = {
+    RECIPIENTS: 'RECIPIENTS',
+    SENDER: 'SENDER',
+    SUBJECT: 'SUBJECT',
+    ATTACHMENTS: 'ATTACHMENTS'
+} as const;
+export type InboxForwarderDtoFieldEnum = typeof InboxForwarderDtoFieldEnum[keyof typeof InboxForwarderDtoFieldEnum];
+
+
+/**
+ * Check if a given object implements the InboxForwarderDto interface.
+ */
+export function instanceOfInboxForwarderDto(value: object): value is InboxForwarderDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('field' in value) || value['field'] === undefined) return false;
+    if (!('match' in value) || value['match'] === undefined) return false;
+    if (!('forwardToRecipients' in value) || value['forwardToRecipients'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function InboxForwarderDtoFromJSON(json: any): InboxForwarderDto {
-  return InboxForwarderDtoFromJSONTyped(json, false);
+    return InboxForwarderDtoFromJSONTyped(json, false);
 }
 
-export function InboxForwarderDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxForwarderDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    inboxId: json['inboxId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
-    forwardToRecipients: json['forwardToRecipients'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function InboxForwarderDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'forwardToRecipients': json['forwardToRecipients'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function InboxForwarderDtoToJSON(value?: InboxForwarderDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    name: value.name,
-    field: value.field,
-    match: value.match,
-    forwardToRecipients: value.forwardToRecipients,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function InboxForwarderDtoToJSON(json: any): InboxForwarderDto {
+    return InboxForwarderDtoToJSONTyped(json, false);
 }
+
+export function InboxForwarderDtoToJSONTyped(value?: InboxForwarderDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'inboxId': value['inboxId'],
+        'name': value['name'],
+        'field': value['field'],
+        'match': value['match'],
+        'forwardToRecipients': value['forwardToRecipients'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

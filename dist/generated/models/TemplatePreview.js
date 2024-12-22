@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplatePreviewToJSON = exports.TemplatePreviewFromJSONTyped = exports.TemplatePreviewFromJSON = void 0;
+exports.instanceOfTemplatePreview = instanceOfTemplatePreview;
+exports.TemplatePreviewFromJSON = TemplatePreviewFromJSON;
+exports.TemplatePreviewFromJSONTyped = TemplatePreviewFromJSONTyped;
+exports.TemplatePreviewToJSON = TemplatePreviewToJSON;
+exports.TemplatePreviewToJSONTyped = TemplatePreviewToJSONTyped;
+/**
+ * Check if a given object implements the TemplatePreview interface.
+ */
+function instanceOfTemplatePreview(value) {
+    if (!('preview' in value) || value['preview'] === undefined)
+        return false;
+    return true;
+}
 function TemplatePreviewFromJSON(json) {
     return TemplatePreviewFromJSONTyped(json, false);
 }
-exports.TemplatePreviewFromJSON = TemplatePreviewFromJSON;
 function TemplatePreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        preview: json['preview'],
+        'preview': json['preview'],
     };
 }
-exports.TemplatePreviewFromJSONTyped = TemplatePreviewFromJSONTyped;
-function TemplatePreviewToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TemplatePreviewToJSON(json) {
+    return TemplatePreviewToJSONTyped(json, false);
+}
+function TemplatePreviewToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        preview: value.preview,
+        'preview': value['preview'],
     };
 }
-exports.TemplatePreviewToJSON = TemplatePreviewToJSON;

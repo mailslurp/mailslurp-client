@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ListUnsubscribeRecipientProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { ListUnsubscribeRecipientProjection } from './ListUnsubscribeRecipientProjection';
 /**
  * Paginated list unsubscribe recipients. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageListUnsubscribeRecipients {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageListUnsubscribeRecipients
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageListUnsubscribeRecipients {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageListUnsubscribeRecipients interface.
+ */
+export declare function instanceOfPageListUnsubscribeRecipients(value: object): value is PageListUnsubscribeRecipients;
 export declare function PageListUnsubscribeRecipientsFromJSON(json: any): PageListUnsubscribeRecipients;
 export declare function PageListUnsubscribeRecipientsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageListUnsubscribeRecipients;
-export declare function PageListUnsubscribeRecipientsToJSON(value?: PageListUnsubscribeRecipients | null): any;
+export declare function PageListUnsubscribeRecipientsToJSON(json: any): PageListUnsubscribeRecipients;
+export declare function PageListUnsubscribeRecipientsToJSONTyped(value?: PageListUnsubscribeRecipients | null, ignoreDiscriminator?: boolean): any;

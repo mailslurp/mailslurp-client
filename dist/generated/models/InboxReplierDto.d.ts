@@ -26,7 +26,7 @@ export interface InboxReplierDto {
      * @type {string}
      * @memberof InboxReplierDto
      */
-    inboxId: string;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
@@ -83,11 +83,11 @@ export interface InboxReplierDto {
     templateId?: string | null;
     /**
      *
-     * @type {{ [key: string]: object; }}
+     * @type {{ [key: string]: object | null; }}
      * @memberof InboxReplierDto
      */
     templateVariables?: {
-        [key: string]: object;
+        [key: string]: object | null;
     } | null;
     /**
      *
@@ -104,14 +104,19 @@ export interface InboxReplierDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxReplierDtoFieldEnum {
-    RECIPIENTS = "RECIPIENTS",
-    SENDER = "SENDER",
-    SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
-}
+export declare const InboxReplierDtoFieldEnum: {
+    readonly RECIPIENTS: "RECIPIENTS";
+    readonly SENDER: "SENDER";
+    readonly SUBJECT: "SUBJECT";
+    readonly ATTACHMENTS: "ATTACHMENTS";
+};
+export type InboxReplierDtoFieldEnum = typeof InboxReplierDtoFieldEnum[keyof typeof InboxReplierDtoFieldEnum];
+/**
+ * Check if a given object implements the InboxReplierDto interface.
+ */
+export declare function instanceOfInboxReplierDto(value: object): value is InboxReplierDto;
 export declare function InboxReplierDtoFromJSON(json: any): InboxReplierDto;
 export declare function InboxReplierDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxReplierDto;
-export declare function InboxReplierDtoToJSON(value?: InboxReplierDto | null): any;
+export declare function InboxReplierDtoToJSON(json: any): InboxReplierDto;
+export declare function InboxReplierDtoToJSONTyped(value?: InboxReplierDto | null, ignoreDiscriminator?: boolean): any;

@@ -13,37 +13,55 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerFetchItemToJSON = exports.ImapServerFetchItemFromJSONTyped = exports.ImapServerFetchItemFromJSON = void 0;
+exports.instanceOfImapServerFetchItem = instanceOfImapServerFetchItem;
+exports.ImapServerFetchItemFromJSON = ImapServerFetchItemFromJSON;
+exports.ImapServerFetchItemFromJSONTyped = ImapServerFetchItemFromJSONTyped;
+exports.ImapServerFetchItemToJSON = ImapServerFetchItemToJSON;
+exports.ImapServerFetchItemToJSONTyped = ImapServerFetchItemToJSONTyped;
+/**
+ * Check if a given object implements the ImapServerFetchItem interface.
+ */
+function instanceOfImapServerFetchItem(value) {
+    if (!('content' in value) || value['content'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('uid' in value) || value['uid'] === undefined)
+        return false;
+    if (!('seqNum' in value) || value['seqNum'] === undefined)
+        return false;
+    if (!('read' in value) || value['read'] === undefined)
+        return false;
+    return true;
+}
 function ImapServerFetchItemFromJSON(json) {
     return ImapServerFetchItemFromJSONTyped(json, false);
 }
-exports.ImapServerFetchItemFromJSON = ImapServerFetchItemFromJSON;
 function ImapServerFetchItemFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        content: json['content'],
-        id: json['id'],
-        uid: json['uid'],
-        seqNum: json['seqNum'],
-        read: json['read'],
+        'content': json['content'],
+        'id': json['id'],
+        'uid': json['uid'],
+        'seqNum': json['seqNum'],
+        'read': json['read'],
     };
 }
-exports.ImapServerFetchItemFromJSONTyped = ImapServerFetchItemFromJSONTyped;
-function ImapServerFetchItemToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapServerFetchItemToJSON(json) {
+    return ImapServerFetchItemToJSONTyped(json, false);
+}
+function ImapServerFetchItemToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        content: value.content,
-        id: value.id,
-        uid: value.uid,
-        seqNum: value.seqNum,
-        read: value.read,
+        'content': value['content'],
+        'id': value['id'],
+        'uid': value['uid'],
+        'seqNum': value['seqNum'],
+        'read': value['read'],
     };
 }
-exports.ImapServerFetchItemToJSON = ImapServerFetchItemToJSON;

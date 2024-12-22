@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ConditionOption, MatchOption } from './';
+import type { MatchOption } from './MatchOption';
+import type { ConditionOption } from './ConditionOption';
 /**
  * Optional filter for matching emails based on fields. For instance filter results to only include emails whose `SUBJECT` value does `CONTAIN` given match value. An example payload would be `{ matches: [{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }] }`. You can also pass conditions such as `HAS_ATTACHMENT`. If you wish to extract regex matches inside the email content see the `getEmailContentMatch` method in the EmailController.
  * @export
@@ -29,6 +30,11 @@ export interface MatchOptions {
      */
     conditions?: Array<ConditionOption> | null;
 }
+/**
+ * Check if a given object implements the MatchOptions interface.
+ */
+export declare function instanceOfMatchOptions(value: object): value is MatchOptions;
 export declare function MatchOptionsFromJSON(json: any): MatchOptions;
 export declare function MatchOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): MatchOptions;
-export declare function MatchOptionsToJSON(value?: MatchOptions | null): any;
+export declare function MatchOptionsToJSON(json: any): MatchOptions;
+export declare function MatchOptionsToJSONTyped(value?: MatchOptions | null, ignoreDiscriminator?: boolean): any;

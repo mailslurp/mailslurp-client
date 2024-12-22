@@ -53,37 +53,42 @@ export interface ImapServerSearchOptions {
     sentBefore?: Date | null;
     /**
      *
-     * @type {{ [key: string]: Array<string>; }}
+     * @type {{ [key: string]: Array<string | null> | null; }}
      * @memberof ImapServerSearchOptions
      */
     header?: {
-        [key: string]: Array<string>;
+        [key: string]: Array<string | null> | null;
     } | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapServerSearchOptions
      */
-    body?: Array<string> | null;
+    body?: Array<string | null> | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapServerSearchOptions
      */
-    text?: Array<string> | null;
+    text?: Array<string | null> | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapServerSearchOptions
      */
-    withFlags?: Array<string> | null;
+    withFlags?: Array<string | null> | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapServerSearchOptions
      */
-    withoutFlags?: Array<string> | null;
+    withoutFlags?: Array<string | null> | null;
 }
+/**
+ * Check if a given object implements the ImapServerSearchOptions interface.
+ */
+export declare function instanceOfImapServerSearchOptions(value: object): value is ImapServerSearchOptions;
 export declare function ImapServerSearchOptionsFromJSON(json: any): ImapServerSearchOptions;
 export declare function ImapServerSearchOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerSearchOptions;
-export declare function ImapServerSearchOptionsToJSON(value?: ImapServerSearchOptions | null): any;
+export declare function ImapServerSearchOptionsToJSON(json: any): ImapServerSearchOptions;
+export declare function ImapServerSearchOptionsToJSONTyped(value?: ImapServerSearchOptions | null, ignoreDiscriminator?: boolean): any;

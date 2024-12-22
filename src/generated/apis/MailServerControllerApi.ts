@@ -12,345 +12,263 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
-import {
+import type {
   DNSLookupOptions,
-  DNSLookupOptionsFromJSON,
-  DNSLookupOptionsToJSON,
   DNSLookupResults,
-  DNSLookupResultsFromJSON,
-  DNSLookupResultsToJSON,
   DNSLookupsOptions,
-  DNSLookupsOptionsFromJSON,
-  DNSLookupsOptionsToJSON,
   DescribeDomainOptions,
-  DescribeDomainOptionsFromJSON,
-  DescribeDomainOptionsToJSON,
   DescribeMailServerDomainResult,
-  DescribeMailServerDomainResultFromJSON,
-  DescribeMailServerDomainResultToJSON,
   EmailVerificationResult,
-  EmailVerificationResultFromJSON,
-  EmailVerificationResultToJSON,
   IPAddressResult,
-  IPAddressResultFromJSON,
-  IPAddressResultToJSON,
   VerifyEmailAddressOptions,
-  VerifyEmailAddressOptionsFromJSON,
-  VerifyEmailAddressOptionsToJSON,
-} from '../models';
+} from '../models/index';
+import {
+    DNSLookupOptionsFromJSON,
+    DNSLookupOptionsToJSON,
+    DNSLookupResultsFromJSON,
+    DNSLookupResultsToJSON,
+    DNSLookupsOptionsFromJSON,
+    DNSLookupsOptionsToJSON,
+    DescribeDomainOptionsFromJSON,
+    DescribeDomainOptionsToJSON,
+    DescribeMailServerDomainResultFromJSON,
+    DescribeMailServerDomainResultToJSON,
+    EmailVerificationResultFromJSON,
+    EmailVerificationResultToJSON,
+    IPAddressResultFromJSON,
+    IPAddressResultToJSON,
+    VerifyEmailAddressOptionsFromJSON,
+    VerifyEmailAddressOptionsToJSON,
+} from '../models/index';
 
 export interface DescribeMailServerDomainRequest {
-  describeDomainOptions: DescribeDomainOptions;
+    describeDomainOptions: DescribeDomainOptions;
 }
 
 export interface GetDnsLookupRequest {
-  dNSLookupOptions: DNSLookupOptions;
+    dNSLookupOptions: DNSLookupOptions;
 }
 
 export interface GetDnsLookupsRequest {
-  dNSLookupsOptions: DNSLookupsOptions;
+    dNSLookupsOptions: DNSLookupsOptions;
 }
 
 export interface GetIpAddressRequest {
-  name: string;
+    name: string;
 }
 
 export interface VerifyEmailAddressRequest {
-  verifyEmailAddressOptions: VerifyEmailAddressOptions;
+    verifyEmailAddressOptions: VerifyEmailAddressOptions;
 }
 
 /**
- *
+ * 
  */
 export class MailServerControllerApi extends runtime.BaseAPI {
-  /**
-   * Get DNS Mail Server records for a domain
-   */
-  async describeMailServerDomainRaw(
-    requestParameters: DescribeMailServerDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DescribeMailServerDomainResult>> {
-    if (
-      requestParameters.describeDomainOptions === null ||
-      requestParameters.describeDomainOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'describeDomainOptions',
-        'Required parameter requestParameters.describeDomainOptions was null or undefined when calling describeMailServerDomain.'
-      );
+
+    /**
+     * Get DNS Mail Server records for a domain
+     */
+    async describeMailServerDomainRaw(requestParameters: DescribeMailServerDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DescribeMailServerDomainResult>> {
+        if (requestParameters['describeDomainOptions'] == null) {
+            throw new runtime.RequiredError(
+                'describeDomainOptions',
+                'Required parameter "describeDomainOptions" was null or undefined when calling describeMailServerDomain().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/mail-server/describe/domain`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DescribeDomainOptionsToJSON(requestParameters['describeDomainOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DescribeMailServerDomainResultFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get DNS Mail Server records for a domain
+     */
+    async describeMailServerDomain(requestParameters: DescribeMailServerDomainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DescribeMailServerDomainResult> {
+        const response = await this.describeMailServerDomainRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/mail-server/describe/domain`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: DescribeDomainOptionsToJSON(
-          requestParameters.describeDomainOptions
-        ),
-      },
-      initOverrides
-    );
+    /**
+     * Lookup DNS records for a domain
+     */
+    async getDnsLookupRaw(requestParameters: GetDnsLookupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DNSLookupResults>> {
+        if (requestParameters['dNSLookupOptions'] == null) {
+            throw new runtime.RequiredError(
+                'dNSLookupOptions',
+                'Required parameter "dNSLookupOptions" was null or undefined when calling getDnsLookup().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DescribeMailServerDomainResultFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Get DNS Mail Server records for a domain
-   */
-  async describeMailServerDomain(
-    requestParameters: DescribeMailServerDomainRequest,
-    initOverrides?: RequestInit
-  ): Promise<DescribeMailServerDomainResult> {
-    const response = await this.describeMailServerDomainRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Lookup DNS records for a domain
-   */
-  async getDnsLookupRaw(
-    requestParameters: GetDnsLookupRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DNSLookupResults>> {
-    if (
-      requestParameters.dNSLookupOptions === null ||
-      requestParameters.dNSLookupOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'dNSLookupOptions',
-        'Required parameter requestParameters.dNSLookupOptions was null or undefined when calling getDnsLookup.'
-      );
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/mail-server/describe/dns-lookup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DNSLookupOptionsToJSON(requestParameters['dNSLookupOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DNSLookupResultsFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Lookup DNS records for a domain
+     */
+    async getDnsLookup(requestParameters: GetDnsLookupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DNSLookupResults> {
+        const response = await this.getDnsLookupRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/mail-server/describe/dns-lookup`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: DNSLookupOptionsToJSON(requestParameters.dNSLookupOptions),
-      },
-      initOverrides
-    );
+    /**
+     * Lookup DNS records for multiple domains
+     */
+    async getDnsLookupsRaw(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DNSLookupResults>> {
+        if (requestParameters['dNSLookupsOptions'] == null) {
+            throw new runtime.RequiredError(
+                'dNSLookupsOptions',
+                'Required parameter "dNSLookupsOptions" was null or undefined when calling getDnsLookups().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DNSLookupResultsFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Lookup DNS records for a domain
-   */
-  async getDnsLookup(
-    requestParameters: GetDnsLookupRequest,
-    initOverrides?: RequestInit
-  ): Promise<DNSLookupResults> {
-    const response = await this.getDnsLookupRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Lookup DNS records for multiple domains
-   */
-  async getDnsLookupsRaw(
-    requestParameters: GetDnsLookupsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DNSLookupResults>> {
-    if (
-      requestParameters.dNSLookupsOptions === null ||
-      requestParameters.dNSLookupsOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'dNSLookupsOptions',
-        'Required parameter requestParameters.dNSLookupsOptions was null or undefined when calling getDnsLookups.'
-      );
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/mail-server/describe/dns-lookups`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DNSLookupsOptionsToJSON(requestParameters['dNSLookupsOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DNSLookupResultsFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Lookup DNS records for multiple domains
+     */
+    async getDnsLookups(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DNSLookupResults> {
+        const response = await this.getDnsLookupsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/mail-server/describe/dns-lookups`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: DNSLookupsOptionsToJSON(requestParameters.dNSLookupsOptions),
-      },
-      initOverrides
-    );
+    /**
+     * Get IP address for a domain
+     */
+    async getIpAddressRaw(requestParameters: GetIpAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IPAddressResult>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling getIpAddress().'
+            );
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DNSLookupResultsFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Lookup DNS records for multiple domains
-   */
-  async getDnsLookups(
-    requestParameters: GetDnsLookupsRequest,
-    initOverrides?: RequestInit
-  ): Promise<DNSLookupResults> {
-    const response = await this.getDnsLookupsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        if (requestParameters['name'] != null) {
+            queryParameters['name'] = requestParameters['name'];
+        }
 
-  /**
-   * Get IP address for a domain
-   */
-  async getIpAddressRaw(
-    requestParameters: GetIpAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<IPAddressResult>> {
-    if (
-      requestParameters.name === null ||
-      requestParameters.name === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'name',
-        'Required parameter requestParameters.name was null or undefined when calling getIpAddress.'
-      );
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/mail-server/describe/ip-address`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => IPAddressResultFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    if (requestParameters.name !== undefined) {
-      queryParameters['name'] = requestParameters.name;
+    /**
+     * Get IP address for a domain
+     */
+    async getIpAddress(requestParameters: GetIpAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IPAddressResult> {
+        const response = await this.getIpAddressRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
+     * @deprecated
+     */
+    async verifyEmailAddressRaw(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailVerificationResult>> {
+        if (requestParameters['verifyEmailAddressOptions'] == null) {
+            throw new runtime.RequiredError(
+                'verifyEmailAddressOptions',
+                'Required parameter "verifyEmailAddressOptions" was null or undefined when calling verifyEmailAddress().'
+            );
+        }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/mail-server/verify/email-address`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: VerifyEmailAddressOptionsToJSON(requestParameters['verifyEmailAddressOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EmailVerificationResultFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/mail-server/describe/ip-address`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      IPAddressResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get IP address for a domain
-   */
-  async getIpAddress(
-    requestParameters: GetIpAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<IPAddressResult> {
-    const response = await this.getIpAddressRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
-   */
-  async verifyEmailAddressRaw(
-    requestParameters: VerifyEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<EmailVerificationResult>> {
-    if (
-      requestParameters.verifyEmailAddressOptions === null ||
-      requestParameters.verifyEmailAddressOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'verifyEmailAddressOptions',
-        'Required parameter requestParameters.verifyEmailAddressOptions was null or undefined when calling verifyEmailAddress.'
-      );
+    /**
+     * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
+     * @deprecated
+     */
+    async verifyEmailAddress(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailVerificationResult> {
+        const response = await this.verifyEmailAddressRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/mail-server/verify/email-address`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: VerifyEmailAddressOptionsToJSON(
-          requestParameters.verifyEmailAddressOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      EmailVerificationResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
-   */
-  async verifyEmailAddress(
-    requestParameters: VerifyEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<EmailVerificationResult> {
-    const response = await this.verifyEmailAddressRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }

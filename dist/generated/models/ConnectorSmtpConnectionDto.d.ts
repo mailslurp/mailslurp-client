@@ -26,37 +26,85 @@ export interface ConnectorSmtpConnectionDto {
      * @type {string}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpHost?: string;
+    smtpHost: string;
     /**
      *
      * @type {number}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpPort?: number;
+    smtpPort?: number | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpUsername?: string;
+    smtpUsername?: string | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpPassword?: string;
+    smtpPassword?: string | null;
     /**
      *
      * @type {boolean}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpSsl?: boolean;
+    smtpSsl?: boolean | null;
     /**
      *
      * @type {boolean}
      * @memberof ConnectorSmtpConnectionDto
      */
-    enabled?: boolean;
+    startTls?: boolean | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpMechanisms?: Array<string | null> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    localHostName?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyHost?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyPort?: number | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyEnabled?: boolean | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    enabled?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslTrust?: string | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslProtocols?: Array<string | null> | null;
     /**
      *
      * @type {Date}
@@ -70,6 +118,11 @@ export interface ConnectorSmtpConnectionDto {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the ConnectorSmtpConnectionDto interface.
+ */
+export declare function instanceOfConnectorSmtpConnectionDto(value: object): value is ConnectorSmtpConnectionDto;
 export declare function ConnectorSmtpConnectionDtoFromJSON(json: any): ConnectorSmtpConnectionDto;
 export declare function ConnectorSmtpConnectionDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSmtpConnectionDto;
-export declare function ConnectorSmtpConnectionDtoToJSON(value?: ConnectorSmtpConnectionDto | null): any;
+export declare function ConnectorSmtpConnectionDtoToJSON(json: any): ConnectorSmtpConnectionDto;
+export declare function ConnectorSmtpConnectionDtoToJSONTyped(value?: ConnectorSmtpConnectionDto | null, ignoreDiscriminator?: boolean): any;

@@ -13,35 +13,51 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpiredInboxRecordProjectionToJSON = exports.ExpiredInboxRecordProjectionFromJSONTyped = exports.ExpiredInboxRecordProjectionFromJSON = void 0;
+exports.instanceOfExpiredInboxRecordProjection = instanceOfExpiredInboxRecordProjection;
+exports.ExpiredInboxRecordProjectionFromJSON = ExpiredInboxRecordProjectionFromJSON;
+exports.ExpiredInboxRecordProjectionFromJSONTyped = ExpiredInboxRecordProjectionFromJSONTyped;
+exports.ExpiredInboxRecordProjectionToJSON = ExpiredInboxRecordProjectionToJSON;
+exports.ExpiredInboxRecordProjectionToJSONTyped = ExpiredInboxRecordProjectionToJSONTyped;
+/**
+ * Check if a given object implements the ExpiredInboxRecordProjection interface.
+ */
+function instanceOfExpiredInboxRecordProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function ExpiredInboxRecordProjectionFromJSON(json) {
     return ExpiredInboxRecordProjectionFromJSONTyped(json, false);
 }
-exports.ExpiredInboxRecordProjectionFromJSON = ExpiredInboxRecordProjectionFromJSON;
 function ExpiredInboxRecordProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        userId: json['userId'],
-        emailAddress: json['emailAddress'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'],
+        'id': json['id'],
     };
 }
-exports.ExpiredInboxRecordProjectionFromJSONTyped = ExpiredInboxRecordProjectionFromJSONTyped;
-function ExpiredInboxRecordProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ExpiredInboxRecordProjectionToJSON(json) {
+    return ExpiredInboxRecordProjectionToJSONTyped(json, false);
+}
+function ExpiredInboxRecordProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        userId: value.userId,
-        emailAddress: value.emailAddress,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'id': value['id'],
     };
 }
-exports.ExpiredInboxRecordProjectionToJSON = ExpiredInboxRecordProjectionToJSON;

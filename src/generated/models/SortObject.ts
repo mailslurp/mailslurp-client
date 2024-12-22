@@ -12,61 +12,86 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SortObject
  */
 export interface SortObject {
-  /**
-   *
-   * @type {boolean}
-   * @memberof SortObject
-   */
-  sorted?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SortObject
-   */
-  unsorted?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SortObject
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof SortObject
+     */
+    direction?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SortObject
+     */
+    nullHandling?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SortObject
+     */
+    ascending?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof SortObject
+     */
+    property?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SortObject
+     */
+    ignoreCase?: boolean;
+}
+
+/**
+ * Check if a given object implements the SortObject interface.
+ */
+export function instanceOfSortObject(value: object): value is SortObject {
+    return true;
 }
 
 export function SortObjectFromJSON(json: any): SortObject {
-  return SortObjectFromJSONTyped(json, false);
+    return SortObjectFromJSONTyped(json, false);
 }
 
-export function SortObjectFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SortObject {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    sorted: !exists(json, 'sorted') ? undefined : json['sorted'],
-    unsorted: !exists(json, 'unsorted') ? undefined : json['unsorted'],
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function SortObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): SortObject {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'direction': json['direction'] == null ? undefined : json['direction'],
+        'nullHandling': json['nullHandling'] == null ? undefined : json['nullHandling'],
+        'ascending': json['ascending'] == null ? undefined : json['ascending'],
+        'property': json['property'] == null ? undefined : json['property'],
+        'ignoreCase': json['ignoreCase'] == null ? undefined : json['ignoreCase'],
+    };
 }
 
-export function SortObjectToJSON(value?: SortObject | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    sorted: value.sorted,
-    unsorted: value.unsorted,
-    empty: value.empty,
-  };
+export function SortObjectToJSON(json: any): SortObject {
+    return SortObjectToJSONTyped(json, false);
 }
+
+export function SortObjectToJSONTyped(value?: SortObject | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'direction': value['direction'],
+        'nullHandling': value['nullHandling'],
+        'ascending': value['ascending'],
+        'property': value['property'],
+        'ignoreCase': value['ignoreCase'],
+    };
+}
+

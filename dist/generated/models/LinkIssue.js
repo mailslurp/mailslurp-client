@@ -13,47 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkIssueToJSON = exports.LinkIssueFromJSONTyped = exports.LinkIssueFromJSON = exports.LinkIssueSeverityEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.LinkIssueSeverityEnum = void 0;
+exports.instanceOfLinkIssue = instanceOfLinkIssue;
+exports.LinkIssueFromJSON = LinkIssueFromJSON;
+exports.LinkIssueFromJSONTyped = LinkIssueFromJSONTyped;
+exports.LinkIssueToJSON = LinkIssueToJSON;
+exports.LinkIssueToJSONTyped = LinkIssueToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var LinkIssueSeverityEnum;
-(function (LinkIssueSeverityEnum) {
-    LinkIssueSeverityEnum["Warning"] = "Warning";
-    LinkIssueSeverityEnum["Error"] = "Error";
-})(LinkIssueSeverityEnum = exports.LinkIssueSeverityEnum || (exports.LinkIssueSeverityEnum = {}));
+exports.LinkIssueSeverityEnum = {
+    Warning: 'Warning',
+    Error: 'Error'
+};
+/**
+ * Check if a given object implements the LinkIssue interface.
+ */
+function instanceOfLinkIssue(value) {
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    if (!('severity' in value) || value['severity'] === undefined)
+        return false;
+    if (!('message' in value) || value['message'] === undefined)
+        return false;
+    return true;
+}
 function LinkIssueFromJSON(json) {
     return LinkIssueFromJSONTyped(json, false);
 }
-exports.LinkIssueFromJSON = LinkIssueFromJSON;
 function LinkIssueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        url: json['url'],
-        responseStatus: !(0, runtime_1.exists)(json, 'responseStatus')
-            ? undefined
-            : json['responseStatus'],
-        severity: json['severity'],
-        message: json['message'],
+        'url': json['url'],
+        'responseStatus': json['responseStatus'] == null ? undefined : json['responseStatus'],
+        'severity': json['severity'],
+        'message': json['message'],
     };
 }
-exports.LinkIssueFromJSONTyped = LinkIssueFromJSONTyped;
-function LinkIssueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function LinkIssueToJSON(json) {
+    return LinkIssueToJSONTyped(json, false);
+}
+function LinkIssueToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        url: value.url,
-        responseStatus: value.responseStatus,
-        severity: value.severity,
-        message: value.message,
+        'url': value['url'],
+        'responseStatus': value['responseStatus'],
+        'severity': value['severity'],
+        'message': value['message'],
     };
 }
-exports.LinkIssueToJSON = LinkIssueToJSON;

@@ -22,6 +22,11 @@ export interface CheckEmailClientSupportOptions {
      */
     emailBody: string;
 }
+/**
+ * Check if a given object implements the CheckEmailClientSupportOptions interface.
+ */
+export declare function instanceOfCheckEmailClientSupportOptions(value: object): value is CheckEmailClientSupportOptions;
 export declare function CheckEmailClientSupportOptionsFromJSON(json: any): CheckEmailClientSupportOptions;
 export declare function CheckEmailClientSupportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailClientSupportOptions;
-export declare function CheckEmailClientSupportOptionsToJSON(value?: CheckEmailClientSupportOptions | null): any;
+export declare function CheckEmailClientSupportOptionsToJSON(json: any): CheckEmailClientSupportOptions;
+export declare function CheckEmailClientSupportOptionsToJSONTyped(value?: CheckEmailClientSupportOptions | null, ignoreDiscriminator?: boolean): any;

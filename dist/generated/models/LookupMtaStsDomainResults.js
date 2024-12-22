@@ -13,44 +13,69 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupMtaStsDomainResultsToJSON = exports.LookupMtaStsDomainResultsFromJSONTyped = exports.LookupMtaStsDomainResultsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfLookupMtaStsDomainResults = instanceOfLookupMtaStsDomainResults;
+exports.LookupMtaStsDomainResultsFromJSON = LookupMtaStsDomainResultsFromJSON;
+exports.LookupMtaStsDomainResultsFromJSONTyped = LookupMtaStsDomainResultsFromJSONTyped;
+exports.LookupMtaStsDomainResultsToJSON = LookupMtaStsDomainResultsToJSON;
+exports.LookupMtaStsDomainResultsToJSONTyped = LookupMtaStsDomainResultsToJSONTyped;
+var DNSLookupResult_1 = require("./DNSLookupResult");
+var DNSLookupOptions_1 = require("./DNSLookupOptions");
+/**
+ * Check if a given object implements the LookupMtaStsDomainResults interface.
+ */
+function instanceOfLookupMtaStsDomainResults(value) {
+    if (!('valid' in value) || value['valid'] === undefined)
+        return false;
+    if (!('query' in value) || value['query'] === undefined)
+        return false;
+    if (!('records' in value) || value['records'] === undefined)
+        return false;
+    if (!('wellKnownQuery' in value) || value['wellKnownQuery'] === undefined)
+        return false;
+    if (!('wellKnownPresent' in value) || value['wellKnownPresent'] === undefined)
+        return false;
+    if (!('wellKnownValue' in value) || value['wellKnownValue'] === undefined)
+        return false;
+    if (!('errors' in value) || value['errors'] === undefined)
+        return false;
+    if (!('warnings' in value) || value['warnings'] === undefined)
+        return false;
+    return true;
+}
 function LookupMtaStsDomainResultsFromJSON(json) {
     return LookupMtaStsDomainResultsFromJSONTyped(json, false);
 }
-exports.LookupMtaStsDomainResultsFromJSON = LookupMtaStsDomainResultsFromJSON;
 function LookupMtaStsDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        valid: json['valid'],
-        query: (0, _1.DNSLookupOptionsFromJSON)(json['query']),
-        records: json['records'].map(_1.DNSLookupResultFromJSON),
-        wellKnownQuery: json['wellKnownQuery'],
-        wellKnownPresent: json['wellKnownPresent'],
-        wellKnownValue: json['wellKnownValue'],
-        errors: json['errors'],
-        warnings: json['warnings'],
+        'valid': json['valid'],
+        'query': (0, DNSLookupOptions_1.DNSLookupOptionsFromJSON)(json['query']),
+        'records': (json['records'].map(DNSLookupResult_1.DNSLookupResultFromJSON)),
+        'wellKnownQuery': json['wellKnownQuery'],
+        'wellKnownPresent': json['wellKnownPresent'],
+        'wellKnownValue': json['wellKnownValue'],
+        'errors': json['errors'],
+        'warnings': json['warnings'],
     };
 }
-exports.LookupMtaStsDomainResultsFromJSONTyped = LookupMtaStsDomainResultsFromJSONTyped;
-function LookupMtaStsDomainResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function LookupMtaStsDomainResultsToJSON(json) {
+    return LookupMtaStsDomainResultsToJSONTyped(json, false);
+}
+function LookupMtaStsDomainResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        valid: value.valid,
-        query: (0, _1.DNSLookupOptionsToJSON)(value.query),
-        records: value.records.map(_1.DNSLookupResultToJSON),
-        wellKnownQuery: value.wellKnownQuery,
-        wellKnownPresent: value.wellKnownPresent,
-        wellKnownValue: value.wellKnownValue,
-        errors: value.errors,
-        warnings: value.warnings,
+        'valid': value['valid'],
+        'query': (0, DNSLookupOptions_1.DNSLookupOptionsToJSON)(value['query']),
+        'records': (value['records'].map(DNSLookupResult_1.DNSLookupResultToJSON)),
+        'wellKnownQuery': value['wellKnownQuery'],
+        'wellKnownPresent': value['wellKnownPresent'],
+        'wellKnownValue': value['wellKnownValue'],
+        'errors': value['errors'],
+        'warnings': value['warnings'],
     };
 }
-exports.LookupMtaStsDomainResultsToJSON = LookupMtaStsDomainResultsToJSON;

@@ -13,50 +13,67 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendWithQueueResultToJSON = exports.SendWithQueueResultFromJSONTyped = exports.SendWithQueueResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfSendWithQueueResult = instanceOfSendWithQueueResult;
+exports.SendWithQueueResultFromJSON = SendWithQueueResultFromJSON;
+exports.SendWithQueueResultFromJSONTyped = SendWithQueueResultFromJSONTyped;
+exports.SendWithQueueResultToJSON = SendWithQueueResultToJSON;
+exports.SendWithQueueResultToJSONTyped = SendWithQueueResultToJSONTyped;
+/**
+ * Check if a given object implements the SendWithQueueResult interface.
+ */
+function instanceOfSendWithQueueResult(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('headerId' in value) || value['headerId'] === undefined)
+        return false;
+    if (!('delivered' in value) || value['delivered'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    return true;
+}
 function SendWithQueueResultFromJSON(json) {
     return SendWithQueueResultFromJSONTyped(json, false);
 }
-exports.SendWithQueueResultFromJSON = SendWithQueueResultFromJSON;
 function SendWithQueueResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        headerId: json['headerId'],
-        delivered: json['delivered'],
-        exceptionName: !(0, runtime_1.exists)(json, 'exceptionName')
-            ? undefined
-            : json['exceptionName'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'headerId': json['headerId'],
+        'delivered': json['delivered'],
+        'exceptionName': json['exceptionName'] == null ? undefined : json['exceptionName'],
+        'message': json['message'] == null ? undefined : json['message'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
-exports.SendWithQueueResultFromJSONTyped = SendWithQueueResultFromJSONTyped;
-function SendWithQueueResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SendWithQueueResultToJSON(json) {
+    return SendWithQueueResultToJSONTyped(json, false);
+}
+function SendWithQueueResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        subject: value.subject,
-        inboxId: value.inboxId,
-        headerId: value.headerId,
-        delivered: value.delivered,
-        exceptionName: value.exceptionName,
-        message: value.message,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'subject': value['subject'],
+        'inboxId': value['inboxId'],
+        'headerId': value['headerId'],
+        'delivered': value['delivered'],
+        'exceptionName': value['exceptionName'],
+        'message': value['message'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
     };
 }
-exports.SendWithQueueResultToJSON = SendWithQueueResultToJSON;

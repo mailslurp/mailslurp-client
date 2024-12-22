@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface LookupTlsReportingDomainOptions
  */
 export interface LookupTlsReportingDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof LookupTlsReportingDomainOptions
-   */
-  host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupTlsReportingDomainOptions
+     */
+    host: string;
 }
 
-export function LookupTlsReportingDomainOptionsFromJSON(
-  json: any
-): LookupTlsReportingDomainOptions {
-  return LookupTlsReportingDomainOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the LookupTlsReportingDomainOptions interface.
+ */
+export function instanceOfLookupTlsReportingDomainOptions(value: object): value is LookupTlsReportingDomainOptions {
+    if (!('host' in value) || value['host'] === undefined) return false;
+    return true;
 }
 
-export function LookupTlsReportingDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupTlsReportingDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-  };
+export function LookupTlsReportingDomainOptionsFromJSON(json: any): LookupTlsReportingDomainOptions {
+    return LookupTlsReportingDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupTlsReportingDomainOptionsToJSON(
-  value?: LookupTlsReportingDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-  };
+export function LookupTlsReportingDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupTlsReportingDomainOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+    };
 }
+
+export function LookupTlsReportingDomainOptionsToJSON(json: any): LookupTlsReportingDomainOptions {
+    return LookupTlsReportingDomainOptionsToJSONTyped(json, false);
+}
+
+export function LookupTlsReportingDomainOptionsToJSONTyped(value?: LookupTlsReportingDomainOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'host': value['host'],
+    };
+}
+

@@ -32,7 +32,7 @@ export interface InboxPreview {
      * @type {string}
      * @memberof InboxPreview
      */
-    emailAddress?: string | null;
+    emailAddress: string | null;
     /**
      * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
      * @type {Date}
@@ -53,10 +53,10 @@ export interface InboxPreview {
     name?: string | null;
     /**
      * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof InboxPreview
      */
-    tags?: Array<string> | null;
+    tags?: Array<string | null> | null;
     /**
      * Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
      * @type {boolean}
@@ -68,7 +68,7 @@ export interface InboxPreview {
      * @type {string}
      * @memberof InboxPreview
      */
-    inboxType?: InboxPreviewInboxTypeEnum;
+    inboxType?: InboxPreviewInboxTypeEnum | null;
     /**
      * Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
      * @type {boolean}
@@ -77,35 +77,54 @@ export interface InboxPreview {
     virtualInbox: boolean;
     /**
      * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
-     * @type {string}
+     * @type {Date}
      * @memberof InboxPreview
      */
-    expiresAt?: string | null;
+    expiresAt?: Date | null;
     /**
      * Inbox function if used as a primitive for another system.
      * @type {string}
      * @memberof InboxPreview
      */
-    functionsAs?: InboxPreviewFunctionsAsEnum;
+    functionsAs?: InboxPreviewFunctionsAsEnum | null;
+    /**
+     * ID of user that inbox belongs to
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    userId: string | null;
+    /**
+     * Description of an inbox for labelling and searching purposes
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    description?: string | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxPreviewInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const InboxPreviewInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type InboxPreviewInboxTypeEnum = typeof InboxPreviewInboxTypeEnum[keyof typeof InboxPreviewInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxPreviewFunctionsAsEnum {
-    ALIAS = "ALIAS",
-    THREAD = "THREAD",
-    CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
-}
+export declare const InboxPreviewFunctionsAsEnum: {
+    readonly ALIAS: "ALIAS";
+    readonly THREAD: "THREAD";
+    readonly CATCH_ALL: "CATCH_ALL";
+    readonly CONNECTOR: "CONNECTOR";
+    readonly ACCOUNT: "ACCOUNT";
+    readonly GUEST: "GUEST";
+};
+export type InboxPreviewFunctionsAsEnum = typeof InboxPreviewFunctionsAsEnum[keyof typeof InboxPreviewFunctionsAsEnum];
+/**
+ * Check if a given object implements the InboxPreview interface.
+ */
+export declare function instanceOfInboxPreview(value: object): value is InboxPreview;
 export declare function InboxPreviewFromJSON(json: any): InboxPreview;
 export declare function InboxPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxPreview;
-export declare function InboxPreviewToJSON(value?: InboxPreview | null): any;
+export declare function InboxPreviewToJSON(json: any): InboxPreview;
+export declare function InboxPreviewToJSONTyped(value?: InboxPreview | null, ignoreDiscriminator?: boolean): any;

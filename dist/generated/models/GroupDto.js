@@ -13,36 +13,49 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupDtoToJSON = exports.GroupDtoFromJSONTyped = exports.GroupDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfGroupDto = instanceOfGroupDto;
+exports.GroupDtoFromJSON = GroupDtoFromJSON;
+exports.GroupDtoFromJSONTyped = GroupDtoFromJSONTyped;
+exports.GroupDtoToJSON = GroupDtoToJSON;
+exports.GroupDtoToJSONTyped = GroupDtoToJSONTyped;
+/**
+ * Check if a given object implements the GroupDto interface.
+ */
+function instanceOfGroupDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function GroupDtoFromJSON(json) {
     return GroupDtoFromJSONTyped(json, false);
 }
-exports.GroupDtoFromJSON = GroupDtoFromJSON;
 function GroupDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        name: json['name'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'name': json['name'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.GroupDtoFromJSONTyped = GroupDtoFromJSONTyped;
-function GroupDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GroupDtoToJSON(json) {
+    return GroupDtoToJSONTyped(json, false);
+}
+function GroupDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        name: value.name,
-        description: value.description,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'name': value['name'],
+        'description': value['description'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.GroupDtoToJSON = GroupDtoToJSON;

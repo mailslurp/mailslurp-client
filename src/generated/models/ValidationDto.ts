@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { HTMLValidationResult } from './HTMLValidationResult';
 import {
-  HTMLValidationResult,
-  HTMLValidationResultFromJSON,
-  HTMLValidationResultFromJSONTyped,
-  HTMLValidationResultToJSON,
-} from './';
+    HTMLValidationResultFromJSON,
+    HTMLValidationResultFromJSONTyped,
+    HTMLValidationResultToJSON,
+    HTMLValidationResultToJSONTyped,
+} from './HTMLValidationResult';
 
 /**
  * Response object for email validation operation
@@ -26,46 +27,57 @@ import {
  * @interface ValidationDto
  */
 export interface ValidationDto {
-  /**
-   * ID of the email validated
-   * @type {string}
-   * @memberof ValidationDto
-   */
-  emailId: string;
-  /**
-   *
-   * @type {HTMLValidationResult}
-   * @memberof ValidationDto
-   */
-  html: HTMLValidationResult;
+    /**
+     * ID of the email validated
+     * @type {string}
+     * @memberof ValidationDto
+     */
+    emailId: string;
+    /**
+     * 
+     * @type {HTMLValidationResult}
+     * @memberof ValidationDto
+     */
+    html: HTMLValidationResult;
+}
+
+/**
+ * Check if a given object implements the ValidationDto interface.
+ */
+export function instanceOfValidationDto(value: object): value is ValidationDto {
+    if (!('emailId' in value) || value['emailId'] === undefined) return false;
+    if (!('html' in value) || value['html'] === undefined) return false;
+    return true;
 }
 
 export function ValidationDtoFromJSON(json: any): ValidationDto {
-  return ValidationDtoFromJSONTyped(json, false);
+    return ValidationDtoFromJSONTyped(json, false);
 }
 
-export function ValidationDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ValidationDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailId: json['emailId'],
-    html: HTMLValidationResultFromJSON(json['html']),
-  };
+export function ValidationDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'emailId': json['emailId'],
+        'html': HTMLValidationResultFromJSON(json['html']),
+    };
 }
 
-export function ValidationDtoToJSON(value?: ValidationDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailId: value.emailId,
-    html: HTMLValidationResultToJSON(value.html),
-  };
+export function ValidationDtoToJSON(json: any): ValidationDto {
+    return ValidationDtoToJSONTyped(json, false);
 }
+
+export function ValidationDtoToJSONTyped(value?: ValidationDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'emailId': value['emailId'],
+        'html': HTMLValidationResultToJSON(value['html']),
+    };
+}
+

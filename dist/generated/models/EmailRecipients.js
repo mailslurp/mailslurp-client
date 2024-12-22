@@ -13,47 +13,42 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailRecipientsToJSON = exports.EmailRecipientsFromJSONTyped = exports.EmailRecipientsFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfEmailRecipients = instanceOfEmailRecipients;
+exports.EmailRecipientsFromJSON = EmailRecipientsFromJSON;
+exports.EmailRecipientsFromJSONTyped = EmailRecipientsFromJSONTyped;
+exports.EmailRecipientsToJSON = EmailRecipientsToJSON;
+exports.EmailRecipientsToJSONTyped = EmailRecipientsToJSONTyped;
+var Recipient_1 = require("./Recipient");
+/**
+ * Check if a given object implements the EmailRecipients interface.
+ */
+function instanceOfEmailRecipients(value) {
+    return true;
+}
 function EmailRecipientsFromJSON(json) {
     return EmailRecipientsFromJSONTyped(json, false);
 }
-exports.EmailRecipientsFromJSON = EmailRecipientsFromJSON;
 function EmailRecipientsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        to: !(0, runtime_1.exists)(json, 'to')
-            ? undefined
-            : json['to'].map(_1.RecipientFromJSON),
-        cc: !(0, runtime_1.exists)(json, 'cc')
-            ? undefined
-            : json['cc'].map(_1.RecipientFromJSON),
-        bcc: !(0, runtime_1.exists)(json, 'bcc')
-            ? undefined
-            : json['bcc'].map(_1.RecipientFromJSON),
+        'to': json['to'] == null ? undefined : (json['to'].map(Recipient_1.RecipientFromJSON)),
+        'cc': json['cc'] == null ? undefined : (json['cc'].map(Recipient_1.RecipientFromJSON)),
+        'bcc': json['bcc'] == null ? undefined : (json['bcc'].map(Recipient_1.RecipientFromJSON)),
     };
 }
-exports.EmailRecipientsFromJSONTyped = EmailRecipientsFromJSONTyped;
-function EmailRecipientsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailRecipientsToJSON(json) {
+    return EmailRecipientsToJSONTyped(json, false);
+}
+function EmailRecipientsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        to: value.to === undefined
-            ? undefined
-            : value.to.map(_1.RecipientToJSON),
-        cc: value.cc === undefined
-            ? undefined
-            : value.cc.map(_1.RecipientToJSON),
-        bcc: value.bcc === undefined
-            ? undefined
-            : value.bcc.map(_1.RecipientToJSON),
+        'to': value['to'] == null ? undefined : (value['to'].map(Recipient_1.RecipientToJSON)),
+        'cc': value['cc'] == null ? undefined : (value['cc'].map(Recipient_1.RecipientToJSON)),
+        'bcc': value['bcc'] == null ? undefined : (value['bcc'].map(Recipient_1.RecipientToJSON)),
     };
 }
-exports.EmailRecipientsToJSON = EmailRecipientsToJSON;

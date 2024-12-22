@@ -13,38 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentMetaDataToJSON = exports.AttachmentMetaDataFromJSONTyped = exports.AttachmentMetaDataFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfAttachmentMetaData = instanceOfAttachmentMetaData;
+exports.AttachmentMetaDataFromJSON = AttachmentMetaDataFromJSON;
+exports.AttachmentMetaDataFromJSONTyped = AttachmentMetaDataFromJSONTyped;
+exports.AttachmentMetaDataToJSON = AttachmentMetaDataToJSON;
+exports.AttachmentMetaDataToJSONTyped = AttachmentMetaDataToJSONTyped;
+/**
+ * Check if a given object implements the AttachmentMetaData interface.
+ */
+function instanceOfAttachmentMetaData(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('contentType' in value) || value['contentType'] === undefined)
+        return false;
+    if (!('contentLength' in value) || value['contentLength'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function AttachmentMetaDataFromJSON(json) {
     return AttachmentMetaDataFromJSONTyped(json, false);
 }
-exports.AttachmentMetaDataFromJSON = AttachmentMetaDataFromJSON;
 function AttachmentMetaDataFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        contentType: json['contentType'],
-        contentLength: json['contentLength'],
-        id: json['id'],
-        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
+        'name': json['name'],
+        'contentType': json['contentType'],
+        'contentLength': json['contentLength'],
+        'id': json['id'],
+        'contentId': json['contentId'] == null ? undefined : json['contentId'],
     };
 }
-exports.AttachmentMetaDataFromJSONTyped = AttachmentMetaDataFromJSONTyped;
-function AttachmentMetaDataToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function AttachmentMetaDataToJSON(json) {
+    return AttachmentMetaDataToJSONTyped(json, false);
+}
+function AttachmentMetaDataToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        contentType: value.contentType,
-        contentLength: value.contentLength,
-        id: value.id,
-        contentId: value.contentId,
+        'name': value['name'],
+        'contentType': value['contentType'],
+        'contentLength': value['contentLength'],
+        'id': value['id'],
+        'contentId': value['contentId'],
     };
 }
-exports.AttachmentMetaDataToJSON = AttachmentMetaDataToJSON;

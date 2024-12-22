@@ -28,6 +28,11 @@ export interface IPAddressResult {
      */
     hostname: string;
 }
+/**
+ * Check if a given object implements the IPAddressResult interface.
+ */
+export declare function instanceOfIPAddressResult(value: object): value is IPAddressResult;
 export declare function IPAddressResultFromJSON(json: any): IPAddressResult;
 export declare function IPAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): IPAddressResult;
-export declare function IPAddressResultToJSON(value?: IPAddressResult | null): any;
+export declare function IPAddressResultToJSON(json: any): IPAddressResult;
+export declare function IPAddressResultToJSONTyped(value?: IPAddressResult | null, ignoreDiscriminator?: boolean): any;

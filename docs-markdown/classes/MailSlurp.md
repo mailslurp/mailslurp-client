@@ -58,6 +58,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 - [emailVerificationController](MailSlurp.md#emailverificationcontroller)
 - [formController](MailSlurp.md#formcontroller)
 - [groupController](MailSlurp.md#groupcontroller)
+- [guestPortalController](MailSlurp.md#guestportalcontroller)
 - [inboxController](MailSlurp.md#inboxcontroller)
 - [inboxForwarderController](MailSlurp.md#inboxforwardercontroller)
 - [inboxReplierController](MailSlurp.md#inboxrepliercontroller)
@@ -183,6 +184,12 @@ ___
 ### groupController
 
 • `Readonly` **groupController**: [`GroupControllerApi`](GroupControllerApi.md)
+
+___
+
+### guestPortalController
+
+• `Readonly` **guestPortalController**: [`GuestPortalControllerApi`](GuestPortalControllerApi.md)
 
 ___
 

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ContactDto, ContactProjection, CreateContactOptions, PageContactProjection } from '../models';
+import type { ContactDto, ContactProjection, CreateContactOptions, PageContactProjection } from '../models/index';
 export interface CreateContactRequest {
     createContactOptions: CreateContactOptions;
 }
@@ -38,57 +38,59 @@ export declare class ContactControllerApi extends runtime.BaseAPI {
     /**
      * Create a contact
      */
-    createContactRaw(requestParameters: CreateContactRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ContactDto>>;
+    createContactRaw(requestParameters: CreateContactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ContactDto>>;
     /**
      * Create a contact
      */
-    createContact(requestParameters: CreateContactRequest, initOverrides?: RequestInit): Promise<ContactDto>;
+    createContact(requestParameters: CreateContactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ContactDto>;
     /**
      * Delete contact
      */
-    deleteContactRaw(requestParameters: DeleteContactRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteContactRaw(requestParameters: DeleteContactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete contact
      */
-    deleteContact(requestParameters: DeleteContactRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteContact(requestParameters: DeleteContactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get all contacts
      */
-    getAllContactsRaw(requestParameters: GetAllContactsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageContactProjection>>;
+    getAllContactsRaw(requestParameters: GetAllContactsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageContactProjection>>;
     /**
      * Get all contacts
      */
-    getAllContacts(requestParameters: GetAllContactsRequest, initOverrides?: RequestInit): Promise<PageContactProjection>;
+    getAllContacts(requestParameters?: GetAllContactsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageContactProjection>;
     /**
      * Get contact
      */
-    getContactRaw(requestParameters: GetContactRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ContactDto>>;
+    getContactRaw(requestParameters: GetContactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ContactDto>>;
     /**
      * Get contact
      */
-    getContact(requestParameters: GetContactRequest, initOverrides?: RequestInit): Promise<ContactDto>;
+    getContact(requestParameters: GetContactRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ContactDto>;
     /**
      * Get contact vCard vcf file
+     * @deprecated
      */
-    getContactVCardRaw(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    getContactVCardRaw(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Get contact vCard vcf file
+     * @deprecated
      */
-    getContactVCard(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<void>;
+    getContactVCard(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get all contacts
      */
-    getContactsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<ContactProjection>>>;
+    getContactsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ContactProjection>>>;
     /**
      * Get all contacts
      */
-    getContacts(initOverrides?: RequestInit): Promise<Array<ContactProjection>>;
+    getContacts(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ContactProjection>>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllContactsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllContactsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllContactsSortEnum = typeof GetAllContactsSortEnum[keyof typeof GetAllContactsSortEnum];

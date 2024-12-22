@@ -12,69 +12,83 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for matching emails in an inbox based on a condition such as `HAS_ATTACHMENTS=TRUE`
  * @export
  * @interface ConditionOption
  */
 export interface ConditionOption {
-  /**
-   * Condition of an email object that can be used to filter results
-   * @type {string}
-   * @memberof ConditionOption
-   */
-  condition: ConditionOptionConditionEnum;
-  /**
-   * Expected condition value
-   * @type {string}
-   * @memberof ConditionOption
-   */
-  value: ConditionOptionValueEnum;
+    /**
+     * Condition of an email object that can be used to filter results
+     * @type {string}
+     * @memberof ConditionOption
+     */
+    condition: ConditionOptionConditionEnum;
+    /**
+     * Expected condition value
+     * @type {string}
+     * @memberof ConditionOption
+     */
+    value: ConditionOptionValueEnum;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum ConditionOptionConditionEnum {
-  HAS_ATTACHMENTS = 'HAS_ATTACHMENTS',
-}
+export const ConditionOptionConditionEnum = {
+    HAS_ATTACHMENTS: 'HAS_ATTACHMENTS'
+} as const;
+export type ConditionOptionConditionEnum = typeof ConditionOptionConditionEnum[keyof typeof ConditionOptionConditionEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum ConditionOptionValueEnum {
-  TRUE = 'TRUE',
-  FALSE = 'FALSE',
+export const ConditionOptionValueEnum = {
+    TRUE: 'TRUE',
+    FALSE: 'FALSE'
+} as const;
+export type ConditionOptionValueEnum = typeof ConditionOptionValueEnum[keyof typeof ConditionOptionValueEnum];
+
+
+/**
+ * Check if a given object implements the ConditionOption interface.
+ */
+export function instanceOfConditionOption(value: object): value is ConditionOption {
+    if (!('condition' in value) || value['condition'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
+    return true;
 }
 
 export function ConditionOptionFromJSON(json: any): ConditionOption {
-  return ConditionOptionFromJSONTyped(json, false);
+    return ConditionOptionFromJSONTyped(json, false);
 }
 
-export function ConditionOptionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConditionOption {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    condition: json['condition'],
-    value: json['value'],
-  };
+export function ConditionOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConditionOption {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'condition': json['condition'],
+        'value': json['value'],
+    };
 }
 
-export function ConditionOptionToJSON(value?: ConditionOption | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    condition: value.condition,
-    value: value.value,
-  };
+export function ConditionOptionToJSON(json: any): ConditionOption {
+    return ConditionOptionToJSONTyped(json, false);
 }
+
+export function ConditionOptionToJSONTyped(value?: ConditionOption | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'condition': value['condition'],
+        'value': value['value'],
+    };
+}
+

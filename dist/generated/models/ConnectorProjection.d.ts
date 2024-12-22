@@ -47,24 +47,6 @@ export interface ConnectorProjection {
     emailAddress?: string;
     /**
      *
-     * @type {boolean}
-     * @memberof ConnectorProjection
-     */
-    syncEnabled?: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    syncScheduleType: ConnectorProjectionSyncScheduleTypeEnum;
-    /**
-     *
-     * @type {number}
-     * @memberof ConnectorProjection
-     */
-    syncInterval?: number;
-    /**
-     *
      * @type {string}
      * @memberof ConnectorProjection
      */
@@ -74,15 +56,13 @@ export interface ConnectorProjection {
      * @type {string}
      * @memberof ConnectorProjection
      */
-    id?: string;
+    id: string;
 }
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the ConnectorProjection interface.
  */
-export declare enum ConnectorProjectionSyncScheduleTypeEnum {
-    INTERVAL = "INTERVAL"
-}
+export declare function instanceOfConnectorProjection(value: object): value is ConnectorProjection;
 export declare function ConnectorProjectionFromJSON(json: any): ConnectorProjection;
 export declare function ConnectorProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorProjection;
-export declare function ConnectorProjectionToJSON(value?: ConnectorProjection | null): any;
+export declare function ConnectorProjectionToJSON(json: any): ConnectorProjection;
+export declare function ConnectorProjectionToJSONTyped(value?: ConnectorProjection | null, ignoreDiscriminator?: boolean): any;

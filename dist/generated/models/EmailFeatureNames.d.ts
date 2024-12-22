@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailFeatureCategoryName, EmailFeatureFamilyName, EmailFeaturePlatformName } from './';
+import type { EmailFeatureCategoryName } from './EmailFeatureCategoryName';
+import type { EmailFeaturePlatformName } from './EmailFeaturePlatformName';
+import type { EmailFeatureFamilyName } from './EmailFeatureFamilyName';
 /**
  *
  * @export
@@ -35,6 +37,11 @@ export interface EmailFeatureNames {
      */
     category: Array<EmailFeatureCategoryName>;
 }
+/**
+ * Check if a given object implements the EmailFeatureNames interface.
+ */
+export declare function instanceOfEmailFeatureNames(value: object): value is EmailFeatureNames;
 export declare function EmailFeatureNamesFromJSON(json: any): EmailFeatureNames;
 export declare function EmailFeatureNamesFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureNames;
-export declare function EmailFeatureNamesToJSON(value?: EmailFeatureNames | null): any;
+export declare function EmailFeatureNamesToJSON(json: any): EmailFeatureNames;
+export declare function EmailFeatureNamesToJSONTyped(value?: EmailFeatureNames | null, ignoreDiscriminator?: boolean): any;

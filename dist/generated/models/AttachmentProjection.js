@@ -13,46 +13,65 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentProjectionToJSON = exports.AttachmentProjectionFromJSONTyped = exports.AttachmentProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfAttachmentProjection = instanceOfAttachmentProjection;
+exports.AttachmentProjectionFromJSON = AttachmentProjectionFromJSON;
+exports.AttachmentProjectionFromJSONTyped = AttachmentProjectionFromJSONTyped;
+exports.AttachmentProjectionToJSON = AttachmentProjectionToJSON;
+exports.AttachmentProjectionToJSONTyped = AttachmentProjectionToJSONTyped;
+/**
+ * Check if a given object implements the AttachmentProjection interface.
+ */
+function instanceOfAttachmentProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('attachmentId' in value) || value['attachmentId'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function AttachmentProjectionFromJSON(json) {
     return AttachmentProjectionFromJSONTyped(json, false);
 }
-exports.AttachmentProjectionFromJSON = AttachmentProjectionFromJSON;
 function AttachmentProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        userId: json['userId'],
-        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
-        attachmentId: json['attachmentId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        contentLength: !(0, runtime_1.exists)(json, 'contentLength')
-            ? undefined
-            : json['contentLength'],
-        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'],
+        'contentId': json['contentId'] == null ? undefined : json['contentId'],
+        'attachmentId': json['attachmentId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
+        'contentLength': json['contentLength'] == null ? undefined : json['contentLength'],
+        'contentType': json['contentType'] == null ? undefined : json['contentType'],
     };
 }
-exports.AttachmentProjectionFromJSONTyped = AttachmentProjectionFromJSONTyped;
-function AttachmentProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function AttachmentProjectionToJSON(json) {
+    return AttachmentProjectionToJSONTyped(json, false);
+}
+function AttachmentProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        userId: value.userId,
-        contentId: value.contentId,
-        attachmentId: value.attachmentId,
-        name: value.name,
-        contentLength: value.contentLength,
-        contentType: value.contentType,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'contentId': value['contentId'],
+        'attachmentId': value['attachmentId'],
+        'name': value['name'],
+        'id': value['id'],
+        'contentLength': value['contentLength'],
+        'contentType': value['contentType'],
     };
 }
-exports.AttachmentProjectionToJSON = AttachmentProjectionToJSON;

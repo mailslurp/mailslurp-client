@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderTestResultToJSON = exports.InboxForwarderTestResultFromJSONTyped = exports.InboxForwarderTestResultFromJSON = void 0;
+exports.instanceOfInboxForwarderTestResult = instanceOfInboxForwarderTestResult;
+exports.InboxForwarderTestResultFromJSON = InboxForwarderTestResultFromJSON;
+exports.InboxForwarderTestResultFromJSONTyped = InboxForwarderTestResultFromJSONTyped;
+exports.InboxForwarderTestResultToJSON = InboxForwarderTestResultToJSON;
+exports.InboxForwarderTestResultToJSONTyped = InboxForwarderTestResultToJSONTyped;
+/**
+ * Check if a given object implements the InboxForwarderTestResult interface.
+ */
+function instanceOfInboxForwarderTestResult(value) {
+    if (!('matches' in value) || value['matches'] === undefined)
+        return false;
+    if (!('doesMatch' in value) || value['doesMatch'] === undefined)
+        return false;
+    return true;
+}
 function InboxForwarderTestResultFromJSON(json) {
     return InboxForwarderTestResultFromJSONTyped(json, false);
 }
-exports.InboxForwarderTestResultFromJSON = InboxForwarderTestResultFromJSON;
 function InboxForwarderTestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        matches: json['matches'],
-        doesMatch: json['doesMatch'],
+        'matches': json['matches'],
+        'doesMatch': json['doesMatch'],
     };
 }
-exports.InboxForwarderTestResultFromJSONTyped = InboxForwarderTestResultFromJSONTyped;
-function InboxForwarderTestResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxForwarderTestResultToJSON(json) {
+    return InboxForwarderTestResultToJSONTyped(json, false);
+}
+function InboxForwarderTestResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        matches: value.matches,
-        doesMatch: value.doesMatch,
+        'matches': value['matches'],
+        'doesMatch': value['doesMatch'],
     };
 }
-exports.InboxForwarderTestResultToJSON = InboxForwarderTestResultToJSON;

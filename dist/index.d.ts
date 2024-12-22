@@ -1,4 +1,4 @@
-import { AliasControllerApi, UserControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, EmailVerificationControllerApi, FetchAPI, FormControllerApi, GroupControllerApi, ImapSmtpAccessDetails, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, PhoneControllerApi, SendEmailOptions, SentEmailDto, SentEmailsControllerApi, SmsControllerApi, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, InboxReplierControllerApi } from './generated';
+import { AliasControllerApi, UserControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, EmailVerificationControllerApi, FetchAPI, FormControllerApi, GroupControllerApi, ImapSmtpAccessDetails, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, PhoneControllerApi, SendEmailOptions, SentEmailDto, SentEmailsControllerApi, SmsControllerApi, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, InboxReplierControllerApi, GuestPortalControllerApi } from './generated';
 export * from './generated';
 type SortEnum = 'ASC' | 'DESC';
 /**
@@ -80,6 +80,7 @@ export declare class MailSlurp {
     readonly inboxForwarderController: InboxForwarderControllerApi;
     readonly trackingController: TrackingControllerApi;
     readonly bounceController: BounceControllerApi;
+    readonly guestPortalController: GuestPortalControllerApi;
     /**
      * Create a new MailSlurp instance.
      *

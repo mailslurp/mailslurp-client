@@ -13,129 +13,142 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSLookupOptionsToJSON = exports.DNSLookupOptionsFromJSONTyped = exports.DNSLookupOptionsFromJSON = exports.DNSLookupOptionsRecordTypesEnum = void 0;
+exports.DNSLookupOptionsRecordTypesEnum = void 0;
+exports.instanceOfDNSLookupOptions = instanceOfDNSLookupOptions;
+exports.DNSLookupOptionsFromJSON = DNSLookupOptionsFromJSON;
+exports.DNSLookupOptionsFromJSONTyped = DNSLookupOptionsFromJSONTyped;
+exports.DNSLookupOptionsToJSON = DNSLookupOptionsToJSON;
+exports.DNSLookupOptionsToJSONTyped = DNSLookupOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var DNSLookupOptionsRecordTypesEnum;
-(function (DNSLookupOptionsRecordTypesEnum) {
-    DNSLookupOptionsRecordTypesEnum["A"] = "A";
-    DNSLookupOptionsRecordTypesEnum["NS"] = "NS";
-    DNSLookupOptionsRecordTypesEnum["MD"] = "MD";
-    DNSLookupOptionsRecordTypesEnum["MF"] = "MF";
-    DNSLookupOptionsRecordTypesEnum["CNAME"] = "CNAME";
-    DNSLookupOptionsRecordTypesEnum["SOA"] = "SOA";
-    DNSLookupOptionsRecordTypesEnum["MB"] = "MB";
-    DNSLookupOptionsRecordTypesEnum["MG"] = "MG";
-    DNSLookupOptionsRecordTypesEnum["MR"] = "MR";
-    DNSLookupOptionsRecordTypesEnum["NULL"] = "NULL";
-    DNSLookupOptionsRecordTypesEnum["WKS"] = "WKS";
-    DNSLookupOptionsRecordTypesEnum["PTR"] = "PTR";
-    DNSLookupOptionsRecordTypesEnum["HINFO"] = "HINFO";
-    DNSLookupOptionsRecordTypesEnum["MINFO"] = "MINFO";
-    DNSLookupOptionsRecordTypesEnum["MX"] = "MX";
-    DNSLookupOptionsRecordTypesEnum["TXT"] = "TXT";
-    DNSLookupOptionsRecordTypesEnum["RP"] = "RP";
-    DNSLookupOptionsRecordTypesEnum["AFSDB"] = "AFSDB";
-    DNSLookupOptionsRecordTypesEnum["X25"] = "X25";
-    DNSLookupOptionsRecordTypesEnum["ISDN"] = "ISDN";
-    DNSLookupOptionsRecordTypesEnum["RT"] = "RT";
-    DNSLookupOptionsRecordTypesEnum["NSAP"] = "NSAP";
-    DNSLookupOptionsRecordTypesEnum["NSAP_PTR"] = "NSAP_PTR";
-    DNSLookupOptionsRecordTypesEnum["SIG"] = "SIG";
-    DNSLookupOptionsRecordTypesEnum["KEY"] = "KEY";
-    DNSLookupOptionsRecordTypesEnum["PX"] = "PX";
-    DNSLookupOptionsRecordTypesEnum["GPOS"] = "GPOS";
-    DNSLookupOptionsRecordTypesEnum["AAAA"] = "AAAA";
-    DNSLookupOptionsRecordTypesEnum["LOC"] = "LOC";
-    DNSLookupOptionsRecordTypesEnum["NXT"] = "NXT";
-    DNSLookupOptionsRecordTypesEnum["EID"] = "EID";
-    DNSLookupOptionsRecordTypesEnum["NIMLOC"] = "NIMLOC";
-    DNSLookupOptionsRecordTypesEnum["SRV"] = "SRV";
-    DNSLookupOptionsRecordTypesEnum["ATMA"] = "ATMA";
-    DNSLookupOptionsRecordTypesEnum["NAPTR"] = "NAPTR";
-    DNSLookupOptionsRecordTypesEnum["KX"] = "KX";
-    DNSLookupOptionsRecordTypesEnum["CERT"] = "CERT";
-    DNSLookupOptionsRecordTypesEnum["A6"] = "A6";
-    DNSLookupOptionsRecordTypesEnum["DNAME"] = "DNAME";
-    DNSLookupOptionsRecordTypesEnum["SINK"] = "SINK";
-    DNSLookupOptionsRecordTypesEnum["OPT"] = "OPT";
-    DNSLookupOptionsRecordTypesEnum["APL"] = "APL";
-    DNSLookupOptionsRecordTypesEnum["DS"] = "DS";
-    DNSLookupOptionsRecordTypesEnum["SSHFP"] = "SSHFP";
-    DNSLookupOptionsRecordTypesEnum["IPSECKEY"] = "IPSECKEY";
-    DNSLookupOptionsRecordTypesEnum["RRSIG"] = "RRSIG";
-    DNSLookupOptionsRecordTypesEnum["NSEC"] = "NSEC";
-    DNSLookupOptionsRecordTypesEnum["DNSKEY"] = "DNSKEY";
-    DNSLookupOptionsRecordTypesEnum["DHCID"] = "DHCID";
-    DNSLookupOptionsRecordTypesEnum["NSEC3"] = "NSEC3";
-    DNSLookupOptionsRecordTypesEnum["NSEC3PARAM"] = "NSEC3PARAM";
-    DNSLookupOptionsRecordTypesEnum["TLSA"] = "TLSA";
-    DNSLookupOptionsRecordTypesEnum["SMIMEA"] = "SMIMEA";
-    DNSLookupOptionsRecordTypesEnum["HIP"] = "HIP";
-    DNSLookupOptionsRecordTypesEnum["NINFO"] = "NINFO";
-    DNSLookupOptionsRecordTypesEnum["RKEY"] = "RKEY";
-    DNSLookupOptionsRecordTypesEnum["TALINK"] = "TALINK";
-    DNSLookupOptionsRecordTypesEnum["CDS"] = "CDS";
-    DNSLookupOptionsRecordTypesEnum["CDNSKEY"] = "CDNSKEY";
-    DNSLookupOptionsRecordTypesEnum["OPENPGPKEY"] = "OPENPGPKEY";
-    DNSLookupOptionsRecordTypesEnum["CSYNC"] = "CSYNC";
-    DNSLookupOptionsRecordTypesEnum["ZONEMD"] = "ZONEMD";
-    DNSLookupOptionsRecordTypesEnum["SVCB"] = "SVCB";
-    DNSLookupOptionsRecordTypesEnum["HTTPS"] = "HTTPS";
-    DNSLookupOptionsRecordTypesEnum["SPF"] = "SPF";
-    DNSLookupOptionsRecordTypesEnum["UINFO"] = "UINFO";
-    DNSLookupOptionsRecordTypesEnum["UID"] = "UID";
-    DNSLookupOptionsRecordTypesEnum["GID"] = "GID";
-    DNSLookupOptionsRecordTypesEnum["UNSPEC"] = "UNSPEC";
-    DNSLookupOptionsRecordTypesEnum["NID"] = "NID";
-    DNSLookupOptionsRecordTypesEnum["L32"] = "L32";
-    DNSLookupOptionsRecordTypesEnum["L64"] = "L64";
-    DNSLookupOptionsRecordTypesEnum["LP"] = "LP";
-    DNSLookupOptionsRecordTypesEnum["EUI48"] = "EUI48";
-    DNSLookupOptionsRecordTypesEnum["EUI64"] = "EUI64";
-    DNSLookupOptionsRecordTypesEnum["TKEY"] = "TKEY";
-    DNSLookupOptionsRecordTypesEnum["TSIG"] = "TSIG";
-    DNSLookupOptionsRecordTypesEnum["IXFR"] = "IXFR";
-    DNSLookupOptionsRecordTypesEnum["AXFR"] = "AXFR";
-    DNSLookupOptionsRecordTypesEnum["MAILB"] = "MAILB";
-    DNSLookupOptionsRecordTypesEnum["MAILA"] = "MAILA";
-    DNSLookupOptionsRecordTypesEnum["ANY"] = "ANY";
-    DNSLookupOptionsRecordTypesEnum["URI"] = "URI";
-    DNSLookupOptionsRecordTypesEnum["CAA"] = "CAA";
-    DNSLookupOptionsRecordTypesEnum["AVC"] = "AVC";
-    DNSLookupOptionsRecordTypesEnum["DOA"] = "DOA";
-    DNSLookupOptionsRecordTypesEnum["AMTRELAY"] = "AMTRELAY";
-    DNSLookupOptionsRecordTypesEnum["TA"] = "TA";
-    DNSLookupOptionsRecordTypesEnum["DLV"] = "DLV";
-})(DNSLookupOptionsRecordTypesEnum = exports.DNSLookupOptionsRecordTypesEnum || (exports.DNSLookupOptionsRecordTypesEnum = {}));
+exports.DNSLookupOptionsRecordTypesEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+};
+/**
+ * Check if a given object implements the DNSLookupOptions interface.
+ */
+function instanceOfDNSLookupOptions(value) {
+    if (!('hostname' in value) || value['hostname'] === undefined)
+        return false;
+    if (!('recordTypes' in value) || value['recordTypes'] === undefined)
+        return false;
+    if (!('omitFinalDNSDot' in value) || value['omitFinalDNSDot'] === undefined)
+        return false;
+    return true;
+}
 function DNSLookupOptionsFromJSON(json) {
     return DNSLookupOptionsFromJSONTyped(json, false);
 }
-exports.DNSLookupOptionsFromJSON = DNSLookupOptionsFromJSON;
 function DNSLookupOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        hostname: json['hostname'],
-        recordTypes: json['recordTypes'],
-        omitFinalDNSDot: json['omitFinalDNSDot'],
+        'hostname': json['hostname'],
+        'recordTypes': json['recordTypes'],
+        'omitFinalDNSDot': json['omitFinalDNSDot'],
     };
 }
-exports.DNSLookupOptionsFromJSONTyped = DNSLookupOptionsFromJSONTyped;
-function DNSLookupOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DNSLookupOptionsToJSON(json) {
+    return DNSLookupOptionsToJSONTyped(json, false);
+}
+function DNSLookupOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        hostname: value.hostname,
-        recordTypes: value.recordTypes,
-        omitFinalDNSDot: value.omitFinalDNSDot,
+        'hostname': value['hostname'],
+        'recordTypes': value['recordTypes'],
+        'omitFinalDNSDot': value['omitFinalDNSDot'],
     };
 }
-exports.DNSLookupOptionsToJSON = DNSLookupOptionsToJSON;

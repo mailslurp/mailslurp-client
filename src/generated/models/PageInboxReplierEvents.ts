@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { PageableObject } from './PageableObject';
 import {
-  InboxReplierEventProjection,
-  InboxReplierEventProjectionFromJSON,
-  InboxReplierEventProjectionFromJSONTyped,
-  InboxReplierEventProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-} from './';
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PageableObjectToJSONTyped,
+} from './PageableObject';
+import type { SortObject } from './SortObject';
+import {
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    SortObjectToJSONTyped,
+} from './SortObject';
+import type { InboxReplierEventProjection } from './InboxReplierEventProjection';
+import {
+    InboxReplierEventProjectionFromJSON,
+    InboxReplierEventProjectionFromJSONTyped,
+    InboxReplierEventProjectionToJSON,
+    InboxReplierEventProjectionToJSONTyped,
+} from './InboxReplierEventProjection';
 
 /**
  * Paginated inbox replier events. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -34,133 +41,129 @@ import {
  * @interface PageInboxReplierEvents
  */
 export interface PageInboxReplierEvents {
-  /**
-   *
-   * @type {Array<InboxReplierEventProjection>}
-   * @memberof PageInboxReplierEvents
-   */
-  content?: Array<InboxReplierEventProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageInboxReplierEvents
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxReplierEvents
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxReplierEvents
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxReplierEvents
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxReplierEvents
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxReplierEvents
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxReplierEvents
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxReplierEvents
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageInboxReplierEvents
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxReplierEvents
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<InboxReplierEventProjection>}
+     * @memberof PageInboxReplierEvents
+     */
+    content?: Array<InboxReplierEventProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageInboxReplierEvents
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxReplierEvents
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxReplierEvents
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxReplierEvents
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxReplierEvents
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxReplierEvents
+     */
+    number?: number;
+    /**
+     * 
+     * @type {Array<SortObject>}
+     * @memberof PageInboxReplierEvents
+     */
+    sort?: Array<SortObject>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    empty?: boolean;
 }
 
-export function PageInboxReplierEventsFromJSON(
-  json: any
-): PageInboxReplierEvents {
-  return PageInboxReplierEventsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the PageInboxReplierEvents interface.
+ */
+export function instanceOfPageInboxReplierEvents(value: object): value is PageInboxReplierEvents {
+    if (!('totalPages' in value) || value['totalPages'] === undefined) return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
-export function PageInboxReplierEventsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageInboxReplierEvents {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(
-          InboxReplierEventProjectionFromJSON
-        ),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageInboxReplierEventsFromJSON(json: any): PageInboxReplierEvents {
+    return PageInboxReplierEventsFromJSONTyped(json, false);
 }
 
-export function PageInboxReplierEventsToJSON(
-  value?: PageInboxReplierEvents | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(InboxReplierEventProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
-    totalElements: value.totalElements,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageInboxReplierEventsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxReplierEvents {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'] == null ? undefined : ((json['content'] as Array<any>).map(InboxReplierEventProjectionFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : ((json['sort'] as Array<any>).map(SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
+    };
 }
+
+export function PageInboxReplierEventsToJSON(json: any): PageInboxReplierEvents {
+    return PageInboxReplierEventsToJSONTyped(json, false);
+}
+
+export function PageInboxReplierEventsToJSONTyped(value?: PageInboxReplierEvents | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'] == null ? undefined : ((value['content'] as Array<any>).map(InboxReplierEventProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : ((value['sort'] as Array<any>).map(SortObjectToJSON)),
+        'empty': value['empty'],
+    };
+}
+

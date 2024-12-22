@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface TestInboxRulesetSendingResult
  */
 export interface TestInboxRulesetSendingResult {
-  /**
-   *
-   * @type {boolean}
-   * @memberof TestInboxRulesetSendingResult
-   */
-  canSend: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TestInboxRulesetSendingResult
+     */
+    canSend: boolean;
 }
 
-export function TestInboxRulesetSendingResultFromJSON(
-  json: any
-): TestInboxRulesetSendingResult {
-  return TestInboxRulesetSendingResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the TestInboxRulesetSendingResult interface.
+ */
+export function instanceOfTestInboxRulesetSendingResult(value: object): value is TestInboxRulesetSendingResult {
+    if (!('canSend' in value) || value['canSend'] === undefined) return false;
+    return true;
 }
 
-export function TestInboxRulesetSendingResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestInboxRulesetSendingResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    canSend: json['canSend'],
-  };
+export function TestInboxRulesetSendingResultFromJSON(json: any): TestInboxRulesetSendingResult {
+    return TestInboxRulesetSendingResultFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetSendingResultToJSON(
-  value?: TestInboxRulesetSendingResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    canSend: value.canSend,
-  };
+export function TestInboxRulesetSendingResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetSendingResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'canSend': json['canSend'],
+    };
 }
+
+export function TestInboxRulesetSendingResultToJSON(json: any): TestInboxRulesetSendingResult {
+    return TestInboxRulesetSendingResultToJSONTyped(json, false);
+}
+
+export function TestInboxRulesetSendingResultToJSONTyped(value?: TestInboxRulesetSendingResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'canSend': value['canSend'],
+    };
+}
+

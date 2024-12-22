@@ -78,6 +78,8 @@
 - [getInboxIds](InboxControllerApi.md#getinboxids)
 - [getInboxIdsRaw](InboxControllerApi.md#getinboxidsraw)
 - [getInboxRaw](InboxControllerApi.md#getinboxraw)
+- [getInboxSentCount](InboxControllerApi.md#getinboxsentcount)
+- [getInboxSentCountRaw](InboxControllerApi.md#getinboxsentcountraw)
 - [getInboxSentEmails](InboxControllerApi.md#getinboxsentemails)
 - [getInboxSentEmailsRaw](InboxControllerApi.md#getinboxsentemailsraw)
 - [getInboxTags](InboxControllerApi.md#getinboxtags)
@@ -94,6 +96,8 @@
 - [getScheduledJobsByInboxIdRaw](InboxControllerApi.md#getscheduledjobsbyinboxidraw)
 - [getSmtpAccess](InboxControllerApi.md#getsmtpaccess)
 - [getSmtpAccessRaw](InboxControllerApi.md#getsmtpaccessraw)
+- [isEmailAddressAvailable](InboxControllerApi.md#isemailaddressavailable)
+- [isEmailAddressAvailableRaw](InboxControllerApi.md#isemailaddressavailableraw)
 - [listInboxRulesets](InboxControllerApi.md#listinboxrulesets)
 - [listInboxRulesetsRaw](InboxControllerApi.md#listinboxrulesetsraw)
 - [listInboxTrackingPixels](InboxControllerApi.md#listinboxtrackingpixels)
@@ -115,8 +119,12 @@
 - [sendWithScheduleRaw](InboxControllerApi.md#sendwithscheduleraw)
 - [setInboxFavourited](InboxControllerApi.md#setinboxfavourited)
 - [setInboxFavouritedRaw](InboxControllerApi.md#setinboxfavouritedraw)
+- [updateImapAccess](InboxControllerApi.md#updateimapaccess)
+- [updateImapAccessRaw](InboxControllerApi.md#updateimapaccessraw)
 - [updateInbox](InboxControllerApi.md#updateinbox)
 - [updateInboxRaw](InboxControllerApi.md#updateinboxraw)
+- [updateSmtpAccess](InboxControllerApi.md#updatesmtpaccess)
+- [updateSmtpAccessRaw](InboxControllerApi.md#updatesmtpaccessraw)
 - [withMiddleware](InboxControllerApi.md#withmiddleware)
 - [withPostMiddleware](InboxControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](InboxControllerApi.md#withpremiddleware)
@@ -1283,6 +1291,44 @@ Get Inbox. Returns properties of an inbox.
 
 ___
 
+### getInboxSentCount
+
+▸ **getInboxSentCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+Get sent email count in inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxSentCountRequest`](../interfaces/GetInboxSentCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+___
+
+### getInboxSentCountRaw
+
+▸ **getInboxSentCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+Get sent email count in inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxSentCountRequest`](../interfaces/GetInboxSentCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+___
+
 ### getInboxSentEmails
 
 ▸ **getInboxSentEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
@@ -1596,6 +1642,46 @@ Get SMTP access usernames and passwords
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmtpAccessDetails`](../interfaces/SmtpAccessDetails.md)\>\>
+
+___
+
+### isEmailAddressAvailable
+
+▸ **isEmailAddressAvailable**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>
+
+Returns whether an email address is available
+Is email address available
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`IsEmailAddressAvailableRequest`](../interfaces/IsEmailAddressAvailableRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>
+
+___
+
+### isEmailAddressAvailableRaw
+
+▸ **isEmailAddressAvailableRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>\>
+
+Returns whether an email address is available
+Is email address available
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`IsEmailAddressAvailableRequest`](../interfaces/IsEmailAddressAvailableRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>\>
 
 ___
 
@@ -2020,6 +2106,44 @@ Set inbox favourited state
 
 ___
 
+### updateImapAccess
+
+▸ **updateImapAccess**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Update IMAP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateImapAccessRequest`](../interfaces/UpdateImapAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### updateImapAccessRaw
+
+▸ **updateImapAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Update IMAP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateImapAccessRequest`](../interfaces/UpdateImapAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
 ### updateInbox
 
 ▸ **updateInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
@@ -2057,6 +2181,44 @@ Update Inbox. Change name and description. Email address is not editable.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+___
+
+### updateSmtpAccess
+
+▸ **updateSmtpAccess**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Update SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateSmtpAccessRequest`](../interfaces/UpdateSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### updateSmtpAccessRaw
+
+▸ **updateSmtpAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Update SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateSmtpAccessRequest`](../interfaces/UpdateSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IPAddressResultToJSON = exports.IPAddressResultFromJSONTyped = exports.IPAddressResultFromJSON = void 0;
+exports.instanceOfIPAddressResult = instanceOfIPAddressResult;
+exports.IPAddressResultFromJSON = IPAddressResultFromJSON;
+exports.IPAddressResultFromJSONTyped = IPAddressResultFromJSONTyped;
+exports.IPAddressResultToJSON = IPAddressResultToJSON;
+exports.IPAddressResultToJSONTyped = IPAddressResultToJSONTyped;
+/**
+ * Check if a given object implements the IPAddressResult interface.
+ */
+function instanceOfIPAddressResult(value) {
+    if (!('address' in value) || value['address'] === undefined)
+        return false;
+    if (!('hostname' in value) || value['hostname'] === undefined)
+        return false;
+    return true;
+}
 function IPAddressResultFromJSON(json) {
     return IPAddressResultFromJSONTyped(json, false);
 }
-exports.IPAddressResultFromJSON = IPAddressResultFromJSON;
 function IPAddressResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        address: json['address'],
-        hostname: json['hostname'],
+        'address': json['address'],
+        'hostname': json['hostname'],
     };
 }
-exports.IPAddressResultFromJSONTyped = IPAddressResultFromJSONTyped;
-function IPAddressResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function IPAddressResultToJSON(json) {
+    return IPAddressResultToJSONTyped(json, false);
+}
+function IPAddressResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        address: value.address,
-        hostname: value.hostname,
+        'address': value['address'],
+        'hostname': value['hostname'],
     };
 }
-exports.IPAddressResultToJSON = IPAddressResultToJSON;

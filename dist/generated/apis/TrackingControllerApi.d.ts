@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateTrackingPixelOptions, PageTrackingPixelProjection, TrackingPixelDto } from '../models';
+import type { CreateTrackingPixelOptions, PageTrackingPixelProjection, TrackingPixelDto } from '../models/index';
 export interface CreateTrackingPixelRequest {
     createTrackingPixelOptions: CreateTrackingPixelOptions;
 }
@@ -33,36 +33,36 @@ export declare class TrackingControllerApi extends runtime.BaseAPI {
      * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
      * Create tracking pixel
      */
-    createTrackingPixelRaw(requestParameters: CreateTrackingPixelRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TrackingPixelDto>>;
+    createTrackingPixelRaw(requestParameters: CreateTrackingPixelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TrackingPixelDto>>;
     /**
      * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
      * Create tracking pixel
      */
-    createTrackingPixel(requestParameters: CreateTrackingPixelRequest, initOverrides?: RequestInit): Promise<TrackingPixelDto>;
+    createTrackingPixel(requestParameters: CreateTrackingPixelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TrackingPixelDto>;
     /**
      * List tracking pixels in paginated form
      * Get tracking pixels
      */
-    getAllTrackingPixelsRaw(requestParameters: GetAllTrackingPixelsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTrackingPixelProjection>>;
+    getAllTrackingPixelsRaw(requestParameters: GetAllTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageTrackingPixelProjection>>;
     /**
      * List tracking pixels in paginated form
      * Get tracking pixels
      */
-    getAllTrackingPixels(requestParameters: GetAllTrackingPixelsRequest, initOverrides?: RequestInit): Promise<PageTrackingPixelProjection>;
+    getAllTrackingPixels(requestParameters?: GetAllTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageTrackingPixelProjection>;
     /**
      * Get pixel
      */
-    getTrackingPixelRaw(requestParameters: GetTrackingPixelRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TrackingPixelDto>>;
+    getTrackingPixelRaw(requestParameters: GetTrackingPixelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TrackingPixelDto>>;
     /**
      * Get pixel
      */
-    getTrackingPixel(requestParameters: GetTrackingPixelRequest, initOverrides?: RequestInit): Promise<TrackingPixelDto>;
+    getTrackingPixel(requestParameters: GetTrackingPixelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TrackingPixelDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllTrackingPixelsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllTrackingPixelsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllTrackingPixelsSortEnum = typeof GetAllTrackingPixelsSortEnum[keyof typeof GetAllTrackingPixelsSortEnum];

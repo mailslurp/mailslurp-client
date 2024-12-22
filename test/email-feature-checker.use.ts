@@ -4,7 +4,7 @@ import {
   EmailFeatureSupportStatusPercentageStatusEnum,
 } from '../src';
 
-jest.setTimeout(120_000);
+
 const timeout = 120001;
 jest.setTimeout(timeout);
 integrationTest('can check email compatibility', async (mailslurp) => {

@@ -12,85 +12,94 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailFeatureFamilyName
  */
 export interface EmailFeatureFamilyName {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureFamilyName
-   */
-  slug: EmailFeatureFamilyNameSlugEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureFamilyName
-   */
-  name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureFamilyName
+     */
+    slug: EmailFeatureFamilyNameSlugEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureFamilyName
+     */
+    name: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum EmailFeatureFamilyNameSlugEnum {
-  aol = 'aol',
-  apple_mail = 'apple-mail',
-  fastmail = 'fastmail',
-  free_fr = 'free-fr',
-  gmail = 'gmail',
-  gmx = 'gmx',
-  hey = 'hey',
-  ionos_1and1 = 'ionos-1and1',
-  laposte = 'laposte',
-  mail_ru = 'mail-ru',
-  microsoft = 'microsoft',
-  orange = 'orange',
-  outlook = 'outlook',
-  protonmail = 'protonmail',
-  rainloop = 'rainloop',
-  samsung_email = 'samsung-email',
-  sfr = 'sfr',
-  t_online_de = 't-online-de',
-  thunderbird = 'thunderbird',
-  web_de = 'web-de',
-  yahoo = 'yahoo',
+export const EmailFeatureFamilyNameSlugEnum = {
+    aol: 'aol',
+    apple_mail: 'apple-mail',
+    fastmail: 'fastmail',
+    free_fr: 'free-fr',
+    gmail: 'gmail',
+    gmx: 'gmx',
+    hey: 'hey',
+    ionos_1and1: 'ionos-1and1',
+    laposte: 'laposte',
+    mail_ru: 'mail-ru',
+    microsoft: 'microsoft',
+    orange: 'orange',
+    outlook: 'outlook',
+    protonmail: 'protonmail',
+    rainloop: 'rainloop',
+    samsung_email: 'samsung-email',
+    sfr: 'sfr',
+    t_online_de: 't-online-de',
+    thunderbird: 'thunderbird',
+    web_de: 'web-de',
+    yahoo: 'yahoo'
+} as const;
+export type EmailFeatureFamilyNameSlugEnum = typeof EmailFeatureFamilyNameSlugEnum[keyof typeof EmailFeatureFamilyNameSlugEnum];
+
+
+/**
+ * Check if a given object implements the EmailFeatureFamilyName interface.
+ */
+export function instanceOfEmailFeatureFamilyName(value: object): value is EmailFeatureFamilyName {
+    if (!('slug' in value) || value['slug'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    return true;
 }
 
-export function EmailFeatureFamilyNameFromJSON(
-  json: any
-): EmailFeatureFamilyName {
-  return EmailFeatureFamilyNameFromJSONTyped(json, false);
+export function EmailFeatureFamilyNameFromJSON(json: any): EmailFeatureFamilyName {
+    return EmailFeatureFamilyNameFromJSONTyped(json, false);
 }
 
-export function EmailFeatureFamilyNameFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailFeatureFamilyName {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    slug: json['slug'],
-    name: json['name'],
-  };
+export function EmailFeatureFamilyNameFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureFamilyName {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'slug': json['slug'],
+        'name': json['name'],
+    };
 }
 
-export function EmailFeatureFamilyNameToJSON(
-  value?: EmailFeatureFamilyName | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    slug: value.slug,
-    name: value.name,
-  };
+export function EmailFeatureFamilyNameToJSON(json: any): EmailFeatureFamilyName {
+    return EmailFeatureFamilyNameToJSONTyped(json, false);
 }
+
+export function EmailFeatureFamilyNameToJSONTyped(value?: EmailFeatureFamilyName | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'slug': value['slug'],
+        'name': value['name'],
+    };
+}
+

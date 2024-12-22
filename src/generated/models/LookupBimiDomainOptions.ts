@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface LookupBimiDomainOptions
  */
 export interface LookupBimiDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof LookupBimiDomainOptions
-   */
-  host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupBimiDomainOptions
+     */
+    host: string;
 }
 
-export function LookupBimiDomainOptionsFromJSON(
-  json: any
-): LookupBimiDomainOptions {
-  return LookupBimiDomainOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the LookupBimiDomainOptions interface.
+ */
+export function instanceOfLookupBimiDomainOptions(value: object): value is LookupBimiDomainOptions {
+    if (!('host' in value) || value['host'] === undefined) return false;
+    return true;
 }
 
-export function LookupBimiDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupBimiDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-  };
+export function LookupBimiDomainOptionsFromJSON(json: any): LookupBimiDomainOptions {
+    return LookupBimiDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupBimiDomainOptionsToJSON(
-  value?: LookupBimiDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-  };
+export function LookupBimiDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupBimiDomainOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+    };
 }
+
+export function LookupBimiDomainOptionsToJSON(json: any): LookupBimiDomainOptions {
+    return LookupBimiDomainOptionsToJSONTyped(json, false);
+}
+
+export function LookupBimiDomainOptionsToJSONTyped(value?: LookupBimiDomainOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'host': value['host'],
+    };
+}
+

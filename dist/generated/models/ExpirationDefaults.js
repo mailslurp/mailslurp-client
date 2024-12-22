@@ -13,50 +13,49 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpirationDefaultsToJSON = exports.ExpirationDefaultsFromJSONTyped = exports.ExpirationDefaultsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfExpirationDefaults = instanceOfExpirationDefaults;
+exports.ExpirationDefaultsFromJSON = ExpirationDefaultsFromJSON;
+exports.ExpirationDefaultsFromJSONTyped = ExpirationDefaultsFromJSONTyped;
+exports.ExpirationDefaultsToJSON = ExpirationDefaultsToJSON;
+exports.ExpirationDefaultsToJSONTyped = ExpirationDefaultsToJSONTyped;
+/**
+ * Check if a given object implements the ExpirationDefaults interface.
+ */
+function instanceOfExpirationDefaults(value) {
+    if (!('canPermanentInbox' in value) || value['canPermanentInbox'] === undefined)
+        return false;
+    if (!('nextInboxAllowsPermanent' in value) || value['nextInboxAllowsPermanent'] === undefined)
+        return false;
+    return true;
+}
 function ExpirationDefaultsFromJSON(json) {
     return ExpirationDefaultsFromJSONTyped(json, false);
 }
-exports.ExpirationDefaultsFromJSON = ExpirationDefaultsFromJSON;
 function ExpirationDefaultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        defaultExpirationMillis: !(0, runtime_1.exists)(json, 'defaultExpirationMillis')
-            ? undefined
-            : json['defaultExpirationMillis'],
-        maxExpirationMillis: !(0, runtime_1.exists)(json, 'maxExpirationMillis')
-            ? undefined
-            : json['maxExpirationMillis'],
-        defaultExpiresAt: !(0, runtime_1.exists)(json, 'defaultExpiresAt')
-            ? undefined
-            : json['defaultExpiresAt'] === null
-                ? null
-                : new Date(json['defaultExpiresAt']),
-        canPermanentInbox: json['canPermanentInbox'],
-        nextInboxAllowsPermanent: json['nextInboxAllowsPermanent'],
+        'defaultExpirationMillis': json['defaultExpirationMillis'] == null ? undefined : json['defaultExpirationMillis'],
+        'maxExpirationMillis': json['maxExpirationMillis'] == null ? undefined : json['maxExpirationMillis'],
+        'defaultExpiresAt': json['defaultExpiresAt'] == null ? undefined : (new Date(json['defaultExpiresAt'])),
+        'canPermanentInbox': json['canPermanentInbox'],
+        'nextInboxAllowsPermanent': json['nextInboxAllowsPermanent'],
     };
 }
-exports.ExpirationDefaultsFromJSONTyped = ExpirationDefaultsFromJSONTyped;
-function ExpirationDefaultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ExpirationDefaultsToJSON(json) {
+    return ExpirationDefaultsToJSONTyped(json, false);
+}
+function ExpirationDefaultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        defaultExpirationMillis: value.defaultExpirationMillis,
-        maxExpirationMillis: value.maxExpirationMillis,
-        defaultExpiresAt: value.defaultExpiresAt === undefined
-            ? undefined
-            : value.defaultExpiresAt === null
-                ? null
-                : value.defaultExpiresAt.toISOString(),
-        canPermanentInbox: value.canPermanentInbox,
-        nextInboxAllowsPermanent: value.nextInboxAllowsPermanent,
+        'defaultExpirationMillis': value['defaultExpirationMillis'],
+        'maxExpirationMillis': value['maxExpirationMillis'],
+        'defaultExpiresAt': value['defaultExpiresAt'] == null ? undefined : (value['defaultExpiresAt'].toISOString()),
+        'canPermanentInbox': value['canPermanentInbox'],
+        'nextInboxAllowsPermanent': value['nextInboxAllowsPermanent'],
     };
 }
-exports.ExpirationDefaultsToJSON = ExpirationDefaultsToJSON;

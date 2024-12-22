@@ -13,34 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidateEmailAddressListOptionsToJSON = exports.ValidateEmailAddressListOptionsFromJSONTyped = exports.ValidateEmailAddressListOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfValidateEmailAddressListOptions = instanceOfValidateEmailAddressListOptions;
+exports.ValidateEmailAddressListOptionsFromJSON = ValidateEmailAddressListOptionsFromJSON;
+exports.ValidateEmailAddressListOptionsFromJSONTyped = ValidateEmailAddressListOptionsFromJSONTyped;
+exports.ValidateEmailAddressListOptionsToJSON = ValidateEmailAddressListOptionsToJSON;
+exports.ValidateEmailAddressListOptionsToJSONTyped = ValidateEmailAddressListOptionsToJSONTyped;
+/**
+ * Check if a given object implements the ValidateEmailAddressListOptions interface.
+ */
+function instanceOfValidateEmailAddressListOptions(value) {
+    if (!('emailAddressList' in value) || value['emailAddressList'] === undefined)
+        return false;
+    return true;
+}
 function ValidateEmailAddressListOptionsFromJSON(json) {
     return ValidateEmailAddressListOptionsFromJSONTyped(json, false);
 }
-exports.ValidateEmailAddressListOptionsFromJSON = ValidateEmailAddressListOptionsFromJSON;
 function ValidateEmailAddressListOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        emailAddressList: json['emailAddressList'],
-        ignoreOldResults: !(0, runtime_1.exists)(json, 'ignoreOldResults')
-            ? undefined
-            : json['ignoreOldResults'],
+        'emailAddressList': json['emailAddressList'],
+        'ignoreOldResults': json['ignoreOldResults'] == null ? undefined : json['ignoreOldResults'],
     };
 }
-exports.ValidateEmailAddressListOptionsFromJSONTyped = ValidateEmailAddressListOptionsFromJSONTyped;
-function ValidateEmailAddressListOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ValidateEmailAddressListOptionsToJSON(json) {
+    return ValidateEmailAddressListOptionsToJSONTyped(json, false);
+}
+function ValidateEmailAddressListOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        emailAddressList: value.emailAddressList,
-        ignoreOldResults: value.ignoreOldResults,
+        'emailAddressList': value['emailAddressList'],
+        'ignoreOldResults': value['ignoreOldResults'],
     };
 }
-exports.ValidateEmailAddressListOptionsToJSON = ValidateEmailAddressListOptionsToJSON;

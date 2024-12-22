@@ -12,17 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { MatchOption } from './MatchOption';
 import {
-  ConditionOption,
-  ConditionOptionFromJSON,
-  ConditionOptionFromJSONTyped,
-  ConditionOptionToJSON,
-  MatchOption,
-  MatchOptionFromJSON,
-  MatchOptionFromJSONTyped,
-  MatchOptionToJSON,
-} from './';
+    MatchOptionFromJSON,
+    MatchOptionFromJSONTyped,
+    MatchOptionToJSON,
+    MatchOptionToJSONTyped,
+} from './MatchOption';
+import type { ConditionOption } from './ConditionOption';
+import {
+    ConditionOptionFromJSON,
+    ConditionOptionFromJSONTyped,
+    ConditionOptionToJSON,
+    ConditionOptionToJSONTyped,
+} from './ConditionOption';
 
 /**
  * Optional filter for matching emails based on fields. For instance filter results to only include emails whose `SUBJECT` value does `CONTAIN` given match value. An example payload would be `{ matches: [{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }] }`. You can also pass conditions such as `HAS_ATTACHMENT`. If you wish to extract regex matches inside the email content see the `getEmailContentMatch` method in the EmailController.
@@ -30,64 +34,55 @@ import {
  * @interface MatchOptions
  */
 export interface MatchOptions {
-  /**
-   * Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }`. Options are additive so if one does not match the email is excluded from results
-   * @type {Array<MatchOption>}
-   * @memberof MatchOptions
-   */
-  matches?: Array<MatchOption> | null;
-  /**
-   * Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
-   * @type {Array<ConditionOption>}
-   * @memberof MatchOptions
-   */
-  conditions?: Array<ConditionOption> | null;
+    /**
+     * Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }`. Options are additive so if one does not match the email is excluded from results
+     * @type {Array<MatchOption>}
+     * @memberof MatchOptions
+     */
+    matches?: Array<MatchOption> | null;
+    /**
+     * Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
+     * @type {Array<ConditionOption>}
+     * @memberof MatchOptions
+     */
+    conditions?: Array<ConditionOption> | null;
+}
+
+/**
+ * Check if a given object implements the MatchOptions interface.
+ */
+export function instanceOfMatchOptions(value: object): value is MatchOptions {
+    return true;
 }
 
 export function MatchOptionsFromJSON(json: any): MatchOptions {
-  return MatchOptionsFromJSONTyped(json, false);
+    return MatchOptionsFromJSONTyped(json, false);
 }
 
-export function MatchOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): MatchOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    matches: !exists(json, 'matches')
-      ? undefined
-      : json['matches'] === null
-      ? null
-      : (json['matches'] as Array<any>).map(MatchOptionFromJSON),
-    conditions: !exists(json, 'conditions')
-      ? undefined
-      : json['conditions'] === null
-      ? null
-      : (json['conditions'] as Array<any>).map(ConditionOptionFromJSON),
-  };
+export function MatchOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): MatchOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'matches': json['matches'] == null ? undefined : ((json['matches'] as Array<any>).map(MatchOptionFromJSON)),
+        'conditions': json['conditions'] == null ? undefined : ((json['conditions'] as Array<any>).map(ConditionOptionFromJSON)),
+    };
 }
 
-export function MatchOptionsToJSON(value?: MatchOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    matches:
-      value.matches === undefined
-        ? undefined
-        : value.matches === null
-        ? null
-        : (value.matches as Array<any>).map(MatchOptionToJSON),
-    conditions:
-      value.conditions === undefined
-        ? undefined
-        : value.conditions === null
-        ? null
-        : (value.conditions as Array<any>).map(ConditionOptionToJSON),
-  };
+export function MatchOptionsToJSON(json: any): MatchOptions {
+    return MatchOptionsToJSONTyped(json, false);
 }
+
+export function MatchOptionsToJSONTyped(value?: MatchOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'matches': value['matches'] == null ? undefined : ((value['matches'] as Array<any>).map(MatchOptionToJSON)),
+        'conditions': value['conditions'] == null ? undefined : ((value['conditions'] as Array<any>).map(ConditionOptionToJSON)),
+    };
+}
+

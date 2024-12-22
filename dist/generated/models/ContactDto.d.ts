@@ -82,6 +82,11 @@ export interface ContactDto {
      */
     createdAt: Date;
 }
+/**
+ * Check if a given object implements the ContactDto interface.
+ */
+export declare function instanceOfContactDto(value: object): value is ContactDto;
 export declare function ContactDtoFromJSON(json: any): ContactDto;
 export declare function ContactDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContactDto;
-export declare function ContactDtoToJSON(value?: ContactDto | null): any;
+export declare function ContactDtoToJSON(json: any): ContactDto;
+export declare function ContactDtoToJSONTyped(value?: ContactDto | null, ignoreDiscriminator?: boolean): any;

@@ -28,6 +28,11 @@ export interface ImapServerListOptions {
      */
     seqSet?: string | null;
 }
+/**
+ * Check if a given object implements the ImapServerListOptions interface.
+ */
+export declare function instanceOfImapServerListOptions(value: object): value is ImapServerListOptions;
 export declare function ImapServerListOptionsFromJSON(json: any): ImapServerListOptions;
 export declare function ImapServerListOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerListOptions;
-export declare function ImapServerListOptionsToJSON(value?: ImapServerListOptions | null): any;
+export declare function ImapServerListOptionsToJSON(json: any): ImapServerListOptions;
+export declare function ImapServerListOptionsToJSONTyped(value?: ImapServerListOptions | null, ignoreDiscriminator?: boolean): any;

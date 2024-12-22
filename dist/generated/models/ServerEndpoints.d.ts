@@ -40,6 +40,11 @@ export interface ServerEndpoints {
      */
     altPorts: Array<number>;
 }
+/**
+ * Check if a given object implements the ServerEndpoints interface.
+ */
+export declare function instanceOfServerEndpoints(value: object): value is ServerEndpoints;
 export declare function ServerEndpointsFromJSON(json: any): ServerEndpoints;
 export declare function ServerEndpointsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServerEndpoints;
-export declare function ServerEndpointsToJSON(value?: ServerEndpoints | null): any;
+export declare function ServerEndpointsToJSON(json: any): ServerEndpoints;
+export declare function ServerEndpointsToJSONTyped(value?: ServerEndpoints | null, ignoreDiscriminator?: boolean): any;

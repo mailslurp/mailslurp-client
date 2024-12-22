@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailFeaturesClientSupportResultsToJSON = exports.CheckEmailFeaturesClientSupportResultsFromJSONTyped = exports.CheckEmailFeaturesClientSupportResultsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfCheckEmailFeaturesClientSupportResults = instanceOfCheckEmailFeaturesClientSupportResults;
+exports.CheckEmailFeaturesClientSupportResultsFromJSON = CheckEmailFeaturesClientSupportResultsFromJSON;
+exports.CheckEmailFeaturesClientSupportResultsFromJSONTyped = CheckEmailFeaturesClientSupportResultsFromJSONTyped;
+exports.CheckEmailFeaturesClientSupportResultsToJSON = CheckEmailFeaturesClientSupportResultsToJSON;
+exports.CheckEmailFeaturesClientSupportResultsToJSONTyped = CheckEmailFeaturesClientSupportResultsToJSONTyped;
+var EmailFeatureSupportResult_1 = require("./EmailFeatureSupportResult");
+/**
+ * Check if a given object implements the CheckEmailFeaturesClientSupportResults interface.
+ */
+function instanceOfCheckEmailFeaturesClientSupportResults(value) {
+    if (!('result' in value) || value['result'] === undefined)
+        return false;
+    return true;
+}
 function CheckEmailFeaturesClientSupportResultsFromJSON(json) {
     return CheckEmailFeaturesClientSupportResultsFromJSONTyped(json, false);
 }
-exports.CheckEmailFeaturesClientSupportResultsFromJSON = CheckEmailFeaturesClientSupportResultsFromJSON;
 function CheckEmailFeaturesClientSupportResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        result: (0, _1.EmailFeatureSupportResultFromJSON)(json['result']),
+        'result': (0, EmailFeatureSupportResult_1.EmailFeatureSupportResultFromJSON)(json['result']),
     };
 }
-exports.CheckEmailFeaturesClientSupportResultsFromJSONTyped = CheckEmailFeaturesClientSupportResultsFromJSONTyped;
-function CheckEmailFeaturesClientSupportResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CheckEmailFeaturesClientSupportResultsToJSON(json) {
+    return CheckEmailFeaturesClientSupportResultsToJSONTyped(json, false);
+}
+function CheckEmailFeaturesClientSupportResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        result: (0, _1.EmailFeatureSupportResultToJSON)(value.result),
+        'result': (0, EmailFeatureSupportResult_1.EmailFeatureSupportResultToJSON)(value['result']),
     };
 }
-exports.CheckEmailFeaturesClientSupportResultsToJSON = CheckEmailFeaturesClientSupportResultsToJSON;

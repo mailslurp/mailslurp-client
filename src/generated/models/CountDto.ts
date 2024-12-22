@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Number of elements
  * @export
  * @interface CountDto
  */
 export interface CountDto {
-  /**
-   *
-   * @type {number}
-   * @memberof CountDto
-   */
-  totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof CountDto
+     */
+    totalElements: number;
+}
+
+/**
+ * Check if a given object implements the CountDto interface.
+ */
+export function instanceOfCountDto(value: object): value is CountDto {
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
 export function CountDtoFromJSON(json: any): CountDto {
-  return CountDtoFromJSONTyped(json, false);
+    return CountDtoFromJSONTyped(json, false);
 }
 
-export function CountDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CountDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    totalElements: json['totalElements'],
-  };
+export function CountDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): CountDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'totalElements': json['totalElements'],
+    };
 }
 
-export function CountDtoToJSON(value?: CountDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    totalElements: value.totalElements,
-  };
+export function CountDtoToJSON(json: any): CountDto {
+    return CountDtoToJSONTyped(json, false);
 }
+
+export function CountDtoToJSONTyped(value?: CountDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'totalElements': value['totalElements'],
+    };
+}
+

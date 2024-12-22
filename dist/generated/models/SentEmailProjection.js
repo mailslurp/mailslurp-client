@@ -13,52 +13,91 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SentEmailProjectionToJSON = exports.SentEmailProjectionFromJSONTyped = exports.SentEmailProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfSentEmailProjection = instanceOfSentEmailProjection;
+exports.SentEmailProjectionFromJSON = SentEmailProjectionFromJSON;
+exports.SentEmailProjectionFromJSONTyped = SentEmailProjectionFromJSONTyped;
+exports.SentEmailProjectionToJSON = SentEmailProjectionToJSON;
+exports.SentEmailProjectionToJSONTyped = SentEmailProjectionToJSONTyped;
+var Sender_1 = require("./Sender");
+var EmailRecipients_1 = require("./EmailRecipients");
+/**
+ * Check if a given object implements the SentEmailProjection interface.
+ */
+function instanceOfSentEmailProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('to' in value) || value['to'] === undefined)
+        return false;
+    if (!('cc' in value) || value['cc'] === undefined)
+        return false;
+    if (!('bcc' in value) || value['bcc'] === undefined)
+        return false;
+    if (!('virtualSend' in value) || value['virtualSend'] === undefined)
+        return false;
+    return true;
+}
 function SentEmailProjectionFromJSON(json) {
     return SentEmailProjectionFromJSONTyped(json, false);
 }
-exports.SentEmailProjectionFromJSON = SentEmailProjectionFromJSON;
 function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        id: json['id'],
-        bcc: json['bcc'],
-        cc: json['cc'],
-        virtualSend: json['virtualSend'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        inboxId: json['inboxId'],
-        userId: json['userId'],
-        attachments: json['attachments'],
-        to: json['to'],
-        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'id': json['id'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'sender': json['sender'] == null ? undefined : (0, Sender_1.SenderFromJSON)(json['sender']),
+        'recipients': json['recipients'] == null ? undefined : (0, EmailRecipients_1.EmailRecipientsFromJSON)(json['recipients']),
+        'attachments': json['attachments'] == null ? undefined : json['attachments'],
+        'inboxId': json['inboxId'],
+        'userId': json['userId'],
+        'to': json['to'],
+        'cc': json['cc'],
+        'bcc': json['bcc'],
+        'messageId': json['messageId'] == null ? undefined : json['messageId'],
+        'inReplyTo': json['inReplyTo'] == null ? undefined : json['inReplyTo'],
+        'bodyExcerpt': json['bodyExcerpt'] == null ? undefined : json['bodyExcerpt'],
+        'textExcerpt': json['textExcerpt'] == null ? undefined : json['textExcerpt'],
+        'bodyMD5Hash': json['bodyMD5Hash'] == null ? undefined : json['bodyMD5Hash'],
+        'virtualSend': json['virtualSend'],
+        'threadId': json['threadId'] == null ? undefined : json['threadId'],
     };
 }
-exports.SentEmailProjectionFromJSONTyped = SentEmailProjectionFromJSONTyped;
-function SentEmailProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SentEmailProjectionToJSON(json) {
+    return SentEmailProjectionToJSONTyped(json, false);
+}
+function SentEmailProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        id: value.id,
-        bcc: value.bcc,
-        cc: value.cc,
-        virtualSend: value.virtualSend,
-        from: value.from,
-        subject: value.subject,
-        inboxId: value.inboxId,
-        userId: value.userId,
-        attachments: value.attachments,
-        to: value.to,
-        bodyMD5Hash: value.bodyMD5Hash,
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'id': value['id'],
+        'from': value['from'],
+        'sender': (0, Sender_1.SenderToJSON)(value['sender']),
+        'recipients': (0, EmailRecipients_1.EmailRecipientsToJSON)(value['recipients']),
+        'attachments': value['attachments'],
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'to': value['to'],
+        'cc': value['cc'],
+        'bcc': value['bcc'],
+        'messageId': value['messageId'],
+        'inReplyTo': value['inReplyTo'],
+        'bodyExcerpt': value['bodyExcerpt'],
+        'textExcerpt': value['textExcerpt'],
+        'bodyMD5Hash': value['bodyMD5Hash'],
+        'virtualSend': value['virtualSend'],
+        'threadId': value['threadId'],
     };
 }
-exports.SentEmailProjectionToJSON = SentEmailProjectionToJSON;

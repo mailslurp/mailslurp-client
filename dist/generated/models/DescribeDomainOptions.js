@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeDomainOptionsToJSON = exports.DescribeDomainOptionsFromJSONTyped = exports.DescribeDomainOptionsFromJSON = void 0;
+exports.instanceOfDescribeDomainOptions = instanceOfDescribeDomainOptions;
+exports.DescribeDomainOptionsFromJSON = DescribeDomainOptionsFromJSON;
+exports.DescribeDomainOptionsFromJSONTyped = DescribeDomainOptionsFromJSONTyped;
+exports.DescribeDomainOptionsToJSON = DescribeDomainOptionsToJSON;
+exports.DescribeDomainOptionsToJSONTyped = DescribeDomainOptionsToJSONTyped;
+/**
+ * Check if a given object implements the DescribeDomainOptions interface.
+ */
+function instanceOfDescribeDomainOptions(value) {
+    if (!('domain' in value) || value['domain'] === undefined)
+        return false;
+    return true;
+}
 function DescribeDomainOptionsFromJSON(json) {
     return DescribeDomainOptionsFromJSONTyped(json, false);
 }
-exports.DescribeDomainOptionsFromJSON = DescribeDomainOptionsFromJSON;
 function DescribeDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        domain: json['domain'],
+        'domain': json['domain'],
     };
 }
-exports.DescribeDomainOptionsFromJSONTyped = DescribeDomainOptionsFromJSONTyped;
-function DescribeDomainOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DescribeDomainOptionsToJSON(json) {
+    return DescribeDomainOptionsToJSONTyped(json, false);
+}
+function DescribeDomainOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        domain: value.domain,
+        'domain': value['domain'],
     };
 }
-exports.DescribeDomainOptionsToJSON = DescribeDomainOptionsToJSON;

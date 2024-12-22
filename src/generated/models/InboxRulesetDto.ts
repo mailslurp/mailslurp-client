@@ -12,118 +12,137 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Rules for inbox
  * @export
  * @interface InboxRulesetDto
  */
 export interface InboxRulesetDto {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetDto
-   */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetDto
-   */
-  scope: InboxRulesetDtoScopeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetDto
-   */
-  action: InboxRulesetDtoActionEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetDto
-   */
-  target: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetDto
-   */
-  handler: InboxRulesetDtoHandlerEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof InboxRulesetDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxRulesetDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxRulesetDto
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxRulesetDto
+     */
+    scope: InboxRulesetDtoScopeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxRulesetDto
+     */
+    action: InboxRulesetDtoActionEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxRulesetDto
+     */
+    target: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxRulesetDto
+     */
+    handler: InboxRulesetDtoHandlerEnum;
+    /**
+     * 
+     * @type {Date}
+     * @memberof InboxRulesetDto
+     */
+    createdAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum InboxRulesetDtoScopeEnum {
-  RECEIVING_EMAILS = 'RECEIVING_EMAILS',
-  SENDING_EMAILS = 'SENDING_EMAILS',
-}
+export const InboxRulesetDtoScopeEnum = {
+    RECEIVING_EMAILS: 'RECEIVING_EMAILS',
+    SENDING_EMAILS: 'SENDING_EMAILS'
+} as const;
+export type InboxRulesetDtoScopeEnum = typeof InboxRulesetDtoScopeEnum[keyof typeof InboxRulesetDtoScopeEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum InboxRulesetDtoActionEnum {
-  BLOCK = 'BLOCK',
-  ALLOW = 'ALLOW',
-  FILTER_REMOVE = 'FILTER_REMOVE',
-}
+export const InboxRulesetDtoActionEnum = {
+    BLOCK: 'BLOCK',
+    ALLOW: 'ALLOW',
+    FILTER_REMOVE: 'FILTER_REMOVE'
+} as const;
+export type InboxRulesetDtoActionEnum = typeof InboxRulesetDtoActionEnum[keyof typeof InboxRulesetDtoActionEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum InboxRulesetDtoHandlerEnum {
-  EXCEPTION = 'EXCEPTION',
+export const InboxRulesetDtoHandlerEnum = {
+    EXCEPTION: 'EXCEPTION'
+} as const;
+export type InboxRulesetDtoHandlerEnum = typeof InboxRulesetDtoHandlerEnum[keyof typeof InboxRulesetDtoHandlerEnum];
+
+
+/**
+ * Check if a given object implements the InboxRulesetDto interface.
+ */
+export function instanceOfInboxRulesetDto(value: object): value is InboxRulesetDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('scope' in value) || value['scope'] === undefined) return false;
+    if (!('action' in value) || value['action'] === undefined) return false;
+    if (!('target' in value) || value['target'] === undefined) return false;
+    if (!('handler' in value) || value['handler'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function InboxRulesetDtoFromJSON(json: any): InboxRulesetDto {
-  return InboxRulesetDtoFromJSONTyped(json, false);
+    return InboxRulesetDtoFromJSONTyped(json, false);
 }
 
-export function InboxRulesetDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxRulesetDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    scope: json['scope'],
-    action: json['action'],
-    target: json['target'],
-    handler: json['handler'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function InboxRulesetDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRulesetDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'scope': json['scope'],
+        'action': json['action'],
+        'target': json['target'],
+        'handler': json['handler'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function InboxRulesetDtoToJSON(value?: InboxRulesetDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    scope: value.scope,
-    action: value.action,
-    target: value.target,
-    handler: value.handler,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function InboxRulesetDtoToJSON(json: any): InboxRulesetDto {
+    return InboxRulesetDtoToJSONTyped(json, false);
 }
+
+export function InboxRulesetDtoToJSONTyped(value?: InboxRulesetDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'inboxId': value['inboxId'],
+        'scope': value['scope'],
+        'action': value['action'],
+        'target': value['target'],
+        'handler': value['handler'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

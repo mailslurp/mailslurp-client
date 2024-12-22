@@ -12,124 +12,165 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { Sender } from './Sender';
 import {
-  EmailRecipients,
-  EmailRecipientsFromJSON,
-  EmailRecipientsFromJSONTyped,
-  EmailRecipientsToJSON,
-  Sender,
-  SenderFromJSON,
-  SenderFromJSONTyped,
-  SenderToJSON,
-} from './';
+    SenderFromJSON,
+    SenderFromJSONTyped,
+    SenderToJSON,
+    SenderToJSONTyped,
+} from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
+import {
+    EmailRecipientsFromJSON,
+    EmailRecipientsFromJSONTyped,
+    EmailRecipientsToJSON,
+    EmailRecipientsToJSONTyped,
+} from './EmailRecipients';
 
 /**
- *
+ * 
  * @export
  * @interface FakeEmailDto
  */
 export interface FakeEmailDto {
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailDto
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {Sender}
-   * @memberof FakeEmailDto
-   */
-  sender?: Sender | null;
-  /**
-   *
-   * @type {EmailRecipients}
-   * @memberof FakeEmailDto
-   */
-  recipients?: EmailRecipients | null;
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailDto
-   */
-  subject?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailDto
-   */
-  preview?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailDto
-   */
-  body: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof FakeEmailDto
-   */
-  seen: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof FakeEmailDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {Sender}
+     * @memberof FakeEmailDto
+     */
+    sender?: Sender | null;
+    /**
+     * 
+     * @type {EmailRecipients}
+     * @memberof FakeEmailDto
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof FakeEmailDto
+     */
+    attachmentNames: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    subject?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    preview?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    body: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof FakeEmailDto
+     */
+    seen: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof FakeEmailDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    contentType: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    bodyUrl: string;
+}
+
+/**
+ * Check if a given object implements the FakeEmailDto interface.
+ */
+export function instanceOfFakeEmailDto(value: object): value is FakeEmailDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('attachmentNames' in value) || value['attachmentNames'] === undefined) return false;
+    if (!('body' in value) || value['body'] === undefined) return false;
+    if (!('seen' in value) || value['seen'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('contentType' in value) || value['contentType'] === undefined) return false;
+    if (!('bodyUrl' in value) || value['bodyUrl'] === undefined) return false;
+    return true;
 }
 
 export function FakeEmailDtoFromJSON(json: any): FakeEmailDto {
-  return FakeEmailDtoFromJSONTyped(json, false);
+    return FakeEmailDtoFromJSONTyped(json, false);
 }
 
-export function FakeEmailDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): FakeEmailDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    emailAddress: json['emailAddress'],
-    sender: !exists(json, 'sender')
-      ? undefined
-      : SenderFromJSON(json['sender']),
-    recipients: !exists(json, 'recipients')
-      ? undefined
-      : EmailRecipientsFromJSON(json['recipients']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    preview: !exists(json, 'preview') ? undefined : json['preview'],
-    body: json['body'],
-    seen: json['seen'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function FakeEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+        'sender': json['sender'] == null ? undefined : SenderFromJSON(json['sender']),
+        'recipients': json['recipients'] == null ? undefined : EmailRecipientsFromJSON(json['recipients']),
+        'attachmentNames': json['attachmentNames'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'preview': json['preview'] == null ? undefined : json['preview'],
+        'body': json['body'],
+        'seen': json['seen'],
+        'createdAt': (new Date(json['createdAt'])),
+        'contentType': json['contentType'],
+        'bodyUrl': json['bodyUrl'],
+    };
 }
 
-export function FakeEmailDtoToJSON(value?: FakeEmailDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    emailAddress: value.emailAddress,
-    sender: SenderToJSON(value.sender),
-    recipients: EmailRecipientsToJSON(value.recipients),
-    subject: value.subject,
-    preview: value.preview,
-    body: value.body,
-    seen: value.seen,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function FakeEmailDtoToJSON(json: any): FakeEmailDto {
+    return FakeEmailDtoToJSONTyped(json, false);
 }
+
+export function FakeEmailDtoToJSONTyped(value?: FakeEmailDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'emailAddress': value['emailAddress'],
+        'sender': SenderToJSON(value['sender']),
+        'recipients': EmailRecipientsToJSON(value['recipients']),
+        'attachmentNames': value['attachmentNames'],
+        'subject': value['subject'],
+        'preview': value['preview'],
+        'body': value['body'],
+        'seen': value['seen'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'contentType': value['contentType'],
+        'bodyUrl': value['bodyUrl'],
+    };
+}
+

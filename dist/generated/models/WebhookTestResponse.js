@@ -13,32 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookTestResponseToJSON = exports.WebhookTestResponseFromJSONTyped = exports.WebhookTestResponseFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfWebhookTestResponse = instanceOfWebhookTestResponse;
+exports.WebhookTestResponseFromJSON = WebhookTestResponseFromJSON;
+exports.WebhookTestResponseFromJSONTyped = WebhookTestResponseFromJSONTyped;
+exports.WebhookTestResponseToJSON = WebhookTestResponseToJSON;
+exports.WebhookTestResponseToJSONTyped = WebhookTestResponseToJSONTyped;
+/**
+ * Check if a given object implements the WebhookTestResponse interface.
+ */
+function instanceOfWebhookTestResponse(value) {
+    return true;
+}
 function WebhookTestResponseFromJSON(json) {
     return WebhookTestResponseFromJSONTyped(json, false);
 }
-exports.WebhookTestResponseFromJSON = WebhookTestResponseFromJSON;
 function WebhookTestResponseFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        statusCode: !(0, runtime_1.exists)(json, 'statusCode') ? undefined : json['statusCode'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'statusCode': json['statusCode'] == null ? undefined : json['statusCode'],
+        'message': json['message'] == null ? undefined : json['message'],
     };
 }
-exports.WebhookTestResponseFromJSONTyped = WebhookTestResponseFromJSONTyped;
-function WebhookTestResponseToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookTestResponseToJSON(json) {
+    return WebhookTestResponseToJSONTyped(json, false);
+}
+function WebhookTestResponseToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        statusCode: value.statusCode,
-        message: value.message,
+        'statusCode': value['statusCode'],
+        'message': value['message'],
     };
 }
-exports.WebhookTestResponseToJSON = WebhookTestResponseToJSON;

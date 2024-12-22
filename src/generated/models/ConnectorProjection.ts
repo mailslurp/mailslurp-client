@@ -12,131 +12,106 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Connector
  * @export
  * @interface ConnectorProjection
  */
 export interface ConnectorProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorProjection
-   */
-  enabled?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  emailAddress?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorProjection
-   */
-  syncEnabled?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  syncScheduleType: ConnectorProjectionSyncScheduleTypeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorProjection
-   */
-  syncInterval?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  id?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ConnectorProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorProjection
+     */
+    enabled?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    emailAddress?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    id: string;
 }
 
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the ConnectorProjection interface.
  */
-export enum ConnectorProjectionSyncScheduleTypeEnum {
-  INTERVAL = 'INTERVAL',
+export function instanceOfConnectorProjection(value: object): value is ConnectorProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function ConnectorProjectionFromJSON(json: any): ConnectorProjection {
-  return ConnectorProjectionFromJSONTyped(json, false);
+    return ConnectorProjectionFromJSONTyped(json, false);
 }
 
-export function ConnectorProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-    inboxId: json['inboxId'],
-    userId: json['userId'],
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
-    syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-    syncScheduleType: json['syncScheduleType'],
-    syncInterval: !exists(json, 'syncInterval')
-      ? undefined
-      : json['syncInterval'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-  };
+export function ConnectorProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
+        'inboxId': json['inboxId'],
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
 
-export function ConnectorProjectionToJSON(
-  value?: ConnectorProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    enabled: value.enabled,
-    inboxId: value.inboxId,
-    userId: value.userId,
-    emailAddress: value.emailAddress,
-    syncEnabled: value.syncEnabled,
-    syncScheduleType: value.syncScheduleType,
-    syncInterval: value.syncInterval,
-    name: value.name,
-    id: value.id,
-  };
+export function ConnectorProjectionToJSON(json: any): ConnectorProjection {
+    return ConnectorProjectionToJSONTyped(json, false);
 }
+
+export function ConnectorProjectionToJSONTyped(value?: ConnectorProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'enabled': value['enabled'],
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'name': value['name'],
+        'id': value['id'],
+    };
+}
+

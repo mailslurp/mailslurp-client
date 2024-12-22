@@ -12,68 +12,77 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailFeatureSupportStatusPercentage
  */
 export interface EmailFeatureSupportStatusPercentage {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureSupportStatusPercentage
-   */
-  status: EmailFeatureSupportStatusPercentageStatusEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof EmailFeatureSupportStatusPercentage
-   */
-  percentage: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureSupportStatusPercentage
+     */
+    status: EmailFeatureSupportStatusPercentageStatusEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof EmailFeatureSupportStatusPercentage
+     */
+    percentage: number;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum EmailFeatureSupportStatusPercentageStatusEnum {
-  SUPPORTED = 'SUPPORTED',
-  PARTIAL = 'PARTIAL',
-  NOT_SUPPORTED = 'NOT_SUPPORTED',
-  UNKNOWN = 'UNKNOWN',
+export const EmailFeatureSupportStatusPercentageStatusEnum = {
+    SUPPORTED: 'SUPPORTED',
+    PARTIAL: 'PARTIAL',
+    NOT_SUPPORTED: 'NOT_SUPPORTED',
+    UNKNOWN: 'UNKNOWN'
+} as const;
+export type EmailFeatureSupportStatusPercentageStatusEnum = typeof EmailFeatureSupportStatusPercentageStatusEnum[keyof typeof EmailFeatureSupportStatusPercentageStatusEnum];
+
+
+/**
+ * Check if a given object implements the EmailFeatureSupportStatusPercentage interface.
+ */
+export function instanceOfEmailFeatureSupportStatusPercentage(value: object): value is EmailFeatureSupportStatusPercentage {
+    if (!('status' in value) || value['status'] === undefined) return false;
+    if (!('percentage' in value) || value['percentage'] === undefined) return false;
+    return true;
 }
 
-export function EmailFeatureSupportStatusPercentageFromJSON(
-  json: any
-): EmailFeatureSupportStatusPercentage {
-  return EmailFeatureSupportStatusPercentageFromJSONTyped(json, false);
+export function EmailFeatureSupportStatusPercentageFromJSON(json: any): EmailFeatureSupportStatusPercentage {
+    return EmailFeatureSupportStatusPercentageFromJSONTyped(json, false);
 }
 
-export function EmailFeatureSupportStatusPercentageFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailFeatureSupportStatusPercentage {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    status: json['status'],
-    percentage: json['percentage'],
-  };
+export function EmailFeatureSupportStatusPercentageFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureSupportStatusPercentage {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'status': json['status'],
+        'percentage': json['percentage'],
+    };
 }
 
-export function EmailFeatureSupportStatusPercentageToJSON(
-  value?: EmailFeatureSupportStatusPercentage | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    status: value.status,
-    percentage: value.percentage,
-  };
+export function EmailFeatureSupportStatusPercentageToJSON(json: any): EmailFeatureSupportStatusPercentage {
+    return EmailFeatureSupportStatusPercentageToJSONTyped(json, false);
 }
+
+export function EmailFeatureSupportStatusPercentageToJSONTyped(value?: EmailFeatureSupportStatusPercentage | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'status': value['status'],
+        'percentage': value['percentage'],
+    };
+}
+

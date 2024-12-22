@@ -23,10 +23,10 @@ export interface InboxReplierEventProjection {
     createdAt: Date;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof InboxReplierEventProjection
      */
-    recipients?: Array<string> | null;
+    recipients?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -74,16 +74,21 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    status?: InboxReplierEventProjectionStatusEnum;
+    status?: InboxReplierEventProjectionStatusEnum | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxReplierEventProjectionStatusEnum {
-    SUCCESS = "SUCCESS",
-    FAILURE = "FAILURE"
-}
+export declare const InboxReplierEventProjectionStatusEnum: {
+    readonly SUCCESS: "SUCCESS";
+    readonly FAILURE: "FAILURE";
+};
+export type InboxReplierEventProjectionStatusEnum = typeof InboxReplierEventProjectionStatusEnum[keyof typeof InboxReplierEventProjectionStatusEnum];
+/**
+ * Check if a given object implements the InboxReplierEventProjection interface.
+ */
+export declare function instanceOfInboxReplierEventProjection(value: object): value is InboxReplierEventProjection;
 export declare function InboxReplierEventProjectionFromJSON(json: any): InboxReplierEventProjection;
 export declare function InboxReplierEventProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxReplierEventProjection;
-export declare function InboxReplierEventProjectionToJSON(value?: InboxReplierEventProjection | null): any;
+export declare function InboxReplierEventProjectionToJSON(json: any): InboxReplierEventProjection;
+export declare function InboxReplierEventProjectionToJSONTyped(value?: InboxReplierEventProjection | null, ignoreDiscriminator?: boolean): any;

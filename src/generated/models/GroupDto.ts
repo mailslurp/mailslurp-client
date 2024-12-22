@@ -12,69 +12,81 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Contact group data
  * @export
  * @interface GroupDto
  */
 export interface GroupDto {
-  /**
-   *
-   * @type {string}
-   * @memberof GroupDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupDto
-   */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupDto
-   */
-  description?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof GroupDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupDto
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupDto
+     */
+    description?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof GroupDto
+     */
+    createdAt: Date;
+}
+
+/**
+ * Check if a given object implements the GroupDto interface.
+ */
+export function instanceOfGroupDto(value: object): value is GroupDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function GroupDtoFromJSON(json: any): GroupDto {
-  return GroupDtoFromJSONTyped(json, false);
+    return GroupDtoFromJSONTyped(json, false);
 }
 
-export function GroupDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GroupDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    name: json['name'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function GroupDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'name': json['name'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function GroupDtoToJSON(value?: GroupDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    name: value.name,
-    description: value.description,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function GroupDtoToJSON(json: any): GroupDto {
+    return GroupDtoToJSONTyped(json, false);
 }
+
+export function GroupDtoToJSONTyped(value?: GroupDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'name': value['name'],
+        'description': value['description'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

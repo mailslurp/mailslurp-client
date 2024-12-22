@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailContentMatchResultToJSON = exports.EmailContentMatchResultFromJSONTyped = exports.EmailContentMatchResultFromJSON = void 0;
+exports.instanceOfEmailContentMatchResult = instanceOfEmailContentMatchResult;
+exports.EmailContentMatchResultFromJSON = EmailContentMatchResultFromJSON;
+exports.EmailContentMatchResultFromJSONTyped = EmailContentMatchResultFromJSONTyped;
+exports.EmailContentMatchResultToJSON = EmailContentMatchResultToJSON;
+exports.EmailContentMatchResultToJSONTyped = EmailContentMatchResultToJSONTyped;
+/**
+ * Check if a given object implements the EmailContentMatchResult interface.
+ */
+function instanceOfEmailContentMatchResult(value) {
+    if (!('pattern' in value) || value['pattern'] === undefined)
+        return false;
+    if (!('matches' in value) || value['matches'] === undefined)
+        return false;
+    return true;
+}
 function EmailContentMatchResultFromJSON(json) {
     return EmailContentMatchResultFromJSONTyped(json, false);
 }
-exports.EmailContentMatchResultFromJSON = EmailContentMatchResultFromJSON;
 function EmailContentMatchResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        pattern: json['pattern'],
-        matches: json['matches'],
+        'pattern': json['pattern'],
+        'matches': json['matches'],
     };
 }
-exports.EmailContentMatchResultFromJSONTyped = EmailContentMatchResultFromJSONTyped;
-function EmailContentMatchResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailContentMatchResultToJSON(json) {
+    return EmailContentMatchResultToJSONTyped(json, false);
+}
+function EmailContentMatchResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        pattern: value.pattern,
-        matches: value.matches,
+        'pattern': value['pattern'],
+        'matches': value['matches'],
     };
 }
-exports.EmailContentMatchResultToJSON = EmailContentMatchResultToJSON;

@@ -13,38 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupBimiDomainResultsToJSON = exports.LookupBimiDomainResultsFromJSONTyped = exports.LookupBimiDomainResultsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfLookupBimiDomainResults = instanceOfLookupBimiDomainResults;
+exports.LookupBimiDomainResultsFromJSON = LookupBimiDomainResultsFromJSON;
+exports.LookupBimiDomainResultsFromJSONTyped = LookupBimiDomainResultsFromJSONTyped;
+exports.LookupBimiDomainResultsToJSON = LookupBimiDomainResultsToJSON;
+exports.LookupBimiDomainResultsToJSONTyped = LookupBimiDomainResultsToJSONTyped;
+var DNSLookupResult_1 = require("./DNSLookupResult");
+var DNSLookupOptions_1 = require("./DNSLookupOptions");
+/**
+ * Check if a given object implements the LookupBimiDomainResults interface.
+ */
+function instanceOfLookupBimiDomainResults(value) {
+    if (!('valid' in value) || value['valid'] === undefined)
+        return false;
+    if (!('query' in value) || value['query'] === undefined)
+        return false;
+    if (!('records' in value) || value['records'] === undefined)
+        return false;
+    if (!('errors' in value) || value['errors'] === undefined)
+        return false;
+    if (!('warnings' in value) || value['warnings'] === undefined)
+        return false;
+    return true;
+}
 function LookupBimiDomainResultsFromJSON(json) {
     return LookupBimiDomainResultsFromJSONTyped(json, false);
 }
-exports.LookupBimiDomainResultsFromJSON = LookupBimiDomainResultsFromJSON;
 function LookupBimiDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        valid: json['valid'],
-        query: (0, _1.DNSLookupOptionsFromJSON)(json['query']),
-        records: json['records'].map(_1.DNSLookupResultFromJSON),
-        errors: json['errors'],
-        warnings: json['warnings'],
+        'valid': json['valid'],
+        'query': (0, DNSLookupOptions_1.DNSLookupOptionsFromJSON)(json['query']),
+        'records': (json['records'].map(DNSLookupResult_1.DNSLookupResultFromJSON)),
+        'errors': json['errors'],
+        'warnings': json['warnings'],
     };
 }
-exports.LookupBimiDomainResultsFromJSONTyped = LookupBimiDomainResultsFromJSONTyped;
-function LookupBimiDomainResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function LookupBimiDomainResultsToJSON(json) {
+    return LookupBimiDomainResultsToJSONTyped(json, false);
+}
+function LookupBimiDomainResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        valid: value.valid,
-        query: (0, _1.DNSLookupOptionsToJSON)(value.query),
-        records: value.records.map(_1.DNSLookupResultToJSON),
-        errors: value.errors,
-        warnings: value.warnings,
+        'valid': value['valid'],
+        'query': (0, DNSLookupOptions_1.DNSLookupOptionsToJSON)(value['query']),
+        'records': (value['records'].map(DNSLookupResult_1.DNSLookupResultToJSON)),
+        'errors': value['errors'],
+        'warnings': value['warnings'],
     };
 }
-exports.LookupBimiDomainResultsToJSON = LookupBimiDomainResultsToJSON;

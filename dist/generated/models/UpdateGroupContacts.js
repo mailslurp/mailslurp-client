@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateGroupContactsToJSON = exports.UpdateGroupContactsFromJSONTyped = exports.UpdateGroupContactsFromJSON = void 0;
+exports.instanceOfUpdateGroupContacts = instanceOfUpdateGroupContacts;
+exports.UpdateGroupContactsFromJSON = UpdateGroupContactsFromJSON;
+exports.UpdateGroupContactsFromJSONTyped = UpdateGroupContactsFromJSONTyped;
+exports.UpdateGroupContactsToJSON = UpdateGroupContactsToJSON;
+exports.UpdateGroupContactsToJSONTyped = UpdateGroupContactsToJSONTyped;
+/**
+ * Check if a given object implements the UpdateGroupContacts interface.
+ */
+function instanceOfUpdateGroupContacts(value) {
+    if (!('contactIds' in value) || value['contactIds'] === undefined)
+        return false;
+    return true;
+}
 function UpdateGroupContactsFromJSON(json) {
     return UpdateGroupContactsFromJSONTyped(json, false);
 }
-exports.UpdateGroupContactsFromJSON = UpdateGroupContactsFromJSON;
 function UpdateGroupContactsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        contactIds: json['contactIds'],
+        'contactIds': json['contactIds'],
     };
 }
-exports.UpdateGroupContactsFromJSONTyped = UpdateGroupContactsFromJSONTyped;
-function UpdateGroupContactsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UpdateGroupContactsToJSON(json) {
+    return UpdateGroupContactsToJSONTyped(json, false);
+}
+function UpdateGroupContactsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        contactIds: value.contactIds,
+        'contactIds': value['contactIds'],
     };
 }
-exports.UpdateGroupContactsToJSON = UpdateGroupContactsToJSON;

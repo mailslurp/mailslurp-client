@@ -28,6 +28,11 @@ export interface SendEmailBodyPart {
      */
     contentBody: string;
 }
+/**
+ * Check if a given object implements the SendEmailBodyPart interface.
+ */
+export declare function instanceOfSendEmailBodyPart(value: object): value is SendEmailBodyPart;
 export declare function SendEmailBodyPartFromJSON(json: any): SendEmailBodyPart;
 export declare function SendEmailBodyPartFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendEmailBodyPart;
-export declare function SendEmailBodyPartToJSON(value?: SendEmailBodyPart | null): any;
+export declare function SendEmailBodyPartToJSON(json: any): SendEmailBodyPart;
+export declare function SendEmailBodyPartToJSONTyped(value?: SendEmailBodyPart | null, ignoreDiscriminator?: boolean): any;

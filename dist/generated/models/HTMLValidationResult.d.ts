@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ValidationMessage } from './';
+import type { ValidationMessage } from './ValidationMessage';
 /**
  * HTML Validation Results
  * @export
@@ -41,6 +41,11 @@ export interface HTMLValidationResult {
      */
     warnings: Array<ValidationMessage>;
 }
+/**
+ * Check if a given object implements the HTMLValidationResult interface.
+ */
+export declare function instanceOfHTMLValidationResult(value: object): value is HTMLValidationResult;
 export declare function HTMLValidationResultFromJSON(json: any): HTMLValidationResult;
 export declare function HTMLValidationResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): HTMLValidationResult;
-export declare function HTMLValidationResultToJSON(value?: HTMLValidationResult | null): any;
+export declare function HTMLValidationResultToJSON(json: any): HTMLValidationResult;
+export declare function HTMLValidationResultToJSONTyped(value?: HTMLValidationResult | null, ignoreDiscriminator?: boolean): any;

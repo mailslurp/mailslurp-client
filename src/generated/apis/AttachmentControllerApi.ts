@@ -12,667 +12,539 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
-import {
-  AttachmentEntity,
-  AttachmentEntityFromJSON,
-  AttachmentEntityToJSON,
+import type {
+  AttachmentEntityDto,
   AttachmentMetaData,
-  AttachmentMetaDataFromJSON,
-  AttachmentMetaDataToJSON,
   DownloadAttachmentDto,
-  DownloadAttachmentDtoFromJSON,
-  DownloadAttachmentDtoToJSON,
-  InlineObject,
-  InlineObjectFromJSON,
-  InlineObjectToJSON,
   PageAttachmentEntity,
-  PageAttachmentEntityFromJSON,
-  PageAttachmentEntityToJSON,
   UploadAttachmentOptions,
-  UploadAttachmentOptionsFromJSON,
-  UploadAttachmentOptionsToJSON,
-} from '../models';
+  UploadMultipartFormRequest,
+} from '../models/index';
+import {
+    AttachmentEntityDtoFromJSON,
+    AttachmentEntityDtoToJSON,
+    AttachmentMetaDataFromJSON,
+    AttachmentMetaDataToJSON,
+    DownloadAttachmentDtoFromJSON,
+    DownloadAttachmentDtoToJSON,
+    PageAttachmentEntityFromJSON,
+    PageAttachmentEntityToJSON,
+    UploadAttachmentOptionsFromJSON,
+    UploadAttachmentOptionsToJSON,
+    UploadMultipartFormRequestFromJSON,
+    UploadMultipartFormRequestToJSON,
+} from '../models/index';
 
 export interface DeleteAttachmentRequest {
-  attachmentId: string;
+    attachmentId: string;
 }
 
 export interface DownloadAttachmentAsBase64EncodedRequest {
-  attachmentId: string;
+    attachmentId: string;
 }
 
 export interface DownloadAttachmentAsBytesRequest {
-  attachmentId: string;
+    attachmentId: string;
 }
 
 export interface GetAttachmentRequest {
-  attachmentId: string;
+    attachmentId: string;
 }
 
 export interface GetAttachmentInfoRequest {
-  attachmentId: string;
+    attachmentId: string;
 }
 
 export interface GetAttachmentsRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAttachmentsSortEnum;
-  fileNameFilter?: string;
-  since?: Date;
-  before?: Date;
-  inboxId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAttachmentsSortEnum;
+    fileNameFilter?: string;
+    since?: Date;
+    before?: Date;
+    inboxId?: string;
 }
 
 export interface UploadAttachmentRequest {
-  uploadAttachmentOptions: UploadAttachmentOptions;
+    uploadAttachmentOptions: UploadAttachmentOptions;
 }
 
 export interface UploadAttachmentBytesRequest {
-  contentType?: string;
-  contentType2?: string;
-  contentId?: string;
-  filename?: string;
-  filename2?: string;
+    contentType?: string;
+    contentType2?: string;
+    contentId?: string;
+    filename?: string;
+    fileSize?: number;
+    filename2?: string;
 }
 
-export interface UploadMultipartFormRequest {
-  contentId?: string;
-  contentType?: string;
-  filename?: string;
-  xFilename?: string;
-  inlineObject?: InlineObject;
+export interface UploadMultipartFormOperationRequest {
+    contentId?: string;
+    contentType?: string;
+    filename?: string;
+    contentTypeHeader?: string;
+    xFilename?: string;
+    xFilenameRaw?: string;
+    xFilesize?: number;
+    uploadMultipartFormRequest?: UploadMultipartFormRequest;
 }
 
 /**
- *
+ * 
  */
 export class AttachmentControllerApi extends runtime.BaseAPI {
-  /**
-   * Delete all attachments
-   */
-  async deleteAllAttachmentsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Delete all attachments
+     * Delete all attachments
+     */
+    async deleteAllAttachmentsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/attachments`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Delete all attachments
-   */
-  async deleteAllAttachments(initOverrides?: RequestInit): Promise<void> {
-    await this.deleteAllAttachmentsRaw(initOverrides);
-  }
-
-  /**
-   * Delete an attachment
-   */
-  async deleteAttachmentRaw(
-    requestParameters: DeleteAttachmentRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.attachmentId === null ||
-      requestParameters.attachmentId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'attachmentId',
-        'Required parameter requestParameters.attachmentId was null or undefined when calling deleteAttachment.'
-      );
+    /**
+     * Delete all attachments
+     * Delete all attachments
+     */
+    async deleteAllAttachments(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAllAttachmentsRaw(initOverrides);
     }
 
-    const queryParameters: any = {};
+    /**
+     * Delete an attachment
+     * Delete an attachment
+     */
+    async deleteAttachmentRaw(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['attachmentId'] == null) {
+            throw new runtime.RequiredError(
+                'attachmentId',
+                'Required parameter "attachmentId" was null or undefined when calling deleteAttachment().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments/{attachmentId}`.replace(`{${"attachmentId"}}`, encodeURIComponent(String(requestParameters['attachmentId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/attachments/{attachmentId}`.replace(
-          `{${'attachmentId'}}`,
-          encodeURIComponent(String(requestParameters.attachmentId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Delete an attachment
-   */
-  async deleteAttachment(
-    requestParameters: DeleteAttachmentRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteAttachmentRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
-   * Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
-   */
-  async downloadAttachmentAsBase64EncodedRaw(
-    requestParameters: DownloadAttachmentAsBase64EncodedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<DownloadAttachmentDto>> {
-    if (
-      requestParameters.attachmentId === null ||
-      requestParameters.attachmentId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'attachmentId',
-        'Required parameter requestParameters.attachmentId was null or undefined when calling downloadAttachmentAsBase64Encoded.'
-      );
+    /**
+     * Delete an attachment
+     * Delete an attachment
+     */
+    async deleteAttachment(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAttachmentRaw(requestParameters, initOverrides);
     }
 
-    const queryParameters: any = {};
+    /**
+     * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+     * Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
+     */
+    async downloadAttachmentAsBase64EncodedRaw(requestParameters: DownloadAttachmentAsBase64EncodedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DownloadAttachmentDto>> {
+        if (requestParameters['attachmentId'] == null) {
+            throw new runtime.RequiredError(
+                'attachmentId',
+                'Required parameter "attachmentId" was null or undefined when calling downloadAttachmentAsBase64Encoded().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments/{attachmentId}/base64`.replace(`{${"attachmentId"}}`, encodeURIComponent(String(requestParameters['attachmentId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DownloadAttachmentDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/attachments/{attachmentId}/base64`.replace(
-          `{${'attachmentId'}}`,
-          encodeURIComponent(String(requestParameters.attachmentId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      DownloadAttachmentDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
-   * Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
-   */
-  async downloadAttachmentAsBase64Encoded(
-    requestParameters: DownloadAttachmentAsBase64EncodedRequest,
-    initOverrides?: RequestInit
-  ): Promise<DownloadAttachmentDto> {
-    const response = await this.downloadAttachmentAsBase64EncodedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
-   * Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
-   */
-  async downloadAttachmentAsBytesRaw(
-    requestParameters: DownloadAttachmentAsBytesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<string>> {
-    if (
-      requestParameters.attachmentId === null ||
-      requestParameters.attachmentId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'attachmentId',
-        'Required parameter requestParameters.attachmentId was null or undefined when calling downloadAttachmentAsBytes.'
-      );
+    /**
+     * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+     * Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
+     */
+    async downloadAttachmentAsBase64Encoded(requestParameters: DownloadAttachmentAsBase64EncodedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DownloadAttachmentDto> {
+        const response = await this.downloadAttachmentAsBase64EncodedRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+     * Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
+     */
+    async downloadAttachmentAsBytesRaw(requestParameters: DownloadAttachmentAsBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        if (requestParameters['attachmentId'] == null) {
+            throw new runtime.RequiredError(
+                'attachmentId',
+                'Required parameter "attachmentId" was null or undefined when calling downloadAttachmentAsBytes().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments/{attachmentId}/bytes`.replace(`{${"attachmentId"}}`, encodeURIComponent(String(requestParameters['attachmentId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        if (this.isJsonMime(response.headers.get('content-type'))) {
+            return new runtime.JSONApiResponse<string>(response);
+        } else {
+            return new runtime.TextApiResponse(response) as any;
+        }
     }
 
-    const response = await this.request(
-      {
-        path: `/attachments/{attachmentId}/bytes`.replace(
-          `{${'attachmentId'}}`,
-          encodeURIComponent(String(requestParameters.attachmentId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.TextApiResponse(response) as any;
-  }
-
-  /**
-   * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
-   * Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
-   */
-  async downloadAttachmentAsBytes(
-    requestParameters: DownloadAttachmentAsBytesRequest,
-    initOverrides?: RequestInit
-  ): Promise<string> {
-    const response = await this.downloadAttachmentAsBytesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get an attachment entity
-   */
-  async getAttachmentRaw(
-    requestParameters: GetAttachmentRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<AttachmentEntity>> {
-    if (
-      requestParameters.attachmentId === null ||
-      requestParameters.attachmentId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'attachmentId',
-        'Required parameter requestParameters.attachmentId was null or undefined when calling getAttachment.'
-      );
+    /**
+     * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+     * Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
+     */
+    async downloadAttachmentAsBytes(requestParameters: DownloadAttachmentAsBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+        const response = await this.downloadAttachmentAsBytesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Get an attachment entity
+     */
+    async getAttachmentRaw(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AttachmentEntityDto>> {
+        if (requestParameters['attachmentId'] == null) {
+            throw new runtime.RequiredError(
+                'attachmentId',
+                'Required parameter "attachmentId" was null or undefined when calling getAttachment().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments/{attachmentId}`.replace(`{${"attachmentId"}}`, encodeURIComponent(String(requestParameters['attachmentId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AttachmentEntityDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/attachments/{attachmentId}`.replace(
-          `{${'attachmentId'}}`,
-          encodeURIComponent(String(requestParameters.attachmentId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      AttachmentEntityFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get an attachment entity
-   */
-  async getAttachment(
-    requestParameters: GetAttachmentRequest,
-    initOverrides?: RequestInit
-  ): Promise<AttachmentEntity> {
-    const response = await this.getAttachmentRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
-   * Get email attachment metadata information
-   */
-  async getAttachmentInfoRaw(
-    requestParameters: GetAttachmentInfoRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<AttachmentMetaData>> {
-    if (
-      requestParameters.attachmentId === null ||
-      requestParameters.attachmentId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'attachmentId',
-        'Required parameter requestParameters.attachmentId was null or undefined when calling getAttachmentInfo.'
-      );
+    /**
+     * Get an attachment entity
+     */
+    async getAttachment(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AttachmentEntityDto> {
+        const response = await this.getAttachmentRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
+     * Get email attachment metadata information
+     */
+    async getAttachmentInfoRaw(requestParameters: GetAttachmentInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AttachmentMetaData>> {
+        if (requestParameters['attachmentId'] == null) {
+            throw new runtime.RequiredError(
+                'attachmentId',
+                'Required parameter "attachmentId" was null or undefined when calling getAttachmentInfo().'
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments/{attachmentId}/metadata`.replace(`{${"attachmentId"}}`, encodeURIComponent(String(requestParameters['attachmentId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AttachmentMetaDataFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/attachments/{attachmentId}/metadata`.replace(
-          `{${'attachmentId'}}`,
-          encodeURIComponent(String(requestParameters.attachmentId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      AttachmentMetaDataFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
-   * Get email attachment metadata information
-   */
-  async getAttachmentInfo(
-    requestParameters: GetAttachmentInfoRequest,
-    initOverrides?: RequestInit
-  ): Promise<AttachmentMetaData> {
-    const response = await this.getAttachmentInfoRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
-   * Get email attachments
-   */
-  async getAttachmentsRaw(
-    requestParameters: GetAttachmentsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageAttachmentEntity>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+    /**
+     * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
+     * Get email attachment metadata information
+     */
+    async getAttachmentInfo(requestParameters: GetAttachmentInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AttachmentMetaData> {
+        const response = await this.getAttachmentInfoRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
+     * Get email attachments
+     */
+    async getAttachmentsRaw(requestParameters: GetAttachmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageAttachmentEntity>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['fileNameFilter'] != null) {
+            queryParameters['fileNameFilter'] = requestParameters['fileNameFilter'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageAttachmentEntityFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
+     * Get email attachments
+     */
+    async getAttachments(requestParameters: GetAttachmentsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageAttachmentEntity> {
+        const response = await this.getAttachmentsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.fileNameFilter !== undefined) {
-      queryParameters['fileNameFilter'] = requestParameters.fileNameFilter;
+    /**
+     * Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
+     */
+    async uploadAttachmentRaw(requestParameters: UploadAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>> {
+        if (requestParameters['uploadAttachmentOptions'] == null) {
+            throw new runtime.RequiredError(
+                'uploadAttachmentOptions',
+                'Required parameter "uploadAttachmentOptions" was null or undefined when calling uploadAttachment().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UploadAttachmentOptionsToJSON(requestParameters['uploadAttachmentOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    /**
+     * Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
+     */
+    async uploadAttachment(requestParameters: UploadAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>> {
+        const response = await this.uploadAttachmentRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
+    /**
+     * Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
+     */
+    async uploadAttachmentBytesRaw(requestParameters: UploadAttachmentBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['contentType2'] != null) {
+            queryParameters['contentType'] = requestParameters['contentType2'];
+        }
+
+        if (requestParameters['contentId'] != null) {
+            queryParameters['contentId'] = requestParameters['contentId'];
+        }
+
+        if (requestParameters['filename'] != null) {
+            queryParameters['filename'] = requestParameters['filename'];
+        }
+
+        if (requestParameters['fileSize'] != null) {
+            queryParameters['fileSize'] = requestParameters['fileSize'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['contentType'] != null) {
+            headerParameters['contentType'] = String(requestParameters['contentType']);
+        }
+
+        if (requestParameters['filename2'] != null) {
+            headerParameters['filename'] = String(requestParameters['filename2']);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments/bytes`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
     }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+    /**
+     * Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
+     */
+    async uploadAttachmentBytes(requestParameters: UploadAttachmentBytesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>> {
+        const response = await this.uploadAttachmentBytesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
+     */
+    async uploadMultipartFormRaw(requestParameters: UploadMultipartFormOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>> {
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters['contentId'] != null) {
+            queryParameters['contentId'] = requestParameters['contentId'];
+        }
+
+        if (requestParameters['contentType'] != null) {
+            queryParameters['contentType'] = requestParameters['contentType'];
+        }
+
+        if (requestParameters['filename'] != null) {
+            queryParameters['filename'] = requestParameters['filename'];
+        }
+
+        if (requestParameters['contentTypeHeader'] != null) {
+            queryParameters['contentTypeHeader'] = requestParameters['contentTypeHeader'];
+        }
+
+        if (requestParameters['xFilename'] != null) {
+            queryParameters['x-filename'] = requestParameters['xFilename'];
+        }
+
+        if (requestParameters['xFilenameRaw'] != null) {
+            queryParameters['x-filename-raw'] = requestParameters['xFilenameRaw'];
+        }
+
+        if (requestParameters['xFilesize'] != null) {
+            queryParameters['x-filesize'] = requestParameters['xFilesize'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/attachments/multipart`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UploadMultipartFormRequestToJSON(requestParameters['uploadMultipartFormRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/attachments`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageAttachmentEntityFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
-   * Get email attachments
-   */
-  async getAttachments(
-    requestParameters: GetAttachmentsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageAttachmentEntity> {
-    const response = await this.getAttachmentsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
-   */
-  async uploadAttachmentRaw(
-    requestParameters: UploadAttachmentRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<string>>> {
-    if (
-      requestParameters.uploadAttachmentOptions === null ||
-      requestParameters.uploadAttachmentOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'uploadAttachmentOptions',
-        'Required parameter requestParameters.uploadAttachmentOptions was null or undefined when calling uploadAttachment.'
-      );
+    /**
+     * Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
+     */
+    async uploadMultipartForm(requestParameters: UploadMultipartFormOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>> {
+        const response = await this.uploadMultipartFormRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/attachments`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: UploadAttachmentOptionsToJSON(
-          requestParameters.uploadAttachmentOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse<any>(response);
-  }
-
-  /**
-   * Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
-   */
-  async uploadAttachment(
-    requestParameters: UploadAttachmentRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<string>> {
-    const response = await this.uploadAttachmentRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
-   */
-  async uploadAttachmentBytesRaw(
-    requestParameters: UploadAttachmentBytesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<string>>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.contentType2 !== undefined) {
-      queryParameters['contentType'] = requestParameters.contentType2;
-    }
-
-    if (requestParameters.contentId !== undefined) {
-      queryParameters['contentId'] = requestParameters.contentId;
-    }
-
-    if (requestParameters.filename !== undefined) {
-      queryParameters['filename'] = requestParameters.filename;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (
-      requestParameters.contentType !== undefined &&
-      requestParameters.contentType !== null
-    ) {
-      headerParameters['contentType'] = String(requestParameters.contentType);
-    }
-
-    if (
-      requestParameters.filename2 !== undefined &&
-      requestParameters.filename2 !== null
-    ) {
-      headerParameters['filename'] = String(requestParameters.filename2);
-    }
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/attachments/bytes`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse<any>(response);
-  }
-
-  /**
-   * Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
-   */
-  async uploadAttachmentBytes(
-    requestParameters: UploadAttachmentBytesRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<string>> {
-    const response = await this.uploadAttachmentBytesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
-   */
-  async uploadMultipartFormRaw(
-    requestParameters: UploadMultipartFormRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<string>>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.contentId !== undefined) {
-      queryParameters['contentId'] = requestParameters.contentId;
-    }
-
-    if (requestParameters.contentType !== undefined) {
-      queryParameters['contentType'] = requestParameters.contentType;
-    }
-
-    if (requestParameters.filename !== undefined) {
-      queryParameters['filename'] = requestParameters.filename;
-    }
-
-    if (requestParameters.xFilename !== undefined) {
-      queryParameters['x-filename'] = requestParameters.xFilename;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/attachments/multipart`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: InlineObjectToJSON(requestParameters.inlineObject),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse<any>(response);
-  }
-
-  /**
-   * Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
-   */
-  async uploadMultipartForm(
-    requestParameters: UploadMultipartFormRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<string>> {
-    const response = await this.uploadMultipartFormRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
  * @export
- * @enum {string}
  */
-export enum GetAttachmentsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetAttachmentsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetAttachmentsSortEnum = typeof GetAttachmentsSortEnum[keyof typeof GetAttachmentsSortEnum];

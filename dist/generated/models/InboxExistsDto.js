@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxExistsDtoToJSON = exports.InboxExistsDtoFromJSONTyped = exports.InboxExistsDtoFromJSON = void 0;
+exports.instanceOfInboxExistsDto = instanceOfInboxExistsDto;
+exports.InboxExistsDtoFromJSON = InboxExistsDtoFromJSON;
+exports.InboxExistsDtoFromJSONTyped = InboxExistsDtoFromJSONTyped;
+exports.InboxExistsDtoToJSON = InboxExistsDtoToJSON;
+exports.InboxExistsDtoToJSONTyped = InboxExistsDtoToJSONTyped;
+/**
+ * Check if a given object implements the InboxExistsDto interface.
+ */
+function instanceOfInboxExistsDto(value) {
+    if (!('_exists' in value) || value['_exists'] === undefined)
+        return false;
+    return true;
+}
 function InboxExistsDtoFromJSON(json) {
     return InboxExistsDtoFromJSONTyped(json, false);
 }
-exports.InboxExistsDtoFromJSON = InboxExistsDtoFromJSON;
 function InboxExistsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        _exists: json['exists'],
+        '_exists': json['exists'],
     };
 }
-exports.InboxExistsDtoFromJSONTyped = InboxExistsDtoFromJSONTyped;
-function InboxExistsDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxExistsDtoToJSON(json) {
+    return InboxExistsDtoToJSONTyped(json, false);
+}
+function InboxExistsDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        exists: value._exists,
+        'exists': value['_exists'],
     };
 }
-exports.InboxExistsDtoToJSON = InboxExistsDtoToJSON;

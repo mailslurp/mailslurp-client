@@ -1,8 +1,11 @@
+import { expect, test, describe, it } from 'vitest';
 import { integrationTest } from './_helpers';
 import MailSlurp from '../dist';
 
-jest.setTimeout(120_000);
-integrationTest('can create inboxes', async (mailslurp) => {
+
+test('can create inboxes', async () => {
+  const config = { apiKey: process.env.API_KEY };
+  const mailslurp = new MailSlurp(config);
   // check account
   const userInfo = await mailslurp.userController.getUserInfo();
   expect(userInfo.id.length).toBeGreaterThan(0);
@@ -25,16 +28,18 @@ integrationTest('can create inboxes', async (mailslurp) => {
     });
   } catch (e) {
     // handle the error and status code in your code
-    const statusCode = e.status;
-    const errorMessage = await e.text();
+    const statusCode = e.response.status;
+    const errorMessage = await e.response.text();
 
     expect(errorMessage).toContain('Failed to satisfy email query for inbox');
     expect(statusCode).toEqual(408);
   }
   //</gen>
-});
+}, 120_000);
 
-integrationTest('send with queue', async (mailslurp) => {
+test('send with queue', async () => {
+  const config = { apiKey: process.env.API_KEY };
+  const mailslurp = new MailSlurp(config);
   const inbox = await mailslurp.createInbox();
   const inboxId = inbox.id!;
   const recipient = inbox.emailAddress;
@@ -54,7 +59,7 @@ integrationTest('send with queue', async (mailslurp) => {
   //</gen>
   const email = await mailslurp.waitForLatestEmail(inboxId, 60_000);
   expect(email.subject).toContain('Sent with a queue');
-});
+}, 120_000);
 
 describe('email verification', () => {
   const config = { apiKey: process.env.API_KEY };
@@ -69,10 +74,10 @@ describe('email verification', () => {
         },
       });
     expect(res.resultMapEmailAddressIsValid['contact@mailslurp.dev']).toEqual(
-      true
+      true,
     );
     expect(res.resultMapEmailAddressIsValid['bad@mailslurp.dev']).toEqual(
-      false
+      false,
     );
     //</gen>
   });
@@ -144,7 +149,7 @@ describe('wait_for_latest', () => {
     const allEmails = await mailslurp.getEmails(inbox.id);
     expect(allEmails).toHaveLength(2);
     //</gen>
-  });
+  }, 120_000);
 });
 import * as fs from 'fs';
 import * as path from 'path';
@@ -165,7 +170,7 @@ describe('send email', () => {
     const sent = await mailslurp.sendEmail(inbox.id, options);
     expect(sent.subject).toContain('Hello');
     //</gen>
-  });
+  }, 120_000);
   test('attachments', async () => {
     const config = { apiKey: process.env.API_KEY };
     //<gen>upload_attachment
@@ -229,7 +234,7 @@ describe('send email', () => {
     expect(attachmentDto.base64FileContents).toBeTruthy();
     const fileContent = new Buffer(
       attachmentDto.base64FileContents,
-      'base64'
+      'base64',
     ).toString();
     expect(fileContent).toContain('test');
 
@@ -237,5 +242,5 @@ describe('send email', () => {
     expect(attachmentDto.sizeBytes).toBeTruthy();
     expect(attachmentDto.contentType).toBeTruthy();
     //</gen>
-  });
+  }, 120_000);
 });

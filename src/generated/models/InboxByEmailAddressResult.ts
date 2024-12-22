@@ -12,57 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Result of search for inbox by email address
  * @export
  * @interface InboxByEmailAddressResult
  */
 export interface InboxByEmailAddressResult {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxByEmailAddressResult
-   */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxByEmailAddressResult
-   */
-  _exists: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxByEmailAddressResult
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxByEmailAddressResult
+     */
+    _exists: boolean;
 }
 
-export function InboxByEmailAddressResultFromJSON(
-  json: any
-): InboxByEmailAddressResult {
-  return InboxByEmailAddressResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the InboxByEmailAddressResult interface.
+ */
+export function instanceOfInboxByEmailAddressResult(value: object): value is InboxByEmailAddressResult {
+    if (!('_exists' in value) || value['_exists'] === undefined) return false;
+    return true;
 }
 
-export function InboxByEmailAddressResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxByEmailAddressResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    _exists: json['exists'],
-  };
+export function InboxByEmailAddressResultFromJSON(json: any): InboxByEmailAddressResult {
+    return InboxByEmailAddressResultFromJSONTyped(json, false);
 }
 
-export function InboxByEmailAddressResultToJSON(
-  value?: InboxByEmailAddressResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    exists: value._exists,
-  };
+export function InboxByEmailAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxByEmailAddressResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        '_exists': json['exists'],
+    };
 }
+
+export function InboxByEmailAddressResultToJSON(json: any): InboxByEmailAddressResult {
+    return InboxByEmailAddressResultToJSONTyped(json, false);
+}
+
+export function InboxByEmailAddressResultToJSONTyped(value?: InboxByEmailAddressResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxId': value['inboxId'],
+        'exists': value['_exists'],
+    };
+}
+

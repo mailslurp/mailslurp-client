@@ -13,33 +13,47 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpiredInboxDtoToJSON = exports.ExpiredInboxDtoFromJSONTyped = exports.ExpiredInboxDtoFromJSON = void 0;
+exports.instanceOfExpiredInboxDto = instanceOfExpiredInboxDto;
+exports.ExpiredInboxDtoFromJSON = ExpiredInboxDtoFromJSON;
+exports.ExpiredInboxDtoFromJSONTyped = ExpiredInboxDtoFromJSONTyped;
+exports.ExpiredInboxDtoToJSON = ExpiredInboxDtoToJSON;
+exports.ExpiredInboxDtoToJSONTyped = ExpiredInboxDtoToJSONTyped;
+/**
+ * Check if a given object implements the ExpiredInboxDto interface.
+ */
+function instanceOfExpiredInboxDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    return true;
+}
 function ExpiredInboxDtoFromJSON(json) {
     return ExpiredInboxDtoFromJSONTyped(json, false);
 }
-exports.ExpiredInboxDtoFromJSON = ExpiredInboxDtoFromJSON;
 function ExpiredInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        inboxId: json['inboxId'],
-        emailAddress: json['emailAddress'],
+        'id': json['id'],
+        'inboxId': json['inboxId'],
+        'emailAddress': json['emailAddress'],
     };
 }
-exports.ExpiredInboxDtoFromJSONTyped = ExpiredInboxDtoFromJSONTyped;
-function ExpiredInboxDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ExpiredInboxDtoToJSON(json) {
+    return ExpiredInboxDtoToJSONTyped(json, false);
+}
+function ExpiredInboxDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        inboxId: value.inboxId,
-        emailAddress: value.emailAddress,
+        'id': value['id'],
+        'inboxId': value['inboxId'],
+        'emailAddress': value['emailAddress'],
     };
 }
-exports.ExpiredInboxDtoToJSON = ExpiredInboxDtoToJSON;

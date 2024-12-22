@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JSONSchemaDtoToJSON = exports.JSONSchemaDtoFromJSONTyped = exports.JSONSchemaDtoFromJSON = void 0;
+exports.instanceOfJSONSchemaDto = instanceOfJSONSchemaDto;
+exports.JSONSchemaDtoFromJSON = JSONSchemaDtoFromJSON;
+exports.JSONSchemaDtoFromJSONTyped = JSONSchemaDtoFromJSONTyped;
+exports.JSONSchemaDtoToJSON = JSONSchemaDtoToJSON;
+exports.JSONSchemaDtoToJSONTyped = JSONSchemaDtoToJSONTyped;
+/**
+ * Check if a given object implements the JSONSchemaDto interface.
+ */
+function instanceOfJSONSchemaDto(value) {
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function JSONSchemaDtoFromJSON(json) {
     return JSONSchemaDtoFromJSONTyped(json, false);
 }
-exports.JSONSchemaDtoFromJSON = JSONSchemaDtoFromJSON;
 function JSONSchemaDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        value: json['value'],
+        'value': json['value'],
     };
 }
-exports.JSONSchemaDtoFromJSONTyped = JSONSchemaDtoFromJSONTyped;
-function JSONSchemaDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function JSONSchemaDtoToJSON(json) {
+    return JSONSchemaDtoToJSONTyped(json, false);
+}
+function JSONSchemaDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        value: value.value,
+        'value': value['value'],
     };
 }
-exports.JSONSchemaDtoToJSON = JSONSchemaDtoToJSON;

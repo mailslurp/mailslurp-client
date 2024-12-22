@@ -13,42 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureSupportStatusPercentageToJSON = exports.EmailFeatureSupportStatusPercentageFromJSONTyped = exports.EmailFeatureSupportStatusPercentageFromJSON = exports.EmailFeatureSupportStatusPercentageStatusEnum = void 0;
+exports.EmailFeatureSupportStatusPercentageStatusEnum = void 0;
+exports.instanceOfEmailFeatureSupportStatusPercentage = instanceOfEmailFeatureSupportStatusPercentage;
+exports.EmailFeatureSupportStatusPercentageFromJSON = EmailFeatureSupportStatusPercentageFromJSON;
+exports.EmailFeatureSupportStatusPercentageFromJSONTyped = EmailFeatureSupportStatusPercentageFromJSONTyped;
+exports.EmailFeatureSupportStatusPercentageToJSON = EmailFeatureSupportStatusPercentageToJSON;
+exports.EmailFeatureSupportStatusPercentageToJSONTyped = EmailFeatureSupportStatusPercentageToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var EmailFeatureSupportStatusPercentageStatusEnum;
-(function (EmailFeatureSupportStatusPercentageStatusEnum) {
-    EmailFeatureSupportStatusPercentageStatusEnum["SUPPORTED"] = "SUPPORTED";
-    EmailFeatureSupportStatusPercentageStatusEnum["PARTIAL"] = "PARTIAL";
-    EmailFeatureSupportStatusPercentageStatusEnum["NOT_SUPPORTED"] = "NOT_SUPPORTED";
-    EmailFeatureSupportStatusPercentageStatusEnum["UNKNOWN"] = "UNKNOWN";
-})(EmailFeatureSupportStatusPercentageStatusEnum = exports.EmailFeatureSupportStatusPercentageStatusEnum || (exports.EmailFeatureSupportStatusPercentageStatusEnum = {}));
+exports.EmailFeatureSupportStatusPercentageStatusEnum = {
+    SUPPORTED: 'SUPPORTED',
+    PARTIAL: 'PARTIAL',
+    NOT_SUPPORTED: 'NOT_SUPPORTED',
+    UNKNOWN: 'UNKNOWN'
+};
+/**
+ * Check if a given object implements the EmailFeatureSupportStatusPercentage interface.
+ */
+function instanceOfEmailFeatureSupportStatusPercentage(value) {
+    if (!('status' in value) || value['status'] === undefined)
+        return false;
+    if (!('percentage' in value) || value['percentage'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeatureSupportStatusPercentageFromJSON(json) {
     return EmailFeatureSupportStatusPercentageFromJSONTyped(json, false);
 }
-exports.EmailFeatureSupportStatusPercentageFromJSON = EmailFeatureSupportStatusPercentageFromJSON;
 function EmailFeatureSupportStatusPercentageFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        status: json['status'],
-        percentage: json['percentage'],
+        'status': json['status'],
+        'percentage': json['percentage'],
     };
 }
-exports.EmailFeatureSupportStatusPercentageFromJSONTyped = EmailFeatureSupportStatusPercentageFromJSONTyped;
-function EmailFeatureSupportStatusPercentageToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeatureSupportStatusPercentageToJSON(json) {
+    return EmailFeatureSupportStatusPercentageToJSONTyped(json, false);
+}
+function EmailFeatureSupportStatusPercentageToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        status: value.status,
-        percentage: value.percentage,
+        'status': value['status'],
+        'percentage': value['percentage'],
     };
 }
-exports.EmailFeatureSupportStatusPercentageToJSON = EmailFeatureSupportStatusPercentageToJSON;

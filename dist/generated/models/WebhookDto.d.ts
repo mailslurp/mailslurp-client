@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { WebhookHeaders } from './';
+import type { WebhookHeaders } from './WebhookHeaders';
 /**
  * Representation of a webhook for an inbox. The URL specified will be using by MailSlurp whenever an email is received by the attached inbox. A webhook entity should have a URL that points to your server. Your server should accept HTTP/S POST requests and return a success 200. MailSlurp will retry your webhooks if they fail. See https://api.mailslurp.com/schemas/webhook-payload for the payload schema.
  * @export
@@ -93,7 +93,7 @@ export interface WebhookDto {
      * @type {string}
      * @memberof WebhookDto
      */
-    eventName?: WebhookDtoEventNameEnum;
+    eventName?: WebhookDtoEventNameEnum | null;
     /**
      *
      * @type {WebhookHeaders}
@@ -112,37 +112,57 @@ export interface WebhookDto {
      * @memberof WebhookDto
      */
     useStaticIpRange?: boolean | null;
+    /**
+     * Webhook health
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    healthStatus?: WebhookDtoHealthStatusEnum | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookDtoMethodEnum {
-    POST = "POST",
-    DELETE = "DELETE",
-    GET = "GET",
-    PUT = "PUT",
-    PATCH = "PATCH",
-    HEAD = "HEAD",
-    OPTIONS = "OPTIONS",
-    TRACE = "TRACE"
-}
+export declare const WebhookDtoMethodEnum: {
+    readonly POST: "POST";
+    readonly DELETE: "DELETE";
+    readonly GET: "GET";
+    readonly PUT: "PUT";
+    readonly PATCH: "PATCH";
+    readonly HEAD: "HEAD";
+    readonly OPTIONS: "OPTIONS";
+    readonly TRACE: "TRACE";
+};
+export type WebhookDtoMethodEnum = typeof WebhookDtoMethodEnum[keyof typeof WebhookDtoMethodEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookDtoEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const WebhookDtoEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type WebhookDtoEventNameEnum = typeof WebhookDtoEventNameEnum[keyof typeof WebhookDtoEventNameEnum];
+/**
+ * @export
+ */
+export declare const WebhookDtoHealthStatusEnum: {
+    readonly HEALTHY: "HEALTHY";
+    readonly UNHEALTHY: "UNHEALTHY";
+};
+export type WebhookDtoHealthStatusEnum = typeof WebhookDtoHealthStatusEnum[keyof typeof WebhookDtoHealthStatusEnum];
+/**
+ * Check if a given object implements the WebhookDto interface.
+ */
+export declare function instanceOfWebhookDto(value: object): value is WebhookDto;
 export declare function WebhookDtoFromJSON(json: any): WebhookDto;
 export declare function WebhookDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookDto;
-export declare function WebhookDtoToJSON(value?: WebhookDto | null): any;
+export declare function WebhookDtoToJSON(json: any): WebhookDto;
+export declare function WebhookDtoToJSONTyped(value?: WebhookDto | null, ignoreDiscriminator?: boolean): any;

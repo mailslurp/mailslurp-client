@@ -13,48 +13,60 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateTlsReportingRecordOptionsToJSON = exports.GenerateTlsReportingRecordOptionsFromJSONTyped = exports.GenerateTlsReportingRecordOptionsFromJSON = exports.GenerateTlsReportingRecordOptionsVersionEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.GenerateTlsReportingRecordOptionsVersionEnum = void 0;
+exports.instanceOfGenerateTlsReportingRecordOptions = instanceOfGenerateTlsReportingRecordOptions;
+exports.GenerateTlsReportingRecordOptionsFromJSON = GenerateTlsReportingRecordOptionsFromJSON;
+exports.GenerateTlsReportingRecordOptionsFromJSONTyped = GenerateTlsReportingRecordOptionsFromJSONTyped;
+exports.GenerateTlsReportingRecordOptionsToJSON = GenerateTlsReportingRecordOptionsToJSON;
+exports.GenerateTlsReportingRecordOptionsToJSONTyped = GenerateTlsReportingRecordOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var GenerateTlsReportingRecordOptionsVersionEnum;
-(function (GenerateTlsReportingRecordOptionsVersionEnum) {
-    GenerateTlsReportingRecordOptionsVersionEnum["TLSRPTv1"] = "TLSRPTv1";
-})(GenerateTlsReportingRecordOptionsVersionEnum = exports.GenerateTlsReportingRecordOptionsVersionEnum || (exports.GenerateTlsReportingRecordOptionsVersionEnum = {}));
+exports.GenerateTlsReportingRecordOptionsVersionEnum = {
+    TLSRPTv1: 'TLSRPTv1'
+};
+/**
+ * Check if a given object implements the GenerateTlsReportingRecordOptions interface.
+ */
+function instanceOfGenerateTlsReportingRecordOptions(value) {
+    if (!('reportingAddresses' in value) || value['reportingAddresses'] === undefined)
+        return false;
+    if (!('host' in value) || value['host'] === undefined)
+        return false;
+    if (!('version' in value) || value['version'] === undefined)
+        return false;
+    if (!('ttl' in value) || value['ttl'] === undefined)
+        return false;
+    return true;
+}
 function GenerateTlsReportingRecordOptionsFromJSON(json) {
     return GenerateTlsReportingRecordOptionsFromJSONTyped(json, false);
 }
-exports.GenerateTlsReportingRecordOptionsFromJSON = GenerateTlsReportingRecordOptionsFromJSON;
 function GenerateTlsReportingRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        reportingAddresses: json['reportingAddresses'],
-        reportingUrl: !(0, runtime_1.exists)(json, 'reportingUrl')
-            ? undefined
-            : json['reportingUrl'],
-        host: json['host'],
-        version: json['version'],
-        ttl: json['ttl'],
+        'reportingAddresses': json['reportingAddresses'],
+        'reportingUrl': json['reportingUrl'] == null ? undefined : json['reportingUrl'],
+        'host': json['host'],
+        'version': json['version'],
+        'ttl': json['ttl'],
     };
 }
-exports.GenerateTlsReportingRecordOptionsFromJSONTyped = GenerateTlsReportingRecordOptionsFromJSONTyped;
-function GenerateTlsReportingRecordOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GenerateTlsReportingRecordOptionsToJSON(json) {
+    return GenerateTlsReportingRecordOptionsToJSONTyped(json, false);
+}
+function GenerateTlsReportingRecordOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        reportingAddresses: value.reportingAddresses,
-        reportingUrl: value.reportingUrl,
-        host: value.host,
-        version: value.version,
-        ttl: value.ttl,
+        'reportingAddresses': value['reportingAddresses'],
+        'reportingUrl': value['reportingUrl'],
+        'host': value['host'],
+        'version': value['version'],
+        'ttl': value['ttl'],
     };
 }
-exports.GenerateTlsReportingRecordOptionsToJSON = GenerateTlsReportingRecordOptionsToJSON;

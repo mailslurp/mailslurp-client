@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SortObject, TrackingPixelProjection } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { TrackingPixelProjection } from './TrackingPixelProjection';
 /**
  * Paginated TrackingPixel results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageTrackingPixelProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageTrackingPixelProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageTrackingPixelProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageTrackingPixelProjection interface.
+ */
+export declare function instanceOfPageTrackingPixelProjection(value: object): value is PageTrackingPixelProjection;
 export declare function PageTrackingPixelProjectionFromJSON(json: any): PageTrackingPixelProjection;
 export declare function PageTrackingPixelProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageTrackingPixelProjection;
-export declare function PageTrackingPixelProjectionToJSON(value?: PageTrackingPixelProjection | null): any;
+export declare function PageTrackingPixelProjectionToJSON(json: any): PageTrackingPixelProjection;
+export declare function PageTrackingPixelProjectionToJSONTyped(value?: PageTrackingPixelProjection | null, ignoreDiscriminator?: boolean): any;

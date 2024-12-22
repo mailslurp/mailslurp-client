@@ -22,6 +22,11 @@ export interface UnseenErrorCountDto {
      */
     count: number;
 }
+/**
+ * Check if a given object implements the UnseenErrorCountDto interface.
+ */
+export declare function instanceOfUnseenErrorCountDto(value: object): value is UnseenErrorCountDto;
 export declare function UnseenErrorCountDtoFromJSON(json: any): UnseenErrorCountDto;
 export declare function UnseenErrorCountDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnseenErrorCountDto;
-export declare function UnseenErrorCountDtoToJSON(value?: UnseenErrorCountDto | null): any;
+export declare function UnseenErrorCountDtoToJSON(json: any): UnseenErrorCountDto;
+export declare function UnseenErrorCountDtoToJSONTyped(value?: UnseenErrorCountDto | null, ignoreDiscriminator?: boolean): any;

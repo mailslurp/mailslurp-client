@@ -12,53 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Basic Authentication options for webhooks. Will be used is present when calling webhook endpoints.
  * @export
  * @interface BasicAuthOptions
  */
 export interface BasicAuthOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof BasicAuthOptions
-   */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BasicAuthOptions
-   */
-  password: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BasicAuthOptions
+     */
+    username: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BasicAuthOptions
+     */
+    password: string;
+}
+
+/**
+ * Check if a given object implements the BasicAuthOptions interface.
+ */
+export function instanceOfBasicAuthOptions(value: object): value is BasicAuthOptions {
+    if (!('username' in value) || value['username'] === undefined) return false;
+    if (!('password' in value) || value['password'] === undefined) return false;
+    return true;
 }
 
 export function BasicAuthOptionsFromJSON(json: any): BasicAuthOptions {
-  return BasicAuthOptionsFromJSONTyped(json, false);
+    return BasicAuthOptionsFromJSONTyped(json, false);
 }
 
-export function BasicAuthOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): BasicAuthOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    username: json['username'],
-    password: json['password'],
-  };
+export function BasicAuthOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): BasicAuthOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'username': json['username'],
+        'password': json['password'],
+    };
 }
 
-export function BasicAuthOptionsToJSON(value?: BasicAuthOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    username: value.username,
-    password: value.password,
-  };
+export function BasicAuthOptionsToJSON(json: any): BasicAuthOptions {
+    return BasicAuthOptionsToJSONTyped(json, false);
 }
+
+export function BasicAuthOptionsToJSONTyped(value?: BasicAuthOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'username': value['username'],
+        'password': value['password'],
+    };
+}
+

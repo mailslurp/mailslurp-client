@@ -16,6 +16,12 @@
  */
 export interface ImapSmtpAccessDetails {
     /**
+     * Email address for SMTP/IMAP login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    emailAddress: string;
+    /**
      * Secure TLS SMTP server host domain
      * @type {string}
      * @memberof ImapSmtpAccessDetails
@@ -124,6 +130,11 @@ export interface ImapSmtpAccessDetails {
      */
     mailFromDomain?: string | null;
 }
+/**
+ * Check if a given object implements the ImapSmtpAccessDetails interface.
+ */
+export declare function instanceOfImapSmtpAccessDetails(value: object): value is ImapSmtpAccessDetails;
 export declare function ImapSmtpAccessDetailsFromJSON(json: any): ImapSmtpAccessDetails;
 export declare function ImapSmtpAccessDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapSmtpAccessDetails;
-export declare function ImapSmtpAccessDetailsToJSON(value?: ImapSmtpAccessDetails | null): any;
+export declare function ImapSmtpAccessDetailsToJSON(json: any): ImapSmtpAccessDetails;
+export declare function ImapSmtpAccessDetailsToJSONTyped(value?: ImapSmtpAccessDetails | null, ignoreDiscriminator?: boolean): any;

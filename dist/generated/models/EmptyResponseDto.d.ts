@@ -22,6 +22,11 @@ export interface EmptyResponseDto {
      */
     message?: string;
 }
+/**
+ * Check if a given object implements the EmptyResponseDto interface.
+ */
+export declare function instanceOfEmptyResponseDto(value: object): value is EmptyResponseDto;
 export declare function EmptyResponseDtoFromJSON(json: any): EmptyResponseDto;
 export declare function EmptyResponseDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmptyResponseDto;
-export declare function EmptyResponseDtoToJSON(value?: EmptyResponseDto | null): any;
+export declare function EmptyResponseDtoToJSON(json: any): EmptyResponseDto;
+export declare function EmptyResponseDtoToJSONTyped(value?: EmptyResponseDto | null, ignoreDiscriminator?: boolean): any;

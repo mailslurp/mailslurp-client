@@ -13,33 +13,38 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FakeEmailResultToJSON = exports.FakeEmailResultFromJSONTyped = exports.FakeEmailResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfFakeEmailResult = instanceOfFakeEmailResult;
+exports.FakeEmailResultFromJSON = FakeEmailResultFromJSON;
+exports.FakeEmailResultFromJSONTyped = FakeEmailResultFromJSONTyped;
+exports.FakeEmailResultToJSON = FakeEmailResultToJSON;
+exports.FakeEmailResultToJSONTyped = FakeEmailResultToJSONTyped;
+var FakeEmailDto_1 = require("./FakeEmailDto");
+/**
+ * Check if a given object implements the FakeEmailResult interface.
+ */
+function instanceOfFakeEmailResult(value) {
+    return true;
+}
 function FakeEmailResultFromJSON(json) {
     return FakeEmailResultFromJSONTyped(json, false);
 }
-exports.FakeEmailResultFromJSON = FakeEmailResultFromJSON;
 function FakeEmailResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        email: !(0, runtime_1.exists)(json, 'email')
-            ? undefined
-            : (0, _1.FakeEmailDtoFromJSON)(json['email']),
+        'email': json['email'] == null ? undefined : (0, FakeEmailDto_1.FakeEmailDtoFromJSON)(json['email']),
     };
 }
-exports.FakeEmailResultFromJSONTyped = FakeEmailResultFromJSONTyped;
-function FakeEmailResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function FakeEmailResultToJSON(json) {
+    return FakeEmailResultToJSONTyped(json, false);
+}
+function FakeEmailResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        email: (0, _1.FakeEmailDtoToJSON)(value.email),
+        'email': (0, FakeEmailDto_1.FakeEmailDtoToJSON)(value['email']),
     };
 }
-exports.FakeEmailResultToJSON = FakeEmailResultToJSON;

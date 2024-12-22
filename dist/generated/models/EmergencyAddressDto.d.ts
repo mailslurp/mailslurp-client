@@ -36,13 +36,18 @@ export interface EmergencyAddressDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum EmergencyAddressDtoPhoneCountryEnum {
-    US = "US",
-    GB = "GB",
-    AU = "AU"
-}
+export declare const EmergencyAddressDtoPhoneCountryEnum: {
+    readonly US: "US";
+    readonly GB: "GB";
+    readonly AU: "AU";
+};
+export type EmergencyAddressDtoPhoneCountryEnum = typeof EmergencyAddressDtoPhoneCountryEnum[keyof typeof EmergencyAddressDtoPhoneCountryEnum];
+/**
+ * Check if a given object implements the EmergencyAddressDto interface.
+ */
+export declare function instanceOfEmergencyAddressDto(value: object): value is EmergencyAddressDto;
 export declare function EmergencyAddressDtoFromJSON(json: any): EmergencyAddressDto;
 export declare function EmergencyAddressDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmergencyAddressDto;
-export declare function EmergencyAddressDtoToJSON(value?: EmergencyAddressDto | null): any;
+export declare function EmergencyAddressDtoToJSON(json: any): EmergencyAddressDto;
+export declare function EmergencyAddressDtoToJSONTyped(value?: EmergencyAddressDto | null, ignoreDiscriminator?: boolean): any;

@@ -42,12 +42,17 @@ export interface SpellingIssue {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum SpellingIssueSeverityEnum {
-    Warning = "Warning",
-    Error = "Error"
-}
+export declare const SpellingIssueSeverityEnum: {
+    readonly Warning: "Warning";
+    readonly Error: "Error";
+};
+export type SpellingIssueSeverityEnum = typeof SpellingIssueSeverityEnum[keyof typeof SpellingIssueSeverityEnum];
+/**
+ * Check if a given object implements the SpellingIssue interface.
+ */
+export declare function instanceOfSpellingIssue(value: object): value is SpellingIssue;
 export declare function SpellingIssueFromJSON(json: any): SpellingIssue;
 export declare function SpellingIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): SpellingIssue;
-export declare function SpellingIssueToJSON(value?: SpellingIssue | null): any;
+export declare function SpellingIssueToJSON(json: any): SpellingIssue;
+export declare function SpellingIssueToJSONTyped(value?: SpellingIssue | null, ignoreDiscriminator?: boolean): any;

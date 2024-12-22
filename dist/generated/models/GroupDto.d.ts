@@ -40,6 +40,11 @@ export interface GroupDto {
      */
     createdAt: Date;
 }
+/**
+ * Check if a given object implements the GroupDto interface.
+ */
+export declare function instanceOfGroupDto(value: object): value is GroupDto;
 export declare function GroupDtoFromJSON(json: any): GroupDto;
 export declare function GroupDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupDto;
-export declare function GroupDtoToJSON(value?: GroupDto | null): any;
+export declare function GroupDtoToJSON(json: any): GroupDto;
+export declare function GroupDtoToJSONTyped(value?: GroupDto | null, ignoreDiscriminator?: boolean): any;

@@ -10,9 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ConnectorDto, ConnectorImapConnectionDto, ConnectorSmtpConnectionDto, ConnectorSyncEventDto, ConnectorSyncRequestResult, CreateConnectorImapConnectionOptions, CreateConnectorOptions, CreateConnectorSmtpConnectionOptions, PageConnector, PageConnectorSyncEvents } from '../models';
+import type { ConnectorDto, ConnectorEventDto, ConnectorImapConnectionDto, ConnectorImapConnectionTestResult, ConnectorProviderSettingsDto, ConnectorSmtpConnectionDto, ConnectorSmtpConnectionTestResult, ConnectorSyncRequestResult, ConnectorSyncSettingsDto, CreateConnectorImapConnectionOptions, CreateConnectorOptions, CreateConnectorSmtpConnectionOptions, CreateConnectorSyncSettingsOptions, CreateConnectorWithOptions, OptionalConnectorDto, OptionalConnectorImapConnectionDto, OptionalConnectorSmtpConnectionDto, OptionalConnectorSyncSettingsDto, PageConnector, PageConnectorEvents, SendEmailOptions, SentEmailDto } from '../models/index';
 export interface CreateConnectorRequest {
     createConnectorOptions: CreateConnectorOptions;
+    inboxId?: string;
 }
 export interface CreateConnectorImapConnectionRequest {
     id: string;
@@ -21,6 +22,14 @@ export interface CreateConnectorImapConnectionRequest {
 export interface CreateConnectorSmtpConnectionRequest {
     id: string;
     createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
+}
+export interface CreateConnectorSyncSettingsRequest {
+    id: string;
+    createConnectorSyncSettingsOptions: CreateConnectorSyncSettingsOptions;
+}
+export interface CreateConnectorWithOptionsRequest {
+    createConnectorWithOptions: CreateConnectorWithOptions;
+    inboxId?: string;
 }
 export interface DeleteConnectorRequest {
     id: string;
@@ -31,26 +40,50 @@ export interface DeleteConnectorImapConnectionRequest {
 export interface DeleteConnectorSmtpConnectionRequest {
     id: string;
 }
-export interface GetAllConnectorSyncEventsRequest {
+export interface DeleteConnectorSyncSettingsRequest {
+    id: string;
+}
+export interface GetAllConnectorEventsRequest {
+    id?: string;
     page?: number;
     size?: number;
-    sort?: GetAllConnectorSyncEventsSortEnum;
+    sort?: GetAllConnectorEventsSortEnum;
     since?: Date;
     before?: Date;
+    eventType?: GetAllConnectorEventsEventTypeEnum;
 }
 export interface GetConnectorRequest {
     id: string;
 }
-export interface GetConnectorSyncEventRequest {
+export interface GetConnectorByEmailAddressRequest {
+    emailAddress: string;
+}
+export interface GetConnectorByInboxIdRequest {
+    inboxId: string;
+}
+export interface GetConnectorByNameRequest {
+    name: string;
+}
+export interface GetConnectorEventRequest {
     id: string;
 }
-export interface GetConnectorSyncEventsRequest {
+export interface GetConnectorEventsRequest {
     id: string;
     page?: number;
     size?: number;
-    sort?: GetConnectorSyncEventsSortEnum;
+    sort?: GetConnectorEventsSortEnum;
     since?: Date;
     before?: Date;
+    eventType?: GetConnectorEventsEventTypeEnum;
+}
+export interface GetConnectorImapConnectionRequest {
+    id: string;
+}
+export interface GetConnectorSmtpConnectionRequest {
+    id: string;
+}
+export interface GetConnectorSyncSettingsRequest {
+    id: string;
 }
 export interface GetConnectorsRequest {
     page?: number;
@@ -59,12 +92,42 @@ export interface GetConnectorsRequest {
     since?: Date;
     before?: Date;
 }
+export interface SendEmailFromConnectorRequest {
+    id: string;
+    sendEmailOptions: SendEmailOptions;
+    useFallback?: boolean;
+}
 export interface SyncConnectorRequest {
     id: string;
+    since?: Date;
+    folder?: string;
+    logging?: boolean;
+}
+export interface TestConnectorImapConnectionRequest {
+    id: string;
+    createConnectorImapConnectionOptions?: CreateConnectorImapConnectionOptions;
+}
+export interface TestConnectorImapConnectionOptionsRequest {
+    createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
+}
+export interface TestConnectorSmtpConnectionRequest {
+    id: string;
+    createConnectorSmtpConnectionOptions?: CreateConnectorSmtpConnectionOptions;
+}
+export interface TestConnectorSmtpConnectionOptionsRequest {
+    createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
 }
 export interface UpdateConnectorRequest {
     id: string;
     createConnectorOptions: CreateConnectorOptions;
+}
+export interface UpdateConnectorImapConnectionRequest {
+    id: string;
+    createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
+}
+export interface UpdateConnectorSmtpConnectionRequest {
+    id: string;
+    createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
 }
 /**
  *
@@ -74,148 +137,332 @@ export declare class ConnectorControllerApi extends runtime.BaseAPI {
      * Sync emails between external mailboxes and MailSlurp inboxes
      * Create an inbox connector
      */
-    createConnectorRaw(requestParameters: CreateConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorDto>>;
+    createConnectorRaw(requestParameters: CreateConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorDto>>;
     /**
      * Sync emails between external mailboxes and MailSlurp inboxes
      * Create an inbox connector
      */
-    createConnector(requestParameters: CreateConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorDto>;
+    createConnector(requestParameters: CreateConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorDto>;
     /**
      * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
      * Create an inbox connector IMAP connection
      */
-    createConnectorImapConnectionRaw(requestParameters: CreateConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorImapConnectionDto>>;
+    createConnectorImapConnectionRaw(requestParameters: CreateConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorImapConnectionDto>>;
     /**
      * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
      * Create an inbox connector IMAP connection
      */
-    createConnectorImapConnection(requestParameters: CreateConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorImapConnectionDto>;
+    createConnectorImapConnection(requestParameters: CreateConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorImapConnectionDto>;
     /**
      * Allows sending via connector and email is routed to connected inbox and sent via SMTP
      * Create an inbox connector SMTP connection
      */
-    createConnectorSmtpConnectionRaw(requestParameters: CreateConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSmtpConnectionDto>>;
+    createConnectorSmtpConnectionRaw(requestParameters: CreateConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorSmtpConnectionDto>>;
     /**
      * Allows sending via connector and email is routed to connected inbox and sent via SMTP
      * Create an inbox connector SMTP connection
      */
-    createConnectorSmtpConnection(requestParameters: CreateConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorSmtpConnectionDto>;
+    createConnectorSmtpConnection(requestParameters: CreateConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorSmtpConnectionDto>;
+    /**
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
+     */
+    createConnectorSyncSettingsRaw(requestParameters: CreateConnectorSyncSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorSyncSettingsDto>>;
+    /**
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
+     */
+    createConnectorSyncSettings(requestParameters: CreateConnectorSyncSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorSyncSettingsDto>;
+    /**
+     * Sync emails between external mailboxes and MailSlurp inboxes
+     * Create an inbox connector with options
+     */
+    createConnectorWithOptionsRaw(requestParameters: CreateConnectorWithOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorDto>>;
+    /**
+     * Sync emails between external mailboxes and MailSlurp inboxes
+     * Create an inbox connector with options
+     */
+    createConnectorWithOptions(requestParameters: CreateConnectorWithOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorDto>;
     /**
      * Delete all inbox connectors
      */
-    deleteAllConnectorRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllConnectorRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete all inbox connectors
      */
-    deleteAllConnector(initOverrides?: RequestInit): Promise<void>;
+    deleteAllConnector(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete an inbox connector
      */
-    deleteConnectorRaw(requestParameters: DeleteConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteConnectorRaw(requestParameters: DeleteConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete an inbox connector
      */
-    deleteConnector(requestParameters: DeleteConnectorRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteConnector(requestParameters: DeleteConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete IMAP connection for external inbox
      * Delete an inbox connector IMAP connection
      */
-    deleteConnectorImapConnectionRaw(requestParameters: DeleteConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteConnectorImapConnectionRaw(requestParameters: DeleteConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete IMAP connection for external inbox
      * Delete an inbox connector IMAP connection
      */
-    deleteConnectorImapConnection(requestParameters: DeleteConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteConnectorImapConnection(requestParameters: DeleteConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete SMTP connection for external inbox
      * Delete an inbox connector SMTP connection
      */
-    deleteConnectorSmtpConnectionRaw(requestParameters: DeleteConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteConnectorSmtpConnectionRaw(requestParameters: DeleteConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete SMTP connection for external inbox
      * Delete an inbox connector SMTP connection
      */
-    deleteConnectorSmtpConnection(requestParameters: DeleteConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteConnectorSmtpConnection(requestParameters: DeleteConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Get all inbox connector sync events
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
      */
-    getAllConnectorSyncEventsRaw(requestParameters: GetAllConnectorSyncEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageConnectorSyncEvents>>;
+    deleteConnectorSyncSettingsRaw(requestParameters: DeleteConnectorSyncSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Get all inbox connector sync events
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
      */
-    getAllConnectorSyncEvents(requestParameters: GetAllConnectorSyncEventsRequest, initOverrides?: RequestInit): Promise<PageConnectorSyncEvents>;
+    deleteConnectorSyncSettings(requestParameters: DeleteConnectorSyncSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     * Get all inbox connector events
+     */
+    getAllConnectorEventsRaw(requestParameters: GetAllConnectorEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageConnectorEvents>>;
+    /**
+     * Get all inbox connector events
+     */
+    getAllConnectorEvents(requestParameters?: GetAllConnectorEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageConnectorEvents>;
     /**
      * Get an inbox connector
      */
-    getConnectorRaw(requestParameters: GetConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorDto>>;
+    getConnectorRaw(requestParameters: GetConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorDto>>;
     /**
      * Get an inbox connector
      */
-    getConnector(requestParameters: GetConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorDto>;
+    getConnector(requestParameters: GetConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorDto>;
     /**
-     * Get an inbox connector sync event
+     * Find an inbox connector by email address
+     * Get connector by email address
      */
-    getConnectorSyncEventRaw(requestParameters: GetConnectorSyncEventRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSyncEventDto>>;
+    getConnectorByEmailAddressRaw(requestParameters: GetConnectorByEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OptionalConnectorDto>>;
     /**
-     * Get an inbox connector sync event
+     * Find an inbox connector by email address
+     * Get connector by email address
      */
-    getConnectorSyncEvent(requestParameters: GetConnectorSyncEventRequest, initOverrides?: RequestInit): Promise<ConnectorSyncEventDto>;
+    getConnectorByEmailAddress(requestParameters: GetConnectorByEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OptionalConnectorDto>;
     /**
-     * Get an inbox connector sync events
+     * Find an inbox connector by inbox ID
+     * Get connector by inbox ID
      */
-    getConnectorSyncEventsRaw(requestParameters: GetConnectorSyncEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageConnectorSyncEvents>>;
+    getConnectorByInboxIdRaw(requestParameters: GetConnectorByInboxIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OptionalConnectorDto>>;
     /**
-     * Get an inbox connector sync events
+     * Find an inbox connector by inbox ID
+     * Get connector by inbox ID
      */
-    getConnectorSyncEvents(requestParameters: GetConnectorSyncEventsRequest, initOverrides?: RequestInit): Promise<PageConnectorSyncEvents>;
+    getConnectorByInboxId(requestParameters: GetConnectorByInboxIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OptionalConnectorDto>;
+    /**
+     * Find an inbox connector by name
+     * Get connector by name
+     */
+    getConnectorByNameRaw(requestParameters: GetConnectorByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OptionalConnectorDto>>;
+    /**
+     * Find an inbox connector by name
+     * Get connector by name
+     */
+    getConnectorByName(requestParameters: GetConnectorByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OptionalConnectorDto>;
+    /**
+     * Get an inbox connector event
+     */
+    getConnectorEventRaw(requestParameters: GetConnectorEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorEventDto>>;
+    /**
+     * Get an inbox connector event
+     */
+    getConnectorEvent(requestParameters: GetConnectorEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorEventDto>;
+    /**
+     * Get an inbox connector events
+     */
+    getConnectorEventsRaw(requestParameters: GetConnectorEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageConnectorEvents>>;
+    /**
+     * Get an inbox connector events
+     */
+    getConnectorEvents(requestParameters: GetConnectorEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageConnectorEvents>;
+    /**
+     * Get IMAP connection for external inbox
+     * Get an inbox connector IMAP connection
+     */
+    getConnectorImapConnectionRaw(requestParameters: GetConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OptionalConnectorImapConnectionDto>>;
+    /**
+     * Get IMAP connection for external inbox
+     * Get an inbox connector IMAP connection
+     */
+    getConnectorImapConnection(requestParameters: GetConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OptionalConnectorImapConnectionDto>;
+    /**
+     * Get common mail provider SMTP and IMAP connection settings
+     * Get SMTP and IMAP connection settings for common mail providers
+     */
+    getConnectorProviderSettingsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorProviderSettingsDto>>;
+    /**
+     * Get common mail provider SMTP and IMAP connection settings
+     * Get SMTP and IMAP connection settings for common mail providers
+     */
+    getConnectorProviderSettings(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorProviderSettingsDto>;
+    /**
+     * Get SMTP connection for external inbox
+     * Get an inbox connector SMTP connection
+     */
+    getConnectorSmtpConnectionRaw(requestParameters: GetConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OptionalConnectorSmtpConnectionDto>>;
+    /**
+     * Get SMTP connection for external inbox
+     * Get an inbox connector SMTP connection
+     */
+    getConnectorSmtpConnection(requestParameters: GetConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OptionalConnectorSmtpConnectionDto>;
+    /**
+     * Get sync settings for connection with external inbox
+     * Get an inbox connector sync settings
+     */
+    getConnectorSyncSettingsRaw(requestParameters: GetConnectorSyncSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OptionalConnectorSyncSettingsDto>>;
+    /**
+     * Get sync settings for connection with external inbox
+     * Get an inbox connector sync settings
+     */
+    getConnectorSyncSettings(requestParameters: GetConnectorSyncSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OptionalConnectorSyncSettingsDto>;
     /**
      * List inbox connectors that sync external emails to MailSlurp inboxes
      * Get inbox connectors
      */
-    getConnectorsRaw(requestParameters: GetConnectorsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageConnector>>;
+    getConnectorsRaw(requestParameters: GetConnectorsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageConnector>>;
     /**
      * List inbox connectors that sync external emails to MailSlurp inboxes
      * Get inbox connectors
      */
-    getConnectors(requestParameters: GetConnectorsRequest, initOverrides?: RequestInit): Promise<PageConnector>;
+    getConnectors(requestParameters?: GetConnectorsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageConnector>;
+    /**
+     * Send from an inbox connector
+     */
+    sendEmailFromConnectorRaw(requestParameters: SendEmailFromConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>>;
+    /**
+     * Send from an inbox connector
+     */
+    sendEmailFromConnector(requestParameters: SendEmailFromConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto>;
     /**
      * Sync an inbox connector
      */
-    syncConnectorRaw(requestParameters: SyncConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSyncRequestResult>>;
+    syncConnectorRaw(requestParameters: SyncConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorSyncRequestResult>>;
     /**
      * Sync an inbox connector
      */
-    syncConnector(requestParameters: SyncConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorSyncRequestResult>;
+    syncConnector(requestParameters: SyncConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorSyncRequestResult>;
+    /**
+     * Test the IMAP connection for a connector
+     * Test an inbox connector IMAP connection
+     */
+    testConnectorImapConnectionRaw(requestParameters: TestConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorImapConnectionTestResult>>;
+    /**
+     * Test the IMAP connection for a connector
+     * Test an inbox connector IMAP connection
+     */
+    testConnectorImapConnection(requestParameters: TestConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorImapConnectionTestResult>;
+    /**
+     * Test the IMAP connection options for a connector
+     * Test an inbox connector IMAP connection options
+     */
+    testConnectorImapConnectionOptionsRaw(requestParameters: TestConnectorImapConnectionOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorImapConnectionTestResult>>;
+    /**
+     * Test the IMAP connection options for a connector
+     * Test an inbox connector IMAP connection options
+     */
+    testConnectorImapConnectionOptions(requestParameters: TestConnectorImapConnectionOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorImapConnectionTestResult>;
+    /**
+     * Test the SMTP connection for a connector
+     * Test an inbox connector SMTP connection
+     */
+    testConnectorSmtpConnectionRaw(requestParameters: TestConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorSmtpConnectionTestResult>>;
+    /**
+     * Test the SMTP connection for a connector
+     * Test an inbox connector SMTP connection
+     */
+    testConnectorSmtpConnection(requestParameters: TestConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorSmtpConnectionTestResult>;
+    /**
+     * Test the SMTP connection options for a connector
+     * Test an inbox connector SMTP connection options
+     */
+    testConnectorSmtpConnectionOptionsRaw(requestParameters: TestConnectorSmtpConnectionOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorSmtpConnectionTestResult>>;
+    /**
+     * Test the SMTP connection options for a connector
+     * Test an inbox connector SMTP connection options
+     */
+    testConnectorSmtpConnectionOptions(requestParameters: TestConnectorSmtpConnectionOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorSmtpConnectionTestResult>;
     /**
      * Update an inbox connector
      */
-    updateConnectorRaw(requestParameters: UpdateConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorDto>>;
+    updateConnectorRaw(requestParameters: UpdateConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorDto>>;
     /**
      * Update an inbox connector
      */
-    updateConnector(requestParameters: UpdateConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorDto>;
+    updateConnector(requestParameters: UpdateConnectorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorDto>;
+    /**
+     * Update IMAP connection for external inbox
+     * Update an inbox connector IMAP connection
+     */
+    updateConnectorImapConnectionRaw(requestParameters: UpdateConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorImapConnectionDto>>;
+    /**
+     * Update IMAP connection for external inbox
+     * Update an inbox connector IMAP connection
+     */
+    updateConnectorImapConnection(requestParameters: UpdateConnectorImapConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorImapConnectionDto>;
+    /**
+     * Update SMTP connection for external inbox
+     * Update an inbox connector SMTP connection
+     */
+    updateConnectorSmtpConnectionRaw(requestParameters: UpdateConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ConnectorSmtpConnectionDto>>;
+    /**
+     * Update SMTP connection for external inbox
+     * Update an inbox connector SMTP connection
+     */
+    updateConnectorSmtpConnection(requestParameters: UpdateConnectorSmtpConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ConnectorSmtpConnectionDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllConnectorSyncEventsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllConnectorEventsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllConnectorEventsSortEnum = typeof GetAllConnectorEventsSortEnum[keyof typeof GetAllConnectorEventsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetConnectorSyncEventsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllConnectorEventsEventTypeEnum: {
+    readonly SEND: "SEND";
+    readonly SYNC: "SYNC";
+};
+export type GetAllConnectorEventsEventTypeEnum = typeof GetAllConnectorEventsEventTypeEnum[keyof typeof GetAllConnectorEventsEventTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetConnectorsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetConnectorEventsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetConnectorEventsSortEnum = typeof GetConnectorEventsSortEnum[keyof typeof GetConnectorEventsSortEnum];
+/**
+ * @export
+ */
+export declare const GetConnectorEventsEventTypeEnum: {
+    readonly SEND: "SEND";
+    readonly SYNC: "SYNC";
+};
+export type GetConnectorEventsEventTypeEnum = typeof GetConnectorEventsEventTypeEnum[keyof typeof GetConnectorEventsEventTypeEnum];
+/**
+ * @export
+ */
+export declare const GetConnectorsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetConnectorsSortEnum = typeof GetConnectorsSortEnum[keyof typeof GetConnectorsSortEnum];

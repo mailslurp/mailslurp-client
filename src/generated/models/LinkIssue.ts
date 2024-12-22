@@ -12,80 +12,92 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface LinkIssue
  */
 export interface LinkIssue {
-  /**
-   *
-   * @type {string}
-   * @memberof LinkIssue
-   */
-  url: string;
-  /**
-   *
-   * @type {number}
-   * @memberof LinkIssue
-   */
-  responseStatus?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof LinkIssue
-   */
-  severity: LinkIssueSeverityEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof LinkIssue
-   */
-  message: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LinkIssue
+     */
+    url: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof LinkIssue
+     */
+    responseStatus?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof LinkIssue
+     */
+    severity: LinkIssueSeverityEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof LinkIssue
+     */
+    message: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum LinkIssueSeverityEnum {
-  Warning = 'Warning',
-  Error = 'Error',
+export const LinkIssueSeverityEnum = {
+    Warning: 'Warning',
+    Error: 'Error'
+} as const;
+export type LinkIssueSeverityEnum = typeof LinkIssueSeverityEnum[keyof typeof LinkIssueSeverityEnum];
+
+
+/**
+ * Check if a given object implements the LinkIssue interface.
+ */
+export function instanceOfLinkIssue(value: object): value is LinkIssue {
+    if (!('url' in value) || value['url'] === undefined) return false;
+    if (!('severity' in value) || value['severity'] === undefined) return false;
+    if (!('message' in value) || value['message'] === undefined) return false;
+    return true;
 }
 
 export function LinkIssueFromJSON(json: any): LinkIssue {
-  return LinkIssueFromJSONTyped(json, false);
+    return LinkIssueFromJSONTyped(json, false);
 }
 
-export function LinkIssueFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LinkIssue {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    url: json['url'],
-    responseStatus: !exists(json, 'responseStatus')
-      ? undefined
-      : json['responseStatus'],
-    severity: json['severity'],
-    message: json['message'],
-  };
+export function LinkIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): LinkIssue {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'url': json['url'],
+        'responseStatus': json['responseStatus'] == null ? undefined : json['responseStatus'],
+        'severity': json['severity'],
+        'message': json['message'],
+    };
 }
 
-export function LinkIssueToJSON(value?: LinkIssue | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    url: value.url,
-    responseStatus: value.responseStatus,
-    severity: value.severity,
-    message: value.message,
-  };
+export function LinkIssueToJSON(json: any): LinkIssue {
+    return LinkIssueToJSONTyped(json, false);
 }
+
+export function LinkIssueToJSONTyped(value?: LinkIssue | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'url': value['url'],
+        'responseStatus': value['responseStatus'],
+        'severity': value['severity'],
+        'message': value['message'],
+    };
+}
+

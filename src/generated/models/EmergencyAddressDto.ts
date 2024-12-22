@@ -12,73 +12,85 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmergencyAddressDto
  */
 export interface EmergencyAddressDto {
-  /**
-   *
-   * @type {string}
-   * @memberof EmergencyAddressDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmergencyAddressDto
-   */
-  address1: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmergencyAddressDto
-   */
-  phoneCountry: EmergencyAddressDtoPhoneCountryEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmergencyAddressDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmergencyAddressDto
+     */
+    address1: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmergencyAddressDto
+     */
+    phoneCountry: EmergencyAddressDtoPhoneCountryEnum;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum EmergencyAddressDtoPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
+export const EmergencyAddressDtoPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+} as const;
+export type EmergencyAddressDtoPhoneCountryEnum = typeof EmergencyAddressDtoPhoneCountryEnum[keyof typeof EmergencyAddressDtoPhoneCountryEnum];
+
+
+/**
+ * Check if a given object implements the EmergencyAddressDto interface.
+ */
+export function instanceOfEmergencyAddressDto(value: object): value is EmergencyAddressDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('address1' in value) || value['address1'] === undefined) return false;
+    if (!('phoneCountry' in value) || value['phoneCountry'] === undefined) return false;
+    return true;
 }
 
 export function EmergencyAddressDtoFromJSON(json: any): EmergencyAddressDto {
-  return EmergencyAddressDtoFromJSONTyped(json, false);
+    return EmergencyAddressDtoFromJSONTyped(json, false);
 }
 
-export function EmergencyAddressDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmergencyAddressDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    address1: json['address1'],
-    phoneCountry: json['phoneCountry'],
-  };
+export function EmergencyAddressDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmergencyAddressDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'address1': json['address1'],
+        'phoneCountry': json['phoneCountry'],
+    };
 }
 
-export function EmergencyAddressDtoToJSON(
-  value?: EmergencyAddressDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    address1: value.address1,
-    phoneCountry: value.phoneCountry,
-  };
+export function EmergencyAddressDtoToJSON(json: any): EmergencyAddressDto {
+    return EmergencyAddressDtoToJSONTyped(json, false);
 }
+
+export function EmergencyAddressDtoToJSONTyped(value?: EmergencyAddressDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'address1': value['address1'],
+        'phoneCountry': value['phoneCountry'],
+    };
+}
+

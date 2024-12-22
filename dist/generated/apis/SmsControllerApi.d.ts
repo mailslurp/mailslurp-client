@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, UnreadCount } from '../models';
+import type { CountDto, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, UnreadCount } from '../models/index';
 export interface DeleteSmsMessageRequest {
     smsId: string;
 }
@@ -31,10 +31,15 @@ export interface GetSmsMessagesPaginatedRequest {
     unreadOnly?: boolean;
     since?: Date;
     before?: Date;
+    search?: string;
 }
 export interface ReplyToSmsMessageRequest {
     smsId: string;
     smsReplyOptions: SmsReplyOptions;
+}
+export interface SetSmsFavouritedRequest {
+    smsId: string;
+    favourited: boolean;
 }
 /**
  *
@@ -44,88 +49,94 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Delete an SMS message
      * Delete SMS message.
      */
-    deleteSmsMessageRaw(requestParameters: DeleteSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteSmsMessageRaw(requestParameters: DeleteSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete an SMS message
      * Delete SMS message.
      */
-    deleteSmsMessage(requestParameters: DeleteSmsMessageRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteSmsMessage(requestParameters: DeleteSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete all SMS messages or all messages for a given phone number
      * Delete all SMS messages
      */
-    deleteSmsMessagesRaw(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteSmsMessagesRaw(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete all SMS messages or all messages for a given phone number
      * Delete all SMS messages
      */
-    deleteSmsMessages(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteSmsMessages(requestParameters?: DeleteSmsMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get reply for an SMS message.
      * Get reply for an SMS message
      */
-    getReplyForSmsMessageRaw(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ReplyForSms>>;
+    getReplyForSmsMessageRaw(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReplyForSms>>;
     /**
      * Get reply for an SMS message.
      * Get reply for an SMS message
      */
-    getReplyForSmsMessage(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<ReplyForSms>;
+    getReplyForSmsMessage(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReplyForSms>;
     /**
      * Get number of SMS
      * Get SMS count
      */
-    getSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    getSmsCountRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CountDto>>;
     /**
      * Get number of SMS
      * Get SMS count
      */
-    getSmsCount(initOverrides?: RequestInit): Promise<CountDto>;
+    getSmsCount(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CountDto>;
     /**
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
      */
-    getSmsMessageRaw(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>>;
+    getSmsMessageRaw(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SmsDto>>;
     /**
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
      */
-    getSmsMessage(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<SmsDto>;
+    getSmsMessage(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SmsDto>;
     /**
      * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
      * Get all SMS messages in all phone numbers in paginated form. .
      */
-    getSmsMessagesPaginatedRaw(requestParameters: GetSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsProjection>>;
+    getSmsMessagesPaginatedRaw(requestParameters: GetSmsMessagesPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageSmsProjection>>;
     /**
      * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
      * Get all SMS messages in all phone numbers in paginated form. .
      */
-    getSmsMessagesPaginated(requestParameters: GetSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<PageSmsProjection>;
+    getSmsMessagesPaginated(requestParameters?: GetSmsMessagesPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageSmsProjection>;
     /**
      * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread SMS count
      */
-    getUnreadSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnreadCount>>;
+    getUnreadSmsCountRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UnreadCount>>;
     /**
      * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread SMS count
      */
-    getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount>;
+    getUnreadSmsCount(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UnreadCount>;
     /**
      * Reply to an SMS message.
      * Send a reply to a received SMS message. Replies are sent from the receiving number.
      */
-    replyToSmsMessageRaw(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>>;
+    replyToSmsMessageRaw(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentSmsDto>>;
     /**
      * Reply to an SMS message.
      * Send a reply to a received SMS message. Replies are sent from the receiving number.
      */
-    replyToSmsMessage(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<SentSmsDto>;
+    replyToSmsMessage(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentSmsDto>;
+    /**
+     */
+    setSmsFavouritedRaw(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SmsDto>>;
+    /**
+     */
+    setSmsFavourited(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SmsDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetSmsMessagesPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetSmsMessagesPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetSmsMessagesPaginatedSortEnum = typeof GetSmsMessagesPaginatedSortEnum[keyof typeof GetSmsMessagesPaginatedSortEnum];

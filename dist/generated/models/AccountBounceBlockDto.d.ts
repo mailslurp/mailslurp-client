@@ -20,6 +20,12 @@ export interface AccountBounceBlockDto {
      * @type {boolean}
      * @memberof AccountBounceBlockDto
      */
+    isFrozen: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof AccountBounceBlockDto
+     */
     isSendingBlocked: boolean;
     /**
      *
@@ -46,6 +52,11 @@ export interface AccountBounceBlockDto {
      */
     maximumAccountBounces: number;
 }
+/**
+ * Check if a given object implements the AccountBounceBlockDto interface.
+ */
+export declare function instanceOfAccountBounceBlockDto(value: object): value is AccountBounceBlockDto;
 export declare function AccountBounceBlockDtoFromJSON(json: any): AccountBounceBlockDto;
 export declare function AccountBounceBlockDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountBounceBlockDto;
-export declare function AccountBounceBlockDtoToJSON(value?: AccountBounceBlockDto | null): any;
+export declare function AccountBounceBlockDtoToJSON(json: any): AccountBounceBlockDto;
+export declare function AccountBounceBlockDtoToJSONTyped(value?: AccountBounceBlockDto | null, ignoreDiscriminator?: boolean): any;

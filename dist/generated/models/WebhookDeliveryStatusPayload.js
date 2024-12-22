@@ -13,93 +13,94 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookDeliveryStatusPayloadToJSON = exports.WebhookDeliveryStatusPayloadFromJSONTyped = exports.WebhookDeliveryStatusPayloadFromJSON = exports.WebhookDeliveryStatusPayloadEventNameEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.WebhookDeliveryStatusPayloadEventNameEnum = void 0;
+exports.instanceOfWebhookDeliveryStatusPayload = instanceOfWebhookDeliveryStatusPayload;
+exports.WebhookDeliveryStatusPayloadFromJSON = WebhookDeliveryStatusPayloadFromJSON;
+exports.WebhookDeliveryStatusPayloadFromJSONTyped = WebhookDeliveryStatusPayloadFromJSONTyped;
+exports.WebhookDeliveryStatusPayloadToJSON = WebhookDeliveryStatusPayloadToJSON;
+exports.WebhookDeliveryStatusPayloadToJSONTyped = WebhookDeliveryStatusPayloadToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var WebhookDeliveryStatusPayloadEventNameEnum;
-(function (WebhookDeliveryStatusPayloadEventNameEnum) {
-    WebhookDeliveryStatusPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
-    WebhookDeliveryStatusPayloadEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
-    WebhookDeliveryStatusPayloadEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
-    WebhookDeliveryStatusPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
-    WebhookDeliveryStatusPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
-    WebhookDeliveryStatusPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-    WebhookDeliveryStatusPayloadEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
-    WebhookDeliveryStatusPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
-    WebhookDeliveryStatusPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
-    WebhookDeliveryStatusPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
-})(WebhookDeliveryStatusPayloadEventNameEnum = exports.WebhookDeliveryStatusPayloadEventNameEnum || (exports.WebhookDeliveryStatusPayloadEventNameEnum = {}));
+exports.WebhookDeliveryStatusPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+};
+/**
+ * Check if a given object implements the WebhookDeliveryStatusPayload interface.
+ */
+function instanceOfWebhookDeliveryStatusPayload(value) {
+    if (!('messageId' in value) || value['messageId'] === undefined)
+        return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined)
+        return false;
+    if (!('eventName' in value) || value['eventName'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    return true;
+}
 function WebhookDeliveryStatusPayloadFromJSON(json) {
     return WebhookDeliveryStatusPayloadFromJSONTyped(json, false);
 }
-exports.WebhookDeliveryStatusPayloadFromJSON = WebhookDeliveryStatusPayloadFromJSON;
 function WebhookDeliveryStatusPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        eventName: json['eventName'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        id: json['id'],
-        userId: json['userId'],
-        sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
-        remoteMtaIp: !(0, runtime_1.exists)(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        reportingMta: !(0, runtime_1.exists)(json, 'reportingMta')
-            ? undefined
-            : json['reportingMta'],
-        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
-        smtpResponse: !(0, runtime_1.exists)(json, 'smtpResponse')
-            ? undefined
-            : json['smtpResponse'],
-        smtpStatusCode: !(0, runtime_1.exists)(json, 'smtpStatusCode')
-            ? undefined
-            : json['smtpStatusCode'],
-        processingTimeMillis: !(0, runtime_1.exists)(json, 'processingTimeMillis')
-            ? undefined
-            : json['processingTimeMillis'],
-        received: !(0, runtime_1.exists)(json, 'received')
-            ? undefined
-            : json['received'] === null
-                ? null
-                : new Date(json['received']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+        'id': json['id'],
+        'userId': json['userId'],
+        'sentId': json['sentId'] == null ? undefined : json['sentId'],
+        'remoteMtaIp': json['remoteMtaIp'] == null ? undefined : json['remoteMtaIp'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'reportingMta': json['reportingMta'] == null ? undefined : json['reportingMta'],
+        'recipients': json['recipients'] == null ? undefined : json['recipients'],
+        'smtpResponse': json['smtpResponse'] == null ? undefined : json['smtpResponse'],
+        'smtpStatusCode': json['smtpStatusCode'] == null ? undefined : json['smtpStatusCode'],
+        'processingTimeMillis': json['processingTimeMillis'] == null ? undefined : json['processingTimeMillis'],
+        'received': json['received'] == null ? undefined : (new Date(json['received'])),
+        'subject': json['subject'] == null ? undefined : json['subject'],
     };
 }
-exports.WebhookDeliveryStatusPayloadFromJSONTyped = WebhookDeliveryStatusPayloadFromJSONTyped;
-function WebhookDeliveryStatusPayloadToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookDeliveryStatusPayloadToJSON(json) {
+    return WebhookDeliveryStatusPayloadToJSONTyped(json, false);
+}
+function WebhookDeliveryStatusPayloadToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        eventName: value.eventName,
-        webhookName: value.webhookName,
-        id: value.id,
-        userId: value.userId,
-        sentId: value.sentId,
-        remoteMtaIp: value.remoteMtaIp,
-        inboxId: value.inboxId,
-        reportingMta: value.reportingMta,
-        recipients: value.recipients,
-        smtpResponse: value.smtpResponse,
-        smtpStatusCode: value.smtpStatusCode,
-        processingTimeMillis: value.processingTimeMillis,
-        received: value.received === undefined
-            ? undefined
-            : value.received === null
-                ? null
-                : value.received.toISOString(),
-        subject: value.subject,
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'eventName': value['eventName'],
+        'webhookName': value['webhookName'],
+        'id': value['id'],
+        'userId': value['userId'],
+        'sentId': value['sentId'],
+        'remoteMtaIp': value['remoteMtaIp'],
+        'inboxId': value['inboxId'],
+        'reportingMta': value['reportingMta'],
+        'recipients': value['recipients'],
+        'smtpResponse': value['smtpResponse'],
+        'smtpStatusCode': value['smtpStatusCode'],
+        'processingTimeMillis': value['processingTimeMillis'],
+        'received': value['received'] == null ? undefined : (value['received'].toISOString()),
+        'subject': value['subject'],
     };
 }
-exports.WebhookDeliveryStatusPayloadToJSON = WebhookDeliveryStatusPayloadToJSON;

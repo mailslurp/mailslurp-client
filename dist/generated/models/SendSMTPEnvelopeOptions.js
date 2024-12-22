@@ -13,33 +13,47 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendSMTPEnvelopeOptionsToJSON = exports.SendSMTPEnvelopeOptionsFromJSONTyped = exports.SendSMTPEnvelopeOptionsFromJSON = void 0;
+exports.instanceOfSendSMTPEnvelopeOptions = instanceOfSendSMTPEnvelopeOptions;
+exports.SendSMTPEnvelopeOptionsFromJSON = SendSMTPEnvelopeOptionsFromJSON;
+exports.SendSMTPEnvelopeOptionsFromJSONTyped = SendSMTPEnvelopeOptionsFromJSONTyped;
+exports.SendSMTPEnvelopeOptionsToJSON = SendSMTPEnvelopeOptionsToJSON;
+exports.SendSMTPEnvelopeOptionsToJSONTyped = SendSMTPEnvelopeOptionsToJSONTyped;
+/**
+ * Check if a given object implements the SendSMTPEnvelopeOptions interface.
+ */
+function instanceOfSendSMTPEnvelopeOptions(value) {
+    if (!('rcptTo' in value) || value['rcptTo'] === undefined)
+        return false;
+    if (!('mailFrom' in value) || value['mailFrom'] === undefined)
+        return false;
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
+    return true;
+}
 function SendSMTPEnvelopeOptionsFromJSON(json) {
     return SendSMTPEnvelopeOptionsFromJSONTyped(json, false);
 }
-exports.SendSMTPEnvelopeOptionsFromJSON = SendSMTPEnvelopeOptionsFromJSON;
 function SendSMTPEnvelopeOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        rcptTo: json['rcptTo'],
-        mailFrom: json['mailFrom'],
-        data: json['data'],
+        'rcptTo': json['rcptTo'],
+        'mailFrom': json['mailFrom'],
+        'data': json['data'],
     };
 }
-exports.SendSMTPEnvelopeOptionsFromJSONTyped = SendSMTPEnvelopeOptionsFromJSONTyped;
-function SendSMTPEnvelopeOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SendSMTPEnvelopeOptionsToJSON(json) {
+    return SendSMTPEnvelopeOptionsToJSONTyped(json, false);
+}
+function SendSMTPEnvelopeOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        rcptTo: value.rcptTo,
-        mailFrom: value.mailFrom,
-        data: value.data,
+        'rcptTo': value['rcptTo'],
+        'mailFrom': value['mailFrom'],
+        'data': value['data'],
     };
 }
-exports.SendSMTPEnvelopeOptionsToJSON = SendSMTPEnvelopeOptionsToJSON;

@@ -12,151 +12,154 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for replying to email with API
  * @export
  * @interface ReplyToEmailOptions
  */
 export interface ReplyToEmailOptions {
-  /**
-   * Body of the reply email you want to send
-   * @type {string}
-   * @memberof ReplyToEmailOptions
-   */
-  body: string;
-  /**
-   * Is the reply HTML
-   * @type {boolean}
-   * @memberof ReplyToEmailOptions
-   */
-  isHTML: boolean;
-  /**
-   * The from header that should be used. Optional
-   * @type {string}
-   * @memberof ReplyToEmailOptions
-   */
-  from?: string | null;
-  /**
-   * The replyTo header that should be used. Optional
-   * @type {string}
-   * @memberof ReplyToEmailOptions
-   */
-  replyTo?: string | null;
-  /**
-   * Optional custom headers
-   * @type {{ [key: string]: string; }}
-   * @memberof ReplyToEmailOptions
-   */
-  customHeaders?: { [key: string]: string } | null;
-  /**
-   * The charset that your message should be sent with. Optional. Default is UTF-8
-   * @type {string}
-   * @memberof ReplyToEmailOptions
-   */
-  charset?: string | null;
-  /**
-   * List of uploaded attachments to send with the reply. Optional.
-   * @type {Array<string>}
-   * @memberof ReplyToEmailOptions
-   */
-  attachments?: Array<string> | null;
-  /**
-   * Template variables if using a template
-   * @type {{ [key: string]: object; }}
-   * @memberof ReplyToEmailOptions
-   */
-  templateVariables?: { [key: string]: object } | null;
-  /**
-   * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
-   * @type {string}
-   * @memberof ReplyToEmailOptions
-   */
-  template?: string | null;
-  /**
-   * How an email should be sent based on its recipients
-   * @type {string}
-   * @memberof ReplyToEmailOptions
-   */
-  sendStrategy?: ReplyToEmailOptionsSendStrategyEnum;
-  /**
-   * Optionally use inbox name as display name for sender email address
-   * @type {boolean}
-   * @memberof ReplyToEmailOptions
-   */
-  useInboxName?: boolean | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ReplyToEmailOptions
-   */
-  html?: boolean;
+    /**
+     * Body of the reply email you want to send
+     * @type {string}
+     * @memberof ReplyToEmailOptions
+     */
+    body: string;
+    /**
+     * Is the reply HTML
+     * @type {boolean}
+     * @memberof ReplyToEmailOptions
+     */
+    isHTML: boolean;
+    /**
+     * The from header that should be used. Optional
+     * @type {string}
+     * @memberof ReplyToEmailOptions
+     */
+    from?: string | null;
+    /**
+     * The replyTo header that should be used. Optional
+     * @type {string}
+     * @memberof ReplyToEmailOptions
+     */
+    replyTo?: string | null;
+    /**
+     * Optional custom headers
+     * @type {{ [key: string]: string | null; }}
+     * @memberof ReplyToEmailOptions
+     */
+    customHeaders?: { [key: string]: string | null; } | null;
+    /**
+     * The charset that your message should be sent with. Optional. Default is UTF-8
+     * @type {string}
+     * @memberof ReplyToEmailOptions
+     */
+    charset?: string | null;
+    /**
+     * List of uploaded attachments to send with the reply. Optional.
+     * @type {Array<string | null>}
+     * @memberof ReplyToEmailOptions
+     */
+    attachments?: Array<string | null> | null;
+    /**
+     * Template variables if using a template
+     * @type {{ [key: string]: object | null; }}
+     * @memberof ReplyToEmailOptions
+     */
+    templateVariables?: { [key: string]: object | null; } | null;
+    /**
+     * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
+     * @type {string}
+     * @memberof ReplyToEmailOptions
+     */
+    template?: string | null;
+    /**
+     * How an email should be sent based on its recipients
+     * @type {string}
+     * @memberof ReplyToEmailOptions
+     */
+    sendStrategy?: ReplyToEmailOptionsSendStrategyEnum | null;
+    /**
+     * Optionally use inbox name as display name for sender email address
+     * @type {boolean}
+     * @memberof ReplyToEmailOptions
+     */
+    useInboxName?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ReplyToEmailOptions
+     */
+    html?: boolean;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum ReplyToEmailOptionsSendStrategyEnum {
-  SINGLE_MESSAGE = 'SINGLE_MESSAGE',
+export const ReplyToEmailOptionsSendStrategyEnum = {
+    SINGLE_MESSAGE: 'SINGLE_MESSAGE'
+} as const;
+export type ReplyToEmailOptionsSendStrategyEnum = typeof ReplyToEmailOptionsSendStrategyEnum[keyof typeof ReplyToEmailOptionsSendStrategyEnum];
+
+
+/**
+ * Check if a given object implements the ReplyToEmailOptions interface.
+ */
+export function instanceOfReplyToEmailOptions(value: object): value is ReplyToEmailOptions {
+    if (!('body' in value) || value['body'] === undefined) return false;
+    if (!('isHTML' in value) || value['isHTML'] === undefined) return false;
+    return true;
 }
 
 export function ReplyToEmailOptionsFromJSON(json: any): ReplyToEmailOptions {
-  return ReplyToEmailOptionsFromJSONTyped(json, false);
+    return ReplyToEmailOptionsFromJSONTyped(json, false);
 }
 
-export function ReplyToEmailOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ReplyToEmailOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    body: json['body'],
-    isHTML: json['isHTML'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
-    customHeaders: !exists(json, 'customHeaders')
-      ? undefined
-      : json['customHeaders'],
-    charset: !exists(json, 'charset') ? undefined : json['charset'],
-    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
-    templateVariables: !exists(json, 'templateVariables')
-      ? undefined
-      : json['templateVariables'],
-    template: !exists(json, 'template') ? undefined : json['template'],
-    sendStrategy: !exists(json, 'sendStrategy')
-      ? undefined
-      : json['sendStrategy'],
-    useInboxName: !exists(json, 'useInboxName')
-      ? undefined
-      : json['useInboxName'],
-    html: !exists(json, 'html') ? undefined : json['html'],
-  };
+export function ReplyToEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyToEmailOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'body': json['body'],
+        'isHTML': json['isHTML'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'customHeaders': json['customHeaders'] == null ? undefined : json['customHeaders'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'attachments': json['attachments'] == null ? undefined : json['attachments'],
+        'templateVariables': json['templateVariables'] == null ? undefined : json['templateVariables'],
+        'template': json['template'] == null ? undefined : json['template'],
+        'sendStrategy': json['sendStrategy'] == null ? undefined : json['sendStrategy'],
+        'useInboxName': json['useInboxName'] == null ? undefined : json['useInboxName'],
+        'html': json['html'] == null ? undefined : json['html'],
+    };
 }
 
-export function ReplyToEmailOptionsToJSON(
-  value?: ReplyToEmailOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    body: value.body,
-    isHTML: value.isHTML,
-    from: value.from,
-    replyTo: value.replyTo,
-    customHeaders: value.customHeaders,
-    charset: value.charset,
-    attachments: value.attachments,
-    templateVariables: value.templateVariables,
-    template: value.template,
-    sendStrategy: value.sendStrategy,
-    useInboxName: value.useInboxName,
-    html: value.html,
-  };
+export function ReplyToEmailOptionsToJSON(json: any): ReplyToEmailOptions {
+    return ReplyToEmailOptionsToJSONTyped(json, false);
 }
+
+export function ReplyToEmailOptionsToJSONTyped(value?: ReplyToEmailOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'body': value['body'],
+        'isHTML': value['isHTML'],
+        'from': value['from'],
+        'replyTo': value['replyTo'],
+        'customHeaders': value['customHeaders'],
+        'charset': value['charset'],
+        'attachments': value['attachments'],
+        'templateVariables': value['templateVariables'],
+        'template': value['template'],
+        'sendStrategy': value['sendStrategy'],
+        'useInboxName': value['useInboxName'],
+        'html': value['html'],
+    };
+}
+

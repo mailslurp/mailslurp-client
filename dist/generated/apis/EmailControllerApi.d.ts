@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailTextLinesResult, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import type { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailTextLinesResult, EmailThreadDto, EmailThreadItemsDto, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, PageEmailThreadProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models/index';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -56,7 +56,6 @@ export interface GetAttachmentMetaDataRequest {
 }
 export interface GetEmailRequest {
     emailId: string;
-    decode?: boolean;
 }
 export interface GetEmailAttachmentsRequest {
     emailId: string;
@@ -68,15 +67,24 @@ export interface GetEmailContentMatchRequest {
 export interface GetEmailContentPartRequest {
     emailId: string;
     contentType: string;
+    strict?: boolean;
+    index?: number;
+}
+export interface GetEmailContentPartContentRequest {
+    emailId: string;
+    contentType: string;
+    strict?: boolean;
+    index?: number;
+}
+export interface GetEmailCountRequest {
+    inboxId?: string;
 }
 export interface GetEmailHTMLRequest {
     emailId: string;
-    decode?: boolean;
     replaceCidImages?: boolean;
 }
 export interface GetEmailHTMLJsonRequest {
     emailId: string;
-    decode?: boolean;
     replaceCidImages?: boolean;
 }
 export interface GetEmailHTMLQueryRequest {
@@ -85,6 +93,7 @@ export interface GetEmailHTMLQueryRequest {
 }
 export interface GetEmailLinksRequest {
     emailId: string;
+    selector?: string;
 }
 export interface GetEmailPreviewURLsRequest {
     emailId: string;
@@ -97,10 +106,30 @@ export interface GetEmailScreenshotAsBinaryRequest {
     emailId: string;
     getEmailScreenshotOptions: GetEmailScreenshotOptions;
 }
+export interface GetEmailSummaryRequest {
+    emailId: string;
+    decode?: boolean;
+}
 export interface GetEmailTextLinesRequest {
     emailId: string;
     decodeHtmlEntities?: boolean;
     lineSeparator?: string;
+}
+export interface GetEmailThreadRequest {
+    threadId: string;
+}
+export interface GetEmailThreadItemsRequest {
+    threadId: string;
+    sort?: GetEmailThreadItemsSortEnum;
+}
+export interface GetEmailThreadsRequest {
+    htmlSelector?: string;
+    page?: number;
+    size?: number;
+    sort?: GetEmailThreadsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
 }
 export interface GetEmailsOffsetPaginatedRequest {
     inboxId?: Array<string>;
@@ -111,6 +140,9 @@ export interface GetEmailsOffsetPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    favourited?: boolean;
+    syncConnectors?: boolean;
+    plusAddressId?: string;
 }
 export interface GetEmailsPaginatedRequest {
     inboxId?: Array<string>;
@@ -121,6 +153,9 @@ export interface GetEmailsPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    syncConnectors?: boolean;
+    plusAddressId?: string;
+    favourited?: boolean;
 }
 export interface GetGravatarUrlForEmailAddressRequest {
     emailAddress: string;
@@ -141,6 +176,9 @@ export interface GetOrganizationEmailsPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    syncConnectors?: boolean;
+    favourited?: boolean;
+    plusAddressId?: string;
 }
 export interface GetRawEmailContentsRequest {
     emailId: string;
@@ -165,12 +203,19 @@ export interface ReplyToEmailRequest {
 }
 export interface SearchEmailsRequest {
     searchEmailsOptions: SearchEmailsOptions;
+    syncConnectors?: boolean;
+    favourited?: boolean;
+    plusAddressId?: string;
 }
 export interface SendEmailSourceOptionalRequest {
     sendEmailOptions: SendEmailOptions;
     inboxId?: string;
     useDomainPool?: boolean;
     virtualSend?: boolean;
+}
+export interface SetEmailFavouritedRequest {
+    emailId: string;
+    favourited: boolean;
 }
 export interface ValidateEmailRequest {
     emailId: string;
@@ -183,430 +228,506 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
      * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
      */
-    applyImapFlagOperationRaw(requestParameters: ApplyImapFlagOperationRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreview>>;
+    applyImapFlagOperationRaw(requestParameters: ApplyImapFlagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailPreview>>;
     /**
      * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
      * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
      */
-    applyImapFlagOperation(requestParameters: ApplyImapFlagOperationRequest, initOverrides?: RequestInit): Promise<EmailPreview>;
+    applyImapFlagOperation(requestParameters: ApplyImapFlagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailPreview>;
     /**
      * Can user send email to given recipient or is the recipient blocked
      * Check if email can be sent and options are valid.
      */
-    canSendRaw(requestParameters: CanSendRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CanSendEmailResults>>;
+    canSendRaw(requestParameters: CanSendRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CanSendEmailResults>>;
     /**
      * Can user send email to given recipient or is the recipient blocked
      * Check if email can be sent and options are valid.
      */
-    canSend(requestParameters: CanSendRequest, initOverrides?: RequestInit): Promise<CanSendEmailResults>;
+    canSend(requestParameters: CanSendRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CanSendEmailResults>;
     /**
      * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
      * Detect broken links, spelling, and images in email content
      */
-    checkEmailBodyRaw(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailBodyResults>>;
+    checkEmailBodyRaw(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CheckEmailBodyResults>>;
     /**
      * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
      * Detect broken links, spelling, and images in email content
      */
-    checkEmailBody(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit): Promise<CheckEmailBodyResults>;
+    checkEmailBody(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CheckEmailBodyResults>;
     /**
      * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
      * Show which mail clients support the HTML and CSS features used in an email body.
      */
-    checkEmailBodyFeatureSupportRaw(requestParameters: CheckEmailBodyFeatureSupportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailBodyFeatureSupportResults>>;
+    checkEmailBodyFeatureSupportRaw(requestParameters: CheckEmailBodyFeatureSupportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CheckEmailBodyFeatureSupportResults>>;
     /**
      * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
      * Show which mail clients support the HTML and CSS features used in an email body.
      */
-    checkEmailBodyFeatureSupport(requestParameters: CheckEmailBodyFeatureSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailBodyFeatureSupportResults>;
+    checkEmailBodyFeatureSupport(requestParameters: CheckEmailBodyFeatureSupportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CheckEmailBodyFeatureSupportResults>;
     /**
      * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
      * Show which email programs and devices support the features used in an email body.
      */
-    checkEmailClientSupportRaw(requestParameters: CheckEmailClientSupportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailClientSupportResults>>;
+    checkEmailClientSupportRaw(requestParameters: CheckEmailClientSupportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CheckEmailClientSupportResults>>;
     /**
      * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
      * Show which email programs and devices support the features used in an email body.
      */
-    checkEmailClientSupport(requestParameters: CheckEmailClientSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailClientSupportResults>;
+    checkEmailClientSupport(requestParameters: CheckEmailClientSupportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CheckEmailClientSupportResults>;
     /**
      * Deletes all emails in your account. Be careful as emails cannot be recovered
      * Delete all emails in all inboxes.
      */
-    deleteAllEmailsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllEmailsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes all emails in your account. Be careful as emails cannot be recovered
      * Delete all emails in all inboxes.
      */
-    deleteAllEmails(initOverrides?: RequestInit): Promise<void>;
+    deleteAllEmails(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
      * Delete an email
      */
-    deleteEmailRaw(requestParameters: DeleteEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteEmailRaw(requestParameters: DeleteEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
      * Delete an email
      */
-    deleteEmail(requestParameters: DeleteEmailRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteEmail(requestParameters: DeleteEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
      * Get email attachment bytes. Returned as `octet-stream` with content type header. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints and convert the base 64 encoded content to a file or string.
      */
-    downloadAttachmentRaw(requestParameters: DownloadAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    downloadAttachmentRaw(requestParameters: DownloadAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
      * Get email attachment bytes. Returned as `octet-stream` with content type header. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints and convert the base 64 encoded content to a file or string.
      */
-    downloadAttachment(requestParameters: DownloadAttachmentRequest, initOverrides?: RequestInit): Promise<string>;
+    downloadAttachment(requestParameters: DownloadAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
      * Get email attachment as base64 encoded string as an alternative to binary responses. Decode the `base64FileContents` as a `utf-8` encoded string or array of bytes depending on the `contentType`.
      */
-    downloadAttachmentBase64Raw(requestParameters: DownloadAttachmentBase64Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DownloadAttachmentDto>>;
+    downloadAttachmentBase64Raw(requestParameters: DownloadAttachmentBase64Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DownloadAttachmentDto>>;
     /**
      * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
      * Get email attachment as base64 encoded string as an alternative to binary responses. Decode the `base64FileContents` as a `utf-8` encoded string or array of bytes depending on the `contentType`.
      */
-    downloadAttachmentBase64(requestParameters: DownloadAttachmentBase64Request, initOverrides?: RequestInit): Promise<DownloadAttachmentDto>;
+    downloadAttachmentBase64(requestParameters: DownloadAttachmentBase64Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DownloadAttachmentDto>;
     /**
      * Returns the specified email body for a given email as a string
      * Get email body as string. Returned as `plain/text` with content type header.
      */
-    downloadBodyRaw(requestParameters: DownloadBodyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    downloadBodyRaw(requestParameters: DownloadBodyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Returns the specified email body for a given email as a string
      * Get email body as string. Returned as `plain/text` with content type header.
      */
-    downloadBody(requestParameters: DownloadBodyRequest, initOverrides?: RequestInit): Promise<string>;
+    downloadBody(requestParameters: DownloadBodyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Returns the specified email body for a given email as a stream / array of bytes.
      * Get email body in bytes. Returned as `octet-stream` with content type header.
      */
-    downloadBodyBytesRaw(requestParameters: DownloadBodyBytesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    downloadBodyBytesRaw(requestParameters: DownloadBodyBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Returns the specified email body for a given email as a stream / array of bytes.
      * Get email body in bytes. Returned as `octet-stream` with content type header.
      */
-    downloadBodyBytes(requestParameters: DownloadBodyBytesRequest, initOverrides?: RequestInit): Promise<string>;
+    downloadBodyBytes(requestParameters: DownloadBodyBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Forward an existing email to new recipients. The sender of the email will be the inbox that received the email you are forwarding. You can override the sender with the `from` option. Note you must have access to the from address in MailSlurp to use the override. For more control consider fetching the email and sending it a new using the send email endpoints.
      * Forward email to recipients
      */
-    forwardEmailRaw(requestParameters: ForwardEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    forwardEmailRaw(requestParameters: ForwardEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>>;
     /**
      * Forward an existing email to new recipients. The sender of the email will be the inbox that received the email you are forwarding. You can override the sender with the `from` option. Note you must have access to the from address in MailSlurp to use the override. For more control consider fetching the email and sending it a new using the send email endpoints.
      * Forward email to recipients
      */
-    forwardEmail(requestParameters: ForwardEmailRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    forwardEmail(requestParameters: ForwardEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto>;
     /**
      * Returns the metadata such as name and content-type for a given attachment and email.
      * Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
      */
-    getAttachmentMetaDataRaw(requestParameters: GetAttachmentMetaDataRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AttachmentMetaData>>;
+    getAttachmentMetaDataRaw(requestParameters: GetAttachmentMetaDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AttachmentMetaData>>;
     /**
      * Returns the metadata such as name and content-type for a given attachment and email.
      * Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
      */
-    getAttachmentMetaData(requestParameters: GetAttachmentMetaDataRequest, initOverrides?: RequestInit): Promise<AttachmentMetaData>;
+    getAttachmentMetaData(requestParameters: GetAttachmentMetaDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AttachmentMetaData>;
     /**
      * Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
      * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
      */
-    getEmailRaw(requestParameters: GetEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    getEmailRaw(requestParameters: GetEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Email>>;
     /**
      * Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
      * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
      */
-    getEmail(requestParameters: GetEmailRequest, initOverrides?: RequestInit): Promise<Email>;
+    getEmail(requestParameters: GetEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Email>;
     /**
      * Returns an array of attachment metadata such as name and content-type for a given email if present.
      * Get all email attachment metadata. Metadata includes name and size of attachments.
      */
-    getEmailAttachmentsRaw(requestParameters: GetEmailAttachmentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<AttachmentMetaData>>>;
+    getEmailAttachmentsRaw(requestParameters: GetEmailAttachmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<AttachmentMetaData>>>;
     /**
      * Returns an array of attachment metadata such as name and content-type for a given email if present.
      * Get all email attachment metadata. Metadata includes name and size of attachments.
      */
-    getEmailAttachments(requestParameters: GetEmailAttachmentsRequest, initOverrides?: RequestInit): Promise<Array<AttachmentMetaData>>;
+    getEmailAttachments(requestParameters: GetEmailAttachmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<AttachmentMetaData>>;
     /**
      * Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `[\'code is: 123456\', \'123456\']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
      * Get email content regex pattern match results. Runs regex against email body and returns match groups.
      */
-    getEmailContentMatchRaw(requestParameters: GetEmailContentMatchRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailContentMatchResult>>;
+    getEmailContentMatchRaw(requestParameters: GetEmailContentMatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailContentMatchResult>>;
     /**
      * Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `[\'code is: 123456\', \'123456\']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
      * Get email content regex pattern match results. Runs regex against email body and returns match groups.
      */
-    getEmailContentMatch(requestParameters: GetEmailContentMatchRequest, initOverrides?: RequestInit): Promise<EmailContentMatchResult>;
+    getEmailContentMatch(requestParameters: GetEmailContentMatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailContentMatchResult>;
     /**
      * Get email body content parts from a multipart email message for a given content type
      * Get email content part by content type
      */
-    getEmailContentPartRaw(requestParameters: GetEmailContentPartRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailContentPartResult>>;
+    getEmailContentPartRaw(requestParameters: GetEmailContentPartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailContentPartResult>>;
     /**
      * Get email body content parts from a multipart email message for a given content type
      * Get email content part by content type
      */
-    getEmailContentPart(requestParameters: GetEmailContentPartRequest, initOverrides?: RequestInit): Promise<EmailContentPartResult>;
+    getEmailContentPart(requestParameters: GetEmailContentPartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailContentPartResult>;
+    /**
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
+     */
+    getEmailContentPartContentRaw(requestParameters: GetEmailContentPartContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
+     */
+    getEmailContentPartContent(requestParameters: GetEmailContentPartContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Get email count
      */
-    getEmailCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    getEmailCountRaw(requestParameters: GetEmailCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CountDto>>;
     /**
      * Get email count
      */
-    getEmailCount(initOverrides?: RequestInit): Promise<CountDto>;
+    getEmailCount(requestParameters?: GetEmailCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CountDto>;
     /**
      * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
      * Get email content as HTML. For displaying emails in browser context.
      */
-    getEmailHTMLRaw(requestParameters: GetEmailHTMLRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    getEmailHTMLRaw(requestParameters: GetEmailHTMLRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
      * Get email content as HTML. For displaying emails in browser context.
      */
-    getEmailHTML(requestParameters: GetEmailHTMLRequest, initOverrides?: RequestInit): Promise<string>;
+    getEmailHTML(requestParameters: GetEmailHTMLRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
      * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
      */
-    getEmailHTMLJsonRaw(requestParameters: GetEmailHTMLJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailHtmlDto>>;
+    getEmailHTMLJsonRaw(requestParameters: GetEmailHTMLJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailHtmlDto>>;
     /**
      * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
      * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
      */
-    getEmailHTMLJson(requestParameters: GetEmailHTMLJsonRequest, initOverrides?: RequestInit): Promise<EmailHtmlDto>;
+    getEmailHTMLJson(requestParameters: GetEmailHTMLJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailHtmlDto>;
     /**
      * Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
-    getEmailHTMLQueryRaw(requestParameters: GetEmailHTMLQueryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailTextLinesResult>>;
+    getEmailHTMLQueryRaw(requestParameters: GetEmailHTMLQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailTextLinesResult>>;
     /**
      * Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
-    getEmailHTMLQuery(requestParameters: GetEmailHTMLQueryRequest, initOverrides?: RequestInit): Promise<EmailTextLinesResult>;
+    getEmailHTMLQuery(requestParameters: GetEmailHTMLQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailTextLinesResult>;
     /**
      * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
      * Parse and return list of links found in an email (only works for HTML content)
      */
-    getEmailLinksRaw(requestParameters: GetEmailLinksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailLinksResult>>;
+    getEmailLinksRaw(requestParameters: GetEmailLinksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailLinksResult>>;
     /**
      * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
      * Parse and return list of links found in an email (only works for HTML content)
      */
-    getEmailLinks(requestParameters: GetEmailLinksRequest, initOverrides?: RequestInit): Promise<EmailLinksResult>;
+    getEmailLinks(requestParameters: GetEmailLinksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailLinksResult>;
     /**
      * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
      * Get email URLs for viewing in browser or downloading
      */
-    getEmailPreviewURLsRaw(requestParameters: GetEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreviewUrls>>;
+    getEmailPreviewURLsRaw(requestParameters: GetEmailPreviewURLsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailPreviewUrls>>;
     /**
      * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
      * Get email URLs for viewing in browser or downloading
      */
-    getEmailPreviewURLs(requestParameters: GetEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<EmailPreviewUrls>;
+    getEmailPreviewURLs(requestParameters: GetEmailPreviewURLsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailPreviewUrls>;
     /**
      * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
      * Take a screenshot of an email in a browser and return base64 encoded string
      */
-    getEmailScreenshotAsBase64Raw(requestParameters: GetEmailScreenshotAsBase64Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailScreenshotResult>>;
+    getEmailScreenshotAsBase64Raw(requestParameters: GetEmailScreenshotAsBase64Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailScreenshotResult>>;
     /**
      * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
      * Take a screenshot of an email in a browser and return base64 encoded string
      */
-    getEmailScreenshotAsBase64(requestParameters: GetEmailScreenshotAsBase64Request, initOverrides?: RequestInit): Promise<EmailScreenshotResult>;
+    getEmailScreenshotAsBase64(requestParameters: GetEmailScreenshotAsBase64Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailScreenshotResult>;
     /**
      * Returns binary octet-stream of screenshot of the given email
      * Take a screenshot of an email in a browser
      */
-    getEmailScreenshotAsBinaryRaw(requestParameters: GetEmailScreenshotAsBinaryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    getEmailScreenshotAsBinaryRaw(requestParameters: GetEmailScreenshotAsBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Returns binary octet-stream of screenshot of the given email
      * Take a screenshot of an email in a browser
      */
-    getEmailScreenshotAsBinary(requestParameters: GetEmailScreenshotAsBinaryRequest, initOverrides?: RequestInit): Promise<void>;
+    getEmailScreenshotAsBinary(requestParameters: GetEmailScreenshotAsBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    getEmailSummaryRaw(requestParameters: GetEmailSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailPreview>>;
+    /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    getEmailSummary(requestParameters: GetEmailSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailPreview>;
     /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
-    getEmailTextLinesRaw(requestParameters: GetEmailTextLinesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailTextLinesResult>>;
+    getEmailTextLinesRaw(requestParameters: GetEmailTextLinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailTextLinesResult>>;
     /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
-    getEmailTextLines(requestParameters: GetEmailTextLinesRequest, initOverrides?: RequestInit): Promise<EmailTextLinesResult>;
+    getEmailTextLines(requestParameters: GetEmailTextLinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailTextLinesResult>;
+    /**
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
+     */
+    getEmailThreadRaw(requestParameters: GetEmailThreadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailThreadDto>>;
+    /**
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
+     */
+    getEmailThread(requestParameters: GetEmailThreadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailThreadDto>;
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    getEmailThreadItemsRaw(requestParameters: GetEmailThreadItemsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailThreadItemsDto>>;
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    getEmailThreadItems(requestParameters: GetEmailThreadItemsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailThreadItemsDto>;
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    getEmailThreadsRaw(requestParameters: GetEmailThreadsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailThreadProjection>>;
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    getEmailThreads(requestParameters?: GetEmailThreadsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailThreadProjection>;
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
-    getEmailsOffsetPaginatedRaw(requestParameters: GetEmailsOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
+    getEmailsOffsetPaginatedRaw(requestParameters: GetEmailsOffsetPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailProjection>>;
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
-    getEmailsOffsetPaginated(requestParameters: GetEmailsOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
+    getEmailsOffsetPaginated(requestParameters?: GetEmailsOffsetPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailProjection>;
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
-    getEmailsPaginatedRaw(requestParameters: GetEmailsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
+    getEmailsPaginatedRaw(requestParameters: GetEmailsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailProjection>>;
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
-    getEmailsPaginated(requestParameters: GetEmailsPaginatedRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
+    getEmailsPaginated(requestParameters?: GetEmailsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailProjection>;
     /**
      * Get gravatar url for email address
      */
-    getGravatarUrlForEmailAddressRaw(requestParameters: GetGravatarUrlForEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GravatarUrl>>;
+    getGravatarUrlForEmailAddressRaw(requestParameters: GetGravatarUrlForEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GravatarUrl>>;
     /**
      * Get gravatar url for email address
      */
-    getGravatarUrlForEmailAddress(requestParameters: GetGravatarUrlForEmailAddressRequest, initOverrides?: RequestInit): Promise<GravatarUrl>;
+    getGravatarUrlForEmailAddress(requestParameters: GetGravatarUrlForEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GravatarUrl>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in all inboxes. Most recently received.
      */
-    getLatestEmailRaw(requestParameters: GetLatestEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    getLatestEmailRaw(requestParameters: GetLatestEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Email>>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in all inboxes. Most recently received.
      */
-    getLatestEmail(requestParameters: GetLatestEmailRequest, initOverrides?: RequestInit): Promise<Email>;
+    getLatestEmail(requestParameters?: GetLatestEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Email>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
-    getLatestEmailInInbox1Raw(requestParameters: GetLatestEmailInInbox1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    getLatestEmailInInbox1Raw(requestParameters: GetLatestEmailInInbox1Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Email>>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
-    getLatestEmailInInbox1(requestParameters: GetLatestEmailInInbox1Request, initOverrides?: RequestInit): Promise<Email>;
+    getLatestEmailInInbox1(requestParameters: GetLatestEmailInInbox1Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Email>;
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all organization emails. List team or shared test email accounts
      */
-    getOrganizationEmailsPaginatedRaw(requestParameters: GetOrganizationEmailsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
+    getOrganizationEmailsPaginatedRaw(requestParameters: GetOrganizationEmailsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailProjection>>;
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all organization emails. List team or shared test email accounts
      */
-    getOrganizationEmailsPaginated(requestParameters: GetOrganizationEmailsPaginatedRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
+    getOrganizationEmailsPaginated(requestParameters?: GetOrganizationEmailsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailProjection>;
     /**
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * Get raw email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawEmailContentsRaw(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    getRawEmailContentsRaw(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * Get raw email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawEmailContents(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit): Promise<void>;
+    getRawEmailContents(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
      * Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
      */
-    getRawEmailJsonRaw(requestParameters: GetRawEmailJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<RawEmailJson>>;
+    getRawEmailJsonRaw(requestParameters: GetRawEmailJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RawEmailJson>>;
     /**
      * Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
      * Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
      */
-    getRawEmailJson(requestParameters: GetRawEmailJsonRequest, initOverrides?: RequestInit): Promise<RawEmailJson>;
+    getRawEmailJson(requestParameters: GetRawEmailJsonRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RawEmailJson>;
     /**
      * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread email count
      */
-    getUnreadEmailCountRaw(requestParameters: GetUnreadEmailCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnreadCount>>;
+    getUnreadEmailCountRaw(requestParameters: GetUnreadEmailCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UnreadCount>>;
     /**
      * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread email count
      */
-    getUnreadEmailCount(requestParameters: GetUnreadEmailCountRequest, initOverrides?: RequestInit): Promise<UnreadCount>;
+    getUnreadEmailCount(requestParameters?: GetUnreadEmailCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UnreadCount>;
     /**
      * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
      * Mark all emails as read or unread
      */
-    markAllAsReadRaw(requestParameters: MarkAllAsReadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    markAllAsReadRaw(requestParameters: MarkAllAsReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
      * Mark all emails as read or unread
      */
-    markAllAsRead(requestParameters: MarkAllAsReadRequest, initOverrides?: RequestInit): Promise<void>;
+    markAllAsRead(requestParameters?: MarkAllAsReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
      * Mark an email as read or unread
      */
-    markAsReadRaw(requestParameters: MarkAsReadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreview>>;
+    markAsReadRaw(requestParameters: MarkAsReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailPreview>>;
     /**
      * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
      * Mark an email as read or unread
      */
-    markAsRead(requestParameters: MarkAsReadRequest, initOverrides?: RequestInit): Promise<EmailPreview>;
+    markAsRead(requestParameters: MarkAsReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailPreview>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * Reply to an email
      */
-    replyToEmailRaw(requestParameters: ReplyToEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    replyToEmailRaw(requestParameters: ReplyToEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * Reply to an email
      */
-    replyToEmail(requestParameters: ReplyToEmailRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    replyToEmail(requestParameters: ReplyToEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto>;
     /**
      * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
      * Get all emails by search criteria. Return in paginated form.
      */
-    searchEmailsRaw(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
+    searchEmailsRaw(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailProjection>>;
     /**
      * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
      * Get all emails by search criteria. Return in paginated form.
      */
-    searchEmails(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
+    searchEmails(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailProjection>;
     /**
      * Alias for `InboxController.sendEmail` method - see original method for full details. Sends an email from a given inbox that you have created. If no inbox is supplied a random inbox will be created for you and used to send the email.
      * Send email
      */
-    sendEmailSourceOptionalRaw(requestParameters: SendEmailSourceOptionalRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    sendEmailSourceOptionalRaw(requestParameters: SendEmailSourceOptionalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Alias for `InboxController.sendEmail` method - see original method for full details. Sends an email from a given inbox that you have created. If no inbox is supplied a random inbox will be created for you and used to send the email.
      * Send email
      */
-    sendEmailSourceOptional(requestParameters: SendEmailSourceOptionalRequest, initOverrides?: RequestInit): Promise<void>;
+    sendEmailSourceOptional(requestParameters: SendEmailSourceOptionalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    setEmailFavouritedRaw(requestParameters: SetEmailFavouritedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    setEmailFavourited(requestParameters: SetEmailFavouritedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
      * Validate email HTML contents
      */
-    validateEmailRaw(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ValidationDto>>;
+    validateEmailRaw(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ValidationDto>>;
     /**
      * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
      * Validate email HTML contents
      */
-    validateEmail(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit): Promise<ValidationDto>;
+    validateEmail(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ValidationDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetEmailsOffsetPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetEmailThreadItemsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetEmailThreadItemsSortEnum = typeof GetEmailThreadItemsSortEnum[keyof typeof GetEmailThreadItemsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetEmailsPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetEmailThreadsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetEmailThreadsSortEnum = typeof GetEmailThreadsSortEnum[keyof typeof GetEmailThreadsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetOrganizationEmailsPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetEmailsOffsetPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetEmailsOffsetPaginatedSortEnum = typeof GetEmailsOffsetPaginatedSortEnum[keyof typeof GetEmailsOffsetPaginatedSortEnum];
+/**
+ * @export
+ */
+export declare const GetEmailsPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetEmailsPaginatedSortEnum = typeof GetEmailsPaginatedSortEnum[keyof typeof GetEmailsPaginatedSortEnum];
+/**
+ * @export
+ */
+export declare const GetOrganizationEmailsPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetOrganizationEmailsPaginatedSortEnum = typeof GetOrganizationEmailsPaginatedSortEnum[keyof typeof GetOrganizationEmailsPaginatedSortEnum];

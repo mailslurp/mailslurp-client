@@ -34,6 +34,11 @@ export interface DownloadAttachmentDto {
      */
     sizeBytes: number;
 }
+/**
+ * Check if a given object implements the DownloadAttachmentDto interface.
+ */
+export declare function instanceOfDownloadAttachmentDto(value: object): value is DownloadAttachmentDto;
 export declare function DownloadAttachmentDtoFromJSON(json: any): DownloadAttachmentDto;
 export declare function DownloadAttachmentDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DownloadAttachmentDto;
-export declare function DownloadAttachmentDtoToJSON(value?: DownloadAttachmentDto | null): any;
+export declare function DownloadAttachmentDtoToJSON(json: any): DownloadAttachmentDto;
+export declare function DownloadAttachmentDtoToJSONTyped(value?: DownloadAttachmentDto | null, ignoreDiscriminator?: boolean): any;

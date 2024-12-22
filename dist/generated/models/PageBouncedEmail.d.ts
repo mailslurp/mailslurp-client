@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BounceProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { BounceProjection } from './BounceProjection';
 /**
  * Paginated bounced email. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageBouncedEmail {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageBouncedEmail
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageBouncedEmail {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageBouncedEmail interface.
+ */
+export declare function instanceOfPageBouncedEmail(value: object): value is PageBouncedEmail;
 export declare function PageBouncedEmailFromJSON(json: any): PageBouncedEmail;
 export declare function PageBouncedEmailFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageBouncedEmail;
-export declare function PageBouncedEmailToJSON(value?: PageBouncedEmail | null): any;
+export declare function PageBouncedEmailToJSON(json: any): PageBouncedEmail;
+export declare function PageBouncedEmailToJSONTyped(value?: PageBouncedEmail | null, ignoreDiscriminator?: boolean): any;

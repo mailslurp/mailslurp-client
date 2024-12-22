@@ -51,113 +51,124 @@ export interface DomainNameRecord {
      * @memberof DomainNameRecord
      */
     ttl: number;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof DomainNameRecord
+     */
+    alternativeRecordEntries?: Array<string | null> | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum DomainNameRecordLabelEnum {
-    VERIFICATION = "VERIFICATION",
-    MX = "MX",
-    SPF = "SPF",
-    DKIM = "DKIM",
-    DMARC = "DMARC"
-}
+export declare const DomainNameRecordLabelEnum: {
+    readonly VERIFICATION: "VERIFICATION";
+    readonly MX: "MX";
+    readonly SPF: "SPF";
+    readonly DKIM: "DKIM";
+    readonly DMARC: "DMARC";
+};
+export type DomainNameRecordLabelEnum = typeof DomainNameRecordLabelEnum[keyof typeof DomainNameRecordLabelEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum DomainNameRecordRecordTypeEnum {
-    A = "A",
-    NS = "NS",
-    MD = "MD",
-    MF = "MF",
-    CNAME = "CNAME",
-    SOA = "SOA",
-    MB = "MB",
-    MG = "MG",
-    MR = "MR",
-    NULL = "NULL",
-    WKS = "WKS",
-    PTR = "PTR",
-    HINFO = "HINFO",
-    MINFO = "MINFO",
-    MX = "MX",
-    TXT = "TXT",
-    RP = "RP",
-    AFSDB = "AFSDB",
-    X25 = "X25",
-    ISDN = "ISDN",
-    RT = "RT",
-    NSAP = "NSAP",
-    NSAP_PTR = "NSAP_PTR",
-    SIG = "SIG",
-    KEY = "KEY",
-    PX = "PX",
-    GPOS = "GPOS",
-    AAAA = "AAAA",
-    LOC = "LOC",
-    NXT = "NXT",
-    EID = "EID",
-    NIMLOC = "NIMLOC",
-    SRV = "SRV",
-    ATMA = "ATMA",
-    NAPTR = "NAPTR",
-    KX = "KX",
-    CERT = "CERT",
-    A6 = "A6",
-    DNAME = "DNAME",
-    SINK = "SINK",
-    OPT = "OPT",
-    APL = "APL",
-    DS = "DS",
-    SSHFP = "SSHFP",
-    IPSECKEY = "IPSECKEY",
-    RRSIG = "RRSIG",
-    NSEC = "NSEC",
-    DNSKEY = "DNSKEY",
-    DHCID = "DHCID",
-    NSEC3 = "NSEC3",
-    NSEC3PARAM = "NSEC3PARAM",
-    TLSA = "TLSA",
-    SMIMEA = "SMIMEA",
-    HIP = "HIP",
-    NINFO = "NINFO",
-    RKEY = "RKEY",
-    TALINK = "TALINK",
-    CDS = "CDS",
-    CDNSKEY = "CDNSKEY",
-    OPENPGPKEY = "OPENPGPKEY",
-    CSYNC = "CSYNC",
-    ZONEMD = "ZONEMD",
-    SVCB = "SVCB",
-    HTTPS = "HTTPS",
-    SPF = "SPF",
-    UINFO = "UINFO",
-    UID = "UID",
-    GID = "GID",
-    UNSPEC = "UNSPEC",
-    NID = "NID",
-    L32 = "L32",
-    L64 = "L64",
-    LP = "LP",
-    EUI48 = "EUI48",
-    EUI64 = "EUI64",
-    TKEY = "TKEY",
-    TSIG = "TSIG",
-    IXFR = "IXFR",
-    AXFR = "AXFR",
-    MAILB = "MAILB",
-    MAILA = "MAILA",
-    ANY = "ANY",
-    URI = "URI",
-    CAA = "CAA",
-    AVC = "AVC",
-    DOA = "DOA",
-    AMTRELAY = "AMTRELAY",
-    TA = "TA",
-    DLV = "DLV"
-}
+export declare const DomainNameRecordRecordTypeEnum: {
+    readonly A: "A";
+    readonly NS: "NS";
+    readonly MD: "MD";
+    readonly MF: "MF";
+    readonly CNAME: "CNAME";
+    readonly SOA: "SOA";
+    readonly MB: "MB";
+    readonly MG: "MG";
+    readonly MR: "MR";
+    readonly NULL: "NULL";
+    readonly WKS: "WKS";
+    readonly PTR: "PTR";
+    readonly HINFO: "HINFO";
+    readonly MINFO: "MINFO";
+    readonly MX: "MX";
+    readonly TXT: "TXT";
+    readonly RP: "RP";
+    readonly AFSDB: "AFSDB";
+    readonly X25: "X25";
+    readonly ISDN: "ISDN";
+    readonly RT: "RT";
+    readonly NSAP: "NSAP";
+    readonly NSAP_PTR: "NSAP_PTR";
+    readonly SIG: "SIG";
+    readonly KEY: "KEY";
+    readonly PX: "PX";
+    readonly GPOS: "GPOS";
+    readonly AAAA: "AAAA";
+    readonly LOC: "LOC";
+    readonly NXT: "NXT";
+    readonly EID: "EID";
+    readonly NIMLOC: "NIMLOC";
+    readonly SRV: "SRV";
+    readonly ATMA: "ATMA";
+    readonly NAPTR: "NAPTR";
+    readonly KX: "KX";
+    readonly CERT: "CERT";
+    readonly A6: "A6";
+    readonly DNAME: "DNAME";
+    readonly SINK: "SINK";
+    readonly OPT: "OPT";
+    readonly APL: "APL";
+    readonly DS: "DS";
+    readonly SSHFP: "SSHFP";
+    readonly IPSECKEY: "IPSECKEY";
+    readonly RRSIG: "RRSIG";
+    readonly NSEC: "NSEC";
+    readonly DNSKEY: "DNSKEY";
+    readonly DHCID: "DHCID";
+    readonly NSEC3: "NSEC3";
+    readonly NSEC3PARAM: "NSEC3PARAM";
+    readonly TLSA: "TLSA";
+    readonly SMIMEA: "SMIMEA";
+    readonly HIP: "HIP";
+    readonly NINFO: "NINFO";
+    readonly RKEY: "RKEY";
+    readonly TALINK: "TALINK";
+    readonly CDS: "CDS";
+    readonly CDNSKEY: "CDNSKEY";
+    readonly OPENPGPKEY: "OPENPGPKEY";
+    readonly CSYNC: "CSYNC";
+    readonly ZONEMD: "ZONEMD";
+    readonly SVCB: "SVCB";
+    readonly HTTPS: "HTTPS";
+    readonly SPF: "SPF";
+    readonly UINFO: "UINFO";
+    readonly UID: "UID";
+    readonly GID: "GID";
+    readonly UNSPEC: "UNSPEC";
+    readonly NID: "NID";
+    readonly L32: "L32";
+    readonly L64: "L64";
+    readonly LP: "LP";
+    readonly EUI48: "EUI48";
+    readonly EUI64: "EUI64";
+    readonly TKEY: "TKEY";
+    readonly TSIG: "TSIG";
+    readonly IXFR: "IXFR";
+    readonly AXFR: "AXFR";
+    readonly MAILB: "MAILB";
+    readonly MAILA: "MAILA";
+    readonly ANY: "ANY";
+    readonly URI: "URI";
+    readonly CAA: "CAA";
+    readonly AVC: "AVC";
+    readonly DOA: "DOA";
+    readonly AMTRELAY: "AMTRELAY";
+    readonly TA: "TA";
+    readonly DLV: "DLV";
+};
+export type DomainNameRecordRecordTypeEnum = typeof DomainNameRecordRecordTypeEnum[keyof typeof DomainNameRecordRecordTypeEnum];
+/**
+ * Check if a given object implements the DomainNameRecord interface.
+ */
+export declare function instanceOfDomainNameRecord(value: object): value is DomainNameRecord;
 export declare function DomainNameRecordFromJSON(json: any): DomainNameRecord;
 export declare function DomainNameRecordFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainNameRecord;
-export declare function DomainNameRecordToJSON(value?: DomainNameRecord | null): any;
+export declare function DomainNameRecordToJSON(json: any): DomainNameRecord;
+export declare function DomainNameRecordToJSONTyped(value?: DomainNameRecord | null, ignoreDiscriminator?: boolean): any;

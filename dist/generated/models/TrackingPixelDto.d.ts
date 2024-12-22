@@ -70,6 +70,11 @@ export interface TrackingPixelDto {
      */
     createdAt: Date;
 }
+/**
+ * Check if a given object implements the TrackingPixelDto interface.
+ */
+export declare function instanceOfTrackingPixelDto(value: object): value is TrackingPixelDto;
 export declare function TrackingPixelDtoFromJSON(json: any): TrackingPixelDto;
 export declare function TrackingPixelDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackingPixelDto;
-export declare function TrackingPixelDtoToJSON(value?: TrackingPixelDto | null): any;
+export declare function TrackingPixelDtoToJSON(json: any): TrackingPixelDto;
+export declare function TrackingPixelDtoToJSONTyped(value?: TrackingPixelDto | null, ignoreDiscriminator?: boolean): any;

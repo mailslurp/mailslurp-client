@@ -12,116 +12,133 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DNSLookupResult } from './DNSLookupResult';
 import {
-  DNSLookupOptions,
-  DNSLookupOptionsFromJSON,
-  DNSLookupOptionsFromJSONTyped,
-  DNSLookupOptionsToJSON,
-  DNSLookupResult,
-  DNSLookupResultFromJSON,
-  DNSLookupResultFromJSONTyped,
-  DNSLookupResultToJSON,
-} from './';
+    DNSLookupResultFromJSON,
+    DNSLookupResultFromJSONTyped,
+    DNSLookupResultToJSON,
+    DNSLookupResultToJSONTyped,
+} from './DNSLookupResult';
+import type { DNSLookupOptions } from './DNSLookupOptions';
+import {
+    DNSLookupOptionsFromJSON,
+    DNSLookupOptionsFromJSONTyped,
+    DNSLookupOptionsToJSON,
+    DNSLookupOptionsToJSONTyped,
+} from './DNSLookupOptions';
 
 /**
- *
+ * 
  * @export
  * @interface LookupMtaStsDomainResults
  */
 export interface LookupMtaStsDomainResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof LookupMtaStsDomainResults
-   */
-  valid: boolean;
-  /**
-   *
-   * @type {DNSLookupOptions}
-   * @memberof LookupMtaStsDomainResults
-   */
-  query: DNSLookupOptions;
-  /**
-   *
-   * @type {Array<DNSLookupResult>}
-   * @memberof LookupMtaStsDomainResults
-   */
-  records: Array<DNSLookupResult>;
-  /**
-   *
-   * @type {string}
-   * @memberof LookupMtaStsDomainResults
-   */
-  wellKnownQuery: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof LookupMtaStsDomainResults
-   */
-  wellKnownPresent: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof LookupMtaStsDomainResults
-   */
-  wellKnownValue: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupMtaStsDomainResults
-   */
-  errors: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupMtaStsDomainResults
-   */
-  warnings: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof LookupMtaStsDomainResults
+     */
+    valid: boolean;
+    /**
+     * 
+     * @type {DNSLookupOptions}
+     * @memberof LookupMtaStsDomainResults
+     */
+    query: DNSLookupOptions;
+    /**
+     * 
+     * @type {Array<DNSLookupResult>}
+     * @memberof LookupMtaStsDomainResults
+     */
+    records: Array<DNSLookupResult>;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupMtaStsDomainResults
+     */
+    wellKnownQuery: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof LookupMtaStsDomainResults
+     */
+    wellKnownPresent: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupMtaStsDomainResults
+     */
+    wellKnownValue: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupMtaStsDomainResults
+     */
+    errors: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupMtaStsDomainResults
+     */
+    warnings: Array<string>;
 }
 
-export function LookupMtaStsDomainResultsFromJSON(
-  json: any
-): LookupMtaStsDomainResults {
-  return LookupMtaStsDomainResultsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the LookupMtaStsDomainResults interface.
+ */
+export function instanceOfLookupMtaStsDomainResults(value: object): value is LookupMtaStsDomainResults {
+    if (!('valid' in value) || value['valid'] === undefined) return false;
+    if (!('query' in value) || value['query'] === undefined) return false;
+    if (!('records' in value) || value['records'] === undefined) return false;
+    if (!('wellKnownQuery' in value) || value['wellKnownQuery'] === undefined) return false;
+    if (!('wellKnownPresent' in value) || value['wellKnownPresent'] === undefined) return false;
+    if (!('wellKnownValue' in value) || value['wellKnownValue'] === undefined) return false;
+    if (!('errors' in value) || value['errors'] === undefined) return false;
+    if (!('warnings' in value) || value['warnings'] === undefined) return false;
+    return true;
 }
 
-export function LookupMtaStsDomainResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupMtaStsDomainResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    valid: json['valid'],
-    query: DNSLookupOptionsFromJSON(json['query']),
-    records: (json['records'] as Array<any>).map(DNSLookupResultFromJSON),
-    wellKnownQuery: json['wellKnownQuery'],
-    wellKnownPresent: json['wellKnownPresent'],
-    wellKnownValue: json['wellKnownValue'],
-    errors: json['errors'],
-    warnings: json['warnings'],
-  };
+export function LookupMtaStsDomainResultsFromJSON(json: any): LookupMtaStsDomainResults {
+    return LookupMtaStsDomainResultsFromJSONTyped(json, false);
 }
 
-export function LookupMtaStsDomainResultsToJSON(
-  value?: LookupMtaStsDomainResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    valid: value.valid,
-    query: DNSLookupOptionsToJSON(value.query),
-    records: (value.records as Array<any>).map(DNSLookupResultToJSON),
-    wellKnownQuery: value.wellKnownQuery,
-    wellKnownPresent: value.wellKnownPresent,
-    wellKnownValue: value.wellKnownValue,
-    errors: value.errors,
-    warnings: value.warnings,
-  };
+export function LookupMtaStsDomainResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupMtaStsDomainResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'valid': json['valid'],
+        'query': DNSLookupOptionsFromJSON(json['query']),
+        'records': ((json['records'] as Array<any>).map(DNSLookupResultFromJSON)),
+        'wellKnownQuery': json['wellKnownQuery'],
+        'wellKnownPresent': json['wellKnownPresent'],
+        'wellKnownValue': json['wellKnownValue'],
+        'errors': json['errors'],
+        'warnings': json['warnings'],
+    };
 }
+
+export function LookupMtaStsDomainResultsToJSON(json: any): LookupMtaStsDomainResults {
+    return LookupMtaStsDomainResultsToJSONTyped(json, false);
+}
+
+export function LookupMtaStsDomainResultsToJSONTyped(value?: LookupMtaStsDomainResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'valid': value['valid'],
+        'query': DNSLookupOptionsToJSON(value['query']),
+        'records': ((value['records'] as Array<any>).map(DNSLookupResultToJSON)),
+        'wellKnownQuery': value['wellKnownQuery'],
+        'wellKnownPresent': value['wellKnownPresent'],
+        'wellKnownValue': value['wellKnownValue'],
+        'errors': value['errors'],
+        'warnings': value['warnings'],
+    };
+}
+

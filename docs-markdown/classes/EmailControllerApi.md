@@ -795,7 +795,7 @@ ___
 
 ### getEmailCount
 
-▸ **getEmailCount**(`initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+▸ **getEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
 
 Get email count
 
@@ -803,6 +803,7 @@ Get email count
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetEmailCountRequest`](../interfaces/GetEmailCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -813,7 +814,7 @@ ___
 
 ### getEmailCountRaw
 
-▸ **getEmailCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+▸ **getEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
 Get email count
 
@@ -821,6 +822,7 @@ Get email count
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetEmailCountRequest`](../interfaces/GetEmailCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

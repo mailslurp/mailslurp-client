@@ -4,12 +4,18 @@
 
 SPEC_URL=/tmp/swagger.json
 
+# https://mvnrepository.com/artifact/org.openapitools/openapi-generator-cli
+GENERATOR_VERSION=7.10.0
+
 node_modules:
 	npm install
 
+clean:
+	rm -rf $(PWD)/bin
+
 bin/openapi-generator-cli.jar:
 	mkdir -p bin
-	wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.2.1/openapi-generator-cli-5.2.1.jar -O bin/openapi-generator-cli.jar
+	wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/$(GENERATOR_VERSION)/openapi-generator-cli-$(GENERATOR_VERSION).jar -O bin/openapi-generator-cli.jar
 
 test: node_modules
 	API_KEY=$(API_KEY) npm run integration

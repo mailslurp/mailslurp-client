@@ -112,6 +112,11 @@ export interface MissedEmailDto {
      */
     updatedAt: Date;
 }
+/**
+ * Check if a given object implements the MissedEmailDto interface.
+ */
+export declare function instanceOfMissedEmailDto(value: object): value is MissedEmailDto;
 export declare function MissedEmailDtoFromJSON(json: any): MissedEmailDto;
 export declare function MissedEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): MissedEmailDto;
-export declare function MissedEmailDtoToJSON(value?: MissedEmailDto | null): any;
+export declare function MissedEmailDtoToJSON(json: any): MissedEmailDto;
+export declare function MissedEmailDtoToJSONTyped(value?: MissedEmailDto | null, ignoreDiscriminator?: boolean): any;

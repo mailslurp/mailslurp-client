@@ -13,36 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapUpdateFlagsOptionsToJSON = exports.ImapUpdateFlagsOptionsFromJSONTyped = exports.ImapUpdateFlagsOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfImapUpdateFlagsOptions = instanceOfImapUpdateFlagsOptions;
+exports.ImapUpdateFlagsOptionsFromJSON = ImapUpdateFlagsOptionsFromJSON;
+exports.ImapUpdateFlagsOptionsFromJSONTyped = ImapUpdateFlagsOptionsFromJSONTyped;
+exports.ImapUpdateFlagsOptionsToJSON = ImapUpdateFlagsOptionsToJSON;
+exports.ImapUpdateFlagsOptionsToJSONTyped = ImapUpdateFlagsOptionsToJSONTyped;
+/**
+ * Check if a given object implements the ImapUpdateFlagsOptions interface.
+ */
+function instanceOfImapUpdateFlagsOptions(value) {
+    if (!('operation' in value) || value['operation'] === undefined)
+        return false;
+    return true;
+}
 function ImapUpdateFlagsOptionsFromJSON(json) {
     return ImapUpdateFlagsOptionsFromJSONTyped(json, false);
 }
-exports.ImapUpdateFlagsOptionsFromJSON = ImapUpdateFlagsOptionsFromJSON;
 function ImapUpdateFlagsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        operation: json['operation'],
-        flags: !(0, runtime_1.exists)(json, 'flags') ? undefined : json['flags'],
-        uidSet: !(0, runtime_1.exists)(json, 'uidSet') ? undefined : json['uidSet'],
-        seqSet: !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
+        'operation': json['operation'],
+        'flags': json['flags'] == null ? undefined : json['flags'],
+        'uidSet': json['uidSet'] == null ? undefined : json['uidSet'],
+        'seqSet': json['seqSet'] == null ? undefined : json['seqSet'],
     };
 }
-exports.ImapUpdateFlagsOptionsFromJSONTyped = ImapUpdateFlagsOptionsFromJSONTyped;
-function ImapUpdateFlagsOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapUpdateFlagsOptionsToJSON(json) {
+    return ImapUpdateFlagsOptionsToJSONTyped(json, false);
+}
+function ImapUpdateFlagsOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        operation: value.operation,
-        flags: value.flags,
-        uidSet: value.uidSet,
-        seqSet: value.seqSet,
+        'operation': value['operation'],
+        'flags': value['flags'],
+        'uidSet': value['uidSet'],
+        'seqSet': value['seqSet'],
     };
 }
-exports.ImapUpdateFlagsOptionsToJSON = ImapUpdateFlagsOptionsToJSON;

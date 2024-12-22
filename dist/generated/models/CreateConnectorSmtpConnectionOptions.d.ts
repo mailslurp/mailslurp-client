@@ -20,7 +20,7 @@ export interface CreateConnectorSmtpConnectionOptions {
      * @type {boolean}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    enabled?: boolean;
+    enabled?: boolean | null;
     /**
      *
      * @type {string}
@@ -32,26 +32,79 @@ export interface CreateConnectorSmtpConnectionOptions {
      * @type {number}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpPort?: number;
+    smtpPort?: number | null;
     /**
      *
      * @type {boolean}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpSsl?: boolean;
+    smtpSsl?: boolean | null;
     /**
      *
      * @type {string}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpUsername?: string;
+    smtpUsername?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpPassword?: string;
+    smtpPassword?: string | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    smtpMechanisms?: Array<string | null> | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    startTls?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    localHostName?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    proxyHost?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    proxyPort?: number | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    proxyEnabled?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    sslTrust?: string | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    sslProtocols?: Array<string | null> | null;
 }
+/**
+ * Check if a given object implements the CreateConnectorSmtpConnectionOptions interface.
+ */
+export declare function instanceOfCreateConnectorSmtpConnectionOptions(value: object): value is CreateConnectorSmtpConnectionOptions;
 export declare function CreateConnectorSmtpConnectionOptionsFromJSON(json: any): CreateConnectorSmtpConnectionOptions;
 export declare function CreateConnectorSmtpConnectionOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorSmtpConnectionOptions;
-export declare function CreateConnectorSmtpConnectionOptionsToJSON(value?: CreateConnectorSmtpConnectionOptions | null): any;
+export declare function CreateConnectorSmtpConnectionOptionsToJSON(json: any): CreateConnectorSmtpConnectionOptions;
+export declare function CreateConnectorSmtpConnectionOptionsToJSONTyped(value?: CreateConnectorSmtpConnectionOptions | null, ignoreDiscriminator?: boolean): any;

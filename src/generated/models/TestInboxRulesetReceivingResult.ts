@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface TestInboxRulesetReceivingResult
  */
 export interface TestInboxRulesetReceivingResult {
-  /**
-   *
-   * @type {boolean}
-   * @memberof TestInboxRulesetReceivingResult
-   */
-  canReceive: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TestInboxRulesetReceivingResult
+     */
+    canReceive: boolean;
 }
 
-export function TestInboxRulesetReceivingResultFromJSON(
-  json: any
-): TestInboxRulesetReceivingResult {
-  return TestInboxRulesetReceivingResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the TestInboxRulesetReceivingResult interface.
+ */
+export function instanceOfTestInboxRulesetReceivingResult(value: object): value is TestInboxRulesetReceivingResult {
+    if (!('canReceive' in value) || value['canReceive'] === undefined) return false;
+    return true;
 }
 
-export function TestInboxRulesetReceivingResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestInboxRulesetReceivingResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    canReceive: json['canReceive'],
-  };
+export function TestInboxRulesetReceivingResultFromJSON(json: any): TestInboxRulesetReceivingResult {
+    return TestInboxRulesetReceivingResultFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetReceivingResultToJSON(
-  value?: TestInboxRulesetReceivingResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    canReceive: value.canReceive,
-  };
+export function TestInboxRulesetReceivingResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetReceivingResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'canReceive': json['canReceive'],
+    };
 }
+
+export function TestInboxRulesetReceivingResultToJSON(json: any): TestInboxRulesetReceivingResult {
+    return TestInboxRulesetReceivingResultToJSONTyped(json, false);
+}
+
+export function TestInboxRulesetReceivingResultToJSONTyped(value?: TestInboxRulesetReceivingResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'canReceive': value['canReceive'],
+    };
+}
+

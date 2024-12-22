@@ -12,81 +12,90 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Email verification result. Valid means email address exists according to response from mail server running at the domain and port given.
  * @export
  * @interface EmailVerificationResult
  */
 export interface EmailVerificationResult {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailVerificationResult
-   */
-  domainName: string;
-  /**
-   *
-   * @type {number}
-   * @memberof EmailVerificationResult
-   */
-  port: number;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailVerificationResult
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailVerificationResult
-   */
-  isValid: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailVerificationResult
-   */
-  error?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailVerificationResult
+     */
+    domainName: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof EmailVerificationResult
+     */
+    port: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailVerificationResult
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof EmailVerificationResult
+     */
+    isValid: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailVerificationResult
+     */
+    error?: string | null;
 }
 
-export function EmailVerificationResultFromJSON(
-  json: any
-): EmailVerificationResult {
-  return EmailVerificationResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the EmailVerificationResult interface.
+ */
+export function instanceOfEmailVerificationResult(value: object): value is EmailVerificationResult {
+    if (!('domainName' in value) || value['domainName'] === undefined) return false;
+    if (!('port' in value) || value['port'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('isValid' in value) || value['isValid'] === undefined) return false;
+    return true;
 }
 
-export function EmailVerificationResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailVerificationResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domainName: json['domainName'],
-    port: json['port'],
-    emailAddress: json['emailAddress'],
-    isValid: json['isValid'],
-    error: !exists(json, 'error') ? undefined : json['error'],
-  };
+export function EmailVerificationResultFromJSON(json: any): EmailVerificationResult {
+    return EmailVerificationResultFromJSONTyped(json, false);
 }
 
-export function EmailVerificationResultToJSON(
-  value?: EmailVerificationResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domainName: value.domainName,
-    port: value.port,
-    emailAddress: value.emailAddress,
-    isValid: value.isValid,
-    error: value.error,
-  };
+export function EmailVerificationResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailVerificationResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'domainName': json['domainName'],
+        'port': json['port'],
+        'emailAddress': json['emailAddress'],
+        'isValid': json['isValid'],
+        'error': json['error'] == null ? undefined : json['error'],
+    };
 }
+
+export function EmailVerificationResultToJSON(json: any): EmailVerificationResult {
+    return EmailVerificationResultToJSONTyped(json, false);
+}
+
+export function EmailVerificationResultToJSONTyped(value?: EmailVerificationResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'domainName': value['domainName'],
+        'port': value['port'],
+        'emailAddress': value['emailAddress'],
+        'isValid': value['isValid'],
+        'error': value['error'],
+    };
+}
+

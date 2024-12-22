@@ -22,6 +22,11 @@ export interface LookupTlsReportingDomainOptions {
      */
     host: string;
 }
+/**
+ * Check if a given object implements the LookupTlsReportingDomainOptions interface.
+ */
+export declare function instanceOfLookupTlsReportingDomainOptions(value: object): value is LookupTlsReportingDomainOptions;
 export declare function LookupTlsReportingDomainOptionsFromJSON(json: any): LookupTlsReportingDomainOptions;
 export declare function LookupTlsReportingDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupTlsReportingDomainOptions;
-export declare function LookupTlsReportingDomainOptionsToJSON(value?: LookupTlsReportingDomainOptions | null): any;
+export declare function LookupTlsReportingDomainOptionsToJSON(json: any): LookupTlsReportingDomainOptions;
+export declare function LookupTlsReportingDomainOptionsToJSONTyped(value?: LookupTlsReportingDomainOptions | null, ignoreDiscriminator?: boolean): any;

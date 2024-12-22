@@ -12,69 +12,82 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ServerEndpoints
  */
 export interface ServerEndpoints {
-  /**
-   *
-   * @type {string}
-   * @memberof ServerEndpoints
-   */
-  host: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ServerEndpoints
-   */
-  port: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ServerEndpoints
-   */
-  tls: boolean;
-  /**
-   *
-   * @type {Array<number>}
-   * @memberof ServerEndpoints
-   */
-  altPorts: Array<number>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServerEndpoints
+     */
+    host: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServerEndpoints
+     */
+    port: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServerEndpoints
+     */
+    tls: boolean;
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof ServerEndpoints
+     */
+    altPorts: Array<number>;
+}
+
+/**
+ * Check if a given object implements the ServerEndpoints interface.
+ */
+export function instanceOfServerEndpoints(value: object): value is ServerEndpoints {
+    if (!('host' in value) || value['host'] === undefined) return false;
+    if (!('port' in value) || value['port'] === undefined) return false;
+    if (!('tls' in value) || value['tls'] === undefined) return false;
+    if (!('altPorts' in value) || value['altPorts'] === undefined) return false;
+    return true;
 }
 
 export function ServerEndpointsFromJSON(json: any): ServerEndpoints {
-  return ServerEndpointsFromJSONTyped(json, false);
+    return ServerEndpointsFromJSONTyped(json, false);
 }
 
-export function ServerEndpointsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ServerEndpoints {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-    port: json['port'],
-    tls: json['tls'],
-    altPorts: json['altPorts'],
-  };
+export function ServerEndpointsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServerEndpoints {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+        'port': json['port'],
+        'tls': json['tls'],
+        'altPorts': json['altPorts'],
+    };
 }
 
-export function ServerEndpointsToJSON(value?: ServerEndpoints | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-    port: value.port,
-    tls: value.tls,
-    altPorts: value.altPorts,
-  };
+export function ServerEndpointsToJSON(json: any): ServerEndpoints {
+    return ServerEndpointsToJSONTyped(json, false);
 }
+
+export function ServerEndpointsToJSONTyped(value?: ServerEndpoints | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'host': value['host'],
+        'port': value['port'],
+        'tls': value['tls'],
+        'altPorts': value['altPorts'],
+    };
+}
+

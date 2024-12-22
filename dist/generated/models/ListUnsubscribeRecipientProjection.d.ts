@@ -40,6 +40,11 @@ export interface ListUnsubscribeRecipientProjection {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the ListUnsubscribeRecipientProjection interface.
+ */
+export declare function instanceOfListUnsubscribeRecipientProjection(value: object): value is ListUnsubscribeRecipientProjection;
 export declare function ListUnsubscribeRecipientProjectionFromJSON(json: any): ListUnsubscribeRecipientProjection;
 export declare function ListUnsubscribeRecipientProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ListUnsubscribeRecipientProjection;
-export declare function ListUnsubscribeRecipientProjectionToJSON(value?: ListUnsubscribeRecipientProjection | null): any;
+export declare function ListUnsubscribeRecipientProjectionToJSON(json: any): ListUnsubscribeRecipientProjection;
+export declare function ListUnsubscribeRecipientProjectionToJSONTyped(value?: ListUnsubscribeRecipientProjection | null, ignoreDiscriminator?: boolean): any;

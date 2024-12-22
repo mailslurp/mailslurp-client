@@ -12,97 +12,104 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Bounced recipient
  * @export
  * @interface BounceRecipientProjection
  */
 export interface BounceRecipientProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof BounceRecipientProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
-  sentEmailId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
-  recipient: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
-  action?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
-  bounceType?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
-  id?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
-  status?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof BounceRecipientProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
+    sentEmailId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
+    recipient: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
+    action?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
+    bounceType?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
+    status?: string | null;
 }
 
-export function BounceRecipientProjectionFromJSON(
-  json: any
-): BounceRecipientProjection {
-  return BounceRecipientProjectionFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the BounceRecipientProjection interface.
+ */
+export function instanceOfBounceRecipientProjection(value: object): value is BounceRecipientProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('recipient' in value) || value['recipient'] === undefined) return false;
+    return true;
 }
 
-export function BounceRecipientProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): BounceRecipientProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-    recipient: json['recipient'],
-    action: !exists(json, 'action') ? undefined : json['action'],
-    bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-    status: !exists(json, 'status') ? undefined : json['status'],
-  };
+export function BounceRecipientProjectionFromJSON(json: any): BounceRecipientProjection {
+    return BounceRecipientProjectionFromJSONTyped(json, false);
 }
 
-export function BounceRecipientProjectionToJSON(
-  value?: BounceRecipientProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    sentEmailId: value.sentEmailId,
-    recipient: value.recipient,
-    action: value.action,
-    bounceType: value.bounceType,
-    id: value.id,
-    status: value.status,
-  };
+export function BounceRecipientProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceRecipientProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'sentEmailId': json['sentEmailId'] == null ? undefined : json['sentEmailId'],
+        'recipient': json['recipient'],
+        'action': json['action'] == null ? undefined : json['action'],
+        'bounceType': json['bounceType'] == null ? undefined : json['bounceType'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'status': json['status'] == null ? undefined : json['status'],
+    };
 }
+
+export function BounceRecipientProjectionToJSON(json: any): BounceRecipientProjection {
+    return BounceRecipientProjectionToJSONTyped(json, false);
+}
+
+export function BounceRecipientProjectionToJSONTyped(value?: BounceRecipientProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'sentEmailId': value['sentEmailId'],
+        'recipient': value['recipient'],
+        'action': value['action'],
+        'bounceType': value['bounceType'],
+        'id': value['id'],
+        'status': value['status'],
+    };
+}
+

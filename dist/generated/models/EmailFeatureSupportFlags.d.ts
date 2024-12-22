@@ -30,14 +30,19 @@ export interface EmailFeatureSupportFlags {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum EmailFeatureSupportFlagsStatusEnum {
-    SUPPORTED = "SUPPORTED",
-    PARTIAL = "PARTIAL",
-    NOT_SUPPORTED = "NOT_SUPPORTED",
-    UNKNOWN = "UNKNOWN"
-}
+export declare const EmailFeatureSupportFlagsStatusEnum: {
+    readonly SUPPORTED: "SUPPORTED";
+    readonly PARTIAL: "PARTIAL";
+    readonly NOT_SUPPORTED: "NOT_SUPPORTED";
+    readonly UNKNOWN: "UNKNOWN";
+};
+export type EmailFeatureSupportFlagsStatusEnum = typeof EmailFeatureSupportFlagsStatusEnum[keyof typeof EmailFeatureSupportFlagsStatusEnum];
+/**
+ * Check if a given object implements the EmailFeatureSupportFlags interface.
+ */
+export declare function instanceOfEmailFeatureSupportFlags(value: object): value is EmailFeatureSupportFlags;
 export declare function EmailFeatureSupportFlagsFromJSON(json: any): EmailFeatureSupportFlags;
 export declare function EmailFeatureSupportFlagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureSupportFlags;
-export declare function EmailFeatureSupportFlagsToJSON(value?: EmailFeatureSupportFlags | null): any;
+export declare function EmailFeatureSupportFlagsToJSON(json: any): EmailFeatureSupportFlags;
+export declare function EmailFeatureSupportFlagsToJSONTyped(value?: EmailFeatureSupportFlags | null, ignoreDiscriminator?: boolean): any;

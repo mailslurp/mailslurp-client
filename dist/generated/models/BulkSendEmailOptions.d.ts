@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { SendEmailOptions } from './';
+import type { SendEmailOptions } from './SendEmailOptions';
 /**
  * Options for bulk sending an email from multiple addresses. See regular `sendEmail` methods for more information.
  * @export
@@ -29,6 +29,11 @@ export interface BulkSendEmailOptions {
      */
     sendEmailOptions: SendEmailOptions;
 }
+/**
+ * Check if a given object implements the BulkSendEmailOptions interface.
+ */
+export declare function instanceOfBulkSendEmailOptions(value: object): value is BulkSendEmailOptions;
 export declare function BulkSendEmailOptionsFromJSON(json: any): BulkSendEmailOptions;
 export declare function BulkSendEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): BulkSendEmailOptions;
-export declare function BulkSendEmailOptionsToJSON(value?: BulkSendEmailOptions | null): any;
+export declare function BulkSendEmailOptionsToJSON(json: any): BulkSendEmailOptions;
+export declare function BulkSendEmailOptionsToJSONTyped(value?: BulkSendEmailOptions | null, ignoreDiscriminator?: boolean): any;

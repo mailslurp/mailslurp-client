@@ -13,39 +13,42 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncRequestResultToJSON = exports.ConnectorSyncRequestResultFromJSONTyped = exports.ConnectorSyncRequestResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfConnectorSyncRequestResult = instanceOfConnectorSyncRequestResult;
+exports.ConnectorSyncRequestResultFromJSON = ConnectorSyncRequestResultFromJSON;
+exports.ConnectorSyncRequestResultFromJSONTyped = ConnectorSyncRequestResultFromJSONTyped;
+exports.ConnectorSyncRequestResultToJSON = ConnectorSyncRequestResultToJSON;
+exports.ConnectorSyncRequestResultToJSONTyped = ConnectorSyncRequestResultToJSONTyped;
+var ConnectorSyncResult_1 = require("./ConnectorSyncResult");
+/**
+ * Check if a given object implements the ConnectorSyncRequestResult interface.
+ */
+function instanceOfConnectorSyncRequestResult(value) {
+    return true;
+}
 function ConnectorSyncRequestResultFromJSON(json) {
     return ConnectorSyncRequestResultFromJSONTyped(json, false);
 }
-exports.ConnectorSyncRequestResultFromJSON = ConnectorSyncRequestResultFromJSON;
 function ConnectorSyncRequestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        syncResult: !(0, runtime_1.exists)(json, 'syncResult')
-            ? undefined
-            : (0, _1.ConnectorSyncResultFromJSON)(json['syncResult']),
-        exception: !(0, runtime_1.exists)(json, 'exception')
-            ? undefined
-            : (0, _1.ConnectorSyncRequestResultExceptionFromJSON)(json['exception']),
-        eventId: !(0, runtime_1.exists)(json, 'eventId') ? undefined : json['eventId'],
+        'syncResult': json['syncResult'] == null ? undefined : (0, ConnectorSyncResult_1.ConnectorSyncResultFromJSON)(json['syncResult']),
+        'exception': json['exception'] == null ? undefined : json['exception'],
+        'eventId': json['eventId'] == null ? undefined : json['eventId'],
     };
 }
-exports.ConnectorSyncRequestResultFromJSONTyped = ConnectorSyncRequestResultFromJSONTyped;
-function ConnectorSyncRequestResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ConnectorSyncRequestResultToJSON(json) {
+    return ConnectorSyncRequestResultToJSONTyped(json, false);
+}
+function ConnectorSyncRequestResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        syncResult: (0, _1.ConnectorSyncResultToJSON)(value.syncResult),
-        exception: (0, _1.ConnectorSyncRequestResultExceptionToJSON)(value.exception),
-        eventId: value.eventId,
+        'syncResult': (0, ConnectorSyncResult_1.ConnectorSyncResultToJSON)(value['syncResult']),
+        'exception': value['exception'],
+        'eventId': value['eventId'],
     };
 }
-exports.ConnectorSyncRequestResultToJSON = ConnectorSyncRequestResultToJSON;

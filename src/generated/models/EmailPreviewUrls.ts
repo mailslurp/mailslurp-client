@@ -12,61 +12,73 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * URLs for email body
  * @export
  * @interface EmailPreviewUrls
  */
 export interface EmailPreviewUrls {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailPreviewUrls
-   */
-  rawSmtpMessageUrl: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailPreviewUrls
-   */
-  plainHtmlBodyUrl: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailPreviewUrls
-   */
-  origin: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailPreviewUrls
+     */
+    rawSmtpMessageUrl: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailPreviewUrls
+     */
+    plainHtmlBodyUrl: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailPreviewUrls
+     */
+    origin: string;
+}
+
+/**
+ * Check if a given object implements the EmailPreviewUrls interface.
+ */
+export function instanceOfEmailPreviewUrls(value: object): value is EmailPreviewUrls {
+    if (!('rawSmtpMessageUrl' in value) || value['rawSmtpMessageUrl'] === undefined) return false;
+    if (!('plainHtmlBodyUrl' in value) || value['plainHtmlBodyUrl'] === undefined) return false;
+    if (!('origin' in value) || value['origin'] === undefined) return false;
+    return true;
 }
 
 export function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls {
-  return EmailPreviewUrlsFromJSONTyped(json, false);
+    return EmailPreviewUrlsFromJSONTyped(json, false);
 }
 
-export function EmailPreviewUrlsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailPreviewUrls {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
-    plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
-    origin: json['origin'],
-  };
+export function EmailPreviewUrlsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreviewUrls {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'rawSmtpMessageUrl': json['rawSmtpMessageUrl'],
+        'plainHtmlBodyUrl': json['plainHtmlBodyUrl'],
+        'origin': json['origin'],
+    };
 }
 
-export function EmailPreviewUrlsToJSON(value?: EmailPreviewUrls | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    rawSmtpMessageUrl: value.rawSmtpMessageUrl,
-    plainHtmlBodyUrl: value.plainHtmlBodyUrl,
-    origin: value.origin,
-  };
+export function EmailPreviewUrlsToJSON(json: any): EmailPreviewUrls {
+    return EmailPreviewUrlsToJSONTyped(json, false);
 }
+
+export function EmailPreviewUrlsToJSONTyped(value?: EmailPreviewUrls | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'rawSmtpMessageUrl': value['rawSmtpMessageUrl'],
+        'plainHtmlBodyUrl': value['plainHtmlBodyUrl'],
+        'origin': value['origin'],
+    };
+}
+

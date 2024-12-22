@@ -12,116 +12,138 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { Sender } from './Sender';
 import {
-  EmailRecipients,
-  EmailRecipientsFromJSON,
-  EmailRecipientsFromJSONTyped,
-  EmailRecipientsToJSON,
-  Sender,
-  SenderFromJSON,
-  SenderFromJSONTyped,
-  SenderToJSON,
-} from './';
+    SenderFromJSON,
+    SenderFromJSONTyped,
+    SenderToJSON,
+    SenderToJSONTyped,
+} from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
+import {
+    EmailRecipientsFromJSON,
+    EmailRecipientsFromJSONTyped,
+    EmailRecipientsToJSON,
+    EmailRecipientsToJSONTyped,
+} from './EmailRecipients';
 
 /**
- *
+ * 
  * @export
  * @interface FakeEmailPreview
  */
 export interface FakeEmailPreview {
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailPreview
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailPreview
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {Sender}
-   * @memberof FakeEmailPreview
-   */
-  sender?: Sender | null;
-  /**
-   *
-   * @type {EmailRecipients}
-   * @memberof FakeEmailPreview
-   */
-  recipients?: EmailRecipients | null;
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailPreview
-   */
-  subject?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof FakeEmailPreview
-   */
-  preview?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof FakeEmailPreview
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {boolean}
-   * @memberof FakeEmailPreview
-   */
-  seen: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailPreview
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailPreview
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {Sender}
+     * @memberof FakeEmailPreview
+     */
+    sender?: Sender | null;
+    /**
+     * 
+     * @type {EmailRecipients}
+     * @memberof FakeEmailPreview
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof FakeEmailPreview
+     */
+    hasAttachments: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailPreview
+     */
+    subject?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FakeEmailPreview
+     */
+    preview?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof FakeEmailPreview
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof FakeEmailPreview
+     */
+    seen: boolean;
+}
+
+/**
+ * Check if a given object implements the FakeEmailPreview interface.
+ */
+export function instanceOfFakeEmailPreview(value: object): value is FakeEmailPreview {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('hasAttachments' in value) || value['hasAttachments'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('seen' in value) || value['seen'] === undefined) return false;
+    return true;
 }
 
 export function FakeEmailPreviewFromJSON(json: any): FakeEmailPreview {
-  return FakeEmailPreviewFromJSONTyped(json, false);
+    return FakeEmailPreviewFromJSONTyped(json, false);
 }
 
-export function FakeEmailPreviewFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): FakeEmailPreview {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    emailAddress: json['emailAddress'],
-    sender: !exists(json, 'sender')
-      ? undefined
-      : SenderFromJSON(json['sender']),
-    recipients: !exists(json, 'recipients')
-      ? undefined
-      : EmailRecipientsFromJSON(json['recipients']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    preview: !exists(json, 'preview') ? undefined : json['preview'],
-    createdAt: new Date(json['createdAt']),
-    seen: json['seen'],
-  };
+export function FakeEmailPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailPreview {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+        'sender': json['sender'] == null ? undefined : SenderFromJSON(json['sender']),
+        'recipients': json['recipients'] == null ? undefined : EmailRecipientsFromJSON(json['recipients']),
+        'hasAttachments': json['hasAttachments'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'preview': json['preview'] == null ? undefined : json['preview'],
+        'createdAt': (new Date(json['createdAt'])),
+        'seen': json['seen'],
+    };
 }
 
-export function FakeEmailPreviewToJSON(value?: FakeEmailPreview | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    emailAddress: value.emailAddress,
-    sender: SenderToJSON(value.sender),
-    recipients: EmailRecipientsToJSON(value.recipients),
-    subject: value.subject,
-    preview: value.preview,
-    createdAt: value.createdAt.toISOString(),
-    seen: value.seen,
-  };
+export function FakeEmailPreviewToJSON(json: any): FakeEmailPreview {
+    return FakeEmailPreviewToJSONTyped(json, false);
 }
+
+export function FakeEmailPreviewToJSONTyped(value?: FakeEmailPreview | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'emailAddress': value['emailAddress'],
+        'sender': SenderToJSON(value['sender']),
+        'recipients': EmailRecipientsToJSON(value['recipients']),
+        'hasAttachments': value['hasAttachments'],
+        'subject': value['subject'],
+        'preview': value['preview'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'seen': value['seen'],
+    };
+}
+

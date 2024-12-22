@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { SmsMatchOption } from './';
+import type { SmsMatchOption } from './SmsMatchOption';
 /**
  * Conditions to apply to emails that you are waiting for
  * @export
@@ -57,7 +57,7 @@ export interface WaitForSmsConditions {
      * @type {string}
      * @memberof WaitForSmsConditions
      */
-    countType?: WaitForSmsConditionsCountTypeEnum;
+    countType?: WaitForSmsConditionsCountTypeEnum | null;
     /**
      * Conditions that should be matched for an SMS to qualify for results. Each condition will be applied in order to each SMS within a phone number to filter a result list of matching SMSs you are waiting for.
      * @type {Array<SmsMatchOption>}
@@ -69,7 +69,7 @@ export interface WaitForSmsConditions {
      * @type {string}
      * @memberof WaitForSmsConditions
      */
-    sortDirection?: WaitForSmsConditionsSortDirectionEnum;
+    sortDirection?: WaitForSmsConditionsSortDirectionEnum | null;
     /**
      * ISO Date Time earliest time of SMS to consider. Filter for matching SMSs that were received after this date
      * @type {Date}
@@ -85,20 +85,25 @@ export interface WaitForSmsConditions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WaitForSmsConditionsCountTypeEnum {
-    EXACTLY = "EXACTLY",
-    ATLEAST = "ATLEAST"
-}
+export declare const WaitForSmsConditionsCountTypeEnum: {
+    readonly EXACTLY: "EXACTLY";
+    readonly ATLEAST: "ATLEAST";
+};
+export type WaitForSmsConditionsCountTypeEnum = typeof WaitForSmsConditionsCountTypeEnum[keyof typeof WaitForSmsConditionsCountTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum WaitForSmsConditionsSortDirectionEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const WaitForSmsConditionsSortDirectionEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type WaitForSmsConditionsSortDirectionEnum = typeof WaitForSmsConditionsSortDirectionEnum[keyof typeof WaitForSmsConditionsSortDirectionEnum];
+/**
+ * Check if a given object implements the WaitForSmsConditions interface.
+ */
+export declare function instanceOfWaitForSmsConditions(value: object): value is WaitForSmsConditions;
 export declare function WaitForSmsConditionsFromJSON(json: any): WaitForSmsConditions;
 export declare function WaitForSmsConditionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): WaitForSmsConditions;
-export declare function WaitForSmsConditionsToJSON(value?: WaitForSmsConditions | null): any;
+export declare function WaitForSmsConditionsToJSON(json: any): WaitForSmsConditions;
+export declare function WaitForSmsConditionsToJSONTyped(value?: WaitForSmsConditions | null, ignoreDiscriminator?: boolean): any;

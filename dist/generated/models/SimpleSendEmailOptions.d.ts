@@ -40,6 +40,11 @@ export interface SimpleSendEmailOptions {
      */
     subject?: string | null;
 }
+/**
+ * Check if a given object implements the SimpleSendEmailOptions interface.
+ */
+export declare function instanceOfSimpleSendEmailOptions(value: object): value is SimpleSendEmailOptions;
 export declare function SimpleSendEmailOptionsFromJSON(json: any): SimpleSendEmailOptions;
 export declare function SimpleSendEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SimpleSendEmailOptions;
-export declare function SimpleSendEmailOptionsToJSON(value?: SimpleSendEmailOptions | null): any;
+export declare function SimpleSendEmailOptionsToJSON(json: any): SimpleSendEmailOptions;
+export declare function SimpleSendEmailOptionsToJSONTyped(value?: SimpleSendEmailOptions | null, ignoreDiscriminator?: boolean): any;

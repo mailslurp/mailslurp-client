@@ -69,16 +69,27 @@ export interface PhoneNumberDto {
      * @memberof PhoneNumberDto
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PhoneNumberDto
+     */
+    favourite: boolean;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum PhoneNumberDtoPhoneCountryEnum {
-    US = "US",
-    GB = "GB",
-    AU = "AU"
-}
+export declare const PhoneNumberDtoPhoneCountryEnum: {
+    readonly US: "US";
+    readonly GB: "GB";
+    readonly AU: "AU";
+};
+export type PhoneNumberDtoPhoneCountryEnum = typeof PhoneNumberDtoPhoneCountryEnum[keyof typeof PhoneNumberDtoPhoneCountryEnum];
+/**
+ * Check if a given object implements the PhoneNumberDto interface.
+ */
+export declare function instanceOfPhoneNumberDto(value: object): value is PhoneNumberDto;
 export declare function PhoneNumberDtoFromJSON(json: any): PhoneNumberDto;
 export declare function PhoneNumberDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberDto;
-export declare function PhoneNumberDtoToJSON(value?: PhoneNumberDto | null): any;
+export declare function PhoneNumberDtoToJSON(json: any): PhoneNumberDto;
+export declare function PhoneNumberDtoToJSONTyped(value?: PhoneNumberDto | null, ignoreDiscriminator?: boolean): any;

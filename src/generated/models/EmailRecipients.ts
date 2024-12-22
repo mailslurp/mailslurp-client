@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { Recipient } from './Recipient';
 import {
-  Recipient,
-  RecipientFromJSON,
-  RecipientFromJSONTyped,
-  RecipientToJSON,
-} from './';
+    RecipientFromJSON,
+    RecipientFromJSONTyped,
+    RecipientToJSON,
+    RecipientToJSONTyped,
+} from './Recipient';
 
 /**
  * The `To`,`CC`,`BCC` recipients stored in object form with email address and name accessible.
@@ -26,69 +27,63 @@ import {
  * @interface EmailRecipients
  */
 export interface EmailRecipients {
-  /**
-   *
-   * @type {Array<Recipient>}
-   * @memberof EmailRecipients
-   */
-  to?: Array<Recipient>;
-  /**
-   *
-   * @type {Array<Recipient>}
-   * @memberof EmailRecipients
-   */
-  cc?: Array<Recipient>;
-  /**
-   *
-   * @type {Array<Recipient>}
-   * @memberof EmailRecipients
-   */
-  bcc?: Array<Recipient>;
+    /**
+     * 
+     * @type {Array<Recipient>}
+     * @memberof EmailRecipients
+     */
+    to?: Array<Recipient>;
+    /**
+     * 
+     * @type {Array<Recipient>}
+     * @memberof EmailRecipients
+     */
+    cc?: Array<Recipient>;
+    /**
+     * 
+     * @type {Array<Recipient>}
+     * @memberof EmailRecipients
+     */
+    bcc?: Array<Recipient>;
+}
+
+/**
+ * Check if a given object implements the EmailRecipients interface.
+ */
+export function instanceOfEmailRecipients(value: object): value is EmailRecipients {
+    return true;
 }
 
 export function EmailRecipientsFromJSON(json: any): EmailRecipients {
-  return EmailRecipientsFromJSONTyped(json, false);
+    return EmailRecipientsFromJSONTyped(json, false);
 }
 
-export function EmailRecipientsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailRecipients {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    to: !exists(json, 'to')
-      ? undefined
-      : (json['to'] as Array<any>).map(RecipientFromJSON),
-    cc: !exists(json, 'cc')
-      ? undefined
-      : (json['cc'] as Array<any>).map(RecipientFromJSON),
-    bcc: !exists(json, 'bcc')
-      ? undefined
-      : (json['bcc'] as Array<any>).map(RecipientFromJSON),
-  };
+export function EmailRecipientsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailRecipients {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'to': json['to'] == null ? undefined : ((json['to'] as Array<any>).map(RecipientFromJSON)),
+        'cc': json['cc'] == null ? undefined : ((json['cc'] as Array<any>).map(RecipientFromJSON)),
+        'bcc': json['bcc'] == null ? undefined : ((json['bcc'] as Array<any>).map(RecipientFromJSON)),
+    };
 }
 
-export function EmailRecipientsToJSON(value?: EmailRecipients | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    to:
-      value.to === undefined
-        ? undefined
-        : (value.to as Array<any>).map(RecipientToJSON),
-    cc:
-      value.cc === undefined
-        ? undefined
-        : (value.cc as Array<any>).map(RecipientToJSON),
-    bcc:
-      value.bcc === undefined
-        ? undefined
-        : (value.bcc as Array<any>).map(RecipientToJSON),
-  };
+export function EmailRecipientsToJSON(json: any): EmailRecipients {
+    return EmailRecipientsToJSONTyped(json, false);
 }
+
+export function EmailRecipientsToJSONTyped(value?: EmailRecipients | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'to': value['to'] == null ? undefined : ((value['to'] as Array<any>).map(RecipientToJSON)),
+        'cc': value['cc'] == null ? undefined : ((value['cc'] as Array<any>).map(RecipientToJSON)),
+        'bcc': value['bcc'] == null ? undefined : ((value['bcc'] as Array<any>).map(RecipientToJSON)),
+    };
+}
+

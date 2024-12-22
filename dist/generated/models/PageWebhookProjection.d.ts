@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SortObject, WebhookProjection } from './';
+import type { PageableObject } from './PageableObject';
+import type { WebhookProjection } from './WebhookProjection';
+import type { SortObject } from './SortObject';
 /**
  * Paginated webhook entity. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageWebhookProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageWebhookProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageWebhookProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageWebhookProjection interface.
+ */
+export declare function instanceOfPageWebhookProjection(value: object): value is PageWebhookProjection;
 export declare function PageWebhookProjectionFromJSON(json: any): PageWebhookProjection;
 export declare function PageWebhookProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageWebhookProjection;
-export declare function PageWebhookProjectionToJSON(value?: PageWebhookProjection | null): any;
+export declare function PageWebhookProjectionToJSON(json: any): PageWebhookProjection;
+export declare function PageWebhookProjectionToJSONTyped(value?: PageWebhookProjection | null, ignoreDiscriminator?: boolean): any;

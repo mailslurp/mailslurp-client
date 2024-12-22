@@ -12,88 +12,86 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for updating inbox properties
  * @export
  * @interface UpdateInboxOptions
  */
 export interface UpdateInboxOptions {
-  /**
-   * Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search
-   * @type {string}
-   * @memberof UpdateInboxOptions
-   */
-  name?: string | null;
-  /**
-   * Description of an inbox for labelling and searching purposes
-   * @type {string}
-   * @memberof UpdateInboxOptions
-   */
-  description?: string | null;
-  /**
-   * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-   * @type {Array<string>}
-   * @memberof UpdateInboxOptions
-   */
-  tags?: Array<string> | null;
-  /**
-   * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
-   * @type {Date}
-   * @memberof UpdateInboxOptions
-   */
-  expiresAt?: Date | null;
-  /**
-   * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
-   * @type {boolean}
-   * @memberof UpdateInboxOptions
-   */
-  favourite?: boolean | null;
+    /**
+     * Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search
+     * @type {string}
+     * @memberof UpdateInboxOptions
+     */
+    name?: string | null;
+    /**
+     * Description of an inbox for labelling and searching purposes
+     * @type {string}
+     * @memberof UpdateInboxOptions
+     */
+    description?: string | null;
+    /**
+     * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
+     * @type {Array<string | null>}
+     * @memberof UpdateInboxOptions
+     */
+    tags?: Array<string | null> | null;
+    /**
+     * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
+     * @type {Date}
+     * @memberof UpdateInboxOptions
+     */
+    expiresAt?: Date | null;
+    /**
+     * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
+     * @type {boolean}
+     * @memberof UpdateInboxOptions
+     */
+    favourite?: boolean | null;
+}
+
+/**
+ * Check if a given object implements the UpdateInboxOptions interface.
+ */
+export function instanceOfUpdateInboxOptions(value: object): value is UpdateInboxOptions {
+    return true;
 }
 
 export function UpdateInboxOptionsFromJSON(json: any): UpdateInboxOptions {
-  return UpdateInboxOptionsFromJSONTyped(json, false);
+    return UpdateInboxOptionsFromJSONTyped(json, false);
 }
 
-export function UpdateInboxOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UpdateInboxOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-    tags: !exists(json, 'tags') ? undefined : json['tags'],
-    expiresAt: !exists(json, 'expiresAt')
-      ? undefined
-      : json['expiresAt'] === null
-      ? null
-      : new Date(json['expiresAt']),
-    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
-  };
+export function UpdateInboxOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateInboxOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'] == null ? undefined : json['name'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
+        'expiresAt': json['expiresAt'] == null ? undefined : (new Date(json['expiresAt'])),
+        'favourite': json['favourite'] == null ? undefined : json['favourite'],
+    };
 }
 
-export function UpdateInboxOptionsToJSON(
-  value?: UpdateInboxOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    description: value.description,
-    tags: value.tags,
-    expiresAt:
-      value.expiresAt === undefined
-        ? undefined
-        : value.expiresAt === null
-        ? null
-        : value.expiresAt.toISOString(),
-    favourite: value.favourite,
-  };
+export function UpdateInboxOptionsToJSON(json: any): UpdateInboxOptions {
+    return UpdateInboxOptionsToJSONTyped(json, false);
 }
+
+export function UpdateInboxOptionsToJSONTyped(value?: UpdateInboxOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'description': value['description'],
+        'tags': value['tags'],
+        'expiresAt': value['expiresAt'] == null ? undefined : ((value['expiresAt'] as any).toISOString()),
+        'favourite': value['favourite'],
+    };
+}
+

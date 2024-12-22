@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SentEmailProjection, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { SentEmailProjection } from './SentEmailProjection';
 /**
  * Paginated sent email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageSentEmailProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageSentEmailProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageSentEmailProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageSentEmailProjection interface.
+ */
+export declare function instanceOfPageSentEmailProjection(value: object): value is PageSentEmailProjection;
 export declare function PageSentEmailProjectionFromJSON(json: any): PageSentEmailProjection;
 export declare function PageSentEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageSentEmailProjection;
-export declare function PageSentEmailProjectionToJSON(value?: PageSentEmailProjection | null): any;
+export declare function PageSentEmailProjectionToJSON(json: any): PageSentEmailProjection;
+export declare function PageSentEmailProjectionToJSONTyped(value?: PageSentEmailProjection | null, ignoreDiscriminator?: boolean): any;

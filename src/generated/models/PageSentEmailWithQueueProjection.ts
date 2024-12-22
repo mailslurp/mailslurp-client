@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { PageableObject } from './PageableObject';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SendWithQueueResult,
-  SendWithQueueResultFromJSON,
-  SendWithQueueResultFromJSONTyped,
-  SendWithQueueResultToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-} from './';
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PageableObjectToJSONTyped,
+} from './PageableObject';
+import type { SendWithQueueResult } from './SendWithQueueResult';
+import {
+    SendWithQueueResultFromJSON,
+    SendWithQueueResultFromJSONTyped,
+    SendWithQueueResultToJSON,
+    SendWithQueueResultToJSONTyped,
+} from './SendWithQueueResult';
+import type { SortObject } from './SortObject';
+import {
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    SortObjectToJSONTyped,
+} from './SortObject';
 
 /**
  * Paginated sent email results for emails sent with queue. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
@@ -34,131 +41,129 @@ import {
  * @interface PageSentEmailWithQueueProjection
  */
 export interface PageSentEmailWithQueueProjection {
-  /**
-   *
-   * @type {Array<SendWithQueueResult>}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  content?: Array<SendWithQueueResult>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<SendWithQueueResult>}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    content?: Array<SendWithQueueResult>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {Array<SortObject>}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    sort?: Array<SortObject>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    empty?: boolean;
 }
 
-export function PageSentEmailWithQueueProjectionFromJSON(
-  json: any
-): PageSentEmailWithQueueProjection {
-  return PageSentEmailWithQueueProjectionFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the PageSentEmailWithQueueProjection interface.
+ */
+export function instanceOfPageSentEmailWithQueueProjection(value: object): value is PageSentEmailWithQueueProjection {
+    if (!('totalPages' in value) || value['totalPages'] === undefined) return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
-export function PageSentEmailWithQueueProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageSentEmailWithQueueProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(SendWithQueueResultFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageSentEmailWithQueueProjectionFromJSON(json: any): PageSentEmailWithQueueProjection {
+    return PageSentEmailWithQueueProjectionFromJSONTyped(json, false);
 }
 
-export function PageSentEmailWithQueueProjectionToJSON(
-  value?: PageSentEmailWithQueueProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(SendWithQueueResultToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
-    totalElements: value.totalElements,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageSentEmailWithQueueProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageSentEmailWithQueueProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'] == null ? undefined : ((json['content'] as Array<any>).map(SendWithQueueResultFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : ((json['sort'] as Array<any>).map(SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
+    };
 }
+
+export function PageSentEmailWithQueueProjectionToJSON(json: any): PageSentEmailWithQueueProjection {
+    return PageSentEmailWithQueueProjectionToJSONTyped(json, false);
+}
+
+export function PageSentEmailWithQueueProjectionToJSONTyped(value?: PageSentEmailWithQueueProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'] == null ? undefined : ((value['content'] as Array<any>).map(SendWithQueueResultToJSON)),
+        'pageable': PageableObjectToJSON(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : ((value['sort'] as Array<any>).map(SortObjectToJSON)),
+        'empty': value['empty'],
+    };
+}
+

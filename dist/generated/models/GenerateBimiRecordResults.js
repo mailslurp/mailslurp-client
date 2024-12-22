@@ -13,131 +13,146 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateBimiRecordResultsToJSON = exports.GenerateBimiRecordResultsFromJSONTyped = exports.GenerateBimiRecordResultsFromJSON = exports.GenerateBimiRecordResultsTypeEnum = void 0;
+exports.GenerateBimiRecordResultsTypeEnum = void 0;
+exports.instanceOfGenerateBimiRecordResults = instanceOfGenerateBimiRecordResults;
+exports.GenerateBimiRecordResultsFromJSON = GenerateBimiRecordResultsFromJSON;
+exports.GenerateBimiRecordResultsFromJSONTyped = GenerateBimiRecordResultsFromJSONTyped;
+exports.GenerateBimiRecordResultsToJSON = GenerateBimiRecordResultsToJSON;
+exports.GenerateBimiRecordResultsToJSONTyped = GenerateBimiRecordResultsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var GenerateBimiRecordResultsTypeEnum;
-(function (GenerateBimiRecordResultsTypeEnum) {
-    GenerateBimiRecordResultsTypeEnum["A"] = "A";
-    GenerateBimiRecordResultsTypeEnum["NS"] = "NS";
-    GenerateBimiRecordResultsTypeEnum["MD"] = "MD";
-    GenerateBimiRecordResultsTypeEnum["MF"] = "MF";
-    GenerateBimiRecordResultsTypeEnum["CNAME"] = "CNAME";
-    GenerateBimiRecordResultsTypeEnum["SOA"] = "SOA";
-    GenerateBimiRecordResultsTypeEnum["MB"] = "MB";
-    GenerateBimiRecordResultsTypeEnum["MG"] = "MG";
-    GenerateBimiRecordResultsTypeEnum["MR"] = "MR";
-    GenerateBimiRecordResultsTypeEnum["NULL"] = "NULL";
-    GenerateBimiRecordResultsTypeEnum["WKS"] = "WKS";
-    GenerateBimiRecordResultsTypeEnum["PTR"] = "PTR";
-    GenerateBimiRecordResultsTypeEnum["HINFO"] = "HINFO";
-    GenerateBimiRecordResultsTypeEnum["MINFO"] = "MINFO";
-    GenerateBimiRecordResultsTypeEnum["MX"] = "MX";
-    GenerateBimiRecordResultsTypeEnum["TXT"] = "TXT";
-    GenerateBimiRecordResultsTypeEnum["RP"] = "RP";
-    GenerateBimiRecordResultsTypeEnum["AFSDB"] = "AFSDB";
-    GenerateBimiRecordResultsTypeEnum["X25"] = "X25";
-    GenerateBimiRecordResultsTypeEnum["ISDN"] = "ISDN";
-    GenerateBimiRecordResultsTypeEnum["RT"] = "RT";
-    GenerateBimiRecordResultsTypeEnum["NSAP"] = "NSAP";
-    GenerateBimiRecordResultsTypeEnum["NSAP_PTR"] = "NSAP_PTR";
-    GenerateBimiRecordResultsTypeEnum["SIG"] = "SIG";
-    GenerateBimiRecordResultsTypeEnum["KEY"] = "KEY";
-    GenerateBimiRecordResultsTypeEnum["PX"] = "PX";
-    GenerateBimiRecordResultsTypeEnum["GPOS"] = "GPOS";
-    GenerateBimiRecordResultsTypeEnum["AAAA"] = "AAAA";
-    GenerateBimiRecordResultsTypeEnum["LOC"] = "LOC";
-    GenerateBimiRecordResultsTypeEnum["NXT"] = "NXT";
-    GenerateBimiRecordResultsTypeEnum["EID"] = "EID";
-    GenerateBimiRecordResultsTypeEnum["NIMLOC"] = "NIMLOC";
-    GenerateBimiRecordResultsTypeEnum["SRV"] = "SRV";
-    GenerateBimiRecordResultsTypeEnum["ATMA"] = "ATMA";
-    GenerateBimiRecordResultsTypeEnum["NAPTR"] = "NAPTR";
-    GenerateBimiRecordResultsTypeEnum["KX"] = "KX";
-    GenerateBimiRecordResultsTypeEnum["CERT"] = "CERT";
-    GenerateBimiRecordResultsTypeEnum["A6"] = "A6";
-    GenerateBimiRecordResultsTypeEnum["DNAME"] = "DNAME";
-    GenerateBimiRecordResultsTypeEnum["SINK"] = "SINK";
-    GenerateBimiRecordResultsTypeEnum["OPT"] = "OPT";
-    GenerateBimiRecordResultsTypeEnum["APL"] = "APL";
-    GenerateBimiRecordResultsTypeEnum["DS"] = "DS";
-    GenerateBimiRecordResultsTypeEnum["SSHFP"] = "SSHFP";
-    GenerateBimiRecordResultsTypeEnum["IPSECKEY"] = "IPSECKEY";
-    GenerateBimiRecordResultsTypeEnum["RRSIG"] = "RRSIG";
-    GenerateBimiRecordResultsTypeEnum["NSEC"] = "NSEC";
-    GenerateBimiRecordResultsTypeEnum["DNSKEY"] = "DNSKEY";
-    GenerateBimiRecordResultsTypeEnum["DHCID"] = "DHCID";
-    GenerateBimiRecordResultsTypeEnum["NSEC3"] = "NSEC3";
-    GenerateBimiRecordResultsTypeEnum["NSEC3PARAM"] = "NSEC3PARAM";
-    GenerateBimiRecordResultsTypeEnum["TLSA"] = "TLSA";
-    GenerateBimiRecordResultsTypeEnum["SMIMEA"] = "SMIMEA";
-    GenerateBimiRecordResultsTypeEnum["HIP"] = "HIP";
-    GenerateBimiRecordResultsTypeEnum["NINFO"] = "NINFO";
-    GenerateBimiRecordResultsTypeEnum["RKEY"] = "RKEY";
-    GenerateBimiRecordResultsTypeEnum["TALINK"] = "TALINK";
-    GenerateBimiRecordResultsTypeEnum["CDS"] = "CDS";
-    GenerateBimiRecordResultsTypeEnum["CDNSKEY"] = "CDNSKEY";
-    GenerateBimiRecordResultsTypeEnum["OPENPGPKEY"] = "OPENPGPKEY";
-    GenerateBimiRecordResultsTypeEnum["CSYNC"] = "CSYNC";
-    GenerateBimiRecordResultsTypeEnum["ZONEMD"] = "ZONEMD";
-    GenerateBimiRecordResultsTypeEnum["SVCB"] = "SVCB";
-    GenerateBimiRecordResultsTypeEnum["HTTPS"] = "HTTPS";
-    GenerateBimiRecordResultsTypeEnum["SPF"] = "SPF";
-    GenerateBimiRecordResultsTypeEnum["UINFO"] = "UINFO";
-    GenerateBimiRecordResultsTypeEnum["UID"] = "UID";
-    GenerateBimiRecordResultsTypeEnum["GID"] = "GID";
-    GenerateBimiRecordResultsTypeEnum["UNSPEC"] = "UNSPEC";
-    GenerateBimiRecordResultsTypeEnum["NID"] = "NID";
-    GenerateBimiRecordResultsTypeEnum["L32"] = "L32";
-    GenerateBimiRecordResultsTypeEnum["L64"] = "L64";
-    GenerateBimiRecordResultsTypeEnum["LP"] = "LP";
-    GenerateBimiRecordResultsTypeEnum["EUI48"] = "EUI48";
-    GenerateBimiRecordResultsTypeEnum["EUI64"] = "EUI64";
-    GenerateBimiRecordResultsTypeEnum["TKEY"] = "TKEY";
-    GenerateBimiRecordResultsTypeEnum["TSIG"] = "TSIG";
-    GenerateBimiRecordResultsTypeEnum["IXFR"] = "IXFR";
-    GenerateBimiRecordResultsTypeEnum["AXFR"] = "AXFR";
-    GenerateBimiRecordResultsTypeEnum["MAILB"] = "MAILB";
-    GenerateBimiRecordResultsTypeEnum["MAILA"] = "MAILA";
-    GenerateBimiRecordResultsTypeEnum["ANY"] = "ANY";
-    GenerateBimiRecordResultsTypeEnum["URI"] = "URI";
-    GenerateBimiRecordResultsTypeEnum["CAA"] = "CAA";
-    GenerateBimiRecordResultsTypeEnum["AVC"] = "AVC";
-    GenerateBimiRecordResultsTypeEnum["DOA"] = "DOA";
-    GenerateBimiRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
-    GenerateBimiRecordResultsTypeEnum["TA"] = "TA";
-    GenerateBimiRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateBimiRecordResultsTypeEnum = exports.GenerateBimiRecordResultsTypeEnum || (exports.GenerateBimiRecordResultsTypeEnum = {}));
+exports.GenerateBimiRecordResultsTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+};
+/**
+ * Check if a given object implements the GenerateBimiRecordResults interface.
+ */
+function instanceOfGenerateBimiRecordResults(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('type' in value) || value['type'] === undefined)
+        return false;
+    if (!('ttl' in value) || value['ttl'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function GenerateBimiRecordResultsFromJSON(json) {
     return GenerateBimiRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateBimiRecordResultsFromJSON = GenerateBimiRecordResultsFromJSON;
 function GenerateBimiRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        type: json['type'],
-        ttl: json['ttl'],
-        value: json['value'],
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
     };
 }
-exports.GenerateBimiRecordResultsFromJSONTyped = GenerateBimiRecordResultsFromJSONTyped;
-function GenerateBimiRecordResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GenerateBimiRecordResultsToJSON(json) {
+    return GenerateBimiRecordResultsToJSONTyped(json, false);
+}
+function GenerateBimiRecordResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        type: value.type,
-        ttl: value.ttl,
-        value: value.value,
+        'name': value['name'],
+        'type': value['type'],
+        'ttl': value['ttl'],
+        'value': value['value'],
     };
 }
-exports.GenerateBimiRecordResultsToJSON = GenerateBimiRecordResultsToJSON;

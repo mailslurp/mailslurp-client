@@ -13,68 +13,70 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReplyToEmailOptionsToJSON = exports.ReplyToEmailOptionsFromJSONTyped = exports.ReplyToEmailOptionsFromJSON = exports.ReplyToEmailOptionsSendStrategyEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.ReplyToEmailOptionsSendStrategyEnum = void 0;
+exports.instanceOfReplyToEmailOptions = instanceOfReplyToEmailOptions;
+exports.ReplyToEmailOptionsFromJSON = ReplyToEmailOptionsFromJSON;
+exports.ReplyToEmailOptionsFromJSONTyped = ReplyToEmailOptionsFromJSONTyped;
+exports.ReplyToEmailOptionsToJSON = ReplyToEmailOptionsToJSON;
+exports.ReplyToEmailOptionsToJSONTyped = ReplyToEmailOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var ReplyToEmailOptionsSendStrategyEnum;
-(function (ReplyToEmailOptionsSendStrategyEnum) {
-    ReplyToEmailOptionsSendStrategyEnum["SINGLE_MESSAGE"] = "SINGLE_MESSAGE";
-})(ReplyToEmailOptionsSendStrategyEnum = exports.ReplyToEmailOptionsSendStrategyEnum || (exports.ReplyToEmailOptionsSendStrategyEnum = {}));
+exports.ReplyToEmailOptionsSendStrategyEnum = {
+    SINGLE_MESSAGE: 'SINGLE_MESSAGE'
+};
+/**
+ * Check if a given object implements the ReplyToEmailOptions interface.
+ */
+function instanceOfReplyToEmailOptions(value) {
+    if (!('body' in value) || value['body'] === undefined)
+        return false;
+    if (!('isHTML' in value) || value['isHTML'] === undefined)
+        return false;
+    return true;
+}
 function ReplyToEmailOptionsFromJSON(json) {
     return ReplyToEmailOptionsFromJSONTyped(json, false);
 }
-exports.ReplyToEmailOptionsFromJSON = ReplyToEmailOptionsFromJSON;
 function ReplyToEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        body: json['body'],
-        isHTML: json['isHTML'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
-        customHeaders: !(0, runtime_1.exists)(json, 'customHeaders')
-            ? undefined
-            : json['customHeaders'],
-        charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
-            ? undefined
-            : json['templateVariables'],
-        template: !(0, runtime_1.exists)(json, 'template') ? undefined : json['template'],
-        sendStrategy: !(0, runtime_1.exists)(json, 'sendStrategy')
-            ? undefined
-            : json['sendStrategy'],
-        useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
-            ? undefined
-            : json['useInboxName'],
-        html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
+        'body': json['body'],
+        'isHTML': json['isHTML'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'customHeaders': json['customHeaders'] == null ? undefined : json['customHeaders'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'attachments': json['attachments'] == null ? undefined : json['attachments'],
+        'templateVariables': json['templateVariables'] == null ? undefined : json['templateVariables'],
+        'template': json['template'] == null ? undefined : json['template'],
+        'sendStrategy': json['sendStrategy'] == null ? undefined : json['sendStrategy'],
+        'useInboxName': json['useInboxName'] == null ? undefined : json['useInboxName'],
+        'html': json['html'] == null ? undefined : json['html'],
     };
 }
-exports.ReplyToEmailOptionsFromJSONTyped = ReplyToEmailOptionsFromJSONTyped;
-function ReplyToEmailOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ReplyToEmailOptionsToJSON(json) {
+    return ReplyToEmailOptionsToJSONTyped(json, false);
+}
+function ReplyToEmailOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        body: value.body,
-        isHTML: value.isHTML,
-        from: value.from,
-        replyTo: value.replyTo,
-        customHeaders: value.customHeaders,
-        charset: value.charset,
-        attachments: value.attachments,
-        templateVariables: value.templateVariables,
-        template: value.template,
-        sendStrategy: value.sendStrategy,
-        useInboxName: value.useInboxName,
-        html: value.html,
+        'body': value['body'],
+        'isHTML': value['isHTML'],
+        'from': value['from'],
+        'replyTo': value['replyTo'],
+        'customHeaders': value['customHeaders'],
+        'charset': value['charset'],
+        'attachments': value['attachments'],
+        'templateVariables': value['templateVariables'],
+        'template': value['template'],
+        'sendStrategy': value['sendStrategy'],
+        'useInboxName': value['useInboxName'],
+        'html': value['html'],
     };
 }
-exports.ReplyToEmailOptionsToJSON = ReplyToEmailOptionsToJSON;

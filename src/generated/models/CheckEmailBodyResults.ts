@@ -12,92 +12,104 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { SpellingIssue } from './SpellingIssue';
 import {
-  ImageIssue,
-  ImageIssueFromJSON,
-  ImageIssueFromJSONTyped,
-  ImageIssueToJSON,
-  LinkIssue,
-  LinkIssueFromJSON,
-  LinkIssueFromJSONTyped,
-  LinkIssueToJSON,
-  SpellingIssue,
-  SpellingIssueFromJSON,
-  SpellingIssueFromJSONTyped,
-  SpellingIssueToJSON,
-} from './';
+    SpellingIssueFromJSON,
+    SpellingIssueFromJSONTyped,
+    SpellingIssueToJSON,
+    SpellingIssueToJSONTyped,
+} from './SpellingIssue';
+import type { ImageIssue } from './ImageIssue';
+import {
+    ImageIssueFromJSON,
+    ImageIssueFromJSONTyped,
+    ImageIssueToJSON,
+    ImageIssueToJSONTyped,
+} from './ImageIssue';
+import type { LinkIssue } from './LinkIssue';
+import {
+    LinkIssueFromJSON,
+    LinkIssueFromJSONTyped,
+    LinkIssueToJSON,
+    LinkIssueToJSONTyped,
+} from './LinkIssue';
 
 /**
- *
+ * 
  * @export
  * @interface CheckEmailBodyResults
  */
 export interface CheckEmailBodyResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof CheckEmailBodyResults
-   */
-  hasIssues: boolean;
-  /**
-   *
-   * @type {Array<LinkIssue>}
-   * @memberof CheckEmailBodyResults
-   */
-  linkIssues: Array<LinkIssue>;
-  /**
-   *
-   * @type {Array<ImageIssue>}
-   * @memberof CheckEmailBodyResults
-   */
-  imageIssues: Array<ImageIssue>;
-  /**
-   *
-   * @type {Array<SpellingIssue>}
-   * @memberof CheckEmailBodyResults
-   */
-  spellingIssues: Array<SpellingIssue>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CheckEmailBodyResults
+     */
+    hasIssues: boolean;
+    /**
+     * 
+     * @type {Array<LinkIssue>}
+     * @memberof CheckEmailBodyResults
+     */
+    linkIssues: Array<LinkIssue>;
+    /**
+     * 
+     * @type {Array<ImageIssue>}
+     * @memberof CheckEmailBodyResults
+     */
+    imageIssues: Array<ImageIssue>;
+    /**
+     * 
+     * @type {Array<SpellingIssue>}
+     * @memberof CheckEmailBodyResults
+     */
+    spellingIssues: Array<SpellingIssue>;
 }
 
-export function CheckEmailBodyResultsFromJSON(
-  json: any
-): CheckEmailBodyResults {
-  return CheckEmailBodyResultsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the CheckEmailBodyResults interface.
+ */
+export function instanceOfCheckEmailBodyResults(value: object): value is CheckEmailBodyResults {
+    if (!('hasIssues' in value) || value['hasIssues'] === undefined) return false;
+    if (!('linkIssues' in value) || value['linkIssues'] === undefined) return false;
+    if (!('imageIssues' in value) || value['imageIssues'] === undefined) return false;
+    if (!('spellingIssues' in value) || value['spellingIssues'] === undefined) return false;
+    return true;
 }
 
-export function CheckEmailBodyResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CheckEmailBodyResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    hasIssues: json['hasIssues'],
-    linkIssues: (json['linkIssues'] as Array<any>).map(LinkIssueFromJSON),
-    imageIssues: (json['imageIssues'] as Array<any>).map(ImageIssueFromJSON),
-    spellingIssues: (json['spellingIssues'] as Array<any>).map(
-      SpellingIssueFromJSON
-    ),
-  };
+export function CheckEmailBodyResultsFromJSON(json: any): CheckEmailBodyResults {
+    return CheckEmailBodyResultsFromJSONTyped(json, false);
 }
 
-export function CheckEmailBodyResultsToJSON(
-  value?: CheckEmailBodyResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    hasIssues: value.hasIssues,
-    linkIssues: (value.linkIssues as Array<any>).map(LinkIssueToJSON),
-    imageIssues: (value.imageIssues as Array<any>).map(ImageIssueToJSON),
-    spellingIssues: (value.spellingIssues as Array<any>).map(
-      SpellingIssueToJSON
-    ),
-  };
+export function CheckEmailBodyResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailBodyResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'hasIssues': json['hasIssues'],
+        'linkIssues': ((json['linkIssues'] as Array<any>).map(LinkIssueFromJSON)),
+        'imageIssues': ((json['imageIssues'] as Array<any>).map(ImageIssueFromJSON)),
+        'spellingIssues': ((json['spellingIssues'] as Array<any>).map(SpellingIssueFromJSON)),
+    };
 }
+
+export function CheckEmailBodyResultsToJSON(json: any): CheckEmailBodyResults {
+    return CheckEmailBodyResultsToJSONTyped(json, false);
+}
+
+export function CheckEmailBodyResultsToJSONTyped(value?: CheckEmailBodyResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'hasIssues': value['hasIssues'],
+        'linkIssues': ((value['linkIssues'] as Array<any>).map(LinkIssueToJSON)),
+        'imageIssues': ((value['imageIssues'] as Array<any>).map(ImageIssueToJSON)),
+        'spellingIssues': ((value['spellingIssues'] as Array<any>).map(SpellingIssueToJSON)),
+    };
+}
+

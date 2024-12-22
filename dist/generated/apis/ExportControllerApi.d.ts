@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ExportLink, ExportOptions } from '../models';
+import type { ExportLink, ExportOptions } from '../models/index';
 export interface ExportEntitiesRequest {
     exportType: ExportEntitiesExportTypeEnum;
     apiKey: string;
@@ -33,45 +33,45 @@ export declare class ExportControllerApi extends runtime.BaseAPI {
     /**
      * Export inboxes link callable via browser
      */
-    exportEntitiesRaw(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    exportEntitiesRaw(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Export inboxes link callable via browser
      */
-    exportEntities(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<string>;
+    exportEntities(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Get export link
      */
-    getExportLinkRaw(requestParameters: GetExportLinkRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ExportLink>>;
+    getExportLinkRaw(requestParameters: GetExportLinkRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ExportLink>>;
     /**
      * Get export link
      */
-    getExportLink(requestParameters: GetExportLinkRequest, initOverrides?: RequestInit): Promise<ExportLink>;
+    getExportLink(requestParameters: GetExportLinkRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ExportLink>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ExportEntitiesExportTypeEnum {
-    INBOXES = "INBOXES",
-    CONTACTS = "CONTACTS",
-    ATTACHMENTS = "ATTACHMENTS",
-    EMAILS = "EMAILS"
-}
+export declare const ExportEntitiesExportTypeEnum: {
+    readonly INBOXES: "INBOXES";
+    readonly CONTACTS: "CONTACTS";
+    readonly ATTACHMENTS: "ATTACHMENTS";
+    readonly EMAILS: "EMAILS";
+};
+export type ExportEntitiesExportTypeEnum = typeof ExportEntitiesExportTypeEnum[keyof typeof ExportEntitiesExportTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ExportEntitiesOutputFormatEnum {
-    DEFAULT = "CSV_DEFAULT",
-    EXCEL = "CSV_EXCEL"
-}
+export declare const ExportEntitiesOutputFormatEnum: {
+    readonly DEFAULT: "CSV_DEFAULT";
+    readonly EXCEL: "CSV_EXCEL";
+};
+export type ExportEntitiesOutputFormatEnum = typeof ExportEntitiesOutputFormatEnum[keyof typeof ExportEntitiesOutputFormatEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetExportLinkExportTypeEnum {
-    INBOXES = "INBOXES",
-    CONTACTS = "CONTACTS",
-    ATTACHMENTS = "ATTACHMENTS",
-    EMAILS = "EMAILS"
-}
+export declare const GetExportLinkExportTypeEnum: {
+    readonly INBOXES: "INBOXES";
+    readonly CONTACTS: "CONTACTS";
+    readonly ATTACHMENTS: "ATTACHMENTS";
+    readonly EMAILS: "EMAILS";
+};
+export type GetExportLinkExportTypeEnum = typeof GetExportLinkExportTypeEnum[keyof typeof GetExportLinkExportTypeEnum];

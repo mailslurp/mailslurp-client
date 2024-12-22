@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxForwarderEventProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { InboxForwarderEventProjection } from './InboxForwarderEventProjection';
+import type { SortObject } from './SortObject';
 /**
  * Paginated inbox forwarder events. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageInboxForwarderEvents {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageInboxForwarderEvents
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageInboxForwarderEvents {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageInboxForwarderEvents interface.
+ */
+export declare function instanceOfPageInboxForwarderEvents(value: object): value is PageInboxForwarderEvents;
 export declare function PageInboxForwarderEventsFromJSON(json: any): PageInboxForwarderEvents;
 export declare function PageInboxForwarderEventsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxForwarderEvents;
-export declare function PageInboxForwarderEventsToJSON(value?: PageInboxForwarderEvents | null): any;
+export declare function PageInboxForwarderEventsToJSON(json: any): PageInboxForwarderEvents;
+export declare function PageInboxForwarderEventsToJSONTyped(value?: PageInboxForwarderEvents | null, ignoreDiscriminator?: boolean): any;

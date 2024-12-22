@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Test options for inbox ruleset
  * @export
  * @interface InboxRulesetTestOptions
  */
 export interface InboxRulesetTestOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetTestOptions
-   */
-  testTarget: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxRulesetTestOptions
+     */
+    testTarget: string;
 }
 
-export function InboxRulesetTestOptionsFromJSON(
-  json: any
-): InboxRulesetTestOptions {
-  return InboxRulesetTestOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the InboxRulesetTestOptions interface.
+ */
+export function instanceOfInboxRulesetTestOptions(value: object): value is InboxRulesetTestOptions {
+    if (!('testTarget' in value) || value['testTarget'] === undefined) return false;
+    return true;
 }
 
-export function InboxRulesetTestOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxRulesetTestOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    testTarget: json['testTarget'],
-  };
+export function InboxRulesetTestOptionsFromJSON(json: any): InboxRulesetTestOptions {
+    return InboxRulesetTestOptionsFromJSONTyped(json, false);
 }
 
-export function InboxRulesetTestOptionsToJSON(
-  value?: InboxRulesetTestOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    testTarget: value.testTarget,
-  };
+export function InboxRulesetTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRulesetTestOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'testTarget': json['testTarget'],
+    };
 }
+
+export function InboxRulesetTestOptionsToJSON(json: any): InboxRulesetTestOptions {
+    return InboxRulesetTestOptionsToJSONTyped(json, false);
+}
+
+export function InboxRulesetTestOptionsToJSONTyped(value?: InboxRulesetTestOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'testTarget': value['testTarget'],
+    };
+}
+

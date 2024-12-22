@@ -13,37 +13,55 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplateProjectionToJSON = exports.TemplateProjectionFromJSONTyped = exports.TemplateProjectionFromJSON = void 0;
+exports.instanceOfTemplateProjection = instanceOfTemplateProjection;
+exports.TemplateProjectionFromJSON = TemplateProjectionFromJSON;
+exports.TemplateProjectionFromJSONTyped = TemplateProjectionFromJSONTyped;
+exports.TemplateProjectionToJSON = TemplateProjectionToJSON;
+exports.TemplateProjectionToJSONTyped = TemplateProjectionToJSONTyped;
+/**
+ * Check if a given object implements the TemplateProjection interface.
+ */
+function instanceOfTemplateProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    if (!('variables' in value) || value['variables'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function TemplateProjectionFromJSON(json) {
     return TemplateProjectionFromJSONTyped(json, false);
 }
-exports.TemplateProjectionFromJSON = TemplateProjectionFromJSON;
 function TemplateProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        variables: json['variables'],
-        name: json['name'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'variables': json['variables'],
+        'name': json['name'],
+        'id': json['id'],
     };
 }
-exports.TemplateProjectionFromJSONTyped = TemplateProjectionFromJSONTyped;
-function TemplateProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TemplateProjectionToJSON(json) {
+    return TemplateProjectionToJSONTyped(json, false);
+}
+function TemplateProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        variables: value.variables,
-        name: value.name,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'variables': value['variables'],
+        'name': value['name'],
+        'id': value['id'],
     };
 }
-exports.TemplateProjectionToJSON = TemplateProjectionToJSON;

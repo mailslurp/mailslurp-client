@@ -12,89 +12,100 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Email validation request
  * @export
  * @interface EmailValidationRequestDto
  */
 export interface EmailValidationRequestDto {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailValidationRequestDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailValidationRequestDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailValidationRequestDto
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailValidationRequestDto
-   */
-  isValid: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof EmailValidationRequestDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof EmailValidationRequestDto
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailValidationRequestDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailValidationRequestDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailValidationRequestDto
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof EmailValidationRequestDto
+     */
+    isValid: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof EmailValidationRequestDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof EmailValidationRequestDto
+     */
+    updatedAt: Date;
 }
 
-export function EmailValidationRequestDtoFromJSON(
-  json: any
-): EmailValidationRequestDto {
-  return EmailValidationRequestDtoFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the EmailValidationRequestDto interface.
+ */
+export function instanceOfEmailValidationRequestDto(value: object): value is EmailValidationRequestDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('isValid' in value) || value['isValid'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    return true;
 }
 
-export function EmailValidationRequestDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailValidationRequestDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    emailAddress: json['emailAddress'],
-    isValid: json['isValid'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function EmailValidationRequestDtoFromJSON(json: any): EmailValidationRequestDto {
+    return EmailValidationRequestDtoFromJSONTyped(json, false);
 }
 
-export function EmailValidationRequestDtoToJSON(
-  value?: EmailValidationRequestDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    emailAddress: value.emailAddress,
-    isValid: value.isValid,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function EmailValidationRequestDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailValidationRequestDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'],
+        'isValid': json['isValid'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
+
+export function EmailValidationRequestDtoToJSON(json: any): EmailValidationRequestDto {
+    return EmailValidationRequestDtoToJSONTyped(json, false);
+}
+
+export function EmailValidationRequestDtoToJSONTyped(value?: EmailValidationRequestDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'isValid': value['isValid'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+    };
+}
+

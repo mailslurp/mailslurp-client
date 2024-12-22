@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSLookupsOptionsToJSON = exports.DNSLookupsOptionsFromJSONTyped = exports.DNSLookupsOptionsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfDNSLookupsOptions = instanceOfDNSLookupsOptions;
+exports.DNSLookupsOptionsFromJSON = DNSLookupsOptionsFromJSON;
+exports.DNSLookupsOptionsFromJSONTyped = DNSLookupsOptionsFromJSONTyped;
+exports.DNSLookupsOptionsToJSON = DNSLookupsOptionsToJSON;
+exports.DNSLookupsOptionsToJSONTyped = DNSLookupsOptionsToJSONTyped;
+var DNSLookupOptions_1 = require("./DNSLookupOptions");
+/**
+ * Check if a given object implements the DNSLookupsOptions interface.
+ */
+function instanceOfDNSLookupsOptions(value) {
+    if (!('lookups' in value) || value['lookups'] === undefined)
+        return false;
+    return true;
+}
 function DNSLookupsOptionsFromJSON(json) {
     return DNSLookupsOptionsFromJSONTyped(json, false);
 }
-exports.DNSLookupsOptionsFromJSON = DNSLookupsOptionsFromJSON;
 function DNSLookupsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        lookups: json['lookups'].map(_1.DNSLookupOptionsFromJSON),
+        'lookups': (json['lookups'].map(DNSLookupOptions_1.DNSLookupOptionsFromJSON)),
     };
 }
-exports.DNSLookupsOptionsFromJSONTyped = DNSLookupsOptionsFromJSONTyped;
-function DNSLookupsOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DNSLookupsOptionsToJSON(json) {
+    return DNSLookupsOptionsToJSONTyped(json, false);
+}
+function DNSLookupsOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        lookups: value.lookups.map(_1.DNSLookupOptionsToJSON),
+        'lookups': (value['lookups'].map(DNSLookupOptions_1.DNSLookupOptionsToJSON)),
     };
 }
-exports.DNSLookupsOptionsToJSON = DNSLookupsOptionsToJSON;

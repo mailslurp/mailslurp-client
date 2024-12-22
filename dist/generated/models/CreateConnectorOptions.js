@@ -13,54 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorOptionsToJSON = exports.CreateConnectorOptionsFromJSONTyped = exports.CreateConnectorOptionsFromJSON = exports.CreateConnectorOptionsSyncScheduleTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfCreateConnectorOptions = instanceOfCreateConnectorOptions;
+exports.CreateConnectorOptionsFromJSON = CreateConnectorOptionsFromJSON;
+exports.CreateConnectorOptionsFromJSONTyped = CreateConnectorOptionsFromJSONTyped;
+exports.CreateConnectorOptionsToJSON = CreateConnectorOptionsToJSON;
+exports.CreateConnectorOptionsToJSONTyped = CreateConnectorOptionsToJSONTyped;
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the CreateConnectorOptions interface.
  */
-var CreateConnectorOptionsSyncScheduleTypeEnum;
-(function (CreateConnectorOptionsSyncScheduleTypeEnum) {
-    CreateConnectorOptionsSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(CreateConnectorOptionsSyncScheduleTypeEnum = exports.CreateConnectorOptionsSyncScheduleTypeEnum || (exports.CreateConnectorOptionsSyncScheduleTypeEnum = {}));
+function instanceOfCreateConnectorOptions(value) {
+    return true;
+}
 function CreateConnectorOptionsFromJSON(json) {
     return CreateConnectorOptionsFromJSONTyped(json, false);
 }
-exports.CreateConnectorOptionsFromJSON = CreateConnectorOptionsFromJSON;
 function CreateConnectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
-            ? undefined
-            : json['syncScheduleType'],
-        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
-            ? undefined
-            : json['syncInterval'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
-        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
     };
 }
-exports.CreateConnectorOptionsFromJSONTyped = CreateConnectorOptionsFromJSONTyped;
-function CreateConnectorOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateConnectorOptionsToJSON(json) {
+    return CreateConnectorOptionsToJSONTyped(json, false);
+}
+function CreateConnectorOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        syncEnabled: value.syncEnabled,
-        syncScheduleType: value.syncScheduleType,
-        syncInterval: value.syncInterval,
-        name: value.name,
-        emailAddress: value.emailAddress,
-        enabled: value.enabled,
+        'name': value['name'],
+        'emailAddress': value['emailAddress'],
+        'enabled': value['enabled'],
     };
 }
-exports.CreateConnectorOptionsToJSON = CreateConnectorOptionsToJSON;

@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupBimiDomainOptionsToJSON = exports.LookupBimiDomainOptionsFromJSONTyped = exports.LookupBimiDomainOptionsFromJSON = void 0;
+exports.instanceOfLookupBimiDomainOptions = instanceOfLookupBimiDomainOptions;
+exports.LookupBimiDomainOptionsFromJSON = LookupBimiDomainOptionsFromJSON;
+exports.LookupBimiDomainOptionsFromJSONTyped = LookupBimiDomainOptionsFromJSONTyped;
+exports.LookupBimiDomainOptionsToJSON = LookupBimiDomainOptionsToJSON;
+exports.LookupBimiDomainOptionsToJSONTyped = LookupBimiDomainOptionsToJSONTyped;
+/**
+ * Check if a given object implements the LookupBimiDomainOptions interface.
+ */
+function instanceOfLookupBimiDomainOptions(value) {
+    if (!('host' in value) || value['host'] === undefined)
+        return false;
+    return true;
+}
 function LookupBimiDomainOptionsFromJSON(json) {
     return LookupBimiDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupBimiDomainOptionsFromJSON = LookupBimiDomainOptionsFromJSON;
 function LookupBimiDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        host: json['host'],
+        'host': json['host'],
     };
 }
-exports.LookupBimiDomainOptionsFromJSONTyped = LookupBimiDomainOptionsFromJSONTyped;
-function LookupBimiDomainOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function LookupBimiDomainOptionsToJSON(json) {
+    return LookupBimiDomainOptionsToJSONTyped(json, false);
+}
+function LookupBimiDomainOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        host: value.host,
+        'host': value['host'],
     };
 }
-exports.LookupBimiDomainOptionsToJSON = LookupBimiDomainOptionsToJSON;

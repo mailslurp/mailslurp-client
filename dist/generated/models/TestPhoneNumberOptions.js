@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestPhoneNumberOptionsToJSON = exports.TestPhoneNumberOptionsFromJSONTyped = exports.TestPhoneNumberOptionsFromJSON = void 0;
+exports.instanceOfTestPhoneNumberOptions = instanceOfTestPhoneNumberOptions;
+exports.TestPhoneNumberOptionsFromJSON = TestPhoneNumberOptionsFromJSON;
+exports.TestPhoneNumberOptionsFromJSONTyped = TestPhoneNumberOptionsFromJSONTyped;
+exports.TestPhoneNumberOptionsToJSON = TestPhoneNumberOptionsToJSON;
+exports.TestPhoneNumberOptionsToJSONTyped = TestPhoneNumberOptionsToJSONTyped;
+/**
+ * Check if a given object implements the TestPhoneNumberOptions interface.
+ */
+function instanceOfTestPhoneNumberOptions(value) {
+    if (!('message' in value) || value['message'] === undefined)
+        return false;
+    return true;
+}
 function TestPhoneNumberOptionsFromJSON(json) {
     return TestPhoneNumberOptionsFromJSONTyped(json, false);
 }
-exports.TestPhoneNumberOptionsFromJSON = TestPhoneNumberOptionsFromJSON;
 function TestPhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        message: json['message'],
+        'message': json['message'],
     };
 }
-exports.TestPhoneNumberOptionsFromJSONTyped = TestPhoneNumberOptionsFromJSONTyped;
-function TestPhoneNumberOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TestPhoneNumberOptionsToJSON(json) {
+    return TestPhoneNumberOptionsToJSONTyped(json, false);
+}
+function TestPhoneNumberOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        message: value.message,
+        'message': value['message'],
     };
 }
-exports.TestPhoneNumberOptionsToJSON = TestPhoneNumberOptionsToJSON;

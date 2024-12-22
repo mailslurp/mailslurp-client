@@ -12,114 +12,130 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Inbox forwarder event. Describes how an email was handled by an inbox forwarder.
  * @export
  * @interface InboxForwarderEventDto
  */
 export interface InboxForwarderEventDto {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventDto
-   */
-  id?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventDto
-   */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventDto
-   */
-  emailId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventDto
-   */
-  userId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventDto
-   */
-  forwarderId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventDto
-   */
-  message?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventDto
-   */
-  status?: InboxForwarderEventDtoStatusEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof InboxForwarderEventDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    id?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    emailId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    sentId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    userId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    forwarderId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    message?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderEventDto
+     */
+    status?: InboxForwarderEventDtoStatusEnum | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof InboxForwarderEventDto
+     */
+    createdAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum InboxForwarderEventDtoStatusEnum {
-  SUCCESS = 'SUCCESS',
-  FAILURE = 'FAILURE',
+export const InboxForwarderEventDtoStatusEnum = {
+    SUCCESS: 'SUCCESS',
+    FAILURE: 'FAILURE'
+} as const;
+export type InboxForwarderEventDtoStatusEnum = typeof InboxForwarderEventDtoStatusEnum[keyof typeof InboxForwarderEventDtoStatusEnum];
+
+
+/**
+ * Check if a given object implements the InboxForwarderEventDto interface.
+ */
+export function instanceOfInboxForwarderEventDto(value: object): value is InboxForwarderEventDto {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
-export function InboxForwarderEventDtoFromJSON(
-  json: any
-): InboxForwarderEventDto {
-  return InboxForwarderEventDtoFromJSONTyped(json, false);
+export function InboxForwarderEventDtoFromJSON(json: any): InboxForwarderEventDto {
+    return InboxForwarderEventDtoFromJSONTyped(json, false);
 }
 
-export function InboxForwarderEventDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxForwarderEventDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: !exists(json, 'id') ? undefined : json['id'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
-    forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-    status: !exists(json, 'status') ? undefined : json['status'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function InboxForwarderEventDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderEventDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'] == null ? undefined : json['id'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'emailId': json['emailId'] == null ? undefined : json['emailId'],
+        'sentId': json['sentId'] == null ? undefined : json['sentId'],
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'forwarderId': json['forwarderId'] == null ? undefined : json['forwarderId'],
+        'message': json['message'] == null ? undefined : json['message'],
+        'status': json['status'] == null ? undefined : json['status'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function InboxForwarderEventDtoToJSON(
-  value?: InboxForwarderEventDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    emailId: value.emailId,
-    userId: value.userId,
-    forwarderId: value.forwarderId,
-    message: value.message,
-    status: value.status,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function InboxForwarderEventDtoToJSON(json: any): InboxForwarderEventDto {
+    return InboxForwarderEventDtoToJSONTyped(json, false);
 }
+
+export function InboxForwarderEventDtoToJSONTyped(value?: InboxForwarderEventDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'inboxId': value['inboxId'],
+        'emailId': value['emailId'],
+        'sentId': value['sentId'],
+        'userId': value['userId'],
+        'forwarderId': value['forwarderId'],
+        'message': value['message'],
+        'status': value['status'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

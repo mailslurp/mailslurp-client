@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CreateInboxRulesetOptions, InboxRulesetTestOptions } from './';
+import type { InboxRulesetTestOptions } from './InboxRulesetTestOptions';
+import type { CreateInboxRulesetOptions } from './CreateInboxRulesetOptions';
 /**
  * Test inbox ruleset options
  * @export
@@ -29,6 +30,11 @@ export interface TestNewInboxRulesetOptions {
      */
     createInboxRulesetOptions: CreateInboxRulesetOptions;
 }
+/**
+ * Check if a given object implements the TestNewInboxRulesetOptions interface.
+ */
+export declare function instanceOfTestNewInboxRulesetOptions(value: object): value is TestNewInboxRulesetOptions;
 export declare function TestNewInboxRulesetOptionsFromJSON(json: any): TestNewInboxRulesetOptions;
 export declare function TestNewInboxRulesetOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestNewInboxRulesetOptions;
-export declare function TestNewInboxRulesetOptionsToJSON(value?: TestNewInboxRulesetOptions | null): any;
+export declare function TestNewInboxRulesetOptionsToJSON(json: any): TestNewInboxRulesetOptions;
+export declare function TestNewInboxRulesetOptionsToJSONTyped(value?: TestNewInboxRulesetOptions | null, ignoreDiscriminator?: boolean): any;

@@ -13,63 +13,93 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookProjectionToJSON = exports.WebhookProjectionFromJSONTyped = exports.WebhookProjectionFromJSON = exports.WebhookProjectionEventNameEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.WebhookProjectionHealthStatusEnum = exports.WebhookProjectionEventNameEnum = void 0;
+exports.instanceOfWebhookProjection = instanceOfWebhookProjection;
+exports.WebhookProjectionFromJSON = WebhookProjectionFromJSON;
+exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
+exports.WebhookProjectionToJSON = WebhookProjectionToJSON;
+exports.WebhookProjectionToJSONTyped = WebhookProjectionToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var WebhookProjectionEventNameEnum;
-(function (WebhookProjectionEventNameEnum) {
-    WebhookProjectionEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
-    WebhookProjectionEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
-    WebhookProjectionEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
-    WebhookProjectionEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
-    WebhookProjectionEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
-    WebhookProjectionEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-    WebhookProjectionEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
-    WebhookProjectionEventNameEnum["BOUNCE"] = "BOUNCE";
-    WebhookProjectionEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
-    WebhookProjectionEventNameEnum["NEW_SMS"] = "NEW_SMS";
-})(WebhookProjectionEventNameEnum = exports.WebhookProjectionEventNameEnum || (exports.WebhookProjectionEventNameEnum = {}));
+exports.WebhookProjectionEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+};
+/**
+ * @export
+ */
+exports.WebhookProjectionHealthStatusEnum = {
+    HEALTHY: 'HEALTHY',
+    UNHEALTHY: 'UNHEALTHY'
+};
+/**
+ * Check if a given object implements the WebhookProjection interface.
+ */
+function instanceOfWebhookProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function WebhookProjectionFromJSON(json) {
     return WebhookProjectionFromJSONTyped(json, false);
 }
-exports.WebhookProjectionFromJSON = WebhookProjectionFromJSON;
 function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        url: json['url'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        phoneNumberId: !(0, runtime_1.exists)(json, 'phoneNumberId')
-            ? undefined
-            : json['phoneNumberId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'url': json['url'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'],
+        'eventName': json['eventName'] == null ? undefined : json['eventName'],
+        'healthStatus': json['healthStatus'] == null ? undefined : json['healthStatus'],
+        'phoneNumberId': json['phoneNumberId'] == null ? undefined : json['phoneNumberId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
+        'username': json['username'] == null ? undefined : json['username'],
+        'password': json['password'] == null ? undefined : json['password'],
     };
 }
-exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
-function WebhookProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookProjectionToJSON(json) {
+    return WebhookProjectionToJSONTyped(json, false);
+}
+function WebhookProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        url: value.url,
-        inboxId: value.inboxId,
-        eventName: value.eventName,
-        phoneNumberId: value.phoneNumberId,
-        name: value.name,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'url': value['url'],
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'eventName': value['eventName'],
+        'healthStatus': value['healthStatus'],
+        'phoneNumberId': value['phoneNumberId'],
+        'name': value['name'],
+        'id': value['id'],
+        'username': value['username'],
+        'password': value['password'],
     };
 }
-exports.WebhookProjectionToJSON = WebhookProjectionToJSON;

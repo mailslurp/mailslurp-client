@@ -12,82 +12,90 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- * Options for creating a domain to use with MailSlurp. You must have ownership access to this domain in order to verify it. Domains will not function correctly until the domain has been verified. See https://www.mailslurp.com/guides/custom-domains for help. Domains can be either `HTTP` or `SMTP` type. The type of domain determines which inboxes can be used with it. `SMTP` inboxes use a mail server running `mx.mailslurp.com` while `HTTP` inboxes are handled by AWS SES.
+ * Options for creating a domain to use with MailSlurp. You must have ownership access to this domain in order to verify it. Domains will not function correctly until the domain has been verified. See https://www.mailslurp.com/guides/custom-domains for help. Domains can be either `HTTP` or `SMTP` type. The type of domain determines which inboxes can be used with it. `SMTP` inboxes use a mail server running `mxslurp.click` while `HTTP` inboxes are handled by AWS SES.
  * @export
  * @interface CreateDomainOptions
  */
 export interface CreateDomainOptions {
-  /**
-   * The top level domain you wish to use with MailSlurp. Do not specify subdomain just the top level. So `test.com` covers all subdomains such as `mail.test.com`. Don't include a protocol such as `http://`. Once added you must complete the verification steps by adding the returned records to your domain.
-   * @type {string}
-   * @memberof CreateDomainOptions
-   */
-  domain: string;
-  /**
-   * Optional description of the domain.
-   * @type {string}
-   * @memberof CreateDomainOptions
-   */
-  description?: string | null;
-  /**
-   * Whether to create a catch all inbox for the domain. Any email sent to an address using your domain that cannot be matched to an existing inbox you created with the domain will be routed to the created catch all inbox. You can access emails using the regular methods on this inbox ID.
-   * @type {boolean}
-   * @memberof CreateDomainOptions
-   */
-  createdCatchAllInbox?: boolean | null;
-  /**
-   * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
-   * @type {string}
-   * @memberof CreateDomainOptions
-   */
-  domainType?: CreateDomainOptionsDomainTypeEnum;
+    /**
+     * The top level domain you wish to use with MailSlurp. Do not specify subdomain just the top level. So `test.com` covers all subdomains such as `mail.test.com`. Don't include a protocol such as `http://`. Once added you must complete the verification steps by adding the returned records to your domain.
+     * @type {string}
+     * @memberof CreateDomainOptions
+     */
+    domain: string;
+    /**
+     * Optional description of the domain.
+     * @type {string}
+     * @memberof CreateDomainOptions
+     */
+    description?: string | null;
+    /**
+     * Whether to create a catch all inbox for the domain. Any email sent to an address using your domain that cannot be matched to an existing inbox you created with the domain will be routed to the created catch all inbox. You can access emails using the regular methods on this inbox ID.
+     * @type {boolean}
+     * @memberof CreateDomainOptions
+     */
+    createdCatchAllInbox?: boolean | null;
+    /**
+     * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+     * @type {string}
+     * @memberof CreateDomainOptions
+     */
+    domainType?: CreateDomainOptionsDomainTypeEnum | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum CreateDomainOptionsDomainTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_DOMAIN = 'SMTP_DOMAIN',
+export const CreateDomainOptionsDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+} as const;
+export type CreateDomainOptionsDomainTypeEnum = typeof CreateDomainOptionsDomainTypeEnum[keyof typeof CreateDomainOptionsDomainTypeEnum];
+
+
+/**
+ * Check if a given object implements the CreateDomainOptions interface.
+ */
+export function instanceOfCreateDomainOptions(value: object): value is CreateDomainOptions {
+    if (!('domain' in value) || value['domain'] === undefined) return false;
+    return true;
 }
 
 export function CreateDomainOptionsFromJSON(json: any): CreateDomainOptions {
-  return CreateDomainOptionsFromJSONTyped(json, false);
+    return CreateDomainOptionsFromJSONTyped(json, false);
 }
 
-export function CreateDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domain: json['domain'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-    createdCatchAllInbox: !exists(json, 'createdCatchAllInbox')
-      ? undefined
-      : json['createdCatchAllInbox'],
-    domainType: !exists(json, 'domainType') ? undefined : json['domainType'],
-  };
+export function CreateDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateDomainOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'domain': json['domain'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'createdCatchAllInbox': json['createdCatchAllInbox'] == null ? undefined : json['createdCatchAllInbox'],
+        'domainType': json['domainType'] == null ? undefined : json['domainType'],
+    };
 }
 
-export function CreateDomainOptionsToJSON(
-  value?: CreateDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domain: value.domain,
-    description: value.description,
-    createdCatchAllInbox: value.createdCatchAllInbox,
-    domainType: value.domainType,
-  };
+export function CreateDomainOptionsToJSON(json: any): CreateDomainOptions {
+    return CreateDomainOptionsToJSONTyped(json, false);
 }
+
+export function CreateDomainOptionsToJSONTyped(value?: CreateDomainOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'domain': value['domain'],
+        'description': value['description'],
+        'createdCatchAllInbox': value['createdCatchAllInbox'],
+        'domainType': value['domainType'],
+    };
+}
+

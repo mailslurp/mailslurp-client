@@ -36,21 +36,26 @@ export interface CreateInboxRulesetOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateInboxRulesetOptionsScopeEnum {
-    RECEIVING_EMAILS = "RECEIVING_EMAILS",
-    SENDING_EMAILS = "SENDING_EMAILS"
-}
+export declare const CreateInboxRulesetOptionsScopeEnum: {
+    readonly RECEIVING_EMAILS: "RECEIVING_EMAILS";
+    readonly SENDING_EMAILS: "SENDING_EMAILS";
+};
+export type CreateInboxRulesetOptionsScopeEnum = typeof CreateInboxRulesetOptionsScopeEnum[keyof typeof CreateInboxRulesetOptionsScopeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateInboxRulesetOptionsActionEnum {
-    BLOCK = "BLOCK",
-    ALLOW = "ALLOW",
-    FILTER_REMOVE = "FILTER_REMOVE"
-}
+export declare const CreateInboxRulesetOptionsActionEnum: {
+    readonly BLOCK: "BLOCK";
+    readonly ALLOW: "ALLOW";
+    readonly FILTER_REMOVE: "FILTER_REMOVE";
+};
+export type CreateInboxRulesetOptionsActionEnum = typeof CreateInboxRulesetOptionsActionEnum[keyof typeof CreateInboxRulesetOptionsActionEnum];
+/**
+ * Check if a given object implements the CreateInboxRulesetOptions interface.
+ */
+export declare function instanceOfCreateInboxRulesetOptions(value: object): value is CreateInboxRulesetOptions;
 export declare function CreateInboxRulesetOptionsFromJSON(json: any): CreateInboxRulesetOptions;
 export declare function CreateInboxRulesetOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxRulesetOptions;
-export declare function CreateInboxRulesetOptionsToJSON(value?: CreateInboxRulesetOptions | null): any;
+export declare function CreateInboxRulesetOptionsToJSON(json: any): CreateInboxRulesetOptions;
+export declare function CreateInboxRulesetOptionsToJSONTyped(value?: CreateInboxRulesetOptions | null, ignoreDiscriminator?: boolean): any;

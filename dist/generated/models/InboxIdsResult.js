@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxIdsResultToJSON = exports.InboxIdsResultFromJSONTyped = exports.InboxIdsResultFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfInboxIdsResult = instanceOfInboxIdsResult;
+exports.InboxIdsResultFromJSON = InboxIdsResultFromJSON;
+exports.InboxIdsResultFromJSONTyped = InboxIdsResultFromJSONTyped;
+exports.InboxIdsResultToJSON = InboxIdsResultToJSON;
+exports.InboxIdsResultToJSONTyped = InboxIdsResultToJSONTyped;
+var InboxIdItem_1 = require("./InboxIdItem");
+/**
+ * Check if a given object implements the InboxIdsResult interface.
+ */
+function instanceOfInboxIdsResult(value) {
+    if (!('inboxIds' in value) || value['inboxIds'] === undefined)
+        return false;
+    return true;
+}
 function InboxIdsResultFromJSON(json) {
     return InboxIdsResultFromJSONTyped(json, false);
 }
-exports.InboxIdsResultFromJSON = InboxIdsResultFromJSON;
 function InboxIdsResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxIds: json['inboxIds'].map(_1.InboxIdItemFromJSON),
+        'inboxIds': (json['inboxIds'].map(InboxIdItem_1.InboxIdItemFromJSON)),
     };
 }
-exports.InboxIdsResultFromJSONTyped = InboxIdsResultFromJSONTyped;
-function InboxIdsResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxIdsResultToJSON(json) {
+    return InboxIdsResultToJSONTyped(json, false);
+}
+function InboxIdsResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxIds: value.inboxIds.map(_1.InboxIdItemToJSON),
+        'inboxIds': (value['inboxIds'].map(InboxIdItem_1.InboxIdItemToJSON)),
     };
 }
-exports.InboxIdsResultToJSON = InboxIdsResultToJSON;

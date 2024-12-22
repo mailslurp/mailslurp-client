@@ -13,44 +13,63 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AliasProjectionToJSON = exports.AliasProjectionFromJSONTyped = exports.AliasProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfAliasProjection = instanceOfAliasProjection;
+exports.AliasProjectionFromJSON = AliasProjectionFromJSON;
+exports.AliasProjectionFromJSONTyped = AliasProjectionFromJSONTyped;
+exports.AliasProjectionToJSON = AliasProjectionToJSON;
+exports.AliasProjectionToJSONTyped = AliasProjectionToJSONTyped;
+/**
+ * Check if a given object implements the AliasProjection interface.
+ */
+function instanceOfAliasProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function AliasProjectionFromJSON(json) {
     return AliasProjectionFromJSONTyped(json, false);
 }
-exports.AliasProjectionFromJSON = AliasProjectionFromJSON;
 function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        inboxId: json['inboxId'],
-        userId: json['userId'],
-        emailAddress: json['emailAddress'],
-        useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'inboxId': json['inboxId'],
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'],
+        'useThreads': json['useThreads'] == null ? undefined : json['useThreads'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
     };
 }
-exports.AliasProjectionFromJSONTyped = AliasProjectionFromJSONTyped;
-function AliasProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function AliasProjectionToJSON(json) {
+    return AliasProjectionToJSONTyped(json, false);
+}
+function AliasProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        inboxId: value.inboxId,
-        userId: value.userId,
-        emailAddress: value.emailAddress,
-        useThreads: value.useThreads,
-        name: value.name,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'useThreads': value['useThreads'],
+        'name': value['name'],
+        'id': value['id'],
     };
 }
-exports.AliasProjectionToJSON = AliasProjectionToJSON;

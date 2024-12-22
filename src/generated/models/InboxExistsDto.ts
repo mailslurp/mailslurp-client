@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Result of email exists query
  * @export
  * @interface InboxExistsDto
  */
 export interface InboxExistsDto {
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxExistsDto
-   */
-  _exists: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxExistsDto
+     */
+    _exists: boolean;
+}
+
+/**
+ * Check if a given object implements the InboxExistsDto interface.
+ */
+export function instanceOfInboxExistsDto(value: object): value is InboxExistsDto {
+    if (!('_exists' in value) || value['_exists'] === undefined) return false;
+    return true;
 }
 
 export function InboxExistsDtoFromJSON(json: any): InboxExistsDto {
-  return InboxExistsDtoFromJSONTyped(json, false);
+    return InboxExistsDtoFromJSONTyped(json, false);
 }
 
-export function InboxExistsDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxExistsDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    _exists: json['exists'],
-  };
+export function InboxExistsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxExistsDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        '_exists': json['exists'],
+    };
 }
 
-export function InboxExistsDtoToJSON(value?: InboxExistsDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    exists: value._exists,
-  };
+export function InboxExistsDtoToJSON(json: any): InboxExistsDto {
+    return InboxExistsDtoToJSONTyped(json, false);
 }
+
+export function InboxExistsDtoToJSONTyped(value?: InboxExistsDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'exists': value['_exists'],
+    };
+}
+

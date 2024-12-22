@@ -12,104 +12,119 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Preview object for domain entity
  * @export
  * @interface DomainPreview
  */
 export interface DomainPreview {
-  /**
-   *
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  domain: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  catchAllInboxId?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof DomainPreview
-   */
-  createdAt: Date;
-  /**
-   * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  domainType: DomainPreviewDomainTypeEnum;
-  /**
-   *
-   * @type {boolean}
-   * @memberof DomainPreview
-   */
-  isVerified: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof DomainPreview
-   */
-  hasMissingRecords: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    domain: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    catchAllInboxId?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof DomainPreview
+     */
+    createdAt: Date;
+    /**
+     * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    domainType: DomainPreviewDomainTypeEnum;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DomainPreview
+     */
+    isVerified: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DomainPreview
+     */
+    hasMissingRecords: boolean;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum DomainPreviewDomainTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_DOMAIN = 'SMTP_DOMAIN',
+export const DomainPreviewDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+} as const;
+export type DomainPreviewDomainTypeEnum = typeof DomainPreviewDomainTypeEnum[keyof typeof DomainPreviewDomainTypeEnum];
+
+
+/**
+ * Check if a given object implements the DomainPreview interface.
+ */
+export function instanceOfDomainPreview(value: object): value is DomainPreview {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('domain' in value) || value['domain'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('domainType' in value) || value['domainType'] === undefined) return false;
+    if (!('isVerified' in value) || value['isVerified'] === undefined) return false;
+    if (!('hasMissingRecords' in value) || value['hasMissingRecords'] === undefined) return false;
+    return true;
 }
 
 export function DomainPreviewFromJSON(json: any): DomainPreview {
-  return DomainPreviewFromJSONTyped(json, false);
+    return DomainPreviewFromJSONTyped(json, false);
 }
 
-export function DomainPreviewFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainPreview {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    domain: json['domain'],
-    catchAllInboxId: !exists(json, 'catchAllInboxId')
-      ? undefined
-      : json['catchAllInboxId'],
-    createdAt: new Date(json['createdAt']),
-    domainType: json['domainType'],
-    isVerified: json['isVerified'],
-    hasMissingRecords: json['hasMissingRecords'],
-  };
+export function DomainPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainPreview {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'domain': json['domain'],
+        'catchAllInboxId': json['catchAllInboxId'] == null ? undefined : json['catchAllInboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'domainType': json['domainType'],
+        'isVerified': json['isVerified'],
+        'hasMissingRecords': json['hasMissingRecords'],
+    };
 }
 
-export function DomainPreviewToJSON(value?: DomainPreview | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    domain: value.domain,
-    catchAllInboxId: value.catchAllInboxId,
-    createdAt: value.createdAt.toISOString(),
-    domainType: value.domainType,
-    isVerified: value.isVerified,
-    hasMissingRecords: value.hasMissingRecords,
-  };
+export function DomainPreviewToJSON(json: any): DomainPreview {
+    return DomainPreviewToJSONTyped(json, false);
 }
+
+export function DomainPreviewToJSONTyped(value?: DomainPreview | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'domain': value['domain'],
+        'catchAllInboxId': value['catchAllInboxId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'domainType': value['domainType'],
+        'isVerified': value['isVerified'],
+        'hasMissingRecords': value['hasMissingRecords'],
+    };
+}
+

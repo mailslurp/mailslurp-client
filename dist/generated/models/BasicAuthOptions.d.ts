@@ -28,6 +28,11 @@ export interface BasicAuthOptions {
      */
     password: string;
 }
+/**
+ * Check if a given object implements the BasicAuthOptions interface.
+ */
+export declare function instanceOfBasicAuthOptions(value: object): value is BasicAuthOptions;
 export declare function BasicAuthOptionsFromJSON(json: any): BasicAuthOptions;
 export declare function BasicAuthOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): BasicAuthOptions;
-export declare function BasicAuthOptionsToJSON(value?: BasicAuthOptions | null): any;
+export declare function BasicAuthOptionsToJSON(json: any): BasicAuthOptions;
+export declare function BasicAuthOptionsToJSONTyped(value?: BasicAuthOptions | null, ignoreDiscriminator?: boolean): any;

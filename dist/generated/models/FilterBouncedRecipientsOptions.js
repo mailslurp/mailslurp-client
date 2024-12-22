@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilterBouncedRecipientsOptionsToJSON = exports.FilterBouncedRecipientsOptionsFromJSONTyped = exports.FilterBouncedRecipientsOptionsFromJSON = void 0;
+exports.instanceOfFilterBouncedRecipientsOptions = instanceOfFilterBouncedRecipientsOptions;
+exports.FilterBouncedRecipientsOptionsFromJSON = FilterBouncedRecipientsOptionsFromJSON;
+exports.FilterBouncedRecipientsOptionsFromJSONTyped = FilterBouncedRecipientsOptionsFromJSONTyped;
+exports.FilterBouncedRecipientsOptionsToJSON = FilterBouncedRecipientsOptionsToJSON;
+exports.FilterBouncedRecipientsOptionsToJSONTyped = FilterBouncedRecipientsOptionsToJSONTyped;
+/**
+ * Check if a given object implements the FilterBouncedRecipientsOptions interface.
+ */
+function instanceOfFilterBouncedRecipientsOptions(value) {
+    if (!('emailRecipients' in value) || value['emailRecipients'] === undefined)
+        return false;
+    return true;
+}
 function FilterBouncedRecipientsOptionsFromJSON(json) {
     return FilterBouncedRecipientsOptionsFromJSONTyped(json, false);
 }
-exports.FilterBouncedRecipientsOptionsFromJSON = FilterBouncedRecipientsOptionsFromJSON;
 function FilterBouncedRecipientsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        emailRecipients: json['emailRecipients'],
+        'emailRecipients': json['emailRecipients'],
     };
 }
-exports.FilterBouncedRecipientsOptionsFromJSONTyped = FilterBouncedRecipientsOptionsFromJSONTyped;
-function FilterBouncedRecipientsOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function FilterBouncedRecipientsOptionsToJSON(json) {
+    return FilterBouncedRecipientsOptionsToJSONTyped(json, false);
+}
+function FilterBouncedRecipientsOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        emailRecipients: value.emailRecipients,
+        'emailRecipients': value['emailRecipients'],
     };
 }
-exports.FilterBouncedRecipientsOptionsToJSON = FilterBouncedRecipientsOptionsToJSON;

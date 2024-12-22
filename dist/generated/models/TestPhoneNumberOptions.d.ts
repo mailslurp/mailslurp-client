@@ -22,6 +22,11 @@ export interface TestPhoneNumberOptions {
      */
     message: string;
 }
+/**
+ * Check if a given object implements the TestPhoneNumberOptions interface.
+ */
+export declare function instanceOfTestPhoneNumberOptions(value: object): value is TestPhoneNumberOptions;
 export declare function TestPhoneNumberOptionsFromJSON(json: any): TestPhoneNumberOptions;
 export declare function TestPhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestPhoneNumberOptions;
-export declare function TestPhoneNumberOptionsToJSON(value?: TestPhoneNumberOptions | null): any;
+export declare function TestPhoneNumberOptionsToJSON(json: any): TestPhoneNumberOptions;
+export declare function TestPhoneNumberOptionsToJSONTyped(value?: TestPhoneNumberOptions | null, ignoreDiscriminator?: boolean): any;

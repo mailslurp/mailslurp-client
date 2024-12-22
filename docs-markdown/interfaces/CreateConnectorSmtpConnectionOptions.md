@@ -13,11 +13,19 @@ CreateConnectorSmtpConnectionOptions
 ### Properties
 
 - [enabled](CreateConnectorSmtpConnectionOptions.md#enabled)
+- [localHostName](CreateConnectorSmtpConnectionOptions.md#localhostname)
+- [proxyEnabled](CreateConnectorSmtpConnectionOptions.md#proxyenabled)
+- [proxyHost](CreateConnectorSmtpConnectionOptions.md#proxyhost)
+- [proxyPort](CreateConnectorSmtpConnectionOptions.md#proxyport)
 - [smtpHost](CreateConnectorSmtpConnectionOptions.md#smtphost)
+- [smtpMechanisms](CreateConnectorSmtpConnectionOptions.md#smtpmechanisms)
 - [smtpPassword](CreateConnectorSmtpConnectionOptions.md#smtppassword)
 - [smtpPort](CreateConnectorSmtpConnectionOptions.md#smtpport)
 - [smtpSsl](CreateConnectorSmtpConnectionOptions.md#smtpssl)
 - [smtpUsername](CreateConnectorSmtpConnectionOptions.md#smtpusername)
+- [sslProtocols](CreateConnectorSmtpConnectionOptions.md#sslprotocols)
+- [sslTrust](CreateConnectorSmtpConnectionOptions.md#ssltrust)
+- [startTls](CreateConnectorSmtpConnectionOptions.md#starttls)
 
 ## Properties
 
@@ -31,9 +39,59 @@ CreateConnectorSmtpConnectionOptions
 
 ___
 
+### localHostName
+
+• `Optional` **localHostName**: `string`
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
+### proxyEnabled
+
+• `Optional` **proxyEnabled**: `boolean`
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
+### proxyHost
+
+• `Optional` **proxyHost**: `string`
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
+### proxyPort
+
+• `Optional` **proxyPort**: `number`
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
 ### smtpHost
 
 • **smtpHost**: `string`
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
+### smtpMechanisms
+
+• `Optional` **smtpMechanisms**: `string`[]
 
 **`Memberof`**
 
@@ -74,6 +132,36 @@ ___
 ### smtpUsername
 
 • `Optional` **smtpUsername**: `string`
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
+### sslProtocols
+
+• `Optional` **sslProtocols**: `string`[]
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
+### sslTrust
+
+• `Optional` **sslTrust**: `string`
+
+**`Memberof`**
+
+CreateConnectorSmtpConnectionOptions
+
+___
+
+### startTls
+
+• `Optional` **startTls**: `boolean`
 
 **`Memberof`**
 

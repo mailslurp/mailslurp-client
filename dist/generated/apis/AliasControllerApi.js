@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -89,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetThreadsPaginatedSortEnum = exports.GetAliasesSortEnum = exports.GetAliasThreadsSortEnum = exports.GetAliasEmailsSortEnum = exports.AliasControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -104,32 +114,33 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.createAliasRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.createAliasOptions === null ||
-                            requestParameters.createAliasOptions === undefined) {
-                            throw new runtime.RequiredError('createAliasOptions', 'Required parameter requestParameters.createAliasOptions was null or undefined when calling createAlias.');
+                        if (requestParameters['createAliasOptions'] == null) {
+                            throw new runtime.RequiredError('createAliasOptions', 'Required parameter "createAliasOptions" was null or undefined when calling createAlias().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.CreateAliasOptionsToJSON)(requestParameters.createAliasOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AliasDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.CreateAliasOptionsToJSON)(requestParameters['createAliasOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.AliasDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -157,27 +168,30 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.deleteAliasRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.aliasId === null ||
-                            requestParameters.aliasId === undefined) {
-                            throw new runtime.RequiredError('aliasId', 'Required parameter requestParameters.aliasId was null or undefined when calling deleteAlias.');
+                        if (requestParameters['aliasId'] == null) {
+                            throw new runtime.RequiredError('aliasId', 'Required parameter "aliasId" was null or undefined when calling deleteAlias().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/{aliasId}".replace("{".concat("aliasId", "}"), encodeURIComponent(String(requestParameters['aliasId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -204,30 +218,31 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.getAliasRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.aliasId === null ||
-                            requestParameters.aliasId === undefined) {
-                            throw new runtime.RequiredError('aliasId', 'Required parameter requestParameters.aliasId was null or undefined when calling getAlias.');
+                        if (requestParameters['aliasId'] == null) {
+                            throw new runtime.RequiredError('aliasId', 'Required parameter "aliasId" was null or undefined when calling getAlias().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AliasDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/{aliasId}".replace("{".concat("aliasId", "}"), encodeURIComponent(String(requestParameters['aliasId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.AliasDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -256,45 +271,46 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.getAliasEmailsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.aliasId === null ||
-                            requestParameters.aliasId === undefined) {
-                            throw new runtime.RequiredError('aliasId', 'Required parameter requestParameters.aliasId was null or undefined when calling getAliasEmails.');
+                        if (requestParameters['aliasId'] == null) {
+                            throw new runtime.RequiredError('aliasId', 'Required parameter "aliasId" was null or undefined when calling getAliasEmails().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}/emails".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/{aliasId}/emails".replace("{".concat("aliasId", "}"), encodeURIComponent(String(requestParameters['aliasId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -323,45 +339,46 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.getAliasThreadsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.aliasId === null ||
-                            requestParameters.aliasId === undefined) {
-                            throw new runtime.RequiredError('aliasId', 'Required parameter requestParameters.aliasId was null or undefined when calling getAliasThreads.');
+                        if (requestParameters['aliasId'] == null) {
+                            throw new runtime.RequiredError('aliasId', 'Required parameter "aliasId" was null or undefined when calling getAliasThreads().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}/threads".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageThreadProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/{aliasId}/threads".replace("{".concat("aliasId", "}"), encodeURIComponent(String(requestParameters['aliasId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageAliasThreadProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -390,44 +407,46 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.getAliasesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.search !== undefined) {
-                            queryParameters['search'] = requestParameters.search;
+                        if (requestParameters['search'] != null) {
+                            queryParameters['search'] = requestParameters['search'];
                         }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageAliasFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageAliasFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -436,9 +455,10 @@ var AliasControllerApi = /** @class */ (function (_super) {
      * Get all email aliases in paginated form
      * Get all email aliases you have created
      */
-    AliasControllerApi.prototype.getAliases = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    AliasControllerApi.prototype.getAliases = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAliasesRaw(requestParameters, initOverrides)];
@@ -456,30 +476,31 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.getThreadRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.threadId === null ||
-                            requestParameters.threadId === undefined) {
-                            throw new runtime.RequiredError('threadId', 'Required parameter requestParameters.threadId was null or undefined when calling getThread.');
+                        if (requestParameters['threadId'] == null) {
+                            throw new runtime.RequiredError('threadId', 'Required parameter "threadId" was null or undefined when calling getThread().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/threads/{threadId}".replace("{".concat('threadId', "}"), encodeURIComponent(String(requestParameters.threadId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ThreadProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/threads/{threadId}".replace("{".concat("threadId", "}"), encodeURIComponent(String(requestParameters['threadId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.AliasThreadProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -508,41 +529,43 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.getThreadsPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/threads",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageThreadProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/threads",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageAliasThreadProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -551,9 +574,10 @@ var AliasControllerApi = /** @class */ (function (_super) {
      * Returns threads created for all aliases in paginated form
      * Get all threads
      */
-    AliasControllerApi.prototype.getThreadsPaginated = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    AliasControllerApi.prototype.getThreadsPaginated = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getThreadsPaginatedRaw(requestParameters, initOverrides)];
@@ -571,42 +595,39 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.replyToAliasEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.aliasId === null ||
-                            requestParameters.aliasId === undefined) {
-                            throw new runtime.RequiredError('aliasId', 'Required parameter requestParameters.aliasId was null or undefined when calling replyToAliasEmail.');
+                        if (requestParameters['aliasId'] == null) {
+                            throw new runtime.RequiredError('aliasId', 'Required parameter "aliasId" was null or undefined when calling replyToAliasEmail().');
                         }
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling replyToAliasEmail.');
+                        if (requestParameters['emailId'] == null) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter "emailId" was null or undefined when calling replyToAliasEmail().');
                         }
-                        if (requestParameters.replyToAliasEmailOptions === null ||
-                            requestParameters.replyToAliasEmailOptions === undefined) {
-                            throw new runtime.RequiredError('replyToAliasEmailOptions', 'Required parameter requestParameters.replyToAliasEmailOptions was null or undefined when calling replyToAliasEmail.');
+                        if (requestParameters['replyToAliasEmailOptions'] == null) {
+                            throw new runtime.RequiredError('replyToAliasEmailOptions', 'Required parameter "replyToAliasEmailOptions" was null or undefined when calling replyToAliasEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}/emails/{emailId}"
-                                    .replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId)))
-                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'PUT',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.ReplyToAliasEmailOptionsToJSON)(requestParameters.replyToAliasEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/{aliasId}/emails/{emailId}".replace("{".concat("aliasId", "}"), encodeURIComponent(String(requestParameters['aliasId']))).replace("{".concat("emailId", "}"), encodeURIComponent(String(requestParameters['emailId']))),
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.ReplyToAliasEmailOptionsToJSON)(requestParameters['replyToAliasEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SentEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -635,36 +656,36 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.sendAliasEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.aliasId === null ||
-                            requestParameters.aliasId === undefined) {
-                            throw new runtime.RequiredError('aliasId', 'Required parameter requestParameters.aliasId was null or undefined when calling sendAliasEmail.');
+                        if (requestParameters['aliasId'] == null) {
+                            throw new runtime.RequiredError('aliasId', 'Required parameter "aliasId" was null or undefined when calling sendAliasEmail().');
                         }
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendAliasEmail.');
+                        if (requestParameters['sendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter "sendEmailOptions" was null or undefined when calling sendAliasEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}/emails".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/{aliasId}/emails".replace("{".concat("aliasId", "}"), encodeURIComponent(String(requestParameters['aliasId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendEmailOptionsToJSON)(requestParameters['sendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SentEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -692,36 +713,36 @@ var AliasControllerApi = /** @class */ (function (_super) {
      */
     AliasControllerApi.prototype.updateAliasRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.aliasId === null ||
-                            requestParameters.aliasId === undefined) {
-                            throw new runtime.RequiredError('aliasId', 'Required parameter requestParameters.aliasId was null or undefined when calling updateAlias.');
+                        if (requestParameters['aliasId'] == null) {
+                            throw new runtime.RequiredError('aliasId', 'Required parameter "aliasId" was null or undefined when calling updateAlias().');
                         }
-                        if (requestParameters.updateAliasOptions === null ||
-                            requestParameters.updateAliasOptions === undefined) {
-                            throw new runtime.RequiredError('updateAliasOptions', 'Required parameter requestParameters.updateAliasOptions was null or undefined when calling updateAlias.');
+                        if (requestParameters['updateAliasOptions'] == null) {
+                            throw new runtime.RequiredError('updateAliasOptions', 'Required parameter "updateAliasOptions" was null or undefined when calling updateAlias().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
-                                method: 'PUT',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.UpdateAliasOptionsToJSON)(requestParameters.updateAliasOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AliasDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/aliases/{aliasId}".replace("{".concat("aliasId", "}"), encodeURIComponent(String(requestParameters['aliasId']))),
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.UpdateAliasOptionsToJSON)(requestParameters['updateAliasOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.AliasDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -748,37 +769,29 @@ var AliasControllerApi = /** @class */ (function (_super) {
 exports.AliasControllerApi = AliasControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var GetAliasEmailsSortEnum;
-(function (GetAliasEmailsSortEnum) {
-    GetAliasEmailsSortEnum["ASC"] = "ASC";
-    GetAliasEmailsSortEnum["DESC"] = "DESC";
-})(GetAliasEmailsSortEnum = exports.GetAliasEmailsSortEnum || (exports.GetAliasEmailsSortEnum = {}));
+exports.GetAliasEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAliasThreadsSortEnum;
-(function (GetAliasThreadsSortEnum) {
-    GetAliasThreadsSortEnum["ASC"] = "ASC";
-    GetAliasThreadsSortEnum["DESC"] = "DESC";
-})(GetAliasThreadsSortEnum = exports.GetAliasThreadsSortEnum || (exports.GetAliasThreadsSortEnum = {}));
+exports.GetAliasThreadsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAliasesSortEnum;
-(function (GetAliasesSortEnum) {
-    GetAliasesSortEnum["ASC"] = "ASC";
-    GetAliasesSortEnum["DESC"] = "DESC";
-})(GetAliasesSortEnum = exports.GetAliasesSortEnum || (exports.GetAliasesSortEnum = {}));
+exports.GetAliasesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetThreadsPaginatedSortEnum;
-(function (GetThreadsPaginatedSortEnum) {
-    GetThreadsPaginatedSortEnum["ASC"] = "ASC";
-    GetThreadsPaginatedSortEnum["DESC"] = "DESC";
-})(GetThreadsPaginatedSortEnum = exports.GetThreadsPaginatedSortEnum || (exports.GetThreadsPaginatedSortEnum = {}));
+exports.GetThreadsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};

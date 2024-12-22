@@ -22,6 +22,11 @@ export interface InboxForwarderTestOptions {
      */
     testValue: string;
 }
+/**
+ * Check if a given object implements the InboxForwarderTestOptions interface.
+ */
+export declare function instanceOfInboxForwarderTestOptions(value: object): value is InboxForwarderTestOptions;
 export declare function InboxForwarderTestOptionsFromJSON(json: any): InboxForwarderTestOptions;
 export declare function InboxForwarderTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderTestOptions;
-export declare function InboxForwarderTestOptionsToJSON(value?: InboxForwarderTestOptions | null): any;
+export declare function InboxForwarderTestOptionsToJSON(json: any): InboxForwarderTestOptions;
+export declare function InboxForwarderTestOptionsToJSONTyped(value?: InboxForwarderTestOptions | null, ignoreDiscriminator?: boolean): any;

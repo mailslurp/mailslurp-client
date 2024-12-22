@@ -13,82 +13,115 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SentEmailDtoToJSON = exports.SentEmailDtoFromJSONTyped = exports.SentEmailDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfSentEmailDto = instanceOfSentEmailDto;
+exports.SentEmailDtoFromJSON = SentEmailDtoFromJSON;
+exports.SentEmailDtoFromJSONTyped = SentEmailDtoFromJSONTyped;
+exports.SentEmailDtoToJSON = SentEmailDtoToJSON;
+exports.SentEmailDtoToJSONTyped = SentEmailDtoToJSONTyped;
+var Sender_1 = require("./Sender");
+var EmailRecipients_1 = require("./EmailRecipients");
+/**
+ * Check if a given object implements the SentEmailDto interface.
+ */
+function instanceOfSentEmailDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('sentAt' in value) || value['sentAt'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function SentEmailDtoFromJSON(json) {
     return SentEmailDtoFromJSONTyped(json, false);
 }
-exports.SentEmailDtoFromJSON = SentEmailDtoFromJSON;
 function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        inboxId: json['inboxId'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
-        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
-        toContacts: !(0, runtime_1.exists)(json, 'toContacts') ? undefined : json['toContacts'],
-        toGroup: !(0, runtime_1.exists)(json, 'toGroup') ? undefined : json['toGroup'],
-        charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
-        isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
-        sentAt: new Date(json['sentAt']),
-        pixelIds: !(0, runtime_1.exists)(json, 'pixelIds') ? undefined : json['pixelIds'],
-        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
-        messageIds: !(0, runtime_1.exists)(json, 'messageIds') ? undefined : json['messageIds'],
-        virtualSend: !(0, runtime_1.exists)(json, 'virtualSend') ? undefined : json['virtualSend'],
-        templateId: !(0, runtime_1.exists)(json, 'templateId') ? undefined : json['templateId'],
-        templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
-            ? undefined
-            : json['templateVariables'],
-        headers: !(0, runtime_1.exists)(json, 'headers') ? undefined : json['headers'],
-        html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
+        'id': json['id'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
+        'to': json['to'] == null ? undefined : json['to'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'sender': json['sender'] == null ? undefined : (0, Sender_1.SenderFromJSON)(json['sender']),
+        'recipients': json['recipients'] == null ? undefined : (0, EmailRecipients_1.EmailRecipientsFromJSON)(json['recipients']),
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'cc': json['cc'] == null ? undefined : json['cc'],
+        'bcc': json['bcc'] == null ? undefined : json['bcc'],
+        'attachments': json['attachments'] == null ? undefined : json['attachments'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'bodyMD5Hash': json['bodyMD5Hash'] == null ? undefined : json['bodyMD5Hash'],
+        'body': json['body'] == null ? undefined : json['body'],
+        'toContacts': json['toContacts'] == null ? undefined : json['toContacts'],
+        'toGroup': json['toGroup'] == null ? undefined : json['toGroup'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'isHTML': json['isHTML'] == null ? undefined : json['isHTML'],
+        'sentAt': (new Date(json['sentAt'])),
+        'createdAt': (new Date(json['createdAt'])),
+        'pixelIds': json['pixelIds'] == null ? undefined : json['pixelIds'],
+        'messageId': json['messageId'] == null ? undefined : json['messageId'],
+        'messageIds': json['messageIds'] == null ? undefined : json['messageIds'],
+        'virtualSend': json['virtualSend'] == null ? undefined : json['virtualSend'],
+        'templateId': json['templateId'] == null ? undefined : json['templateId'],
+        'templateVariables': json['templateVariables'] == null ? undefined : json['templateVariables'],
+        'headers': json['headers'] == null ? undefined : json['headers'],
+        'threadId': json['threadId'] == null ? undefined : json['threadId'],
+        'bodyExcerpt': json['bodyExcerpt'] == null ? undefined : json['bodyExcerpt'],
+        'textExcerpt': json['textExcerpt'] == null ? undefined : json['textExcerpt'],
+        'inReplyTo': json['inReplyTo'] == null ? undefined : json['inReplyTo'],
+        'favourite': json['favourite'] == null ? undefined : json['favourite'],
+        'html': json['html'] == null ? undefined : json['html'],
     };
 }
-exports.SentEmailDtoFromJSONTyped = SentEmailDtoFromJSONTyped;
-function SentEmailDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SentEmailDtoToJSON(json) {
+    return SentEmailDtoToJSONTyped(json, false);
+}
+function SentEmailDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        inboxId: value.inboxId,
-        domainId: value.domainId,
-        to: value.to,
-        from: value.from,
-        replyTo: value.replyTo,
-        cc: value.cc,
-        bcc: value.bcc,
-        attachments: value.attachments,
-        subject: value.subject,
-        bodyMD5Hash: value.bodyMD5Hash,
-        body: value.body,
-        toContacts: value.toContacts,
-        toGroup: value.toGroup,
-        charset: value.charset,
-        isHTML: value.isHTML,
-        sentAt: value.sentAt.toISOString(),
-        pixelIds: value.pixelIds,
-        messageId: value.messageId,
-        messageIds: value.messageIds,
-        virtualSend: value.virtualSend,
-        templateId: value.templateId,
-        templateVariables: value.templateVariables,
-        headers: value.headers,
-        html: value.html,
+        'id': value['id'],
+        'userId': value['userId'],
+        'inboxId': value['inboxId'],
+        'domainId': value['domainId'],
+        'to': value['to'],
+        'from': value['from'],
+        'sender': (0, Sender_1.SenderToJSON)(value['sender']),
+        'recipients': (0, EmailRecipients_1.EmailRecipientsToJSON)(value['recipients']),
+        'replyTo': value['replyTo'],
+        'cc': value['cc'],
+        'bcc': value['bcc'],
+        'attachments': value['attachments'],
+        'subject': value['subject'],
+        'bodyMD5Hash': value['bodyMD5Hash'],
+        'body': value['body'],
+        'toContacts': value['toContacts'],
+        'toGroup': value['toGroup'],
+        'charset': value['charset'],
+        'isHTML': value['isHTML'],
+        'sentAt': ((value['sentAt']).toISOString()),
+        'createdAt': ((value['createdAt']).toISOString()),
+        'pixelIds': value['pixelIds'],
+        'messageId': value['messageId'],
+        'messageIds': value['messageIds'],
+        'virtualSend': value['virtualSend'],
+        'templateId': value['templateId'],
+        'templateVariables': value['templateVariables'],
+        'headers': value['headers'],
+        'threadId': value['threadId'],
+        'bodyExcerpt': value['bodyExcerpt'],
+        'textExcerpt': value['textExcerpt'],
+        'inReplyTo': value['inReplyTo'],
+        'favourite': value['favourite'],
+        'html': value['html'],
     };
 }
-exports.SentEmailDtoToJSON = SentEmailDtoToJSON;

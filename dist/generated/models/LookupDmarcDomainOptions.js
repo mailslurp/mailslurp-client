@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupDmarcDomainOptionsToJSON = exports.LookupDmarcDomainOptionsFromJSONTyped = exports.LookupDmarcDomainOptionsFromJSON = void 0;
+exports.instanceOfLookupDmarcDomainOptions = instanceOfLookupDmarcDomainOptions;
+exports.LookupDmarcDomainOptionsFromJSON = LookupDmarcDomainOptionsFromJSON;
+exports.LookupDmarcDomainOptionsFromJSONTyped = LookupDmarcDomainOptionsFromJSONTyped;
+exports.LookupDmarcDomainOptionsToJSON = LookupDmarcDomainOptionsToJSON;
+exports.LookupDmarcDomainOptionsToJSONTyped = LookupDmarcDomainOptionsToJSONTyped;
+/**
+ * Check if a given object implements the LookupDmarcDomainOptions interface.
+ */
+function instanceOfLookupDmarcDomainOptions(value) {
+    if (!('host' in value) || value['host'] === undefined)
+        return false;
+    return true;
+}
 function LookupDmarcDomainOptionsFromJSON(json) {
     return LookupDmarcDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupDmarcDomainOptionsFromJSON = LookupDmarcDomainOptionsFromJSON;
 function LookupDmarcDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        host: json['host'],
+        'host': json['host'],
     };
 }
-exports.LookupDmarcDomainOptionsFromJSONTyped = LookupDmarcDomainOptionsFromJSONTyped;
-function LookupDmarcDomainOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function LookupDmarcDomainOptionsToJSON(json) {
+    return LookupDmarcDomainOptionsToJSONTyped(json, false);
+}
+function LookupDmarcDomainOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        host: value.host,
+        'host': value['host'],
     };
 }
-exports.LookupDmarcDomainOptionsToJSON = LookupDmarcDomainOptionsToJSON;

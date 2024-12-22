@@ -13,32 +13,44 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureVersionStatisticsToJSON = exports.EmailFeatureVersionStatisticsFromJSONTyped = exports.EmailFeatureVersionStatisticsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfEmailFeatureVersionStatistics = instanceOfEmailFeatureVersionStatistics;
+exports.EmailFeatureVersionStatisticsFromJSON = EmailFeatureVersionStatisticsFromJSON;
+exports.EmailFeatureVersionStatisticsFromJSONTyped = EmailFeatureVersionStatisticsFromJSONTyped;
+exports.EmailFeatureVersionStatisticsToJSON = EmailFeatureVersionStatisticsToJSON;
+exports.EmailFeatureVersionStatisticsToJSONTyped = EmailFeatureVersionStatisticsToJSONTyped;
+var EmailFeatureSupportFlags_1 = require("./EmailFeatureSupportFlags");
+/**
+ * Check if a given object implements the EmailFeatureVersionStatistics interface.
+ */
+function instanceOfEmailFeatureVersionStatistics(value) {
+    if (!('version' in value) || value['version'] === undefined)
+        return false;
+    if (!('supportFlags' in value) || value['supportFlags'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeatureVersionStatisticsFromJSON(json) {
     return EmailFeatureVersionStatisticsFromJSONTyped(json, false);
 }
-exports.EmailFeatureVersionStatisticsFromJSON = EmailFeatureVersionStatisticsFromJSON;
 function EmailFeatureVersionStatisticsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        version: json['version'],
-        supportFlags: (0, _1.EmailFeatureSupportFlagsFromJSON)(json['supportFlags']),
+        'version': json['version'],
+        'supportFlags': (0, EmailFeatureSupportFlags_1.EmailFeatureSupportFlagsFromJSON)(json['supportFlags']),
     };
 }
-exports.EmailFeatureVersionStatisticsFromJSONTyped = EmailFeatureVersionStatisticsFromJSONTyped;
-function EmailFeatureVersionStatisticsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeatureVersionStatisticsToJSON(json) {
+    return EmailFeatureVersionStatisticsToJSONTyped(json, false);
+}
+function EmailFeatureVersionStatisticsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        version: value.version,
-        supportFlags: (0, _1.EmailFeatureSupportFlagsToJSON)(value.supportFlags),
+        'version': value['version'],
+        'supportFlags': (0, EmailFeatureSupportFlags_1.EmailFeatureSupportFlagsToJSON)(value['supportFlags']),
     };
 }
-exports.EmailFeatureVersionStatisticsToJSON = EmailFeatureVersionStatisticsToJSON;

@@ -13,135 +13,154 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateMtaStsRecordResultsToJSON = exports.GenerateMtaStsRecordResultsFromJSONTyped = exports.GenerateMtaStsRecordResultsFromJSON = exports.GenerateMtaStsRecordResultsTypeEnum = void 0;
+exports.GenerateMtaStsRecordResultsTypeEnum = void 0;
+exports.instanceOfGenerateMtaStsRecordResults = instanceOfGenerateMtaStsRecordResults;
+exports.GenerateMtaStsRecordResultsFromJSON = GenerateMtaStsRecordResultsFromJSON;
+exports.GenerateMtaStsRecordResultsFromJSONTyped = GenerateMtaStsRecordResultsFromJSONTyped;
+exports.GenerateMtaStsRecordResultsToJSON = GenerateMtaStsRecordResultsToJSON;
+exports.GenerateMtaStsRecordResultsToJSONTyped = GenerateMtaStsRecordResultsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var GenerateMtaStsRecordResultsTypeEnum;
-(function (GenerateMtaStsRecordResultsTypeEnum) {
-    GenerateMtaStsRecordResultsTypeEnum["A"] = "A";
-    GenerateMtaStsRecordResultsTypeEnum["NS"] = "NS";
-    GenerateMtaStsRecordResultsTypeEnum["MD"] = "MD";
-    GenerateMtaStsRecordResultsTypeEnum["MF"] = "MF";
-    GenerateMtaStsRecordResultsTypeEnum["CNAME"] = "CNAME";
-    GenerateMtaStsRecordResultsTypeEnum["SOA"] = "SOA";
-    GenerateMtaStsRecordResultsTypeEnum["MB"] = "MB";
-    GenerateMtaStsRecordResultsTypeEnum["MG"] = "MG";
-    GenerateMtaStsRecordResultsTypeEnum["MR"] = "MR";
-    GenerateMtaStsRecordResultsTypeEnum["NULL"] = "NULL";
-    GenerateMtaStsRecordResultsTypeEnum["WKS"] = "WKS";
-    GenerateMtaStsRecordResultsTypeEnum["PTR"] = "PTR";
-    GenerateMtaStsRecordResultsTypeEnum["HINFO"] = "HINFO";
-    GenerateMtaStsRecordResultsTypeEnum["MINFO"] = "MINFO";
-    GenerateMtaStsRecordResultsTypeEnum["MX"] = "MX";
-    GenerateMtaStsRecordResultsTypeEnum["TXT"] = "TXT";
-    GenerateMtaStsRecordResultsTypeEnum["RP"] = "RP";
-    GenerateMtaStsRecordResultsTypeEnum["AFSDB"] = "AFSDB";
-    GenerateMtaStsRecordResultsTypeEnum["X25"] = "X25";
-    GenerateMtaStsRecordResultsTypeEnum["ISDN"] = "ISDN";
-    GenerateMtaStsRecordResultsTypeEnum["RT"] = "RT";
-    GenerateMtaStsRecordResultsTypeEnum["NSAP"] = "NSAP";
-    GenerateMtaStsRecordResultsTypeEnum["NSAP_PTR"] = "NSAP_PTR";
-    GenerateMtaStsRecordResultsTypeEnum["SIG"] = "SIG";
-    GenerateMtaStsRecordResultsTypeEnum["KEY"] = "KEY";
-    GenerateMtaStsRecordResultsTypeEnum["PX"] = "PX";
-    GenerateMtaStsRecordResultsTypeEnum["GPOS"] = "GPOS";
-    GenerateMtaStsRecordResultsTypeEnum["AAAA"] = "AAAA";
-    GenerateMtaStsRecordResultsTypeEnum["LOC"] = "LOC";
-    GenerateMtaStsRecordResultsTypeEnum["NXT"] = "NXT";
-    GenerateMtaStsRecordResultsTypeEnum["EID"] = "EID";
-    GenerateMtaStsRecordResultsTypeEnum["NIMLOC"] = "NIMLOC";
-    GenerateMtaStsRecordResultsTypeEnum["SRV"] = "SRV";
-    GenerateMtaStsRecordResultsTypeEnum["ATMA"] = "ATMA";
-    GenerateMtaStsRecordResultsTypeEnum["NAPTR"] = "NAPTR";
-    GenerateMtaStsRecordResultsTypeEnum["KX"] = "KX";
-    GenerateMtaStsRecordResultsTypeEnum["CERT"] = "CERT";
-    GenerateMtaStsRecordResultsTypeEnum["A6"] = "A6";
-    GenerateMtaStsRecordResultsTypeEnum["DNAME"] = "DNAME";
-    GenerateMtaStsRecordResultsTypeEnum["SINK"] = "SINK";
-    GenerateMtaStsRecordResultsTypeEnum["OPT"] = "OPT";
-    GenerateMtaStsRecordResultsTypeEnum["APL"] = "APL";
-    GenerateMtaStsRecordResultsTypeEnum["DS"] = "DS";
-    GenerateMtaStsRecordResultsTypeEnum["SSHFP"] = "SSHFP";
-    GenerateMtaStsRecordResultsTypeEnum["IPSECKEY"] = "IPSECKEY";
-    GenerateMtaStsRecordResultsTypeEnum["RRSIG"] = "RRSIG";
-    GenerateMtaStsRecordResultsTypeEnum["NSEC"] = "NSEC";
-    GenerateMtaStsRecordResultsTypeEnum["DNSKEY"] = "DNSKEY";
-    GenerateMtaStsRecordResultsTypeEnum["DHCID"] = "DHCID";
-    GenerateMtaStsRecordResultsTypeEnum["NSEC3"] = "NSEC3";
-    GenerateMtaStsRecordResultsTypeEnum["NSEC3PARAM"] = "NSEC3PARAM";
-    GenerateMtaStsRecordResultsTypeEnum["TLSA"] = "TLSA";
-    GenerateMtaStsRecordResultsTypeEnum["SMIMEA"] = "SMIMEA";
-    GenerateMtaStsRecordResultsTypeEnum["HIP"] = "HIP";
-    GenerateMtaStsRecordResultsTypeEnum["NINFO"] = "NINFO";
-    GenerateMtaStsRecordResultsTypeEnum["RKEY"] = "RKEY";
-    GenerateMtaStsRecordResultsTypeEnum["TALINK"] = "TALINK";
-    GenerateMtaStsRecordResultsTypeEnum["CDS"] = "CDS";
-    GenerateMtaStsRecordResultsTypeEnum["CDNSKEY"] = "CDNSKEY";
-    GenerateMtaStsRecordResultsTypeEnum["OPENPGPKEY"] = "OPENPGPKEY";
-    GenerateMtaStsRecordResultsTypeEnum["CSYNC"] = "CSYNC";
-    GenerateMtaStsRecordResultsTypeEnum["ZONEMD"] = "ZONEMD";
-    GenerateMtaStsRecordResultsTypeEnum["SVCB"] = "SVCB";
-    GenerateMtaStsRecordResultsTypeEnum["HTTPS"] = "HTTPS";
-    GenerateMtaStsRecordResultsTypeEnum["SPF"] = "SPF";
-    GenerateMtaStsRecordResultsTypeEnum["UINFO"] = "UINFO";
-    GenerateMtaStsRecordResultsTypeEnum["UID"] = "UID";
-    GenerateMtaStsRecordResultsTypeEnum["GID"] = "GID";
-    GenerateMtaStsRecordResultsTypeEnum["UNSPEC"] = "UNSPEC";
-    GenerateMtaStsRecordResultsTypeEnum["NID"] = "NID";
-    GenerateMtaStsRecordResultsTypeEnum["L32"] = "L32";
-    GenerateMtaStsRecordResultsTypeEnum["L64"] = "L64";
-    GenerateMtaStsRecordResultsTypeEnum["LP"] = "LP";
-    GenerateMtaStsRecordResultsTypeEnum["EUI48"] = "EUI48";
-    GenerateMtaStsRecordResultsTypeEnum["EUI64"] = "EUI64";
-    GenerateMtaStsRecordResultsTypeEnum["TKEY"] = "TKEY";
-    GenerateMtaStsRecordResultsTypeEnum["TSIG"] = "TSIG";
-    GenerateMtaStsRecordResultsTypeEnum["IXFR"] = "IXFR";
-    GenerateMtaStsRecordResultsTypeEnum["AXFR"] = "AXFR";
-    GenerateMtaStsRecordResultsTypeEnum["MAILB"] = "MAILB";
-    GenerateMtaStsRecordResultsTypeEnum["MAILA"] = "MAILA";
-    GenerateMtaStsRecordResultsTypeEnum["ANY"] = "ANY";
-    GenerateMtaStsRecordResultsTypeEnum["URI"] = "URI";
-    GenerateMtaStsRecordResultsTypeEnum["CAA"] = "CAA";
-    GenerateMtaStsRecordResultsTypeEnum["AVC"] = "AVC";
-    GenerateMtaStsRecordResultsTypeEnum["DOA"] = "DOA";
-    GenerateMtaStsRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
-    GenerateMtaStsRecordResultsTypeEnum["TA"] = "TA";
-    GenerateMtaStsRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateMtaStsRecordResultsTypeEnum = exports.GenerateMtaStsRecordResultsTypeEnum || (exports.GenerateMtaStsRecordResultsTypeEnum = {}));
+exports.GenerateMtaStsRecordResultsTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+};
+/**
+ * Check if a given object implements the GenerateMtaStsRecordResults interface.
+ */
+function instanceOfGenerateMtaStsRecordResults(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('type' in value) || value['type'] === undefined)
+        return false;
+    if (!('ttl' in value) || value['ttl'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    if (!('wellKnownValue' in value) || value['wellKnownValue'] === undefined)
+        return false;
+    if (!('wellKnownUrl' in value) || value['wellKnownUrl'] === undefined)
+        return false;
+    return true;
+}
 function GenerateMtaStsRecordResultsFromJSON(json) {
     return GenerateMtaStsRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateMtaStsRecordResultsFromJSON = GenerateMtaStsRecordResultsFromJSON;
 function GenerateMtaStsRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        type: json['type'],
-        ttl: json['ttl'],
-        value: json['value'],
-        wellKnownValue: json['wellKnownValue'],
-        wellKnownUrl: json['wellKnownUrl'],
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
+        'wellKnownValue': json['wellKnownValue'],
+        'wellKnownUrl': json['wellKnownUrl'],
     };
 }
-exports.GenerateMtaStsRecordResultsFromJSONTyped = GenerateMtaStsRecordResultsFromJSONTyped;
-function GenerateMtaStsRecordResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GenerateMtaStsRecordResultsToJSON(json) {
+    return GenerateMtaStsRecordResultsToJSONTyped(json, false);
+}
+function GenerateMtaStsRecordResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        type: value.type,
-        ttl: value.ttl,
-        value: value.value,
-        wellKnownValue: value.wellKnownValue,
-        wellKnownUrl: value.wellKnownUrl,
+        'name': value['name'],
+        'type': value['type'],
+        'ttl': value['ttl'],
+        'value': value['value'],
+        'wellKnownValue': value['wellKnownValue'],
+        'wellKnownUrl': value['wellKnownUrl'],
     };
 }
-exports.GenerateMtaStsRecordResultsToJSON = GenerateMtaStsRecordResultsToJSON;

@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * JSONSchema for payload
  * @export
  * @interface JSONSchemaDto
  */
 export interface JSONSchemaDto {
-  /**
-   *
-   * @type {string}
-   * @memberof JSONSchemaDto
-   */
-  value: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof JSONSchemaDto
+     */
+    value: string;
+}
+
+/**
+ * Check if a given object implements the JSONSchemaDto interface.
+ */
+export function instanceOfJSONSchemaDto(value: object): value is JSONSchemaDto {
+    if (!('value' in value) || value['value'] === undefined) return false;
+    return true;
 }
 
 export function JSONSchemaDtoFromJSON(json: any): JSONSchemaDto {
-  return JSONSchemaDtoFromJSONTyped(json, false);
+    return JSONSchemaDtoFromJSONTyped(json, false);
 }
 
-export function JSONSchemaDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): JSONSchemaDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    value: json['value'],
-  };
+export function JSONSchemaDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): JSONSchemaDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'value': json['value'],
+    };
 }
 
-export function JSONSchemaDtoToJSON(value?: JSONSchemaDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    value: value.value,
-  };
+export function JSONSchemaDtoToJSON(json: any): JSONSchemaDto {
+    return JSONSchemaDtoToJSONTyped(json, false);
 }
+
+export function JSONSchemaDtoToJSONTyped(value?: JSONSchemaDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'value': value['value'],
+    };
+}
+

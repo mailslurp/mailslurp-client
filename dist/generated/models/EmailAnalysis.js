@@ -13,42 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAnalysisToJSON = exports.EmailAnalysisFromJSONTyped = exports.EmailAnalysisFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfEmailAnalysis = instanceOfEmailAnalysis;
+exports.EmailAnalysisFromJSON = EmailAnalysisFromJSON;
+exports.EmailAnalysisFromJSONTyped = EmailAnalysisFromJSONTyped;
+exports.EmailAnalysisToJSON = EmailAnalysisToJSON;
+exports.EmailAnalysisToJSONTyped = EmailAnalysisToJSONTyped;
+/**
+ * Check if a given object implements the EmailAnalysis interface.
+ */
+function instanceOfEmailAnalysis(value) {
+    return true;
+}
 function EmailAnalysisFromJSON(json) {
     return EmailAnalysisFromJSONTyped(json, false);
 }
-exports.EmailAnalysisFromJSON = EmailAnalysisFromJSON;
 function EmailAnalysisFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        spamVerdict: !(0, runtime_1.exists)(json, 'spamVerdict') ? undefined : json['spamVerdict'],
-        virusVerdict: !(0, runtime_1.exists)(json, 'virusVerdict')
-            ? undefined
-            : json['virusVerdict'],
-        spfVerdict: !(0, runtime_1.exists)(json, 'spfVerdict') ? undefined : json['spfVerdict'],
-        dkimVerdict: !(0, runtime_1.exists)(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
-        dmarcVerdict: !(0, runtime_1.exists)(json, 'dmarcVerdict')
-            ? undefined
-            : json['dmarcVerdict'],
+        'spamVerdict': json['spamVerdict'] == null ? undefined : json['spamVerdict'],
+        'virusVerdict': json['virusVerdict'] == null ? undefined : json['virusVerdict'],
+        'spfVerdict': json['spfVerdict'] == null ? undefined : json['spfVerdict'],
+        'dkimVerdict': json['dkimVerdict'] == null ? undefined : json['dkimVerdict'],
+        'dmarcVerdict': json['dmarcVerdict'] == null ? undefined : json['dmarcVerdict'],
     };
 }
-exports.EmailAnalysisFromJSONTyped = EmailAnalysisFromJSONTyped;
-function EmailAnalysisToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailAnalysisToJSON(json) {
+    return EmailAnalysisToJSONTyped(json, false);
+}
+function EmailAnalysisToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        spamVerdict: value.spamVerdict,
-        virusVerdict: value.virusVerdict,
-        spfVerdict: value.spfVerdict,
-        dkimVerdict: value.dkimVerdict,
-        dmarcVerdict: value.dmarcVerdict,
+        'spamVerdict': value['spamVerdict'],
+        'virusVerdict': value['virusVerdict'],
+        'spfVerdict': value['spfVerdict'],
+        'dkimVerdict': value['dkimVerdict'],
+        'dmarcVerdict': value['dmarcVerdict'],
     };
 }
-exports.EmailAnalysisToJSON = EmailAnalysisToJSON;

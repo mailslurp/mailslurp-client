@@ -13,46 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateInboxOptionsToJSON = exports.UpdateInboxOptionsFromJSONTyped = exports.UpdateInboxOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfUpdateInboxOptions = instanceOfUpdateInboxOptions;
+exports.UpdateInboxOptionsFromJSON = UpdateInboxOptionsFromJSON;
+exports.UpdateInboxOptionsFromJSONTyped = UpdateInboxOptionsFromJSONTyped;
+exports.UpdateInboxOptionsToJSON = UpdateInboxOptionsToJSON;
+exports.UpdateInboxOptionsToJSONTyped = UpdateInboxOptionsToJSONTyped;
+/**
+ * Check if a given object implements the UpdateInboxOptions interface.
+ */
+function instanceOfUpdateInboxOptions(value) {
+    return true;
+}
 function UpdateInboxOptionsFromJSON(json) {
     return UpdateInboxOptionsFromJSONTyped(json, false);
 }
-exports.UpdateInboxOptionsFromJSON = UpdateInboxOptionsFromJSON;
 function UpdateInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
-            ? undefined
-            : json['expiresAt'] === null
-                ? null
-                : new Date(json['expiresAt']),
-        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
+        'expiresAt': json['expiresAt'] == null ? undefined : (new Date(json['expiresAt'])),
+        'favourite': json['favourite'] == null ? undefined : json['favourite'],
     };
 }
-exports.UpdateInboxOptionsFromJSONTyped = UpdateInboxOptionsFromJSONTyped;
-function UpdateInboxOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UpdateInboxOptionsToJSON(json) {
+    return UpdateInboxOptionsToJSONTyped(json, false);
+}
+function UpdateInboxOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        description: value.description,
-        tags: value.tags,
-        expiresAt: value.expiresAt === undefined
-            ? undefined
-            : value.expiresAt === null
-                ? null
-                : value.expiresAt.toISOString(),
-        favourite: value.favourite,
+        'name': value['name'],
+        'description': value['description'],
+        'tags': value['tags'],
+        'expiresAt': value['expiresAt'] == null ? undefined : (value['expiresAt'].toISOString()),
+        'favourite': value['favourite'],
     };
 }
-exports.UpdateInboxOptionsToJSON = UpdateInboxOptionsToJSON;

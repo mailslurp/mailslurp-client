@@ -13,49 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MatchOptionsToJSON = exports.MatchOptionsFromJSONTyped = exports.MatchOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfMatchOptions = instanceOfMatchOptions;
+exports.MatchOptionsFromJSON = MatchOptionsFromJSON;
+exports.MatchOptionsFromJSONTyped = MatchOptionsFromJSONTyped;
+exports.MatchOptionsToJSON = MatchOptionsToJSON;
+exports.MatchOptionsToJSONTyped = MatchOptionsToJSONTyped;
+var MatchOption_1 = require("./MatchOption");
+var ConditionOption_1 = require("./ConditionOption");
+/**
+ * Check if a given object implements the MatchOptions interface.
+ */
+function instanceOfMatchOptions(value) {
+    return true;
+}
 function MatchOptionsFromJSON(json) {
     return MatchOptionsFromJSONTyped(json, false);
 }
-exports.MatchOptionsFromJSON = MatchOptionsFromJSON;
 function MatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        matches: !(0, runtime_1.exists)(json, 'matches')
-            ? undefined
-            : json['matches'] === null
-                ? null
-                : json['matches'].map(_1.MatchOptionFromJSON),
-        conditions: !(0, runtime_1.exists)(json, 'conditions')
-            ? undefined
-            : json['conditions'] === null
-                ? null
-                : json['conditions'].map(_1.ConditionOptionFromJSON),
+        'matches': json['matches'] == null ? undefined : (json['matches'].map(MatchOption_1.MatchOptionFromJSON)),
+        'conditions': json['conditions'] == null ? undefined : (json['conditions'].map(ConditionOption_1.ConditionOptionFromJSON)),
     };
 }
-exports.MatchOptionsFromJSONTyped = MatchOptionsFromJSONTyped;
-function MatchOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function MatchOptionsToJSON(json) {
+    return MatchOptionsToJSONTyped(json, false);
+}
+function MatchOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        matches: value.matches === undefined
-            ? undefined
-            : value.matches === null
-                ? null
-                : value.matches.map(_1.MatchOptionToJSON),
-        conditions: value.conditions === undefined
-            ? undefined
-            : value.conditions === null
-                ? null
-                : value.conditions.map(_1.ConditionOptionToJSON),
+        'matches': value['matches'] == null ? undefined : (value['matches'].map(MatchOption_1.MatchOptionToJSON)),
+        'conditions': value['conditions'] == null ? undefined : (value['conditions'].map(ConditionOption_1.ConditionOptionToJSON)),
     };
 }
-exports.MatchOptionsToJSON = MatchOptionsToJSON;

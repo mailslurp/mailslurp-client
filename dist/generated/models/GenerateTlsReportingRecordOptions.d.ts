@@ -48,11 +48,16 @@ export interface GenerateTlsReportingRecordOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateTlsReportingRecordOptionsVersionEnum {
-    TLSRPTv1 = "TLSRPTv1"
-}
+export declare const GenerateTlsReportingRecordOptionsVersionEnum: {
+    readonly TLSRPTv1: "TLSRPTv1";
+};
+export type GenerateTlsReportingRecordOptionsVersionEnum = typeof GenerateTlsReportingRecordOptionsVersionEnum[keyof typeof GenerateTlsReportingRecordOptionsVersionEnum];
+/**
+ * Check if a given object implements the GenerateTlsReportingRecordOptions interface.
+ */
+export declare function instanceOfGenerateTlsReportingRecordOptions(value: object): value is GenerateTlsReportingRecordOptions;
 export declare function GenerateTlsReportingRecordOptionsFromJSON(json: any): GenerateTlsReportingRecordOptions;
 export declare function GenerateTlsReportingRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateTlsReportingRecordOptions;
-export declare function GenerateTlsReportingRecordOptionsToJSON(value?: GenerateTlsReportingRecordOptions | null): any;
+export declare function GenerateTlsReportingRecordOptionsToJSON(json: any): GenerateTlsReportingRecordOptions;
+export declare function GenerateTlsReportingRecordOptionsToJSONTyped(value?: GenerateTlsReportingRecordOptions | null, ignoreDiscriminator?: boolean): any;

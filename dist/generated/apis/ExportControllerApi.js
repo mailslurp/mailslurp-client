@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -89,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetExportLinkExportTypeEnum = exports.ExportEntitiesOutputFormatEnum = exports.ExportEntitiesExportTypeEnum = exports.ExportControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -103,62 +113,67 @@ var ExportControllerApi = /** @class */ (function (_super) {
      */
     ExportControllerApi.prototype.exportEntitiesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.exportType === null ||
-                            requestParameters.exportType === undefined) {
-                            throw new runtime.RequiredError('exportType', 'Required parameter requestParameters.exportType was null or undefined when calling exportEntities.');
+                        if (requestParameters['exportType'] == null) {
+                            throw new runtime.RequiredError('exportType', 'Required parameter "exportType" was null or undefined when calling exportEntities().');
                         }
-                        if (requestParameters.apiKey === null ||
-                            requestParameters.apiKey === undefined) {
-                            throw new runtime.RequiredError('apiKey', 'Required parameter requestParameters.apiKey was null or undefined when calling exportEntities.');
+                        if (requestParameters['apiKey'] == null) {
+                            throw new runtime.RequiredError('apiKey', 'Required parameter "apiKey" was null or undefined when calling exportEntities().');
                         }
-                        if (requestParameters.outputFormat === null ||
-                            requestParameters.outputFormat === undefined) {
-                            throw new runtime.RequiredError('outputFormat', 'Required parameter requestParameters.outputFormat was null or undefined when calling exportEntities.');
+                        if (requestParameters['outputFormat'] == null) {
+                            throw new runtime.RequiredError('outputFormat', 'Required parameter "outputFormat" was null or undefined when calling exportEntities().');
                         }
                         queryParameters = {};
-                        if (requestParameters.exportType !== undefined) {
-                            queryParameters['exportType'] = requestParameters.exportType;
+                        if (requestParameters['exportType'] != null) {
+                            queryParameters['exportType'] = requestParameters['exportType'];
                         }
-                        if (requestParameters.apiKey !== undefined) {
-                            queryParameters['apiKey'] = requestParameters.apiKey;
+                        if (requestParameters['apiKey'] != null) {
+                            queryParameters['apiKey'] = requestParameters['apiKey'];
                         }
-                        if (requestParameters.outputFormat !== undefined) {
-                            queryParameters['outputFormat'] = requestParameters.outputFormat;
+                        if (requestParameters['outputFormat'] != null) {
+                            queryParameters['outputFormat'] = requestParameters['outputFormat'];
                         }
-                        if (requestParameters.filter !== undefined) {
-                            queryParameters['filter'] = requestParameters.filter;
+                        if (requestParameters['filter'] != null) {
+                            queryParameters['filter'] = requestParameters['filter'];
                         }
-                        if (requestParameters.listSeparatorToken !== undefined) {
-                            queryParameters['listSeparatorToken'] =
-                                requestParameters.listSeparatorToken;
+                        if (requestParameters['listSeparatorToken'] != null) {
+                            queryParameters['listSeparatorToken'] = requestParameters['listSeparatorToken'];
                         }
-                        if (requestParameters.excludePreviouslyExported !== undefined) {
-                            queryParameters['excludePreviouslyExported'] =
-                                requestParameters.excludePreviouslyExported;
+                        if (requestParameters['excludePreviouslyExported'] != null) {
+                            queryParameters['excludePreviouslyExported'] = requestParameters['excludePreviouslyExported'];
                         }
-                        if (requestParameters.createdEarliestTime !== undefined) {
-                            queryParameters['createdEarliestTime'] = requestParameters.createdEarliestTime.toISOString();
+                        if (requestParameters['createdEarliestTime'] != null) {
+                            queryParameters['createdEarliestTime'] = requestParameters['createdEarliestTime'].toISOString();
                         }
-                        if (requestParameters.createdOldestTime !== undefined) {
-                            queryParameters['createdOldestTime'] = requestParameters.createdOldestTime.toISOString();
+                        if (requestParameters['createdOldestTime'] != null) {
+                            queryParameters['createdOldestTime'] = requestParameters['createdOldestTime'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/export",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/export",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        if (this.isJsonMime(response.headers.get('content-type'))) {
+                            return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        }
+                        else {
+                            return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
@@ -185,42 +200,42 @@ var ExportControllerApi = /** @class */ (function (_super) {
      */
     ExportControllerApi.prototype.getExportLinkRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.exportType === null ||
-                            requestParameters.exportType === undefined) {
-                            throw new runtime.RequiredError('exportType', 'Required parameter requestParameters.exportType was null or undefined when calling getExportLink.');
+                        if (requestParameters['exportType'] == null) {
+                            throw new runtime.RequiredError('exportType', 'Required parameter "exportType" was null or undefined when calling getExportLink().');
                         }
-                        if (requestParameters.exportOptions === null ||
-                            requestParameters.exportOptions === undefined) {
-                            throw new runtime.RequiredError('exportOptions', 'Required parameter requestParameters.exportOptions was null or undefined when calling getExportLink.');
+                        if (requestParameters['exportOptions'] == null) {
+                            throw new runtime.RequiredError('exportOptions', 'Required parameter "exportOptions" was null or undefined when calling getExportLink().');
                         }
                         queryParameters = {};
-                        if (requestParameters.exportType !== undefined) {
-                            queryParameters['exportType'] = requestParameters.exportType;
+                        if (requestParameters['exportType'] != null) {
+                            queryParameters['exportType'] = requestParameters['exportType'];
                         }
-                        if (requestParameters.apiKey !== undefined) {
-                            queryParameters['apiKey'] = requestParameters.apiKey;
+                        if (requestParameters['apiKey'] != null) {
+                            queryParameters['apiKey'] = requestParameters['apiKey'];
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/export",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.ExportOptionsToJSON)(requestParameters.exportOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ExportLinkFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/export",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.ExportOptionsToJSON)(requestParameters['exportOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ExportLinkFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -247,32 +262,26 @@ var ExportControllerApi = /** @class */ (function (_super) {
 exports.ExportControllerApi = ExportControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var ExportEntitiesExportTypeEnum;
-(function (ExportEntitiesExportTypeEnum) {
-    ExportEntitiesExportTypeEnum["INBOXES"] = "INBOXES";
-    ExportEntitiesExportTypeEnum["CONTACTS"] = "CONTACTS";
-    ExportEntitiesExportTypeEnum["ATTACHMENTS"] = "ATTACHMENTS";
-    ExportEntitiesExportTypeEnum["EMAILS"] = "EMAILS";
-})(ExportEntitiesExportTypeEnum = exports.ExportEntitiesExportTypeEnum || (exports.ExportEntitiesExportTypeEnum = {}));
+exports.ExportEntitiesExportTypeEnum = {
+    INBOXES: 'INBOXES',
+    CONTACTS: 'CONTACTS',
+    ATTACHMENTS: 'ATTACHMENTS',
+    EMAILS: 'EMAILS'
+};
 /**
  * @export
- * @enum {string}
  */
-var ExportEntitiesOutputFormatEnum;
-(function (ExportEntitiesOutputFormatEnum) {
-    ExportEntitiesOutputFormatEnum["DEFAULT"] = "CSV_DEFAULT";
-    ExportEntitiesOutputFormatEnum["EXCEL"] = "CSV_EXCEL";
-})(ExportEntitiesOutputFormatEnum = exports.ExportEntitiesOutputFormatEnum || (exports.ExportEntitiesOutputFormatEnum = {}));
+exports.ExportEntitiesOutputFormatEnum = {
+    DEFAULT: 'CSV_DEFAULT',
+    EXCEL: 'CSV_EXCEL'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetExportLinkExportTypeEnum;
-(function (GetExportLinkExportTypeEnum) {
-    GetExportLinkExportTypeEnum["INBOXES"] = "INBOXES";
-    GetExportLinkExportTypeEnum["CONTACTS"] = "CONTACTS";
-    GetExportLinkExportTypeEnum["ATTACHMENTS"] = "ATTACHMENTS";
-    GetExportLinkExportTypeEnum["EMAILS"] = "EMAILS";
-})(GetExportLinkExportTypeEnum = exports.GetExportLinkExportTypeEnum || (exports.GetExportLinkExportTypeEnum = {}));
+exports.GetExportLinkExportTypeEnum = {
+    INBOXES: 'INBOXES',
+    CONTACTS: 'CONTACTS',
+    ATTACHMENTS: 'ATTACHMENTS',
+    EMAILS: 'EMAILS'
+};

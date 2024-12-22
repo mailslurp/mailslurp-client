@@ -13,32 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookRedriveAllResultToJSON = exports.WebhookRedriveAllResultFromJSONTyped = exports.WebhookRedriveAllResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfWebhookRedriveAllResult = instanceOfWebhookRedriveAllResult;
+exports.WebhookRedriveAllResultFromJSON = WebhookRedriveAllResultFromJSON;
+exports.WebhookRedriveAllResultFromJSONTyped = WebhookRedriveAllResultFromJSONTyped;
+exports.WebhookRedriveAllResultToJSON = WebhookRedriveAllResultToJSON;
+exports.WebhookRedriveAllResultToJSONTyped = WebhookRedriveAllResultToJSONTyped;
+/**
+ * Check if a given object implements the WebhookRedriveAllResult interface.
+ */
+function instanceOfWebhookRedriveAllResult(value) {
+    if (!('success' in value) || value['success'] === undefined)
+        return false;
+    return true;
+}
 function WebhookRedriveAllResultFromJSON(json) {
     return WebhookRedriveAllResultFromJSONTyped(json, false);
 }
-exports.WebhookRedriveAllResultFromJSON = WebhookRedriveAllResultFromJSON;
 function WebhookRedriveAllResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        success: json['success'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'success': json['success'],
+        'message': json['message'] == null ? undefined : json['message'],
     };
 }
-exports.WebhookRedriveAllResultFromJSONTyped = WebhookRedriveAllResultFromJSONTyped;
-function WebhookRedriveAllResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookRedriveAllResultToJSON(json) {
+    return WebhookRedriveAllResultToJSONTyped(json, false);
+}
+function WebhookRedriveAllResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        success: value.success,
-        message: value.message,
+        'success': value['success'],
+        'message': value['message'],
     };
 }
-exports.WebhookRedriveAllResultToJSON = WebhookRedriveAllResultToJSON;

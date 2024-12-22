@@ -20,7 +20,7 @@ export interface CreateInboxReplierOptions {
      * @type {string}
      * @memberof CreateInboxReplierOptions
      */
-    inboxId: string;
+    inboxId?: string;
     /**
      * Name for replier
      * @type {string}
@@ -89,23 +89,28 @@ export interface CreateInboxReplierOptions {
     templateId?: string | null;
     /**
      * Template variable values
-     * @type {{ [key: string]: object; }}
+     * @type {{ [key: string]: object | null; }}
      * @memberof CreateInboxReplierOptions
      */
     templateVariables?: {
-        [key: string]: object;
+        [key: string]: object | null;
     } | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateInboxReplierOptionsFieldEnum {
-    RECIPIENTS = "RECIPIENTS",
-    SENDER = "SENDER",
-    SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
-}
+export declare const CreateInboxReplierOptionsFieldEnum: {
+    readonly RECIPIENTS: "RECIPIENTS";
+    readonly SENDER: "SENDER";
+    readonly SUBJECT: "SUBJECT";
+    readonly ATTACHMENTS: "ATTACHMENTS";
+};
+export type CreateInboxReplierOptionsFieldEnum = typeof CreateInboxReplierOptionsFieldEnum[keyof typeof CreateInboxReplierOptionsFieldEnum];
+/**
+ * Check if a given object implements the CreateInboxReplierOptions interface.
+ */
+export declare function instanceOfCreateInboxReplierOptions(value: object): value is CreateInboxReplierOptions;
 export declare function CreateInboxReplierOptionsFromJSON(json: any): CreateInboxReplierOptions;
 export declare function CreateInboxReplierOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxReplierOptions;
-export declare function CreateInboxReplierOptionsToJSON(value?: CreateInboxReplierOptions | null): any;
+export declare function CreateInboxReplierOptionsToJSON(json: any): CreateInboxReplierOptions;
+export declare function CreateInboxReplierOptionsToJSONTyped(value?: CreateInboxReplierOptions | null, ignoreDiscriminator?: boolean): any;

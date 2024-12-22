@@ -28,6 +28,11 @@ export interface WebhookRedriveAllResult {
      */
     message?: string | null;
 }
+/**
+ * Check if a given object implements the WebhookRedriveAllResult interface.
+ */
+export declare function instanceOfWebhookRedriveAllResult(value: object): value is WebhookRedriveAllResult;
 export declare function WebhookRedriveAllResultFromJSON(json: any): WebhookRedriveAllResult;
 export declare function WebhookRedriveAllResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookRedriveAllResult;
-export declare function WebhookRedriveAllResultToJSON(value?: WebhookRedriveAllResult | null): any;
+export declare function WebhookRedriveAllResultToJSON(json: any): WebhookRedriveAllResult;
+export declare function WebhookRedriveAllResultToJSONTyped(value?: WebhookRedriveAllResult | null, ignoreDiscriminator?: boolean): any;

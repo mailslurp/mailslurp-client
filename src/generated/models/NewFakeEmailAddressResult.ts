@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface NewFakeEmailAddressResult
  */
 export interface NewFakeEmailAddressResult {
-  /**
-   *
-   * @type {string}
-   * @memberof NewFakeEmailAddressResult
-   */
-  emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof NewFakeEmailAddressResult
+     */
+    emailAddress: string;
 }
 
-export function NewFakeEmailAddressResultFromJSON(
-  json: any
-): NewFakeEmailAddressResult {
-  return NewFakeEmailAddressResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the NewFakeEmailAddressResult interface.
+ */
+export function instanceOfNewFakeEmailAddressResult(value: object): value is NewFakeEmailAddressResult {
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    return true;
 }
 
-export function NewFakeEmailAddressResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): NewFakeEmailAddressResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailAddress: json['emailAddress'],
-  };
+export function NewFakeEmailAddressResultFromJSON(json: any): NewFakeEmailAddressResult {
+    return NewFakeEmailAddressResultFromJSONTyped(json, false);
 }
 
-export function NewFakeEmailAddressResultToJSON(
-  value?: NewFakeEmailAddressResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailAddress: value.emailAddress,
-  };
+export function NewFakeEmailAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewFakeEmailAddressResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'emailAddress': json['emailAddress'],
+    };
 }
+
+export function NewFakeEmailAddressResultToJSON(json: any): NewFakeEmailAddressResult {
+    return NewFakeEmailAddressResultToJSONTyped(json, false);
+}
+
+export function NewFakeEmailAddressResultToJSONTyped(value?: NewFakeEmailAddressResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'emailAddress': value['emailAddress'],
+    };
+}
+

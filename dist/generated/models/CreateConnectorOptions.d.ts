@@ -16,24 +16,6 @@
  */
 export interface CreateConnectorOptions {
     /**
-     * Enable automatic background sync
-     * @type {boolean}
-     * @memberof CreateConnectorOptions
-     */
-    syncEnabled?: boolean | null;
-    /**
-     * Sync schedule type
-     * @type {string}
-     * @memberof CreateConnectorOptions
-     */
-    syncScheduleType?: CreateConnectorOptionsSyncScheduleTypeEnum;
-    /**
-     * Sync interval in minutes
-     * @type {number}
-     * @memberof CreateConnectorOptions
-     */
-    syncInterval?: number | null;
-    /**
      * Name of connector
      * @type {string}
      * @memberof CreateConnectorOptions
@@ -53,12 +35,10 @@ export interface CreateConnectorOptions {
     enabled?: boolean | null;
 }
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the CreateConnectorOptions interface.
  */
-export declare enum CreateConnectorOptionsSyncScheduleTypeEnum {
-    INTERVAL = "INTERVAL"
-}
+export declare function instanceOfCreateConnectorOptions(value: object): value is CreateConnectorOptions;
 export declare function CreateConnectorOptionsFromJSON(json: any): CreateConnectorOptions;
 export declare function CreateConnectorOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorOptions;
-export declare function CreateConnectorOptionsToJSON(value?: CreateConnectorOptions | null): any;
+export declare function CreateConnectorOptionsToJSON(json: any): CreateConnectorOptions;
+export declare function CreateConnectorOptionsToJSONTyped(value?: CreateConnectorOptions | null, ignoreDiscriminator?: boolean): any;

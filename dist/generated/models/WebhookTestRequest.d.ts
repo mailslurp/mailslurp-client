@@ -44,18 +44,23 @@ export interface WebhookTestRequest {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WebhookTestRequestMethodEnum {
-    POST = "POST",
-    DELETE = "DELETE",
-    GET = "GET",
-    PUT = "PUT",
-    PATCH = "PATCH",
-    HEAD = "HEAD",
-    OPTIONS = "OPTIONS",
-    TRACE = "TRACE"
-}
+export declare const WebhookTestRequestMethodEnum: {
+    readonly POST: "POST";
+    readonly DELETE: "DELETE";
+    readonly GET: "GET";
+    readonly PUT: "PUT";
+    readonly PATCH: "PATCH";
+    readonly HEAD: "HEAD";
+    readonly OPTIONS: "OPTIONS";
+    readonly TRACE: "TRACE";
+};
+export type WebhookTestRequestMethodEnum = typeof WebhookTestRequestMethodEnum[keyof typeof WebhookTestRequestMethodEnum];
+/**
+ * Check if a given object implements the WebhookTestRequest interface.
+ */
+export declare function instanceOfWebhookTestRequest(value: object): value is WebhookTestRequest;
 export declare function WebhookTestRequestFromJSON(json: any): WebhookTestRequest;
 export declare function WebhookTestRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestRequest;
-export declare function WebhookTestRequestToJSON(value?: WebhookTestRequest | null): any;
+export declare function WebhookTestRequestToJSON(json: any): WebhookTestRequest;
+export declare function WebhookTestRequestToJSONTyped(value?: WebhookTestRequest | null, ignoreDiscriminator?: boolean): any;

@@ -12,13 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { SendEmailOptions } from './SendEmailOptions';
 import {
-  SendEmailOptions,
-  SendEmailOptionsFromJSON,
-  SendEmailOptionsFromJSONTyped,
-  SendEmailOptionsToJSON,
-} from './';
+    SendEmailOptionsFromJSON,
+    SendEmailOptionsFromJSONTyped,
+    SendEmailOptionsToJSON,
+    SendEmailOptionsToJSONTyped,
+} from './SendEmailOptions';
 
 /**
  * Options for bulk sending an email from multiple addresses. See regular `sendEmail` methods for more information.
@@ -26,48 +27,57 @@ import {
  * @interface BulkSendEmailOptions
  */
 export interface BulkSendEmailOptions {
-  /**
-   * Inboxes to send the email from
-   * @type {Array<string>}
-   * @memberof BulkSendEmailOptions
-   */
-  inboxIds: Array<string>;
-  /**
-   *
-   * @type {SendEmailOptions}
-   * @memberof BulkSendEmailOptions
-   */
-  sendEmailOptions: SendEmailOptions;
+    /**
+     * Inboxes to send the email from
+     * @type {Array<string>}
+     * @memberof BulkSendEmailOptions
+     */
+    inboxIds: Array<string>;
+    /**
+     * 
+     * @type {SendEmailOptions}
+     * @memberof BulkSendEmailOptions
+     */
+    sendEmailOptions: SendEmailOptions;
+}
+
+/**
+ * Check if a given object implements the BulkSendEmailOptions interface.
+ */
+export function instanceOfBulkSendEmailOptions(value: object): value is BulkSendEmailOptions {
+    if (!('inboxIds' in value) || value['inboxIds'] === undefined) return false;
+    if (!('sendEmailOptions' in value) || value['sendEmailOptions'] === undefined) return false;
+    return true;
 }
 
 export function BulkSendEmailOptionsFromJSON(json: any): BulkSendEmailOptions {
-  return BulkSendEmailOptionsFromJSONTyped(json, false);
+    return BulkSendEmailOptionsFromJSONTyped(json, false);
 }
 
-export function BulkSendEmailOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): BulkSendEmailOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxIds: json['inboxIds'],
-    sendEmailOptions: SendEmailOptionsFromJSON(json['sendEmailOptions']),
-  };
+export function BulkSendEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): BulkSendEmailOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxIds': json['inboxIds'],
+        'sendEmailOptions': SendEmailOptionsFromJSON(json['sendEmailOptions']),
+    };
 }
 
-export function BulkSendEmailOptionsToJSON(
-  value?: BulkSendEmailOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxIds: value.inboxIds,
-    sendEmailOptions: SendEmailOptionsToJSON(value.sendEmailOptions),
-  };
+export function BulkSendEmailOptionsToJSON(json: any): BulkSendEmailOptions {
+    return BulkSendEmailOptionsToJSONTyped(json, false);
 }
+
+export function BulkSendEmailOptionsToJSONTyped(value?: BulkSendEmailOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxIds': value['inboxIds'],
+        'sendEmailOptions': SendEmailOptionsToJSON(value['sendEmailOptions']),
+    };
+}
+

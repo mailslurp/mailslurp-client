@@ -12,244 +12,262 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Result of a webhook notification
  * @export
  * @interface WebhookResultDto
  */
 export interface WebhookResultDto {
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  id?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  webhookId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  webhookUrl: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  messageId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  redriveId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  httpMethod: WebhookResultDtoHttpMethodEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  webhookEvent: WebhookResultDtoWebhookEventEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof WebhookResultDto
-   */
-  responseStatus?: number | null;
-  /**
-   *
-   * @type {number}
-   * @memberof WebhookResultDto
-   */
-  responseTimeMillis: number;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  responseBodyExtract?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  resultType?: WebhookResultDtoResultTypeEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookResultDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookResultDto
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {boolean}
-   * @memberof WebhookResultDto
-   */
-  seen: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  emailId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  attachmentId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  phoneId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
-  smsId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    id?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    webhookId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    webhookUrl: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    messageId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    redriveId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    httpMethod: WebhookResultDtoHttpMethodEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    webhookEvent: WebhookResultDtoWebhookEventEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof WebhookResultDto
+     */
+    responseStatus?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof WebhookResultDto
+     */
+    responseTimeMillis: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    responseBodyExtract?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    resultType?: WebhookResultDtoResultTypeEnum | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof WebhookResultDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof WebhookResultDto
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof WebhookResultDto
+     */
+    seen: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    emailId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    attachmentId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    phoneId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    smsId?: string | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookResultDtoHttpMethodEnum {
-  POST = 'POST',
-  DELETE = 'DELETE',
-  GET = 'GET',
-  PUT = 'PUT',
-  PATCH = 'PATCH',
-  HEAD = 'HEAD',
-  OPTIONS = 'OPTIONS',
-  TRACE = 'TRACE',
-}
+export const WebhookResultDtoHttpMethodEnum = {
+    POST: 'POST',
+    DELETE: 'DELETE',
+    GET: 'GET',
+    PUT: 'PUT',
+    PATCH: 'PATCH',
+    HEAD: 'HEAD',
+    OPTIONS: 'OPTIONS',
+    TRACE: 'TRACE'
+} as const;
+export type WebhookResultDtoHttpMethodEnum = typeof WebhookResultDtoHttpMethodEnum[keyof typeof WebhookResultDtoHttpMethodEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookResultDtoWebhookEventEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-}
+export const WebhookResultDtoWebhookEventEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+} as const;
+export type WebhookResultDtoWebhookEventEnum = typeof WebhookResultDtoWebhookEventEnum[keyof typeof WebhookResultDtoWebhookEventEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookResultDtoResultTypeEnum {
-  BAD_RESPONSE = 'BAD_RESPONSE',
-  EXCEPTION = 'EXCEPTION',
-  SUCCESS = 'SUCCESS',
-  REDRIVEN = 'REDRIVEN',
+export const WebhookResultDtoResultTypeEnum = {
+    BAD_RESPONSE: 'BAD_RESPONSE',
+    EXCEPTION: 'EXCEPTION',
+    SUCCESS: 'SUCCESS',
+    REDRIVEN: 'REDRIVEN'
+} as const;
+export type WebhookResultDtoResultTypeEnum = typeof WebhookResultDtoResultTypeEnum[keyof typeof WebhookResultDtoResultTypeEnum];
+
+
+/**
+ * Check if a given object implements the WebhookResultDto interface.
+ */
+export function instanceOfWebhookResultDto(value: object): value is WebhookResultDto {
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined) return false;
+    if (!('webhookUrl' in value) || value['webhookUrl'] === undefined) return false;
+    if (!('messageId' in value) || value['messageId'] === undefined) return false;
+    if (!('httpMethod' in value) || value['httpMethod'] === undefined) return false;
+    if (!('webhookEvent' in value) || value['webhookEvent'] === undefined) return false;
+    if (!('responseTimeMillis' in value) || value['responseTimeMillis'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('seen' in value) || value['seen'] === undefined) return false;
+    return true;
 }
 
 export function WebhookResultDtoFromJSON(json: any): WebhookResultDto {
-  return WebhookResultDtoFromJSONTyped(json, false);
+    return WebhookResultDtoFromJSONTyped(json, false);
 }
 
-export function WebhookResultDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookResultDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: !exists(json, 'id') ? undefined : json['id'],
-    userId: json['userId'],
-    webhookId: json['webhookId'],
-    webhookUrl: json['webhookUrl'],
-    messageId: json['messageId'],
-    redriveId: !exists(json, 'redriveId') ? undefined : json['redriveId'],
-    httpMethod: json['httpMethod'],
-    webhookEvent: json['webhookEvent'],
-    responseStatus: !exists(json, 'responseStatus')
-      ? undefined
-      : json['responseStatus'],
-    responseTimeMillis: json['responseTimeMillis'],
-    responseBodyExtract: !exists(json, 'responseBodyExtract')
-      ? undefined
-      : json['responseBodyExtract'],
-    resultType: !exists(json, 'resultType') ? undefined : json['resultType'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    seen: json['seen'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
-    attachmentId: !exists(json, 'attachmentId')
-      ? undefined
-      : json['attachmentId'],
-    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
-    smsId: !exists(json, 'smsId') ? undefined : json['smsId'],
-  };
+export function WebhookResultDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookResultDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'] == null ? undefined : json['id'],
+        'userId': json['userId'],
+        'webhookId': json['webhookId'],
+        'webhookUrl': json['webhookUrl'],
+        'messageId': json['messageId'],
+        'redriveId': json['redriveId'] == null ? undefined : json['redriveId'],
+        'httpMethod': json['httpMethod'],
+        'webhookEvent': json['webhookEvent'],
+        'responseStatus': json['responseStatus'] == null ? undefined : json['responseStatus'],
+        'responseTimeMillis': json['responseTimeMillis'],
+        'responseBodyExtract': json['responseBodyExtract'] == null ? undefined : json['responseBodyExtract'],
+        'resultType': json['resultType'] == null ? undefined : json['resultType'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'seen': json['seen'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'emailId': json['emailId'] == null ? undefined : json['emailId'],
+        'attachmentId': json['attachmentId'] == null ? undefined : json['attachmentId'],
+        'phoneId': json['phoneId'] == null ? undefined : json['phoneId'],
+        'smsId': json['smsId'] == null ? undefined : json['smsId'],
+    };
 }
 
-export function WebhookResultDtoToJSON(value?: WebhookResultDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    webhookId: value.webhookId,
-    webhookUrl: value.webhookUrl,
-    messageId: value.messageId,
-    redriveId: value.redriveId,
-    httpMethod: value.httpMethod,
-    webhookEvent: value.webhookEvent,
-    responseStatus: value.responseStatus,
-    responseTimeMillis: value.responseTimeMillis,
-    responseBodyExtract: value.responseBodyExtract,
-    resultType: value.resultType,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    seen: value.seen,
-    inboxId: value.inboxId,
-    emailId: value.emailId,
-    attachmentId: value.attachmentId,
-    phoneId: value.phoneId,
-    smsId: value.smsId,
-  };
+export function WebhookResultDtoToJSON(json: any): WebhookResultDto {
+    return WebhookResultDtoToJSONTyped(json, false);
 }
+
+export function WebhookResultDtoToJSONTyped(value?: WebhookResultDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'webhookId': value['webhookId'],
+        'webhookUrl': value['webhookUrl'],
+        'messageId': value['messageId'],
+        'redriveId': value['redriveId'],
+        'httpMethod': value['httpMethod'],
+        'webhookEvent': value['webhookEvent'],
+        'responseStatus': value['responseStatus'],
+        'responseTimeMillis': value['responseTimeMillis'],
+        'responseBodyExtract': value['responseBodyExtract'],
+        'resultType': value['resultType'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+        'seen': value['seen'],
+        'inboxId': value['inboxId'],
+        'emailId': value['emailId'],
+        'attachmentId': value['attachmentId'],
+        'phoneId': value['phoneId'],
+        'smsId': value['smsId'],
+    };
+}
+

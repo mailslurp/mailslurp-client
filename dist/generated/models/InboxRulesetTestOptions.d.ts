@@ -22,6 +22,11 @@ export interface InboxRulesetTestOptions {
      */
     testTarget: string;
 }
+/**
+ * Check if a given object implements the InboxRulesetTestOptions interface.
+ */
+export declare function instanceOfInboxRulesetTestOptions(value: object): value is InboxRulesetTestOptions;
 export declare function InboxRulesetTestOptionsFromJSON(json: any): InboxRulesetTestOptions;
 export declare function InboxRulesetTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRulesetTestOptions;
-export declare function InboxRulesetTestOptionsToJSON(value?: InboxRulesetTestOptions | null): any;
+export declare function InboxRulesetTestOptionsToJSON(json: any): InboxRulesetTestOptions;
+export declare function InboxRulesetTestOptionsToJSONTyped(value?: InboxRulesetTestOptions | null, ignoreDiscriminator?: boolean): any;

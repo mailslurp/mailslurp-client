@@ -34,6 +34,11 @@ export interface SendSMTPEnvelopeOptions {
      */
     data: string;
 }
+/**
+ * Check if a given object implements the SendSMTPEnvelopeOptions interface.
+ */
+export declare function instanceOfSendSMTPEnvelopeOptions(value: object): value is SendSMTPEnvelopeOptions;
 export declare function SendSMTPEnvelopeOptionsFromJSON(json: any): SendSMTPEnvelopeOptions;
 export declare function SendSMTPEnvelopeOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendSMTPEnvelopeOptions;
-export declare function SendSMTPEnvelopeOptionsToJSON(value?: SendSMTPEnvelopeOptions | null): any;
+export declare function SendSMTPEnvelopeOptionsToJSON(json: any): SendSMTPEnvelopeOptions;
+export declare function SendSMTPEnvelopeOptionsToJSONTyped(value?: SendSMTPEnvelopeOptions | null, ignoreDiscriminator?: boolean): any;

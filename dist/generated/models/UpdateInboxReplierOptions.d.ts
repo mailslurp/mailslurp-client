@@ -89,23 +89,28 @@ export interface UpdateInboxReplierOptions {
     templateId?: string | null;
     /**
      * Template variable values
-     * @type {{ [key: string]: object; }}
+     * @type {{ [key: string]: object | null; }}
      * @memberof UpdateInboxReplierOptions
      */
     templateVariables?: {
-        [key: string]: object;
+        [key: string]: object | null;
     } | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum UpdateInboxReplierOptionsFieldEnum {
-    RECIPIENTS = "RECIPIENTS",
-    SENDER = "SENDER",
-    SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
-}
+export declare const UpdateInboxReplierOptionsFieldEnum: {
+    readonly RECIPIENTS: "RECIPIENTS";
+    readonly SENDER: "SENDER";
+    readonly SUBJECT: "SUBJECT";
+    readonly ATTACHMENTS: "ATTACHMENTS";
+};
+export type UpdateInboxReplierOptionsFieldEnum = typeof UpdateInboxReplierOptionsFieldEnum[keyof typeof UpdateInboxReplierOptionsFieldEnum];
+/**
+ * Check if a given object implements the UpdateInboxReplierOptions interface.
+ */
+export declare function instanceOfUpdateInboxReplierOptions(value: object): value is UpdateInboxReplierOptions;
 export declare function UpdateInboxReplierOptionsFromJSON(json: any): UpdateInboxReplierOptions;
 export declare function UpdateInboxReplierOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateInboxReplierOptions;
-export declare function UpdateInboxReplierOptionsToJSON(value?: UpdateInboxReplierOptions | null): any;
+export declare function UpdateInboxReplierOptionsToJSON(json: any): UpdateInboxReplierOptions;
+export declare function UpdateInboxReplierOptionsToJSONTyped(value?: UpdateInboxReplierOptions | null, ignoreDiscriminator?: boolean): any;

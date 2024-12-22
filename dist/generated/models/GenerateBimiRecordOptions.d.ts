@@ -42,11 +42,16 @@ export interface GenerateBimiRecordOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateBimiRecordOptionsVersionEnum {
-    BIMI1 = "BIMI1"
-}
+export declare const GenerateBimiRecordOptionsVersionEnum: {
+    readonly BIMI1: "BIMI1";
+};
+export type GenerateBimiRecordOptionsVersionEnum = typeof GenerateBimiRecordOptionsVersionEnum[keyof typeof GenerateBimiRecordOptionsVersionEnum];
+/**
+ * Check if a given object implements the GenerateBimiRecordOptions interface.
+ */
+export declare function instanceOfGenerateBimiRecordOptions(value: object): value is GenerateBimiRecordOptions;
 export declare function GenerateBimiRecordOptionsFromJSON(json: any): GenerateBimiRecordOptions;
 export declare function GenerateBimiRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateBimiRecordOptions;
-export declare function GenerateBimiRecordOptionsToJSON(value?: GenerateBimiRecordOptions | null): any;
+export declare function GenerateBimiRecordOptionsToJSON(json: any): GenerateBimiRecordOptions;
+export declare function GenerateBimiRecordOptionsToJSONTyped(value?: GenerateBimiRecordOptions | null, ignoreDiscriminator?: boolean): any;

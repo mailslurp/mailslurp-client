@@ -28,6 +28,11 @@ export interface CanSendEmailResults {
      */
     message?: string;
 }
+/**
+ * Check if a given object implements the CanSendEmailResults interface.
+ */
+export declare function instanceOfCanSendEmailResults(value: object): value is CanSendEmailResults;
 export declare function CanSendEmailResultsFromJSON(json: any): CanSendEmailResults;
 export declare function CanSendEmailResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CanSendEmailResults;
-export declare function CanSendEmailResultsToJSON(value?: CanSendEmailResults | null): any;
+export declare function CanSendEmailResultsToJSON(json: any): CanSendEmailResults;
+export declare function CanSendEmailResultsToJSONTyped(value?: CanSendEmailResults | null, ignoreDiscriminator?: boolean): any;

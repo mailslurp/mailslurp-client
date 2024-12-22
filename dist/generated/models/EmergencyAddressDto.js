@@ -13,43 +13,56 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmergencyAddressDtoToJSON = exports.EmergencyAddressDtoFromJSONTyped = exports.EmergencyAddressDtoFromJSON = exports.EmergencyAddressDtoPhoneCountryEnum = void 0;
+exports.EmergencyAddressDtoPhoneCountryEnum = void 0;
+exports.instanceOfEmergencyAddressDto = instanceOfEmergencyAddressDto;
+exports.EmergencyAddressDtoFromJSON = EmergencyAddressDtoFromJSON;
+exports.EmergencyAddressDtoFromJSONTyped = EmergencyAddressDtoFromJSONTyped;
+exports.EmergencyAddressDtoToJSON = EmergencyAddressDtoToJSON;
+exports.EmergencyAddressDtoToJSONTyped = EmergencyAddressDtoToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var EmergencyAddressDtoPhoneCountryEnum;
-(function (EmergencyAddressDtoPhoneCountryEnum) {
-    EmergencyAddressDtoPhoneCountryEnum["US"] = "US";
-    EmergencyAddressDtoPhoneCountryEnum["GB"] = "GB";
-    EmergencyAddressDtoPhoneCountryEnum["AU"] = "AU";
-})(EmergencyAddressDtoPhoneCountryEnum = exports.EmergencyAddressDtoPhoneCountryEnum || (exports.EmergencyAddressDtoPhoneCountryEnum = {}));
+exports.EmergencyAddressDtoPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+};
+/**
+ * Check if a given object implements the EmergencyAddressDto interface.
+ */
+function instanceOfEmergencyAddressDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('address1' in value) || value['address1'] === undefined)
+        return false;
+    if (!('phoneCountry' in value) || value['phoneCountry'] === undefined)
+        return false;
+    return true;
+}
 function EmergencyAddressDtoFromJSON(json) {
     return EmergencyAddressDtoFromJSONTyped(json, false);
 }
-exports.EmergencyAddressDtoFromJSON = EmergencyAddressDtoFromJSON;
 function EmergencyAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        address1: json['address1'],
-        phoneCountry: json['phoneCountry'],
+        'id': json['id'],
+        'address1': json['address1'],
+        'phoneCountry': json['phoneCountry'],
     };
 }
-exports.EmergencyAddressDtoFromJSONTyped = EmergencyAddressDtoFromJSONTyped;
-function EmergencyAddressDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmergencyAddressDtoToJSON(json) {
+    return EmergencyAddressDtoToJSONTyped(json, false);
+}
+function EmergencyAddressDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        address1: value.address1,
-        phoneCountry: value.phoneCountry,
+        'id': value['id'],
+        'address1': value['address1'],
+        'phoneCountry': value['phoneCountry'],
     };
 }
-exports.EmergencyAddressDtoToJSON = EmergencyAddressDtoToJSON;

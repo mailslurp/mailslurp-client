@@ -28,6 +28,11 @@ export interface ValidationMessage {
      */
     message?: string;
 }
+/**
+ * Check if a given object implements the ValidationMessage interface.
+ */
+export declare function instanceOfValidationMessage(value: object): value is ValidationMessage;
 export declare function ValidationMessageFromJSON(json: any): ValidationMessage;
 export declare function ValidationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationMessage;
-export declare function ValidationMessageToJSON(value?: ValidationMessage | null): any;
+export declare function ValidationMessageToJSON(json: any): ValidationMessage;
+export declare function ValidationMessageToJSONTyped(value?: ValidationMessage | null, ignoreDiscriminator?: boolean): any;

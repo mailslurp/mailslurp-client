@@ -46,6 +46,11 @@ export interface EmailVerificationResult {
      */
     error?: string | null;
 }
+/**
+ * Check if a given object implements the EmailVerificationResult interface.
+ */
+export declare function instanceOfEmailVerificationResult(value: object): value is EmailVerificationResult;
 export declare function EmailVerificationResultFromJSON(json: any): EmailVerificationResult;
 export declare function EmailVerificationResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailVerificationResult;
-export declare function EmailVerificationResultToJSON(value?: EmailVerificationResult | null): any;
+export declare function EmailVerificationResultToJSON(json: any): EmailVerificationResult;
+export declare function EmailVerificationResultToJSONTyped(value?: EmailVerificationResult | null, ignoreDiscriminator?: boolean): any;

@@ -12,90 +12,101 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Abstract webhook payload. Use the correct payload type for your webhook event type in order to access all the specific properties for that event. See the `NEW_EMAIL`,`NEW_CONTACT`, `NEW_ATTACHMENT` and `EMAIL_OPENED` payloads for the properties available for those events.
  * @export
  * @interface AbstractWebhookPayload
  */
 export interface AbstractWebhookPayload {
-  /**
-   *
-   * @type {string}
-   * @memberof AbstractWebhookPayload
-   */
-  eventName: AbstractWebhookPayloadEventNameEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof AbstractWebhookPayload
-   */
-  messageId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AbstractWebhookPayload
-   */
-  webhookId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AbstractWebhookPayload
-   */
-  webhookName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AbstractWebhookPayload
+     */
+    eventName: AbstractWebhookPayloadEventNameEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AbstractWebhookPayload
+     */
+    messageId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AbstractWebhookPayload
+     */
+    webhookId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AbstractWebhookPayload
+     */
+    webhookName?: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum AbstractWebhookPayloadEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
+export const AbstractWebhookPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+} as const;
+export type AbstractWebhookPayloadEventNameEnum = typeof AbstractWebhookPayloadEventNameEnum[keyof typeof AbstractWebhookPayloadEventNameEnum];
+
+
+/**
+ * Check if a given object implements the AbstractWebhookPayload interface.
+ */
+export function instanceOfAbstractWebhookPayload(value: object): value is AbstractWebhookPayload {
+    if (!('eventName' in value) || value['eventName'] === undefined) return false;
+    if (!('messageId' in value) || value['messageId'] === undefined) return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined) return false;
+    return true;
 }
 
-export function AbstractWebhookPayloadFromJSON(
-  json: any
-): AbstractWebhookPayload {
-  return AbstractWebhookPayloadFromJSONTyped(json, false);
+export function AbstractWebhookPayloadFromJSON(json: any): AbstractWebhookPayload {
+    return AbstractWebhookPayloadFromJSONTyped(json, false);
 }
 
-export function AbstractWebhookPayloadFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AbstractWebhookPayload {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    eventName: json['eventName'],
-    messageId: json['messageId'],
-    webhookId: json['webhookId'],
-    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
-  };
+export function AbstractWebhookPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): AbstractWebhookPayload {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'eventName': json['eventName'],
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+    };
 }
 
-export function AbstractWebhookPayloadToJSON(
-  value?: AbstractWebhookPayload | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    eventName: value.eventName,
-    messageId: value.messageId,
-    webhookId: value.webhookId,
-    webhookName: value.webhookName,
-  };
+export function AbstractWebhookPayloadToJSON(json: any): AbstractWebhookPayload {
+    return AbstractWebhookPayloadToJSONTyped(json, false);
 }
+
+export function AbstractWebhookPayloadToJSONTyped(value?: AbstractWebhookPayload | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'eventName': value['eventName'],
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'webhookName': value['webhookName'],
+    };
+}
+

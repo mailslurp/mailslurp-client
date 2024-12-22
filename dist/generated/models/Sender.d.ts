@@ -34,6 +34,11 @@ export interface Sender {
      */
     name?: string;
 }
+/**
+ * Check if a given object implements the Sender interface.
+ */
+export declare function instanceOfSender(value: object): value is Sender;
 export declare function SenderFromJSON(json: any): Sender;
 export declare function SenderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sender;
-export declare function SenderToJSON(value?: Sender | null): any;
+export declare function SenderToJSON(json: any): Sender;
+export declare function SenderToJSONTyped(value?: Sender | null, ignoreDiscriminator?: boolean): any;

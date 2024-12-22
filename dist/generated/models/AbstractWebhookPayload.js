@@ -13,53 +13,66 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AbstractWebhookPayloadToJSON = exports.AbstractWebhookPayloadFromJSONTyped = exports.AbstractWebhookPayloadFromJSON = exports.AbstractWebhookPayloadEventNameEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.AbstractWebhookPayloadEventNameEnum = void 0;
+exports.instanceOfAbstractWebhookPayload = instanceOfAbstractWebhookPayload;
+exports.AbstractWebhookPayloadFromJSON = AbstractWebhookPayloadFromJSON;
+exports.AbstractWebhookPayloadFromJSONTyped = AbstractWebhookPayloadFromJSONTyped;
+exports.AbstractWebhookPayloadToJSON = AbstractWebhookPayloadToJSON;
+exports.AbstractWebhookPayloadToJSONTyped = AbstractWebhookPayloadToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var AbstractWebhookPayloadEventNameEnum;
-(function (AbstractWebhookPayloadEventNameEnum) {
-    AbstractWebhookPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
-    AbstractWebhookPayloadEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
-    AbstractWebhookPayloadEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
-    AbstractWebhookPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
-    AbstractWebhookPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
-    AbstractWebhookPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-    AbstractWebhookPayloadEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
-    AbstractWebhookPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
-    AbstractWebhookPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
-    AbstractWebhookPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
-})(AbstractWebhookPayloadEventNameEnum = exports.AbstractWebhookPayloadEventNameEnum || (exports.AbstractWebhookPayloadEventNameEnum = {}));
+exports.AbstractWebhookPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+};
+/**
+ * Check if a given object implements the AbstractWebhookPayload interface.
+ */
+function instanceOfAbstractWebhookPayload(value) {
+    if (!('eventName' in value) || value['eventName'] === undefined)
+        return false;
+    if (!('messageId' in value) || value['messageId'] === undefined)
+        return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined)
+        return false;
+    return true;
+}
 function AbstractWebhookPayloadFromJSON(json) {
     return AbstractWebhookPayloadFromJSONTyped(json, false);
 }
-exports.AbstractWebhookPayloadFromJSON = AbstractWebhookPayloadFromJSON;
 function AbstractWebhookPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        eventName: json['eventName'],
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        'eventName': json['eventName'],
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
     };
 }
-exports.AbstractWebhookPayloadFromJSONTyped = AbstractWebhookPayloadFromJSONTyped;
-function AbstractWebhookPayloadToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function AbstractWebhookPayloadToJSON(json) {
+    return AbstractWebhookPayloadToJSONTyped(json, false);
+}
+function AbstractWebhookPayloadToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        eventName: value.eventName,
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        webhookName: value.webhookName,
+        'eventName': value['eventName'],
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'webhookName': value['webhookName'],
     };
 }
-exports.AbstractWebhookPayloadToJSON = AbstractWebhookPayloadToJSON;

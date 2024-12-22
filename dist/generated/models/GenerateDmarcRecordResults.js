@@ -13,131 +13,146 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateDmarcRecordResultsToJSON = exports.GenerateDmarcRecordResultsFromJSONTyped = exports.GenerateDmarcRecordResultsFromJSON = exports.GenerateDmarcRecordResultsTypeEnum = void 0;
+exports.GenerateDmarcRecordResultsTypeEnum = void 0;
+exports.instanceOfGenerateDmarcRecordResults = instanceOfGenerateDmarcRecordResults;
+exports.GenerateDmarcRecordResultsFromJSON = GenerateDmarcRecordResultsFromJSON;
+exports.GenerateDmarcRecordResultsFromJSONTyped = GenerateDmarcRecordResultsFromJSONTyped;
+exports.GenerateDmarcRecordResultsToJSON = GenerateDmarcRecordResultsToJSON;
+exports.GenerateDmarcRecordResultsToJSONTyped = GenerateDmarcRecordResultsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var GenerateDmarcRecordResultsTypeEnum;
-(function (GenerateDmarcRecordResultsTypeEnum) {
-    GenerateDmarcRecordResultsTypeEnum["A"] = "A";
-    GenerateDmarcRecordResultsTypeEnum["NS"] = "NS";
-    GenerateDmarcRecordResultsTypeEnum["MD"] = "MD";
-    GenerateDmarcRecordResultsTypeEnum["MF"] = "MF";
-    GenerateDmarcRecordResultsTypeEnum["CNAME"] = "CNAME";
-    GenerateDmarcRecordResultsTypeEnum["SOA"] = "SOA";
-    GenerateDmarcRecordResultsTypeEnum["MB"] = "MB";
-    GenerateDmarcRecordResultsTypeEnum["MG"] = "MG";
-    GenerateDmarcRecordResultsTypeEnum["MR"] = "MR";
-    GenerateDmarcRecordResultsTypeEnum["NULL"] = "NULL";
-    GenerateDmarcRecordResultsTypeEnum["WKS"] = "WKS";
-    GenerateDmarcRecordResultsTypeEnum["PTR"] = "PTR";
-    GenerateDmarcRecordResultsTypeEnum["HINFO"] = "HINFO";
-    GenerateDmarcRecordResultsTypeEnum["MINFO"] = "MINFO";
-    GenerateDmarcRecordResultsTypeEnum["MX"] = "MX";
-    GenerateDmarcRecordResultsTypeEnum["TXT"] = "TXT";
-    GenerateDmarcRecordResultsTypeEnum["RP"] = "RP";
-    GenerateDmarcRecordResultsTypeEnum["AFSDB"] = "AFSDB";
-    GenerateDmarcRecordResultsTypeEnum["X25"] = "X25";
-    GenerateDmarcRecordResultsTypeEnum["ISDN"] = "ISDN";
-    GenerateDmarcRecordResultsTypeEnum["RT"] = "RT";
-    GenerateDmarcRecordResultsTypeEnum["NSAP"] = "NSAP";
-    GenerateDmarcRecordResultsTypeEnum["NSAP_PTR"] = "NSAP_PTR";
-    GenerateDmarcRecordResultsTypeEnum["SIG"] = "SIG";
-    GenerateDmarcRecordResultsTypeEnum["KEY"] = "KEY";
-    GenerateDmarcRecordResultsTypeEnum["PX"] = "PX";
-    GenerateDmarcRecordResultsTypeEnum["GPOS"] = "GPOS";
-    GenerateDmarcRecordResultsTypeEnum["AAAA"] = "AAAA";
-    GenerateDmarcRecordResultsTypeEnum["LOC"] = "LOC";
-    GenerateDmarcRecordResultsTypeEnum["NXT"] = "NXT";
-    GenerateDmarcRecordResultsTypeEnum["EID"] = "EID";
-    GenerateDmarcRecordResultsTypeEnum["NIMLOC"] = "NIMLOC";
-    GenerateDmarcRecordResultsTypeEnum["SRV"] = "SRV";
-    GenerateDmarcRecordResultsTypeEnum["ATMA"] = "ATMA";
-    GenerateDmarcRecordResultsTypeEnum["NAPTR"] = "NAPTR";
-    GenerateDmarcRecordResultsTypeEnum["KX"] = "KX";
-    GenerateDmarcRecordResultsTypeEnum["CERT"] = "CERT";
-    GenerateDmarcRecordResultsTypeEnum["A6"] = "A6";
-    GenerateDmarcRecordResultsTypeEnum["DNAME"] = "DNAME";
-    GenerateDmarcRecordResultsTypeEnum["SINK"] = "SINK";
-    GenerateDmarcRecordResultsTypeEnum["OPT"] = "OPT";
-    GenerateDmarcRecordResultsTypeEnum["APL"] = "APL";
-    GenerateDmarcRecordResultsTypeEnum["DS"] = "DS";
-    GenerateDmarcRecordResultsTypeEnum["SSHFP"] = "SSHFP";
-    GenerateDmarcRecordResultsTypeEnum["IPSECKEY"] = "IPSECKEY";
-    GenerateDmarcRecordResultsTypeEnum["RRSIG"] = "RRSIG";
-    GenerateDmarcRecordResultsTypeEnum["NSEC"] = "NSEC";
-    GenerateDmarcRecordResultsTypeEnum["DNSKEY"] = "DNSKEY";
-    GenerateDmarcRecordResultsTypeEnum["DHCID"] = "DHCID";
-    GenerateDmarcRecordResultsTypeEnum["NSEC3"] = "NSEC3";
-    GenerateDmarcRecordResultsTypeEnum["NSEC3PARAM"] = "NSEC3PARAM";
-    GenerateDmarcRecordResultsTypeEnum["TLSA"] = "TLSA";
-    GenerateDmarcRecordResultsTypeEnum["SMIMEA"] = "SMIMEA";
-    GenerateDmarcRecordResultsTypeEnum["HIP"] = "HIP";
-    GenerateDmarcRecordResultsTypeEnum["NINFO"] = "NINFO";
-    GenerateDmarcRecordResultsTypeEnum["RKEY"] = "RKEY";
-    GenerateDmarcRecordResultsTypeEnum["TALINK"] = "TALINK";
-    GenerateDmarcRecordResultsTypeEnum["CDS"] = "CDS";
-    GenerateDmarcRecordResultsTypeEnum["CDNSKEY"] = "CDNSKEY";
-    GenerateDmarcRecordResultsTypeEnum["OPENPGPKEY"] = "OPENPGPKEY";
-    GenerateDmarcRecordResultsTypeEnum["CSYNC"] = "CSYNC";
-    GenerateDmarcRecordResultsTypeEnum["ZONEMD"] = "ZONEMD";
-    GenerateDmarcRecordResultsTypeEnum["SVCB"] = "SVCB";
-    GenerateDmarcRecordResultsTypeEnum["HTTPS"] = "HTTPS";
-    GenerateDmarcRecordResultsTypeEnum["SPF"] = "SPF";
-    GenerateDmarcRecordResultsTypeEnum["UINFO"] = "UINFO";
-    GenerateDmarcRecordResultsTypeEnum["UID"] = "UID";
-    GenerateDmarcRecordResultsTypeEnum["GID"] = "GID";
-    GenerateDmarcRecordResultsTypeEnum["UNSPEC"] = "UNSPEC";
-    GenerateDmarcRecordResultsTypeEnum["NID"] = "NID";
-    GenerateDmarcRecordResultsTypeEnum["L32"] = "L32";
-    GenerateDmarcRecordResultsTypeEnum["L64"] = "L64";
-    GenerateDmarcRecordResultsTypeEnum["LP"] = "LP";
-    GenerateDmarcRecordResultsTypeEnum["EUI48"] = "EUI48";
-    GenerateDmarcRecordResultsTypeEnum["EUI64"] = "EUI64";
-    GenerateDmarcRecordResultsTypeEnum["TKEY"] = "TKEY";
-    GenerateDmarcRecordResultsTypeEnum["TSIG"] = "TSIG";
-    GenerateDmarcRecordResultsTypeEnum["IXFR"] = "IXFR";
-    GenerateDmarcRecordResultsTypeEnum["AXFR"] = "AXFR";
-    GenerateDmarcRecordResultsTypeEnum["MAILB"] = "MAILB";
-    GenerateDmarcRecordResultsTypeEnum["MAILA"] = "MAILA";
-    GenerateDmarcRecordResultsTypeEnum["ANY"] = "ANY";
-    GenerateDmarcRecordResultsTypeEnum["URI"] = "URI";
-    GenerateDmarcRecordResultsTypeEnum["CAA"] = "CAA";
-    GenerateDmarcRecordResultsTypeEnum["AVC"] = "AVC";
-    GenerateDmarcRecordResultsTypeEnum["DOA"] = "DOA";
-    GenerateDmarcRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
-    GenerateDmarcRecordResultsTypeEnum["TA"] = "TA";
-    GenerateDmarcRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateDmarcRecordResultsTypeEnum = exports.GenerateDmarcRecordResultsTypeEnum || (exports.GenerateDmarcRecordResultsTypeEnum = {}));
+exports.GenerateDmarcRecordResultsTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+};
+/**
+ * Check if a given object implements the GenerateDmarcRecordResults interface.
+ */
+function instanceOfGenerateDmarcRecordResults(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('type' in value) || value['type'] === undefined)
+        return false;
+    if (!('ttl' in value) || value['ttl'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function GenerateDmarcRecordResultsFromJSON(json) {
     return GenerateDmarcRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateDmarcRecordResultsFromJSON = GenerateDmarcRecordResultsFromJSON;
 function GenerateDmarcRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        type: json['type'],
-        ttl: json['ttl'],
-        value: json['value'],
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
     };
 }
-exports.GenerateDmarcRecordResultsFromJSONTyped = GenerateDmarcRecordResultsFromJSONTyped;
-function GenerateDmarcRecordResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GenerateDmarcRecordResultsToJSON(json) {
+    return GenerateDmarcRecordResultsToJSONTyped(json, false);
+}
+function GenerateDmarcRecordResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        type: value.type,
-        ttl: value.ttl,
-        value: value.value,
+        'name': value['name'],
+        'type': value['type'],
+        'ttl': value['ttl'],
+        'value': value['value'],
     };
 }
-exports.GenerateDmarcRecordResultsToJSON = GenerateDmarcRecordResultsToJSON;

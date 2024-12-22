@@ -12,61 +12,74 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Variable for use with email template
  * @export
  * @interface TemplateVariable
  */
 export interface TemplateVariable {
-  /**
-   * Name of variable. This can be used in a template as {{name}}
-   * @type {string}
-   * @memberof TemplateVariable
-   */
-  name: string;
-  /**
-   * The type of variable
-   * @type {string}
-   * @memberof TemplateVariable
-   */
-  variableType: TemplateVariableVariableTypeEnum;
+    /**
+     * Name of variable. This can be used in a template as {{name}}
+     * @type {string}
+     * @memberof TemplateVariable
+     */
+    name: string;
+    /**
+     * The type of variable
+     * @type {string}
+     * @memberof TemplateVariable
+     */
+    variableType: TemplateVariableVariableTypeEnum;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum TemplateVariableVariableTypeEnum {
-  STRING = 'STRING',
+export const TemplateVariableVariableTypeEnum = {
+    STRING: 'STRING'
+} as const;
+export type TemplateVariableVariableTypeEnum = typeof TemplateVariableVariableTypeEnum[keyof typeof TemplateVariableVariableTypeEnum];
+
+
+/**
+ * Check if a given object implements the TemplateVariable interface.
+ */
+export function instanceOfTemplateVariable(value: object): value is TemplateVariable {
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('variableType' in value) || value['variableType'] === undefined) return false;
+    return true;
 }
 
 export function TemplateVariableFromJSON(json: any): TemplateVariable {
-  return TemplateVariableFromJSONTyped(json, false);
+    return TemplateVariableFromJSONTyped(json, false);
 }
 
-export function TemplateVariableFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TemplateVariable {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    variableType: json['variableType'],
-  };
+export function TemplateVariableFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateVariable {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'variableType': json['variableType'],
+    };
 }
 
-export function TemplateVariableToJSON(value?: TemplateVariable | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    variableType: value.variableType,
-  };
+export function TemplateVariableToJSON(json: any): TemplateVariable {
+    return TemplateVariableToJSONTyped(json, false);
 }
+
+export function TemplateVariableToJSONTyped(value?: TemplateVariable | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'variableType': value['variableType'],
+    };
+}
+

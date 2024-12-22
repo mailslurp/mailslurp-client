@@ -12,117 +12,186 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ConnectorSmtpConnectionDto
  */
 export interface ConnectorSmtpConnectionDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  connectorId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpHost?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpPort?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpUsername?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpPassword?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpSsl?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  enabled?: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    connectorId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpHost: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpPort?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpUsername?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpPassword?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpSsl?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    startTls?: boolean | null;
+    /**
+     * 
+     * @type {Array<string | null>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpMechanisms?: Array<string | null> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    localHostName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyHost?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyPort?: number | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyEnabled?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    enabled?: boolean | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslTrust?: string | null;
+    /**
+     * 
+     * @type {Array<string | null>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslProtocols?: Array<string | null> | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    id: string;
 }
 
-export function ConnectorSmtpConnectionDtoFromJSON(
-  json: any
-): ConnectorSmtpConnectionDto {
-  return ConnectorSmtpConnectionDtoFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the ConnectorSmtpConnectionDto interface.
+ */
+export function instanceOfConnectorSmtpConnectionDto(value: object): value is ConnectorSmtpConnectionDto {
+    if (!('connectorId' in value) || value['connectorId'] === undefined) return false;
+    if (!('smtpHost' in value) || value['smtpHost'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
-export function ConnectorSmtpConnectionDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorSmtpConnectionDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    connectorId: json['connectorId'],
-    smtpHost: !exists(json, 'smtpHost') ? undefined : json['smtpHost'],
-    smtpPort: !exists(json, 'smtpPort') ? undefined : json['smtpPort'],
-    smtpUsername: !exists(json, 'smtpUsername')
-      ? undefined
-      : json['smtpUsername'],
-    smtpPassword: !exists(json, 'smtpPassword')
-      ? undefined
-      : json['smtpPassword'],
-    smtpSsl: !exists(json, 'smtpSsl') ? undefined : json['smtpSsl'],
-    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-    createdAt: new Date(json['createdAt']),
-    id: json['id'],
-  };
+export function ConnectorSmtpConnectionDtoFromJSON(json: any): ConnectorSmtpConnectionDto {
+    return ConnectorSmtpConnectionDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorSmtpConnectionDtoToJSON(
-  value?: ConnectorSmtpConnectionDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    connectorId: value.connectorId,
-    smtpHost: value.smtpHost,
-    smtpPort: value.smtpPort,
-    smtpUsername: value.smtpUsername,
-    smtpPassword: value.smtpPassword,
-    smtpSsl: value.smtpSsl,
-    enabled: value.enabled,
-    createdAt: value.createdAt.toISOString(),
-    id: value.id,
-  };
+export function ConnectorSmtpConnectionDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSmtpConnectionDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'connectorId': json['connectorId'],
+        'smtpHost': json['smtpHost'],
+        'smtpPort': json['smtpPort'] == null ? undefined : json['smtpPort'],
+        'smtpUsername': json['smtpUsername'] == null ? undefined : json['smtpUsername'],
+        'smtpPassword': json['smtpPassword'] == null ? undefined : json['smtpPassword'],
+        'smtpSsl': json['smtpSsl'] == null ? undefined : json['smtpSsl'],
+        'startTls': json['startTls'] == null ? undefined : json['startTls'],
+        'smtpMechanisms': json['smtpMechanisms'] == null ? undefined : json['smtpMechanisms'],
+        'localHostName': json['localHostName'] == null ? undefined : json['localHostName'],
+        'proxyHost': json['proxyHost'] == null ? undefined : json['proxyHost'],
+        'proxyPort': json['proxyPort'] == null ? undefined : json['proxyPort'],
+        'proxyEnabled': json['proxyEnabled'] == null ? undefined : json['proxyEnabled'],
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
+        'sslTrust': json['sslTrust'] == null ? undefined : json['sslTrust'],
+        'sslProtocols': json['sslProtocols'] == null ? undefined : json['sslProtocols'],
+        'createdAt': (new Date(json['createdAt'])),
+        'id': json['id'],
+    };
 }
+
+export function ConnectorSmtpConnectionDtoToJSON(json: any): ConnectorSmtpConnectionDto {
+    return ConnectorSmtpConnectionDtoToJSONTyped(json, false);
+}
+
+export function ConnectorSmtpConnectionDtoToJSONTyped(value?: ConnectorSmtpConnectionDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'connectorId': value['connectorId'],
+        'smtpHost': value['smtpHost'],
+        'smtpPort': value['smtpPort'],
+        'smtpUsername': value['smtpUsername'],
+        'smtpPassword': value['smtpPassword'],
+        'smtpSsl': value['smtpSsl'],
+        'startTls': value['startTls'],
+        'smtpMechanisms': value['smtpMechanisms'],
+        'localHostName': value['localHostName'],
+        'proxyHost': value['proxyHost'],
+        'proxyPort': value['proxyPort'],
+        'proxyEnabled': value['proxyEnabled'],
+        'enabled': value['enabled'],
+        'sslTrust': value['sslTrust'],
+        'sslProtocols': value['sslProtocols'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'id': value['id'],
+    };
+}
+

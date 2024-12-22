@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BasicAuthOptions, WebhookHeaders } from './';
+import type { WebhookHeaders } from './WebhookHeaders';
+import type { BasicAuthOptions } from './BasicAuthOptions';
 /**
  * Options for creating a webhook. Webhooks can be attached to inboxes and MailSlurp will POST a webhook payload to the URL specified whenever the webhook's event is triggered. Webhooks are great for processing many inbound emails and responding to other events at scale. Customize the payload sent to your endpoint by setting the `requestBodyTemplate` property to a string with moustache style variables. Property names from the standard payload model for the given event are available as variables.
  * @export
@@ -39,7 +40,7 @@ export interface CreateWebhookOptions {
      * @type {string}
      * @memberof CreateWebhookOptions
      */
-    eventName?: CreateWebhookOptionsEventNameEnum;
+    eventName?: CreateWebhookOptionsEventNameEnum | null;
     /**
      *
      * @type {WebhookHeaders}
@@ -64,23 +65,35 @@ export interface CreateWebhookOptions {
      * @memberof CreateWebhookOptions
      */
     ignoreInsecureSslCertificates?: boolean | null;
+    /**
+     * Optional list of tags
+     * @type {Array<string | null>}
+     * @memberof CreateWebhookOptions
+     */
+    tags?: Array<string | null> | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateWebhookOptionsEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const CreateWebhookOptionsEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type CreateWebhookOptionsEventNameEnum = typeof CreateWebhookOptionsEventNameEnum[keyof typeof CreateWebhookOptionsEventNameEnum];
+/**
+ * Check if a given object implements the CreateWebhookOptions interface.
+ */
+export declare function instanceOfCreateWebhookOptions(value: object): value is CreateWebhookOptions;
 export declare function CreateWebhookOptionsFromJSON(json: any): CreateWebhookOptions;
 export declare function CreateWebhookOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateWebhookOptions;
-export declare function CreateWebhookOptionsToJSON(value?: CreateWebhookOptions | null): any;
+export declare function CreateWebhookOptionsToJSON(json: any): CreateWebhookOptions;
+export declare function CreateWebhookOptionsToJSONTyped(value?: CreateWebhookOptions | null, ignoreDiscriminator?: boolean): any;

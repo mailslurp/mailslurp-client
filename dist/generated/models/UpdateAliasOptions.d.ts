@@ -22,6 +22,11 @@ export interface UpdateAliasOptions {
      */
     name?: string | null;
 }
+/**
+ * Check if a given object implements the UpdateAliasOptions interface.
+ */
+export declare function instanceOfUpdateAliasOptions(value: object): value is UpdateAliasOptions;
 export declare function UpdateAliasOptionsFromJSON(json: any): UpdateAliasOptions;
 export declare function UpdateAliasOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateAliasOptions;
-export declare function UpdateAliasOptionsToJSON(value?: UpdateAliasOptions | null): any;
+export declare function UpdateAliasOptionsToJSON(json: any): UpdateAliasOptions;
+export declare function UpdateAliasOptionsToJSONTyped(value?: UpdateAliasOptions | null, ignoreDiscriminator?: boolean): any;

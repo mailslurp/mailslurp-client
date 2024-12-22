@@ -12,187 +12,216 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Access details for inbox using SMTP or IMAP
  * @export
  * @interface ImapSmtpAccessDetails
  */
 export interface ImapSmtpAccessDetails {
-  /**
-   * Secure TLS SMTP server host domain
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureSmtpServerHost: string;
-  /**
-   * Secure TLS SMTP server host port
-   * @type {number}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureSmtpServerPort: number;
-  /**
-   * Secure TLS SMTP username for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureSmtpUsername: string;
-  /**
-   * Secure TLS SMTP password for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureSmtpPassword: string;
-  /**
-   * SMTP server host domain
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  smtpServerHost: string;
-  /**
-   * SMTP server host port
-   * @type {number}
-   * @memberof ImapSmtpAccessDetails
-   */
-  smtpServerPort: number;
-  /**
-   * SMTP username for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  smtpUsername: string;
-  /**
-   * SMTP password for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  smtpPassword: string;
-  /**
-   * Secure TLS IMAP server host domain
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureImapServerHost: string;
-  /**
-   * Secure TLS IMAP server host port
-   * @type {number}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureImapServerPort: number;
-  /**
-   * Secure TLS IMAP username for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureImapUsername: string;
-  /**
-   * Secure TLS IMAP password for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  secureImapPassword: string;
-  /**
-   * IMAP server host domain
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  imapServerHost: string;
-  /**
-   * IMAP server host port
-   * @type {number}
-   * @memberof ImapSmtpAccessDetails
-   */
-  imapServerPort: number;
-  /**
-   * IMAP username for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  imapUsername: string;
-  /**
-   * IMAP password for login
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  imapPassword: string;
-  /**
-   * IMAP mailbox to SELECT
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  imapMailbox: string;
-  /**
-   * Mail from domain or SMTP HELO value
-   * @type {string}
-   * @memberof ImapSmtpAccessDetails
-   */
-  mailFromDomain?: string | null;
+    /**
+     * Email address for SMTP/IMAP login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    emailAddress: string;
+    /**
+     * Secure TLS SMTP server host domain
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureSmtpServerHost: string;
+    /**
+     * Secure TLS SMTP server host port
+     * @type {number}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureSmtpServerPort: number;
+    /**
+     * Secure TLS SMTP username for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureSmtpUsername: string;
+    /**
+     * Secure TLS SMTP password for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureSmtpPassword: string;
+    /**
+     * SMTP server host domain
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    smtpServerHost: string;
+    /**
+     * SMTP server host port
+     * @type {number}
+     * @memberof ImapSmtpAccessDetails
+     */
+    smtpServerPort: number;
+    /**
+     * SMTP username for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    smtpUsername: string;
+    /**
+     * SMTP password for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    smtpPassword: string;
+    /**
+     * Secure TLS IMAP server host domain
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureImapServerHost: string;
+    /**
+     * Secure TLS IMAP server host port
+     * @type {number}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureImapServerPort: number;
+    /**
+     * Secure TLS IMAP username for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureImapUsername: string;
+    /**
+     * Secure TLS IMAP password for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    secureImapPassword: string;
+    /**
+     * IMAP server host domain
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    imapServerHost: string;
+    /**
+     * IMAP server host port
+     * @type {number}
+     * @memberof ImapSmtpAccessDetails
+     */
+    imapServerPort: number;
+    /**
+     * IMAP username for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    imapUsername: string;
+    /**
+     * IMAP password for login
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    imapPassword: string;
+    /**
+     * IMAP mailbox to SELECT
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    imapMailbox: string;
+    /**
+     * Mail from domain or SMTP HELO value
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    mailFromDomain?: string | null;
 }
 
-export function ImapSmtpAccessDetailsFromJSON(
-  json: any
-): ImapSmtpAccessDetails {
-  return ImapSmtpAccessDetailsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the ImapSmtpAccessDetails interface.
+ */
+export function instanceOfImapSmtpAccessDetails(value: object): value is ImapSmtpAccessDetails {
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('secureSmtpServerHost' in value) || value['secureSmtpServerHost'] === undefined) return false;
+    if (!('secureSmtpServerPort' in value) || value['secureSmtpServerPort'] === undefined) return false;
+    if (!('secureSmtpUsername' in value) || value['secureSmtpUsername'] === undefined) return false;
+    if (!('secureSmtpPassword' in value) || value['secureSmtpPassword'] === undefined) return false;
+    if (!('smtpServerHost' in value) || value['smtpServerHost'] === undefined) return false;
+    if (!('smtpServerPort' in value) || value['smtpServerPort'] === undefined) return false;
+    if (!('smtpUsername' in value) || value['smtpUsername'] === undefined) return false;
+    if (!('smtpPassword' in value) || value['smtpPassword'] === undefined) return false;
+    if (!('secureImapServerHost' in value) || value['secureImapServerHost'] === undefined) return false;
+    if (!('secureImapServerPort' in value) || value['secureImapServerPort'] === undefined) return false;
+    if (!('secureImapUsername' in value) || value['secureImapUsername'] === undefined) return false;
+    if (!('secureImapPassword' in value) || value['secureImapPassword'] === undefined) return false;
+    if (!('imapServerHost' in value) || value['imapServerHost'] === undefined) return false;
+    if (!('imapServerPort' in value) || value['imapServerPort'] === undefined) return false;
+    if (!('imapUsername' in value) || value['imapUsername'] === undefined) return false;
+    if (!('imapPassword' in value) || value['imapPassword'] === undefined) return false;
+    if (!('imapMailbox' in value) || value['imapMailbox'] === undefined) return false;
+    return true;
 }
 
-export function ImapSmtpAccessDetailsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapSmtpAccessDetails {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    secureSmtpServerHost: json['secureSmtpServerHost'],
-    secureSmtpServerPort: json['secureSmtpServerPort'],
-    secureSmtpUsername: json['secureSmtpUsername'],
-    secureSmtpPassword: json['secureSmtpPassword'],
-    smtpServerHost: json['smtpServerHost'],
-    smtpServerPort: json['smtpServerPort'],
-    smtpUsername: json['smtpUsername'],
-    smtpPassword: json['smtpPassword'],
-    secureImapServerHost: json['secureImapServerHost'],
-    secureImapServerPort: json['secureImapServerPort'],
-    secureImapUsername: json['secureImapUsername'],
-    secureImapPassword: json['secureImapPassword'],
-    imapServerHost: json['imapServerHost'],
-    imapServerPort: json['imapServerPort'],
-    imapUsername: json['imapUsername'],
-    imapPassword: json['imapPassword'],
-    imapMailbox: json['imapMailbox'],
-    mailFromDomain: !exists(json, 'mailFromDomain')
-      ? undefined
-      : json['mailFromDomain'],
-  };
+export function ImapSmtpAccessDetailsFromJSON(json: any): ImapSmtpAccessDetails {
+    return ImapSmtpAccessDetailsFromJSONTyped(json, false);
 }
 
-export function ImapSmtpAccessDetailsToJSON(
-  value?: ImapSmtpAccessDetails | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    secureSmtpServerHost: value.secureSmtpServerHost,
-    secureSmtpServerPort: value.secureSmtpServerPort,
-    secureSmtpUsername: value.secureSmtpUsername,
-    secureSmtpPassword: value.secureSmtpPassword,
-    smtpServerHost: value.smtpServerHost,
-    smtpServerPort: value.smtpServerPort,
-    smtpUsername: value.smtpUsername,
-    smtpPassword: value.smtpPassword,
-    secureImapServerHost: value.secureImapServerHost,
-    secureImapServerPort: value.secureImapServerPort,
-    secureImapUsername: value.secureImapUsername,
-    secureImapPassword: value.secureImapPassword,
-    imapServerHost: value.imapServerHost,
-    imapServerPort: value.imapServerPort,
-    imapUsername: value.imapUsername,
-    imapPassword: value.imapPassword,
-    imapMailbox: value.imapMailbox,
-    mailFromDomain: value.mailFromDomain,
-  };
+export function ImapSmtpAccessDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapSmtpAccessDetails {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'emailAddress': json['emailAddress'],
+        'secureSmtpServerHost': json['secureSmtpServerHost'],
+        'secureSmtpServerPort': json['secureSmtpServerPort'],
+        'secureSmtpUsername': json['secureSmtpUsername'],
+        'secureSmtpPassword': json['secureSmtpPassword'],
+        'smtpServerHost': json['smtpServerHost'],
+        'smtpServerPort': json['smtpServerPort'],
+        'smtpUsername': json['smtpUsername'],
+        'smtpPassword': json['smtpPassword'],
+        'secureImapServerHost': json['secureImapServerHost'],
+        'secureImapServerPort': json['secureImapServerPort'],
+        'secureImapUsername': json['secureImapUsername'],
+        'secureImapPassword': json['secureImapPassword'],
+        'imapServerHost': json['imapServerHost'],
+        'imapServerPort': json['imapServerPort'],
+        'imapUsername': json['imapUsername'],
+        'imapPassword': json['imapPassword'],
+        'imapMailbox': json['imapMailbox'],
+        'mailFromDomain': json['mailFromDomain'] == null ? undefined : json['mailFromDomain'],
+    };
 }
+
+export function ImapSmtpAccessDetailsToJSON(json: any): ImapSmtpAccessDetails {
+    return ImapSmtpAccessDetailsToJSONTyped(json, false);
+}
+
+export function ImapSmtpAccessDetailsToJSONTyped(value?: ImapSmtpAccessDetails | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'emailAddress': value['emailAddress'],
+        'secureSmtpServerHost': value['secureSmtpServerHost'],
+        'secureSmtpServerPort': value['secureSmtpServerPort'],
+        'secureSmtpUsername': value['secureSmtpUsername'],
+        'secureSmtpPassword': value['secureSmtpPassword'],
+        'smtpServerHost': value['smtpServerHost'],
+        'smtpServerPort': value['smtpServerPort'],
+        'smtpUsername': value['smtpUsername'],
+        'smtpPassword': value['smtpPassword'],
+        'secureImapServerHost': value['secureImapServerHost'],
+        'secureImapServerPort': value['secureImapServerPort'],
+        'secureImapUsername': value['secureImapUsername'],
+        'secureImapPassword': value['secureImapPassword'],
+        'imapServerHost': value['imapServerHost'],
+        'imapServerPort': value['imapServerPort'],
+        'imapUsername': value['imapUsername'],
+        'imapPassword': value['imapPassword'],
+        'imapMailbox': value['imapMailbox'],
+        'mailFromDomain': value['mailFromDomain'],
+    };
+}
+

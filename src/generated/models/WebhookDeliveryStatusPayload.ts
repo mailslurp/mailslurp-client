@@ -12,203 +12,199 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * DELIVERY_STATUS webhook payload. Sent to your webhook url endpoint via HTTP POST when an email delivery status is created. This could be a successful delivery or a delivery failure.
  * @export
  * @interface WebhookDeliveryStatusPayload
  */
 export interface WebhookDeliveryStatusPayload {
-  /**
-   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  messageId: string;
-  /**
-   * ID of webhook entity being triggered
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  webhookId: string;
-  /**
-   * Name of the event type webhook is being triggered for.
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  eventName: WebhookDeliveryStatusPayloadEventNameEnum;
-  /**
-   * Name of the webhook being triggered
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  webhookName?: string | null;
-  /**
-   * ID of delivery status
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  id: string;
-  /**
-   * User ID of event
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  userId: string;
-  /**
-   * ID of sent email
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  sentId?: string | null;
-  /**
-   * IP address of the remote Mail Transfer Agent
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  remoteMtaIp?: string | null;
-  /**
-   * Id of the inbox
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  inboxId?: string | null;
-  /**
-   * Mail Transfer Agent reporting delivery status
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  reportingMta?: string | null;
-  /**
-   * Recipients for delivery
-   * @type {Array<string>}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  recipients?: Array<string> | null;
-  /**
-   * SMTP server response message
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  smtpResponse?: string | null;
-  /**
-   * SMTP server status
-   * @type {number}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  smtpStatusCode?: number | null;
-  /**
-   * Time in milliseconds for delivery processing
-   * @type {number}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  processingTimeMillis?: number | null;
-  /**
-   * Time event was received
-   * @type {Date}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  received?: Date | null;
-  /**
-   * Email subject
-   * @type {string}
-   * @memberof WebhookDeliveryStatusPayload
-   */
-  subject?: string | null;
+    /**
+     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    messageId: string;
+    /**
+     * ID of webhook entity being triggered
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    webhookId: string;
+    /**
+     * Name of the event type webhook is being triggered for.
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    eventName: WebhookDeliveryStatusPayloadEventNameEnum;
+    /**
+     * Name of the webhook being triggered
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    webhookName?: string | null;
+    /**
+     * ID of delivery status
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    id: string;
+    /**
+     * User ID of event
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    userId: string;
+    /**
+     * ID of sent email
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    sentId?: string | null;
+    /**
+     * IP address of the remote Mail Transfer Agent
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    remoteMtaIp?: string | null;
+    /**
+     * Id of the inbox
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    inboxId?: string | null;
+    /**
+     * Mail Transfer Agent reporting delivery status
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    reportingMta?: string | null;
+    /**
+     * Recipients for delivery
+     * @type {Array<string | null>}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    recipients?: Array<string | null> | null;
+    /**
+     * SMTP server response message
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    smtpResponse?: string | null;
+    /**
+     * SMTP server status
+     * @type {number}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    smtpStatusCode?: number | null;
+    /**
+     * Time in milliseconds for delivery processing
+     * @type {number}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    processingTimeMillis?: number | null;
+    /**
+     * Time event was received
+     * @type {Date}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    received?: Date | null;
+    /**
+     * Email subject
+     * @type {string}
+     * @memberof WebhookDeliveryStatusPayload
+     */
+    subject?: string | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum WebhookDeliveryStatusPayloadEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
+export const WebhookDeliveryStatusPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+} as const;
+export type WebhookDeliveryStatusPayloadEventNameEnum = typeof WebhookDeliveryStatusPayloadEventNameEnum[keyof typeof WebhookDeliveryStatusPayloadEventNameEnum];
+
+
+/**
+ * Check if a given object implements the WebhookDeliveryStatusPayload interface.
+ */
+export function instanceOfWebhookDeliveryStatusPayload(value: object): value is WebhookDeliveryStatusPayload {
+    if (!('messageId' in value) || value['messageId'] === undefined) return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined) return false;
+    if (!('eventName' in value) || value['eventName'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    return true;
 }
 
-export function WebhookDeliveryStatusPayloadFromJSON(
-  json: any
-): WebhookDeliveryStatusPayload {
-  return WebhookDeliveryStatusPayloadFromJSONTyped(json, false);
+export function WebhookDeliveryStatusPayloadFromJSON(json: any): WebhookDeliveryStatusPayload {
+    return WebhookDeliveryStatusPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookDeliveryStatusPayloadFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookDeliveryStatusPayload {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    messageId: json['messageId'],
-    webhookId: json['webhookId'],
-    eventName: json['eventName'],
-    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
-    id: json['id'],
-    userId: json['userId'],
-    sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
-    remoteMtaIp: !exists(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    reportingMta: !exists(json, 'reportingMta')
-      ? undefined
-      : json['reportingMta'],
-    recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
-    smtpResponse: !exists(json, 'smtpResponse')
-      ? undefined
-      : json['smtpResponse'],
-    smtpStatusCode: !exists(json, 'smtpStatusCode')
-      ? undefined
-      : json['smtpStatusCode'],
-    processingTimeMillis: !exists(json, 'processingTimeMillis')
-      ? undefined
-      : json['processingTimeMillis'],
-    received: !exists(json, 'received')
-      ? undefined
-      : json['received'] === null
-      ? null
-      : new Date(json['received']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-  };
+export function WebhookDeliveryStatusPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookDeliveryStatusPayload {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+        'id': json['id'],
+        'userId': json['userId'],
+        'sentId': json['sentId'] == null ? undefined : json['sentId'],
+        'remoteMtaIp': json['remoteMtaIp'] == null ? undefined : json['remoteMtaIp'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'reportingMta': json['reportingMta'] == null ? undefined : json['reportingMta'],
+        'recipients': json['recipients'] == null ? undefined : json['recipients'],
+        'smtpResponse': json['smtpResponse'] == null ? undefined : json['smtpResponse'],
+        'smtpStatusCode': json['smtpStatusCode'] == null ? undefined : json['smtpStatusCode'],
+        'processingTimeMillis': json['processingTimeMillis'] == null ? undefined : json['processingTimeMillis'],
+        'received': json['received'] == null ? undefined : (new Date(json['received'])),
+        'subject': json['subject'] == null ? undefined : json['subject'],
+    };
 }
 
-export function WebhookDeliveryStatusPayloadToJSON(
-  value?: WebhookDeliveryStatusPayload | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    messageId: value.messageId,
-    webhookId: value.webhookId,
-    eventName: value.eventName,
-    webhookName: value.webhookName,
-    id: value.id,
-    userId: value.userId,
-    sentId: value.sentId,
-    remoteMtaIp: value.remoteMtaIp,
-    inboxId: value.inboxId,
-    reportingMta: value.reportingMta,
-    recipients: value.recipients,
-    smtpResponse: value.smtpResponse,
-    smtpStatusCode: value.smtpStatusCode,
-    processingTimeMillis: value.processingTimeMillis,
-    received:
-      value.received === undefined
-        ? undefined
-        : value.received === null
-        ? null
-        : value.received.toISOString(),
-    subject: value.subject,
-  };
+export function WebhookDeliveryStatusPayloadToJSON(json: any): WebhookDeliveryStatusPayload {
+    return WebhookDeliveryStatusPayloadToJSONTyped(json, false);
 }
+
+export function WebhookDeliveryStatusPayloadToJSONTyped(value?: WebhookDeliveryStatusPayload | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'eventName': value['eventName'],
+        'webhookName': value['webhookName'],
+        'id': value['id'],
+        'userId': value['userId'],
+        'sentId': value['sentId'],
+        'remoteMtaIp': value['remoteMtaIp'],
+        'inboxId': value['inboxId'],
+        'reportingMta': value['reportingMta'],
+        'recipients': value['recipients'],
+        'smtpResponse': value['smtpResponse'],
+        'smtpStatusCode': value['smtpStatusCode'],
+        'processingTimeMillis': value['processingTimeMillis'],
+        'received': value['received'] == null ? undefined : ((value['received'] as any).toISOString()),
+        'subject': value['subject'],
+    };
+}
+

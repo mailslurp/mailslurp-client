@@ -52,6 +52,11 @@ export interface EmailValidationRequestDto {
      */
     updatedAt: Date;
 }
+/**
+ * Check if a given object implements the EmailValidationRequestDto interface.
+ */
+export declare function instanceOfEmailValidationRequestDto(value: object): value is EmailValidationRequestDto;
 export declare function EmailValidationRequestDtoFromJSON(json: any): EmailValidationRequestDto;
 export declare function EmailValidationRequestDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailValidationRequestDto;
-export declare function EmailValidationRequestDtoToJSON(value?: EmailValidationRequestDto | null): any;
+export declare function EmailValidationRequestDtoToJSON(json: any): EmailValidationRequestDto;
+export declare function EmailValidationRequestDtoToJSONTyped(value?: EmailValidationRequestDto | null, ignoreDiscriminator?: boolean): any;

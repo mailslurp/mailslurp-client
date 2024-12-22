@@ -13,97 +13,79 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WaitForSmsConditionsToJSON = exports.WaitForSmsConditionsFromJSONTyped = exports.WaitForSmsConditionsFromJSON = exports.WaitForSmsConditionsSortDirectionEnum = exports.WaitForSmsConditionsCountTypeEnum = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.WaitForSmsConditionsSortDirectionEnum = exports.WaitForSmsConditionsCountTypeEnum = void 0;
+exports.instanceOfWaitForSmsConditions = instanceOfWaitForSmsConditions;
+exports.WaitForSmsConditionsFromJSON = WaitForSmsConditionsFromJSON;
+exports.WaitForSmsConditionsFromJSONTyped = WaitForSmsConditionsFromJSONTyped;
+exports.WaitForSmsConditionsToJSON = WaitForSmsConditionsToJSON;
+exports.WaitForSmsConditionsToJSONTyped = WaitForSmsConditionsToJSONTyped;
+var SmsMatchOption_1 = require("./SmsMatchOption");
 /**
  * @export
- * @enum {string}
  */
-var WaitForSmsConditionsCountTypeEnum;
-(function (WaitForSmsConditionsCountTypeEnum) {
-    WaitForSmsConditionsCountTypeEnum["EXACTLY"] = "EXACTLY";
-    WaitForSmsConditionsCountTypeEnum["ATLEAST"] = "ATLEAST";
-})(WaitForSmsConditionsCountTypeEnum = exports.WaitForSmsConditionsCountTypeEnum || (exports.WaitForSmsConditionsCountTypeEnum = {}));
+exports.WaitForSmsConditionsCountTypeEnum = {
+    EXACTLY: 'EXACTLY',
+    ATLEAST: 'ATLEAST'
+};
 /**
  * @export
- * @enum {string}
  */
-var WaitForSmsConditionsSortDirectionEnum;
-(function (WaitForSmsConditionsSortDirectionEnum) {
-    WaitForSmsConditionsSortDirectionEnum["ASC"] = "ASC";
-    WaitForSmsConditionsSortDirectionEnum["DESC"] = "DESC";
-})(WaitForSmsConditionsSortDirectionEnum = exports.WaitForSmsConditionsSortDirectionEnum || (exports.WaitForSmsConditionsSortDirectionEnum = {}));
+exports.WaitForSmsConditionsSortDirectionEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * Check if a given object implements the WaitForSmsConditions interface.
+ */
+function instanceOfWaitForSmsConditions(value) {
+    if (!('phoneNumberId' in value) || value['phoneNumberId'] === undefined)
+        return false;
+    if (!('count' in value) || value['count'] === undefined)
+        return false;
+    if (!('timeout' in value) || value['timeout'] === undefined)
+        return false;
+    return true;
+}
 function WaitForSmsConditionsFromJSON(json) {
     return WaitForSmsConditionsFromJSONTyped(json, false);
 }
-exports.WaitForSmsConditionsFromJSON = WaitForSmsConditionsFromJSON;
 function WaitForSmsConditionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        phoneNumberId: json['phoneNumberId'],
-        limit: !(0, runtime_1.exists)(json, 'limit') ? undefined : json['limit'],
-        count: json['count'],
-        delayTimeout: !(0, runtime_1.exists)(json, 'delayTimeout')
-            ? undefined
-            : json['delayTimeout'],
-        timeout: json['timeout'],
-        unreadOnly: !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
-        countType: !(0, runtime_1.exists)(json, 'countType') ? undefined : json['countType'],
-        matches: !(0, runtime_1.exists)(json, 'matches')
-            ? undefined
-            : json['matches'] === null
-                ? null
-                : json['matches'].map(_1.SmsMatchOptionFromJSON),
-        sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
-            ? undefined
-            : json['sortDirection'],
-        since: !(0, runtime_1.exists)(json, 'since')
-            ? undefined
-            : json['since'] === null
-                ? null
-                : new Date(json['since']),
-        before: !(0, runtime_1.exists)(json, 'before')
-            ? undefined
-            : json['before'] === null
-                ? null
-                : new Date(json['before']),
+        'phoneNumberId': json['phoneNumberId'],
+        'limit': json['limit'] == null ? undefined : json['limit'],
+        'count': json['count'],
+        'delayTimeout': json['delayTimeout'] == null ? undefined : json['delayTimeout'],
+        'timeout': json['timeout'],
+        'unreadOnly': json['unreadOnly'] == null ? undefined : json['unreadOnly'],
+        'countType': json['countType'] == null ? undefined : json['countType'],
+        'matches': json['matches'] == null ? undefined : (json['matches'].map(SmsMatchOption_1.SmsMatchOptionFromJSON)),
+        'sortDirection': json['sortDirection'] == null ? undefined : json['sortDirection'],
+        'since': json['since'] == null ? undefined : (new Date(json['since'])),
+        'before': json['before'] == null ? undefined : (new Date(json['before'])),
     };
 }
-exports.WaitForSmsConditionsFromJSONTyped = WaitForSmsConditionsFromJSONTyped;
-function WaitForSmsConditionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WaitForSmsConditionsToJSON(json) {
+    return WaitForSmsConditionsToJSONTyped(json, false);
+}
+function WaitForSmsConditionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        phoneNumberId: value.phoneNumberId,
-        limit: value.limit,
-        count: value.count,
-        delayTimeout: value.delayTimeout,
-        timeout: value.timeout,
-        unreadOnly: value.unreadOnly,
-        countType: value.countType,
-        matches: value.matches === undefined
-            ? undefined
-            : value.matches === null
-                ? null
-                : value.matches.map(_1.SmsMatchOptionToJSON),
-        sortDirection: value.sortDirection,
-        since: value.since === undefined
-            ? undefined
-            : value.since === null
-                ? null
-                : value.since.toISOString(),
-        before: value.before === undefined
-            ? undefined
-            : value.before === null
-                ? null
-                : value.before.toISOString(),
+        'phoneNumberId': value['phoneNumberId'],
+        'limit': value['limit'],
+        'count': value['count'],
+        'delayTimeout': value['delayTimeout'],
+        'timeout': value['timeout'],
+        'unreadOnly': value['unreadOnly'],
+        'countType': value['countType'],
+        'matches': value['matches'] == null ? undefined : (value['matches'].map(SmsMatchOption_1.SmsMatchOptionToJSON)),
+        'sortDirection': value['sortDirection'],
+        'since': value['since'] == null ? undefined : (value['since'].toISOString()),
+        'before': value['before'] == null ? undefined : (value['before'].toISOString()),
     };
 }
-exports.WaitForSmsConditionsToJSON = WaitForSmsConditionsToJSON;

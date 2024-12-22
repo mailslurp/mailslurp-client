@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestInboxRulesetReceivingOptionsToJSON = exports.TestInboxRulesetReceivingOptionsFromJSONTyped = exports.TestInboxRulesetReceivingOptionsFromJSON = void 0;
+exports.instanceOfTestInboxRulesetReceivingOptions = instanceOfTestInboxRulesetReceivingOptions;
+exports.TestInboxRulesetReceivingOptionsFromJSON = TestInboxRulesetReceivingOptionsFromJSON;
+exports.TestInboxRulesetReceivingOptionsFromJSONTyped = TestInboxRulesetReceivingOptionsFromJSONTyped;
+exports.TestInboxRulesetReceivingOptionsToJSON = TestInboxRulesetReceivingOptionsToJSON;
+exports.TestInboxRulesetReceivingOptionsToJSONTyped = TestInboxRulesetReceivingOptionsToJSONTyped;
+/**
+ * Check if a given object implements the TestInboxRulesetReceivingOptions interface.
+ */
+function instanceOfTestInboxRulesetReceivingOptions(value) {
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('fromSender' in value) || value['fromSender'] === undefined)
+        return false;
+    return true;
+}
 function TestInboxRulesetReceivingOptionsFromJSON(json) {
     return TestInboxRulesetReceivingOptionsFromJSONTyped(json, false);
 }
-exports.TestInboxRulesetReceivingOptionsFromJSON = TestInboxRulesetReceivingOptionsFromJSON;
 function TestInboxRulesetReceivingOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxId: json['inboxId'],
-        fromSender: json['fromSender'],
+        'inboxId': json['inboxId'],
+        'fromSender': json['fromSender'],
     };
 }
-exports.TestInboxRulesetReceivingOptionsFromJSONTyped = TestInboxRulesetReceivingOptionsFromJSONTyped;
-function TestInboxRulesetReceivingOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TestInboxRulesetReceivingOptionsToJSON(json) {
+    return TestInboxRulesetReceivingOptionsToJSONTyped(json, false);
+}
+function TestInboxRulesetReceivingOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxId: value.inboxId,
-        fromSender: value.fromSender,
+        'inboxId': value['inboxId'],
+        'fromSender': value['fromSender'],
     };
 }
-exports.TestInboxRulesetReceivingOptionsToJSON = TestInboxRulesetReceivingOptionsToJSON;

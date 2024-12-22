@@ -13,34 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecipientToJSON = exports.RecipientFromJSONTyped = exports.RecipientFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfRecipient = instanceOfRecipient;
+exports.RecipientFromJSON = RecipientFromJSON;
+exports.RecipientFromJSONTyped = RecipientFromJSONTyped;
+exports.RecipientToJSON = RecipientToJSON;
+exports.RecipientToJSONTyped = RecipientToJSONTyped;
+/**
+ * Check if a given object implements the Recipient interface.
+ */
+function instanceOfRecipient(value) {
+    if (!('rawValue' in value) || value['rawValue'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    return true;
+}
 function RecipientFromJSON(json) {
     return RecipientFromJSONTyped(json, false);
 }
-exports.RecipientFromJSON = RecipientFromJSON;
 function RecipientFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        rawValue: json['rawValue'],
-        emailAddress: json['emailAddress'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'rawValue': json['rawValue'],
+        'emailAddress': json['emailAddress'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
-exports.RecipientFromJSONTyped = RecipientFromJSONTyped;
-function RecipientToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function RecipientToJSON(json) {
+    return RecipientToJSONTyped(json, false);
+}
+function RecipientToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        rawValue: value.rawValue,
-        emailAddress: value.emailAddress,
-        name: value.name,
+        'rawValue': value['rawValue'],
+        'emailAddress': value['emailAddress'],
+        'name': value['name'],
     };
 }
-exports.RecipientToJSON = RecipientToJSON;

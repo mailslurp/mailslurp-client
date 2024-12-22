@@ -30,31 +30,36 @@ export interface EmailFeatureFamilyName {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum EmailFeatureFamilyNameSlugEnum {
-    aol = "aol",
-    apple_mail = "apple-mail",
-    fastmail = "fastmail",
-    free_fr = "free-fr",
-    gmail = "gmail",
-    gmx = "gmx",
-    hey = "hey",
-    ionos_1and1 = "ionos-1and1",
-    laposte = "laposte",
-    mail_ru = "mail-ru",
-    microsoft = "microsoft",
-    orange = "orange",
-    outlook = "outlook",
-    protonmail = "protonmail",
-    rainloop = "rainloop",
-    samsung_email = "samsung-email",
-    sfr = "sfr",
-    t_online_de = "t-online-de",
-    thunderbird = "thunderbird",
-    web_de = "web-de",
-    yahoo = "yahoo"
-}
+export declare const EmailFeatureFamilyNameSlugEnum: {
+    readonly aol: "aol";
+    readonly apple_mail: "apple-mail";
+    readonly fastmail: "fastmail";
+    readonly free_fr: "free-fr";
+    readonly gmail: "gmail";
+    readonly gmx: "gmx";
+    readonly hey: "hey";
+    readonly ionos_1and1: "ionos-1and1";
+    readonly laposte: "laposte";
+    readonly mail_ru: "mail-ru";
+    readonly microsoft: "microsoft";
+    readonly orange: "orange";
+    readonly outlook: "outlook";
+    readonly protonmail: "protonmail";
+    readonly rainloop: "rainloop";
+    readonly samsung_email: "samsung-email";
+    readonly sfr: "sfr";
+    readonly t_online_de: "t-online-de";
+    readonly thunderbird: "thunderbird";
+    readonly web_de: "web-de";
+    readonly yahoo: "yahoo";
+};
+export type EmailFeatureFamilyNameSlugEnum = typeof EmailFeatureFamilyNameSlugEnum[keyof typeof EmailFeatureFamilyNameSlugEnum];
+/**
+ * Check if a given object implements the EmailFeatureFamilyName interface.
+ */
+export declare function instanceOfEmailFeatureFamilyName(value: object): value is EmailFeatureFamilyName;
 export declare function EmailFeatureFamilyNameFromJSON(json: any): EmailFeatureFamilyName;
 export declare function EmailFeatureFamilyNameFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureFamilyName;
-export declare function EmailFeatureFamilyNameToJSON(value?: EmailFeatureFamilyName | null): any;
+export declare function EmailFeatureFamilyNameToJSON(json: any): EmailFeatureFamilyName;
+export declare function EmailFeatureFamilyNameToJSONTyped(value?: EmailFeatureFamilyName | null, ignoreDiscriminator?: boolean): any;

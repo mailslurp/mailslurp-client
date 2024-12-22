@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ConnectorSyncRequestResultException, ConnectorSyncResult } from './';
+import type { ConnectorSyncResult } from './ConnectorSyncResult';
 /**
  *
  * @export
@@ -24,10 +24,10 @@ export interface ConnectorSyncRequestResult {
     syncResult?: ConnectorSyncResult;
     /**
      *
-     * @type {ConnectorSyncRequestResultException}
+     * @type {string}
      * @memberof ConnectorSyncRequestResult
      */
-    exception?: ConnectorSyncRequestResultException;
+    exception?: string;
     /**
      *
      * @type {string}
@@ -35,6 +35,11 @@ export interface ConnectorSyncRequestResult {
      */
     eventId?: string;
 }
+/**
+ * Check if a given object implements the ConnectorSyncRequestResult interface.
+ */
+export declare function instanceOfConnectorSyncRequestResult(value: object): value is ConnectorSyncRequestResult;
 export declare function ConnectorSyncRequestResultFromJSON(json: any): ConnectorSyncRequestResult;
 export declare function ConnectorSyncRequestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSyncRequestResult;
-export declare function ConnectorSyncRequestResultToJSON(value?: ConnectorSyncRequestResult | null): any;
+export declare function ConnectorSyncRequestResultToJSON(json: any): ConnectorSyncRequestResult;
+export declare function ConnectorSyncRequestResultToJSONTyped(value?: ConnectorSyncRequestResult | null, ignoreDiscriminator?: boolean): any;

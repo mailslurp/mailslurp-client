@@ -12,45 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SmsReplyOptions
  */
 export interface SmsReplyOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof SmsReplyOptions
-   */
-  body: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsReplyOptions
+     */
+    body: string;
+}
+
+/**
+ * Check if a given object implements the SmsReplyOptions interface.
+ */
+export function instanceOfSmsReplyOptions(value: object): value is SmsReplyOptions {
+    if (!('body' in value) || value['body'] === undefined) return false;
+    return true;
 }
 
 export function SmsReplyOptionsFromJSON(json: any): SmsReplyOptions {
-  return SmsReplyOptionsFromJSONTyped(json, false);
+    return SmsReplyOptionsFromJSONTyped(json, false);
 }
 
-export function SmsReplyOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmsReplyOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    body: json['body'],
-  };
+export function SmsReplyOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsReplyOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'body': json['body'],
+    };
 }
 
-export function SmsReplyOptionsToJSON(value?: SmsReplyOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    body: value.body,
-  };
+export function SmsReplyOptionsToJSON(json: any): SmsReplyOptions {
+    return SmsReplyOptionsToJSONTyped(json, false);
 }
+
+export function SmsReplyOptionsToJSONTyped(value?: SmsReplyOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'body': value['body'],
+    };
+}
+

@@ -36,25 +36,30 @@ export interface MatchOption {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum MatchOptionFieldEnum {
-    SUBJECT = "SUBJECT",
-    TO = "TO",
-    BCC = "BCC",
-    CC = "CC",
-    FROM = "FROM",
-    HEADERS = "HEADERS"
-}
+export declare const MatchOptionFieldEnum: {
+    readonly SUBJECT: "SUBJECT";
+    readonly TO: "TO";
+    readonly BCC: "BCC";
+    readonly CC: "CC";
+    readonly FROM: "FROM";
+    readonly HEADERS: "HEADERS";
+};
+export type MatchOptionFieldEnum = typeof MatchOptionFieldEnum[keyof typeof MatchOptionFieldEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum MatchOptionShouldEnum {
-    MATCH = "MATCH",
-    CONTAIN = "CONTAIN",
-    EQUAL = "EQUAL"
-}
+export declare const MatchOptionShouldEnum: {
+    readonly MATCH: "MATCH";
+    readonly CONTAIN: "CONTAIN";
+    readonly EQUAL: "EQUAL";
+};
+export type MatchOptionShouldEnum = typeof MatchOptionShouldEnum[keyof typeof MatchOptionShouldEnum];
+/**
+ * Check if a given object implements the MatchOption interface.
+ */
+export declare function instanceOfMatchOption(value: object): value is MatchOption;
 export declare function MatchOptionFromJSON(json: any): MatchOption;
 export declare function MatchOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MatchOption;
-export declare function MatchOptionToJSON(value?: MatchOption | null): any;
+export declare function MatchOptionToJSON(json: any): MatchOption;
+export declare function MatchOptionToJSONTyped(value?: MatchOption | null, ignoreDiscriminator?: boolean): any;

@@ -13,59 +13,64 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageInboxProjectionToJSON = exports.PageInboxProjectionFromJSONTyped = exports.PageInboxProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfPageInboxProjection = instanceOfPageInboxProjection;
+exports.PageInboxProjectionFromJSON = PageInboxProjectionFromJSON;
+exports.PageInboxProjectionFromJSONTyped = PageInboxProjectionFromJSONTyped;
+exports.PageInboxProjectionToJSON = PageInboxProjectionToJSON;
+exports.PageInboxProjectionToJSONTyped = PageInboxProjectionToJSONTyped;
+var PageableObject_1 = require("./PageableObject");
+var InboxPreview_1 = require("./InboxPreview");
+var SortObject_1 = require("./SortObject");
+/**
+ * Check if a given object implements the PageInboxProjection interface.
+ */
+function instanceOfPageInboxProjection(value) {
+    if (!('totalPages' in value) || value['totalPages'] === undefined)
+        return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined)
+        return false;
+    return true;
+}
 function PageInboxProjectionFromJSON(json) {
     return PageInboxProjectionFromJSONTyped(json, false);
 }
-exports.PageInboxProjectionFromJSON = PageInboxProjectionFromJSON;
 function PageInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        content: !(0, runtime_1.exists)(json, 'content')
-            ? undefined
-            : json['content'].map(_1.InboxPreviewFromJSON),
-        pageable: !(0, runtime_1.exists)(json, 'pageable')
-            ? undefined
-            : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        totalPages: json['totalPages'],
-        totalElements: json['totalElements'],
-        last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
-            ? undefined
-            : json['numberOfElements'],
-        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
-        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
-        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
-        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        'content': json['content'] == null ? undefined : (json['content'].map(InboxPreview_1.InboxPreviewFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : (0, PageableObject_1.PageableObjectFromJSON)(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : (json['sort'].map(SortObject_1.SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
     };
 }
-exports.PageInboxProjectionFromJSONTyped = PageInboxProjectionFromJSONTyped;
-function PageInboxProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function PageInboxProjectionToJSON(json) {
+    return PageInboxProjectionToJSONTyped(json, false);
+}
+function PageInboxProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        content: value.content === undefined
-            ? undefined
-            : value.content.map(_1.InboxPreviewToJSON),
-        pageable: (0, _1.PageableObjectToJSON)(value.pageable),
-        totalPages: value.totalPages,
-        totalElements: value.totalElements,
-        last: value.last,
-        numberOfElements: value.numberOfElements,
-        first: value.first,
-        size: value.size,
-        number: value.number,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
-        empty: value.empty,
+        'content': value['content'] == null ? undefined : (value['content'].map(InboxPreview_1.InboxPreviewToJSON)),
+        'pageable': (0, PageableObject_1.PageableObjectToJSON)(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : (value['sort'].map(SortObject_1.SortObjectToJSON)),
+        'empty': value['empty'],
     };
 }
-exports.PageInboxProjectionToJSON = PageInboxProjectionToJSON;

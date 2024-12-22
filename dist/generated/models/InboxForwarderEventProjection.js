@@ -13,53 +13,63 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderEventProjectionToJSON = exports.InboxForwarderEventProjectionFromJSONTyped = exports.InboxForwarderEventProjectionFromJSON = exports.InboxForwarderEventProjectionStatusEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.InboxForwarderEventProjectionStatusEnum = void 0;
+exports.instanceOfInboxForwarderEventProjection = instanceOfInboxForwarderEventProjection;
+exports.InboxForwarderEventProjectionFromJSON = InboxForwarderEventProjectionFromJSON;
+exports.InboxForwarderEventProjectionFromJSONTyped = InboxForwarderEventProjectionFromJSONTyped;
+exports.InboxForwarderEventProjectionToJSON = InboxForwarderEventProjectionToJSON;
+exports.InboxForwarderEventProjectionToJSONTyped = InboxForwarderEventProjectionToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var InboxForwarderEventProjectionStatusEnum;
-(function (InboxForwarderEventProjectionStatusEnum) {
-    InboxForwarderEventProjectionStatusEnum["SUCCESS"] = "SUCCESS";
-    InboxForwarderEventProjectionStatusEnum["FAILURE"] = "FAILURE";
-})(InboxForwarderEventProjectionStatusEnum = exports.InboxForwarderEventProjectionStatusEnum || (exports.InboxForwarderEventProjectionStatusEnum = {}));
+exports.InboxForwarderEventProjectionStatusEnum = {
+    SUCCESS: 'SUCCESS',
+    FAILURE: 'FAILURE'
+};
+/**
+ * Check if a given object implements the InboxForwarderEventProjection interface.
+ */
+function instanceOfInboxForwarderEventProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function InboxForwarderEventProjectionFromJSON(json) {
     return InboxForwarderEventProjectionFromJSONTyped(json, false);
 }
-exports.InboxForwarderEventProjectionFromJSON = InboxForwarderEventProjectionFromJSON;
 function InboxForwarderEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        forwarderId: !(0, runtime_1.exists)(json, 'forwarderId') ? undefined : json['forwarderId'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
+        'createdAt': (new Date(json['createdAt'])),
+        'emailId': json['emailId'] == null ? undefined : json['emailId'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'sentId': json['sentId'] == null ? undefined : json['sentId'],
+        'forwarderId': json['forwarderId'] == null ? undefined : json['forwarderId'],
+        'message': json['message'] == null ? undefined : json['message'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'status': json['status'] == null ? undefined : json['status'],
     };
 }
-exports.InboxForwarderEventProjectionFromJSONTyped = InboxForwarderEventProjectionFromJSONTyped;
-function InboxForwarderEventProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxForwarderEventProjectionToJSON(json) {
+    return InboxForwarderEventProjectionToJSONTyped(json, false);
+}
+function InboxForwarderEventProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        emailId: value.emailId,
-        inboxId: value.inboxId,
-        userId: value.userId,
-        forwarderId: value.forwarderId,
-        message: value.message,
-        id: value.id,
-        status: value.status,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'emailId': value['emailId'],
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'sentId': value['sentId'],
+        'forwarderId': value['forwarderId'],
+        'message': value['message'],
+        'id': value['id'],
+        'status': value['status'],
     };
 }
-exports.InboxForwarderEventProjectionToJSON = InboxForwarderEventProjectionToJSON;

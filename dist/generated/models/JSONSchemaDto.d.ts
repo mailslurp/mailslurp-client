@@ -22,6 +22,11 @@ export interface JSONSchemaDto {
      */
     value: string;
 }
+/**
+ * Check if a given object implements the JSONSchemaDto interface.
+ */
+export declare function instanceOfJSONSchemaDto(value: object): value is JSONSchemaDto;
 export declare function JSONSchemaDtoFromJSON(json: any): JSONSchemaDto;
 export declare function JSONSchemaDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): JSONSchemaDto;
-export declare function JSONSchemaDtoToJSON(value?: JSONSchemaDto | null): any;
+export declare function JSONSchemaDtoToJSON(json: any): JSONSchemaDto;
+export declare function JSONSchemaDtoToJSONTyped(value?: JSONSchemaDto | null, ignoreDiscriminator?: boolean): any;

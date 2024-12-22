@@ -13,72 +13,74 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateWebhookOptionsToJSON = exports.CreateWebhookOptionsFromJSONTyped = exports.CreateWebhookOptionsFromJSON = exports.CreateWebhookOptionsEventNameEnum = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.CreateWebhookOptionsEventNameEnum = void 0;
+exports.instanceOfCreateWebhookOptions = instanceOfCreateWebhookOptions;
+exports.CreateWebhookOptionsFromJSON = CreateWebhookOptionsFromJSON;
+exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
+exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;
+exports.CreateWebhookOptionsToJSONTyped = CreateWebhookOptionsToJSONTyped;
+var WebhookHeaders_1 = require("./WebhookHeaders");
+var BasicAuthOptions_1 = require("./BasicAuthOptions");
 /**
  * @export
- * @enum {string}
  */
-var CreateWebhookOptionsEventNameEnum;
-(function (CreateWebhookOptionsEventNameEnum) {
-    CreateWebhookOptionsEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
-    CreateWebhookOptionsEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
-    CreateWebhookOptionsEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
-    CreateWebhookOptionsEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
-    CreateWebhookOptionsEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
-    CreateWebhookOptionsEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-    CreateWebhookOptionsEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
-    CreateWebhookOptionsEventNameEnum["BOUNCE"] = "BOUNCE";
-    CreateWebhookOptionsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
-    CreateWebhookOptionsEventNameEnum["NEW_SMS"] = "NEW_SMS";
-})(CreateWebhookOptionsEventNameEnum = exports.CreateWebhookOptionsEventNameEnum || (exports.CreateWebhookOptionsEventNameEnum = {}));
+exports.CreateWebhookOptionsEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+};
+/**
+ * Check if a given object implements the CreateWebhookOptions interface.
+ */
+function instanceOfCreateWebhookOptions(value) {
+    if (!('url' in value) || value['url'] === undefined)
+        return false;
+    return true;
+}
 function CreateWebhookOptionsFromJSON(json) {
     return CreateWebhookOptionsFromJSONTyped(json, false);
 }
-exports.CreateWebhookOptionsFromJSON = CreateWebhookOptionsFromJSON;
 function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        url: json['url'],
-        basicAuth: !(0, runtime_1.exists)(json, 'basicAuth')
-            ? undefined
-            : (0, _1.BasicAuthOptionsFromJSON)(json['basicAuth']),
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        includeHeaders: !(0, runtime_1.exists)(json, 'includeHeaders')
-            ? undefined
-            : (0, _1.WebhookHeadersFromJSON)(json['includeHeaders']),
-        requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
-            ? undefined
-            : json['requestBodyTemplate'],
-        useStaticIpRange: !(0, runtime_1.exists)(json, 'useStaticIpRange')
-            ? undefined
-            : json['useStaticIpRange'],
-        ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
-            ? undefined
-            : json['ignoreInsecureSslCertificates'],
+        'url': json['url'],
+        'basicAuth': json['basicAuth'] == null ? undefined : (0, BasicAuthOptions_1.BasicAuthOptionsFromJSON)(json['basicAuth']),
+        'name': json['name'] == null ? undefined : json['name'],
+        'eventName': json['eventName'] == null ? undefined : json['eventName'],
+        'includeHeaders': json['includeHeaders'] == null ? undefined : (0, WebhookHeaders_1.WebhookHeadersFromJSON)(json['includeHeaders']),
+        'requestBodyTemplate': json['requestBodyTemplate'] == null ? undefined : json['requestBodyTemplate'],
+        'useStaticIpRange': json['useStaticIpRange'] == null ? undefined : json['useStaticIpRange'],
+        'ignoreInsecureSslCertificates': json['ignoreInsecureSslCertificates'] == null ? undefined : json['ignoreInsecureSslCertificates'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
     };
 }
-exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
-function CreateWebhookOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateWebhookOptionsToJSON(json) {
+    return CreateWebhookOptionsToJSONTyped(json, false);
+}
+function CreateWebhookOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        url: value.url,
-        basicAuth: (0, _1.BasicAuthOptionsToJSON)(value.basicAuth),
-        name: value.name,
-        eventName: value.eventName,
-        includeHeaders: (0, _1.WebhookHeadersToJSON)(value.includeHeaders),
-        requestBodyTemplate: value.requestBodyTemplate,
-        useStaticIpRange: value.useStaticIpRange,
-        ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
+        'url': value['url'],
+        'basicAuth': (0, BasicAuthOptions_1.BasicAuthOptionsToJSON)(value['basicAuth']),
+        'name': value['name'],
+        'eventName': value['eventName'],
+        'includeHeaders': (0, WebhookHeaders_1.WebhookHeadersToJSON)(value['includeHeaders']),
+        'requestBodyTemplate': value['requestBodyTemplate'],
+        'useStaticIpRange': value['useStaticIpRange'],
+        'ignoreInsecureSslCertificates': value['ignoreInsecureSslCertificates'],
+        'tags': value['tags'],
     };
 }
-exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;

@@ -13,47 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDomainOptionsToJSON = exports.CreateDomainOptionsFromJSONTyped = exports.CreateDomainOptionsFromJSON = exports.CreateDomainOptionsDomainTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.CreateDomainOptionsDomainTypeEnum = void 0;
+exports.instanceOfCreateDomainOptions = instanceOfCreateDomainOptions;
+exports.CreateDomainOptionsFromJSON = CreateDomainOptionsFromJSON;
+exports.CreateDomainOptionsFromJSONTyped = CreateDomainOptionsFromJSONTyped;
+exports.CreateDomainOptionsToJSON = CreateDomainOptionsToJSON;
+exports.CreateDomainOptionsToJSONTyped = CreateDomainOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var CreateDomainOptionsDomainTypeEnum;
-(function (CreateDomainOptionsDomainTypeEnum) {
-    CreateDomainOptionsDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    CreateDomainOptionsDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(CreateDomainOptionsDomainTypeEnum = exports.CreateDomainOptionsDomainTypeEnum || (exports.CreateDomainOptionsDomainTypeEnum = {}));
+exports.CreateDomainOptionsDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+};
+/**
+ * Check if a given object implements the CreateDomainOptions interface.
+ */
+function instanceOfCreateDomainOptions(value) {
+    if (!('domain' in value) || value['domain'] === undefined)
+        return false;
+    return true;
+}
 function CreateDomainOptionsFromJSON(json) {
     return CreateDomainOptionsFromJSONTyped(json, false);
 }
-exports.CreateDomainOptionsFromJSON = CreateDomainOptionsFromJSON;
 function CreateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        domain: json['domain'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        createdCatchAllInbox: !(0, runtime_1.exists)(json, 'createdCatchAllInbox')
-            ? undefined
-            : json['createdCatchAllInbox'],
-        domainType: !(0, runtime_1.exists)(json, 'domainType') ? undefined : json['domainType'],
+        'domain': json['domain'],
+        'description': json['description'] == null ? undefined : json['description'],
+        'createdCatchAllInbox': json['createdCatchAllInbox'] == null ? undefined : json['createdCatchAllInbox'],
+        'domainType': json['domainType'] == null ? undefined : json['domainType'],
     };
 }
-exports.CreateDomainOptionsFromJSONTyped = CreateDomainOptionsFromJSONTyped;
-function CreateDomainOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateDomainOptionsToJSON(json) {
+    return CreateDomainOptionsToJSONTyped(json, false);
+}
+function CreateDomainOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        domain: value.domain,
-        description: value.description,
-        createdCatchAllInbox: value.createdCatchAllInbox,
-        domainType: value.domainType,
+        'domain': value['domain'],
+        'description': value['description'],
+        'createdCatchAllInbox': value['createdCatchAllInbox'],
+        'domainType': value['domainType'],
     };
 }
-exports.CreateDomainOptionsToJSON = CreateDomainOptionsToJSON;

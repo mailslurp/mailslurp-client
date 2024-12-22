@@ -13,32 +13,44 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidationDtoToJSON = exports.ValidationDtoFromJSONTyped = exports.ValidationDtoFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfValidationDto = instanceOfValidationDto;
+exports.ValidationDtoFromJSON = ValidationDtoFromJSON;
+exports.ValidationDtoFromJSONTyped = ValidationDtoFromJSONTyped;
+exports.ValidationDtoToJSON = ValidationDtoToJSON;
+exports.ValidationDtoToJSONTyped = ValidationDtoToJSONTyped;
+var HTMLValidationResult_1 = require("./HTMLValidationResult");
+/**
+ * Check if a given object implements the ValidationDto interface.
+ */
+function instanceOfValidationDto(value) {
+    if (!('emailId' in value) || value['emailId'] === undefined)
+        return false;
+    if (!('html' in value) || value['html'] === undefined)
+        return false;
+    return true;
+}
 function ValidationDtoFromJSON(json) {
     return ValidationDtoFromJSONTyped(json, false);
 }
-exports.ValidationDtoFromJSON = ValidationDtoFromJSON;
 function ValidationDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        emailId: json['emailId'],
-        html: (0, _1.HTMLValidationResultFromJSON)(json['html']),
+        'emailId': json['emailId'],
+        'html': (0, HTMLValidationResult_1.HTMLValidationResultFromJSON)(json['html']),
     };
 }
-exports.ValidationDtoFromJSONTyped = ValidationDtoFromJSONTyped;
-function ValidationDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ValidationDtoToJSON(json) {
+    return ValidationDtoToJSONTyped(json, false);
+}
+function ValidationDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        emailId: value.emailId,
-        html: (0, _1.HTMLValidationResultToJSON)(value.html),
+        'emailId': value['emailId'],
+        'html': (0, HTMLValidationResult_1.HTMLValidationResultToJSON)(value['html']),
     };
 }
-exports.ValidationDtoToJSON = ValidationDtoToJSON;

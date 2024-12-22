@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { EmailProjection } from './EmailProjection';
 /**
  * Paginated email projection results. EmailProjections and EmailPreviews are essentially the same but have legacy naming issues. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full email entity use the projection ID with individual method calls. For emails there are several methods for fetching message bodies and attachments.
  * @export
@@ -72,10 +74,10 @@ export interface PageEmailProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageEmailProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageEmailProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageEmailProjection interface.
+ */
+export declare function instanceOfPageEmailProjection(value: object): value is PageEmailProjection;
 export declare function PageEmailProjectionFromJSON(json: any): PageEmailProjection;
 export declare function PageEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageEmailProjection;
-export declare function PageEmailProjectionToJSON(value?: PageEmailProjection | null): any;
+export declare function PageEmailProjectionToJSON(json: any): PageEmailProjection;
+export declare function PageEmailProjectionToJSONTyped(value?: PageEmailProjection | null, ignoreDiscriminator?: boolean): any;

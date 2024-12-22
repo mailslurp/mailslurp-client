@@ -7,9 +7,16 @@
 ### Properties
 
 - [searchEmailsOptions](SearchEmailsRequest.md#searchemailsoptions)
+- [syncConnectors](SearchEmailsRequest.md#syncconnectors)
 
 ## Properties
 
 ### searchEmailsOptions
 
 • **searchEmailsOptions**: [`SearchEmailsOptions`](SearchEmailsOptions.md)
+
+___
+
+### syncConnectors
+
+• `Optional` **syncConnectors**: `boolean`

@@ -13,15 +13,11 @@ ConnectorDto
 ### Properties
 
 - [createdAt](ConnectorDto.md#createdat)
+- [emailAddress](ConnectorDto.md#emailaddress)
 - [enabled](ConnectorDto.md#enabled)
-- [hasImapConnection](ConnectorDto.md#hasimapconnection)
-- [hasSmtpConnection](ConnectorDto.md#hassmtpconnection)
 - [id](ConnectorDto.md#id)
 - [inboxId](ConnectorDto.md#inboxid)
 - [name](ConnectorDto.md#name)
-- [syncEnabled](ConnectorDto.md#syncenabled)
-- [syncInterval](ConnectorDto.md#syncinterval)
-- [syncScheduleType](ConnectorDto.md#syncscheduletype)
 - [userId](ConnectorDto.md#userid)
 
 ## Properties
@@ -36,29 +32,19 @@ ConnectorDto
 
 ___
 
+### emailAddress
+
+• `Optional` **emailAddress**: `string`
+
+**`Memberof`**
+
+ConnectorDto
+
+___
+
 ### enabled
 
 • **enabled**: `boolean`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### hasImapConnection
-
-• **hasImapConnection**: `boolean`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### hasSmtpConnection
-
-• **hasSmtpConnection**: `boolean`
 
 **`Memberof`**
 
@@ -89,36 +75,6 @@ ___
 ### name
 
 • `Optional` **name**: `string`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### syncEnabled
-
-• **syncEnabled**: `boolean`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### syncInterval
-
-• `Optional` **syncInterval**: `number`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### syncScheduleType
-
-• `Optional` **syncScheduleType**: [`INTERVAL`](../enums/ConnectorDtoSyncScheduleTypeEnum.md#interval)
 
 **`Memberof`**
 

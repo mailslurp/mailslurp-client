@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnseenErrorCountDtoToJSON = exports.UnseenErrorCountDtoFromJSONTyped = exports.UnseenErrorCountDtoFromJSON = void 0;
+exports.instanceOfUnseenErrorCountDto = instanceOfUnseenErrorCountDto;
+exports.UnseenErrorCountDtoFromJSON = UnseenErrorCountDtoFromJSON;
+exports.UnseenErrorCountDtoFromJSONTyped = UnseenErrorCountDtoFromJSONTyped;
+exports.UnseenErrorCountDtoToJSON = UnseenErrorCountDtoToJSON;
+exports.UnseenErrorCountDtoToJSONTyped = UnseenErrorCountDtoToJSONTyped;
+/**
+ * Check if a given object implements the UnseenErrorCountDto interface.
+ */
+function instanceOfUnseenErrorCountDto(value) {
+    if (!('count' in value) || value['count'] === undefined)
+        return false;
+    return true;
+}
 function UnseenErrorCountDtoFromJSON(json) {
     return UnseenErrorCountDtoFromJSONTyped(json, false);
 }
-exports.UnseenErrorCountDtoFromJSON = UnseenErrorCountDtoFromJSON;
 function UnseenErrorCountDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        count: json['count'],
+        'count': json['count'],
     };
 }
-exports.UnseenErrorCountDtoFromJSONTyped = UnseenErrorCountDtoFromJSONTyped;
-function UnseenErrorCountDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UnseenErrorCountDtoToJSON(json) {
+    return UnseenErrorCountDtoToJSONTyped(json, false);
+}
+function UnseenErrorCountDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        count: value.count,
+        'count': value['count'],
     };
 }
-exports.UnseenErrorCountDtoToJSON = UnseenErrorCountDtoToJSON;

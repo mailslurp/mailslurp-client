@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ContactProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { ContactProjection } from './ContactProjection';
+import type { SortObject } from './SortObject';
 /**
  * Paginated contact results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageContactProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageContactProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageContactProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageContactProjection interface.
+ */
+export declare function instanceOfPageContactProjection(value: object): value is PageContactProjection;
 export declare function PageContactProjectionFromJSON(json: any): PageContactProjection;
 export declare function PageContactProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageContactProjection;
-export declare function PageContactProjectionToJSON(value?: PageContactProjection | null): any;
+export declare function PageContactProjectionToJSON(json: any): PageContactProjection;
+export declare function PageContactProjectionToJSONTyped(value?: PageContactProjection | null, ignoreDiscriminator?: boolean): any;

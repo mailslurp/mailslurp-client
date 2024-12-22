@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailRecipients, Sender } from './';
+import type { Sender } from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
 /**
  *
  * @export
@@ -42,6 +43,12 @@ export interface FakeEmailDto {
     recipients?: EmailRecipients | null;
     /**
      *
+     * @type {Array<string>}
+     * @memberof FakeEmailDto
+     */
+    attachmentNames: Array<string>;
+    /**
+     *
      * @type {string}
      * @memberof FakeEmailDto
      */
@@ -70,7 +77,24 @@ export interface FakeEmailDto {
      * @memberof FakeEmailDto
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    contentType: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FakeEmailDto
+     */
+    bodyUrl: string;
 }
+/**
+ * Check if a given object implements the FakeEmailDto interface.
+ */
+export declare function instanceOfFakeEmailDto(value: object): value is FakeEmailDto;
 export declare function FakeEmailDtoFromJSON(json: any): FakeEmailDto;
 export declare function FakeEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailDto;
-export declare function FakeEmailDtoToJSON(value?: FakeEmailDto | null): any;
+export declare function FakeEmailDtoToJSON(json: any): FakeEmailDto;
+export declare function FakeEmailDtoToJSONTyped(value?: FakeEmailDto | null, ignoreDiscriminator?: boolean): any;

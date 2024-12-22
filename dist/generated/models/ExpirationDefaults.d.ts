@@ -46,6 +46,11 @@ export interface ExpirationDefaults {
      */
     nextInboxAllowsPermanent: boolean;
 }
+/**
+ * Check if a given object implements the ExpirationDefaults interface.
+ */
+export declare function instanceOfExpirationDefaults(value: object): value is ExpirationDefaults;
 export declare function ExpirationDefaultsFromJSON(json: any): ExpirationDefaults;
 export declare function ExpirationDefaultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpirationDefaults;
-export declare function ExpirationDefaultsToJSON(value?: ExpirationDefaults | null): any;
+export declare function ExpirationDefaultsToJSON(json: any): ExpirationDefaults;
+export declare function ExpirationDefaultsToJSONTyped(value?: ExpirationDefaults | null, ignoreDiscriminator?: boolean): any;

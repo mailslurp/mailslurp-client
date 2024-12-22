@@ -35,17 +35,17 @@ export interface ReplyToAliasEmailOptions {
     charset?: string | null;
     /**
      * List of uploaded attachments to send with the reply. Optional.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ReplyToAliasEmailOptions
      */
-    attachments?: Array<string> | null;
+    attachments?: Array<string | null> | null;
     /**
      * Template variables if using a template
-     * @type {{ [key: string]: object; }}
+     * @type {{ [key: string]: object | null; }}
      * @memberof ReplyToAliasEmailOptions
      */
     templateVariables?: {
-        [key: string]: object;
+        [key: string]: object | null;
     } | null;
     /**
      * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
@@ -58,14 +58,14 @@ export interface ReplyToAliasEmailOptions {
      * @type {string}
      * @memberof ReplyToAliasEmailOptions
      */
-    sendStrategy?: ReplyToAliasEmailOptionsSendStrategyEnum;
+    sendStrategy?: ReplyToAliasEmailOptionsSendStrategyEnum | null;
     /**
      * Optional custom headers
-     * @type {{ [key: string]: string; }}
+     * @type {{ [key: string]: string | null; }}
      * @memberof ReplyToAliasEmailOptions
      */
     customHeaders?: {
-        [key: string]: string;
+        [key: string]: string | null;
     } | null;
     /**
      * Optionally use inbox name as display name for sender email address
@@ -82,11 +82,16 @@ export interface ReplyToAliasEmailOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ReplyToAliasEmailOptionsSendStrategyEnum {
-    SINGLE_MESSAGE = "SINGLE_MESSAGE"
-}
+export declare const ReplyToAliasEmailOptionsSendStrategyEnum: {
+    readonly SINGLE_MESSAGE: "SINGLE_MESSAGE";
+};
+export type ReplyToAliasEmailOptionsSendStrategyEnum = typeof ReplyToAliasEmailOptionsSendStrategyEnum[keyof typeof ReplyToAliasEmailOptionsSendStrategyEnum];
+/**
+ * Check if a given object implements the ReplyToAliasEmailOptions interface.
+ */
+export declare function instanceOfReplyToAliasEmailOptions(value: object): value is ReplyToAliasEmailOptions;
 export declare function ReplyToAliasEmailOptionsFromJSON(json: any): ReplyToAliasEmailOptions;
 export declare function ReplyToAliasEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyToAliasEmailOptions;
-export declare function ReplyToAliasEmailOptionsToJSON(value?: ReplyToAliasEmailOptions | null): any;
+export declare function ReplyToAliasEmailOptionsToJSON(json: any): ReplyToAliasEmailOptions;
+export declare function ReplyToAliasEmailOptionsToJSONTyped(value?: ReplyToAliasEmailOptions | null, ignoreDiscriminator?: boolean): any;

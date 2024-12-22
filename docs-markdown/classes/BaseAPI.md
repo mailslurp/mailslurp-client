@@ -36,6 +36,8 @@ This is the base class for all generated API classes.
 
   ↳ [`GroupControllerApi`](GroupControllerApi.md)
 
+  ↳ [`GuestPortalControllerApi`](GuestPortalControllerApi.md)
+
   ↳ [`ImapControllerApi`](ImapControllerApi.md)
 
   ↳ [`InboxControllerApi`](InboxControllerApi.md)

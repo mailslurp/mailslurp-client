@@ -13,38 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapEmailProjectionToJSON = exports.ImapEmailProjectionFromJSONTyped = exports.ImapEmailProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfImapEmailProjection = instanceOfImapEmailProjection;
+exports.ImapEmailProjectionFromJSON = ImapEmailProjectionFromJSON;
+exports.ImapEmailProjectionFromJSONTyped = ImapEmailProjectionFromJSONTyped;
+exports.ImapEmailProjectionToJSON = ImapEmailProjectionToJSON;
+exports.ImapEmailProjectionToJSONTyped = ImapEmailProjectionToJSONTyped;
+/**
+ * Check if a given object implements the ImapEmailProjection interface.
+ */
+function instanceOfImapEmailProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('uid' in value) || value['uid'] === undefined)
+        return false;
+    if (!('seqNum' in value) || value['seqNum'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function ImapEmailProjectionFromJSON(json) {
     return ImapEmailProjectionFromJSONTyped(json, false);
 }
-exports.ImapEmailProjectionFromJSON = ImapEmailProjectionFromJSON;
 function ImapEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        read: !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
-        uid: json['uid'],
-        seqNum: json['seqNum'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'read': json['read'] == null ? undefined : json['read'],
+        'uid': json['uid'],
+        'seqNum': json['seqNum'],
+        'id': json['id'],
     };
 }
-exports.ImapEmailProjectionFromJSONTyped = ImapEmailProjectionFromJSONTyped;
-function ImapEmailProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapEmailProjectionToJSON(json) {
+    return ImapEmailProjectionToJSONTyped(json, false);
+}
+function ImapEmailProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        read: value.read,
-        uid: value.uid,
-        seqNum: value.seqNum,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'read': value['read'],
+        'uid': value['uid'],
+        'seqNum': value['seqNum'],
+        'id': value['id'],
     };
 }
-exports.ImapEmailProjectionToJSON = ImapEmailProjectionToJSON;

@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailFeatureVersionStatistics } from './';
+import type { EmailFeatureVersionStatistics } from './EmailFeatureVersionStatistics';
 /**
  *
  * @export
@@ -31,20 +31,25 @@ export interface EmailFeaturePlatformStatistics {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum EmailFeaturePlatformStatisticsPlatformEnum {
-    android = "android",
-    desktop_app = "desktop-app",
-    desktop_webmail = "desktop-webmail",
-    ios = "ios",
-    macos = "macos",
-    mobile_webmail = "mobile-webmail",
-    outlook_com = "outlook-com",
-    webmail = "webmail",
-    windows = "windows",
-    windows_mail = "windows-mail"
-}
+export declare const EmailFeaturePlatformStatisticsPlatformEnum: {
+    readonly android: "android";
+    readonly desktop_app: "desktop-app";
+    readonly desktop_webmail: "desktop-webmail";
+    readonly ios: "ios";
+    readonly macos: "macos";
+    readonly mobile_webmail: "mobile-webmail";
+    readonly outlook_com: "outlook-com";
+    readonly webmail: "webmail";
+    readonly windows: "windows";
+    readonly windows_mail: "windows-mail";
+};
+export type EmailFeaturePlatformStatisticsPlatformEnum = typeof EmailFeaturePlatformStatisticsPlatformEnum[keyof typeof EmailFeaturePlatformStatisticsPlatformEnum];
+/**
+ * Check if a given object implements the EmailFeaturePlatformStatistics interface.
+ */
+export declare function instanceOfEmailFeaturePlatformStatistics(value: object): value is EmailFeaturePlatformStatistics;
 export declare function EmailFeaturePlatformStatisticsFromJSON(json: any): EmailFeaturePlatformStatistics;
 export declare function EmailFeaturePlatformStatisticsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeaturePlatformStatistics;
-export declare function EmailFeaturePlatformStatisticsToJSON(value?: EmailFeaturePlatformStatistics | null): any;
+export declare function EmailFeaturePlatformStatisticsToJSON(json: any): EmailFeaturePlatformStatistics;
+export declare function EmailFeaturePlatformStatisticsToJSONTyped(value?: EmailFeaturePlatformStatistics | null, ignoreDiscriminator?: boolean): any;

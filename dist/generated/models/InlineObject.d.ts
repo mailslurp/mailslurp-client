@@ -16,12 +16,6 @@
  */
 export interface InlineObject {
     /**
-     * Optional content type header of attachment
-     * @type {string}
-     * @memberof InlineObject
-     */
-    contentTypeHeader?: string;
-    /**
      *
      * @type {Blob}
      * @memberof InlineObject

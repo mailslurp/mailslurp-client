@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RawEmailJsonToJSON = exports.RawEmailJsonFromJSONTyped = exports.RawEmailJsonFromJSON = void 0;
+exports.instanceOfRawEmailJson = instanceOfRawEmailJson;
+exports.RawEmailJsonFromJSON = RawEmailJsonFromJSON;
+exports.RawEmailJsonFromJSONTyped = RawEmailJsonFromJSONTyped;
+exports.RawEmailJsonToJSON = RawEmailJsonToJSON;
+exports.RawEmailJsonToJSONTyped = RawEmailJsonToJSONTyped;
+/**
+ * Check if a given object implements the RawEmailJson interface.
+ */
+function instanceOfRawEmailJson(value) {
+    if (!('content' in value) || value['content'] === undefined)
+        return false;
+    return true;
+}
 function RawEmailJsonFromJSON(json) {
     return RawEmailJsonFromJSONTyped(json, false);
 }
-exports.RawEmailJsonFromJSON = RawEmailJsonFromJSON;
 function RawEmailJsonFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        content: json['content'],
+        'content': json['content'],
     };
 }
-exports.RawEmailJsonFromJSONTyped = RawEmailJsonFromJSONTyped;
-function RawEmailJsonToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function RawEmailJsonToJSON(json) {
+    return RawEmailJsonToJSONTyped(json, false);
+}
+function RawEmailJsonToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        content: value.content,
+        'content': value['content'],
     };
 }
-exports.RawEmailJsonToJSON = RawEmailJsonToJSON;

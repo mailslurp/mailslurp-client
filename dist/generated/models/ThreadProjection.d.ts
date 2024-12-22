@@ -16,29 +16,17 @@
  */
 export interface ThreadProjection {
     /**
-     * Created at DateTime
-     * @type {Date}
+     * User ID
+     * @type {string}
      * @memberof ThreadProjection
      */
-    createdAt: Date;
-    /**
-     * Updated at DateTime
-     * @type {Date}
-     * @memberof ThreadProjection
-     */
-    updatedAt: Date;
+    userId: string;
     /**
      * Inbox ID
      * @type {string}
      * @memberof ThreadProjection
      */
     inboxId: string;
-    /**
-     * User ID
-     * @type {string}
-     * @memberof ThreadProjection
-     */
-    userId: string;
     /**
      * To recipients
      * @type {Array<string>}
@@ -63,6 +51,18 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     aliasId: string;
+    /**
+     * Created at DateTime
+     * @type {Date}
+     * @memberof ThreadProjection
+     */
+    createdAt: Date;
+    /**
+     * Updated at DateTime
+     * @type {Date}
+     * @memberof ThreadProjection
+     */
+    updatedAt: Date;
     /**
      * Thread subject
      * @type {string}

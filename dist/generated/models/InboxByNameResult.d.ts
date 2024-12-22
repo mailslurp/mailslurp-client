@@ -28,6 +28,11 @@ export interface InboxByNameResult {
      */
     _exists: boolean;
 }
+/**
+ * Check if a given object implements the InboxByNameResult interface.
+ */
+export declare function instanceOfInboxByNameResult(value: object): value is InboxByNameResult;
 export declare function InboxByNameResultFromJSON(json: any): InboxByNameResult;
 export declare function InboxByNameResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxByNameResult;
-export declare function InboxByNameResultToJSON(value?: InboxByNameResult | null): any;
+export declare function InboxByNameResultToJSON(json: any): InboxByNameResult;
+export declare function InboxByNameResultToJSONTyped(value?: InboxByNameResult | null, ignoreDiscriminator?: boolean): any;

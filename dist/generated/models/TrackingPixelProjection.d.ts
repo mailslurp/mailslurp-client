@@ -70,6 +70,11 @@ export interface TrackingPixelProjection {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the TrackingPixelProjection interface.
+ */
+export declare function instanceOfTrackingPixelProjection(value: object): value is TrackingPixelProjection;
 export declare function TrackingPixelProjectionFromJSON(json: any): TrackingPixelProjection;
 export declare function TrackingPixelProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackingPixelProjection;
-export declare function TrackingPixelProjectionToJSON(value?: TrackingPixelProjection | null): any;
+export declare function TrackingPixelProjectionToJSON(json: any): TrackingPixelProjection;
+export declare function TrackingPixelProjectionToJSONTyped(value?: TrackingPixelProjection | null, ignoreDiscriminator?: boolean): any;

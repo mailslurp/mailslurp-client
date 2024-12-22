@@ -40,6 +40,11 @@ export interface UploadAttachmentOptions {
      */
     base64Contents: string;
 }
+/**
+ * Check if a given object implements the UploadAttachmentOptions interface.
+ */
+export declare function instanceOfUploadAttachmentOptions(value: object): value is UploadAttachmentOptions;
 export declare function UploadAttachmentOptionsFromJSON(json: any): UploadAttachmentOptions;
 export declare function UploadAttachmentOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UploadAttachmentOptions;
-export declare function UploadAttachmentOptionsToJSON(value?: UploadAttachmentOptions | null): any;
+export declare function UploadAttachmentOptionsToJSON(json: any): UploadAttachmentOptions;
+export declare function UploadAttachmentOptionsToJSONTyped(value?: UploadAttachmentOptions | null, ignoreDiscriminator?: boolean): any;

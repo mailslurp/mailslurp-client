@@ -12,137 +12,107 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ConnectorDto
  */
 export interface ConnectorDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorDto
-   */
-  enabled: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorDto
-   */
-  syncEnabled: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  syncScheduleType?: ConnectorDtoSyncScheduleTypeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorDto
-   */
-  syncInterval?: number | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorDto
-   */
-  hasImapConnection: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorDto
-   */
-  hasSmtpConnection: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorDto
+     */
+    enabled: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    emailAddress?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ConnectorDto
+     */
+    createdAt: Date;
 }
 
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the ConnectorDto interface.
  */
-export enum ConnectorDtoSyncScheduleTypeEnum {
-  INTERVAL = 'INTERVAL',
+export function instanceOfConnectorDto(value: object): value is ConnectorDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('enabled' in value) || value['enabled'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function ConnectorDtoFromJSON(json: any): ConnectorDto {
-  return ConnectorDtoFromJSONTyped(json, false);
+    return ConnectorDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    enabled: json['enabled'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    syncEnabled: json['syncEnabled'],
-    syncScheduleType: !exists(json, 'syncScheduleType')
-      ? undefined
-      : json['syncScheduleType'],
-    syncInterval: !exists(json, 'syncInterval')
-      ? undefined
-      : json['syncInterval'],
-    hasImapConnection: json['hasImapConnection'],
-    hasSmtpConnection: json['hasSmtpConnection'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function ConnectorDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'enabled': json['enabled'],
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function ConnectorDtoToJSON(value?: ConnectorDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    name: value.name,
-    enabled: value.enabled,
-    userId: value.userId,
-    inboxId: value.inboxId,
-    syncEnabled: value.syncEnabled,
-    syncScheduleType: value.syncScheduleType,
-    syncInterval: value.syncInterval,
-    hasImapConnection: value.hasImapConnection,
-    hasSmtpConnection: value.hasSmtpConnection,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function ConnectorDtoToJSON(json: any): ConnectorDto {
+    return ConnectorDtoToJSONTyped(json, false);
 }
+
+export function ConnectorDtoToJSONTyped(value?: ConnectorDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'name': value['name'],
+        'enabled': value['enabled'],
+        'emailAddress': value['emailAddress'],
+        'userId': value['userId'],
+        'inboxId': value['inboxId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

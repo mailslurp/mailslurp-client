@@ -13,35 +13,51 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ServerEndpointsToJSON = exports.ServerEndpointsFromJSONTyped = exports.ServerEndpointsFromJSON = void 0;
+exports.instanceOfServerEndpoints = instanceOfServerEndpoints;
+exports.ServerEndpointsFromJSON = ServerEndpointsFromJSON;
+exports.ServerEndpointsFromJSONTyped = ServerEndpointsFromJSONTyped;
+exports.ServerEndpointsToJSON = ServerEndpointsToJSON;
+exports.ServerEndpointsToJSONTyped = ServerEndpointsToJSONTyped;
+/**
+ * Check if a given object implements the ServerEndpoints interface.
+ */
+function instanceOfServerEndpoints(value) {
+    if (!('host' in value) || value['host'] === undefined)
+        return false;
+    if (!('port' in value) || value['port'] === undefined)
+        return false;
+    if (!('tls' in value) || value['tls'] === undefined)
+        return false;
+    if (!('altPorts' in value) || value['altPorts'] === undefined)
+        return false;
+    return true;
+}
 function ServerEndpointsFromJSON(json) {
     return ServerEndpointsFromJSONTyped(json, false);
 }
-exports.ServerEndpointsFromJSON = ServerEndpointsFromJSON;
 function ServerEndpointsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        host: json['host'],
-        port: json['port'],
-        tls: json['tls'],
-        altPorts: json['altPorts'],
+        'host': json['host'],
+        'port': json['port'],
+        'tls': json['tls'],
+        'altPorts': json['altPorts'],
     };
 }
-exports.ServerEndpointsFromJSONTyped = ServerEndpointsFromJSONTyped;
-function ServerEndpointsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ServerEndpointsToJSON(json) {
+    return ServerEndpointsToJSONTyped(json, false);
+}
+function ServerEndpointsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        host: value.host,
-        port: value.port,
-        tls: value.tls,
-        altPorts: value.altPorts,
+        'host': value['host'],
+        'port': value['port'],
+        'tls': value['tls'],
+        'altPorts': value['altPorts'],
     };
 }
-exports.ServerEndpointsToJSON = ServerEndpointsToJSON;

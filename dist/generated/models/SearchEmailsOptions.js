@@ -13,57 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SearchEmailsOptionsToJSON = exports.SearchEmailsOptionsFromJSONTyped = exports.SearchEmailsOptionsFromJSON = exports.SearchEmailsOptionsSortDirectionEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.SearchEmailsOptionsSortDirectionEnum = void 0;
+exports.instanceOfSearchEmailsOptions = instanceOfSearchEmailsOptions;
+exports.SearchEmailsOptionsFromJSON = SearchEmailsOptionsFromJSON;
+exports.SearchEmailsOptionsFromJSONTyped = SearchEmailsOptionsFromJSONTyped;
+exports.SearchEmailsOptionsToJSON = SearchEmailsOptionsToJSON;
+exports.SearchEmailsOptionsToJSONTyped = SearchEmailsOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var SearchEmailsOptionsSortDirectionEnum;
-(function (SearchEmailsOptionsSortDirectionEnum) {
-    SearchEmailsOptionsSortDirectionEnum["ASC"] = "ASC";
-    SearchEmailsOptionsSortDirectionEnum["DESC"] = "DESC";
-})(SearchEmailsOptionsSortDirectionEnum = exports.SearchEmailsOptionsSortDirectionEnum || (exports.SearchEmailsOptionsSortDirectionEnum = {}));
+exports.SearchEmailsOptionsSortDirectionEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * Check if a given object implements the SearchEmailsOptions interface.
+ */
+function instanceOfSearchEmailsOptions(value) {
+    return true;
+}
 function SearchEmailsOptionsFromJSON(json) {
     return SearchEmailsOptionsFromJSONTyped(json, false);
 }
-exports.SearchEmailsOptionsFromJSON = SearchEmailsOptionsFromJSON;
 function SearchEmailsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxIds: !(0, runtime_1.exists)(json, 'inboxIds') ? undefined : json['inboxIds'],
-        pageIndex: !(0, runtime_1.exists)(json, 'pageIndex') ? undefined : json['pageIndex'],
-        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
-        sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
-            ? undefined
-            : json['sortDirection'],
-        unreadOnly: !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
-        searchFilter: !(0, runtime_1.exists)(json, 'searchFilter')
-            ? undefined
-            : json['searchFilter'],
-        since: !(0, runtime_1.exists)(json, 'since') ? undefined : new Date(json['since']),
-        before: !(0, runtime_1.exists)(json, 'before') ? undefined : new Date(json['before']),
+        'inboxIds': json['inboxIds'] == null ? undefined : json['inboxIds'],
+        'pageIndex': json['pageIndex'] == null ? undefined : json['pageIndex'],
+        'pageSize': json['pageSize'] == null ? undefined : json['pageSize'],
+        'sortDirection': json['sortDirection'] == null ? undefined : json['sortDirection'],
+        'unreadOnly': json['unreadOnly'] == null ? undefined : json['unreadOnly'],
+        'searchFilter': json['searchFilter'] == null ? undefined : json['searchFilter'],
+        'since': json['since'] == null ? undefined : (new Date(json['since'])),
+        'before': json['before'] == null ? undefined : (new Date(json['before'])),
     };
 }
-exports.SearchEmailsOptionsFromJSONTyped = SearchEmailsOptionsFromJSONTyped;
-function SearchEmailsOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SearchEmailsOptionsToJSON(json) {
+    return SearchEmailsOptionsToJSONTyped(json, false);
+}
+function SearchEmailsOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxIds: value.inboxIds,
-        pageIndex: value.pageIndex,
-        pageSize: value.pageSize,
-        sortDirection: value.sortDirection,
-        unreadOnly: value.unreadOnly,
-        searchFilter: value.searchFilter,
-        since: value.since === undefined ? undefined : value.since.toISOString(),
-        before: value.before === undefined ? undefined : value.before.toISOString(),
+        'inboxIds': value['inboxIds'],
+        'pageIndex': value['pageIndex'],
+        'pageSize': value['pageSize'],
+        'sortDirection': value['sortDirection'],
+        'unreadOnly': value['unreadOnly'],
+        'searchFilter': value['searchFilter'],
+        'since': value['since'] == null ? undefined : ((value['since']).toISOString()),
+        'before': value['before'] == null ? undefined : ((value['before']).toISOString()),
     };
 }
-exports.SearchEmailsOptionsToJSON = SearchEmailsOptionsToJSON;

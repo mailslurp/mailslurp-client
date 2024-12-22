@@ -22,6 +22,11 @@ export interface UnreadCount {
      */
     count: number;
 }
+/**
+ * Check if a given object implements the UnreadCount interface.
+ */
+export declare function instanceOfUnreadCount(value: object): value is UnreadCount;
 export declare function UnreadCountFromJSON(json: any): UnreadCount;
 export declare function UnreadCountFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnreadCount;
-export declare function UnreadCountToJSON(value?: UnreadCount | null): any;
+export declare function UnreadCountToJSON(json: any): UnreadCount;
+export declare function UnreadCountToJSONTyped(value?: UnreadCount | null, ignoreDiscriminator?: boolean): any;

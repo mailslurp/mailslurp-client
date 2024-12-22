@@ -13,53 +13,69 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderDtoToJSON = exports.InboxForwarderDtoFromJSONTyped = exports.InboxForwarderDtoFromJSON = exports.InboxForwarderDtoFieldEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.InboxForwarderDtoFieldEnum = void 0;
+exports.instanceOfInboxForwarderDto = instanceOfInboxForwarderDto;
+exports.InboxForwarderDtoFromJSON = InboxForwarderDtoFromJSON;
+exports.InboxForwarderDtoFromJSONTyped = InboxForwarderDtoFromJSONTyped;
+exports.InboxForwarderDtoToJSON = InboxForwarderDtoToJSON;
+exports.InboxForwarderDtoToJSONTyped = InboxForwarderDtoToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var InboxForwarderDtoFieldEnum;
-(function (InboxForwarderDtoFieldEnum) {
-    InboxForwarderDtoFieldEnum["RECIPIENTS"] = "RECIPIENTS";
-    InboxForwarderDtoFieldEnum["SENDER"] = "SENDER";
-    InboxForwarderDtoFieldEnum["SUBJECT"] = "SUBJECT";
-    InboxForwarderDtoFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
-})(InboxForwarderDtoFieldEnum = exports.InboxForwarderDtoFieldEnum || (exports.InboxForwarderDtoFieldEnum = {}));
+exports.InboxForwarderDtoFieldEnum = {
+    RECIPIENTS: 'RECIPIENTS',
+    SENDER: 'SENDER',
+    SUBJECT: 'SUBJECT',
+    ATTACHMENTS: 'ATTACHMENTS'
+};
+/**
+ * Check if a given object implements the InboxForwarderDto interface.
+ */
+function instanceOfInboxForwarderDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('field' in value) || value['field'] === undefined)
+        return false;
+    if (!('match' in value) || value['match'] === undefined)
+        return false;
+    if (!('forwardToRecipients' in value) || value['forwardToRecipients'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function InboxForwarderDtoFromJSON(json) {
     return InboxForwarderDtoFromJSONTyped(json, false);
 }
-exports.InboxForwarderDtoFromJSON = InboxForwarderDtoFromJSON;
 function InboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        inboxId: json['inboxId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        field: json['field'],
-        match: json['match'],
-        forwardToRecipients: json['forwardToRecipients'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'forwardToRecipients': json['forwardToRecipients'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.InboxForwarderDtoFromJSONTyped = InboxForwarderDtoFromJSONTyped;
-function InboxForwarderDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxForwarderDtoToJSON(json) {
+    return InboxForwarderDtoToJSONTyped(json, false);
+}
+function InboxForwarderDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        inboxId: value.inboxId,
-        name: value.name,
-        field: value.field,
-        match: value.match,
-        forwardToRecipients: value.forwardToRecipients,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'inboxId': value['inboxId'],
+        'name': value['name'],
+        'field': value['field'],
+        'match': value['match'],
+        'forwardToRecipients': value['forwardToRecipients'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.InboxForwarderDtoToJSON = InboxForwarderDtoToJSON;

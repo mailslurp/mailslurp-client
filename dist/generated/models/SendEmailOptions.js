@@ -13,119 +13,99 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendEmailOptionsToJSON = exports.SendEmailOptionsFromJSONTyped = exports.SendEmailOptionsFromJSON = exports.SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsSendStrategyEnum = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsSendStrategyEnum = void 0;
+exports.instanceOfSendEmailOptions = instanceOfSendEmailOptions;
+exports.SendEmailOptionsFromJSON = SendEmailOptionsFromJSON;
+exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
+exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;
+exports.SendEmailOptionsToJSONTyped = SendEmailOptionsToJSONTyped;
+var SendEmailBodyPart_1 = require("./SendEmailBodyPart");
 /**
  * @export
- * @enum {string}
  */
-var SendEmailOptionsSendStrategyEnum;
-(function (SendEmailOptionsSendStrategyEnum) {
-    SendEmailOptionsSendStrategyEnum["SINGLE_MESSAGE"] = "SINGLE_MESSAGE";
-})(SendEmailOptionsSendStrategyEnum = exports.SendEmailOptionsSendStrategyEnum || (exports.SendEmailOptionsSendStrategyEnum = {}));
+exports.SendEmailOptionsSendStrategyEnum = {
+    SINGLE_MESSAGE: 'SINGLE_MESSAGE'
+};
 /**
  * @export
- * @enum {string}
  */
-var SendEmailOptionsValidateEmailAddressesEnum;
-(function (SendEmailOptionsValidateEmailAddressesEnum) {
-    SendEmailOptionsValidateEmailAddressesEnum["VALIDATE_FILTER_REMOVE_INVALID"] = "VALIDATE_FILTER_REMOVE_INVALID";
-    SendEmailOptionsValidateEmailAddressesEnum["VALIDATE_ERROR_IF_INVALID"] = "VALIDATE_ERROR_IF_INVALID";
-    SendEmailOptionsValidateEmailAddressesEnum["NO_VALIDATION"] = "NO_VALIDATION";
-})(SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsValidateEmailAddressesEnum || (exports.SendEmailOptionsValidateEmailAddressesEnum = {}));
+exports.SendEmailOptionsValidateEmailAddressesEnum = {
+    VALIDATE_FILTER_REMOVE_INVALID: 'VALIDATE_FILTER_REMOVE_INVALID',
+    VALIDATE_ERROR_IF_INVALID: 'VALIDATE_ERROR_IF_INVALID',
+    NO_VALIDATION: 'NO_VALIDATION'
+};
+/**
+ * Check if a given object implements the SendEmailOptions interface.
+ */
+function instanceOfSendEmailOptions(value) {
+    return true;
+}
 function SendEmailOptionsFromJSON(json) {
     return SendEmailOptionsFromJSONTyped(json, false);
 }
-exports.SendEmailOptionsFromJSON = SendEmailOptionsFromJSON;
 function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        toContacts: !(0, runtime_1.exists)(json, 'toContacts') ? undefined : json['toContacts'],
-        toGroup: !(0, runtime_1.exists)(json, 'toGroup') ? undefined : json['toGroup'],
-        to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
-        customHeaders: !(0, runtime_1.exists)(json, 'customHeaders')
-            ? undefined
-            : json['customHeaders'],
-        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
-        html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
-        isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
-        charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
-            ? undefined
-            : json['templateVariables'],
-        template: !(0, runtime_1.exists)(json, 'template') ? undefined : json['template'],
-        sendStrategy: !(0, runtime_1.exists)(json, 'sendStrategy')
-            ? undefined
-            : json['sendStrategy'],
-        useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
-            ? undefined
-            : json['useInboxName'],
-        addTrackingPixel: !(0, runtime_1.exists)(json, 'addTrackingPixel')
-            ? undefined
-            : json['addTrackingPixel'],
-        filterBouncedRecipients: !(0, runtime_1.exists)(json, 'filterBouncedRecipients')
-            ? undefined
-            : json['filterBouncedRecipients'],
-        validateEmailAddresses: !(0, runtime_1.exists)(json, 'validateEmailAddresses')
-            ? undefined
-            : json['validateEmailAddresses'],
-        ignoreEmptyRecipients: !(0, runtime_1.exists)(json, 'ignoreEmptyRecipients')
-            ? undefined
-            : json['ignoreEmptyRecipients'],
-        isXAmpHtml: !(0, runtime_1.exists)(json, 'isXAmpHtml') ? undefined : json['isXAmpHtml'],
-        bodyParts: !(0, runtime_1.exists)(json, 'bodyParts')
-            ? undefined
-            : json['bodyParts'] === null
-                ? null
-                : json['bodyParts'].map(_1.SendEmailBodyPartFromJSON),
+        'toContacts': json['toContacts'] == null ? undefined : json['toContacts'],
+        'toGroup': json['toGroup'] == null ? undefined : json['toGroup'],
+        'to': json['to'] == null ? undefined : json['to'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'cc': json['cc'] == null ? undefined : json['cc'],
+        'bcc': json['bcc'] == null ? undefined : json['bcc'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'customHeaders': json['customHeaders'] == null ? undefined : json['customHeaders'],
+        'body': json['body'] == null ? undefined : json['body'],
+        'html': json['html'] == null ? undefined : json['html'],
+        'isHTML': json['isHTML'] == null ? undefined : json['isHTML'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'attachments': json['attachments'] == null ? undefined : json['attachments'],
+        'templateVariables': json['templateVariables'] == null ? undefined : json['templateVariables'],
+        'template': json['template'] == null ? undefined : json['template'],
+        'sendStrategy': json['sendStrategy'] == null ? undefined : json['sendStrategy'],
+        'useInboxName': json['useInboxName'] == null ? undefined : json['useInboxName'],
+        'addTrackingPixel': json['addTrackingPixel'] == null ? undefined : json['addTrackingPixel'],
+        'filterBouncedRecipients': json['filterBouncedRecipients'] == null ? undefined : json['filterBouncedRecipients'],
+        'validateEmailAddresses': json['validateEmailAddresses'] == null ? undefined : json['validateEmailAddresses'],
+        'ignoreEmptyRecipients': json['ignoreEmptyRecipients'] == null ? undefined : json['ignoreEmptyRecipients'],
+        'isXAmpHtml': json['isXAmpHtml'] == null ? undefined : json['isXAmpHtml'],
+        'bodyParts': json['bodyParts'] == null ? undefined : (json['bodyParts'].map(SendEmailBodyPart_1.SendEmailBodyPartFromJSON)),
     };
 }
-exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
-function SendEmailOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SendEmailOptionsToJSON(json) {
+    return SendEmailOptionsToJSONTyped(json, false);
+}
+function SendEmailOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        toContacts: value.toContacts,
-        toGroup: value.toGroup,
-        to: value.to,
-        from: value.from,
-        cc: value.cc,
-        bcc: value.bcc,
-        subject: value.subject,
-        replyTo: value.replyTo,
-        customHeaders: value.customHeaders,
-        body: value.body,
-        html: value.html,
-        isHTML: value.isHTML,
-        charset: value.charset,
-        attachments: value.attachments,
-        templateVariables: value.templateVariables,
-        template: value.template,
-        sendStrategy: value.sendStrategy,
-        useInboxName: value.useInboxName,
-        addTrackingPixel: value.addTrackingPixel,
-        filterBouncedRecipients: value.filterBouncedRecipients,
-        validateEmailAddresses: value.validateEmailAddresses,
-        ignoreEmptyRecipients: value.ignoreEmptyRecipients,
-        isXAmpHtml: value.isXAmpHtml,
-        bodyParts: value.bodyParts === undefined
-            ? undefined
-            : value.bodyParts === null
-                ? null
-                : value.bodyParts.map(_1.SendEmailBodyPartToJSON),
+        'toContacts': value['toContacts'],
+        'toGroup': value['toGroup'],
+        'to': value['to'],
+        'from': value['from'],
+        'cc': value['cc'],
+        'bcc': value['bcc'],
+        'subject': value['subject'],
+        'replyTo': value['replyTo'],
+        'customHeaders': value['customHeaders'],
+        'body': value['body'],
+        'html': value['html'],
+        'isHTML': value['isHTML'],
+        'charset': value['charset'],
+        'attachments': value['attachments'],
+        'templateVariables': value['templateVariables'],
+        'template': value['template'],
+        'sendStrategy': value['sendStrategy'],
+        'useInboxName': value['useInboxName'],
+        'addTrackingPixel': value['addTrackingPixel'],
+        'filterBouncedRecipients': value['filterBouncedRecipients'],
+        'validateEmailAddresses': value['validateEmailAddresses'],
+        'ignoreEmptyRecipients': value['ignoreEmptyRecipients'],
+        'isXAmpHtml': value['isXAmpHtml'],
+        'bodyParts': value['bodyParts'] == null ? undefined : (value['bodyParts'].map(SendEmailBodyPart_1.SendEmailBodyPartToJSON)),
     };
 }
-exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;

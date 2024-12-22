@@ -46,6 +46,11 @@ export interface AttachmentMetaData {
      */
     contentId?: string | null;
 }
+/**
+ * Check if a given object implements the AttachmentMetaData interface.
+ */
+export declare function instanceOfAttachmentMetaData(value: object): value is AttachmentMetaData;
 export declare function AttachmentMetaDataFromJSON(json: any): AttachmentMetaData;
 export declare function AttachmentMetaDataFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentMetaData;
-export declare function AttachmentMetaDataToJSON(value?: AttachmentMetaData | null): any;
+export declare function AttachmentMetaDataToJSON(json: any): AttachmentMetaData;
+export declare function AttachmentMetaDataToJSONTyped(value?: AttachmentMetaData | null, ignoreDiscriminator?: boolean): any;

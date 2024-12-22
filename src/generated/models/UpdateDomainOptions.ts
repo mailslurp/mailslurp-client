@@ -12,49 +12,54 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for creating a domain to use with MailSlurp. You must have ownership access to this domain in order to verify it. Domains will not functionally currently until the domain has been verified. See https://www.mailslurp.com/guides/custom-domains for help.
  * @export
  * @interface UpdateDomainOptions
  */
 export interface UpdateDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateDomainOptions
-   */
-  catchAllInboxId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateDomainOptions
+     */
+    catchAllInboxId?: string | null;
+}
+
+/**
+ * Check if a given object implements the UpdateDomainOptions interface.
+ */
+export function instanceOfUpdateDomainOptions(value: object): value is UpdateDomainOptions {
+    return true;
 }
 
 export function UpdateDomainOptionsFromJSON(json: any): UpdateDomainOptions {
-  return UpdateDomainOptionsFromJSONTyped(json, false);
+    return UpdateDomainOptionsFromJSONTyped(json, false);
 }
 
-export function UpdateDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UpdateDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    catchAllInboxId: !exists(json, 'catchAllInboxId')
-      ? undefined
-      : json['catchAllInboxId'],
-  };
+export function UpdateDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateDomainOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'catchAllInboxId': json['catchAllInboxId'] == null ? undefined : json['catchAllInboxId'],
+    };
 }
 
-export function UpdateDomainOptionsToJSON(
-  value?: UpdateDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    catchAllInboxId: value.catchAllInboxId,
-  };
+export function UpdateDomainOptionsToJSON(json: any): UpdateDomainOptions {
+    return UpdateDomainOptionsToJSONTyped(json, false);
 }
+
+export function UpdateDomainOptionsToJSONTyped(value?: UpdateDomainOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'catchAllInboxId': value['catchAllInboxId'],
+    };
+}
+

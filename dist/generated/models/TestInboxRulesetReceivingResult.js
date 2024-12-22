@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestInboxRulesetReceivingResultToJSON = exports.TestInboxRulesetReceivingResultFromJSONTyped = exports.TestInboxRulesetReceivingResultFromJSON = void 0;
+exports.instanceOfTestInboxRulesetReceivingResult = instanceOfTestInboxRulesetReceivingResult;
+exports.TestInboxRulesetReceivingResultFromJSON = TestInboxRulesetReceivingResultFromJSON;
+exports.TestInboxRulesetReceivingResultFromJSONTyped = TestInboxRulesetReceivingResultFromJSONTyped;
+exports.TestInboxRulesetReceivingResultToJSON = TestInboxRulesetReceivingResultToJSON;
+exports.TestInboxRulesetReceivingResultToJSONTyped = TestInboxRulesetReceivingResultToJSONTyped;
+/**
+ * Check if a given object implements the TestInboxRulesetReceivingResult interface.
+ */
+function instanceOfTestInboxRulesetReceivingResult(value) {
+    if (!('canReceive' in value) || value['canReceive'] === undefined)
+        return false;
+    return true;
+}
 function TestInboxRulesetReceivingResultFromJSON(json) {
     return TestInboxRulesetReceivingResultFromJSONTyped(json, false);
 }
-exports.TestInboxRulesetReceivingResultFromJSON = TestInboxRulesetReceivingResultFromJSON;
 function TestInboxRulesetReceivingResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        canReceive: json['canReceive'],
+        'canReceive': json['canReceive'],
     };
 }
-exports.TestInboxRulesetReceivingResultFromJSONTyped = TestInboxRulesetReceivingResultFromJSONTyped;
-function TestInboxRulesetReceivingResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TestInboxRulesetReceivingResultToJSON(json) {
+    return TestInboxRulesetReceivingResultToJSONTyped(json, false);
+}
+function TestInboxRulesetReceivingResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        canReceive: value.canReceive,
+        'canReceive': value['canReceive'],
     };
 }
-exports.TestInboxRulesetReceivingResultToJSON = TestInboxRulesetReceivingResultToJSON;

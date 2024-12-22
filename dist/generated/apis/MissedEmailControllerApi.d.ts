@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { MissedEmailDto, PageMissedEmailProjection, PageUnknownMissedEmailProjection } from '../models';
+import type { MissedEmailDto, PageMissedEmailProjection, PageUnknownMissedEmailProjection } from '../models/index';
 export interface GetAllMissedEmailsRequest {
     page?: number;
     size?: number;
@@ -46,65 +46,65 @@ export declare class MissedEmailControllerApi extends runtime.BaseAPI {
     /**
      * Get all MissedEmails in paginated format
      */
-    getAllMissedEmailsRaw(requestParameters: GetAllMissedEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageMissedEmailProjection>>;
+    getAllMissedEmailsRaw(requestParameters: GetAllMissedEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageMissedEmailProjection>>;
     /**
      * Get all MissedEmails in paginated format
      */
-    getAllMissedEmails(requestParameters: GetAllMissedEmailsRequest, initOverrides?: RequestInit): Promise<PageMissedEmailProjection>;
+    getAllMissedEmails(requestParameters?: GetAllMissedEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageMissedEmailProjection>;
     /**
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * Get all unknown missed emails in paginated format
      */
-    getAllUnknownMissedEmailsRaw(requestParameters: GetAllUnknownMissedEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageUnknownMissedEmailProjection>>;
+    getAllUnknownMissedEmailsRaw(requestParameters: GetAllUnknownMissedEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageUnknownMissedEmailProjection>>;
     /**
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * Get all unknown missed emails in paginated format
      */
-    getAllUnknownMissedEmails(requestParameters: GetAllUnknownMissedEmailsRequest, initOverrides?: RequestInit): Promise<PageUnknownMissedEmailProjection>;
+    getAllUnknownMissedEmails(requestParameters?: GetAllUnknownMissedEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageUnknownMissedEmailProjection>;
     /**
      * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
-    getMissedEmailRaw(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmailDto>>;
+    getMissedEmailRaw(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MissedEmailDto>>;
     /**
      * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
-    getMissedEmail(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmailDto>;
+    getMissedEmail(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MissedEmailDto>;
     /**
      * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
      * Restore missed emails
      */
-    restoreMissedEmailsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    restoreMissedEmailsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
      * Restore missed emails
      */
-    restoreMissedEmails(initOverrides?: RequestInit): Promise<void>;
+    restoreMissedEmails(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Wait for 0 based index missed email
      * Wait for Nth missed email
      */
-    waitForNthMissedEmailRaw(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmailDto>>;
+    waitForNthMissedEmailRaw(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MissedEmailDto>>;
     /**
      * Wait for 0 based index missed email
      * Wait for Nth missed email
      */
-    waitForNthMissedEmail(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmailDto>;
+    waitForNthMissedEmail(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MissedEmailDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllMissedEmailsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllMissedEmailsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllMissedEmailsSortEnum = typeof GetAllMissedEmailsSortEnum[keyof typeof GetAllMissedEmailsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllUnknownMissedEmailsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllUnknownMissedEmailsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllUnknownMissedEmailsSortEnum = typeof GetAllUnknownMissedEmailsSortEnum[keyof typeof GetAllUnknownMissedEmailsSortEnum];

@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Complaint, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { Complaint } from './Complaint';
 /**
  * Paginated complaint email. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageComplaint {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageComplaint
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageComplaint {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageComplaint interface.
+ */
+export declare function instanceOfPageComplaint(value: object): value is PageComplaint;
 export declare function PageComplaintFromJSON(json: any): PageComplaint;
 export declare function PageComplaintFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageComplaint;
-export declare function PageComplaintToJSON(value?: PageComplaint | null): any;
+export declare function PageComplaintToJSON(json: any): PageComplaint;
+export declare function PageComplaintToJSONTyped(value?: PageComplaint | null, ignoreDiscriminator?: boolean): any;

@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for filtering bounced email recipients
  * @export
  * @interface FilterBouncedRecipientsOptions
  */
 export interface FilterBouncedRecipientsOptions {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof FilterBouncedRecipientsOptions
-   */
-  emailRecipients: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof FilterBouncedRecipientsOptions
+     */
+    emailRecipients: Array<string>;
 }
 
-export function FilterBouncedRecipientsOptionsFromJSON(
-  json: any
-): FilterBouncedRecipientsOptions {
-  return FilterBouncedRecipientsOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the FilterBouncedRecipientsOptions interface.
+ */
+export function instanceOfFilterBouncedRecipientsOptions(value: object): value is FilterBouncedRecipientsOptions {
+    if (!('emailRecipients' in value) || value['emailRecipients'] === undefined) return false;
+    return true;
 }
 
-export function FilterBouncedRecipientsOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): FilterBouncedRecipientsOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailRecipients: json['emailRecipients'],
-  };
+export function FilterBouncedRecipientsOptionsFromJSON(json: any): FilterBouncedRecipientsOptions {
+    return FilterBouncedRecipientsOptionsFromJSONTyped(json, false);
 }
 
-export function FilterBouncedRecipientsOptionsToJSON(
-  value?: FilterBouncedRecipientsOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailRecipients: value.emailRecipients,
-  };
+export function FilterBouncedRecipientsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilterBouncedRecipientsOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'emailRecipients': json['emailRecipients'],
+    };
 }
+
+export function FilterBouncedRecipientsOptionsToJSON(json: any): FilterBouncedRecipientsOptions {
+    return FilterBouncedRecipientsOptionsToJSONTyped(json, false);
+}
+
+export function FilterBouncedRecipientsOptionsToJSONTyped(value?: FilterBouncedRecipientsOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'emailRecipients': value['emailRecipients'],
+    };
+}
+

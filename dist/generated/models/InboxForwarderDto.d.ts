@@ -26,7 +26,7 @@ export interface InboxForwarderDto {
      * @type {string}
      * @memberof InboxForwarderDto
      */
-    inboxId: string;
+    inboxId?: string | null;
     /**
      * Name of inbox forwarder
      * @type {string}
@@ -60,14 +60,19 @@ export interface InboxForwarderDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxForwarderDtoFieldEnum {
-    RECIPIENTS = "RECIPIENTS",
-    SENDER = "SENDER",
-    SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
-}
+export declare const InboxForwarderDtoFieldEnum: {
+    readonly RECIPIENTS: "RECIPIENTS";
+    readonly SENDER: "SENDER";
+    readonly SUBJECT: "SUBJECT";
+    readonly ATTACHMENTS: "ATTACHMENTS";
+};
+export type InboxForwarderDtoFieldEnum = typeof InboxForwarderDtoFieldEnum[keyof typeof InboxForwarderDtoFieldEnum];
+/**
+ * Check if a given object implements the InboxForwarderDto interface.
+ */
+export declare function instanceOfInboxForwarderDto(value: object): value is InboxForwarderDto;
 export declare function InboxForwarderDtoFromJSON(json: any): InboxForwarderDto;
 export declare function InboxForwarderDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderDto;
-export declare function InboxForwarderDtoToJSON(value?: InboxForwarderDto | null): any;
+export declare function InboxForwarderDtoToJSON(json: any): InboxForwarderDto;
+export declare function InboxForwarderDtoToJSONTyped(value?: InboxForwarderDto | null, ignoreDiscriminator?: boolean): any;

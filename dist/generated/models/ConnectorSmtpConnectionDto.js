@@ -13,50 +13,77 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSmtpConnectionDtoToJSON = exports.ConnectorSmtpConnectionDtoFromJSONTyped = exports.ConnectorSmtpConnectionDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfConnectorSmtpConnectionDto = instanceOfConnectorSmtpConnectionDto;
+exports.ConnectorSmtpConnectionDtoFromJSON = ConnectorSmtpConnectionDtoFromJSON;
+exports.ConnectorSmtpConnectionDtoFromJSONTyped = ConnectorSmtpConnectionDtoFromJSONTyped;
+exports.ConnectorSmtpConnectionDtoToJSON = ConnectorSmtpConnectionDtoToJSON;
+exports.ConnectorSmtpConnectionDtoToJSONTyped = ConnectorSmtpConnectionDtoToJSONTyped;
+/**
+ * Check if a given object implements the ConnectorSmtpConnectionDto interface.
+ */
+function instanceOfConnectorSmtpConnectionDto(value) {
+    if (!('connectorId' in value) || value['connectorId'] === undefined)
+        return false;
+    if (!('smtpHost' in value) || value['smtpHost'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function ConnectorSmtpConnectionDtoFromJSON(json) {
     return ConnectorSmtpConnectionDtoFromJSONTyped(json, false);
 }
-exports.ConnectorSmtpConnectionDtoFromJSON = ConnectorSmtpConnectionDtoFromJSON;
 function ConnectorSmtpConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        connectorId: json['connectorId'],
-        smtpHost: !(0, runtime_1.exists)(json, 'smtpHost') ? undefined : json['smtpHost'],
-        smtpPort: !(0, runtime_1.exists)(json, 'smtpPort') ? undefined : json['smtpPort'],
-        smtpUsername: !(0, runtime_1.exists)(json, 'smtpUsername')
-            ? undefined
-            : json['smtpUsername'],
-        smtpPassword: !(0, runtime_1.exists)(json, 'smtpPassword')
-            ? undefined
-            : json['smtpPassword'],
-        smtpSsl: !(0, runtime_1.exists)(json, 'smtpSsl') ? undefined : json['smtpSsl'],
-        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
-        createdAt: new Date(json['createdAt']),
-        id: json['id'],
+        'connectorId': json['connectorId'],
+        'smtpHost': json['smtpHost'],
+        'smtpPort': json['smtpPort'] == null ? undefined : json['smtpPort'],
+        'smtpUsername': json['smtpUsername'] == null ? undefined : json['smtpUsername'],
+        'smtpPassword': json['smtpPassword'] == null ? undefined : json['smtpPassword'],
+        'smtpSsl': json['smtpSsl'] == null ? undefined : json['smtpSsl'],
+        'startTls': json['startTls'] == null ? undefined : json['startTls'],
+        'smtpMechanisms': json['smtpMechanisms'] == null ? undefined : json['smtpMechanisms'],
+        'localHostName': json['localHostName'] == null ? undefined : json['localHostName'],
+        'proxyHost': json['proxyHost'] == null ? undefined : json['proxyHost'],
+        'proxyPort': json['proxyPort'] == null ? undefined : json['proxyPort'],
+        'proxyEnabled': json['proxyEnabled'] == null ? undefined : json['proxyEnabled'],
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
+        'sslTrust': json['sslTrust'] == null ? undefined : json['sslTrust'],
+        'sslProtocols': json['sslProtocols'] == null ? undefined : json['sslProtocols'],
+        'createdAt': (new Date(json['createdAt'])),
+        'id': json['id'],
     };
 }
-exports.ConnectorSmtpConnectionDtoFromJSONTyped = ConnectorSmtpConnectionDtoFromJSONTyped;
-function ConnectorSmtpConnectionDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ConnectorSmtpConnectionDtoToJSON(json) {
+    return ConnectorSmtpConnectionDtoToJSONTyped(json, false);
+}
+function ConnectorSmtpConnectionDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        connectorId: value.connectorId,
-        smtpHost: value.smtpHost,
-        smtpPort: value.smtpPort,
-        smtpUsername: value.smtpUsername,
-        smtpPassword: value.smtpPassword,
-        smtpSsl: value.smtpSsl,
-        enabled: value.enabled,
-        createdAt: value.createdAt.toISOString(),
-        id: value.id,
+        'connectorId': value['connectorId'],
+        'smtpHost': value['smtpHost'],
+        'smtpPort': value['smtpPort'],
+        'smtpUsername': value['smtpUsername'],
+        'smtpPassword': value['smtpPassword'],
+        'smtpSsl': value['smtpSsl'],
+        'startTls': value['startTls'],
+        'smtpMechanisms': value['smtpMechanisms'],
+        'localHostName': value['localHostName'],
+        'proxyHost': value['proxyHost'],
+        'proxyPort': value['proxyPort'],
+        'proxyEnabled': value['proxyEnabled'],
+        'enabled': value['enabled'],
+        'sslTrust': value['sslTrust'],
+        'sslProtocols': value['sslProtocols'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'id': value['id'],
     };
 }
-exports.ConnectorSmtpConnectionDtoToJSON = ConnectorSmtpConnectionDtoToJSON;

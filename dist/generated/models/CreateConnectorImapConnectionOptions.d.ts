@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Options for IMAP connection to external email inbox. Allows syncing emails iva IMAP.
+ * Options for IMAP connection to external email inbox. Allows syncing emails via IMAP.
  * @export
  * @interface CreateConnectorImapConnectionOptions
  */
@@ -63,7 +63,60 @@ export interface CreateConnectorImapConnectionOptions {
      * @memberof CreateConnectorImapConnectionOptions
      */
     enabled?: boolean | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    startTls?: boolean | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    proxyEnabled?: boolean | null;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    proxyPort?: number | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    proxyHost?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    localHostName?: string | null;
+    /**
+     * List of IMAP mechanisms
+     * @type {Array<string | null>}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    mechanisms?: Array<string | null> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    sslTrust?: string | null;
+    /**
+     * List of SSL protocols
+     * @type {Array<string | null>}
+     * @memberof CreateConnectorImapConnectionOptions
+     */
+    sslProtocols?: Array<string | null> | null;
 }
+/**
+ * Check if a given object implements the CreateConnectorImapConnectionOptions interface.
+ */
+export declare function instanceOfCreateConnectorImapConnectionOptions(value: object): value is CreateConnectorImapConnectionOptions;
 export declare function CreateConnectorImapConnectionOptionsFromJSON(json: any): CreateConnectorImapConnectionOptions;
 export declare function CreateConnectorImapConnectionOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorImapConnectionOptions;
-export declare function CreateConnectorImapConnectionOptionsToJSON(value?: CreateConnectorImapConnectionOptions | null): any;
+export declare function CreateConnectorImapConnectionOptionsToJSON(json: any): CreateConnectorImapConnectionOptions;
+export declare function CreateConnectorImapConnectionOptionsToJSONTyped(value?: CreateConnectorImapConnectionOptions | null, ignoreDiscriminator?: boolean): any;

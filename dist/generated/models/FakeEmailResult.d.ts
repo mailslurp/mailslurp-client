@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { FakeEmailDto } from './';
+import type { FakeEmailDto } from './FakeEmailDto';
 /**
  *
  * @export
@@ -23,6 +23,11 @@ export interface FakeEmailResult {
      */
     email?: FakeEmailDto;
 }
+/**
+ * Check if a given object implements the FakeEmailResult interface.
+ */
+export declare function instanceOfFakeEmailResult(value: object): value is FakeEmailResult;
 export declare function FakeEmailResultFromJSON(json: any): FakeEmailResult;
 export declare function FakeEmailResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailResult;
-export declare function FakeEmailResultToJSON(value?: FakeEmailResult | null): any;
+export declare function FakeEmailResultToJSON(json: any): FakeEmailResult;
+export declare function FakeEmailResultToJSONTyped(value?: FakeEmailResult | null, ignoreDiscriminator?: boolean): any;

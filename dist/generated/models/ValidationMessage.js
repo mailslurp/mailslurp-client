@@ -13,32 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidationMessageToJSON = exports.ValidationMessageFromJSONTyped = exports.ValidationMessageFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfValidationMessage = instanceOfValidationMessage;
+exports.ValidationMessageFromJSON = ValidationMessageFromJSON;
+exports.ValidationMessageFromJSONTyped = ValidationMessageFromJSONTyped;
+exports.ValidationMessageToJSON = ValidationMessageToJSON;
+exports.ValidationMessageToJSONTyped = ValidationMessageToJSONTyped;
+/**
+ * Check if a given object implements the ValidationMessage interface.
+ */
+function instanceOfValidationMessage(value) {
+    if (!('lineNumber' in value) || value['lineNumber'] === undefined)
+        return false;
+    return true;
+}
 function ValidationMessageFromJSON(json) {
     return ValidationMessageFromJSONTyped(json, false);
 }
-exports.ValidationMessageFromJSON = ValidationMessageFromJSON;
 function ValidationMessageFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        lineNumber: json['lineNumber'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'lineNumber': json['lineNumber'],
+        'message': json['message'] == null ? undefined : json['message'],
     };
 }
-exports.ValidationMessageFromJSONTyped = ValidationMessageFromJSONTyped;
-function ValidationMessageToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ValidationMessageToJSON(json) {
+    return ValidationMessageToJSONTyped(json, false);
+}
+function ValidationMessageToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        lineNumber: value.lineNumber,
-        message: value.message,
+        'lineNumber': value['lineNumber'],
+        'message': value['message'],
     };
 }
-exports.ValidationMessageToJSON = ValidationMessageToJSON;

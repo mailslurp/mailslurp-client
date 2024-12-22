@@ -12,117 +12,133 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface UserInfoDto
  */
 export interface UserInfoDto {
-  /**
-   *
-   * @type {string}
-   * @memberof UserInfoDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof UserInfoDto
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof UserInfoDto
-   */
-  accountState: UserInfoDtoAccountStateEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof UserInfoDto
-   */
-  subscriptionType?: UserInfoDtoSubscriptionTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof UserInfoDto
-   */
-  accountType: UserInfoDtoAccountTypeEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof UserInfoDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfoDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfoDto
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfoDto
+     */
+    accountState: UserInfoDtoAccountStateEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfoDto
+     */
+    subscriptionType?: UserInfoDtoSubscriptionTypeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserInfoDto
+     */
+    accountType: UserInfoDtoAccountTypeEnum;
+    /**
+     * 
+     * @type {Date}
+     * @memberof UserInfoDto
+     */
+    createdAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum UserInfoDtoAccountStateEnum {
-  FROZEN = 'FROZEN',
-  ACTIVE = 'ACTIVE',
-}
+export const UserInfoDtoAccountStateEnum = {
+    FROZEN: 'FROZEN',
+    ACTIVE: 'ACTIVE'
+} as const;
+export type UserInfoDtoAccountStateEnum = typeof UserInfoDtoAccountStateEnum[keyof typeof UserInfoDtoAccountStateEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum UserInfoDtoSubscriptionTypeEnum {
-  PRO_MONTHLY = 'PRO_MONTHLY',
-  STARTER = 'STARTER',
-  PRO = 'PRO',
-  TEAM = 'TEAM',
-  ENTERPRISE = 'ENTERPRISE',
-}
+export const UserInfoDtoSubscriptionTypeEnum = {
+    PRO_MONTHLY: 'PRO_MONTHLY',
+    STARTER: 'STARTER',
+    PRO: 'PRO',
+    TEAM: 'TEAM',
+    ENTERPRISE: 'ENTERPRISE'
+} as const;
+export type UserInfoDtoSubscriptionTypeEnum = typeof UserInfoDtoSubscriptionTypeEnum[keyof typeof UserInfoDtoSubscriptionTypeEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum UserInfoDtoAccountTypeEnum {
-  SOLO = 'SOLO',
-  CHILD_SOLO = 'CHILD_SOLO',
-  CHILD_TEAM = 'CHILD_TEAM',
-  CHILD_ADMIN = 'CHILD_ADMIN',
+export const UserInfoDtoAccountTypeEnum = {
+    SOLO: 'SOLO',
+    CHILD_SOLO: 'CHILD_SOLO',
+    CHILD_TEAM: 'CHILD_TEAM',
+    CHILD_ADMIN: 'CHILD_ADMIN'
+} as const;
+export type UserInfoDtoAccountTypeEnum = typeof UserInfoDtoAccountTypeEnum[keyof typeof UserInfoDtoAccountTypeEnum];
+
+
+/**
+ * Check if a given object implements the UserInfoDto interface.
+ */
+export function instanceOfUserInfoDto(value: object): value is UserInfoDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('accountState' in value) || value['accountState'] === undefined) return false;
+    if (!('accountType' in value) || value['accountType'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function UserInfoDtoFromJSON(json: any): UserInfoDto {
-  return UserInfoDtoFromJSONTyped(json, false);
+    return UserInfoDtoFromJSONTyped(json, false);
 }
 
-export function UserInfoDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UserInfoDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    emailAddress: json['emailAddress'],
-    accountState: json['accountState'],
-    subscriptionType: !exists(json, 'subscriptionType')
-      ? undefined
-      : json['subscriptionType'],
-    accountType: json['accountType'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function UserInfoDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserInfoDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+        'accountState': json['accountState'],
+        'subscriptionType': json['subscriptionType'] == null ? undefined : json['subscriptionType'],
+        'accountType': json['accountType'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function UserInfoDtoToJSON(value?: UserInfoDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    emailAddress: value.emailAddress,
-    accountState: value.accountState,
-    subscriptionType: value.subscriptionType,
-    accountType: value.accountType,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function UserInfoDtoToJSON(json: any): UserInfoDto {
+    return UserInfoDtoToJSONTyped(json, false);
 }
+
+export function UserInfoDtoToJSONTyped(value?: UserInfoDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'emailAddress': value['emailAddress'],
+        'accountState': value['accountState'],
+        'subscriptionType': value['subscriptionType'],
+        'accountType': value['accountType'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

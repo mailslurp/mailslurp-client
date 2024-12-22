@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainGroupsDtoToJSON = exports.DomainGroupsDtoFromJSONTyped = exports.DomainGroupsDtoFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfDomainGroupsDto = instanceOfDomainGroupsDto;
+exports.DomainGroupsDtoFromJSON = DomainGroupsDtoFromJSON;
+exports.DomainGroupsDtoFromJSONTyped = DomainGroupsDtoFromJSONTyped;
+exports.DomainGroupsDtoToJSON = DomainGroupsDtoToJSON;
+exports.DomainGroupsDtoToJSONTyped = DomainGroupsDtoToJSONTyped;
+var DomainGroup_1 = require("./DomainGroup");
+/**
+ * Check if a given object implements the DomainGroupsDto interface.
+ */
+function instanceOfDomainGroupsDto(value) {
+    if (!('domainGroups' in value) || value['domainGroups'] === undefined)
+        return false;
+    return true;
+}
 function DomainGroupsDtoFromJSON(json) {
     return DomainGroupsDtoFromJSONTyped(json, false);
 }
-exports.DomainGroupsDtoFromJSON = DomainGroupsDtoFromJSON;
 function DomainGroupsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        domainGroups: json['domainGroups'].map(_1.DomainGroupFromJSON),
+        'domainGroups': (json['domainGroups'].map(DomainGroup_1.DomainGroupFromJSON)),
     };
 }
-exports.DomainGroupsDtoFromJSONTyped = DomainGroupsDtoFromJSONTyped;
-function DomainGroupsDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DomainGroupsDtoToJSON(json) {
+    return DomainGroupsDtoToJSONTyped(json, false);
+}
+function DomainGroupsDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        domainGroups: value.domainGroups.map(_1.DomainGroupToJSON),
+        'domainGroups': (value['domainGroups'].map(DomainGroup_1.DomainGroupToJSON)),
     };
 }
-exports.DomainGroupsDtoToJSON = DomainGroupsDtoToJSON;

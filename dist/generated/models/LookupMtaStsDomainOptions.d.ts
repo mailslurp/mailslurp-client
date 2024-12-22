@@ -22,6 +22,11 @@ export interface LookupMtaStsDomainOptions {
      */
     host: string;
 }
+/**
+ * Check if a given object implements the LookupMtaStsDomainOptions interface.
+ */
+export declare function instanceOfLookupMtaStsDomainOptions(value: object): value is LookupMtaStsDomainOptions;
 export declare function LookupMtaStsDomainOptionsFromJSON(json: any): LookupMtaStsDomainOptions;
 export declare function LookupMtaStsDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupMtaStsDomainOptions;
-export declare function LookupMtaStsDomainOptionsToJSON(value?: LookupMtaStsDomainOptions | null): any;
+export declare function LookupMtaStsDomainOptionsToJSON(json: any): LookupMtaStsDomainOptions;
+export declare function LookupMtaStsDomainOptionsToJSONTyped(value?: LookupMtaStsDomainOptions | null, ignoreDiscriminator?: boolean): any;

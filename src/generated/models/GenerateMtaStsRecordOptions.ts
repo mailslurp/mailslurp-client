@@ -12,106 +12,120 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface GenerateMtaStsRecordOptions
  */
 export interface GenerateMtaStsRecordOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  host: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  version: GenerateMtaStsRecordOptionsVersionEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  mode: GenerateMtaStsRecordOptionsModeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  ttl: number;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  maxAgeSeconds: number;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  mxRecords: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    version: GenerateMtaStsRecordOptionsVersionEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    mode: GenerateMtaStsRecordOptionsModeEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    ttl: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    maxAgeSeconds: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    mxRecords: Array<string>;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateMtaStsRecordOptionsVersionEnum {
-  STSv1 = 'STSv1',
-}
+export const GenerateMtaStsRecordOptionsVersionEnum = {
+    STSv1: 'STSv1'
+} as const;
+export type GenerateMtaStsRecordOptionsVersionEnum = typeof GenerateMtaStsRecordOptionsVersionEnum[keyof typeof GenerateMtaStsRecordOptionsVersionEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateMtaStsRecordOptionsModeEnum {
-  TESTING = 'TESTING',
-  ENFORCE = 'ENFORCE',
-  NONE = 'NONE',
+export const GenerateMtaStsRecordOptionsModeEnum = {
+    TESTING: 'TESTING',
+    ENFORCE: 'ENFORCE',
+    NONE: 'NONE'
+} as const;
+export type GenerateMtaStsRecordOptionsModeEnum = typeof GenerateMtaStsRecordOptionsModeEnum[keyof typeof GenerateMtaStsRecordOptionsModeEnum];
+
+
+/**
+ * Check if a given object implements the GenerateMtaStsRecordOptions interface.
+ */
+export function instanceOfGenerateMtaStsRecordOptions(value: object): value is GenerateMtaStsRecordOptions {
+    if (!('host' in value) || value['host'] === undefined) return false;
+    if (!('version' in value) || value['version'] === undefined) return false;
+    if (!('mode' in value) || value['mode'] === undefined) return false;
+    if (!('ttl' in value) || value['ttl'] === undefined) return false;
+    if (!('maxAgeSeconds' in value) || value['maxAgeSeconds'] === undefined) return false;
+    if (!('mxRecords' in value) || value['mxRecords'] === undefined) return false;
+    return true;
 }
 
-export function GenerateMtaStsRecordOptionsFromJSON(
-  json: any
-): GenerateMtaStsRecordOptions {
-  return GenerateMtaStsRecordOptionsFromJSONTyped(json, false);
+export function GenerateMtaStsRecordOptionsFromJSON(json: any): GenerateMtaStsRecordOptions {
+    return GenerateMtaStsRecordOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateMtaStsRecordOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateMtaStsRecordOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-    version: json['version'],
-    mode: json['mode'],
-    ttl: json['ttl'],
-    maxAgeSeconds: json['maxAgeSeconds'],
-    mxRecords: json['mxRecords'],
-  };
+export function GenerateMtaStsRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateMtaStsRecordOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+        'version': json['version'],
+        'mode': json['mode'],
+        'ttl': json['ttl'],
+        'maxAgeSeconds': json['maxAgeSeconds'],
+        'mxRecords': json['mxRecords'],
+    };
 }
 
-export function GenerateMtaStsRecordOptionsToJSON(
-  value?: GenerateMtaStsRecordOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-    version: value.version,
-    mode: value.mode,
-    ttl: value.ttl,
-    maxAgeSeconds: value.maxAgeSeconds,
-    mxRecords: value.mxRecords,
-  };
+export function GenerateMtaStsRecordOptionsToJSON(json: any): GenerateMtaStsRecordOptions {
+    return GenerateMtaStsRecordOptionsToJSONTyped(json, false);
 }
+
+export function GenerateMtaStsRecordOptionsToJSONTyped(value?: GenerateMtaStsRecordOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'host': value['host'],
+        'version': value['version'],
+        'mode': value['mode'],
+        'ttl': value['ttl'],
+        'maxAgeSeconds': value['maxAgeSeconds'],
+        'mxRecords': value['mxRecords'],
+    };
+}
+

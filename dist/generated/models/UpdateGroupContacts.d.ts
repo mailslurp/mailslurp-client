@@ -22,6 +22,11 @@ export interface UpdateGroupContacts {
      */
     contactIds: Array<string>;
 }
+/**
+ * Check if a given object implements the UpdateGroupContacts interface.
+ */
+export declare function instanceOfUpdateGroupContacts(value: object): value is UpdateGroupContacts;
 export declare function UpdateGroupContactsFromJSON(json: any): UpdateGroupContacts;
 export declare function UpdateGroupContactsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateGroupContacts;
-export declare function UpdateGroupContactsToJSON(value?: UpdateGroupContacts | null): any;
+export declare function UpdateGroupContactsToJSON(json: any): UpdateGroupContacts;
+export declare function UpdateGroupContactsToJSONTyped(value?: UpdateGroupContacts | null, ignoreDiscriminator?: boolean): any;

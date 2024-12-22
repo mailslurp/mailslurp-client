@@ -29,16 +29,16 @@ export interface ForwardEmailOptions {
     subject?: string | null;
     /**
      * Optional cc recipients
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ForwardEmailOptions
      */
-    cc?: Array<string> | null;
+    cc?: Array<string | null> | null;
     /**
      * Optional bcc recipients
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ForwardEmailOptions
      */
-    bcc?: Array<string> | null;
+    bcc?: Array<string | null> | null;
     /**
      * Optional from override
      * @type {string}
@@ -58,6 +58,11 @@ export interface ForwardEmailOptions {
      */
     filterBouncedRecipients?: boolean | null;
 }
+/**
+ * Check if a given object implements the ForwardEmailOptions interface.
+ */
+export declare function instanceOfForwardEmailOptions(value: object): value is ForwardEmailOptions;
 export declare function ForwardEmailOptionsFromJSON(json: any): ForwardEmailOptions;
 export declare function ForwardEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ForwardEmailOptions;
-export declare function ForwardEmailOptionsToJSON(value?: ForwardEmailOptions | null): any;
+export declare function ForwardEmailOptionsToJSON(json: any): ForwardEmailOptions;
+export declare function ForwardEmailOptionsToJSONTyped(value?: ForwardEmailOptions | null, ignoreDiscriminator?: boolean): any;

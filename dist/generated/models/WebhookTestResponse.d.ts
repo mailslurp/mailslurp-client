@@ -28,6 +28,11 @@ export interface WebhookTestResponse {
      */
     message?: string | null;
 }
+/**
+ * Check if a given object implements the WebhookTestResponse interface.
+ */
+export declare function instanceOfWebhookTestResponse(value: object): value is WebhookTestResponse;
 export declare function WebhookTestResponseFromJSON(json: any): WebhookTestResponse;
 export declare function WebhookTestResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestResponse;
-export declare function WebhookTestResponseToJSON(value?: WebhookTestResponse | null): any;
+export declare function WebhookTestResponseToJSON(json: any): WebhookTestResponse;
+export declare function WebhookTestResponseToJSONTyped(value?: WebhookTestResponse | null, ignoreDiscriminator?: boolean): any;

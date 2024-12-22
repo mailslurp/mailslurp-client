@@ -12,69 +12,81 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Data for contact group
  * @export
  * @interface GroupProjection
  */
 export interface GroupProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof GroupProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
-  description?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof GroupProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupProjection
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupProjection
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupProjection
+     */
+    description?: string | null;
+}
+
+/**
+ * Check if a given object implements the GroupProjection interface.
+ */
+export function instanceOfGroupProjection(value: object): value is GroupProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function GroupProjectionFromJSON(json: any): GroupProjection {
-  return GroupProjectionFromJSONTyped(json, false);
+    return GroupProjectionFromJSONTyped(json, false);
 }
 
-export function GroupProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GroupProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    name: json['name'],
-    id: json['id'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-  };
+export function GroupProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'name': json['name'],
+        'id': json['id'],
+        'description': json['description'] == null ? undefined : json['description'],
+    };
 }
 
-export function GroupProjectionToJSON(value?: GroupProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    name: value.name,
-    id: value.id,
-    description: value.description,
-  };
+export function GroupProjectionToJSON(json: any): GroupProjection {
+    return GroupProjectionToJSONTyped(json, false);
 }
+
+export function GroupProjectionToJSONTyped(value?: GroupProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'name': value['name'],
+        'id': value['id'],
+        'description': value['description'],
+    };
+}
+

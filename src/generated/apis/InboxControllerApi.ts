@@ -12,3614 +12,3671 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
-import {
+import type {
   CountDto,
-  CountDtoFromJSON,
-  CountDtoToJSON,
   CreateInboxDto,
-  CreateInboxDtoFromJSON,
-  CreateInboxDtoToJSON,
   CreateInboxRulesetOptions,
-  CreateInboxRulesetOptionsFromJSON,
-  CreateInboxRulesetOptionsToJSON,
   Email,
-  EmailFromJSON,
-  EmailToJSON,
+  EmailAvailableResult,
   EmailPreview,
-  EmailPreviewFromJSON,
-  EmailPreviewToJSON,
   FlushExpiredInboxesResult,
-  FlushExpiredInboxesResultFromJSON,
-  FlushExpiredInboxesResultToJSON,
   ImapAccessDetails,
-  ImapAccessDetailsFromJSON,
-  ImapAccessDetailsToJSON,
   ImapSmtpAccessDetails,
-  ImapSmtpAccessDetailsFromJSON,
-  ImapSmtpAccessDetailsToJSON,
   ImapSmtpAccessServers,
-  ImapSmtpAccessServersFromJSON,
-  ImapSmtpAccessServersToJSON,
   InboxByEmailAddressResult,
-  InboxByEmailAddressResultFromJSON,
-  InboxByEmailAddressResultToJSON,
   InboxByNameResult,
-  InboxByNameResultFromJSON,
-  InboxByNameResultToJSON,
   InboxDto,
-  InboxDtoFromJSON,
-  InboxDtoToJSON,
   InboxExistsDto,
-  InboxExistsDtoFromJSON,
-  InboxExistsDtoToJSON,
   InboxIdsResult,
-  InboxIdsResultFromJSON,
-  InboxIdsResultToJSON,
   InboxRulesetDto,
-  InboxRulesetDtoFromJSON,
-  InboxRulesetDtoToJSON,
   PageDeliveryStatus,
-  PageDeliveryStatusFromJSON,
-  PageDeliveryStatusToJSON,
   PageEmailPreview,
-  PageEmailPreviewFromJSON,
-  PageEmailPreviewToJSON,
   PageInboxProjection,
-  PageInboxProjectionFromJSON,
-  PageInboxProjectionToJSON,
   PageInboxRulesetDto,
-  PageInboxRulesetDtoFromJSON,
-  PageInboxRulesetDtoToJSON,
+  PageInboxTags,
   PageOrganizationInboxProjection,
-  PageOrganizationInboxProjectionFromJSON,
-  PageOrganizationInboxProjectionToJSON,
+  PagePlusAddressProjection,
   PageScheduledJobs,
-  PageScheduledJobsFromJSON,
-  PageScheduledJobsToJSON,
   PageSentEmailProjection,
-  PageSentEmailProjectionFromJSON,
-  PageSentEmailProjectionToJSON,
   PageTrackingPixelProjection,
-  PageTrackingPixelProjectionFromJSON,
-  PageTrackingPixelProjectionToJSON,
+  PlusAddressDto,
   ScheduledJobDto,
-  ScheduledJobDtoFromJSON,
-  ScheduledJobDtoToJSON,
   SearchInboxesOptions,
-  SearchInboxesOptionsFromJSON,
-  SearchInboxesOptionsToJSON,
   SendEmailOptions,
-  SendEmailOptionsFromJSON,
-  SendEmailOptionsToJSON,
   SendSMTPEnvelopeOptions,
-  SendSMTPEnvelopeOptionsFromJSON,
-  SendSMTPEnvelopeOptionsToJSON,
   SentEmailDto,
-  SentEmailDtoFromJSON,
-  SentEmailDtoToJSON,
   SetInboxFavouritedOptions,
-  SetInboxFavouritedOptionsFromJSON,
-  SetInboxFavouritedOptionsToJSON,
   SmtpAccessDetails,
-  SmtpAccessDetailsFromJSON,
-  SmtpAccessDetailsToJSON,
+  UpdateImapAccessOptions,
   UpdateInboxOptions,
-  UpdateInboxOptionsFromJSON,
-  UpdateInboxOptionsToJSON,
-} from '../models';
+  UpdateSmtpAccessOptions,
+} from '../models/index';
+import {
+    CountDtoFromJSON,
+    CountDtoToJSON,
+    CreateInboxDtoFromJSON,
+    CreateInboxDtoToJSON,
+    CreateInboxRulesetOptionsFromJSON,
+    CreateInboxRulesetOptionsToJSON,
+    EmailFromJSON,
+    EmailToJSON,
+    EmailAvailableResultFromJSON,
+    EmailAvailableResultToJSON,
+    EmailPreviewFromJSON,
+    EmailPreviewToJSON,
+    FlushExpiredInboxesResultFromJSON,
+    FlushExpiredInboxesResultToJSON,
+    ImapAccessDetailsFromJSON,
+    ImapAccessDetailsToJSON,
+    ImapSmtpAccessDetailsFromJSON,
+    ImapSmtpAccessDetailsToJSON,
+    ImapSmtpAccessServersFromJSON,
+    ImapSmtpAccessServersToJSON,
+    InboxByEmailAddressResultFromJSON,
+    InboxByEmailAddressResultToJSON,
+    InboxByNameResultFromJSON,
+    InboxByNameResultToJSON,
+    InboxDtoFromJSON,
+    InboxDtoToJSON,
+    InboxExistsDtoFromJSON,
+    InboxExistsDtoToJSON,
+    InboxIdsResultFromJSON,
+    InboxIdsResultToJSON,
+    InboxRulesetDtoFromJSON,
+    InboxRulesetDtoToJSON,
+    PageDeliveryStatusFromJSON,
+    PageDeliveryStatusToJSON,
+    PageEmailPreviewFromJSON,
+    PageEmailPreviewToJSON,
+    PageInboxProjectionFromJSON,
+    PageInboxProjectionToJSON,
+    PageInboxRulesetDtoFromJSON,
+    PageInboxRulesetDtoToJSON,
+    PageInboxTagsFromJSON,
+    PageInboxTagsToJSON,
+    PageOrganizationInboxProjectionFromJSON,
+    PageOrganizationInboxProjectionToJSON,
+    PagePlusAddressProjectionFromJSON,
+    PagePlusAddressProjectionToJSON,
+    PageScheduledJobsFromJSON,
+    PageScheduledJobsToJSON,
+    PageSentEmailProjectionFromJSON,
+    PageSentEmailProjectionToJSON,
+    PageTrackingPixelProjectionFromJSON,
+    PageTrackingPixelProjectionToJSON,
+    PlusAddressDtoFromJSON,
+    PlusAddressDtoToJSON,
+    ScheduledJobDtoFromJSON,
+    ScheduledJobDtoToJSON,
+    SearchInboxesOptionsFromJSON,
+    SearchInboxesOptionsToJSON,
+    SendEmailOptionsFromJSON,
+    SendEmailOptionsToJSON,
+    SendSMTPEnvelopeOptionsFromJSON,
+    SendSMTPEnvelopeOptionsToJSON,
+    SentEmailDtoFromJSON,
+    SentEmailDtoToJSON,
+    SetInboxFavouritedOptionsFromJSON,
+    SetInboxFavouritedOptionsToJSON,
+    SmtpAccessDetailsFromJSON,
+    SmtpAccessDetailsToJSON,
+    UpdateImapAccessOptionsFromJSON,
+    UpdateImapAccessOptionsToJSON,
+    UpdateInboxOptionsFromJSON,
+    UpdateInboxOptionsToJSON,
+    UpdateSmtpAccessOptionsFromJSON,
+    UpdateSmtpAccessOptionsToJSON,
+} from '../models/index';
 
 export interface CancelScheduledJobRequest {
-  jobId: string;
+    jobId: string;
 }
 
 export interface CreateInboxRequest {
-  emailAddress?: string;
-  tags?: Array<string>;
-  name?: string;
-  description?: string;
-  useDomainPool?: boolean;
-  favourite?: boolean;
-  expiresAt?: Date;
-  expiresIn?: number;
-  allowTeamAccess?: boolean;
-  inboxType?: CreateInboxInboxTypeEnum;
-  virtualInbox?: boolean;
-  useShortAddress?: boolean;
-  domainId?: string;
-  domainName?: string;
-  prefix?: string;
+    emailAddress?: string;
+    tags?: Array<string>;
+    name?: string;
+    description?: string;
+    useDomainPool?: boolean;
+    favourite?: boolean;
+    expiresAt?: Date;
+    expiresIn?: number;
+    allowTeamAccess?: boolean;
+    inboxType?: CreateInboxInboxTypeEnum;
+    virtualInbox?: boolean;
+    useShortAddress?: boolean;
+    domainId?: string;
+    domainName?: string;
+    prefix?: string;
 }
 
 export interface CreateInboxRulesetRequest {
-  inboxId: string;
-  createInboxRulesetOptions: CreateInboxRulesetOptions;
+    inboxId: string;
+    createInboxRulesetOptions: CreateInboxRulesetOptions;
 }
 
 export interface CreateInboxWithOptionsRequest {
-  createInboxDto: CreateInboxDto;
+    createInboxDto: CreateInboxDto;
 }
 
 export interface DeleteAllInboxEmailsRequest {
-  inboxId: string;
+    inboxId: string;
 }
 
 export interface DeleteAllInboxesByDescriptionRequest {
-  description: string;
+    description: string;
 }
 
 export interface DeleteAllInboxesByNameRequest {
-  name: string;
+    name: string;
 }
 
 export interface DeleteAllInboxesByTagRequest {
-  tag: string;
+    tag: string;
 }
 
 export interface DeleteInboxRequest {
-  inboxId: string;
+    inboxId: string;
 }
 
 export interface DoesInboxExistRequest {
-  emailAddress: string;
-  allowCatchAll?: boolean;
+    emailAddress: string;
+    allowCatchAll?: boolean;
 }
 
 export interface FlushExpiredRequest {
-  before?: Date;
+    before?: Date;
 }
 
 export interface GetAllInboxesRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllInboxesSortEnum;
-  favourite?: boolean;
-  search?: string;
-  tag?: string;
-  teamAccess?: boolean;
-  since?: Date;
-  before?: Date;
-  inboxType?: GetAllInboxesInboxTypeEnum;
-  inboxFunction?: GetAllInboxesInboxFunctionEnum;
-  domainId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllInboxesSortEnum;
+    favourite?: boolean;
+    search?: string;
+    tag?: string;
+    teamAccess?: boolean;
+    since?: Date;
+    before?: Date;
+    inboxType?: GetAllInboxesInboxTypeEnum;
+    inboxFunction?: GetAllInboxesInboxFunctionEnum;
+    domainId?: string;
 }
 
 export interface GetAllInboxesOffsetPaginatedRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllInboxesOffsetPaginatedSortEnum;
-  favourite?: boolean;
-  search?: string;
-  tag?: string;
-  teamAccess?: boolean;
-  since?: Date;
-  before?: Date;
-  inboxType?: GetAllInboxesOffsetPaginatedInboxTypeEnum;
-  inboxFunction?: GetAllInboxesOffsetPaginatedInboxFunctionEnum;
-  domainId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllInboxesOffsetPaginatedSortEnum;
+    favourite?: boolean;
+    search?: string;
+    tag?: string;
+    teamAccess?: boolean;
+    since?: Date;
+    before?: Date;
+    inboxType?: GetAllInboxesOffsetPaginatedInboxTypeEnum;
+    inboxFunction?: GetAllInboxesOffsetPaginatedInboxFunctionEnum;
+    domainId?: string;
+}
+
+export interface GetAllPlusAddressesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllPlusAddressesSortEnum;
+    inboxId?: string;
 }
 
 export interface GetAllScheduledJobsRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllScheduledJobsSortEnum;
-  since?: Date;
-  before?: Date;
+    page?: number;
+    size?: number;
+    sort?: GetAllScheduledJobsSortEnum;
+    since?: Date;
+    before?: Date;
+    inboxId?: string;
 }
 
 export interface GetDeliveryStatusesByInboxIdRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: GetDeliveryStatusesByInboxIdSortEnum;
-  since?: Date;
-  before?: Date;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetDeliveryStatusesByInboxIdSortEnum;
+    since?: Date;
+    before?: Date;
 }
 
 export interface GetEmailsRequest {
-  inboxId: string;
-  size?: number;
-  limit?: number;
-  sort?: GetEmailsSortEnum;
-  retryTimeout?: number;
-  delayTimeout?: number;
-  minCount?: number;
-  unreadOnly?: boolean;
-  before?: Date;
-  since?: Date;
+    inboxId: string;
+    size?: number;
+    limit?: number;
+    sort?: GetEmailsSortEnum;
+    retryTimeout?: number;
+    delayTimeout?: number;
+    minCount?: number;
+    unreadOnly?: boolean;
+    before?: Date;
+    since?: Date;
 }
 
 export interface GetImapAccessRequest {
-  inboxId?: string;
+    inboxId?: string;
 }
 
 export interface GetImapSmtpAccessRequest {
-  inboxId?: string;
+    inboxId?: string;
 }
 
 export interface GetImapSmtpAccessEnvRequest {
-  inboxId?: string;
+    inboxId?: string;
 }
 
 export interface GetInboxRequest {
-  inboxId: string;
+    inboxId: string;
 }
 
 export interface GetInboxByEmailAddressRequest {
-  emailAddress: string;
+    emailAddress: string;
 }
 
 export interface GetInboxByNameRequest {
-  name: string;
+    name: string;
 }
 
 export interface GetInboxEmailCountRequest {
-  inboxId: string;
+    inboxId: string;
 }
 
 export interface GetInboxEmailsPaginatedRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: GetInboxEmailsPaginatedSortEnum;
-  since?: Date;
-  before?: Date;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxEmailsPaginatedSortEnum;
+    since?: Date;
+    before?: Date;
+    syncConnectors?: boolean;
+}
+
+export interface GetInboxPlusAddressRequest {
+    plusAddressId: string;
+    inboxId: string;
+}
+
+export interface GetInboxPlusAddressByIdRequest {
+    plusAddressId: string;
+    inboxId?: string;
+}
+
+export interface GetInboxPlusAddressEmailsRequest {
+    plusAddress: string;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxPlusAddressEmailsSortEnum;
+    since?: Date;
+    before?: Date;
+}
+
+export interface GetInboxPlusAddressEmailsForPlusAddressIdRequest {
+    plusAddressId: string;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxPlusAddressEmailsForPlusAddressIdSortEnum;
+    since?: Date;
+    before?: Date;
+}
+
+export interface GetInboxPlusAddressesRequest {
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxPlusAddressesSortEnum;
+}
+
+export interface GetInboxSentCountRequest {
+    inboxId: string;
 }
 
 export interface GetInboxSentEmailsRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: GetInboxSentEmailsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxSentEmailsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
+}
+
+export interface GetInboxTagsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetInboxTagsSortEnum;
+    searchFilter?: string;
+}
+
+export interface GetInboxTagsPaginatedRequest {
+    page?: number;
+    size?: number;
+    sort?: GetInboxTagsPaginatedSortEnum;
+    searchFilter?: string;
 }
 
 export interface GetInboxesRequest {
-  size?: number;
-  sort?: GetInboxesSortEnum;
-  since?: Date;
-  excludeCatchAllInboxes?: boolean;
-  before?: Date;
+    size?: number;
+    sort?: GetInboxesSortEnum;
+    since?: Date;
+    excludeCatchAllInboxes?: boolean;
+    before?: Date;
+    include?: Array<string>;
+}
+
+export interface GetInboxesByTagRequest {
+    tag: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxesByTagSortEnum;
+    searchFilter?: string;
 }
 
 export interface GetLatestEmailInInboxRequest {
-  inboxId: string;
-  timeoutMillis: number;
+    inboxId: string;
+    timeoutMillis: number;
 }
 
 export interface GetOrganizationInboxesRequest {
-  page?: number;
-  size?: number;
-  sort?: GetOrganizationInboxesSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
+    page?: number;
+    size?: number;
+    sort?: GetOrganizationInboxesSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
+}
+
+export interface GetOutboxesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetOutboxesSortEnum;
 }
 
 export interface GetScheduledJobRequest {
-  jobId: string;
+    jobId: string;
 }
 
 export interface GetScheduledJobsByInboxIdRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: GetScheduledJobsByInboxIdSortEnum;
-  since?: Date;
-  before?: Date;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetScheduledJobsByInboxIdSortEnum;
+    since?: Date;
+    before?: Date;
 }
 
 export interface GetSmtpAccessRequest {
-  inboxId?: string;
+    inboxId?: string;
+}
+
+export interface IsEmailAddressAvailableRequest {
+    emailAddress: string;
 }
 
 export interface ListInboxRulesetsRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: ListInboxRulesetsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: ListInboxRulesetsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
 }
 
 export interface ListInboxTrackingPixelsRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: ListInboxTrackingPixelsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: ListInboxTrackingPixelsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
 }
 
 export interface SearchInboxesRequest {
-  searchInboxesOptions: SearchInboxesOptions;
+    searchInboxesOptions: SearchInboxesOptions;
 }
 
 export interface SendEmailRequest {
-  inboxId: string;
-  sendEmailOptions: SendEmailOptions;
+    inboxId: string;
+    sendEmailOptions: SendEmailOptions;
 }
 
 export interface SendEmailAndConfirmRequest {
-  inboxId: string;
-  sendEmailOptions: SendEmailOptions;
+    inboxId: string;
+    sendEmailOptions: SendEmailOptions;
 }
 
 export interface SendEmailWithQueueRequest {
-  inboxId: string;
-  validateBeforeEnqueue: boolean;
-  sendEmailOptions: SendEmailOptions;
+    inboxId: string;
+    validateBeforeEnqueue: boolean;
+    sendEmailOptions: SendEmailOptions;
 }
 
 export interface SendSmtpEnvelopeRequest {
-  inboxId: string;
-  sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
+    inboxId: string;
+    sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
 }
 
 export interface SendTestEmailRequest {
-  inboxId: string;
+    inboxId: string;
 }
 
 export interface SendWithScheduleRequest {
-  inboxId: string;
-  sendEmailOptions: SendEmailOptions;
-  sendAtTimestamp?: Date;
-  sendAtNowPlusSeconds?: number;
-  validateBeforeEnqueue?: boolean;
+    inboxId: string;
+    sendEmailOptions: SendEmailOptions;
+    sendAtTimestamp?: Date;
+    sendAtNowPlusSeconds?: number;
+    validateBeforeEnqueue?: boolean;
 }
 
 export interface SetInboxFavouritedRequest {
-  inboxId: string;
-  setInboxFavouritedOptions: SetInboxFavouritedOptions;
+    inboxId: string;
+    setInboxFavouritedOptions: SetInboxFavouritedOptions;
+}
+
+export interface UpdateImapAccessRequest {
+    updateImapAccessOptions: UpdateImapAccessOptions;
+    inboxId?: string;
 }
 
 export interface UpdateInboxRequest {
-  inboxId: string;
-  updateInboxOptions: UpdateInboxOptions;
+    inboxId: string;
+    updateInboxOptions: UpdateInboxOptions;
+}
+
+export interface UpdateSmtpAccessRequest {
+    updateSmtpAccessOptions: UpdateSmtpAccessOptions;
+    inboxId?: string;
 }
 
 /**
- *
+ * 
  */
 export class InboxControllerApi extends runtime.BaseAPI {
-  /**
-   * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
-   * Cancel a scheduled email job
-   */
-  async cancelScheduledJobRaw(
-    requestParameters: CancelScheduledJobRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ScheduledJobDto>> {
-    if (
-      requestParameters.jobId === null ||
-      requestParameters.jobId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'jobId',
-        'Required parameter requestParameters.jobId was null or undefined when calling cancelScheduledJob.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/scheduled-jobs/{jobId}`.replace(
-          `{${'jobId'}}`,
-          encodeURIComponent(String(requestParameters.jobId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ScheduledJobDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
-   * Cancel a scheduled email job
-   */
-  async cancelScheduledJob(
-    requestParameters: CancelScheduledJobRequest,
-    initOverrides?: RequestInit
-  ): Promise<ScheduledJobDto> {
-    const response = await this.cancelScheduledJobRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
-   * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-   */
-  async createInboxRaw(
-    requestParameters: CreateInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.emailAddress !== undefined) {
-      queryParameters['emailAddress'] = requestParameters.emailAddress;
-    }
-
-    if (requestParameters.tags) {
-      queryParameters['tags'] = requestParameters.tags;
-    }
-
-    if (requestParameters.name !== undefined) {
-      queryParameters['name'] = requestParameters.name;
-    }
-
-    if (requestParameters.description !== undefined) {
-      queryParameters['description'] = requestParameters.description;
-    }
-
-    if (requestParameters.useDomainPool !== undefined) {
-      queryParameters['useDomainPool'] = requestParameters.useDomainPool;
-    }
-
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
-    }
-
-    if (requestParameters.expiresAt !== undefined) {
-      queryParameters['expiresAt'] = (
-        requestParameters.expiresAt as any
-      ).toISOString();
-    }
-
-    if (requestParameters.expiresIn !== undefined) {
-      queryParameters['expiresIn'] = requestParameters.expiresIn;
-    }
-
-    if (requestParameters.allowTeamAccess !== undefined) {
-      queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
-    }
 
-    if (requestParameters.inboxType !== undefined) {
-      queryParameters['inboxType'] = requestParameters.inboxType;
-    }
-
-    if (requestParameters.virtualInbox !== undefined) {
-      queryParameters['virtualInbox'] = requestParameters.virtualInbox;
-    }
-
-    if (requestParameters.useShortAddress !== undefined) {
-      queryParameters['useShortAddress'] = requestParameters.useShortAddress;
-    }
+    /**
+     * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+     * Cancel a scheduled email job
+     */
+    async cancelScheduledJobRaw(requestParameters: CancelScheduledJobRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScheduledJobDto>> {
+        if (requestParameters['jobId'] == null) {
+            throw new runtime.RequiredError(
+                'jobId',
+                'Required parameter "jobId" was null or undefined when calling cancelScheduledJob().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/scheduled-jobs/{jobId}`.replace(`{${"jobId"}}`, encodeURIComponent(String(requestParameters['jobId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ScheduledJobDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+     * Cancel a scheduled email job
+     */
+    async cancelScheduledJob(requestParameters: CancelScheduledJobRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScheduledJobDto> {
+        const response = await this.cancelScheduledJobRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty. 
+     * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
+     */
+    async createInboxRaw(requestParameters: CreateInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['emailAddress'] != null) {
+            queryParameters['emailAddress'] = requestParameters['emailAddress'];
+        }
+
+        if (requestParameters['tags'] != null) {
+            queryParameters['tags'] = requestParameters['tags'];
+        }
+
+        if (requestParameters['name'] != null) {
+            queryParameters['name'] = requestParameters['name'];
+        }
+
+        if (requestParameters['description'] != null) {
+            queryParameters['description'] = requestParameters['description'];
+        }
+
+        if (requestParameters['useDomainPool'] != null) {
+            queryParameters['useDomainPool'] = requestParameters['useDomainPool'];
+        }
+
+        if (requestParameters['favourite'] != null) {
+            queryParameters['favourite'] = requestParameters['favourite'];
+        }
+
+        if (requestParameters['expiresAt'] != null) {
+            queryParameters['expiresAt'] = (requestParameters['expiresAt'] as any).toISOString();
+        }
+
+        if (requestParameters['expiresIn'] != null) {
+            queryParameters['expiresIn'] = requestParameters['expiresIn'];
+        }
+
+        if (requestParameters['allowTeamAccess'] != null) {
+            queryParameters['allowTeamAccess'] = requestParameters['allowTeamAccess'];
+        }
+
+        if (requestParameters['inboxType'] != null) {
+            queryParameters['inboxType'] = requestParameters['inboxType'];
+        }
+
+        if (requestParameters['virtualInbox'] != null) {
+            queryParameters['virtualInbox'] = requestParameters['virtualInbox'];
+        }
+
+        if (requestParameters['useShortAddress'] != null) {
+            queryParameters['useShortAddress'] = requestParameters['useShortAddress'];
+        }
+
+        if (requestParameters['domainId'] != null) {
+            queryParameters['domainId'] = requestParameters['domainId'];
+        }
+
+        if (requestParameters['domainName'] != null) {
+            queryParameters['domainName'] = requestParameters['domainName'];
+        }
+
+        if (requestParameters['prefix'] != null) {
+            queryParameters['prefix'] = requestParameters['prefix'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-    if (requestParameters.domainId !== undefined) {
-      queryParameters['domainId'] = requestParameters.domainId;
+        const response = await this.request({
+            path: `/inboxes`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty. 
+     * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
+     */
+    async createInbox(requestParameters: CreateInboxRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto> {
+        const response = await this.createInboxRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * Create an inbox ruleset
+     */
+    async createInboxRulesetRaw(requestParameters: CreateInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxRulesetDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling createInboxRuleset().'
+            );
+        }
+
+        if (requestParameters['createInboxRulesetOptions'] == null) {
+            throw new runtime.RequiredError(
+                'createInboxRulesetOptions',
+                'Required parameter "createInboxRulesetOptions" was null or undefined when calling createInboxRuleset().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/rulesets`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateInboxRulesetOptionsToJSON(requestParameters['createInboxRulesetOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxRulesetDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * Create an inbox ruleset
+     */
+    async createInboxRuleset(requestParameters: CreateInboxRulesetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxRulesetDto> {
+        const response = await this.createInboxRulesetRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Create an inbox with default options. Uses MailSlurp domain pool address and is private.
+     */
+    async createInboxWithDefaultsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/withDefaults`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Create an inbox with default options. Uses MailSlurp domain pool address and is private.
+     */
+    async createInboxWithDefaults(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto> {
+        const response = await this.createInboxWithDefaultsRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
+     * Create an inbox with options. Extended options for inbox creation.
+     */
+    async createInboxWithOptionsRaw(requestParameters: CreateInboxWithOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>> {
+        if (requestParameters['createInboxDto'] == null) {
+            throw new runtime.RequiredError(
+                'createInboxDto',
+                'Required parameter "createInboxDto" was null or undefined when calling createInboxWithOptions().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/withOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateInboxDtoToJSON(requestParameters['createInboxDto']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
+     * Create an inbox with options. Extended options for inbox creation.
+     */
+    async createInboxWithOptions(requestParameters: CreateInboxWithOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto> {
+        const response = await this.createInboxWithOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Deletes all emails in an inbox. Be careful as emails cannot be recovered
+     * Delete all emails in a given inboxes.
+     */
+    async deleteAllInboxEmailsRaw(requestParameters: DeleteAllInboxEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling deleteAllInboxEmails().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/deleteAllInboxEmails`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Deletes all emails in an inbox. Be careful as emails cannot be recovered
+     * Delete all emails in a given inboxes.
+     */
+    async deleteAllInboxEmails(requestParameters: DeleteAllInboxEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAllInboxEmailsRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
+     * Delete all inboxes
+     */
+    async deleteAllInboxesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
+     * Delete all inboxes
+     */
+    async deleteAllInboxes(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAllInboxesRaw(initOverrides);
+    }
+
+    /**
+     * Permanently delete all inboxes by description
+     * Delete inboxes by description
+     */
+    async deleteAllInboxesByDescriptionRaw(requestParameters: DeleteAllInboxesByDescriptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['description'] == null) {
+            throw new runtime.RequiredError(
+                'description',
+                'Required parameter "description" was null or undefined when calling deleteAllInboxesByDescription().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['description'] != null) {
+            queryParameters['description'] = requestParameters['description'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/by-description`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Permanently delete all inboxes by description
+     * Delete inboxes by description
+     */
+    async deleteAllInboxesByDescription(requestParameters: DeleteAllInboxesByDescriptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAllInboxesByDescriptionRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Permanently delete all inboxes by name
+     * Delete inboxes by name
+     */
+    async deleteAllInboxesByNameRaw(requestParameters: DeleteAllInboxesByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling deleteAllInboxesByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['name'] != null) {
+            queryParameters['name'] = requestParameters['name'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/by-name`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Permanently delete all inboxes by name
+     * Delete inboxes by name
+     */
+    async deleteAllInboxesByName(requestParameters: DeleteAllInboxesByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAllInboxesByNameRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Permanently delete all inboxes by tag
+     * Delete inboxes by tag
+     */
+    async deleteAllInboxesByTagRaw(requestParameters: DeleteAllInboxesByTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['tag'] == null) {
+            throw new runtime.RequiredError(
+                'tag',
+                'Required parameter "tag" was null or undefined when calling deleteAllInboxesByTag().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['tag'] != null) {
+            queryParameters['tag'] = requestParameters['tag'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/by-tag`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Permanently delete all inboxes by tag
+     * Delete inboxes by tag
+     */
+    async deleteAllInboxesByTag(requestParameters: DeleteAllInboxesByTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAllInboxesByTagRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
+     * Delete inbox
+     */
+    async deleteInboxRaw(requestParameters: DeleteInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling deleteInbox().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
+     * Delete inbox
+     */
+    async deleteInbox(requestParameters: DeleteInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteInboxRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Check if inboxes exist by email address. Useful if you are sending emails to mailslurp addresses
+     * Does inbox exist
+     */
+    async doesInboxExistRaw(requestParameters: DoesInboxExistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxExistsDto>> {
+        if (requestParameters['emailAddress'] == null) {
+            throw new runtime.RequiredError(
+                'emailAddress',
+                'Required parameter "emailAddress" was null or undefined when calling doesInboxExist().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['emailAddress'] != null) {
+            queryParameters['emailAddress'] = requestParameters['emailAddress'];
+        }
+
+        if (requestParameters['allowCatchAll'] != null) {
+            queryParameters['allowCatchAll'] = requestParameters['allowCatchAll'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/exists`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxExistsDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Check if inboxes exist by email address. Useful if you are sending emails to mailslurp addresses
+     * Does inbox exist
+     */
+    async doesInboxExist(requestParameters: DoesInboxExistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxExistsDto> {
+        const response = await this.doesInboxExistRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+     * Remove expired inboxes
+     */
+    async flushExpiredRaw(requestParameters: FlushExpiredRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<FlushExpiredInboxesResult>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/expired`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => FlushExpiredInboxesResultFromJSON(jsonValue));
+    }
+
+    /**
+     * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+     * Remove expired inboxes
+     */
+    async flushExpired(requestParameters: FlushExpiredRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<FlushExpiredInboxesResult> {
+        const response = await this.flushExpiredRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Paginated
+     */
+    async getAllInboxesRaw(requestParameters: GetAllInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['favourite'] != null) {
+            queryParameters['favourite'] = requestParameters['favourite'];
+        }
+
+        if (requestParameters['search'] != null) {
+            queryParameters['search'] = requestParameters['search'];
+        }
+
+        if (requestParameters['tag'] != null) {
+            queryParameters['tag'] = requestParameters['tag'];
+        }
+
+        if (requestParameters['teamAccess'] != null) {
+            queryParameters['teamAccess'] = requestParameters['teamAccess'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        if (requestParameters['inboxType'] != null) {
+            queryParameters['inboxType'] = requestParameters['inboxType'];
+        }
+
+        if (requestParameters['inboxFunction'] != null) {
+            queryParameters['inboxFunction'] = requestParameters['inboxFunction'];
+        }
+
+        if (requestParameters['domainId'] != null) {
+            queryParameters['domainId'] = requestParameters['domainId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/paginated`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Paginated
+     */
+    async getAllInboxes(requestParameters: GetAllInboxesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxProjection> {
+        const response = await this.getAllInboxesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Offset Paginated
+     */
+    async getAllInboxesOffsetPaginatedRaw(requestParameters: GetAllInboxesOffsetPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['favourite'] != null) {
+            queryParameters['favourite'] = requestParameters['favourite'];
+        }
+
+        if (requestParameters['search'] != null) {
+            queryParameters['search'] = requestParameters['search'];
+        }
+
+        if (requestParameters['tag'] != null) {
+            queryParameters['tag'] = requestParameters['tag'];
+        }
+
+        if (requestParameters['teamAccess'] != null) {
+            queryParameters['teamAccess'] = requestParameters['teamAccess'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        if (requestParameters['inboxType'] != null) {
+            queryParameters['inboxType'] = requestParameters['inboxType'];
+        }
+
+        if (requestParameters['inboxFunction'] != null) {
+            queryParameters['inboxFunction'] = requestParameters['inboxFunction'];
+        }
+
+        if (requestParameters['domainId'] != null) {
+            queryParameters['domainId'] = requestParameters['domainId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/offset-paginated`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Offset Paginated
+     */
+    async getAllInboxesOffsetPaginated(requestParameters: GetAllInboxesOffsetPaginatedRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxProjection> {
+        const response = await this.getAllInboxesOffsetPaginatedRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    async getAllPlusAddressesRaw(requestParameters: GetAllPlusAddressesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PagePlusAddressProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/plus-addresses`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PagePlusAddressProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    async getAllPlusAddresses(requestParameters: GetAllPlusAddressesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PagePlusAddressProjection> {
+        const response = await this.getAllPlusAddressesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+     * Get all scheduled email sending jobs for account
+     */
+    async getAllScheduledJobsRaw(requestParameters: GetAllScheduledJobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageScheduledJobs>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/scheduled-jobs`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageScheduledJobsFromJSON(jsonValue));
+    }
+
+    /**
+     * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+     * Get all scheduled email sending jobs for account
+     */
+    async getAllScheduledJobs(requestParameters: GetAllScheduledJobsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageScheduledJobs> {
+        const response = await this.getAllScheduledJobsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get all email delivery statuses for an inbox
+     * @deprecated
+     */
+    async getDeliveryStatusesByInboxIdRaw(requestParameters: GetDeliveryStatusesByInboxIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageDeliveryStatus>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getDeliveryStatusesByInboxId().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/delivery-status`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageDeliveryStatusFromJSON(jsonValue));
+    }
+
+    /**
+     * Get all email delivery statuses for an inbox
+     * @deprecated
+     */
+    async getDeliveryStatusesByInboxId(requestParameters: GetDeliveryStatusesByInboxIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageDeliveryStatus> {
+        const response = await this.getDeliveryStatusesByInboxIdRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List emails that an inbox has received. Only emails that are sent to the inbox\'s email address will appear in the inbox. It may take several seconds for any email you send to an inbox\'s email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
+     * Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
+     */
+    async getEmailsRaw(requestParameters: GetEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<EmailPreview>>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getEmails().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['retryTimeout'] != null) {
+            queryParameters['retryTimeout'] = requestParameters['retryTimeout'];
+        }
+
+        if (requestParameters['delayTimeout'] != null) {
+            queryParameters['delayTimeout'] = requestParameters['delayTimeout'];
+        }
+
+        if (requestParameters['minCount'] != null) {
+            queryParameters['minCount'] = requestParameters['minCount'];
+        }
+
+        if (requestParameters['unreadOnly'] != null) {
+            queryParameters['unreadOnly'] = requestParameters['unreadOnly'];
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/emails`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(EmailPreviewFromJSON));
+    }
+
+    /**
+     * List emails that an inbox has received. Only emails that are sent to the inbox\'s email address will appear in the inbox. It may take several seconds for any email you send to an inbox\'s email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
+     * Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
+     */
+    async getEmails(requestParameters: GetEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<EmailPreview>> {
+        const response = await this.getEmailsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get IMAP access usernames and passwords
+     */
+    async getImapAccessRaw(requestParameters: GetImapAccessRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapAccessDetails>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/imap-access`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ImapAccessDetailsFromJSON(jsonValue));
+    }
+
+    /**
+     * Get IMAP access usernames and passwords
+     */
+    async getImapAccess(requestParameters: GetImapAccessRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapAccessDetails> {
+        const response = await this.getImapAccessRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get IMAP and SMTP access usernames and passwords
+     */
+    async getImapSmtpAccessRaw(requestParameters: GetImapSmtpAccessRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapSmtpAccessDetails>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/imap-smtp-access`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ImapSmtpAccessDetailsFromJSON(jsonValue));
+    }
+
+    /**
+     * Get IMAP and SMTP access usernames and passwords
+     */
+    async getImapSmtpAccess(requestParameters: GetImapSmtpAccessRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapSmtpAccessDetails> {
+        const response = await this.getImapSmtpAccessRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get IMAP and SMTP access details in .env format
+     */
+    async getImapSmtpAccessEnvRaw(requestParameters: GetImapSmtpAccessEnvRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/imap-smtp-access/env`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        if (this.isJsonMime(response.headers.get('content-type'))) {
+            return new runtime.JSONApiResponse<string>(response);
+        } else {
+            return new runtime.TextApiResponse(response) as any;
+        }
+    }
+
+    /**
+     * Get IMAP and SMTP access details in .env format
+     */
+    async getImapSmtpAccessEnv(requestParameters: GetImapSmtpAccessEnvRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+        const response = await this.getImapSmtpAccessEnvRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get IMAP and SMTP server hosts
+     */
+    async getImapSmtpAccessServersRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImapSmtpAccessServers>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/imap-smtp-access/servers`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ImapSmtpAccessServersFromJSON(jsonValue));
+    }
+
+    /**
+     * Get IMAP and SMTP server hosts
+     */
+    async getImapSmtpAccessServers(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImapSmtpAccessServers> {
+        const response = await this.getImapSmtpAccessServersRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns an inbox\'s properties, including its email address and ID.
+     * Get Inbox. Returns properties of an inbox.
+     */
+    async getInboxRaw(requestParameters: GetInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInbox().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns an inbox\'s properties, including its email address and ID.
+     * Get Inbox. Returns properties of an inbox.
+     */
+    async getInbox(requestParameters: GetInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto> {
+        const response = await this.getInboxRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a inbox result by email address
+     * Search for an inbox with the provided email address
+     */
+    async getInboxByEmailAddressRaw(requestParameters: GetInboxByEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxByEmailAddressResult>> {
+        if (requestParameters['emailAddress'] == null) {
+            throw new runtime.RequiredError(
+                'emailAddress',
+                'Required parameter "emailAddress" was null or undefined when calling getInboxByEmailAddress().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['emailAddress'] != null) {
+            queryParameters['emailAddress'] = requestParameters['emailAddress'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/byEmailAddress`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxByEmailAddressResultFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a inbox result by email address
+     * Search for an inbox with the provided email address
+     */
+    async getInboxByEmailAddress(requestParameters: GetInboxByEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxByEmailAddressResult> {
+        const response = await this.getInboxByEmailAddressRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a inbox result by name
+     * Search for an inbox with the given name
+     */
+    async getInboxByNameRaw(requestParameters: GetInboxByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxByNameResult>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling getInboxByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['name'] != null) {
+            queryParameters['name'] = requestParameters['name'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/byName`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxByNameResultFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a inbox result by name
+     * Search for an inbox with the given name
+     */
+    async getInboxByName(requestParameters: GetInboxByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxByNameResult> {
+        const response = await this.getInboxByNameRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get total inbox count
+     */
+    async getInboxCountRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CountDto>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/count`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CountDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get total inbox count
+     */
+    async getInboxCount(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CountDto> {
+        const response = await this.getInboxCountRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get email count in inbox
+     */
+    async getInboxEmailCountRaw(requestParameters: GetInboxEmailCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CountDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxEmailCount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/emails/count`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CountDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get email count in inbox
+     */
+    async getInboxEmailCount(requestParameters: GetInboxEmailCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CountDto> {
+        const response = await this.getInboxEmailCountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a paginated list of emails in an inbox. Does not hold connections open.
+     * Get inbox emails paginated
+     */
+    async getInboxEmailsPaginatedRaw(requestParameters: GetInboxEmailsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailPreview>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxEmailsPaginated().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        if (requestParameters['syncConnectors'] != null) {
+            queryParameters['syncConnectors'] = requestParameters['syncConnectors'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/emails/paginated`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageEmailPreviewFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a paginated list of emails in an inbox. Does not hold connections open.
+     * Get inbox emails paginated
+     */
+    async getInboxEmailsPaginated(requestParameters: GetInboxEmailsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailPreview> {
+        const response = await this.getInboxEmailsPaginatedRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get list of inbox IDs
+     * Get all inbox IDs
+     * @deprecated
+     */
+    async getInboxIdsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxIdsResult>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/ids`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxIdsResultFromJSON(jsonValue));
+    }
+
+    /**
+     * Get list of inbox IDs
+     * Get all inbox IDs
+     * @deprecated
+     */
+    async getInboxIds(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxIdsResult> {
+        const response = await this.getInboxIdsRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
+     */
+    async getInboxPlusAddressRaw(requestParameters: GetInboxPlusAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlusAddressDto>> {
+        if (requestParameters['plusAddressId'] == null) {
+            throw new runtime.RequiredError(
+                'plusAddressId',
+                'Required parameter "plusAddressId" was null or undefined when calling getInboxPlusAddress().'
+            );
+        }
+
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddress().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/plus-addresses/{plusAddressId}`.replace(`{${"plusAddressId"}}`, encodeURIComponent(String(requestParameters['plusAddressId']))).replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PlusAddressDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
+     */
+    async getInboxPlusAddress(requestParameters: GetInboxPlusAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PlusAddressDto> {
+        const response = await this.getInboxPlusAddressRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    async getInboxPlusAddressByIdRaw(requestParameters: GetInboxPlusAddressByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlusAddressDto>> {
+        if (requestParameters['plusAddressId'] == null) {
+            throw new runtime.RequiredError(
+                'plusAddressId',
+                'Required parameter "plusAddressId" was null or undefined when calling getInboxPlusAddressById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/plus-addresses/{plusAddressId}`.replace(`{${"plusAddressId"}}`, encodeURIComponent(String(requestParameters['plusAddressId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PlusAddressDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    async getInboxPlusAddressById(requestParameters: GetInboxPlusAddressByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PlusAddressDto> {
+        const response = await this.getInboxPlusAddressByIdRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    async getInboxPlusAddressEmailsRaw(requestParameters: GetInboxPlusAddressEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailPreview>> {
+        if (requestParameters['plusAddress'] == null) {
+            throw new runtime.RequiredError(
+                'plusAddress',
+                'Required parameter "plusAddress" was null or undefined when calling getInboxPlusAddressEmails().'
+            );
+        }
+
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddressEmails().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['plusAddress'] != null) {
+            queryParameters['plusAddress'] = requestParameters['plusAddress'];
+        }
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/plus-addresses/emails`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageEmailPreviewFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    async getInboxPlusAddressEmails(requestParameters: GetInboxPlusAddressEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailPreview> {
+        const response = await this.getInboxPlusAddressEmailsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    async getInboxPlusAddressEmailsForPlusAddressIdRaw(requestParameters: GetInboxPlusAddressEmailsForPlusAddressIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailPreview>> {
+        if (requestParameters['plusAddressId'] == null) {
+            throw new runtime.RequiredError(
+                'plusAddressId',
+                'Required parameter "plusAddressId" was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId().'
+            );
+        }
+
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/plus-addresses/{plusAddressId}/emails`.replace(`{${"plusAddressId"}}`, encodeURIComponent(String(requestParameters['plusAddressId']))).replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageEmailPreviewFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    async getInboxPlusAddressEmailsForPlusAddressId(requestParameters: GetInboxPlusAddressEmailsForPlusAddressIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailPreview> {
+        const response = await this.getInboxPlusAddressEmailsForPlusAddressIdRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    async getInboxPlusAddressesRaw(requestParameters: GetInboxPlusAddressesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PagePlusAddressProjection>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddresses().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/plus-addresses`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PagePlusAddressProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    async getInboxPlusAddresses(requestParameters: GetInboxPlusAddressesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PagePlusAddressProjection> {
+        const response = await this.getInboxPlusAddressesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get sent email count in inbox
+     */
+    async getInboxSentCountRaw(requestParameters: GetInboxSentCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CountDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxSentCount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/sent/count`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CountDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get sent email count in inbox
+     */
+    async getInboxSentCount(requestParameters: GetInboxSentCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CountDto> {
+        const response = await this.getInboxSentCountRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
+     * Get Inbox Sent Emails
+     * @deprecated
+     */
+    async getInboxSentEmailsRaw(requestParameters: GetInboxSentEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageSentEmailProjection>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getInboxSentEmails().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/sent`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageSentEmailProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
+     * Get Inbox Sent Emails
+     * @deprecated
+     */
+    async getInboxSentEmails(requestParameters: GetInboxSentEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageSentEmailProjection> {
+        const response = await this.getInboxSentEmailsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get all inbox tags
+     * Get inbox tags
+     */
+    async getInboxTagsRaw(requestParameters: GetInboxTagsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/tags`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     * Get all inbox tags
+     * Get inbox tags
+     */
+    async getInboxTags(requestParameters: GetInboxTagsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>> {
+        const response = await this.getInboxTagsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    async getInboxTagsPaginatedRaw(requestParameters: GetInboxTagsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxTags>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/tags/paginated`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxTagsFromJSON(jsonValue));
+    }
+
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    async getInboxTagsPaginated(requestParameters: GetInboxTagsPaginatedRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxTags> {
+        const response = await this.getInboxTagsPaginatedRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
+     * List Inboxes and email addresses
+     * @deprecated
+     */
+    async getInboxesRaw(requestParameters: GetInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<InboxDto>>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['excludeCatchAllInboxes'] != null) {
+            queryParameters['excludeCatchAllInboxes'] = requestParameters['excludeCatchAllInboxes'];
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        if (requestParameters['include'] != null) {
+            queryParameters['include'] = requestParameters['include'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(InboxDtoFromJSON));
+    }
+
+    /**
+     * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
+     * List Inboxes and email addresses
+     * @deprecated
+     */
+    async getInboxes(requestParameters: GetInboxesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<InboxDto>> {
+        const response = await this.getInboxesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    async getInboxesByTagRaw(requestParameters: GetInboxesByTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxProjection>> {
+        if (requestParameters['tag'] == null) {
+            throw new runtime.RequiredError(
+                'tag',
+                'Required parameter "tag" was null or undefined when calling getInboxesByTag().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        if (requestParameters['tag'] != null) {
+            queryParameters['tag'] = requestParameters['tag'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/tags/inboxes`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    async getInboxesByTag(requestParameters: GetInboxesByTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxProjection> {
+        const response = await this.getInboxesByTagRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get the newest email in an inbox or wait for one to arrive
+     * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+     */
+    async getLatestEmailInInboxRaw(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Email>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getLatestEmailInInbox().'
+            );
+        }
+
+        if (requestParameters['timeoutMillis'] == null) {
+            throw new runtime.RequiredError(
+                'timeoutMillis',
+                'Required parameter "timeoutMillis" was null or undefined when calling getLatestEmailInInbox().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        if (requestParameters['timeoutMillis'] != null) {
+            queryParameters['timeoutMillis'] = requestParameters['timeoutMillis'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/getLatestEmail`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EmailFromJSON(jsonValue));
+    }
+
+    /**
+     * Get the newest email in an inbox or wait for one to arrive
+     * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+     */
+    async getLatestEmailInInbox(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Email> {
+        const response = await this.getLatestEmailInInboxRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). 
+     * List Organization Inboxes Paginated
+     * @deprecated
+     */
+    async getOrganizationInboxesRaw(requestParameters: GetOrganizationInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageOrganizationInboxProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/organization`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageOrganizationInboxProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). 
+     * List Organization Inboxes Paginated
+     * @deprecated
+     */
+    async getOrganizationInboxes(requestParameters: GetOrganizationInboxesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageOrganizationInboxProjection> {
+        const response = await this.getOrganizationInboxesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    async getOutboxesRaw(requestParameters: GetOutboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/outboxes`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    async getOutboxes(requestParameters: GetOutboxesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxProjection> {
+        const response = await this.getOutboxesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a scheduled email job details.
+     * Get a scheduled email job
+     */
+    async getScheduledJobRaw(requestParameters: GetScheduledJobRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScheduledJobDto>> {
+        if (requestParameters['jobId'] == null) {
+            throw new runtime.RequiredError(
+                'jobId',
+                'Required parameter "jobId" was null or undefined when calling getScheduledJob().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/scheduled-jobs/{jobId}`.replace(`{${"jobId"}}`, encodeURIComponent(String(requestParameters['jobId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ScheduledJobDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a scheduled email job details.
+     * Get a scheduled email job
+     */
+    async getScheduledJob(requestParameters: GetScheduledJobRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScheduledJobDto> {
+        const response = await this.getScheduledJobRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Schedule sending of emails using scheduled jobs.
+     * Get all scheduled email sending jobs for the inbox
+     */
+    async getScheduledJobsByInboxIdRaw(requestParameters: GetScheduledJobsByInboxIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageScheduledJobs>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling getScheduledJobsByInboxId().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/scheduled-jobs`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageScheduledJobsFromJSON(jsonValue));
+    }
+
+    /**
+     * Schedule sending of emails using scheduled jobs.
+     * Get all scheduled email sending jobs for the inbox
+     */
+    async getScheduledJobsByInboxId(requestParameters: GetScheduledJobsByInboxIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageScheduledJobs> {
+        const response = await this.getScheduledJobsByInboxIdRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get SMTP access usernames and passwords
+     */
+    async getSmtpAccessRaw(requestParameters: GetSmtpAccessRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SmtpAccessDetails>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/smtp-access`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SmtpAccessDetailsFromJSON(jsonValue));
+    }
+
+    /**
+     * Get SMTP access usernames and passwords
+     */
+    async getSmtpAccess(requestParameters: GetSmtpAccessRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SmtpAccessDetails> {
+        const response = await this.getSmtpAccessRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    async isEmailAddressAvailableRaw(requestParameters: IsEmailAddressAvailableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EmailAvailableResult>> {
+        if (requestParameters['emailAddress'] == null) {
+            throw new runtime.RequiredError(
+                'emailAddress',
+                'Required parameter "emailAddress" was null or undefined when calling isEmailAddressAvailable().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['emailAddress'] != null) {
+            queryParameters['emailAddress'] = requestParameters['emailAddress'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/available`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EmailAvailableResultFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    async isEmailAddressAvailable(requestParameters: IsEmailAddressAvailableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EmailAvailableResult> {
+        const response = await this.isEmailAddressAvailableRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List all rulesets attached to an inbox
+     * List inbox rulesets
+     */
+    async listInboxRulesetsRaw(requestParameters: ListInboxRulesetsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxRulesetDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling listInboxRulesets().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/rulesets`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxRulesetDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * List all rulesets attached to an inbox
+     * List inbox rulesets
+     */
+    async listInboxRulesets(requestParameters: ListInboxRulesetsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxRulesetDto> {
+        const response = await this.listInboxRulesetsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List all tracking pixels sent from an inbox
+     * List inbox tracking pixels
+     */
+    async listInboxTrackingPixelsRaw(requestParameters: ListInboxTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageTrackingPixelProjection>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling listInboxTrackingPixels().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
+        }
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
+
+        if (requestParameters['sort'] != null) {
+            queryParameters['sort'] = requestParameters['sort'];
+        }
+
+        if (requestParameters['searchFilter'] != null) {
+            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+        }
+
+        if (requestParameters['since'] != null) {
+            queryParameters['since'] = (requestParameters['since'] as any).toISOString();
+        }
+
+        if (requestParameters['before'] != null) {
+            queryParameters['before'] = (requestParameters['before'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/tracking-pixels`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageTrackingPixelProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List all tracking pixels sent from an inbox
+     * List inbox tracking pixels
+     */
+    async listInboxTrackingPixels(requestParameters: ListInboxTrackingPixelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageTrackingPixelProjection> {
+        const response = await this.listInboxTrackingPixelsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * Search all inboxes and return matching inboxes
+     */
+    async searchInboxesRaw(requestParameters: SearchInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxProjection>> {
+        if (requestParameters['searchInboxesOptions'] == null) {
+            throw new runtime.RequiredError(
+                'searchInboxesOptions',
+                'Required parameter "searchInboxesOptions" was null or undefined when calling searchInboxes().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/search`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SearchInboxesOptionsToJSON(requestParameters['searchInboxesOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * Search all inboxes and return matching inboxes
+     */
+    async searchInboxes(requestParameters: SearchInboxesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxProjection> {
+        const response = await this.searchInboxesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Send an email from an inbox\'s email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox\'s id not the inbox\'s email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
+     * Send Email
+     */
+    async sendEmailRaw(requestParameters: SendEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling sendEmail().'
+            );
+        }
+
+        if (requestParameters['sendEmailOptions'] == null) {
+            throw new runtime.RequiredError(
+                'sendEmailOptions',
+                'Required parameter "sendEmailOptions" was null or undefined when calling sendEmail().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SendEmailOptionsToJSON(requestParameters['sendEmailOptions']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Send an email from an inbox\'s email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox\'s id not the inbox\'s email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
+     * Send Email
+     */
+    async sendEmail(requestParameters: SendEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.sendEmailRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Sister method for standard `sendEmail` method with the benefit of returning a `SentEmail` entity confirming the successful sending of the email with a link to the sent object created for it.
+     * Send email and return sent confirmation
+     */
+    async sendEmailAndConfirmRaw(requestParameters: SendEmailAndConfirmRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling sendEmailAndConfirm().'
+            );
+        }
+
+        if (requestParameters['sendEmailOptions'] == null) {
+            throw new runtime.RequiredError(
+                'sendEmailOptions',
+                'Required parameter "sendEmailOptions" was null or undefined when calling sendEmailAndConfirm().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/confirm`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SendEmailOptionsToJSON(requestParameters['sendEmailOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SentEmailDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Sister method for standard `sendEmail` method with the benefit of returning a `SentEmail` entity confirming the successful sending of the email with a link to the sent object created for it.
+     * Send email and return sent confirmation
+     */
+    async sendEmailAndConfirm(requestParameters: SendEmailAndConfirmRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto> {
+        const response = await this.sendEmailAndConfirmRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+     * Send email with queue
+     */
+    async sendEmailWithQueueRaw(requestParameters: SendEmailWithQueueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling sendEmailWithQueue().'
+            );
+        }
+
+        if (requestParameters['validateBeforeEnqueue'] == null) {
+            throw new runtime.RequiredError(
+                'validateBeforeEnqueue',
+                'Required parameter "validateBeforeEnqueue" was null or undefined when calling sendEmailWithQueue().'
+            );
+        }
+
+        if (requestParameters['sendEmailOptions'] == null) {
+            throw new runtime.RequiredError(
+                'sendEmailOptions',
+                'Required parameter "sendEmailOptions" was null or undefined when calling sendEmailWithQueue().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['validateBeforeEnqueue'] != null) {
+            queryParameters['validateBeforeEnqueue'] = requestParameters['validateBeforeEnqueue'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/with-queue`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SendEmailOptionsToJSON(requestParameters['sendEmailOptions']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+     * Send email with queue
+     */
+    async sendEmailWithQueue(requestParameters: SendEmailWithQueueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.sendEmailWithQueueRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+     * Send email using an SMTP mail envelope and message body and return sent confirmation
+     */
+    async sendSmtpEnvelopeRaw(requestParameters: SendSmtpEnvelopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SentEmailDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling sendSmtpEnvelope().'
+            );
+        }
+
+        if (requestParameters['sendSMTPEnvelopeOptions'] == null) {
+            throw new runtime.RequiredError(
+                'sendSMTPEnvelopeOptions',
+                'Required parameter "sendSMTPEnvelopeOptions" was null or undefined when calling sendSmtpEnvelope().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/smtp-envelope`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SendSMTPEnvelopeOptionsToJSON(requestParameters['sendSMTPEnvelopeOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SentEmailDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+     * Send email using an SMTP mail envelope and message body and return sent confirmation
+     */
+    async sendSmtpEnvelope(requestParameters: SendSmtpEnvelopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SentEmailDto> {
+        const response = await this.sendSmtpEnvelopeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Send an inbox a test email to test email receiving is working
+     * Send a test email to inbox
+     */
+    async sendTestEmailRaw(requestParameters: SendTestEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling sendTestEmail().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/send-test-email`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Send an inbox a test email to test email receiving is working
+     * Send a test email to inbox
+     */
+    async sendTestEmail(requestParameters: SendTestEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.sendTestEmailRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+     * Send email with with delay or schedule
+     */
+    async sendWithScheduleRaw(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScheduledJobDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling sendWithSchedule().'
+            );
+        }
+
+        if (requestParameters['sendEmailOptions'] == null) {
+            throw new runtime.RequiredError(
+                'sendEmailOptions',
+                'Required parameter "sendEmailOptions" was null or undefined when calling sendWithSchedule().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['sendAtTimestamp'] != null) {
+            queryParameters['sendAtTimestamp'] = (requestParameters['sendAtTimestamp'] as any).toISOString();
+        }
+
+        if (requestParameters['sendAtNowPlusSeconds'] != null) {
+            queryParameters['sendAtNowPlusSeconds'] = requestParameters['sendAtNowPlusSeconds'];
+        }
+
+        if (requestParameters['validateBeforeEnqueue'] != null) {
+            queryParameters['validateBeforeEnqueue'] = requestParameters['validateBeforeEnqueue'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/with-schedule`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SendEmailOptionsToJSON(requestParameters['sendEmailOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ScheduledJobDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+     * Send email with with delay or schedule
+     */
+    async sendWithSchedule(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScheduledJobDto> {
+        const response = await this.sendWithScheduleRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Set and return new favorite state for an inbox
+     * Set inbox favourited state
+     */
+    async setInboxFavouritedRaw(requestParameters: SetInboxFavouritedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling setInboxFavourited().'
+            );
+        }
+
+        if (requestParameters['setInboxFavouritedOptions'] == null) {
+            throw new runtime.RequiredError(
+                'setInboxFavouritedOptions',
+                'Required parameter "setInboxFavouritedOptions" was null or undefined when calling setInboxFavourited().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/favourite`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SetInboxFavouritedOptionsToJSON(requestParameters['setInboxFavouritedOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Set and return new favorite state for an inbox
+     * Set inbox favourited state
+     */
+    async setInboxFavourited(requestParameters: SetInboxFavouritedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto> {
+        const response = await this.setInboxFavouritedRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Update IMAP access usernames and passwords
+     */
+    async updateImapAccessRaw(requestParameters: UpdateImapAccessRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['updateImapAccessOptions'] == null) {
+            throw new runtime.RequiredError(
+                'updateImapAccessOptions',
+                'Required parameter "updateImapAccessOptions" was null or undefined when calling updateImapAccess().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/imap-access`,
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateImapAccessOptionsToJSON(requestParameters['updateImapAccessOptions']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Update IMAP access usernames and passwords
+     */
+    async updateImapAccess(requestParameters: UpdateImapAccessRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.updateImapAccessRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Update editable fields on an inbox
+     * Update Inbox. Change name and description. Email address is not editable.
+     */
+    async updateInboxRaw(requestParameters: UpdateInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>> {
+        if (requestParameters['inboxId'] == null) {
+            throw new runtime.RequiredError(
+                'inboxId',
+                'Required parameter "inboxId" was null or undefined when calling updateInbox().'
+            );
+        }
+
+        if (requestParameters['updateInboxOptions'] == null) {
+            throw new runtime.RequiredError(
+                'updateInboxOptions',
+                'Required parameter "updateInboxOptions" was null or undefined when calling updateInbox().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters['inboxId']))),
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateInboxOptionsToJSON(requestParameters['updateInboxOptions']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Update editable fields on an inbox
+     * Update Inbox. Change name and description. Email address is not editable.
+     */
+    async updateInbox(requestParameters: UpdateInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto> {
+        const response = await this.updateInboxRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    async updateSmtpAccessRaw(requestParameters: UpdateSmtpAccessRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['updateSmtpAccessOptions'] == null) {
+            throw new runtime.RequiredError(
+                'updateSmtpAccessOptions',
+                'Required parameter "updateSmtpAccessOptions" was null or undefined when calling updateSmtpAccess().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['inboxId'] != null) {
+            queryParameters['inboxId'] = requestParameters['inboxId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = await this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/smtp-access`,
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateSmtpAccessOptionsToJSON(requestParameters['updateSmtpAccessOptions']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    async updateSmtpAccess(requestParameters: UpdateSmtpAccessRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.updateSmtpAccessRaw(requestParameters, initOverrides);
     }
-
-    if (requestParameters.domainName !== undefined) {
-      queryParameters['domainName'] = requestParameters.domainName;
-    }
-
-    if (requestParameters.prefix !== undefined) {
-      queryParameters['prefix'] = requestParameters.prefix;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
-   * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-   */
-  async createInbox(
-    requestParameters: CreateInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.createInboxRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-   * Create an inbox ruleset
-   */
-  async createInboxRulesetRaw(
-    requestParameters: CreateInboxRulesetRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxRulesetDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling createInboxRuleset.'
-      );
-    }
-
-    if (
-      requestParameters.createInboxRulesetOptions === null ||
-      requestParameters.createInboxRulesetOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createInboxRulesetOptions',
-        'Required parameter requestParameters.createInboxRulesetOptions was null or undefined when calling createInboxRuleset.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/rulesets`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateInboxRulesetOptionsToJSON(
-          requestParameters.createInboxRulesetOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxRulesetDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-   * Create an inbox ruleset
-   */
-  async createInboxRuleset(
-    requestParameters: CreateInboxRulesetRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxRulesetDto> {
-    const response = await this.createInboxRulesetRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Create an inbox with default options. Uses MailSlurp domain pool address and is private.
-   */
-  async createInboxWithDefaultsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/withDefaults`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Create an inbox with default options. Uses MailSlurp domain pool address and is private.
-   */
-  async createInboxWithDefaults(
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.createInboxWithDefaultsRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
-   * Create an inbox with options. Extended options for inbox creation.
-   */
-  async createInboxWithOptionsRaw(
-    requestParameters: CreateInboxWithOptionsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    if (
-      requestParameters.createInboxDto === null ||
-      requestParameters.createInboxDto === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createInboxDto',
-        'Required parameter requestParameters.createInboxDto was null or undefined when calling createInboxWithOptions.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/withOptions`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateInboxDtoToJSON(requestParameters.createInboxDto),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
-   * Create an inbox with options. Extended options for inbox creation.
-   */
-  async createInboxWithOptions(
-    requestParameters: CreateInboxWithOptionsRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.createInboxWithOptionsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Deletes all emails in an inbox. Be careful as emails cannot be recovered
-   * Delete all emails in a given inboxes.
-   */
-  async deleteAllInboxEmailsRaw(
-    requestParameters: DeleteAllInboxEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling deleteAllInboxEmails.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/deleteAllInboxEmails`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Deletes all emails in an inbox. Be careful as emails cannot be recovered
-   * Delete all emails in a given inboxes.
-   */
-  async deleteAllInboxEmails(
-    requestParameters: DeleteAllInboxEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteAllInboxEmailsRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
-   * Delete all inboxes
-   */
-  async deleteAllInboxesRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
-   * Delete all inboxes
-   */
-  async deleteAllInboxes(initOverrides?: RequestInit): Promise<void> {
-    await this.deleteAllInboxesRaw(initOverrides);
-  }
-
-  /**
-   * Permanently delete all inboxes by description
-   * Delete inboxes by description
-   */
-  async deleteAllInboxesByDescriptionRaw(
-    requestParameters: DeleteAllInboxesByDescriptionRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.description === null ||
-      requestParameters.description === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'description',
-        'Required parameter requestParameters.description was null or undefined when calling deleteAllInboxesByDescription.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.description !== undefined) {
-      queryParameters['description'] = requestParameters.description;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/by-description`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Permanently delete all inboxes by description
-   * Delete inboxes by description
-   */
-  async deleteAllInboxesByDescription(
-    requestParameters: DeleteAllInboxesByDescriptionRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteAllInboxesByDescriptionRaw(
-      requestParameters,
-      initOverrides
-    );
-  }
-
-  /**
-   * Permanently delete all inboxes by name
-   * Delete inboxes by name
-   */
-  async deleteAllInboxesByNameRaw(
-    requestParameters: DeleteAllInboxesByNameRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.name === null ||
-      requestParameters.name === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'name',
-        'Required parameter requestParameters.name was null or undefined when calling deleteAllInboxesByName.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.name !== undefined) {
-      queryParameters['name'] = requestParameters.name;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/by-name`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Permanently delete all inboxes by name
-   * Delete inboxes by name
-   */
-  async deleteAllInboxesByName(
-    requestParameters: DeleteAllInboxesByNameRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteAllInboxesByNameRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Permanently delete all inboxes by tag
-   * Delete inboxes by tag
-   */
-  async deleteAllInboxesByTagRaw(
-    requestParameters: DeleteAllInboxesByTagRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (requestParameters.tag === null || requestParameters.tag === undefined) {
-      throw new runtime.RequiredError(
-        'tag',
-        'Required parameter requestParameters.tag was null or undefined when calling deleteAllInboxesByTag.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.tag !== undefined) {
-      queryParameters['tag'] = requestParameters.tag;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/by-tag`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Permanently delete all inboxes by tag
-   * Delete inboxes by tag
-   */
-  async deleteAllInboxesByTag(
-    requestParameters: DeleteAllInboxesByTagRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteAllInboxesByTagRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
-   * Delete inbox
-   */
-  async deleteInboxRaw(
-    requestParameters: DeleteInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling deleteInbox.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
-   * Delete inbox
-   */
-  async deleteInbox(
-    requestParameters: DeleteInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteInboxRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Check if inboxes exist by email address. Useful if you are sending emails to mailslurp addresses
-   * Does inbox exist
-   */
-  async doesInboxExistRaw(
-    requestParameters: DoesInboxExistRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxExistsDto>> {
-    if (
-      requestParameters.emailAddress === null ||
-      requestParameters.emailAddress === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'emailAddress',
-        'Required parameter requestParameters.emailAddress was null or undefined when calling doesInboxExist.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.emailAddress !== undefined) {
-      queryParameters['emailAddress'] = requestParameters.emailAddress;
-    }
-
-    if (requestParameters.allowCatchAll !== undefined) {
-      queryParameters['allowCatchAll'] = requestParameters.allowCatchAll;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/exists`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxExistsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Check if inboxes exist by email address. Useful if you are sending emails to mailslurp addresses
-   * Does inbox exist
-   */
-  async doesInboxExist(
-    requestParameters: DoesInboxExistRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxExistsDto> {
-    const response = await this.doesInboxExistRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
-   * Remove expired inboxes
-   */
-  async flushExpiredRaw(
-    requestParameters: FlushExpiredRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<FlushExpiredInboxesResult>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/expired`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      FlushExpiredInboxesResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
-   * Remove expired inboxes
-   */
-  async flushExpired(
-    requestParameters: FlushExpiredRequest,
-    initOverrides?: RequestInit
-  ): Promise<FlushExpiredInboxesResult> {
-    const response = await this.flushExpiredRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
-   * List All Inboxes Paginated
-   */
-  async getAllInboxesRaw(
-    requestParameters: GetAllInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
-    }
-
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
-    }
-
-    if (requestParameters.tag !== undefined) {
-      queryParameters['tag'] = requestParameters.tag;
-    }
-
-    if (requestParameters.teamAccess !== undefined) {
-      queryParameters['teamAccess'] = requestParameters.teamAccess;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.inboxType !== undefined) {
-      queryParameters['inboxType'] = requestParameters.inboxType;
-    }
-
-    if (requestParameters.inboxFunction !== undefined) {
-      queryParameters['inboxFunction'] = requestParameters.inboxFunction;
-    }
-
-    if (requestParameters.domainId !== undefined) {
-      queryParameters['domainId'] = requestParameters.domainId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/paginated`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
-   * List All Inboxes Paginated
-   */
-  async getAllInboxes(
-    requestParameters: GetAllInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxProjection> {
-    const response = await this.getAllInboxesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
-   * List All Inboxes Offset Paginated
-   */
-  async getAllInboxesOffsetPaginatedRaw(
-    requestParameters: GetAllInboxesOffsetPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
-    }
-
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
-    }
-
-    if (requestParameters.tag !== undefined) {
-      queryParameters['tag'] = requestParameters.tag;
-    }
-
-    if (requestParameters.teamAccess !== undefined) {
-      queryParameters['teamAccess'] = requestParameters.teamAccess;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.inboxType !== undefined) {
-      queryParameters['inboxType'] = requestParameters.inboxType;
-    }
-
-    if (requestParameters.inboxFunction !== undefined) {
-      queryParameters['inboxFunction'] = requestParameters.inboxFunction;
-    }
-
-    if (requestParameters.domainId !== undefined) {
-      queryParameters['domainId'] = requestParameters.domainId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/offset-paginated`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
-   * List All Inboxes Offset Paginated
-   */
-  async getAllInboxesOffsetPaginated(
-    requestParameters: GetAllInboxesOffsetPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxProjection> {
-    const response = await this.getAllInboxesOffsetPaginatedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
-   * Get all scheduled email sending jobs for account
-   */
-  async getAllScheduledJobsRaw(
-    requestParameters: GetAllScheduledJobsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageScheduledJobs>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/scheduled-jobs`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageScheduledJobsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
-   * Get all scheduled email sending jobs for account
-   */
-  async getAllScheduledJobs(
-    requestParameters: GetAllScheduledJobsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageScheduledJobs> {
-    const response = await this.getAllScheduledJobsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get all email delivery statuses for an inbox
-   */
-  async getDeliveryStatusesByInboxIdRaw(
-    requestParameters: GetDeliveryStatusesByInboxIdRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageDeliveryStatus>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getDeliveryStatusesByInboxId.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/delivery-status`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageDeliveryStatusFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get all email delivery statuses for an inbox
-   */
-  async getDeliveryStatusesByInboxId(
-    requestParameters: GetDeliveryStatusesByInboxIdRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageDeliveryStatus> {
-    const response = await this.getDeliveryStatusesByInboxIdRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List emails that an inbox has received. Only emails that are sent to the inbox\'s email address will appear in the inbox. It may take several seconds for any email you send to an inbox\'s email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
-   * Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
-   */
-  async getEmailsRaw(
-    requestParameters: GetEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<EmailPreview>>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getEmails.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.limit !== undefined) {
-      queryParameters['limit'] = requestParameters.limit;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.retryTimeout !== undefined) {
-      queryParameters['retryTimeout'] = requestParameters.retryTimeout;
-    }
-
-    if (requestParameters.delayTimeout !== undefined) {
-      queryParameters['delayTimeout'] = requestParameters.delayTimeout;
-    }
-
-    if (requestParameters.minCount !== undefined) {
-      queryParameters['minCount'] = requestParameters.minCount;
-    }
-
-    if (requestParameters.unreadOnly !== undefined) {
-      queryParameters['unreadOnly'] = requestParameters.unreadOnly;
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/emails`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(EmailPreviewFromJSON)
-    );
-  }
-
-  /**
-   * List emails that an inbox has received. Only emails that are sent to the inbox\'s email address will appear in the inbox. It may take several seconds for any email you send to an inbox\'s email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
-   * Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
-   */
-  async getEmails(
-    requestParameters: GetEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<EmailPreview>> {
-    const response = await this.getEmailsRaw(requestParameters, initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get IMAP access usernames and passwords
-   */
-  async getImapAccessRaw(
-    requestParameters: GetImapAccessRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ImapAccessDetails>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/imap-access`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ImapAccessDetailsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get IMAP access usernames and passwords
-   */
-  async getImapAccess(
-    requestParameters: GetImapAccessRequest,
-    initOverrides?: RequestInit
-  ): Promise<ImapAccessDetails> {
-    const response = await this.getImapAccessRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get IMAP and SMTP access usernames and passwords
-   */
-  async getImapSmtpAccessRaw(
-    requestParameters: GetImapSmtpAccessRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ImapSmtpAccessDetails>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/imap-smtp-access`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ImapSmtpAccessDetailsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get IMAP and SMTP access usernames and passwords
-   */
-  async getImapSmtpAccess(
-    requestParameters: GetImapSmtpAccessRequest,
-    initOverrides?: RequestInit
-  ): Promise<ImapSmtpAccessDetails> {
-    const response = await this.getImapSmtpAccessRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get IMAP and SMTP access details in .env format
-   */
-  async getImapSmtpAccessEnvRaw(
-    requestParameters: GetImapSmtpAccessEnvRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<string>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/imap-smtp-access/env`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.TextApiResponse(response) as any;
-  }
-
-  /**
-   * Get IMAP and SMTP access details in .env format
-   */
-  async getImapSmtpAccessEnv(
-    requestParameters: GetImapSmtpAccessEnvRequest,
-    initOverrides?: RequestInit
-  ): Promise<string> {
-    const response = await this.getImapSmtpAccessEnvRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get IMAP and SMTP server hosts
-   */
-  async getImapSmtpAccessServersRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ImapSmtpAccessServers>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/imap-smtp-access/servers`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ImapSmtpAccessServersFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get IMAP and SMTP server hosts
-   */
-  async getImapSmtpAccessServers(
-    initOverrides?: RequestInit
-  ): Promise<ImapSmtpAccessServers> {
-    const response = await this.getImapSmtpAccessServersRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Returns an inbox\'s properties, including its email address and ID.
-   * Get Inbox. Returns properties of an inbox.
-   */
-  async getInboxRaw(
-    requestParameters: GetInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getInbox.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns an inbox\'s properties, including its email address and ID.
-   * Get Inbox. Returns properties of an inbox.
-   */
-  async getInbox(
-    requestParameters: GetInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.getInboxRaw(requestParameters, initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get a inbox result by email address
-   * Search for an inbox with the provided email address
-   */
-  async getInboxByEmailAddressRaw(
-    requestParameters: GetInboxByEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxByEmailAddressResult>> {
-    if (
-      requestParameters.emailAddress === null ||
-      requestParameters.emailAddress === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'emailAddress',
-        'Required parameter requestParameters.emailAddress was null or undefined when calling getInboxByEmailAddress.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.emailAddress !== undefined) {
-      queryParameters['emailAddress'] = requestParameters.emailAddress;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/byEmailAddress`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxByEmailAddressResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a inbox result by email address
-   * Search for an inbox with the provided email address
-   */
-  async getInboxByEmailAddress(
-    requestParameters: GetInboxByEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxByEmailAddressResult> {
-    const response = await this.getInboxByEmailAddressRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a inbox result by name
-   * Search for an inbox with the given name
-   */
-  async getInboxByNameRaw(
-    requestParameters: GetInboxByNameRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxByNameResult>> {
-    if (
-      requestParameters.name === null ||
-      requestParameters.name === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'name',
-        'Required parameter requestParameters.name was null or undefined when calling getInboxByName.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.name !== undefined) {
-      queryParameters['name'] = requestParameters.name;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/byName`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxByNameResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a inbox result by name
-   * Search for an inbox with the given name
-   */
-  async getInboxByName(
-    requestParameters: GetInboxByNameRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxByNameResult> {
-    const response = await this.getInboxByNameRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get total inbox count
-   */
-  async getInboxCountRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CountDto>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/count`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CountDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get total inbox count
-   */
-  async getInboxCount(initOverrides?: RequestInit): Promise<CountDto> {
-    const response = await this.getInboxCountRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get email count in inbox
-   */
-  async getInboxEmailCountRaw(
-    requestParameters: GetInboxEmailCountRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CountDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxEmailCount.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/emails/count`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CountDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get email count in inbox
-   */
-  async getInboxEmailCount(
-    requestParameters: GetInboxEmailCountRequest,
-    initOverrides?: RequestInit
-  ): Promise<CountDto> {
-    const response = await this.getInboxEmailCountRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a paginated list of emails in an inbox. Does not hold connections open.
-   * Get inbox emails paginated
-   */
-  async getInboxEmailsPaginatedRaw(
-    requestParameters: GetInboxEmailsPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageEmailPreview>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxEmailsPaginated.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/emails/paginated`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageEmailPreviewFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a paginated list of emails in an inbox. Does not hold connections open.
-   * Get inbox emails paginated
-   */
-  async getInboxEmailsPaginated(
-    requestParameters: GetInboxEmailsPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageEmailPreview> {
-    const response = await this.getInboxEmailsPaginatedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get list of inbox IDs
-   * Get all inbox IDs
-   */
-  async getInboxIdsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxIdsResult>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/ids`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxIdsResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get list of inbox IDs
-   * Get all inbox IDs
-   */
-  async getInboxIds(initOverrides?: RequestInit): Promise<InboxIdsResult> {
-    const response = await this.getInboxIdsRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
-   * Get Inbox Sent Emails
-   */
-  async getInboxSentEmailsRaw(
-    requestParameters: GetInboxSentEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageSentEmailProjection>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxSentEmails.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/sent`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageSentEmailProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
-   * Get Inbox Sent Emails
-   */
-  async getInboxSentEmails(
-    requestParameters: GetInboxSentEmailsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageSentEmailProjection> {
-    const response = await this.getInboxSentEmailsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get all inbox tags
-   * Get inbox tags
-   */
-  async getInboxTagsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<string>>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/tags`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse<any>(response);
-  }
-
-  /**
-   * Get all inbox tags
-   * Get inbox tags
-   */
-  async getInboxTags(initOverrides?: RequestInit): Promise<Array<string>> {
-    const response = await this.getInboxTagsRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
-   * List Inboxes and email addresses
-   */
-  async getInboxesRaw(
-    requestParameters: GetInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<InboxDto>>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.excludeCatchAllInboxes !== undefined) {
-      queryParameters['excludeCatchAllInboxes'] =
-        requestParameters.excludeCatchAllInboxes;
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(InboxDtoFromJSON)
-    );
-  }
-
-  /**
-   * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
-   * List Inboxes and email addresses
-   */
-  async getInboxes(
-    requestParameters: GetInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<InboxDto>> {
-    const response = await this.getInboxesRaw(requestParameters, initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get the newest email in an inbox or wait for one to arrive
-   * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
-   */
-  async getLatestEmailInInboxRaw(
-    requestParameters: GetLatestEmailInInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Email>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox.'
-      );
-    }
-
-    if (
-      requestParameters.timeoutMillis === null ||
-      requestParameters.timeoutMillis === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'timeoutMillis',
-        'Required parameter requestParameters.timeoutMillis was null or undefined when calling getLatestEmailInInbox.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    if (requestParameters.timeoutMillis !== undefined) {
-      queryParameters['timeoutMillis'] = requestParameters.timeoutMillis;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/getLatestEmail`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      EmailFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get the newest email in an inbox or wait for one to arrive
-   * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
-   */
-  async getLatestEmailInInbox(
-    requestParameters: GetLatestEmailInInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<Email> {
-    const response = await this.getLatestEmailInInboxRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
-   * List Organization Inboxes Paginated
-   */
-  async getOrganizationInboxesRaw(
-    requestParameters: GetOrganizationInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageOrganizationInboxProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/organization`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageOrganizationInboxProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
-   * List Organization Inboxes Paginated
-   */
-  async getOrganizationInboxes(
-    requestParameters: GetOrganizationInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageOrganizationInboxProjection> {
-    const response = await this.getOrganizationInboxesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a scheduled email job details.
-   * Get a scheduled email job
-   */
-  async getScheduledJobRaw(
-    requestParameters: GetScheduledJobRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ScheduledJobDto>> {
-    if (
-      requestParameters.jobId === null ||
-      requestParameters.jobId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'jobId',
-        'Required parameter requestParameters.jobId was null or undefined when calling getScheduledJob.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/scheduled-jobs/{jobId}`.replace(
-          `{${'jobId'}}`,
-          encodeURIComponent(String(requestParameters.jobId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ScheduledJobDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a scheduled email job details.
-   * Get a scheduled email job
-   */
-  async getScheduledJob(
-    requestParameters: GetScheduledJobRequest,
-    initOverrides?: RequestInit
-  ): Promise<ScheduledJobDto> {
-    const response = await this.getScheduledJobRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Schedule sending of emails using scheduled jobs.
-   * Get all scheduled email sending jobs for the inbox
-   */
-  async getScheduledJobsByInboxIdRaw(
-    requestParameters: GetScheduledJobsByInboxIdRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageScheduledJobs>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getScheduledJobsByInboxId.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/scheduled-jobs`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageScheduledJobsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Schedule sending of emails using scheduled jobs.
-   * Get all scheduled email sending jobs for the inbox
-   */
-  async getScheduledJobsByInboxId(
-    requestParameters: GetScheduledJobsByInboxIdRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageScheduledJobs> {
-    const response = await this.getScheduledJobsByInboxIdRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get SMTP access usernames and passwords
-   */
-  async getSmtpAccessRaw(
-    requestParameters: GetSmtpAccessRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SmtpAccessDetails>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/smtp-access`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SmtpAccessDetailsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get SMTP access usernames and passwords
-   */
-  async getSmtpAccess(
-    requestParameters: GetSmtpAccessRequest,
-    initOverrides?: RequestInit
-  ): Promise<SmtpAccessDetails> {
-    const response = await this.getSmtpAccessRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List all rulesets attached to an inbox
-   * List inbox rulesets
-   */
-  async listInboxRulesetsRaw(
-    requestParameters: ListInboxRulesetsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxRulesetDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling listInboxRulesets.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/rulesets`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxRulesetDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List all rulesets attached to an inbox
-   * List inbox rulesets
-   */
-  async listInboxRulesets(
-    requestParameters: ListInboxRulesetsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxRulesetDto> {
-    const response = await this.listInboxRulesetsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List all tracking pixels sent from an inbox
-   * List inbox tracking pixels
-   */
-  async listInboxTrackingPixelsRaw(
-    requestParameters: ListInboxTrackingPixelsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageTrackingPixelProjection>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling listInboxTrackingPixels.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/tracking-pixels`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageTrackingPixelProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List all tracking pixels sent from an inbox
-   * List inbox tracking pixels
-   */
-  async listInboxTrackingPixels(
-    requestParameters: ListInboxTrackingPixelsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageTrackingPixelProjection> {
-    const response = await this.listInboxTrackingPixelsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
-   * Search all inboxes and return matching inboxes
-   */
-  async searchInboxesRaw(
-    requestParameters: SearchInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxProjection>> {
-    if (
-      requestParameters.searchInboxesOptions === null ||
-      requestParameters.searchInboxesOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'searchInboxesOptions',
-        'Required parameter requestParameters.searchInboxesOptions was null or undefined when calling searchInboxes.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/search`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SearchInboxesOptionsToJSON(
-          requestParameters.searchInboxesOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
-   * Search all inboxes and return matching inboxes
-   */
-  async searchInboxes(
-    requestParameters: SearchInboxesRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxProjection> {
-    const response = await this.searchInboxesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Send an email from an inbox\'s email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox\'s id not the inbox\'s email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
-   * Send Email
-   */
-  async sendEmailRaw(
-    requestParameters: SendEmailRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling sendEmail.'
-      );
-    }
-
-    if (
-      requestParameters.sendEmailOptions === null ||
-      requestParameters.sendEmailOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'sendEmailOptions',
-        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmail.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Send an email from an inbox\'s email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox\'s id not the inbox\'s email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
-   * Send Email
-   */
-  async sendEmail(
-    requestParameters: SendEmailRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.sendEmailRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Sister method for standard `sendEmail` method with the benefit of returning a `SentEmail` entity confirming the successful sending of the email with a link to the sent object created for it.
-   * Send email and return sent confirmation
-   */
-  async sendEmailAndConfirmRaw(
-    requestParameters: SendEmailAndConfirmRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SentEmailDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailAndConfirm.'
-      );
-    }
-
-    if (
-      requestParameters.sendEmailOptions === null ||
-      requestParameters.sendEmailOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'sendEmailOptions',
-        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailAndConfirm.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/confirm`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SentEmailDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Sister method for standard `sendEmail` method with the benefit of returning a `SentEmail` entity confirming the successful sending of the email with a link to the sent object created for it.
-   * Send email and return sent confirmation
-   */
-  async sendEmailAndConfirm(
-    requestParameters: SendEmailAndConfirmRequest,
-    initOverrides?: RequestInit
-  ): Promise<SentEmailDto> {
-    const response = await this.sendEmailAndConfirmRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
-   * Send email with queue
-   */
-  async sendEmailWithQueueRaw(
-    requestParameters: SendEmailWithQueueRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailWithQueue.'
-      );
-    }
-
-    if (
-      requestParameters.validateBeforeEnqueue === null ||
-      requestParameters.validateBeforeEnqueue === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'validateBeforeEnqueue',
-        'Required parameter requestParameters.validateBeforeEnqueue was null or undefined when calling sendEmailWithQueue.'
-      );
-    }
-
-    if (
-      requestParameters.sendEmailOptions === null ||
-      requestParameters.sendEmailOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'sendEmailOptions',
-        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailWithQueue.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.validateBeforeEnqueue !== undefined) {
-      queryParameters['validateBeforeEnqueue'] =
-        requestParameters.validateBeforeEnqueue;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/with-queue`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
-   * Send email with queue
-   */
-  async sendEmailWithQueue(
-    requestParameters: SendEmailWithQueueRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.sendEmailWithQueueRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
-   * Send email using an SMTP mail envelope and message body and return sent confirmation
-   */
-  async sendSmtpEnvelopeRaw(
-    requestParameters: SendSmtpEnvelopeRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SentEmailDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelope.'
-      );
-    }
-
-    if (
-      requestParameters.sendSMTPEnvelopeOptions === null ||
-      requestParameters.sendSMTPEnvelopeOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'sendSMTPEnvelopeOptions',
-        'Required parameter requestParameters.sendSMTPEnvelopeOptions was null or undefined when calling sendSmtpEnvelope.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/smtp-envelope`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SendSMTPEnvelopeOptionsToJSON(
-          requestParameters.sendSMTPEnvelopeOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SentEmailDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
-   * Send email using an SMTP mail envelope and message body and return sent confirmation
-   */
-  async sendSmtpEnvelope(
-    requestParameters: SendSmtpEnvelopeRequest,
-    initOverrides?: RequestInit
-  ): Promise<SentEmailDto> {
-    const response = await this.sendSmtpEnvelopeRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Send an inbox a test email to test email receiving is working
-   * Send a test email to inbox
-   */
-  async sendTestEmailRaw(
-    requestParameters: SendTestEmailRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling sendTestEmail.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/send-test-email`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Send an inbox a test email to test email receiving is working
-   * Send a test email to inbox
-   */
-  async sendTestEmail(
-    requestParameters: SendTestEmailRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.sendTestEmailRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
-   * Send email with with delay or schedule
-   */
-  async sendWithScheduleRaw(
-    requestParameters: SendWithScheduleRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ScheduledJobDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling sendWithSchedule.'
-      );
-    }
-
-    if (
-      requestParameters.sendEmailOptions === null ||
-      requestParameters.sendEmailOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'sendEmailOptions',
-        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendWithSchedule.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.sendAtTimestamp !== undefined) {
-      queryParameters['sendAtTimestamp'] = (
-        requestParameters.sendAtTimestamp as any
-      ).toISOString();
-    }
-
-    if (requestParameters.sendAtNowPlusSeconds !== undefined) {
-      queryParameters['sendAtNowPlusSeconds'] =
-        requestParameters.sendAtNowPlusSeconds;
-    }
-
-    if (requestParameters.validateBeforeEnqueue !== undefined) {
-      queryParameters['validateBeforeEnqueue'] =
-        requestParameters.validateBeforeEnqueue;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/with-schedule`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ScheduledJobDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
-   * Send email with with delay or schedule
-   */
-  async sendWithSchedule(
-    requestParameters: SendWithScheduleRequest,
-    initOverrides?: RequestInit
-  ): Promise<ScheduledJobDto> {
-    const response = await this.sendWithScheduleRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Set and return new favourite state for an inbox
-   * Set inbox favourited state
-   */
-  async setInboxFavouritedRaw(
-    requestParameters: SetInboxFavouritedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling setInboxFavourited.'
-      );
-    }
-
-    if (
-      requestParameters.setInboxFavouritedOptions === null ||
-      requestParameters.setInboxFavouritedOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'setInboxFavouritedOptions',
-        'Required parameter requestParameters.setInboxFavouritedOptions was null or undefined when calling setInboxFavourited.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/favourite`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SetInboxFavouritedOptionsToJSON(
-          requestParameters.setInboxFavouritedOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Set and return new favourite state for an inbox
-   * Set inbox favourited state
-   */
-  async setInboxFavourited(
-    requestParameters: SetInboxFavouritedRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.setInboxFavouritedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Update editable fields on an inbox
-   * Update Inbox. Change name and description. Email address is not editable.
-   */
-  async updateInboxRaw(
-    requestParameters: UpdateInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling updateInbox.'
-      );
-    }
-
-    if (
-      requestParameters.updateInboxOptions === null ||
-      requestParameters.updateInboxOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'updateInboxOptions',
-        'Required parameter requestParameters.updateInboxOptions was null or undefined when calling updateInbox.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'PATCH',
-        headers: headerParameters,
-        query: queryParameters,
-        body: UpdateInboxOptionsToJSON(requestParameters.updateInboxOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update editable fields on an inbox
-   * Update Inbox. Change name and description. Email address is not editable.
-   */
-  async updateInbox(
-    requestParameters: UpdateInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.updateInboxRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
  * @export
- * @enum {string}
  */
-export enum CreateInboxInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
-}
+export const CreateInboxInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+} as const;
+export type CreateInboxInboxTypeEnum = typeof CreateInboxInboxTypeEnum[keyof typeof CreateInboxInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllInboxesSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetAllInboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetAllInboxesSortEnum = typeof GetAllInboxesSortEnum[keyof typeof GetAllInboxesSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllInboxesInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
-}
+export const GetAllInboxesInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+} as const;
+export type GetAllInboxesInboxTypeEnum = typeof GetAllInboxesInboxTypeEnum[keyof typeof GetAllInboxesInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllInboxesInboxFunctionEnum {
-  ALIAS = 'ALIAS',
-  THREAD = 'THREAD',
-  CATCH_ALL = 'CATCH_ALL',
-  CONNECTOR = 'CONNECTOR',
-}
+export const GetAllInboxesInboxFunctionEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+} as const;
+export type GetAllInboxesInboxFunctionEnum = typeof GetAllInboxesInboxFunctionEnum[keyof typeof GetAllInboxesInboxFunctionEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllInboxesOffsetPaginatedSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetAllInboxesOffsetPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetAllInboxesOffsetPaginatedSortEnum = typeof GetAllInboxesOffsetPaginatedSortEnum[keyof typeof GetAllInboxesOffsetPaginatedSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllInboxesOffsetPaginatedInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
-}
+export const GetAllInboxesOffsetPaginatedInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+} as const;
+export type GetAllInboxesOffsetPaginatedInboxTypeEnum = typeof GetAllInboxesOffsetPaginatedInboxTypeEnum[keyof typeof GetAllInboxesOffsetPaginatedInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
-  ALIAS = 'ALIAS',
-  THREAD = 'THREAD',
-  CATCH_ALL = 'CATCH_ALL',
-  CONNECTOR = 'CONNECTOR',
-}
+export const GetAllInboxesOffsetPaginatedInboxFunctionEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+} as const;
+export type GetAllInboxesOffsetPaginatedInboxFunctionEnum = typeof GetAllInboxesOffsetPaginatedInboxFunctionEnum[keyof typeof GetAllInboxesOffsetPaginatedInboxFunctionEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetAllScheduledJobsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetAllPlusAddressesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetAllPlusAddressesSortEnum = typeof GetAllPlusAddressesSortEnum[keyof typeof GetAllPlusAddressesSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetDeliveryStatusesByInboxIdSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetAllScheduledJobsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetAllScheduledJobsSortEnum = typeof GetAllScheduledJobsSortEnum[keyof typeof GetAllScheduledJobsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetEmailsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetDeliveryStatusesByInboxIdSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetDeliveryStatusesByInboxIdSortEnum = typeof GetDeliveryStatusesByInboxIdSortEnum[keyof typeof GetDeliveryStatusesByInboxIdSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetInboxEmailsPaginatedSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetEmailsSortEnum = typeof GetEmailsSortEnum[keyof typeof GetEmailsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetInboxSentEmailsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxEmailsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxEmailsPaginatedSortEnum = typeof GetInboxEmailsPaginatedSortEnum[keyof typeof GetInboxEmailsPaginatedSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetInboxesSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxPlusAddressEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxPlusAddressEmailsSortEnum = typeof GetInboxPlusAddressEmailsSortEnum[keyof typeof GetInboxPlusAddressEmailsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetOrganizationInboxesSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = typeof GetInboxPlusAddressEmailsForPlusAddressIdSortEnum[keyof typeof GetInboxPlusAddressEmailsForPlusAddressIdSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum GetScheduledJobsByInboxIdSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxPlusAddressesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxPlusAddressesSortEnum = typeof GetInboxPlusAddressesSortEnum[keyof typeof GetInboxPlusAddressesSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum ListInboxRulesetsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxSentEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxSentEmailsSortEnum = typeof GetInboxSentEmailsSortEnum[keyof typeof GetInboxSentEmailsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export enum ListInboxTrackingPixelsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
+export const GetInboxTagsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxTagsSortEnum = typeof GetInboxTagsSortEnum[keyof typeof GetInboxTagsSortEnum];
+/**
+ * @export
+ */
+export const GetInboxTagsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxTagsPaginatedSortEnum = typeof GetInboxTagsPaginatedSortEnum[keyof typeof GetInboxTagsPaginatedSortEnum];
+/**
+ * @export
+ */
+export const GetInboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxesSortEnum = typeof GetInboxesSortEnum[keyof typeof GetInboxesSortEnum];
+/**
+ * @export
+ */
+export const GetInboxesByTagSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetInboxesByTagSortEnum = typeof GetInboxesByTagSortEnum[keyof typeof GetInboxesByTagSortEnum];
+/**
+ * @export
+ */
+export const GetOrganizationInboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetOrganizationInboxesSortEnum = typeof GetOrganizationInboxesSortEnum[keyof typeof GetOrganizationInboxesSortEnum];
+/**
+ * @export
+ */
+export const GetOutboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetOutboxesSortEnum = typeof GetOutboxesSortEnum[keyof typeof GetOutboxesSortEnum];
+/**
+ * @export
+ */
+export const GetScheduledJobsByInboxIdSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type GetScheduledJobsByInboxIdSortEnum = typeof GetScheduledJobsByInboxIdSortEnum[keyof typeof GetScheduledJobsByInboxIdSortEnum];
+/**
+ * @export
+ */
+export const ListInboxRulesetsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type ListInboxRulesetsSortEnum = typeof ListInboxRulesetsSortEnum[keyof typeof ListInboxRulesetsSortEnum];
+/**
+ * @export
+ */
+export const ListInboxTrackingPixelsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+} as const;
+export type ListInboxTrackingPixelsSortEnum = typeof ListInboxTrackingPixelsSortEnum[keyof typeof ListInboxTrackingPixelsSortEnum];

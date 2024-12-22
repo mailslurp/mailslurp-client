@@ -22,6 +22,11 @@ export interface CountDto {
      */
     totalElements: number;
 }
+/**
+ * Check if a given object implements the CountDto interface.
+ */
+export declare function instanceOfCountDto(value: object): value is CountDto;
 export declare function CountDtoFromJSON(json: any): CountDto;
 export declare function CountDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): CountDto;
-export declare function CountDtoToJSON(value?: CountDto | null): any;
+export declare function CountDtoToJSON(json: any): CountDto;
+export declare function CountDtoToJSONTyped(value?: CountDto | null, ignoreDiscriminator?: boolean): any;

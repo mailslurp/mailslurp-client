@@ -22,6 +22,11 @@ export interface DomainIssuesDto {
      */
     hasIssues: boolean;
 }
+/**
+ * Check if a given object implements the DomainIssuesDto interface.
+ */
+export declare function instanceOfDomainIssuesDto(value: object): value is DomainIssuesDto;
 export declare function DomainIssuesDtoFromJSON(json: any): DomainIssuesDto;
 export declare function DomainIssuesDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainIssuesDto;
-export declare function DomainIssuesDtoToJSON(value?: DomainIssuesDto | null): any;
+export declare function DomainIssuesDtoToJSON(json: any): DomainIssuesDto;
+export declare function DomainIssuesDtoToJSONTyped(value?: DomainIssuesDto | null, ignoreDiscriminator?: boolean): any;

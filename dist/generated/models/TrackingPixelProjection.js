@@ -13,46 +13,61 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrackingPixelProjectionToJSON = exports.TrackingPixelProjectionFromJSONTyped = exports.TrackingPixelProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfTrackingPixelProjection = instanceOfTrackingPixelProjection;
+exports.TrackingPixelProjectionFromJSON = TrackingPixelProjectionFromJSON;
+exports.TrackingPixelProjectionFromJSONTyped = TrackingPixelProjectionFromJSONTyped;
+exports.TrackingPixelProjectionToJSON = TrackingPixelProjectionToJSON;
+exports.TrackingPixelProjectionToJSONTyped = TrackingPixelProjectionToJSONTyped;
+/**
+ * Check if a given object implements the TrackingPixelProjection interface.
+ */
+function instanceOfTrackingPixelProjection(value) {
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('seen' in value) || value['seen'] === undefined)
+        return false;
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    return true;
+}
 function TrackingPixelProjectionFromJSON(json) {
     return TrackingPixelProjectionFromJSONTyped(json, false);
 }
-exports.TrackingPixelProjectionFromJSON = TrackingPixelProjectionFromJSON;
 function TrackingPixelProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        userId: json['userId'],
-        sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-        recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
-        seen: json['seen'],
-        seenAt: !(0, runtime_1.exists)(json, 'seenAt') ? undefined : new Date(json['seenAt']),
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'userId': json['userId'],
+        'sentEmailId': json['sentEmailId'] == null ? undefined : json['sentEmailId'],
+        'recipient': json['recipient'] == null ? undefined : json['recipient'],
+        'seen': json['seen'],
+        'seenAt': json['seenAt'] == null ? undefined : (new Date(json['seenAt'])),
+        'name': json['name'] == null ? undefined : json['name'],
+        'id': json['id'],
     };
 }
-exports.TrackingPixelProjectionFromJSONTyped = TrackingPixelProjectionFromJSONTyped;
-function TrackingPixelProjectionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TrackingPixelProjectionToJSON(json) {
+    return TrackingPixelProjectionToJSONTyped(json, false);
+}
+function TrackingPixelProjectionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        inboxId: value.inboxId,
-        userId: value.userId,
-        sentEmailId: value.sentEmailId,
-        recipient: value.recipient,
-        seen: value.seen,
-        seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
-        name: value.name,
-        id: value.id,
+        'createdAt': ((value['createdAt']).toISOString()),
+        'inboxId': value['inboxId'],
+        'userId': value['userId'],
+        'sentEmailId': value['sentEmailId'],
+        'recipient': value['recipient'],
+        'seen': value['seen'],
+        'seenAt': value['seenAt'] == null ? undefined : ((value['seenAt']).toISOString()),
+        'name': value['name'],
+        'id': value['id'],
     };
 }
-exports.TrackingPixelProjectionToJSON = TrackingPixelProjectionToJSON;

@@ -28,6 +28,11 @@ export interface GetEmailScreenshotOptions {
      */
     width?: number | null;
 }
+/**
+ * Check if a given object implements the GetEmailScreenshotOptions interface.
+ */
+export declare function instanceOfGetEmailScreenshotOptions(value: object): value is GetEmailScreenshotOptions;
 export declare function GetEmailScreenshotOptionsFromJSON(json: any): GetEmailScreenshotOptions;
 export declare function GetEmailScreenshotOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetEmailScreenshotOptions;
-export declare function GetEmailScreenshotOptionsToJSON(value?: GetEmailScreenshotOptions | null): any;
+export declare function GetEmailScreenshotOptionsToJSON(json: any): GetEmailScreenshotOptions;
+export declare function GetEmailScreenshotOptionsToJSONTyped(value?: GetEmailScreenshotOptions | null, ignoreDiscriminator?: boolean): any;

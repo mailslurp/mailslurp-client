@@ -13,31 +13,43 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailLinksResultToJSON = exports.EmailLinksResultFromJSONTyped = exports.EmailLinksResultFromJSON = void 0;
+exports.instanceOfEmailLinksResult = instanceOfEmailLinksResult;
+exports.EmailLinksResultFromJSON = EmailLinksResultFromJSON;
+exports.EmailLinksResultFromJSONTyped = EmailLinksResultFromJSONTyped;
+exports.EmailLinksResultToJSON = EmailLinksResultToJSON;
+exports.EmailLinksResultToJSONTyped = EmailLinksResultToJSONTyped;
+/**
+ * Check if a given object implements the EmailLinksResult interface.
+ */
+function instanceOfEmailLinksResult(value) {
+    if (!('links' in value) || value['links'] === undefined)
+        return false;
+    if (!('body' in value) || value['body'] === undefined)
+        return false;
+    return true;
+}
 function EmailLinksResultFromJSON(json) {
     return EmailLinksResultFromJSONTyped(json, false);
 }
-exports.EmailLinksResultFromJSON = EmailLinksResultFromJSON;
 function EmailLinksResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        links: json['links'],
-        body: json['body'],
+        'links': json['links'],
+        'body': json['body'],
     };
 }
-exports.EmailLinksResultFromJSONTyped = EmailLinksResultFromJSONTyped;
-function EmailLinksResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailLinksResultToJSON(json) {
+    return EmailLinksResultToJSONTyped(json, false);
+}
+function EmailLinksResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        links: value.links,
-        body: value.body,
+        'links': value['links'],
+        'body': value['body'],
     };
 }
-exports.EmailLinksResultToJSON = EmailLinksResultToJSON;

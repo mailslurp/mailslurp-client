@@ -13,34 +13,50 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureNamesToJSON = exports.EmailFeatureNamesFromJSONTyped = exports.EmailFeatureNamesFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfEmailFeatureNames = instanceOfEmailFeatureNames;
+exports.EmailFeatureNamesFromJSON = EmailFeatureNamesFromJSON;
+exports.EmailFeatureNamesFromJSONTyped = EmailFeatureNamesFromJSONTyped;
+exports.EmailFeatureNamesToJSON = EmailFeatureNamesToJSON;
+exports.EmailFeatureNamesToJSONTyped = EmailFeatureNamesToJSONTyped;
+var EmailFeatureCategoryName_1 = require("./EmailFeatureCategoryName");
+var EmailFeaturePlatformName_1 = require("./EmailFeaturePlatformName");
+var EmailFeatureFamilyName_1 = require("./EmailFeatureFamilyName");
+/**
+ * Check if a given object implements the EmailFeatureNames interface.
+ */
+function instanceOfEmailFeatureNames(value) {
+    if (!('family' in value) || value['family'] === undefined)
+        return false;
+    if (!('platform' in value) || value['platform'] === undefined)
+        return false;
+    if (!('category' in value) || value['category'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeatureNamesFromJSON(json) {
     return EmailFeatureNamesFromJSONTyped(json, false);
 }
-exports.EmailFeatureNamesFromJSON = EmailFeatureNamesFromJSON;
 function EmailFeatureNamesFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        family: json['family'].map(_1.EmailFeatureFamilyNameFromJSON),
-        platform: json['platform'].map(_1.EmailFeaturePlatformNameFromJSON),
-        category: json['category'].map(_1.EmailFeatureCategoryNameFromJSON),
+        'family': (json['family'].map(EmailFeatureFamilyName_1.EmailFeatureFamilyNameFromJSON)),
+        'platform': (json['platform'].map(EmailFeaturePlatformName_1.EmailFeaturePlatformNameFromJSON)),
+        'category': (json['category'].map(EmailFeatureCategoryName_1.EmailFeatureCategoryNameFromJSON)),
     };
 }
-exports.EmailFeatureNamesFromJSONTyped = EmailFeatureNamesFromJSONTyped;
-function EmailFeatureNamesToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeatureNamesToJSON(json) {
+    return EmailFeatureNamesToJSONTyped(json, false);
+}
+function EmailFeatureNamesToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        family: value.family.map(_1.EmailFeatureFamilyNameToJSON),
-        platform: value.platform.map(_1.EmailFeaturePlatformNameToJSON),
-        category: value.category.map(_1.EmailFeatureCategoryNameToJSON),
+        'family': (value['family'].map(EmailFeatureFamilyName_1.EmailFeatureFamilyNameToJSON)),
+        'platform': (value['platform'].map(EmailFeaturePlatformName_1.EmailFeaturePlatformNameToJSON)),
+        'category': (value['category'].map(EmailFeatureCategoryName_1.EmailFeatureCategoryNameToJSON)),
     };
 }
-exports.EmailFeatureNamesToJSON = EmailFeatureNamesToJSON;

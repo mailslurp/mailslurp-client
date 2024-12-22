@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, ScheduledJob, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { ScheduledJob } from './ScheduledJob';
+import type { SortObject } from './SortObject';
 /**
  * Paginated scheduled jobs results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageScheduledJobs {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageScheduledJobs
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageScheduledJobs {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageScheduledJobs interface.
+ */
+export declare function instanceOfPageScheduledJobs(value: object): value is PageScheduledJobs;
 export declare function PageScheduledJobsFromJSON(json: any): PageScheduledJobs;
 export declare function PageScheduledJobsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageScheduledJobs;
-export declare function PageScheduledJobsToJSON(value?: PageScheduledJobs | null): any;
+export declare function PageScheduledJobsToJSON(json: any): PageScheduledJobs;
+export declare function PageScheduledJobsToJSONTyped(value?: PageScheduledJobs | null, ignoreDiscriminator?: boolean): any;

@@ -13,32 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailHtmlDtoToJSON = exports.EmailHtmlDtoFromJSONTyped = exports.EmailHtmlDtoFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfEmailHtmlDto = instanceOfEmailHtmlDto;
+exports.EmailHtmlDtoFromJSON = EmailHtmlDtoFromJSON;
+exports.EmailHtmlDtoFromJSONTyped = EmailHtmlDtoFromJSONTyped;
+exports.EmailHtmlDtoToJSON = EmailHtmlDtoToJSON;
+exports.EmailHtmlDtoToJSONTyped = EmailHtmlDtoToJSONTyped;
+/**
+ * Check if a given object implements the EmailHtmlDto interface.
+ */
+function instanceOfEmailHtmlDto(value) {
+    return true;
+}
 function EmailHtmlDtoFromJSON(json) {
     return EmailHtmlDtoFromJSONTyped(json, false);
 }
-exports.EmailHtmlDtoFromJSON = EmailHtmlDtoFromJSON;
 function EmailHtmlDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'body': json['body'] == null ? undefined : json['body'],
     };
 }
-exports.EmailHtmlDtoFromJSONTyped = EmailHtmlDtoFromJSONTyped;
-function EmailHtmlDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailHtmlDtoToJSON(json) {
+    return EmailHtmlDtoToJSONTyped(json, false);
+}
+function EmailHtmlDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        subject: value.subject,
-        body: value.body,
+        'subject': value['subject'],
+        'body': value['body'],
     };
 }
-exports.EmailHtmlDtoToJSON = EmailHtmlDtoToJSON;

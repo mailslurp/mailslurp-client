@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { MatchOption } from './';
+import type { MatchOption } from './MatchOption';
 /**
  * Conditions to apply to emails that you are waiting for
  * @export
@@ -51,7 +51,7 @@ export interface WaitForConditions {
      * @type {string}
      * @memberof WaitForConditions
      */
-    countType?: WaitForConditionsCountTypeEnum;
+    countType?: WaitForConditionsCountTypeEnum | null;
     /**
      * Conditions that should be matched for an email to qualify for results. Each condition will be applied in order to each email within an inbox to filter a result list of matching emails you are waiting for.
      * @type {Array<MatchOption>}
@@ -63,7 +63,7 @@ export interface WaitForConditions {
      * @type {string}
      * @memberof WaitForConditions
      */
-    sortDirection?: WaitForConditionsSortDirectionEnum;
+    sortDirection?: WaitForConditionsSortDirectionEnum | null;
     /**
      * ISO Date Time earliest time of email to consider. Filter for matching emails that were received after this date
      * @type {Date}
@@ -79,20 +79,25 @@ export interface WaitForConditions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WaitForConditionsCountTypeEnum {
-    EXACTLY = "EXACTLY",
-    ATLEAST = "ATLEAST"
-}
+export declare const WaitForConditionsCountTypeEnum: {
+    readonly EXACTLY: "EXACTLY";
+    readonly ATLEAST: "ATLEAST";
+};
+export type WaitForConditionsCountTypeEnum = typeof WaitForConditionsCountTypeEnum[keyof typeof WaitForConditionsCountTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum WaitForConditionsSortDirectionEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const WaitForConditionsSortDirectionEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type WaitForConditionsSortDirectionEnum = typeof WaitForConditionsSortDirectionEnum[keyof typeof WaitForConditionsSortDirectionEnum];
+/**
+ * Check if a given object implements the WaitForConditions interface.
+ */
+export declare function instanceOfWaitForConditions(value: object): value is WaitForConditions;
 export declare function WaitForConditionsFromJSON(json: any): WaitForConditions;
 export declare function WaitForConditionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): WaitForConditions;
-export declare function WaitForConditionsToJSON(value?: WaitForConditions | null): any;
+export declare function WaitForConditionsToJSON(json: any): WaitForConditions;
+export declare function WaitForConditionsToJSONTyped(value?: WaitForConditions | null, ignoreDiscriminator?: boolean): any;

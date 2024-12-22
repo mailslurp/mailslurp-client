@@ -13,147 +13,166 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainNameRecordToJSON = exports.DomainNameRecordFromJSONTyped = exports.DomainNameRecordFromJSON = exports.DomainNameRecordRecordTypeEnum = exports.DomainNameRecordLabelEnum = void 0;
+exports.DomainNameRecordRecordTypeEnum = exports.DomainNameRecordLabelEnum = void 0;
+exports.instanceOfDomainNameRecord = instanceOfDomainNameRecord;
+exports.DomainNameRecordFromJSON = DomainNameRecordFromJSON;
+exports.DomainNameRecordFromJSONTyped = DomainNameRecordFromJSONTyped;
+exports.DomainNameRecordToJSON = DomainNameRecordToJSON;
+exports.DomainNameRecordToJSONTyped = DomainNameRecordToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var DomainNameRecordLabelEnum;
-(function (DomainNameRecordLabelEnum) {
-    DomainNameRecordLabelEnum["VERIFICATION"] = "VERIFICATION";
-    DomainNameRecordLabelEnum["MX"] = "MX";
-    DomainNameRecordLabelEnum["SPF"] = "SPF";
-    DomainNameRecordLabelEnum["DKIM"] = "DKIM";
-    DomainNameRecordLabelEnum["DMARC"] = "DMARC";
-})(DomainNameRecordLabelEnum = exports.DomainNameRecordLabelEnum || (exports.DomainNameRecordLabelEnum = {}));
+exports.DomainNameRecordLabelEnum = {
+    VERIFICATION: 'VERIFICATION',
+    MX: 'MX',
+    SPF: 'SPF',
+    DKIM: 'DKIM',
+    DMARC: 'DMARC'
+};
 /**
  * @export
- * @enum {string}
  */
-var DomainNameRecordRecordTypeEnum;
-(function (DomainNameRecordRecordTypeEnum) {
-    DomainNameRecordRecordTypeEnum["A"] = "A";
-    DomainNameRecordRecordTypeEnum["NS"] = "NS";
-    DomainNameRecordRecordTypeEnum["MD"] = "MD";
-    DomainNameRecordRecordTypeEnum["MF"] = "MF";
-    DomainNameRecordRecordTypeEnum["CNAME"] = "CNAME";
-    DomainNameRecordRecordTypeEnum["SOA"] = "SOA";
-    DomainNameRecordRecordTypeEnum["MB"] = "MB";
-    DomainNameRecordRecordTypeEnum["MG"] = "MG";
-    DomainNameRecordRecordTypeEnum["MR"] = "MR";
-    DomainNameRecordRecordTypeEnum["NULL"] = "NULL";
-    DomainNameRecordRecordTypeEnum["WKS"] = "WKS";
-    DomainNameRecordRecordTypeEnum["PTR"] = "PTR";
-    DomainNameRecordRecordTypeEnum["HINFO"] = "HINFO";
-    DomainNameRecordRecordTypeEnum["MINFO"] = "MINFO";
-    DomainNameRecordRecordTypeEnum["MX"] = "MX";
-    DomainNameRecordRecordTypeEnum["TXT"] = "TXT";
-    DomainNameRecordRecordTypeEnum["RP"] = "RP";
-    DomainNameRecordRecordTypeEnum["AFSDB"] = "AFSDB";
-    DomainNameRecordRecordTypeEnum["X25"] = "X25";
-    DomainNameRecordRecordTypeEnum["ISDN"] = "ISDN";
-    DomainNameRecordRecordTypeEnum["RT"] = "RT";
-    DomainNameRecordRecordTypeEnum["NSAP"] = "NSAP";
-    DomainNameRecordRecordTypeEnum["NSAP_PTR"] = "NSAP_PTR";
-    DomainNameRecordRecordTypeEnum["SIG"] = "SIG";
-    DomainNameRecordRecordTypeEnum["KEY"] = "KEY";
-    DomainNameRecordRecordTypeEnum["PX"] = "PX";
-    DomainNameRecordRecordTypeEnum["GPOS"] = "GPOS";
-    DomainNameRecordRecordTypeEnum["AAAA"] = "AAAA";
-    DomainNameRecordRecordTypeEnum["LOC"] = "LOC";
-    DomainNameRecordRecordTypeEnum["NXT"] = "NXT";
-    DomainNameRecordRecordTypeEnum["EID"] = "EID";
-    DomainNameRecordRecordTypeEnum["NIMLOC"] = "NIMLOC";
-    DomainNameRecordRecordTypeEnum["SRV"] = "SRV";
-    DomainNameRecordRecordTypeEnum["ATMA"] = "ATMA";
-    DomainNameRecordRecordTypeEnum["NAPTR"] = "NAPTR";
-    DomainNameRecordRecordTypeEnum["KX"] = "KX";
-    DomainNameRecordRecordTypeEnum["CERT"] = "CERT";
-    DomainNameRecordRecordTypeEnum["A6"] = "A6";
-    DomainNameRecordRecordTypeEnum["DNAME"] = "DNAME";
-    DomainNameRecordRecordTypeEnum["SINK"] = "SINK";
-    DomainNameRecordRecordTypeEnum["OPT"] = "OPT";
-    DomainNameRecordRecordTypeEnum["APL"] = "APL";
-    DomainNameRecordRecordTypeEnum["DS"] = "DS";
-    DomainNameRecordRecordTypeEnum["SSHFP"] = "SSHFP";
-    DomainNameRecordRecordTypeEnum["IPSECKEY"] = "IPSECKEY";
-    DomainNameRecordRecordTypeEnum["RRSIG"] = "RRSIG";
-    DomainNameRecordRecordTypeEnum["NSEC"] = "NSEC";
-    DomainNameRecordRecordTypeEnum["DNSKEY"] = "DNSKEY";
-    DomainNameRecordRecordTypeEnum["DHCID"] = "DHCID";
-    DomainNameRecordRecordTypeEnum["NSEC3"] = "NSEC3";
-    DomainNameRecordRecordTypeEnum["NSEC3PARAM"] = "NSEC3PARAM";
-    DomainNameRecordRecordTypeEnum["TLSA"] = "TLSA";
-    DomainNameRecordRecordTypeEnum["SMIMEA"] = "SMIMEA";
-    DomainNameRecordRecordTypeEnum["HIP"] = "HIP";
-    DomainNameRecordRecordTypeEnum["NINFO"] = "NINFO";
-    DomainNameRecordRecordTypeEnum["RKEY"] = "RKEY";
-    DomainNameRecordRecordTypeEnum["TALINK"] = "TALINK";
-    DomainNameRecordRecordTypeEnum["CDS"] = "CDS";
-    DomainNameRecordRecordTypeEnum["CDNSKEY"] = "CDNSKEY";
-    DomainNameRecordRecordTypeEnum["OPENPGPKEY"] = "OPENPGPKEY";
-    DomainNameRecordRecordTypeEnum["CSYNC"] = "CSYNC";
-    DomainNameRecordRecordTypeEnum["ZONEMD"] = "ZONEMD";
-    DomainNameRecordRecordTypeEnum["SVCB"] = "SVCB";
-    DomainNameRecordRecordTypeEnum["HTTPS"] = "HTTPS";
-    DomainNameRecordRecordTypeEnum["SPF"] = "SPF";
-    DomainNameRecordRecordTypeEnum["UINFO"] = "UINFO";
-    DomainNameRecordRecordTypeEnum["UID"] = "UID";
-    DomainNameRecordRecordTypeEnum["GID"] = "GID";
-    DomainNameRecordRecordTypeEnum["UNSPEC"] = "UNSPEC";
-    DomainNameRecordRecordTypeEnum["NID"] = "NID";
-    DomainNameRecordRecordTypeEnum["L32"] = "L32";
-    DomainNameRecordRecordTypeEnum["L64"] = "L64";
-    DomainNameRecordRecordTypeEnum["LP"] = "LP";
-    DomainNameRecordRecordTypeEnum["EUI48"] = "EUI48";
-    DomainNameRecordRecordTypeEnum["EUI64"] = "EUI64";
-    DomainNameRecordRecordTypeEnum["TKEY"] = "TKEY";
-    DomainNameRecordRecordTypeEnum["TSIG"] = "TSIG";
-    DomainNameRecordRecordTypeEnum["IXFR"] = "IXFR";
-    DomainNameRecordRecordTypeEnum["AXFR"] = "AXFR";
-    DomainNameRecordRecordTypeEnum["MAILB"] = "MAILB";
-    DomainNameRecordRecordTypeEnum["MAILA"] = "MAILA";
-    DomainNameRecordRecordTypeEnum["ANY"] = "ANY";
-    DomainNameRecordRecordTypeEnum["URI"] = "URI";
-    DomainNameRecordRecordTypeEnum["CAA"] = "CAA";
-    DomainNameRecordRecordTypeEnum["AVC"] = "AVC";
-    DomainNameRecordRecordTypeEnum["DOA"] = "DOA";
-    DomainNameRecordRecordTypeEnum["AMTRELAY"] = "AMTRELAY";
-    DomainNameRecordRecordTypeEnum["TA"] = "TA";
-    DomainNameRecordRecordTypeEnum["DLV"] = "DLV";
-})(DomainNameRecordRecordTypeEnum = exports.DomainNameRecordRecordTypeEnum || (exports.DomainNameRecordRecordTypeEnum = {}));
+exports.DomainNameRecordRecordTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+};
+/**
+ * Check if a given object implements the DomainNameRecord interface.
+ */
+function instanceOfDomainNameRecord(value) {
+    if (!('label' in value) || value['label'] === undefined)
+        return false;
+    if (!('required' in value) || value['required'] === undefined)
+        return false;
+    if (!('recordType' in value) || value['recordType'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('recordEntries' in value) || value['recordEntries'] === undefined)
+        return false;
+    if (!('ttl' in value) || value['ttl'] === undefined)
+        return false;
+    return true;
+}
 function DomainNameRecordFromJSON(json) {
     return DomainNameRecordFromJSONTyped(json, false);
 }
-exports.DomainNameRecordFromJSON = DomainNameRecordFromJSON;
 function DomainNameRecordFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        label: json['label'],
-        required: json['required'],
-        recordType: json['recordType'],
-        name: json['name'],
-        recordEntries: json['recordEntries'],
-        ttl: json['ttl'],
+        'label': json['label'],
+        'required': json['required'],
+        'recordType': json['recordType'],
+        'name': json['name'],
+        'recordEntries': json['recordEntries'],
+        'ttl': json['ttl'],
+        'alternativeRecordEntries': json['alternativeRecordEntries'] == null ? undefined : json['alternativeRecordEntries'],
     };
 }
-exports.DomainNameRecordFromJSONTyped = DomainNameRecordFromJSONTyped;
-function DomainNameRecordToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DomainNameRecordToJSON(json) {
+    return DomainNameRecordToJSONTyped(json, false);
+}
+function DomainNameRecordToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        label: value.label,
-        required: value.required,
-        recordType: value.recordType,
-        name: value.name,
-        recordEntries: value.recordEntries,
-        ttl: value.ttl,
+        'label': value['label'],
+        'required': value['required'],
+        'recordType': value['recordType'],
+        'name': value['name'],
+        'recordEntries': value['recordEntries'],
+        'ttl': value['ttl'],
+        'alternativeRecordEntries': value['alternativeRecordEntries'],
     };
 }
-exports.DomainNameRecordToJSON = DomainNameRecordToJSON;

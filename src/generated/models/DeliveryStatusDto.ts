@@ -12,160 +12,162 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface DeliveryStatusDto
  */
 export interface DeliveryStatusDto {
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  sentId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  remoteMtaIp?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  inboxId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  reportingMta?: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof DeliveryStatusDto
-   */
-  recipients?: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  smtpResponse?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof DeliveryStatusDto
-   */
-  smtpStatusCode?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof DeliveryStatusDto
-   */
-  processingTimeMillis?: number;
-  /**
-   *
-   * @type {Date}
-   * @memberof DeliveryStatusDto
-   */
-  received?: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof DeliveryStatusDto
-   */
-  subject?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof DeliveryStatusDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof DeliveryStatusDto
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    sentId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    remoteMtaIp?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    inboxId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    reportingMta?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof DeliveryStatusDto
+     */
+    recipients?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    smtpResponse?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof DeliveryStatusDto
+     */
+    smtpStatusCode?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof DeliveryStatusDto
+     */
+    processingTimeMillis?: number;
+    /**
+     * 
+     * @type {Date}
+     * @memberof DeliveryStatusDto
+     */
+    received?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeliveryStatusDto
+     */
+    subject?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof DeliveryStatusDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof DeliveryStatusDto
+     */
+    updatedAt: Date;
+}
+
+/**
+ * Check if a given object implements the DeliveryStatusDto interface.
+ */
+export function instanceOfDeliveryStatusDto(value: object): value is DeliveryStatusDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    return true;
 }
 
 export function DeliveryStatusDtoFromJSON(json: any): DeliveryStatusDto {
-  return DeliveryStatusDtoFromJSONTyped(json, false);
+    return DeliveryStatusDtoFromJSONTyped(json, false);
 }
 
-export function DeliveryStatusDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DeliveryStatusDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
-    remoteMtaIp: !exists(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    reportingMta: !exists(json, 'reportingMta')
-      ? undefined
-      : json['reportingMta'],
-    recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
-    smtpResponse: !exists(json, 'smtpResponse')
-      ? undefined
-      : json['smtpResponse'],
-    smtpStatusCode: !exists(json, 'smtpStatusCode')
-      ? undefined
-      : json['smtpStatusCode'],
-    processingTimeMillis: !exists(json, 'processingTimeMillis')
-      ? undefined
-      : json['processingTimeMillis'],
-    received: !exists(json, 'received')
-      ? undefined
-      : new Date(json['received']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function DeliveryStatusDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeliveryStatusDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'sentId': json['sentId'] == null ? undefined : json['sentId'],
+        'remoteMtaIp': json['remoteMtaIp'] == null ? undefined : json['remoteMtaIp'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'reportingMta': json['reportingMta'] == null ? undefined : json['reportingMta'],
+        'recipients': json['recipients'] == null ? undefined : json['recipients'],
+        'smtpResponse': json['smtpResponse'] == null ? undefined : json['smtpResponse'],
+        'smtpStatusCode': json['smtpStatusCode'] == null ? undefined : json['smtpStatusCode'],
+        'processingTimeMillis': json['processingTimeMillis'] == null ? undefined : json['processingTimeMillis'],
+        'received': json['received'] == null ? undefined : (new Date(json['received'])),
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
-export function DeliveryStatusDtoToJSON(value?: DeliveryStatusDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    sentId: value.sentId,
-    remoteMtaIp: value.remoteMtaIp,
-    inboxId: value.inboxId,
-    reportingMta: value.reportingMta,
-    recipients: value.recipients,
-    smtpResponse: value.smtpResponse,
-    smtpStatusCode: value.smtpStatusCode,
-    processingTimeMillis: value.processingTimeMillis,
-    received:
-      value.received === undefined ? undefined : value.received.toISOString(),
-    subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function DeliveryStatusDtoToJSON(json: any): DeliveryStatusDto {
+    return DeliveryStatusDtoToJSONTyped(json, false);
 }
+
+export function DeliveryStatusDtoToJSONTyped(value?: DeliveryStatusDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'sentId': value['sentId'],
+        'remoteMtaIp': value['remoteMtaIp'],
+        'inboxId': value['inboxId'],
+        'reportingMta': value['reportingMta'],
+        'recipients': value['recipients'],
+        'smtpResponse': value['smtpResponse'],
+        'smtpStatusCode': value['smtpStatusCode'],
+        'processingTimeMillis': value['processingTimeMillis'],
+        'received': value['received'] == null ? undefined : ((value['received']).toISOString()),
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+    };
+}
+

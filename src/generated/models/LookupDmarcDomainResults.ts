@@ -12,92 +12,106 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DNSLookupResult } from './DNSLookupResult';
 import {
-  DNSLookupOptions,
-  DNSLookupOptionsFromJSON,
-  DNSLookupOptionsFromJSONTyped,
-  DNSLookupOptionsToJSON,
-  DNSLookupResult,
-  DNSLookupResultFromJSON,
-  DNSLookupResultFromJSONTyped,
-  DNSLookupResultToJSON,
-} from './';
+    DNSLookupResultFromJSON,
+    DNSLookupResultFromJSONTyped,
+    DNSLookupResultToJSON,
+    DNSLookupResultToJSONTyped,
+} from './DNSLookupResult';
+import type { DNSLookupOptions } from './DNSLookupOptions';
+import {
+    DNSLookupOptionsFromJSON,
+    DNSLookupOptionsFromJSONTyped,
+    DNSLookupOptionsToJSON,
+    DNSLookupOptionsToJSONTyped,
+} from './DNSLookupOptions';
 
 /**
- *
+ * 
  * @export
  * @interface LookupDmarcDomainResults
  */
 export interface LookupDmarcDomainResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof LookupDmarcDomainResults
-   */
-  valid: boolean;
-  /**
-   *
-   * @type {DNSLookupOptions}
-   * @memberof LookupDmarcDomainResults
-   */
-  query: DNSLookupOptions;
-  /**
-   *
-   * @type {Array<DNSLookupResult>}
-   * @memberof LookupDmarcDomainResults
-   */
-  records: Array<DNSLookupResult>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupDmarcDomainResults
-   */
-  errors: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupDmarcDomainResults
-   */
-  warnings: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof LookupDmarcDomainResults
+     */
+    valid: boolean;
+    /**
+     * 
+     * @type {DNSLookupOptions}
+     * @memberof LookupDmarcDomainResults
+     */
+    query: DNSLookupOptions;
+    /**
+     * 
+     * @type {Array<DNSLookupResult>}
+     * @memberof LookupDmarcDomainResults
+     */
+    records: Array<DNSLookupResult>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupDmarcDomainResults
+     */
+    errors: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupDmarcDomainResults
+     */
+    warnings: Array<string>;
 }
 
-export function LookupDmarcDomainResultsFromJSON(
-  json: any
-): LookupDmarcDomainResults {
-  return LookupDmarcDomainResultsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the LookupDmarcDomainResults interface.
+ */
+export function instanceOfLookupDmarcDomainResults(value: object): value is LookupDmarcDomainResults {
+    if (!('valid' in value) || value['valid'] === undefined) return false;
+    if (!('query' in value) || value['query'] === undefined) return false;
+    if (!('records' in value) || value['records'] === undefined) return false;
+    if (!('errors' in value) || value['errors'] === undefined) return false;
+    if (!('warnings' in value) || value['warnings'] === undefined) return false;
+    return true;
 }
 
-export function LookupDmarcDomainResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupDmarcDomainResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    valid: json['valid'],
-    query: DNSLookupOptionsFromJSON(json['query']),
-    records: (json['records'] as Array<any>).map(DNSLookupResultFromJSON),
-    errors: json['errors'],
-    warnings: json['warnings'],
-  };
+export function LookupDmarcDomainResultsFromJSON(json: any): LookupDmarcDomainResults {
+    return LookupDmarcDomainResultsFromJSONTyped(json, false);
 }
 
-export function LookupDmarcDomainResultsToJSON(
-  value?: LookupDmarcDomainResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    valid: value.valid,
-    query: DNSLookupOptionsToJSON(value.query),
-    records: (value.records as Array<any>).map(DNSLookupResultToJSON),
-    errors: value.errors,
-    warnings: value.warnings,
-  };
+export function LookupDmarcDomainResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupDmarcDomainResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'valid': json['valid'],
+        'query': DNSLookupOptionsFromJSON(json['query']),
+        'records': ((json['records'] as Array<any>).map(DNSLookupResultFromJSON)),
+        'errors': json['errors'],
+        'warnings': json['warnings'],
+    };
 }
+
+export function LookupDmarcDomainResultsToJSON(json: any): LookupDmarcDomainResults {
+    return LookupDmarcDomainResultsToJSONTyped(json, false);
+}
+
+export function LookupDmarcDomainResultsToJSONTyped(value?: LookupDmarcDomainResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'valid': value['valid'],
+        'query': DNSLookupOptionsToJSON(value['query']),
+        'records': ((value['records'] as Array<any>).map(DNSLookupResultToJSON)),
+        'errors': value['errors'],
+        'warnings': value['warnings'],
+    };
+}
+

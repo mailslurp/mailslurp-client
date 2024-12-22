@@ -26,7 +26,7 @@ export interface ConnectorImapConnectionDto {
      * @type {string}
      * @memberof ConnectorImapConnectionDto
      */
-    imapHost?: string;
+    imapHost: string;
     /**
      *
      * @type {number}
@@ -68,6 +68,54 @@ export interface ConnectorImapConnectionDto {
      * @type {boolean}
      * @memberof ConnectorImapConnectionDto
      */
+    startTls?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    proxyHost?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof ConnectorImapConnectionDto
+     */
+    proxyPort?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorImapConnectionDto
+     */
+    proxyEnabled?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    localHostName?: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof ConnectorImapConnectionDto
+     */
+    mechanisms?: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof ConnectorImapConnectionDto
+     */
+    sslProtocols?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorImapConnectionDto
+     */
+    sslTrust?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorImapConnectionDto
+     */
     enabled?: boolean;
     /**
      *
@@ -82,6 +130,11 @@ export interface ConnectorImapConnectionDto {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the ConnectorImapConnectionDto interface.
+ */
+export declare function instanceOfConnectorImapConnectionDto(value: object): value is ConnectorImapConnectionDto;
 export declare function ConnectorImapConnectionDtoFromJSON(json: any): ConnectorImapConnectionDto;
 export declare function ConnectorImapConnectionDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorImapConnectionDto;
-export declare function ConnectorImapConnectionDtoToJSON(value?: ConnectorImapConnectionDto | null): any;
+export declare function ConnectorImapConnectionDtoToJSON(json: any): ConnectorImapConnectionDto;
+export declare function ConnectorImapConnectionDtoToJSONTyped(value?: ConnectorImapConnectionDto | null, ignoreDiscriminator?: boolean): any;

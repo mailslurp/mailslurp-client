@@ -13,49 +13,79 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SentSmsDtoToJSON = exports.SentSmsDtoFromJSONTyped = exports.SentSmsDtoFromJSON = void 0;
+exports.instanceOfSentSmsDto = instanceOfSentSmsDto;
+exports.SentSmsDtoFromJSON = SentSmsDtoFromJSON;
+exports.SentSmsDtoFromJSONTyped = SentSmsDtoFromJSONTyped;
+exports.SentSmsDtoToJSON = SentSmsDtoToJSON;
+exports.SentSmsDtoToJSONTyped = SentSmsDtoToJSONTyped;
+/**
+ * Check if a given object implements the SentSmsDto interface.
+ */
+function instanceOfSentSmsDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined)
+        return false;
+    if (!('fromNumber' in value) || value['fromNumber'] === undefined)
+        return false;
+    if (!('toNumber' in value) || value['toNumber'] === undefined)
+        return false;
+    if (!('body' in value) || value['body'] === undefined)
+        return false;
+    if (!('sid' in value) || value['sid'] === undefined)
+        return false;
+    if (!('replyToSid' in value) || value['replyToSid'] === undefined)
+        return false;
+    if (!('replyToId' in value) || value['replyToId'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
+        return false;
+    return true;
+}
 function SentSmsDtoFromJSON(json) {
     return SentSmsDtoFromJSONTyped(json, false);
 }
-exports.SentSmsDtoFromJSON = SentSmsDtoFromJSON;
 function SentSmsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        phoneNumber: json['phoneNumber'],
-        fromNumber: json['fromNumber'],
-        toNumber: json['toNumber'],
-        body: json['body'],
-        sid: json['sid'],
-        replyToSid: json['replyToSid'],
-        replyToId: json['replyToId'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'toNumber': json['toNumber'],
+        'body': json['body'],
+        'sid': json['sid'],
+        'replyToSid': json['replyToSid'],
+        'replyToId': json['replyToId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
-exports.SentSmsDtoFromJSONTyped = SentSmsDtoFromJSONTyped;
-function SentSmsDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SentSmsDtoToJSON(json) {
+    return SentSmsDtoToJSONTyped(json, false);
+}
+function SentSmsDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        phoneNumber: value.phoneNumber,
-        fromNumber: value.fromNumber,
-        toNumber: value.toNumber,
-        body: value.body,
-        sid: value.sid,
-        replyToSid: value.replyToSid,
-        replyToId: value.replyToId,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value['id'],
+        'userId': value['userId'],
+        'phoneNumber': value['phoneNumber'],
+        'fromNumber': value['fromNumber'],
+        'toNumber': value['toNumber'],
+        'body': value['body'],
+        'sid': value['sid'],
+        'replyToSid': value['replyToSid'],
+        'replyToId': value['replyToId'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
     };
 }
-exports.SentSmsDtoToJSON = SentSmsDtoToJSON;

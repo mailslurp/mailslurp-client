@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface LookupDmarcDomainOptions
  */
 export interface LookupDmarcDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof LookupDmarcDomainOptions
-   */
-  host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupDmarcDomainOptions
+     */
+    host: string;
 }
 
-export function LookupDmarcDomainOptionsFromJSON(
-  json: any
-): LookupDmarcDomainOptions {
-  return LookupDmarcDomainOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the LookupDmarcDomainOptions interface.
+ */
+export function instanceOfLookupDmarcDomainOptions(value: object): value is LookupDmarcDomainOptions {
+    if (!('host' in value) || value['host'] === undefined) return false;
+    return true;
 }
 
-export function LookupDmarcDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupDmarcDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-  };
+export function LookupDmarcDomainOptionsFromJSON(json: any): LookupDmarcDomainOptions {
+    return LookupDmarcDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupDmarcDomainOptionsToJSON(
-  value?: LookupDmarcDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-  };
+export function LookupDmarcDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupDmarcDomainOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+    };
 }
+
+export function LookupDmarcDomainOptionsToJSON(json: any): LookupDmarcDomainOptions {
+    return LookupDmarcDomainOptionsToJSONTyped(json, false);
+}
+
+export function LookupDmarcDomainOptionsToJSONTyped(value?: LookupDmarcDomainOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'host': value['host'],
+    };
+}
+

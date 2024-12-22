@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { PageableObject } from './PageableObject';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  PhoneNumberProjection,
-  PhoneNumberProjectionFromJSON,
-  PhoneNumberProjectionFromJSONTyped,
-  PhoneNumberProjectionToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-} from './';
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PageableObjectToJSONTyped,
+} from './PageableObject';
+import type { PhoneNumberProjection } from './PhoneNumberProjection';
+import {
+    PhoneNumberProjectionFromJSON,
+    PhoneNumberProjectionFromJSONTyped,
+    PhoneNumberProjectionToJSON,
+    PhoneNumberProjectionToJSONTyped,
+} from './PhoneNumberProjection';
+import type { SortObject } from './SortObject';
+import {
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    SortObjectToJSONTyped,
+} from './SortObject';
 
 /**
  * Paginated phone numbers. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -34,131 +41,129 @@ import {
  * @interface PagePhoneNumberProjection
  */
 export interface PagePhoneNumberProjection {
-  /**
-   *
-   * @type {Array<PhoneNumberProjection>}
-   * @memberof PagePhoneNumberProjection
-   */
-  content?: Array<PhoneNumberProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PagePhoneNumberProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneNumberProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneNumberProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PagePhoneNumberProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneNumberProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PagePhoneNumberProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneNumberProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneNumberProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PagePhoneNumberProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PagePhoneNumberProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<PhoneNumberProjection>}
+     * @memberof PagePhoneNumberProjection
+     */
+    content?: Array<PhoneNumberProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PagePhoneNumberProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneNumberProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneNumberProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneNumberProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneNumberProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneNumberProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {Array<SortObject>}
+     * @memberof PagePhoneNumberProjection
+     */
+    sort?: Array<SortObject>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    empty?: boolean;
 }
 
-export function PagePhoneNumberProjectionFromJSON(
-  json: any
-): PagePhoneNumberProjection {
-  return PagePhoneNumberProjectionFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the PagePhoneNumberProjection interface.
+ */
+export function instanceOfPagePhoneNumberProjection(value: object): value is PagePhoneNumberProjection {
+    if (!('totalPages' in value) || value['totalPages'] === undefined) return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
-export function PagePhoneNumberProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PagePhoneNumberProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(PhoneNumberProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PagePhoneNumberProjectionFromJSON(json: any): PagePhoneNumberProjection {
+    return PagePhoneNumberProjectionFromJSONTyped(json, false);
 }
 
-export function PagePhoneNumberProjectionToJSON(
-  value?: PagePhoneNumberProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(PhoneNumberProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
-    totalElements: value.totalElements,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PagePhoneNumberProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PagePhoneNumberProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'] == null ? undefined : ((json['content'] as Array<any>).map(PhoneNumberProjectionFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : ((json['sort'] as Array<any>).map(SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
+    };
 }
+
+export function PagePhoneNumberProjectionToJSON(json: any): PagePhoneNumberProjection {
+    return PagePhoneNumberProjectionToJSONTyped(json, false);
+}
+
+export function PagePhoneNumberProjectionToJSONTyped(value?: PagePhoneNumberProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'] == null ? undefined : ((value['content'] as Array<any>).map(PhoneNumberProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : ((value['sort'] as Array<any>).map(SortObjectToJSON)),
+        'empty': value['empty'],
+    };
+}
+

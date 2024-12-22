@@ -12,206 +12,212 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface GenerateDmarcRecordOptions
  */
 export interface GenerateDmarcRecordOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  domain: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  version: GenerateDmarcRecordOptionsVersionEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  policy: GenerateDmarcRecordOptionsPolicyEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  subdomainPolicy?: GenerateDmarcRecordOptionsSubdomainPolicyEnum;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  reportEmailAddress?: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  forensicEmailAddress?: Array<string>;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  percentage?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  reportFormat?: GenerateDmarcRecordOptionsReportFormatEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  secondsBetweenReports?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  adkim?: GenerateDmarcRecordOptionsAdkimEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  aspf?: GenerateDmarcRecordOptionsAspfEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordOptions
-   */
-  fo?: GenerateDmarcRecordOptionsFoEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    domain: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    version: GenerateDmarcRecordOptionsVersionEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    policy: GenerateDmarcRecordOptionsPolicyEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    subdomainPolicy?: GenerateDmarcRecordOptionsSubdomainPolicyEnum;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    reportEmailAddress?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    forensicEmailAddress?: Array<string>;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    percentage?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    reportFormat?: GenerateDmarcRecordOptionsReportFormatEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    secondsBetweenReports?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    adkim?: GenerateDmarcRecordOptionsAdkimEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    aspf?: GenerateDmarcRecordOptionsAspfEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordOptions
+     */
+    fo?: GenerateDmarcRecordOptionsFoEnum;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateDmarcRecordOptionsVersionEnum {
-  DMARC1 = 'DMARC1',
-}
+export const GenerateDmarcRecordOptionsVersionEnum = {
+    DMARC1: 'DMARC1'
+} as const;
+export type GenerateDmarcRecordOptionsVersionEnum = typeof GenerateDmarcRecordOptionsVersionEnum[keyof typeof GenerateDmarcRecordOptionsVersionEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateDmarcRecordOptionsPolicyEnum {
-  NONE = 'NONE',
-  QUARANTINE = 'QUARANTINE',
-  REJECT = 'REJECT',
-}
+export const GenerateDmarcRecordOptionsPolicyEnum = {
+    NONE: 'NONE',
+    QUARANTINE: 'QUARANTINE',
+    REJECT: 'REJECT'
+} as const;
+export type GenerateDmarcRecordOptionsPolicyEnum = typeof GenerateDmarcRecordOptionsPolicyEnum[keyof typeof GenerateDmarcRecordOptionsPolicyEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateDmarcRecordOptionsSubdomainPolicyEnum {
-  NONE = 'NONE',
-  QUARANTINE = 'QUARANTINE',
-  REJECT = 'REJECT',
-}
+export const GenerateDmarcRecordOptionsSubdomainPolicyEnum = {
+    NONE: 'NONE',
+    QUARANTINE: 'QUARANTINE',
+    REJECT: 'REJECT'
+} as const;
+export type GenerateDmarcRecordOptionsSubdomainPolicyEnum = typeof GenerateDmarcRecordOptionsSubdomainPolicyEnum[keyof typeof GenerateDmarcRecordOptionsSubdomainPolicyEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateDmarcRecordOptionsReportFormatEnum {
-  AFRF = 'AFRF',
-}
+export const GenerateDmarcRecordOptionsReportFormatEnum = {
+    AFRF: 'AFRF'
+} as const;
+export type GenerateDmarcRecordOptionsReportFormatEnum = typeof GenerateDmarcRecordOptionsReportFormatEnum[keyof typeof GenerateDmarcRecordOptionsReportFormatEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateDmarcRecordOptionsAdkimEnum {
-  STRICT = 'STRICT',
-  RELAXED = 'RELAXED',
-}
+export const GenerateDmarcRecordOptionsAdkimEnum = {
+    STRICT: 'STRICT',
+    RELAXED: 'RELAXED'
+} as const;
+export type GenerateDmarcRecordOptionsAdkimEnum = typeof GenerateDmarcRecordOptionsAdkimEnum[keyof typeof GenerateDmarcRecordOptionsAdkimEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateDmarcRecordOptionsAspfEnum {
-  STRICT = 'STRICT',
-  RELAXED = 'RELAXED',
-}
+export const GenerateDmarcRecordOptionsAspfEnum = {
+    STRICT: 'STRICT',
+    RELAXED: 'RELAXED'
+} as const;
+export type GenerateDmarcRecordOptionsAspfEnum = typeof GenerateDmarcRecordOptionsAspfEnum[keyof typeof GenerateDmarcRecordOptionsAspfEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateDmarcRecordOptionsFoEnum {
-  _0 = 'FO_0',
-  _1 = 'FO_1',
-  D = 'FO_D',
-  S = 'FO_S',
+export const GenerateDmarcRecordOptionsFoEnum = {
+    _0: 'FO_0',
+    _1: 'FO_1',
+    D: 'FO_D',
+    S: 'FO_S'
+} as const;
+export type GenerateDmarcRecordOptionsFoEnum = typeof GenerateDmarcRecordOptionsFoEnum[keyof typeof GenerateDmarcRecordOptionsFoEnum];
+
+
+/**
+ * Check if a given object implements the GenerateDmarcRecordOptions interface.
+ */
+export function instanceOfGenerateDmarcRecordOptions(value: object): value is GenerateDmarcRecordOptions {
+    if (!('domain' in value) || value['domain'] === undefined) return false;
+    if (!('version' in value) || value['version'] === undefined) return false;
+    if (!('policy' in value) || value['policy'] === undefined) return false;
+    return true;
 }
 
-export function GenerateDmarcRecordOptionsFromJSON(
-  json: any
-): GenerateDmarcRecordOptions {
-  return GenerateDmarcRecordOptionsFromJSONTyped(json, false);
+export function GenerateDmarcRecordOptionsFromJSON(json: any): GenerateDmarcRecordOptions {
+    return GenerateDmarcRecordOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateDmarcRecordOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateDmarcRecordOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domain: json['domain'],
-    version: json['version'],
-    policy: json['policy'],
-    subdomainPolicy: !exists(json, 'subdomainPolicy')
-      ? undefined
-      : json['subdomainPolicy'],
-    reportEmailAddress: !exists(json, 'reportEmailAddress')
-      ? undefined
-      : json['reportEmailAddress'],
-    forensicEmailAddress: !exists(json, 'forensicEmailAddress')
-      ? undefined
-      : json['forensicEmailAddress'],
-    percentage: !exists(json, 'percentage') ? undefined : json['percentage'],
-    reportFormat: !exists(json, 'reportFormat')
-      ? undefined
-      : json['reportFormat'],
-    secondsBetweenReports: !exists(json, 'secondsBetweenReports')
-      ? undefined
-      : json['secondsBetweenReports'],
-    adkim: !exists(json, 'adkim') ? undefined : json['adkim'],
-    aspf: !exists(json, 'aspf') ? undefined : json['aspf'],
-    fo: !exists(json, 'fo') ? undefined : json['fo'],
-  };
+export function GenerateDmarcRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateDmarcRecordOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'domain': json['domain'],
+        'version': json['version'],
+        'policy': json['policy'],
+        'subdomainPolicy': json['subdomainPolicy'] == null ? undefined : json['subdomainPolicy'],
+        'reportEmailAddress': json['reportEmailAddress'] == null ? undefined : json['reportEmailAddress'],
+        'forensicEmailAddress': json['forensicEmailAddress'] == null ? undefined : json['forensicEmailAddress'],
+        'percentage': json['percentage'] == null ? undefined : json['percentage'],
+        'reportFormat': json['reportFormat'] == null ? undefined : json['reportFormat'],
+        'secondsBetweenReports': json['secondsBetweenReports'] == null ? undefined : json['secondsBetweenReports'],
+        'adkim': json['adkim'] == null ? undefined : json['adkim'],
+        'aspf': json['aspf'] == null ? undefined : json['aspf'],
+        'fo': json['fo'] == null ? undefined : json['fo'],
+    };
 }
 
-export function GenerateDmarcRecordOptionsToJSON(
-  value?: GenerateDmarcRecordOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domain: value.domain,
-    version: value.version,
-    policy: value.policy,
-    subdomainPolicy: value.subdomainPolicy,
-    reportEmailAddress: value.reportEmailAddress,
-    forensicEmailAddress: value.forensicEmailAddress,
-    percentage: value.percentage,
-    reportFormat: value.reportFormat,
-    secondsBetweenReports: value.secondsBetweenReports,
-    adkim: value.adkim,
-    aspf: value.aspf,
-    fo: value.fo,
-  };
+export function GenerateDmarcRecordOptionsToJSON(json: any): GenerateDmarcRecordOptions {
+    return GenerateDmarcRecordOptionsToJSONTyped(json, false);
 }
+
+export function GenerateDmarcRecordOptionsToJSONTyped(value?: GenerateDmarcRecordOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'domain': value['domain'],
+        'version': value['version'],
+        'policy': value['policy'],
+        'subdomainPolicy': value['subdomainPolicy'],
+        'reportEmailAddress': value['reportEmailAddress'],
+        'forensicEmailAddress': value['forensicEmailAddress'],
+        'percentage': value['percentage'],
+        'reportFormat': value['reportFormat'],
+        'secondsBetweenReports': value['secondsBetweenReports'],
+        'adkim': value['adkim'],
+        'aspf': value['aspf'],
+        'fo': value['fo'],
+    };
+}
+

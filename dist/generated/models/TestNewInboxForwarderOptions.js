@@ -13,32 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestNewInboxForwarderOptionsToJSON = exports.TestNewInboxForwarderOptionsFromJSONTyped = exports.TestNewInboxForwarderOptionsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfTestNewInboxForwarderOptions = instanceOfTestNewInboxForwarderOptions;
+exports.TestNewInboxForwarderOptionsFromJSON = TestNewInboxForwarderOptionsFromJSON;
+exports.TestNewInboxForwarderOptionsFromJSONTyped = TestNewInboxForwarderOptionsFromJSONTyped;
+exports.TestNewInboxForwarderOptionsToJSON = TestNewInboxForwarderOptionsToJSON;
+exports.TestNewInboxForwarderOptionsToJSONTyped = TestNewInboxForwarderOptionsToJSONTyped;
+var CreateInboxForwarderOptions_1 = require("./CreateInboxForwarderOptions");
+var InboxForwarderTestOptions_1 = require("./InboxForwarderTestOptions");
+/**
+ * Check if a given object implements the TestNewInboxForwarderOptions interface.
+ */
+function instanceOfTestNewInboxForwarderOptions(value) {
+    if (!('inboxForwarderTestOptions' in value) || value['inboxForwarderTestOptions'] === undefined)
+        return false;
+    if (!('createInboxForwarderOptions' in value) || value['createInboxForwarderOptions'] === undefined)
+        return false;
+    return true;
+}
 function TestNewInboxForwarderOptionsFromJSON(json) {
     return TestNewInboxForwarderOptionsFromJSONTyped(json, false);
 }
-exports.TestNewInboxForwarderOptionsFromJSON = TestNewInboxForwarderOptionsFromJSON;
 function TestNewInboxForwarderOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxForwarderTestOptions: (0, _1.InboxForwarderTestOptionsFromJSON)(json['inboxForwarderTestOptions']),
-        createInboxForwarderOptions: (0, _1.CreateInboxForwarderOptionsFromJSON)(json['createInboxForwarderOptions']),
+        'inboxForwarderTestOptions': (0, InboxForwarderTestOptions_1.InboxForwarderTestOptionsFromJSON)(json['inboxForwarderTestOptions']),
+        'createInboxForwarderOptions': (0, CreateInboxForwarderOptions_1.CreateInboxForwarderOptionsFromJSON)(json['createInboxForwarderOptions']),
     };
 }
-exports.TestNewInboxForwarderOptionsFromJSONTyped = TestNewInboxForwarderOptionsFromJSONTyped;
-function TestNewInboxForwarderOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TestNewInboxForwarderOptionsToJSON(json) {
+    return TestNewInboxForwarderOptionsToJSONTyped(json, false);
+}
+function TestNewInboxForwarderOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxForwarderTestOptions: (0, _1.InboxForwarderTestOptionsToJSON)(value.inboxForwarderTestOptions),
-        createInboxForwarderOptions: (0, _1.CreateInboxForwarderOptionsToJSON)(value.createInboxForwarderOptions),
+        'inboxForwarderTestOptions': (0, InboxForwarderTestOptions_1.InboxForwarderTestOptionsToJSON)(value['inboxForwarderTestOptions']),
+        'createInboxForwarderOptions': (0, CreateInboxForwarderOptions_1.CreateInboxForwarderOptionsToJSON)(value['createInboxForwarderOptions']),
     };
 }
-exports.TestNewInboxForwarderOptionsToJSON = TestNewInboxForwarderOptionsToJSON;

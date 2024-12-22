@@ -13,36 +13,52 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapSmtpAccessServersToJSON = exports.ImapSmtpAccessServersFromJSONTyped = exports.ImapSmtpAccessServersFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfImapSmtpAccessServers = instanceOfImapSmtpAccessServers;
+exports.ImapSmtpAccessServersFromJSON = ImapSmtpAccessServersFromJSON;
+exports.ImapSmtpAccessServersFromJSONTyped = ImapSmtpAccessServersFromJSONTyped;
+exports.ImapSmtpAccessServersToJSON = ImapSmtpAccessServersToJSON;
+exports.ImapSmtpAccessServersToJSONTyped = ImapSmtpAccessServersToJSONTyped;
+var ServerEndpoints_1 = require("./ServerEndpoints");
+/**
+ * Check if a given object implements the ImapSmtpAccessServers interface.
+ */
+function instanceOfImapSmtpAccessServers(value) {
+    if (!('imapServer' in value) || value['imapServer'] === undefined)
+        return false;
+    if (!('secureImapServer' in value) || value['secureImapServer'] === undefined)
+        return false;
+    if (!('smtpServer' in value) || value['smtpServer'] === undefined)
+        return false;
+    if (!('secureSmtpServer' in value) || value['secureSmtpServer'] === undefined)
+        return false;
+    return true;
+}
 function ImapSmtpAccessServersFromJSON(json) {
     return ImapSmtpAccessServersFromJSONTyped(json, false);
 }
-exports.ImapSmtpAccessServersFromJSON = ImapSmtpAccessServersFromJSON;
 function ImapSmtpAccessServersFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        imapServer: (0, _1.ServerEndpointsFromJSON)(json['imapServer']),
-        secureImapServer: (0, _1.ServerEndpointsFromJSON)(json['secureImapServer']),
-        smtpServer: (0, _1.ServerEndpointsFromJSON)(json['smtpServer']),
-        secureSmtpServer: (0, _1.ServerEndpointsFromJSON)(json['secureSmtpServer']),
+        'imapServer': (0, ServerEndpoints_1.ServerEndpointsFromJSON)(json['imapServer']),
+        'secureImapServer': (0, ServerEndpoints_1.ServerEndpointsFromJSON)(json['secureImapServer']),
+        'smtpServer': (0, ServerEndpoints_1.ServerEndpointsFromJSON)(json['smtpServer']),
+        'secureSmtpServer': (0, ServerEndpoints_1.ServerEndpointsFromJSON)(json['secureSmtpServer']),
     };
 }
-exports.ImapSmtpAccessServersFromJSONTyped = ImapSmtpAccessServersFromJSONTyped;
-function ImapSmtpAccessServersToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapSmtpAccessServersToJSON(json) {
+    return ImapSmtpAccessServersToJSONTyped(json, false);
+}
+function ImapSmtpAccessServersToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        imapServer: (0, _1.ServerEndpointsToJSON)(value.imapServer),
-        secureImapServer: (0, _1.ServerEndpointsToJSON)(value.secureImapServer),
-        smtpServer: (0, _1.ServerEndpointsToJSON)(value.smtpServer),
-        secureSmtpServer: (0, _1.ServerEndpointsToJSON)(value.secureSmtpServer),
+        'imapServer': (0, ServerEndpoints_1.ServerEndpointsToJSON)(value['imapServer']),
+        'secureImapServer': (0, ServerEndpoints_1.ServerEndpointsToJSON)(value['secureImapServer']),
+        'smtpServer': (0, ServerEndpoints_1.ServerEndpointsToJSON)(value['smtpServer']),
+        'secureSmtpServer': (0, ServerEndpoints_1.ServerEndpointsToJSON)(value['secureSmtpServer']),
     };
 }
-exports.ImapSmtpAccessServersToJSON = ImapSmtpAccessServersToJSON;

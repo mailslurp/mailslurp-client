@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DomainNameRecord } from './';
+import type { DomainNameRecord } from './DomainNameRecord';
 /**
  * Domain plus verification records and status
  * @export
@@ -97,12 +97,17 @@ export interface DomainDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum DomainDtoDomainTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_DOMAIN = "SMTP_DOMAIN"
-}
+export declare const DomainDtoDomainTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_DOMAIN: "SMTP_DOMAIN";
+};
+export type DomainDtoDomainTypeEnum = typeof DomainDtoDomainTypeEnum[keyof typeof DomainDtoDomainTypeEnum];
+/**
+ * Check if a given object implements the DomainDto interface.
+ */
+export declare function instanceOfDomainDto(value: object): value is DomainDto;
 export declare function DomainDtoFromJSON(json: any): DomainDto;
 export declare function DomainDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainDto;
-export declare function DomainDtoToJSON(value?: DomainDto | null): any;
+export declare function DomainDtoToJSON(json: any): DomainDto;
+export declare function DomainDtoToJSONTyped(value?: DomainDto | null, ignoreDiscriminator?: boolean): any;

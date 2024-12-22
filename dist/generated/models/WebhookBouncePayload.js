@@ -13,65 +13,78 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookBouncePayloadToJSON = exports.WebhookBouncePayloadFromJSONTyped = exports.WebhookBouncePayloadFromJSON = exports.WebhookBouncePayloadEventNameEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.WebhookBouncePayloadEventNameEnum = void 0;
+exports.instanceOfWebhookBouncePayload = instanceOfWebhookBouncePayload;
+exports.WebhookBouncePayloadFromJSON = WebhookBouncePayloadFromJSON;
+exports.WebhookBouncePayloadFromJSONTyped = WebhookBouncePayloadFromJSONTyped;
+exports.WebhookBouncePayloadToJSON = WebhookBouncePayloadToJSON;
+exports.WebhookBouncePayloadToJSONTyped = WebhookBouncePayloadToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var WebhookBouncePayloadEventNameEnum;
-(function (WebhookBouncePayloadEventNameEnum) {
-    WebhookBouncePayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
-    WebhookBouncePayloadEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
-    WebhookBouncePayloadEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
-    WebhookBouncePayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
-    WebhookBouncePayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
-    WebhookBouncePayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-    WebhookBouncePayloadEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
-    WebhookBouncePayloadEventNameEnum["BOUNCE"] = "BOUNCE";
-    WebhookBouncePayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
-    WebhookBouncePayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
-})(WebhookBouncePayloadEventNameEnum = exports.WebhookBouncePayloadEventNameEnum || (exports.WebhookBouncePayloadEventNameEnum = {}));
+exports.WebhookBouncePayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+};
+/**
+ * Check if a given object implements the WebhookBouncePayload interface.
+ */
+function instanceOfWebhookBouncePayload(value) {
+    if (!('messageId' in value) || value['messageId'] === undefined)
+        return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined)
+        return false;
+    if (!('eventName' in value) || value['eventName'] === undefined)
+        return false;
+    if (!('bounceId' in value) || value['bounceId'] === undefined)
+        return false;
+    if (!('sender' in value) || value['sender'] === undefined)
+        return false;
+    return true;
+}
 function WebhookBouncePayloadFromJSON(json) {
     return WebhookBouncePayloadFromJSONTyped(json, false);
 }
-exports.WebhookBouncePayloadFromJSON = WebhookBouncePayloadFromJSON;
 function WebhookBouncePayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        eventName: json['eventName'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        bounceId: json['bounceId'],
-        sentToRecipients: !(0, runtime_1.exists)(json, 'sentToRecipients')
-            ? undefined
-            : json['sentToRecipients'],
-        sender: json['sender'],
-        bounceRecipients: !(0, runtime_1.exists)(json, 'bounceRecipients')
-            ? undefined
-            : json['bounceRecipients'],
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+        'bounceId': json['bounceId'],
+        'sentToRecipients': json['sentToRecipients'] == null ? undefined : json['sentToRecipients'],
+        'sender': json['sender'],
+        'bounceRecipients': json['bounceRecipients'] == null ? undefined : json['bounceRecipients'],
     };
 }
-exports.WebhookBouncePayloadFromJSONTyped = WebhookBouncePayloadFromJSONTyped;
-function WebhookBouncePayloadToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookBouncePayloadToJSON(json) {
+    return WebhookBouncePayloadToJSONTyped(json, false);
+}
+function WebhookBouncePayloadToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        eventName: value.eventName,
-        webhookName: value.webhookName,
-        bounceId: value.bounceId,
-        sentToRecipients: value.sentToRecipients,
-        sender: value.sender,
-        bounceRecipients: value.bounceRecipients,
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'eventName': value['eventName'],
+        'webhookName': value['webhookName'],
+        'bounceId': value['bounceId'],
+        'sentToRecipients': value['sentToRecipients'],
+        'sender': value['sender'],
+        'bounceRecipients': value['bounceRecipients'],
     };
 }
-exports.WebhookBouncePayloadToJSON = WebhookBouncePayloadToJSON;

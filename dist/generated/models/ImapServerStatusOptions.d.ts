@@ -23,23 +23,28 @@ export interface ImapServerStatusOptions {
     name?: string | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapServerStatusOptions
      */
-    statusItems?: Array<ImapServerStatusOptionsStatusItemsEnum>;
+    statusItems?: Array<ImapServerStatusOptionsStatusItemsEnum | null> | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ImapServerStatusOptionsStatusItemsEnum {
-    MESSAGES = "MESSAGES",
-    RECENT = "RECENT",
-    UIDNEXT = "UIDNEXT",
-    UIDVALIDITY = "UIDVALIDITY",
-    UNSEEN = "UNSEEN",
-    APPENDLIMIT = "APPENDLIMIT"
-}
+export declare const ImapServerStatusOptionsStatusItemsEnum: {
+    readonly MESSAGES: "MESSAGES";
+    readonly RECENT: "RECENT";
+    readonly UIDNEXT: "UIDNEXT";
+    readonly UIDVALIDITY: "UIDVALIDITY";
+    readonly UNSEEN: "UNSEEN";
+    readonly APPENDLIMIT: "APPENDLIMIT";
+};
+export type ImapServerStatusOptionsStatusItemsEnum = typeof ImapServerStatusOptionsStatusItemsEnum[keyof typeof ImapServerStatusOptionsStatusItemsEnum];
+/**
+ * Check if a given object implements the ImapServerStatusOptions interface.
+ */
+export declare function instanceOfImapServerStatusOptions(value: object): value is ImapServerStatusOptions;
 export declare function ImapServerStatusOptionsFromJSON(json: any): ImapServerStatusOptions;
 export declare function ImapServerStatusOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerStatusOptions;
-export declare function ImapServerStatusOptionsToJSON(value?: ImapServerStatusOptions | null): any;
+export declare function ImapServerStatusOptionsToJSON(json: any): ImapServerStatusOptions;
+export declare function ImapServerStatusOptionsToJSONTyped(value?: ImapServerStatusOptions | null, ignoreDiscriminator?: boolean): any;

@@ -12,17 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { CreateInboxForwarderOptions } from './CreateInboxForwarderOptions';
 import {
-  CreateInboxForwarderOptions,
-  CreateInboxForwarderOptionsFromJSON,
-  CreateInboxForwarderOptionsFromJSONTyped,
-  CreateInboxForwarderOptionsToJSON,
-  InboxForwarderTestOptions,
-  InboxForwarderTestOptionsFromJSON,
-  InboxForwarderTestOptionsFromJSONTyped,
-  InboxForwarderTestOptionsToJSON,
-} from './';
+    CreateInboxForwarderOptionsFromJSON,
+    CreateInboxForwarderOptionsFromJSONTyped,
+    CreateInboxForwarderOptionsToJSON,
+    CreateInboxForwarderOptionsToJSONTyped,
+} from './CreateInboxForwarderOptions';
+import type { InboxForwarderTestOptions } from './InboxForwarderTestOptions';
+import {
+    InboxForwarderTestOptionsFromJSON,
+    InboxForwarderTestOptionsFromJSONTyped,
+    InboxForwarderTestOptionsToJSON,
+    InboxForwarderTestOptionsToJSONTyped,
+} from './InboxForwarderTestOptions';
 
 /**
  * Options for testing new inbox forwarder rules
@@ -30,58 +34,57 @@ import {
  * @interface TestNewInboxForwarderOptions
  */
 export interface TestNewInboxForwarderOptions {
-  /**
-   *
-   * @type {InboxForwarderTestOptions}
-   * @memberof TestNewInboxForwarderOptions
-   */
-  inboxForwarderTestOptions: InboxForwarderTestOptions;
-  /**
-   *
-   * @type {CreateInboxForwarderOptions}
-   * @memberof TestNewInboxForwarderOptions
-   */
-  createInboxForwarderOptions: CreateInboxForwarderOptions;
+    /**
+     * 
+     * @type {InboxForwarderTestOptions}
+     * @memberof TestNewInboxForwarderOptions
+     */
+    inboxForwarderTestOptions: InboxForwarderTestOptions;
+    /**
+     * 
+     * @type {CreateInboxForwarderOptions}
+     * @memberof TestNewInboxForwarderOptions
+     */
+    createInboxForwarderOptions: CreateInboxForwarderOptions;
 }
 
-export function TestNewInboxForwarderOptionsFromJSON(
-  json: any
-): TestNewInboxForwarderOptions {
-  return TestNewInboxForwarderOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the TestNewInboxForwarderOptions interface.
+ */
+export function instanceOfTestNewInboxForwarderOptions(value: object): value is TestNewInboxForwarderOptions {
+    if (!('inboxForwarderTestOptions' in value) || value['inboxForwarderTestOptions'] === undefined) return false;
+    if (!('createInboxForwarderOptions' in value) || value['createInboxForwarderOptions'] === undefined) return false;
+    return true;
 }
 
-export function TestNewInboxForwarderOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestNewInboxForwarderOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxForwarderTestOptions: InboxForwarderTestOptionsFromJSON(
-      json['inboxForwarderTestOptions']
-    ),
-    createInboxForwarderOptions: CreateInboxForwarderOptionsFromJSON(
-      json['createInboxForwarderOptions']
-    ),
-  };
+export function TestNewInboxForwarderOptionsFromJSON(json: any): TestNewInboxForwarderOptions {
+    return TestNewInboxForwarderOptionsFromJSONTyped(json, false);
 }
 
-export function TestNewInboxForwarderOptionsToJSON(
-  value?: TestNewInboxForwarderOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxForwarderTestOptions: InboxForwarderTestOptionsToJSON(
-      value.inboxForwarderTestOptions
-    ),
-    createInboxForwarderOptions: CreateInboxForwarderOptionsToJSON(
-      value.createInboxForwarderOptions
-    ),
-  };
+export function TestNewInboxForwarderOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestNewInboxForwarderOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxForwarderTestOptions': InboxForwarderTestOptionsFromJSON(json['inboxForwarderTestOptions']),
+        'createInboxForwarderOptions': CreateInboxForwarderOptionsFromJSON(json['createInboxForwarderOptions']),
+    };
 }
+
+export function TestNewInboxForwarderOptionsToJSON(json: any): TestNewInboxForwarderOptions {
+    return TestNewInboxForwarderOptionsToJSONTyped(json, false);
+}
+
+export function TestNewInboxForwarderOptionsToJSONTyped(value?: TestNewInboxForwarderOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxForwarderTestOptions': InboxForwarderTestOptionsToJSON(value['inboxForwarderTestOptions']),
+        'createInboxForwarderOptions': CreateInboxForwarderOptionsToJSON(value['createInboxForwarderOptions']),
+    };
+}
+

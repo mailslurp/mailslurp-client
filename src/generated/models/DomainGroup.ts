@@ -12,70 +12,84 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { DomainInformation } from './DomainInformation';
 import {
-  DomainInformation,
-  DomainInformationFromJSON,
-  DomainInformationFromJSONTyped,
-  DomainInformationToJSON,
-} from './';
+    DomainInformationFromJSON,
+    DomainInformationFromJSONTyped,
+    DomainInformationToJSON,
+    DomainInformationToJSONTyped,
+} from './DomainInformation';
 
 /**
- *
+ * 
  * @export
  * @interface DomainGroup
  */
 export interface DomainGroup {
-  /**
-   *
-   * @type {string}
-   * @memberof DomainGroup
-   */
-  label: DomainGroupLabelEnum;
-  /**
-   *
-   * @type {Array<DomainInformation>}
-   * @memberof DomainGroup
-   */
-  domains: Array<DomainInformation>;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainGroup
+     */
+    label: DomainGroupLabelEnum;
+    /**
+     * 
+     * @type {Array<DomainInformation>}
+     * @memberof DomainGroup
+     */
+    domains: Array<DomainInformation>;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum DomainGroupLabelEnum {
-  DEFAULT = 'DEFAULT',
-  DOMAIN_POOL = 'DOMAIN_POOL',
-  CUSTOM = 'CUSTOM',
+export const DomainGroupLabelEnum = {
+    DEFAULT: 'DEFAULT',
+    DOMAIN_POOL: 'DOMAIN_POOL',
+    CUSTOM: 'CUSTOM'
+} as const;
+export type DomainGroupLabelEnum = typeof DomainGroupLabelEnum[keyof typeof DomainGroupLabelEnum];
+
+
+/**
+ * Check if a given object implements the DomainGroup interface.
+ */
+export function instanceOfDomainGroup(value: object): value is DomainGroup {
+    if (!('label' in value) || value['label'] === undefined) return false;
+    if (!('domains' in value) || value['domains'] === undefined) return false;
+    return true;
 }
 
 export function DomainGroupFromJSON(json: any): DomainGroup {
-  return DomainGroupFromJSONTyped(json, false);
+    return DomainGroupFromJSONTyped(json, false);
 }
 
-export function DomainGroupFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainGroup {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    label: json['label'],
-    domains: (json['domains'] as Array<any>).map(DomainInformationFromJSON),
-  };
+export function DomainGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainGroup {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'label': json['label'],
+        'domains': ((json['domains'] as Array<any>).map(DomainInformationFromJSON)),
+    };
 }
 
-export function DomainGroupToJSON(value?: DomainGroup | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    label: value.label,
-    domains: (value.domains as Array<any>).map(DomainInformationToJSON),
-  };
+export function DomainGroupToJSON(json: any): DomainGroup {
+    return DomainGroupToJSONTyped(json, false);
 }
+
+export function DomainGroupToJSONTyped(value?: DomainGroup | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'label': value['label'],
+        'domains': ((value['domains'] as Array<any>).map(DomainInformationToJSON)),
+    };
+}
+

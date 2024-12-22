@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnreadCountToJSON = exports.UnreadCountFromJSONTyped = exports.UnreadCountFromJSON = void 0;
+exports.instanceOfUnreadCount = instanceOfUnreadCount;
+exports.UnreadCountFromJSON = UnreadCountFromJSON;
+exports.UnreadCountFromJSONTyped = UnreadCountFromJSONTyped;
+exports.UnreadCountToJSON = UnreadCountToJSON;
+exports.UnreadCountToJSONTyped = UnreadCountToJSONTyped;
+/**
+ * Check if a given object implements the UnreadCount interface.
+ */
+function instanceOfUnreadCount(value) {
+    if (!('count' in value) || value['count'] === undefined)
+        return false;
+    return true;
+}
 function UnreadCountFromJSON(json) {
     return UnreadCountFromJSONTyped(json, false);
 }
-exports.UnreadCountFromJSON = UnreadCountFromJSON;
 function UnreadCountFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        count: json['count'],
+        'count': json['count'],
     };
 }
-exports.UnreadCountFromJSONTyped = UnreadCountFromJSONTyped;
-function UnreadCountToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function UnreadCountToJSON(json) {
+    return UnreadCountToJSONTyped(json, false);
+}
+function UnreadCountToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        count: value.count,
+        'count': value['count'],
     };
 }
-exports.UnreadCountToJSON = UnreadCountToJSON;

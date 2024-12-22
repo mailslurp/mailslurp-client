@@ -13,33 +13,47 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DownloadAttachmentDtoToJSON = exports.DownloadAttachmentDtoFromJSONTyped = exports.DownloadAttachmentDtoFromJSON = void 0;
+exports.instanceOfDownloadAttachmentDto = instanceOfDownloadAttachmentDto;
+exports.DownloadAttachmentDtoFromJSON = DownloadAttachmentDtoFromJSON;
+exports.DownloadAttachmentDtoFromJSONTyped = DownloadAttachmentDtoFromJSONTyped;
+exports.DownloadAttachmentDtoToJSON = DownloadAttachmentDtoToJSON;
+exports.DownloadAttachmentDtoToJSONTyped = DownloadAttachmentDtoToJSONTyped;
+/**
+ * Check if a given object implements the DownloadAttachmentDto interface.
+ */
+function instanceOfDownloadAttachmentDto(value) {
+    if (!('base64FileContents' in value) || value['base64FileContents'] === undefined)
+        return false;
+    if (!('contentType' in value) || value['contentType'] === undefined)
+        return false;
+    if (!('sizeBytes' in value) || value['sizeBytes'] === undefined)
+        return false;
+    return true;
+}
 function DownloadAttachmentDtoFromJSON(json) {
     return DownloadAttachmentDtoFromJSONTyped(json, false);
 }
-exports.DownloadAttachmentDtoFromJSON = DownloadAttachmentDtoFromJSON;
 function DownloadAttachmentDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        base64FileContents: json['base64FileContents'],
-        contentType: json['contentType'],
-        sizeBytes: json['sizeBytes'],
+        'base64FileContents': json['base64FileContents'],
+        'contentType': json['contentType'],
+        'sizeBytes': json['sizeBytes'],
     };
 }
-exports.DownloadAttachmentDtoFromJSONTyped = DownloadAttachmentDtoFromJSONTyped;
-function DownloadAttachmentDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DownloadAttachmentDtoToJSON(json) {
+    return DownloadAttachmentDtoToJSONTyped(json, false);
+}
+function DownloadAttachmentDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        base64FileContents: value.base64FileContents,
-        contentType: value.contentType,
-        sizeBytes: value.sizeBytes,
+        'base64FileContents': value['base64FileContents'],
+        'contentType': value['contentType'],
+        'sizeBytes': value['sizeBytes'],
     };
 }
-exports.DownloadAttachmentDtoToJSON = DownloadAttachmentDtoToJSON;

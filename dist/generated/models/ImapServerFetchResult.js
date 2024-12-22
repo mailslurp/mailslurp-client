@@ -13,33 +13,38 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerFetchResultToJSON = exports.ImapServerFetchResultFromJSONTyped = exports.ImapServerFetchResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfImapServerFetchResult = instanceOfImapServerFetchResult;
+exports.ImapServerFetchResultFromJSON = ImapServerFetchResultFromJSON;
+exports.ImapServerFetchResultFromJSONTyped = ImapServerFetchResultFromJSONTyped;
+exports.ImapServerFetchResultToJSON = ImapServerFetchResultToJSON;
+exports.ImapServerFetchResultToJSONTyped = ImapServerFetchResultToJSONTyped;
+var ImapServerFetchItem_1 = require("./ImapServerFetchItem");
+/**
+ * Check if a given object implements the ImapServerFetchResult interface.
+ */
+function instanceOfImapServerFetchResult(value) {
+    return true;
+}
 function ImapServerFetchResultFromJSON(json) {
     return ImapServerFetchResultFromJSONTyped(json, false);
 }
-exports.ImapServerFetchResultFromJSON = ImapServerFetchResultFromJSON;
 function ImapServerFetchResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        result: !(0, runtime_1.exists)(json, 'result')
-            ? undefined
-            : (0, _1.ImapServerFetchItemFromJSON)(json['result']),
+        'result': json['result'] == null ? undefined : (0, ImapServerFetchItem_1.ImapServerFetchItemFromJSON)(json['result']),
     };
 }
-exports.ImapServerFetchResultFromJSONTyped = ImapServerFetchResultFromJSONTyped;
-function ImapServerFetchResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapServerFetchResultToJSON(json) {
+    return ImapServerFetchResultToJSONTyped(json, false);
+}
+function ImapServerFetchResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        result: (0, _1.ImapServerFetchItemToJSON)(value.result),
+        'result': (0, ImapServerFetchItem_1.ImapServerFetchItemToJSON)(value['result']),
     };
 }
-exports.ImapServerFetchResultToJSON = ImapServerFetchResultToJSON;

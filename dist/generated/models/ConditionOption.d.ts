@@ -30,19 +30,24 @@ export interface ConditionOption {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ConditionOptionConditionEnum {
-    HAS_ATTACHMENTS = "HAS_ATTACHMENTS"
-}
+export declare const ConditionOptionConditionEnum: {
+    readonly HAS_ATTACHMENTS: "HAS_ATTACHMENTS";
+};
+export type ConditionOptionConditionEnum = typeof ConditionOptionConditionEnum[keyof typeof ConditionOptionConditionEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ConditionOptionValueEnum {
-    TRUE = "TRUE",
-    FALSE = "FALSE"
-}
+export declare const ConditionOptionValueEnum: {
+    readonly TRUE: "TRUE";
+    readonly FALSE: "FALSE";
+};
+export type ConditionOptionValueEnum = typeof ConditionOptionValueEnum[keyof typeof ConditionOptionValueEnum];
+/**
+ * Check if a given object implements the ConditionOption interface.
+ */
+export declare function instanceOfConditionOption(value: object): value is ConditionOption;
 export declare function ConditionOptionFromJSON(json: any): ConditionOption;
 export declare function ConditionOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConditionOption;
-export declare function ConditionOptionToJSON(value?: ConditionOption | null): any;
+export declare function ConditionOptionToJSON(json: any): ConditionOption;
+export declare function ConditionOptionToJSONTyped(value?: ConditionOption | null, ignoreDiscriminator?: boolean): any;

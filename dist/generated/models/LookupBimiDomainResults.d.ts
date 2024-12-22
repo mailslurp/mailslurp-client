@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DNSLookupOptions, DNSLookupResult } from './';
+import type { DNSLookupResult } from './DNSLookupResult';
+import type { DNSLookupOptions } from './DNSLookupOptions';
 /**
  *
  * @export
@@ -47,6 +48,11 @@ export interface LookupBimiDomainResults {
      */
     warnings: Array<string>;
 }
+/**
+ * Check if a given object implements the LookupBimiDomainResults interface.
+ */
+export declare function instanceOfLookupBimiDomainResults(value: object): value is LookupBimiDomainResults;
 export declare function LookupBimiDomainResultsFromJSON(json: any): LookupBimiDomainResults;
 export declare function LookupBimiDomainResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupBimiDomainResults;
-export declare function LookupBimiDomainResultsToJSON(value?: LookupBimiDomainResults | null): any;
+export declare function LookupBimiDomainResultsToJSON(json: any): LookupBimiDomainResults;
+export declare function LookupBimiDomainResultsToJSONTyped(value?: LookupBimiDomainResults | null, ignoreDiscriminator?: boolean): any;

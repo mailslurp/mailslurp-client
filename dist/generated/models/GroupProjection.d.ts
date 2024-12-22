@@ -40,6 +40,11 @@ export interface GroupProjection {
      */
     description?: string | null;
 }
+/**
+ * Check if a given object implements the GroupProjection interface.
+ */
+export declare function instanceOfGroupProjection(value: object): value is GroupProjection;
 export declare function GroupProjectionFromJSON(json: any): GroupProjection;
 export declare function GroupProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupProjection;
-export declare function GroupProjectionToJSON(value?: GroupProjection | null): any;
+export declare function GroupProjectionToJSON(json: any): GroupProjection;
+export declare function GroupProjectionToJSONTyped(value?: GroupProjection | null, ignoreDiscriminator?: boolean): any;

@@ -12,54 +12,62 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { SentSmsDto } from './SentSmsDto';
 import {
-  SentSmsDto,
-  SentSmsDtoFromJSON,
-  SentSmsDtoFromJSONTyped,
-  SentSmsDtoToJSON,
-} from './';
+    SentSmsDtoFromJSON,
+    SentSmsDtoFromJSONTyped,
+    SentSmsDtoToJSON,
+    SentSmsDtoToJSONTyped,
+} from './SentSmsDto';
 
 /**
- *
+ * 
  * @export
  * @interface ReplyForSms
  */
 export interface ReplyForSms {
-  /**
-   *
-   * @type {SentSmsDto}
-   * @memberof ReplyForSms
-   */
-  reply?: SentSmsDto;
+    /**
+     * 
+     * @type {SentSmsDto}
+     * @memberof ReplyForSms
+     */
+    reply?: SentSmsDto;
+}
+
+/**
+ * Check if a given object implements the ReplyForSms interface.
+ */
+export function instanceOfReplyForSms(value: object): value is ReplyForSms {
+    return true;
 }
 
 export function ReplyForSmsFromJSON(json: any): ReplyForSms {
-  return ReplyForSmsFromJSONTyped(json, false);
+    return ReplyForSmsFromJSONTyped(json, false);
 }
 
-export function ReplyForSmsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ReplyForSms {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    reply: !exists(json, 'reply')
-      ? undefined
-      : SentSmsDtoFromJSON(json['reply']),
-  };
+export function ReplyForSmsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyForSms {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'reply': json['reply'] == null ? undefined : SentSmsDtoFromJSON(json['reply']),
+    };
 }
 
-export function ReplyForSmsToJSON(value?: ReplyForSms | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    reply: SentSmsDtoToJSON(value.reply),
-  };
+export function ReplyForSmsToJSON(json: any): ReplyForSms {
+    return ReplyForSmsToJSONTyped(json, false);
 }
+
+export function ReplyForSmsToJSONTyped(value?: ReplyForSms | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'reply': SentSmsDtoToJSON(value['reply']),
+    };
+}
+

@@ -36,12 +36,17 @@ export interface DomainInformation {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum DomainInformationDomainTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_DOMAIN = "SMTP_DOMAIN"
-}
+export declare const DomainInformationDomainTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_DOMAIN: "SMTP_DOMAIN";
+};
+export type DomainInformationDomainTypeEnum = typeof DomainInformationDomainTypeEnum[keyof typeof DomainInformationDomainTypeEnum];
+/**
+ * Check if a given object implements the DomainInformation interface.
+ */
+export declare function instanceOfDomainInformation(value: object): value is DomainInformation;
 export declare function DomainInformationFromJSON(json: any): DomainInformation;
 export declare function DomainInformationFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainInformation;
-export declare function DomainInformationToJSON(value?: DomainInformation | null): any;
+export declare function DomainInformationToJSON(json: any): DomainInformation;
+export declare function DomainInformationToJSONTyped(value?: DomainInformation | null, ignoreDiscriminator?: boolean): any;

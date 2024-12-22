@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderTestOptionsToJSON = exports.InboxForwarderTestOptionsFromJSONTyped = exports.InboxForwarderTestOptionsFromJSON = void 0;
+exports.instanceOfInboxForwarderTestOptions = instanceOfInboxForwarderTestOptions;
+exports.InboxForwarderTestOptionsFromJSON = InboxForwarderTestOptionsFromJSON;
+exports.InboxForwarderTestOptionsFromJSONTyped = InboxForwarderTestOptionsFromJSONTyped;
+exports.InboxForwarderTestOptionsToJSON = InboxForwarderTestOptionsToJSON;
+exports.InboxForwarderTestOptionsToJSONTyped = InboxForwarderTestOptionsToJSONTyped;
+/**
+ * Check if a given object implements the InboxForwarderTestOptions interface.
+ */
+function instanceOfInboxForwarderTestOptions(value) {
+    if (!('testValue' in value) || value['testValue'] === undefined)
+        return false;
+    return true;
+}
 function InboxForwarderTestOptionsFromJSON(json) {
     return InboxForwarderTestOptionsFromJSONTyped(json, false);
 }
-exports.InboxForwarderTestOptionsFromJSON = InboxForwarderTestOptionsFromJSON;
 function InboxForwarderTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        testValue: json['testValue'],
+        'testValue': json['testValue'],
     };
 }
-exports.InboxForwarderTestOptionsFromJSONTyped = InboxForwarderTestOptionsFromJSONTyped;
-function InboxForwarderTestOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxForwarderTestOptionsToJSON(json) {
+    return InboxForwarderTestOptionsToJSONTyped(json, false);
+}
+function InboxForwarderTestOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        testValue: value.testValue,
+        'testValue': value['testValue'],
     };
 }
-exports.InboxForwarderTestOptionsToJSON = InboxForwarderTestOptionsToJSON;

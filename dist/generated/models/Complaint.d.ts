@@ -64,6 +64,11 @@ export interface Complaint {
      */
     updatedAt: Date;
 }
+/**
+ * Check if a given object implements the Complaint interface.
+ */
+export declare function instanceOfComplaint(value: object): value is Complaint;
 export declare function ComplaintFromJSON(json: any): Complaint;
 export declare function ComplaintFromJSONTyped(json: any, ignoreDiscriminator: boolean): Complaint;
-export declare function ComplaintToJSON(value?: Complaint | null): any;
+export declare function ComplaintToJSON(json: any): Complaint;
+export declare function ComplaintToJSONTyped(value?: Complaint | null, ignoreDiscriminator?: boolean): any;

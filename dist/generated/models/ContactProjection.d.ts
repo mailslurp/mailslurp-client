@@ -29,10 +29,10 @@ export interface ContactProjection {
     emailAddress?: string | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ContactProjection
      */
-    emailAddresses?: Array<string> | null;
+    emailAddresses?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -70,6 +70,11 @@ export interface ContactProjection {
      */
     groupId?: string | null;
 }
+/**
+ * Check if a given object implements the ContactProjection interface.
+ */
+export declare function instanceOfContactProjection(value: object): value is ContactProjection;
 export declare function ContactProjectionFromJSON(json: any): ContactProjection;
 export declare function ContactProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContactProjection;
-export declare function ContactProjectionToJSON(value?: ContactProjection | null): any;
+export declare function ContactProjectionToJSON(json: any): ContactProjection;
+export declare function ContactProjectionToJSONTyped(value?: ContactProjection | null, ignoreDiscriminator?: boolean): any;

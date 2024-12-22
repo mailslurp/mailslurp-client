@@ -13,49 +13,60 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeaturePlatformStatisticsToJSON = exports.EmailFeaturePlatformStatisticsFromJSONTyped = exports.EmailFeaturePlatformStatisticsFromJSON = exports.EmailFeaturePlatformStatisticsPlatformEnum = void 0;
-var _1 = require("./");
+exports.EmailFeaturePlatformStatisticsPlatformEnum = void 0;
+exports.instanceOfEmailFeaturePlatformStatistics = instanceOfEmailFeaturePlatformStatistics;
+exports.EmailFeaturePlatformStatisticsFromJSON = EmailFeaturePlatformStatisticsFromJSON;
+exports.EmailFeaturePlatformStatisticsFromJSONTyped = EmailFeaturePlatformStatisticsFromJSONTyped;
+exports.EmailFeaturePlatformStatisticsToJSON = EmailFeaturePlatformStatisticsToJSON;
+exports.EmailFeaturePlatformStatisticsToJSONTyped = EmailFeaturePlatformStatisticsToJSONTyped;
+var EmailFeatureVersionStatistics_1 = require("./EmailFeatureVersionStatistics");
 /**
  * @export
- * @enum {string}
  */
-var EmailFeaturePlatformStatisticsPlatformEnum;
-(function (EmailFeaturePlatformStatisticsPlatformEnum) {
-    EmailFeaturePlatformStatisticsPlatformEnum["android"] = "android";
-    EmailFeaturePlatformStatisticsPlatformEnum["desktop_app"] = "desktop-app";
-    EmailFeaturePlatformStatisticsPlatformEnum["desktop_webmail"] = "desktop-webmail";
-    EmailFeaturePlatformStatisticsPlatformEnum["ios"] = "ios";
-    EmailFeaturePlatformStatisticsPlatformEnum["macos"] = "macos";
-    EmailFeaturePlatformStatisticsPlatformEnum["mobile_webmail"] = "mobile-webmail";
-    EmailFeaturePlatformStatisticsPlatformEnum["outlook_com"] = "outlook-com";
-    EmailFeaturePlatformStatisticsPlatformEnum["webmail"] = "webmail";
-    EmailFeaturePlatformStatisticsPlatformEnum["windows"] = "windows";
-    EmailFeaturePlatformStatisticsPlatformEnum["windows_mail"] = "windows-mail";
-})(EmailFeaturePlatformStatisticsPlatformEnum = exports.EmailFeaturePlatformStatisticsPlatformEnum || (exports.EmailFeaturePlatformStatisticsPlatformEnum = {}));
+exports.EmailFeaturePlatformStatisticsPlatformEnum = {
+    android: 'android',
+    desktop_app: 'desktop-app',
+    desktop_webmail: 'desktop-webmail',
+    ios: 'ios',
+    macos: 'macos',
+    mobile_webmail: 'mobile-webmail',
+    outlook_com: 'outlook-com',
+    webmail: 'webmail',
+    windows: 'windows',
+    windows_mail: 'windows-mail'
+};
+/**
+ * Check if a given object implements the EmailFeaturePlatformStatistics interface.
+ */
+function instanceOfEmailFeaturePlatformStatistics(value) {
+    if (!('platform' in value) || value['platform'] === undefined)
+        return false;
+    if (!('versions' in value) || value['versions'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeaturePlatformStatisticsFromJSON(json) {
     return EmailFeaturePlatformStatisticsFromJSONTyped(json, false);
 }
-exports.EmailFeaturePlatformStatisticsFromJSON = EmailFeaturePlatformStatisticsFromJSON;
 function EmailFeaturePlatformStatisticsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        platform: json['platform'],
-        versions: json['versions'].map(_1.EmailFeatureVersionStatisticsFromJSON),
+        'platform': json['platform'],
+        'versions': (json['versions'].map(EmailFeatureVersionStatistics_1.EmailFeatureVersionStatisticsFromJSON)),
     };
 }
-exports.EmailFeaturePlatformStatisticsFromJSONTyped = EmailFeaturePlatformStatisticsFromJSONTyped;
-function EmailFeaturePlatformStatisticsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeaturePlatformStatisticsToJSON(json) {
+    return EmailFeaturePlatformStatisticsToJSONTyped(json, false);
+}
+function EmailFeaturePlatformStatisticsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        platform: value.platform,
-        versions: value.versions.map(_1.EmailFeatureVersionStatisticsToJSON),
+        'platform': value['platform'],
+        'versions': (value['versions'].map(EmailFeatureVersionStatistics_1.EmailFeatureVersionStatisticsToJSON)),
     };
 }
-exports.EmailFeaturePlatformStatisticsToJSON = EmailFeaturePlatformStatisticsToJSON;

@@ -13,34 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SenderToJSON = exports.SenderFromJSONTyped = exports.SenderFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfSender = instanceOfSender;
+exports.SenderFromJSON = SenderFromJSON;
+exports.SenderFromJSONTyped = SenderFromJSONTyped;
+exports.SenderToJSON = SenderToJSON;
+exports.SenderToJSONTyped = SenderToJSONTyped;
+/**
+ * Check if a given object implements the Sender interface.
+ */
+function instanceOfSender(value) {
+    if (!('rawValue' in value) || value['rawValue'] === undefined)
+        return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    return true;
+}
 function SenderFromJSON(json) {
     return SenderFromJSONTyped(json, false);
 }
-exports.SenderFromJSON = SenderFromJSON;
 function SenderFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        rawValue: json['rawValue'],
-        emailAddress: json['emailAddress'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'rawValue': json['rawValue'],
+        'emailAddress': json['emailAddress'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
-exports.SenderFromJSONTyped = SenderFromJSONTyped;
-function SenderToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SenderToJSON(json) {
+    return SenderToJSONTyped(json, false);
+}
+function SenderToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        rawValue: value.rawValue,
-        emailAddress: value.emailAddress,
-        name: value.name,
+        'rawValue': value['rawValue'],
+        'emailAddress': value['emailAddress'],
+        'name': value['name'],
     };
 }
-exports.SenderToJSON = SenderToJSON;

@@ -13,48 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConditionOptionToJSON = exports.ConditionOptionFromJSONTyped = exports.ConditionOptionFromJSON = exports.ConditionOptionValueEnum = exports.ConditionOptionConditionEnum = void 0;
+exports.ConditionOptionValueEnum = exports.ConditionOptionConditionEnum = void 0;
+exports.instanceOfConditionOption = instanceOfConditionOption;
+exports.ConditionOptionFromJSON = ConditionOptionFromJSON;
+exports.ConditionOptionFromJSONTyped = ConditionOptionFromJSONTyped;
+exports.ConditionOptionToJSON = ConditionOptionToJSON;
+exports.ConditionOptionToJSONTyped = ConditionOptionToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var ConditionOptionConditionEnum;
-(function (ConditionOptionConditionEnum) {
-    ConditionOptionConditionEnum["HAS_ATTACHMENTS"] = "HAS_ATTACHMENTS";
-})(ConditionOptionConditionEnum = exports.ConditionOptionConditionEnum || (exports.ConditionOptionConditionEnum = {}));
+exports.ConditionOptionConditionEnum = {
+    HAS_ATTACHMENTS: 'HAS_ATTACHMENTS'
+};
 /**
  * @export
- * @enum {string}
  */
-var ConditionOptionValueEnum;
-(function (ConditionOptionValueEnum) {
-    ConditionOptionValueEnum["TRUE"] = "TRUE";
-    ConditionOptionValueEnum["FALSE"] = "FALSE";
-})(ConditionOptionValueEnum = exports.ConditionOptionValueEnum || (exports.ConditionOptionValueEnum = {}));
+exports.ConditionOptionValueEnum = {
+    TRUE: 'TRUE',
+    FALSE: 'FALSE'
+};
+/**
+ * Check if a given object implements the ConditionOption interface.
+ */
+function instanceOfConditionOption(value) {
+    if (!('condition' in value) || value['condition'] === undefined)
+        return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
+    return true;
+}
 function ConditionOptionFromJSON(json) {
     return ConditionOptionFromJSONTyped(json, false);
 }
-exports.ConditionOptionFromJSON = ConditionOptionFromJSON;
 function ConditionOptionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        condition: json['condition'],
-        value: json['value'],
+        'condition': json['condition'],
+        'value': json['value'],
     };
 }
-exports.ConditionOptionFromJSONTyped = ConditionOptionFromJSONTyped;
-function ConditionOptionToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ConditionOptionToJSON(json) {
+    return ConditionOptionToJSONTyped(json, false);
+}
+function ConditionOptionToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        condition: value.condition,
-        value: value.value,
+        'condition': value['condition'],
+        'value': value['value'],
     };
 }
-exports.ConditionOptionToJSON = ConditionOptionToJSON;

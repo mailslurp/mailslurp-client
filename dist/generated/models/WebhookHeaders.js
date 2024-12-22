@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookHeadersToJSON = exports.WebhookHeadersFromJSONTyped = exports.WebhookHeadersFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfWebhookHeaders = instanceOfWebhookHeaders;
+exports.WebhookHeadersFromJSON = WebhookHeadersFromJSON;
+exports.WebhookHeadersFromJSONTyped = WebhookHeadersFromJSONTyped;
+exports.WebhookHeadersToJSON = WebhookHeadersToJSON;
+exports.WebhookHeadersToJSONTyped = WebhookHeadersToJSONTyped;
+var WebhookHeaderNameValue_1 = require("./WebhookHeaderNameValue");
+/**
+ * Check if a given object implements the WebhookHeaders interface.
+ */
+function instanceOfWebhookHeaders(value) {
+    if (!('headers' in value) || value['headers'] === undefined)
+        return false;
+    return true;
+}
 function WebhookHeadersFromJSON(json) {
     return WebhookHeadersFromJSONTyped(json, false);
 }
-exports.WebhookHeadersFromJSON = WebhookHeadersFromJSON;
 function WebhookHeadersFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        headers: json['headers'].map(_1.WebhookHeaderNameValueFromJSON),
+        'headers': (json['headers'].map(WebhookHeaderNameValue_1.WebhookHeaderNameValueFromJSON)),
     };
 }
-exports.WebhookHeadersFromJSONTyped = WebhookHeadersFromJSONTyped;
-function WebhookHeadersToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookHeadersToJSON(json) {
+    return WebhookHeadersToJSONTyped(json, false);
+}
+function WebhookHeadersToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        headers: value.headers.map(_1.WebhookHeaderNameValueToJSON),
+        'headers': (value['headers'].map(WebhookHeaderNameValue_1.WebhookHeaderNameValueToJSON)),
     };
 }
-exports.WebhookHeadersToJSON = WebhookHeadersToJSON;

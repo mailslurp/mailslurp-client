@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Matches for the given pattern
  * @export
  * @interface EmailContentMatchResult
  */
 export interface EmailContentMatchResult {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailContentMatchResult
-   */
-  pattern: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailContentMatchResult
-   */
-  matches: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailContentMatchResult
+     */
+    pattern: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof EmailContentMatchResult
+     */
+    matches: Array<string>;
 }
 
-export function EmailContentMatchResultFromJSON(
-  json: any
-): EmailContentMatchResult {
-  return EmailContentMatchResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the EmailContentMatchResult interface.
+ */
+export function instanceOfEmailContentMatchResult(value: object): value is EmailContentMatchResult {
+    if (!('pattern' in value) || value['pattern'] === undefined) return false;
+    if (!('matches' in value) || value['matches'] === undefined) return false;
+    return true;
 }
 
-export function EmailContentMatchResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailContentMatchResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    pattern: json['pattern'],
-    matches: json['matches'],
-  };
+export function EmailContentMatchResultFromJSON(json: any): EmailContentMatchResult {
+    return EmailContentMatchResultFromJSONTyped(json, false);
 }
 
-export function EmailContentMatchResultToJSON(
-  value?: EmailContentMatchResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    pattern: value.pattern,
-    matches: value.matches,
-  };
+export function EmailContentMatchResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailContentMatchResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'pattern': json['pattern'],
+        'matches': json['matches'],
+    };
 }
+
+export function EmailContentMatchResultToJSON(json: any): EmailContentMatchResult {
+    return EmailContentMatchResultToJSONTyped(json, false);
+}
+
+export function EmailContentMatchResultToJSONTyped(value?: EmailContentMatchResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'pattern': value['pattern'],
+        'matches': value['matches'],
+    };
+}
+

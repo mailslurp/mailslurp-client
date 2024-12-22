@@ -9,6 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { Sender } from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
 /**
  * A compact representation of a full email. Used in list endpoints to keep response sizes low. Body and attachments are not included. To get all fields of the email use the `getEmail` method with the email projection's ID. See `EmailDto` for documentation on projection properties.
  * @export
@@ -17,10 +19,34 @@
 export interface EmailProjection {
     /**
      *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    subject?: string | null;
+    /**
+     *
      * @type {Date}
      * @memberof EmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {Sender}
+     * @memberof EmailProjection
+     */
+    sender?: Sender | null;
+    /**
+     *
+     * @type {EmailRecipients}
+     * @memberof EmailProjection
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof EmailProjection
+     */
+    attachments?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -32,13 +58,31 @@ export interface EmailProjection {
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    attachments?: Array<string> | null;
+    to: Array<string>;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof EmailProjection
      */
-    to: Array<string>;
+    cc?: Array<string | null> | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof EmailProjection
+     */
+    bcc?: Array<string | null> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    messageId?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    favourite?: boolean | null;
     /**
      *
      * @type {string}
@@ -47,16 +91,16 @@ export interface EmailProjection {
     domainId?: string | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {string}
      * @memberof EmailProjection
      */
-    bcc?: Array<string> | null;
+    plusAddress?: string | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {string}
      * @memberof EmailProjection
      */
-    cc?: Array<string> | null;
+    inReplyTo?: string | null;
     /**
      *
      * @type {boolean}
@@ -71,16 +115,10 @@ export interface EmailProjection {
     bodyExcerpt?: string | null;
     /**
      *
-     * @type {boolean}
+     * @type {Array<string | null>}
      * @memberof EmailProjection
      */
-    teamAccess: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyMD5Hash?: string | null;
+    bodyPartContentTypes?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -92,7 +130,13 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    subject?: string | null;
+    bodyMD5Hash?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    teamAccess: boolean;
     /**
      *
      * @type {string}
@@ -104,8 +148,19 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    from?: string | null;
+    threadId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    from: string | null;
 }
+/**
+ * Check if a given object implements the EmailProjection interface.
+ */
+export declare function instanceOfEmailProjection(value: object): value is EmailProjection;
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;
-export declare function EmailProjectionToJSON(value?: EmailProjection | null): any;
+export declare function EmailProjectionToJSON(json: any): EmailProjection;
+export declare function EmailProjectionToJSONTyped(value?: EmailProjection | null, ignoreDiscriminator?: boolean): any;

@@ -1,6 +1,6 @@
 import { integrationTest } from './_helpers';
 
-jest.setTimeout(120_000);
+
 integrationTest('can check links', async (mailslurp) => {
   const inbox = await mailslurp.createInboxWithOptions({
     expiresIn: 300_000,

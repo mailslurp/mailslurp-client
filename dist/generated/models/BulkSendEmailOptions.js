@@ -13,32 +13,44 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BulkSendEmailOptionsToJSON = exports.BulkSendEmailOptionsFromJSONTyped = exports.BulkSendEmailOptionsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfBulkSendEmailOptions = instanceOfBulkSendEmailOptions;
+exports.BulkSendEmailOptionsFromJSON = BulkSendEmailOptionsFromJSON;
+exports.BulkSendEmailOptionsFromJSONTyped = BulkSendEmailOptionsFromJSONTyped;
+exports.BulkSendEmailOptionsToJSON = BulkSendEmailOptionsToJSON;
+exports.BulkSendEmailOptionsToJSONTyped = BulkSendEmailOptionsToJSONTyped;
+var SendEmailOptions_1 = require("./SendEmailOptions");
+/**
+ * Check if a given object implements the BulkSendEmailOptions interface.
+ */
+function instanceOfBulkSendEmailOptions(value) {
+    if (!('inboxIds' in value) || value['inboxIds'] === undefined)
+        return false;
+    if (!('sendEmailOptions' in value) || value['sendEmailOptions'] === undefined)
+        return false;
+    return true;
+}
 function BulkSendEmailOptionsFromJSON(json) {
     return BulkSendEmailOptionsFromJSONTyped(json, false);
 }
-exports.BulkSendEmailOptionsFromJSON = BulkSendEmailOptionsFromJSON;
 function BulkSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxIds: json['inboxIds'],
-        sendEmailOptions: (0, _1.SendEmailOptionsFromJSON)(json['sendEmailOptions']),
+        'inboxIds': json['inboxIds'],
+        'sendEmailOptions': (0, SendEmailOptions_1.SendEmailOptionsFromJSON)(json['sendEmailOptions']),
     };
 }
-exports.BulkSendEmailOptionsFromJSONTyped = BulkSendEmailOptionsFromJSONTyped;
-function BulkSendEmailOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function BulkSendEmailOptionsToJSON(json) {
+    return BulkSendEmailOptionsToJSONTyped(json, false);
+}
+function BulkSendEmailOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxIds: value.inboxIds,
-        sendEmailOptions: (0, _1.SendEmailOptionsToJSON)(value.sendEmailOptions),
+        'inboxIds': value['inboxIds'],
+        'sendEmailOptions': (0, SendEmailOptions_1.SendEmailOptionsToJSON)(value['sendEmailOptions']),
     };
 }
-exports.BulkSendEmailOptionsToJSON = BulkSendEmailOptionsToJSON;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageEmailValidationRequest, ValidateEmailAddressListOptions, ValidateEmailAddressListResult } from '../models';
+import type { PageEmailValidationRequest, ValidateEmailAddressListOptions, ValidateEmailAddressListResult } from '../models/index';
 export interface DeleteValidationRequestRequest {
     id: string;
 }
@@ -33,41 +33,41 @@ export declare class EmailVerificationControllerApi extends runtime.BaseAPI {
     /**
      * Delete all validation requests
      */
-    deleteAllValidationRequestsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllValidationRequestsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete all validation requests
      */
-    deleteAllValidationRequests(initOverrides?: RequestInit): Promise<void>;
+    deleteAllValidationRequests(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete a validation record
      */
-    deleteValidationRequestRaw(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteValidationRequestRaw(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete a validation record
      */
-    deleteValidationRequest(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteValidationRequest(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
-    getValidationRequestsRaw(requestParameters: GetValidationRequestsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailValidationRequest>>;
+    getValidationRequestsRaw(requestParameters: GetValidationRequestsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageEmailValidationRequest>>;
     /**
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
-    getValidationRequests(requestParameters: GetValidationRequestsRequest, initOverrides?: RequestInit): Promise<PageEmailValidationRequest>;
+    getValidationRequests(requestParameters?: GetValidationRequestsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageEmailValidationRequest>;
     /**
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
-    validateEmailAddressListRaw(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ValidateEmailAddressListResult>>;
+    validateEmailAddressListRaw(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ValidateEmailAddressListResult>>;
     /**
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
-    validateEmailAddressList(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit): Promise<ValidateEmailAddressListResult>;
+    validateEmailAddressList(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ValidateEmailAddressListResult>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetValidationRequestsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetValidationRequestsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetValidationRequestsSortEnum = typeof GetValidationRequestsSortEnum[keyof typeof GetValidationRequestsSortEnum];

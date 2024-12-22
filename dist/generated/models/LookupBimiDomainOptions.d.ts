@@ -22,6 +22,11 @@ export interface LookupBimiDomainOptions {
      */
     host: string;
 }
+/**
+ * Check if a given object implements the LookupBimiDomainOptions interface.
+ */
+export declare function instanceOfLookupBimiDomainOptions(value: object): value is LookupBimiDomainOptions;
 export declare function LookupBimiDomainOptionsFromJSON(json: any): LookupBimiDomainOptions;
 export declare function LookupBimiDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupBimiDomainOptions;
-export declare function LookupBimiDomainOptionsToJSON(value?: LookupBimiDomainOptions | null): any;
+export declare function LookupBimiDomainOptionsToJSON(json: any): LookupBimiDomainOptions;
+export declare function LookupBimiDomainOptionsToJSONTyped(value?: LookupBimiDomainOptions | null, ignoreDiscriminator?: boolean): any;

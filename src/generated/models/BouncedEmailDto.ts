@@ -12,139 +12,147 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Bounced email
  * @export
  * @interface BouncedEmailDto
  */
 export interface BouncedEmailDto {
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  notificationType: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof BouncedEmailDto
-   */
-  sentToRecipients?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  sender: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  bounceMta?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  bounceType?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof BouncedEmailDto
-   */
-  bounceRecipients?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  bounceSubType?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  sentEmailId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BouncedEmailDto
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof BouncedEmailDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    notificationType: string;
+    /**
+     * 
+     * @type {Array<string | null>}
+     * @memberof BouncedEmailDto
+     */
+    sentToRecipients?: Array<string | null> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    sender: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    bounceMta?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    bounceType?: string | null;
+    /**
+     * 
+     * @type {Array<string | null>}
+     * @memberof BouncedEmailDto
+     */
+    bounceRecipients?: Array<string | null> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    bounceSubType?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    sentEmailId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    subject?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof BouncedEmailDto
+     */
+    createdAt: Date;
+}
+
+/**
+ * Check if a given object implements the BouncedEmailDto interface.
+ */
+export function instanceOfBouncedEmailDto(value: object): value is BouncedEmailDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('notificationType' in value) || value['notificationType'] === undefined) return false;
+    if (!('sender' in value) || value['sender'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function BouncedEmailDtoFromJSON(json: any): BouncedEmailDto {
-  return BouncedEmailDtoFromJSONTyped(json, false);
+    return BouncedEmailDtoFromJSONTyped(json, false);
 }
 
-export function BouncedEmailDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): BouncedEmailDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    notificationType: json['notificationType'],
-    sentToRecipients: !exists(json, 'sentToRecipients')
-      ? undefined
-      : json['sentToRecipients'],
-    sender: json['sender'],
-    bounceMta: !exists(json, 'bounceMta') ? undefined : json['bounceMta'],
-    bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
-    bounceRecipients: !exists(json, 'bounceRecipients')
-      ? undefined
-      : json['bounceRecipients'],
-    bounceSubType: !exists(json, 'bounceSubType')
-      ? undefined
-      : json['bounceSubType'],
-    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function BouncedEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): BouncedEmailDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'notificationType': json['notificationType'],
+        'sentToRecipients': json['sentToRecipients'] == null ? undefined : json['sentToRecipients'],
+        'sender': json['sender'],
+        'bounceMta': json['bounceMta'] == null ? undefined : json['bounceMta'],
+        'bounceType': json['bounceType'] == null ? undefined : json['bounceType'],
+        'bounceRecipients': json['bounceRecipients'] == null ? undefined : json['bounceRecipients'],
+        'bounceSubType': json['bounceSubType'] == null ? undefined : json['bounceSubType'],
+        'sentEmailId': json['sentEmailId'] == null ? undefined : json['sentEmailId'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function BouncedEmailDtoToJSON(value?: BouncedEmailDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    notificationType: value.notificationType,
-    sentToRecipients: value.sentToRecipients,
-    sender: value.sender,
-    bounceMta: value.bounceMta,
-    bounceType: value.bounceType,
-    bounceRecipients: value.bounceRecipients,
-    bounceSubType: value.bounceSubType,
-    sentEmailId: value.sentEmailId,
-    subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function BouncedEmailDtoToJSON(json: any): BouncedEmailDto {
+    return BouncedEmailDtoToJSONTyped(json, false);
 }
+
+export function BouncedEmailDtoToJSONTyped(value?: BouncedEmailDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'notificationType': value['notificationType'],
+        'sentToRecipients': value['sentToRecipients'],
+        'sender': value['sender'],
+        'bounceMta': value['bounceMta'],
+        'bounceType': value['bounceType'],
+        'bounceRecipients': value['bounceRecipients'],
+        'bounceSubType': value['bounceSubType'],
+        'sentEmailId': value['sentEmailId'],
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

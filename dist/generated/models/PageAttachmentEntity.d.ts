@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AttachmentProjection, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { AttachmentProjection } from './AttachmentProjection';
 /**
  * Paginated attachment entity results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageAttachmentEntity {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageAttachmentEntity
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageAttachmentEntity {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageAttachmentEntity interface.
+ */
+export declare function instanceOfPageAttachmentEntity(value: object): value is PageAttachmentEntity;
 export declare function PageAttachmentEntityFromJSON(json: any): PageAttachmentEntity;
 export declare function PageAttachmentEntityFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageAttachmentEntity;
-export declare function PageAttachmentEntityToJSON(value?: PageAttachmentEntity | null): any;
+export declare function PageAttachmentEntityToJSON(json: any): PageAttachmentEntity;
+export declare function PageAttachmentEntityToJSONTyped(value?: PageAttachmentEntity | null, ignoreDiscriminator?: boolean): any;

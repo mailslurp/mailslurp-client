@@ -25,6 +25,7 @@ Email
 - [charset](Email.md#charset)
 - [createdAt](Email.md#createdat)
 - [domainId](Email.md#domainid)
+- [externalId](Email.md#externalid)
 - [from](Email.md#from)
 - [headers](Email.md#headers)
 - [headersMap](Email.md#headersmap)
@@ -170,6 +171,18 @@ ___
 • `Optional` **domainId**: `string`
 
 ID of the domain that received the email
+
+**`Memberof`**
+
+Email
+
+___
+
+### externalId
+
+• `Optional` **externalId**: `string`
+
+UID used by external IMAP server to identify email
 
 **`Memberof`**
 

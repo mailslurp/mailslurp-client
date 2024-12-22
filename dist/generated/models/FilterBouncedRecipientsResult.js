@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilterBouncedRecipientsResultToJSON = exports.FilterBouncedRecipientsResultFromJSONTyped = exports.FilterBouncedRecipientsResultFromJSON = void 0;
+exports.instanceOfFilterBouncedRecipientsResult = instanceOfFilterBouncedRecipientsResult;
+exports.FilterBouncedRecipientsResultFromJSON = FilterBouncedRecipientsResultFromJSON;
+exports.FilterBouncedRecipientsResultFromJSONTyped = FilterBouncedRecipientsResultFromJSONTyped;
+exports.FilterBouncedRecipientsResultToJSON = FilterBouncedRecipientsResultToJSON;
+exports.FilterBouncedRecipientsResultToJSONTyped = FilterBouncedRecipientsResultToJSONTyped;
+/**
+ * Check if a given object implements the FilterBouncedRecipientsResult interface.
+ */
+function instanceOfFilterBouncedRecipientsResult(value) {
+    if (!('filteredRecipients' in value) || value['filteredRecipients'] === undefined)
+        return false;
+    return true;
+}
 function FilterBouncedRecipientsResultFromJSON(json) {
     return FilterBouncedRecipientsResultFromJSONTyped(json, false);
 }
-exports.FilterBouncedRecipientsResultFromJSON = FilterBouncedRecipientsResultFromJSON;
 function FilterBouncedRecipientsResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        filteredRecipients: json['filteredRecipients'],
+        'filteredRecipients': json['filteredRecipients'],
     };
 }
-exports.FilterBouncedRecipientsResultFromJSONTyped = FilterBouncedRecipientsResultFromJSONTyped;
-function FilterBouncedRecipientsResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function FilterBouncedRecipientsResultToJSON(json) {
+    return FilterBouncedRecipientsResultToJSONTyped(json, false);
+}
+function FilterBouncedRecipientsResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        filteredRecipients: value.filteredRecipients,
+        'filteredRecipients': value['filteredRecipients'],
     };
 }
-exports.FilterBouncedRecipientsResultToJSON = FilterBouncedRecipientsResultToJSON;

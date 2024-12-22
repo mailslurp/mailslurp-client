@@ -13,62 +13,59 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorDtoToJSON = exports.ConnectorDtoFromJSONTyped = exports.ConnectorDtoFromJSON = exports.ConnectorDtoSyncScheduleTypeEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfConnectorDto = instanceOfConnectorDto;
+exports.ConnectorDtoFromJSON = ConnectorDtoFromJSON;
+exports.ConnectorDtoFromJSONTyped = ConnectorDtoFromJSONTyped;
+exports.ConnectorDtoToJSON = ConnectorDtoToJSON;
+exports.ConnectorDtoToJSONTyped = ConnectorDtoToJSONTyped;
 /**
- * @export
- * @enum {string}
+ * Check if a given object implements the ConnectorDto interface.
  */
-var ConnectorDtoSyncScheduleTypeEnum;
-(function (ConnectorDtoSyncScheduleTypeEnum) {
-    ConnectorDtoSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(ConnectorDtoSyncScheduleTypeEnum = exports.ConnectorDtoSyncScheduleTypeEnum || (exports.ConnectorDtoSyncScheduleTypeEnum = {}));
+function instanceOfConnectorDto(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('enabled' in value) || value['enabled'] === undefined)
+        return false;
+    if (!('userId' in value) || value['userId'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function ConnectorDtoFromJSON(json) {
     return ConnectorDtoFromJSONTyped(json, false);
 }
-exports.ConnectorDtoFromJSON = ConnectorDtoFromJSON;
 function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        id: json['id'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        enabled: json['enabled'],
-        userId: json['userId'],
-        inboxId: json['inboxId'],
-        syncEnabled: json['syncEnabled'],
-        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
-            ? undefined
-            : json['syncScheduleType'],
-        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
-            ? undefined
-            : json['syncInterval'],
-        hasImapConnection: json['hasImapConnection'],
-        hasSmtpConnection: json['hasSmtpConnection'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'enabled': json['enabled'],
+        'emailAddress': json['emailAddress'] == null ? undefined : json['emailAddress'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.ConnectorDtoFromJSONTyped = ConnectorDtoFromJSONTyped;
-function ConnectorDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ConnectorDtoToJSON(json) {
+    return ConnectorDtoToJSONTyped(json, false);
+}
+function ConnectorDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        id: value.id,
-        name: value.name,
-        enabled: value.enabled,
-        userId: value.userId,
-        inboxId: value.inboxId,
-        syncEnabled: value.syncEnabled,
-        syncScheduleType: value.syncScheduleType,
-        syncInterval: value.syncInterval,
-        hasImapConnection: value.hasImapConnection,
-        hasSmtpConnection: value.hasSmtpConnection,
-        createdAt: value.createdAt.toISOString(),
+        'id': value['id'],
+        'name': value['name'],
+        'enabled': value['enabled'],
+        'emailAddress': value['emailAddress'],
+        'userId': value['userId'],
+        'inboxId': value['inboxId'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.ConnectorDtoToJSON = ConnectorDtoToJSON;

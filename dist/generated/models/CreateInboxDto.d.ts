@@ -53,10 +53,10 @@ export interface CreateInboxDto {
     useDomainPool?: boolean | null;
     /**
      * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof CreateInboxDto
      */
-    tags?: Array<string> | null;
+    tags?: Array<string | null> | null;
     /**
      * Optional inbox expiration date. If null then this inbox is permanent and the emails in it won't be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX.
      * @type {Date}
@@ -86,7 +86,7 @@ export interface CreateInboxDto {
      * @type {string}
      * @memberof CreateInboxDto
      */
-    inboxType?: CreateInboxDtoInboxTypeEnum;
+    inboxType?: CreateInboxDtoInboxTypeEnum | null;
     /**
      * Virtual inbox prevents any outbound emails from being sent. It creates sent email records but will never send real emails to recipients. Great for testing and faking email sending.
      * @type {boolean}
@@ -108,12 +108,17 @@ export interface CreateInboxDto {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateInboxDtoInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const CreateInboxDtoInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type CreateInboxDtoInboxTypeEnum = typeof CreateInboxDtoInboxTypeEnum[keyof typeof CreateInboxDtoInboxTypeEnum];
+/**
+ * Check if a given object implements the CreateInboxDto interface.
+ */
+export declare function instanceOfCreateInboxDto(value: object): value is CreateInboxDto;
 export declare function CreateInboxDtoFromJSON(json: any): CreateInboxDto;
 export declare function CreateInboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxDto;
-export declare function CreateInboxDtoToJSON(value?: CreateInboxDto | null): any;
+export declare function CreateInboxDtoToJSON(json: any): CreateInboxDto;
+export declare function CreateInboxDtoToJSONTyped(value?: CreateInboxDto | null, ignoreDiscriminator?: boolean): any;

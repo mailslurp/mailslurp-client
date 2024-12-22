@@ -12,73 +12,79 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your `SendEmailOptions` when sending an email. This way you can use attachments multiple times once they have been uploaded.
  * @export
  * @interface UploadAttachmentOptions
  */
 export interface UploadAttachmentOptions {
-  /**
-   * Optional contentId for file.
-   * @type {string}
-   * @memberof UploadAttachmentOptions
-   */
-  contentId?: string | null;
-  /**
-   * Optional contentType for file. For instance `application/pdf`
-   * @type {string}
-   * @memberof UploadAttachmentOptions
-   */
-  contentType?: string | null;
-  /**
-   * Optional filename to save upload with. Will be the name that is shown in email clients
-   * @type {string}
-   * @memberof UploadAttachmentOptions
-   */
-  filename?: string | null;
-  /**
-   * Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string. For examples of how to do this see https://www.mailslurp.com/guides/base64-file-uploads/
-   * @type {string}
-   * @memberof UploadAttachmentOptions
-   */
-  base64Contents: string;
+    /**
+     * Optional contentId for file.
+     * @type {string}
+     * @memberof UploadAttachmentOptions
+     */
+    contentId?: string | null;
+    /**
+     * Optional contentType for file. For instance `application/pdf`
+     * @type {string}
+     * @memberof UploadAttachmentOptions
+     */
+    contentType?: string | null;
+    /**
+     * Optional filename to save upload with. Will be the name that is shown in email clients
+     * @type {string}
+     * @memberof UploadAttachmentOptions
+     */
+    filename?: string | null;
+    /**
+     * Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string. For examples of how to do this see https://www.mailslurp.com/guides/base64-file-uploads/
+     * @type {string}
+     * @memberof UploadAttachmentOptions
+     */
+    base64Contents: string;
 }
 
-export function UploadAttachmentOptionsFromJSON(
-  json: any
-): UploadAttachmentOptions {
-  return UploadAttachmentOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the UploadAttachmentOptions interface.
+ */
+export function instanceOfUploadAttachmentOptions(value: object): value is UploadAttachmentOptions {
+    if (!('base64Contents' in value) || value['base64Contents'] === undefined) return false;
+    return true;
 }
 
-export function UploadAttachmentOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UploadAttachmentOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
-    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
-    filename: !exists(json, 'filename') ? undefined : json['filename'],
-    base64Contents: json['base64Contents'],
-  };
+export function UploadAttachmentOptionsFromJSON(json: any): UploadAttachmentOptions {
+    return UploadAttachmentOptionsFromJSONTyped(json, false);
 }
 
-export function UploadAttachmentOptionsToJSON(
-  value?: UploadAttachmentOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    contentId: value.contentId,
-    contentType: value.contentType,
-    filename: value.filename,
-    base64Contents: value.base64Contents,
-  };
+export function UploadAttachmentOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UploadAttachmentOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'contentId': json['contentId'] == null ? undefined : json['contentId'],
+        'contentType': json['contentType'] == null ? undefined : json['contentType'],
+        'filename': json['filename'] == null ? undefined : json['filename'],
+        'base64Contents': json['base64Contents'],
+    };
 }
+
+export function UploadAttachmentOptionsToJSON(json: any): UploadAttachmentOptions {
+    return UploadAttachmentOptionsToJSONTyped(json, false);
+}
+
+export function UploadAttachmentOptionsToJSONTyped(value?: UploadAttachmentOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'contentId': value['contentId'],
+        'contentType': value['contentType'],
+        'filename': value['filename'],
+        'base64Contents': value['base64Contents'],
+    };
+}
+

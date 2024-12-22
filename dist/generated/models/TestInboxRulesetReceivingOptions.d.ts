@@ -28,6 +28,11 @@ export interface TestInboxRulesetReceivingOptions {
      */
     fromSender: string;
 }
+/**
+ * Check if a given object implements the TestInboxRulesetReceivingOptions interface.
+ */
+export declare function instanceOfTestInboxRulesetReceivingOptions(value: object): value is TestInboxRulesetReceivingOptions;
 export declare function TestInboxRulesetReceivingOptionsFromJSON(json: any): TestInboxRulesetReceivingOptions;
 export declare function TestInboxRulesetReceivingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetReceivingOptions;
-export declare function TestInboxRulesetReceivingOptionsToJSON(value?: TestInboxRulesetReceivingOptions | null): any;
+export declare function TestInboxRulesetReceivingOptionsToJSON(json: any): TestInboxRulesetReceivingOptions;
+export declare function TestInboxRulesetReceivingOptionsToJSONTyped(value?: TestInboxRulesetReceivingOptions | null, ignoreDiscriminator?: boolean): any;

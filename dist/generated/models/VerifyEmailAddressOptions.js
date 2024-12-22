@@ -13,40 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyEmailAddressOptionsToJSON = exports.VerifyEmailAddressOptionsFromJSONTyped = exports.VerifyEmailAddressOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfVerifyEmailAddressOptions = instanceOfVerifyEmailAddressOptions;
+exports.VerifyEmailAddressOptionsFromJSON = VerifyEmailAddressOptionsFromJSON;
+exports.VerifyEmailAddressOptionsFromJSONTyped = VerifyEmailAddressOptionsFromJSONTyped;
+exports.VerifyEmailAddressOptionsToJSON = VerifyEmailAddressOptionsToJSON;
+exports.VerifyEmailAddressOptionsToJSONTyped = VerifyEmailAddressOptionsToJSONTyped;
+/**
+ * Check if a given object implements the VerifyEmailAddressOptions interface.
+ */
+function instanceOfVerifyEmailAddressOptions(value) {
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined)
+        return false;
+    return true;
+}
 function VerifyEmailAddressOptionsFromJSON(json) {
     return VerifyEmailAddressOptionsFromJSONTyped(json, false);
 }
-exports.VerifyEmailAddressOptionsFromJSON = VerifyEmailAddressOptionsFromJSON;
 function VerifyEmailAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        mailServerDomain: !(0, runtime_1.exists)(json, 'mailServerDomain')
-            ? undefined
-            : json['mailServerDomain'],
-        emailAddress: json['emailAddress'],
-        senderEmailAddress: !(0, runtime_1.exists)(json, 'senderEmailAddress')
-            ? undefined
-            : json['senderEmailAddress'],
-        port: !(0, runtime_1.exists)(json, 'port') ? undefined : json['port'],
+        'mailServerDomain': json['mailServerDomain'] == null ? undefined : json['mailServerDomain'],
+        'emailAddress': json['emailAddress'],
+        'senderEmailAddress': json['senderEmailAddress'] == null ? undefined : json['senderEmailAddress'],
+        'port': json['port'] == null ? undefined : json['port'],
     };
 }
-exports.VerifyEmailAddressOptionsFromJSONTyped = VerifyEmailAddressOptionsFromJSONTyped;
-function VerifyEmailAddressOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function VerifyEmailAddressOptionsToJSON(json) {
+    return VerifyEmailAddressOptionsToJSONTyped(json, false);
+}
+function VerifyEmailAddressOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        mailServerDomain: value.mailServerDomain,
-        emailAddress: value.emailAddress,
-        senderEmailAddress: value.senderEmailAddress,
-        port: value.port,
+        'mailServerDomain': value['mailServerDomain'],
+        'emailAddress': value['emailAddress'],
+        'senderEmailAddress': value['senderEmailAddress'],
+        'port': value['port'],
     };
 }
-exports.VerifyEmailAddressOptionsToJSON = VerifyEmailAddressOptionsToJSON;

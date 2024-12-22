@@ -12,79 +12,94 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface PhonePlanDto
  */
 export interface PhonePlanDto {
-  /**
-   *
-   * @type {string}
-   * @memberof PhonePlanDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhonePlanDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhonePlanDto
-   */
-  phoneCountry: PhonePlanDtoPhoneCountryEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof PhonePlanDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhonePlanDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhonePlanDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhonePlanDto
+     */
+    phoneCountry: PhonePlanDtoPhoneCountryEnum;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PhonePlanDto
+     */
+    createdAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum PhonePlanDtoPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
+export const PhonePlanDtoPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+} as const;
+export type PhonePlanDtoPhoneCountryEnum = typeof PhonePlanDtoPhoneCountryEnum[keyof typeof PhonePlanDtoPhoneCountryEnum];
+
+
+/**
+ * Check if a given object implements the PhonePlanDto interface.
+ */
+export function instanceOfPhonePlanDto(value: object): value is PhonePlanDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('phoneCountry' in value) || value['phoneCountry'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function PhonePlanDtoFromJSON(json: any): PhonePlanDto {
-  return PhonePlanDtoFromJSONTyped(json, false);
+    return PhonePlanDtoFromJSONTyped(json, false);
 }
 
-export function PhonePlanDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PhonePlanDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    phoneCountry: json['phoneCountry'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function PhonePlanDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'phoneCountry': json['phoneCountry'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function PhonePlanDtoToJSON(value?: PhonePlanDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    phoneCountry: value.phoneCountry,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function PhonePlanDtoToJSON(json: any): PhonePlanDto {
+    return PhonePlanDtoToJSONTyped(json, false);
 }
+
+export function PhonePlanDtoToJSONTyped(value?: PhonePlanDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'phoneCountry': value['phoneCountry'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

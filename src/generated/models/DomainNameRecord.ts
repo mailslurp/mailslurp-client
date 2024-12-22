@@ -12,192 +12,218 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * DNS Record required for verification of a domain. Record vary depending on domain type.
  * @export
  * @interface DomainNameRecord
  */
 export interface DomainNameRecord {
-  /**
-   * Domain Name Server Record Label
-   * @type {string}
-   * @memberof DomainNameRecord
-   */
-  label: DomainNameRecordLabelEnum;
-  /**
-   *
-   * @type {boolean}
-   * @memberof DomainNameRecord
-   */
-  required: boolean;
-  /**
-   * Domain Name Server Record Types
-   * @type {string}
-   * @memberof DomainNameRecord
-   */
-  recordType: DomainNameRecordRecordTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof DomainNameRecord
-   */
-  name: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof DomainNameRecord
-   */
-  recordEntries: Array<string>;
-  /**
-   *
-   * @type {number}
-   * @memberof DomainNameRecord
-   */
-  ttl: number;
+    /**
+     * Domain Name Server Record Label
+     * @type {string}
+     * @memberof DomainNameRecord
+     */
+    label: DomainNameRecordLabelEnum;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DomainNameRecord
+     */
+    required: boolean;
+    /**
+     * Domain Name Server Record Types
+     * @type {string}
+     * @memberof DomainNameRecord
+     */
+    recordType: DomainNameRecordRecordTypeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainNameRecord
+     */
+    name: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof DomainNameRecord
+     */
+    recordEntries: Array<string>;
+    /**
+     * 
+     * @type {number}
+     * @memberof DomainNameRecord
+     */
+    ttl: number;
+    /**
+     * 
+     * @type {Array<string | null>}
+     * @memberof DomainNameRecord
+     */
+    alternativeRecordEntries?: Array<string | null> | null;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum DomainNameRecordLabelEnum {
-  VERIFICATION = 'VERIFICATION',
-  MX = 'MX',
-  SPF = 'SPF',
-  DKIM = 'DKIM',
-  DMARC = 'DMARC',
-}
+export const DomainNameRecordLabelEnum = {
+    VERIFICATION: 'VERIFICATION',
+    MX: 'MX',
+    SPF: 'SPF',
+    DKIM: 'DKIM',
+    DMARC: 'DMARC'
+} as const;
+export type DomainNameRecordLabelEnum = typeof DomainNameRecordLabelEnum[keyof typeof DomainNameRecordLabelEnum];
+
 /**
  * @export
- * @enum {string}
  */
-export enum DomainNameRecordRecordTypeEnum {
-  A = 'A',
-  NS = 'NS',
-  MD = 'MD',
-  MF = 'MF',
-  CNAME = 'CNAME',
-  SOA = 'SOA',
-  MB = 'MB',
-  MG = 'MG',
-  MR = 'MR',
-  NULL = 'NULL',
-  WKS = 'WKS',
-  PTR = 'PTR',
-  HINFO = 'HINFO',
-  MINFO = 'MINFO',
-  MX = 'MX',
-  TXT = 'TXT',
-  RP = 'RP',
-  AFSDB = 'AFSDB',
-  X25 = 'X25',
-  ISDN = 'ISDN',
-  RT = 'RT',
-  NSAP = 'NSAP',
-  NSAP_PTR = 'NSAP_PTR',
-  SIG = 'SIG',
-  KEY = 'KEY',
-  PX = 'PX',
-  GPOS = 'GPOS',
-  AAAA = 'AAAA',
-  LOC = 'LOC',
-  NXT = 'NXT',
-  EID = 'EID',
-  NIMLOC = 'NIMLOC',
-  SRV = 'SRV',
-  ATMA = 'ATMA',
-  NAPTR = 'NAPTR',
-  KX = 'KX',
-  CERT = 'CERT',
-  A6 = 'A6',
-  DNAME = 'DNAME',
-  SINK = 'SINK',
-  OPT = 'OPT',
-  APL = 'APL',
-  DS = 'DS',
-  SSHFP = 'SSHFP',
-  IPSECKEY = 'IPSECKEY',
-  RRSIG = 'RRSIG',
-  NSEC = 'NSEC',
-  DNSKEY = 'DNSKEY',
-  DHCID = 'DHCID',
-  NSEC3 = 'NSEC3',
-  NSEC3PARAM = 'NSEC3PARAM',
-  TLSA = 'TLSA',
-  SMIMEA = 'SMIMEA',
-  HIP = 'HIP',
-  NINFO = 'NINFO',
-  RKEY = 'RKEY',
-  TALINK = 'TALINK',
-  CDS = 'CDS',
-  CDNSKEY = 'CDNSKEY',
-  OPENPGPKEY = 'OPENPGPKEY',
-  CSYNC = 'CSYNC',
-  ZONEMD = 'ZONEMD',
-  SVCB = 'SVCB',
-  HTTPS = 'HTTPS',
-  SPF = 'SPF',
-  UINFO = 'UINFO',
-  UID = 'UID',
-  GID = 'GID',
-  UNSPEC = 'UNSPEC',
-  NID = 'NID',
-  L32 = 'L32',
-  L64 = 'L64',
-  LP = 'LP',
-  EUI48 = 'EUI48',
-  EUI64 = 'EUI64',
-  TKEY = 'TKEY',
-  TSIG = 'TSIG',
-  IXFR = 'IXFR',
-  AXFR = 'AXFR',
-  MAILB = 'MAILB',
-  MAILA = 'MAILA',
-  ANY = 'ANY',
-  URI = 'URI',
-  CAA = 'CAA',
-  AVC = 'AVC',
-  DOA = 'DOA',
-  AMTRELAY = 'AMTRELAY',
-  TA = 'TA',
-  DLV = 'DLV',
+export const DomainNameRecordRecordTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+} as const;
+export type DomainNameRecordRecordTypeEnum = typeof DomainNameRecordRecordTypeEnum[keyof typeof DomainNameRecordRecordTypeEnum];
+
+
+/**
+ * Check if a given object implements the DomainNameRecord interface.
+ */
+export function instanceOfDomainNameRecord(value: object): value is DomainNameRecord {
+    if (!('label' in value) || value['label'] === undefined) return false;
+    if (!('required' in value) || value['required'] === undefined) return false;
+    if (!('recordType' in value) || value['recordType'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('recordEntries' in value) || value['recordEntries'] === undefined) return false;
+    if (!('ttl' in value) || value['ttl'] === undefined) return false;
+    return true;
 }
 
 export function DomainNameRecordFromJSON(json: any): DomainNameRecord {
-  return DomainNameRecordFromJSONTyped(json, false);
+    return DomainNameRecordFromJSONTyped(json, false);
 }
 
-export function DomainNameRecordFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainNameRecord {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    label: json['label'],
-    required: json['required'],
-    recordType: json['recordType'],
-    name: json['name'],
-    recordEntries: json['recordEntries'],
-    ttl: json['ttl'],
-  };
+export function DomainNameRecordFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainNameRecord {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'label': json['label'],
+        'required': json['required'],
+        'recordType': json['recordType'],
+        'name': json['name'],
+        'recordEntries': json['recordEntries'],
+        'ttl': json['ttl'],
+        'alternativeRecordEntries': json['alternativeRecordEntries'] == null ? undefined : json['alternativeRecordEntries'],
+    };
 }
 
-export function DomainNameRecordToJSON(value?: DomainNameRecord | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    label: value.label,
-    required: value.required,
-    recordType: value.recordType,
-    name: value.name,
-    recordEntries: value.recordEntries,
-    ttl: value.ttl,
-  };
+export function DomainNameRecordToJSON(json: any): DomainNameRecord {
+    return DomainNameRecordToJSONTyped(json, false);
 }
+
+export function DomainNameRecordToJSONTyped(value?: DomainNameRecord | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'label': value['label'],
+        'required': value['required'],
+        'recordType': value['recordType'],
+        'name': value['name'],
+        'recordEntries': value['recordEntries'],
+        'ttl': value['ttl'],
+        'alternativeRecordEntries': value['alternativeRecordEntries'],
+    };
+}
+

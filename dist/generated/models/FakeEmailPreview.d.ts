@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailRecipients, Sender } from './';
+import type { Sender } from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
 /**
  *
  * @export
@@ -42,6 +43,12 @@ export interface FakeEmailPreview {
     recipients?: EmailRecipients | null;
     /**
      *
+     * @type {boolean}
+     * @memberof FakeEmailPreview
+     */
+    hasAttachments: boolean;
+    /**
+     *
      * @type {string}
      * @memberof FakeEmailPreview
      */
@@ -65,6 +72,11 @@ export interface FakeEmailPreview {
      */
     seen: boolean;
 }
+/**
+ * Check if a given object implements the FakeEmailPreview interface.
+ */
+export declare function instanceOfFakeEmailPreview(value: object): value is FakeEmailPreview;
 export declare function FakeEmailPreviewFromJSON(json: any): FakeEmailPreview;
 export declare function FakeEmailPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailPreview;
-export declare function FakeEmailPreviewToJSON(value?: FakeEmailPreview | null): any;
+export declare function FakeEmailPreviewToJSON(json: any): FakeEmailPreview;
+export declare function FakeEmailPreviewToJSONTyped(value?: FakeEmailPreview | null, ignoreDiscriminator?: boolean): any;

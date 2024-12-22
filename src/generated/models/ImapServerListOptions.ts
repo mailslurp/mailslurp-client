@@ -12,57 +12,62 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ImapServerListOptions
  */
 export interface ImapServerListOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof ImapServerListOptions
-   */
-  uidSet?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ImapServerListOptions
-   */
-  seqSet?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImapServerListOptions
+     */
+    uidSet?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImapServerListOptions
+     */
+    seqSet?: string | null;
 }
 
-export function ImapServerListOptionsFromJSON(
-  json: any
-): ImapServerListOptions {
-  return ImapServerListOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the ImapServerListOptions interface.
+ */
+export function instanceOfImapServerListOptions(value: object): value is ImapServerListOptions {
+    return true;
 }
 
-export function ImapServerListOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerListOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    uidSet: !exists(json, 'uidSet') ? undefined : json['uidSet'],
-    seqSet: !exists(json, 'seqSet') ? undefined : json['seqSet'],
-  };
+export function ImapServerListOptionsFromJSON(json: any): ImapServerListOptions {
+    return ImapServerListOptionsFromJSONTyped(json, false);
 }
 
-export function ImapServerListOptionsToJSON(
-  value?: ImapServerListOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    uidSet: value.uidSet,
-    seqSet: value.seqSet,
-  };
+export function ImapServerListOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerListOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'uidSet': json['uidSet'] == null ? undefined : json['uidSet'],
+        'seqSet': json['seqSet'] == null ? undefined : json['seqSet'],
+    };
 }
+
+export function ImapServerListOptionsToJSON(json: any): ImapServerListOptions {
+    return ImapServerListOptionsToJSONTyped(json, false);
+}
+
+export function ImapServerListOptionsToJSONTyped(value?: ImapServerListOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'uidSet': value['uidSet'],
+        'seqSet': value['seqSet'],
+    };
+}
+

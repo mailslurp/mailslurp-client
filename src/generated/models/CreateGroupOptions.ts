@@ -12,55 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Create contact group options
  * @export
  * @interface CreateGroupOptions
  */
 export interface CreateGroupOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof CreateGroupOptions
-   */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateGroupOptions
-   */
-  description?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateGroupOptions
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateGroupOptions
+     */
+    description?: string | null;
+}
+
+/**
+ * Check if a given object implements the CreateGroupOptions interface.
+ */
+export function instanceOfCreateGroupOptions(value: object): value is CreateGroupOptions {
+    if (!('name' in value) || value['name'] === undefined) return false;
+    return true;
 }
 
 export function CreateGroupOptionsFromJSON(json: any): CreateGroupOptions {
-  return CreateGroupOptionsFromJSONTyped(json, false);
+    return CreateGroupOptionsFromJSONTyped(json, false);
 }
 
-export function CreateGroupOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateGroupOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-  };
+export function CreateGroupOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateGroupOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'description': json['description'] == null ? undefined : json['description'],
+    };
 }
 
-export function CreateGroupOptionsToJSON(
-  value?: CreateGroupOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    description: value.description,
-  };
+export function CreateGroupOptionsToJSON(json: any): CreateGroupOptions {
+    return CreateGroupOptionsToJSONTyped(json, false);
 }
+
+export function CreateGroupOptionsToJSONTyped(value?: CreateGroupOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'description': value['description'],
+    };
+}
+

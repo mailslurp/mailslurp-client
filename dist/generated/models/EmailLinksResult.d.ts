@@ -28,6 +28,11 @@ export interface EmailLinksResult {
      */
     body: string;
 }
+/**
+ * Check if a given object implements the EmailLinksResult interface.
+ */
+export declare function instanceOfEmailLinksResult(value: object): value is EmailLinksResult;
 export declare function EmailLinksResultFromJSON(json: any): EmailLinksResult;
 export declare function EmailLinksResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailLinksResult;
-export declare function EmailLinksResultToJSON(value?: EmailLinksResult | null): any;
+export declare function EmailLinksResultToJSON(json: any): EmailLinksResult;
+export declare function EmailLinksResultToJSONTyped(value?: EmailLinksResult | null, ignoreDiscriminator?: boolean): any;

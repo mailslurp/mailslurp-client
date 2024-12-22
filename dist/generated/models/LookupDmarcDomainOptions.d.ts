@@ -22,6 +22,11 @@ export interface LookupDmarcDomainOptions {
      */
     host: string;
 }
+/**
+ * Check if a given object implements the LookupDmarcDomainOptions interface.
+ */
+export declare function instanceOfLookupDmarcDomainOptions(value: object): value is LookupDmarcDomainOptions;
 export declare function LookupDmarcDomainOptionsFromJSON(json: any): LookupDmarcDomainOptions;
 export declare function LookupDmarcDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupDmarcDomainOptions;
-export declare function LookupDmarcDomainOptionsToJSON(value?: LookupDmarcDomainOptions | null): any;
+export declare function LookupDmarcDomainOptionsToJSON(json: any): LookupDmarcDomainOptions;
+export declare function LookupDmarcDomainOptionsToJSONTyped(value?: LookupDmarcDomainOptions | null, ignoreDiscriminator?: boolean): any;

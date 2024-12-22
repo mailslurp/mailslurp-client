@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxPreview, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { InboxPreview } from './InboxPreview';
+import type { SortObject } from './SortObject';
 /**
  * Paginated inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageInboxProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageInboxProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageInboxProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageInboxProjection interface.
+ */
+export declare function instanceOfPageInboxProjection(value: object): value is PageInboxProjection;
 export declare function PageInboxProjectionFromJSON(json: any): PageInboxProjection;
 export declare function PageInboxProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxProjection;
-export declare function PageInboxProjectionToJSON(value?: PageInboxProjection | null): any;
+export declare function PageInboxProjectionToJSON(json: any): PageInboxProjection;
+export declare function PageInboxProjectionToJSONTyped(value?: PageInboxProjection | null, ignoreDiscriminator?: boolean): any;

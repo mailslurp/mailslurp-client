@@ -12,55 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface CanSendEmailResults
  */
 export interface CanSendEmailResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof CanSendEmailResults
-   */
-  isSendingPermitted: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof CanSendEmailResults
-   */
-  message?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CanSendEmailResults
+     */
+    isSendingPermitted: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof CanSendEmailResults
+     */
+    message?: string;
+}
+
+/**
+ * Check if a given object implements the CanSendEmailResults interface.
+ */
+export function instanceOfCanSendEmailResults(value: object): value is CanSendEmailResults {
+    if (!('isSendingPermitted' in value) || value['isSendingPermitted'] === undefined) return false;
+    return true;
 }
 
 export function CanSendEmailResultsFromJSON(json: any): CanSendEmailResults {
-  return CanSendEmailResultsFromJSONTyped(json, false);
+    return CanSendEmailResultsFromJSONTyped(json, false);
 }
 
-export function CanSendEmailResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CanSendEmailResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    isSendingPermitted: json['isSendingPermitted'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-  };
+export function CanSendEmailResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CanSendEmailResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'isSendingPermitted': json['isSendingPermitted'],
+        'message': json['message'] == null ? undefined : json['message'],
+    };
 }
 
-export function CanSendEmailResultsToJSON(
-  value?: CanSendEmailResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    isSendingPermitted: value.isSendingPermitted,
-    message: value.message,
-  };
+export function CanSendEmailResultsToJSON(json: any): CanSendEmailResults {
+    return CanSendEmailResultsToJSONTyped(json, false);
 }
+
+export function CanSendEmailResultsToJSONTyped(value?: CanSendEmailResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'isSendingPermitted': value['isSendingPermitted'],
+        'message': value['message'],
+    };
+}
+

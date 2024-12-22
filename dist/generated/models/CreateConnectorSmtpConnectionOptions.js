@@ -13,44 +13,65 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorSmtpConnectionOptionsToJSON = exports.CreateConnectorSmtpConnectionOptionsFromJSONTyped = exports.CreateConnectorSmtpConnectionOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfCreateConnectorSmtpConnectionOptions = instanceOfCreateConnectorSmtpConnectionOptions;
+exports.CreateConnectorSmtpConnectionOptionsFromJSON = CreateConnectorSmtpConnectionOptionsFromJSON;
+exports.CreateConnectorSmtpConnectionOptionsFromJSONTyped = CreateConnectorSmtpConnectionOptionsFromJSONTyped;
+exports.CreateConnectorSmtpConnectionOptionsToJSON = CreateConnectorSmtpConnectionOptionsToJSON;
+exports.CreateConnectorSmtpConnectionOptionsToJSONTyped = CreateConnectorSmtpConnectionOptionsToJSONTyped;
+/**
+ * Check if a given object implements the CreateConnectorSmtpConnectionOptions interface.
+ */
+function instanceOfCreateConnectorSmtpConnectionOptions(value) {
+    if (!('smtpHost' in value) || value['smtpHost'] === undefined)
+        return false;
+    return true;
+}
 function CreateConnectorSmtpConnectionOptionsFromJSON(json) {
     return CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, false);
 }
-exports.CreateConnectorSmtpConnectionOptionsFromJSON = CreateConnectorSmtpConnectionOptionsFromJSON;
 function CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
-        smtpHost: json['smtpHost'],
-        smtpPort: !(0, runtime_1.exists)(json, 'smtpPort') ? undefined : json['smtpPort'],
-        smtpSsl: !(0, runtime_1.exists)(json, 'smtpSsl') ? undefined : json['smtpSsl'],
-        smtpUsername: !(0, runtime_1.exists)(json, 'smtpUsername')
-            ? undefined
-            : json['smtpUsername'],
-        smtpPassword: !(0, runtime_1.exists)(json, 'smtpPassword')
-            ? undefined
-            : json['smtpPassword'],
+        'enabled': json['enabled'] == null ? undefined : json['enabled'],
+        'smtpHost': json['smtpHost'],
+        'smtpPort': json['smtpPort'] == null ? undefined : json['smtpPort'],
+        'smtpSsl': json['smtpSsl'] == null ? undefined : json['smtpSsl'],
+        'smtpUsername': json['smtpUsername'] == null ? undefined : json['smtpUsername'],
+        'smtpPassword': json['smtpPassword'] == null ? undefined : json['smtpPassword'],
+        'smtpMechanisms': json['smtpMechanisms'] == null ? undefined : json['smtpMechanisms'],
+        'startTls': json['startTls'] == null ? undefined : json['startTls'],
+        'localHostName': json['localHostName'] == null ? undefined : json['localHostName'],
+        'proxyHost': json['proxyHost'] == null ? undefined : json['proxyHost'],
+        'proxyPort': json['proxyPort'] == null ? undefined : json['proxyPort'],
+        'proxyEnabled': json['proxyEnabled'] == null ? undefined : json['proxyEnabled'],
+        'sslTrust': json['sslTrust'] == null ? undefined : json['sslTrust'],
+        'sslProtocols': json['sslProtocols'] == null ? undefined : json['sslProtocols'],
     };
 }
-exports.CreateConnectorSmtpConnectionOptionsFromJSONTyped = CreateConnectorSmtpConnectionOptionsFromJSONTyped;
-function CreateConnectorSmtpConnectionOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateConnectorSmtpConnectionOptionsToJSON(json) {
+    return CreateConnectorSmtpConnectionOptionsToJSONTyped(json, false);
+}
+function CreateConnectorSmtpConnectionOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        enabled: value.enabled,
-        smtpHost: value.smtpHost,
-        smtpPort: value.smtpPort,
-        smtpSsl: value.smtpSsl,
-        smtpUsername: value.smtpUsername,
-        smtpPassword: value.smtpPassword,
+        'enabled': value['enabled'],
+        'smtpHost': value['smtpHost'],
+        'smtpPort': value['smtpPort'],
+        'smtpSsl': value['smtpSsl'],
+        'smtpUsername': value['smtpUsername'],
+        'smtpPassword': value['smtpPassword'],
+        'smtpMechanisms': value['smtpMechanisms'],
+        'startTls': value['startTls'],
+        'localHostName': value['localHostName'],
+        'proxyHost': value['proxyHost'],
+        'proxyPort': value['proxyPort'],
+        'proxyEnabled': value['proxyEnabled'],
+        'sslTrust': value['sslTrust'],
+        'sslProtocols': value['sslProtocols'],
     };
 }
-exports.CreateConnectorSmtpConnectionOptionsToJSON = CreateConnectorSmtpConnectionOptionsToJSON;

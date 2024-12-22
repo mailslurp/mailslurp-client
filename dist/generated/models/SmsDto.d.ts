@@ -44,6 +44,18 @@ export interface SmsDto {
      * @type {string}
      * @memberof SmsDto
      */
+    toNumber?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SmsDto
+     */
+    favourite: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof SmsDto
+     */
     body: string;
     /**
      *
@@ -64,6 +76,11 @@ export interface SmsDto {
      */
     updatedAt: Date;
 }
+/**
+ * Check if a given object implements the SmsDto interface.
+ */
+export declare function instanceOfSmsDto(value: object): value is SmsDto;
 export declare function SmsDtoFromJSON(json: any): SmsDto;
 export declare function SmsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsDto;
-export declare function SmsDtoToJSON(value?: SmsDto | null): any;
+export declare function SmsDtoToJSON(json: any): SmsDto;
+export declare function SmsDtoToJSONTyped(value?: SmsDto | null, ignoreDiscriminator?: boolean): any;

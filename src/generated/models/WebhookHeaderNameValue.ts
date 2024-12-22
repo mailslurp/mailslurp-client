@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Name value pair for webhook header
  * @export
  * @interface WebhookHeaderNameValue
  */
 export interface WebhookHeaderNameValue {
-  /**
-   * Name of header
-   * @type {string}
-   * @memberof WebhookHeaderNameValue
-   */
-  name: string;
-  /**
-   * Value of header
-   * @type {string}
-   * @memberof WebhookHeaderNameValue
-   */
-  value: string;
+    /**
+     * Name of header
+     * @type {string}
+     * @memberof WebhookHeaderNameValue
+     */
+    name: string;
+    /**
+     * Value of header
+     * @type {string}
+     * @memberof WebhookHeaderNameValue
+     */
+    value: string;
 }
 
-export function WebhookHeaderNameValueFromJSON(
-  json: any
-): WebhookHeaderNameValue {
-  return WebhookHeaderNameValueFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the WebhookHeaderNameValue interface.
+ */
+export function instanceOfWebhookHeaderNameValue(value: object): value is WebhookHeaderNameValue {
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
+    return true;
 }
 
-export function WebhookHeaderNameValueFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookHeaderNameValue {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    value: json['value'],
-  };
+export function WebhookHeaderNameValueFromJSON(json: any): WebhookHeaderNameValue {
+    return WebhookHeaderNameValueFromJSONTyped(json, false);
 }
 
-export function WebhookHeaderNameValueToJSON(
-  value?: WebhookHeaderNameValue | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    value: value.value,
-  };
+export function WebhookHeaderNameValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookHeaderNameValue {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'value': json['value'],
+    };
 }
+
+export function WebhookHeaderNameValueToJSON(json: any): WebhookHeaderNameValue {
+    return WebhookHeaderNameValueToJSONTyped(json, false);
+}
+
+export function WebhookHeaderNameValueToJSONTyped(value?: WebhookHeaderNameValue | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'value': value['value'],
+    };
+}
+

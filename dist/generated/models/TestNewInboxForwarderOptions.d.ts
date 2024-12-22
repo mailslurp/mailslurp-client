@@ -9,7 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CreateInboxForwarderOptions, InboxForwarderTestOptions } from './';
+import type { CreateInboxForwarderOptions } from './CreateInboxForwarderOptions';
+import type { InboxForwarderTestOptions } from './InboxForwarderTestOptions';
 /**
  * Options for testing new inbox forwarder rules
  * @export
@@ -29,6 +30,11 @@ export interface TestNewInboxForwarderOptions {
      */
     createInboxForwarderOptions: CreateInboxForwarderOptions;
 }
+/**
+ * Check if a given object implements the TestNewInboxForwarderOptions interface.
+ */
+export declare function instanceOfTestNewInboxForwarderOptions(value: object): value is TestNewInboxForwarderOptions;
 export declare function TestNewInboxForwarderOptionsFromJSON(json: any): TestNewInboxForwarderOptions;
 export declare function TestNewInboxForwarderOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestNewInboxForwarderOptions;
-export declare function TestNewInboxForwarderOptionsToJSON(value?: TestNewInboxForwarderOptions | null): any;
+export declare function TestNewInboxForwarderOptionsToJSON(json: any): TestNewInboxForwarderOptions;
+export declare function TestNewInboxForwarderOptionsToJSONTyped(value?: TestNewInboxForwarderOptions | null, ignoreDiscriminator?: boolean): any;

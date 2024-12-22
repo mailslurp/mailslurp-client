@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateGroupOptions, GroupContactsDto, GroupDto, GroupProjection, PageContactProjection, PageGroupProjection, UpdateGroupContacts } from '../models';
+import type { CreateGroupOptions, GroupContactsDto, GroupDto, GroupProjection, PageContactProjection, PageGroupProjection, UpdateGroupContacts } from '../models/index';
 export interface AddContactsToGroupRequest {
     groupId: string;
     updateGroupContacts: UpdateGroupContacts;
@@ -53,89 +53,89 @@ export declare class GroupControllerApi extends runtime.BaseAPI {
     /**
      * Add contacts to a group
      */
-    addContactsToGroupRaw(requestParameters: AddContactsToGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupContactsDto>>;
+    addContactsToGroupRaw(requestParameters: AddContactsToGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupContactsDto>>;
     /**
      * Add contacts to a group
      */
-    addContactsToGroup(requestParameters: AddContactsToGroupRequest, initOverrides?: RequestInit): Promise<GroupContactsDto>;
+    addContactsToGroup(requestParameters: AddContactsToGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupContactsDto>;
     /**
      * Create a group
      */
-    createGroupRaw(requestParameters: CreateGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupDto>>;
+    createGroupRaw(requestParameters: CreateGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupDto>>;
     /**
      * Create a group
      */
-    createGroup(requestParameters: CreateGroupRequest, initOverrides?: RequestInit): Promise<GroupDto>;
+    createGroup(requestParameters: CreateGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupDto>;
     /**
      * Delete group
      */
-    deleteGroupRaw(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteGroupRaw(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete group
      */
-    deleteGroup(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteGroup(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Get all Contact Groups in paginated format
      */
-    getAllGroupsRaw(requestParameters: GetAllGroupsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageGroupProjection>>;
+    getAllGroupsRaw(requestParameters: GetAllGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageGroupProjection>>;
     /**
      * Get all Contact Groups in paginated format
      */
-    getAllGroups(requestParameters: GetAllGroupsRequest, initOverrides?: RequestInit): Promise<PageGroupProjection>;
+    getAllGroups(requestParameters?: GetAllGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageGroupProjection>;
     /**
      * Get group
      */
-    getGroupRaw(requestParameters: GetGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupDto>>;
+    getGroupRaw(requestParameters: GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupDto>>;
     /**
      * Get group
      */
-    getGroup(requestParameters: GetGroupRequest, initOverrides?: RequestInit): Promise<GroupDto>;
+    getGroup(requestParameters: GetGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupDto>;
     /**
      * Get group and contacts belonging to it
      */
-    getGroupWithContactsRaw(requestParameters: GetGroupWithContactsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupContactsDto>>;
+    getGroupWithContactsRaw(requestParameters: GetGroupWithContactsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupContactsDto>>;
     /**
      * Get group and contacts belonging to it
      */
-    getGroupWithContacts(requestParameters: GetGroupWithContactsRequest, initOverrides?: RequestInit): Promise<GroupContactsDto>;
+    getGroupWithContacts(requestParameters: GetGroupWithContactsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupContactsDto>;
     /**
      * Get group and paginated contacts belonging to it
      */
-    getGroupWithContactsPaginatedRaw(requestParameters: GetGroupWithContactsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageContactProjection>>;
+    getGroupWithContactsPaginatedRaw(requestParameters: GetGroupWithContactsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageContactProjection>>;
     /**
      * Get group and paginated contacts belonging to it
      */
-    getGroupWithContactsPaginated(requestParameters: GetGroupWithContactsPaginatedRequest, initOverrides?: RequestInit): Promise<PageContactProjection>;
+    getGroupWithContactsPaginated(requestParameters: GetGroupWithContactsPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageContactProjection>;
     /**
      * Get all groups
      */
-    getGroupsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<GroupProjection>>>;
+    getGroupsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<GroupProjection>>>;
     /**
      * Get all groups
      */
-    getGroups(initOverrides?: RequestInit): Promise<Array<GroupProjection>>;
+    getGroups(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<GroupProjection>>;
     /**
      * Remove contacts from a group
      */
-    removeContactsFromGroupRaw(requestParameters: RemoveContactsFromGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupContactsDto>>;
+    removeContactsFromGroupRaw(requestParameters: RemoveContactsFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupContactsDto>>;
     /**
      * Remove contacts from a group
      */
-    removeContactsFromGroup(requestParameters: RemoveContactsFromGroupRequest, initOverrides?: RequestInit): Promise<GroupContactsDto>;
+    removeContactsFromGroup(requestParameters: RemoveContactsFromGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupContactsDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllGroupsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllGroupsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllGroupsSortEnum = typeof GetAllGroupsSortEnum[keyof typeof GetAllGroupsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetGroupWithContactsPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetGroupWithContactsPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetGroupWithContactsPaginatedSortEnum = typeof GetGroupWithContactsPaginatedSortEnum[keyof typeof GetGroupWithContactsPaginatedSortEnum];

@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerListResultToJSON = exports.ImapServerListResultFromJSONTyped = exports.ImapServerListResultFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfImapServerListResult = instanceOfImapServerListResult;
+exports.ImapServerListResultFromJSON = ImapServerListResultFromJSON;
+exports.ImapServerListResultFromJSONTyped = ImapServerListResultFromJSONTyped;
+exports.ImapServerListResultToJSON = ImapServerListResultToJSON;
+exports.ImapServerListResultToJSONTyped = ImapServerListResultToJSONTyped;
+var ImapEmailProjection_1 = require("./ImapEmailProjection");
+/**
+ * Check if a given object implements the ImapServerListResult interface.
+ */
+function instanceOfImapServerListResult(value) {
+    if (!('results' in value) || value['results'] === undefined)
+        return false;
+    return true;
+}
 function ImapServerListResultFromJSON(json) {
     return ImapServerListResultFromJSONTyped(json, false);
 }
-exports.ImapServerListResultFromJSON = ImapServerListResultFromJSON;
 function ImapServerListResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        results: json['results'].map(_1.ImapEmailProjectionFromJSON),
+        'results': (json['results'].map(ImapEmailProjection_1.ImapEmailProjectionFromJSON)),
     };
 }
-exports.ImapServerListResultFromJSONTyped = ImapServerListResultFromJSONTyped;
-function ImapServerListResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapServerListResultToJSON(json) {
+    return ImapServerListResultToJSONTyped(json, false);
+}
+function ImapServerListResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        results: value.results.map(_1.ImapEmailProjectionToJSON),
+        'results': (value['results'].map(ImapEmailProjection_1.ImapEmailProjectionToJSON)),
     };
 }
-exports.ImapServerListResultToJSON = ImapServerListResultToJSON;

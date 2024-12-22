@@ -70,6 +70,11 @@ export interface SmtpAccessDetails {
      */
     mailFromDomain?: string | null;
 }
+/**
+ * Check if a given object implements the SmtpAccessDetails interface.
+ */
+export declare function instanceOfSmtpAccessDetails(value: object): value is SmtpAccessDetails;
 export declare function SmtpAccessDetailsFromJSON(json: any): SmtpAccessDetails;
 export declare function SmtpAccessDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmtpAccessDetails;
-export declare function SmtpAccessDetailsToJSON(value?: SmtpAccessDetails | null): any;
+export declare function SmtpAccessDetailsToJSON(json: any): SmtpAccessDetails;
+export declare function SmtpAccessDetailsToJSONTyped(value?: SmtpAccessDetails | null, ignoreDiscriminator?: boolean): any;

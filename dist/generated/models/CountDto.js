@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CountDtoToJSON = exports.CountDtoFromJSONTyped = exports.CountDtoFromJSON = void 0;
+exports.instanceOfCountDto = instanceOfCountDto;
+exports.CountDtoFromJSON = CountDtoFromJSON;
+exports.CountDtoFromJSONTyped = CountDtoFromJSONTyped;
+exports.CountDtoToJSON = CountDtoToJSON;
+exports.CountDtoToJSONTyped = CountDtoToJSONTyped;
+/**
+ * Check if a given object implements the CountDto interface.
+ */
+function instanceOfCountDto(value) {
+    if (!('totalElements' in value) || value['totalElements'] === undefined)
+        return false;
+    return true;
+}
 function CountDtoFromJSON(json) {
     return CountDtoFromJSONTyped(json, false);
 }
-exports.CountDtoFromJSON = CountDtoFromJSON;
 function CountDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        totalElements: json['totalElements'],
+        'totalElements': json['totalElements'],
     };
 }
-exports.CountDtoFromJSONTyped = CountDtoFromJSONTyped;
-function CountDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CountDtoToJSON(json) {
+    return CountDtoToJSONTyped(json, false);
+}
+function CountDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        totalElements: value.totalElements,
+        'totalElements': value['totalElements'],
     };
 }
-exports.CountDtoToJSON = CountDtoToJSON;

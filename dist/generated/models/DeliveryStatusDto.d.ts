@@ -100,6 +100,11 @@ export interface DeliveryStatusDto {
      */
     updatedAt: Date;
 }
+/**
+ * Check if a given object implements the DeliveryStatusDto interface.
+ */
+export declare function instanceOfDeliveryStatusDto(value: object): value is DeliveryStatusDto;
 export declare function DeliveryStatusDtoFromJSON(json: any): DeliveryStatusDto;
 export declare function DeliveryStatusDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeliveryStatusDto;
-export declare function DeliveryStatusDtoToJSON(value?: DeliveryStatusDto | null): any;
+export declare function DeliveryStatusDtoToJSON(json: any): DeliveryStatusDto;
+export declare function DeliveryStatusDtoToJSONTyped(value?: DeliveryStatusDto | null, ignoreDiscriminator?: boolean): any;

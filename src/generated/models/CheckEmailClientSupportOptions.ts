@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Options for the email to be validated
  * @export
  * @interface CheckEmailClientSupportOptions
  */
 export interface CheckEmailClientSupportOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof CheckEmailClientSupportOptions
-   */
-  emailBody: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CheckEmailClientSupportOptions
+     */
+    emailBody: string;
 }
 
-export function CheckEmailClientSupportOptionsFromJSON(
-  json: any
-): CheckEmailClientSupportOptions {
-  return CheckEmailClientSupportOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the CheckEmailClientSupportOptions interface.
+ */
+export function instanceOfCheckEmailClientSupportOptions(value: object): value is CheckEmailClientSupportOptions {
+    if (!('emailBody' in value) || value['emailBody'] === undefined) return false;
+    return true;
 }
 
-export function CheckEmailClientSupportOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CheckEmailClientSupportOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailBody: json['emailBody'],
-  };
+export function CheckEmailClientSupportOptionsFromJSON(json: any): CheckEmailClientSupportOptions {
+    return CheckEmailClientSupportOptionsFromJSONTyped(json, false);
 }
 
-export function CheckEmailClientSupportOptionsToJSON(
-  value?: CheckEmailClientSupportOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailBody: value.emailBody,
-  };
+export function CheckEmailClientSupportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailClientSupportOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'emailBody': json['emailBody'],
+    };
 }
+
+export function CheckEmailClientSupportOptionsToJSON(json: any): CheckEmailClientSupportOptions {
+    return CheckEmailClientSupportOptionsToJSONTyped(json, false);
+}
+
+export function CheckEmailClientSupportOptionsToJSONTyped(value?: CheckEmailClientSupportOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'emailBody': value['emailBody'],
+    };
+}
+

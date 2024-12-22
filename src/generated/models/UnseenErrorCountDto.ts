@@ -12,47 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Number of unseen errors
  * @export
  * @interface UnseenErrorCountDto
  */
 export interface UnseenErrorCountDto {
-  /**
-   *
-   * @type {number}
-   * @memberof UnseenErrorCountDto
-   */
-  count: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UnseenErrorCountDto
+     */
+    count: number;
+}
+
+/**
+ * Check if a given object implements the UnseenErrorCountDto interface.
+ */
+export function instanceOfUnseenErrorCountDto(value: object): value is UnseenErrorCountDto {
+    if (!('count' in value) || value['count'] === undefined) return false;
+    return true;
 }
 
 export function UnseenErrorCountDtoFromJSON(json: any): UnseenErrorCountDto {
-  return UnseenErrorCountDtoFromJSONTyped(json, false);
+    return UnseenErrorCountDtoFromJSONTyped(json, false);
 }
 
-export function UnseenErrorCountDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UnseenErrorCountDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    count: json['count'],
-  };
+export function UnseenErrorCountDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnseenErrorCountDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'count': json['count'],
+    };
 }
 
-export function UnseenErrorCountDtoToJSON(
-  value?: UnseenErrorCountDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    count: value.count,
-  };
+export function UnseenErrorCountDtoToJSON(json: any): UnseenErrorCountDto {
+    return UnseenErrorCountDtoToJSONTyped(json, false);
 }
+
+export function UnseenErrorCountDtoToJSONTyped(value?: UnseenErrorCountDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'count': value['count'],
+    };
+}
+

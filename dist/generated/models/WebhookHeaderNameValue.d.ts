@@ -28,6 +28,11 @@ export interface WebhookHeaderNameValue {
      */
     value: string;
 }
+/**
+ * Check if a given object implements the WebhookHeaderNameValue interface.
+ */
+export declare function instanceOfWebhookHeaderNameValue(value: object): value is WebhookHeaderNameValue;
 export declare function WebhookHeaderNameValueFromJSON(json: any): WebhookHeaderNameValue;
 export declare function WebhookHeaderNameValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookHeaderNameValue;
-export declare function WebhookHeaderNameValueToJSON(value?: WebhookHeaderNameValue | null): any;
+export declare function WebhookHeaderNameValueToJSON(json: any): WebhookHeaderNameValue;
+export declare function WebhookHeaderNameValueToJSONTyped(value?: WebhookHeaderNameValue | null, ignoreDiscriminator?: boolean): any;

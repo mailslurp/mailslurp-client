@@ -13,32 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CanSendEmailResultsToJSON = exports.CanSendEmailResultsFromJSONTyped = exports.CanSendEmailResultsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfCanSendEmailResults = instanceOfCanSendEmailResults;
+exports.CanSendEmailResultsFromJSON = CanSendEmailResultsFromJSON;
+exports.CanSendEmailResultsFromJSONTyped = CanSendEmailResultsFromJSONTyped;
+exports.CanSendEmailResultsToJSON = CanSendEmailResultsToJSON;
+exports.CanSendEmailResultsToJSONTyped = CanSendEmailResultsToJSONTyped;
+/**
+ * Check if a given object implements the CanSendEmailResults interface.
+ */
+function instanceOfCanSendEmailResults(value) {
+    if (!('isSendingPermitted' in value) || value['isSendingPermitted'] === undefined)
+        return false;
+    return true;
+}
 function CanSendEmailResultsFromJSON(json) {
     return CanSendEmailResultsFromJSONTyped(json, false);
 }
-exports.CanSendEmailResultsFromJSON = CanSendEmailResultsFromJSON;
 function CanSendEmailResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        isSendingPermitted: json['isSendingPermitted'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'isSendingPermitted': json['isSendingPermitted'],
+        'message': json['message'] == null ? undefined : json['message'],
     };
 }
-exports.CanSendEmailResultsFromJSONTyped = CanSendEmailResultsFromJSONTyped;
-function CanSendEmailResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CanSendEmailResultsToJSON(json) {
+    return CanSendEmailResultsToJSONTyped(json, false);
+}
+function CanSendEmailResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        isSendingPermitted: value.isSendingPermitted,
-        message: value.message,
+        'isSendingPermitted': value['isSendingPermitted'],
+        'message': value['message'],
     };
 }
-exports.CanSendEmailResultsToJSON = CanSendEmailResultsToJSON;

@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DNSLookupResult } from './';
+import type { DNSLookupResult } from './DNSLookupResult';
 /**
  * Results of query on domain name servers
  * @export
@@ -23,6 +23,11 @@ export interface DNSLookupResults {
      */
     results: Array<DNSLookupResult>;
 }
+/**
+ * Check if a given object implements the DNSLookupResults interface.
+ */
+export declare function instanceOfDNSLookupResults(value: object): value is DNSLookupResults;
 export declare function DNSLookupResultsFromJSON(json: any): DNSLookupResults;
 export declare function DNSLookupResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DNSLookupResults;
-export declare function DNSLookupResultsToJSON(value?: DNSLookupResults | null): any;
+export declare function DNSLookupResultsToJSON(json: any): DNSLookupResults;
+export declare function DNSLookupResultsToJSONTyped(value?: DNSLookupResults | null, ignoreDiscriminator?: boolean): any;

@@ -13,69 +13,57 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExportOptionsToJSON = exports.ExportOptionsFromJSONTyped = exports.ExportOptionsFromJSON = exports.ExportOptionsOutputFormatEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.ExportOptionsOutputFormatEnum = void 0;
+exports.instanceOfExportOptions = instanceOfExportOptions;
+exports.ExportOptionsFromJSON = ExportOptionsFromJSON;
+exports.ExportOptionsFromJSONTyped = ExportOptionsFromJSONTyped;
+exports.ExportOptionsToJSON = ExportOptionsToJSON;
+exports.ExportOptionsToJSONTyped = ExportOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var ExportOptionsOutputFormatEnum;
-(function (ExportOptionsOutputFormatEnum) {
-    ExportOptionsOutputFormatEnum["DEFAULT"] = "CSV_DEFAULT";
-    ExportOptionsOutputFormatEnum["EXCEL"] = "CSV_EXCEL";
-})(ExportOptionsOutputFormatEnum = exports.ExportOptionsOutputFormatEnum || (exports.ExportOptionsOutputFormatEnum = {}));
+exports.ExportOptionsOutputFormatEnum = {
+    DEFAULT: 'CSV_DEFAULT',
+    EXCEL: 'CSV_EXCEL'
+};
+/**
+ * Check if a given object implements the ExportOptions interface.
+ */
+function instanceOfExportOptions(value) {
+    if (!('outputFormat' in value) || value['outputFormat'] === undefined)
+        return false;
+    return true;
+}
 function ExportOptionsFromJSON(json) {
     return ExportOptionsFromJSONTyped(json, false);
 }
-exports.ExportOptionsFromJSON = ExportOptionsFromJSON;
 function ExportOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        outputFormat: json['outputFormat'],
-        excludePreviouslyExported: !(0, runtime_1.exists)(json, 'excludePreviouslyExported')
-            ? undefined
-            : json['excludePreviouslyExported'],
-        createdEarliestTime: !(0, runtime_1.exists)(json, 'createdEarliestTime')
-            ? undefined
-            : json['createdEarliestTime'] === null
-                ? null
-                : new Date(json['createdEarliestTime']),
-        createdOldestTime: !(0, runtime_1.exists)(json, 'createdOldestTime')
-            ? undefined
-            : json['createdOldestTime'] === null
-                ? null
-                : new Date(json['createdOldestTime']),
-        filter: !(0, runtime_1.exists)(json, 'filter') ? undefined : json['filter'],
-        listSeparatorToken: !(0, runtime_1.exists)(json, 'listSeparatorToken')
-            ? undefined
-            : json['listSeparatorToken'],
+        'outputFormat': json['outputFormat'],
+        'excludePreviouslyExported': json['excludePreviouslyExported'] == null ? undefined : json['excludePreviouslyExported'],
+        'createdEarliestTime': json['createdEarliestTime'] == null ? undefined : (new Date(json['createdEarliestTime'])),
+        'createdOldestTime': json['createdOldestTime'] == null ? undefined : (new Date(json['createdOldestTime'])),
+        'filter': json['filter'] == null ? undefined : json['filter'],
+        'listSeparatorToken': json['listSeparatorToken'] == null ? undefined : json['listSeparatorToken'],
     };
 }
-exports.ExportOptionsFromJSONTyped = ExportOptionsFromJSONTyped;
-function ExportOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ExportOptionsToJSON(json) {
+    return ExportOptionsToJSONTyped(json, false);
+}
+function ExportOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        outputFormat: value.outputFormat,
-        excludePreviouslyExported: value.excludePreviouslyExported,
-        createdEarliestTime: value.createdEarliestTime === undefined
-            ? undefined
-            : value.createdEarliestTime === null
-                ? null
-                : value.createdEarliestTime.toISOString(),
-        createdOldestTime: value.createdOldestTime === undefined
-            ? undefined
-            : value.createdOldestTime === null
-                ? null
-                : value.createdOldestTime.toISOString(),
-        filter: value.filter,
-        listSeparatorToken: value.listSeparatorToken,
+        'outputFormat': value['outputFormat'],
+        'excludePreviouslyExported': value['excludePreviouslyExported'],
+        'createdEarliestTime': value['createdEarliestTime'] == null ? undefined : (value['createdEarliestTime'].toISOString()),
+        'createdOldestTime': value['createdOldestTime'] == null ? undefined : (value['createdOldestTime'].toISOString()),
+        'filter': value['filter'],
+        'listSeparatorToken': value['listSeparatorToken'],
     };
 }
-exports.ExportOptionsToJSON = ExportOptionsToJSON;

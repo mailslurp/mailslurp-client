@@ -12,93 +12,109 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * SMS projection
  * @export
  * @interface SmsProjection
  */
 export interface SmsProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof SmsProjection
-   */
-  body: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof SmsProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsProjection
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsProjection
-   */
-  fromNumber: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SmsProjection
-   */
-  read: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    body: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SmsProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    fromNumber: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SmsProjection
+     */
+    read: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    id: string;
+}
+
+/**
+ * Check if a given object implements the SmsProjection interface.
+ */
+export function instanceOfSmsProjection(value: object): value is SmsProjection {
+    if (!('body' in value) || value['body'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined) return false;
+    if (!('fromNumber' in value) || value['fromNumber'] === undefined) return false;
+    if (!('read' in value) || value['read'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
 export function SmsProjectionFromJSON(json: any): SmsProjection {
-  return SmsProjectionFromJSONTyped(json, false);
+    return SmsProjectionFromJSONTyped(json, false);
 }
 
-export function SmsProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmsProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    body: json['body'],
-    createdAt: new Date(json['createdAt']),
-    userId: json['userId'],
-    phoneNumber: json['phoneNumber'],
-    fromNumber: json['fromNumber'],
-    read: json['read'],
-    id: json['id'],
-  };
+export function SmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'body': json['body'],
+        'createdAt': (new Date(json['createdAt'])),
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'read': json['read'],
+        'id': json['id'],
+    };
 }
 
-export function SmsProjectionToJSON(value?: SmsProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    body: value.body,
-    createdAt: value.createdAt.toISOString(),
-    userId: value.userId,
-    phoneNumber: value.phoneNumber,
-    fromNumber: value.fromNumber,
-    read: value.read,
-    id: value.id,
-  };
+export function SmsProjectionToJSON(json: any): SmsProjection {
+    return SmsProjectionToJSONTyped(json, false);
 }
+
+export function SmsProjectionToJSONTyped(value?: SmsProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'body': value['body'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'userId': value['userId'],
+        'phoneNumber': value['phoneNumber'],
+        'fromNumber': value['fromNumber'],
+        'read': value['read'],
+        'id': value['id'],
+    };
+}
+

@@ -28,6 +28,11 @@ export interface TestInboxRulesetSendingOptions {
      */
     recipient: string;
 }
+/**
+ * Check if a given object implements the TestInboxRulesetSendingOptions interface.
+ */
+export declare function instanceOfTestInboxRulesetSendingOptions(value: object): value is TestInboxRulesetSendingOptions;
 export declare function TestInboxRulesetSendingOptionsFromJSON(json: any): TestInboxRulesetSendingOptions;
 export declare function TestInboxRulesetSendingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetSendingOptions;
-export declare function TestInboxRulesetSendingOptionsToJSON(value?: TestInboxRulesetSendingOptions | null): any;
+export declare function TestInboxRulesetSendingOptionsToJSON(json: any): TestInboxRulesetSendingOptions;
+export declare function TestInboxRulesetSendingOptionsToJSONTyped(value?: TestInboxRulesetSendingOptions | null, ignoreDiscriminator?: boolean): any;

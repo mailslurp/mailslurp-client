@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Test options for inbox ruleset receiving test
  * @export
  * @interface TestInboxRulesetReceivingOptions
  */
 export interface TestInboxRulesetReceivingOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof TestInboxRulesetReceivingOptions
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TestInboxRulesetReceivingOptions
-   */
-  fromSender: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestInboxRulesetReceivingOptions
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestInboxRulesetReceivingOptions
+     */
+    fromSender: string;
 }
 
-export function TestInboxRulesetReceivingOptionsFromJSON(
-  json: any
-): TestInboxRulesetReceivingOptions {
-  return TestInboxRulesetReceivingOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the TestInboxRulesetReceivingOptions interface.
+ */
+export function instanceOfTestInboxRulesetReceivingOptions(value: object): value is TestInboxRulesetReceivingOptions {
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('fromSender' in value) || value['fromSender'] === undefined) return false;
+    return true;
 }
 
-export function TestInboxRulesetReceivingOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestInboxRulesetReceivingOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: json['inboxId'],
-    fromSender: json['fromSender'],
-  };
+export function TestInboxRulesetReceivingOptionsFromJSON(json: any): TestInboxRulesetReceivingOptions {
+    return TestInboxRulesetReceivingOptionsFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetReceivingOptionsToJSON(
-  value?: TestInboxRulesetReceivingOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    fromSender: value.fromSender,
-  };
+export function TestInboxRulesetReceivingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetReceivingOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxId': json['inboxId'],
+        'fromSender': json['fromSender'],
+    };
 }
+
+export function TestInboxRulesetReceivingOptionsToJSON(json: any): TestInboxRulesetReceivingOptions {
+    return TestInboxRulesetReceivingOptionsToJSONTyped(json, false);
+}
+
+export function TestInboxRulesetReceivingOptionsToJSONTyped(value?: TestInboxRulesetReceivingOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxId': value['inboxId'],
+        'fromSender': value['fromSender'],
+    };
+}
+

@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupTlsReportingDomainOptionsToJSON = exports.LookupTlsReportingDomainOptionsFromJSONTyped = exports.LookupTlsReportingDomainOptionsFromJSON = void 0;
+exports.instanceOfLookupTlsReportingDomainOptions = instanceOfLookupTlsReportingDomainOptions;
+exports.LookupTlsReportingDomainOptionsFromJSON = LookupTlsReportingDomainOptionsFromJSON;
+exports.LookupTlsReportingDomainOptionsFromJSONTyped = LookupTlsReportingDomainOptionsFromJSONTyped;
+exports.LookupTlsReportingDomainOptionsToJSON = LookupTlsReportingDomainOptionsToJSON;
+exports.LookupTlsReportingDomainOptionsToJSONTyped = LookupTlsReportingDomainOptionsToJSONTyped;
+/**
+ * Check if a given object implements the LookupTlsReportingDomainOptions interface.
+ */
+function instanceOfLookupTlsReportingDomainOptions(value) {
+    if (!('host' in value) || value['host'] === undefined)
+        return false;
+    return true;
+}
 function LookupTlsReportingDomainOptionsFromJSON(json) {
     return LookupTlsReportingDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupTlsReportingDomainOptionsFromJSON = LookupTlsReportingDomainOptionsFromJSON;
 function LookupTlsReportingDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        host: json['host'],
+        'host': json['host'],
     };
 }
-exports.LookupTlsReportingDomainOptionsFromJSONTyped = LookupTlsReportingDomainOptionsFromJSONTyped;
-function LookupTlsReportingDomainOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function LookupTlsReportingDomainOptionsToJSON(json) {
+    return LookupTlsReportingDomainOptionsToJSONTyped(json, false);
+}
+function LookupTlsReportingDomainOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        host: value.host,
+        'host': value['host'],
     };
 }
-exports.LookupTlsReportingDomainOptionsToJSON = LookupTlsReportingDomainOptionsToJSON;

@@ -58,6 +58,11 @@ export interface BounceRecipientProjection {
      */
     status?: string | null;
 }
+/**
+ * Check if a given object implements the BounceRecipientProjection interface.
+ */
+export declare function instanceOfBounceRecipientProjection(value: object): value is BounceRecipientProjection;
 export declare function BounceRecipientProjectionFromJSON(json: any): BounceRecipientProjection;
 export declare function BounceRecipientProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceRecipientProjection;
-export declare function BounceRecipientProjectionToJSON(value?: BounceRecipientProjection | null): any;
+export declare function BounceRecipientProjectionToJSON(json: any): BounceRecipientProjection;
+export declare function BounceRecipientProjectionToJSONTyped(value?: BounceRecipientProjection | null, ignoreDiscriminator?: boolean): any;

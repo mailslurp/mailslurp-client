@@ -13,59 +13,64 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageScheduledJobsToJSON = exports.PageScheduledJobsFromJSONTyped = exports.PageScheduledJobsFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfPageScheduledJobs = instanceOfPageScheduledJobs;
+exports.PageScheduledJobsFromJSON = PageScheduledJobsFromJSON;
+exports.PageScheduledJobsFromJSONTyped = PageScheduledJobsFromJSONTyped;
+exports.PageScheduledJobsToJSON = PageScheduledJobsToJSON;
+exports.PageScheduledJobsToJSONTyped = PageScheduledJobsToJSONTyped;
+var PageableObject_1 = require("./PageableObject");
+var ScheduledJob_1 = require("./ScheduledJob");
+var SortObject_1 = require("./SortObject");
+/**
+ * Check if a given object implements the PageScheduledJobs interface.
+ */
+function instanceOfPageScheduledJobs(value) {
+    if (!('totalPages' in value) || value['totalPages'] === undefined)
+        return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined)
+        return false;
+    return true;
+}
 function PageScheduledJobsFromJSON(json) {
     return PageScheduledJobsFromJSONTyped(json, false);
 }
-exports.PageScheduledJobsFromJSON = PageScheduledJobsFromJSON;
 function PageScheduledJobsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        content: !(0, runtime_1.exists)(json, 'content')
-            ? undefined
-            : json['content'].map(_1.ScheduledJobFromJSON),
-        pageable: !(0, runtime_1.exists)(json, 'pageable')
-            ? undefined
-            : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        totalPages: json['totalPages'],
-        totalElements: json['totalElements'],
-        last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
-            ? undefined
-            : json['numberOfElements'],
-        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
-        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
-        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
-        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        'content': json['content'] == null ? undefined : (json['content'].map(ScheduledJob_1.ScheduledJobFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : (0, PageableObject_1.PageableObjectFromJSON)(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : (json['sort'].map(SortObject_1.SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
     };
 }
-exports.PageScheduledJobsFromJSONTyped = PageScheduledJobsFromJSONTyped;
-function PageScheduledJobsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function PageScheduledJobsToJSON(json) {
+    return PageScheduledJobsToJSONTyped(json, false);
+}
+function PageScheduledJobsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        content: value.content === undefined
-            ? undefined
-            : value.content.map(_1.ScheduledJobToJSON),
-        pageable: (0, _1.PageableObjectToJSON)(value.pageable),
-        totalPages: value.totalPages,
-        totalElements: value.totalElements,
-        last: value.last,
-        numberOfElements: value.numberOfElements,
-        first: value.first,
-        size: value.size,
-        number: value.number,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
-        empty: value.empty,
+        'content': value['content'] == null ? undefined : (value['content'].map(ScheduledJob_1.ScheduledJobToJSON)),
+        'pageable': (0, PageableObject_1.PageableObjectToJSON)(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : (value['sort'].map(SortObject_1.SortObjectToJSON)),
+        'empty': value['empty'],
     };
 }
-exports.PageScheduledJobsToJSON = PageScheduledJobsToJSON;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InboxDto, SimpleSendEmailOptions } from '../models';
+import type { InboxDto, SimpleSendEmailOptions } from '../models/index';
 export interface CreateNewEmailAddressRequest {
     allowTeamAccess?: boolean;
     useDomainPool?: boolean;
@@ -68,76 +68,76 @@ export declare class CommonActionsControllerApi extends runtime.BaseAPI {
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    createNewEmailAddressRaw(requestParameters: CreateNewEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>>;
+    createNewEmailAddressRaw(requestParameters: CreateNewEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>>;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    createNewEmailAddress(requestParameters: CreateNewEmailAddressRequest, initOverrides?: RequestInit): Promise<InboxDto>;
+    createNewEmailAddress(requestParameters?: CreateNewEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto>;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    createRandomInboxRaw(requestParameters: CreateRandomInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>>;
+    createRandomInboxRaw(requestParameters: CreateRandomInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxDto>>;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    createRandomInbox(requestParameters: CreateRandomInboxRequest, initOverrides?: RequestInit): Promise<InboxDto>;
+    createRandomInbox(requestParameters?: CreateRandomInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxDto>;
     /**
      * Deletes inbox email address
      * Delete inbox email address by inbox id
      */
-    deleteEmailAddressRaw(requestParameters: DeleteEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteEmailAddressRaw(requestParameters: DeleteEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes inbox email address
      * Delete inbox email address by inbox id
      */
-    deleteEmailAddress(requestParameters: DeleteEmailAddressRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteEmailAddress(requestParameters: DeleteEmailAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Deletes all emails
      * Delete all emails in an inbox
      */
-    emptyInboxRaw(requestParameters: EmptyInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    emptyInboxRaw(requestParameters: EmptyInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes all emails
      * Delete all emails in an inbox
      */
-    emptyInbox(requestParameters: EmptyInboxRequest, initOverrides?: RequestInit): Promise<void>;
+    emptyInbox(requestParameters: EmptyInboxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
      * Send an email using query parameters
      */
-    sendEmailQueryRaw(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    sendEmailQueryRaw(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
      * Send an email using query parameters
      */
-    sendEmailQuery(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit): Promise<void>;
+    sendEmailQuery(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * If no senderId or inboxId provided a random email address will be used to send from.
      * Send an email
      */
-    sendEmailSimpleRaw(requestParameters: SendEmailSimpleRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    sendEmailSimpleRaw(requestParameters: SendEmailSimpleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * If no senderId or inboxId provided a random email address will be used to send from.
      * Send an email
      */
-    sendEmailSimple(requestParameters: SendEmailSimpleRequest, initOverrides?: RequestInit): Promise<void>;
+    sendEmailSimple(requestParameters: SendEmailSimpleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateNewEmailAddressInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const CreateNewEmailAddressInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type CreateNewEmailAddressInboxTypeEnum = typeof CreateNewEmailAddressInboxTypeEnum[keyof typeof CreateNewEmailAddressInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum CreateRandomInboxInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const CreateRandomInboxInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type CreateRandomInboxInboxTypeEnum = typeof CreateRandomInboxInboxTypeEnum[keyof typeof CreateRandomInboxInboxTypeEnum];

@@ -13,69 +13,75 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxReplierOptionsToJSON = exports.CreateInboxReplierOptionsFromJSONTyped = exports.CreateInboxReplierOptionsFromJSON = exports.CreateInboxReplierOptionsFieldEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.CreateInboxReplierOptionsFieldEnum = void 0;
+exports.instanceOfCreateInboxReplierOptions = instanceOfCreateInboxReplierOptions;
+exports.CreateInboxReplierOptionsFromJSON = CreateInboxReplierOptionsFromJSON;
+exports.CreateInboxReplierOptionsFromJSONTyped = CreateInboxReplierOptionsFromJSONTyped;
+exports.CreateInboxReplierOptionsToJSON = CreateInboxReplierOptionsToJSON;
+exports.CreateInboxReplierOptionsToJSONTyped = CreateInboxReplierOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var CreateInboxReplierOptionsFieldEnum;
-(function (CreateInboxReplierOptionsFieldEnum) {
-    CreateInboxReplierOptionsFieldEnum["RECIPIENTS"] = "RECIPIENTS";
-    CreateInboxReplierOptionsFieldEnum["SENDER"] = "SENDER";
-    CreateInboxReplierOptionsFieldEnum["SUBJECT"] = "SUBJECT";
-    CreateInboxReplierOptionsFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
-})(CreateInboxReplierOptionsFieldEnum = exports.CreateInboxReplierOptionsFieldEnum || (exports.CreateInboxReplierOptionsFieldEnum = {}));
+exports.CreateInboxReplierOptionsFieldEnum = {
+    RECIPIENTS: 'RECIPIENTS',
+    SENDER: 'SENDER',
+    SUBJECT: 'SUBJECT',
+    ATTACHMENTS: 'ATTACHMENTS'
+};
+/**
+ * Check if a given object implements the CreateInboxReplierOptions interface.
+ */
+function instanceOfCreateInboxReplierOptions(value) {
+    if (!('field' in value) || value['field'] === undefined)
+        return false;
+    if (!('match' in value) || value['match'] === undefined)
+        return false;
+    return true;
+}
 function CreateInboxReplierOptionsFromJSON(json) {
     return CreateInboxReplierOptionsFromJSONTyped(json, false);
 }
-exports.CreateInboxReplierOptionsFromJSON = CreateInboxReplierOptionsFromJSON;
 function CreateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxId: json['inboxId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        field: json['field'],
-        match: json['match'],
-        replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
-        ignoreReplyTo: !(0, runtime_1.exists)(json, 'ignoreReplyTo')
-            ? undefined
-            : json['ignoreReplyTo'],
-        isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
-        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
-        templateId: !(0, runtime_1.exists)(json, 'templateId') ? undefined : json['templateId'],
-        templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
-            ? undefined
-            : json['templateVariables'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'replyTo': json['replyTo'] == null ? undefined : json['replyTo'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'charset': json['charset'] == null ? undefined : json['charset'],
+        'ignoreReplyTo': json['ignoreReplyTo'] == null ? undefined : json['ignoreReplyTo'],
+        'isHTML': json['isHTML'] == null ? undefined : json['isHTML'],
+        'body': json['body'] == null ? undefined : json['body'],
+        'templateId': json['templateId'] == null ? undefined : json['templateId'],
+        'templateVariables': json['templateVariables'] == null ? undefined : json['templateVariables'],
     };
 }
-exports.CreateInboxReplierOptionsFromJSONTyped = CreateInboxReplierOptionsFromJSONTyped;
-function CreateInboxReplierOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CreateInboxReplierOptionsToJSON(json) {
+    return CreateInboxReplierOptionsToJSONTyped(json, false);
+}
+function CreateInboxReplierOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxId: value.inboxId,
-        name: value.name,
-        field: value.field,
-        match: value.match,
-        replyTo: value.replyTo,
-        subject: value.subject,
-        from: value.from,
-        charset: value.charset,
-        ignoreReplyTo: value.ignoreReplyTo,
-        isHTML: value.isHTML,
-        body: value.body,
-        templateId: value.templateId,
-        templateVariables: value.templateVariables,
+        'inboxId': value['inboxId'],
+        'name': value['name'],
+        'field': value['field'],
+        'match': value['match'],
+        'replyTo': value['replyTo'],
+        'subject': value['subject'],
+        'from': value['from'],
+        'charset': value['charset'],
+        'ignoreReplyTo': value['ignoreReplyTo'],
+        'isHTML': value['isHTML'],
+        'body': value['body'],
+        'templateId': value['templateId'],
+        'templateVariables': value['templateVariables'],
     };
 }
-exports.CreateInboxReplierOptionsToJSON = CreateInboxReplierOptionsToJSON;

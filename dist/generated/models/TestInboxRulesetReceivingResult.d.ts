@@ -22,6 +22,11 @@ export interface TestInboxRulesetReceivingResult {
      */
     canReceive: boolean;
 }
+/**
+ * Check if a given object implements the TestInboxRulesetReceivingResult interface.
+ */
+export declare function instanceOfTestInboxRulesetReceivingResult(value: object): value is TestInboxRulesetReceivingResult;
 export declare function TestInboxRulesetReceivingResultFromJSON(json: any): TestInboxRulesetReceivingResult;
 export declare function TestInboxRulesetReceivingResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetReceivingResult;
-export declare function TestInboxRulesetReceivingResultToJSON(value?: TestInboxRulesetReceivingResult | null): any;
+export declare function TestInboxRulesetReceivingResultToJSON(json: any): TestInboxRulesetReceivingResult;
+export declare function TestInboxRulesetReceivingResultToJSONTyped(value?: TestInboxRulesetReceivingResult | null, ignoreDiscriminator?: boolean): any;

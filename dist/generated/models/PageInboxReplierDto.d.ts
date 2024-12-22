@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxReplierDto, PageableObject, SortObject } from './';
+import type { PageableObject } from './PageableObject';
+import type { InboxReplierDto } from './InboxReplierDto';
+import type { SortObject } from './SortObject';
 /**
  * Paginated inbox replier results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageInboxReplierDto {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageInboxReplierDto
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageInboxReplierDto {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageInboxReplierDto interface.
+ */
+export declare function instanceOfPageInboxReplierDto(value: object): value is PageInboxReplierDto;
 export declare function PageInboxReplierDtoFromJSON(json: any): PageInboxReplierDto;
 export declare function PageInboxReplierDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxReplierDto;
-export declare function PageInboxReplierDtoToJSON(value?: PageInboxReplierDto | null): any;
+export declare function PageInboxReplierDtoToJSON(json: any): PageInboxReplierDto;
+export declare function PageInboxReplierDtoToJSONTyped(value?: PageInboxReplierDto | null, ignoreDiscriminator?: boolean): any;

@@ -60,12 +60,17 @@ export interface WaitForSingleSmsOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum WaitForSingleSmsOptionsSortDirectionEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const WaitForSingleSmsOptionsSortDirectionEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type WaitForSingleSmsOptionsSortDirectionEnum = typeof WaitForSingleSmsOptionsSortDirectionEnum[keyof typeof WaitForSingleSmsOptionsSortDirectionEnum];
+/**
+ * Check if a given object implements the WaitForSingleSmsOptions interface.
+ */
+export declare function instanceOfWaitForSingleSmsOptions(value: object): value is WaitForSingleSmsOptions;
 export declare function WaitForSingleSmsOptionsFromJSON(json: any): WaitForSingleSmsOptions;
 export declare function WaitForSingleSmsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): WaitForSingleSmsOptions;
-export declare function WaitForSingleSmsOptionsToJSON(value?: WaitForSingleSmsOptions | null): any;
+export declare function WaitForSingleSmsOptionsToJSON(json: any): WaitForSingleSmsOptions;
+export declare function WaitForSingleSmsOptionsToJSONTyped(value?: WaitForSingleSmsOptions | null, ignoreDiscriminator?: boolean): any;

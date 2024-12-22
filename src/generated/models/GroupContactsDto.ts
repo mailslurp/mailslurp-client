@@ -12,17 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { ContactDto } from './ContactDto';
 import {
-  ContactDto,
-  ContactDtoFromJSON,
-  ContactDtoFromJSONTyped,
-  ContactDtoToJSON,
-  GroupDto,
-  GroupDtoFromJSON,
-  GroupDtoFromJSONTyped,
-  GroupDtoToJSON,
-} from './';
+    ContactDtoFromJSON,
+    ContactDtoFromJSONTyped,
+    ContactDtoToJSON,
+    ContactDtoToJSONTyped,
+} from './ContactDto';
+import type { GroupDto } from './GroupDto';
+import {
+    GroupDtoFromJSON,
+    GroupDtoFromJSONTyped,
+    GroupDtoToJSON,
+    GroupDtoToJSONTyped,
+} from './GroupDto';
 
 /**
  * Describes contacts attached to a contact group
@@ -30,46 +34,57 @@ import {
  * @interface GroupContactsDto
  */
 export interface GroupContactsDto {
-  /**
-   *
-   * @type {GroupDto}
-   * @memberof GroupContactsDto
-   */
-  group: GroupDto;
-  /**
-   *
-   * @type {Array<ContactDto>}
-   * @memberof GroupContactsDto
-   */
-  contacts: Array<ContactDto>;
+    /**
+     * 
+     * @type {GroupDto}
+     * @memberof GroupContactsDto
+     */
+    group: GroupDto;
+    /**
+     * 
+     * @type {Array<ContactDto>}
+     * @memberof GroupContactsDto
+     */
+    contacts: Array<ContactDto>;
+}
+
+/**
+ * Check if a given object implements the GroupContactsDto interface.
+ */
+export function instanceOfGroupContactsDto(value: object): value is GroupContactsDto {
+    if (!('group' in value) || value['group'] === undefined) return false;
+    if (!('contacts' in value) || value['contacts'] === undefined) return false;
+    return true;
 }
 
 export function GroupContactsDtoFromJSON(json: any): GroupContactsDto {
-  return GroupContactsDtoFromJSONTyped(json, false);
+    return GroupContactsDtoFromJSONTyped(json, false);
 }
 
-export function GroupContactsDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GroupContactsDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    group: GroupDtoFromJSON(json['group']),
-    contacts: (json['contacts'] as Array<any>).map(ContactDtoFromJSON),
-  };
+export function GroupContactsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupContactsDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'group': GroupDtoFromJSON(json['group']),
+        'contacts': ((json['contacts'] as Array<any>).map(ContactDtoFromJSON)),
+    };
 }
 
-export function GroupContactsDtoToJSON(value?: GroupContactsDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    group: GroupDtoToJSON(value.group),
-    contacts: (value.contacts as Array<any>).map(ContactDtoToJSON),
-  };
+export function GroupContactsDtoToJSON(json: any): GroupContactsDto {
+    return GroupContactsDtoToJSONTyped(json, false);
 }
+
+export function GroupContactsDtoToJSONTyped(value?: GroupContactsDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'group': GroupDtoToJSON(value['group']),
+        'contacts': ((value['contacts'] as Array<any>).map(ContactDtoToJSON)),
+    };
+}
+

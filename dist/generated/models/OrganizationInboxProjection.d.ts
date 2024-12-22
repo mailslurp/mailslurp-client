@@ -44,7 +44,7 @@ export interface OrganizationInboxProjection {
      * @type {string}
      * @memberof OrganizationInboxProjection
      */
-    emailAddress?: string | null;
+    emailAddress: string | null;
     /**
      * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
      * @type {boolean}
@@ -53,10 +53,10 @@ export interface OrganizationInboxProjection {
     favourite: boolean;
     /**
      * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof OrganizationInboxProjection
      */
-    tags?: Array<string> | null;
+    tags?: Array<string | null> | null;
     /**
      * Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
      * @type {boolean}
@@ -68,7 +68,7 @@ export interface OrganizationInboxProjection {
      * @type {string}
      * @memberof OrganizationInboxProjection
      */
-    inboxType?: OrganizationInboxProjectionInboxTypeEnum;
+    inboxType?: OrganizationInboxProjectionInboxTypeEnum | null;
     /**
      * Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.
      * @type {boolean}
@@ -86,26 +86,51 @@ export interface OrganizationInboxProjection {
      * @type {string}
      * @memberof OrganizationInboxProjection
      */
-    functionsAs?: OrganizationInboxProjectionFunctionsAsEnum;
+    functionsAs?: OrganizationInboxProjectionFunctionsAsEnum | null;
+    /**
+     * ID of user that inbox belongs to
+     * @type {string}
+     * @memberof OrganizationInboxProjection
+     */
+    userId: string;
+    /**
+     * Description of an inbox for labelling and searching purposes
+     * @type {string}
+     * @memberof OrganizationInboxProjection
+     */
+    description?: string | null;
+    /**
+     * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
+     * @type {Date}
+     * @memberof OrganizationInboxProjection
+     */
+    expiresAt?: Date | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum OrganizationInboxProjectionInboxTypeEnum {
-    HTTP_INBOX = "HTTP_INBOX",
-    SMTP_INBOX = "SMTP_INBOX"
-}
+export declare const OrganizationInboxProjectionInboxTypeEnum: {
+    readonly HTTP_INBOX: "HTTP_INBOX";
+    readonly SMTP_INBOX: "SMTP_INBOX";
+};
+export type OrganizationInboxProjectionInboxTypeEnum = typeof OrganizationInboxProjectionInboxTypeEnum[keyof typeof OrganizationInboxProjectionInboxTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum OrganizationInboxProjectionFunctionsAsEnum {
-    ALIAS = "ALIAS",
-    THREAD = "THREAD",
-    CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
-}
+export declare const OrganizationInboxProjectionFunctionsAsEnum: {
+    readonly ALIAS: "ALIAS";
+    readonly THREAD: "THREAD";
+    readonly CATCH_ALL: "CATCH_ALL";
+    readonly CONNECTOR: "CONNECTOR";
+    readonly ACCOUNT: "ACCOUNT";
+    readonly GUEST: "GUEST";
+};
+export type OrganizationInboxProjectionFunctionsAsEnum = typeof OrganizationInboxProjectionFunctionsAsEnum[keyof typeof OrganizationInboxProjectionFunctionsAsEnum];
+/**
+ * Check if a given object implements the OrganizationInboxProjection interface.
+ */
+export declare function instanceOfOrganizationInboxProjection(value: object): value is OrganizationInboxProjection;
 export declare function OrganizationInboxProjectionFromJSON(json: any): OrganizationInboxProjection;
 export declare function OrganizationInboxProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): OrganizationInboxProjection;
-export declare function OrganizationInboxProjectionToJSON(value?: OrganizationInboxProjection | null): any;
+export declare function OrganizationInboxProjectionToJSON(json: any): OrganizationInboxProjection;
+export declare function OrganizationInboxProjectionToJSONTyped(value?: OrganizationInboxProjection | null, ignoreDiscriminator?: boolean): any;

@@ -13,32 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetEmailScreenshotOptionsToJSON = exports.GetEmailScreenshotOptionsFromJSONTyped = exports.GetEmailScreenshotOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfGetEmailScreenshotOptions = instanceOfGetEmailScreenshotOptions;
+exports.GetEmailScreenshotOptionsFromJSON = GetEmailScreenshotOptionsFromJSON;
+exports.GetEmailScreenshotOptionsFromJSONTyped = GetEmailScreenshotOptionsFromJSONTyped;
+exports.GetEmailScreenshotOptionsToJSON = GetEmailScreenshotOptionsToJSON;
+exports.GetEmailScreenshotOptionsToJSONTyped = GetEmailScreenshotOptionsToJSONTyped;
+/**
+ * Check if a given object implements the GetEmailScreenshotOptions interface.
+ */
+function instanceOfGetEmailScreenshotOptions(value) {
+    return true;
+}
 function GetEmailScreenshotOptionsFromJSON(json) {
     return GetEmailScreenshotOptionsFromJSONTyped(json, false);
 }
-exports.GetEmailScreenshotOptionsFromJSON = GetEmailScreenshotOptionsFromJSON;
 function GetEmailScreenshotOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        height: !(0, runtime_1.exists)(json, 'height') ? undefined : json['height'],
-        width: !(0, runtime_1.exists)(json, 'width') ? undefined : json['width'],
+        'height': json['height'] == null ? undefined : json['height'],
+        'width': json['width'] == null ? undefined : json['width'],
     };
 }
-exports.GetEmailScreenshotOptionsFromJSONTyped = GetEmailScreenshotOptionsFromJSONTyped;
-function GetEmailScreenshotOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function GetEmailScreenshotOptionsToJSON(json) {
+    return GetEmailScreenshotOptionsToJSONTyped(json, false);
+}
+function GetEmailScreenshotOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        height: value.height,
-        width: value.width,
+        'height': value['height'],
+        'width': value['width'],
     };
 }
-exports.GetEmailScreenshotOptionsToJSON = GetEmailScreenshotOptionsToJSON;

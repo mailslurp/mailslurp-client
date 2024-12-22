@@ -13,35 +13,46 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeMailServerDomainResultToJSON = exports.DescribeMailServerDomainResultFromJSONTyped = exports.DescribeMailServerDomainResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfDescribeMailServerDomainResult = instanceOfDescribeMailServerDomainResult;
+exports.DescribeMailServerDomainResultFromJSON = DescribeMailServerDomainResultFromJSON;
+exports.DescribeMailServerDomainResultFromJSONTyped = DescribeMailServerDomainResultFromJSONTyped;
+exports.DescribeMailServerDomainResultToJSON = DescribeMailServerDomainResultToJSON;
+exports.DescribeMailServerDomainResultToJSONTyped = DescribeMailServerDomainResultToJSONTyped;
+var NameServerRecord_1 = require("./NameServerRecord");
+/**
+ * Check if a given object implements the DescribeMailServerDomainResult interface.
+ */
+function instanceOfDescribeMailServerDomainResult(value) {
+    if (!('mxRecords' in value) || value['mxRecords'] === undefined)
+        return false;
+    if (!('domain' in value) || value['domain'] === undefined)
+        return false;
+    return true;
+}
 function DescribeMailServerDomainResultFromJSON(json) {
     return DescribeMailServerDomainResultFromJSONTyped(json, false);
 }
-exports.DescribeMailServerDomainResultFromJSON = DescribeMailServerDomainResultFromJSON;
 function DescribeMailServerDomainResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        mxRecords: json['mxRecords'].map(_1.NameServerRecordFromJSON),
-        domain: json['domain'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'mxRecords': (json['mxRecords'].map(NameServerRecord_1.NameServerRecordFromJSON)),
+        'domain': json['domain'],
+        'message': json['message'] == null ? undefined : json['message'],
     };
 }
-exports.DescribeMailServerDomainResultFromJSONTyped = DescribeMailServerDomainResultFromJSONTyped;
-function DescribeMailServerDomainResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DescribeMailServerDomainResultToJSON(json) {
+    return DescribeMailServerDomainResultToJSONTyped(json, false);
+}
+function DescribeMailServerDomainResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        mxRecords: value.mxRecords.map(_1.NameServerRecordToJSON),
-        domain: value.domain,
-        message: value.message,
+        'mxRecords': (value['mxRecords'].map(NameServerRecord_1.NameServerRecordToJSON)),
+        'domain': value['domain'],
+        'message': value['message'],
     };
 }
-exports.DescribeMailServerDomainResultToJSON = DescribeMailServerDomainResultToJSON;

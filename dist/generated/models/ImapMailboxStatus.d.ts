@@ -35,16 +35,16 @@ export interface ImapMailboxStatus {
     items: object | null;
     /**
      * The mailbox flags.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapMailboxStatus
      */
-    flags: Array<string> | null;
+    flags: Array<string | null> | null;
     /**
      * The mailbox permanent flags.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapMailboxStatus
      */
-    permanentFlags: Array<string> | null;
+    permanentFlags: Array<string | null> | null;
     /**
      * The sequence number of the first unseen message in the mailbox.
      * @type {number}
@@ -88,6 +88,11 @@ export interface ImapMailboxStatus {
      */
     appendLimit?: number | null;
 }
+/**
+ * Check if a given object implements the ImapMailboxStatus interface.
+ */
+export declare function instanceOfImapMailboxStatus(value: object): value is ImapMailboxStatus;
 export declare function ImapMailboxStatusFromJSON(json: any): ImapMailboxStatus;
 export declare function ImapMailboxStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapMailboxStatus;
-export declare function ImapMailboxStatusToJSON(value?: ImapMailboxStatus | null): any;
+export declare function ImapMailboxStatusToJSON(json: any): ImapMailboxStatus;
+export declare function ImapMailboxStatusToJSONTyped(value?: ImapMailboxStatus | null, ignoreDiscriminator?: boolean): any;

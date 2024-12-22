@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { PageableObject } from './PageableObject';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  ScheduledJob,
-  ScheduledJobFromJSON,
-  ScheduledJobFromJSONTyped,
-  ScheduledJobToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-} from './';
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PageableObjectToJSONTyped,
+} from './PageableObject';
+import type { ScheduledJob } from './ScheduledJob';
+import {
+    ScheduledJobFromJSON,
+    ScheduledJobFromJSONTyped,
+    ScheduledJobToJSON,
+    ScheduledJobToJSONTyped,
+} from './ScheduledJob';
+import type { SortObject } from './SortObject';
+import {
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    SortObjectToJSONTyped,
+} from './SortObject';
 
 /**
  * Paginated scheduled jobs results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -34,127 +41,129 @@ import {
  * @interface PageScheduledJobs
  */
 export interface PageScheduledJobs {
-  /**
-   *
-   * @type {Array<ScheduledJob>}
-   * @memberof PageScheduledJobs
-   */
-  content?: Array<ScheduledJob>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageScheduledJobs
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageScheduledJobs
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageScheduledJobs
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageScheduledJobs
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageScheduledJobs
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<ScheduledJob>}
+     * @memberof PageScheduledJobs
+     */
+    content?: Array<ScheduledJob>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageScheduledJobs
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    number?: number;
+    /**
+     * 
+     * @type {Array<SortObject>}
+     * @memberof PageScheduledJobs
+     */
+    sort?: Array<SortObject>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    empty?: boolean;
+}
+
+/**
+ * Check if a given object implements the PageScheduledJobs interface.
+ */
+export function instanceOfPageScheduledJobs(value: object): value is PageScheduledJobs {
+    if (!('totalPages' in value) || value['totalPages'] === undefined) return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
 export function PageScheduledJobsFromJSON(json: any): PageScheduledJobs {
-  return PageScheduledJobsFromJSONTyped(json, false);
+    return PageScheduledJobsFromJSONTyped(json, false);
 }
 
-export function PageScheduledJobsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageScheduledJobs {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(ScheduledJobFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageScheduledJobsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageScheduledJobs {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'] == null ? undefined : ((json['content'] as Array<any>).map(ScheduledJobFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : ((json['sort'] as Array<any>).map(SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
+    };
 }
 
-export function PageScheduledJobsToJSON(value?: PageScheduledJobs | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(ScheduledJobToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
-    totalElements: value.totalElements,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageScheduledJobsToJSON(json: any): PageScheduledJobs {
+    return PageScheduledJobsToJSONTyped(json, false);
 }
+
+export function PageScheduledJobsToJSONTyped(value?: PageScheduledJobs | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'] == null ? undefined : ((value['content'] as Array<any>).map(ScheduledJobToJSON)),
+        'pageable': PageableObjectToJSON(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : ((value['sort'] as Array<any>).map(SortObjectToJSON)),
+        'empty': value['empty'],
+    };
+}
+

@@ -13,39 +13,50 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplateVariableToJSON = exports.TemplateVariableFromJSONTyped = exports.TemplateVariableFromJSON = exports.TemplateVariableVariableTypeEnum = void 0;
+exports.TemplateVariableVariableTypeEnum = void 0;
+exports.instanceOfTemplateVariable = instanceOfTemplateVariable;
+exports.TemplateVariableFromJSON = TemplateVariableFromJSON;
+exports.TemplateVariableFromJSONTyped = TemplateVariableFromJSONTyped;
+exports.TemplateVariableToJSON = TemplateVariableToJSON;
+exports.TemplateVariableToJSONTyped = TemplateVariableToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var TemplateVariableVariableTypeEnum;
-(function (TemplateVariableVariableTypeEnum) {
-    TemplateVariableVariableTypeEnum["STRING"] = "STRING";
-})(TemplateVariableVariableTypeEnum = exports.TemplateVariableVariableTypeEnum || (exports.TemplateVariableVariableTypeEnum = {}));
+exports.TemplateVariableVariableTypeEnum = {
+    STRING: 'STRING'
+};
+/**
+ * Check if a given object implements the TemplateVariable interface.
+ */
+function instanceOfTemplateVariable(value) {
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    if (!('variableType' in value) || value['variableType'] === undefined)
+        return false;
+    return true;
+}
 function TemplateVariableFromJSON(json) {
     return TemplateVariableFromJSONTyped(json, false);
 }
-exports.TemplateVariableFromJSON = TemplateVariableFromJSON;
 function TemplateVariableFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: json['name'],
-        variableType: json['variableType'],
+        'name': json['name'],
+        'variableType': json['variableType'],
     };
 }
-exports.TemplateVariableFromJSONTyped = TemplateVariableFromJSONTyped;
-function TemplateVariableToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TemplateVariableToJSON(json) {
+    return TemplateVariableToJSONTyped(json, false);
+}
+function TemplateVariableToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        variableType: value.variableType,
+        'name': value['name'],
+        'variableType': value['variableType'],
     };
 }
-exports.TemplateVariableToJSON = TemplateVariableToJSON;

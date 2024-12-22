@@ -13,99 +13,83 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SearchInboxesOptionsToJSON = exports.SearchInboxesOptionsFromJSONTyped = exports.SearchInboxesOptionsFromJSON = exports.SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxTypeEnum = exports.SearchInboxesOptionsSortDirectionEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxTypeEnum = exports.SearchInboxesOptionsSortDirectionEnum = void 0;
+exports.instanceOfSearchInboxesOptions = instanceOfSearchInboxesOptions;
+exports.SearchInboxesOptionsFromJSON = SearchInboxesOptionsFromJSON;
+exports.SearchInboxesOptionsFromJSONTyped = SearchInboxesOptionsFromJSONTyped;
+exports.SearchInboxesOptionsToJSON = SearchInboxesOptionsToJSON;
+exports.SearchInboxesOptionsToJSONTyped = SearchInboxesOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var SearchInboxesOptionsSortDirectionEnum;
-(function (SearchInboxesOptionsSortDirectionEnum) {
-    SearchInboxesOptionsSortDirectionEnum["ASC"] = "ASC";
-    SearchInboxesOptionsSortDirectionEnum["DESC"] = "DESC";
-})(SearchInboxesOptionsSortDirectionEnum = exports.SearchInboxesOptionsSortDirectionEnum || (exports.SearchInboxesOptionsSortDirectionEnum = {}));
+exports.SearchInboxesOptionsSortDirectionEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var SearchInboxesOptionsInboxTypeEnum;
-(function (SearchInboxesOptionsInboxTypeEnum) {
-    SearchInboxesOptionsInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    SearchInboxesOptionsInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(SearchInboxesOptionsInboxTypeEnum = exports.SearchInboxesOptionsInboxTypeEnum || (exports.SearchInboxesOptionsInboxTypeEnum = {}));
+exports.SearchInboxesOptionsInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var SearchInboxesOptionsInboxFunctionEnum;
-(function (SearchInboxesOptionsInboxFunctionEnum) {
-    SearchInboxesOptionsInboxFunctionEnum["ALIAS"] = "ALIAS";
-    SearchInboxesOptionsInboxFunctionEnum["THREAD"] = "THREAD";
-    SearchInboxesOptionsInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
-    SearchInboxesOptionsInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
-})(SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxFunctionEnum || (exports.SearchInboxesOptionsInboxFunctionEnum = {}));
+exports.SearchInboxesOptionsInboxFunctionEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+};
+/**
+ * Check if a given object implements the SearchInboxesOptions interface.
+ */
+function instanceOfSearchInboxesOptions(value) {
+    return true;
+}
 function SearchInboxesOptionsFromJSON(json) {
     return SearchInboxesOptionsFromJSONTyped(json, false);
 }
-exports.SearchInboxesOptionsFromJSON = SearchInboxesOptionsFromJSON;
 function SearchInboxesOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        pageIndex: !(0, runtime_1.exists)(json, 'pageIndex') ? undefined : json['pageIndex'],
-        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
-        sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
-            ? undefined
-            : json['sortDirection'],
-        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
-        search: !(0, runtime_1.exists)(json, 'search') ? undefined : json['search'],
-        tag: !(0, runtime_1.exists)(json, 'tag') ? undefined : json['tag'],
-        since: !(0, runtime_1.exists)(json, 'since')
-            ? undefined
-            : json['since'] === null
-                ? null
-                : new Date(json['since']),
-        before: !(0, runtime_1.exists)(json, 'before')
-            ? undefined
-            : json['before'] === null
-                ? null
-                : new Date(json['before']),
-        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        inboxFunction: !(0, runtime_1.exists)(json, 'inboxFunction')
-            ? undefined
-            : json['inboxFunction'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        'pageIndex': json['pageIndex'] == null ? undefined : json['pageIndex'],
+        'pageSize': json['pageSize'] == null ? undefined : json['pageSize'],
+        'sortDirection': json['sortDirection'] == null ? undefined : json['sortDirection'],
+        'favourite': json['favourite'] == null ? undefined : json['favourite'],
+        'search': json['search'] == null ? undefined : json['search'],
+        'tag': json['tag'] == null ? undefined : json['tag'],
+        'since': json['since'] == null ? undefined : (new Date(json['since'])),
+        'before': json['before'] == null ? undefined : (new Date(json['before'])),
+        'inboxType': json['inboxType'] == null ? undefined : json['inboxType'],
+        'inboxFunction': json['inboxFunction'] == null ? undefined : json['inboxFunction'],
+        'domainId': json['domainId'] == null ? undefined : json['domainId'],
     };
 }
-exports.SearchInboxesOptionsFromJSONTyped = SearchInboxesOptionsFromJSONTyped;
-function SearchInboxesOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function SearchInboxesOptionsToJSON(json) {
+    return SearchInboxesOptionsToJSONTyped(json, false);
+}
+function SearchInboxesOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        pageIndex: value.pageIndex,
-        pageSize: value.pageSize,
-        sortDirection: value.sortDirection,
-        favourite: value.favourite,
-        search: value.search,
-        tag: value.tag,
-        since: value.since === undefined
-            ? undefined
-            : value.since === null
-                ? null
-                : value.since.toISOString(),
-        before: value.before === undefined
-            ? undefined
-            : value.before === null
-                ? null
-                : value.before.toISOString(),
-        inboxType: value.inboxType,
-        inboxFunction: value.inboxFunction,
-        domainId: value.domainId,
+        'pageIndex': value['pageIndex'],
+        'pageSize': value['pageSize'],
+        'sortDirection': value['sortDirection'],
+        'favourite': value['favourite'],
+        'search': value['search'],
+        'tag': value['tag'],
+        'since': value['since'] == null ? undefined : (value['since'].toISOString()),
+        'before': value['before'] == null ? undefined : (value['before'].toISOString()),
+        'inboxType': value['inboxType'],
+        'inboxFunction': value['inboxFunction'],
+        'domainId': value['domainId'],
     };
 }
-exports.SearchInboxesOptionsToJSON = SearchInboxesOptionsToJSON;

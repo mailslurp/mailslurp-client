@@ -12,73 +12,82 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Record of inbox expiration
  * @export
  * @interface ExpiredInboxRecordProjection
  */
 export interface ExpiredInboxRecordProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof ExpiredInboxRecordProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxRecordProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxRecordProjection
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxRecordProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ExpiredInboxRecordProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxRecordProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxRecordProjection
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxRecordProjection
+     */
+    id: string;
 }
 
-export function ExpiredInboxRecordProjectionFromJSON(
-  json: any
-): ExpiredInboxRecordProjection {
-  return ExpiredInboxRecordProjectionFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the ExpiredInboxRecordProjection interface.
+ */
+export function instanceOfExpiredInboxRecordProjection(value: object): value is ExpiredInboxRecordProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('emailAddress' in value) || value['emailAddress'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
-export function ExpiredInboxRecordProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ExpiredInboxRecordProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    userId: json['userId'],
-    emailAddress: json['emailAddress'],
-    id: json['id'],
-  };
+export function ExpiredInboxRecordProjectionFromJSON(json: any): ExpiredInboxRecordProjection {
+    return ExpiredInboxRecordProjectionFromJSONTyped(json, false);
 }
 
-export function ExpiredInboxRecordProjectionToJSON(
-  value?: ExpiredInboxRecordProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    userId: value.userId,
-    emailAddress: value.emailAddress,
-    id: value.id,
-  };
+export function ExpiredInboxRecordProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxRecordProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'userId': json['userId'],
+        'emailAddress': json['emailAddress'],
+        'id': json['id'],
+    };
 }
+
+export function ExpiredInboxRecordProjectionToJSON(json: any): ExpiredInboxRecordProjection {
+    return ExpiredInboxRecordProjectionToJSONTyped(json, false);
+}
+
+export function ExpiredInboxRecordProjectionToJSONTyped(value?: ExpiredInboxRecordProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'userId': value['userId'],
+        'emailAddress': value['emailAddress'],
+        'id': value['id'],
+    };
+}
+

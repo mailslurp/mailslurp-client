@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainIssuesDtoToJSON = exports.DomainIssuesDtoFromJSONTyped = exports.DomainIssuesDtoFromJSON = void 0;
+exports.instanceOfDomainIssuesDto = instanceOfDomainIssuesDto;
+exports.DomainIssuesDtoFromJSON = DomainIssuesDtoFromJSON;
+exports.DomainIssuesDtoFromJSONTyped = DomainIssuesDtoFromJSONTyped;
+exports.DomainIssuesDtoToJSON = DomainIssuesDtoToJSON;
+exports.DomainIssuesDtoToJSONTyped = DomainIssuesDtoToJSONTyped;
+/**
+ * Check if a given object implements the DomainIssuesDto interface.
+ */
+function instanceOfDomainIssuesDto(value) {
+    if (!('hasIssues' in value) || value['hasIssues'] === undefined)
+        return false;
+    return true;
+}
 function DomainIssuesDtoFromJSON(json) {
     return DomainIssuesDtoFromJSONTyped(json, false);
 }
-exports.DomainIssuesDtoFromJSON = DomainIssuesDtoFromJSON;
 function DomainIssuesDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        hasIssues: json['hasIssues'],
+        'hasIssues': json['hasIssues'],
     };
 }
-exports.DomainIssuesDtoFromJSONTyped = DomainIssuesDtoFromJSONTyped;
-function DomainIssuesDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DomainIssuesDtoToJSON(json) {
+    return DomainIssuesDtoToJSONTyped(json, false);
+}
+function DomainIssuesDtoToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        hasIssues: value.hasIssues,
+        'hasIssues': value['hasIssues'],
     };
 }
-exports.DomainIssuesDtoToJSON = DomainIssuesDtoToJSON;

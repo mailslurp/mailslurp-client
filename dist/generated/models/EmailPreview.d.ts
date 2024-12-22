@@ -9,6 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { Sender } from './Sender';
+import type { EmailRecipients } from './EmailRecipients';
 /**
  * Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
  * @export
@@ -21,6 +23,12 @@ export interface EmailPreview {
      * @memberof EmailPreview
      */
     id: string;
+    /**
+     * ID of the inbox that received the email
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    inboxId?: string | null;
     /**
      * ID of the domain that received the email
      * @type {string}
@@ -35,10 +43,10 @@ export interface EmailPreview {
     subject?: string | null;
     /**
      * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof EmailPreview
      */
-    to: Array<string> | null;
+    to: Array<string | null> | null;
     /**
      * Who the email was sent from. An email address - see fromName for the sender name.
      * @type {string}
@@ -47,16 +55,16 @@ export interface EmailPreview {
     from?: string | null;
     /**
      * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof EmailPreview
      */
-    bcc?: Array<string> | null;
+    bcc?: Array<string | null> | null;
     /**
      * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof EmailPreview
      */
-    cc?: Array<string> | null;
+    cc?: Array<string | null> | null;
     /**
      * When was the email received by MailSlurp
      * @type {Date}
@@ -71,11 +79,64 @@ export interface EmailPreview {
     read: boolean;
     /**
      * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof EmailPreview
      */
-    attachments?: Array<string> | null;
+    attachments?: Array<string | null> | null;
+    /**
+     * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    threadId?: string | null;
+    /**
+     * RFC 5322 Message-ID header value without angle brackets.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    messageId?: string | null;
+    /**
+     * Parsed value of In-Reply-To header. A Message-ID in a thread.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    inReplyTo?: string | null;
+    /**
+     *
+     * @type {Sender}
+     * @memberof EmailPreview
+     */
+    sender?: Sender | null;
+    /**
+     *
+     * @type {EmailRecipients}
+     * @memberof EmailPreview
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailPreview
+     */
+    favourite?: boolean | null;
+    /**
+     *
+     * @type {Array<string | null>}
+     * @memberof EmailPreview
+     */
+    bodyPartContentTypes?: Array<string | null> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    plusAddress?: string | null;
 }
+/**
+ * Check if a given object implements the EmailPreview interface.
+ */
+export declare function instanceOfEmailPreview(value: object): value is EmailPreview;
 export declare function EmailPreviewFromJSON(json: any): EmailPreview;
 export declare function EmailPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreview;
-export declare function EmailPreviewToJSON(value?: EmailPreview | null): any;
+export declare function EmailPreviewToJSON(json: any): EmailPreview;
+export declare function EmailPreviewToJSONTyped(value?: EmailPreview | null, ignoreDiscriminator?: boolean): any;

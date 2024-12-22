@@ -12,169 +12,180 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface GenerateBimiRecordResults
  */
 export interface GenerateBimiRecordResults {
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateBimiRecordResults
-   */
-  name: string;
-  /**
-   * Domain Name Server Record Types
-   * @type {string}
-   * @memberof GenerateBimiRecordResults
-   */
-  type: GenerateBimiRecordResultsTypeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateBimiRecordResults
-   */
-  ttl: number;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateBimiRecordResults
-   */
-  value: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateBimiRecordResults
+     */
+    name: string;
+    /**
+     * Domain Name Server Record Types
+     * @type {string}
+     * @memberof GenerateBimiRecordResults
+     */
+    type: GenerateBimiRecordResultsTypeEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateBimiRecordResults
+     */
+    ttl: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateBimiRecordResults
+     */
+    value: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum GenerateBimiRecordResultsTypeEnum {
-  A = 'A',
-  NS = 'NS',
-  MD = 'MD',
-  MF = 'MF',
-  CNAME = 'CNAME',
-  SOA = 'SOA',
-  MB = 'MB',
-  MG = 'MG',
-  MR = 'MR',
-  NULL = 'NULL',
-  WKS = 'WKS',
-  PTR = 'PTR',
-  HINFO = 'HINFO',
-  MINFO = 'MINFO',
-  MX = 'MX',
-  TXT = 'TXT',
-  RP = 'RP',
-  AFSDB = 'AFSDB',
-  X25 = 'X25',
-  ISDN = 'ISDN',
-  RT = 'RT',
-  NSAP = 'NSAP',
-  NSAP_PTR = 'NSAP_PTR',
-  SIG = 'SIG',
-  KEY = 'KEY',
-  PX = 'PX',
-  GPOS = 'GPOS',
-  AAAA = 'AAAA',
-  LOC = 'LOC',
-  NXT = 'NXT',
-  EID = 'EID',
-  NIMLOC = 'NIMLOC',
-  SRV = 'SRV',
-  ATMA = 'ATMA',
-  NAPTR = 'NAPTR',
-  KX = 'KX',
-  CERT = 'CERT',
-  A6 = 'A6',
-  DNAME = 'DNAME',
-  SINK = 'SINK',
-  OPT = 'OPT',
-  APL = 'APL',
-  DS = 'DS',
-  SSHFP = 'SSHFP',
-  IPSECKEY = 'IPSECKEY',
-  RRSIG = 'RRSIG',
-  NSEC = 'NSEC',
-  DNSKEY = 'DNSKEY',
-  DHCID = 'DHCID',
-  NSEC3 = 'NSEC3',
-  NSEC3PARAM = 'NSEC3PARAM',
-  TLSA = 'TLSA',
-  SMIMEA = 'SMIMEA',
-  HIP = 'HIP',
-  NINFO = 'NINFO',
-  RKEY = 'RKEY',
-  TALINK = 'TALINK',
-  CDS = 'CDS',
-  CDNSKEY = 'CDNSKEY',
-  OPENPGPKEY = 'OPENPGPKEY',
-  CSYNC = 'CSYNC',
-  ZONEMD = 'ZONEMD',
-  SVCB = 'SVCB',
-  HTTPS = 'HTTPS',
-  SPF = 'SPF',
-  UINFO = 'UINFO',
-  UID = 'UID',
-  GID = 'GID',
-  UNSPEC = 'UNSPEC',
-  NID = 'NID',
-  L32 = 'L32',
-  L64 = 'L64',
-  LP = 'LP',
-  EUI48 = 'EUI48',
-  EUI64 = 'EUI64',
-  TKEY = 'TKEY',
-  TSIG = 'TSIG',
-  IXFR = 'IXFR',
-  AXFR = 'AXFR',
-  MAILB = 'MAILB',
-  MAILA = 'MAILA',
-  ANY = 'ANY',
-  URI = 'URI',
-  CAA = 'CAA',
-  AVC = 'AVC',
-  DOA = 'DOA',
-  AMTRELAY = 'AMTRELAY',
-  TA = 'TA',
-  DLV = 'DLV',
+export const GenerateBimiRecordResultsTypeEnum = {
+    A: 'A',
+    NS: 'NS',
+    MD: 'MD',
+    MF: 'MF',
+    CNAME: 'CNAME',
+    SOA: 'SOA',
+    MB: 'MB',
+    MG: 'MG',
+    MR: 'MR',
+    NULL: 'NULL',
+    WKS: 'WKS',
+    PTR: 'PTR',
+    HINFO: 'HINFO',
+    MINFO: 'MINFO',
+    MX: 'MX',
+    TXT: 'TXT',
+    RP: 'RP',
+    AFSDB: 'AFSDB',
+    X25: 'X25',
+    ISDN: 'ISDN',
+    RT: 'RT',
+    NSAP: 'NSAP',
+    NSAP_PTR: 'NSAP_PTR',
+    SIG: 'SIG',
+    KEY: 'KEY',
+    PX: 'PX',
+    GPOS: 'GPOS',
+    AAAA: 'AAAA',
+    LOC: 'LOC',
+    NXT: 'NXT',
+    EID: 'EID',
+    NIMLOC: 'NIMLOC',
+    SRV: 'SRV',
+    ATMA: 'ATMA',
+    NAPTR: 'NAPTR',
+    KX: 'KX',
+    CERT: 'CERT',
+    A6: 'A6',
+    DNAME: 'DNAME',
+    SINK: 'SINK',
+    OPT: 'OPT',
+    APL: 'APL',
+    DS: 'DS',
+    SSHFP: 'SSHFP',
+    IPSECKEY: 'IPSECKEY',
+    RRSIG: 'RRSIG',
+    NSEC: 'NSEC',
+    DNSKEY: 'DNSKEY',
+    DHCID: 'DHCID',
+    NSEC3: 'NSEC3',
+    NSEC3PARAM: 'NSEC3PARAM',
+    TLSA: 'TLSA',
+    SMIMEA: 'SMIMEA',
+    HIP: 'HIP',
+    NINFO: 'NINFO',
+    RKEY: 'RKEY',
+    TALINK: 'TALINK',
+    CDS: 'CDS',
+    CDNSKEY: 'CDNSKEY',
+    OPENPGPKEY: 'OPENPGPKEY',
+    CSYNC: 'CSYNC',
+    ZONEMD: 'ZONEMD',
+    SVCB: 'SVCB',
+    HTTPS: 'HTTPS',
+    SPF: 'SPF',
+    UINFO: 'UINFO',
+    UID: 'UID',
+    GID: 'GID',
+    UNSPEC: 'UNSPEC',
+    NID: 'NID',
+    L32: 'L32',
+    L64: 'L64',
+    LP: 'LP',
+    EUI48: 'EUI48',
+    EUI64: 'EUI64',
+    TKEY: 'TKEY',
+    TSIG: 'TSIG',
+    IXFR: 'IXFR',
+    AXFR: 'AXFR',
+    MAILB: 'MAILB',
+    MAILA: 'MAILA',
+    ANY: 'ANY',
+    URI: 'URI',
+    CAA: 'CAA',
+    AVC: 'AVC',
+    DOA: 'DOA',
+    AMTRELAY: 'AMTRELAY',
+    TA: 'TA',
+    DLV: 'DLV'
+} as const;
+export type GenerateBimiRecordResultsTypeEnum = typeof GenerateBimiRecordResultsTypeEnum[keyof typeof GenerateBimiRecordResultsTypeEnum];
+
+
+/**
+ * Check if a given object implements the GenerateBimiRecordResults interface.
+ */
+export function instanceOfGenerateBimiRecordResults(value: object): value is GenerateBimiRecordResults {
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('type' in value) || value['type'] === undefined) return false;
+    if (!('ttl' in value) || value['ttl'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
+    return true;
 }
 
-export function GenerateBimiRecordResultsFromJSON(
-  json: any
-): GenerateBimiRecordResults {
-  return GenerateBimiRecordResultsFromJSONTyped(json, false);
+export function GenerateBimiRecordResultsFromJSON(json: any): GenerateBimiRecordResults {
+    return GenerateBimiRecordResultsFromJSONTyped(json, false);
 }
 
-export function GenerateBimiRecordResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateBimiRecordResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    type: json['type'],
-    ttl: json['ttl'],
-    value: json['value'],
-  };
+export function GenerateBimiRecordResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateBimiRecordResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
+    };
 }
 
-export function GenerateBimiRecordResultsToJSON(
-  value?: GenerateBimiRecordResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    type: value.type,
-    ttl: value.ttl,
-    value: value.value,
-  };
+export function GenerateBimiRecordResultsToJSON(json: any): GenerateBimiRecordResults {
+    return GenerateBimiRecordResultsToJSONTyped(json, false);
 }
+
+export function GenerateBimiRecordResultsToJSONTyped(value?: GenerateBimiRecordResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'name': value['name'],
+        'type': value['type'],
+        'ttl': value['ttl'],
+        'value': value['value'],
+    };
+}
+

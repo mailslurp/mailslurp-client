@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Test options for inbox ruleset sending test
  * @export
  * @interface TestInboxRulesetSendingOptions
  */
 export interface TestInboxRulesetSendingOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof TestInboxRulesetSendingOptions
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TestInboxRulesetSendingOptions
-   */
-  recipient: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestInboxRulesetSendingOptions
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestInboxRulesetSendingOptions
+     */
+    recipient: string;
 }
 
-export function TestInboxRulesetSendingOptionsFromJSON(
-  json: any
-): TestInboxRulesetSendingOptions {
-  return TestInboxRulesetSendingOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the TestInboxRulesetSendingOptions interface.
+ */
+export function instanceOfTestInboxRulesetSendingOptions(value: object): value is TestInboxRulesetSendingOptions {
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('recipient' in value) || value['recipient'] === undefined) return false;
+    return true;
 }
 
-export function TestInboxRulesetSendingOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestInboxRulesetSendingOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: json['inboxId'],
-    recipient: json['recipient'],
-  };
+export function TestInboxRulesetSendingOptionsFromJSON(json: any): TestInboxRulesetSendingOptions {
+    return TestInboxRulesetSendingOptionsFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetSendingOptionsToJSON(
-  value?: TestInboxRulesetSendingOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    recipient: value.recipient,
-  };
+export function TestInboxRulesetSendingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetSendingOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'inboxId': json['inboxId'],
+        'recipient': json['recipient'],
+    };
 }
+
+export function TestInboxRulesetSendingOptionsToJSON(json: any): TestInboxRulesetSendingOptions {
+    return TestInboxRulesetSendingOptionsToJSONTyped(json, false);
+}
+
+export function TestInboxRulesetSendingOptionsToJSONTyped(value?: TestInboxRulesetSendingOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'inboxId': value['inboxId'],
+        'recipient': value['recipient'],
+    };
+}
+

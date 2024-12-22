@@ -36,6 +36,11 @@ export interface ValidateEmailAddressListResult {
         [key: string]: boolean;
     };
 }
+/**
+ * Check if a given object implements the ValidateEmailAddressListResult interface.
+ */
+export declare function instanceOfValidateEmailAddressListResult(value: object): value is ValidateEmailAddressListResult;
 export declare function ValidateEmailAddressListResultFromJSON(json: any): ValidateEmailAddressListResult;
 export declare function ValidateEmailAddressListResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidateEmailAddressListResult;
-export declare function ValidateEmailAddressListResultToJSON(value?: ValidateEmailAddressListResult | null): any;
+export declare function ValidateEmailAddressListResultToJSON(json: any): ValidateEmailAddressListResult;
+export declare function ValidateEmailAddressListResultToJSONTyped(value?: ValidateEmailAddressListResult | null, ignoreDiscriminator?: boolean): any;

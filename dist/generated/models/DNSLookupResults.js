@@ -13,30 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSLookupResultsToJSON = exports.DNSLookupResultsFromJSONTyped = exports.DNSLookupResultsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfDNSLookupResults = instanceOfDNSLookupResults;
+exports.DNSLookupResultsFromJSON = DNSLookupResultsFromJSON;
+exports.DNSLookupResultsFromJSONTyped = DNSLookupResultsFromJSONTyped;
+exports.DNSLookupResultsToJSON = DNSLookupResultsToJSON;
+exports.DNSLookupResultsToJSONTyped = DNSLookupResultsToJSONTyped;
+var DNSLookupResult_1 = require("./DNSLookupResult");
+/**
+ * Check if a given object implements the DNSLookupResults interface.
+ */
+function instanceOfDNSLookupResults(value) {
+    if (!('results' in value) || value['results'] === undefined)
+        return false;
+    return true;
+}
 function DNSLookupResultsFromJSON(json) {
     return DNSLookupResultsFromJSONTyped(json, false);
 }
-exports.DNSLookupResultsFromJSON = DNSLookupResultsFromJSON;
 function DNSLookupResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        results: json['results'].map(_1.DNSLookupResultFromJSON),
+        'results': (json['results'].map(DNSLookupResult_1.DNSLookupResultFromJSON)),
     };
 }
-exports.DNSLookupResultsFromJSONTyped = DNSLookupResultsFromJSONTyped;
-function DNSLookupResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DNSLookupResultsToJSON(json) {
+    return DNSLookupResultsToJSONTyped(json, false);
+}
+function DNSLookupResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        results: value.results.map(_1.DNSLookupResultToJSON),
+        'results': (value['results'].map(DNSLookupResult_1.DNSLookupResultToJSON)),
     };
 }
-exports.DNSLookupResultsToJSON = DNSLookupResultsToJSON;

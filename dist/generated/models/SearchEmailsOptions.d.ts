@@ -66,12 +66,17 @@ export interface SearchEmailsOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum SearchEmailsOptionsSortDirectionEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const SearchEmailsOptionsSortDirectionEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type SearchEmailsOptionsSortDirectionEnum = typeof SearchEmailsOptionsSortDirectionEnum[keyof typeof SearchEmailsOptionsSortDirectionEnum];
+/**
+ * Check if a given object implements the SearchEmailsOptions interface.
+ */
+export declare function instanceOfSearchEmailsOptions(value: object): value is SearchEmailsOptions;
 export declare function SearchEmailsOptionsFromJSON(json: any): SearchEmailsOptions;
 export declare function SearchEmailsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchEmailsOptions;
-export declare function SearchEmailsOptionsToJSON(value?: SearchEmailsOptions | null): any;
+export declare function SearchEmailsOptionsToJSON(json: any): SearchEmailsOptions;
+export declare function SearchEmailsOptionsToJSONTyped(value?: SearchEmailsOptions | null, ignoreDiscriminator?: boolean): any;

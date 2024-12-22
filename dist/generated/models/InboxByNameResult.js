@@ -13,32 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxByNameResultToJSON = exports.InboxByNameResultFromJSONTyped = exports.InboxByNameResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfInboxByNameResult = instanceOfInboxByNameResult;
+exports.InboxByNameResultFromJSON = InboxByNameResultFromJSON;
+exports.InboxByNameResultFromJSONTyped = InboxByNameResultFromJSONTyped;
+exports.InboxByNameResultToJSON = InboxByNameResultToJSON;
+exports.InboxByNameResultToJSONTyped = InboxByNameResultToJSONTyped;
+/**
+ * Check if a given object implements the InboxByNameResult interface.
+ */
+function instanceOfInboxByNameResult(value) {
+    if (!('_exists' in value) || value['_exists'] === undefined)
+        return false;
+    return true;
+}
 function InboxByNameResultFromJSON(json) {
     return InboxByNameResultFromJSONTyped(json, false);
 }
-exports.InboxByNameResultFromJSON = InboxByNameResultFromJSON;
 function InboxByNameResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        _exists: json['exists'],
+        'inboxId': json['inboxId'] == null ? undefined : json['inboxId'],
+        '_exists': json['exists'],
     };
 }
-exports.InboxByNameResultFromJSONTyped = InboxByNameResultFromJSONTyped;
-function InboxByNameResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function InboxByNameResultToJSON(json) {
+    return InboxByNameResultToJSONTyped(json, false);
+}
+function InboxByNameResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxId: value.inboxId,
-        exists: value._exists,
+        'inboxId': value['inboxId'],
+        'exists': value['_exists'],
     };
 }
-exports.InboxByNameResultToJSON = InboxByNameResultToJSON;

@@ -13,46 +13,51 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ForwardEmailOptionsToJSON = exports.ForwardEmailOptionsFromJSONTyped = exports.ForwardEmailOptionsFromJSON = void 0;
-var runtime_1 = require("../runtime");
+exports.instanceOfForwardEmailOptions = instanceOfForwardEmailOptions;
+exports.ForwardEmailOptionsFromJSON = ForwardEmailOptionsFromJSON;
+exports.ForwardEmailOptionsFromJSONTyped = ForwardEmailOptionsFromJSONTyped;
+exports.ForwardEmailOptionsToJSON = ForwardEmailOptionsToJSON;
+exports.ForwardEmailOptionsToJSONTyped = ForwardEmailOptionsToJSONTyped;
+/**
+ * Check if a given object implements the ForwardEmailOptions interface.
+ */
+function instanceOfForwardEmailOptions(value) {
+    if (!('to' in value) || value['to'] === undefined)
+        return false;
+    return true;
+}
 function ForwardEmailOptionsFromJSON(json) {
     return ForwardEmailOptionsFromJSONTyped(json, false);
 }
-exports.ForwardEmailOptionsFromJSON = ForwardEmailOptionsFromJSON;
 function ForwardEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        to: json['to'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
-            ? undefined
-            : json['useInboxName'],
-        filterBouncedRecipients: !(0, runtime_1.exists)(json, 'filterBouncedRecipients')
-            ? undefined
-            : json['filterBouncedRecipients'],
+        'to': json['to'],
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'cc': json['cc'] == null ? undefined : json['cc'],
+        'bcc': json['bcc'] == null ? undefined : json['bcc'],
+        'from': json['from'] == null ? undefined : json['from'],
+        'useInboxName': json['useInboxName'] == null ? undefined : json['useInboxName'],
+        'filterBouncedRecipients': json['filterBouncedRecipients'] == null ? undefined : json['filterBouncedRecipients'],
     };
 }
-exports.ForwardEmailOptionsFromJSONTyped = ForwardEmailOptionsFromJSONTyped;
-function ForwardEmailOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ForwardEmailOptionsToJSON(json) {
+    return ForwardEmailOptionsToJSONTyped(json, false);
+}
+function ForwardEmailOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        to: value.to,
-        subject: value.subject,
-        cc: value.cc,
-        bcc: value.bcc,
-        from: value.from,
-        useInboxName: value.useInboxName,
-        filterBouncedRecipients: value.filterBouncedRecipients,
+        'to': value['to'],
+        'subject': value['subject'],
+        'cc': value['cc'],
+        'bcc': value['bcc'],
+        'from': value['from'],
+        'useInboxName': value['useInboxName'],
+        'filterBouncedRecipients': value['filterBouncedRecipients'],
     };
 }
-exports.ForwardEmailOptionsToJSON = ForwardEmailOptionsToJSON;

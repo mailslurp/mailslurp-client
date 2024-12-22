@@ -44,6 +44,12 @@ export interface InboxForwarderEventProjection {
      * @type {string}
      * @memberof InboxForwarderEventProjection
      */
+    sentId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
     forwarderId?: string | null;
     /**
      *
@@ -62,16 +68,21 @@ export interface InboxForwarderEventProjection {
      * @type {string}
      * @memberof InboxForwarderEventProjection
      */
-    status?: InboxForwarderEventProjectionStatusEnum;
+    status?: InboxForwarderEventProjectionStatusEnum | null;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum InboxForwarderEventProjectionStatusEnum {
-    SUCCESS = "SUCCESS",
-    FAILURE = "FAILURE"
-}
+export declare const InboxForwarderEventProjectionStatusEnum: {
+    readonly SUCCESS: "SUCCESS";
+    readonly FAILURE: "FAILURE";
+};
+export type InboxForwarderEventProjectionStatusEnum = typeof InboxForwarderEventProjectionStatusEnum[keyof typeof InboxForwarderEventProjectionStatusEnum];
+/**
+ * Check if a given object implements the InboxForwarderEventProjection interface.
+ */
+export declare function instanceOfInboxForwarderEventProjection(value: object): value is InboxForwarderEventProjection;
 export declare function InboxForwarderEventProjectionFromJSON(json: any): InboxForwarderEventProjection;
 export declare function InboxForwarderEventProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderEventProjection;
-export declare function InboxForwarderEventProjectionToJSON(value?: InboxForwarderEventProjection | null): any;
+export declare function InboxForwarderEventProjectionToJSON(json: any): InboxForwarderEventProjection;
+export declare function InboxForwarderEventProjectionToJSONTyped(value?: InboxForwarderEventProjection | null, ignoreDiscriminator?: boolean): any;

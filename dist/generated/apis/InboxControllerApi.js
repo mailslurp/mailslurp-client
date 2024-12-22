@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -87,9 +97,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
+exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOutboxesSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesByTagSortEnum = exports.GetInboxesSortEnum = exports.GetInboxTagsPaginatedSortEnum = exports.GetInboxTagsSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxPlusAddressesSortEnum = exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = exports.GetInboxPlusAddressEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllPlusAddressesSortEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 /**
  *
  */
@@ -104,30 +114,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.cancelScheduledJobRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.jobId === null ||
-                            requestParameters.jobId === undefined) {
-                            throw new runtime.RequiredError('jobId', 'Required parameter requestParameters.jobId was null or undefined when calling cancelScheduledJob.');
+                        if (requestParameters['jobId'] == null) {
+                            throw new runtime.RequiredError('jobId', 'Required parameter "jobId" was null or undefined when calling cancelScheduledJob().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat('jobId', "}"), encodeURIComponent(String(requestParameters.jobId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat("jobId", "}"), encodeURIComponent(String(requestParameters['jobId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ScheduledJobDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -156,71 +167,73 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.createInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        if (requestParameters['emailAddress'] != null) {
+                            queryParameters['emailAddress'] = requestParameters['emailAddress'];
                         }
-                        if (requestParameters.tags) {
-                            queryParameters['tags'] = requestParameters.tags;
+                        if (requestParameters['tags'] != null) {
+                            queryParameters['tags'] = requestParameters['tags'];
                         }
-                        if (requestParameters.name !== undefined) {
-                            queryParameters['name'] = requestParameters.name;
+                        if (requestParameters['name'] != null) {
+                            queryParameters['name'] = requestParameters['name'];
                         }
-                        if (requestParameters.description !== undefined) {
-                            queryParameters['description'] = requestParameters.description;
+                        if (requestParameters['description'] != null) {
+                            queryParameters['description'] = requestParameters['description'];
                         }
-                        if (requestParameters.useDomainPool !== undefined) {
-                            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+                        if (requestParameters['useDomainPool'] != null) {
+                            queryParameters['useDomainPool'] = requestParameters['useDomainPool'];
                         }
-                        if (requestParameters.favourite !== undefined) {
-                            queryParameters['favourite'] = requestParameters.favourite;
+                        if (requestParameters['favourite'] != null) {
+                            queryParameters['favourite'] = requestParameters['favourite'];
                         }
-                        if (requestParameters.expiresAt !== undefined) {
-                            queryParameters['expiresAt'] = requestParameters.expiresAt.toISOString();
+                        if (requestParameters['expiresAt'] != null) {
+                            queryParameters['expiresAt'] = requestParameters['expiresAt'].toISOString();
                         }
-                        if (requestParameters.expiresIn !== undefined) {
-                            queryParameters['expiresIn'] = requestParameters.expiresIn;
+                        if (requestParameters['expiresIn'] != null) {
+                            queryParameters['expiresIn'] = requestParameters['expiresIn'];
                         }
-                        if (requestParameters.allowTeamAccess !== undefined) {
-                            queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
+                        if (requestParameters['allowTeamAccess'] != null) {
+                            queryParameters['allowTeamAccess'] = requestParameters['allowTeamAccess'];
                         }
-                        if (requestParameters.inboxType !== undefined) {
-                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        if (requestParameters['inboxType'] != null) {
+                            queryParameters['inboxType'] = requestParameters['inboxType'];
                         }
-                        if (requestParameters.virtualInbox !== undefined) {
-                            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+                        if (requestParameters['virtualInbox'] != null) {
+                            queryParameters['virtualInbox'] = requestParameters['virtualInbox'];
                         }
-                        if (requestParameters.useShortAddress !== undefined) {
-                            queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+                        if (requestParameters['useShortAddress'] != null) {
+                            queryParameters['useShortAddress'] = requestParameters['useShortAddress'];
                         }
-                        if (requestParameters.domainId !== undefined) {
-                            queryParameters['domainId'] = requestParameters.domainId;
+                        if (requestParameters['domainId'] != null) {
+                            queryParameters['domainId'] = requestParameters['domainId'];
                         }
-                        if (requestParameters.domainName !== undefined) {
-                            queryParameters['domainName'] = requestParameters.domainName;
+                        if (requestParameters['domainName'] != null) {
+                            queryParameters['domainName'] = requestParameters['domainName'];
                         }
-                        if (requestParameters.prefix !== undefined) {
-                            queryParameters['prefix'] = requestParameters.prefix;
+                        if (requestParameters['prefix'] != null) {
+                            queryParameters['prefix'] = requestParameters['prefix'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -229,9 +242,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
      */
-    InboxControllerApi.prototype.createInbox = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.createInbox = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.createInboxRaw(requestParameters, initOverrides)];
@@ -249,36 +263,36 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.createInboxRulesetRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling createInboxRuleset.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling createInboxRuleset().');
                         }
-                        if (requestParameters.createInboxRulesetOptions === null ||
-                            requestParameters.createInboxRulesetOptions === undefined) {
-                            throw new runtime.RequiredError('createInboxRulesetOptions', 'Required parameter requestParameters.createInboxRulesetOptions was null or undefined when calling createInboxRuleset.');
+                        if (requestParameters['createInboxRulesetOptions'] == null) {
+                            throw new runtime.RequiredError('createInboxRulesetOptions', 'Required parameter "createInboxRulesetOptions" was null or undefined when calling createInboxRuleset().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.CreateInboxRulesetOptionsToJSON)(requestParameters.createInboxRulesetOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxRulesetDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/rulesets".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.CreateInboxRulesetOptionsToJSON)(requestParameters['createInboxRulesetOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxRulesetDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -306,26 +320,28 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.createInboxWithDefaultsRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/withDefaults",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/withDefaults",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -353,32 +369,33 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.createInboxWithOptionsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.createInboxDto === null ||
-                            requestParameters.createInboxDto === undefined) {
-                            throw new runtime.RequiredError('createInboxDto', 'Required parameter requestParameters.createInboxDto was null or undefined when calling createInboxWithOptions.');
+                        if (requestParameters['createInboxDto'] == null) {
+                            throw new runtime.RequiredError('createInboxDto', 'Required parameter "createInboxDto" was null or undefined when calling createInboxWithOptions().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/withOptions",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.CreateInboxDtoToJSON)(requestParameters.createInboxDto),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/withOptions",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.CreateInboxDtoToJSON)(requestParameters['createInboxDto']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -407,27 +424,30 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.deleteAllInboxEmailsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling deleteAllInboxEmails.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling deleteAllInboxEmails().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/deleteAllInboxEmails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/deleteAllInboxEmails".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -455,23 +475,27 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.deleteAllInboxesRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -499,30 +523,33 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.deleteAllInboxesByDescriptionRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.description === null ||
-                            requestParameters.description === undefined) {
-                            throw new runtime.RequiredError('description', 'Required parameter requestParameters.description was null or undefined when calling deleteAllInboxesByDescription.');
+                        if (requestParameters['description'] == null) {
+                            throw new runtime.RequiredError('description', 'Required parameter "description" was null or undefined when calling deleteAllInboxesByDescription().');
                         }
                         queryParameters = {};
-                        if (requestParameters.description !== undefined) {
-                            queryParameters['description'] = requestParameters.description;
+                        if (requestParameters['description'] != null) {
+                            queryParameters['description'] = requestParameters['description'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/by-description",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/by-description",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -550,30 +577,33 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.deleteAllInboxesByNameRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.name === null ||
-                            requestParameters.name === undefined) {
-                            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling deleteAllInboxesByName.');
+                        if (requestParameters['name'] == null) {
+                            throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling deleteAllInboxesByName().');
                         }
                         queryParameters = {};
-                        if (requestParameters.name !== undefined) {
-                            queryParameters['name'] = requestParameters.name;
+                        if (requestParameters['name'] != null) {
+                            queryParameters['name'] = requestParameters['name'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/by-name",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/by-name",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -601,29 +631,33 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.deleteAllInboxesByTagRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.tag === null || requestParameters.tag === undefined) {
-                            throw new runtime.RequiredError('tag', 'Required parameter requestParameters.tag was null or undefined when calling deleteAllInboxesByTag.');
+                        if (requestParameters['tag'] == null) {
+                            throw new runtime.RequiredError('tag', 'Required parameter "tag" was null or undefined when calling deleteAllInboxesByTag().');
                         }
                         queryParameters = {};
-                        if (requestParameters.tag !== undefined) {
-                            queryParameters['tag'] = requestParameters.tag;
+                        if (requestParameters['tag'] != null) {
+                            queryParameters['tag'] = requestParameters['tag'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/by-tag",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/by-tag",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -651,27 +685,30 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.deleteInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling deleteInbox.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling deleteInbox().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -699,36 +736,37 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.doesInboxExistRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null ||
-                            requestParameters.emailAddress === undefined) {
-                            throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling doesInboxExist.');
+                        if (requestParameters['emailAddress'] == null) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter "emailAddress" was null or undefined when calling doesInboxExist().');
                         }
                         queryParameters = {};
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        if (requestParameters['emailAddress'] != null) {
+                            queryParameters['emailAddress'] = requestParameters['emailAddress'];
                         }
-                        if (requestParameters.allowCatchAll !== undefined) {
-                            queryParameters['allowCatchAll'] = requestParameters.allowCatchAll;
+                        if (requestParameters['allowCatchAll'] != null) {
+                            queryParameters['allowCatchAll'] = requestParameters['allowCatchAll'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/exists",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxExistsDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/exists",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxExistsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -757,29 +795,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.flushExpiredRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/expired",
-                                method: 'DELETE',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.FlushExpiredInboxesResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/expired",
+                            method: 'DELETE',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.FlushExpiredInboxesResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -788,9 +828,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
      * Remove expired inboxes
      */
-    InboxControllerApi.prototype.flushExpired = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.flushExpired = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.flushExpiredRaw(requestParameters, initOverrides)];
@@ -808,62 +849,64 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getAllInboxesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.favourite !== undefined) {
-                            queryParameters['favourite'] = requestParameters.favourite;
+                        if (requestParameters['favourite'] != null) {
+                            queryParameters['favourite'] = requestParameters['favourite'];
                         }
-                        if (requestParameters.search !== undefined) {
-                            queryParameters['search'] = requestParameters.search;
+                        if (requestParameters['search'] != null) {
+                            queryParameters['search'] = requestParameters['search'];
                         }
-                        if (requestParameters.tag !== undefined) {
-                            queryParameters['tag'] = requestParameters.tag;
+                        if (requestParameters['tag'] != null) {
+                            queryParameters['tag'] = requestParameters['tag'];
                         }
-                        if (requestParameters.teamAccess !== undefined) {
-                            queryParameters['teamAccess'] = requestParameters.teamAccess;
+                        if (requestParameters['teamAccess'] != null) {
+                            queryParameters['teamAccess'] = requestParameters['teamAccess'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
-                        if (requestParameters.inboxType !== undefined) {
-                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        if (requestParameters['inboxType'] != null) {
+                            queryParameters['inboxType'] = requestParameters['inboxType'];
                         }
-                        if (requestParameters.inboxFunction !== undefined) {
-                            queryParameters['inboxFunction'] = requestParameters.inboxFunction;
+                        if (requestParameters['inboxFunction'] != null) {
+                            queryParameters['inboxFunction'] = requestParameters['inboxFunction'];
                         }
-                        if (requestParameters.domainId !== undefined) {
-                            queryParameters['domainId'] = requestParameters.domainId;
+                        if (requestParameters['domainId'] != null) {
+                            queryParameters['domainId'] = requestParameters['domainId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/paginated",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/paginated",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -872,9 +915,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * List All Inboxes Paginated
      */
-    InboxControllerApi.prototype.getAllInboxes = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getAllInboxes = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllInboxesRaw(requestParameters, initOverrides)];
@@ -892,62 +936,64 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getAllInboxesOffsetPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.favourite !== undefined) {
-                            queryParameters['favourite'] = requestParameters.favourite;
+                        if (requestParameters['favourite'] != null) {
+                            queryParameters['favourite'] = requestParameters['favourite'];
                         }
-                        if (requestParameters.search !== undefined) {
-                            queryParameters['search'] = requestParameters.search;
+                        if (requestParameters['search'] != null) {
+                            queryParameters['search'] = requestParameters['search'];
                         }
-                        if (requestParameters.tag !== undefined) {
-                            queryParameters['tag'] = requestParameters.tag;
+                        if (requestParameters['tag'] != null) {
+                            queryParameters['tag'] = requestParameters['tag'];
                         }
-                        if (requestParameters.teamAccess !== undefined) {
-                            queryParameters['teamAccess'] = requestParameters.teamAccess;
+                        if (requestParameters['teamAccess'] != null) {
+                            queryParameters['teamAccess'] = requestParameters['teamAccess'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
-                        if (requestParameters.inboxType !== undefined) {
-                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        if (requestParameters['inboxType'] != null) {
+                            queryParameters['inboxType'] = requestParameters['inboxType'];
                         }
-                        if (requestParameters.inboxFunction !== undefined) {
-                            queryParameters['inboxFunction'] = requestParameters.inboxFunction;
+                        if (requestParameters['inboxFunction'] != null) {
+                            queryParameters['inboxFunction'] = requestParameters['inboxFunction'];
                         }
-                        if (requestParameters.domainId !== undefined) {
-                            queryParameters['domainId'] = requestParameters.domainId;
+                        if (requestParameters['domainId'] != null) {
+                            queryParameters['domainId'] = requestParameters['domainId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/offset-paginated",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/offset-paginated",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -956,12 +1002,76 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * List All Inboxes Offset Paginated
      */
-    InboxControllerApi.prototype.getAllInboxesOffsetPaginated = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getAllInboxesOffsetPaginated = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllInboxesOffsetPaginatedRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getAllPlusAddressesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/plus-addresses",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PagePlusAddressProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getAllPlusAddresses = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllPlusAddressesRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -976,41 +1086,46 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getAllScheduledJobsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/scheduled-jobs",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageScheduledJobsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/scheduled-jobs",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageScheduledJobsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1019,9 +1134,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
      * Get all scheduled email sending jobs for account
      */
-    InboxControllerApi.prototype.getAllScheduledJobs = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getAllScheduledJobs = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllScheduledJobsRaw(requestParameters, initOverrides)];
@@ -1035,54 +1151,57 @@ var InboxControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Get all email delivery statuses for an inbox
+     * @deprecated
      */
     InboxControllerApi.prototype.getDeliveryStatusesByInboxIdRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getDeliveryStatusesByInboxId.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getDeliveryStatusesByInboxId().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/delivery-status".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageDeliveryStatusFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/delivery-status".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageDeliveryStatusFromJSON)(jsonValue); })];
                 }
             });
         });
     };
     /**
      * Get all email delivery statuses for an inbox
+     * @deprecated
      */
     InboxControllerApi.prototype.getDeliveryStatusesByInboxId = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1104,57 +1223,58 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getEmailsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getEmails.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getEmails().');
                         }
                         queryParameters = {};
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.limit !== undefined) {
-                            queryParameters['limit'] = requestParameters.limit;
+                        if (requestParameters['limit'] != null) {
+                            queryParameters['limit'] = requestParameters['limit'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.retryTimeout !== undefined) {
-                            queryParameters['retryTimeout'] = requestParameters.retryTimeout;
+                        if (requestParameters['retryTimeout'] != null) {
+                            queryParameters['retryTimeout'] = requestParameters['retryTimeout'];
                         }
-                        if (requestParameters.delayTimeout !== undefined) {
-                            queryParameters['delayTimeout'] = requestParameters.delayTimeout;
+                        if (requestParameters['delayTimeout'] != null) {
+                            queryParameters['delayTimeout'] = requestParameters['delayTimeout'];
                         }
-                        if (requestParameters.minCount !== undefined) {
-                            queryParameters['minCount'] = requestParameters.minCount;
+                        if (requestParameters['minCount'] != null) {
+                            queryParameters['minCount'] = requestParameters['minCount'];
                         }
-                        if (requestParameters.unreadOnly !== undefined) {
-                            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
+                        if (requestParameters['unreadOnly'] != null) {
+                            queryParameters['unreadOnly'] = requestParameters['unreadOnly'];
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.EmailPreviewFromJSON);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/emails".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(index_1.EmailPreviewFromJSON); })];
                 }
             });
         });
@@ -1182,29 +1302,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getImapAccessRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/imap-access",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapAccessDetailsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/imap-access",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ImapAccessDetailsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1212,9 +1334,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * Get IMAP access usernames and passwords
      */
-    InboxControllerApi.prototype.getImapAccess = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getImapAccess = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getImapAccessRaw(requestParameters, initOverrides)];
@@ -1231,29 +1354,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getImapSmtpAccessRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/imap-smtp-access",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapSmtpAccessDetailsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/imap-smtp-access",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ImapSmtpAccessDetailsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1261,9 +1386,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * Get IMAP and SMTP access usernames and passwords
      */
-    InboxControllerApi.prototype.getImapSmtpAccess = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getImapSmtpAccess = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getImapSmtpAccessRaw(requestParameters, initOverrides)];
@@ -1280,27 +1406,37 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getImapSmtpAccessEnvRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/imap-smtp-access/env",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/imap-smtp-access/env",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        if (this.isJsonMime(response.headers.get('content-type'))) {
+                            return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        }
+                        else {
+                            return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
@@ -1308,9 +1444,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * Get IMAP and SMTP access details in .env format
      */
-    InboxControllerApi.prototype.getImapSmtpAccessEnv = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getImapSmtpAccessEnv = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getImapSmtpAccessEnvRaw(requestParameters, initOverrides)];
@@ -1327,26 +1464,28 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getImapSmtpAccessServersRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/imap-smtp-access/servers",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapSmtpAccessServersFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/imap-smtp-access/servers",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ImapSmtpAccessServersFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1374,30 +1513,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInbox.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInbox().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1426,33 +1566,34 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getInboxByEmailAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null ||
-                            requestParameters.emailAddress === undefined) {
-                            throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getInboxByEmailAddress.');
+                        if (requestParameters['emailAddress'] == null) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter "emailAddress" was null or undefined when calling getInboxByEmailAddress().');
                         }
                         queryParameters = {};
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        if (requestParameters['emailAddress'] != null) {
+                            queryParameters['emailAddress'] = requestParameters['emailAddress'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/byEmailAddress",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxByEmailAddressResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/byEmailAddress",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxByEmailAddressResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1481,33 +1622,34 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getInboxByNameRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.name === null ||
-                            requestParameters.name === undefined) {
-                            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling getInboxByName.');
+                        if (requestParameters['name'] == null) {
+                            throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling getInboxByName().');
                         }
                         queryParameters = {};
-                        if (requestParameters.name !== undefined) {
-                            queryParameters['name'] = requestParameters.name;
+                        if (requestParameters['name'] != null) {
+                            queryParameters['name'] = requestParameters['name'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/byName",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxByNameResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/byName",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxByNameResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1535,26 +1677,28 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getInboxCountRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/count",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CountDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/count",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CountDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1581,30 +1725,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getInboxEmailCountRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxEmailCount.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxEmailCount().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails/count".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CountDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/emails/count".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CountDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1632,45 +1777,49 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getInboxEmailsPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxEmailsPaginated.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxEmailsPaginated().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['syncConnectors'] != null) {
+                            queryParameters['syncConnectors'] = requestParameters['syncConnectors'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails/paginated".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEmailPreviewFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/emails/paginated".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailPreviewFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1696,29 +1845,32 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * Get list of inbox IDs
      * Get all inbox IDs
+     * @deprecated
      */
     InboxControllerApi.prototype.getInboxIdsRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/ids",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxIdsResultFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/ids",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxIdsResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1726,6 +1878,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * Get list of inbox IDs
      * Get all inbox IDs
+     * @deprecated
      */
     InboxControllerApi.prototype.getInboxIds = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1742,53 +1895,371 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
-     * Get Inbox Sent Emails
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
      */
-    InboxControllerApi.prototype.getInboxSentEmailsRaw = function (requestParameters, initOverrides) {
+    InboxControllerApi.prototype.getInboxPlusAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxSentEmails.');
+                        if (requestParameters['plusAddressId'] == null) {
+                            throw new runtime.RequiredError('plusAddressId', 'Required parameter "plusAddressId" was null or undefined when calling getInboxPlusAddress().');
+                        }
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddress().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
-                        }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
-                        }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
-                        }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
-                        }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
-                        }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
-                        }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/sent".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}".replace("{".concat("plusAddressId", "}"), encodeURIComponent(String(requestParameters['plusAddressId']))).replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PlusAddressDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
+     */
+    InboxControllerApi.prototype.getInboxPlusAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageSentEmailProjectionFromJSON)(jsonValue);
-                            })];
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressByIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['plusAddressId'] == null) {
+                            throw new runtime.RequiredError('plusAddressId', 'Required parameter "plusAddressId" was null or undefined when calling getInboxPlusAddressById().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/plus-addresses/{plusAddressId}".replace("{".concat("plusAddressId", "}"), encodeURIComponent(String(requestParameters['plusAddressId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PlusAddressDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressById = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressByIdRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmailsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['plusAddress'] == null) {
+                            throw new runtime.RequiredError('plusAddress', 'Required parameter "plusAddress" was null or undefined when calling getInboxPlusAddressEmails().');
+                        }
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddressEmails().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['plusAddress'] != null) {
+                            queryParameters['plusAddress'] = requestParameters['plusAddress'];
+                        }
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
+                        }
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/plus-addresses/emails".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailPreviewFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmails = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressEmailsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmailsForPlusAddressIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['plusAddressId'] == null) {
+                            throw new runtime.RequiredError('plusAddressId', 'Required parameter "plusAddressId" was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId().');
+                        }
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
+                        }
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}/emails".replace("{".concat("plusAddressId", "}"), encodeURIComponent(String(requestParameters['plusAddressId']))).replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageEmailPreviewFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmailsForPlusAddressId = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressEmailsForPlusAddressIdRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxPlusAddresses().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/plus-addresses".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PagePlusAddressProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getInboxPlusAddresses = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get sent email count in inbox
+     */
+    InboxControllerApi.prototype.getInboxSentCountRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxSentCount().');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/sent/count".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.CountDtoFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Get sent email count in inbox
+     */
+    InboxControllerApi.prototype.getInboxSentCount = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxSentCountRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -1796,6 +2267,61 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * Get Inbox Sent Emails
+     * @deprecated
+     */
+    InboxControllerApi.prototype.getInboxSentEmailsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getInboxSentEmails().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+                        }
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
+                        }
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/sent".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageSentEmailProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
+     * Get Inbox Sent Emails
+     * @deprecated
      */
     InboxControllerApi.prototype.getInboxSentEmails = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1815,25 +2341,41 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Get all inbox tags
      * Get inbox tags
      */
-    InboxControllerApi.prototype.getInboxTagsRaw = function (initOverrides) {
+    InboxControllerApi.prototype.getInboxTagsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/tags",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/tags",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response)];
                 }
             });
@@ -1843,12 +2385,76 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Get all inbox tags
      * Get inbox tags
      */
-    InboxControllerApi.prototype.getInboxTags = function (initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getInboxTags = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getInboxTagsRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.getInboxTagsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    InboxControllerApi.prototype.getInboxTagsPaginatedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/tags/paginated",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxTagsFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    InboxControllerApi.prototype.getInboxTagsPaginated = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxTagsPaginatedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1860,45 +2466,50 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
      * List Inboxes and email addresses
+     * @deprecated
      */
     InboxControllerApi.prototype.getInboxesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.excludeCatchAllInboxes !== undefined) {
-                            queryParameters['excludeCatchAllInboxes'] =
-                                requestParameters.excludeCatchAllInboxes;
+                        if (requestParameters['excludeCatchAllInboxes'] != null) {
+                            queryParameters['excludeCatchAllInboxes'] = requestParameters['excludeCatchAllInboxes'];
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
+                        }
+                        if (requestParameters['include'] != null) {
+                            queryParameters['include'] = requestParameters['include'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.InboxDtoFromJSON);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(index_1.InboxDtoFromJSON); })];
                 }
             });
         });
@@ -1906,13 +2517,83 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
      * List Inboxes and email addresses
+     * @deprecated
      */
-    InboxControllerApi.prototype.getInboxes = function (requestParameters, initOverrides) {
+    InboxControllerApi.prototype.getInboxes = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    InboxControllerApi.prototype.getInboxesByTagRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['tag'] == null) {
+                            throw new runtime.RequiredError('tag', 'Required parameter "tag" was null or undefined when calling getInboxesByTag().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
+                        }
+                        if (requestParameters['tag'] != null) {
+                            queryParameters['tag'] = requestParameters['tag'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/tags/inboxes",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    InboxControllerApi.prototype.getInboxesByTag = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getInboxesRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getInboxesByTagRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1927,40 +2608,40 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getLatestEmailInInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getLatestEmailInInbox().');
                         }
-                        if (requestParameters.timeoutMillis === null ||
-                            requestParameters.timeoutMillis === undefined) {
-                            throw new runtime.RequiredError('timeoutMillis', 'Required parameter requestParameters.timeoutMillis was null or undefined when calling getLatestEmailInInbox.');
+                        if (requestParameters['timeoutMillis'] == null) {
+                            throw new runtime.RequiredError('timeoutMillis', 'Required parameter "timeoutMillis" was null or undefined when calling getLatestEmailInInbox().');
                         }
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
-                        if (requestParameters.timeoutMillis !== undefined) {
-                            queryParameters['timeoutMillis'] = requestParameters.timeoutMillis;
+                        if (requestParameters['timeoutMillis'] != null) {
+                            queryParameters['timeoutMillis'] = requestParameters['timeoutMillis'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/getLatestEmail",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.EmailFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/getLatestEmail",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1986,47 +2667,50 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * List Organization Inboxes Paginated
+     * @deprecated
      */
     InboxControllerApi.prototype.getOrganizationInboxesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/organization",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageOrganizationInboxProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/organization",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageOrganizationInboxProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2034,13 +2718,75 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * List Organization Inboxes Paginated
+     * @deprecated
      */
-    InboxControllerApi.prototype.getOrganizationInboxes = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
+    InboxControllerApi.prototype.getOrganizationInboxes = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
             var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getOrganizationInboxesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    InboxControllerApi.prototype.getOutboxesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
+                        }
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
+                        }
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/outboxes",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    InboxControllerApi.prototype.getOutboxes = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getOutboxesRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2055,30 +2801,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getScheduledJobRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.jobId === null ||
-                            requestParameters.jobId === undefined) {
-                            throw new runtime.RequiredError('jobId', 'Required parameter requestParameters.jobId was null or undefined when calling getScheduledJob.');
+                        if (requestParameters['jobId'] == null) {
+                            throw new runtime.RequiredError('jobId', 'Required parameter "jobId" was null or undefined when calling getScheduledJob().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat('jobId', "}"), encodeURIComponent(String(requestParameters.jobId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat("jobId", "}"), encodeURIComponent(String(requestParameters['jobId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ScheduledJobDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2107,45 +2854,46 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getScheduledJobsByInboxIdRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getScheduledJobsByInboxId.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling getScheduledJobsByInboxId().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/scheduled-jobs".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageScheduledJobsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/scheduled-jobs".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageScheduledJobsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2173,29 +2921,31 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.getSmtpAccessRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.inboxId !== undefined) {
-                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/smtp-access",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SmtpAccessDetailsFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/smtp-access",
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SmtpAccessDetailsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2203,12 +2953,69 @@ var InboxControllerApi = /** @class */ (function (_super) {
     /**
      * Get SMTP access usernames and passwords
      */
-    InboxControllerApi.prototype.getSmtpAccess = function (requestParameters, initOverrides) {
+    InboxControllerApi.prototype.getSmtpAccess = function () {
+        return __awaiter(this, arguments, void 0, function (requestParameters, initOverrides) {
+            var response;
+            if (requestParameters === void 0) { requestParameters = {}; }
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSmtpAccessRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    InboxControllerApi.prototype.isEmailAddressAvailableRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['emailAddress'] == null) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter "emailAddress" was null or undefined when calling isEmailAddressAvailable().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['emailAddress'] != null) {
+                            queryParameters['emailAddress'] = requestParameters['emailAddress'];
+                        }
+                        headerParameters = {};
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/available",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.EmailAvailableResultFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    InboxControllerApi.prototype.isEmailAddressAvailable = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getSmtpAccessRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.isEmailAddressAvailableRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2223,48 +3030,49 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.listInboxRulesetsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling listInboxRulesets.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling listInboxRulesets().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxRulesetDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/rulesets".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxRulesetDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2293,48 +3101,49 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.listInboxTrackingPixelsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling listInboxTrackingPixels.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling listInboxTrackingPixels().');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
+                        if (requestParameters['page'] != null) {
+                            queryParameters['page'] = requestParameters['page'];
                         }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
+                        if (requestParameters['size'] != null) {
+                            queryParameters['size'] = requestParameters['size'];
                         }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
+                        if (requestParameters['sort'] != null) {
+                            queryParameters['sort'] = requestParameters['sort'];
                         }
-                        if (requestParameters.searchFilter !== undefined) {
-                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        if (requestParameters['searchFilter'] != null) {
+                            queryParameters['searchFilter'] = requestParameters['searchFilter'];
                         }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
+                        if (requestParameters['since'] != null) {
+                            queryParameters['since'] = requestParameters['since'].toISOString();
                         }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
+                        if (requestParameters['before'] != null) {
+                            queryParameters['before'] = requestParameters['before'].toISOString();
                         }
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/tracking-pixels".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/tracking-pixels".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'GET',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageTrackingPixelProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2363,32 +3172,33 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.searchInboxesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.searchInboxesOptions === null ||
-                            requestParameters.searchInboxesOptions === undefined) {
-                            throw new runtime.RequiredError('searchInboxesOptions', 'Required parameter requestParameters.searchInboxesOptions was null or undefined when calling searchInboxes.');
+                        if (requestParameters['searchInboxesOptions'] == null) {
+                            throw new runtime.RequiredError('searchInboxesOptions', 'Required parameter "searchInboxesOptions" was null or undefined when calling searchInboxes().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/search",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SearchInboxesOptionsToJSON)(requestParameters.searchInboxesOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/search",
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SearchInboxesOptionsToJSON)(requestParameters['searchInboxesOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.PageInboxProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2417,33 +3227,35 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.sendEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendEmail.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling sendEmail().');
                         }
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmail.');
+                        if (requestParameters['sendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter "sendEmailOptions" was null or undefined when calling sendEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendEmailOptionsToJSON)(requestParameters['sendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -2471,36 +3283,36 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.sendEmailAndConfirmRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailAndConfirm.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling sendEmailAndConfirm().');
                         }
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailAndConfirm.');
+                        if (requestParameters['sendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter "sendEmailOptions" was null or undefined when calling sendEmailAndConfirm().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/confirm".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/confirm".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendEmailOptionsToJSON)(requestParameters['sendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SentEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2529,41 +3341,41 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.sendEmailWithQueueRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailWithQueue.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling sendEmailWithQueue().');
                         }
-                        if (requestParameters.validateBeforeEnqueue === null ||
-                            requestParameters.validateBeforeEnqueue === undefined) {
-                            throw new runtime.RequiredError('validateBeforeEnqueue', 'Required parameter requestParameters.validateBeforeEnqueue was null or undefined when calling sendEmailWithQueue.');
+                        if (requestParameters['validateBeforeEnqueue'] == null) {
+                            throw new runtime.RequiredError('validateBeforeEnqueue', 'Required parameter "validateBeforeEnqueue" was null or undefined when calling sendEmailWithQueue().');
                         }
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailWithQueue.');
+                        if (requestParameters['sendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter "sendEmailOptions" was null or undefined when calling sendEmailWithQueue().');
                         }
                         queryParameters = {};
-                        if (requestParameters.validateBeforeEnqueue !== undefined) {
-                            queryParameters['validateBeforeEnqueue'] =
-                                requestParameters.validateBeforeEnqueue;
+                        if (requestParameters['validateBeforeEnqueue'] != null) {
+                            queryParameters['validateBeforeEnqueue'] = requestParameters['validateBeforeEnqueue'];
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/with-queue".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/with-queue".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendEmailOptionsToJSON)(requestParameters['sendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -2591,36 +3403,36 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.sendSmtpEnvelopeRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelope.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling sendSmtpEnvelope().');
                         }
-                        if (requestParameters.sendSMTPEnvelopeOptions === null ||
-                            requestParameters.sendSMTPEnvelopeOptions === undefined) {
-                            throw new runtime.RequiredError('sendSMTPEnvelopeOptions', 'Required parameter requestParameters.sendSMTPEnvelopeOptions was null or undefined when calling sendSmtpEnvelope.');
+                        if (requestParameters['sendSMTPEnvelopeOptions'] == null) {
+                            throw new runtime.RequiredError('sendSMTPEnvelopeOptions', 'Required parameter "sendSMTPEnvelopeOptions" was null or undefined when calling sendSmtpEnvelope().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/smtp-envelope".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendSMTPEnvelopeOptionsToJSON)(requestParameters.sendSMTPEnvelopeOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/smtp-envelope".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendSMTPEnvelopeOptionsToJSON)(requestParameters['sendSMTPEnvelopeOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.SentEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2649,27 +3461,30 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.sendTestEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendTestEmail.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling sendTestEmail().');
                         }
                         queryParameters = {};
                         headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/send-test-email".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/send-test-email".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
                         return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
@@ -2697,47 +3512,45 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.sendWithScheduleRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendWithSchedule.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling sendWithSchedule().');
                         }
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
-                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendWithSchedule.');
+                        if (requestParameters['sendEmailOptions'] == null) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter "sendEmailOptions" was null or undefined when calling sendWithSchedule().');
                         }
                         queryParameters = {};
-                        if (requestParameters.sendAtTimestamp !== undefined) {
-                            queryParameters['sendAtTimestamp'] = requestParameters.sendAtTimestamp.toISOString();
+                        if (requestParameters['sendAtTimestamp'] != null) {
+                            queryParameters['sendAtTimestamp'] = requestParameters['sendAtTimestamp'].toISOString();
                         }
-                        if (requestParameters.sendAtNowPlusSeconds !== undefined) {
-                            queryParameters['sendAtNowPlusSeconds'] =
-                                requestParameters.sendAtNowPlusSeconds;
+                        if (requestParameters['sendAtNowPlusSeconds'] != null) {
+                            queryParameters['sendAtNowPlusSeconds'] = requestParameters['sendAtNowPlusSeconds'];
                         }
-                        if (requestParameters.validateBeforeEnqueue !== undefined) {
-                            queryParameters['validateBeforeEnqueue'] =
-                                requestParameters.validateBeforeEnqueue;
+                        if (requestParameters['validateBeforeEnqueue'] != null) {
+                            queryParameters['validateBeforeEnqueue'] = requestParameters['validateBeforeEnqueue'];
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/with-schedule".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/with-schedule".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'POST',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SendEmailOptionsToJSON)(requestParameters['sendEmailOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.ScheduledJobDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2761,47 +3574,47 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Set and return new favourite state for an inbox
+     * Set and return new favorite state for an inbox
      * Set inbox favourited state
      */
     InboxControllerApi.prototype.setInboxFavouritedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling setInboxFavourited.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling setInboxFavourited().');
                         }
-                        if (requestParameters.setInboxFavouritedOptions === null ||
-                            requestParameters.setInboxFavouritedOptions === undefined) {
-                            throw new runtime.RequiredError('setInboxFavouritedOptions', 'Required parameter requestParameters.setInboxFavouritedOptions was null or undefined when calling setInboxFavourited.');
+                        if (requestParameters['setInboxFavouritedOptions'] == null) {
+                            throw new runtime.RequiredError('setInboxFavouritedOptions', 'Required parameter "setInboxFavouritedOptions" was null or undefined when calling setInboxFavourited().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/favourite".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'PUT',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.SetInboxFavouritedOptionsToJSON)(requestParameters.setInboxFavouritedOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}/favourite".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'PUT',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.SetInboxFavouritedOptionsToJSON)(requestParameters['setInboxFavouritedOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
     };
     /**
-     * Set and return new favourite state for an inbox
+     * Set and return new favorite state for an inbox
      * Set inbox favourited state
      */
     InboxControllerApi.prototype.setInboxFavourited = function (requestParameters, initOverrides) {
@@ -2819,41 +3632,95 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Update IMAP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateImapAccessRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['updateImapAccessOptions'] == null) {
+                            throw new runtime.RequiredError('updateImapAccessOptions', 'Required parameter "updateImapAccessOptions" was null or undefined when calling updateImapAccess().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/imap-access",
+                            method: 'PATCH',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.UpdateImapAccessOptionsToJSON)(requestParameters['updateImapAccessOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Update IMAP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateImapAccess = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateImapAccessRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Update editable fields on an inbox
      * Update Inbox. Change name and description. Email address is not editable.
      */
     InboxControllerApi.prototype.updateInboxRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling updateInbox.');
+                        if (requestParameters['inboxId'] == null) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter "inboxId" was null or undefined when calling updateInbox().');
                         }
-                        if (requestParameters.updateInboxOptions === null ||
-                            requestParameters.updateInboxOptions === undefined) {
-                            throw new runtime.RequiredError('updateInboxOptions', 'Required parameter requestParameters.updateInboxOptions was null or undefined when calling updateInbox.');
+                        if (requestParameters['updateInboxOptions'] == null) {
+                            throw new runtime.RequiredError('updateInboxOptions', 'Required parameter "updateInboxOptions" was null or undefined when calling updateInbox().');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
-                                method: 'PATCH',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.UpdateInboxOptionsToJSON)(requestParameters.updateInboxOptions),
-                            }, initOverrides)];
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
                     case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters['inboxId']))),
+                            method: 'PATCH',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.UpdateInboxOptionsToJSON)(requestParameters['updateInboxOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, index_1.InboxDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -2876,163 +3743,243 @@ var InboxControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateSmtpAccessRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, _a, _b, response;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (requestParameters['updateSmtpAccessOptions'] == null) {
+                            throw new runtime.RequiredError('updateSmtpAccessOptions', 'Required parameter "updateSmtpAccessOptions" was null or undefined when calling updateSmtpAccess().');
+                        }
+                        queryParameters = {};
+                        if (requestParameters['inboxId'] != null) {
+                            queryParameters['inboxId'] = requestParameters['inboxId'];
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (!(this.configuration && this.configuration.apiKey)) return [3 /*break*/, 2];
+                        _a = headerParameters;
+                        _b = "x-api-key";
+                        return [4 /*yield*/, this.configuration.apiKey("x-api-key")];
+                    case 1:
+                        _a[_b] = _c.sent(); // API_KEY authentication
+                        _c.label = 2;
+                    case 2: return [4 /*yield*/, this.request({
+                            path: "/inboxes/smtp-access",
+                            method: 'PATCH',
+                            headers: headerParameters,
+                            query: queryParameters,
+                            body: (0, index_1.UpdateSmtpAccessOptionsToJSON)(requestParameters['updateSmtpAccessOptions']),
+                        }, initOverrides)];
+                    case 3:
+                        response = _c.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateSmtpAccess = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateSmtpAccessRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     return InboxControllerApi;
 }(runtime.BaseAPI));
 exports.InboxControllerApi = InboxControllerApi;
 /**
  * @export
- * @enum {string}
  */
-var CreateInboxInboxTypeEnum;
-(function (CreateInboxInboxTypeEnum) {
-    CreateInboxInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    CreateInboxInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(CreateInboxInboxTypeEnum = exports.CreateInboxInboxTypeEnum || (exports.CreateInboxInboxTypeEnum = {}));
+exports.CreateInboxInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllInboxesSortEnum;
-(function (GetAllInboxesSortEnum) {
-    GetAllInboxesSortEnum["ASC"] = "ASC";
-    GetAllInboxesSortEnum["DESC"] = "DESC";
-})(GetAllInboxesSortEnum = exports.GetAllInboxesSortEnum || (exports.GetAllInboxesSortEnum = {}));
+exports.GetAllInboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllInboxesInboxTypeEnum;
-(function (GetAllInboxesInboxTypeEnum) {
-    GetAllInboxesInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    GetAllInboxesInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(GetAllInboxesInboxTypeEnum = exports.GetAllInboxesInboxTypeEnum || (exports.GetAllInboxesInboxTypeEnum = {}));
+exports.GetAllInboxesInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllInboxesInboxFunctionEnum;
-(function (GetAllInboxesInboxFunctionEnum) {
-    GetAllInboxesInboxFunctionEnum["ALIAS"] = "ALIAS";
-    GetAllInboxesInboxFunctionEnum["THREAD"] = "THREAD";
-    GetAllInboxesInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
-    GetAllInboxesInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
-})(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
+exports.GetAllInboxesInboxFunctionEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllInboxesOffsetPaginatedSortEnum;
-(function (GetAllInboxesOffsetPaginatedSortEnum) {
-    GetAllInboxesOffsetPaginatedSortEnum["ASC"] = "ASC";
-    GetAllInboxesOffsetPaginatedSortEnum["DESC"] = "DESC";
-})(GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesOffsetPaginatedSortEnum || (exports.GetAllInboxesOffsetPaginatedSortEnum = {}));
+exports.GetAllInboxesOffsetPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllInboxesOffsetPaginatedInboxTypeEnum;
-(function (GetAllInboxesOffsetPaginatedInboxTypeEnum) {
-    GetAllInboxesOffsetPaginatedInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    GetAllInboxesOffsetPaginatedInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum || (exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = {}));
+exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_INBOX: 'SMTP_INBOX'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
-(function (GetAllInboxesOffsetPaginatedInboxFunctionEnum) {
-    GetAllInboxesOffsetPaginatedInboxFunctionEnum["ALIAS"] = "ALIAS";
-    GetAllInboxesOffsetPaginatedInboxFunctionEnum["THREAD"] = "THREAD";
-    GetAllInboxesOffsetPaginatedInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
-    GetAllInboxesOffsetPaginatedInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
-})(GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));
+exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {
+    ALIAS: 'ALIAS',
+    THREAD: 'THREAD',
+    CATCH_ALL: 'CATCH_ALL',
+    CONNECTOR: 'CONNECTOR',
+    ACCOUNT: 'ACCOUNT',
+    GUEST: 'GUEST'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetAllScheduledJobsSortEnum;
-(function (GetAllScheduledJobsSortEnum) {
-    GetAllScheduledJobsSortEnum["ASC"] = "ASC";
-    GetAllScheduledJobsSortEnum["DESC"] = "DESC";
-})(GetAllScheduledJobsSortEnum = exports.GetAllScheduledJobsSortEnum || (exports.GetAllScheduledJobsSortEnum = {}));
+exports.GetAllPlusAddressesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetDeliveryStatusesByInboxIdSortEnum;
-(function (GetDeliveryStatusesByInboxIdSortEnum) {
-    GetDeliveryStatusesByInboxIdSortEnum["ASC"] = "ASC";
-    GetDeliveryStatusesByInboxIdSortEnum["DESC"] = "DESC";
-})(GetDeliveryStatusesByInboxIdSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum || (exports.GetDeliveryStatusesByInboxIdSortEnum = {}));
+exports.GetAllScheduledJobsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetEmailsSortEnum;
-(function (GetEmailsSortEnum) {
-    GetEmailsSortEnum["ASC"] = "ASC";
-    GetEmailsSortEnum["DESC"] = "DESC";
-})(GetEmailsSortEnum = exports.GetEmailsSortEnum || (exports.GetEmailsSortEnum = {}));
+exports.GetDeliveryStatusesByInboxIdSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetInboxEmailsPaginatedSortEnum;
-(function (GetInboxEmailsPaginatedSortEnum) {
-    GetInboxEmailsPaginatedSortEnum["ASC"] = "ASC";
-    GetInboxEmailsPaginatedSortEnum["DESC"] = "DESC";
-})(GetInboxEmailsPaginatedSortEnum = exports.GetInboxEmailsPaginatedSortEnum || (exports.GetInboxEmailsPaginatedSortEnum = {}));
+exports.GetEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetInboxSentEmailsSortEnum;
-(function (GetInboxSentEmailsSortEnum) {
-    GetInboxSentEmailsSortEnum["ASC"] = "ASC";
-    GetInboxSentEmailsSortEnum["DESC"] = "DESC";
-})(GetInboxSentEmailsSortEnum = exports.GetInboxSentEmailsSortEnum || (exports.GetInboxSentEmailsSortEnum = {}));
+exports.GetInboxEmailsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetInboxesSortEnum;
-(function (GetInboxesSortEnum) {
-    GetInboxesSortEnum["ASC"] = "ASC";
-    GetInboxesSortEnum["DESC"] = "DESC";
-})(GetInboxesSortEnum = exports.GetInboxesSortEnum || (exports.GetInboxesSortEnum = {}));
+exports.GetInboxPlusAddressEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetOrganizationInboxesSortEnum;
-(function (GetOrganizationInboxesSortEnum) {
-    GetOrganizationInboxesSortEnum["ASC"] = "ASC";
-    GetOrganizationInboxesSortEnum["DESC"] = "DESC";
-})(GetOrganizationInboxesSortEnum = exports.GetOrganizationInboxesSortEnum || (exports.GetOrganizationInboxesSortEnum = {}));
+exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var GetScheduledJobsByInboxIdSortEnum;
-(function (GetScheduledJobsByInboxIdSortEnum) {
-    GetScheduledJobsByInboxIdSortEnum["ASC"] = "ASC";
-    GetScheduledJobsByInboxIdSortEnum["DESC"] = "DESC";
-})(GetScheduledJobsByInboxIdSortEnum = exports.GetScheduledJobsByInboxIdSortEnum || (exports.GetScheduledJobsByInboxIdSortEnum = {}));
+exports.GetInboxPlusAddressesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var ListInboxRulesetsSortEnum;
-(function (ListInboxRulesetsSortEnum) {
-    ListInboxRulesetsSortEnum["ASC"] = "ASC";
-    ListInboxRulesetsSortEnum["DESC"] = "DESC";
-})(ListInboxRulesetsSortEnum = exports.ListInboxRulesetsSortEnum || (exports.ListInboxRulesetsSortEnum = {}));
+exports.GetInboxSentEmailsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
 /**
  * @export
- * @enum {string}
  */
-var ListInboxTrackingPixelsSortEnum;
-(function (ListInboxTrackingPixelsSortEnum) {
-    ListInboxTrackingPixelsSortEnum["ASC"] = "ASC";
-    ListInboxTrackingPixelsSortEnum["DESC"] = "DESC";
-})(ListInboxTrackingPixelsSortEnum = exports.ListInboxTrackingPixelsSortEnum || (exports.ListInboxTrackingPixelsSortEnum = {}));
+exports.GetInboxTagsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetInboxTagsPaginatedSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetInboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetInboxesByTagSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetOrganizationInboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetOutboxesSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.GetScheduledJobsByInboxIdSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.ListInboxRulesetsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};
+/**
+ * @export
+ */
+exports.ListInboxTrackingPixelsSortEnum = {
+    ASC: 'ASC',
+    DESC: 'DESC'
+};

@@ -13,42 +13,55 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainInformationToJSON = exports.DomainInformationFromJSONTyped = exports.DomainInformationFromJSON = exports.DomainInformationDomainTypeEnum = void 0;
+exports.DomainInformationDomainTypeEnum = void 0;
+exports.instanceOfDomainInformation = instanceOfDomainInformation;
+exports.DomainInformationFromJSON = DomainInformationFromJSON;
+exports.DomainInformationFromJSONTyped = DomainInformationFromJSONTyped;
+exports.DomainInformationToJSON = DomainInformationToJSON;
+exports.DomainInformationToJSONTyped = DomainInformationToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var DomainInformationDomainTypeEnum;
-(function (DomainInformationDomainTypeEnum) {
-    DomainInformationDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    DomainInformationDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(DomainInformationDomainTypeEnum = exports.DomainInformationDomainTypeEnum || (exports.DomainInformationDomainTypeEnum = {}));
+exports.DomainInformationDomainTypeEnum = {
+    HTTP_INBOX: 'HTTP_INBOX',
+    SMTP_DOMAIN: 'SMTP_DOMAIN'
+};
+/**
+ * Check if a given object implements the DomainInformation interface.
+ */
+function instanceOfDomainInformation(value) {
+    if (!('domainName' in value) || value['domainName'] === undefined)
+        return false;
+    if (!('verified' in value) || value['verified'] === undefined)
+        return false;
+    if (!('domainType' in value) || value['domainType'] === undefined)
+        return false;
+    return true;
+}
 function DomainInformationFromJSON(json) {
     return DomainInformationFromJSONTyped(json, false);
 }
-exports.DomainInformationFromJSON = DomainInformationFromJSON;
 function DomainInformationFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        domainName: json['domainName'],
-        verified: json['verified'],
-        domainType: json['domainType'],
+        'domainName': json['domainName'],
+        'verified': json['verified'],
+        'domainType': json['domainType'],
     };
 }
-exports.DomainInformationFromJSONTyped = DomainInformationFromJSONTyped;
-function DomainInformationToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function DomainInformationToJSON(json) {
+    return DomainInformationToJSONTyped(json, false);
+}
+function DomainInformationToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        domainName: value.domainName,
-        verified: value.verified,
-        domainType: value.domainType,
+        'domainName': value['domainName'],
+        'verified': value['verified'],
+        'domainType': value['domainType'],
     };
 }
-exports.DomainInformationToJSON = DomainInformationToJSON;

@@ -13,45 +13,51 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerStatusOptionsToJSON = exports.ImapServerStatusOptionsFromJSONTyped = exports.ImapServerStatusOptionsFromJSON = exports.ImapServerStatusOptionsStatusItemsEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.ImapServerStatusOptionsStatusItemsEnum = void 0;
+exports.instanceOfImapServerStatusOptions = instanceOfImapServerStatusOptions;
+exports.ImapServerStatusOptionsFromJSON = ImapServerStatusOptionsFromJSON;
+exports.ImapServerStatusOptionsFromJSONTyped = ImapServerStatusOptionsFromJSONTyped;
+exports.ImapServerStatusOptionsToJSON = ImapServerStatusOptionsToJSON;
+exports.ImapServerStatusOptionsToJSONTyped = ImapServerStatusOptionsToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var ImapServerStatusOptionsStatusItemsEnum;
-(function (ImapServerStatusOptionsStatusItemsEnum) {
-    ImapServerStatusOptionsStatusItemsEnum["MESSAGES"] = "MESSAGES";
-    ImapServerStatusOptionsStatusItemsEnum["RECENT"] = "RECENT";
-    ImapServerStatusOptionsStatusItemsEnum["UIDNEXT"] = "UIDNEXT";
-    ImapServerStatusOptionsStatusItemsEnum["UIDVALIDITY"] = "UIDVALIDITY";
-    ImapServerStatusOptionsStatusItemsEnum["UNSEEN"] = "UNSEEN";
-    ImapServerStatusOptionsStatusItemsEnum["APPENDLIMIT"] = "APPENDLIMIT";
-})(ImapServerStatusOptionsStatusItemsEnum = exports.ImapServerStatusOptionsStatusItemsEnum || (exports.ImapServerStatusOptionsStatusItemsEnum = {}));
+exports.ImapServerStatusOptionsStatusItemsEnum = {
+    MESSAGES: 'MESSAGES',
+    RECENT: 'RECENT',
+    UIDNEXT: 'UIDNEXT',
+    UIDVALIDITY: 'UIDVALIDITY',
+    UNSEEN: 'UNSEEN',
+    APPENDLIMIT: 'APPENDLIMIT'
+};
+/**
+ * Check if a given object implements the ImapServerStatusOptions interface.
+ */
+function instanceOfImapServerStatusOptions(value) {
+    return true;
+}
 function ImapServerStatusOptionsFromJSON(json) {
     return ImapServerStatusOptionsFromJSONTyped(json, false);
 }
-exports.ImapServerStatusOptionsFromJSON = ImapServerStatusOptionsFromJSON;
 function ImapServerStatusOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        statusItems: !(0, runtime_1.exists)(json, 'statusItems') ? undefined : json['statusItems'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'statusItems': json['statusItems'] == null ? undefined : json['statusItems'],
     };
 }
-exports.ImapServerStatusOptionsFromJSONTyped = ImapServerStatusOptionsFromJSONTyped;
-function ImapServerStatusOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ImapServerStatusOptionsToJSON(json) {
+    return ImapServerStatusOptionsToJSONTyped(json, false);
+}
+function ImapServerStatusOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        name: value.name,
-        statusItems: value.statusItems,
+        'name': value['name'],
+        'statusItems': value['statusItems'],
     };
 }
-exports.ImapServerStatusOptionsToJSON = ImapServerStatusOptionsToJSON;

@@ -12,91 +12,103 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Phone number projection
  * @export
  * @interface PhoneNumberProjection
  */
 export interface PhoneNumberProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof PhoneNumberProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberProjection
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberProjection
-   */
-  phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PhoneNumberProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    id: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum PhoneNumberProjectionPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
+export const PhoneNumberProjectionPhoneCountryEnum = {
+    US: 'US',
+    GB: 'GB',
+    AU: 'AU'
+} as const;
+export type PhoneNumberProjectionPhoneCountryEnum = typeof PhoneNumberProjectionPhoneCountryEnum[keyof typeof PhoneNumberProjectionPhoneCountryEnum];
+
+
+/**
+ * Check if a given object implements the PhoneNumberProjection interface.
+ */
+export function instanceOfPhoneNumberProjection(value: object): value is PhoneNumberProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('phoneNumber' in value) || value['phoneNumber'] === undefined) return false;
+    if (!('phoneCountry' in value) || value['phoneCountry'] === undefined) return false;
+    if (!('id' in value) || value['id'] === undefined) return false;
+    return true;
 }
 
-export function PhoneNumberProjectionFromJSON(
-  json: any
-): PhoneNumberProjection {
-  return PhoneNumberProjectionFromJSONTyped(json, false);
+export function PhoneNumberProjectionFromJSON(json: any): PhoneNumberProjection {
+    return PhoneNumberProjectionFromJSONTyped(json, false);
 }
 
-export function PhoneNumberProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PhoneNumberProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    userId: json['userId'],
-    phoneNumber: json['phoneNumber'],
-    phoneCountry: json['phoneCountry'],
-    id: json['id'],
-  };
+export function PhoneNumberProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'phoneCountry': json['phoneCountry'],
+        'id': json['id'],
+    };
 }
 
-export function PhoneNumberProjectionToJSON(
-  value?: PhoneNumberProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    userId: value.userId,
-    phoneNumber: value.phoneNumber,
-    phoneCountry: value.phoneCountry,
-    id: value.id,
-  };
+export function PhoneNumberProjectionToJSON(json: any): PhoneNumberProjection {
+    return PhoneNumberProjectionToJSONTyped(json, false);
 }
+
+export function PhoneNumberProjectionToJSONTyped(value?: PhoneNumberProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'createdAt': ((value['createdAt']).toISOString()),
+        'userId': value['userId'],
+        'phoneNumber': value['phoneNumber'],
+        'phoneCountry': value['phoneCountry'],
+        'id': value['id'],
+    };
+}
+

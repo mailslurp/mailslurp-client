@@ -58,6 +58,11 @@ export interface SmsProjection {
      */
     id: string;
 }
+/**
+ * Check if a given object implements the SmsProjection interface.
+ */
+export declare function instanceOfSmsProjection(value: object): value is SmsProjection;
 export declare function SmsProjectionFromJSON(json: any): SmsProjection;
 export declare function SmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsProjection;
-export declare function SmsProjectionToJSON(value?: SmsProjection | null): any;
+export declare function SmsProjectionToJSON(json: any): SmsProjection;
+export declare function SmsProjectionToJSONTyped(value?: SmsProjection | null, ignoreDiscriminator?: boolean): any;

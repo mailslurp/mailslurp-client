@@ -13,36 +13,54 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailBodyResultsToJSON = exports.CheckEmailBodyResultsFromJSONTyped = exports.CheckEmailBodyResultsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfCheckEmailBodyResults = instanceOfCheckEmailBodyResults;
+exports.CheckEmailBodyResultsFromJSON = CheckEmailBodyResultsFromJSON;
+exports.CheckEmailBodyResultsFromJSONTyped = CheckEmailBodyResultsFromJSONTyped;
+exports.CheckEmailBodyResultsToJSON = CheckEmailBodyResultsToJSON;
+exports.CheckEmailBodyResultsToJSONTyped = CheckEmailBodyResultsToJSONTyped;
+var SpellingIssue_1 = require("./SpellingIssue");
+var ImageIssue_1 = require("./ImageIssue");
+var LinkIssue_1 = require("./LinkIssue");
+/**
+ * Check if a given object implements the CheckEmailBodyResults interface.
+ */
+function instanceOfCheckEmailBodyResults(value) {
+    if (!('hasIssues' in value) || value['hasIssues'] === undefined)
+        return false;
+    if (!('linkIssues' in value) || value['linkIssues'] === undefined)
+        return false;
+    if (!('imageIssues' in value) || value['imageIssues'] === undefined)
+        return false;
+    if (!('spellingIssues' in value) || value['spellingIssues'] === undefined)
+        return false;
+    return true;
+}
 function CheckEmailBodyResultsFromJSON(json) {
     return CheckEmailBodyResultsFromJSONTyped(json, false);
 }
-exports.CheckEmailBodyResultsFromJSON = CheckEmailBodyResultsFromJSON;
 function CheckEmailBodyResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        hasIssues: json['hasIssues'],
-        linkIssues: json['linkIssues'].map(_1.LinkIssueFromJSON),
-        imageIssues: json['imageIssues'].map(_1.ImageIssueFromJSON),
-        spellingIssues: json['spellingIssues'].map(_1.SpellingIssueFromJSON),
+        'hasIssues': json['hasIssues'],
+        'linkIssues': (json['linkIssues'].map(LinkIssue_1.LinkIssueFromJSON)),
+        'imageIssues': (json['imageIssues'].map(ImageIssue_1.ImageIssueFromJSON)),
+        'spellingIssues': (json['spellingIssues'].map(SpellingIssue_1.SpellingIssueFromJSON)),
     };
 }
-exports.CheckEmailBodyResultsFromJSONTyped = CheckEmailBodyResultsFromJSONTyped;
-function CheckEmailBodyResultsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function CheckEmailBodyResultsToJSON(json) {
+    return CheckEmailBodyResultsToJSONTyped(json, false);
+}
+function CheckEmailBodyResultsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        hasIssues: value.hasIssues,
-        linkIssues: value.linkIssues.map(_1.LinkIssueToJSON),
-        imageIssues: value.imageIssues.map(_1.ImageIssueToJSON),
-        spellingIssues: value.spellingIssues.map(_1.SpellingIssueToJSON),
+        'hasIssues': value['hasIssues'],
+        'linkIssues': (value['linkIssues'].map(LinkIssue_1.LinkIssueToJSON)),
+        'imageIssues': (value['imageIssues'].map(ImageIssue_1.ImageIssueToJSON)),
+        'spellingIssues': (value['spellingIssues'].map(SpellingIssue_1.SpellingIssueToJSON)),
     };
 }
-exports.CheckEmailBodyResultsToJSON = CheckEmailBodyResultsToJSON;

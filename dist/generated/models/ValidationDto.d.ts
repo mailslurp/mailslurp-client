@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { HTMLValidationResult } from './';
+import type { HTMLValidationResult } from './HTMLValidationResult';
 /**
  * Response object for email validation operation
  * @export
@@ -29,6 +29,11 @@ export interface ValidationDto {
      */
     html: HTMLValidationResult;
 }
+/**
+ * Check if a given object implements the ValidationDto interface.
+ */
+export declare function instanceOfValidationDto(value: object): value is ValidationDto;
 export declare function ValidationDtoFromJSON(json: any): ValidationDto;
 export declare function ValidationDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationDto;
-export declare function ValidationDtoToJSON(value?: ValidationDto | null): any;
+export declare function ValidationDtoToJSON(json: any): ValidationDto;
+export declare function ValidationDtoToJSONTyped(value?: ValidationDto | null, ignoreDiscriminator?: boolean): any;

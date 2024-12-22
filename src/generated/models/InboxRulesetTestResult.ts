@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Result of test of inbox ruleset
  * @export
  * @interface InboxRulesetTestResult
  */
 export interface InboxRulesetTestResult {
-  /**
-   * Map of inbox ruleset ID to boolean of if target matches
-   * @type {{ [key: string]: boolean; }}
-   * @memberof InboxRulesetTestResult
-   */
-  rulesetMatches: { [key: string]: boolean };
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxRulesetTestResult
-   */
-  matches: boolean;
+    /**
+     * Map of inbox ruleset ID to boolean of if target matches
+     * @type {{ [key: string]: boolean; }}
+     * @memberof InboxRulesetTestResult
+     */
+    rulesetMatches: { [key: string]: boolean; };
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxRulesetTestResult
+     */
+    matches: boolean;
 }
 
-export function InboxRulesetTestResultFromJSON(
-  json: any
-): InboxRulesetTestResult {
-  return InboxRulesetTestResultFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the InboxRulesetTestResult interface.
+ */
+export function instanceOfInboxRulesetTestResult(value: object): value is InboxRulesetTestResult {
+    if (!('rulesetMatches' in value) || value['rulesetMatches'] === undefined) return false;
+    if (!('matches' in value) || value['matches'] === undefined) return false;
+    return true;
 }
 
-export function InboxRulesetTestResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxRulesetTestResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    rulesetMatches: json['rulesetMatches'],
-    matches: json['matches'],
-  };
+export function InboxRulesetTestResultFromJSON(json: any): InboxRulesetTestResult {
+    return InboxRulesetTestResultFromJSONTyped(json, false);
 }
 
-export function InboxRulesetTestResultToJSON(
-  value?: InboxRulesetTestResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    rulesetMatches: value.rulesetMatches,
-    matches: value.matches,
-  };
+export function InboxRulesetTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRulesetTestResult {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'rulesetMatches': json['rulesetMatches'],
+        'matches': json['matches'],
+    };
 }
+
+export function InboxRulesetTestResultToJSON(json: any): InboxRulesetTestResult {
+    return InboxRulesetTestResultToJSONTyped(json, false);
+}
+
+export function InboxRulesetTestResultToJSONTyped(value?: InboxRulesetTestResult | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'rulesetMatches': value['rulesetMatches'],
+        'matches': value['matches'],
+    };
+}
+

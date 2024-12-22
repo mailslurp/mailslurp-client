@@ -13,6 +13,7 @@
 - [since](GetEmailsOffsetPaginatedRequest.md#since)
 - [size](GetEmailsOffsetPaginatedRequest.md#size)
 - [sort](GetEmailsOffsetPaginatedRequest.md#sort)
+- [syncConnectors](GetEmailsOffsetPaginatedRequest.md#syncconnectors)
 - [unreadOnly](GetEmailsOffsetPaginatedRequest.md#unreadonly)
 
 ## Properties
@@ -56,6 +57,12 @@ ___
 ### sort
 
 • `Optional` **sort**: [`GetEmailsOffsetPaginatedSortEnum`](../enums/GetEmailsOffsetPaginatedSortEnum.md)
+
+___
+
+### syncConnectors
+
+• `Optional` **syncConnectors**: `boolean`
 
 ___
 

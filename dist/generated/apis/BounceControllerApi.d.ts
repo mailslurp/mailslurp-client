@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, Complaint, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models';
+import type { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, Complaint, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models/index';
 export interface FilterBouncedRecipientRequest {
     filterBouncedRecipientsOptions: FilterBouncedRecipientsOptions;
 }
@@ -58,122 +58,122 @@ export declare class BounceControllerApi extends runtime.BaseAPI {
      * Prevent email sending errors by remove recipients who have resulted in past email bounces or complaints
      * Filter a list of email recipients and remove those who have bounced
      */
-    filterBouncedRecipientRaw(requestParameters: FilterBouncedRecipientRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<FilterBouncedRecipientsResult>>;
+    filterBouncedRecipientRaw(requestParameters: FilterBouncedRecipientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<FilterBouncedRecipientsResult>>;
     /**
      * Prevent email sending errors by remove recipients who have resulted in past email bounces or complaints
      * Filter a list of email recipients and remove those who have bounced
      */
-    filterBouncedRecipient(requestParameters: FilterBouncedRecipientRequest, initOverrides?: RequestInit): Promise<FilterBouncedRecipientsResult>;
+    filterBouncedRecipient(requestParameters: FilterBouncedRecipientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<FilterBouncedRecipientsResult>;
     /**
      * Check if account block status prevents sending
      * Can account send email
      */
-    getAccountBounceBlockStatusRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<AccountBounceBlockDto>>;
+    getAccountBounceBlockStatusRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AccountBounceBlockDto>>;
     /**
      * Check if account block status prevents sending
      * Can account send email
      */
-    getAccountBounceBlockStatus(initOverrides?: RequestInit): Promise<AccountBounceBlockDto>;
+    getAccountBounceBlockStatus(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AccountBounceBlockDto>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * Get a bounced email.
      */
-    getBouncedEmailRaw(requestParameters: GetBouncedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<BouncedEmailDto>>;
+    getBouncedEmailRaw(requestParameters: GetBouncedEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BouncedEmailDto>>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * Get a bounced email.
      */
-    getBouncedEmail(requestParameters: GetBouncedEmailRequest, initOverrides?: RequestInit): Promise<BouncedEmailDto>;
+    getBouncedEmail(requestParameters: GetBouncedEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BouncedEmailDto>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * Get paginated list of bounced emails.
      */
-    getBouncedEmailsRaw(requestParameters: GetBouncedEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageBouncedEmail>>;
+    getBouncedEmailsRaw(requestParameters: GetBouncedEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageBouncedEmail>>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * Get paginated list of bounced emails.
      */
-    getBouncedEmails(requestParameters: GetBouncedEmailsRequest, initOverrides?: RequestInit): Promise<PageBouncedEmail>;
+    getBouncedEmails(requestParameters?: GetBouncedEmailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageBouncedEmail>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * Get a bounced email.
      */
-    getBouncedRecipientRaw(requestParameters: GetBouncedRecipientRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<BouncedRecipientDto>>;
+    getBouncedRecipientRaw(requestParameters: GetBouncedRecipientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BouncedRecipientDto>>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * Get a bounced email.
      */
-    getBouncedRecipient(requestParameters: GetBouncedRecipientRequest, initOverrides?: RequestInit): Promise<BouncedRecipientDto>;
+    getBouncedRecipient(requestParameters: GetBouncedRecipientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BouncedRecipientDto>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * Get paginated list of bounced recipients.
      */
-    getBouncedRecipientsRaw(requestParameters: GetBouncedRecipientsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageBouncedRecipients>>;
+    getBouncedRecipientsRaw(requestParameters: GetBouncedRecipientsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageBouncedRecipients>>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * Get paginated list of bounced recipients.
      */
-    getBouncedRecipients(requestParameters: GetBouncedRecipientsRequest, initOverrides?: RequestInit): Promise<PageBouncedRecipients>;
+    getBouncedRecipients(requestParameters?: GetBouncedRecipientsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageBouncedRecipients>;
     /**
      * Get complaint
      * Get complaint
      */
-    getComplaintRaw(requestParameters: GetComplaintRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Complaint>>;
+    getComplaintRaw(requestParameters: GetComplaintRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Complaint>>;
     /**
      * Get complaint
      * Get complaint
      */
-    getComplaint(requestParameters: GetComplaintRequest, initOverrides?: RequestInit): Promise<Complaint>;
+    getComplaint(requestParameters: GetComplaintRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Complaint>;
     /**
      * SMTP complaints made against your account
      * Get paginated list of complaints.
      */
-    getComplaintsRaw(requestParameters: GetComplaintsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageComplaint>>;
+    getComplaintsRaw(requestParameters: GetComplaintsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageComplaint>>;
     /**
      * SMTP complaints made against your account
      * Get paginated list of complaints.
      */
-    getComplaints(requestParameters: GetComplaintsRequest, initOverrides?: RequestInit): Promise<PageComplaint>;
+    getComplaints(requestParameters?: GetComplaintsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageComplaint>;
     /**
      * Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
      * Get paginated list of unsubscribed recipients.
      */
-    getListUnsubscribeRecipientsRaw(requestParameters: GetListUnsubscribeRecipientsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageListUnsubscribeRecipients>>;
+    getListUnsubscribeRecipientsRaw(requestParameters: GetListUnsubscribeRecipientsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageListUnsubscribeRecipients>>;
     /**
      * Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
      * Get paginated list of unsubscribed recipients.
      */
-    getListUnsubscribeRecipients(requestParameters: GetListUnsubscribeRecipientsRequest, initOverrides?: RequestInit): Promise<PageListUnsubscribeRecipients>;
+    getListUnsubscribeRecipients(requestParameters?: GetListUnsubscribeRecipientsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageListUnsubscribeRecipients>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetBouncedEmailsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetBouncedEmailsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetBouncedEmailsSortEnum = typeof GetBouncedEmailsSortEnum[keyof typeof GetBouncedEmailsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetBouncedRecipientsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetBouncedRecipientsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetBouncedRecipientsSortEnum = typeof GetBouncedRecipientsSortEnum[keyof typeof GetBouncedRecipientsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetComplaintsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetComplaintsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetComplaintsSortEnum = typeof GetComplaintsSortEnum[keyof typeof GetComplaintsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetListUnsubscribeRecipientsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetListUnsubscribeRecipientsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetListUnsubscribeRecipientsSortEnum = typeof GetListUnsubscribeRecipientsSortEnum[keyof typeof GetListUnsubscribeRecipientsSortEnum];

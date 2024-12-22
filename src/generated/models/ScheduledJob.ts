@@ -12,129 +12,150 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ScheduledJob
  */
 export interface ScheduledJob {
-  /**
-   *
-   * @type {string}
-   * @memberof ScheduledJob
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ScheduledJob
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ScheduledJob
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ScheduledJob
-   */
-  jobId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ScheduledJob
-   */
-  groupId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ScheduledJob
-   */
-  triggerId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ScheduledJob
-   */
-  status: ScheduledJobStatusEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof ScheduledJob
-   */
-  sendAtTimestamp: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof ScheduledJob
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof ScheduledJob
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    jobId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    groupId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    triggerId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    status: ScheduledJobStatusEnum;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ScheduledJob
+     */
+    sendAtTimestamp: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ScheduledJob
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ScheduledJob
+     */
+    updatedAt: Date;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum ScheduledJobStatusEnum {
-  SUBMITTED = 'SUBMITTED',
-  COMPLETED = 'COMPLETED',
-  ABORTED = 'ABORTED',
-  FAILED = 'FAILED',
-  CANCELLED = 'CANCELLED',
+export const ScheduledJobStatusEnum = {
+    SUBMITTED: 'SUBMITTED',
+    COMPLETED: 'COMPLETED',
+    ABORTED: 'ABORTED',
+    FAILED: 'FAILED',
+    CANCELLED: 'CANCELLED'
+} as const;
+export type ScheduledJobStatusEnum = typeof ScheduledJobStatusEnum[keyof typeof ScheduledJobStatusEnum];
+
+
+/**
+ * Check if a given object implements the ScheduledJob interface.
+ */
+export function instanceOfScheduledJob(value: object): value is ScheduledJob {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('userId' in value) || value['userId'] === undefined) return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined) return false;
+    if (!('jobId' in value) || value['jobId'] === undefined) return false;
+    if (!('groupId' in value) || value['groupId'] === undefined) return false;
+    if (!('triggerId' in value) || value['triggerId'] === undefined) return false;
+    if (!('status' in value) || value['status'] === undefined) return false;
+    if (!('sendAtTimestamp' in value) || value['sendAtTimestamp'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    return true;
 }
 
 export function ScheduledJobFromJSON(json: any): ScheduledJob {
-  return ScheduledJobFromJSONTyped(json, false);
+    return ScheduledJobFromJSONTyped(json, false);
 }
 
-export function ScheduledJobFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ScheduledJob {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    jobId: json['jobId'],
-    groupId: json['groupId'],
-    triggerId: json['triggerId'],
-    status: json['status'],
-    sendAtTimestamp: new Date(json['sendAtTimestamp']),
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function ScheduledJobFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScheduledJob {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'jobId': json['jobId'],
+        'groupId': json['groupId'],
+        'triggerId': json['triggerId'],
+        'status': json['status'],
+        'sendAtTimestamp': (new Date(json['sendAtTimestamp'])),
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
-export function ScheduledJobToJSON(value?: ScheduledJob | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    inboxId: value.inboxId,
-    jobId: value.jobId,
-    groupId: value.groupId,
-    triggerId: value.triggerId,
-    status: value.status,
-    sendAtTimestamp: value.sendAtTimestamp.toISOString(),
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function ScheduledJobToJSON(json: any): ScheduledJob {
+    return ScheduledJobToJSONTyped(json, false);
 }
+
+export function ScheduledJobToJSONTyped(value?: ScheduledJob | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'userId': value['userId'],
+        'inboxId': value['inboxId'],
+        'jobId': value['jobId'],
+        'groupId': value['groupId'],
+        'triggerId': value['triggerId'],
+        'status': value['status'],
+        'sendAtTimestamp': ((value['sendAtTimestamp']).toISOString()),
+        'createdAt': ((value['createdAt']).toISOString()),
+        'updatedAt': ((value['updatedAt']).toISOString()),
+    };
+}
+

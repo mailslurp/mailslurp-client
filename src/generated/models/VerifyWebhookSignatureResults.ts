@@ -12,49 +12,55 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface VerifyWebhookSignatureResults
  */
 export interface VerifyWebhookSignatureResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof VerifyWebhookSignatureResults
-   */
-  isValid: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof VerifyWebhookSignatureResults
+     */
+    isValid: boolean;
 }
 
-export function VerifyWebhookSignatureResultsFromJSON(
-  json: any
-): VerifyWebhookSignatureResults {
-  return VerifyWebhookSignatureResultsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the VerifyWebhookSignatureResults interface.
+ */
+export function instanceOfVerifyWebhookSignatureResults(value: object): value is VerifyWebhookSignatureResults {
+    if (!('isValid' in value) || value['isValid'] === undefined) return false;
+    return true;
 }
 
-export function VerifyWebhookSignatureResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): VerifyWebhookSignatureResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    isValid: json['isValid'],
-  };
+export function VerifyWebhookSignatureResultsFromJSON(json: any): VerifyWebhookSignatureResults {
+    return VerifyWebhookSignatureResultsFromJSONTyped(json, false);
 }
 
-export function VerifyWebhookSignatureResultsToJSON(
-  value?: VerifyWebhookSignatureResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    isValid: value.isValid,
-  };
+export function VerifyWebhookSignatureResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyWebhookSignatureResults {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'isValid': json['isValid'],
+    };
 }
+
+export function VerifyWebhookSignatureResultsToJSON(json: any): VerifyWebhookSignatureResults {
+    return VerifyWebhookSignatureResultsToJSONTyped(json, false);
+}
+
+export function VerifyWebhookSignatureResultsToJSONTyped(value?: VerifyWebhookSignatureResults | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'isValid': value['isValid'],
+    };
+}
+

@@ -13,32 +13,45 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestNewInboxRulesetOptionsToJSON = exports.TestNewInboxRulesetOptionsFromJSONTyped = exports.TestNewInboxRulesetOptionsFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfTestNewInboxRulesetOptions = instanceOfTestNewInboxRulesetOptions;
+exports.TestNewInboxRulesetOptionsFromJSON = TestNewInboxRulesetOptionsFromJSON;
+exports.TestNewInboxRulesetOptionsFromJSONTyped = TestNewInboxRulesetOptionsFromJSONTyped;
+exports.TestNewInboxRulesetOptionsToJSON = TestNewInboxRulesetOptionsToJSON;
+exports.TestNewInboxRulesetOptionsToJSONTyped = TestNewInboxRulesetOptionsToJSONTyped;
+var InboxRulesetTestOptions_1 = require("./InboxRulesetTestOptions");
+var CreateInboxRulesetOptions_1 = require("./CreateInboxRulesetOptions");
+/**
+ * Check if a given object implements the TestNewInboxRulesetOptions interface.
+ */
+function instanceOfTestNewInboxRulesetOptions(value) {
+    if (!('inboxRulesetTestOptions' in value) || value['inboxRulesetTestOptions'] === undefined)
+        return false;
+    if (!('createInboxRulesetOptions' in value) || value['createInboxRulesetOptions'] === undefined)
+        return false;
+    return true;
+}
 function TestNewInboxRulesetOptionsFromJSON(json) {
     return TestNewInboxRulesetOptionsFromJSONTyped(json, false);
 }
-exports.TestNewInboxRulesetOptionsFromJSON = TestNewInboxRulesetOptionsFromJSON;
 function TestNewInboxRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        inboxRulesetTestOptions: (0, _1.InboxRulesetTestOptionsFromJSON)(json['inboxRulesetTestOptions']),
-        createInboxRulesetOptions: (0, _1.CreateInboxRulesetOptionsFromJSON)(json['createInboxRulesetOptions']),
+        'inboxRulesetTestOptions': (0, InboxRulesetTestOptions_1.InboxRulesetTestOptionsFromJSON)(json['inboxRulesetTestOptions']),
+        'createInboxRulesetOptions': (0, CreateInboxRulesetOptions_1.CreateInboxRulesetOptionsFromJSON)(json['createInboxRulesetOptions']),
     };
 }
-exports.TestNewInboxRulesetOptionsFromJSONTyped = TestNewInboxRulesetOptionsFromJSONTyped;
-function TestNewInboxRulesetOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function TestNewInboxRulesetOptionsToJSON(json) {
+    return TestNewInboxRulesetOptionsToJSONTyped(json, false);
+}
+function TestNewInboxRulesetOptionsToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        inboxRulesetTestOptions: (0, _1.InboxRulesetTestOptionsToJSON)(value.inboxRulesetTestOptions),
-        createInboxRulesetOptions: (0, _1.CreateInboxRulesetOptionsToJSON)(value.createInboxRulesetOptions),
+        'inboxRulesetTestOptions': (0, InboxRulesetTestOptions_1.InboxRulesetTestOptionsToJSON)(value['inboxRulesetTestOptions']),
+        'createInboxRulesetOptions': (0, CreateInboxRulesetOptions_1.CreateInboxRulesetOptionsToJSON)(value['createInboxRulesetOptions']),
     };
 }
-exports.TestNewInboxRulesetOptionsToJSON = TestNewInboxRulesetOptionsToJSON;

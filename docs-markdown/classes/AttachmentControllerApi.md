@@ -78,6 +78,7 @@
 ▸ **deleteAllAttachments**(`initOverrides?`): `Promise`<`void`\>
 
 Delete all attachments
+Delete all attachments
 
 #### Parameters
 
@@ -95,6 +96,7 @@ ___
 
 ▸ **deleteAllAttachmentsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
+Delete all attachments
 Delete all attachments
 
 #### Parameters
@@ -114,6 +116,7 @@ ___
 ▸ **deleteAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete an attachment
+Delete an attachment
 
 #### Parameters
 
@@ -132,6 +135,7 @@ ___
 
 ▸ **deleteAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
+Delete an attachment
 Delete an attachment
 
 #### Parameters

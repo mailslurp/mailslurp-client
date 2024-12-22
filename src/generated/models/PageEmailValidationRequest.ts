@@ -12,21 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { PageableObject } from './PageableObject';
 import {
-  EmailValidationRequestDto,
-  EmailValidationRequestDtoFromJSON,
-  EmailValidationRequestDtoFromJSONTyped,
-  EmailValidationRequestDtoToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-} from './';
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PageableObjectToJSONTyped,
+} from './PageableObject';
+import type { SortObject } from './SortObject';
+import {
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    SortObjectToJSONTyped,
+} from './SortObject';
+import type { EmailValidationRequestDto } from './EmailValidationRequestDto';
+import {
+    EmailValidationRequestDtoFromJSON,
+    EmailValidationRequestDtoFromJSONTyped,
+    EmailValidationRequestDtoToJSON,
+    EmailValidationRequestDtoToJSONTyped,
+} from './EmailValidationRequestDto';
 
 /**
  * Paginated email validation request records. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -34,131 +41,129 @@ import {
  * @interface PageEmailValidationRequest
  */
 export interface PageEmailValidationRequest {
-  /**
-   *
-   * @type {Array<EmailValidationRequestDto>}
-   * @memberof PageEmailValidationRequest
-   */
-  content?: Array<EmailValidationRequestDto>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageEmailValidationRequest
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEmailValidationRequest
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEmailValidationRequest
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEmailValidationRequest
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEmailValidationRequest
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEmailValidationRequest
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEmailValidationRequest
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEmailValidationRequest
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageEmailValidationRequest
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEmailValidationRequest
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<EmailValidationRequestDto>}
+     * @memberof PageEmailValidationRequest
+     */
+    content?: Array<EmailValidationRequestDto>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageEmailValidationRequest
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEmailValidationRequest
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEmailValidationRequest
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEmailValidationRequest
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEmailValidationRequest
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEmailValidationRequest
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEmailValidationRequest
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEmailValidationRequest
+     */
+    number?: number;
+    /**
+     * 
+     * @type {Array<SortObject>}
+     * @memberof PageEmailValidationRequest
+     */
+    sort?: Array<SortObject>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEmailValidationRequest
+     */
+    empty?: boolean;
 }
 
-export function PageEmailValidationRequestFromJSON(
-  json: any
-): PageEmailValidationRequest {
-  return PageEmailValidationRequestFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the PageEmailValidationRequest interface.
+ */
+export function instanceOfPageEmailValidationRequest(value: object): value is PageEmailValidationRequest {
+    if (!('totalPages' in value) || value['totalPages'] === undefined) return false;
+    if (!('totalElements' in value) || value['totalElements'] === undefined) return false;
+    return true;
 }
 
-export function PageEmailValidationRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageEmailValidationRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(EmailValidationRequestDtoFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageEmailValidationRequestFromJSON(json: any): PageEmailValidationRequest {
+    return PageEmailValidationRequestFromJSONTyped(json, false);
 }
 
-export function PageEmailValidationRequestToJSON(
-  value?: PageEmailValidationRequest | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(EmailValidationRequestDtoToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
-    totalElements: value.totalElements,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageEmailValidationRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageEmailValidationRequest {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'] == null ? undefined : ((json['content'] as Array<any>).map(EmailValidationRequestDtoFromJSON)),
+        'pageable': json['pageable'] == null ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalPages': json['totalPages'],
+        'totalElements': json['totalElements'],
+        'last': json['last'] == null ? undefined : json['last'],
+        'numberOfElements': json['numberOfElements'] == null ? undefined : json['numberOfElements'],
+        'first': json['first'] == null ? undefined : json['first'],
+        'size': json['size'] == null ? undefined : json['size'],
+        'number': json['number'] == null ? undefined : json['number'],
+        'sort': json['sort'] == null ? undefined : ((json['sort'] as Array<any>).map(SortObjectFromJSON)),
+        'empty': json['empty'] == null ? undefined : json['empty'],
+    };
 }
+
+export function PageEmailValidationRequestToJSON(json: any): PageEmailValidationRequest {
+    return PageEmailValidationRequestToJSONTyped(json, false);
+}
+
+export function PageEmailValidationRequestToJSONTyped(value?: PageEmailValidationRequest | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'content': value['content'] == null ? undefined : ((value['content'] as Array<any>).map(EmailValidationRequestDtoToJSON)),
+        'pageable': PageableObjectToJSON(value['pageable']),
+        'totalPages': value['totalPages'],
+        'totalElements': value['totalElements'],
+        'last': value['last'],
+        'numberOfElements': value['numberOfElements'],
+        'first': value['first'],
+        'size': value['size'],
+        'number': value['number'],
+        'sort': value['sort'] == null ? undefined : ((value['sort'] as Array<any>).map(SortObjectToJSON)),
+        'empty': value['empty'],
+    };
+}
+

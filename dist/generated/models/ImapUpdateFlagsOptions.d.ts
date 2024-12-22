@@ -23,10 +23,10 @@ export interface ImapUpdateFlagsOptions {
     operation: string;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<string | null>}
      * @memberof ImapUpdateFlagsOptions
      */
-    flags?: Array<string> | null;
+    flags?: Array<string | null> | null;
     /**
      *
      * @type {string}
@@ -40,6 +40,11 @@ export interface ImapUpdateFlagsOptions {
      */
     seqSet?: string | null;
 }
+/**
+ * Check if a given object implements the ImapUpdateFlagsOptions interface.
+ */
+export declare function instanceOfImapUpdateFlagsOptions(value: object): value is ImapUpdateFlagsOptions;
 export declare function ImapUpdateFlagsOptionsFromJSON(json: any): ImapUpdateFlagsOptions;
 export declare function ImapUpdateFlagsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapUpdateFlagsOptions;
-export declare function ImapUpdateFlagsOptionsToJSON(value?: ImapUpdateFlagsOptions | null): any;
+export declare function ImapUpdateFlagsOptionsToJSON(json: any): ImapUpdateFlagsOptions;
+export declare function ImapUpdateFlagsOptionsToJSONTyped(value?: ImapUpdateFlagsOptions | null, ignoreDiscriminator?: boolean): any;

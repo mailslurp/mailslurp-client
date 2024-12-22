@@ -12,57 +12,64 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface VerifyWebhookSignatureOptions
  */
 export interface VerifyWebhookSignatureOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof VerifyWebhookSignatureOptions
-   */
-  messageId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof VerifyWebhookSignatureOptions
-   */
-  signature: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifyWebhookSignatureOptions
+     */
+    messageId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifyWebhookSignatureOptions
+     */
+    signature: string;
 }
 
-export function VerifyWebhookSignatureOptionsFromJSON(
-  json: any
-): VerifyWebhookSignatureOptions {
-  return VerifyWebhookSignatureOptionsFromJSONTyped(json, false);
+/**
+ * Check if a given object implements the VerifyWebhookSignatureOptions interface.
+ */
+export function instanceOfVerifyWebhookSignatureOptions(value: object): value is VerifyWebhookSignatureOptions {
+    if (!('messageId' in value) || value['messageId'] === undefined) return false;
+    if (!('signature' in value) || value['signature'] === undefined) return false;
+    return true;
 }
 
-export function VerifyWebhookSignatureOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): VerifyWebhookSignatureOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    messageId: json['messageId'],
-    signature: json['signature'],
-  };
+export function VerifyWebhookSignatureOptionsFromJSON(json: any): VerifyWebhookSignatureOptions {
+    return VerifyWebhookSignatureOptionsFromJSONTyped(json, false);
 }
 
-export function VerifyWebhookSignatureOptionsToJSON(
-  value?: VerifyWebhookSignatureOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    messageId: value.messageId,
-    signature: value.signature,
-  };
+export function VerifyWebhookSignatureOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyWebhookSignatureOptions {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'messageId': json['messageId'],
+        'signature': json['signature'],
+    };
 }
+
+export function VerifyWebhookSignatureOptionsToJSON(json: any): VerifyWebhookSignatureOptions {
+    return VerifyWebhookSignatureOptionsToJSONTyped(json, false);
+}
+
+export function VerifyWebhookSignatureOptionsToJSONTyped(value?: VerifyWebhookSignatureOptions | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'messageId': value['messageId'],
+        'signature': value['signature'],
+    };
+}
+

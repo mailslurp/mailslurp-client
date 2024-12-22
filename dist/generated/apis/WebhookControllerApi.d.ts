@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CountDto, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookRedriveAllResult, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import type { AbstractWebhookPayload, CountDto, CreateWebhookOptions, JSONSchemaDto, PageWebhookEndpointProjection, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookProjection, WebhookRedriveAllResult, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models/index';
 export interface CreateAccountWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
 }
@@ -36,9 +36,23 @@ export interface GetAllAccountWebhooksRequest {
     page?: number;
     size?: number;
     sort?: GetAllAccountWebhooksSortEnum;
-    eventType?: GetAllAccountWebhooksEventTypeEnum;
     since?: Date;
     before?: Date;
+    eventType?: GetAllAccountWebhooksEventTypeEnum;
+    health?: GetAllAccountWebhooksHealthEnum;
+    searchFilter?: string;
+}
+export interface GetAllWebhookEndpointsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllWebhookEndpointsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    inboxId?: string;
+    phoneId?: string;
+    before?: Date;
+    health?: GetAllWebhookEndpointsHealthEnum;
+    eventType?: GetAllWebhookEndpointsEventTypeEnum;
 }
 export interface GetAllWebhookResultsRequest {
     page?: number;
@@ -67,6 +81,9 @@ export interface GetAllWebhooksRequest {
     inboxId?: string;
     phoneId?: string;
     before?: Date;
+    health?: GetAllWebhooksHealthEnum;
+    eventType?: GetAllWebhooksEventTypeEnum;
+    url?: string;
 }
 export interface GetInboxWebhooksPaginatedRequest {
     inboxId: string;
@@ -76,6 +93,8 @@ export interface GetInboxWebhooksPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    health?: GetInboxWebhooksPaginatedHealthEnum;
+    eventType?: GetInboxWebhooksPaginatedEventTypeEnum;
 }
 export interface GetJsonSchemaForWebhookEventRequest {
     event: GetJsonSchemaForWebhookEventEventEnum;
@@ -90,6 +109,9 @@ export interface GetPhoneNumberWebhooksPaginatedRequest {
     sort?: GetPhoneNumberWebhooksPaginatedSortEnum;
     since?: Date;
     before?: Date;
+    eventType?: GetPhoneNumberWebhooksPaginatedEventTypeEnum;
+    searchFilter?: string;
+    health?: GetPhoneNumberWebhooksPaginatedHealthEnum;
 }
 export interface GetTestWebhookPayloadRequest {
     eventName?: GetTestWebhookPayloadEventNameEnum;
@@ -127,12 +149,21 @@ export interface GetWebhookResultsCountRequest {
 }
 export interface GetWebhooksRequest {
     inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetWebhooksSortEnum;
 }
 export interface RedriveWebhookResultRequest {
     webhookResultId: string;
 }
 export interface SendTestDataRequest {
     webhookId: string;
+}
+export interface UpdateWebhookRequest {
+    webhookId: string;
+    createWebhookOptions: CreateWebhookOptions;
+    inboxId?: string;
+    phoneNumberId?: string;
 }
 export interface UpdateWebhookHeadersRequest {
     webhookId: string;
@@ -154,452 +185,601 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Get notified of account level events such as bounce and bounce recipient.
      * Attach a WebHook URL to an inbox
      */
-    createAccountWebhookRaw(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    createAccountWebhookRaw(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookDto>>;
     /**
      * Get notified of account level events such as bounce and bounce recipient.
      * Attach a WebHook URL to an inbox
      */
-    createAccountWebhook(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    createAccountWebhook(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookDto>;
     /**
      * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
      * Attach a WebHook URL to an inbox
      */
-    createWebhookRaw(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    createWebhookRaw(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookDto>>;
     /**
      * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
      * Attach a WebHook URL to an inbox
      */
-    createWebhook(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    createWebhook(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookDto>;
     /**
      * Get notified whenever a phone number receives an SMS via a WebHook URL.
      * Attach a WebHook URL to a phone number
      */
-    createWebhookForPhoneNumberRaw(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    createWebhookForPhoneNumberRaw(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookDto>>;
     /**
      * Get notified whenever a phone number receives an SMS via a WebHook URL.
      * Attach a WebHook URL to a phone number
      */
-    createWebhookForPhoneNumber(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    createWebhookForPhoneNumber(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookDto>;
     /**
      * Delete all webhooks
      */
-    deleteAllWebhooksRaw(requestParameters: DeleteAllWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllWebhooksRaw(requestParameters: DeleteAllWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete all webhooks
      */
-    deleteAllWebhooks(requestParameters: DeleteAllWebhooksRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteAllWebhooks(requestParameters?: DeleteAllWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete and disable a Webhook for an Inbox
      */
-    deleteWebhookRaw(requestParameters: DeleteWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteWebhookRaw(requestParameters: DeleteWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete and disable a Webhook for an Inbox
      */
-    deleteWebhook(requestParameters: DeleteWebhookRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteWebhook(requestParameters: DeleteWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete a webhook
      */
-    deleteWebhookByIdRaw(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteWebhookByIdRaw(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete a webhook
      */
-    deleteWebhookById(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteWebhookById(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
      * List account webhooks Paginated
      */
-    getAllAccountWebhooksRaw(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>>;
+    getAllAccountWebhooksRaw(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageWebhookProjection>>;
     /**
      * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
      * List account webhooks Paginated
      */
-    getAllAccountWebhooks(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
+    getAllAccountWebhooks(requestParameters?: GetAllAccountWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageWebhookProjection>;
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    getAllWebhookEndpointsRaw(requestParameters: GetAllWebhookEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageWebhookEndpointProjection>>;
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    getAllWebhookEndpoints(requestParameters?: GetAllWebhookEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageWebhookEndpointProjection>;
     /**
      * Get results for all webhooks
      */
-    getAllWebhookResultsRaw(requestParameters: GetAllWebhookResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookResult>>;
+    getAllWebhookResultsRaw(requestParameters: GetAllWebhookResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageWebhookResult>>;
     /**
      * Get results for all webhooks
      */
-    getAllWebhookResults(requestParameters: GetAllWebhookResultsRequest, initOverrides?: RequestInit): Promise<PageWebhookResult>;
+    getAllWebhookResults(requestParameters?: GetAllWebhookResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageWebhookResult>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * List Webhooks Paginated
      */
-    getAllWebhooksRaw(requestParameters: GetAllWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>>;
+    getAllWebhooksRaw(requestParameters: GetAllWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageWebhookProjection>>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * List Webhooks Paginated
      */
-    getAllWebhooks(requestParameters: GetAllWebhooksRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
+    getAllWebhooks(requestParameters?: GetAllWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageWebhookProjection>;
     /**
      * Get paginated webhooks for an Inbox
      */
-    getInboxWebhooksPaginatedRaw(requestParameters: GetInboxWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>>;
+    getInboxWebhooksPaginatedRaw(requestParameters: GetInboxWebhooksPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageWebhookProjection>>;
     /**
      * Get paginated webhooks for an Inbox
      */
-    getInboxWebhooksPaginated(requestParameters: GetInboxWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
+    getInboxWebhooksPaginated(requestParameters: GetInboxWebhooksPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageWebhookProjection>;
     /**
      * Get JSON Schema definition for webhook payload by event
      */
-    getJsonSchemaForWebhookEventRaw(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<JSONSchemaDto>>;
+    getJsonSchemaForWebhookEventRaw(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<JSONSchemaDto>>;
     /**
      * Get JSON Schema definition for webhook payload by event
      */
-    getJsonSchemaForWebhookEvent(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit): Promise<JSONSchemaDto>;
+    getJsonSchemaForWebhookEvent(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<JSONSchemaDto>;
     /**
      * Get JSON Schema definition for webhook payload
      */
-    getJsonSchemaForWebhookPayloadRaw(requestParameters: GetJsonSchemaForWebhookPayloadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<JSONSchemaDto>>;
+    getJsonSchemaForWebhookPayloadRaw(requestParameters: GetJsonSchemaForWebhookPayloadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<JSONSchemaDto>>;
     /**
      * Get JSON Schema definition for webhook payload
      */
-    getJsonSchemaForWebhookPayload(requestParameters: GetJsonSchemaForWebhookPayloadRequest, initOverrides?: RequestInit): Promise<JSONSchemaDto>;
+    getJsonSchemaForWebhookPayload(requestParameters: GetJsonSchemaForWebhookPayloadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<JSONSchemaDto>;
     /**
      * Get paginated webhooks for a phone number
      */
-    getPhoneNumberWebhooksPaginatedRaw(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>>;
+    getPhoneNumberWebhooksPaginatedRaw(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageWebhookProjection>>;
     /**
      * Get paginated webhooks for a phone number
      */
-    getPhoneNumberWebhooksPaginated(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
+    getPhoneNumberWebhooksPaginated(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageWebhookProjection>;
     /**
      * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
      */
-    getTestWebhookPayloadRaw(requestParameters: GetTestWebhookPayloadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AbstractWebhookPayload>>;
+    getTestWebhookPayloadRaw(requestParameters: GetTestWebhookPayloadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AbstractWebhookPayload>>;
     /**
      * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
      */
-    getTestWebhookPayload(requestParameters: GetTestWebhookPayloadRequest, initOverrides?: RequestInit): Promise<AbstractWebhookPayload>;
+    getTestWebhookPayload(requestParameters?: GetTestWebhookPayloadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AbstractWebhookPayload>;
     /**
      * Get webhook test payload for bounce
      */
-    getTestWebhookPayloadBounceRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookBouncePayload>>;
+    getTestWebhookPayloadBounceRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookBouncePayload>>;
     /**
      * Get webhook test payload for bounce
      */
-    getTestWebhookPayloadBounce(initOverrides?: RequestInit): Promise<WebhookBouncePayload>;
+    getTestWebhookPayloadBounce(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookBouncePayload>;
     /**
      * Get webhook test payload for bounce recipient
      */
-    getTestWebhookPayloadBounceRecipientRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookBounceRecipientPayload>>;
+    getTestWebhookPayloadBounceRecipientRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookBounceRecipientPayload>>;
     /**
      * Get webhook test payload for bounce recipient
      */
-    getTestWebhookPayloadBounceRecipient(initOverrides?: RequestInit): Promise<WebhookBounceRecipientPayload>;
+    getTestWebhookPayloadBounceRecipient(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookBounceRecipientPayload>;
     /**
      * Get webhook test payload for delivery status event
      */
-    getTestWebhookPayloadDeliveryStatusRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDeliveryStatusPayload>>;
+    getTestWebhookPayloadDeliveryStatusRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookDeliveryStatusPayload>>;
     /**
      * Get webhook test payload for delivery status event
      */
-    getTestWebhookPayloadDeliveryStatus(initOverrides?: RequestInit): Promise<WebhookDeliveryStatusPayload>;
+    getTestWebhookPayloadDeliveryStatus(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookDeliveryStatusPayload>;
     /**
      * Get webhook test payload for email opened event
      */
-    getTestWebhookPayloadEmailOpenedRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookEmailOpenedPayload>>;
+    getTestWebhookPayloadEmailOpenedRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookEmailOpenedPayload>>;
     /**
      * Get webhook test payload for email opened event
      */
-    getTestWebhookPayloadEmailOpened(initOverrides?: RequestInit): Promise<WebhookEmailOpenedPayload>;
+    getTestWebhookPayloadEmailOpened(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookEmailOpenedPayload>;
     /**
      * Get webhook test payload for email opened event
      */
-    getTestWebhookPayloadEmailReadRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookEmailReadPayload>>;
+    getTestWebhookPayloadEmailReadRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookEmailReadPayload>>;
     /**
      * Get webhook test payload for email opened event
      */
-    getTestWebhookPayloadEmailRead(initOverrides?: RequestInit): Promise<WebhookEmailReadPayload>;
+    getTestWebhookPayloadEmailRead(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookEmailReadPayload>;
     /**
      * Get example payload for webhook
      */
-    getTestWebhookPayloadForWebhookRaw(requestParameters: GetTestWebhookPayloadForWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AbstractWebhookPayload>>;
+    getTestWebhookPayloadForWebhookRaw(requestParameters: GetTestWebhookPayloadForWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AbstractWebhookPayload>>;
     /**
      * Get example payload for webhook
      */
-    getTestWebhookPayloadForWebhook(requestParameters: GetTestWebhookPayloadForWebhookRequest, initOverrides?: RequestInit): Promise<AbstractWebhookPayload>;
+    getTestWebhookPayloadForWebhook(requestParameters: GetTestWebhookPayloadForWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AbstractWebhookPayload>;
     /**
      * Get webhook test payload for new attachment event
      */
-    getTestWebhookPayloadNewAttachmentRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewAttachmentPayload>>;
+    getTestWebhookPayloadNewAttachmentRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookNewAttachmentPayload>>;
     /**
      * Get webhook test payload for new attachment event
      */
-    getTestWebhookPayloadNewAttachment(initOverrides?: RequestInit): Promise<WebhookNewAttachmentPayload>;
+    getTestWebhookPayloadNewAttachment(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookNewAttachmentPayload>;
     /**
      * Get webhook test payload for new contact event
      */
-    getTestWebhookPayloadNewContactRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewContactPayload>>;
+    getTestWebhookPayloadNewContactRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookNewContactPayload>>;
     /**
      * Get webhook test payload for new contact event
      */
-    getTestWebhookPayloadNewContact(initOverrides?: RequestInit): Promise<WebhookNewContactPayload>;
+    getTestWebhookPayloadNewContact(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookNewContactPayload>;
     /**
      * Get webhook test payload for new email event
      */
-    getTestWebhookPayloadNewEmailRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewEmailPayload>>;
+    getTestWebhookPayloadNewEmailRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookNewEmailPayload>>;
     /**
      * Get webhook test payload for new email event
      */
-    getTestWebhookPayloadNewEmail(initOverrides?: RequestInit): Promise<WebhookNewEmailPayload>;
+    getTestWebhookPayloadNewEmail(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookNewEmailPayload>;
     /**
      * Get webhook test payload for new sms event
      */
-    getTestWebhookPayloadNewSmsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewSmsPayload>>;
+    getTestWebhookPayloadNewSmsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookNewSmsPayload>>;
     /**
      * Get webhook test payload for new sms event
      */
-    getTestWebhookPayloadNewSms(initOverrides?: RequestInit): Promise<WebhookNewSmsPayload>;
+    getTestWebhookPayloadNewSms(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookNewSmsPayload>;
     /**
      * Get a webhook
      */
-    getWebhookRaw(requestParameters: GetWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    getWebhookRaw(requestParameters: GetWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookDto>>;
     /**
      * Get a webhook
      */
-    getWebhook(requestParameters: GetWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    getWebhook(requestParameters: GetWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookDto>;
     /**
      * Get a webhook result for a webhook
      */
-    getWebhookResultRaw(requestParameters: GetWebhookResultRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookResultDto>>;
+    getWebhookResultRaw(requestParameters: GetWebhookResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookResultDto>>;
     /**
      * Get a webhook result for a webhook
      */
-    getWebhookResult(requestParameters: GetWebhookResultRequest, initOverrides?: RequestInit): Promise<WebhookResultDto>;
+    getWebhookResult(requestParameters: GetWebhookResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookResultDto>;
     /**
      * Get a webhook results for a webhook
      */
-    getWebhookResultsRaw(requestParameters: GetWebhookResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookResult>>;
+    getWebhookResultsRaw(requestParameters: GetWebhookResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageWebhookResult>>;
     /**
      * Get a webhook results for a webhook
      */
-    getWebhookResults(requestParameters: GetWebhookResultsRequest, initOverrides?: RequestInit): Promise<PageWebhookResult>;
+    getWebhookResults(requestParameters: GetWebhookResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageWebhookResult>;
     /**
      * Get a webhook results count for a webhook
      */
-    getWebhookResultsCountRaw(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    getWebhookResultsCountRaw(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CountDto>>;
     /**
      * Get a webhook results count for a webhook
      */
-    getWebhookResultsCount(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit): Promise<CountDto>;
+    getWebhookResultsCount(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CountDto>;
     /**
      * Get count of unseen webhook results with error status
      */
-    getWebhookResultsUnseenErrorCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnseenErrorCountDto>>;
+    getWebhookResultsUnseenErrorCountRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UnseenErrorCountDto>>;
     /**
      * Get count of unseen webhook results with error status
      */
-    getWebhookResultsUnseenErrorCount(initOverrides?: RequestInit): Promise<UnseenErrorCountDto>;
+    getWebhookResultsUnseenErrorCount(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UnseenErrorCountDto>;
     /**
      * Get all webhooks for an Inbox
+     * @deprecated
      */
-    getWebhooksRaw(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<WebhookDto>>>;
+    getWebhooksRaw(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<WebhookProjection>>>;
     /**
      * Get all webhooks for an Inbox
+     * @deprecated
      */
-    getWebhooks(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<Array<WebhookDto>>;
+    getWebhooks(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<WebhookProjection>>;
     /**
      * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
      * Redrive all webhook results that have failed status
      */
-    redriveAllWebhookResultsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookRedriveAllResult>>;
+    redriveAllWebhookResultsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookRedriveAllResult>>;
     /**
      * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
      * Redrive all webhook results that have failed status
      */
-    redriveAllWebhookResults(initOverrides?: RequestInit): Promise<WebhookRedriveAllResult>;
+    redriveAllWebhookResults(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookRedriveAllResult>;
     /**
      * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
      * Get a webhook result and try to resend the original webhook payload
      */
-    redriveWebhookResultRaw(requestParameters: RedriveWebhookResultRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookRedriveResult>>;
+    redriveWebhookResultRaw(requestParameters: RedriveWebhookResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookRedriveResult>>;
     /**
      * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
      * Get a webhook result and try to resend the original webhook payload
      */
-    redriveWebhookResult(requestParameters: RedriveWebhookResultRequest, initOverrides?: RequestInit): Promise<WebhookRedriveResult>;
+    redriveWebhookResult(requestParameters: RedriveWebhookResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookRedriveResult>;
     /**
      * Send webhook test data
      */
-    sendTestDataRaw(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookTestResult>>;
+    sendTestDataRaw(requestParameters: SendTestDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookTestResult>>;
     /**
      * Send webhook test data
      */
-    sendTestData(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<WebhookTestResult>;
+    sendTestData(requestParameters: SendTestDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookTestResult>;
+    /**
+     * Update a webhook
+     */
+    updateWebhookRaw(requestParameters: UpdateWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookDto>>;
+    /**
+     * Update a webhook
+     */
+    updateWebhook(requestParameters: UpdateWebhookRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookDto>;
     /**
      * Update a webhook request headers
      */
-    updateWebhookHeadersRaw(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    updateWebhookHeadersRaw(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebhookDto>>;
     /**
      * Update a webhook request headers
      */
-    updateWebhookHeaders(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    updateWebhookHeaders(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebhookDto>;
     /**
      * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
      * Verify a webhook payload signature
      */
-    verifyWebhookSignatureRaw(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<VerifyWebhookSignatureResults>>;
+    verifyWebhookSignatureRaw(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VerifyWebhookSignatureResults>>;
     /**
      * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
      * Verify a webhook payload signature
      */
-    verifyWebhookSignature(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<VerifyWebhookSignatureResults>;
+    verifyWebhookSignature(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VerifyWebhookSignatureResults>;
     /**
      * Wait for webhook results for a webhook
      */
-    waitForWebhookResultsRaw(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<WebhookResultDto>>>;
+    waitForWebhookResultsRaw(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<WebhookResultDto>>>;
     /**
      * Wait for webhook results for a webhook
      */
-    waitForWebhookResults(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<Array<WebhookResultDto>>;
+    waitForWebhookResults(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<WebhookResultDto>>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllAccountWebhooksSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllAccountWebhooksSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllAccountWebhooksSortEnum = typeof GetAllAccountWebhooksSortEnum[keyof typeof GetAllAccountWebhooksSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllAccountWebhooksEventTypeEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const GetAllAccountWebhooksEventTypeEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetAllAccountWebhooksEventTypeEnum = typeof GetAllAccountWebhooksEventTypeEnum[keyof typeof GetAllAccountWebhooksEventTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllWebhookResultsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllAccountWebhooksHealthEnum: {
+    readonly HEALTHY: "HEALTHY";
+    readonly UNHEALTHY: "UNHEALTHY";
+};
+export type GetAllAccountWebhooksHealthEnum = typeof GetAllAccountWebhooksHealthEnum[keyof typeof GetAllAccountWebhooksHealthEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllWebhookResultsResultTypeEnum {
-    BAD_RESPONSE = "BAD_RESPONSE",
-    EXCEPTION = "EXCEPTION",
-    SUCCESS = "SUCCESS",
-    REDRIVEN = "REDRIVEN"
-}
+export declare const GetAllWebhookEndpointsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllWebhookEndpointsSortEnum = typeof GetAllWebhookEndpointsSortEnum[keyof typeof GetAllWebhookEndpointsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllWebhookResultsEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const GetAllWebhookEndpointsHealthEnum: {
+    readonly HEALTHY: "HEALTHY";
+    readonly UNHEALTHY: "UNHEALTHY";
+};
+export type GetAllWebhookEndpointsHealthEnum = typeof GetAllWebhookEndpointsHealthEnum[keyof typeof GetAllWebhookEndpointsHealthEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAllWebhooksSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllWebhookEndpointsEventTypeEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetAllWebhookEndpointsEventTypeEnum = typeof GetAllWebhookEndpointsEventTypeEnum[keyof typeof GetAllWebhookEndpointsEventTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetInboxWebhooksPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllWebhookResultsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllWebhookResultsSortEnum = typeof GetAllWebhookResultsSortEnum[keyof typeof GetAllWebhookResultsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetJsonSchemaForWebhookEventEventEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const GetAllWebhookResultsResultTypeEnum: {
+    readonly BAD_RESPONSE: "BAD_RESPONSE";
+    readonly EXCEPTION: "EXCEPTION";
+    readonly SUCCESS: "SUCCESS";
+    readonly REDRIVEN: "REDRIVEN";
+};
+export type GetAllWebhookResultsResultTypeEnum = typeof GetAllWebhookResultsResultTypeEnum[keyof typeof GetAllWebhookResultsResultTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetPhoneNumberWebhooksPaginatedSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllWebhookResultsEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetAllWebhookResultsEventNameEnum = typeof GetAllWebhookResultsEventNameEnum[keyof typeof GetAllWebhookResultsEventNameEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetTestWebhookPayloadEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const GetAllWebhooksSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllWebhooksSortEnum = typeof GetAllWebhooksSortEnum[keyof typeof GetAllWebhooksSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetWebhookResultsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllWebhooksHealthEnum: {
+    readonly HEALTHY: "HEALTHY";
+    readonly UNHEALTHY: "UNHEALTHY";
+};
+export type GetAllWebhooksHealthEnum = typeof GetAllWebhooksHealthEnum[keyof typeof GetAllWebhooksHealthEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetWebhookResultsResultTypeEnum {
-    BAD_RESPONSE = "BAD_RESPONSE",
-    EXCEPTION = "EXCEPTION",
-    SUCCESS = "SUCCESS",
-    REDRIVEN = "REDRIVEN"
-}
+export declare const GetAllWebhooksEventTypeEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetAllWebhooksEventTypeEnum = typeof GetAllWebhooksEventTypeEnum[keyof typeof GetAllWebhooksEventTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetWebhookResultsEventNameEnum {
-    EMAIL_RECEIVED = "EMAIL_RECEIVED",
-    NEW_EMAIL = "NEW_EMAIL",
-    NEW_CONTACT = "NEW_CONTACT",
-    NEW_ATTACHMENT = "NEW_ATTACHMENT",
-    EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ",
-    DELIVERY_STATUS = "DELIVERY_STATUS",
-    BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
-}
+export declare const GetInboxWebhooksPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetInboxWebhooksPaginatedSortEnum = typeof GetInboxWebhooksPaginatedSortEnum[keyof typeof GetInboxWebhooksPaginatedSortEnum];
+/**
+ * @export
+ */
+export declare const GetInboxWebhooksPaginatedHealthEnum: {
+    readonly HEALTHY: "HEALTHY";
+    readonly UNHEALTHY: "UNHEALTHY";
+};
+export type GetInboxWebhooksPaginatedHealthEnum = typeof GetInboxWebhooksPaginatedHealthEnum[keyof typeof GetInboxWebhooksPaginatedHealthEnum];
+/**
+ * @export
+ */
+export declare const GetInboxWebhooksPaginatedEventTypeEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetInboxWebhooksPaginatedEventTypeEnum = typeof GetInboxWebhooksPaginatedEventTypeEnum[keyof typeof GetInboxWebhooksPaginatedEventTypeEnum];
+/**
+ * @export
+ */
+export declare const GetJsonSchemaForWebhookEventEventEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetJsonSchemaForWebhookEventEventEnum = typeof GetJsonSchemaForWebhookEventEventEnum[keyof typeof GetJsonSchemaForWebhookEventEventEnum];
+/**
+ * @export
+ */
+export declare const GetPhoneNumberWebhooksPaginatedSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetPhoneNumberWebhooksPaginatedSortEnum = typeof GetPhoneNumberWebhooksPaginatedSortEnum[keyof typeof GetPhoneNumberWebhooksPaginatedSortEnum];
+/**
+ * @export
+ */
+export declare const GetPhoneNumberWebhooksPaginatedEventTypeEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetPhoneNumberWebhooksPaginatedEventTypeEnum = typeof GetPhoneNumberWebhooksPaginatedEventTypeEnum[keyof typeof GetPhoneNumberWebhooksPaginatedEventTypeEnum];
+/**
+ * @export
+ */
+export declare const GetPhoneNumberWebhooksPaginatedHealthEnum: {
+    readonly HEALTHY: "HEALTHY";
+    readonly UNHEALTHY: "UNHEALTHY";
+};
+export type GetPhoneNumberWebhooksPaginatedHealthEnum = typeof GetPhoneNumberWebhooksPaginatedHealthEnum[keyof typeof GetPhoneNumberWebhooksPaginatedHealthEnum];
+/**
+ * @export
+ */
+export declare const GetTestWebhookPayloadEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetTestWebhookPayloadEventNameEnum = typeof GetTestWebhookPayloadEventNameEnum[keyof typeof GetTestWebhookPayloadEventNameEnum];
+/**
+ * @export
+ */
+export declare const GetWebhookResultsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetWebhookResultsSortEnum = typeof GetWebhookResultsSortEnum[keyof typeof GetWebhookResultsSortEnum];
+/**
+ * @export
+ */
+export declare const GetWebhookResultsResultTypeEnum: {
+    readonly BAD_RESPONSE: "BAD_RESPONSE";
+    readonly EXCEPTION: "EXCEPTION";
+    readonly SUCCESS: "SUCCESS";
+    readonly REDRIVEN: "REDRIVEN";
+};
+export type GetWebhookResultsResultTypeEnum = typeof GetWebhookResultsResultTypeEnum[keyof typeof GetWebhookResultsResultTypeEnum];
+/**
+ * @export
+ */
+export declare const GetWebhookResultsEventNameEnum: {
+    readonly EMAIL_RECEIVED: "EMAIL_RECEIVED";
+    readonly NEW_EMAIL: "NEW_EMAIL";
+    readonly NEW_CONTACT: "NEW_CONTACT";
+    readonly NEW_ATTACHMENT: "NEW_ATTACHMENT";
+    readonly EMAIL_OPENED: "EMAIL_OPENED";
+    readonly EMAIL_READ: "EMAIL_READ";
+    readonly DELIVERY_STATUS: "DELIVERY_STATUS";
+    readonly BOUNCE: "BOUNCE";
+    readonly BOUNCE_RECIPIENT: "BOUNCE_RECIPIENT";
+    readonly NEW_SMS: "NEW_SMS";
+    readonly NEW_GUEST_USER: "NEW_GUEST_USER";
+};
+export type GetWebhookResultsEventNameEnum = typeof GetWebhookResultsEventNameEnum[keyof typeof GetWebhookResultsEventNameEnum];
+/**
+ * @export
+ */
+export declare const GetWebhooksSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetWebhooksSortEnum = typeof GetWebhooksSortEnum[keyof typeof GetWebhooksSortEnum];

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentEntity, AttachmentMetaData, DownloadAttachmentDto, InlineObject, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
+import type { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, PageAttachmentEntity, UploadAttachmentOptions, UploadMultipartFormRequest } from '../models/index';
 export interface DeleteAttachmentRequest {
     attachmentId: string;
 }
@@ -43,14 +43,18 @@ export interface UploadAttachmentBytesRequest {
     contentType2?: string;
     contentId?: string;
     filename?: string;
+    fileSize?: number;
     filename2?: string;
 }
-export interface UploadMultipartFormRequest {
+export interface UploadMultipartFormOperationRequest {
     contentId?: string;
     contentType?: string;
     filename?: string;
+    contentTypeHeader?: string;
     xFilename?: string;
-    inlineObject?: InlineObject;
+    xFilenameRaw?: string;
+    xFilesize?: number;
+    uploadMultipartFormRequest?: UploadMultipartFormRequest;
 }
 /**
  *
@@ -58,98 +62,102 @@ export interface UploadMultipartFormRequest {
 export declare class AttachmentControllerApi extends runtime.BaseAPI {
     /**
      * Delete all attachments
-     */
-    deleteAllAttachmentsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
-    /**
      * Delete all attachments
      */
-    deleteAllAttachments(initOverrides?: RequestInit): Promise<void>;
+    deleteAllAttachmentsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete all attachments
+     * Delete all attachments
+     */
+    deleteAllAttachments(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete an attachment
-     */
-    deleteAttachmentRaw(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
-    /**
      * Delete an attachment
      */
-    deleteAttachment(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteAttachmentRaw(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete an attachment
+     * Delete an attachment
+     */
+    deleteAttachment(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
      * Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
      */
-    downloadAttachmentAsBase64EncodedRaw(requestParameters: DownloadAttachmentAsBase64EncodedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DownloadAttachmentDto>>;
+    downloadAttachmentAsBase64EncodedRaw(requestParameters: DownloadAttachmentAsBase64EncodedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DownloadAttachmentDto>>;
     /**
      * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
      * Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
      */
-    downloadAttachmentAsBase64Encoded(requestParameters: DownloadAttachmentAsBase64EncodedRequest, initOverrides?: RequestInit): Promise<DownloadAttachmentDto>;
+    downloadAttachmentAsBase64Encoded(requestParameters: DownloadAttachmentAsBase64EncodedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DownloadAttachmentDto>;
     /**
      * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
      * Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
      */
-    downloadAttachmentAsBytesRaw(requestParameters: DownloadAttachmentAsBytesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    downloadAttachmentAsBytesRaw(requestParameters: DownloadAttachmentAsBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
      * Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
      */
-    downloadAttachmentAsBytes(requestParameters: DownloadAttachmentAsBytesRequest, initOverrides?: RequestInit): Promise<string>;
+    downloadAttachmentAsBytes(requestParameters: DownloadAttachmentAsBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Get an attachment entity
      */
-    getAttachmentRaw(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AttachmentEntity>>;
+    getAttachmentRaw(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AttachmentEntityDto>>;
     /**
      * Get an attachment entity
      */
-    getAttachment(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit): Promise<AttachmentEntity>;
+    getAttachment(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AttachmentEntityDto>;
     /**
      * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
      * Get email attachment metadata information
      */
-    getAttachmentInfoRaw(requestParameters: GetAttachmentInfoRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AttachmentMetaData>>;
+    getAttachmentInfoRaw(requestParameters: GetAttachmentInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AttachmentMetaData>>;
     /**
      * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
      * Get email attachment metadata information
      */
-    getAttachmentInfo(requestParameters: GetAttachmentInfoRequest, initOverrides?: RequestInit): Promise<AttachmentMetaData>;
+    getAttachmentInfo(requestParameters: GetAttachmentInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AttachmentMetaData>;
     /**
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * Get email attachments
      */
-    getAttachmentsRaw(requestParameters: GetAttachmentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAttachmentEntity>>;
+    getAttachmentsRaw(requestParameters: GetAttachmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageAttachmentEntity>>;
     /**
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * Get email attachments
      */
-    getAttachments(requestParameters: GetAttachmentsRequest, initOverrides?: RequestInit): Promise<PageAttachmentEntity>;
+    getAttachments(requestParameters?: GetAttachmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageAttachmentEntity>;
     /**
      * Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
      */
-    uploadAttachmentRaw(requestParameters: UploadAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    uploadAttachmentRaw(requestParameters: UploadAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
     /**
      * Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
      */
-    uploadAttachment(requestParameters: UploadAttachmentRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    uploadAttachment(requestParameters: UploadAttachmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
     /**
      * Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
      */
-    uploadAttachmentBytesRaw(requestParameters: UploadAttachmentBytesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    uploadAttachmentBytesRaw(requestParameters: UploadAttachmentBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
     /**
      * Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
      */
-    uploadAttachmentBytes(requestParameters: UploadAttachmentBytesRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    uploadAttachmentBytes(requestParameters?: UploadAttachmentBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
     /**
      * Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
      */
-    uploadMultipartFormRaw(requestParameters: UploadMultipartFormRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    uploadMultipartFormRaw(requestParameters: UploadMultipartFormOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
     /**
      * Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
      */
-    uploadMultipartForm(requestParameters: UploadMultipartFormRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    uploadMultipartForm(requestParameters?: UploadMultipartFormOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetAttachmentsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAttachmentsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAttachmentsSortEnum = typeof GetAttachmentsSortEnum[keyof typeof GetAttachmentsSortEnum];

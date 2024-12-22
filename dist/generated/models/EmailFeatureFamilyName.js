@@ -13,59 +13,70 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureFamilyNameToJSON = exports.EmailFeatureFamilyNameFromJSONTyped = exports.EmailFeatureFamilyNameFromJSON = exports.EmailFeatureFamilyNameSlugEnum = void 0;
+exports.EmailFeatureFamilyNameSlugEnum = void 0;
+exports.instanceOfEmailFeatureFamilyName = instanceOfEmailFeatureFamilyName;
+exports.EmailFeatureFamilyNameFromJSON = EmailFeatureFamilyNameFromJSON;
+exports.EmailFeatureFamilyNameFromJSONTyped = EmailFeatureFamilyNameFromJSONTyped;
+exports.EmailFeatureFamilyNameToJSON = EmailFeatureFamilyNameToJSON;
+exports.EmailFeatureFamilyNameToJSONTyped = EmailFeatureFamilyNameToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var EmailFeatureFamilyNameSlugEnum;
-(function (EmailFeatureFamilyNameSlugEnum) {
-    EmailFeatureFamilyNameSlugEnum["aol"] = "aol";
-    EmailFeatureFamilyNameSlugEnum["apple_mail"] = "apple-mail";
-    EmailFeatureFamilyNameSlugEnum["fastmail"] = "fastmail";
-    EmailFeatureFamilyNameSlugEnum["free_fr"] = "free-fr";
-    EmailFeatureFamilyNameSlugEnum["gmail"] = "gmail";
-    EmailFeatureFamilyNameSlugEnum["gmx"] = "gmx";
-    EmailFeatureFamilyNameSlugEnum["hey"] = "hey";
-    EmailFeatureFamilyNameSlugEnum["ionos_1and1"] = "ionos-1and1";
-    EmailFeatureFamilyNameSlugEnum["laposte"] = "laposte";
-    EmailFeatureFamilyNameSlugEnum["mail_ru"] = "mail-ru";
-    EmailFeatureFamilyNameSlugEnum["microsoft"] = "microsoft";
-    EmailFeatureFamilyNameSlugEnum["orange"] = "orange";
-    EmailFeatureFamilyNameSlugEnum["outlook"] = "outlook";
-    EmailFeatureFamilyNameSlugEnum["protonmail"] = "protonmail";
-    EmailFeatureFamilyNameSlugEnum["rainloop"] = "rainloop";
-    EmailFeatureFamilyNameSlugEnum["samsung_email"] = "samsung-email";
-    EmailFeatureFamilyNameSlugEnum["sfr"] = "sfr";
-    EmailFeatureFamilyNameSlugEnum["t_online_de"] = "t-online-de";
-    EmailFeatureFamilyNameSlugEnum["thunderbird"] = "thunderbird";
-    EmailFeatureFamilyNameSlugEnum["web_de"] = "web-de";
-    EmailFeatureFamilyNameSlugEnum["yahoo"] = "yahoo";
-})(EmailFeatureFamilyNameSlugEnum = exports.EmailFeatureFamilyNameSlugEnum || (exports.EmailFeatureFamilyNameSlugEnum = {}));
+exports.EmailFeatureFamilyNameSlugEnum = {
+    aol: 'aol',
+    apple_mail: 'apple-mail',
+    fastmail: 'fastmail',
+    free_fr: 'free-fr',
+    gmail: 'gmail',
+    gmx: 'gmx',
+    hey: 'hey',
+    ionos_1and1: 'ionos-1and1',
+    laposte: 'laposte',
+    mail_ru: 'mail-ru',
+    microsoft: 'microsoft',
+    orange: 'orange',
+    outlook: 'outlook',
+    protonmail: 'protonmail',
+    rainloop: 'rainloop',
+    samsung_email: 'samsung-email',
+    sfr: 'sfr',
+    t_online_de: 't-online-de',
+    thunderbird: 'thunderbird',
+    web_de: 'web-de',
+    yahoo: 'yahoo'
+};
+/**
+ * Check if a given object implements the EmailFeatureFamilyName interface.
+ */
+function instanceOfEmailFeatureFamilyName(value) {
+    if (!('slug' in value) || value['slug'] === undefined)
+        return false;
+    if (!('name' in value) || value['name'] === undefined)
+        return false;
+    return true;
+}
 function EmailFeatureFamilyNameFromJSON(json) {
     return EmailFeatureFamilyNameFromJSONTyped(json, false);
 }
-exports.EmailFeatureFamilyNameFromJSON = EmailFeatureFamilyNameFromJSON;
 function EmailFeatureFamilyNameFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        slug: json['slug'],
-        name: json['name'],
+        'slug': json['slug'],
+        'name': json['name'],
     };
 }
-exports.EmailFeatureFamilyNameFromJSONTyped = EmailFeatureFamilyNameFromJSONTyped;
-function EmailFeatureFamilyNameToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function EmailFeatureFamilyNameToJSON(json) {
+    return EmailFeatureFamilyNameToJSONTyped(json, false);
+}
+function EmailFeatureFamilyNameToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        slug: value.slug,
-        name: value.name,
+        'slug': value['slug'],
+        'name': value['name'],
     };
 }
-exports.EmailFeatureFamilyNameToJSON = EmailFeatureFamilyNameToJSON;

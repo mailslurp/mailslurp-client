@@ -26,8 +26,19 @@ export interface ConnectorSyncResult {
      * @type {Array<string>}
      * @memberof ConnectorSyncResult
      */
-    logLines?: Array<string>;
+    logs?: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof ConnectorSyncResult
+     */
+    emailIds?: Array<string>;
 }
+/**
+ * Check if a given object implements the ConnectorSyncResult interface.
+ */
+export declare function instanceOfConnectorSyncResult(value: object): value is ConnectorSyncResult;
 export declare function ConnectorSyncResultFromJSON(json: any): ConnectorSyncResult;
 export declare function ConnectorSyncResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSyncResult;
-export declare function ConnectorSyncResultToJSON(value?: ConnectorSyncResult | null): any;
+export declare function ConnectorSyncResultToJSON(json: any): ConnectorSyncResult;
+export declare function ConnectorSyncResultToJSONTyped(value?: ConnectorSyncResult | null, ignoreDiscriminator?: boolean): any;

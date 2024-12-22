@@ -90,62 +90,67 @@ export interface GenerateDmarcRecordOptions {
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateDmarcRecordOptionsVersionEnum {
-    DMARC1 = "DMARC1"
-}
+export declare const GenerateDmarcRecordOptionsVersionEnum: {
+    readonly DMARC1: "DMARC1";
+};
+export type GenerateDmarcRecordOptionsVersionEnum = typeof GenerateDmarcRecordOptionsVersionEnum[keyof typeof GenerateDmarcRecordOptionsVersionEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateDmarcRecordOptionsPolicyEnum {
-    NONE = "NONE",
-    QUARANTINE = "QUARANTINE",
-    REJECT = "REJECT"
-}
+export declare const GenerateDmarcRecordOptionsPolicyEnum: {
+    readonly NONE: "NONE";
+    readonly QUARANTINE: "QUARANTINE";
+    readonly REJECT: "REJECT";
+};
+export type GenerateDmarcRecordOptionsPolicyEnum = typeof GenerateDmarcRecordOptionsPolicyEnum[keyof typeof GenerateDmarcRecordOptionsPolicyEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateDmarcRecordOptionsSubdomainPolicyEnum {
-    NONE = "NONE",
-    QUARANTINE = "QUARANTINE",
-    REJECT = "REJECT"
-}
+export declare const GenerateDmarcRecordOptionsSubdomainPolicyEnum: {
+    readonly NONE: "NONE";
+    readonly QUARANTINE: "QUARANTINE";
+    readonly REJECT: "REJECT";
+};
+export type GenerateDmarcRecordOptionsSubdomainPolicyEnum = typeof GenerateDmarcRecordOptionsSubdomainPolicyEnum[keyof typeof GenerateDmarcRecordOptionsSubdomainPolicyEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateDmarcRecordOptionsReportFormatEnum {
-    AFRF = "AFRF"
-}
+export declare const GenerateDmarcRecordOptionsReportFormatEnum: {
+    readonly AFRF: "AFRF";
+};
+export type GenerateDmarcRecordOptionsReportFormatEnum = typeof GenerateDmarcRecordOptionsReportFormatEnum[keyof typeof GenerateDmarcRecordOptionsReportFormatEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateDmarcRecordOptionsAdkimEnum {
-    STRICT = "STRICT",
-    RELAXED = "RELAXED"
-}
+export declare const GenerateDmarcRecordOptionsAdkimEnum: {
+    readonly STRICT: "STRICT";
+    readonly RELAXED: "RELAXED";
+};
+export type GenerateDmarcRecordOptionsAdkimEnum = typeof GenerateDmarcRecordOptionsAdkimEnum[keyof typeof GenerateDmarcRecordOptionsAdkimEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateDmarcRecordOptionsAspfEnum {
-    STRICT = "STRICT",
-    RELAXED = "RELAXED"
-}
+export declare const GenerateDmarcRecordOptionsAspfEnum: {
+    readonly STRICT: "STRICT";
+    readonly RELAXED: "RELAXED";
+};
+export type GenerateDmarcRecordOptionsAspfEnum = typeof GenerateDmarcRecordOptionsAspfEnum[keyof typeof GenerateDmarcRecordOptionsAspfEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GenerateDmarcRecordOptionsFoEnum {
-    _0 = "FO_0",
-    _1 = "FO_1",
-    D = "FO_D",
-    S = "FO_S"
-}
+export declare const GenerateDmarcRecordOptionsFoEnum: {
+    readonly _0: "FO_0";
+    readonly _1: "FO_1";
+    readonly D: "FO_D";
+    readonly S: "FO_S";
+};
+export type GenerateDmarcRecordOptionsFoEnum = typeof GenerateDmarcRecordOptionsFoEnum[keyof typeof GenerateDmarcRecordOptionsFoEnum];
+/**
+ * Check if a given object implements the GenerateDmarcRecordOptions interface.
+ */
+export declare function instanceOfGenerateDmarcRecordOptions(value: object): value is GenerateDmarcRecordOptions;
 export declare function GenerateDmarcRecordOptionsFromJSON(json: any): GenerateDmarcRecordOptions;
 export declare function GenerateDmarcRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateDmarcRecordOptions;
-export declare function GenerateDmarcRecordOptionsToJSON(value?: GenerateDmarcRecordOptions | null): any;
+export declare function GenerateDmarcRecordOptionsToJSON(json: any): GenerateDmarcRecordOptions;
+export declare function GenerateDmarcRecordOptionsToJSONTyped(value?: GenerateDmarcRecordOptions | null, ignoreDiscriminator?: boolean): any;

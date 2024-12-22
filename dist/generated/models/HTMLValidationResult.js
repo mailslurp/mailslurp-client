@@ -13,36 +13,52 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HTMLValidationResultToJSON = exports.HTMLValidationResultFromJSONTyped = exports.HTMLValidationResultFromJSON = void 0;
-var _1 = require("./");
+exports.instanceOfHTMLValidationResult = instanceOfHTMLValidationResult;
+exports.HTMLValidationResultFromJSON = HTMLValidationResultFromJSON;
+exports.HTMLValidationResultFromJSONTyped = HTMLValidationResultFromJSONTyped;
+exports.HTMLValidationResultToJSON = HTMLValidationResultToJSON;
+exports.HTMLValidationResultToJSONTyped = HTMLValidationResultToJSONTyped;
+var ValidationMessage_1 = require("./ValidationMessage");
+/**
+ * Check if a given object implements the HTMLValidationResult interface.
+ */
+function instanceOfHTMLValidationResult(value) {
+    if (!('isValid' in value) || value['isValid'] === undefined)
+        return false;
+    if (!('infos' in value) || value['infos'] === undefined)
+        return false;
+    if (!('errors' in value) || value['errors'] === undefined)
+        return false;
+    if (!('warnings' in value) || value['warnings'] === undefined)
+        return false;
+    return true;
+}
 function HTMLValidationResultFromJSON(json) {
     return HTMLValidationResultFromJSONTyped(json, false);
 }
-exports.HTMLValidationResultFromJSON = HTMLValidationResultFromJSON;
 function HTMLValidationResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        isValid: json['isValid'],
-        infos: json['infos'].map(_1.ValidationMessageFromJSON),
-        errors: json['errors'].map(_1.ValidationMessageFromJSON),
-        warnings: json['warnings'].map(_1.ValidationMessageFromJSON),
+        'isValid': json['isValid'],
+        'infos': (json['infos'].map(ValidationMessage_1.ValidationMessageFromJSON)),
+        'errors': (json['errors'].map(ValidationMessage_1.ValidationMessageFromJSON)),
+        'warnings': (json['warnings'].map(ValidationMessage_1.ValidationMessageFromJSON)),
     };
 }
-exports.HTMLValidationResultFromJSONTyped = HTMLValidationResultFromJSONTyped;
-function HTMLValidationResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function HTMLValidationResultToJSON(json) {
+    return HTMLValidationResultToJSONTyped(json, false);
+}
+function HTMLValidationResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        isValid: value.isValid,
-        infos: value.infos.map(_1.ValidationMessageToJSON),
-        errors: value.errors.map(_1.ValidationMessageToJSON),
-        warnings: value.warnings.map(_1.ValidationMessageToJSON),
+        'isValid': value['isValid'],
+        'infos': (value['infos'].map(ValidationMessage_1.ValidationMessageToJSON)),
+        'errors': (value['errors'].map(ValidationMessage_1.ValidationMessageToJSON)),
+        'warnings': (value['warnings'].map(ValidationMessage_1.ValidationMessageToJSON)),
     };
 }
-exports.HTMLValidationResultToJSON = HTMLValidationResultToJSON;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxReplierOptions, InboxReplierDto, PageInboxReplierDto, PageInboxReplierEvents, UpdateInboxReplierOptions } from '../models';
+import type { CreateInboxReplierOptions, InboxReplierDto, PageInboxReplierDto, PageInboxReplierEvents, UpdateInboxReplierOptions } from '../models/index';
 export interface CreateNewInboxReplierRequest {
     createInboxReplierOptions: CreateInboxReplierOptions;
 }
@@ -19,6 +19,15 @@ export interface DeleteInboxReplierRequest {
 }
 export interface DeleteInboxRepliersRequest {
     inboxId?: string;
+}
+export interface GetAllInboxReplierEventsRequest {
+    inboxReplierId?: string;
+    inboxId?: string;
+    emailId?: string;
+    sentId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllInboxReplierEventsSortEnum;
 }
 export interface GetInboxReplierRequest {
     id: string;
@@ -49,86 +58,104 @@ export declare class InboxReplierControllerApi extends runtime.BaseAPI {
      * Create a new inbox rule for reply toing, blocking, and allowing emails when sending and receiving
      * Create an inbox replier
      */
-    createNewInboxReplierRaw(requestParameters: CreateNewInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxReplierDto>>;
+    createNewInboxReplierRaw(requestParameters: CreateNewInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxReplierDto>>;
     /**
      * Create a new inbox rule for reply toing, blocking, and allowing emails when sending and receiving
      * Create an inbox replier
      */
-    createNewInboxReplier(requestParameters: CreateNewInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto>;
+    createNewInboxReplier(requestParameters: CreateNewInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxReplierDto>;
     /**
      * Delete inbox replier
      * Delete an inbox replier
      */
-    deleteInboxReplierRaw(requestParameters: DeleteInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteInboxReplierRaw(requestParameters: DeleteInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete inbox replier
      * Delete an inbox replier
      */
-    deleteInboxReplier(requestParameters: DeleteInboxReplierRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteInboxReplier(requestParameters: DeleteInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Delete inbox repliers. Accepts optional inboxId filter.
      * Delete inbox repliers
      */
-    deleteInboxRepliersRaw(requestParameters: DeleteInboxRepliersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteInboxRepliersRaw(requestParameters: DeleteInboxRepliersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete inbox repliers. Accepts optional inboxId filter.
      * Delete inbox repliers
      */
-    deleteInboxRepliers(requestParameters: DeleteInboxRepliersRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteInboxRepliers(requestParameters?: DeleteInboxRepliersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    getAllInboxReplierEventsRaw(requestParameters: GetAllInboxReplierEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxReplierEvents>>;
+    /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    getAllInboxReplierEvents(requestParameters?: GetAllInboxReplierEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxReplierEvents>;
     /**
      * Get inbox ruleset
      * Get an inbox replier
      */
-    getInboxReplierRaw(requestParameters: GetInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxReplierDto>>;
+    getInboxReplierRaw(requestParameters: GetInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxReplierDto>>;
     /**
      * Get inbox ruleset
      * Get an inbox replier
      */
-    getInboxReplier(requestParameters: GetInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto>;
+    getInboxReplier(requestParameters: GetInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxReplierDto>;
     /**
      * Get inbox ruleset events
      * Get an inbox replier event list
      */
-    getInboxReplierEventsRaw(requestParameters: GetInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxReplierEvents>>;
+    getInboxReplierEventsRaw(requestParameters: GetInboxReplierEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxReplierEvents>>;
     /**
      * Get inbox ruleset events
      * Get an inbox replier event list
      */
-    getInboxReplierEvents(requestParameters: GetInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<PageInboxReplierEvents>;
+    getInboxReplierEvents(requestParameters: GetInboxReplierEventsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxReplierEvents>;
     /**
      * List all repliers attached to an inbox
      * List inbox repliers
      */
-    getInboxRepliersRaw(requestParameters: GetInboxRepliersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxReplierDto>>;
+    getInboxRepliersRaw(requestParameters: GetInboxRepliersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PageInboxReplierDto>>;
     /**
      * List all repliers attached to an inbox
      * List inbox repliers
      */
-    getInboxRepliers(requestParameters: GetInboxRepliersRequest, initOverrides?: RequestInit): Promise<PageInboxReplierDto>;
+    getInboxRepliers(requestParameters?: GetInboxRepliersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PageInboxReplierDto>;
     /**
      * Update inbox ruleset
      * Update an inbox replier
      */
-    updateInboxReplierRaw(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxReplierDto>>;
+    updateInboxReplierRaw(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InboxReplierDto>>;
     /**
      * Update inbox ruleset
      * Update an inbox replier
      */
-    updateInboxReplier(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto>;
+    updateInboxReplier(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InboxReplierDto>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetInboxReplierEventsSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetAllInboxReplierEventsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetAllInboxReplierEventsSortEnum = typeof GetAllInboxReplierEventsSortEnum[keyof typeof GetAllInboxReplierEventsSortEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum GetInboxRepliersSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
+export declare const GetInboxReplierEventsSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetInboxReplierEventsSortEnum = typeof GetInboxReplierEventsSortEnum[keyof typeof GetInboxReplierEventsSortEnum];
+/**
+ * @export
+ */
+export declare const GetInboxRepliersSortEnum: {
+    readonly ASC: "ASC";
+    readonly DESC: "DESC";
+};
+export type GetInboxRepliersSortEnum = typeof GetInboxRepliersSortEnum[keyof typeof GetInboxRepliersSortEnum];

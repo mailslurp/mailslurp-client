@@ -13,61 +13,82 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookEmailReadPayloadToJSON = exports.WebhookEmailReadPayloadFromJSONTyped = exports.WebhookEmailReadPayloadFromJSON = exports.WebhookEmailReadPayloadEventNameEnum = void 0;
-var runtime_1 = require("../runtime");
+exports.WebhookEmailReadPayloadEventNameEnum = void 0;
+exports.instanceOfWebhookEmailReadPayload = instanceOfWebhookEmailReadPayload;
+exports.WebhookEmailReadPayloadFromJSON = WebhookEmailReadPayloadFromJSON;
+exports.WebhookEmailReadPayloadFromJSONTyped = WebhookEmailReadPayloadFromJSONTyped;
+exports.WebhookEmailReadPayloadToJSON = WebhookEmailReadPayloadToJSON;
+exports.WebhookEmailReadPayloadToJSONTyped = WebhookEmailReadPayloadToJSONTyped;
 /**
  * @export
- * @enum {string}
  */
-var WebhookEmailReadPayloadEventNameEnum;
-(function (WebhookEmailReadPayloadEventNameEnum) {
-    WebhookEmailReadPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
-    WebhookEmailReadPayloadEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
-    WebhookEmailReadPayloadEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
-    WebhookEmailReadPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
-    WebhookEmailReadPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
-    WebhookEmailReadPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-    WebhookEmailReadPayloadEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
-    WebhookEmailReadPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
-    WebhookEmailReadPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
-    WebhookEmailReadPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
-})(WebhookEmailReadPayloadEventNameEnum = exports.WebhookEmailReadPayloadEventNameEnum || (exports.WebhookEmailReadPayloadEventNameEnum = {}));
+exports.WebhookEmailReadPayloadEventNameEnum = {
+    EMAIL_RECEIVED: 'EMAIL_RECEIVED',
+    NEW_EMAIL: 'NEW_EMAIL',
+    NEW_CONTACT: 'NEW_CONTACT',
+    NEW_ATTACHMENT: 'NEW_ATTACHMENT',
+    EMAIL_OPENED: 'EMAIL_OPENED',
+    EMAIL_READ: 'EMAIL_READ',
+    DELIVERY_STATUS: 'DELIVERY_STATUS',
+    BOUNCE: 'BOUNCE',
+    BOUNCE_RECIPIENT: 'BOUNCE_RECIPIENT',
+    NEW_SMS: 'NEW_SMS',
+    NEW_GUEST_USER: 'NEW_GUEST_USER'
+};
+/**
+ * Check if a given object implements the WebhookEmailReadPayload interface.
+ */
+function instanceOfWebhookEmailReadPayload(value) {
+    if (!('messageId' in value) || value['messageId'] === undefined)
+        return false;
+    if (!('webhookId' in value) || value['webhookId'] === undefined)
+        return false;
+    if (!('eventName' in value) || value['eventName'] === undefined)
+        return false;
+    if (!('emailId' in value) || value['emailId'] === undefined)
+        return false;
+    if (!('inboxId' in value) || value['inboxId'] === undefined)
+        return false;
+    if (!('emailIsRead' in value) || value['emailIsRead'] === undefined)
+        return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    return true;
+}
 function WebhookEmailReadPayloadFromJSON(json) {
     return WebhookEmailReadPayloadFromJSONTyped(json, false);
 }
-exports.WebhookEmailReadPayloadFromJSON = WebhookEmailReadPayloadFromJSON;
 function WebhookEmailReadPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        eventName: json['eventName'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        emailId: json['emailId'],
-        inboxId: json['inboxId'],
-        emailIsRead: json['emailIsRead'],
-        createdAt: new Date(json['createdAt']),
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': json['webhookName'] == null ? undefined : json['webhookName'],
+        'emailId': json['emailId'],
+        'inboxId': json['inboxId'],
+        'emailIsRead': json['emailIsRead'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
-exports.WebhookEmailReadPayloadFromJSONTyped = WebhookEmailReadPayloadFromJSONTyped;
-function WebhookEmailReadPayloadToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookEmailReadPayloadToJSON(json) {
+    return WebhookEmailReadPayloadToJSONTyped(json, false);
+}
+function WebhookEmailReadPayloadToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        eventName: value.eventName,
-        webhookName: value.webhookName,
-        emailId: value.emailId,
-        inboxId: value.inboxId,
-        emailIsRead: value.emailIsRead,
-        createdAt: value.createdAt.toISOString(),
+        'messageId': value['messageId'],
+        'webhookId': value['webhookId'],
+        'eventName': value['eventName'],
+        'webhookName': value['webhookName'],
+        'emailId': value['emailId'],
+        'inboxId': value['inboxId'],
+        'emailIsRead': value['emailIsRead'],
+        'createdAt': ((value['createdAt']).toISOString()),
     };
 }
-exports.WebhookEmailReadPayloadToJSON = WebhookEmailReadPayloadToJSON;

@@ -13,35 +13,47 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookTestResultToJSON = exports.WebhookTestResultFromJSONTyped = exports.WebhookTestResultFromJSON = void 0;
-var runtime_1 = require("../runtime");
-var _1 = require("./");
+exports.instanceOfWebhookTestResult = instanceOfWebhookTestResult;
+exports.WebhookTestResultFromJSON = WebhookTestResultFromJSON;
+exports.WebhookTestResultFromJSONTyped = WebhookTestResultFromJSONTyped;
+exports.WebhookTestResultToJSON = WebhookTestResultToJSON;
+exports.WebhookTestResultToJSONTyped = WebhookTestResultToJSONTyped;
+var WebhookTestRequest_1 = require("./WebhookTestRequest");
+var WebhookTestResponse_1 = require("./WebhookTestResponse");
+/**
+ * Check if a given object implements the WebhookTestResult interface.
+ */
+function instanceOfWebhookTestResult(value) {
+    if (!('response' in value) || value['response'] === undefined)
+        return false;
+    if (!('request' in value) || value['request'] === undefined)
+        return false;
+    return true;
+}
 function WebhookTestResultFromJSON(json) {
     return WebhookTestResultFromJSONTyped(json, false);
 }
-exports.WebhookTestResultFromJSON = WebhookTestResultFromJSON;
 function WebhookTestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        response: (0, _1.WebhookTestResponseFromJSON)(json['response']),
-        request: (0, _1.WebhookTestRequestFromJSON)(json['request']),
+        'message': json['message'] == null ? undefined : json['message'],
+        'response': (0, WebhookTestResponse_1.WebhookTestResponseFromJSON)(json['response']),
+        'request': (0, WebhookTestRequest_1.WebhookTestRequestFromJSON)(json['request']),
     };
 }
-exports.WebhookTestResultFromJSONTyped = WebhookTestResultFromJSONTyped;
-function WebhookTestResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function WebhookTestResultToJSON(json) {
+    return WebhookTestResultToJSONTyped(json, false);
+}
+function WebhookTestResultToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        message: value.message,
-        response: (0, _1.WebhookTestResponseToJSON)(value.response),
-        request: (0, _1.WebhookTestRequestToJSON)(value.request),
+        'message': value['message'],
+        'response': (0, WebhookTestResponse_1.WebhookTestResponseToJSON)(value['response']),
+        'request': (0, WebhookTestRequest_1.WebhookTestRequestToJSON)(value['request']),
     };
 }
-exports.WebhookTestResultToJSON = WebhookTestResultToJSON;

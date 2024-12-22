@@ -12,127 +12,138 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Contact object. For saving a user in contact book.
  * @export
  * @interface ContactDto
  */
 export interface ContactDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ContactDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactDto
-   */
-  groupId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactDto
-   */
-  firstName?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactDto
-   */
-  lastName?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactDto
-   */
-  company?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ContactDto
-   */
-  emailAddresses: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactDto
-   */
-  primaryEmailAddress?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ContactDto
-   */
-  tags: Array<string>;
-  /**
-   *
-   * @type {object}
-   * @memberof ContactDto
-   */
-  metaData?: object | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ContactDto
-   */
-  optOut?: boolean | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof ContactDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactDto
+     */
+    groupId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactDto
+     */
+    firstName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactDto
+     */
+    lastName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactDto
+     */
+    company?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ContactDto
+     */
+    emailAddresses: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactDto
+     */
+    primaryEmailAddress?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ContactDto
+     */
+    tags: Array<string>;
+    /**
+     * 
+     * @type {object}
+     * @memberof ContactDto
+     */
+    metaData?: object | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ContactDto
+     */
+    optOut?: boolean | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ContactDto
+     */
+    createdAt: Date;
+}
+
+/**
+ * Check if a given object implements the ContactDto interface.
+ */
+export function instanceOfContactDto(value: object): value is ContactDto {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('emailAddresses' in value) || value['emailAddresses'] === undefined) return false;
+    if (!('tags' in value) || value['tags'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    return true;
 }
 
 export function ContactDtoFromJSON(json: any): ContactDto {
-  return ContactDtoFromJSONTyped(json, false);
+    return ContactDtoFromJSONTyped(json, false);
 }
 
-export function ContactDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ContactDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
-    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
-    lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
-    company: !exists(json, 'company') ? undefined : json['company'],
-    emailAddresses: json['emailAddresses'],
-    primaryEmailAddress: !exists(json, 'primaryEmailAddress')
-      ? undefined
-      : json['primaryEmailAddress'],
-    tags: json['tags'],
-    metaData: !exists(json, 'metaData') ? undefined : json['metaData'],
-    optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function ContactDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContactDto {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'groupId': json['groupId'] == null ? undefined : json['groupId'],
+        'firstName': json['firstName'] == null ? undefined : json['firstName'],
+        'lastName': json['lastName'] == null ? undefined : json['lastName'],
+        'company': json['company'] == null ? undefined : json['company'],
+        'emailAddresses': json['emailAddresses'],
+        'primaryEmailAddress': json['primaryEmailAddress'] == null ? undefined : json['primaryEmailAddress'],
+        'tags': json['tags'],
+        'metaData': json['metaData'] == null ? undefined : json['metaData'],
+        'optOut': json['optOut'] == null ? undefined : json['optOut'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
-export function ContactDtoToJSON(value?: ContactDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    groupId: value.groupId,
-    firstName: value.firstName,
-    lastName: value.lastName,
-    company: value.company,
-    emailAddresses: value.emailAddresses,
-    primaryEmailAddress: value.primaryEmailAddress,
-    tags: value.tags,
-    metaData: value.metaData,
-    optOut: value.optOut,
-    createdAt: value.createdAt.toISOString(),
-  };
+export function ContactDtoToJSON(json: any): ContactDto {
+    return ContactDtoToJSONTyped(json, false);
 }
+
+export function ContactDtoToJSONTyped(value?: ContactDto | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'id': value['id'],
+        'groupId': value['groupId'],
+        'firstName': value['firstName'],
+        'lastName': value['lastName'],
+        'company': value['company'],
+        'emailAddresses': value['emailAddresses'],
+        'primaryEmailAddress': value['primaryEmailAddress'],
+        'tags': value['tags'],
+        'metaData': value['metaData'],
+        'optOut': value['optOut'],
+        'createdAt': ((value['createdAt']).toISOString()),
+    };
+}
+

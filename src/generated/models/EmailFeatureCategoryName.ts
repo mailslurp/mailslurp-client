@@ -12,68 +12,77 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailFeatureCategoryName
  */
 export interface EmailFeatureCategoryName {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureCategoryName
-   */
-  slug: EmailFeatureCategoryNameSlugEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureCategoryName
-   */
-  name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureCategoryName
+     */
+    slug: EmailFeatureCategoryNameSlugEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureCategoryName
+     */
+    name: string;
 }
+
 
 /**
  * @export
- * @enum {string}
  */
-export enum EmailFeatureCategoryNameSlugEnum {
-  css = 'css',
-  html = 'html',
-  image = 'image',
-  others = 'others',
+export const EmailFeatureCategoryNameSlugEnum = {
+    css: 'css',
+    html: 'html',
+    image: 'image',
+    others: 'others'
+} as const;
+export type EmailFeatureCategoryNameSlugEnum = typeof EmailFeatureCategoryNameSlugEnum[keyof typeof EmailFeatureCategoryNameSlugEnum];
+
+
+/**
+ * Check if a given object implements the EmailFeatureCategoryName interface.
+ */
+export function instanceOfEmailFeatureCategoryName(value: object): value is EmailFeatureCategoryName {
+    if (!('slug' in value) || value['slug'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    return true;
 }
 
-export function EmailFeatureCategoryNameFromJSON(
-  json: any
-): EmailFeatureCategoryName {
-  return EmailFeatureCategoryNameFromJSONTyped(json, false);
+export function EmailFeatureCategoryNameFromJSON(json: any): EmailFeatureCategoryName {
+    return EmailFeatureCategoryNameFromJSONTyped(json, false);
 }
 
-export function EmailFeatureCategoryNameFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailFeatureCategoryName {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    slug: json['slug'],
-    name: json['name'],
-  };
+export function EmailFeatureCategoryNameFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureCategoryName {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'slug': json['slug'],
+        'name': json['name'],
+    };
 }
 
-export function EmailFeatureCategoryNameToJSON(
-  value?: EmailFeatureCategoryName | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    slug: value.slug,
-    name: value.name,
-  };
+export function EmailFeatureCategoryNameToJSON(json: any): EmailFeatureCategoryName {
+    return EmailFeatureCategoryNameToJSONTyped(json, false);
 }
+
+export function EmailFeatureCategoryNameToJSONTyped(value?: EmailFeatureCategoryName | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'slug': value['slug'],
+        'name': value['name'],
+    };
+}
+

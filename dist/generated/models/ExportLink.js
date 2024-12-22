@@ -13,29 +13,39 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExportLinkToJSON = exports.ExportLinkFromJSONTyped = exports.ExportLinkFromJSON = void 0;
+exports.instanceOfExportLink = instanceOfExportLink;
+exports.ExportLinkFromJSON = ExportLinkFromJSON;
+exports.ExportLinkFromJSONTyped = ExportLinkFromJSONTyped;
+exports.ExportLinkToJSON = ExportLinkToJSON;
+exports.ExportLinkToJSONTyped = ExportLinkToJSONTyped;
+/**
+ * Check if a given object implements the ExportLink interface.
+ */
+function instanceOfExportLink(value) {
+    if (!('downloadLink' in value) || value['downloadLink'] === undefined)
+        return false;
+    return true;
+}
 function ExportLinkFromJSON(json) {
     return ExportLinkFromJSONTyped(json, false);
 }
-exports.ExportLinkFromJSON = ExportLinkFromJSON;
 function ExportLinkFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if (json == null) {
         return json;
     }
     return {
-        downloadLink: json['downloadLink'],
+        'downloadLink': json['downloadLink'],
     };
 }
-exports.ExportLinkFromJSONTyped = ExportLinkFromJSONTyped;
-function ExportLinkToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+function ExportLinkToJSON(json) {
+    return ExportLinkToJSONTyped(json, false);
+}
+function ExportLinkToJSONTyped(value, ignoreDiscriminator) {
+    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+    if (value == null) {
+        return value;
     }
     return {
-        downloadLink: value.downloadLink,
+        'downloadLink': value['downloadLink'],
     };
 }
-exports.ExportLinkToJSON = ExportLinkToJSON;

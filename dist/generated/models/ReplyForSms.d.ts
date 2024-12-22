@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { SentSmsDto } from './';
+import type { SentSmsDto } from './SentSmsDto';
 /**
  *
  * @export
@@ -23,6 +23,11 @@ export interface ReplyForSms {
      */
     reply?: SentSmsDto;
 }
+/**
+ * Check if a given object implements the ReplyForSms interface.
+ */
+export declare function instanceOfReplyForSms(value: object): value is ReplyForSms;
 export declare function ReplyForSmsFromJSON(json: any): ReplyForSms;
 export declare function ReplyForSmsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyForSms;
-export declare function ReplyForSmsToJSON(value?: ReplyForSms | null): any;
+export declare function ReplyForSmsToJSON(json: any): ReplyForSms;
+export declare function ReplyForSmsToJSONTyped(value?: ReplyForSms | null, ignoreDiscriminator?: boolean): any;

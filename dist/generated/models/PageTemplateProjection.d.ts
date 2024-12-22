@@ -9,7 +9,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SortObject, TemplateProjection } from './';
+import type { PageableObject } from './PageableObject';
+import type { SortObject } from './SortObject';
+import type { TemplateProjection } from './TemplateProjection';
 /**
  * Paginated email template results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +74,10 @@ export interface PageTemplateProjection {
     number?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {Array<SortObject>}
      * @memberof PageTemplateProjection
      */
-    sort?: SortObject;
+    sort?: Array<SortObject>;
     /**
      *
      * @type {boolean}
@@ -83,6 +85,11 @@ export interface PageTemplateProjection {
      */
     empty?: boolean;
 }
+/**
+ * Check if a given object implements the PageTemplateProjection interface.
+ */
+export declare function instanceOfPageTemplateProjection(value: object): value is PageTemplateProjection;
 export declare function PageTemplateProjectionFromJSON(json: any): PageTemplateProjection;
 export declare function PageTemplateProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageTemplateProjection;
-export declare function PageTemplateProjectionToJSON(value?: PageTemplateProjection | null): any;
+export declare function PageTemplateProjectionToJSON(json: any): PageTemplateProjection;
+export declare function PageTemplateProjectionToJSONTyped(value?: PageTemplateProjection | null, ignoreDiscriminator?: boolean): any;

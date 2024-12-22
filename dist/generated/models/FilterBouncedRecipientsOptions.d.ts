@@ -22,6 +22,11 @@ export interface FilterBouncedRecipientsOptions {
      */
     emailRecipients: Array<string>;
 }
+/**
+ * Check if a given object implements the FilterBouncedRecipientsOptions interface.
+ */
+export declare function instanceOfFilterBouncedRecipientsOptions(value: object): value is FilterBouncedRecipientsOptions;
 export declare function FilterBouncedRecipientsOptionsFromJSON(json: any): FilterBouncedRecipientsOptions;
 export declare function FilterBouncedRecipientsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilterBouncedRecipientsOptions;
-export declare function FilterBouncedRecipientsOptionsToJSON(value?: FilterBouncedRecipientsOptions | null): any;
+export declare function FilterBouncedRecipientsOptionsToJSON(json: any): FilterBouncedRecipientsOptions;
+export declare function FilterBouncedRecipientsOptionsToJSONTyped(value?: FilterBouncedRecipientsOptions | null, ignoreDiscriminator?: boolean): any;

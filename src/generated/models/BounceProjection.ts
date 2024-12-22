@@ -12,85 +12,96 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Bounced email event
  * @export
  * @interface BounceProjection
  */
 export interface BounceProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof BounceProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceProjection
-   */
-  sender: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceProjection
-   */
-  bounceMta?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceProjection
-   */
-  bounceType?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceProjection
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceProjection
-   */
-  id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    subject?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof BounceProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    sender: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    bounceMta?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    bounceType?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    id?: string;
+}
+
+/**
+ * Check if a given object implements the BounceProjection interface.
+ */
+export function instanceOfBounceProjection(value: object): value is BounceProjection {
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('sender' in value) || value['sender'] === undefined) return false;
+    return true;
 }
 
 export function BounceProjectionFromJSON(json: any): BounceProjection {
-  return BounceProjectionFromJSONTyped(json, false);
+    return BounceProjectionFromJSONTyped(json, false);
 }
 
-export function BounceProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): BounceProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    sender: json['sender'],
-    bounceMta: !exists(json, 'bounceMta') ? undefined : json['bounceMta'],
-    bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-  };
+export function BounceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceProjection {
+    if (json == null) {
+        return json;
+    }
+    return {
+        
+        'subject': json['subject'] == null ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'sender': json['sender'],
+        'bounceMta': json['bounceMta'] == null ? undefined : json['bounceMta'],
+        'bounceType': json['bounceType'] == null ? undefined : json['bounceType'],
+        'id': json['id'] == null ? undefined : json['id'],
+    };
 }
 
-export function BounceProjectionToJSON(value?: BounceProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    sender: value.sender,
-    bounceMta: value.bounceMta,
-    bounceType: value.bounceType,
-    subject: value.subject,
-    id: value.id,
-  };
+export function BounceProjectionToJSON(json: any): BounceProjection {
+    return BounceProjectionToJSONTyped(json, false);
 }
+
+export function BounceProjectionToJSONTyped(value?: BounceProjection | null, ignoreDiscriminator: boolean = false): any {
+    if (value == null) {
+        return value;
+    }
+
+    return {
+        
+        'subject': value['subject'],
+        'createdAt': ((value['createdAt']).toISOString()),
+        'sender': value['sender'],
+        'bounceMta': value['bounceMta'],
+        'bounceType': value['bounceType'],
+        'id': value['id'],
+    };
+}
+
