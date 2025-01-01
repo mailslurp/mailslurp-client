@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailPreviewToJSON = exports.EmailPreviewFromJSONTyped = exports.EmailPreviewFromJSON = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 function EmailPreviewFromJSON(json) {
     return EmailPreviewFromJSONTyped(json, false);
 }
@@ -25,6 +26,7 @@ function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         to: json['to'],
@@ -34,6 +36,20 @@ function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
         read: json['read'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
+        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+        sender: !(0, runtime_1.exists)(json, 'sender')
+            ? undefined
+            : (0, _1.SenderFromJSON)(json['sender']),
+        recipients: !(0, runtime_1.exists)(json, 'recipients')
+            ? undefined
+            : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        bodyPartContentTypes: !(0, runtime_1.exists)(json, 'bodyPartContentTypes')
+            ? undefined
+            : json['bodyPartContentTypes'],
+        plusAddress: !(0, runtime_1.exists)(json, 'plusAddress') ? undefined : json['plusAddress'],
     };
 }
 exports.EmailPreviewFromJSONTyped = EmailPreviewFromJSONTyped;
@@ -46,6 +62,7 @@ function EmailPreviewToJSON(value) {
     }
     return {
         id: value.id,
+        inboxId: value.inboxId,
         domainId: value.domainId,
         subject: value.subject,
         to: value.to,
@@ -55,6 +72,14 @@ function EmailPreviewToJSON(value) {
         createdAt: value.createdAt.toISOString(),
         read: value.read,
         attachments: value.attachments,
+        threadId: value.threadId,
+        messageId: value.messageId,
+        inReplyTo: value.inReplyTo,
+        sender: (0, _1.SenderToJSON)(value.sender),
+        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
+        favourite: value.favourite,
+        bodyPartContentTypes: value.bodyPartContentTypes,
+        plusAddress: value.plusAddress,
     };
 }
 exports.EmailPreviewToJSON = EmailPreviewToJSON;

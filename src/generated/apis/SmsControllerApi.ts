@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -61,11 +61,18 @@ export interface GetSmsMessagesPaginatedRequest {
   unreadOnly?: boolean;
   since?: Date;
   before?: Date;
+  search?: string;
+  favourite?: boolean;
 }
 
 export interface ReplyToSmsMessageRequest {
   smsId: string;
   smsReplyOptions: SmsReplyOptions;
+}
+
+export interface SetSmsFavouritedRequest {
+  smsId: string;
+  favourited: boolean;
 }
 
 /**
@@ -366,6 +373,14 @@ export class SmsControllerApi extends runtime.BaseAPI {
       ).toISOString();
     }
 
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    if (requestParameters.favourite !== undefined) {
+      queryParameters['favourite'] = requestParameters.favourite;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -507,6 +522,75 @@ export class SmsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<SentSmsDto> {
     const response = await this.replyToSmsMessageRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async setSmsFavouritedRaw(
+    requestParameters: SetSmsFavouritedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SmsDto>> {
+    if (
+      requestParameters.smsId === null ||
+      requestParameters.smsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsId',
+        'Required parameter requestParameters.smsId was null or undefined when calling setSmsFavourited.'
+      );
+    }
+
+    if (
+      requestParameters.favourited === null ||
+      requestParameters.favourited === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'favourited',
+        'Required parameter requestParameters.favourited was null or undefined when calling setSmsFavourited.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.favourited !== undefined) {
+      queryParameters['favourited'] = requestParameters.favourited;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/{smsId}/favourite`.replace(
+          `{${'smsId'}}`,
+          encodeURIComponent(String(requestParameters.smsId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SmsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async setSmsFavourited(
+    requestParameters: SetSmsFavouritedRequest,
+    initOverrides?: RequestInit
+  ): Promise<SmsDto> {
+    const response = await this.setSmsFavouritedRaw(
       requestParameters,
       initOverrides
     );

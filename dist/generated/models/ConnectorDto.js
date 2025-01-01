@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,16 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorDtoToJSON = exports.ConnectorDtoFromJSONTyped = exports.ConnectorDtoFromJSON = exports.ConnectorDtoSyncScheduleTypeEnum = void 0;
+exports.ConnectorDtoToJSON = exports.ConnectorDtoFromJSONTyped = exports.ConnectorDtoFromJSON = void 0;
 var runtime_1 = require("../runtime");
-/**
- * @export
- * @enum {string}
- */
-var ConnectorDtoSyncScheduleTypeEnum;
-(function (ConnectorDtoSyncScheduleTypeEnum) {
-    ConnectorDtoSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(ConnectorDtoSyncScheduleTypeEnum = exports.ConnectorDtoSyncScheduleTypeEnum || (exports.ConnectorDtoSyncScheduleTypeEnum = {}));
 function ConnectorDtoFromJSON(json) {
     return ConnectorDtoFromJSONTyped(json, false);
 }
@@ -35,17 +27,11 @@ function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         enabled: json['enabled'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
         userId: json['userId'],
         inboxId: json['inboxId'],
-        syncEnabled: json['syncEnabled'],
-        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
-            ? undefined
-            : json['syncScheduleType'],
-        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
-            ? undefined
-            : json['syncInterval'],
-        hasImapConnection: json['hasImapConnection'],
-        hasSmtpConnection: json['hasSmtpConnection'],
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -61,13 +47,9 @@ function ConnectorDtoToJSON(value) {
         id: value.id,
         name: value.name,
         enabled: value.enabled,
+        emailAddress: value.emailAddress,
         userId: value.userId,
         inboxId: value.inboxId,
-        syncEnabled: value.syncEnabled,
-        syncScheduleType: value.syncScheduleType,
-        syncInterval: value.syncInterval,
-        hasImapConnection: value.hasImapConnection,
-        hasSmtpConnection: value.hasSmtpConnection,
         createdAt: value.createdAt.toISOString(),
     };
 }

@@ -14,8 +14,11 @@ PhoneNumberDto
 
 - [complianceAddress](PhoneNumberDto.md#complianceaddress)
 - [createdAt](PhoneNumberDto.md#createdat)
+- [description](PhoneNumberDto.md#description)
 - [emergencyAddress](PhoneNumberDto.md#emergencyaddress)
+- [favourite](PhoneNumberDto.md#favourite)
 - [id](PhoneNumberDto.md#id)
+- [name](PhoneNumberDto.md#name)
 - [phoneCountry](PhoneNumberDto.md#phonecountry)
 - [phoneNumber](PhoneNumberDto.md#phonenumber)
 - [phonePlan](PhoneNumberDto.md#phoneplan)
@@ -44,6 +47,16 @@ PhoneNumberDto
 
 ___
 
+### description
+
+• `Optional` **description**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
 ### emergencyAddress
 
 • `Optional` **emergencyAddress**: `string`
@@ -54,9 +67,29 @@ PhoneNumberDto
 
 ___
 
+### favourite
+
+• **favourite**: `boolean`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
+### name
+
+• `Optional` **name**: `string`
 
 **`Memberof`**
 

@@ -6,17 +6,10 @@
 
 ### Properties
 
-- [decode](GetEmailHTMLRequest.md#decode)
 - [emailId](GetEmailHTMLRequest.md#emailid)
 - [replaceCidImages](GetEmailHTMLRequest.md#replacecidimages)
 
 ## Properties
-
-### decode
-
-• `Optional` **decode**: `boolean`
-
-___
 
 ### emailId
 

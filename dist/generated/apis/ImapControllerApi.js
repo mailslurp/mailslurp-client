@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -257,6 +257,59 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.imapServerListRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Create a new mailbox if possible
+     */
+    ImapControllerApi.prototype.imapServerMailboxRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.name === null ||
+                            requestParameters.name === undefined) {
+                            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling imapServerMailbox.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.name !== undefined) {
+                            queryParameters['name'] = requestParameters.name;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/imap/server/mailbox",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ImapServerMailboxResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create a new mailbox if possible
+     */
+    ImapControllerApi.prototype.imapServerMailbox = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.imapServerMailboxRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

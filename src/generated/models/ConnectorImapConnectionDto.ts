@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -30,7 +30,7 @@ export interface ConnectorImapConnectionDto {
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  imapHost?: string;
+  imapHost: string;
   /**
    *
    * @type {number}
@@ -72,6 +72,54 @@ export interface ConnectorImapConnectionDto {
    * @type {boolean}
    * @memberof ConnectorImapConnectionDto
    */
+  startTls?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorImapConnectionDto
+   */
+  proxyHost?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof ConnectorImapConnectionDto
+   */
+  proxyPort?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorImapConnectionDto
+   */
+  proxyEnabled?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorImapConnectionDto
+   */
+  localHostName?: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ConnectorImapConnectionDto
+   */
+  mechanisms?: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ConnectorImapConnectionDto
+   */
+  sslProtocols?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorImapConnectionDto
+   */
+  sslTrust?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorImapConnectionDto
+   */
   enabled?: boolean;
   /**
    *
@@ -102,7 +150,7 @@ export function ConnectorImapConnectionDtoFromJSONTyped(
   }
   return {
     connectorId: json['connectorId'],
-    imapHost: !exists(json, 'imapHost') ? undefined : json['imapHost'],
+    imapHost: json['imapHost'],
     imapPort: !exists(json, 'imapPort') ? undefined : json['imapPort'],
     imapUsername: !exists(json, 'imapUsername')
       ? undefined
@@ -115,6 +163,20 @@ export function ConnectorImapConnectionDtoFromJSONTyped(
       ? undefined
       : json['selectFolder'],
     searchTerms: !exists(json, 'searchTerms') ? undefined : json['searchTerms'],
+    startTls: !exists(json, 'startTls') ? undefined : json['startTls'],
+    proxyHost: !exists(json, 'proxyHost') ? undefined : json['proxyHost'],
+    proxyPort: !exists(json, 'proxyPort') ? undefined : json['proxyPort'],
+    proxyEnabled: !exists(json, 'proxyEnabled')
+      ? undefined
+      : json['proxyEnabled'],
+    localHostName: !exists(json, 'localHostName')
+      ? undefined
+      : json['localHostName'],
+    mechanisms: !exists(json, 'mechanisms') ? undefined : json['mechanisms'],
+    sslProtocols: !exists(json, 'sslProtocols')
+      ? undefined
+      : json['sslProtocols'],
+    sslTrust: !exists(json, 'sslTrust') ? undefined : json['sslTrust'],
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
     createdAt: new Date(json['createdAt']),
     id: json['id'],
@@ -139,6 +201,14 @@ export function ConnectorImapConnectionDtoToJSON(
     imapSsl: value.imapSsl,
     selectFolder: value.selectFolder,
     searchTerms: value.searchTerms,
+    startTls: value.startTls,
+    proxyHost: value.proxyHost,
+    proxyPort: value.proxyPort,
+    proxyEnabled: value.proxyEnabled,
+    localHostName: value.localHostName,
+    mechanisms: value.mechanisms,
+    sslProtocols: value.sslProtocols,
+    sslTrust: value.sslTrust,
     enabled: value.enabled,
     createdAt: value.createdAt.toISOString(),
     id: value.id,

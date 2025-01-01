@@ -37,6 +37,8 @@
 - [replyToSmsMessage](SmsControllerApi.md#replytosmsmessage)
 - [replyToSmsMessageRaw](SmsControllerApi.md#replytosmsmessageraw)
 - [request](SmsControllerApi.md#request)
+- [setSmsFavourited](SmsControllerApi.md#setsmsfavourited)
+- [setSmsFavouritedRaw](SmsControllerApi.md#setsmsfavouritedraw)
 - [withMiddleware](SmsControllerApi.md#withmiddleware)
 - [withPostMiddleware](SmsControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](SmsControllerApi.md#withpremiddleware)
@@ -403,6 +405,40 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### setSmsFavourited
+
+▸ **setSmsFavourited**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetSmsFavouritedRequest`](../interfaces/SetSmsFavouritedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
+
+___
+
+### setSmsFavouritedRaw
+
+▸ **setSmsFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetSmsFavouritedRequest`](../interfaces/SetSmsFavouritedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
 
 ___
 

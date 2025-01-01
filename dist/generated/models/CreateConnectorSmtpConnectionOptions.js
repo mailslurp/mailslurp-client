@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -34,6 +34,22 @@ function CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, ignoreDiscrimin
         smtpPassword: !(0, runtime_1.exists)(json, 'smtpPassword')
             ? undefined
             : json['smtpPassword'],
+        smtpMechanisms: !(0, runtime_1.exists)(json, 'smtpMechanisms')
+            ? undefined
+            : json['smtpMechanisms'],
+        startTls: !(0, runtime_1.exists)(json, 'startTls') ? undefined : json['startTls'],
+        localHostName: !(0, runtime_1.exists)(json, 'localHostName')
+            ? undefined
+            : json['localHostName'],
+        proxyHost: !(0, runtime_1.exists)(json, 'proxyHost') ? undefined : json['proxyHost'],
+        proxyPort: !(0, runtime_1.exists)(json, 'proxyPort') ? undefined : json['proxyPort'],
+        proxyEnabled: !(0, runtime_1.exists)(json, 'proxyEnabled')
+            ? undefined
+            : json['proxyEnabled'],
+        sslTrust: !(0, runtime_1.exists)(json, 'sslTrust') ? undefined : json['sslTrust'],
+        sslProtocols: !(0, runtime_1.exists)(json, 'sslProtocols')
+            ? undefined
+            : json['sslProtocols'],
     };
 }
 exports.CreateConnectorSmtpConnectionOptionsFromJSONTyped = CreateConnectorSmtpConnectionOptionsFromJSONTyped;
@@ -51,6 +67,14 @@ function CreateConnectorSmtpConnectionOptionsToJSON(value) {
         smtpSsl: value.smtpSsl,
         smtpUsername: value.smtpUsername,
         smtpPassword: value.smtpPassword,
+        smtpMechanisms: value.smtpMechanisms,
+        startTls: value.startTls,
+        localHostName: value.localHostName,
+        proxyHost: value.proxyHost,
+        proxyPort: value.proxyPort,
+        proxyEnabled: value.proxyEnabled,
+        sslTrust: value.sslTrust,
+        sslProtocols: value.sslProtocols,
     };
 }
 exports.CreateConnectorSmtpConnectionOptionsToJSON = CreateConnectorSmtpConnectionOptionsToJSON;

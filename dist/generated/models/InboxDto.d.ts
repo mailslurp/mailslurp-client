@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mx.mailslurp.com` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
+ * Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mxslurp.click` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
  * @export
  * @interface InboxDto
  */
@@ -26,7 +26,7 @@ export interface InboxDto {
      * @type {string}
      * @memberof InboxDto
      */
-    userId?: string | null;
+    userId: string | null;
     /**
      * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
      * @type {Date}
@@ -59,10 +59,10 @@ export interface InboxDto {
     emailAddress: string;
     /**
      * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
-     * @type {string}
+     * @type {Date}
      * @memberof InboxDto
      */
-    expiresAt?: string | null;
+    expiresAt?: Date | null;
     /**
      * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
      * @type {boolean}
@@ -99,6 +99,18 @@ export interface InboxDto {
      * @memberof InboxDto
      */
     functionsAs?: InboxDtoFunctionsAsEnum;
+    /**
+     * Local part of email addresses before the @ symbol
+     * @type {string}
+     * @memberof InboxDto
+     */
+    localPart?: string | null;
+    /**
+     * Domain name of the email address
+     * @type {string}
+     * @memberof InboxDto
+     */
+    domain?: string | null;
 }
 /**
  * @export
@@ -116,7 +128,9 @@ export declare enum InboxDtoFunctionsAsEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
     CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
+    CONNECTOR = "CONNECTOR",
+    ACCOUNT = "ACCOUNT",
+    GUEST = "GUEST"
 }
 export declare function InboxDtoFromJSON(json: any): InboxDto;
 export declare function InboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxDto;

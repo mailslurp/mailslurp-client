@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -38,6 +38,12 @@ export interface AttachmentProjection {
    */
   userId: string;
   /**
+   * Inbox ID
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  inboxId?: string;
+  /**
    * Content ID of attachment.
    * @type {string}
    * @memberof AttachmentProjection
@@ -55,6 +61,12 @@ export interface AttachmentProjection {
    * @memberof AttachmentProjection
    */
   name?: string | null;
+  /**
+   * ID
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  id: string;
   /**
    * Content length of attachment in bytes
    * @type {number}
@@ -84,9 +96,11 @@ export function AttachmentProjectionFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     userId: json['userId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
     attachmentId: json['attachmentId'],
     name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
     contentLength: !exists(json, 'contentLength')
       ? undefined
       : json['contentLength'],
@@ -107,9 +121,11 @@ export function AttachmentProjectionToJSON(
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     userId: value.userId,
+    inboxId: value.inboxId,
     contentId: value.contentId,
     attachmentId: value.attachmentId,
     name: value.name,
+    id: value.id,
     contentLength: value.contentLength,
     contentType: value.contentType,
   };

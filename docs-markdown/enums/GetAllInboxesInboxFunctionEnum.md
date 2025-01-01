@@ -8,12 +8,20 @@
 
 ### Enumeration Members
 
+- [ACCOUNT](GetAllInboxesInboxFunctionEnum.md#account)
 - [ALIAS](GetAllInboxesInboxFunctionEnum.md#alias)
 - [CATCH\_ALL](GetAllInboxesInboxFunctionEnum.md#catch_all)
 - [CONNECTOR](GetAllInboxesInboxFunctionEnum.md#connector)
+- [GUEST](GetAllInboxesInboxFunctionEnum.md#guest)
 - [THREAD](GetAllInboxesInboxFunctionEnum.md#thread)
 
 ## Enumeration Members
+
+### ACCOUNT
+
+• **ACCOUNT** = ``"ACCOUNT"``
+
+___
 
 ### ALIAS
 
@@ -30,6 +38,12 @@ ___
 ### CONNECTOR
 
 • **CONNECTOR** = ``"CONNECTOR"``
+
+___
+
+### GUEST
+
+• **GUEST** = ``"GUEST"``
 
 ___
 

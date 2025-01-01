@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ImapServerFetchResult, ImapServerGetResult, ImapServerListOptions, ImapServerListResult, ImapServerSearchOptions, ImapServerSearchResult, ImapServerStatusOptions, ImapServerStatusResult, ImapUpdateFlagsOptions } from '../models';
+import { ImapServerFetchResult, ImapServerGetResult, ImapServerListOptions, ImapServerListResult, ImapServerMailboxResult, ImapServerSearchOptions, ImapServerSearchResult, ImapServerStatusOptions, ImapServerStatusResult, ImapUpdateFlagsOptions } from '../models';
 export interface ImapServerFetchRequest {
     seqNum: number;
     inboxId?: string;
@@ -22,6 +22,9 @@ export interface ImapServerGetRequest {
 export interface ImapServerListRequest {
     imapServerListOptions: ImapServerListOptions;
     inboxId?: string;
+}
+export interface ImapServerMailboxRequest {
+    name: string;
 }
 export interface ImapServerSearchRequest {
     imapServerSearchOptions: ImapServerSearchOptions;
@@ -63,6 +66,14 @@ export declare class ImapControllerApi extends runtime.BaseAPI {
      * List messages in an inbox
      */
     imapServerList(requestParameters: ImapServerListRequest, initOverrides?: RequestInit): Promise<ImapServerListResult>;
+    /**
+     * Create a new mailbox if possible
+     */
+    imapServerMailboxRaw(requestParameters: ImapServerMailboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapServerMailboxResult>>;
+    /**
+     * Create a new mailbox if possible
+     */
+    imapServerMailbox(requestParameters: ImapServerMailboxRequest, initOverrides?: RequestInit): Promise<ImapServerMailboxResult>;
     /**
      * Search messages in an inbox
      */

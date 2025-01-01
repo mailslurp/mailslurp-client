@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,10 +14,6 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ConnectorSyncRequestResultException,
-  ConnectorSyncRequestResultExceptionFromJSON,
-  ConnectorSyncRequestResultExceptionFromJSONTyped,
-  ConnectorSyncRequestResultExceptionToJSON,
   ConnectorSyncResult,
   ConnectorSyncResultFromJSON,
   ConnectorSyncResultFromJSONTyped,
@@ -38,10 +34,10 @@ export interface ConnectorSyncRequestResult {
   syncResult?: ConnectorSyncResult;
   /**
    *
-   * @type {ConnectorSyncRequestResultException}
+   * @type {string}
    * @memberof ConnectorSyncRequestResult
    */
-  exception?: ConnectorSyncRequestResultException;
+  exception?: string;
   /**
    *
    * @type {string}
@@ -67,9 +63,7 @@ export function ConnectorSyncRequestResultFromJSONTyped(
     syncResult: !exists(json, 'syncResult')
       ? undefined
       : ConnectorSyncResultFromJSON(json['syncResult']),
-    exception: !exists(json, 'exception')
-      ? undefined
-      : ConnectorSyncRequestResultExceptionFromJSON(json['exception']),
+    exception: !exists(json, 'exception') ? undefined : json['exception'],
     eventId: !exists(json, 'eventId') ? undefined : json['eventId'],
   };
 }
@@ -85,7 +79,7 @@ export function ConnectorSyncRequestResultToJSON(
   }
   return {
     syncResult: ConnectorSyncResultToJSON(value.syncResult),
-    exception: ConnectorSyncRequestResultExceptionToJSON(value.exception),
+    exception: value.exception,
     eventId: value.eventId,
   };
 }

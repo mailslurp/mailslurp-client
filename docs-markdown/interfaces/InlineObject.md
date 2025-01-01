@@ -12,22 +12,9 @@ InlineObject
 
 ### Properties
 
-- [contentTypeHeader](InlineObject.md#contenttypeheader)
 - [file](InlineObject.md#file)
 
 ## Properties
-
-### contentTypeHeader
-
-• `Optional` **contentTypeHeader**: `string`
-
-Optional content type header of attachment
-
-**`Memberof`**
-
-InlineObject
-
-___
 
 ### file
 

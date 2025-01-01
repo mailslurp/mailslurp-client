@@ -26,6 +26,10 @@
 - [createConnectorRaw](ConnectorControllerApi.md#createconnectorraw)
 - [createConnectorSmtpConnection](ConnectorControllerApi.md#createconnectorsmtpconnection)
 - [createConnectorSmtpConnectionRaw](ConnectorControllerApi.md#createconnectorsmtpconnectionraw)
+- [createConnectorSyncSettings](ConnectorControllerApi.md#createconnectorsyncsettings)
+- [createConnectorSyncSettingsRaw](ConnectorControllerApi.md#createconnectorsyncsettingsraw)
+- [createConnectorWithOptions](ConnectorControllerApi.md#createconnectorwithoptions)
+- [createConnectorWithOptionsRaw](ConnectorControllerApi.md#createconnectorwithoptionsraw)
 - [deleteAllConnector](ConnectorControllerApi.md#deleteallconnector)
 - [deleteAllConnectorRaw](ConnectorControllerApi.md#deleteallconnectorraw)
 - [deleteConnector](ConnectorControllerApi.md#deleteconnector)
@@ -34,21 +38,51 @@
 - [deleteConnectorRaw](ConnectorControllerApi.md#deleteconnectorraw)
 - [deleteConnectorSmtpConnection](ConnectorControllerApi.md#deleteconnectorsmtpconnection)
 - [deleteConnectorSmtpConnectionRaw](ConnectorControllerApi.md#deleteconnectorsmtpconnectionraw)
-- [getAllConnectorSyncEvents](ConnectorControllerApi.md#getallconnectorsyncevents)
-- [getAllConnectorSyncEventsRaw](ConnectorControllerApi.md#getallconnectorsynceventsraw)
+- [deleteConnectorSyncSettings](ConnectorControllerApi.md#deleteconnectorsyncsettings)
+- [deleteConnectorSyncSettingsRaw](ConnectorControllerApi.md#deleteconnectorsyncsettingsraw)
+- [getAllConnectorEvents](ConnectorControllerApi.md#getallconnectorevents)
+- [getAllConnectorEventsRaw](ConnectorControllerApi.md#getallconnectoreventsraw)
 - [getConnector](ConnectorControllerApi.md#getconnector)
+- [getConnectorByEmailAddress](ConnectorControllerApi.md#getconnectorbyemailaddress)
+- [getConnectorByEmailAddressRaw](ConnectorControllerApi.md#getconnectorbyemailaddressraw)
+- [getConnectorByInboxId](ConnectorControllerApi.md#getconnectorbyinboxid)
+- [getConnectorByInboxIdRaw](ConnectorControllerApi.md#getconnectorbyinboxidraw)
+- [getConnectorByName](ConnectorControllerApi.md#getconnectorbyname)
+- [getConnectorByNameRaw](ConnectorControllerApi.md#getconnectorbynameraw)
+- [getConnectorEvent](ConnectorControllerApi.md#getconnectorevent)
+- [getConnectorEventRaw](ConnectorControllerApi.md#getconnectoreventraw)
+- [getConnectorEvents](ConnectorControllerApi.md#getconnectorevents)
+- [getConnectorEventsRaw](ConnectorControllerApi.md#getconnectoreventsraw)
+- [getConnectorImapConnection](ConnectorControllerApi.md#getconnectorimapconnection)
+- [getConnectorImapConnectionRaw](ConnectorControllerApi.md#getconnectorimapconnectionraw)
+- [getConnectorProviderSettings](ConnectorControllerApi.md#getconnectorprovidersettings)
+- [getConnectorProviderSettingsRaw](ConnectorControllerApi.md#getconnectorprovidersettingsraw)
 - [getConnectorRaw](ConnectorControllerApi.md#getconnectorraw)
-- [getConnectorSyncEvent](ConnectorControllerApi.md#getconnectorsyncevent)
-- [getConnectorSyncEventRaw](ConnectorControllerApi.md#getconnectorsynceventraw)
-- [getConnectorSyncEvents](ConnectorControllerApi.md#getconnectorsyncevents)
-- [getConnectorSyncEventsRaw](ConnectorControllerApi.md#getconnectorsynceventsraw)
+- [getConnectorSmtpConnection](ConnectorControllerApi.md#getconnectorsmtpconnection)
+- [getConnectorSmtpConnectionRaw](ConnectorControllerApi.md#getconnectorsmtpconnectionraw)
+- [getConnectorSyncSettings](ConnectorControllerApi.md#getconnectorsyncsettings)
+- [getConnectorSyncSettingsRaw](ConnectorControllerApi.md#getconnectorsyncsettingsraw)
 - [getConnectors](ConnectorControllerApi.md#getconnectors)
 - [getConnectorsRaw](ConnectorControllerApi.md#getconnectorsraw)
 - [request](ConnectorControllerApi.md#request)
+- [sendEmailFromConnector](ConnectorControllerApi.md#sendemailfromconnector)
+- [sendEmailFromConnectorRaw](ConnectorControllerApi.md#sendemailfromconnectorraw)
 - [syncConnector](ConnectorControllerApi.md#syncconnector)
 - [syncConnectorRaw](ConnectorControllerApi.md#syncconnectorraw)
+- [testConnectorImapConnection](ConnectorControllerApi.md#testconnectorimapconnection)
+- [testConnectorImapConnectionOptions](ConnectorControllerApi.md#testconnectorimapconnectionoptions)
+- [testConnectorImapConnectionOptionsRaw](ConnectorControllerApi.md#testconnectorimapconnectionoptionsraw)
+- [testConnectorImapConnectionRaw](ConnectorControllerApi.md#testconnectorimapconnectionraw)
+- [testConnectorSmtpConnection](ConnectorControllerApi.md#testconnectorsmtpconnection)
+- [testConnectorSmtpConnectionOptions](ConnectorControllerApi.md#testconnectorsmtpconnectionoptions)
+- [testConnectorSmtpConnectionOptionsRaw](ConnectorControllerApi.md#testconnectorsmtpconnectionoptionsraw)
+- [testConnectorSmtpConnectionRaw](ConnectorControllerApi.md#testconnectorsmtpconnectionraw)
 - [updateConnector](ConnectorControllerApi.md#updateconnector)
+- [updateConnectorImapConnection](ConnectorControllerApi.md#updateconnectorimapconnection)
+- [updateConnectorImapConnectionRaw](ConnectorControllerApi.md#updateconnectorimapconnectionraw)
 - [updateConnectorRaw](ConnectorControllerApi.md#updateconnectorraw)
+- [updateConnectorSmtpConnection](ConnectorControllerApi.md#updateconnectorsmtpconnection)
+- [updateConnectorSmtpConnectionRaw](ConnectorControllerApi.md#updateconnectorsmtpconnectionraw)
 - [withMiddleware](ConnectorControllerApi.md#withmiddleware)
 - [withPostMiddleware](ConnectorControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](ConnectorControllerApi.md#withpremiddleware)
@@ -198,6 +232,86 @@ Create an inbox connector SMTP connection
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>\>
+
+___
+
+### createConnectorSyncSettings
+
+▸ **createConnectorSyncSettings**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorSyncSettingsDto`](../interfaces/ConnectorSyncSettingsDto.md)\>
+
+Configure automatic pull or emails from external inboxes using an interval or schedule
+Create an inbox connector sync settings
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorSyncSettingsRequest`](../interfaces/CreateConnectorSyncSettingsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorSyncSettingsDto`](../interfaces/ConnectorSyncSettingsDto.md)\>
+
+___
+
+### createConnectorSyncSettingsRaw
+
+▸ **createConnectorSyncSettingsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSyncSettingsDto`](../interfaces/ConnectorSyncSettingsDto.md)\>\>
+
+Configure automatic pull or emails from external inboxes using an interval or schedule
+Create an inbox connector sync settings
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorSyncSettingsRequest`](../interfaces/CreateConnectorSyncSettingsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSyncSettingsDto`](../interfaces/ConnectorSyncSettingsDto.md)\>\>
+
+___
+
+### createConnectorWithOptions
+
+▸ **createConnectorWithOptions**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>
+
+Sync emails between external mailboxes and MailSlurp inboxes
+Create an inbox connector with options
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorWithOptionsRequest`](../interfaces/CreateConnectorWithOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>
+
+___
+
+### createConnectorWithOptionsRaw
+
+▸ **createConnectorWithOptionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
+
+Sync emails between external mailboxes and MailSlurp inboxes
+Create an inbox connector with options
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorWithOptionsRequest`](../interfaces/CreateConnectorWithOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
 
 ___
 
@@ -355,41 +469,81 @@ Delete an inbox connector SMTP connection
 
 ___
 
-### getAllConnectorSyncEvents
+### deleteConnectorSyncSettings
 
-▸ **getAllConnectorSyncEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>
+▸ **deleteConnectorSyncSettings**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Get all inbox connector sync events
+Configure automatic pull or emails from external inboxes using an interval or schedule
+Create an inbox connector sync settings
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAllConnectorSyncEventsRequest`](../interfaces/GetAllConnectorSyncEventsRequest.md) |
+| `requestParameters` | [`DeleteConnectorSyncSettingsRequest`](../interfaces/DeleteConnectorSyncSettingsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>
+`Promise`<`void`\>
 
 ___
 
-### getAllConnectorSyncEventsRaw
+### deleteConnectorSyncSettingsRaw
 
-▸ **getAllConnectorSyncEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>\>
+▸ **deleteConnectorSyncSettingsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Get all inbox connector sync events
+Configure automatic pull or emails from external inboxes using an interval or schedule
+Create an inbox connector sync settings
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAllConnectorSyncEventsRequest`](../interfaces/GetAllConnectorSyncEventsRequest.md) |
+| `requestParameters` | [`DeleteConnectorSyncSettingsRequest`](../interfaces/DeleteConnectorSyncSettingsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### getAllConnectorEvents
+
+▸ **getAllConnectorEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>
+
+Get all inbox connector events
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllConnectorEventsRequest`](../interfaces/GetAllConnectorEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>
+
+___
+
+### getAllConnectorEventsRaw
+
+▸ **getAllConnectorEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>\>
+
+Get all inbox connector events
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllConnectorEventsRequest`](../interfaces/GetAllConnectorEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>\>
 
 ___
 
@@ -412,6 +566,280 @@ Get an inbox connector
 
 ___
 
+### getConnectorByEmailAddress
+
+▸ **getConnectorByEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>
+
+Find an inbox connector by email address
+Get connector by email address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorByEmailAddressRequest`](../interfaces/GetConnectorByEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>
+
+___
+
+### getConnectorByEmailAddressRaw
+
+▸ **getConnectorByEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>\>
+
+Find an inbox connector by email address
+Get connector by email address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorByEmailAddressRequest`](../interfaces/GetConnectorByEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>\>
+
+___
+
+### getConnectorByInboxId
+
+▸ **getConnectorByInboxId**(`requestParameters`, `initOverrides?`): `Promise`<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>
+
+Find an inbox connector by inbox ID
+Get connector by inbox ID
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorByInboxIdRequest`](../interfaces/GetConnectorByInboxIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>
+
+___
+
+### getConnectorByInboxIdRaw
+
+▸ **getConnectorByInboxIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>\>
+
+Find an inbox connector by inbox ID
+Get connector by inbox ID
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorByInboxIdRequest`](../interfaces/GetConnectorByInboxIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>\>
+
+___
+
+### getConnectorByName
+
+▸ **getConnectorByName**(`requestParameters`, `initOverrides?`): `Promise`<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>
+
+Find an inbox connector by name
+Get connector by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorByNameRequest`](../interfaces/GetConnectorByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>
+
+___
+
+### getConnectorByNameRaw
+
+▸ **getConnectorByNameRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>\>
+
+Find an inbox connector by name
+Get connector by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorByNameRequest`](../interfaces/GetConnectorByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorDto`](../interfaces/OptionalConnectorDto.md)\>\>
+
+___
+
+### getConnectorEvent
+
+▸ **getConnectorEvent**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorEventDto`](../interfaces/ConnectorEventDto.md)\>
+
+Get an inbox connector event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorEventRequest`](../interfaces/GetConnectorEventRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorEventDto`](../interfaces/ConnectorEventDto.md)\>
+
+___
+
+### getConnectorEventRaw
+
+▸ **getConnectorEventRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorEventDto`](../interfaces/ConnectorEventDto.md)\>\>
+
+Get an inbox connector event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorEventRequest`](../interfaces/GetConnectorEventRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorEventDto`](../interfaces/ConnectorEventDto.md)\>\>
+
+___
+
+### getConnectorEvents
+
+▸ **getConnectorEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>
+
+Get an inbox connector events
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorEventsRequest`](../interfaces/GetConnectorEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>
+
+___
+
+### getConnectorEventsRaw
+
+▸ **getConnectorEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>\>
+
+Get an inbox connector events
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorEventsRequest`](../interfaces/GetConnectorEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorEvents`](../interfaces/PageConnectorEvents.md)\>\>
+
+___
+
+### getConnectorImapConnection
+
+▸ **getConnectorImapConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`OptionalConnectorImapConnectionDto`](../interfaces/OptionalConnectorImapConnectionDto.md)\>
+
+Get IMAP connection for external inbox
+Get an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorImapConnectionRequest`](../interfaces/GetConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`OptionalConnectorImapConnectionDto`](../interfaces/OptionalConnectorImapConnectionDto.md)\>
+
+___
+
+### getConnectorImapConnectionRaw
+
+▸ **getConnectorImapConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorImapConnectionDto`](../interfaces/OptionalConnectorImapConnectionDto.md)\>\>
+
+Get IMAP connection for external inbox
+Get an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetConnectorImapConnectionRequest`](../interfaces/GetConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorImapConnectionDto`](../interfaces/OptionalConnectorImapConnectionDto.md)\>\>
+
+___
+
+### getConnectorProviderSettings
+
+▸ **getConnectorProviderSettings**(`initOverrides?`): `Promise`<[`ConnectorProviderSettingsDto`](../interfaces/ConnectorProviderSettingsDto.md)\>
+
+Get common mail provider SMTP and IMAP connection settings
+Get SMTP and IMAP connection settings for common mail providers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorProviderSettingsDto`](../interfaces/ConnectorProviderSettingsDto.md)\>
+
+___
+
+### getConnectorProviderSettingsRaw
+
+▸ **getConnectorProviderSettingsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorProviderSettingsDto`](../interfaces/ConnectorProviderSettingsDto.md)\>\>
+
+Get common mail provider SMTP and IMAP connection settings
+Get SMTP and IMAP connection settings for common mail providers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorProviderSettingsDto`](../interfaces/ConnectorProviderSettingsDto.md)\>\>
+
+___
+
 ### getConnectorRaw
 
 ▸ **getConnectorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
@@ -431,79 +859,83 @@ Get an inbox connector
 
 ___
 
-### getConnectorSyncEvent
+### getConnectorSmtpConnection
 
-▸ **getConnectorSyncEvent**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorSyncEventDto`](../interfaces/ConnectorSyncEventDto.md)\>
+▸ **getConnectorSmtpConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`OptionalConnectorSmtpConnectionDto`](../interfaces/OptionalConnectorSmtpConnectionDto.md)\>
 
-Get an inbox connector sync event
+Get SMTP connection for external inbox
+Get an inbox connector SMTP connection
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetConnectorSyncEventRequest`](../interfaces/GetConnectorSyncEventRequest.md) |
+| `requestParameters` | [`GetConnectorSmtpConnectionRequest`](../interfaces/GetConnectorSmtpConnectionRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`ConnectorSyncEventDto`](../interfaces/ConnectorSyncEventDto.md)\>
+`Promise`<[`OptionalConnectorSmtpConnectionDto`](../interfaces/OptionalConnectorSmtpConnectionDto.md)\>
 
 ___
 
-### getConnectorSyncEventRaw
+### getConnectorSmtpConnectionRaw
 
-▸ **getConnectorSyncEventRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSyncEventDto`](../interfaces/ConnectorSyncEventDto.md)\>\>
+▸ **getConnectorSmtpConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorSmtpConnectionDto`](../interfaces/OptionalConnectorSmtpConnectionDto.md)\>\>
 
-Get an inbox connector sync event
+Get SMTP connection for external inbox
+Get an inbox connector SMTP connection
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetConnectorSyncEventRequest`](../interfaces/GetConnectorSyncEventRequest.md) |
+| `requestParameters` | [`GetConnectorSmtpConnectionRequest`](../interfaces/GetConnectorSmtpConnectionRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSyncEventDto`](../interfaces/ConnectorSyncEventDto.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorSmtpConnectionDto`](../interfaces/OptionalConnectorSmtpConnectionDto.md)\>\>
 
 ___
 
-### getConnectorSyncEvents
+### getConnectorSyncSettings
 
-▸ **getConnectorSyncEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>
+▸ **getConnectorSyncSettings**(`requestParameters`, `initOverrides?`): `Promise`<[`OptionalConnectorSyncSettingsDto`](../interfaces/OptionalConnectorSyncSettingsDto.md)\>
 
-Get an inbox connector sync events
+Get sync settings for connection with external inbox
+Get an inbox connector sync settings
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetConnectorSyncEventsRequest`](../interfaces/GetConnectorSyncEventsRequest.md) |
+| `requestParameters` | [`GetConnectorSyncSettingsRequest`](../interfaces/GetConnectorSyncSettingsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>
+`Promise`<[`OptionalConnectorSyncSettingsDto`](../interfaces/OptionalConnectorSyncSettingsDto.md)\>
 
 ___
 
-### getConnectorSyncEventsRaw
+### getConnectorSyncSettingsRaw
 
-▸ **getConnectorSyncEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>\>
+▸ **getConnectorSyncSettingsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorSyncSettingsDto`](../interfaces/OptionalConnectorSyncSettingsDto.md)\>\>
 
-Get an inbox connector sync events
+Get sync settings for connection with external inbox
+Get an inbox connector sync settings
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetConnectorSyncEventsRequest`](../interfaces/GetConnectorSyncEventsRequest.md) |
+| `requestParameters` | [`GetConnectorSyncSettingsRequest`](../interfaces/GetConnectorSyncSettingsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageConnectorSyncEvents`](../interfaces/PageConnectorSyncEvents.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`OptionalConnectorSyncSettingsDto`](../interfaces/OptionalConnectorSyncSettingsDto.md)\>\>
 
 ___
 
@@ -568,6 +1000,44 @@ ___
 
 ___
 
+### sendEmailFromConnector
+
+▸ **sendEmailFromConnector**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+Send from an inbox connector
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailFromConnectorRequest`](../interfaces/SendEmailFromConnectorRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+___
+
+### sendEmailFromConnectorRaw
+
+▸ **sendEmailFromConnectorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Send from an inbox connector
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailFromConnectorRequest`](../interfaces/SendEmailFromConnectorRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+___
+
 ### syncConnector
 
 ▸ **syncConnector**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorSyncRequestResult`](../interfaces/ConnectorSyncRequestResult.md)\>
@@ -606,6 +1076,166 @@ Sync an inbox connector
 
 ___
 
+### testConnectorImapConnection
+
+▸ **testConnectorImapConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>
+
+Test the IMAP connection for a connector
+Test an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorImapConnectionRequest`](../interfaces/TestConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>
+
+___
+
+### testConnectorImapConnectionOptions
+
+▸ **testConnectorImapConnectionOptions**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>
+
+Test the IMAP connection options for a connector
+Test an inbox connector IMAP connection options
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorImapConnectionOptionsRequest`](../interfaces/TestConnectorImapConnectionOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>
+
+___
+
+### testConnectorImapConnectionOptionsRaw
+
+▸ **testConnectorImapConnectionOptionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>\>
+
+Test the IMAP connection options for a connector
+Test an inbox connector IMAP connection options
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorImapConnectionOptionsRequest`](../interfaces/TestConnectorImapConnectionOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>\>
+
+___
+
+### testConnectorImapConnectionRaw
+
+▸ **testConnectorImapConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>\>
+
+Test the IMAP connection for a connector
+Test an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorImapConnectionRequest`](../interfaces/TestConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionTestResult`](../interfaces/ConnectorImapConnectionTestResult.md)\>\>
+
+___
+
+### testConnectorSmtpConnection
+
+▸ **testConnectorSmtpConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>
+
+Test the SMTP connection for a connector
+Test an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorSmtpConnectionRequest`](../interfaces/TestConnectorSmtpConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>
+
+___
+
+### testConnectorSmtpConnectionOptions
+
+▸ **testConnectorSmtpConnectionOptions**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>
+
+Test the SMTP connection options for a connector
+Test an inbox connector SMTP connection options
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorSmtpConnectionOptionsRequest`](../interfaces/TestConnectorSmtpConnectionOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>
+
+___
+
+### testConnectorSmtpConnectionOptionsRaw
+
+▸ **testConnectorSmtpConnectionOptionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>\>
+
+Test the SMTP connection options for a connector
+Test an inbox connector SMTP connection options
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorSmtpConnectionOptionsRequest`](../interfaces/TestConnectorSmtpConnectionOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>\>
+
+___
+
+### testConnectorSmtpConnectionRaw
+
+▸ **testConnectorSmtpConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>\>
+
+Test the SMTP connection for a connector
+Test an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestConnectorSmtpConnectionRequest`](../interfaces/TestConnectorSmtpConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionTestResult`](../interfaces/ConnectorSmtpConnectionTestResult.md)\>\>
+
+___
+
 ### updateConnector
 
 ▸ **updateConnector**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>
@@ -625,6 +1255,46 @@ Update an inbox connector
 
 ___
 
+### updateConnectorImapConnection
+
+▸ **updateConnectorImapConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>
+
+Update IMAP connection for external inbox
+Update an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateConnectorImapConnectionRequest`](../interfaces/UpdateConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>
+
+___
+
+### updateConnectorImapConnectionRaw
+
+▸ **updateConnectorImapConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>\>
+
+Update IMAP connection for external inbox
+Update an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateConnectorImapConnectionRequest`](../interfaces/UpdateConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>\>
+
+___
+
 ### updateConnectorRaw
 
 ▸ **updateConnectorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
@@ -641,6 +1311,46 @@ Update an inbox connector
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
+
+___
+
+### updateConnectorSmtpConnection
+
+▸ **updateConnectorSmtpConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>
+
+Update SMTP connection for external inbox
+Update an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateConnectorSmtpConnectionRequest`](../interfaces/UpdateConnectorSmtpConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>
+
+___
+
+### updateConnectorSmtpConnectionRaw
+
+▸ **updateConnectorSmtpConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>\>
+
+Update SMTP connection for external inbox
+Update an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateConnectorSmtpConnectionRequest`](../interfaces/UpdateConnectorSmtpConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>\>
 
 ___
 

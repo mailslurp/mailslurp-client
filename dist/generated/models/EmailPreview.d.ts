@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { EmailRecipients, Sender } from './';
 /**
  * Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
  * @export
@@ -21,6 +22,12 @@ export interface EmailPreview {
      * @memberof EmailPreview
      */
     id: string;
+    /**
+     * ID of the inbox that received the email
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    inboxId?: string | null;
     /**
      * ID of the domain that received the email
      * @type {string}
@@ -75,6 +82,54 @@ export interface EmailPreview {
      * @memberof EmailPreview
      */
     attachments?: Array<string> | null;
+    /**
+     * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    threadId?: string | null;
+    /**
+     * RFC 5322 Message-ID header value without angle brackets.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    messageId?: string | null;
+    /**
+     * Parsed value of In-Reply-To header. A Message-ID in a thread.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    inReplyTo?: string | null;
+    /**
+     *
+     * @type {Sender}
+     * @memberof EmailPreview
+     */
+    sender?: Sender | null;
+    /**
+     *
+     * @type {EmailRecipients}
+     * @memberof EmailPreview
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailPreview
+     */
+    favourite?: boolean | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailPreview
+     */
+    bodyPartContentTypes?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    plusAddress?: string | null;
 }
 export declare function EmailPreviewFromJSON(json: any): EmailPreview;
 export declare function EmailPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreview;

@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -32,7 +32,7 @@ export interface InboxPreview {
      * @type {string}
      * @memberof InboxPreview
      */
-    emailAddress?: string | null;
+    emailAddress: string | null;
     /**
      * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
      * @type {Date}
@@ -77,16 +77,28 @@ export interface InboxPreview {
     virtualInbox: boolean;
     /**
      * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
-     * @type {string}
+     * @type {Date}
      * @memberof InboxPreview
      */
-    expiresAt?: string | null;
+    expiresAt?: Date | null;
     /**
      * Inbox function if used as a primitive for another system.
      * @type {string}
      * @memberof InboxPreview
      */
     functionsAs?: InboxPreviewFunctionsAsEnum;
+    /**
+     * ID of user that inbox belongs to
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    userId: string | null;
+    /**
+     * Description of an inbox for labelling and searching purposes
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    description?: string | null;
 }
 /**
  * @export
@@ -104,7 +116,9 @@ export declare enum InboxPreviewFunctionsAsEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
     CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
+    CONNECTOR = "CONNECTOR",
+    ACCOUNT = "ACCOUNT",
+    GUEST = "GUEST"
 }
 export declare function InboxPreviewFromJSON(json: any): InboxPreview;
 export declare function InboxPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxPreview;

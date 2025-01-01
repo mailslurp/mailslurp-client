@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -21,6 +21,18 @@ export interface PhoneNumberDto {
      * @memberof PhoneNumberDto
      */
     id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    description?: string;
     /**
      *
      * @type {string}
@@ -69,6 +81,12 @@ export interface PhoneNumberDto {
      * @memberof PhoneNumberDto
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PhoneNumberDto
+     */
+    favourite: boolean;
 }
 /**
  * @export

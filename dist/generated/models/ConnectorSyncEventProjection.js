@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncEventProjectionToJSON = exports.ConnectorSyncEventProjectionFromJSONTyped = exports.ConnectorSyncEventProjectionFromJSON = exports.ConnectorSyncEventProjectionSyncStatusEnum = void 0;
+exports.ConnectorSyncEventProjectionSyncStatusEnum = void 0;
+exports.ConnectorSyncEventProjectionFromJSON = ConnectorSyncEventProjectionFromJSON;
+exports.ConnectorSyncEventProjectionFromJSONTyped = ConnectorSyncEventProjectionFromJSONTyped;
+exports.ConnectorSyncEventProjectionToJSON = ConnectorSyncEventProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var ConnectorSyncEventProjectionSyncStatusEnum;
     ConnectorSyncEventProjectionSyncStatusEnum["SUBSCRIPTION_ERROR"] = "SUBSCRIPTION_ERROR";
     ConnectorSyncEventProjectionSyncStatusEnum["CONNECTION_ERROR"] = "CONNECTION_ERROR";
     ConnectorSyncEventProjectionSyncStatusEnum["NOT_FOUND"] = "NOT_FOUND";
-})(ConnectorSyncEventProjectionSyncStatusEnum = exports.ConnectorSyncEventProjectionSyncStatusEnum || (exports.ConnectorSyncEventProjectionSyncStatusEnum = {}));
+})(ConnectorSyncEventProjectionSyncStatusEnum || (exports.ConnectorSyncEventProjectionSyncStatusEnum = ConnectorSyncEventProjectionSyncStatusEnum = {}));
 function ConnectorSyncEventProjectionFromJSON(json) {
     return ConnectorSyncEventProjectionFromJSONTyped(json, false);
 }
-exports.ConnectorSyncEventProjectionFromJSON = ConnectorSyncEventProjectionFromJSON;
 function ConnectorSyncEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function ConnectorSyncEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
-exports.ConnectorSyncEventProjectionFromJSONTyped = ConnectorSyncEventProjectionFromJSONTyped;
 function ConnectorSyncEventProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +62,3 @@ function ConnectorSyncEventProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ConnectorSyncEventProjectionToJSON = ConnectorSyncEventProjectionToJSON;

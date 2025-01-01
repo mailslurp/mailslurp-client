@@ -2,7 +2,7 @@
 
 # Interface: CreateConnectorImapConnectionOptions
 
-Options for IMAP connection to external email inbox. Allows syncing emails iva IMAP.
+Options for IMAP connection to external email inbox. Allows syncing emails via IMAP.
 
 **`Export`**
 
@@ -20,8 +20,16 @@ CreateConnectorImapConnectionOptions
 - [imapPort](CreateConnectorImapConnectionOptions.md#imapport)
 - [imapSsl](CreateConnectorImapConnectionOptions.md#imapssl)
 - [imapUsername](CreateConnectorImapConnectionOptions.md#imapusername)
+- [localHostName](CreateConnectorImapConnectionOptions.md#localhostname)
+- [mechanisms](CreateConnectorImapConnectionOptions.md#mechanisms)
+- [proxyEnabled](CreateConnectorImapConnectionOptions.md#proxyenabled)
+- [proxyHost](CreateConnectorImapConnectionOptions.md#proxyhost)
+- [proxyPort](CreateConnectorImapConnectionOptions.md#proxyport)
 - [searchTerms](CreateConnectorImapConnectionOptions.md#searchterms)
 - [selectFolder](CreateConnectorImapConnectionOptions.md#selectfolder)
+- [sslProtocols](CreateConnectorImapConnectionOptions.md#sslprotocols)
+- [sslTrust](CreateConnectorImapConnectionOptions.md#ssltrust)
+- [startTls](CreateConnectorImapConnectionOptions.md#starttls)
 
 ## Properties
 
@@ -91,6 +99,58 @@ CreateConnectorImapConnectionOptions
 
 ___
 
+### localHostName
+
+• `Optional` **localHostName**: `string`
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
+### mechanisms
+
+• `Optional` **mechanisms**: `string`[]
+
+List of IMAP mechanisms
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
+### proxyEnabled
+
+• `Optional` **proxyEnabled**: `boolean`
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
+### proxyHost
+
+• `Optional` **proxyHost**: `string`
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
+### proxyPort
+
+• `Optional` **proxyPort**: `number`
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
 ### searchTerms
 
 • `Optional` **searchTerms**: `string`
@@ -106,6 +166,38 @@ ___
 • `Optional` **selectFolder**: `string`
 
 Optional folder to select during IMAP connection
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
+### sslProtocols
+
+• `Optional` **sslProtocols**: `string`[]
+
+List of SSL protocols
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
+### sslTrust
+
+• `Optional` **sslTrust**: `string`
+
+**`Memberof`**
+
+CreateConnectorImapConnectionOptions
+
+___
+
+### startTls
+
+• `Optional` **startTls**: `boolean`
 
 **`Memberof`**
 

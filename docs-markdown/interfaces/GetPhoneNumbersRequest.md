@@ -7,8 +7,11 @@
 ### Properties
 
 - [before](GetPhoneNumbersRequest.md#before)
+- [favourite](GetPhoneNumbersRequest.md#favourite)
+- [include](GetPhoneNumbersRequest.md#include)
 - [page](GetPhoneNumbersRequest.md#page)
 - [phoneCountry](GetPhoneNumbersRequest.md#phonecountry)
+- [search](GetPhoneNumbersRequest.md#search)
 - [since](GetPhoneNumbersRequest.md#since)
 - [size](GetPhoneNumbersRequest.md#size)
 - [sort](GetPhoneNumbersRequest.md#sort)
@@ -21,6 +24,18 @@
 
 ___
 
+### favourite
+
+• `Optional` **favourite**: `boolean`
+
+___
+
+### include
+
+• `Optional` **include**: `string`[]
+
+___
+
 ### page
 
 • `Optional` **page**: `number`
@@ -30,6 +45,12 @@ ___
 ### phoneCountry
 
 • `Optional` **phoneCountry**: [`GetPhoneNumbersPhoneCountryEnum`](../enums/GetPhoneNumbersPhoneCountryEnum.md)
+
+___
+
+### search
+
+• `Optional` **search**: `string`
 
 ___
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -19,24 +19,6 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateConnectorOptions
  */
 export interface CreateConnectorOptions {
-  /**
-   * Enable automatic background sync
-   * @type {boolean}
-   * @memberof CreateConnectorOptions
-   */
-  syncEnabled?: boolean | null;
-  /**
-   * Sync schedule type
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  syncScheduleType?: CreateConnectorOptionsSyncScheduleTypeEnum;
-  /**
-   * Sync interval in minutes
-   * @type {number}
-   * @memberof CreateConnectorOptions
-   */
-  syncInterval?: number | null;
   /**
    * Name of connector
    * @type {string}
@@ -57,14 +39,6 @@ export interface CreateConnectorOptions {
   enabled?: boolean | null;
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum CreateConnectorOptionsSyncScheduleTypeEnum {
-  INTERVAL = 'INTERVAL',
-}
-
 export function CreateConnectorOptionsFromJSON(
   json: any
 ): CreateConnectorOptions {
@@ -79,13 +53,6 @@ export function CreateConnectorOptionsFromJSONTyped(
     return json;
   }
   return {
-    syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-    syncScheduleType: !exists(json, 'syncScheduleType')
-      ? undefined
-      : json['syncScheduleType'],
-    syncInterval: !exists(json, 'syncInterval')
-      ? undefined
-      : json['syncInterval'],
     name: !exists(json, 'name') ? undefined : json['name'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
@@ -104,9 +71,6 @@ export function CreateConnectorOptionsToJSON(
     return null;
   }
   return {
-    syncEnabled: value.syncEnabled,
-    syncScheduleType: value.syncScheduleType,
-    syncInterval: value.syncInterval,
     name: value.name,
     emailAddress: value.emailAddress,
     enabled: value.enabled,

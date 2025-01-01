@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -26,6 +26,9 @@ import {
   JSONSchemaDto,
   JSONSchemaDtoFromJSON,
   JSONSchemaDtoToJSON,
+  PageWebhookEndpointProjection,
+  PageWebhookEndpointProjectionFromJSON,
+  PageWebhookEndpointProjectionToJSON,
   PageWebhookProjection,
   PageWebhookProjectionFromJSON,
   PageWebhookProjectionToJSON,
@@ -74,6 +77,9 @@ import {
   WebhookNewSmsPayload,
   WebhookNewSmsPayloadFromJSON,
   WebhookNewSmsPayloadToJSON,
+  WebhookProjection,
+  WebhookProjectionFromJSON,
+  WebhookProjectionToJSON,
   WebhookRedriveAllResult,
   WebhookRedriveAllResultFromJSON,
   WebhookRedriveAllResultToJSON,
@@ -119,9 +125,24 @@ export interface GetAllAccountWebhooksRequest {
   page?: number;
   size?: number;
   sort?: GetAllAccountWebhooksSortEnum;
-  eventType?: GetAllAccountWebhooksEventTypeEnum;
   since?: Date;
   before?: Date;
+  eventType?: GetAllAccountWebhooksEventTypeEnum;
+  health?: GetAllAccountWebhooksHealthEnum;
+  searchFilter?: string;
+}
+
+export interface GetAllWebhookEndpointsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetAllWebhookEndpointsSortEnum;
+  searchFilter?: string;
+  since?: Date;
+  inboxId?: string;
+  phoneId?: string;
+  before?: Date;
+  health?: GetAllWebhookEndpointsHealthEnum;
+  eventType?: GetAllWebhookEndpointsEventTypeEnum;
 }
 
 export interface GetAllWebhookResultsRequest {
@@ -152,6 +173,9 @@ export interface GetAllWebhooksRequest {
   inboxId?: string;
   phoneId?: string;
   before?: Date;
+  health?: GetAllWebhooksHealthEnum;
+  eventType?: GetAllWebhooksEventTypeEnum;
+  url?: string;
 }
 
 export interface GetInboxWebhooksPaginatedRequest {
@@ -162,6 +186,8 @@ export interface GetInboxWebhooksPaginatedRequest {
   searchFilter?: string;
   since?: Date;
   before?: Date;
+  health?: GetInboxWebhooksPaginatedHealthEnum;
+  eventType?: GetInboxWebhooksPaginatedEventTypeEnum;
 }
 
 export interface GetJsonSchemaForWebhookEventRequest {
@@ -179,6 +205,9 @@ export interface GetPhoneNumberWebhooksPaginatedRequest {
   sort?: GetPhoneNumberWebhooksPaginatedSortEnum;
   since?: Date;
   before?: Date;
+  eventType?: GetPhoneNumberWebhooksPaginatedEventTypeEnum;
+  searchFilter?: string;
+  health?: GetPhoneNumberWebhooksPaginatedHealthEnum;
 }
 
 export interface GetTestWebhookPayloadRequest {
@@ -223,6 +252,9 @@ export interface GetWebhookResultsCountRequest {
 
 export interface GetWebhooksRequest {
   inboxId: string;
+  page?: number;
+  size?: number;
+  sort?: GetWebhooksSortEnum;
 }
 
 export interface RedriveWebhookResultRequest {
@@ -231,6 +263,13 @@ export interface RedriveWebhookResultRequest {
 
 export interface SendTestDataRequest {
   webhookId: string;
+}
+
+export interface UpdateWebhookRequest {
+  webhookId: string;
+  createWebhookOptions: CreateWebhookOptions;
+  inboxId?: string;
+  phoneNumberId?: string;
 }
 
 export interface UpdateWebhookHeadersRequest {
@@ -644,10 +683,6 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       queryParameters['sort'] = requestParameters.sort;
     }
 
-    if (requestParameters.eventType !== undefined) {
-      queryParameters['eventType'] = requestParameters.eventType;
-    }
-
     if (requestParameters.since !== undefined) {
       queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
@@ -656,6 +691,18 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.eventType !== undefined) {
+      queryParameters['eventType'] = requestParameters.eventType;
+    }
+
+    if (requestParameters.health !== undefined) {
+      queryParameters['health'] = requestParameters.health;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -688,6 +735,94 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageWebhookProjection> {
     const response = await this.getAllAccountWebhooksRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+   * List Webhooks endpoints Paginated
+   */
+  async getAllWebhookEndpointsRaw(
+    requestParameters: GetAllWebhookEndpointsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageWebhookEndpointProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.phoneId !== undefined) {
+      queryParameters['phoneId'] = requestParameters.phoneId;
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.health !== undefined) {
+      queryParameters['health'] = requestParameters.health;
+    }
+
+    if (requestParameters.eventType !== undefined) {
+      queryParameters['eventType'] = requestParameters.eventType;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/endpoints`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageWebhookEndpointProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+   * List Webhooks endpoints Paginated
+   */
+  async getAllWebhookEndpoints(
+    requestParameters: GetAllWebhookEndpointsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageWebhookEndpointProjection> {
+    const response = await this.getAllWebhookEndpointsRaw(
       requestParameters,
       initOverrides
     );
@@ -848,6 +983,18 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       ).toISOString();
     }
 
+    if (requestParameters.health !== undefined) {
+      queryParameters['health'] = requestParameters.health;
+    }
+
+    if (requestParameters.eventType !== undefined) {
+      queryParameters['eventType'] = requestParameters.eventType;
+    }
+
+    if (requestParameters.url !== undefined) {
+      queryParameters['url'] = requestParameters.url;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -927,6 +1074,14 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.health !== undefined) {
+      queryParameters['health'] = requestParameters.health;
+    }
+
+    if (requestParameters.eventType !== undefined) {
+      queryParameters['eventType'] = requestParameters.eventType;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1121,6 +1276,18 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.eventType !== undefined) {
+      queryParameters['eventType'] = requestParameters.eventType;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
+
+    if (requestParameters.health !== undefined) {
+      queryParameters['health'] = requestParameters.health;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1967,7 +2134,7 @@ export class WebhookControllerApi extends runtime.BaseAPI {
   async getWebhooksRaw(
     requestParameters: GetWebhooksRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<WebhookDto>>> {
+  ): Promise<runtime.ApiResponse<Array<WebhookProjection>>> {
     if (
       requestParameters.inboxId === null ||
       requestParameters.inboxId === undefined
@@ -1979,6 +2146,18 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     }
 
     const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -2000,7 +2179,7 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(WebhookDtoFromJSON)
+      jsonValue.map(WebhookProjectionFromJSON)
     );
   }
 
@@ -2010,7 +2189,7 @@ export class WebhookControllerApi extends runtime.BaseAPI {
   async getWebhooks(
     requestParameters: GetWebhooksRequest,
     initOverrides?: RequestInit
-  ): Promise<Array<WebhookDto>> {
+  ): Promise<Array<WebhookProjection>> {
     const response = await this.getWebhooksRaw(
       requestParameters,
       initOverrides
@@ -2169,6 +2348,86 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<WebhookTestResult> {
     const response = await this.sendTestDataRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update a webhook
+   */
+  async updateWebhookRaw(
+    requestParameters: UpdateWebhookRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookDto>> {
+    if (
+      requestParameters.webhookId === null ||
+      requestParameters.webhookId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'webhookId',
+        'Required parameter requestParameters.webhookId was null or undefined when calling updateWebhook.'
+      );
+    }
+
+    if (
+      requestParameters.createWebhookOptions === null ||
+      requestParameters.createWebhookOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createWebhookOptions',
+        'Required parameter requestParameters.createWebhookOptions was null or undefined when calling updateWebhook.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.phoneNumberId !== undefined) {
+      queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/{webhookId}`.replace(
+          `{${'webhookId'}}`,
+          encodeURIComponent(String(requestParameters.webhookId))
+        ),
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateWebhookOptionsToJSON(
+          requestParameters.createWebhookOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update a webhook
+   */
+  async updateWebhook(
+    requestParameters: UpdateWebhookRequest,
+    initOverrides?: RequestInit
+  ): Promise<WebhookDto> {
+    const response = await this.updateWebhookRaw(
       requestParameters,
       initOverrides
     );
@@ -2415,6 +2674,48 @@ export enum GetAllAccountWebhooksEventTypeEnum {
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllAccountWebhooksHealthEnum {
+  HEALTHY = 'HEALTHY',
+  UNHEALTHY = 'UNHEALTHY',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllWebhookEndpointsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllWebhookEndpointsHealthEnum {
+  HEALTHY = 'HEALTHY',
+  UNHEALTHY = 'UNHEALTHY',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllWebhookEndpointsEventTypeEnum {
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 /**
  * @export
@@ -2449,6 +2750,7 @@ export enum GetAllWebhookResultsEventNameEnum {
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 /**
  * @export
@@ -2462,9 +2764,59 @@ export enum GetAllWebhooksSortEnum {
  * @export
  * @enum {string}
  */
+export enum GetAllWebhooksHealthEnum {
+  HEALTHY = 'HEALTHY',
+  UNHEALTHY = 'UNHEALTHY',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllWebhooksEventTypeEnum {
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum GetInboxWebhooksPaginatedSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetInboxWebhooksPaginatedHealthEnum {
+  HEALTHY = 'HEALTHY',
+  UNHEALTHY = 'UNHEALTHY',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetInboxWebhooksPaginatedEventTypeEnum {
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 /**
  * @export
@@ -2481,6 +2833,7 @@ export enum GetJsonSchemaForWebhookEventEventEnum {
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 /**
  * @export
@@ -2489,6 +2842,31 @@ export enum GetJsonSchemaForWebhookEventEventEnum {
 export enum GetPhoneNumberWebhooksPaginatedSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetPhoneNumberWebhooksPaginatedEventTypeEnum {
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetPhoneNumberWebhooksPaginatedHealthEnum {
+  HEALTHY = 'HEALTHY',
+  UNHEALTHY = 'UNHEALTHY',
 }
 /**
  * @export
@@ -2505,6 +2883,7 @@ export enum GetTestWebhookPayloadEventNameEnum {
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 /**
  * @export
@@ -2539,4 +2918,13 @@ export enum GetWebhookResultsEventNameEnum {
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetWebhooksSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

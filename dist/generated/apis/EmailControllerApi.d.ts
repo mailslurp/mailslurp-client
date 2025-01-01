@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailTextLinesResult, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailTextLinesResult, EmailThreadDto, EmailThreadItemsDto, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, PageEmailThreadProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -56,7 +56,6 @@ export interface GetAttachmentMetaDataRequest {
 }
 export interface GetEmailRequest {
     emailId: string;
-    decode?: boolean;
 }
 export interface GetEmailAttachmentsRequest {
     emailId: string;
@@ -68,15 +67,24 @@ export interface GetEmailContentMatchRequest {
 export interface GetEmailContentPartRequest {
     emailId: string;
     contentType: string;
+    strict?: boolean;
+    index?: number;
+}
+export interface GetEmailContentPartContentRequest {
+    emailId: string;
+    contentType: string;
+    strict?: boolean;
+    index?: number;
+}
+export interface GetEmailCountRequest {
+    inboxId?: string;
 }
 export interface GetEmailHTMLRequest {
     emailId: string;
-    decode?: boolean;
     replaceCidImages?: boolean;
 }
 export interface GetEmailHTMLJsonRequest {
     emailId: string;
-    decode?: boolean;
     replaceCidImages?: boolean;
 }
 export interface GetEmailHTMLQueryRequest {
@@ -85,6 +93,7 @@ export interface GetEmailHTMLQueryRequest {
 }
 export interface GetEmailLinksRequest {
     emailId: string;
+    selector?: string;
 }
 export interface GetEmailPreviewURLsRequest {
     emailId: string;
@@ -97,10 +106,30 @@ export interface GetEmailScreenshotAsBinaryRequest {
     emailId: string;
     getEmailScreenshotOptions: GetEmailScreenshotOptions;
 }
+export interface GetEmailSummaryRequest {
+    emailId: string;
+    decode?: boolean;
+}
 export interface GetEmailTextLinesRequest {
     emailId: string;
     decodeHtmlEntities?: boolean;
     lineSeparator?: string;
+}
+export interface GetEmailThreadRequest {
+    threadId: string;
+}
+export interface GetEmailThreadItemsRequest {
+    threadId: string;
+    sort?: GetEmailThreadItemsSortEnum;
+}
+export interface GetEmailThreadsRequest {
+    htmlSelector?: string;
+    page?: number;
+    size?: number;
+    sort?: GetEmailThreadsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
 }
 export interface GetEmailsOffsetPaginatedRequest {
     inboxId?: Array<string>;
@@ -111,6 +140,9 @@ export interface GetEmailsOffsetPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    favourited?: boolean;
+    syncConnectors?: boolean;
+    plusAddressId?: string;
 }
 export interface GetEmailsPaginatedRequest {
     inboxId?: Array<string>;
@@ -121,6 +153,9 @@ export interface GetEmailsPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    syncConnectors?: boolean;
+    plusAddressId?: string;
+    favourited?: boolean;
 }
 export interface GetGravatarUrlForEmailAddressRequest {
     emailAddress: string;
@@ -141,6 +176,9 @@ export interface GetOrganizationEmailsPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    syncConnectors?: boolean;
+    favourited?: boolean;
+    plusAddressId?: string;
 }
 export interface GetRawEmailContentsRequest {
     emailId: string;
@@ -165,12 +203,19 @@ export interface ReplyToEmailRequest {
 }
 export interface SearchEmailsRequest {
     searchEmailsOptions: SearchEmailsOptions;
+    syncConnectors?: boolean;
+    favourited?: boolean;
+    plusAddressId?: string;
 }
 export interface SendEmailSourceOptionalRequest {
     sendEmailOptions: SendEmailOptions;
     inboxId?: string;
     useDomainPool?: boolean;
     virtualSend?: boolean;
+}
+export interface SetEmailFavouritedRequest {
+    emailId: string;
+    favourited: boolean;
 }
 export interface ValidateEmailRequest {
     emailId: string;
@@ -350,13 +395,23 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     getEmailContentPart(requestParameters: GetEmailContentPartRequest, initOverrides?: RequestInit): Promise<EmailContentPartResult>;
     /**
-     * Get email count
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
      */
-    getEmailCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    getEmailContentPartContentRaw(requestParameters: GetEmailContentPartContentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
+     */
+    getEmailContentPartContent(requestParameters: GetEmailContentPartContentRequest, initOverrides?: RequestInit): Promise<string>;
     /**
      * Get email count
      */
-    getEmailCount(initOverrides?: RequestInit): Promise<CountDto>;
+    getEmailCountRaw(requestParameters: GetEmailCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get email count
+     */
+    getEmailCount(requestParameters: GetEmailCountRequest, initOverrides?: RequestInit): Promise<CountDto>;
     /**
      * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
      * Get email content as HTML. For displaying emails in browser context.
@@ -428,6 +483,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     getEmailScreenshotAsBinary(requestParameters: GetEmailScreenshotAsBinaryRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    getEmailSummaryRaw(requestParameters: GetEmailSummaryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreview>>;
+    /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    getEmailSummary(requestParameters: GetEmailSummaryRequest, initOverrides?: RequestInit): Promise<EmailPreview>;
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
@@ -437,6 +502,36 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
     getEmailTextLines(requestParameters: GetEmailTextLinesRequest, initOverrides?: RequestInit): Promise<EmailTextLinesResult>;
+    /**
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
+     */
+    getEmailThreadRaw(requestParameters: GetEmailThreadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailThreadDto>>;
+    /**
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
+     */
+    getEmailThread(requestParameters: GetEmailThreadRequest, initOverrides?: RequestInit): Promise<EmailThreadDto>;
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    getEmailThreadItemsRaw(requestParameters: GetEmailThreadItemsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailThreadItemsDto>>;
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    getEmailThreadItems(requestParameters: GetEmailThreadItemsRequest, initOverrides?: RequestInit): Promise<EmailThreadItemsDto>;
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    getEmailThreadsRaw(requestParameters: GetEmailThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailThreadProjection>>;
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    getEmailThreads(requestParameters: GetEmailThreadsRequest, initOverrides?: RequestInit): Promise<PageEmailThreadProjection>;
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
@@ -576,6 +671,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     sendEmailSourceOptional(requestParameters: SendEmailSourceOptionalRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    setEmailFavouritedRaw(requestParameters: SetEmailFavouritedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    setEmailFavourited(requestParameters: SetEmailFavouritedRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
      * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
      * Validate email HTML contents
      */
@@ -585,6 +690,22 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Validate email HTML contents
      */
     validateEmail(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit): Promise<ValidationDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEmailThreadItemsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEmailThreadsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }
 /**
  * @export

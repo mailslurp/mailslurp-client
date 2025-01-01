@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -99,6 +99,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Add an emergency address to a phone number
+     * Create an emergency address
      */
     PhoneControllerApi.prototype.createEmergencyAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -133,6 +135,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Add an emergency address to a phone number
+     * Create an emergency address
      */
     PhoneControllerApi.prototype.createEmergencyAddress = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -149,6 +153,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Delete an emergency address
+     * Delete an emergency address
      */
     PhoneControllerApi.prototype.deleteEmergencyAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -181,6 +187,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Delete an emergency address
+     * Delete an emergency address
      */
     PhoneControllerApi.prototype.deleteEmergencyAddress = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -197,6 +205,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Remove phone number from account
+     * Delete a phone number
      */
     PhoneControllerApi.prototype.deletePhoneNumberRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -227,6 +237,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Remove phone number from account
+     * Delete a phone number
      */
     PhoneControllerApi.prototype.deletePhoneNumber = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -241,6 +253,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Fetch an emergency address by ID
+     * Get an emergency address
      */
     PhoneControllerApi.prototype.getEmergencyAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -273,6 +287,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Fetch an emergency address by ID
+     * Get an emergency address
      */
     PhoneControllerApi.prototype.getEmergencyAddress = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -289,6 +305,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List emergency addresses
+     * Get emergency addresses
      */
     PhoneControllerApi.prototype.getEmergencyAddressesRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -317,6 +335,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List emergency addresses
+     * Get emergency addresses
      */
     PhoneControllerApi.prototype.getEmergencyAddresses = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -333,6 +353,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a phone number by ID
+     * Get a phone number by ID
      */
     PhoneControllerApi.prototype.getPhoneNumberRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -365,6 +387,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a phone number by ID
+     * Get a phone number by ID
      */
     PhoneControllerApi.prototype.getPhoneNumber = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -381,6 +405,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List phone numbers for account
+     * Get phone numbers
      */
     PhoneControllerApi.prototype.getPhoneNumbersRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -407,6 +433,15 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
+                        if (requestParameters.include) {
+                            queryParameters['include'] = requestParameters.include;
+                        }
+                        if (requestParameters.favourite !== undefined) {
+                            queryParameters['favourite'] = requestParameters.favourite;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -427,6 +462,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List phone numbers for account
+     * Get phone numbers
      */
     PhoneControllerApi.prototype.getPhoneNumbers = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -443,6 +480,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get phone number plans
+     * Get phone plans
      */
     PhoneControllerApi.prototype.getPhonePlansRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -471,6 +510,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get phone number plans
+     * Get phone plans
      */
     PhoneControllerApi.prototype.getPhonePlans = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -487,6 +528,112 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get phone plans availability
+     */
+    PhoneControllerApi.prototype.getPhonePlansAvailabilityRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/plans/availability",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePlanAvailabilityFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get phone plans availability
+     */
+    PhoneControllerApi.prototype.getPhonePlansAvailability = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhonePlansAvailabilityRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    PhoneControllerApi.prototype.setPhoneFavouritedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling setPhoneFavourited.');
+                        }
+                        if (requestParameters.setPhoneFavouritedOptions === null ||
+                            requestParameters.setPhoneFavouritedOptions === undefined) {
+                            throw new runtime.RequiredError('setPhoneFavouritedOptions', 'Required parameter requestParameters.setPhoneFavouritedOptions was null or undefined when calling setPhoneFavourited.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/favourite".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'PUT',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SetPhoneFavouritedOptionsToJSON)(requestParameters.setPhoneFavouritedOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    PhoneControllerApi.prototype.setPhoneFavourited = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.setPhoneFavouritedRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Test a phone number by sending an SMS to it
+     * Test sending an SMS to a number
      */
     PhoneControllerApi.prototype.testPhoneNumberSendSmsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -527,6 +674,8 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Test a phone number by sending an SMS to it
+     * Test sending an SMS to a number
      */
     PhoneControllerApi.prototype.testPhoneNumberSendSms = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -536,6 +685,64 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Set field for phone number
+     * Update a phone number
+     */
+    PhoneControllerApi.prototype.updatePhoneNumberRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling updatePhoneNumber.');
+                        }
+                        if (requestParameters.updatePhoneNumberOptions === null ||
+                            requestParameters.updatePhoneNumberOptions === undefined) {
+                            throw new runtime.RequiredError('updatePhoneNumberOptions', 'Required parameter requestParameters.updatePhoneNumberOptions was null or undefined when calling updatePhoneNumber.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'PUT',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.UpdatePhoneNumberOptionsToJSON)(requestParameters.updatePhoneNumberOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Set field for phone number
+     * Update a phone number
+     */
+    PhoneControllerApi.prototype.updatePhoneNumber = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updatePhoneNumberRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });

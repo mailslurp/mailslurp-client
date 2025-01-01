@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,16 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorProjectionToJSON = exports.ConnectorProjectionFromJSONTyped = exports.ConnectorProjectionFromJSON = exports.ConnectorProjectionSyncScheduleTypeEnum = void 0;
+exports.ConnectorProjectionToJSON = exports.ConnectorProjectionFromJSONTyped = exports.ConnectorProjectionFromJSON = void 0;
 var runtime_1 = require("../runtime");
-/**
- * @export
- * @enum {string}
- */
-var ConnectorProjectionSyncScheduleTypeEnum;
-(function (ConnectorProjectionSyncScheduleTypeEnum) {
-    ConnectorProjectionSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(ConnectorProjectionSyncScheduleTypeEnum = exports.ConnectorProjectionSyncScheduleTypeEnum || (exports.ConnectorProjectionSyncScheduleTypeEnum = {}));
 function ConnectorProjectionFromJSON(json) {
     return ConnectorProjectionFromJSONTyped(json, false);
 }
@@ -34,18 +26,13 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         createdAt: new Date(json['createdAt']),
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
-        inboxId: json['inboxId'],
         userId: json['userId'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
-        syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-        syncScheduleType: json['syncScheduleType'],
-        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
-            ? undefined
-            : json['syncInterval'],
+        inboxId: json['inboxId'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        id: json['id'],
     };
 }
 exports.ConnectorProjectionFromJSONTyped = ConnectorProjectionFromJSONTyped;
@@ -59,12 +46,9 @@ function ConnectorProjectionToJSON(value) {
     return {
         createdAt: value.createdAt.toISOString(),
         enabled: value.enabled,
-        inboxId: value.inboxId,
         userId: value.userId,
         emailAddress: value.emailAddress,
-        syncEnabled: value.syncEnabled,
-        syncScheduleType: value.syncScheduleType,
-        syncInterval: value.syncInterval,
+        inboxId: value.inboxId,
         name: value.name,
         id: value.id,
     };

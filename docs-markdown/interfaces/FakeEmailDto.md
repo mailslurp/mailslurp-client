@@ -12,7 +12,10 @@ FakeEmailDto
 
 ### Properties
 
+- [attachmentNames](FakeEmailDto.md#attachmentnames)
 - [body](FakeEmailDto.md#body)
+- [bodyUrl](FakeEmailDto.md#bodyurl)
+- [contentType](FakeEmailDto.md#contenttype)
 - [createdAt](FakeEmailDto.md#createdat)
 - [emailAddress](FakeEmailDto.md#emailaddress)
 - [id](FakeEmailDto.md#id)
@@ -24,9 +27,39 @@ FakeEmailDto
 
 ## Properties
 
+### attachmentNames
+
+• **attachmentNames**: `string`[]
+
+**`Memberof`**
+
+FakeEmailDto
+
+___
+
 ### body
 
 • **body**: `string`
+
+**`Memberof`**
+
+FakeEmailDto
+
+___
+
+### bodyUrl
+
+• **bodyUrl**: `string`
+
+**`Memberof`**
+
+FakeEmailDto
+
+___
+
+### contentType
+
+• **contentType**: `string`
 
 **`Memberof`**
 

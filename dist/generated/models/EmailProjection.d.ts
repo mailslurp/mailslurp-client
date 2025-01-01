@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { EmailRecipients, Sender } from './';
 /**
  * A compact representation of a full email. Used in list endpoints to keep response sizes low. Body and attachments are not included. To get all fields of the email use the `getEmail` method with the email projection's ID. See `EmailDto` for documentation on projection properties.
  * @export
@@ -17,10 +18,34 @@
 export interface EmailProjection {
     /**
      *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    subject?: string | null;
+    /**
+     *
      * @type {Date}
      * @memberof EmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {Sender}
+     * @memberof EmailProjection
+     */
+    sender?: Sender | null;
+    /**
+     *
+     * @type {EmailRecipients}
+     * @memberof EmailProjection
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    attachments?: Array<string> | null;
     /**
      *
      * @type {string}
@@ -32,19 +57,13 @@ export interface EmailProjection {
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    attachments?: Array<string> | null;
+    to: Array<string>;
     /**
      *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    to: Array<string>;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    domainId?: string | null;
+    cc?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
@@ -53,10 +72,34 @@ export interface EmailProjection {
     bcc?: Array<string> | null;
     /**
      *
-     * @type {Array<string>}
+     * @type {string}
      * @memberof EmailProjection
      */
-    cc?: Array<string> | null;
+    messageId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    domainId?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    favourite?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    plusAddress?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    inReplyTo?: string | null;
     /**
      *
      * @type {boolean}
@@ -71,10 +114,16 @@ export interface EmailProjection {
     bodyExcerpt?: string | null;
     /**
      *
-     * @type {boolean}
+     * @type {string}
      * @memberof EmailProjection
      */
-    teamAccess: boolean;
+    textExcerpt?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    bodyPartContentTypes?: Array<string> | null;
     /**
      *
      * @type {string}
@@ -83,16 +132,10 @@ export interface EmailProjection {
     bodyMD5Hash?: string | null;
     /**
      *
-     * @type {string}
+     * @type {boolean}
      * @memberof EmailProjection
      */
-    textExcerpt?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    subject?: string | null;
+    teamAccess: boolean;
     /**
      *
      * @type {string}
@@ -104,7 +147,13 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    from?: string | null;
+    threadId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    from: string | null;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

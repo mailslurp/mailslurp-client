@@ -7,6 +7,7 @@
 ### Properties
 
 - [before](GetExpiredInboxesRequest.md#before)
+- [inboxId](GetExpiredInboxesRequest.md#inboxid)
 - [page](GetExpiredInboxesRequest.md#page)
 - [since](GetExpiredInboxesRequest.md#since)
 - [size](GetExpiredInboxesRequest.md#size)
@@ -17,6 +18,12 @@
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
 
 ___
 

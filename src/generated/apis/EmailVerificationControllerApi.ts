@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -48,6 +48,7 @@ export interface ValidateEmailAddressListRequest {
  */
 export class EmailVerificationControllerApi extends runtime.BaseAPI {
   /**
+   * Remove validation requests
    * Delete all validation requests
    */
   async deleteAllValidationRequestsRaw(
@@ -75,6 +76,7 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Remove validation requests
    * Delete all validation requests
    */
   async deleteAllValidationRequests(
@@ -84,6 +86,7 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Delete a validation record
    * Delete a validation record
    */
   async deleteValidationRequestRaw(
@@ -123,6 +126,7 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
 
   /**
    * Delete a validation record
+   * Delete a validation record
    */
   async deleteValidationRequest(
     requestParameters: DeleteValidationRequestRequest,
@@ -132,6 +136,7 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List email verification requests
    * Validate a list of email addresses. Per unit billing. See your plan for pricing.
    */
   async getValidationRequestsRaw(
@@ -192,6 +197,7 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List email verification requests
    * Validate a list of email addresses. Per unit billing. See your plan for pricing.
    */
   async getValidationRequests(
@@ -206,6 +212,7 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Verify a list of email addresses is valid and can be contacted.
    * Validate a list of email addresses. Per unit billing. See your plan for pricing.
    */
   async validateEmailAddressListRaw(
@@ -251,6 +258,7 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Verify a list of email addresses is valid and can be contacted.
    * Validate a list of email addresses. Per unit billing. See your plan for pricing.
    */
   async validateEmailAddressList(

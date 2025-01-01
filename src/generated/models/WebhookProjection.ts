@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -42,6 +42,12 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
   inboxId?: string;
   /**
    *
@@ -49,6 +55,12 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   eventName?: WebhookProjectionEventNameEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  healthStatus?: WebhookProjectionHealthStatusEnum;
   /**
    *
    * @type {string}
@@ -67,6 +79,18 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  username?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  password?: string;
 }
 
 /**
@@ -84,6 +108,15 @@ export enum WebhookProjectionEventNameEnum {
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum WebhookProjectionHealthStatusEnum {
+  HEALTHY = 'HEALTHY',
+  UNHEALTHY = 'UNHEALTHY',
 }
 
 export function WebhookProjectionFromJSON(json: any): WebhookProjection {
@@ -101,13 +134,19 @@ export function WebhookProjectionFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     url: json['url'],
+    userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
+    healthStatus: !exists(json, 'healthStatus')
+      ? undefined
+      : json['healthStatus'],
     phoneNumberId: !exists(json, 'phoneNumberId')
       ? undefined
       : json['phoneNumberId'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
+    username: !exists(json, 'username') ? undefined : json['username'],
+    password: !exists(json, 'password') ? undefined : json['password'],
   };
 }
 
@@ -122,10 +161,14 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     url: value.url,
+    userId: value.userId,
     inboxId: value.inboxId,
     eventName: value.eventName,
+    healthStatus: value.healthStatus,
     phoneNumberId: value.phoneNumberId,
     name: value.name,
     id: value.id,
+    username: value.username,
+    password: value.password,
   };
 }

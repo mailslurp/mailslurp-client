@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -31,12 +31,6 @@ export interface PageableObject {
    * @type {number}
    * @memberof PageableObject
    */
-  pageNumber?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageableObject
-   */
   pageSize?: number;
   /**
    *
@@ -44,6 +38,12 @@ export interface PageableObject {
    * @memberof PageableObject
    */
   paged?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageableObject
+   */
+  pageNumber?: number;
   /**
    *
    * @type {boolean}
@@ -76,9 +76,9 @@ export function PageableObjectFromJSONTyped(
     return json;
   }
   return {
-    pageNumber: !exists(json, 'pageNumber') ? undefined : json['pageNumber'],
     pageSize: !exists(json, 'pageSize') ? undefined : json['pageSize'],
     paged: !exists(json, 'paged') ? undefined : json['paged'],
+    pageNumber: !exists(json, 'pageNumber') ? undefined : json['pageNumber'],
     unpaged: !exists(json, 'unpaged') ? undefined : json['unpaged'],
     offset: !exists(json, 'offset') ? undefined : json['offset'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
@@ -93,9 +93,9 @@ export function PageableObjectToJSON(value?: PageableObject | null): any {
     return null;
   }
   return {
-    pageNumber: value.pageNumber,
     pageSize: value.pageSize,
     paged: value.paged,
+    pageNumber: value.pageNumber,
     unpaged: value.unpaged,
     offset: value.offset,
     sort: SortObjectToJSON(value.sort),

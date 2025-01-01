@@ -34,6 +34,8 @@
 - [deleteWebhookRaw](WebhookControllerApi.md#deletewebhookraw)
 - [getAllAccountWebhooks](WebhookControllerApi.md#getallaccountwebhooks)
 - [getAllAccountWebhooksRaw](WebhookControllerApi.md#getallaccountwebhooksraw)
+- [getAllWebhookEndpoints](WebhookControllerApi.md#getallwebhookendpoints)
+- [getAllWebhookEndpointsRaw](WebhookControllerApi.md#getallwebhookendpointsraw)
 - [getAllWebhookResults](WebhookControllerApi.md#getallwebhookresults)
 - [getAllWebhookResultsRaw](WebhookControllerApi.md#getallwebhookresultsraw)
 - [getAllWebhooks](WebhookControllerApi.md#getallwebhooks)
@@ -87,8 +89,10 @@
 - [request](WebhookControllerApi.md#request)
 - [sendTestData](WebhookControllerApi.md#sendtestdata)
 - [sendTestDataRaw](WebhookControllerApi.md#sendtestdataraw)
+- [updateWebhook](WebhookControllerApi.md#updatewebhook)
 - [updateWebhookHeaders](WebhookControllerApi.md#updatewebhookheaders)
 - [updateWebhookHeadersRaw](WebhookControllerApi.md#updatewebhookheadersraw)
+- [updateWebhookRaw](WebhookControllerApi.md#updatewebhookraw)
 - [verifyWebhookSignature](WebhookControllerApi.md#verifywebhooksignature)
 - [verifyWebhookSignatureRaw](WebhookControllerApi.md#verifywebhooksignatureraw)
 - [waitForWebhookResults](WebhookControllerApi.md#waitforwebhookresults)
@@ -396,6 +400,46 @@ List account webhooks Paginated
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
+
+___
+
+### getAllWebhookEndpoints
+
+▸ **getAllWebhookEndpoints**(`requestParameters`, `initOverrides?`): `Promise`<[`PageWebhookEndpointProjection`](../interfaces/PageWebhookEndpointProjection.md)\>
+
+List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+List Webhooks endpoints Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllWebhookEndpointsRequest`](../interfaces/GetAllWebhookEndpointsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageWebhookEndpointProjection`](../interfaces/PageWebhookEndpointProjection.md)\>
+
+___
+
+### getAllWebhookEndpointsRaw
+
+▸ **getAllWebhookEndpointsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookEndpointProjection`](../interfaces/PageWebhookEndpointProjection.md)\>\>
+
+List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+List Webhooks endpoints Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllWebhookEndpointsRequest`](../interfaces/GetAllWebhookEndpointsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookEndpointProjection`](../interfaces/PageWebhookEndpointProjection.md)\>\>
 
 ___
 
@@ -1219,7 +1263,7 @@ ___
 
 ### getWebhooks
 
-▸ **getWebhooks**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)[]\>
+▸ **getWebhooks**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookProjection`](../interfaces/WebhookProjection.md)[]\>
 
 Get all webhooks for an Inbox
 
@@ -1232,13 +1276,13 @@ Get all webhooks for an Inbox
 
 #### Returns
 
-`Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)[]\>
+`Promise`<[`WebhookProjection`](../interfaces/WebhookProjection.md)[]\>
 
 ___
 
 ### getWebhooksRaw
 
-▸ **getWebhooksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)[]\>\>
+▸ **getWebhooksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookProjection`](../interfaces/WebhookProjection.md)[]\>\>
 
 Get all webhooks for an Inbox
 
@@ -1251,7 +1295,7 @@ Get all webhooks for an Inbox
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)[]\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookProjection`](../interfaces/WebhookProjection.md)[]\>\>
 
 ___
 
@@ -1392,6 +1436,25 @@ Send webhook test data
 
 ___
 
+### updateWebhook
+
+▸ **updateWebhook**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+Update a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateWebhookRequest`](../interfaces/UpdateWebhookRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+___
+
 ### updateWebhookHeaders
 
 ▸ **updateWebhookHeaders**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
@@ -1422,6 +1485,25 @@ Update a webhook request headers
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`UpdateWebhookHeadersRequest`](../interfaces/UpdateWebhookHeadersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
+
+___
+
+### updateWebhookRaw
+
+▸ **updateWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
+
+Update a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateWebhookRequest`](../interfaces/UpdateWebhookRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

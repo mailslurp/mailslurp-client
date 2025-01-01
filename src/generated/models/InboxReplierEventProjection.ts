@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -36,6 +36,12 @@ export interface InboxReplierEventProjection {
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
+  userId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
   emailId?: string | null;
   /**
    *
@@ -43,12 +49,6 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  userId?: string | null;
   /**
    *
    * @type {string}
@@ -106,9 +106,9 @@ export function InboxReplierEventProjectionFromJSONTyped(
   return {
     createdAt: new Date(json['createdAt']),
     recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
     message: !exists(json, 'message') ? undefined : json['message'],
@@ -129,9 +129,9 @@ export function InboxReplierEventProjectionToJSON(
   return {
     createdAt: value.createdAt.toISOString(),
     recipients: value.recipients,
+    userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,
-    userId: value.userId,
     sentId: value.sentId,
     replierId: value.replierId,
     message: value.message,

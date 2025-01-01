@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -19,12 +19,6 @@ import { exists, mapValues } from '../runtime';
  * @interface InlineObject
  */
 export interface InlineObject {
-  /**
-   * Optional content type header of attachment
-   * @type {string}
-   * @memberof InlineObject
-   */
-  contentTypeHeader?: string;
   /**
    *
    * @type {Blob}
@@ -45,9 +39,6 @@ export function InlineObjectFromJSONTyped(
     return json;
   }
   return {
-    contentTypeHeader: !exists(json, 'contentTypeHeader')
-      ? undefined
-      : json['contentTypeHeader'],
     file: json['file'],
   };
 }
@@ -60,7 +51,6 @@ export function InlineObjectToJSON(value?: InlineObject | null): any {
     return null;
   }
   return {
-    contentTypeHeader: value.contentTypeHeader,
     file: value.file,
   };
 }

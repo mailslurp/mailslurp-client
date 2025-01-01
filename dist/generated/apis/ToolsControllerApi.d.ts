@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,6 +14,9 @@ import { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupport
 export interface CheckEmailFeaturesClientSupportRequest {
     checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
 }
+export interface DeleteNewFakeEmailAddressRequest {
+    emailAddress: string;
+}
 export interface GenerateBimiRecordRequest {
     generateBimiRecordOptions: GenerateBimiRecordOptions;
 }
@@ -26,7 +29,13 @@ export interface GenerateMtaStsRecordRequest {
 export interface GenerateTlsReportingRecordRequest {
     generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
 }
+export interface GetFakeEmailByEmailAddressRequest {
+    emailAddress: string;
+}
 export interface GetFakeEmailByIdRequest {
+    id: string;
+}
+export interface GetFakeEmailRawRequest {
     id: string;
 }
 export interface GetFakeEmailsForAddressRequest {
@@ -66,6 +75,16 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      */
     createNewFakeEmailAddress(initOverrides?: RequestInit): Promise<NewFakeEmailAddressResult>;
     /**
+     * Delete a fake email address using the fake email domains
+     * Delete a fake email address using the fake email domains
+     */
+    deleteNewFakeEmailAddressRaw(requestParameters: DeleteNewFakeEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a fake email address using the fake email domains
+     * Delete a fake email address using the fake email domains
+     */
+    deleteNewFakeEmailAddress(requestParameters: DeleteNewFakeEmailAddressRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
      * Create a BIMI record policy
      */
     generateBimiRecordRaw(requestParameters: GenerateBimiRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateBimiRecordResults>>;
@@ -99,14 +118,38 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
     generateTlsReportingRecord(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit): Promise<GenerateTlsReportingRecordResults>;
     /**
      */
+    getFakeEmailByEmailAddressRaw(requestParameters: GetFakeEmailByEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<FakeEmailResult>>;
+    /**
+     */
+    getFakeEmailByEmailAddress(requestParameters: GetFakeEmailByEmailAddressRequest, initOverrides?: RequestInit): Promise<FakeEmailResult>;
+    /**
+     * Get a fake email by its ID
+     * Get a fake email by its ID
+     */
     getFakeEmailByIdRaw(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<FakeEmailResult>>;
     /**
+     * Get a fake email by its ID
+     * Get a fake email by its ID
      */
     getFakeEmailById(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<FakeEmailResult>;
     /**
+     * Retrieve the raw content of a fake email by its ID
+     * Get raw fake email content
+     */
+    getFakeEmailRawRaw(requestParameters: GetFakeEmailRawRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Retrieve the raw content of a fake email by its ID
+     * Get raw fake email content
+     */
+    getFakeEmailRaw(requestParameters: GetFakeEmailRawRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Get fake emails for an address
+     * Get fake emails for an address
      */
     getFakeEmailsForAddressRaw(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<FakeEmailPreview>>>;
     /**
+     * Get fake emails for an address
+     * Get fake emails for an address
      */
     getFakeEmailsForAddress(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<Array<FakeEmailPreview>>;
     /**

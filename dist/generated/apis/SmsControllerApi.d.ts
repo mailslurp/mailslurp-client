@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -31,10 +31,16 @@ export interface GetSmsMessagesPaginatedRequest {
     unreadOnly?: boolean;
     since?: Date;
     before?: Date;
+    search?: string;
+    favourite?: boolean;
 }
 export interface ReplyToSmsMessageRequest {
     smsId: string;
     smsReplyOptions: SmsReplyOptions;
+}
+export interface SetSmsFavouritedRequest {
+    smsId: string;
+    favourited: boolean;
 }
 /**
  *
@@ -120,6 +126,12 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Send a reply to a received SMS message. Replies are sent from the receiving number.
      */
     replyToSmsMessage(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<SentSmsDto>;
+    /**
+     */
+    setSmsFavouritedRaw(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>>;
+    /**
+     */
+    setSmsFavourited(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit): Promise<SmsDto>;
 }
 /**
  * @export

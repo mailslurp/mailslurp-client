@@ -26,6 +26,8 @@
 - [imapServerGetRaw](ImapControllerApi.md#imapservergetraw)
 - [imapServerList](ImapControllerApi.md#imapserverlist)
 - [imapServerListRaw](ImapControllerApi.md#imapserverlistraw)
+- [imapServerMailbox](ImapControllerApi.md#imapservermailbox)
+- [imapServerMailboxRaw](ImapControllerApi.md#imapservermailboxraw)
 - [imapServerSearch](ImapControllerApi.md#imapserversearch)
 - [imapServerSearchRaw](ImapControllerApi.md#imapserversearchraw)
 - [imapServerStatus](ImapControllerApi.md#imapserverstatus)
@@ -176,6 +178,44 @@ List messages in an inbox
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapServerListResult`](../interfaces/ImapServerListResult.md)\>\>
+
+___
+
+### imapServerMailbox
+
+▸ **imapServerMailbox**(`requestParameters`, `initOverrides?`): `Promise`<[`ImapServerMailboxResult`](../interfaces/ImapServerMailboxResult.md)\>
+
+Create a new mailbox if possible
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ImapServerMailboxRequest`](../interfaces/ImapServerMailboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ImapServerMailboxResult`](../interfaces/ImapServerMailboxResult.md)\>
+
+___
+
+### imapServerMailboxRaw
+
+▸ **imapServerMailboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapServerMailboxResult`](../interfaces/ImapServerMailboxResult.md)\>\>
+
+Create a new mailbox if possible
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ImapServerMailboxRequest`](../interfaces/ImapServerMailboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapServerMailboxResult`](../interfaces/ImapServerMailboxResult.md)\>\>
 
 ___
 

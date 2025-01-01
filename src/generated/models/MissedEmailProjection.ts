@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface MissedEmailProjection {
   /**
    *
+   * @type {string}
+   * @memberof MissedEmailProjection
+   */
+  subject?: string | null;
+  /**
+   *
    * @type {Date}
    * @memberof MissedEmailProjection
    */
@@ -31,12 +37,6 @@ export interface MissedEmailProjection {
    * @memberof MissedEmailProjection
    */
   userId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailProjection
-   */
-  subject?: string | null;
   /**
    *
    * @type {string}
@@ -65,9 +65,9 @@ export function MissedEmailProjectionFromJSONTyped(
     return json;
   }
   return {
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     createdAt: new Date(json['createdAt']),
     userId: !exists(json, 'userId') ? undefined : json['userId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
   };
@@ -83,9 +83,9 @@ export function MissedEmailProjectionToJSON(
     return null;
   }
   return {
+    subject: value.subject,
     createdAt: value.createdAt.toISOString(),
     userId: value.userId,
-    subject: value.subject,
     id: value.id,
     from: value.from,
   };

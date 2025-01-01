@@ -7,12 +7,15 @@
 ### Properties
 
 - [before](GetEmailsOffsetPaginatedRequest.md#before)
+- [favourited](GetEmailsOffsetPaginatedRequest.md#favourited)
 - [inboxId](GetEmailsOffsetPaginatedRequest.md#inboxid)
 - [page](GetEmailsOffsetPaginatedRequest.md#page)
+- [plusAddressId](GetEmailsOffsetPaginatedRequest.md#plusaddressid)
 - [searchFilter](GetEmailsOffsetPaginatedRequest.md#searchfilter)
 - [since](GetEmailsOffsetPaginatedRequest.md#since)
 - [size](GetEmailsOffsetPaginatedRequest.md#size)
 - [sort](GetEmailsOffsetPaginatedRequest.md#sort)
+- [syncConnectors](GetEmailsOffsetPaginatedRequest.md#syncconnectors)
 - [unreadOnly](GetEmailsOffsetPaginatedRequest.md#unreadonly)
 
 ## Properties
@@ -20,6 +23,12 @@
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### favourited
+
+• `Optional` **favourited**: `boolean`
 
 ___
 
@@ -32,6 +41,12 @@ ___
 ### page
 
 • `Optional` **page**: `number`
+
+___
+
+### plusAddressId
+
+• `Optional` **plusAddressId**: `string`
 
 ___
 
@@ -56,6 +71,12 @@ ___
 ### sort
 
 • `Optional` **sort**: [`GetEmailsOffsetPaginatedSortEnum`](../enums/GetEmailsOffsetPaginatedSortEnum.md)
+
+___
+
+### syncConnectors
+
+• `Optional` **syncConnectors**: `boolean`
 
 ___
 

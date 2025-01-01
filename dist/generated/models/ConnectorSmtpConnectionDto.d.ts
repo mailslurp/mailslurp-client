@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -26,37 +26,85 @@ export interface ConnectorSmtpConnectionDto {
      * @type {string}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpHost?: string;
+    smtpHost: string;
     /**
      *
      * @type {number}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpPort?: number;
+    smtpPort?: number | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpUsername?: string;
+    smtpUsername?: string | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpPassword?: string;
+    smtpPassword?: string | null;
     /**
      *
      * @type {boolean}
      * @memberof ConnectorSmtpConnectionDto
      */
-    smtpSsl?: boolean;
+    smtpSsl?: boolean | null;
     /**
      *
      * @type {boolean}
      * @memberof ConnectorSmtpConnectionDto
      */
-    enabled?: boolean;
+    startTls?: boolean | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpMechanisms?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    localHostName?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyHost?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyPort?: number | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyEnabled?: boolean | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    enabled?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslTrust?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslProtocols?: Array<string> | null;
     /**
      *
      * @type {Date}

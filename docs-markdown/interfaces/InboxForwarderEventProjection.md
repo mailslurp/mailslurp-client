@@ -20,6 +20,7 @@ InboxForwarderEventProjection
 - [id](InboxForwarderEventProjection.md#id)
 - [inboxId](InboxForwarderEventProjection.md#inboxid)
 - [message](InboxForwarderEventProjection.md#message)
+- [sentId](InboxForwarderEventProjection.md#sentid)
 - [status](InboxForwarderEventProjection.md#status)
 - [userId](InboxForwarderEventProjection.md#userid)
 
@@ -78,6 +79,16 @@ ___
 ### message
 
 • `Optional` **message**: `string`
+
+**`Memberof`**
+
+InboxForwarderEventProjection
+
+___
+
+### sentId
+
+• `Optional` **sentId**: `string`
 
 **`Memberof`**
 

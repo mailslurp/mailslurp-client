@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CountDto, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookRedriveAllResult, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import { AbstractWebhookPayload, CountDto, CreateWebhookOptions, JSONSchemaDto, PageWebhookEndpointProjection, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookProjection, WebhookRedriveAllResult, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
 export interface CreateAccountWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
 }
@@ -36,9 +36,23 @@ export interface GetAllAccountWebhooksRequest {
     page?: number;
     size?: number;
     sort?: GetAllAccountWebhooksSortEnum;
-    eventType?: GetAllAccountWebhooksEventTypeEnum;
     since?: Date;
     before?: Date;
+    eventType?: GetAllAccountWebhooksEventTypeEnum;
+    health?: GetAllAccountWebhooksHealthEnum;
+    searchFilter?: string;
+}
+export interface GetAllWebhookEndpointsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllWebhookEndpointsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    inboxId?: string;
+    phoneId?: string;
+    before?: Date;
+    health?: GetAllWebhookEndpointsHealthEnum;
+    eventType?: GetAllWebhookEndpointsEventTypeEnum;
 }
 export interface GetAllWebhookResultsRequest {
     page?: number;
@@ -67,6 +81,9 @@ export interface GetAllWebhooksRequest {
     inboxId?: string;
     phoneId?: string;
     before?: Date;
+    health?: GetAllWebhooksHealthEnum;
+    eventType?: GetAllWebhooksEventTypeEnum;
+    url?: string;
 }
 export interface GetInboxWebhooksPaginatedRequest {
     inboxId: string;
@@ -76,6 +93,8 @@ export interface GetInboxWebhooksPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+    health?: GetInboxWebhooksPaginatedHealthEnum;
+    eventType?: GetInboxWebhooksPaginatedEventTypeEnum;
 }
 export interface GetJsonSchemaForWebhookEventRequest {
     event: GetJsonSchemaForWebhookEventEventEnum;
@@ -90,6 +109,9 @@ export interface GetPhoneNumberWebhooksPaginatedRequest {
     sort?: GetPhoneNumberWebhooksPaginatedSortEnum;
     since?: Date;
     before?: Date;
+    eventType?: GetPhoneNumberWebhooksPaginatedEventTypeEnum;
+    searchFilter?: string;
+    health?: GetPhoneNumberWebhooksPaginatedHealthEnum;
 }
 export interface GetTestWebhookPayloadRequest {
     eventName?: GetTestWebhookPayloadEventNameEnum;
@@ -127,12 +149,21 @@ export interface GetWebhookResultsCountRequest {
 }
 export interface GetWebhooksRequest {
     inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetWebhooksSortEnum;
 }
 export interface RedriveWebhookResultRequest {
     webhookResultId: string;
 }
 export interface SendTestDataRequest {
     webhookId: string;
+}
+export interface UpdateWebhookRequest {
+    webhookId: string;
+    createWebhookOptions: CreateWebhookOptions;
+    inboxId?: string;
+    phoneNumberId?: string;
 }
 export interface UpdateWebhookHeadersRequest {
     webhookId: string;
@@ -214,6 +245,16 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * List account webhooks Paginated
      */
     getAllAccountWebhooks(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    getAllWebhookEndpointsRaw(requestParameters: GetAllWebhookEndpointsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookEndpointProjection>>;
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    getAllWebhookEndpoints(requestParameters: GetAllWebhookEndpointsRequest, initOverrides?: RequestInit): Promise<PageWebhookEndpointProjection>;
     /**
      * Get results for all webhooks
      */
@@ -395,11 +436,11 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
     /**
      * Get all webhooks for an Inbox
      */
-    getWebhooksRaw(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<WebhookDto>>>;
+    getWebhooksRaw(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<WebhookProjection>>>;
     /**
      * Get all webhooks for an Inbox
      */
-    getWebhooks(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<Array<WebhookDto>>;
+    getWebhooks(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<Array<WebhookProjection>>;
     /**
      * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
      * Redrive all webhook results that have failed status
@@ -428,6 +469,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Send webhook test data
      */
     sendTestData(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<WebhookTestResult>;
+    /**
+     * Update a webhook
+     */
+    updateWebhookRaw(requestParameters: UpdateWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    /**
+     * Update a webhook
+     */
+    updateWebhook(requestParameters: UpdateWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
     /**
      * Update a webhook request headers
      */
@@ -477,7 +526,49 @@ export declare enum GetAllAccountWebhooksEventTypeEnum {
     DELIVERY_STATUS = "DELIVERY_STATUS",
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllAccountWebhooksHealthEnum {
+    HEALTHY = "HEALTHY",
+    UNHEALTHY = "UNHEALTHY"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllWebhookEndpointsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllWebhookEndpointsHealthEnum {
+    HEALTHY = "HEALTHY",
+    UNHEALTHY = "UNHEALTHY"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllWebhookEndpointsEventTypeEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
  * @export
@@ -511,7 +602,8 @@ export declare enum GetAllWebhookResultsEventNameEnum {
     DELIVERY_STATUS = "DELIVERY_STATUS",
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
  * @export
@@ -525,9 +617,59 @@ export declare enum GetAllWebhooksSortEnum {
  * @export
  * @enum {string}
  */
+export declare enum GetAllWebhooksHealthEnum {
+    HEALTHY = "HEALTHY",
+    UNHEALTHY = "UNHEALTHY"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllWebhooksEventTypeEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GetInboxWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetInboxWebhooksPaginatedHealthEnum {
+    HEALTHY = "HEALTHY",
+    UNHEALTHY = "UNHEALTHY"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetInboxWebhooksPaginatedEventTypeEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
  * @export
@@ -543,7 +685,8 @@ export declare enum GetJsonSchemaForWebhookEventEventEnum {
     DELIVERY_STATUS = "DELIVERY_STATUS",
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
  * @export
@@ -552,6 +695,31 @@ export declare enum GetJsonSchemaForWebhookEventEventEnum {
 export declare enum GetPhoneNumberWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetPhoneNumberWebhooksPaginatedEventTypeEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetPhoneNumberWebhooksPaginatedHealthEnum {
+    HEALTHY = "HEALTHY",
+    UNHEALTHY = "UNHEALTHY"
 }
 /**
  * @export
@@ -567,7 +735,8 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
     DELIVERY_STATUS = "DELIVERY_STATUS",
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
  * @export
@@ -601,5 +770,14 @@ export declare enum GetWebhookResultsEventNameEnum {
     DELIVERY_STATUS = "DELIVERY_STATUS",
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
-    NEW_SMS = "NEW_SMS"
+    NEW_SMS = "NEW_SMS",
+    NEW_GUEST_USER = "NEW_GUEST_USER"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetWebhooksSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }

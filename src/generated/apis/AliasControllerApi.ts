@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -17,18 +17,21 @@ import {
   AliasDto,
   AliasDtoFromJSON,
   AliasDtoToJSON,
+  AliasThreadProjection,
+  AliasThreadProjectionFromJSON,
+  AliasThreadProjectionToJSON,
   CreateAliasOptions,
   CreateAliasOptionsFromJSON,
   CreateAliasOptionsToJSON,
   PageAlias,
   PageAliasFromJSON,
   PageAliasToJSON,
+  PageAliasThreadProjection,
+  PageAliasThreadProjectionFromJSON,
+  PageAliasThreadProjectionToJSON,
   PageEmailProjection,
   PageEmailProjectionFromJSON,
   PageEmailProjectionToJSON,
-  PageThreadProjection,
-  PageThreadProjectionFromJSON,
-  PageThreadProjectionToJSON,
   ReplyToAliasEmailOptions,
   ReplyToAliasEmailOptionsFromJSON,
   ReplyToAliasEmailOptionsToJSON,
@@ -38,9 +41,6 @@ import {
   SentEmailDto,
   SentEmailDtoFromJSON,
   SentEmailDtoToJSON,
-  ThreadProjection,
-  ThreadProjectionFromJSON,
-  ThreadProjectionToJSON,
   UpdateAliasOptions,
   UpdateAliasOptionsFromJSON,
   UpdateAliasOptionsToJSON,
@@ -371,7 +371,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
   async getAliasThreadsRaw(
     requestParameters: GetAliasThreadsRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageThreadProjection>> {
+  ): Promise<runtime.ApiResponse<PageAliasThreadProjection>> {
     if (
       requestParameters.aliasId === null ||
       requestParameters.aliasId === undefined
@@ -426,7 +426,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageThreadProjectionFromJSON(jsonValue)
+      PageAliasThreadProjectionFromJSON(jsonValue)
     );
   }
 
@@ -437,7 +437,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
   async getAliasThreads(
     requestParameters: GetAliasThreadsRequest,
     initOverrides?: RequestInit
-  ): Promise<PageThreadProjection> {
+  ): Promise<PageAliasThreadProjection> {
     const response = await this.getAliasThreadsRaw(
       requestParameters,
       initOverrides
@@ -521,7 +521,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
   async getThreadRaw(
     requestParameters: GetThreadRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ThreadProjection>> {
+  ): Promise<runtime.ApiResponse<AliasThreadProjection>> {
     if (
       requestParameters.threadId === null ||
       requestParameters.threadId === undefined
@@ -554,7 +554,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ThreadProjectionFromJSON(jsonValue)
+      AliasThreadProjectionFromJSON(jsonValue)
     );
   }
 
@@ -565,7 +565,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
   async getThread(
     requestParameters: GetThreadRequest,
     initOverrides?: RequestInit
-  ): Promise<ThreadProjection> {
+  ): Promise<AliasThreadProjection> {
     const response = await this.getThreadRaw(requestParameters, initOverrides);
     return await response.value();
   }
@@ -577,7 +577,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
   async getThreadsPaginatedRaw(
     requestParameters: GetThreadsPaginatedRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageThreadProjection>> {
+  ): Promise<runtime.ApiResponse<PageAliasThreadProjection>> {
     const queryParameters: any = {};
 
     if (requestParameters.page !== undefined) {
@@ -619,7 +619,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageThreadProjectionFromJSON(jsonValue)
+      PageAliasThreadProjectionFromJSON(jsonValue)
     );
   }
 
@@ -630,7 +630,7 @@ export class AliasControllerApi extends runtime.BaseAPI {
   async getThreadsPaginated(
     requestParameters: GetThreadsPaginatedRequest,
     initOverrides?: RequestInit
-  ): Promise<PageThreadProjection> {
+  ): Promise<PageAliasThreadProjection> {
     const response = await this.getThreadsPaginatedRaw(
       requestParameters,
       initOverrides

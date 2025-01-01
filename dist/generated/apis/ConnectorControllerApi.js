@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetConnectorsSortEnum = exports.GetConnectorSyncEventsSortEnum = exports.GetAllConnectorSyncEventsSortEnum = exports.ConnectorControllerApi = void 0;
+exports.GetConnectorsSortEnum = exports.GetConnectorEventsEventTypeEnum = exports.GetConnectorEventsSortEnum = exports.GetAllConnectorEventsEventTypeEnum = exports.GetAllConnectorEventsSortEnum = exports.ConnectorControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -113,6 +113,9 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('createConnectorOptions', 'Required parameter requestParameters.createConnectorOptions was null or undefined when calling createConnector.');
                         }
                         queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
@@ -258,6 +261,120 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.createConnectorSmtpConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
+     */
+    ConnectorControllerApi.prototype.createConnectorSyncSettingsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling createConnectorSyncSettings.');
+                        }
+                        if (requestParameters.createConnectorSyncSettingsOptions === null ||
+                            requestParameters.createConnectorSyncSettingsOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorSyncSettingsOptions', 'Required parameter requestParameters.createConnectorSyncSettingsOptions was null or undefined when calling createConnectorSyncSettings.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/sync-settings".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorSyncSettingsOptionsToJSON)(requestParameters.createConnectorSyncSettingsOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorSyncSettingsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
+     */
+    ConnectorControllerApi.prototype.createConnectorSyncSettings = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createConnectorSyncSettingsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Sync emails between external mailboxes and MailSlurp inboxes
+     * Create an inbox connector with options
+     */
+    ConnectorControllerApi.prototype.createConnectorWithOptionsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createConnectorWithOptions === null ||
+                            requestParameters.createConnectorWithOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorWithOptions', 'Required parameter requestParameters.createConnectorWithOptions was null or undefined when calling createConnectorWithOptions.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/withOptions",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorWithOptionsToJSON)(requestParameters.createConnectorWithOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Sync emails between external mailboxes and MailSlurp inboxes
+     * Create an inbox connector with options
+     */
+    ConnectorControllerApi.prototype.createConnectorWithOptions = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createConnectorWithOptionsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -448,15 +565,65 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get all inbox connector sync events
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
      */
-    ConnectorControllerApi.prototype.getAllConnectorSyncEventsRaw = function (requestParameters, initOverrides) {
+    ConnectorControllerApi.prototype.deleteConnectorSyncSettingsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling deleteConnectorSyncSettings.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/sync-settings".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Configure automatic pull or emails from external inboxes using an interval or schedule
+     * Create an inbox connector sync settings
+     */
+    ConnectorControllerApi.prototype.deleteConnectorSyncSettings = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteConnectorSyncSettingsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox connector events
+     */
+    ConnectorControllerApi.prototype.getAllConnectorEventsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.id !== undefined) {
+                            queryParameters['id'] = requestParameters.id;
+                        }
                         if (requestParameters.page !== undefined) {
                             queryParameters['page'] = requestParameters.page;
                         }
@@ -472,6 +639,9 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -485,21 +655,21 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageConnectorSyncEventsFromJSON)(jsonValue);
+                                return (0, models_1.PageConnectorEventsFromJSON)(jsonValue);
                             })];
                 }
             });
         });
     };
     /**
-     * Get all inbox connector sync events
+     * Get all inbox connector events
      */
-    ConnectorControllerApi.prototype.getAllConnectorSyncEvents = function (requestParameters, initOverrides) {
+    ConnectorControllerApi.prototype.getAllConnectorEvents = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getAllConnectorSyncEventsRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getAllConnectorEventsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -558,16 +728,181 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get an inbox connector sync event
+     * Find an inbox connector by email address
+     * Get connector by email address
      */
-    ConnectorControllerApi.prototype.getConnectorSyncEventRaw = function (requestParameters, initOverrides) {
+    ConnectorControllerApi.prototype.getConnectorByEmailAddressRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getConnectorByEmailAddress.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.emailAddress !== undefined) {
+                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/by-email-address",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Find an inbox connector by email address
+     * Get connector by email address
+     */
+    ConnectorControllerApi.prototype.getConnectorByEmailAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getConnectorByEmailAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Find an inbox connector by inbox ID
+     * Get connector by inbox ID
+     */
+    ConnectorControllerApi.prototype.getConnectorByInboxIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getConnectorByInboxId.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/by-inbox-id",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Find an inbox connector by inbox ID
+     * Get connector by inbox ID
+     */
+    ConnectorControllerApi.prototype.getConnectorByInboxId = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getConnectorByInboxIdRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Find an inbox connector by name
+     * Get connector by name
+     */
+    ConnectorControllerApi.prototype.getConnectorByNameRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.name === null ||
+                            requestParameters.name === undefined) {
+                            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling getConnectorByName.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.name !== undefined) {
+                            queryParameters['name'] = requestParameters.name;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/by-name",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Find an inbox connector by name
+     * Get connector by name
+     */
+    ConnectorControllerApi.prototype.getConnectorByName = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getConnectorByNameRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get an inbox connector event
+     */
+    ConnectorControllerApi.prototype.getConnectorEventRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (requestParameters.id === null || requestParameters.id === undefined) {
-                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getConnectorSyncEvent.');
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getConnectorEvent.');
                         }
                         queryParameters = {};
                         headerParameters = {};
@@ -583,21 +918,21 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorSyncEventDtoFromJSON)(jsonValue);
+                                return (0, models_1.ConnectorEventDtoFromJSON)(jsonValue);
                             })];
                 }
             });
         });
     };
     /**
-     * Get an inbox connector sync event
+     * Get an inbox connector event
      */
-    ConnectorControllerApi.prototype.getConnectorSyncEvent = function (requestParameters, initOverrides) {
+    ConnectorControllerApi.prototype.getConnectorEvent = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getConnectorSyncEventRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getConnectorEventRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -607,16 +942,16 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get an inbox connector sync events
+     * Get an inbox connector events
      */
-    ConnectorControllerApi.prototype.getConnectorSyncEventsRaw = function (requestParameters, initOverrides) {
+    ConnectorControllerApi.prototype.getConnectorEventsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (requestParameters.id === null || requestParameters.id === undefined) {
-                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getConnectorSyncEvents.');
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getConnectorEvents.');
                         }
                         queryParameters = {};
                         if (requestParameters.page !== undefined) {
@@ -634,6 +969,9 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -647,21 +985,222 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageConnectorSyncEventsFromJSON)(jsonValue);
+                                return (0, models_1.PageConnectorEventsFromJSON)(jsonValue);
                             })];
                 }
             });
         });
     };
     /**
-     * Get an inbox connector sync events
+     * Get an inbox connector events
      */
-    ConnectorControllerApi.prototype.getConnectorSyncEvents = function (requestParameters, initOverrides) {
+    ConnectorControllerApi.prototype.getConnectorEvents = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getConnectorSyncEventsRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getConnectorEventsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get IMAP connection for external inbox
+     * Get an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.getConnectorImapConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getConnectorImapConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptionalConnectorImapConnectionDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get IMAP connection for external inbox
+     * Get an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.getConnectorImapConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getConnectorImapConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get common mail provider SMTP and IMAP connection settings
+     * Get SMTP and IMAP connection settings for common mail providers
+     */
+    ConnectorControllerApi.prototype.getConnectorProviderSettingsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/provider-settings",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorProviderSettingsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get common mail provider SMTP and IMAP connection settings
+     * Get SMTP and IMAP connection settings for common mail providers
+     */
+    ConnectorControllerApi.prototype.getConnectorProviderSettings = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getConnectorProviderSettingsRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get SMTP connection for external inbox
+     * Get an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.getConnectorSmtpConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getConnectorSmtpConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptionalConnectorSmtpConnectionDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get SMTP connection for external inbox
+     * Get an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.getConnectorSmtpConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getConnectorSmtpConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get sync settings for connection with external inbox
+     * Get an inbox connector sync settings
+     */
+    ConnectorControllerApi.prototype.getConnectorSyncSettingsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getConnectorSyncSettings.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/sync-settings".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptionalConnectorSyncSettingsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get sync settings for connection with external inbox
+     * Get an inbox connector sync settings
+     */
+    ConnectorControllerApi.prototype.getConnectorSyncSettings = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getConnectorSyncSettingsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -734,6 +1273,64 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Send from an inbox connector
+     */
+    ConnectorControllerApi.prototype.sendEmailFromConnectorRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling sendEmailFromConnector.');
+                        }
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailFromConnector.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.useFallback !== undefined) {
+                            queryParameters['useFallback'] = requestParameters.useFallback;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/send".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Send from an inbox connector
+     */
+    ConnectorControllerApi.prototype.sendEmailFromConnector = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendEmailFromConnectorRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Sync an inbox connector
      */
     ConnectorControllerApi.prototype.syncConnectorRaw = function (requestParameters, initOverrides) {
@@ -746,6 +1343,15 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling syncConnector.');
                         }
                         queryParameters = {};
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.folder !== undefined) {
+                            queryParameters['folder'] = requestParameters.folder;
+                        }
+                        if (requestParameters.logging !== undefined) {
+                            queryParameters['logging'] = requestParameters.logging;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -774,6 +1380,220 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.syncConnectorRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Test the IMAP connection for a connector
+     * Test an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.testConnectorImapConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling testConnectorImapConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/imap/test".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorImapConnectionOptionsToJSON)(requestParameters.createConnectorImapConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorImapConnectionTestResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Test the IMAP connection for a connector
+     * Test an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.testConnectorImapConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testConnectorImapConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Test the IMAP connection options for a connector
+     * Test an inbox connector IMAP connection options
+     */
+    ConnectorControllerApi.prototype.testConnectorImapConnectionOptionsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createConnectorImapConnectionOptions === null ||
+                            requestParameters.createConnectorImapConnectionOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorImapConnectionOptions', 'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling testConnectorImapConnectionOptions.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/connections/imap/test",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorImapConnectionOptionsToJSON)(requestParameters.createConnectorImapConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorImapConnectionTestResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Test the IMAP connection options for a connector
+     * Test an inbox connector IMAP connection options
+     */
+    ConnectorControllerApi.prototype.testConnectorImapConnectionOptions = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testConnectorImapConnectionOptionsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Test the SMTP connection for a connector
+     * Test an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.testConnectorSmtpConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling testConnectorSmtpConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/smtp/test".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorSmtpConnectionOptionsToJSON)(requestParameters.createConnectorSmtpConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorSmtpConnectionTestResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Test the SMTP connection for a connector
+     * Test an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.testConnectorSmtpConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testConnectorSmtpConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Test the SMTP connection options for a connector
+     * Test an inbox connector SMTP connection options
+     */
+    ConnectorControllerApi.prototype.testConnectorSmtpConnectionOptionsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createConnectorSmtpConnectionOptions === null ||
+                            requestParameters.createConnectorSmtpConnectionOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorSmtpConnectionOptions', 'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling testConnectorSmtpConnectionOptions.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/connections/smtp/test",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorSmtpConnectionOptionsToJSON)(requestParameters.createConnectorSmtpConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorSmtpConnectionTestResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Test the SMTP connection options for a connector
+     * Test an inbox connector SMTP connection options
+     */
+    ConnectorControllerApi.prototype.testConnectorSmtpConnectionOptions = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testConnectorSmtpConnectionOptionsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -837,6 +1657,120 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Update IMAP connection for external inbox
+     * Update an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.updateConnectorImapConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateConnectorImapConnection.');
+                        }
+                        if (requestParameters.createConnectorImapConnectionOptions === null ||
+                            requestParameters.createConnectorImapConnectionOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorImapConnectionOptions', 'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling updateConnectorImapConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorImapConnectionOptionsToJSON)(requestParameters.createConnectorImapConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorImapConnectionDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Update IMAP connection for external inbox
+     * Update an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.updateConnectorImapConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateConnectorImapConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Update SMTP connection for external inbox
+     * Update an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.updateConnectorSmtpConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateConnectorSmtpConnection.');
+                        }
+                        if (requestParameters.createConnectorSmtpConnectionOptions === null ||
+                            requestParameters.createConnectorSmtpConnectionOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorSmtpConnectionOptions', 'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling updateConnectorSmtpConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorSmtpConnectionOptionsToJSON)(requestParameters.createConnectorSmtpConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorSmtpConnectionDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Update SMTP connection for external inbox
+     * Update an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.updateConnectorSmtpConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateConnectorSmtpConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     return ConnectorControllerApi;
 }(runtime.BaseAPI));
 exports.ConnectorControllerApi = ConnectorControllerApi;
@@ -844,20 +1778,38 @@ exports.ConnectorControllerApi = ConnectorControllerApi;
  * @export
  * @enum {string}
  */
-var GetAllConnectorSyncEventsSortEnum;
-(function (GetAllConnectorSyncEventsSortEnum) {
-    GetAllConnectorSyncEventsSortEnum["ASC"] = "ASC";
-    GetAllConnectorSyncEventsSortEnum["DESC"] = "DESC";
-})(GetAllConnectorSyncEventsSortEnum = exports.GetAllConnectorSyncEventsSortEnum || (exports.GetAllConnectorSyncEventsSortEnum = {}));
+var GetAllConnectorEventsSortEnum;
+(function (GetAllConnectorEventsSortEnum) {
+    GetAllConnectorEventsSortEnum["ASC"] = "ASC";
+    GetAllConnectorEventsSortEnum["DESC"] = "DESC";
+})(GetAllConnectorEventsSortEnum = exports.GetAllConnectorEventsSortEnum || (exports.GetAllConnectorEventsSortEnum = {}));
 /**
  * @export
  * @enum {string}
  */
-var GetConnectorSyncEventsSortEnum;
-(function (GetConnectorSyncEventsSortEnum) {
-    GetConnectorSyncEventsSortEnum["ASC"] = "ASC";
-    GetConnectorSyncEventsSortEnum["DESC"] = "DESC";
-})(GetConnectorSyncEventsSortEnum = exports.GetConnectorSyncEventsSortEnum || (exports.GetConnectorSyncEventsSortEnum = {}));
+var GetAllConnectorEventsEventTypeEnum;
+(function (GetAllConnectorEventsEventTypeEnum) {
+    GetAllConnectorEventsEventTypeEnum["SEND"] = "SEND";
+    GetAllConnectorEventsEventTypeEnum["SYNC"] = "SYNC";
+})(GetAllConnectorEventsEventTypeEnum = exports.GetAllConnectorEventsEventTypeEnum || (exports.GetAllConnectorEventsEventTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetConnectorEventsSortEnum;
+(function (GetConnectorEventsSortEnum) {
+    GetConnectorEventsSortEnum["ASC"] = "ASC";
+    GetConnectorEventsSortEnum["DESC"] = "DESC";
+})(GetConnectorEventsSortEnum = exports.GetConnectorEventsSortEnum || (exports.GetConnectorEventsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetConnectorEventsEventTypeEnum;
+(function (GetConnectorEventsEventTypeEnum) {
+    GetConnectorEventsEventTypeEnum["SEND"] = "SEND";
+    GetConnectorEventsEventTypeEnum["SYNC"] = "SYNC";
+})(GetConnectorEventsEventTypeEnum = exports.GetConnectorEventsEventTypeEnum || (exports.GetConnectorEventsEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}

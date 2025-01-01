@@ -7,12 +7,15 @@
 ### Properties
 
 - [before](GetOrganizationEmailsPaginatedRequest.md#before)
+- [favourited](GetOrganizationEmailsPaginatedRequest.md#favourited)
 - [inboxId](GetOrganizationEmailsPaginatedRequest.md#inboxid)
 - [page](GetOrganizationEmailsPaginatedRequest.md#page)
+- [plusAddressId](GetOrganizationEmailsPaginatedRequest.md#plusaddressid)
 - [searchFilter](GetOrganizationEmailsPaginatedRequest.md#searchfilter)
 - [since](GetOrganizationEmailsPaginatedRequest.md#since)
 - [size](GetOrganizationEmailsPaginatedRequest.md#size)
 - [sort](GetOrganizationEmailsPaginatedRequest.md#sort)
+- [syncConnectors](GetOrganizationEmailsPaginatedRequest.md#syncconnectors)
 - [unreadOnly](GetOrganizationEmailsPaginatedRequest.md#unreadonly)
 
 ## Properties
@@ -20,6 +23,12 @@
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### favourited
+
+• `Optional` **favourited**: `boolean`
 
 ___
 
@@ -32,6 +41,12 @@ ___
 ### page
 
 • `Optional` **page**: `number`
+
+___
+
+### plusAddressId
+
+• `Optional` **plusAddressId**: `string`
 
 ___
 
@@ -56,6 +71,12 @@ ___
 ### sort
 
 • `Optional` **sort**: [`GetOrganizationEmailsPaginatedSortEnum`](../enums/GetOrganizationEmailsPaginatedSortEnum.md)
+
+___
+
+### syncConnectors
+
+• `Optional` **syncConnectors**: `boolean`
 
 ___
 

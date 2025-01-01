@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -61,6 +61,11 @@ function EmailFromJSONTyped(json, ignoreDiscriminator) {
         bodyPartContentTypes: !(0, runtime_1.exists)(json, 'bodyPartContentTypes')
             ? undefined
             : json['bodyPartContentTypes'],
+        externalId: !(0, runtime_1.exists)(json, 'externalId') ? undefined : json['externalId'],
+        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
+        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
         xampHtml: !(0, runtime_1.exists)(json, 'xampHtml') ? undefined : json['xampHtml'],
     };
@@ -102,6 +107,11 @@ function EmailToJSON(value) {
         teamAccess: value.teamAccess,
         isXAmpHtml: value.isXAmpHtml,
         bodyPartContentTypes: value.bodyPartContentTypes,
+        externalId: value.externalId,
+        messageId: value.messageId,
+        threadId: value.threadId,
+        inReplyTo: value.inReplyTo,
+        favourite: value.favourite,
         html: value.html,
         xampHtml: value.xampHtml,
     };

@@ -8,9 +8,12 @@
 
 - [contentId](UploadMultipartFormRequest.md#contentid)
 - [contentType](UploadMultipartFormRequest.md#contenttype)
+- [contentTypeHeader](UploadMultipartFormRequest.md#contenttypeheader)
 - [filename](UploadMultipartFormRequest.md#filename)
 - [inlineObject](UploadMultipartFormRequest.md#inlineobject)
 - [xFilename](UploadMultipartFormRequest.md#xfilename)
+- [xFilenameRaw](UploadMultipartFormRequest.md#xfilenameraw)
+- [xFilesize](UploadMultipartFormRequest.md#xfilesize)
 
 ## Properties
 
@@ -23,6 +26,12 @@ ___
 ### contentType
 
 • `Optional` **contentType**: `string`
+
+___
+
+### contentTypeHeader
+
+• `Optional` **contentTypeHeader**: `string`
 
 ___
 
@@ -41,3 +50,15 @@ ___
 ### xFilename
 
 • `Optional` **xFilename**: `string`
+
+___
+
+### xFilenameRaw
+
+• `Optional` **xFilenameRaw**: `string`
+
+___
+
+### xFilesize
+
+• `Optional` **xFilesize**: `number`

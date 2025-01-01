@@ -2,7 +2,7 @@
 
 # Interface: InboxDto
 
-Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mx.mailslurp.com` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
+Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mxslurp.click` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
 
 **`Export`**
 
@@ -16,6 +16,7 @@ InboxDto
 
 - [createdAt](InboxDto.md#createdat)
 - [description](InboxDto.md#description)
+- [domain](InboxDto.md#domain)
 - [domainId](InboxDto.md#domainid)
 - [emailAddress](InboxDto.md#emailaddress)
 - [expiresAt](InboxDto.md#expiresat)
@@ -23,6 +24,7 @@ InboxDto
 - [functionsAs](InboxDto.md#functionsas)
 - [id](InboxDto.md#id)
 - [inboxType](InboxDto.md#inboxtype)
+- [localPart](InboxDto.md#localpart)
 - [name](InboxDto.md#name)
 - [readOnly](InboxDto.md#readonly)
 - [tags](InboxDto.md#tags)
@@ -48,6 +50,18 @@ ___
 • `Optional` **description**: `string`
 
 Description of an inbox for labelling and searching purposes
+
+**`Memberof`**
+
+InboxDto
+
+___
+
+### domain
+
+• `Optional` **domain**: `string`
+
+Domain name of the email address
 
 **`Memberof`**
 
@@ -81,7 +95,7 @@ ___
 
 ### expiresAt
 
-• `Optional` **expiresAt**: `string`
+• `Optional` **expiresAt**: `Date`
 
 Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
 
@@ -139,6 +153,18 @@ InboxDto
 
 ___
 
+### localPart
+
+• `Optional` **localPart**: `string`
+
+Local part of email addresses before the @ symbol
+
+**`Memberof`**
+
+InboxDto
+
+___
+
 ### name
 
 • `Optional` **name**: `string`
@@ -177,7 +203,7 @@ ___
 
 ### userId
 
-• `Optional` **userId**: `string`
+• **userId**: `string`
 
 ID of user that inbox belongs to
 

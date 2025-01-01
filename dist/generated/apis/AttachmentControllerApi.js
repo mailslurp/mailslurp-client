@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -100,6 +100,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
     }
     /**
      * Delete all attachments
+     * Delete all attachments
      */
     AttachmentControllerApi.prototype.deleteAllAttachmentsRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -127,6 +128,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Delete all attachments
+     * Delete all attachments
      */
     AttachmentControllerApi.prototype.deleteAllAttachments = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -141,6 +143,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Delete an attachment
      * Delete an attachment
      */
     AttachmentControllerApi.prototype.deleteAttachmentRaw = function (requestParameters, initOverrides) {
@@ -172,6 +175,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Delete an attachment
      * Delete an attachment
      */
     AttachmentControllerApi.prototype.deleteAttachment = function (requestParameters, initOverrides) {
@@ -315,7 +319,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AttachmentEntityFromJSON)(jsonValue);
+                                return (0, models_1.AttachmentEntityDtoFromJSON)(jsonValue);
                             })];
                 }
             });
@@ -528,6 +532,9 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.filename !== undefined) {
                             queryParameters['filename'] = requestParameters.filename;
                         }
+                        if (requestParameters.fileSize !== undefined) {
+                            queryParameters['fileSize'] = requestParameters.fileSize;
+                        }
                         headerParameters = {};
                         if (requestParameters.contentType !== undefined &&
                             requestParameters.contentType !== null) {
@@ -589,8 +596,18 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.filename !== undefined) {
                             queryParameters['filename'] = requestParameters.filename;
                         }
+                        if (requestParameters.contentTypeHeader !== undefined) {
+                            queryParameters['contentTypeHeader'] =
+                                requestParameters.contentTypeHeader;
+                        }
                         if (requestParameters.xFilename !== undefined) {
                             queryParameters['x-filename'] = requestParameters.xFilename;
+                        }
+                        if (requestParameters.xFilenameRaw !== undefined) {
+                            queryParameters['x-filename-raw'] = requestParameters.xFilenameRaw;
+                        }
+                        if (requestParameters.xFilesize !== undefined) {
+                            queryParameters['x-filesize'] = requestParameters.xFilesize;
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';

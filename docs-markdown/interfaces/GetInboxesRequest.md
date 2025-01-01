@@ -8,6 +8,7 @@
 
 - [before](GetInboxesRequest.md#before)
 - [excludeCatchAllInboxes](GetInboxesRequest.md#excludecatchallinboxes)
+- [include](GetInboxesRequest.md#include)
 - [since](GetInboxesRequest.md#since)
 - [size](GetInboxesRequest.md#size)
 - [sort](GetInboxesRequest.md#sort)
@@ -23,6 +24,12 @@ ___
 ### excludeCatchAllInboxes
 
 • `Optional` **excludeCatchAllInboxes**: `boolean`
+
+___
+
+### include
+
+• `Optional` **include**: `string`[]
 
 ___
 

@@ -52,6 +52,8 @@
 - [getEmailContentMatch](EmailControllerApi.md#getemailcontentmatch)
 - [getEmailContentMatchRaw](EmailControllerApi.md#getemailcontentmatchraw)
 - [getEmailContentPart](EmailControllerApi.md#getemailcontentpart)
+- [getEmailContentPartContent](EmailControllerApi.md#getemailcontentpartcontent)
+- [getEmailContentPartContentRaw](EmailControllerApi.md#getemailcontentpartcontentraw)
 - [getEmailContentPartRaw](EmailControllerApi.md#getemailcontentpartraw)
 - [getEmailCount](EmailControllerApi.md#getemailcount)
 - [getEmailCountRaw](EmailControllerApi.md#getemailcountraw)
@@ -70,8 +72,16 @@
 - [getEmailScreenshotAsBase64Raw](EmailControllerApi.md#getemailscreenshotasbase64raw)
 - [getEmailScreenshotAsBinary](EmailControllerApi.md#getemailscreenshotasbinary)
 - [getEmailScreenshotAsBinaryRaw](EmailControllerApi.md#getemailscreenshotasbinaryraw)
+- [getEmailSummary](EmailControllerApi.md#getemailsummary)
+- [getEmailSummaryRaw](EmailControllerApi.md#getemailsummaryraw)
 - [getEmailTextLines](EmailControllerApi.md#getemailtextlines)
 - [getEmailTextLinesRaw](EmailControllerApi.md#getemailtextlinesraw)
+- [getEmailThread](EmailControllerApi.md#getemailthread)
+- [getEmailThreadItems](EmailControllerApi.md#getemailthreaditems)
+- [getEmailThreadItemsRaw](EmailControllerApi.md#getemailthreaditemsraw)
+- [getEmailThreadRaw](EmailControllerApi.md#getemailthreadraw)
+- [getEmailThreads](EmailControllerApi.md#getemailthreads)
+- [getEmailThreadsRaw](EmailControllerApi.md#getemailthreadsraw)
 - [getEmailsOffsetPaginated](EmailControllerApi.md#getemailsoffsetpaginated)
 - [getEmailsOffsetPaginatedRaw](EmailControllerApi.md#getemailsoffsetpaginatedraw)
 - [getEmailsPaginated](EmailControllerApi.md#getemailspaginated)
@@ -101,6 +111,8 @@
 - [searchEmailsRaw](EmailControllerApi.md#searchemailsraw)
 - [sendEmailSourceOptional](EmailControllerApi.md#sendemailsourceoptional)
 - [sendEmailSourceOptionalRaw](EmailControllerApi.md#sendemailsourceoptionalraw)
+- [setEmailFavourited](EmailControllerApi.md#setemailfavourited)
+- [setEmailFavouritedRaw](EmailControllerApi.md#setemailfavouritedraw)
 - [validateEmail](EmailControllerApi.md#validateemail)
 - [validateEmailRaw](EmailControllerApi.md#validateemailraw)
 - [withMiddleware](EmailControllerApi.md#withmiddleware)
@@ -773,6 +785,46 @@ Get email content part by content type
 
 ___
 
+### getEmailContentPartContent
+
+▸ **getEmailContentPartContent**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+
+Get email body content parts from a multipart email message for a given content type and return as response
+Get email content part by content type raw response
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailContentPartContentRequest`](../interfaces/GetEmailContentPartContentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### getEmailContentPartContentRaw
+
+▸ **getEmailContentPartContentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Get email body content parts from a multipart email message for a given content type and return as response
+Get email content part by content type raw response
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailContentPartContentRequest`](../interfaces/GetEmailContentPartContentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
 ### getEmailContentPartRaw
 
 ▸ **getEmailContentPartRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentPartResult`](../interfaces/EmailContentPartResult.md)\>\>
@@ -795,7 +847,7 @@ ___
 
 ### getEmailCount
 
-▸ **getEmailCount**(`initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+▸ **getEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
 
 Get email count
 
@@ -803,6 +855,7 @@ Get email count
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetEmailCountRequest`](../interfaces/GetEmailCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -813,7 +866,7 @@ ___
 
 ### getEmailCountRaw
 
-▸ **getEmailCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+▸ **getEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
 Get email count
 
@@ -821,6 +874,7 @@ Get email count
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetEmailCountRequest`](../interfaces/GetEmailCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -1129,6 +1183,46 @@ Take a screenshot of an email in a browser
 
 ___
 
+### getEmailSummary
+
+▸ **getEmailSummary**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
+
+Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailSummaryRequest`](../interfaces/GetEmailSummaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
+
+___
+
+### getEmailSummaryRaw
+
+▸ **getEmailSummaryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
+
+Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailSummaryRequest`](../interfaces/GetEmailSummaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
+
+___
+
 ### getEmailTextLines
 
 ▸ **getEmailTextLines**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>
@@ -1166,6 +1260,126 @@ Parse and return text from an email, stripping HTML and decoding encoded charact
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>\>
+
+___
+
+### getEmailThread
+
+▸ **getEmailThread**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailThreadDto`](../interfaces/EmailThreadDto.md)\>
+
+Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+Return email thread information. Use items endpoints to get messages for thread.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailThreadRequest`](../interfaces/GetEmailThreadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailThreadDto`](../interfaces/EmailThreadDto.md)\>
+
+___
+
+### getEmailThreadItems
+
+▸ **getEmailThreadItems**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailThreadItemsDto`](../interfaces/EmailThreadItemsDto.md)\>
+
+Return email thread messages based on Message-ID, In-Reply-To, and References header
+Return email thread items.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailThreadItemsRequest`](../interfaces/GetEmailThreadItemsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailThreadItemsDto`](../interfaces/EmailThreadItemsDto.md)\>
+
+___
+
+### getEmailThreadItemsRaw
+
+▸ **getEmailThreadItemsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailThreadItemsDto`](../interfaces/EmailThreadItemsDto.md)\>\>
+
+Return email thread messages based on Message-ID, In-Reply-To, and References header
+Return email thread items.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailThreadItemsRequest`](../interfaces/GetEmailThreadItemsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailThreadItemsDto`](../interfaces/EmailThreadItemsDto.md)\>\>
+
+___
+
+### getEmailThreadRaw
+
+▸ **getEmailThreadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailThreadDto`](../interfaces/EmailThreadDto.md)\>\>
+
+Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+Return email thread information. Use items endpoints to get messages for thread.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailThreadRequest`](../interfaces/GetEmailThreadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailThreadDto`](../interfaces/EmailThreadDto.md)\>\>
+
+___
+
+### getEmailThreads
+
+▸ **getEmailThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailThreadProjection`](../interfaces/PageEmailThreadProjection.md)\>
+
+Return email message chains built from Message-ID, In-Reply-To, and References header.
+Return email threads in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailThreadsRequest`](../interfaces/GetEmailThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEmailThreadProjection`](../interfaces/PageEmailThreadProjection.md)\>
+
+___
+
+### getEmailThreadsRaw
+
+▸ **getEmailThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailThreadProjection`](../interfaces/PageEmailThreadProjection.md)\>\>
+
+Return email message chains built from Message-ID, In-Reply-To, and References header.
+Return email threads in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailThreadsRequest`](../interfaces/GetEmailThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailThreadProjection`](../interfaces/PageEmailThreadProjection.md)\>\>
 
 ___
 
@@ -1740,6 +1954,46 @@ Send email
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`SendEmailSourceOptionalRequest`](../interfaces/SendEmailSourceOptionalRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### setEmailFavourited
+
+▸ **setEmailFavourited**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Set and return new favorite state for an email
+Set email favourited state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetEmailFavouritedRequest`](../interfaces/SetEmailFavouritedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### setEmailFavouritedRaw
+
+▸ **setEmailFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Set and return new favorite state for an email
+Set email favourited state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetEmailFavouritedRequest`](../interfaces/SetEmailFavouritedRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

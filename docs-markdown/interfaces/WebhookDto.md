@@ -17,6 +17,7 @@ WebhookDto
 - [basicAuth](WebhookDto.md#basicauth)
 - [createdAt](WebhookDto.md#createdat)
 - [eventName](WebhookDto.md#eventname)
+- [healthStatus](WebhookDto.md#healthstatus)
 - [id](WebhookDto.md#id)
 - [ignoreInsecureSslCertificates](WebhookDto.md#ignoreinsecuresslcertificates)
 - [inboxId](WebhookDto.md#inboxid)
@@ -62,6 +63,18 @@ ___
 • `Optional` **eventName**: [`WebhookDtoEventNameEnum`](../enums/WebhookDtoEventNameEnum.md)
 
 Webhook trigger event name
+
+**`Memberof`**
+
+WebhookDto
+
+___
+
+### healthStatus
+
+• `Optional` **healthStatus**: [`WebhookDtoHealthStatusEnum`](../enums/WebhookDtoHealthStatusEnum.md)
+
+Webhook health
 
 **`Memberof`**
 

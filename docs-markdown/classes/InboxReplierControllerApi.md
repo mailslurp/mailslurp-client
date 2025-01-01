@@ -26,6 +26,8 @@
 - [deleteInboxReplierRaw](InboxReplierControllerApi.md#deleteinboxreplierraw)
 - [deleteInboxRepliers](InboxReplierControllerApi.md#deleteinboxrepliers)
 - [deleteInboxRepliersRaw](InboxReplierControllerApi.md#deleteinboxrepliersraw)
+- [getAllInboxReplierEvents](InboxReplierControllerApi.md#getallinboxreplierevents)
+- [getAllInboxReplierEventsRaw](InboxReplierControllerApi.md#getallinboxrepliereventsraw)
 - [getInboxReplier](InboxReplierControllerApi.md#getinboxreplier)
 - [getInboxReplierEvents](InboxReplierControllerApi.md#getinboxreplierevents)
 - [getInboxReplierEventsRaw](InboxReplierControllerApi.md#getinboxrepliereventsraw)
@@ -184,6 +186,46 @@ Delete inbox repliers
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### getAllInboxReplierEvents
+
+▸ **getAllInboxReplierEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxReplierEvents`](../interfaces/PageInboxReplierEvents.md)\>
+
+Get all inbox ruleset events
+Get inbox replier event list
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllInboxReplierEventsRequest`](../interfaces/GetAllInboxReplierEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageInboxReplierEvents`](../interfaces/PageInboxReplierEvents.md)\>
+
+___
+
+### getAllInboxReplierEventsRaw
+
+▸ **getAllInboxReplierEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxReplierEvents`](../interfaces/PageInboxReplierEvents.md)\>\>
+
+Get all inbox ruleset events
+Get inbox replier event list
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllInboxReplierEventsRequest`](../interfaces/GetAllInboxReplierEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxReplierEvents`](../interfaces/PageInboxReplierEvents.md)\>\>
 
 ___
 

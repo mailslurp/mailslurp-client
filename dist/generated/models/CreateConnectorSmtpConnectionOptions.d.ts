@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -20,7 +20,7 @@ export interface CreateConnectorSmtpConnectionOptions {
      * @type {boolean}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    enabled?: boolean;
+    enabled?: boolean | null;
     /**
      *
      * @type {string}
@@ -32,25 +32,73 @@ export interface CreateConnectorSmtpConnectionOptions {
      * @type {number}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpPort?: number;
+    smtpPort?: number | null;
     /**
      *
      * @type {boolean}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpSsl?: boolean;
+    smtpSsl?: boolean | null;
     /**
      *
      * @type {string}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpUsername?: string;
+    smtpUsername?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateConnectorSmtpConnectionOptions
      */
-    smtpPassword?: string;
+    smtpPassword?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    smtpMechanisms?: Array<string> | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    startTls?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    localHostName?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    proxyHost?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    proxyPort?: number | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    proxyEnabled?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    sslTrust?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof CreateConnectorSmtpConnectionOptions
+     */
+    sslProtocols?: Array<string> | null;
 }
 export declare function CreateConnectorSmtpConnectionOptionsFromJSON(json: any): CreateConnectorSmtpConnectionOptions;
 export declare function CreateConnectorSmtpConnectionOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorSmtpConnectionOptions;

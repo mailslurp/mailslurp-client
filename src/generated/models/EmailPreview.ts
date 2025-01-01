@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,6 +13,17 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  EmailRecipients,
+  EmailRecipientsFromJSON,
+  EmailRecipientsFromJSONTyped,
+  EmailRecipientsToJSON,
+  Sender,
+  SenderFromJSON,
+  SenderFromJSONTyped,
+  SenderToJSON,
+} from './';
+
 /**
  * Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
  * @export
@@ -25,6 +36,12 @@ export interface EmailPreview {
    * @memberof EmailPreview
    */
   id: string;
+  /**
+   * ID of the inbox that received the email
+   * @type {string}
+   * @memberof EmailPreview
+   */
+  inboxId?: string | null;
   /**
    * ID of the domain that received the email
    * @type {string}
@@ -79,6 +96,54 @@ export interface EmailPreview {
    * @memberof EmailPreview
    */
   attachments?: Array<string> | null;
+  /**
+   * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+   * @type {string}
+   * @memberof EmailPreview
+   */
+  threadId?: string | null;
+  /**
+   * RFC 5322 Message-ID header value without angle brackets.
+   * @type {string}
+   * @memberof EmailPreview
+   */
+  messageId?: string | null;
+  /**
+   * Parsed value of In-Reply-To header. A Message-ID in a thread.
+   * @type {string}
+   * @memberof EmailPreview
+   */
+  inReplyTo?: string | null;
+  /**
+   *
+   * @type {Sender}
+   * @memberof EmailPreview
+   */
+  sender?: Sender | null;
+  /**
+   *
+   * @type {EmailRecipients}
+   * @memberof EmailPreview
+   */
+  recipients?: EmailRecipients | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailPreview
+   */
+  favourite?: boolean | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailPreview
+   */
+  bodyPartContentTypes?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailPreview
+   */
+  plusAddress?: string | null;
 }
 
 export function EmailPreviewFromJSON(json: any): EmailPreview {
@@ -94,6 +159,7 @@ export function EmailPreviewFromJSONTyped(
   }
   return {
     id: json['id'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     to: json['to'],
@@ -103,6 +169,20 @@ export function EmailPreviewFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     read: json['read'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
+    messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
+    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
+    recipients: !exists(json, 'recipients')
+      ? undefined
+      : EmailRecipientsFromJSON(json['recipients']),
+    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    bodyPartContentTypes: !exists(json, 'bodyPartContentTypes')
+      ? undefined
+      : json['bodyPartContentTypes'],
+    plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
   };
 }
 
@@ -115,6 +195,7 @@ export function EmailPreviewToJSON(value?: EmailPreview | null): any {
   }
   return {
     id: value.id,
+    inboxId: value.inboxId,
     domainId: value.domainId,
     subject: value.subject,
     to: value.to,
@@ -124,5 +205,13 @@ export function EmailPreviewToJSON(value?: EmailPreview | null): any {
     createdAt: value.createdAt.toISOString(),
     read: value.read,
     attachments: value.attachments,
+    threadId: value.threadId,
+    messageId: value.messageId,
+    inReplyTo: value.inReplyTo,
+    sender: SenderToJSON(value.sender),
+    recipients: EmailRecipientsToJSON(value.recipients),
+    favourite: value.favourite,
+    bodyPartContentTypes: value.bodyPartContentTypes,
+    plusAddress: value.plusAddress,
   };
 }

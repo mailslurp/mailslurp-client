@@ -65,6 +65,7 @@
 
 ▸ **deleteAllValidationRequests**(`initOverrides?`): `Promise`<`void`\>
 
+Remove validation requests
 Delete all validation requests
 
 #### Parameters
@@ -83,6 +84,7 @@ ___
 
 ▸ **deleteAllValidationRequestsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
+Remove validation requests
 Delete all validation requests
 
 #### Parameters
@@ -101,6 +103,7 @@ ___
 
 ▸ **deleteValidationRequest**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
+Delete a validation record
 Delete a validation record
 
 #### Parameters
@@ -121,6 +124,7 @@ ___
 ▸ **deleteValidationRequestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Delete a validation record
+Delete a validation record
 
 #### Parameters
 
@@ -139,6 +143,7 @@ ___
 
 ▸ **getValidationRequests**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailValidationRequest`](../interfaces/PageEmailValidationRequest.md)\>
 
+List email verification requests
 Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 #### Parameters
@@ -158,6 +163,7 @@ ___
 
 ▸ **getValidationRequestsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailValidationRequest`](../interfaces/PageEmailValidationRequest.md)\>\>
 
+List email verification requests
 Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 #### Parameters
@@ -198,6 +204,7 @@ ___
 
 ▸ **validateEmailAddressList**(`requestParameters`, `initOverrides?`): `Promise`<[`ValidateEmailAddressListResult`](../interfaces/ValidateEmailAddressListResult.md)\>
 
+Verify a list of email addresses is valid and can be contacted.
 Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 #### Parameters
@@ -217,6 +224,7 @@ ___
 
 ▸ **validateEmailAddressListRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ValidateEmailAddressListResult`](../interfaces/ValidateEmailAddressListResult.md)\>\>
 
+Verify a list of email addresses is valid and can be contacted.
 Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 #### Parameters

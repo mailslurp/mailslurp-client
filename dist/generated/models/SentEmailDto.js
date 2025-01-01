@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SentEmailDtoToJSON = exports.SentEmailDtoFromJSONTyped = exports.SentEmailDtoFromJSON = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 function SentEmailDtoFromJSON(json) {
     return SentEmailDtoFromJSONTyped(json, false);
 }
@@ -30,6 +31,12 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        sender: !(0, runtime_1.exists)(json, 'sender')
+            ? undefined
+            : (0, _1.SenderFromJSON)(json['sender']),
+        recipients: !(0, runtime_1.exists)(json, 'recipients')
+            ? undefined
+            : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
         replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
@@ -42,6 +49,7 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
         isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
         sentAt: new Date(json['sentAt']),
+        createdAt: new Date(json['createdAt']),
         pixelIds: !(0, runtime_1.exists)(json, 'pixelIds') ? undefined : json['pixelIds'],
         messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
         messageIds: !(0, runtime_1.exists)(json, 'messageIds') ? undefined : json['messageIds'],
@@ -51,6 +59,11 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : json['templateVariables'],
         headers: !(0, runtime_1.exists)(json, 'headers') ? undefined : json['headers'],
+        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
+        bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+        textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
@@ -69,6 +82,8 @@ function SentEmailDtoToJSON(value) {
         domainId: value.domainId,
         to: value.to,
         from: value.from,
+        sender: (0, _1.SenderToJSON)(value.sender),
+        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
         replyTo: value.replyTo,
         cc: value.cc,
         bcc: value.bcc,
@@ -81,6 +96,7 @@ function SentEmailDtoToJSON(value) {
         charset: value.charset,
         isHTML: value.isHTML,
         sentAt: value.sentAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
         pixelIds: value.pixelIds,
         messageId: value.messageId,
         messageIds: value.messageIds,
@@ -88,6 +104,11 @@ function SentEmailDtoToJSON(value) {
         templateId: value.templateId,
         templateVariables: value.templateVariables,
         headers: value.headers,
+        threadId: value.threadId,
+        bodyExcerpt: value.bodyExcerpt,
+        textExcerpt: value.textExcerpt,
+        inReplyTo: value.inReplyTo,
+        favourite: value.favourite,
         html: value.html,
     };
 }

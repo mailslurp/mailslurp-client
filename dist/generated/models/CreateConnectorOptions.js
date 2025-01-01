@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,16 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorOptionsToJSON = exports.CreateConnectorOptionsFromJSONTyped = exports.CreateConnectorOptionsFromJSON = exports.CreateConnectorOptionsSyncScheduleTypeEnum = void 0;
+exports.CreateConnectorOptionsToJSON = exports.CreateConnectorOptionsFromJSONTyped = exports.CreateConnectorOptionsFromJSON = void 0;
 var runtime_1 = require("../runtime");
-/**
- * @export
- * @enum {string}
- */
-var CreateConnectorOptionsSyncScheduleTypeEnum;
-(function (CreateConnectorOptionsSyncScheduleTypeEnum) {
-    CreateConnectorOptionsSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(CreateConnectorOptionsSyncScheduleTypeEnum = exports.CreateConnectorOptionsSyncScheduleTypeEnum || (exports.CreateConnectorOptionsSyncScheduleTypeEnum = {}));
 function CreateConnectorOptionsFromJSON(json) {
     return CreateConnectorOptionsFromJSONTyped(json, false);
 }
@@ -32,13 +24,6 @@ function CreateConnectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
-            ? undefined
-            : json['syncScheduleType'],
-        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
-            ? undefined
-            : json['syncInterval'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
@@ -55,9 +40,6 @@ function CreateConnectorOptionsToJSON(value) {
         return null;
     }
     return {
-        syncEnabled: value.syncEnabled,
-        syncScheduleType: value.syncScheduleType,
-        syncInterval: value.syncInterval,
         name: value.name,
         emailAddress: value.emailAddress,
         enabled: value.enabled,

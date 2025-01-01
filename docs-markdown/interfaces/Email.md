@@ -25,14 +25,18 @@ Email
 - [charset](Email.md#charset)
 - [createdAt](Email.md#createdat)
 - [domainId](Email.md#domainid)
+- [externalId](Email.md#externalid)
+- [favourite](Email.md#favourite)
 - [from](Email.md#from)
 - [headers](Email.md#headers)
 - [headersMap](Email.md#headersmap)
 - [html](Email.md#html)
 - [id](Email.md#id)
+- [inReplyTo](Email.md#inreplyto)
 - [inboxId](Email.md#inboxid)
 - [isHTML](Email.md#ishtml)
 - [isXAmpHtml](Email.md#isxamphtml)
+- [messageId](Email.md#messageid)
 - [read](Email.md#read)
 - [recipients](Email.md#recipients)
 - [replyTo](Email.md#replyto)
@@ -40,6 +44,7 @@ Email
 - [subject](Email.md#subject)
 - [teamAccess](Email.md#teamaccess)
 - [textExcerpt](Email.md#textexcerpt)
+- [threadId](Email.md#threadid)
 - [to](Email.md#to)
 - [updatedAt](Email.md#updatedat)
 - [userId](Email.md#userid)
@@ -177,6 +182,30 @@ Email
 
 ___
 
+### externalId
+
+• `Optional` **externalId**: `string`
+
+UID used by external IMAP server to identify email
+
+**`Memberof`**
+
+Email
+
+___
+
+### favourite
+
+• `Optional` **favourite**: `boolean`
+
+Is email favourited
+
+**`Memberof`**
+
+Email
+
+___
+
 ### from
 
 • `Optional` **from**: `string`
@@ -243,6 +272,18 @@ Email
 
 ___
 
+### inReplyTo
+
+• `Optional` **inReplyTo**: `string`
+
+Parsed value of In-Reply-To header. A Message-ID in a thread.
+
+**`Memberof`**
+
+Email
+
+___
+
 ### inboxId
 
 • **inboxId**: `string`
@@ -272,6 +313,18 @@ ___
 • `Optional` **isXAmpHtml**: `boolean`
 
 Is the email body content type x-amp-html Amp4Email?
+
+**`Memberof`**
+
+Email
+
+___
+
+### messageId
+
+• `Optional` **messageId**: `string`
+
+RFC 5322 Message-ID header value without angle brackets.
 
 **`Memberof`**
 
@@ -352,6 +405,18 @@ ___
 • `Optional` **textExcerpt**: `string`
 
 An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+
+**`Memberof`**
+
+Email
+
+___
+
+### threadId
+
+• `Optional` **threadId**: `string`
+
+MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
 
 **`Memberof`**
 

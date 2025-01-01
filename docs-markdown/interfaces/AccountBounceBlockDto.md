@@ -14,6 +14,7 @@ AccountBounceBlockDto
 
 - [bounceCount](AccountBounceBlockDto.md#bouncecount)
 - [bounceCountToday](AccountBounceBlockDto.md#bouncecounttoday)
+- [isFrozen](AccountBounceBlockDto.md#isfrozen)
 - [isSendingBlocked](AccountBounceBlockDto.md#issendingblocked)
 - [maximumAccountBounces](AccountBounceBlockDto.md#maximumaccountbounces)
 - [maximumDailyBounces](AccountBounceBlockDto.md#maximumdailybounces)
@@ -33,6 +34,16 @@ ___
 ### bounceCountToday
 
 • **bounceCountToday**: `number`
+
+**`Memberof`**
+
+AccountBounceBlockDto
+
+___
+
+### isFrozen
+
+• **isFrozen**: `boolean`
 
 **`Memberof`**
 

@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -19,6 +19,15 @@ export interface DeleteInboxReplierRequest {
 }
 export interface DeleteInboxRepliersRequest {
     inboxId?: string;
+}
+export interface GetAllInboxReplierEventsRequest {
+    inboxReplierId?: string;
+    inboxId?: string;
+    emailId?: string;
+    sentId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllInboxReplierEventsSortEnum;
 }
 export interface GetInboxReplierRequest {
     id: string;
@@ -76,6 +85,16 @@ export declare class InboxReplierControllerApi extends runtime.BaseAPI {
      */
     deleteInboxRepliers(requestParameters: DeleteInboxRepliersRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    getAllInboxReplierEventsRaw(requestParameters: GetAllInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxReplierEvents>>;
+    /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    getAllInboxReplierEvents(requestParameters: GetAllInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<PageInboxReplierEvents>;
+    /**
      * Get inbox ruleset
      * Get an inbox replier
      */
@@ -115,6 +134,14 @@ export declare class InboxReplierControllerApi extends runtime.BaseAPI {
      * Update an inbox replier
      */
     updateInboxReplier(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllInboxReplierEventsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }
 /**
  * @export

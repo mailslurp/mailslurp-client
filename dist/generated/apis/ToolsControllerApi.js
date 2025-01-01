@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -192,6 +192,57 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
                     case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Delete a fake email address using the fake email domains
+     * Delete a fake email address using the fake email domains
+     */
+    ToolsControllerApi.prototype.deleteNewFakeEmailAddressRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling deleteNewFakeEmailAddress.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.emailAddress !== undefined) {
+                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/fake-email",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete a fake email address using the fake email domains
+     * Delete a fake email address using the fake email domains
+     */
+    ToolsControllerApi.prototype.deleteNewFakeEmailAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteNewFakeEmailAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
                 }
             });
         });
@@ -406,6 +457,59 @@ var ToolsControllerApi = /** @class */ (function (_super) {
     };
     /**
      */
+    ToolsControllerApi.prototype.getFakeEmailByEmailAddressRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailByEmailAddress.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.emailAddress !== undefined) {
+                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/fake-email/byEmailAddress",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.FakeEmailResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    ToolsControllerApi.prototype.getFakeEmailByEmailAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getFakeEmailByEmailAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get a fake email by its ID
+     * Get a fake email by its ID
+     */
     ToolsControllerApi.prototype.getFakeEmailByIdRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
@@ -439,6 +543,8 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a fake email by its ID
+     * Get a fake email by its ID
      */
     ToolsControllerApi.prototype.getFakeEmailById = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -455,6 +561,60 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Retrieve the raw content of a fake email by its ID
+     * Get raw fake email content
+     */
+    ToolsControllerApi.prototype.getFakeEmailRawRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getFakeEmailRaw.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.id !== undefined) {
+                            queryParameters['id'] = requestParameters.id;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/fake-email/html",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Retrieve the raw content of a fake email by its ID
+     * Get raw fake email content
+     */
+    ToolsControllerApi.prototype.getFakeEmailRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getFakeEmailRawRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get fake emails for an address
+     * Get fake emails for an address
      */
     ToolsControllerApi.prototype.getFakeEmailsForAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -493,6 +653,8 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get fake emails for an address
+     * Get fake emails for an address
      */
     ToolsControllerApi.prototype.getFakeEmailsForAddress = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {

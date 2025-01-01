@@ -12,10 +12,21 @@ ConnectorSyncResult
 
 ### Properties
 
+- [emailIds](ConnectorSyncResult.md#emailids)
 - [emailSyncCount](ConnectorSyncResult.md#emailsynccount)
-- [logLines](ConnectorSyncResult.md#loglines)
+- [logs](ConnectorSyncResult.md#logs)
 
 ## Properties
+
+### emailIds
+
+• `Optional` **emailIds**: `string`[]
+
+**`Memberof`**
+
+ConnectorSyncResult
+
+___
 
 ### emailSyncCount
 
@@ -27,9 +38,9 @@ ConnectorSyncResult
 
 ___
 
-### logLines
+### logs
 
-• `Optional` **logLines**: `string`[]
+• `Optional` **logs**: `string`[]
 
 **`Memberof`**
 

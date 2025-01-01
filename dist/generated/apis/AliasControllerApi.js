@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -360,7 +360,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageThreadProjectionFromJSON)(jsonValue);
+                                return (0, models_1.PageAliasThreadProjectionFromJSON)(jsonValue);
                             })];
                 }
             });
@@ -478,7 +478,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ThreadProjectionFromJSON)(jsonValue);
+                                return (0, models_1.AliasThreadProjectionFromJSON)(jsonValue);
                             })];
                 }
             });
@@ -541,7 +541,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageThreadProjectionFromJSON)(jsonValue);
+                                return (0, models_1.PageAliasThreadProjectionFromJSON)(jsonValue);
                             })];
                 }
             });

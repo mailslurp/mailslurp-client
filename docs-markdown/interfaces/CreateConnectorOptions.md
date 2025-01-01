@@ -17,9 +17,6 @@ CreateConnectorOptions
 - [emailAddress](CreateConnectorOptions.md#emailaddress)
 - [enabled](CreateConnectorOptions.md#enabled)
 - [name](CreateConnectorOptions.md#name)
-- [syncEnabled](CreateConnectorOptions.md#syncenabled)
-- [syncInterval](CreateConnectorOptions.md#syncinterval)
-- [syncScheduleType](CreateConnectorOptions.md#syncscheduletype)
 
 ## Properties
 
@@ -52,42 +49,6 @@ ___
 • `Optional` **name**: `string`
 
 Name of connector
-
-**`Memberof`**
-
-CreateConnectorOptions
-
-___
-
-### syncEnabled
-
-• `Optional` **syncEnabled**: `boolean`
-
-Enable automatic background sync
-
-**`Memberof`**
-
-CreateConnectorOptions
-
-___
-
-### syncInterval
-
-• `Optional` **syncInterval**: `number`
-
-Sync interval in minutes
-
-**`Memberof`**
-
-CreateConnectorOptions
-
-___
-
-### syncScheduleType
-
-• `Optional` **syncScheduleType**: [`INTERVAL`](../enums/CreateConnectorOptionsSyncScheduleTypeEnum.md#interval)
-
-Sync schedule type
 
 **`Memberof`**
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -51,13 +51,13 @@ export interface PageEmailValidationRequest {
    * @type {number}
    * @memberof PageEmailValidationRequest
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {number}
    * @memberof PageEmailValidationRequest
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -66,16 +66,16 @@ export interface PageEmailValidationRequest {
   last?: boolean;
   /**
    *
-   * @type {number}
-   * @memberof PageEmailValidationRequest
-   */
-  numberOfElements?: number;
-  /**
-   *
    * @type {boolean}
    * @memberof PageEmailValidationRequest
    */
   first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageEmailValidationRequest
+   */
+  numberOfElements?: number;
   /**
    *
    * @type {number}
@@ -122,13 +122,13 @@ export function PageEmailValidationRequestFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
     totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
@@ -151,11 +151,11 @@ export function PageEmailValidationRequestToJSON(
         ? undefined
         : (value.content as Array<any>).map(EmailValidationRequestDtoToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
-    numberOfElements: value.numberOfElements,
     first: value.first,
+    numberOfElements: value.numberOfElements,
     size: value.size,
     number: value.number,
     sort: SortObjectToJSON(value.sort),

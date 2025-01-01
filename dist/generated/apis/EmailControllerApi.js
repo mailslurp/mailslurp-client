@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum = exports.EmailControllerApi = void 0;
+exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum = exports.GetEmailThreadsSortEnum = exports.GetEmailThreadItemsSortEnum = exports.EmailControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -815,9 +815,6 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmail.');
                         }
                         queryParameters = {};
-                        if (requestParameters.decode !== undefined) {
-                            queryParameters['decode'] = requestParameters.decode;
-                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -987,6 +984,12 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.contentType !== undefined) {
                             queryParameters['contentType'] = requestParameters.contentType;
                         }
+                        if (requestParameters.strict !== undefined) {
+                            queryParameters['strict'] = requestParameters.strict;
+                        }
+                        if (requestParameters.index !== undefined) {
+                            queryParameters['index'] = requestParameters.index;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1025,15 +1028,81 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
+     */
+    EmailControllerApi.prototype.getEmailContentPartContentRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailContentPartContent.');
+                        }
+                        if (requestParameters.contentType === null ||
+                            requestParameters.contentType === undefined) {
+                            throw new runtime.RequiredError('contentType', 'Required parameter requestParameters.contentType was null or undefined when calling getEmailContentPartContent.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.contentType !== undefined) {
+                            queryParameters['contentType'] = requestParameters.contentType;
+                        }
+                        if (requestParameters.strict !== undefined) {
+                            queryParameters['strict'] = requestParameters.strict;
+                        }
+                        if (requestParameters.index !== undefined) {
+                            queryParameters['index'] = requestParameters.index;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/contentPart/raw".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Get email body content parts from a multipart email message for a given content type and return as response
+     * Get email content part by content type raw response
+     */
+    EmailControllerApi.prototype.getEmailContentPartContent = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailContentPartContentRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get email count
      */
-    EmailControllerApi.prototype.getEmailCountRaw = function (initOverrides) {
+    EmailControllerApi.prototype.getEmailCountRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1056,12 +1125,12 @@ var EmailControllerApi = /** @class */ (function (_super) {
     /**
      * Get email count
      */
-    EmailControllerApi.prototype.getEmailCount = function (initOverrides) {
+    EmailControllerApi.prototype.getEmailCount = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getEmailCountRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.getEmailCountRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1085,9 +1154,6 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailHTML.');
                         }
                         queryParameters = {};
-                        if (requestParameters.decode !== undefined) {
-                            queryParameters['decode'] = requestParameters.decode;
-                        }
                         if (requestParameters.replaceCidImages !== undefined) {
                             queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
                         }
@@ -1141,9 +1207,6 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailHTMLJson.');
                         }
                         queryParameters = {};
-                        if (requestParameters.decode !== undefined) {
-                            queryParameters['decode'] = requestParameters.decode;
-                        }
                         if (requestParameters.replaceCidImages !== undefined) {
                             queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
                         }
@@ -1258,6 +1321,9 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailLinks.');
                         }
                         queryParameters = {};
+                        if (requestParameters.selector !== undefined) {
+                            queryParameters['selector'] = requestParameters.selector;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1460,6 +1526,61 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    EmailControllerApi.prototype.getEmailSummaryRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailSummary.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.decode !== undefined) {
+                            queryParameters['decode'] = requestParameters.decode;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/summary".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailPreviewFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     */
+    EmailControllerApi.prototype.getEmailSummary = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailSummaryRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
@@ -1519,6 +1640,182 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
+     */
+    EmailControllerApi.prototype.getEmailThreadRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.threadId === null ||
+                            requestParameters.threadId === undefined) {
+                            throw new runtime.RequiredError('threadId', 'Required parameter requestParameters.threadId was null or undefined when calling getEmailThread.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/threads/{threadId}".replace("{".concat('threadId', "}"), encodeURIComponent(String(requestParameters.threadId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailThreadDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+     * Return email thread information. Use items endpoints to get messages for thread.
+     */
+    EmailControllerApi.prototype.getEmailThread = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailThreadRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    EmailControllerApi.prototype.getEmailThreadItemsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.threadId === null ||
+                            requestParameters.threadId === undefined) {
+                            throw new runtime.RequiredError('threadId', 'Required parameter requestParameters.threadId was null or undefined when calling getEmailThreadItems.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/threads/{threadId}/items".replace("{".concat('threadId', "}"), encodeURIComponent(String(requestParameters.threadId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailThreadItemsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Return email thread messages based on Message-ID, In-Reply-To, and References header
+     * Return email thread items.
+     */
+    EmailControllerApi.prototype.getEmailThreadItems = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailThreadItemsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    EmailControllerApi.prototype.getEmailThreadsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.htmlSelector !== undefined) {
+                            queryParameters['htmlSelector'] = requestParameters.htmlSelector;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/threads",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailThreadProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Return email message chains built from Message-ID, In-Reply-To, and References header.
+     * Return email threads in paginated form
+     */
+    EmailControllerApi.prototype.getEmailThreads = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailThreadsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
@@ -1552,6 +1849,15 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.favourited !== undefined) {
+                            queryParameters['favourited'] = requestParameters.favourited;
+                        }
+                        if (requestParameters.syncConnectors !== undefined) {
+                            queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+                        }
+                        if (requestParameters.plusAddressId !== undefined) {
+                            queryParameters['plusAddressId'] = requestParameters.plusAddressId;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -1624,6 +1930,15 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.syncConnectors !== undefined) {
+                            queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+                        }
+                        if (requestParameters.plusAddressId !== undefined) {
+                            queryParameters['plusAddressId'] = requestParameters.plusAddressId;
+                        }
+                        if (requestParameters.favourited !== undefined) {
+                            queryParameters['favourited'] = requestParameters.favourited;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -1858,6 +2173,15 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.syncConnectors !== undefined) {
+                            queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+                        }
+                        if (requestParameters.favourited !== undefined) {
+                            queryParameters['favourited'] = requestParameters.favourited;
+                        }
+                        if (requestParameters.plusAddressId !== undefined) {
+                            queryParameters['plusAddressId'] = requestParameters.plusAddressId;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -2225,6 +2549,15 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('searchEmailsOptions', 'Required parameter requestParameters.searchEmailsOptions was null or undefined when calling searchEmails.');
                         }
                         queryParameters = {};
+                        if (requestParameters.syncConnectors !== undefined) {
+                            queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+                        }
+                        if (requestParameters.favourited !== undefined) {
+                            queryParameters['favourited'] = requestParameters.favourited;
+                        }
+                        if (requestParameters.plusAddressId !== undefined) {
+                            queryParameters['plusAddressId'] = requestParameters.plusAddressId;
+                        }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
@@ -2324,6 +2657,61 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    EmailControllerApi.prototype.setEmailFavouritedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling setEmailFavourited.');
+                        }
+                        if (requestParameters.favourited === null ||
+                            requestParameters.favourited === undefined) {
+                            throw new runtime.RequiredError('favourited', 'Required parameter requestParameters.favourited was null or undefined when calling setEmailFavourited.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.favourited !== undefined) {
+                            queryParameters['favourited'] = requestParameters.favourited;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/favourite".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'PUT',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Set and return new favorite state for an email
+     * Set email favourited state
+     */
+    EmailControllerApi.prototype.setEmailFavourited = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.setEmailFavouritedRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
      * Validate email HTML contents
      */
@@ -2378,6 +2766,24 @@ var EmailControllerApi = /** @class */ (function (_super) {
     return EmailControllerApi;
 }(runtime.BaseAPI));
 exports.EmailControllerApi = EmailControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEmailThreadItemsSortEnum;
+(function (GetEmailThreadItemsSortEnum) {
+    GetEmailThreadItemsSortEnum["ASC"] = "ASC";
+    GetEmailThreadItemsSortEnum["DESC"] = "DESC";
+})(GetEmailThreadItemsSortEnum = exports.GetEmailThreadItemsSortEnum || (exports.GetEmailThreadItemsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEmailThreadsSortEnum;
+(function (GetEmailThreadsSortEnum) {
+    GetEmailThreadsSortEnum["ASC"] = "ASC";
+    GetEmailThreadsSortEnum["DESC"] = "DESC";
+})(GetEmailThreadsSortEnum = exports.GetEmailThreadsSortEnum || (exports.GetEmailThreadsSortEnum = {}));
 /**
  * @export
  * @enum {string}

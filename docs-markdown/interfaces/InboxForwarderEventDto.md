@@ -20,6 +20,7 @@ InboxForwarderEventDto
 - [id](InboxForwarderEventDto.md#id)
 - [inboxId](InboxForwarderEventDto.md#inboxid)
 - [message](InboxForwarderEventDto.md#message)
+- [sentId](InboxForwarderEventDto.md#sentid)
 - [status](InboxForwarderEventDto.md#status)
 - [userId](InboxForwarderEventDto.md#userid)
 
@@ -78,6 +79,16 @@ ___
 ### message
 
 • `Optional` **message**: `string`
+
+**`Memberof`**
+
+InboxForwarderEventDto
+
+___
+
+### sentId
+
+• `Optional` **sentId**: `string`
 
 **`Memberof`**
 

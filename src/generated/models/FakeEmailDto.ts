@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -56,6 +56,12 @@ export interface FakeEmailDto {
   recipients?: EmailRecipients | null;
   /**
    *
+   * @type {Array<string>}
+   * @memberof FakeEmailDto
+   */
+  attachmentNames: Array<string>;
+  /**
+   *
    * @type {string}
    * @memberof FakeEmailDto
    */
@@ -84,6 +90,18 @@ export interface FakeEmailDto {
    * @memberof FakeEmailDto
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  contentType: string;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  bodyUrl: string;
 }
 
 export function FakeEmailDtoFromJSON(json: any): FakeEmailDto {
@@ -106,11 +124,14 @@ export function FakeEmailDtoFromJSONTyped(
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
+    attachmentNames: json['attachmentNames'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     preview: !exists(json, 'preview') ? undefined : json['preview'],
     body: json['body'],
     seen: json['seen'],
     createdAt: new Date(json['createdAt']),
+    contentType: json['contentType'],
+    bodyUrl: json['bodyUrl'],
   };
 }
 
@@ -126,10 +147,13 @@ export function FakeEmailDtoToJSON(value?: FakeEmailDto | null): any {
     emailAddress: value.emailAddress,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
+    attachmentNames: value.attachmentNames,
     subject: value.subject,
     preview: value.preview,
     body: value.body,
     seen: value.seen,
     createdAt: value.createdAt.toISOString(),
+    contentType: value.contentType,
+    bodyUrl: value.bodyUrl,
   };
 }

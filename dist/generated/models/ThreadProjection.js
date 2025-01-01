@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ThreadProjectionToJSON = exports.ThreadProjectionFromJSONTyped = exports.ThreadProjectionFromJSON = void 0;
+exports.ThreadProjectionFromJSON = ThreadProjectionFromJSON;
+exports.ThreadProjectionFromJSONTyped = ThreadProjectionFromJSONTyped;
+exports.ThreadProjectionToJSON = ThreadProjectionToJSON;
 var runtime_1 = require("../runtime");
 function ThreadProjectionFromJSON(json) {
     return ThreadProjectionFromJSONTyped(json, false);
 }
-exports.ThreadProjectionFromJSON = ThreadProjectionFromJSON;
 function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ThreadProjectionFromJSONTyped = ThreadProjectionFromJSONTyped;
 function ThreadProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function ThreadProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ThreadProjectionToJSON = ThreadProjectionToJSON;

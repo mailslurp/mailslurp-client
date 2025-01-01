@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
+exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOutboxesSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesByTagSortEnum = exports.GetInboxesSortEnum = exports.GetInboxTagsPaginatedSortEnum = exports.GetInboxTagsSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxPlusAddressesSortEnum = exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = exports.GetInboxPlusAddressEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllPlusAddressesSortEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -971,6 +971,66 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getAllPlusAddressesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/plus-addresses",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PagePlusAddressProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getAllPlusAddresses = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllPlusAddressesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
      * Get all scheduled email sending jobs for account
      */
@@ -995,6 +1055,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -1656,6 +1719,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.syncConnectors !== undefined) {
+                            queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1742,6 +1808,377 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.plusAddressId === null ||
+                            requestParameters.plusAddressId === undefined) {
+                            throw new runtime.RequiredError('plusAddressId', 'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddress.');
+                        }
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddress.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}"
+                                    .replace("{".concat('plusAddressId', "}"), encodeURIComponent(String(requestParameters.plusAddressId)))
+                                    .replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PlusAddressDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
+     */
+    InboxControllerApi.prototype.getInboxPlusAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressByIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.plusAddressId === null ||
+                            requestParameters.plusAddressId === undefined) {
+                            throw new runtime.RequiredError('plusAddressId', 'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddressById.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/plus-addresses/{plusAddressId}".replace("{".concat('plusAddressId', "}"), encodeURIComponent(String(requestParameters.plusAddressId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PlusAddressDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressById = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressByIdRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmailsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.plusAddress === null ||
+                            requestParameters.plusAddress === undefined) {
+                            throw new runtime.RequiredError('plusAddress', 'Required parameter requestParameters.plusAddress was null or undefined when calling getInboxPlusAddressEmails.');
+                        }
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddressEmails.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.plusAddress !== undefined) {
+                            queryParameters['plusAddress'] = requestParameters.plusAddress;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/plus-addresses/emails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailPreviewFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmails = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressEmailsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmailsForPlusAddressIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.plusAddressId === null ||
+                            requestParameters.plusAddressId === undefined) {
+                            throw new runtime.RequiredError('plusAddressId', 'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId.');
+                        }
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}/emails"
+                                    .replace("{".concat('plusAddressId', "}"), encodeURIComponent(String(requestParameters.plusAddressId)))
+                                    .replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailPreviewFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressEmailsForPlusAddressId = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressEmailsForPlusAddressIdRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getInboxPlusAddressesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddresses.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/plus-addresses".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PagePlusAddressProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    InboxControllerApi.prototype.getInboxPlusAddresses = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxPlusAddressesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get sent email count in inbox
+     */
+    InboxControllerApi.prototype.getInboxSentCountRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxSentCount.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/sent/count".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CountDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get sent email count in inbox
+     */
+    InboxControllerApi.prototype.getInboxSentCount = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxSentCountRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * Get Inbox Sent Emails
      */
@@ -1815,13 +2252,25 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Get all inbox tags
      * Get inbox tags
      */
-    InboxControllerApi.prototype.getInboxTagsRaw = function (initOverrides) {
+    InboxControllerApi.prototype.getInboxTagsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1843,12 +2292,72 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Get all inbox tags
      * Get inbox tags
      */
-    InboxControllerApi.prototype.getInboxTags = function (initOverrides) {
+    InboxControllerApi.prototype.getInboxTags = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getInboxTagsRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.getInboxTagsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    InboxControllerApi.prototype.getInboxTagsPaginatedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/tags/paginated",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxTagsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    InboxControllerApi.prototype.getInboxTagsPaginated = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxTagsPaginatedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1884,6 +2393,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.include) {
+                            queryParameters['include'] = requestParameters.include;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1913,6 +2425,72 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getInboxesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    InboxControllerApi.prototype.getInboxesByTagRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.tag === null || requestParameters.tag === undefined) {
+                            throw new runtime.RequiredError('tag', 'Required parameter requestParameters.tag was null or undefined when calling getInboxesByTag.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        }
+                        if (requestParameters.tag !== undefined) {
+                            queryParameters['tag'] = requestParameters.tag;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/tags/inboxes",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    InboxControllerApi.prototype.getInboxesByTag = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxesByTagRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2041,6 +2619,63 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getOrganizationInboxesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    InboxControllerApi.prototype.getOutboxesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/outboxes",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    InboxControllerApi.prototype.getOutboxes = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getOutboxesRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2209,6 +2844,61 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getSmtpAccessRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    InboxControllerApi.prototype.isEmailAddressAvailableRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
+                            throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling isEmailAddressAvailable.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.emailAddress !== undefined) {
+                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/available",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailAvailableResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    InboxControllerApi.prototype.isEmailAddressAvailable = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.isEmailAddressAvailableRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2761,7 +3451,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Set and return new favourite state for an inbox
+     * Set and return new favorite state for an inbox
      * Set inbox favourited state
      */
     InboxControllerApi.prototype.setInboxFavouritedRaw = function (requestParameters, initOverrides) {
@@ -2801,7 +3491,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Set and return new favourite state for an inbox
+     * Set and return new favorite state for an inbox
      * Set inbox favourited state
      */
     InboxControllerApi.prototype.setInboxFavourited = function (requestParameters, initOverrides) {
@@ -2814,6 +3504,57 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
                     case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Update IMAP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateImapAccessRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.updateImapAccessOptions === null ||
+                            requestParameters.updateImapAccessOptions === undefined) {
+                            throw new runtime.RequiredError('updateImapAccessOptions', 'Required parameter requestParameters.updateImapAccessOptions was null or undefined when calling updateImapAccess.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/imap-access",
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.UpdateImapAccessOptionsToJSON)(requestParameters.updateImapAccessOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Update IMAP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateImapAccess = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateImapAccessRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
                 }
             });
         });
@@ -2876,6 +3617,57 @@ var InboxControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateSmtpAccessRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.updateSmtpAccessOptions === null ||
+                            requestParameters.updateSmtpAccessOptions === undefined) {
+                            throw new runtime.RequiredError('updateSmtpAccessOptions', 'Required parameter requestParameters.updateSmtpAccessOptions was null or undefined when calling updateSmtpAccess.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/smtp-access",
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.UpdateSmtpAccessOptionsToJSON)(requestParameters.updateSmtpAccessOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    InboxControllerApi.prototype.updateSmtpAccess = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateSmtpAccessRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     return InboxControllerApi;
 }(runtime.BaseAPI));
 exports.InboxControllerApi = InboxControllerApi;
@@ -2916,6 +3708,8 @@ var GetAllInboxesInboxFunctionEnum;
     GetAllInboxesInboxFunctionEnum["THREAD"] = "THREAD";
     GetAllInboxesInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
     GetAllInboxesInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
+    GetAllInboxesInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
+    GetAllInboxesInboxFunctionEnum["GUEST"] = "GUEST";
 })(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
 /**
  * @export
@@ -2945,7 +3739,18 @@ var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["THREAD"] = "THREAD";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["GUEST"] = "GUEST";
 })(GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllPlusAddressesSortEnum;
+(function (GetAllPlusAddressesSortEnum) {
+    GetAllPlusAddressesSortEnum["ASC"] = "ASC";
+    GetAllPlusAddressesSortEnum["DESC"] = "DESC";
+})(GetAllPlusAddressesSortEnum = exports.GetAllPlusAddressesSortEnum || (exports.GetAllPlusAddressesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2986,11 +3791,56 @@ var GetInboxEmailsPaginatedSortEnum;
  * @export
  * @enum {string}
  */
+var GetInboxPlusAddressEmailsSortEnum;
+(function (GetInboxPlusAddressEmailsSortEnum) {
+    GetInboxPlusAddressEmailsSortEnum["ASC"] = "ASC";
+    GetInboxPlusAddressEmailsSortEnum["DESC"] = "DESC";
+})(GetInboxPlusAddressEmailsSortEnum = exports.GetInboxPlusAddressEmailsSortEnum || (exports.GetInboxPlusAddressEmailsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetInboxPlusAddressEmailsForPlusAddressIdSortEnum;
+(function (GetInboxPlusAddressEmailsForPlusAddressIdSortEnum) {
+    GetInboxPlusAddressEmailsForPlusAddressIdSortEnum["ASC"] = "ASC";
+    GetInboxPlusAddressEmailsForPlusAddressIdSortEnum["DESC"] = "DESC";
+})(GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum || (exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetInboxPlusAddressesSortEnum;
+(function (GetInboxPlusAddressesSortEnum) {
+    GetInboxPlusAddressesSortEnum["ASC"] = "ASC";
+    GetInboxPlusAddressesSortEnum["DESC"] = "DESC";
+})(GetInboxPlusAddressesSortEnum = exports.GetInboxPlusAddressesSortEnum || (exports.GetInboxPlusAddressesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var GetInboxSentEmailsSortEnum;
 (function (GetInboxSentEmailsSortEnum) {
     GetInboxSentEmailsSortEnum["ASC"] = "ASC";
     GetInboxSentEmailsSortEnum["DESC"] = "DESC";
 })(GetInboxSentEmailsSortEnum = exports.GetInboxSentEmailsSortEnum || (exports.GetInboxSentEmailsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetInboxTagsSortEnum;
+(function (GetInboxTagsSortEnum) {
+    GetInboxTagsSortEnum["ASC"] = "ASC";
+    GetInboxTagsSortEnum["DESC"] = "DESC";
+})(GetInboxTagsSortEnum = exports.GetInboxTagsSortEnum || (exports.GetInboxTagsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetInboxTagsPaginatedSortEnum;
+(function (GetInboxTagsPaginatedSortEnum) {
+    GetInboxTagsPaginatedSortEnum["ASC"] = "ASC";
+    GetInboxTagsPaginatedSortEnum["DESC"] = "DESC";
+})(GetInboxTagsPaginatedSortEnum = exports.GetInboxTagsPaginatedSortEnum || (exports.GetInboxTagsPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3004,11 +3854,29 @@ var GetInboxesSortEnum;
  * @export
  * @enum {string}
  */
+var GetInboxesByTagSortEnum;
+(function (GetInboxesByTagSortEnum) {
+    GetInboxesByTagSortEnum["ASC"] = "ASC";
+    GetInboxesByTagSortEnum["DESC"] = "DESC";
+})(GetInboxesByTagSortEnum = exports.GetInboxesByTagSortEnum || (exports.GetInboxesByTagSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var GetOrganizationInboxesSortEnum;
 (function (GetOrganizationInboxesSortEnum) {
     GetOrganizationInboxesSortEnum["ASC"] = "ASC";
     GetOrganizationInboxesSortEnum["DESC"] = "DESC";
 })(GetOrganizationInboxesSortEnum = exports.GetOrganizationInboxesSortEnum || (exports.GetOrganizationInboxesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetOutboxesSortEnum;
+(function (GetOutboxesSortEnum) {
+    GetOutboxesSortEnum["ASC"] = "ASC";
+    GetOutboxesSortEnum["DESC"] = "DESC";
+})(GetOutboxesSortEnum = exports.GetOutboxesSortEnum || (exports.GetOutboxesSortEnum = {}));
 /**
  * @export
  * @enum {string}

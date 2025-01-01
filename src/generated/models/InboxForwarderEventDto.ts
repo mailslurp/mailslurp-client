@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -37,6 +37,12 @@ export interface InboxForwarderEventDto {
    * @memberof InboxForwarderEventDto
    */
   emailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventDto
+   */
+  sentId?: string | null;
   /**
    *
    * @type {string}
@@ -95,6 +101,7 @@ export function InboxForwarderEventDtoFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
     message: !exists(json, 'message') ? undefined : json['message'],
@@ -116,6 +123,7 @@ export function InboxForwarderEventDtoToJSON(
     id: value.id,
     inboxId: value.inboxId,
     emailId: value.emailId,
+    sentId: value.sentId,
     userId: value.userId,
     forwarderId: value.forwarderId,
     message: value.message,

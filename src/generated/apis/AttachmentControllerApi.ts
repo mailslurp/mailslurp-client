@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,9 +14,9 @@
 
 import * as runtime from '../runtime';
 import {
-  AttachmentEntity,
-  AttachmentEntityFromJSON,
-  AttachmentEntityToJSON,
+  AttachmentEntityDto,
+  AttachmentEntityDtoFromJSON,
+  AttachmentEntityDtoToJSON,
   AttachmentMetaData,
   AttachmentMetaDataFromJSON,
   AttachmentMetaDataToJSON,
@@ -73,6 +73,7 @@ export interface UploadAttachmentBytesRequest {
   contentType2?: string;
   contentId?: string;
   filename?: string;
+  fileSize?: number;
   filename2?: string;
 }
 
@@ -80,7 +81,10 @@ export interface UploadMultipartFormRequest {
   contentId?: string;
   contentType?: string;
   filename?: string;
+  contentTypeHeader?: string;
   xFilename?: string;
+  xFilenameRaw?: string;
+  xFilesize?: number;
   inlineObject?: InlineObject;
 }
 
@@ -89,6 +93,7 @@ export interface UploadMultipartFormRequest {
  */
 export class AttachmentControllerApi extends runtime.BaseAPI {
   /**
+   * Delete all attachments
    * Delete all attachments
    */
   async deleteAllAttachmentsRaw(
@@ -117,12 +122,14 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
 
   /**
    * Delete all attachments
+   * Delete all attachments
    */
   async deleteAllAttachments(initOverrides?: RequestInit): Promise<void> {
     await this.deleteAllAttachmentsRaw(initOverrides);
   }
 
   /**
+   * Delete an attachment
    * Delete an attachment
    */
   async deleteAttachmentRaw(
@@ -164,6 +171,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Delete an attachment
    * Delete an attachment
    */
   async deleteAttachment(
@@ -295,7 +303,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
   async getAttachmentRaw(
     requestParameters: GetAttachmentRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<AttachmentEntity>> {
+  ): Promise<runtime.ApiResponse<AttachmentEntityDto>> {
     if (
       requestParameters.attachmentId === null ||
       requestParameters.attachmentId === undefined
@@ -328,7 +336,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      AttachmentEntityFromJSON(jsonValue)
+      AttachmentEntityDtoFromJSON(jsonValue)
     );
   }
 
@@ -338,7 +346,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
   async getAttachment(
     requestParameters: GetAttachmentRequest,
     initOverrides?: RequestInit
-  ): Promise<AttachmentEntity> {
+  ): Promise<AttachmentEntityDto> {
     const response = await this.getAttachmentRaw(
       requestParameters,
       initOverrides
@@ -559,6 +567,10 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
       queryParameters['filename'] = requestParameters.filename;
     }
 
+    if (requestParameters.fileSize !== undefined) {
+      queryParameters['fileSize'] = requestParameters.fileSize;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (
@@ -627,8 +639,21 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
       queryParameters['filename'] = requestParameters.filename;
     }
 
+    if (requestParameters.contentTypeHeader !== undefined) {
+      queryParameters['contentTypeHeader'] =
+        requestParameters.contentTypeHeader;
+    }
+
     if (requestParameters.xFilename !== undefined) {
       queryParameters['x-filename'] = requestParameters.xFilename;
+    }
+
+    if (requestParameters.xFilenameRaw !== undefined) {
+      queryParameters['x-filename-raw'] = requestParameters.xFilenameRaw;
+    }
+
+    if (requestParameters.xFilesize !== undefined) {
+      queryParameters['x-filesize'] = requestParameters.xFilesize;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AliasDto, CreateAliasOptions, PageAlias, PageEmailProjection, PageThreadProjection, ReplyToAliasEmailOptions, SendEmailOptions, SentEmailDto, ThreadProjection, UpdateAliasOptions } from '../models';
+import { AliasDto, AliasThreadProjection, CreateAliasOptions, PageAlias, PageAliasThreadProjection, PageEmailProjection, ReplyToAliasEmailOptions, SendEmailOptions, SentEmailDto, UpdateAliasOptions } from '../models';
 export interface CreateAliasRequest {
     createAliasOptions: CreateAliasOptions;
 }
@@ -113,12 +113,12 @@ export declare class AliasControllerApi extends runtime.BaseAPI {
      * Returns threads created for an email alias in paginated form
      * Get threads created for an alias
      */
-    getAliasThreadsRaw(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageThreadProjection>>;
+    getAliasThreadsRaw(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAliasThreadProjection>>;
     /**
      * Returns threads created for an email alias in paginated form
      * Get threads created for an alias
      */
-    getAliasThreads(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit): Promise<PageThreadProjection>;
+    getAliasThreads(requestParameters: GetAliasThreadsRequest, initOverrides?: RequestInit): Promise<PageAliasThreadProjection>;
     /**
      * Get all email aliases in paginated form
      * Get all email aliases you have created
@@ -133,22 +133,22 @@ export declare class AliasControllerApi extends runtime.BaseAPI {
      * Return a thread associated with an alias
      * Get a thread
      */
-    getThreadRaw(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ThreadProjection>>;
+    getThreadRaw(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AliasThreadProjection>>;
     /**
      * Return a thread associated with an alias
      * Get a thread
      */
-    getThread(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<ThreadProjection>;
+    getThread(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<AliasThreadProjection>;
     /**
      * Returns threads created for all aliases in paginated form
      * Get all threads
      */
-    getThreadsPaginatedRaw(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageThreadProjection>>;
+    getThreadsPaginatedRaw(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAliasThreadProjection>>;
     /**
      * Returns threads created for all aliases in paginated form
      * Get all threads
      */
-    getThreadsPaginated(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<PageThreadProjection>;
+    getThreadsPaginated(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<PageAliasThreadProjection>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * Reply to an email

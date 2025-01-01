@@ -92,7 +92,7 @@ ___
 
 ### inboxId
 
-• **inboxId**: `string`
+• `Optional` **inboxId**: `string`
 
 Inbox ID to attach replier to
 

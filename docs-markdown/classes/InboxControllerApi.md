@@ -50,6 +50,8 @@
 - [getAllInboxesOffsetPaginated](InboxControllerApi.md#getallinboxesoffsetpaginated)
 - [getAllInboxesOffsetPaginatedRaw](InboxControllerApi.md#getallinboxesoffsetpaginatedraw)
 - [getAllInboxesRaw](InboxControllerApi.md#getallinboxesraw)
+- [getAllPlusAddresses](InboxControllerApi.md#getallplusaddresses)
+- [getAllPlusAddressesRaw](InboxControllerApi.md#getallplusaddressesraw)
 - [getAllScheduledJobs](InboxControllerApi.md#getallscheduledjobs)
 - [getAllScheduledJobsRaw](InboxControllerApi.md#getallscheduledjobsraw)
 - [getDeliveryStatusesByInboxId](InboxControllerApi.md#getdeliverystatusesbyinboxid)
@@ -77,23 +79,43 @@
 - [getInboxEmailsPaginatedRaw](InboxControllerApi.md#getinboxemailspaginatedraw)
 - [getInboxIds](InboxControllerApi.md#getinboxids)
 - [getInboxIdsRaw](InboxControllerApi.md#getinboxidsraw)
+- [getInboxPlusAddress](InboxControllerApi.md#getinboxplusaddress)
+- [getInboxPlusAddressById](InboxControllerApi.md#getinboxplusaddressbyid)
+- [getInboxPlusAddressByIdRaw](InboxControllerApi.md#getinboxplusaddressbyidraw)
+- [getInboxPlusAddressEmails](InboxControllerApi.md#getinboxplusaddressemails)
+- [getInboxPlusAddressEmailsForPlusAddressId](InboxControllerApi.md#getinboxplusaddressemailsforplusaddressid)
+- [getInboxPlusAddressEmailsForPlusAddressIdRaw](InboxControllerApi.md#getinboxplusaddressemailsforplusaddressidraw)
+- [getInboxPlusAddressEmailsRaw](InboxControllerApi.md#getinboxplusaddressemailsraw)
+- [getInboxPlusAddressRaw](InboxControllerApi.md#getinboxplusaddressraw)
+- [getInboxPlusAddresses](InboxControllerApi.md#getinboxplusaddresses)
+- [getInboxPlusAddressesRaw](InboxControllerApi.md#getinboxplusaddressesraw)
 - [getInboxRaw](InboxControllerApi.md#getinboxraw)
+- [getInboxSentCount](InboxControllerApi.md#getinboxsentcount)
+- [getInboxSentCountRaw](InboxControllerApi.md#getinboxsentcountraw)
 - [getInboxSentEmails](InboxControllerApi.md#getinboxsentemails)
 - [getInboxSentEmailsRaw](InboxControllerApi.md#getinboxsentemailsraw)
 - [getInboxTags](InboxControllerApi.md#getinboxtags)
+- [getInboxTagsPaginated](InboxControllerApi.md#getinboxtagspaginated)
+- [getInboxTagsPaginatedRaw](InboxControllerApi.md#getinboxtagspaginatedraw)
 - [getInboxTagsRaw](InboxControllerApi.md#getinboxtagsraw)
 - [getInboxes](InboxControllerApi.md#getinboxes)
+- [getInboxesByTag](InboxControllerApi.md#getinboxesbytag)
+- [getInboxesByTagRaw](InboxControllerApi.md#getinboxesbytagraw)
 - [getInboxesRaw](InboxControllerApi.md#getinboxesraw)
 - [getLatestEmailInInbox](InboxControllerApi.md#getlatestemailininbox)
 - [getLatestEmailInInboxRaw](InboxControllerApi.md#getlatestemailininboxraw)
 - [getOrganizationInboxes](InboxControllerApi.md#getorganizationinboxes)
 - [getOrganizationInboxesRaw](InboxControllerApi.md#getorganizationinboxesraw)
+- [getOutboxes](InboxControllerApi.md#getoutboxes)
+- [getOutboxesRaw](InboxControllerApi.md#getoutboxesraw)
 - [getScheduledJob](InboxControllerApi.md#getscheduledjob)
 - [getScheduledJobRaw](InboxControllerApi.md#getscheduledjobraw)
 - [getScheduledJobsByInboxId](InboxControllerApi.md#getscheduledjobsbyinboxid)
 - [getScheduledJobsByInboxIdRaw](InboxControllerApi.md#getscheduledjobsbyinboxidraw)
 - [getSmtpAccess](InboxControllerApi.md#getsmtpaccess)
 - [getSmtpAccessRaw](InboxControllerApi.md#getsmtpaccessraw)
+- [isEmailAddressAvailable](InboxControllerApi.md#isemailaddressavailable)
+- [isEmailAddressAvailableRaw](InboxControllerApi.md#isemailaddressavailableraw)
 - [listInboxRulesets](InboxControllerApi.md#listinboxrulesets)
 - [listInboxRulesetsRaw](InboxControllerApi.md#listinboxrulesetsraw)
 - [listInboxTrackingPixels](InboxControllerApi.md#listinboxtrackingpixels)
@@ -115,8 +137,12 @@
 - [sendWithScheduleRaw](InboxControllerApi.md#sendwithscheduleraw)
 - [setInboxFavourited](InboxControllerApi.md#setinboxfavourited)
 - [setInboxFavouritedRaw](InboxControllerApi.md#setinboxfavouritedraw)
+- [updateImapAccess](InboxControllerApi.md#updateimapaccess)
+- [updateImapAccessRaw](InboxControllerApi.md#updateimapaccessraw)
 - [updateInbox](InboxControllerApi.md#updateinbox)
 - [updateInboxRaw](InboxControllerApi.md#updateinboxraw)
+- [updateSmtpAccess](InboxControllerApi.md#updatesmtpaccess)
+- [updateSmtpAccessRaw](InboxControllerApi.md#updatesmtpaccessraw)
 - [withMiddleware](InboxControllerApi.md#withmiddleware)
 - [withPostMiddleware](InboxControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](InboxControllerApi.md#withpremiddleware)
@@ -743,6 +769,46 @@ List All Inboxes Paginated
 
 ___
 
+### getAllPlusAddresses
+
+▸ **getAllPlusAddresses**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>
+
+Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+Get all sub address plus address aliases for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllPlusAddressesRequest`](../interfaces/GetAllPlusAddressesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>
+
+___
+
+### getAllPlusAddressesRaw
+
+▸ **getAllPlusAddressesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>\>
+
+Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+Get all sub address plus address aliases for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllPlusAddressesRequest`](../interfaces/GetAllPlusAddressesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>\>
+
+___
+
 ### getAllScheduledJobs
 
 ▸ **getAllScheduledJobs**(`requestParameters`, `initOverrides?`): `Promise`<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>
@@ -1263,6 +1329,206 @@ Get all inbox IDs
 
 ___
 
+### getInboxPlusAddress
+
+▸ **getInboxPlusAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+Get sub address plus address for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressRequest`](../interfaces/GetInboxPlusAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+___
+
+### getInboxPlusAddressById
+
+▸ **getInboxPlusAddressById**(`requestParameters`, `initOverrides?`): `Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+Get sub address plus address by ID
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressByIdRequest`](../interfaces/GetInboxPlusAddressByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+___
+
+### getInboxPlusAddressByIdRaw
+
+▸ **getInboxPlusAddressByIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
+
+Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+Get sub address plus address by ID
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressByIdRequest`](../interfaces/GetInboxPlusAddressByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
+
+___
+
+### getInboxPlusAddressEmails
+
+▸ **getInboxPlusAddressEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
+
+Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+Get emails for a given inbox plus address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressEmailsRequest`](../interfaces/GetInboxPlusAddressEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
+
+___
+
+### getInboxPlusAddressEmailsForPlusAddressId
+
+▸ **getInboxPlusAddressEmailsForPlusAddressId**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
+
+Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+Get emails for a given inbox plus address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressEmailsForPlusAddressIdRequest`](../interfaces/GetInboxPlusAddressEmailsForPlusAddressIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
+
+___
+
+### getInboxPlusAddressEmailsForPlusAddressIdRaw
+
+▸ **getInboxPlusAddressEmailsForPlusAddressIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
+
+Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+Get emails for a given inbox plus address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressEmailsForPlusAddressIdRequest`](../interfaces/GetInboxPlusAddressEmailsForPlusAddressIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
+
+___
+
+### getInboxPlusAddressEmailsRaw
+
+▸ **getInboxPlusAddressEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
+
+Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+Get emails for a given inbox plus address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressEmailsRequest`](../interfaces/GetInboxPlusAddressEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
+
+___
+
+### getInboxPlusAddressRaw
+
+▸ **getInboxPlusAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
+
+Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+Get sub address plus address for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressRequest`](../interfaces/GetInboxPlusAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
+
+___
+
+### getInboxPlusAddresses
+
+▸ **getInboxPlusAddresses**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>
+
+Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+Get sub address plus address aliases for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressesRequest`](../interfaces/GetInboxPlusAddressesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>
+
+___
+
+### getInboxPlusAddressesRaw
+
+▸ **getInboxPlusAddressesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>\>
+
+Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+Get sub address plus address aliases for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxPlusAddressesRequest`](../interfaces/GetInboxPlusAddressesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePlusAddressProjection`](../interfaces/PagePlusAddressProjection.md)\>\>
+
+___
+
 ### getInboxRaw
 
 ▸ **getInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
@@ -1280,6 +1546,44 @@ Get Inbox. Returns properties of an inbox.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+___
+
+### getInboxSentCount
+
+▸ **getInboxSentCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+Get sent email count in inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxSentCountRequest`](../interfaces/GetInboxSentCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+___
+
+### getInboxSentCountRaw
+
+▸ **getInboxSentCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+Get sent email count in inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxSentCountRequest`](../interfaces/GetInboxSentCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
 ___
 
@@ -1325,7 +1629,7 @@ ___
 
 ### getInboxTags
 
-▸ **getInboxTags**(`initOverrides?`): `Promise`<`string`[]\>
+▸ **getInboxTags**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
 Get all inbox tags
 Get inbox tags
@@ -1334,6 +1638,7 @@ Get inbox tags
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetInboxTagsRequest`](../interfaces/GetInboxTagsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -1342,9 +1647,49 @@ Get inbox tags
 
 ___
 
+### getInboxTagsPaginated
+
+▸ **getInboxTagsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxTags`](../interfaces/PageInboxTags.md)\>
+
+Get all inbox tags paginated
+Get inbox tags paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxTagsPaginatedRequest`](../interfaces/GetInboxTagsPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageInboxTags`](../interfaces/PageInboxTags.md)\>
+
+___
+
+### getInboxTagsPaginatedRaw
+
+▸ **getInboxTagsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxTags`](../interfaces/PageInboxTags.md)\>\>
+
+Get all inbox tags paginated
+Get inbox tags paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxTagsPaginatedRequest`](../interfaces/GetInboxTagsPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxTags`](../interfaces/PageInboxTags.md)\>\>
+
+___
+
 ### getInboxTagsRaw
 
-▸ **getInboxTagsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+▸ **getInboxTagsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
 Get all inbox tags
 Get inbox tags
@@ -1353,6 +1698,7 @@ Get inbox tags
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetInboxTagsRequest`](../interfaces/GetInboxTagsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -1378,6 +1724,46 @@ List Inboxes and email addresses
 #### Returns
 
 `Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
+
+___
+
+### getInboxesByTag
+
+▸ **getInboxesByTag**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+Get all inboxes for a given inbox tag
+Get inboxes for a tag
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxesByTagRequest`](../interfaces/GetInboxesByTagRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+___
+
+### getInboxesByTagRaw
+
+▸ **getInboxesByTagRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
+
+Get all inboxes for a given inbox tag
+Get inboxes for a tag
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxesByTagRequest`](../interfaces/GetInboxesByTagRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
 
 ___
 
@@ -1478,6 +1864,46 @@ List Organization Inboxes Paginated
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>\>
+
+___
+
+### getOutboxes
+
+▸ **getOutboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+List inboxes that have sent emails
+List all inboxes with sent emails
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOutboxesRequest`](../interfaces/GetOutboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+___
+
+### getOutboxesRaw
+
+▸ **getOutboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
+
+List inboxes that have sent emails
+List all inboxes with sent emails
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOutboxesRequest`](../interfaces/GetOutboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
 
 ___
 
@@ -1596,6 +2022,46 @@ Get SMTP access usernames and passwords
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmtpAccessDetails`](../interfaces/SmtpAccessDetails.md)\>\>
+
+___
+
+### isEmailAddressAvailable
+
+▸ **isEmailAddressAvailable**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>
+
+Returns whether an email address is available
+Is email address available
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`IsEmailAddressAvailableRequest`](../interfaces/IsEmailAddressAvailableRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>
+
+___
+
+### isEmailAddressAvailableRaw
+
+▸ **isEmailAddressAvailableRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>\>
+
+Returns whether an email address is available
+Is email address available
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`IsEmailAddressAvailableRequest`](../interfaces/IsEmailAddressAvailableRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAvailableResult`](../interfaces/EmailAvailableResult.md)\>\>
 
 ___
 
@@ -1984,7 +2450,7 @@ ___
 
 ▸ **setInboxFavourited**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
-Set and return new favourite state for an inbox
+Set and return new favorite state for an inbox
 Set inbox favourited state
 
 #### Parameters
@@ -2004,7 +2470,7 @@ ___
 
 ▸ **setInboxFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
-Set and return new favourite state for an inbox
+Set and return new favorite state for an inbox
 Set inbox favourited state
 
 #### Parameters
@@ -2017,6 +2483,44 @@ Set inbox favourited state
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+___
+
+### updateImapAccess
+
+▸ **updateImapAccess**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Update IMAP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateImapAccessRequest`](../interfaces/UpdateImapAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### updateImapAccessRaw
+
+▸ **updateImapAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Update IMAP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateImapAccessRequest`](../interfaces/UpdateImapAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
@@ -2057,6 +2561,44 @@ Update Inbox. Change name and description. Email address is not editable.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+___
+
+### updateSmtpAccess
+
+▸ **updateSmtpAccess**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Update SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateSmtpAccessRequest`](../interfaces/UpdateSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### updateSmtpAccessRaw
+
+▸ **updateSmtpAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Update SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateSmtpAccessRequest`](../interfaces/UpdateSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

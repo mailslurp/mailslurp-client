@@ -90,7 +90,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 **`Memberof`**
 

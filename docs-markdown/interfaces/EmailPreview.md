@@ -16,13 +16,22 @@ EmailPreview
 
 - [attachments](EmailPreview.md#attachments)
 - [bcc](EmailPreview.md#bcc)
+- [bodyPartContentTypes](EmailPreview.md#bodypartcontenttypes)
 - [cc](EmailPreview.md#cc)
 - [createdAt](EmailPreview.md#createdat)
 - [domainId](EmailPreview.md#domainid)
+- [favourite](EmailPreview.md#favourite)
 - [from](EmailPreview.md#from)
 - [id](EmailPreview.md#id)
+- [inReplyTo](EmailPreview.md#inreplyto)
+- [inboxId](EmailPreview.md#inboxid)
+- [messageId](EmailPreview.md#messageid)
+- [plusAddress](EmailPreview.md#plusaddress)
 - [read](EmailPreview.md#read)
+- [recipients](EmailPreview.md#recipients)
+- [sender](EmailPreview.md#sender)
 - [subject](EmailPreview.md#subject)
+- [threadId](EmailPreview.md#threadid)
 - [to](EmailPreview.md#to)
 
 ## Properties
@@ -44,6 +53,16 @@ ___
 • `Optional` **bcc**: `string`[]
 
 List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
+### bodyPartContentTypes
+
+• `Optional` **bodyPartContentTypes**: `string`[]
 
 **`Memberof`**
 
@@ -87,6 +106,16 @@ EmailPreview
 
 ___
 
+### favourite
+
+• `Optional` **favourite**: `boolean`
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
 ### from
 
 • `Optional` **from**: `string`
@@ -111,6 +140,52 @@ EmailPreview
 
 ___
 
+### inReplyTo
+
+• `Optional` **inReplyTo**: `string`
+
+Parsed value of In-Reply-To header. A Message-ID in a thread.
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
+
+ID of the inbox that received the email
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
+### messageId
+
+• `Optional` **messageId**: `string`
+
+RFC 5322 Message-ID header value without angle brackets.
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
+### plusAddress
+
+• `Optional` **plusAddress**: `string`
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
 ### read
 
 • **read**: `boolean`
@@ -123,11 +198,43 @@ EmailPreview
 
 ___
 
+### recipients
+
+• `Optional` **recipients**: [`EmailRecipients`](EmailRecipients.md)
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
+### sender
+
+• `Optional` **sender**: [`Sender`](Sender.md)
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
 ### subject
 
 • `Optional` **subject**: `string`
 
 The subject line of the email message as specified by SMTP subject header
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
+### threadId
+
+• `Optional` **threadId**: `string`
+
+MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
 
 **`Memberof`**
 

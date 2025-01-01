@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentEntity, AttachmentMetaData, DownloadAttachmentDto, InlineObject, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
+import { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, InlineObject, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
 export interface DeleteAttachmentRequest {
     attachmentId: string;
 }
@@ -43,13 +43,17 @@ export interface UploadAttachmentBytesRequest {
     contentType2?: string;
     contentId?: string;
     filename?: string;
+    fileSize?: number;
     filename2?: string;
 }
 export interface UploadMultipartFormRequest {
     contentId?: string;
     contentType?: string;
     filename?: string;
+    contentTypeHeader?: string;
     xFilename?: string;
+    xFilenameRaw?: string;
+    xFilesize?: number;
     inlineObject?: InlineObject;
 }
 /**
@@ -58,17 +62,21 @@ export interface UploadMultipartFormRequest {
 export declare class AttachmentControllerApi extends runtime.BaseAPI {
     /**
      * Delete all attachments
+     * Delete all attachments
      */
     deleteAllAttachmentsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
+     * Delete all attachments
      * Delete all attachments
      */
     deleteAllAttachments(initOverrides?: RequestInit): Promise<void>;
     /**
      * Delete an attachment
+     * Delete an attachment
      */
     deleteAttachmentRaw(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
+     * Delete an attachment
      * Delete an attachment
      */
     deleteAttachment(requestParameters: DeleteAttachmentRequest, initOverrides?: RequestInit): Promise<void>;
@@ -95,11 +103,11 @@ export declare class AttachmentControllerApi extends runtime.BaseAPI {
     /**
      * Get an attachment entity
      */
-    getAttachmentRaw(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AttachmentEntity>>;
+    getAttachmentRaw(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AttachmentEntityDto>>;
     /**
      * Get an attachment entity
      */
-    getAttachment(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit): Promise<AttachmentEntity>;
+    getAttachment(requestParameters: GetAttachmentRequest, initOverrides?: RequestInit): Promise<AttachmentEntityDto>;
     /**
      * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
      * Get email attachment metadata information

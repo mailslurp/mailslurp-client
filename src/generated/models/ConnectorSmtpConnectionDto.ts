@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -30,37 +30,85 @@ export interface ConnectorSmtpConnectionDto {
    * @type {string}
    * @memberof ConnectorSmtpConnectionDto
    */
-  smtpHost?: string;
+  smtpHost: string;
   /**
    *
    * @type {number}
    * @memberof ConnectorSmtpConnectionDto
    */
-  smtpPort?: number;
+  smtpPort?: number | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorSmtpConnectionDto
    */
-  smtpUsername?: string;
+  smtpUsername?: string | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorSmtpConnectionDto
    */
-  smtpPassword?: string;
+  smtpPassword?: string | null;
   /**
    *
    * @type {boolean}
    * @memberof ConnectorSmtpConnectionDto
    */
-  smtpSsl?: boolean;
+  smtpSsl?: boolean | null;
   /**
    *
    * @type {boolean}
    * @memberof ConnectorSmtpConnectionDto
    */
-  enabled?: boolean;
+  startTls?: boolean | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  smtpMechanisms?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  localHostName?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  proxyHost?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  proxyPort?: number | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  proxyEnabled?: boolean | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  enabled?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  sslTrust?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ConnectorSmtpConnectionDto
+   */
+  sslProtocols?: Array<string> | null;
   /**
    *
    * @type {Date}
@@ -90,7 +138,7 @@ export function ConnectorSmtpConnectionDtoFromJSONTyped(
   }
   return {
     connectorId: json['connectorId'],
-    smtpHost: !exists(json, 'smtpHost') ? undefined : json['smtpHost'],
+    smtpHost: json['smtpHost'],
     smtpPort: !exists(json, 'smtpPort') ? undefined : json['smtpPort'],
     smtpUsername: !exists(json, 'smtpUsername')
       ? undefined
@@ -99,7 +147,23 @@ export function ConnectorSmtpConnectionDtoFromJSONTyped(
       ? undefined
       : json['smtpPassword'],
     smtpSsl: !exists(json, 'smtpSsl') ? undefined : json['smtpSsl'],
+    startTls: !exists(json, 'startTls') ? undefined : json['startTls'],
+    smtpMechanisms: !exists(json, 'smtpMechanisms')
+      ? undefined
+      : json['smtpMechanisms'],
+    localHostName: !exists(json, 'localHostName')
+      ? undefined
+      : json['localHostName'],
+    proxyHost: !exists(json, 'proxyHost') ? undefined : json['proxyHost'],
+    proxyPort: !exists(json, 'proxyPort') ? undefined : json['proxyPort'],
+    proxyEnabled: !exists(json, 'proxyEnabled')
+      ? undefined
+      : json['proxyEnabled'],
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
+    sslTrust: !exists(json, 'sslTrust') ? undefined : json['sslTrust'],
+    sslProtocols: !exists(json, 'sslProtocols')
+      ? undefined
+      : json['sslProtocols'],
     createdAt: new Date(json['createdAt']),
     id: json['id'],
   };
@@ -121,7 +185,15 @@ export function ConnectorSmtpConnectionDtoToJSON(
     smtpUsername: value.smtpUsername,
     smtpPassword: value.smtpPassword,
     smtpSsl: value.smtpSsl,
+    startTls: value.startTls,
+    smtpMechanisms: value.smtpMechanisms,
+    localHostName: value.localHostName,
+    proxyHost: value.proxyHost,
+    proxyPort: value.proxyPort,
+    proxyEnabled: value.proxyEnabled,
     enabled: value.enabled,
+    sslTrust: value.sslTrust,
+    sslProtocols: value.sslProtocols,
     createdAt: value.createdAt.toISOString(),
     id: value.id,
   };

@@ -35,10 +35,16 @@
 - [getPhoneNumbers](PhoneControllerApi.md#getphonenumbers)
 - [getPhoneNumbersRaw](PhoneControllerApi.md#getphonenumbersraw)
 - [getPhonePlans](PhoneControllerApi.md#getphoneplans)
+- [getPhonePlansAvailability](PhoneControllerApi.md#getphoneplansavailability)
+- [getPhonePlansAvailabilityRaw](PhoneControllerApi.md#getphoneplansavailabilityraw)
 - [getPhonePlansRaw](PhoneControllerApi.md#getphoneplansraw)
 - [request](PhoneControllerApi.md#request)
+- [setPhoneFavourited](PhoneControllerApi.md#setphonefavourited)
+- [setPhoneFavouritedRaw](PhoneControllerApi.md#setphonefavouritedraw)
 - [testPhoneNumberSendSms](PhoneControllerApi.md#testphonenumbersendsms)
 - [testPhoneNumberSendSmsRaw](PhoneControllerApi.md#testphonenumbersendsmsraw)
+- [updatePhoneNumber](PhoneControllerApi.md#updatephonenumber)
+- [updatePhoneNumberRaw](PhoneControllerApi.md#updatephonenumberraw)
 - [withMiddleware](PhoneControllerApi.md#withmiddleware)
 - [withPostMiddleware](PhoneControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](PhoneControllerApi.md#withpremiddleware)
@@ -75,6 +81,9 @@
 
 ▸ **createEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>
 
+Add an emergency address to a phone number
+Create an emergency address
+
 #### Parameters
 
 | Name | Type |
@@ -91,6 +100,9 @@ ___
 ### createEmergencyAddressRaw
 
 ▸ **createEmergencyAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>\>
+
+Add an emergency address to a phone number
+Create an emergency address
 
 #### Parameters
 
@@ -109,6 +121,9 @@ ___
 
 ▸ **deleteEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
 
+Delete an emergency address
+Delete an emergency address
+
 #### Parameters
 
 | Name | Type |
@@ -125,6 +140,9 @@ ___
 ### deleteEmergencyAddressRaw
 
 ▸ **deleteEmergencyAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>\>
+
+Delete an emergency address
+Delete an emergency address
 
 #### Parameters
 
@@ -143,6 +161,9 @@ ___
 
 ▸ **deletePhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
+Remove phone number from account
+Delete a phone number
+
 #### Parameters
 
 | Name | Type |
@@ -159,6 +180,9 @@ ___
 ### deletePhoneNumberRaw
 
 ▸ **deletePhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Remove phone number from account
+Delete a phone number
 
 #### Parameters
 
@@ -177,6 +201,9 @@ ___
 
 ▸ **getEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>
 
+Fetch an emergency address by ID
+Get an emergency address
+
 #### Parameters
 
 | Name | Type |
@@ -193,6 +220,9 @@ ___
 ### getEmergencyAddressRaw
 
 ▸ **getEmergencyAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>\>
+
+Fetch an emergency address by ID
+Get an emergency address
 
 #### Parameters
 
@@ -211,6 +241,9 @@ ___
 
 ▸ **getEmergencyAddresses**(`initOverrides?`): `Promise`<[`EmergencyAddressDto`](../interfaces/EmergencyAddressDto.md)[]\>
 
+List emergency addresses
+Get emergency addresses
+
 #### Parameters
 
 | Name | Type |
@@ -227,6 +260,9 @@ ___
 
 ▸ **getEmergencyAddressesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddressDto`](../interfaces/EmergencyAddressDto.md)[]\>\>
 
+List emergency addresses
+Get emergency addresses
+
 #### Parameters
 
 | Name | Type |
@@ -242,6 +278,9 @@ ___
 ### getPhoneNumber
 
 ▸ **getPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Get a phone number by ID
+Get a phone number by ID
 
 #### Parameters
 
@@ -260,6 +299,9 @@ ___
 
 ▸ **getPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
 
+Get a phone number by ID
+Get a phone number by ID
+
 #### Parameters
 
 | Name | Type |
@@ -276,6 +318,9 @@ ___
 ### getPhoneNumbers
 
 ▸ **getPhoneNumbers**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneNumberProjection`](../interfaces/PagePhoneNumberProjection.md)\>
+
+List phone numbers for account
+Get phone numbers
 
 #### Parameters
 
@@ -294,6 +339,9 @@ ___
 
 ▸ **getPhoneNumbersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneNumberProjection`](../interfaces/PagePhoneNumberProjection.md)\>\>
 
+List phone numbers for account
+Get phone numbers
+
 #### Parameters
 
 | Name | Type |
@@ -311,6 +359,9 @@ ___
 
 ▸ **getPhonePlans**(`initOverrides?`): `Promise`<[`PhonePlanDto`](../interfaces/PhonePlanDto.md)[]\>
 
+Get phone number plans
+Get phone plans
+
 #### Parameters
 
 | Name | Type |
@@ -323,9 +374,48 @@ ___
 
 ___
 
+### getPhonePlansAvailability
+
+▸ **getPhonePlansAvailability**(`initOverrides?`): `Promise`<[`PhonePlanAvailability`](../interfaces/PhonePlanAvailability.md)\>
+
+Get phone plans availability
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePlanAvailability`](../interfaces/PhonePlanAvailability.md)\>
+
+___
+
+### getPhonePlansAvailabilityRaw
+
+▸ **getPhonePlansAvailabilityRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePlanAvailability`](../interfaces/PhonePlanAvailability.md)\>\>
+
+Get phone plans availability
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePlanAvailability`](../interfaces/PhonePlanAvailability.md)\>\>
+
+___
+
 ### getPhonePlansRaw
 
 ▸ **getPhonePlansRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePlanDto`](../interfaces/PhonePlanDto.md)[]\>\>
+
+Get phone number plans
+Get phone plans
 
 #### Parameters
 
@@ -360,9 +450,52 @@ ___
 
 ___
 
+### setPhoneFavourited
+
+▸ **setPhoneFavourited**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Set and return new favorite state for a phone
+Set phone favourited state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetPhoneFavouritedRequest`](../interfaces/SetPhoneFavouritedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### setPhoneFavouritedRaw
+
+▸ **setPhoneFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Set and return new favorite state for a phone
+Set phone favourited state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetPhoneFavouritedRequest`](../interfaces/SetPhoneFavouritedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
 ### testPhoneNumberSendSms
 
 ▸ **testPhoneNumberSendSms**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Test a phone number by sending an SMS to it
+Test sending an SMS to a number
 
 #### Parameters
 
@@ -381,6 +514,9 @@ ___
 
 ▸ **testPhoneNumberSendSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
+Test a phone number by sending an SMS to it
+Test sending an SMS to a number
+
 #### Parameters
 
 | Name | Type |
@@ -391,6 +527,46 @@ ___
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### updatePhoneNumber
+
+▸ **updatePhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Set field for phone number
+Update a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdatePhoneNumberRequest`](../interfaces/UpdatePhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### updatePhoneNumberRaw
+
+▸ **updatePhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Set field for phone number
+Update a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdatePhoneNumberRequest`](../interfaces/UpdatePhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
 
 ___
 

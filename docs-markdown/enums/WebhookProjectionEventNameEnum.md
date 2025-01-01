@@ -17,6 +17,7 @@
 - [NEW\_ATTACHMENT](WebhookProjectionEventNameEnum.md#new_attachment)
 - [NEW\_CONTACT](WebhookProjectionEventNameEnum.md#new_contact)
 - [NEW\_EMAIL](WebhookProjectionEventNameEnum.md#new_email)
+- [NEW\_GUEST\_USER](WebhookProjectionEventNameEnum.md#new_guest_user)
 - [NEW\_SMS](WebhookProjectionEventNameEnum.md#new_sms)
 
 ## Enumeration Members
@@ -72,6 +73,12 @@ ___
 ### NEW\_EMAIL
 
 • **NEW\_EMAIL** = ``"NEW_EMAIL"``
+
+___
+
+### NEW\_GUEST\_USER
+
+• **NEW\_GUEST\_USER** = ``"NEW_GUEST_USER"``
 
 ___
 

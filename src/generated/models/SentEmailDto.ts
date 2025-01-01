@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,6 +13,17 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  EmailRecipients,
+  EmailRecipientsFromJSON,
+  EmailRecipientsFromJSONTyped,
+  EmailRecipientsToJSON,
+  Sender,
+  SenderFromJSON,
+  SenderFromJSONTyped,
+  SenderToJSON,
+} from './';
+
 /**
  * Sent email details
  * @export
@@ -55,6 +66,18 @@ export interface SentEmailDto {
    * @memberof SentEmailDto
    */
   from?: string | null;
+  /**
+   *
+   * @type {Sender}
+   * @memberof SentEmailDto
+   */
+  sender?: Sender | null;
+  /**
+   *
+   * @type {EmailRecipients}
+   * @memberof SentEmailDto
+   */
+  recipients?: EmailRecipients | null;
   /**
    *
    * @type {string}
@@ -129,12 +152,18 @@ export interface SentEmailDto {
   sentAt: Date;
   /**
    *
+   * @type {Date}
+   * @memberof SentEmailDto
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {Array<string>}
    * @memberof SentEmailDto
    */
   pixelIds?: Array<string> | null;
   /**
-   *
+   * RFC 5322 Message-ID header value without angle brackets.
    * @type {string}
    * @memberof SentEmailDto
    */
@@ -170,6 +199,36 @@ export interface SentEmailDto {
    */
   headers?: { [key: string]: string } | null;
   /**
+   * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  threadId?: string | null;
+  /**
+   * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  bodyExcerpt?: string | null;
+  /**
+   * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  textExcerpt?: string | null;
+  /**
+   * Parsed value of In-Reply-To header. A Message-ID in a thread.
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  inReplyTo?: string | null;
+  /**
+   * Is email favourited
+   * @type {boolean}
+   * @memberof SentEmailDto
+   */
+  favourite?: boolean | null;
+  /**
    *
    * @type {boolean}
    * @memberof SentEmailDto
@@ -195,6 +254,12 @@ export function SentEmailDtoFromJSONTyped(
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     to: !exists(json, 'to') ? undefined : json['to'],
     from: !exists(json, 'from') ? undefined : json['from'],
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
+    recipients: !exists(json, 'recipients')
+      ? undefined
+      : EmailRecipientsFromJSON(json['recipients']),
     replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
@@ -207,6 +272,7 @@ export function SentEmailDtoFromJSONTyped(
     charset: !exists(json, 'charset') ? undefined : json['charset'],
     isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
     sentAt: new Date(json['sentAt']),
+    createdAt: new Date(json['createdAt']),
     pixelIds: !exists(json, 'pixelIds') ? undefined : json['pixelIds'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
     messageIds: !exists(json, 'messageIds') ? undefined : json['messageIds'],
@@ -216,6 +282,11 @@ export function SentEmailDtoFromJSONTyped(
       ? undefined
       : json['templateVariables'],
     headers: !exists(json, 'headers') ? undefined : json['headers'],
+    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
+    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
     html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
@@ -234,6 +305,8 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     domainId: value.domainId,
     to: value.to,
     from: value.from,
+    sender: SenderToJSON(value.sender),
+    recipients: EmailRecipientsToJSON(value.recipients),
     replyTo: value.replyTo,
     cc: value.cc,
     bcc: value.bcc,
@@ -246,6 +319,7 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     charset: value.charset,
     isHTML: value.isHTML,
     sentAt: value.sentAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     pixelIds: value.pixelIds,
     messageId: value.messageId,
     messageIds: value.messageIds,
@@ -253,6 +327,11 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     templateId: value.templateId,
     templateVariables: value.templateVariables,
     headers: value.headers,
+    threadId: value.threadId,
+    bodyExcerpt: value.bodyExcerpt,
+    textExcerpt: value.textExcerpt,
+    inReplyTo: value.inReplyTo,
+    favourite: value.favourite,
     html: value.html,
   };
 }

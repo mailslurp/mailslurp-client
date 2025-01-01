@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mx.mailslurp.com` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
+ * Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts and do not support IMAP or POP3. `SMTP` inboxes use a custom mail server at `mxslurp.click` and support SMTP login, IMAP and POP3. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching.
  * @export
  * @interface InboxDto
  */
@@ -30,7 +30,7 @@ export interface InboxDto {
    * @type {string}
    * @memberof InboxDto
    */
-  userId?: string | null;
+  userId: string | null;
   /**
    * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
    * @type {Date}
@@ -63,10 +63,10 @@ export interface InboxDto {
   emailAddress: string;
   /**
    * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
-   * @type {string}
+   * @type {Date}
    * @memberof InboxDto
    */
-  expiresAt?: string | null;
+  expiresAt?: Date | null;
   /**
    * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
    * @type {boolean}
@@ -103,6 +103,18 @@ export interface InboxDto {
    * @memberof InboxDto
    */
   functionsAs?: InboxDtoFunctionsAsEnum;
+  /**
+   * Local part of email addresses before the @ symbol
+   * @type {string}
+   * @memberof InboxDto
+   */
+  localPart?: string | null;
+  /**
+   * Domain name of the email address
+   * @type {string}
+   * @memberof InboxDto
+   */
+  domain?: string | null;
 }
 
 /**
@@ -122,6 +134,8 @@ export enum InboxDtoFunctionsAsEnum {
   THREAD = 'THREAD',
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
+  ACCOUNT = 'ACCOUNT',
+  GUEST = 'GUEST',
 }
 
 export function InboxDtoFromJSON(json: any): InboxDto {
@@ -137,19 +151,25 @@ export function InboxDtoFromJSONTyped(
   }
   return {
     id: json['id'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
+    userId: json['userId'],
     createdAt: new Date(json['createdAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     description: !exists(json, 'description') ? undefined : json['description'],
     emailAddress: json['emailAddress'],
-    expiresAt: !exists(json, 'expiresAt') ? undefined : json['expiresAt'],
+    expiresAt: !exists(json, 'expiresAt')
+      ? undefined
+      : json['expiresAt'] === null
+      ? null
+      : new Date(json['expiresAt']),
     favourite: json['favourite'],
     tags: !exists(json, 'tags') ? undefined : json['tags'],
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
     readOnly: json['readOnly'],
     virtualInbox: json['virtualInbox'],
     functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
+    localPart: !exists(json, 'localPart') ? undefined : json['localPart'],
+    domain: !exists(json, 'domain') ? undefined : json['domain'],
   };
 }
 
@@ -168,12 +188,19 @@ export function InboxDtoToJSON(value?: InboxDto | null): any {
     domainId: value.domainId,
     description: value.description,
     emailAddress: value.emailAddress,
-    expiresAt: value.expiresAt,
+    expiresAt:
+      value.expiresAt === undefined
+        ? undefined
+        : value.expiresAt === null
+        ? null
+        : value.expiresAt.toISOString(),
     favourite: value.favourite,
     tags: value.tags,
     inboxType: value.inboxType,
     readOnly: value.readOnly,
     virtualInbox: value.virtualInbox,
     functionsAs: value.functionsAs,
+    localPart: value.localPart,
+    domain: value.domain,
   };
 }

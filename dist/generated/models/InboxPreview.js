@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -34,6 +34,8 @@ var InboxPreviewFunctionsAsEnum;
     InboxPreviewFunctionsAsEnum["THREAD"] = "THREAD";
     InboxPreviewFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
     InboxPreviewFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
+    InboxPreviewFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
+    InboxPreviewFunctionsAsEnum["GUEST"] = "GUEST";
 })(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {}));
 function InboxPreviewFromJSON(json) {
     return InboxPreviewFromJSONTyped(json, false);
@@ -46,9 +48,7 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
+        emailAddress: json['emailAddress'],
         createdAt: new Date(json['createdAt']),
         favourite: json['favourite'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
@@ -56,8 +56,14 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
         teamAccess: json['teamAccess'],
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
         virtualInbox: json['virtualInbox'],
-        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
         functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        userId: json['userId'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
 exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
@@ -79,8 +85,14 @@ function InboxPreviewToJSON(value) {
         teamAccess: value.teamAccess,
         inboxType: value.inboxType,
         virtualInbox: value.virtualInbox,
-        expiresAt: value.expiresAt,
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
         functionsAs: value.functionsAs,
+        userId: value.userId,
+        description: value.description,
     };
 }
 exports.InboxPreviewToJSON = InboxPreviewToJSON;

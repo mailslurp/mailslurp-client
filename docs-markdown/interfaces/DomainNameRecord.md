@@ -14,6 +14,7 @@ DomainNameRecord
 
 ### Properties
 
+- [alternativeRecordEntries](DomainNameRecord.md#alternativerecordentries)
 - [label](DomainNameRecord.md#label)
 - [name](DomainNameRecord.md#name)
 - [recordEntries](DomainNameRecord.md#recordentries)
@@ -22,6 +23,16 @@ DomainNameRecord
 - [ttl](DomainNameRecord.md#ttl)
 
 ## Properties
+
+### alternativeRecordEntries
+
+• `Optional` **alternativeRecordEntries**: `string`[]
+
+**`Memberof`**
+
+DomainNameRecord
+
+___
 
 ### label
 

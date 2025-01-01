@@ -1,7 +1,5 @@
 // @ts-ignore
 import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
-
-require('es6-promise').polyfill();
 require('cross-fetch/polyfill');
 import {
   AliasControllerApi,

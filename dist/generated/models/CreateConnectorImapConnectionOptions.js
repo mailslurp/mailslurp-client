@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -38,6 +38,20 @@ function CreateConnectorImapConnectionOptionsFromJSONTyped(json, ignoreDiscrimin
         imapPort: !(0, runtime_1.exists)(json, 'imapPort') ? undefined : json['imapPort'],
         imapHost: json['imapHost'],
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
+        startTls: !(0, runtime_1.exists)(json, 'startTls') ? undefined : json['startTls'],
+        proxyEnabled: !(0, runtime_1.exists)(json, 'proxyEnabled')
+            ? undefined
+            : json['proxyEnabled'],
+        proxyPort: !(0, runtime_1.exists)(json, 'proxyPort') ? undefined : json['proxyPort'],
+        proxyHost: !(0, runtime_1.exists)(json, 'proxyHost') ? undefined : json['proxyHost'],
+        localHostName: !(0, runtime_1.exists)(json, 'localHostName')
+            ? undefined
+            : json['localHostName'],
+        mechanisms: !(0, runtime_1.exists)(json, 'mechanisms') ? undefined : json['mechanisms'],
+        sslTrust: !(0, runtime_1.exists)(json, 'sslTrust') ? undefined : json['sslTrust'],
+        sslProtocols: !(0, runtime_1.exists)(json, 'sslProtocols')
+            ? undefined
+            : json['sslProtocols'],
     };
 }
 exports.CreateConnectorImapConnectionOptionsFromJSONTyped = CreateConnectorImapConnectionOptionsFromJSONTyped;
@@ -57,6 +71,14 @@ function CreateConnectorImapConnectionOptionsToJSON(value) {
         imapPort: value.imapPort,
         imapHost: value.imapHost,
         enabled: value.enabled,
+        startTls: value.startTls,
+        proxyEnabled: value.proxyEnabled,
+        proxyPort: value.proxyPort,
+        proxyHost: value.proxyHost,
+        localHostName: value.localHostName,
+        mechanisms: value.mechanisms,
+        sslTrust: value.sslTrust,
+        sslProtocols: value.sslProtocols,
     };
 }
 exports.CreateConnectorImapConnectionOptionsToJSON = CreateConnectorImapConnectionOptionsToJSON;

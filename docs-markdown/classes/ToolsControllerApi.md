@@ -24,6 +24,8 @@
 - [checkEmailFeaturesClientSupportRaw](ToolsControllerApi.md#checkemailfeaturesclientsupportraw)
 - [createNewFakeEmailAddress](ToolsControllerApi.md#createnewfakeemailaddress)
 - [createNewFakeEmailAddressRaw](ToolsControllerApi.md#createnewfakeemailaddressraw)
+- [deleteNewFakeEmailAddress](ToolsControllerApi.md#deletenewfakeemailaddress)
+- [deleteNewFakeEmailAddressRaw](ToolsControllerApi.md#deletenewfakeemailaddressraw)
 - [generateBimiRecord](ToolsControllerApi.md#generatebimirecord)
 - [generateBimiRecordRaw](ToolsControllerApi.md#generatebimirecordraw)
 - [generateDmarcRecord](ToolsControllerApi.md#generatedmarcrecord)
@@ -32,8 +34,12 @@
 - [generateMtaStsRecordRaw](ToolsControllerApi.md#generatemtastsrecordraw)
 - [generateTlsReportingRecord](ToolsControllerApi.md#generatetlsreportingrecord)
 - [generateTlsReportingRecordRaw](ToolsControllerApi.md#generatetlsreportingrecordraw)
+- [getFakeEmailByEmailAddress](ToolsControllerApi.md#getfakeemailbyemailaddress)
+- [getFakeEmailByEmailAddressRaw](ToolsControllerApi.md#getfakeemailbyemailaddressraw)
 - [getFakeEmailById](ToolsControllerApi.md#getfakeemailbyid)
 - [getFakeEmailByIdRaw](ToolsControllerApi.md#getfakeemailbyidraw)
+- [getFakeEmailRaw](ToolsControllerApi.md#getfakeemailraw)
+- [getFakeEmailRawRaw](ToolsControllerApi.md#getfakeemailrawraw)
 - [getFakeEmailsForAddress](ToolsControllerApi.md#getfakeemailsforaddress)
 - [getFakeEmailsForAddressRaw](ToolsControllerApi.md#getfakeemailsforaddressraw)
 - [lookupBimiDomain](ToolsControllerApi.md#lookupbimidomain)
@@ -148,6 +154,46 @@ Create a new email address using the fake email domains
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`NewFakeEmailAddressResult`](../interfaces/NewFakeEmailAddressResult.md)\>\>
+
+___
+
+### deleteNewFakeEmailAddress
+
+▸ **deleteNewFakeEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete a fake email address using the fake email domains
+Delete a fake email address using the fake email domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteNewFakeEmailAddressRequest`](../interfaces/DeleteNewFakeEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteNewFakeEmailAddressRaw
+
+▸ **deleteNewFakeEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete a fake email address using the fake email domains
+Delete a fake email address using the fake email domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteNewFakeEmailAddressRequest`](../interfaces/DeleteNewFakeEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
@@ -303,9 +349,46 @@ Create a TLS reporting record policy
 
 ___
 
+### getFakeEmailByEmailAddress
+
+▸ **getFakeEmailByEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailByEmailAddressRequest`](../interfaces/GetFakeEmailByEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>
+
+___
+
+### getFakeEmailByEmailAddressRaw
+
+▸ **getFakeEmailByEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailByEmailAddressRequest`](../interfaces/GetFakeEmailByEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>\>
+
+___
+
 ### getFakeEmailById
 
 ▸ **getFakeEmailById**(`requestParameters`, `initOverrides?`): `Promise`<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>
+
+Get a fake email by its ID
+Get a fake email by its ID
 
 #### Parameters
 
@@ -324,6 +407,9 @@ ___
 
 ▸ **getFakeEmailByIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>\>
 
+Get a fake email by its ID
+Get a fake email by its ID
+
 #### Parameters
 
 | Name | Type |
@@ -337,9 +423,52 @@ ___
 
 ___
 
+### getFakeEmailRaw
+
+▸ **getFakeEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+
+Retrieve the raw content of a fake email by its ID
+Get raw fake email content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailRawRequest`](../interfaces/GetFakeEmailRawRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### getFakeEmailRawRaw
+
+▸ **getFakeEmailRawRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Retrieve the raw content of a fake email by its ID
+Get raw fake email content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailRawRequest`](../interfaces/GetFakeEmailRawRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
 ### getFakeEmailsForAddress
 
 ▸ **getFakeEmailsForAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`FakeEmailPreview`](../interfaces/FakeEmailPreview.md)[]\>
+
+Get fake emails for an address
+Get fake emails for an address
 
 #### Parameters
 
@@ -357,6 +486,9 @@ ___
 ### getFakeEmailsForAddressRaw
 
 ▸ **getFakeEmailsForAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailPreview`](../interfaces/FakeEmailPreview.md)[]\>\>
+
+Get fake emails for an address
+Get fake emails for an address
 
 #### Parameters
 

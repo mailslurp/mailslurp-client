@@ -17,24 +17,32 @@ SentEmailDto
 - [attachments](SentEmailDto.md#attachments)
 - [bcc](SentEmailDto.md#bcc)
 - [body](SentEmailDto.md#body)
+- [bodyExcerpt](SentEmailDto.md#bodyexcerpt)
 - [bodyMD5Hash](SentEmailDto.md#bodymd5hash)
 - [cc](SentEmailDto.md#cc)
 - [charset](SentEmailDto.md#charset)
+- [createdAt](SentEmailDto.md#createdat)
 - [domainId](SentEmailDto.md#domainid)
+- [favourite](SentEmailDto.md#favourite)
 - [from](SentEmailDto.md#from)
 - [headers](SentEmailDto.md#headers)
 - [html](SentEmailDto.md#html)
 - [id](SentEmailDto.md#id)
+- [inReplyTo](SentEmailDto.md#inreplyto)
 - [inboxId](SentEmailDto.md#inboxid)
 - [isHTML](SentEmailDto.md#ishtml)
 - [messageId](SentEmailDto.md#messageid)
 - [messageIds](SentEmailDto.md#messageids)
 - [pixelIds](SentEmailDto.md#pixelids)
+- [recipients](SentEmailDto.md#recipients)
 - [replyTo](SentEmailDto.md#replyto)
+- [sender](SentEmailDto.md#sender)
 - [sentAt](SentEmailDto.md#sentat)
 - [subject](SentEmailDto.md#subject)
 - [templateId](SentEmailDto.md#templateid)
 - [templateVariables](SentEmailDto.md#templatevariables)
+- [textExcerpt](SentEmailDto.md#textexcerpt)
+- [threadId](SentEmailDto.md#threadid)
 - [to](SentEmailDto.md#to)
 - [toContacts](SentEmailDto.md#tocontacts)
 - [toGroup](SentEmailDto.md#togroup)
@@ -77,6 +85,18 @@ SentEmailDto
 
 ___
 
+### bodyExcerpt
+
+• `Optional` **bodyExcerpt**: `string`
+
+An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
 ### bodyMD5Hash
 
 • `Optional` **bodyMD5Hash**: `string`
@@ -109,11 +129,33 @@ SentEmailDto
 
 ___
 
+### createdAt
+
+• **createdAt**: `Date`
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
 ### domainId
 
 • `Optional` **domainId**: `string`
 
 Domain ID
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
+### favourite
+
+• `Optional` **favourite**: `boolean`
+
+Is email favourited
 
 **`Memberof`**
 
@@ -169,6 +211,18 @@ SentEmailDto
 
 ___
 
+### inReplyTo
+
+• `Optional` **inReplyTo**: `string`
+
+Parsed value of In-Reply-To header. A Message-ID in a thread.
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
 ### inboxId
 
 • **inboxId**: `string`
@@ -194,6 +248,8 @@ ___
 ### messageId
 
 • `Optional` **messageId**: `string`
+
+RFC 5322 Message-ID header value without angle brackets.
 
 **`Memberof`**
 
@@ -221,9 +277,29 @@ SentEmailDto
 
 ___
 
+### recipients
+
+• `Optional` **recipients**: [`EmailRecipients`](EmailRecipients.md)
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
 ### replyTo
 
 • `Optional` **replyTo**: `string`
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
+### sender
+
+• `Optional` **sender**: [`Sender`](Sender.md)
 
 **`Memberof`**
 
@@ -272,6 +348,30 @@ SentEmailDto
 #### Index signature
 
 ▪ [key: `string`]: `object`
+
+___
+
+### textExcerpt
+
+• `Optional` **textExcerpt**: `string`
+
+An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
+### threadId
+
+• `Optional` **threadId**: `string`
+
+MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+
+**`Memberof`**
+
+SentEmailDto
 
 ___
 

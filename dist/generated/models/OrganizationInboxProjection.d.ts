@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -44,7 +44,7 @@ export interface OrganizationInboxProjection {
      * @type {string}
      * @memberof OrganizationInboxProjection
      */
-    emailAddress?: string | null;
+    emailAddress: string | null;
     /**
      * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
      * @type {boolean}
@@ -87,6 +87,24 @@ export interface OrganizationInboxProjection {
      * @memberof OrganizationInboxProjection
      */
     functionsAs?: OrganizationInboxProjectionFunctionsAsEnum;
+    /**
+     * ID of user that inbox belongs to
+     * @type {string}
+     * @memberof OrganizationInboxProjection
+     */
+    userId: string;
+    /**
+     * Description of an inbox for labelling and searching purposes
+     * @type {string}
+     * @memberof OrganizationInboxProjection
+     */
+    description?: string | null;
+    /**
+     * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
+     * @type {Date}
+     * @memberof OrganizationInboxProjection
+     */
+    expiresAt?: Date | null;
 }
 /**
  * @export
@@ -104,7 +122,9 @@ export declare enum OrganizationInboxProjectionFunctionsAsEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
     CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
+    CONNECTOR = "CONNECTOR",
+    ACCOUNT = "ACCOUNT",
+    GUEST = "GUEST"
 }
 export declare function OrganizationInboxProjectionFromJSON(json: any): OrganizationInboxProjection;
 export declare function OrganizationInboxProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): OrganizationInboxProjection;

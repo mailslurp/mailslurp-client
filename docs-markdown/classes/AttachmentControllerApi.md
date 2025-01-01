@@ -78,6 +78,7 @@
 ▸ **deleteAllAttachments**(`initOverrides?`): `Promise`<`void`\>
 
 Delete all attachments
+Delete all attachments
 
 #### Parameters
 
@@ -95,6 +96,7 @@ ___
 
 ▸ **deleteAllAttachmentsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
+Delete all attachments
 Delete all attachments
 
 #### Parameters
@@ -114,6 +116,7 @@ ___
 ▸ **deleteAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete an attachment
+Delete an attachment
 
 #### Parameters
 
@@ -132,6 +135,7 @@ ___
 
 ▸ **deleteAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
+Delete an attachment
 Delete an attachment
 
 #### Parameters
@@ -229,7 +233,7 @@ ___
 
 ### getAttachment
 
-▸ **getAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>
+▸ **getAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentEntityDto`](../interfaces/AttachmentEntityDto.md)\>
 
 Get an attachment entity
 
@@ -242,7 +246,7 @@ Get an attachment entity
 
 #### Returns
 
-`Promise`<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>
+`Promise`<[`AttachmentEntityDto`](../interfaces/AttachmentEntityDto.md)\>
 
 ___
 
@@ -288,7 +292,7 @@ ___
 
 ### getAttachmentRaw
 
-▸ **getAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>\>
+▸ **getAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntityDto`](../interfaces/AttachmentEntityDto.md)\>\>
 
 Get an attachment entity
 
@@ -301,7 +305,7 @@ Get an attachment entity
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntityDto`](../interfaces/AttachmentEntityDto.md)\>\>
 
 ___
 

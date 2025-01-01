@@ -20,9 +20,6 @@ ConnectorProjection
 - [id](ConnectorProjection.md#id)
 - [inboxId](ConnectorProjection.md#inboxid)
 - [name](ConnectorProjection.md#name)
-- [syncEnabled](ConnectorProjection.md#syncenabled)
-- [syncInterval](ConnectorProjection.md#syncinterval)
-- [syncScheduleType](ConnectorProjection.md#syncscheduletype)
 - [userId](ConnectorProjection.md#userid)
 
 ## Properties
@@ -59,7 +56,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 **`Memberof`**
 
@@ -80,36 +77,6 @@ ___
 ### name
 
 • `Optional` **name**: `string`
-
-**`Memberof`**
-
-ConnectorProjection
-
-___
-
-### syncEnabled
-
-• `Optional` **syncEnabled**: `boolean`
-
-**`Memberof`**
-
-ConnectorProjection
-
-___
-
-### syncInterval
-
-• `Optional` **syncInterval**: `number`
-
-**`Memberof`**
-
-ConnectorProjection
-
-___
-
-### syncScheduleType
-
-• **syncScheduleType**: [`INTERVAL`](../enums/ConnectorProjectionSyncScheduleTypeEnum.md#interval)
 
 **`Memberof`**
 

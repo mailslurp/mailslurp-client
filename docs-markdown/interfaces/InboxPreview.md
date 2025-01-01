@@ -15,6 +15,7 @@ InboxPreview
 ### Properties
 
 - [createdAt](InboxPreview.md#createdat)
+- [description](InboxPreview.md#description)
 - [domainId](InboxPreview.md#domainid)
 - [emailAddress](InboxPreview.md#emailaddress)
 - [expiresAt](InboxPreview.md#expiresat)
@@ -25,6 +26,7 @@ InboxPreview
 - [name](InboxPreview.md#name)
 - [tags](InboxPreview.md#tags)
 - [teamAccess](InboxPreview.md#teamaccess)
+- [userId](InboxPreview.md#userid)
 - [virtualInbox](InboxPreview.md#virtualinbox)
 
 ## Properties
@@ -34,6 +36,18 @@ InboxPreview
 • **createdAt**: `Date`
 
 When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
+
+**`Memberof`**
+
+InboxPreview
+
+___
+
+### description
+
+• `Optional` **description**: `string`
+
+Description of an inbox for labelling and searching purposes
 
 **`Memberof`**
 
@@ -55,7 +69,7 @@ ___
 
 ### emailAddress
 
-• `Optional` **emailAddress**: `string`
+• **emailAddress**: `string`
 
 The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
 
@@ -67,7 +81,7 @@ ___
 
 ### expiresAt
 
-• `Optional` **expiresAt**: `string`
+• `Optional` **expiresAt**: `Date`
 
 Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
 
@@ -154,6 +168,18 @@ ___
 • **teamAccess**: `boolean`
 
 Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
+
+**`Memberof`**
+
+InboxPreview
+
+___
+
+### userId
+
+• **userId**: `string`
+
+ID of user that inbox belongs to
 
 **`Memberof`**
 

@@ -235,7 +235,7 @@ ___
 
 ### getAliasThreads
 
-▸ **getAliasThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+▸ **getAliasThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>
 
 Returns threads created for an email alias in paginated form
 Get threads created for an alias
@@ -249,13 +249,13 @@ Get threads created for an alias
 
 #### Returns
 
-`Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+`Promise`<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>
 
 ___
 
 ### getAliasThreadsRaw
 
-▸ **getAliasThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
+▸ **getAliasThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>\>
 
 Returns threads created for an email alias in paginated form
 Get threads created for an alias
@@ -269,7 +269,7 @@ Get threads created for an alias
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>\>
 
 ___
 
@@ -315,7 +315,7 @@ ___
 
 ### getThread
 
-▸ **getThread**(`requestParameters`, `initOverrides?`): `Promise`<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>
+▸ **getThread**(`requestParameters`, `initOverrides?`): `Promise`<[`AliasThreadProjection`](../interfaces/AliasThreadProjection.md)\>
 
 Return a thread associated with an alias
 Get a thread
@@ -329,13 +329,13 @@ Get a thread
 
 #### Returns
 
-`Promise`<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>
+`Promise`<[`AliasThreadProjection`](../interfaces/AliasThreadProjection.md)\>
 
 ___
 
 ### getThreadRaw
 
-▸ **getThreadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>\>
+▸ **getThreadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasThreadProjection`](../interfaces/AliasThreadProjection.md)\>\>
 
 Return a thread associated with an alias
 Get a thread
@@ -349,13 +349,13 @@ Get a thread
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasThreadProjection`](../interfaces/AliasThreadProjection.md)\>\>
 
 ___
 
 ### getThreadsPaginated
 
-▸ **getThreadsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+▸ **getThreadsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>
 
 Returns threads created for all aliases in paginated form
 Get all threads
@@ -369,13 +369,13 @@ Get all threads
 
 #### Returns
 
-`Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+`Promise`<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>
 
 ___
 
 ### getThreadsPaginatedRaw
 
-▸ **getThreadsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
+▸ **getThreadsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>\>
 
 Returns threads created for all aliases in paginated form
 Get all threads
@@ -389,7 +389,7 @@ Get all threads
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAliasThreadProjection`](../interfaces/PageAliasThreadProjection.md)\>\>
 
 ___
 

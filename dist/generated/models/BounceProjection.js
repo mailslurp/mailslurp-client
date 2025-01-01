@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -24,11 +24,11 @@ function BounceProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         createdAt: new Date(json['createdAt']),
         sender: json['sender'],
         bounceMta: !(0, runtime_1.exists)(json, 'bounceMta') ? undefined : json['bounceMta'],
         bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
@@ -41,11 +41,11 @@ function BounceProjectionToJSON(value) {
         return null;
     }
     return {
+        subject: value.subject,
         createdAt: value.createdAt.toISOString(),
         sender: value.sender,
         bounceMta: value.bounceMta,
         bounceType: value.bounceType,
-        subject: value.subject,
         id: value.id,
     };
 }

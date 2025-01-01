@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -25,9 +25,9 @@ function PageableObjectFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        pageNumber: !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
         pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
         paged: !(0, runtime_1.exists)(json, 'paged') ? undefined : json['paged'],
+        pageNumber: !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
         unpaged: !(0, runtime_1.exists)(json, 'unpaged') ? undefined : json['unpaged'],
         offset: !(0, runtime_1.exists)(json, 'offset') ? undefined : json['offset'],
         sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
@@ -42,9 +42,9 @@ function PageableObjectToJSON(value) {
         return null;
     }
     return {
-        pageNumber: value.pageNumber,
         pageSize: value.pageSize,
         paged: value.paged,
+        pageNumber: value.pageNumber,
         unpaged: value.unpaged,
         offset: value.offset,
         sort: (0, _1.SortObjectToJSON)(value.sort),

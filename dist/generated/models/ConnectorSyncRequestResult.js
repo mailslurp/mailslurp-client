@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -28,9 +28,7 @@ function ConnectorSyncRequestResultFromJSONTyped(json, ignoreDiscriminator) {
         syncResult: !(0, runtime_1.exists)(json, 'syncResult')
             ? undefined
             : (0, _1.ConnectorSyncResultFromJSON)(json['syncResult']),
-        exception: !(0, runtime_1.exists)(json, 'exception')
-            ? undefined
-            : (0, _1.ConnectorSyncRequestResultExceptionFromJSON)(json['exception']),
+        exception: !(0, runtime_1.exists)(json, 'exception') ? undefined : json['exception'],
         eventId: !(0, runtime_1.exists)(json, 'eventId') ? undefined : json['eventId'],
     };
 }
@@ -44,7 +42,7 @@ function ConnectorSyncRequestResultToJSON(value) {
     }
     return {
         syncResult: (0, _1.ConnectorSyncResultToJSON)(value.syncResult),
-        exception: (0, _1.ConnectorSyncRequestResultExceptionToJSON)(value.exception),
+        exception: value.exception,
         eventId: value.eventId,
     };
 }

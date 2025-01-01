@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetWebhookResultsEventNameEnum = exports.GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsSortEnum = exports.GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksSortEnum = exports.WebhookControllerApi = void 0;
+exports.GetWebhooksSortEnum = exports.GetWebhookResultsEventNameEnum = exports.GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedHealthEnum = exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedEventTypeEnum = exports.GetInboxWebhooksPaginatedHealthEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksEventTypeEnum = exports.GetAllWebhooksHealthEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsSortEnum = exports.GetAllWebhookEndpointsEventTypeEnum = exports.GetAllWebhookEndpointsHealthEnum = exports.GetAllWebhookEndpointsSortEnum = exports.GetAllAccountWebhooksHealthEnum = exports.GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksSortEnum = exports.WebhookControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -431,14 +431,20 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.sort !== undefined) {
                             queryParameters['sort'] = requestParameters.sort;
                         }
-                        if (requestParameters.eventType !== undefined) {
-                            queryParameters['eventType'] = requestParameters.eventType;
-                        }
                         if (requestParameters.since !== undefined) {
                             queryParameters['since'] = requestParameters.since.toISOString();
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
+                        }
+                        if (requestParameters.health !== undefined) {
+                            queryParameters['health'] = requestParameters.health;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -469,6 +475,84 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllAccountWebhooksRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    WebhookControllerApi.prototype.getAllWebhookEndpointsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.phoneId !== undefined) {
+                            queryParameters['phoneId'] = requestParameters.phoneId;
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.health !== undefined) {
+                            queryParameters['health'] = requestParameters.health;
+                        }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/endpoints",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageWebhookEndpointProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    WebhookControllerApi.prototype.getAllWebhookEndpoints = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllWebhookEndpointsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -606,6 +690,15 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.health !== undefined) {
+                            queryParameters['health'] = requestParameters.health;
+                        }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
+                        }
+                        if (requestParameters.url !== undefined) {
+                            queryParameters['url'] = requestParameters.url;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -674,6 +767,12 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.health !== undefined) {
+                            queryParameters['health'] = requestParameters.health;
+                        }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -842,6 +941,15 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        }
+                        if (requestParameters.health !== undefined) {
+                            queryParameters['health'] = requestParameters.health;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -1700,6 +1808,15 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getWebhooks.');
                         }
                         queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1713,7 +1830,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.WebhookDtoFromJSON);
+                                return jsonValue.map(models_1.WebhookProjectionFromJSON);
                             })];
                 }
             });
@@ -1878,6 +1995,68 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.sendTestDataRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Update a webhook
+     */
+    WebhookControllerApi.prototype.updateWebhookRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
+                            throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling updateWebhook.');
+                        }
+                        if (requestParameters.createWebhookOptions === null ||
+                            requestParameters.createWebhookOptions === undefined) {
+                            throw new runtime.RequiredError('createWebhookOptions', 'Required parameter requestParameters.createWebhookOptions was null or undefined when calling updateWebhook.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.phoneNumberId !== undefined) {
+                            queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/{webhookId}".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateWebhookOptionsToJSON)(requestParameters.createWebhookOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Update a webhook
+     */
+    WebhookControllerApi.prototype.updateWebhook = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateWebhookRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2088,7 +2267,53 @@ var GetAllAccountWebhooksEventTypeEnum;
     GetAllAccountWebhooksEventTypeEnum["BOUNCE"] = "BOUNCE";
     GetAllAccountWebhooksEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetAllAccountWebhooksEventTypeEnum["NEW_SMS"] = "NEW_SMS";
+    GetAllAccountWebhooksEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
 })(GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksEventTypeEnum || (exports.GetAllAccountWebhooksEventTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllAccountWebhooksHealthEnum;
+(function (GetAllAccountWebhooksHealthEnum) {
+    GetAllAccountWebhooksHealthEnum["HEALTHY"] = "HEALTHY";
+    GetAllAccountWebhooksHealthEnum["UNHEALTHY"] = "UNHEALTHY";
+})(GetAllAccountWebhooksHealthEnum = exports.GetAllAccountWebhooksHealthEnum || (exports.GetAllAccountWebhooksHealthEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllWebhookEndpointsSortEnum;
+(function (GetAllWebhookEndpointsSortEnum) {
+    GetAllWebhookEndpointsSortEnum["ASC"] = "ASC";
+    GetAllWebhookEndpointsSortEnum["DESC"] = "DESC";
+})(GetAllWebhookEndpointsSortEnum = exports.GetAllWebhookEndpointsSortEnum || (exports.GetAllWebhookEndpointsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllWebhookEndpointsHealthEnum;
+(function (GetAllWebhookEndpointsHealthEnum) {
+    GetAllWebhookEndpointsHealthEnum["HEALTHY"] = "HEALTHY";
+    GetAllWebhookEndpointsHealthEnum["UNHEALTHY"] = "UNHEALTHY";
+})(GetAllWebhookEndpointsHealthEnum = exports.GetAllWebhookEndpointsHealthEnum || (exports.GetAllWebhookEndpointsHealthEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllWebhookEndpointsEventTypeEnum;
+(function (GetAllWebhookEndpointsEventTypeEnum) {
+    GetAllWebhookEndpointsEventTypeEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetAllWebhookEndpointsEventTypeEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetAllWebhookEndpointsEventTypeEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetAllWebhookEndpointsEventTypeEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetAllWebhookEndpointsEventTypeEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetAllWebhookEndpointsEventTypeEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetAllWebhookEndpointsEventTypeEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
+    GetAllWebhookEndpointsEventTypeEnum["BOUNCE"] = "BOUNCE";
+    GetAllWebhookEndpointsEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetAllWebhookEndpointsEventTypeEnum["NEW_SMS"] = "NEW_SMS";
+    GetAllWebhookEndpointsEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
+})(GetAllWebhookEndpointsEventTypeEnum = exports.GetAllWebhookEndpointsEventTypeEnum || (exports.GetAllWebhookEndpointsEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2125,6 +2350,7 @@ var GetAllWebhookResultsEventNameEnum;
     GetAllWebhookResultsEventNameEnum["BOUNCE"] = "BOUNCE";
     GetAllWebhookResultsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetAllWebhookResultsEventNameEnum["NEW_SMS"] = "NEW_SMS";
+    GetAllWebhookResultsEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
 })(GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsEventNameEnum || (exports.GetAllWebhookResultsEventNameEnum = {}));
 /**
  * @export
@@ -2139,11 +2365,65 @@ var GetAllWebhooksSortEnum;
  * @export
  * @enum {string}
  */
+var GetAllWebhooksHealthEnum;
+(function (GetAllWebhooksHealthEnum) {
+    GetAllWebhooksHealthEnum["HEALTHY"] = "HEALTHY";
+    GetAllWebhooksHealthEnum["UNHEALTHY"] = "UNHEALTHY";
+})(GetAllWebhooksHealthEnum = exports.GetAllWebhooksHealthEnum || (exports.GetAllWebhooksHealthEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllWebhooksEventTypeEnum;
+(function (GetAllWebhooksEventTypeEnum) {
+    GetAllWebhooksEventTypeEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetAllWebhooksEventTypeEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetAllWebhooksEventTypeEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetAllWebhooksEventTypeEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetAllWebhooksEventTypeEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetAllWebhooksEventTypeEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetAllWebhooksEventTypeEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
+    GetAllWebhooksEventTypeEnum["BOUNCE"] = "BOUNCE";
+    GetAllWebhooksEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetAllWebhooksEventTypeEnum["NEW_SMS"] = "NEW_SMS";
+    GetAllWebhooksEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
+})(GetAllWebhooksEventTypeEnum = exports.GetAllWebhooksEventTypeEnum || (exports.GetAllWebhooksEventTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var GetInboxWebhooksPaginatedSortEnum;
 (function (GetInboxWebhooksPaginatedSortEnum) {
     GetInboxWebhooksPaginatedSortEnum["ASC"] = "ASC";
     GetInboxWebhooksPaginatedSortEnum["DESC"] = "DESC";
 })(GetInboxWebhooksPaginatedSortEnum = exports.GetInboxWebhooksPaginatedSortEnum || (exports.GetInboxWebhooksPaginatedSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetInboxWebhooksPaginatedHealthEnum;
+(function (GetInboxWebhooksPaginatedHealthEnum) {
+    GetInboxWebhooksPaginatedHealthEnum["HEALTHY"] = "HEALTHY";
+    GetInboxWebhooksPaginatedHealthEnum["UNHEALTHY"] = "UNHEALTHY";
+})(GetInboxWebhooksPaginatedHealthEnum = exports.GetInboxWebhooksPaginatedHealthEnum || (exports.GetInboxWebhooksPaginatedHealthEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetInboxWebhooksPaginatedEventTypeEnum;
+(function (GetInboxWebhooksPaginatedEventTypeEnum) {
+    GetInboxWebhooksPaginatedEventTypeEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetInboxWebhooksPaginatedEventTypeEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetInboxWebhooksPaginatedEventTypeEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetInboxWebhooksPaginatedEventTypeEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetInboxWebhooksPaginatedEventTypeEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetInboxWebhooksPaginatedEventTypeEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetInboxWebhooksPaginatedEventTypeEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
+    GetInboxWebhooksPaginatedEventTypeEnum["BOUNCE"] = "BOUNCE";
+    GetInboxWebhooksPaginatedEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetInboxWebhooksPaginatedEventTypeEnum["NEW_SMS"] = "NEW_SMS";
+    GetInboxWebhooksPaginatedEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
+})(GetInboxWebhooksPaginatedEventTypeEnum = exports.GetInboxWebhooksPaginatedEventTypeEnum || (exports.GetInboxWebhooksPaginatedEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2160,6 +2440,7 @@ var GetJsonSchemaForWebhookEventEventEnum;
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE"] = "BOUNCE";
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetJsonSchemaForWebhookEventEventEnum["NEW_SMS"] = "NEW_SMS";
+    GetJsonSchemaForWebhookEventEventEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
 })(GetJsonSchemaForWebhookEventEventEnum = exports.GetJsonSchemaForWebhookEventEventEnum || (exports.GetJsonSchemaForWebhookEventEventEnum = {}));
 /**
  * @export
@@ -2170,6 +2451,33 @@ var GetPhoneNumberWebhooksPaginatedSortEnum;
     GetPhoneNumberWebhooksPaginatedSortEnum["ASC"] = "ASC";
     GetPhoneNumberWebhooksPaginatedSortEnum["DESC"] = "DESC";
 })(GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum || (exports.GetPhoneNumberWebhooksPaginatedSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetPhoneNumberWebhooksPaginatedEventTypeEnum;
+(function (GetPhoneNumberWebhooksPaginatedEventTypeEnum) {
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["BOUNCE"] = "BOUNCE";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["NEW_SMS"] = "NEW_SMS";
+    GetPhoneNumberWebhooksPaginatedEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
+})(GetPhoneNumberWebhooksPaginatedEventTypeEnum = exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum || (exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetPhoneNumberWebhooksPaginatedHealthEnum;
+(function (GetPhoneNumberWebhooksPaginatedHealthEnum) {
+    GetPhoneNumberWebhooksPaginatedHealthEnum["HEALTHY"] = "HEALTHY";
+    GetPhoneNumberWebhooksPaginatedHealthEnum["UNHEALTHY"] = "UNHEALTHY";
+})(GetPhoneNumberWebhooksPaginatedHealthEnum = exports.GetPhoneNumberWebhooksPaginatedHealthEnum || (exports.GetPhoneNumberWebhooksPaginatedHealthEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2186,6 +2494,7 @@ var GetTestWebhookPayloadEventNameEnum;
     GetTestWebhookPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
     GetTestWebhookPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetTestWebhookPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
+    GetTestWebhookPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
 })(GetTestWebhookPayloadEventNameEnum = exports.GetTestWebhookPayloadEventNameEnum || (exports.GetTestWebhookPayloadEventNameEnum = {}));
 /**
  * @export
@@ -2223,4 +2532,14 @@ var GetWebhookResultsEventNameEnum;
     GetWebhookResultsEventNameEnum["BOUNCE"] = "BOUNCE";
     GetWebhookResultsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetWebhookResultsEventNameEnum["NEW_SMS"] = "NEW_SMS";
+    GetWebhookResultsEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
 })(GetWebhookResultsEventNameEnum = exports.GetWebhookResultsEventNameEnum || (exports.GetWebhookResultsEventNameEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetWebhooksSortEnum;
+(function (GetWebhooksSortEnum) {
+    GetWebhooksSortEnum["ASC"] = "ASC";
+    GetWebhooksSortEnum["DESC"] = "DESC";
+})(GetWebhooksSortEnum = exports.GetWebhooksSortEnum || (exports.GetWebhooksSortEnum = {}));

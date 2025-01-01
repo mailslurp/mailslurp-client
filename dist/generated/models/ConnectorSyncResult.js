@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -25,7 +25,8 @@ function ConnectorSyncResultFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         emailSyncCount: json['emailSyncCount'],
-        logLines: !(0, runtime_1.exists)(json, 'logLines') ? undefined : json['logLines'],
+        logs: !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
+        emailIds: !(0, runtime_1.exists)(json, 'emailIds') ? undefined : json['emailIds'],
     };
 }
 exports.ConnectorSyncResultFromJSONTyped = ConnectorSyncResultFromJSONTyped;
@@ -38,7 +39,8 @@ function ConnectorSyncResultToJSON(value) {
     }
     return {
         emailSyncCount: value.emailSyncCount,
-        logLines: value.logLines,
+        logs: value.logs,
+        emailIds: value.emailIds,
     };
 }
 exports.ConnectorSyncResultToJSON = ConnectorSyncResultToJSON;

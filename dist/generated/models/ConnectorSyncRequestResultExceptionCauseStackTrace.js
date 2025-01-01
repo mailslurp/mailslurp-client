@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncRequestResultExceptionCauseStackTraceToJSON = exports.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped = exports.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON = void 0;
+exports.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON = ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON;
+exports.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped = ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped;
+exports.ConnectorSyncRequestResultExceptionCauseStackTraceToJSON = ConnectorSyncRequestResultExceptionCauseStackTraceToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON(json) {
     return ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped(json, false);
 }
-exports.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON = ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON;
 function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped(json, i
             : json['nativeMethod'],
     };
 }
-exports.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped = ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped;
 function ConnectorSyncRequestResultExceptionCauseStackTraceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function ConnectorSyncRequestResultExceptionCauseStackTraceToJSON(value) {
         nativeMethod: value.nativeMethod,
     };
 }
-exports.ConnectorSyncRequestResultExceptionCauseStackTraceToJSON = ConnectorSyncRequestResultExceptionCauseStackTraceToJSON;

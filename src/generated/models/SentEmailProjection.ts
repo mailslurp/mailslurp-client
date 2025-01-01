@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,12 +13,29 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  EmailRecipients,
+  EmailRecipientsFromJSON,
+  EmailRecipientsFromJSONTyped,
+  EmailRecipientsToJSON,
+  Sender,
+  SenderFromJSON,
+  SenderFromJSONTyped,
+  SenderToJSON,
+} from './';
+
 /**
  *
  * @export
  * @interface SentEmailProjection
  */
 export interface SentEmailProjection {
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  subject?: string | null;
   /**
    *
    * @type {Date}
@@ -33,40 +50,22 @@ export interface SentEmailProjection {
   id: string;
   /**
    *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  bcc: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  cc: Array<string>;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SentEmailProjection
-   */
-  virtualSend: boolean;
-  /**
-   *
    * @type {string}
    * @memberof SentEmailProjection
    */
-  from?: string;
+  from?: string | null;
   /**
    *
-   * @type {string}
+   * @type {Sender}
    * @memberof SentEmailProjection
    */
-  subject?: string;
+  sender?: Sender | null;
   /**
    *
-   * @type {string}
+   * @type {EmailRecipients}
    * @memberof SentEmailProjection
    */
-  inboxId: string;
+  recipients?: EmailRecipients | null;
   /**
    *
    * @type {string}
@@ -78,7 +77,13 @@ export interface SentEmailProjection {
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
-  attachments: Array<string>;
+  attachments?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  inboxId: string;
   /**
    *
    * @type {Array<string>}
@@ -87,10 +92,58 @@ export interface SentEmailProjection {
   to: Array<string>;
   /**
    *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  cc: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  bcc: Array<string>;
+  /**
+   *
    * @type {string}
    * @memberof SentEmailProjection
    */
-  bodyMD5Hash?: string;
+  messageId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  inReplyTo?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  bodyExcerpt?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  textExcerpt?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  bodyMD5Hash?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SentEmailProjection
+   */
+  virtualSend: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  threadId?: string | null;
 }
 
 export function SentEmailProjectionFromJSON(json: any): SentEmailProjection {
@@ -105,18 +158,29 @@ export function SentEmailProjectionFromJSONTyped(
     return json;
   }
   return {
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     createdAt: new Date(json['createdAt']),
     id: json['id'],
-    bcc: json['bcc'],
-    cc: json['cc'],
-    virtualSend: json['virtualSend'],
     from: !exists(json, 'from') ? undefined : json['from'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    inboxId: json['inboxId'],
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
+    recipients: !exists(json, 'recipients')
+      ? undefined
+      : EmailRecipientsFromJSON(json['recipients']),
     userId: json['userId'],
-    attachments: json['attachments'],
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    inboxId: json['inboxId'],
     to: json['to'],
+    cc: json['cc'],
+    bcc: json['bcc'],
+    messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
+    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    virtualSend: json['virtualSend'],
+    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
   };
 }
 
@@ -130,17 +194,24 @@ export function SentEmailProjectionToJSON(
     return null;
   }
   return {
+    subject: value.subject,
     createdAt: value.createdAt.toISOString(),
     id: value.id,
-    bcc: value.bcc,
-    cc: value.cc,
-    virtualSend: value.virtualSend,
     from: value.from,
-    subject: value.subject,
-    inboxId: value.inboxId,
+    sender: SenderToJSON(value.sender),
+    recipients: EmailRecipientsToJSON(value.recipients),
     userId: value.userId,
     attachments: value.attachments,
+    inboxId: value.inboxId,
     to: value.to,
+    cc: value.cc,
+    bcc: value.bcc,
+    messageId: value.messageId,
+    inReplyTo: value.inReplyTo,
+    bodyExcerpt: value.bodyExcerpt,
+    textExcerpt: value.textExcerpt,
     bodyMD5Hash: value.bodyMD5Hash,
+    virtualSend: value.virtualSend,
+    threadId: value.threadId,
   };
 }

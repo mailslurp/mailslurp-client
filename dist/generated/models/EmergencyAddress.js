@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmergencyAddressToJSON = exports.EmergencyAddressFromJSONTyped = exports.EmergencyAddressFromJSON = exports.EmergencyAddressPhoneCountryEnum = void 0;
-var runtime_1 = require("../runtime");
 /**
  * @export
  * @enum {string}
@@ -34,7 +33,7 @@ function EmergencyAddressFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        id: json['id'],
         sid: json['sid'],
         userId: json['userId'],
         displayName: json['displayName'],

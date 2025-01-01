@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -34,6 +34,8 @@ var InboxDtoFunctionsAsEnum;
     InboxDtoFunctionsAsEnum["THREAD"] = "THREAD";
     InboxDtoFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
     InboxDtoFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
+    InboxDtoFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
+    InboxDtoFunctionsAsEnum["GUEST"] = "GUEST";
 })(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {}));
 function InboxDtoFromJSON(json) {
     return InboxDtoFromJSONTyped(json, false);
@@ -45,19 +47,25 @@ function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        userId: json['userId'],
         createdAt: new Date(json['createdAt']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
         emailAddress: json['emailAddress'],
-        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
         favourite: json['favourite'],
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
         readOnly: json['readOnly'],
         virtualInbox: json['virtualInbox'],
         functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        localPart: !(0, runtime_1.exists)(json, 'localPart') ? undefined : json['localPart'],
+        domain: !(0, runtime_1.exists)(json, 'domain') ? undefined : json['domain'],
     };
 }
 exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
@@ -76,13 +84,19 @@ function InboxDtoToJSON(value) {
         domainId: value.domainId,
         description: value.description,
         emailAddress: value.emailAddress,
-        expiresAt: value.expiresAt,
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
         favourite: value.favourite,
         tags: value.tags,
         inboxType: value.inboxType,
         readOnly: value.readOnly,
         virtualInbox: value.virtualInbox,
         functionsAs: value.functionsAs,
+        localPart: value.localPart,
+        domain: value.domain,
     };
 }
 exports.InboxDtoToJSON = InboxDtoToJSON;

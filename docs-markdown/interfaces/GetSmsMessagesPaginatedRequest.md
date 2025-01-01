@@ -7,8 +7,10 @@
 ### Properties
 
 - [before](GetSmsMessagesPaginatedRequest.md#before)
+- [favourite](GetSmsMessagesPaginatedRequest.md#favourite)
 - [page](GetSmsMessagesPaginatedRequest.md#page)
 - [phoneNumber](GetSmsMessagesPaginatedRequest.md#phonenumber)
+- [search](GetSmsMessagesPaginatedRequest.md#search)
 - [since](GetSmsMessagesPaginatedRequest.md#since)
 - [size](GetSmsMessagesPaginatedRequest.md#size)
 - [sort](GetSmsMessagesPaginatedRequest.md#sort)
@@ -22,6 +24,12 @@
 
 ___
 
+### favourite
+
+• `Optional` **favourite**: `boolean`
+
+___
+
 ### page
 
 • `Optional` **page**: `number`
@@ -31,6 +39,12 @@ ___
 ### phoneNumber
 
 • `Optional` **phoneNumber**: `string`
+
+___
+
+### search
+
+• `Optional` **search**: `string`
 
 ___
 

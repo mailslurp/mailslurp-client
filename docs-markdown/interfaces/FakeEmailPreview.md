@@ -14,6 +14,7 @@ FakeEmailPreview
 
 - [createdAt](FakeEmailPreview.md#createdat)
 - [emailAddress](FakeEmailPreview.md#emailaddress)
+- [hasAttachments](FakeEmailPreview.md#hasattachments)
 - [id](FakeEmailPreview.md#id)
 - [preview](FakeEmailPreview.md#preview)
 - [recipients](FakeEmailPreview.md#recipients)
@@ -36,6 +37,16 @@ ___
 ### emailAddress
 
 • **emailAddress**: `string`
+
+**`Memberof`**
+
+FakeEmailPreview
+
+___
+
+### hasAttachments
+
+• **hasAttachments**: `boolean`
 
 **`Memberof`**
 

@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -31,34 +31,42 @@ export interface ValidateEmailAddressListRequest {
  */
 export declare class EmailVerificationControllerApi extends runtime.BaseAPI {
     /**
+     * Remove validation requests
      * Delete all validation requests
      */
     deleteAllValidationRequestsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
+     * Remove validation requests
      * Delete all validation requests
      */
     deleteAllValidationRequests(initOverrides?: RequestInit): Promise<void>;
     /**
      * Delete a validation record
+     * Delete a validation record
      */
     deleteValidationRequestRaw(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete a validation record
+     * Delete a validation record
      */
     deleteValidationRequest(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * List email verification requests
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     getValidationRequestsRaw(requestParameters: GetValidationRequestsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailValidationRequest>>;
     /**
+     * List email verification requests
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     getValidationRequests(requestParameters: GetValidationRequestsRequest, initOverrides?: RequestInit): Promise<PageEmailValidationRequest>;
     /**
+     * Verify a list of email addresses is valid and can be contacted.
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     validateEmailAddressListRaw(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ValidateEmailAddressListResult>>;
     /**
+     * Verify a list of email addresses is valid and can be contacted.
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     validateEmailAddressList(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit): Promise<ValidateEmailAddressListResult>;

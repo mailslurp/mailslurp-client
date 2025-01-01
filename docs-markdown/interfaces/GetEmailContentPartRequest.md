@@ -8,6 +8,8 @@
 
 - [contentType](GetEmailContentPartRequest.md#contenttype)
 - [emailId](GetEmailContentPartRequest.md#emailid)
+- [index](GetEmailContentPartRequest.md#index)
+- [strict](GetEmailContentPartRequest.md#strict)
 
 ## Properties
 
@@ -20,3 +22,15 @@ ___
 ### emailId
 
 • **emailId**: `string`
+
+___
+
+### index
+
+• `Optional` **index**: `number`
+
+___
+
+### strict
+
+• `Optional` **strict**: `boolean`

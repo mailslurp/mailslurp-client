@@ -7,6 +7,8 @@
 ### Properties
 
 - [before](GetAllWebhooksRequest.md#before)
+- [eventType](GetAllWebhooksRequest.md#eventtype)
+- [health](GetAllWebhooksRequest.md#health)
 - [inboxId](GetAllWebhooksRequest.md#inboxid)
 - [page](GetAllWebhooksRequest.md#page)
 - [phoneId](GetAllWebhooksRequest.md#phoneid)
@@ -14,12 +16,25 @@
 - [since](GetAllWebhooksRequest.md#since)
 - [size](GetAllWebhooksRequest.md#size)
 - [sort](GetAllWebhooksRequest.md#sort)
+- [url](GetAllWebhooksRequest.md#url)
 
 ## Properties
 
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### eventType
+
+• `Optional` **eventType**: [`GetAllWebhooksEventTypeEnum`](../enums/GetAllWebhooksEventTypeEnum.md)
+
+___
+
+### health
+
+• `Optional` **health**: [`GetAllWebhooksHealthEnum`](../enums/GetAllWebhooksHealthEnum.md)
 
 ___
 
@@ -62,3 +77,9 @@ ___
 ### sort
 
 • `Optional` **sort**: [`GetAllWebhooksSortEnum`](../enums/GetAllWebhooksSortEnum.md)
+
+___
+
+### url
+
+• `Optional` **url**: `string`

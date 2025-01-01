@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -48,7 +48,7 @@ export interface OrganizationInboxProjection {
    * @type {string}
    * @memberof OrganizationInboxProjection
    */
-  emailAddress?: string | null;
+  emailAddress: string | null;
   /**
    * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
    * @type {boolean}
@@ -91,6 +91,24 @@ export interface OrganizationInboxProjection {
    * @memberof OrganizationInboxProjection
    */
   functionsAs?: OrganizationInboxProjectionFunctionsAsEnum;
+  /**
+   * ID of user that inbox belongs to
+   * @type {string}
+   * @memberof OrganizationInboxProjection
+   */
+  userId: string;
+  /**
+   * Description of an inbox for labelling and searching purposes
+   * @type {string}
+   * @memberof OrganizationInboxProjection
+   */
+  description?: string | null;
+  /**
+   * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
+   * @type {Date}
+   * @memberof OrganizationInboxProjection
+   */
+  expiresAt?: Date | null;
 }
 
 /**
@@ -110,6 +128,8 @@ export enum OrganizationInboxProjectionFunctionsAsEnum {
   THREAD = 'THREAD',
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
+  ACCOUNT = 'ACCOUNT',
+  GUEST = 'GUEST',
 }
 
 export function OrganizationInboxProjectionFromJSON(
@@ -130,9 +150,7 @@ export function OrganizationInboxProjectionFromJSONTyped(
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     createdAt: new Date(json['createdAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
+    emailAddress: json['emailAddress'],
     favourite: json['favourite'],
     tags: !exists(json, 'tags') ? undefined : json['tags'],
     teamAccess: json['teamAccess'],
@@ -140,6 +158,13 @@ export function OrganizationInboxProjectionFromJSONTyped(
     readOnly: json['readOnly'],
     virtualInbox: json['virtualInbox'],
     functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
+    userId: json['userId'],
+    description: !exists(json, 'description') ? undefined : json['description'],
+    expiresAt: !exists(json, 'expiresAt')
+      ? undefined
+      : json['expiresAt'] === null
+      ? null
+      : new Date(json['expiresAt']),
   };
 }
 
@@ -165,5 +190,13 @@ export function OrganizationInboxProjectionToJSON(
     readOnly: value.readOnly,
     virtualInbox: value.virtualInbox,
     functionsAs: value.functionsAs,
+    userId: value.userId,
+    description: value.description,
+    expiresAt:
+      value.expiresAt === undefined
+        ? undefined
+        : value.expiresAt === null
+        ? null
+        : value.expiresAt.toISOString(),
   };
 }

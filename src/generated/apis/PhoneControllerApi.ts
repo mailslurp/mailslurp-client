@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -32,12 +32,21 @@ import {
   PhoneNumberDto,
   PhoneNumberDtoFromJSON,
   PhoneNumberDtoToJSON,
+  PhonePlanAvailability,
+  PhonePlanAvailabilityFromJSON,
+  PhonePlanAvailabilityToJSON,
   PhonePlanDto,
   PhonePlanDtoFromJSON,
   PhonePlanDtoToJSON,
+  SetPhoneFavouritedOptions,
+  SetPhoneFavouritedOptionsFromJSON,
+  SetPhoneFavouritedOptionsToJSON,
   TestPhoneNumberOptions,
   TestPhoneNumberOptionsFromJSON,
   TestPhoneNumberOptionsToJSON,
+  UpdatePhoneNumberOptions,
+  UpdatePhoneNumberOptionsFromJSON,
+  UpdatePhoneNumberOptionsToJSON,
 } from '../models';
 
 export interface CreateEmergencyAddressRequest {
@@ -67,6 +76,14 @@ export interface GetPhoneNumbersRequest {
   sort?: GetPhoneNumbersSortEnum;
   since?: Date;
   before?: Date;
+  search?: string;
+  include?: Array<string>;
+  favourite?: boolean;
+}
+
+export interface SetPhoneFavouritedRequest {
+  phoneNumberId: string;
+  setPhoneFavouritedOptions: SetPhoneFavouritedOptions;
 }
 
 export interface TestPhoneNumberSendSmsRequest {
@@ -75,11 +92,18 @@ export interface TestPhoneNumberSendSmsRequest {
   xTestId?: string;
 }
 
+export interface UpdatePhoneNumberRequest {
+  phoneNumberId: string;
+  updatePhoneNumberOptions: UpdatePhoneNumberOptions;
+}
+
 /**
  *
  */
 export class PhoneControllerApi extends runtime.BaseAPI {
   /**
+   * Add an emergency address to a phone number
+   * Create an emergency address
    */
   async createEmergencyAddressRaw(
     requestParameters: CreateEmergencyAddressRequest,
@@ -124,6 +148,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Add an emergency address to a phone number
+   * Create an emergency address
    */
   async createEmergencyAddress(
     requestParameters: CreateEmergencyAddressRequest,
@@ -137,6 +163,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Delete an emergency address
+   * Delete an emergency address
    */
   async deleteEmergencyAddressRaw(
     requestParameters: DeleteEmergencyAddressRequest,
@@ -179,6 +207,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Delete an emergency address
+   * Delete an emergency address
    */
   async deleteEmergencyAddress(
     requestParameters: DeleteEmergencyAddressRequest,
@@ -192,6 +222,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Remove phone number from account
+   * Delete a phone number
    */
   async deletePhoneNumberRaw(
     requestParameters: DeletePhoneNumberRequest,
@@ -232,6 +264,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Remove phone number from account
+   * Delete a phone number
    */
   async deletePhoneNumber(
     requestParameters: DeletePhoneNumberRequest,
@@ -241,6 +275,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Fetch an emergency address by ID
+   * Get an emergency address
    */
   async getEmergencyAddressRaw(
     requestParameters: GetEmergencyAddressRequest,
@@ -283,6 +319,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Fetch an emergency address by ID
+   * Get an emergency address
    */
   async getEmergencyAddress(
     requestParameters: GetEmergencyAddressRequest,
@@ -296,6 +334,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List emergency addresses
+   * Get emergency addresses
    */
   async getEmergencyAddressesRaw(
     initOverrides?: RequestInit
@@ -324,6 +364,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List emergency addresses
+   * Get emergency addresses
    */
   async getEmergencyAddresses(
     initOverrides?: RequestInit
@@ -333,6 +375,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get a phone number by ID
+   * Get a phone number by ID
    */
   async getPhoneNumberRaw(
     requestParameters: GetPhoneNumberRequest,
@@ -375,6 +419,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get a phone number by ID
+   * Get a phone number by ID
    */
   async getPhoneNumber(
     requestParameters: GetPhoneNumberRequest,
@@ -388,6 +434,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List phone numbers for account
+   * Get phone numbers
    */
   async getPhoneNumbersRaw(
     requestParameters: GetPhoneNumbersRequest,
@@ -421,6 +469,18 @@ export class PhoneControllerApi extends runtime.BaseAPI {
       ).toISOString();
     }
 
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    if (requestParameters.include) {
+      queryParameters['include'] = requestParameters.include;
+    }
+
+    if (requestParameters.favourite !== undefined) {
+      queryParameters['favourite'] = requestParameters.favourite;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -443,6 +503,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List phone numbers for account
+   * Get phone numbers
    */
   async getPhoneNumbers(
     requestParameters: GetPhoneNumbersRequest,
@@ -456,6 +518,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get phone number plans
+   * Get phone plans
    */
   async getPhonePlansRaw(
     initOverrides?: RequestInit
@@ -484,6 +548,8 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get phone number plans
+   * Get phone plans
    */
   async getPhonePlans(
     initOverrides?: RequestInit
@@ -493,6 +559,121 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get phone plans availability
+   */
+  async getPhonePlansAvailabilityRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePlanAvailability>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/plans/availability`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePlanAvailabilityFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get phone plans availability
+   */
+  async getPhonePlansAvailability(
+    initOverrides?: RequestInit
+  ): Promise<PhonePlanAvailability> {
+    const response = await this.getPhonePlansAvailabilityRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Set and return new favorite state for a phone
+   * Set phone favourited state
+   */
+  async setPhoneFavouritedRaw(
+    requestParameters: SetPhoneFavouritedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling setPhoneFavourited.'
+      );
+    }
+
+    if (
+      requestParameters.setPhoneFavouritedOptions === null ||
+      requestParameters.setPhoneFavouritedOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'setPhoneFavouritedOptions',
+        'Required parameter requestParameters.setPhoneFavouritedOptions was null or undefined when calling setPhoneFavourited.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/favourite`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SetPhoneFavouritedOptionsToJSON(
+          requestParameters.setPhoneFavouritedOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Set and return new favorite state for a phone
+   * Set phone favourited state
+   */
+  async setPhoneFavourited(
+    requestParameters: SetPhoneFavouritedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberDto> {
+    const response = await this.setPhoneFavouritedRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test a phone number by sending an SMS to it
+   * Test sending an SMS to a number
    */
   async testPhoneNumberSendSmsRaw(
     requestParameters: TestPhoneNumberSendSmsRequest,
@@ -555,12 +736,88 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Test a phone number by sending an SMS to it
+   * Test sending an SMS to a number
    */
   async testPhoneNumberSendSms(
     requestParameters: TestPhoneNumberSendSmsRequest,
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.testPhoneNumberSendSmsRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Set field for phone number
+   * Update a phone number
+   */
+  async updatePhoneNumberRaw(
+    requestParameters: UpdatePhoneNumberRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling updatePhoneNumber.'
+      );
+    }
+
+    if (
+      requestParameters.updatePhoneNumberOptions === null ||
+      requestParameters.updatePhoneNumberOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updatePhoneNumberOptions',
+        'Required parameter requestParameters.updatePhoneNumberOptions was null or undefined when calling updatePhoneNumber.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdatePhoneNumberOptionsToJSON(
+          requestParameters.updatePhoneNumberOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Set field for phone number
+   * Update a phone number
+   */
+  async updatePhoneNumber(
+    requestParameters: UpdatePhoneNumberRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberDto> {
+    const response = await this.updatePhoneNumberRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
   }
 }
 

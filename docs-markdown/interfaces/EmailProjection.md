@@ -18,16 +18,24 @@ EmailProjection
 - [bcc](EmailProjection.md#bcc)
 - [bodyExcerpt](EmailProjection.md#bodyexcerpt)
 - [bodyMD5Hash](EmailProjection.md#bodymd5hash)
+- [bodyPartContentTypes](EmailProjection.md#bodypartcontenttypes)
 - [cc](EmailProjection.md#cc)
 - [createdAt](EmailProjection.md#createdat)
 - [domainId](EmailProjection.md#domainid)
+- [favourite](EmailProjection.md#favourite)
 - [from](EmailProjection.md#from)
 - [id](EmailProjection.md#id)
+- [inReplyTo](EmailProjection.md#inreplyto)
 - [inboxId](EmailProjection.md#inboxid)
+- [messageId](EmailProjection.md#messageid)
+- [plusAddress](EmailProjection.md#plusaddress)
 - [read](EmailProjection.md#read)
+- [recipients](EmailProjection.md#recipients)
+- [sender](EmailProjection.md#sender)
 - [subject](EmailProjection.md#subject)
 - [teamAccess](EmailProjection.md#teamaccess)
 - [textExcerpt](EmailProjection.md#textexcerpt)
+- [threadId](EmailProjection.md#threadid)
 - [to](EmailProjection.md#to)
 
 ## Properties
@@ -72,6 +80,16 @@ EmailProjection
 
 ___
 
+### bodyPartContentTypes
+
+• `Optional` **bodyPartContentTypes**: `string`[]
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
 ### cc
 
 • `Optional` **cc**: `string`[]
@@ -102,9 +120,19 @@ EmailProjection
 
 ___
 
+### favourite
+
+• `Optional` **favourite**: `boolean`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
 ### from
 
-• `Optional` **from**: `string`
+• **from**: `string`
 
 **`Memberof`**
 
@@ -122,6 +150,16 @@ EmailProjection
 
 ___
 
+### inReplyTo
+
+• `Optional` **inReplyTo**: `string`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
 ### inboxId
 
 • **inboxId**: `string`
@@ -132,9 +170,49 @@ EmailProjection
 
 ___
 
+### messageId
+
+• `Optional` **messageId**: `string`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
+### plusAddress
+
+• `Optional` **plusAddress**: `string`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
 ### read
 
 • **read**: `boolean`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
+### recipients
+
+• `Optional` **recipients**: [`EmailRecipients`](EmailRecipients.md)
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
+### sender
+
+• `Optional` **sender**: [`Sender`](Sender.md)
 
 **`Memberof`**
 
@@ -165,6 +243,16 @@ ___
 ### textExcerpt
 
 • `Optional` **textExcerpt**: `string`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
+### threadId
+
+• `Optional` **threadId**: `string`
 
 **`Memberof`**
 

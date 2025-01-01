@@ -14,10 +14,12 @@ SmsDto
 
 - [body](SmsDto.md#body)
 - [createdAt](SmsDto.md#createdat)
+- [favourite](SmsDto.md#favourite)
 - [fromNumber](SmsDto.md#fromnumber)
 - [id](SmsDto.md#id)
 - [phoneNumber](SmsDto.md#phonenumber)
 - [read](SmsDto.md#read)
+- [toNumber](SmsDto.md#tonumber)
 - [updatedAt](SmsDto.md#updatedat)
 - [userId](SmsDto.md#userid)
 
@@ -36,6 +38,16 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+SmsDto
+
+___
+
+### favourite
+
+• **favourite**: `boolean`
 
 **`Memberof`**
 
@@ -76,6 +88,16 @@ ___
 ### read
 
 • **read**: `boolean`
+
+**`Memberof`**
+
+SmsDto
+
+___
+
+### toNumber
+
+• `Optional` **toNumber**: `string`
 
 **`Memberof`**
 

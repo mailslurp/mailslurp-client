@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailAvailableResult, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageInboxTags, PageOrganizationInboxProjection, PagePlusAddressProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, PlusAddressDto, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateImapAccessOptions, UpdateInboxOptions, UpdateSmtpAccessOptions } from '../models';
 export interface CancelScheduledJobRequest {
     jobId: string;
 }
@@ -88,12 +88,19 @@ export interface GetAllInboxesOffsetPaginatedRequest {
     inboxFunction?: GetAllInboxesOffsetPaginatedInboxFunctionEnum;
     domainId?: string;
 }
+export interface GetAllPlusAddressesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllPlusAddressesSortEnum;
+    inboxId?: string;
+}
 export interface GetAllScheduledJobsRequest {
     page?: number;
     size?: number;
     sort?: GetAllScheduledJobsSortEnum;
     since?: Date;
     before?: Date;
+    inboxId?: string;
 }
 export interface GetDeliveryStatusesByInboxIdRequest {
     inboxId: string;
@@ -143,6 +150,42 @@ export interface GetInboxEmailsPaginatedRequest {
     sort?: GetInboxEmailsPaginatedSortEnum;
     since?: Date;
     before?: Date;
+    syncConnectors?: boolean;
+}
+export interface GetInboxPlusAddressRequest {
+    plusAddressId: string;
+    inboxId: string;
+}
+export interface GetInboxPlusAddressByIdRequest {
+    plusAddressId: string;
+    inboxId?: string;
+}
+export interface GetInboxPlusAddressEmailsRequest {
+    plusAddress: string;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxPlusAddressEmailsSortEnum;
+    since?: Date;
+    before?: Date;
+}
+export interface GetInboxPlusAddressEmailsForPlusAddressIdRequest {
+    plusAddressId: string;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxPlusAddressEmailsForPlusAddressIdSortEnum;
+    since?: Date;
+    before?: Date;
+}
+export interface GetInboxPlusAddressesRequest {
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxPlusAddressesSortEnum;
+}
+export interface GetInboxSentCountRequest {
+    inboxId: string;
 }
 export interface GetInboxSentEmailsRequest {
     inboxId: string;
@@ -153,12 +196,32 @@ export interface GetInboxSentEmailsRequest {
     since?: Date;
     before?: Date;
 }
+export interface GetInboxTagsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetInboxTagsSortEnum;
+    searchFilter?: string;
+}
+export interface GetInboxTagsPaginatedRequest {
+    page?: number;
+    size?: number;
+    sort?: GetInboxTagsPaginatedSortEnum;
+    searchFilter?: string;
+}
 export interface GetInboxesRequest {
     size?: number;
     sort?: GetInboxesSortEnum;
     since?: Date;
     excludeCatchAllInboxes?: boolean;
     before?: Date;
+    include?: Array<string>;
+}
+export interface GetInboxesByTagRequest {
+    tag: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxesByTagSortEnum;
+    searchFilter?: string;
 }
 export interface GetLatestEmailInInboxRequest {
     inboxId: string;
@@ -171,6 +234,11 @@ export interface GetOrganizationInboxesRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+}
+export interface GetOutboxesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetOutboxesSortEnum;
 }
 export interface GetScheduledJobRequest {
     jobId: string;
@@ -185,6 +253,9 @@ export interface GetScheduledJobsByInboxIdRequest {
 }
 export interface GetSmtpAccessRequest {
     inboxId?: string;
+}
+export interface IsEmailAddressAvailableRequest {
+    emailAddress: string;
 }
 export interface ListInboxRulesetsRequest {
     inboxId: string;
@@ -238,9 +309,17 @@ export interface SetInboxFavouritedRequest {
     inboxId: string;
     setInboxFavouritedOptions: SetInboxFavouritedOptions;
 }
+export interface UpdateImapAccessRequest {
+    updateImapAccessOptions: UpdateImapAccessOptions;
+    inboxId?: string;
+}
 export interface UpdateInboxRequest {
     inboxId: string;
     updateInboxOptions: UpdateInboxOptions;
+}
+export interface UpdateSmtpAccessRequest {
+    updateSmtpAccessOptions: UpdateSmtpAccessOptions;
+    inboxId?: string;
 }
 /**
  *
@@ -395,6 +474,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getAllInboxesOffsetPaginated(requestParameters: GetAllInboxesOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
     /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    getAllPlusAddressesRaw(requestParameters: GetAllPlusAddressesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePlusAddressProjection>>;
+    /**
+     * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+     * Get all sub address plus address aliases for an inbox
+     */
+    getAllPlusAddresses(requestParameters: GetAllPlusAddressesRequest, initOverrides?: RequestInit): Promise<PagePlusAddressProjection>;
+    /**
      * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
      * Get all scheduled email sending jobs for account
      */
@@ -521,6 +610,64 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getInboxIds(initOverrides?: RequestInit): Promise<InboxIdsResult>;
     /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
+     */
+    getInboxPlusAddressRaw(requestParameters: GetInboxPlusAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PlusAddressDto>>;
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address for an inbox
+     */
+    getInboxPlusAddress(requestParameters: GetInboxPlusAddressRequest, initOverrides?: RequestInit): Promise<PlusAddressDto>;
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    getInboxPlusAddressByIdRaw(requestParameters: GetInboxPlusAddressByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PlusAddressDto>>;
+    /**
+     * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address by ID
+     */
+    getInboxPlusAddressById(requestParameters: GetInboxPlusAddressByIdRequest, initOverrides?: RequestInit): Promise<PlusAddressDto>;
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    getInboxPlusAddressEmailsRaw(requestParameters: GetInboxPlusAddressEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailPreview>>;
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    getInboxPlusAddressEmails(requestParameters: GetInboxPlusAddressEmailsRequest, initOverrides?: RequestInit): Promise<PageEmailPreview>;
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    getInboxPlusAddressEmailsForPlusAddressIdRaw(requestParameters: GetInboxPlusAddressEmailsForPlusAddressIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailPreview>>;
+    /**
+     * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get emails for a given inbox plus address
+     */
+    getInboxPlusAddressEmailsForPlusAddressId(requestParameters: GetInboxPlusAddressEmailsForPlusAddressIdRequest, initOverrides?: RequestInit): Promise<PageEmailPreview>;
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    getInboxPlusAddressesRaw(requestParameters: GetInboxPlusAddressesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePlusAddressProjection>>;
+    /**
+     * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+     * Get sub address plus address aliases for an inbox
+     */
+    getInboxPlusAddresses(requestParameters: GetInboxPlusAddressesRequest, initOverrides?: RequestInit): Promise<PagePlusAddressProjection>;
+    /**
+     * Get sent email count in inbox
+     */
+    getInboxSentCountRaw(requestParameters: GetInboxSentCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get sent email count in inbox
+     */
+    getInboxSentCount(requestParameters: GetInboxSentCountRequest, initOverrides?: RequestInit): Promise<CountDto>;
+    /**
      * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * Get Inbox Sent Emails
      */
@@ -534,12 +681,22 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get all inbox tags
      * Get inbox tags
      */
-    getInboxTagsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    getInboxTagsRaw(requestParameters: GetInboxTagsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
     /**
      * Get all inbox tags
      * Get inbox tags
      */
-    getInboxTags(initOverrides?: RequestInit): Promise<Array<string>>;
+    getInboxTags(requestParameters: GetInboxTagsRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    getInboxTagsPaginatedRaw(requestParameters: GetInboxTagsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxTags>>;
+    /**
+     * Get all inbox tags paginated
+     * Get inbox tags paginated
+     */
+    getInboxTagsPaginated(requestParameters: GetInboxTagsPaginatedRequest, initOverrides?: RequestInit): Promise<PageInboxTags>;
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
      * List Inboxes and email addresses
@@ -550,6 +707,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List Inboxes and email addresses
      */
     getInboxes(requestParameters: GetInboxesRequest, initOverrides?: RequestInit): Promise<Array<InboxDto>>;
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    getInboxesByTagRaw(requestParameters: GetInboxesByTagRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxProjection>>;
+    /**
+     * Get all inboxes for a given inbox tag
+     * Get inboxes for a tag
+     */
+    getInboxesByTag(requestParameters: GetInboxesByTagRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
     /**
      * Get the newest email in an inbox or wait for one to arrive
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
@@ -570,6 +737,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List Organization Inboxes Paginated
      */
     getOrganizationInboxes(requestParameters: GetOrganizationInboxesRequest, initOverrides?: RequestInit): Promise<PageOrganizationInboxProjection>;
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    getOutboxesRaw(requestParameters: GetOutboxesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxProjection>>;
+    /**
+     * List inboxes that have sent emails
+     * List all inboxes with sent emails
+     */
+    getOutboxes(requestParameters: GetOutboxesRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
     /**
      * Get a scheduled email job details.
      * Get a scheduled email job
@@ -598,6 +775,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get SMTP access usernames and passwords
      */
     getSmtpAccess(requestParameters: GetSmtpAccessRequest, initOverrides?: RequestInit): Promise<SmtpAccessDetails>;
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    isEmailAddressAvailableRaw(requestParameters: IsEmailAddressAvailableRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailAvailableResult>>;
+    /**
+     * Returns whether an email address is available
+     * Is email address available
+     */
+    isEmailAddressAvailable(requestParameters: IsEmailAddressAvailableRequest, initOverrides?: RequestInit): Promise<EmailAvailableResult>;
     /**
      * List all rulesets attached to an inbox
      * List inbox rulesets
@@ -689,15 +876,23 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     sendWithSchedule(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit): Promise<ScheduledJobDto>;
     /**
-     * Set and return new favourite state for an inbox
+     * Set and return new favorite state for an inbox
      * Set inbox favourited state
      */
     setInboxFavouritedRaw(requestParameters: SetInboxFavouritedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>>;
     /**
-     * Set and return new favourite state for an inbox
+     * Set and return new favorite state for an inbox
      * Set inbox favourited state
      */
     setInboxFavourited(requestParameters: SetInboxFavouritedRequest, initOverrides?: RequestInit): Promise<InboxDto>;
+    /**
+     * Update IMAP access usernames and passwords
+     */
+    updateImapAccessRaw(requestParameters: UpdateImapAccessRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Update IMAP access usernames and passwords
+     */
+    updateImapAccess(requestParameters: UpdateImapAccessRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Update editable fields on an inbox
      * Update Inbox. Change name and description. Email address is not editable.
@@ -708,6 +903,14 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Update Inbox. Change name and description. Email address is not editable.
      */
     updateInbox(requestParameters: UpdateInboxRequest, initOverrides?: RequestInit): Promise<InboxDto>;
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    updateSmtpAccessRaw(requestParameters: UpdateSmtpAccessRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Update SMTP access usernames and passwords
+     */
+    updateSmtpAccess(requestParameters: UpdateSmtpAccessRequest, initOverrides?: RequestInit): Promise<void>;
 }
 /**
  * @export
@@ -741,7 +944,9 @@ export declare enum GetAllInboxesInboxFunctionEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
     CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
+    CONNECTOR = "CONNECTOR",
+    ACCOUNT = "ACCOUNT",
+    GUEST = "GUEST"
 }
 /**
  * @export
@@ -767,7 +972,17 @@ export declare enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
     CATCH_ALL = "CATCH_ALL",
-    CONNECTOR = "CONNECTOR"
+    CONNECTOR = "CONNECTOR",
+    ACCOUNT = "ACCOUNT",
+    GUEST = "GUEST"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllPlusAddressesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }
 /**
  * @export
@@ -805,7 +1020,47 @@ export declare enum GetInboxEmailsPaginatedSortEnum {
  * @export
  * @enum {string}
  */
+export declare enum GetInboxPlusAddressEmailsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetInboxPlusAddressEmailsForPlusAddressIdSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetInboxPlusAddressesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GetInboxSentEmailsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetInboxTagsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetInboxTagsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
@@ -821,7 +1076,23 @@ export declare enum GetInboxesSortEnum {
  * @export
  * @enum {string}
  */
+export declare enum GetInboxesByTagSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GetOrganizationInboxesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetOutboxesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

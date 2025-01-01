@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -26,6 +26,9 @@ import {
   Email,
   EmailFromJSON,
   EmailToJSON,
+  EmailAvailableResult,
+  EmailAvailableResultFromJSON,
+  EmailAvailableResultToJSON,
   EmailPreview,
   EmailPreviewFromJSON,
   EmailPreviewToJSON,
@@ -71,9 +74,15 @@ import {
   PageInboxRulesetDto,
   PageInboxRulesetDtoFromJSON,
   PageInboxRulesetDtoToJSON,
+  PageInboxTags,
+  PageInboxTagsFromJSON,
+  PageInboxTagsToJSON,
   PageOrganizationInboxProjection,
   PageOrganizationInboxProjectionFromJSON,
   PageOrganizationInboxProjectionToJSON,
+  PagePlusAddressProjection,
+  PagePlusAddressProjectionFromJSON,
+  PagePlusAddressProjectionToJSON,
   PageScheduledJobs,
   PageScheduledJobsFromJSON,
   PageScheduledJobsToJSON,
@@ -83,6 +92,9 @@ import {
   PageTrackingPixelProjection,
   PageTrackingPixelProjectionFromJSON,
   PageTrackingPixelProjectionToJSON,
+  PlusAddressDto,
+  PlusAddressDtoFromJSON,
+  PlusAddressDtoToJSON,
   ScheduledJobDto,
   ScheduledJobDtoFromJSON,
   ScheduledJobDtoToJSON,
@@ -104,9 +116,15 @@ import {
   SmtpAccessDetails,
   SmtpAccessDetailsFromJSON,
   SmtpAccessDetailsToJSON,
+  UpdateImapAccessOptions,
+  UpdateImapAccessOptionsFromJSON,
+  UpdateImapAccessOptionsToJSON,
   UpdateInboxOptions,
   UpdateInboxOptionsFromJSON,
   UpdateInboxOptionsToJSON,
+  UpdateSmtpAccessOptions,
+  UpdateSmtpAccessOptionsFromJSON,
+  UpdateSmtpAccessOptionsToJSON,
 } from '../models';
 
 export interface CancelScheduledJobRequest {
@@ -199,12 +217,20 @@ export interface GetAllInboxesOffsetPaginatedRequest {
   domainId?: string;
 }
 
+export interface GetAllPlusAddressesRequest {
+  page?: number;
+  size?: number;
+  sort?: GetAllPlusAddressesSortEnum;
+  inboxId?: string;
+}
+
 export interface GetAllScheduledJobsRequest {
   page?: number;
   size?: number;
   sort?: GetAllScheduledJobsSortEnum;
   since?: Date;
   before?: Date;
+  inboxId?: string;
 }
 
 export interface GetDeliveryStatusesByInboxIdRequest {
@@ -264,6 +290,48 @@ export interface GetInboxEmailsPaginatedRequest {
   sort?: GetInboxEmailsPaginatedSortEnum;
   since?: Date;
   before?: Date;
+  syncConnectors?: boolean;
+}
+
+export interface GetInboxPlusAddressRequest {
+  plusAddressId: string;
+  inboxId: string;
+}
+
+export interface GetInboxPlusAddressByIdRequest {
+  plusAddressId: string;
+  inboxId?: string;
+}
+
+export interface GetInboxPlusAddressEmailsRequest {
+  plusAddress: string;
+  inboxId: string;
+  page?: number;
+  size?: number;
+  sort?: GetInboxPlusAddressEmailsSortEnum;
+  since?: Date;
+  before?: Date;
+}
+
+export interface GetInboxPlusAddressEmailsForPlusAddressIdRequest {
+  plusAddressId: string;
+  inboxId: string;
+  page?: number;
+  size?: number;
+  sort?: GetInboxPlusAddressEmailsForPlusAddressIdSortEnum;
+  since?: Date;
+  before?: Date;
+}
+
+export interface GetInboxPlusAddressesRequest {
+  inboxId: string;
+  page?: number;
+  size?: number;
+  sort?: GetInboxPlusAddressesSortEnum;
+}
+
+export interface GetInboxSentCountRequest {
+  inboxId: string;
 }
 
 export interface GetInboxSentEmailsRequest {
@@ -276,12 +344,35 @@ export interface GetInboxSentEmailsRequest {
   before?: Date;
 }
 
+export interface GetInboxTagsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetInboxTagsSortEnum;
+  searchFilter?: string;
+}
+
+export interface GetInboxTagsPaginatedRequest {
+  page?: number;
+  size?: number;
+  sort?: GetInboxTagsPaginatedSortEnum;
+  searchFilter?: string;
+}
+
 export interface GetInboxesRequest {
   size?: number;
   sort?: GetInboxesSortEnum;
   since?: Date;
   excludeCatchAllInboxes?: boolean;
   before?: Date;
+  include?: Array<string>;
+}
+
+export interface GetInboxesByTagRequest {
+  tag: string;
+  page?: number;
+  size?: number;
+  sort?: GetInboxesByTagSortEnum;
+  searchFilter?: string;
 }
 
 export interface GetLatestEmailInInboxRequest {
@@ -296,6 +387,12 @@ export interface GetOrganizationInboxesRequest {
   searchFilter?: string;
   since?: Date;
   before?: Date;
+}
+
+export interface GetOutboxesRequest {
+  page?: number;
+  size?: number;
+  sort?: GetOutboxesSortEnum;
 }
 
 export interface GetScheduledJobRequest {
@@ -313,6 +410,10 @@ export interface GetScheduledJobsByInboxIdRequest {
 
 export interface GetSmtpAccessRequest {
   inboxId?: string;
+}
+
+export interface IsEmailAddressAvailableRequest {
+  emailAddress: string;
 }
 
 export interface ListInboxRulesetsRequest {
@@ -377,9 +478,19 @@ export interface SetInboxFavouritedRequest {
   setInboxFavouritedOptions: SetInboxFavouritedOptions;
 }
 
+export interface UpdateImapAccessRequest {
+  updateImapAccessOptions: UpdateImapAccessOptions;
+  inboxId?: string;
+}
+
 export interface UpdateInboxRequest {
   inboxId: string;
   updateInboxOptions: UpdateInboxOptions;
+}
+
+export interface UpdateSmtpAccessRequest {
+  updateSmtpAccessOptions: UpdateSmtpAccessOptions;
+  inboxId?: string;
 }
 
 /**
@@ -1338,6 +1449,68 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+   * Get all sub address plus address aliases for an inbox
+   */
+  async getAllPlusAddressesRaw(
+    requestParameters: GetAllPlusAddressesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PagePlusAddressProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/plus-addresses`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PagePlusAddressProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns paginated list of all plus alias addresses found for in account based on received emails that used the inbox address with a +xyz alias.
+   * Get all sub address plus address aliases for an inbox
+   */
+  async getAllPlusAddresses(
+    requestParameters: GetAllPlusAddressesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PagePlusAddressProjection> {
+    const response = await this.getAllPlusAddressesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
    * Get all scheduled email sending jobs for account
    */
@@ -1367,6 +1540,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -2071,6 +2248,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
       ).toISOString();
     }
 
+    if (requestParameters.syncConnectors !== undefined) {
+      queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -2146,6 +2327,462 @@ export class InboxControllerApi extends runtime.BaseAPI {
    */
   async getInboxIds(initOverrides?: RequestInit): Promise<InboxIdsResult> {
     const response = await this.getInboxIdsRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+   * Get sub address plus address for an inbox
+   */
+  async getInboxPlusAddressRaw(
+    requestParameters: GetInboxPlusAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PlusAddressDto>> {
+    if (
+      requestParameters.plusAddressId === null ||
+      requestParameters.plusAddressId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'plusAddressId',
+        'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddress.'
+      );
+    }
+
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/plus-addresses/{plusAddressId}`
+          .replace(
+            `{${'plusAddressId'}}`,
+            encodeURIComponent(String(requestParameters.plusAddressId))
+          )
+          .replace(
+            `{${'inboxId'}}`,
+            encodeURIComponent(String(requestParameters.inboxId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PlusAddressDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+   * Get sub address plus address for an inbox
+   */
+  async getInboxPlusAddress(
+    requestParameters: GetInboxPlusAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<PlusAddressDto> {
+    const response = await this.getInboxPlusAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+   * Get sub address plus address by ID
+   */
+  async getInboxPlusAddressByIdRaw(
+    requestParameters: GetInboxPlusAddressByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PlusAddressDto>> {
+    if (
+      requestParameters.plusAddressId === null ||
+      requestParameters.plusAddressId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'plusAddressId',
+        'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddressById.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/plus-addresses/{plusAddressId}`.replace(
+          `{${'plusAddressId'}}`,
+          encodeURIComponent(String(requestParameters.plusAddressId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PlusAddressDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns a plus address object based on emails that used the inbox address with a +xyz alias.
+   * Get sub address plus address by ID
+   */
+  async getInboxPlusAddressById(
+    requestParameters: GetInboxPlusAddressByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<PlusAddressDto> {
+    const response = await this.getInboxPlusAddressByIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+   * Get emails for a given inbox plus address
+   */
+  async getInboxPlusAddressEmailsRaw(
+    requestParameters: GetInboxPlusAddressEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEmailPreview>> {
+    if (
+      requestParameters.plusAddress === null ||
+      requestParameters.plusAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'plusAddress',
+        'Required parameter requestParameters.plusAddress was null or undefined when calling getInboxPlusAddressEmails.'
+      );
+    }
+
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddressEmails.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.plusAddress !== undefined) {
+      queryParameters['plusAddress'] = requestParameters.plusAddress;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/plus-addresses/emails`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEmailPreviewFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+   * Get emails for a given inbox plus address
+   */
+  async getInboxPlusAddressEmails(
+    requestParameters: GetInboxPlusAddressEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEmailPreview> {
+    const response = await this.getInboxPlusAddressEmailsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+   * Get emails for a given inbox plus address
+   */
+  async getInboxPlusAddressEmailsForPlusAddressIdRaw(
+    requestParameters: GetInboxPlusAddressEmailsForPlusAddressIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEmailPreview>> {
+    if (
+      requestParameters.plusAddressId === null ||
+      requestParameters.plusAddressId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'plusAddressId',
+        'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId.'
+      );
+    }
+
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/plus-addresses/{plusAddressId}/emails`
+          .replace(
+            `{${'plusAddressId'}}`,
+            encodeURIComponent(String(requestParameters.plusAddressId))
+          )
+          .replace(
+            `{${'inboxId'}}`,
+            encodeURIComponent(String(requestParameters.inboxId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEmailPreviewFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns paginated list of all emails for a given plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+   * Get emails for a given inbox plus address
+   */
+  async getInboxPlusAddressEmailsForPlusAddressId(
+    requestParameters: GetInboxPlusAddressEmailsForPlusAddressIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEmailPreview> {
+    const response = await this.getInboxPlusAddressEmailsForPlusAddressIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+   * Get sub address plus address aliases for an inbox
+   */
+  async getInboxPlusAddressesRaw(
+    requestParameters: GetInboxPlusAddressesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PagePlusAddressProjection>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddresses.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/plus-addresses`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PagePlusAddressProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns paginated list of all plus alias addresses found for an inbox based on received emails that used the inbox address with a +xyz alias.
+   * Get sub address plus address aliases for an inbox
+   */
+  async getInboxPlusAddresses(
+    requestParameters: GetInboxPlusAddressesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PagePlusAddressProjection> {
+    const response = await this.getInboxPlusAddressesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get sent email count in inbox
+   */
+  async getInboxSentCountRaw(
+    requestParameters: GetInboxSentCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CountDto>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxSentCount.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/sent/count`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CountDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get sent email count in inbox
+   */
+  async getInboxSentCount(
+    requestParameters: GetInboxSentCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<CountDto> {
+    const response = await this.getInboxSentCountRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -2239,9 +2876,26 @@ export class InboxControllerApi extends runtime.BaseAPI {
    * Get inbox tags
    */
   async getInboxTagsRaw(
+    requestParameters: GetInboxTagsRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<Array<string>>> {
     const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -2266,8 +2920,76 @@ export class InboxControllerApi extends runtime.BaseAPI {
    * Get all inbox tags
    * Get inbox tags
    */
-  async getInboxTags(initOverrides?: RequestInit): Promise<Array<string>> {
-    const response = await this.getInboxTagsRaw(initOverrides);
+  async getInboxTags(
+    requestParameters: GetInboxTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<string>> {
+    const response = await this.getInboxTagsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get all inbox tags paginated
+   * Get inbox tags paginated
+   */
+  async getInboxTagsPaginatedRaw(
+    requestParameters: GetInboxTagsPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageInboxTags>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/tags/paginated`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageInboxTagsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all inbox tags paginated
+   * Get inbox tags paginated
+   */
+  async getInboxTagsPaginated(
+    requestParameters: GetInboxTagsPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageInboxTags> {
+    const response = await this.getInboxTagsPaginatedRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -2304,6 +3026,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
       ).toISOString();
     }
 
+    if (requestParameters.include) {
+      queryParameters['include'] = requestParameters.include;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -2334,6 +3060,79 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Array<InboxDto>> {
     const response = await this.getInboxesRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get all inboxes for a given inbox tag
+   * Get inboxes for a tag
+   */
+  async getInboxesByTagRaw(
+    requestParameters: GetInboxesByTagRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageInboxProjection>> {
+    if (requestParameters.tag === null || requestParameters.tag === undefined) {
+      throw new runtime.RequiredError(
+        'tag',
+        'Required parameter requestParameters.tag was null or undefined when calling getInboxesByTag.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
+
+    if (requestParameters.tag !== undefined) {
+      queryParameters['tag'] = requestParameters.tag;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/tags/inboxes`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageInboxProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all inboxes for a given inbox tag
+   * Get inboxes for a tag
+   */
+  async getInboxesByTag(
+    requestParameters: GetInboxesByTagRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageInboxProjection> {
+    const response = await this.getInboxesByTagRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -2477,6 +3276,64 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageOrganizationInboxProjection> {
     const response = await this.getOrganizationInboxesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List inboxes that have sent emails
+   * List all inboxes with sent emails
+   */
+  async getOutboxesRaw(
+    requestParameters: GetOutboxesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageInboxProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/outboxes`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageInboxProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List inboxes that have sent emails
+   * List all inboxes with sent emails
+   */
+  async getOutboxes(
+    requestParameters: GetOutboxesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageInboxProjection> {
+    const response = await this.getOutboxesRaw(
       requestParameters,
       initOverrides
     );
@@ -2665,6 +3522,66 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<SmtpAccessDetails> {
     const response = await this.getSmtpAccessRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns whether an email address is available
+   * Is email address available
+   */
+  async isEmailAddressAvailableRaw(
+    requestParameters: IsEmailAddressAvailableRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailAvailableResult>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling isEmailAddressAvailable.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/available`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailAvailableResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns whether an email address is available
+   * Is email address available
+   */
+  async isEmailAddressAvailable(
+    requestParameters: IsEmailAddressAvailableRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailAvailableResult> {
+    const response = await this.isEmailAddressAvailableRaw(
       requestParameters,
       initOverrides
     );
@@ -3337,7 +4254,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Set and return new favourite state for an inbox
+   * Set and return new favorite state for an inbox
    * Set inbox favourited state
    */
   async setInboxFavouritedRaw(
@@ -3396,7 +4313,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Set and return new favourite state for an inbox
+   * Set and return new favorite state for an inbox
    * Set inbox favourited state
    */
   async setInboxFavourited(
@@ -3408,6 +4325,63 @@ export class InboxControllerApi extends runtime.BaseAPI {
       initOverrides
     );
     return await response.value();
+  }
+
+  /**
+   * Update IMAP access usernames and passwords
+   */
+  async updateImapAccessRaw(
+    requestParameters: UpdateImapAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.updateImapAccessOptions === null ||
+      requestParameters.updateImapAccessOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateImapAccessOptions',
+        'Required parameter requestParameters.updateImapAccessOptions was null or undefined when calling updateImapAccess.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/imap-access`,
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateImapAccessOptionsToJSON(
+          requestParameters.updateImapAccessOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Update IMAP access usernames and passwords
+   */
+  async updateImapAccess(
+    requestParameters: UpdateImapAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.updateImapAccessRaw(requestParameters, initOverrides);
   }
 
   /**
@@ -3481,6 +4455,63 @@ export class InboxControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * Update SMTP access usernames and passwords
+   */
+  async updateSmtpAccessRaw(
+    requestParameters: UpdateSmtpAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.updateSmtpAccessOptions === null ||
+      requestParameters.updateSmtpAccessOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateSmtpAccessOptions',
+        'Required parameter requestParameters.updateSmtpAccessOptions was null or undefined when calling updateSmtpAccess.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/smtp-access`,
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateSmtpAccessOptionsToJSON(
+          requestParameters.updateSmtpAccessOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Update SMTP access usernames and passwords
+   */
+  async updateSmtpAccess(
+    requestParameters: UpdateSmtpAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.updateSmtpAccessRaw(requestParameters, initOverrides);
+  }
 }
 
 /**
@@ -3516,6 +4547,8 @@ export enum GetAllInboxesInboxFunctionEnum {
   THREAD = 'THREAD',
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
+  ACCOUNT = 'ACCOUNT',
+  GUEST = 'GUEST',
 }
 /**
  * @export
@@ -3542,6 +4575,16 @@ export enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
   THREAD = 'THREAD',
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
+  ACCOUNT = 'ACCOUNT',
+  GUEST = 'GUEST',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllPlusAddressesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 /**
  * @export
@@ -3579,7 +4622,47 @@ export enum GetInboxEmailsPaginatedSortEnum {
  * @export
  * @enum {string}
  */
+export enum GetInboxPlusAddressEmailsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetInboxPlusAddressEmailsForPlusAddressIdSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetInboxPlusAddressesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum GetInboxSentEmailsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetInboxTagsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetInboxTagsPaginatedSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }
@@ -3595,7 +4678,23 @@ export enum GetInboxesSortEnum {
  * @export
  * @enum {string}
  */
+export enum GetInboxesByTagSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum GetOrganizationInboxesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetOutboxesSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

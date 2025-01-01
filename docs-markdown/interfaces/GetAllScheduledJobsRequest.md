@@ -7,6 +7,7 @@
 ### Properties
 
 - [before](GetAllScheduledJobsRequest.md#before)
+- [inboxId](GetAllScheduledJobsRequest.md#inboxid)
 - [page](GetAllScheduledJobsRequest.md#page)
 - [since](GetAllScheduledJobsRequest.md#since)
 - [size](GetAllScheduledJobsRequest.md#size)
@@ -17,6 +18,12 @@
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
 
 ___
 

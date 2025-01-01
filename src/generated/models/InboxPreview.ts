@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -36,7 +36,7 @@ export interface InboxPreview {
    * @type {string}
    * @memberof InboxPreview
    */
-  emailAddress?: string | null;
+  emailAddress: string | null;
   /**
    * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
    * @type {Date}
@@ -81,16 +81,28 @@ export interface InboxPreview {
   virtualInbox: boolean;
   /**
    * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
-   * @type {string}
+   * @type {Date}
    * @memberof InboxPreview
    */
-  expiresAt?: string | null;
+  expiresAt?: Date | null;
   /**
    * Inbox function if used as a primitive for another system.
    * @type {string}
    * @memberof InboxPreview
    */
   functionsAs?: InboxPreviewFunctionsAsEnum;
+  /**
+   * ID of user that inbox belongs to
+   * @type {string}
+   * @memberof InboxPreview
+   */
+  userId: string | null;
+  /**
+   * Description of an inbox for labelling and searching purposes
+   * @type {string}
+   * @memberof InboxPreview
+   */
+  description?: string | null;
 }
 
 /**
@@ -110,6 +122,8 @@ export enum InboxPreviewFunctionsAsEnum {
   THREAD = 'THREAD',
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
+  ACCOUNT = 'ACCOUNT',
+  GUEST = 'GUEST',
 }
 
 export function InboxPreviewFromJSON(json: any): InboxPreview {
@@ -126,9 +140,7 @@ export function InboxPreviewFromJSONTyped(
   return {
     id: json['id'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
+    emailAddress: json['emailAddress'],
     createdAt: new Date(json['createdAt']),
     favourite: json['favourite'],
     name: !exists(json, 'name') ? undefined : json['name'],
@@ -136,8 +148,14 @@ export function InboxPreviewFromJSONTyped(
     teamAccess: json['teamAccess'],
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
     virtualInbox: json['virtualInbox'],
-    expiresAt: !exists(json, 'expiresAt') ? undefined : json['expiresAt'],
+    expiresAt: !exists(json, 'expiresAt')
+      ? undefined
+      : json['expiresAt'] === null
+      ? null
+      : new Date(json['expiresAt']),
     functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
+    userId: json['userId'],
+    description: !exists(json, 'description') ? undefined : json['description'],
   };
 }
 
@@ -159,7 +177,14 @@ export function InboxPreviewToJSON(value?: InboxPreview | null): any {
     teamAccess: value.teamAccess,
     inboxType: value.inboxType,
     virtualInbox: value.virtualInbox,
-    expiresAt: value.expiresAt,
+    expiresAt:
+      value.expiresAt === undefined
+        ? undefined
+        : value.expiresAt === null
+        ? null
+        : value.expiresAt.toISOString(),
     functionsAs: value.functionsAs,
+    userId: value.userId,
+    description: value.description,
   };
 }

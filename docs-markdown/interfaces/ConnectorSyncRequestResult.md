@@ -30,7 +30,7 @@ ___
 
 ### exception
 
-• `Optional` **exception**: [`ConnectorSyncRequestResultException`](ConnectorSyncRequestResultException.md)
+• `Optional` **exception**: `string`
 
 **`Memberof`**
 

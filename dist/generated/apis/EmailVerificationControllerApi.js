@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -99,6 +99,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Remove validation requests
      * Delete all validation requests
      */
     EmailVerificationControllerApi.prototype.deleteAllValidationRequestsRaw = function (initOverrides) {
@@ -126,6 +127,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Remove validation requests
      * Delete all validation requests
      */
     EmailVerificationControllerApi.prototype.deleteAllValidationRequests = function (initOverrides) {
@@ -141,6 +143,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Delete a validation record
      * Delete a validation record
      */
     EmailVerificationControllerApi.prototype.deleteValidationRequestRaw = function (requestParameters, initOverrides) {
@@ -172,6 +175,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Delete a validation record
+     * Delete a validation record
      */
     EmailVerificationControllerApi.prototype.deleteValidationRequest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -186,6 +190,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List email verification requests
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     EmailVerificationControllerApi.prototype.getValidationRequestsRaw = function (requestParameters, initOverrides) {
@@ -236,6 +241,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List email verification requests
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     EmailVerificationControllerApi.prototype.getValidationRequests = function (requestParameters, initOverrides) {
@@ -253,6 +259,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Verify a list of email addresses is valid and can be contacted.
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     EmailVerificationControllerApi.prototype.validateEmailAddressListRaw = function (requestParameters, initOverrides) {
@@ -288,6 +295,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Verify a list of email addresses is valid and can be contacted.
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */
     EmailVerificationControllerApi.prototype.validateEmailAddressList = function (requestParameters, initOverrides) {

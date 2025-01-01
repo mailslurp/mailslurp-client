@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookDtoToJSON = exports.WebhookDtoFromJSONTyped = exports.WebhookDtoFromJSON = exports.WebhookDtoEventNameEnum = exports.WebhookDtoMethodEnum = void 0;
+exports.WebhookDtoToJSON = exports.WebhookDtoFromJSONTyped = exports.WebhookDtoFromJSON = exports.WebhookDtoHealthStatusEnum = exports.WebhookDtoEventNameEnum = exports.WebhookDtoMethodEnum = void 0;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -47,7 +47,17 @@ var WebhookDtoEventNameEnum;
     WebhookDtoEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookDtoEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookDtoEventNameEnum["NEW_SMS"] = "NEW_SMS";
+    WebhookDtoEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
 })(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var WebhookDtoHealthStatusEnum;
+(function (WebhookDtoHealthStatusEnum) {
+    WebhookDtoHealthStatusEnum["HEALTHY"] = "HEALTHY";
+    WebhookDtoHealthStatusEnum["UNHEALTHY"] = "UNHEALTHY";
+})(WebhookDtoHealthStatusEnum = exports.WebhookDtoHealthStatusEnum || (exports.WebhookDtoHealthStatusEnum = {}));
 function WebhookDtoFromJSON(json) {
     return WebhookDtoFromJSONTyped(json, false);
 }
@@ -81,6 +91,9 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         useStaticIpRange: !(0, runtime_1.exists)(json, 'useStaticIpRange')
             ? undefined
             : json['useStaticIpRange'],
+        healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
+            ? undefined
+            : json['healthStatus'],
     };
 }
 exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
@@ -108,6 +121,7 @@ function WebhookDtoToJSON(value) {
         requestHeaders: (0, _1.WebhookHeadersToJSON)(value.requestHeaders),
         ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
         useStaticIpRange: value.useStaticIpRange,
+        healthStatus: value.healthStatus,
     };
 }
 exports.WebhookDtoToJSON = WebhookDtoToJSON;

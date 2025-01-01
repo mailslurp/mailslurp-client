@@ -93,7 +93,7 @@ ___
 
 ### inboxId
 
-• **inboxId**: `string`
+• `Optional` **inboxId**: `string`
 
 **`Memberof`**
 

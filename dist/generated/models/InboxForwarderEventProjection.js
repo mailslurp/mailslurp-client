@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -34,9 +34,10 @@ function InboxForwarderEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         createdAt: new Date(json['createdAt']),
+        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
         emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
         forwarderId: !(0, runtime_1.exists)(json, 'forwarderId') ? undefined : json['forwarderId'],
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
@@ -53,9 +54,10 @@ function InboxForwarderEventProjectionToJSON(value) {
     }
     return {
         createdAt: value.createdAt.toISOString(),
+        userId: value.userId,
         emailId: value.emailId,
         inboxId: value.inboxId,
-        userId: value.userId,
+        sentId: value.sentId,
         forwarderId: value.forwarderId,
         message: value.message,
         id: value.id,

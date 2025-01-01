@@ -15,8 +15,10 @@ OrganizationInboxProjection
 ### Properties
 
 - [createdAt](OrganizationInboxProjection.md#createdat)
+- [description](OrganizationInboxProjection.md#description)
 - [domainId](OrganizationInboxProjection.md#domainid)
 - [emailAddress](OrganizationInboxProjection.md#emailaddress)
+- [expiresAt](OrganizationInboxProjection.md#expiresat)
 - [favourite](OrganizationInboxProjection.md#favourite)
 - [functionsAs](OrganizationInboxProjection.md#functionsas)
 - [id](OrganizationInboxProjection.md#id)
@@ -25,6 +27,7 @@ OrganizationInboxProjection
 - [readOnly](OrganizationInboxProjection.md#readonly)
 - [tags](OrganizationInboxProjection.md#tags)
 - [teamAccess](OrganizationInboxProjection.md#teamaccess)
+- [userId](OrganizationInboxProjection.md#userid)
 - [virtualInbox](OrganizationInboxProjection.md#virtualinbox)
 
 ## Properties
@@ -34,6 +37,18 @@ OrganizationInboxProjection
 • **createdAt**: `Date`
 
 When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
+
+**`Memberof`**
+
+OrganizationInboxProjection
+
+___
+
+### description
+
+• `Optional` **description**: `string`
+
+Description of an inbox for labelling and searching purposes
 
 **`Memberof`**
 
@@ -55,9 +70,21 @@ ___
 
 ### emailAddress
 
-• `Optional` **emailAddress**: `string`
+• **emailAddress**: `string`
 
 The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
+
+**`Memberof`**
+
+OrganizationInboxProjection
+
+___
+
+### expiresAt
+
+• `Optional` **expiresAt**: `Date`
+
+Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
 
 **`Memberof`**
 
@@ -154,6 +181,18 @@ ___
 • **teamAccess**: `boolean`
 
 Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
+
+**`Memberof`**
+
+OrganizationInboxProjection
+
+___
+
+### userId
+
+• **userId**: `string`
+
+ID of user that inbox belongs to
 
 **`Memberof`**
 

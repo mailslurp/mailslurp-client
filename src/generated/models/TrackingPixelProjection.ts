@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -30,13 +30,13 @@ export interface TrackingPixelProjection {
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  inboxId?: string;
+  userId: string;
   /**
    *
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  userId: string;
+  inboxId?: string;
   /**
    *
    * @type {string}
@@ -90,8 +90,8 @@ export function TrackingPixelProjectionFromJSONTyped(
   }
   return {
     createdAt: new Date(json['createdAt']),
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     userId: json['userId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
     seen: json['seen'],
@@ -112,8 +112,8 @@ export function TrackingPixelProjectionToJSON(
   }
   return {
     createdAt: value.createdAt.toISOString(),
-    inboxId: value.inboxId,
     userId: value.userId,
+    inboxId: value.inboxId,
     sentEmailId: value.sentEmailId,
     recipient: value.recipient,
     seen: value.seen,

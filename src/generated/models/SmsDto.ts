@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -48,6 +48,18 @@ export interface SmsDto {
    * @type {string}
    * @memberof SmsDto
    */
+  toNumber?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SmsDto
+   */
+  favourite: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsDto
+   */
   body: string;
   /**
    *
@@ -85,6 +97,8 @@ export function SmsDtoFromJSONTyped(
     userId: json['userId'],
     phoneNumber: json['phoneNumber'],
     fromNumber: json['fromNumber'],
+    toNumber: !exists(json, 'toNumber') ? undefined : json['toNumber'],
+    favourite: json['favourite'],
     body: json['body'],
     read: json['read'],
     createdAt: new Date(json['createdAt']),
@@ -104,6 +118,8 @@ export function SmsDtoToJSON(value?: SmsDto | null): any {
     userId: value.userId,
     phoneNumber: value.phoneNumber,
     fromNumber: value.fromNumber,
+    toNumber: value.toNumber,
+    favourite: value.favourite,
     body: value.body,
     read: value.read,
     createdAt: value.createdAt.toISOString(),

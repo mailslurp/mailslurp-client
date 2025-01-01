@@ -7,6 +7,8 @@
 ### Properties
 
 - [before](GetInboxWebhooksPaginatedRequest.md#before)
+- [eventType](GetInboxWebhooksPaginatedRequest.md#eventtype)
+- [health](GetInboxWebhooksPaginatedRequest.md#health)
 - [inboxId](GetInboxWebhooksPaginatedRequest.md#inboxid)
 - [page](GetInboxWebhooksPaginatedRequest.md#page)
 - [searchFilter](GetInboxWebhooksPaginatedRequest.md#searchfilter)
@@ -19,6 +21,18 @@
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### eventType
+
+• `Optional` **eventType**: [`GetInboxWebhooksPaginatedEventTypeEnum`](../enums/GetInboxWebhooksPaginatedEventTypeEnum.md)
+
+___
+
+### health
+
+• `Optional` **health**: [`GetInboxWebhooksPaginatedHealthEnum`](../enums/GetInboxWebhooksPaginatedHealthEnum.md)
 
 ___
 

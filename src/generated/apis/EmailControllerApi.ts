@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -68,6 +68,12 @@ import {
   EmailTextLinesResult,
   EmailTextLinesResultFromJSON,
   EmailTextLinesResultToJSON,
+  EmailThreadDto,
+  EmailThreadDtoFromJSON,
+  EmailThreadDtoToJSON,
+  EmailThreadItemsDto,
+  EmailThreadItemsDtoFromJSON,
+  EmailThreadItemsDtoToJSON,
   ForwardEmailOptions,
   ForwardEmailOptionsFromJSON,
   ForwardEmailOptionsToJSON,
@@ -83,6 +89,9 @@ import {
   PageEmailProjection,
   PageEmailProjectionFromJSON,
   PageEmailProjectionToJSON,
+  PageEmailThreadProjection,
+  PageEmailThreadProjectionFromJSON,
+  PageEmailThreadProjectionToJSON,
   RawEmailJson,
   RawEmailJsonFromJSON,
   RawEmailJsonToJSON,
@@ -163,7 +172,6 @@ export interface GetAttachmentMetaDataRequest {
 
 export interface GetEmailRequest {
   emailId: string;
-  decode?: boolean;
 }
 
 export interface GetEmailAttachmentsRequest {
@@ -178,17 +186,28 @@ export interface GetEmailContentMatchRequest {
 export interface GetEmailContentPartRequest {
   emailId: string;
   contentType: string;
+  strict?: boolean;
+  index?: number;
+}
+
+export interface GetEmailContentPartContentRequest {
+  emailId: string;
+  contentType: string;
+  strict?: boolean;
+  index?: number;
+}
+
+export interface GetEmailCountRequest {
+  inboxId?: string;
 }
 
 export interface GetEmailHTMLRequest {
   emailId: string;
-  decode?: boolean;
   replaceCidImages?: boolean;
 }
 
 export interface GetEmailHTMLJsonRequest {
   emailId: string;
-  decode?: boolean;
   replaceCidImages?: boolean;
 }
 
@@ -199,6 +218,7 @@ export interface GetEmailHTMLQueryRequest {
 
 export interface GetEmailLinksRequest {
   emailId: string;
+  selector?: string;
 }
 
 export interface GetEmailPreviewURLsRequest {
@@ -215,10 +235,34 @@ export interface GetEmailScreenshotAsBinaryRequest {
   getEmailScreenshotOptions: GetEmailScreenshotOptions;
 }
 
+export interface GetEmailSummaryRequest {
+  emailId: string;
+  decode?: boolean;
+}
+
 export interface GetEmailTextLinesRequest {
   emailId: string;
   decodeHtmlEntities?: boolean;
   lineSeparator?: string;
+}
+
+export interface GetEmailThreadRequest {
+  threadId: string;
+}
+
+export interface GetEmailThreadItemsRequest {
+  threadId: string;
+  sort?: GetEmailThreadItemsSortEnum;
+}
+
+export interface GetEmailThreadsRequest {
+  htmlSelector?: string;
+  page?: number;
+  size?: number;
+  sort?: GetEmailThreadsSortEnum;
+  searchFilter?: string;
+  since?: Date;
+  before?: Date;
 }
 
 export interface GetEmailsOffsetPaginatedRequest {
@@ -230,6 +274,9 @@ export interface GetEmailsOffsetPaginatedRequest {
   searchFilter?: string;
   since?: Date;
   before?: Date;
+  favourited?: boolean;
+  syncConnectors?: boolean;
+  plusAddressId?: string;
 }
 
 export interface GetEmailsPaginatedRequest {
@@ -241,6 +288,9 @@ export interface GetEmailsPaginatedRequest {
   searchFilter?: string;
   since?: Date;
   before?: Date;
+  syncConnectors?: boolean;
+  plusAddressId?: string;
+  favourited?: boolean;
 }
 
 export interface GetGravatarUrlForEmailAddressRequest {
@@ -265,6 +315,9 @@ export interface GetOrganizationEmailsPaginatedRequest {
   searchFilter?: string;
   since?: Date;
   before?: Date;
+  syncConnectors?: boolean;
+  favourited?: boolean;
+  plusAddressId?: string;
 }
 
 export interface GetRawEmailContentsRequest {
@@ -296,6 +349,9 @@ export interface ReplyToEmailRequest {
 
 export interface SearchEmailsRequest {
   searchEmailsOptions: SearchEmailsOptions;
+  syncConnectors?: boolean;
+  favourited?: boolean;
+  plusAddressId?: string;
 }
 
 export interface SendEmailSourceOptionalRequest {
@@ -303,6 +359,11 @@ export interface SendEmailSourceOptionalRequest {
   inboxId?: string;
   useDomainPool?: boolean;
   virtualSend?: boolean;
+}
+
+export interface SetEmailFavouritedRequest {
+  emailId: string;
+  favourited: boolean;
 }
 
 export interface ValidateEmailRequest {
@@ -1155,10 +1216,6 @@ export class EmailControllerApi extends runtime.BaseAPI {
 
     const queryParameters: any = {};
 
-    if (requestParameters.decode !== undefined) {
-      queryParameters['decode'] = requestParameters.decode;
-    }
-
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -1360,6 +1417,14 @@ export class EmailControllerApi extends runtime.BaseAPI {
       queryParameters['contentType'] = requestParameters.contentType;
     }
 
+    if (requestParameters.strict !== undefined) {
+      queryParameters['strict'] = requestParameters.strict;
+    }
+
+    if (requestParameters.index !== undefined) {
+      queryParameters['index'] = requestParameters.index;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -1400,12 +1465,96 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get email body content parts from a multipart email message for a given content type and return as response
+   * Get email content part by content type raw response
+   */
+  async getEmailContentPartContentRaw(
+    requestParameters: GetEmailContentPartContentRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailContentPartContent.'
+      );
+    }
+
+    if (
+      requestParameters.contentType === null ||
+      requestParameters.contentType === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'contentType',
+        'Required parameter requestParameters.contentType was null or undefined when calling getEmailContentPartContent.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.contentType !== undefined) {
+      queryParameters['contentType'] = requestParameters.contentType;
+    }
+
+    if (requestParameters.strict !== undefined) {
+      queryParameters['strict'] = requestParameters.strict;
+    }
+
+    if (requestParameters.index !== undefined) {
+      queryParameters['index'] = requestParameters.index;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/contentPart/raw`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * Get email body content parts from a multipart email message for a given content type and return as response
+   * Get email content part by content type raw response
+   */
+  async getEmailContentPartContent(
+    requestParameters: GetEmailContentPartContentRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.getEmailContentPartContentRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get email count
    */
   async getEmailCountRaw(
+    requestParameters: GetEmailCountRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<CountDto>> {
     const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -1431,8 +1580,14 @@ export class EmailControllerApi extends runtime.BaseAPI {
   /**
    * Get email count
    */
-  async getEmailCount(initOverrides?: RequestInit): Promise<CountDto> {
-    const response = await this.getEmailCountRaw(initOverrides);
+  async getEmailCount(
+    requestParameters: GetEmailCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<CountDto> {
+    const response = await this.getEmailCountRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -1455,10 +1610,6 @@ export class EmailControllerApi extends runtime.BaseAPI {
     }
 
     const queryParameters: any = {};
-
-    if (requestParameters.decode !== undefined) {
-      queryParameters['decode'] = requestParameters.decode;
-    }
 
     if (requestParameters.replaceCidImages !== undefined) {
       queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
@@ -1520,10 +1671,6 @@ export class EmailControllerApi extends runtime.BaseAPI {
     }
 
     const queryParameters: any = {};
-
-    if (requestParameters.decode !== undefined) {
-      queryParameters['decode'] = requestParameters.decode;
-    }
 
     if (requestParameters.replaceCidImages !== undefined) {
       queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
@@ -1660,6 +1807,10 @@ export class EmailControllerApi extends runtime.BaseAPI {
     }
 
     const queryParameters: any = {};
+
+    if (requestParameters.selector !== undefined) {
+      queryParameters['selector'] = requestParameters.selector;
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -1902,6 +2053,69 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+   * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+   */
+  async getEmailSummaryRaw(
+    requestParameters: GetEmailSummaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailPreview>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailSummary.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.decode !== undefined) {
+      queryParameters['decode'] = requestParameters.decode;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/summary`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailPreviewFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
+   * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+   */
+  async getEmailSummary(
+    requestParameters: GetEmailSummaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailPreview> {
+    const response = await this.getEmailSummaryRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
    * Parse and return text from an email, stripping HTML and decoding encoded characters
    */
@@ -1970,6 +2184,204 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+   * Return email thread information. Use items endpoints to get messages for thread.
+   */
+  async getEmailThreadRaw(
+    requestParameters: GetEmailThreadRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailThreadDto>> {
+    if (
+      requestParameters.threadId === null ||
+      requestParameters.threadId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'threadId',
+        'Required parameter requestParameters.threadId was null or undefined when calling getEmailThread.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/threads/{threadId}`.replace(
+          `{${'threadId'}}`,
+          encodeURIComponent(String(requestParameters.threadId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailThreadDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
+   * Return email thread information. Use items endpoints to get messages for thread.
+   */
+  async getEmailThread(
+    requestParameters: GetEmailThreadRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailThreadDto> {
+    const response = await this.getEmailThreadRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Return email thread messages based on Message-ID, In-Reply-To, and References header
+   * Return email thread items.
+   */
+  async getEmailThreadItemsRaw(
+    requestParameters: GetEmailThreadItemsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailThreadItemsDto>> {
+    if (
+      requestParameters.threadId === null ||
+      requestParameters.threadId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'threadId',
+        'Required parameter requestParameters.threadId was null or undefined when calling getEmailThreadItems.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/threads/{threadId}/items`.replace(
+          `{${'threadId'}}`,
+          encodeURIComponent(String(requestParameters.threadId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailThreadItemsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Return email thread messages based on Message-ID, In-Reply-To, and References header
+   * Return email thread items.
+   */
+  async getEmailThreadItems(
+    requestParameters: GetEmailThreadItemsRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailThreadItemsDto> {
+    const response = await this.getEmailThreadItemsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Return email message chains built from Message-ID, In-Reply-To, and References header.
+   * Return email threads in paginated form
+   */
+  async getEmailThreadsRaw(
+    requestParameters: GetEmailThreadsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEmailThreadProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.htmlSelector !== undefined) {
+      queryParameters['htmlSelector'] = requestParameters.htmlSelector;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/threads`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEmailThreadProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Return email message chains built from Message-ID, In-Reply-To, and References header.
+   * Return email threads in paginated form
+   */
+  async getEmailThreads(
+    requestParameters: GetEmailThreadsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEmailThreadProjection> {
+    const response = await this.getEmailThreadsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
    * Get all emails in all inboxes in paginated form. Email API list all.
    */
@@ -2011,6 +2423,18 @@ export class EmailControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.favourited !== undefined) {
+      queryParameters['favourited'] = requestParameters.favourited;
+    }
+
+    if (requestParameters.syncConnectors !== undefined) {
+      queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+    }
+
+    if (requestParameters.plusAddressId !== undefined) {
+      queryParameters['plusAddressId'] = requestParameters.plusAddressId;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -2091,6 +2515,18 @@ export class EmailControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.syncConnectors !== undefined) {
+      queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+    }
+
+    if (requestParameters.plusAddressId !== undefined) {
+      queryParameters['plusAddressId'] = requestParameters.plusAddressId;
+    }
+
+    if (requestParameters.favourited !== undefined) {
+      queryParameters['favourited'] = requestParameters.favourited;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -2343,6 +2779,18 @@ export class EmailControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.syncConnectors !== undefined) {
+      queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+    }
+
+    if (requestParameters.favourited !== undefined) {
+      queryParameters['favourited'] = requestParameters.favourited;
+    }
+
+    if (requestParameters.plusAddressId !== undefined) {
+      queryParameters['plusAddressId'] = requestParameters.plusAddressId;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -2743,6 +3191,18 @@ export class EmailControllerApi extends runtime.BaseAPI {
 
     const queryParameters: any = {};
 
+    if (requestParameters.syncConnectors !== undefined) {
+      queryParameters['syncConnectors'] = requestParameters.syncConnectors;
+    }
+
+    if (requestParameters.favourited !== undefined) {
+      queryParameters['favourited'] = requestParameters.favourited;
+    }
+
+    if (requestParameters.plusAddressId !== undefined) {
+      queryParameters['plusAddressId'] = requestParameters.plusAddressId;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     headerParameters['Content-Type'] = 'application/json';
@@ -2848,6 +3308,73 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Set and return new favorite state for an email
+   * Set email favourited state
+   */
+  async setEmailFavouritedRaw(
+    requestParameters: SetEmailFavouritedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling setEmailFavourited.'
+      );
+    }
+
+    if (
+      requestParameters.favourited === null ||
+      requestParameters.favourited === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'favourited',
+        'Required parameter requestParameters.favourited was null or undefined when calling setEmailFavourited.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.favourited !== undefined) {
+      queryParameters['favourited'] = requestParameters.favourited;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/favourite`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Set and return new favorite state for an email
+   * Set email favourited state
+   */
+  async setEmailFavourited(
+    requestParameters: SetEmailFavouritedRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.setEmailFavouritedRaw(requestParameters, initOverrides);
+  }
+
+  /**
    * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
    * Validate email HTML contents
    */
@@ -2907,6 +3434,22 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEmailThreadItemsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEmailThreadsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
 /**
  * @export
  * @enum {string}

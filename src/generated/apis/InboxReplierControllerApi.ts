@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -41,6 +41,16 @@ export interface DeleteInboxReplierRequest {
 
 export interface DeleteInboxRepliersRequest {
   inboxId?: string;
+}
+
+export interface GetAllInboxReplierEventsRequest {
+  inboxReplierId?: string;
+  inboxId?: string;
+  emailId?: string;
+  sentId?: string;
+  page?: number;
+  size?: number;
+  sort?: GetAllInboxReplierEventsSortEnum;
 }
 
 export interface GetInboxReplierRequest {
@@ -225,6 +235,80 @@ export class InboxReplierControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deleteInboxRepliersRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Get all inbox ruleset events
+   * Get inbox replier event list
+   */
+  async getAllInboxReplierEventsRaw(
+    requestParameters: GetAllInboxReplierEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageInboxReplierEvents>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxReplierId !== undefined) {
+      queryParameters['inboxReplierId'] = requestParameters.inboxReplierId;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.emailId !== undefined) {
+      queryParameters['emailId'] = requestParameters.emailId;
+    }
+
+    if (requestParameters.sentId !== undefined) {
+      queryParameters['sentId'] = requestParameters.sentId;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/repliers/events`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageInboxReplierEventsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all inbox ruleset events
+   * Get inbox replier event list
+   */
+  async getAllInboxReplierEvents(
+    requestParameters: GetAllInboxReplierEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageInboxReplierEvents> {
+    const response = await this.getAllInboxReplierEventsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
   }
 
   /**
@@ -495,6 +579,14 @@ export class InboxReplierControllerApi extends runtime.BaseAPI {
   }
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllInboxReplierEventsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
 /**
  * @export
  * @enum {string}

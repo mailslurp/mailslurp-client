@@ -8,7 +8,9 @@
 
 - [before](GetAllAccountWebhooksRequest.md#before)
 - [eventType](GetAllAccountWebhooksRequest.md#eventtype)
+- [health](GetAllAccountWebhooksRequest.md#health)
 - [page](GetAllAccountWebhooksRequest.md#page)
+- [searchFilter](GetAllAccountWebhooksRequest.md#searchfilter)
 - [since](GetAllAccountWebhooksRequest.md#since)
 - [size](GetAllAccountWebhooksRequest.md#size)
 - [sort](GetAllAccountWebhooksRequest.md#sort)
@@ -27,9 +29,21 @@ ___
 
 ___
 
+### health
+
+• `Optional` **health**: [`GetAllAccountWebhooksHealthEnum`](../enums/GetAllAccountWebhooksHealthEnum.md)
+
+___
+
 ### page
 
 • `Optional` **page**: `number`
+
+___
+
+### searchFilter
+
+• `Optional` **searchFilter**: `string`
 
 ___
 

@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetInboxRepliersSortEnum = exports.GetInboxReplierEventsSortEnum = exports.InboxReplierControllerApi = void 0;
+exports.GetInboxRepliersSortEnum = exports.GetInboxReplierEventsSortEnum = exports.GetAllInboxReplierEventsSortEnum = exports.InboxReplierControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -242,6 +242,75 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    InboxReplierControllerApi.prototype.getAllInboxReplierEventsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.inboxReplierId !== undefined) {
+                            queryParameters['inboxReplierId'] = requestParameters.inboxReplierId;
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.emailId !== undefined) {
+                            queryParameters['emailId'] = requestParameters.emailId;
+                        }
+                        if (requestParameters.sentId !== undefined) {
+                            queryParameters['sentId'] = requestParameters.sentId;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/repliers/events",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxReplierEventsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    InboxReplierControllerApi.prototype.getAllInboxReplierEvents = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllInboxReplierEventsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -483,6 +552,15 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
     return InboxReplierControllerApi;
 }(runtime.BaseAPI));
 exports.InboxReplierControllerApi = InboxReplierControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllInboxReplierEventsSortEnum;
+(function (GetAllInboxReplierEventsSortEnum) {
+    GetAllInboxReplierEventsSortEnum["ASC"] = "ASC";
+    GetAllInboxReplierEventsSortEnum["DESC"] = "DESC";
+})(GetAllInboxReplierEventsSortEnum = exports.GetAllInboxReplierEventsSortEnum || (exports.GetAllInboxReplierEventsSortEnum = {}));
 /**
  * @export
  * @enum {string}

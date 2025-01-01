@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -34,6 +34,8 @@ var OrganizationInboxProjectionFunctionsAsEnum;
     OrganizationInboxProjectionFunctionsAsEnum["THREAD"] = "THREAD";
     OrganizationInboxProjectionFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
     OrganizationInboxProjectionFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
+    OrganizationInboxProjectionFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
+    OrganizationInboxProjectionFunctionsAsEnum["GUEST"] = "GUEST";
 })(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {}));
 function OrganizationInboxProjectionFromJSON(json) {
     return OrganizationInboxProjectionFromJSONTyped(json, false);
@@ -48,9 +50,7 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         createdAt: new Date(json['createdAt']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
+        emailAddress: json['emailAddress'],
         favourite: json['favourite'],
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
         teamAccess: json['teamAccess'],
@@ -58,6 +58,13 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
         readOnly: json['readOnly'],
         virtualInbox: json['virtualInbox'],
         functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        userId: json['userId'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
     };
 }
 exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
@@ -81,6 +88,13 @@ function OrganizationInboxProjectionToJSON(value) {
         readOnly: value.readOnly,
         virtualInbox: value.virtualInbox,
         functionsAs: value.functionsAs,
+        userId: value.userId,
+        description: value.description,
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
     };
 }
 exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

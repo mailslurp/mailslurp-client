@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { EmailRecipients, Sender } from './';
 /**
  * Sent email details
  * @export
@@ -51,6 +52,18 @@ export interface SentEmailDto {
      * @memberof SentEmailDto
      */
     from?: string | null;
+    /**
+     *
+     * @type {Sender}
+     * @memberof SentEmailDto
+     */
+    sender?: Sender | null;
+    /**
+     *
+     * @type {EmailRecipients}
+     * @memberof SentEmailDto
+     */
+    recipients?: EmailRecipients | null;
     /**
      *
      * @type {string}
@@ -125,12 +138,18 @@ export interface SentEmailDto {
     sentAt: Date;
     /**
      *
+     * @type {Date}
+     * @memberof SentEmailDto
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
     pixelIds?: Array<string> | null;
     /**
-     *
+     * RFC 5322 Message-ID header value without angle brackets.
      * @type {string}
      * @memberof SentEmailDto
      */
@@ -169,6 +188,36 @@ export interface SentEmailDto {
     headers?: {
         [key: string]: string;
     } | null;
+    /**
+     * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    threadId?: string | null;
+    /**
+     * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    bodyExcerpt?: string | null;
+    /**
+     * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    textExcerpt?: string | null;
+    /**
+     * Parsed value of In-Reply-To header. A Message-ID in a thread.
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    inReplyTo?: string | null;
+    /**
+     * Is email favourited
+     * @type {boolean}
+     * @memberof SentEmailDto
+     */
+    favourite?: boolean | null;
     /**
      *
      * @type {boolean}

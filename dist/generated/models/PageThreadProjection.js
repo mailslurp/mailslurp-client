@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageThreadProjectionToJSON = exports.PageThreadProjectionFromJSONTyped = exports.PageThreadProjectionFromJSON = void 0;
+exports.PageThreadProjectionFromJSON = PageThreadProjectionFromJSON;
+exports.PageThreadProjectionFromJSONTyped = PageThreadProjectionFromJSONTyped;
+exports.PageThreadProjectionToJSON = PageThreadProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageThreadProjectionFromJSON(json) {
     return PageThreadProjectionFromJSONTyped(json, false);
 }
-exports.PageThreadProjectionFromJSON = PageThreadProjectionFromJSON;
 function PageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageThreadProjectionFromJSONTyped = PageThreadProjectionFromJSONTyped;
 function PageThreadProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageThreadProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageThreadProjectionToJSON = PageThreadProjectionToJSON;

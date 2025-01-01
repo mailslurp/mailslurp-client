@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -15,24 +15,6 @@
  * @interface CreateConnectorOptions
  */
 export interface CreateConnectorOptions {
-    /**
-     * Enable automatic background sync
-     * @type {boolean}
-     * @memberof CreateConnectorOptions
-     */
-    syncEnabled?: boolean | null;
-    /**
-     * Sync schedule type
-     * @type {string}
-     * @memberof CreateConnectorOptions
-     */
-    syncScheduleType?: CreateConnectorOptionsSyncScheduleTypeEnum;
-    /**
-     * Sync interval in minutes
-     * @type {number}
-     * @memberof CreateConnectorOptions
-     */
-    syncInterval?: number | null;
     /**
      * Name of connector
      * @type {string}
@@ -51,13 +33,6 @@ export interface CreateConnectorOptions {
      * @memberof CreateConnectorOptions
      */
     enabled?: boolean | null;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum CreateConnectorOptionsSyncScheduleTypeEnum {
-    INTERVAL = "INTERVAL"
 }
 export declare function CreateConnectorOptionsFromJSON(json: any): CreateConnectorOptions;
 export declare function CreateConnectorOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorOptions;

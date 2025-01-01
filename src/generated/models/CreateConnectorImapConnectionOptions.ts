@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Options for IMAP connection to external email inbox. Allows syncing emails iva IMAP.
+ * Options for IMAP connection to external email inbox. Allows syncing emails via IMAP.
  * @export
  * @interface CreateConnectorImapConnectionOptions
  */
@@ -67,6 +67,54 @@ export interface CreateConnectorImapConnectionOptions {
    * @memberof CreateConnectorImapConnectionOptions
    */
   enabled?: boolean | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  startTls?: boolean | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  proxyEnabled?: boolean | null;
+  /**
+   *
+   * @type {number}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  proxyPort?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  proxyHost?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  localHostName?: string | null;
+  /**
+   * List of IMAP mechanisms
+   * @type {Array<string>}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  mechanisms?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  sslTrust?: string | null;
+  /**
+   * List of SSL protocols
+   * @type {Array<string>}
+   * @memberof CreateConnectorImapConnectionOptions
+   */
+  sslProtocols?: Array<string> | null;
 }
 
 export function CreateConnectorImapConnectionOptionsFromJSON(
@@ -97,6 +145,20 @@ export function CreateConnectorImapConnectionOptionsFromJSONTyped(
     imapPort: !exists(json, 'imapPort') ? undefined : json['imapPort'],
     imapHost: json['imapHost'],
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
+    startTls: !exists(json, 'startTls') ? undefined : json['startTls'],
+    proxyEnabled: !exists(json, 'proxyEnabled')
+      ? undefined
+      : json['proxyEnabled'],
+    proxyPort: !exists(json, 'proxyPort') ? undefined : json['proxyPort'],
+    proxyHost: !exists(json, 'proxyHost') ? undefined : json['proxyHost'],
+    localHostName: !exists(json, 'localHostName')
+      ? undefined
+      : json['localHostName'],
+    mechanisms: !exists(json, 'mechanisms') ? undefined : json['mechanisms'],
+    sslTrust: !exists(json, 'sslTrust') ? undefined : json['sslTrust'],
+    sslProtocols: !exists(json, 'sslProtocols')
+      ? undefined
+      : json['sslProtocols'],
   };
 }
 
@@ -118,5 +180,13 @@ export function CreateConnectorImapConnectionOptionsToJSON(
     imapPort: value.imapPort,
     imapHost: value.imapHost,
     enabled: value.enabled,
+    startTls: value.startTls,
+    proxyEnabled: value.proxyEnabled,
+    proxyPort: value.proxyPort,
+    proxyHost: value.proxyHost,
+    localHostName: value.localHostName,
+    mechanisms: value.mechanisms,
+    sslTrust: value.sslTrust,
+    sslProtocols: value.sslProtocols,
   };
 }

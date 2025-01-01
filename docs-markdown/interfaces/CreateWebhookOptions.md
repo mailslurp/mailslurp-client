@@ -20,6 +20,7 @@ CreateWebhookOptions
 - [includeHeaders](CreateWebhookOptions.md#includeheaders)
 - [name](CreateWebhookOptions.md#name)
 - [requestBodyTemplate](CreateWebhookOptions.md#requestbodytemplate)
+- [tags](CreateWebhookOptions.md#tags)
 - [url](CreateWebhookOptions.md#url)
 - [useStaticIpRange](CreateWebhookOptions.md#usestaticiprange)
 
@@ -86,6 +87,18 @@ ___
 • `Optional` **requestBodyTemplate**: `string`
 
 Template for the JSON body of the webhook request that will be sent to your server. Use Moustache style `{{variableName}}` templating to use parts of the standard webhook payload for the given event.
+
+**`Memberof`**
+
+CreateWebhookOptions
+
+___
+
+### tags
+
+• `Optional` **tags**: `string`[]
+
+Optional list of tags
 
 **`Memberof`**
 

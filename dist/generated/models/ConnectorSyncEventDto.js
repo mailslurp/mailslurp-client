@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncEventDtoToJSON = exports.ConnectorSyncEventDtoFromJSONTyped = exports.ConnectorSyncEventDtoFromJSON = exports.ConnectorSyncEventDtoSyncStatusEnum = void 0;
+exports.ConnectorSyncEventDtoSyncStatusEnum = void 0;
+exports.ConnectorSyncEventDtoFromJSON = ConnectorSyncEventDtoFromJSON;
+exports.ConnectorSyncEventDtoFromJSONTyped = ConnectorSyncEventDtoFromJSONTyped;
+exports.ConnectorSyncEventDtoToJSON = ConnectorSyncEventDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var ConnectorSyncEventDtoSyncStatusEnum;
     ConnectorSyncEventDtoSyncStatusEnum["SUBSCRIPTION_ERROR"] = "SUBSCRIPTION_ERROR";
     ConnectorSyncEventDtoSyncStatusEnum["CONNECTION_ERROR"] = "CONNECTION_ERROR";
     ConnectorSyncEventDtoSyncStatusEnum["NOT_FOUND"] = "NOT_FOUND";
-})(ConnectorSyncEventDtoSyncStatusEnum = exports.ConnectorSyncEventDtoSyncStatusEnum || (exports.ConnectorSyncEventDtoSyncStatusEnum = {}));
+})(ConnectorSyncEventDtoSyncStatusEnum || (exports.ConnectorSyncEventDtoSyncStatusEnum = ConnectorSyncEventDtoSyncStatusEnum = {}));
 function ConnectorSyncEventDtoFromJSON(json) {
     return ConnectorSyncEventDtoFromJSONTyped(json, false);
 }
-exports.ConnectorSyncEventDtoFromJSON = ConnectorSyncEventDtoFromJSON;
 function ConnectorSyncEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function ConnectorSyncEventDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.ConnectorSyncEventDtoFromJSONTyped = ConnectorSyncEventDtoFromJSONTyped;
 function ConnectorSyncEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +62,3 @@ function ConnectorSyncEventDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.ConnectorSyncEventDtoToJSON = ConnectorSyncEventDtoToJSON;

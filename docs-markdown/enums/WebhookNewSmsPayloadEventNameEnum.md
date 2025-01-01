@@ -17,6 +17,7 @@
 - [NEW\_ATTACHMENT](WebhookNewSmsPayloadEventNameEnum.md#new_attachment)
 - [NEW\_CONTACT](WebhookNewSmsPayloadEventNameEnum.md#new_contact)
 - [NEW\_EMAIL](WebhookNewSmsPayloadEventNameEnum.md#new_email)
+- [NEW\_GUEST\_USER](WebhookNewSmsPayloadEventNameEnum.md#new_guest_user)
 - [NEW\_SMS](WebhookNewSmsPayloadEventNameEnum.md#new_sms)
 
 ## Enumeration Members
@@ -72,6 +73,12 @@ ___
 ### NEW\_EMAIL
 
 • **NEW\_EMAIL** = ``"NEW_EMAIL"``
+
+___
+
+### NEW\_GUEST\_USER
+
+• **NEW\_GUEST\_USER** = ``"NEW_GUEST_USER"``
 
 ___
 

@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -9,12 +9,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { EmailRecipients, Sender } from './';
 /**
  *
  * @export
  * @interface SentEmailProjection
  */
 export interface SentEmailProjection {
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {Date}
@@ -29,40 +36,22 @@ export interface SentEmailProjection {
     id: string;
     /**
      *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    bcc: Array<string>;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    cc: Array<string>;
-    /**
-     *
-     * @type {boolean}
-     * @memberof SentEmailProjection
-     */
-    virtualSend: boolean;
-    /**
-     *
      * @type {string}
      * @memberof SentEmailProjection
      */
-    from?: string;
+    from?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Sender}
      * @memberof SentEmailProjection
      */
-    subject?: string;
+    sender?: Sender | null;
     /**
      *
-     * @type {string}
+     * @type {EmailRecipients}
      * @memberof SentEmailProjection
      */
-    inboxId: string;
+    recipients?: EmailRecipients | null;
     /**
      *
      * @type {string}
@@ -74,7 +63,13 @@ export interface SentEmailProjection {
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    attachments: Array<string>;
+    attachments?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    inboxId: string;
     /**
      *
      * @type {Array<string>}
@@ -83,10 +78,58 @@ export interface SentEmailProjection {
     to: Array<string>;
     /**
      *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    cc: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    bcc: Array<string>;
+    /**
+     *
      * @type {string}
      * @memberof SentEmailProjection
      */
-    bodyMD5Hash?: string;
+    messageId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    inReplyTo?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyExcerpt?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    textExcerpt?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyMD5Hash?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SentEmailProjection
+     */
+    virtualSend: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    threadId?: string | null;
 }
 export declare function SentEmailProjectionFromJSON(json: any): SentEmailProjection;
 export declare function SentEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailProjection;

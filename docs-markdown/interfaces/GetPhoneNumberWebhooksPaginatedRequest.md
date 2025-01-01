@@ -7,8 +7,11 @@
 ### Properties
 
 - [before](GetPhoneNumberWebhooksPaginatedRequest.md#before)
+- [eventType](GetPhoneNumberWebhooksPaginatedRequest.md#eventtype)
+- [health](GetPhoneNumberWebhooksPaginatedRequest.md#health)
 - [page](GetPhoneNumberWebhooksPaginatedRequest.md#page)
 - [phoneId](GetPhoneNumberWebhooksPaginatedRequest.md#phoneid)
+- [searchFilter](GetPhoneNumberWebhooksPaginatedRequest.md#searchfilter)
 - [since](GetPhoneNumberWebhooksPaginatedRequest.md#since)
 - [size](GetPhoneNumberWebhooksPaginatedRequest.md#size)
 - [sort](GetPhoneNumberWebhooksPaginatedRequest.md#sort)
@@ -21,6 +24,18 @@
 
 ___
 
+### eventType
+
+• `Optional` **eventType**: [`GetPhoneNumberWebhooksPaginatedEventTypeEnum`](../enums/GetPhoneNumberWebhooksPaginatedEventTypeEnum.md)
+
+___
+
+### health
+
+• `Optional` **health**: [`GetPhoneNumberWebhooksPaginatedHealthEnum`](../enums/GetPhoneNumberWebhooksPaginatedHealthEnum.md)
+
+___
+
 ### page
 
 • `Optional` **page**: `number`
@@ -30,6 +45,12 @@ ___
 ### phoneId
 
 • **phoneId**: `string`
+
+___
+
+### searchFilter
+
+• `Optional` **searchFilter**: `string`
 
 ___
 

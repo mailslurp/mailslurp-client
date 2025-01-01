@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -83,6 +83,10 @@ export interface CheckEmailFeaturesClientSupportRequest {
   checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
 }
 
+export interface DeleteNewFakeEmailAddressRequest {
+  emailAddress: string;
+}
+
 export interface GenerateBimiRecordRequest {
   generateBimiRecordOptions: GenerateBimiRecordOptions;
 }
@@ -99,7 +103,15 @@ export interface GenerateTlsReportingRecordRequest {
   generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
 }
 
+export interface GetFakeEmailByEmailAddressRequest {
+  emailAddress: string;
+}
+
 export interface GetFakeEmailByIdRequest {
+  id: string;
+}
+
+export interface GetFakeEmailRawRequest {
   id: string;
 }
 
@@ -224,6 +236,60 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   ): Promise<NewFakeEmailAddressResult> {
     const response = await this.createNewFakeEmailAddressRaw(initOverrides);
     return await response.value();
+  }
+
+  /**
+   * Delete a fake email address using the fake email domains
+   * Delete a fake email address using the fake email domains
+   */
+  async deleteNewFakeEmailAddressRaw(
+    requestParameters: DeleteNewFakeEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling deleteNewFakeEmailAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/fake-email`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete a fake email address using the fake email domains
+   * Delete a fake email address using the fake email domains
+   */
+  async deleteNewFakeEmailAddress(
+    requestParameters: DeleteNewFakeEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteNewFakeEmailAddressRaw(requestParameters, initOverrides);
   }
 
   /**
@@ -464,6 +530,64 @@ export class ToolsControllerApi extends runtime.BaseAPI {
 
   /**
    */
+  async getFakeEmailByEmailAddressRaw(
+    requestParameters: GetFakeEmailByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<FakeEmailResult>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailByEmailAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/fake-email/byEmailAddress`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      FakeEmailResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getFakeEmailByEmailAddress(
+    requestParameters: GetFakeEmailByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<FakeEmailResult> {
+    const response = await this.getFakeEmailByEmailAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a fake email by its ID
+   * Get a fake email by its ID
+   */
   async getFakeEmailByIdRaw(
     requestParameters: GetFakeEmailByIdRequest,
     initOverrides?: RequestInit
@@ -503,6 +627,8 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get a fake email by its ID
+   * Get a fake email by its ID
    */
   async getFakeEmailById(
     requestParameters: GetFakeEmailByIdRequest,
@@ -516,6 +642,63 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Retrieve the raw content of a fake email by its ID
+   * Get raw fake email content
+   */
+  async getFakeEmailRawRaw(
+    requestParameters: GetFakeEmailRawRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getFakeEmailRaw.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.id !== undefined) {
+      queryParameters['id'] = requestParameters.id;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/fake-email/html`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * Retrieve the raw content of a fake email by its ID
+   * Get raw fake email content
+   */
+  async getFakeEmailRaw(
+    requestParameters: GetFakeEmailRawRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.getFakeEmailRawRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get fake emails for an address
+   * Get fake emails for an address
    */
   async getFakeEmailsForAddressRaw(
     requestParameters: GetFakeEmailsForAddressRequest,
@@ -563,6 +746,8 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get fake emails for an address
+   * Get fake emails for an address
    */
   async getFakeEmailsForAddress(
     requestParameters: GetFakeEmailsForAddressRequest,

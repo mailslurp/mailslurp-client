@@ -16,6 +16,7 @@ PhoneNumberProjection
 
 - [createdAt](PhoneNumberProjection.md#createdat)
 - [id](PhoneNumberProjection.md#id)
+- [name](PhoneNumberProjection.md#name)
 - [phoneCountry](PhoneNumberProjection.md#phonecountry)
 - [phoneNumber](PhoneNumberProjection.md#phonenumber)
 - [userId](PhoneNumberProjection.md#userid)
@@ -35,6 +36,16 @@ ___
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+PhoneNumberProjection
+
+___
+
+### name
+
+• `Optional` **name**: `string`
 
 **`Memberof`**
 

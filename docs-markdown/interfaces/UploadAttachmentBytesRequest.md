@@ -9,6 +9,7 @@
 - [contentId](UploadAttachmentBytesRequest.md#contentid)
 - [contentType](UploadAttachmentBytesRequest.md#contenttype)
 - [contentType2](UploadAttachmentBytesRequest.md#contenttype2)
+- [fileSize](UploadAttachmentBytesRequest.md#filesize)
 - [filename](UploadAttachmentBytesRequest.md#filename)
 - [filename2](UploadAttachmentBytesRequest.md#filename2)
 
@@ -29,6 +30,12 @@ ___
 ### contentType2
 
 • `Optional` **contentType2**: `string`
+
+___
+
+### fileSize
+
+• `Optional` **fileSize**: `number`
 
 ___
 

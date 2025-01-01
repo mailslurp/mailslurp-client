@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -26,6 +26,9 @@ import {
   ImapServerListResult,
   ImapServerListResultFromJSON,
   ImapServerListResultToJSON,
+  ImapServerMailboxResult,
+  ImapServerMailboxResultFromJSON,
+  ImapServerMailboxResultToJSON,
   ImapServerSearchOptions,
   ImapServerSearchOptionsFromJSON,
   ImapServerSearchOptionsToJSON,
@@ -56,6 +59,10 @@ export interface ImapServerGetRequest {
 export interface ImapServerListRequest {
   imapServerListOptions: ImapServerListOptions;
   inboxId?: string;
+}
+
+export interface ImapServerMailboxRequest {
+  name: string;
 }
 
 export interface ImapServerSearchRequest {
@@ -258,6 +265,64 @@ export class ImapControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<ImapServerListResult> {
     const response = await this.imapServerListRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a new mailbox if possible
+   */
+  async imapServerMailboxRaw(
+    requestParameters: ImapServerMailboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ImapServerMailboxResult>> {
+    if (
+      requestParameters.name === null ||
+      requestParameters.name === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'name',
+        'Required parameter requestParameters.name was null or undefined when calling imapServerMailbox.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.name !== undefined) {
+      queryParameters['name'] = requestParameters.name;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/imap/server/mailbox`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ImapServerMailboxResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a new mailbox if possible
+   */
+  async imapServerMailbox(
+    requestParameters: ImapServerMailboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<ImapServerMailboxResult> {
+    const response = await this.imapServerMailboxRaw(
       requestParameters,
       initOverrides
     );

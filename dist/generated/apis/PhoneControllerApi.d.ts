@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateEmergencyAddressOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneNumberProjection, PhoneNumberDto, PhonePlanDto, TestPhoneNumberOptions } from '../models';
+import { CreateEmergencyAddressOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneNumberProjection, PhoneNumberDto, PhonePlanAvailability, PhonePlanDto, SetPhoneFavouritedOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions } from '../models';
 export interface CreateEmergencyAddressRequest {
     createEmergencyAddressOptions: CreateEmergencyAddressOptions;
 }
@@ -33,70 +33,145 @@ export interface GetPhoneNumbersRequest {
     sort?: GetPhoneNumbersSortEnum;
     since?: Date;
     before?: Date;
+    search?: string;
+    include?: Array<string>;
+    favourite?: boolean;
+}
+export interface SetPhoneFavouritedRequest {
+    phoneNumberId: string;
+    setPhoneFavouritedOptions: SetPhoneFavouritedOptions;
 }
 export interface TestPhoneNumberSendSmsRequest {
     phoneNumberId: string;
     testPhoneNumberOptions: TestPhoneNumberOptions;
     xTestId?: string;
 }
+export interface UpdatePhoneNumberRequest {
+    phoneNumberId: string;
+    updatePhoneNumberOptions: UpdatePhoneNumberOptions;
+}
 /**
  *
  */
 export declare class PhoneControllerApi extends runtime.BaseAPI {
     /**
+     * Add an emergency address to a phone number
+     * Create an emergency address
      */
     createEmergencyAddressRaw(requestParameters: CreateEmergencyAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmergencyAddress>>;
     /**
+     * Add an emergency address to a phone number
+     * Create an emergency address
      */
     createEmergencyAddress(requestParameters: CreateEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmergencyAddress>;
     /**
+     * Delete an emergency address
+     * Delete an emergency address
      */
     deleteEmergencyAddressRaw(requestParameters: DeleteEmergencyAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmptyResponseDto>>;
     /**
+     * Delete an emergency address
+     * Delete an emergency address
      */
     deleteEmergencyAddress(requestParameters: DeleteEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmptyResponseDto>;
     /**
+     * Remove phone number from account
+     * Delete a phone number
      */
     deletePhoneNumberRaw(requestParameters: DeletePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
+     * Remove phone number from account
+     * Delete a phone number
      */
     deletePhoneNumber(requestParameters: DeletePhoneNumberRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * Fetch an emergency address by ID
+     * Get an emergency address
      */
     getEmergencyAddressRaw(requestParameters: GetEmergencyAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmergencyAddress>>;
     /**
+     * Fetch an emergency address by ID
+     * Get an emergency address
      */
     getEmergencyAddress(requestParameters: GetEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmergencyAddress>;
     /**
+     * List emergency addresses
+     * Get emergency addresses
      */
     getEmergencyAddressesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<EmergencyAddressDto>>>;
     /**
+     * List emergency addresses
+     * Get emergency addresses
      */
     getEmergencyAddresses(initOverrides?: RequestInit): Promise<Array<EmergencyAddressDto>>;
     /**
+     * Get a phone number by ID
+     * Get a phone number by ID
      */
     getPhoneNumberRaw(requestParameters: GetPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
     /**
+     * Get a phone number by ID
+     * Get a phone number by ID
      */
     getPhoneNumber(requestParameters: GetPhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
+     * List phone numbers for account
+     * Get phone numbers
      */
     getPhoneNumbersRaw(requestParameters: GetPhoneNumbersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneNumberProjection>>;
     /**
+     * List phone numbers for account
+     * Get phone numbers
      */
     getPhoneNumbers(requestParameters: GetPhoneNumbersRequest, initOverrides?: RequestInit): Promise<PagePhoneNumberProjection>;
     /**
+     * Get phone number plans
+     * Get phone plans
      */
     getPhonePlansRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<PhonePlanDto>>>;
     /**
+     * Get phone number plans
+     * Get phone plans
      */
     getPhonePlans(initOverrides?: RequestInit): Promise<Array<PhonePlanDto>>;
     /**
+     * Get phone plans availability
+     */
+    getPhonePlansAvailabilityRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePlanAvailability>>;
+    /**
+     * Get phone plans availability
+     */
+    getPhonePlansAvailability(initOverrides?: RequestInit): Promise<PhonePlanAvailability>;
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    setPhoneFavouritedRaw(requestParameters: SetPhoneFavouritedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    setPhoneFavourited(requestParameters: SetPhoneFavouritedRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
+     * Test a phone number by sending an SMS to it
+     * Test sending an SMS to a number
      */
     testPhoneNumberSendSmsRaw(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
+     * Test a phone number by sending an SMS to it
+     * Test sending an SMS to a number
      */
     testPhoneNumberSendSms(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Set field for phone number
+     * Update a phone number
+     */
+    updatePhoneNumberRaw(requestParameters: UpdatePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Set field for phone number
+     * Update a phone number
+     */
+    updatePhoneNumber(requestParameters: UpdatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
 }
 /**
  * @export

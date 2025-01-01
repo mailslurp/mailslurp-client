@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -25,6 +25,18 @@ export interface PhoneNumberDto {
    * @memberof PhoneNumberDto
    */
   id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  description?: string;
   /**
    *
    * @type {string}
@@ -73,6 +85,12 @@ export interface PhoneNumberDto {
    * @memberof PhoneNumberDto
    */
   updatedAt: Date;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PhoneNumberDto
+   */
+  favourite: boolean;
 }
 
 /**
@@ -98,6 +116,8 @@ export function PhoneNumberDtoFromJSONTyped(
   }
   return {
     id: json['id'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    description: !exists(json, 'description') ? undefined : json['description'],
     userId: json['userId'],
     complianceAddress: !exists(json, 'complianceAddress')
       ? undefined
@@ -110,6 +130,7 @@ export function PhoneNumberDtoFromJSONTyped(
     phonePlan: json['phonePlan'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    favourite: json['favourite'],
   };
 }
 
@@ -122,6 +143,8 @@ export function PhoneNumberDtoToJSON(value?: PhoneNumberDto | null): any {
   }
   return {
     id: value.id,
+    name: value.name,
+    description: value.description,
     userId: value.userId,
     complianceAddress: value.complianceAddress,
     emergencyAddress: value.emergencyAddress,
@@ -130,5 +153,6 @@ export function PhoneNumberDtoToJSON(value?: PhoneNumberDto | null): any {
     phonePlan: value.phonePlan,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    favourite: value.favourite,
   };
 }

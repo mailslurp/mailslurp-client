@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainNameRecordToJSON = exports.DomainNameRecordFromJSONTyped = exports.DomainNameRecordFromJSON = exports.DomainNameRecordRecordTypeEnum = exports.DomainNameRecordLabelEnum = void 0;
+var runtime_1 = require("../runtime");
 /**
  * @export
  * @enum {string}
@@ -137,6 +138,9 @@ function DomainNameRecordFromJSONTyped(json, ignoreDiscriminator) {
         name: json['name'],
         recordEntries: json['recordEntries'],
         ttl: json['ttl'],
+        alternativeRecordEntries: !(0, runtime_1.exists)(json, 'alternativeRecordEntries')
+            ? undefined
+            : json['alternativeRecordEntries'],
     };
 }
 exports.DomainNameRecordFromJSONTyped = DomainNameRecordFromJSONTyped;
@@ -154,6 +158,7 @@ function DomainNameRecordToJSON(value) {
         name: value.name,
         recordEntries: value.recordEntries,
         ttl: value.ttl,
+        alternativeRecordEntries: value.alternativeRecordEntries,
     };
 }
 exports.DomainNameRecordToJSON = DomainNameRecordToJSON;

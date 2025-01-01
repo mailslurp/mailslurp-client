@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncRequestResultExceptionCauseToJSON = exports.ConnectorSyncRequestResultExceptionCauseFromJSONTyped = exports.ConnectorSyncRequestResultExceptionCauseFromJSON = void 0;
+exports.ConnectorSyncRequestResultExceptionCauseFromJSON = ConnectorSyncRequestResultExceptionCauseFromJSON;
+exports.ConnectorSyncRequestResultExceptionCauseFromJSONTyped = ConnectorSyncRequestResultExceptionCauseFromJSONTyped;
+exports.ConnectorSyncRequestResultExceptionCauseToJSON = ConnectorSyncRequestResultExceptionCauseToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function ConnectorSyncRequestResultExceptionCauseFromJSON(json) {
     return ConnectorSyncRequestResultExceptionCauseFromJSONTyped(json, false);
 }
-exports.ConnectorSyncRequestResultExceptionCauseFromJSON = ConnectorSyncRequestResultExceptionCauseFromJSON;
 function ConnectorSyncRequestResultExceptionCauseFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function ConnectorSyncRequestResultExceptionCauseFromJSONTyped(json, ignoreDiscr
             : json['localizedMessage'],
     };
 }
-exports.ConnectorSyncRequestResultExceptionCauseFromJSONTyped = ConnectorSyncRequestResultExceptionCauseFromJSONTyped;
 function ConnectorSyncRequestResultExceptionCauseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function ConnectorSyncRequestResultExceptionCauseToJSON(value) {
         localizedMessage: value.localizedMessage,
     };
 }
-exports.ConnectorSyncRequestResultExceptionCauseToJSON = ConnectorSyncRequestResultExceptionCauseToJSON;
