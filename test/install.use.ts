@@ -1,3 +1,4 @@
+import { expect, test, describe, it } from 'vitest';
 import { ApiResponse, Configuration, InboxDto, MailSlurp } from '../dist';
 import crossFetch from 'cross-fetch';
 
