@@ -24,10 +24,10 @@ function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
+        createdAt: new Date(json['createdAt']),
         emailAddresses: !(0, runtime_1.exists)(json, 'emailAddresses')
             ? undefined
             : json['emailAddresses'],
@@ -48,8 +48,8 @@ function ContactProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
         emailAddress: value.emailAddress,
+        createdAt: value.createdAt.toISOString(),
         emailAddresses: value.emailAddresses,
         firstName: value.firstName,
         lastName: value.lastName,

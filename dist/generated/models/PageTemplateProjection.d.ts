@@ -48,16 +48,16 @@ export interface PageTemplateProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageTemplateProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageTemplateProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTemplateProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

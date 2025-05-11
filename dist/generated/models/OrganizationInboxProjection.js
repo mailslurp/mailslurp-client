@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
+exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionAccountRegionEnum = exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -36,7 +36,16 @@ var OrganizationInboxProjectionFunctionsAsEnum;
     OrganizationInboxProjectionFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
     OrganizationInboxProjectionFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
     OrganizationInboxProjectionFunctionsAsEnum["GUEST"] = "GUEST";
+    OrganizationInboxProjectionFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var OrganizationInboxProjectionAccountRegionEnum;
+(function (OrganizationInboxProjectionAccountRegionEnum) {
+    OrganizationInboxProjectionAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+})(OrganizationInboxProjectionAccountRegionEnum = exports.OrganizationInboxProjectionAccountRegionEnum || (exports.OrganizationInboxProjectionAccountRegionEnum = {}));
 function OrganizationInboxProjectionFromJSON(json) {
     return OrganizationInboxProjectionFromJSONTyped(json, false);
 }
@@ -65,6 +74,9 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
             : json['expiresAt'] === null
                 ? null
                 : new Date(json['expiresAt']),
+        accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
+            ? undefined
+            : json['accountRegion'],
     };
 }
 exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
@@ -95,6 +107,7 @@ function OrganizationInboxProjectionToJSON(value) {
             : value.expiresAt === null
                 ? null
                 : value.expiresAt.toISOString(),
+        accountRegion: value.accountRegion,
     };
 }
 exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

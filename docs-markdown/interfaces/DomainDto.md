@@ -20,6 +20,8 @@ DomainDto
 - [domain](DomainDto.md#domain)
 - [domainNameRecords](DomainDto.md#domainnamerecords)
 - [domainType](DomainDto.md#domaintype)
+- [duplicateRecordsMessage](DomainDto.md#duplicaterecordsmessage)
+- [hasDuplicateRecords](DomainDto.md#hasduplicaterecords)
 - [hasMissingRecords](DomainDto.md#hasmissingrecords)
 - [id](DomainDto.md#id)
 - [isVerified](DomainDto.md#isverified)
@@ -93,6 +95,30 @@ ___
 • **domainType**: [`DomainDtoDomainTypeEnum`](../enums/DomainDtoDomainTypeEnum.md)
 
 Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+
+**`Memberof`**
+
+DomainDto
+
+___
+
+### duplicateRecordsMessage
+
+• `Optional` **duplicateRecordsMessage**: `string`
+
+If the domain is duplicate records.
+
+**`Memberof`**
+
+DomainDto
+
+___
+
+### hasDuplicateRecords
+
+• **hasDuplicateRecords**: `boolean`
+
+Whether the domain has duplicated required records. If true then see the domain in the dashboard app.
 
 **`Memberof`**
 

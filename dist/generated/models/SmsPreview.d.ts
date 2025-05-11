@@ -47,6 +47,12 @@ export interface SmsPreview {
     fromNumber: string;
     /**
      *
+     * @type {boolean}
+     * @memberof SmsPreview
+     */
+    read: boolean;
+    /**
+     *
      * @type {Date}
      * @memberof SmsPreview
      */

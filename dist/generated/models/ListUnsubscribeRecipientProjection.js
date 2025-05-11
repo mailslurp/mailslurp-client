@@ -24,8 +24,8 @@ function ListUnsubscribeRecipientProjectionFromJSONTyped(json, ignoreDiscriminat
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
         emailAddress: json['emailAddress'],
+        createdAt: new Date(json['createdAt']),
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         id: json['id'],
     };
@@ -39,8 +39,8 @@ function ListUnsubscribeRecipientProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
         emailAddress: value.emailAddress,
+        createdAt: value.createdAt.toISOString(),
         domainId: value.domainId,
         id: value.id,
     };

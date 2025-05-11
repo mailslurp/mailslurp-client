@@ -48,16 +48,16 @@ export interface PagePhoneNumberProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PagePhoneNumberProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

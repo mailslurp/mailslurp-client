@@ -66,6 +66,7 @@ function EmailFromJSONTyped(json, ignoreDiscriminator) {
         threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
         inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
         xampHtml: !(0, runtime_1.exists)(json, 'xampHtml') ? undefined : json['xampHtml'],
     };
@@ -112,6 +113,7 @@ function EmailToJSON(value) {
         threadId: value.threadId,
         inReplyTo: value.inReplyTo,
         favourite: value.favourite,
+        sizeBytes: value.sizeBytes,
         html: value.html,
         xampHtml: value.xampHtml,
     };

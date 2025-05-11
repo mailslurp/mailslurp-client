@@ -233,6 +233,12 @@ export interface Email {
    */
   favourite?: boolean | null;
   /**
+   * Size of raw email message in bytes
+   * @type {number}
+   * @memberof Email
+   */
+  sizeBytes?: number | null;
+  /**
    *
    * @type {boolean}
    * @memberof Email
@@ -299,6 +305,7 @@ export function EmailFromJSONTyped(
     threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     html: !exists(json, 'html') ? undefined : json['html'],
     xampHtml: !exists(json, 'xampHtml') ? undefined : json['xampHtml'],
   };
@@ -345,6 +352,7 @@ export function EmailToJSON(value?: Email | null): any {
     threadId: value.threadId,
     inReplyTo: value.inReplyTo,
     favourite: value.favourite,
+    sizeBytes: value.sizeBytes,
     html: value.html,
     xampHtml: value.xampHtml,
   };

@@ -48,16 +48,16 @@ export interface PageContactProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageContactProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageContactProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageContactProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

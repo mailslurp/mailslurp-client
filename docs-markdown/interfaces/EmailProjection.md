@@ -32,6 +32,7 @@ EmailProjection
 - [read](EmailProjection.md#read)
 - [recipients](EmailProjection.md#recipients)
 - [sender](EmailProjection.md#sender)
+- [sizeBytes](EmailProjection.md#sizebytes)
 - [subject](EmailProjection.md#subject)
 - [teamAccess](EmailProjection.md#teamaccess)
 - [textExcerpt](EmailProjection.md#textexcerpt)
@@ -213,6 +214,16 @@ ___
 ### sender
 
 • `Optional` **sender**: [`Sender`](Sender.md)
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
+### sizeBytes
+
+• `Optional` **sizeBytes**: `number`
 
 **`Memberof`**
 

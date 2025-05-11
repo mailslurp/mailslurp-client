@@ -21,16 +21,16 @@ import { exists, mapValues } from '../runtime';
 export interface ContactProjection {
   /**
    *
-   * @type {Date}
-   * @memberof ContactProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof ContactProjection
    */
   emailAddress?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof ContactProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -87,10 +87,10 @@ export function ContactProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
+    createdAt: new Date(json['createdAt']),
     emailAddresses: !exists(json, 'emailAddresses')
       ? undefined
       : json['emailAddresses'],
@@ -111,8 +111,8 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     emailAddress: value.emailAddress,
+    createdAt: value.createdAt.toISOString(),
     emailAddresses: value.emailAddresses,
     firstName: value.firstName,
     lastName: value.lastName,

@@ -34,6 +34,8 @@ export interface GetAttachmentsRequest {
     since?: Date;
     before?: Date;
     inboxId?: string;
+    emailId?: string;
+    sentEmailId?: string;
 }
 export interface UploadAttachmentRequest {
     uploadAttachmentOptions: UploadAttachmentOptions;

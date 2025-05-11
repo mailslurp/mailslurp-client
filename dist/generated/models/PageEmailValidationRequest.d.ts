@@ -48,16 +48,16 @@ export interface PageEmailValidationRequest {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageEmailValidationRequest
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEmailValidationRequest
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

@@ -48,16 +48,16 @@ export interface PageBouncedRecipients {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageBouncedRecipients
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageBouncedRecipients
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedRecipients
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

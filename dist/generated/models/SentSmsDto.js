@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SentSmsDtoToJSON = exports.SentSmsDtoFromJSONTyped = exports.SentSmsDtoFromJSON = void 0;
+var runtime_1 = require("../runtime");
 function SentSmsDtoFromJSON(json) {
     return SentSmsDtoFromJSONTyped(json, false);
 }
@@ -30,8 +31,8 @@ function SentSmsDtoFromJSONTyped(json, ignoreDiscriminator) {
         toNumber: json['toNumber'],
         body: json['body'],
         sid: json['sid'],
-        replyToSid: json['replyToSid'],
-        replyToId: json['replyToId'],
+        replyToSid: !(0, runtime_1.exists)(json, 'replyToSid') ? undefined : json['replyToSid'],
+        replyToId: !(0, runtime_1.exists)(json, 'replyToId') ? undefined : json['replyToId'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
     };

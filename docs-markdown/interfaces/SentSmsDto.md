@@ -78,7 +78,7 @@ ___
 
 ### replyToId
 
-• **replyToId**: `string`
+• `Optional` **replyToId**: `string`
 
 **`Memberof`**
 
@@ -88,7 +88,7 @@ ___
 
 ### replyToSid
 
-• **replyToSid**: `string`
+• `Optional` **replyToSid**: `string`
 
 **`Memberof`**
 

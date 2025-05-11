@@ -20,6 +20,12 @@
 
 ### Methods
 
+- [getEntityAutomations](UserControllerApi.md#getentityautomations)
+- [getEntityAutomationsRaw](UserControllerApi.md#getentityautomationsraw)
+- [getEntityEvents](UserControllerApi.md#getentityevents)
+- [getEntityEventsRaw](UserControllerApi.md#getentityeventsraw)
+- [getEntityFavorites](UserControllerApi.md#getentityfavorites)
+- [getEntityFavoritesRaw](UserControllerApi.md#getentityfavoritesraw)
 - [getJsonPropertyAsString](UserControllerApi.md#getjsonpropertyasstring)
 - [getJsonPropertyAsStringRaw](UserControllerApi.md#getjsonpropertyasstringraw)
 - [getUserInfo](UserControllerApi.md#getuserinfo)
@@ -56,6 +62,108 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### getEntityAutomations
+
+▸ **getEntityAutomations**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEntityAutomationItems`](../interfaces/PageEntityAutomationItems.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEntityAutomationsRequest`](../interfaces/GetEntityAutomationsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEntityAutomationItems`](../interfaces/PageEntityAutomationItems.md)\>
+
+___
+
+### getEntityAutomationsRaw
+
+▸ **getEntityAutomationsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEntityAutomationItems`](../interfaces/PageEntityAutomationItems.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEntityAutomationsRequest`](../interfaces/GetEntityAutomationsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEntityAutomationItems`](../interfaces/PageEntityAutomationItems.md)\>\>
+
+___
+
+### getEntityEvents
+
+▸ **getEntityEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEntityEventItems`](../interfaces/PageEntityEventItems.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEntityEventsRequest`](../interfaces/GetEntityEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEntityEventItems`](../interfaces/PageEntityEventItems.md)\>
+
+___
+
+### getEntityEventsRaw
+
+▸ **getEntityEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEntityEventItems`](../interfaces/PageEntityEventItems.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEntityEventsRequest`](../interfaces/GetEntityEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEntityEventItems`](../interfaces/PageEntityEventItems.md)\>\>
+
+___
+
+### getEntityFavorites
+
+▸ **getEntityFavorites**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEntityFavouriteItems`](../interfaces/PageEntityFavouriteItems.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEntityFavoritesRequest`](../interfaces/GetEntityFavoritesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEntityFavouriteItems`](../interfaces/PageEntityFavouriteItems.md)\>
+
+___
+
+### getEntityFavoritesRaw
+
+▸ **getEntityFavoritesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEntityFavouriteItems`](../interfaces/PageEntityFavouriteItems.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEntityFavoritesRequest`](../interfaces/GetEntityFavoritesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEntityFavouriteItems`](../interfaces/PageEntityFavouriteItems.md)\>\>
+
+___
 
 ### getJsonPropertyAsString
 

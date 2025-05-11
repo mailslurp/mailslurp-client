@@ -48,16 +48,16 @@ export interface PageGroupProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageGroupProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageGroupProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageGroupProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

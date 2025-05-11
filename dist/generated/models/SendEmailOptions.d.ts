@@ -41,6 +41,12 @@ export interface SendEmailOptions {
      */
     from?: string | null;
     /**
+     * Optional from name if not passed with address. If you set `useInboxName` to `true` the from field will include the inbox name as a display name
+     * @type {string}
+     * @memberof SendEmailOptions
+     */
+    fromName?: string | null;
+    /**
      * Optional list of cc destination email addresses
      * @type {Array<string>}
      * @memberof SendEmailOptions

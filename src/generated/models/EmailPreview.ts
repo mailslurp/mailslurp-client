@@ -144,6 +144,12 @@ export interface EmailPreview {
    * @memberof EmailPreview
    */
   plusAddress?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof EmailPreview
+   */
+  sizeBytes?: number | null;
 }
 
 export function EmailPreviewFromJSON(json: any): EmailPreview {
@@ -183,6 +189,7 @@ export function EmailPreviewFromJSONTyped(
       ? undefined
       : json['bodyPartContentTypes'],
     plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
   };
 }
 
@@ -213,5 +220,6 @@ export function EmailPreviewToJSON(value?: EmailPreview | null): any {
     favourite: value.favourite,
     bodyPartContentTypes: value.bodyPartContentTypes,
     plusAddress: value.plusAddress,
+    sizeBytes: value.sizeBytes,
   };
 }

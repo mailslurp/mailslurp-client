@@ -115,6 +115,12 @@ export interface InboxDto {
    * @memberof InboxDto
    */
   domain?: string | null;
+  /**
+   * Region of the inbox
+   * @type {string}
+   * @memberof InboxDto
+   */
+  accountRegion?: InboxDtoAccountRegionEnum;
 }
 
 /**
@@ -136,6 +142,14 @@ export enum InboxDtoFunctionsAsEnum {
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
   GUEST = 'GUEST',
+  OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxDtoAccountRegionEnum {
+  US_WEST_2 = 'US_WEST_2',
 }
 
 export function InboxDtoFromJSON(json: any): InboxDto {
@@ -170,6 +184,9 @@ export function InboxDtoFromJSONTyped(
     functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
     localPart: !exists(json, 'localPart') ? undefined : json['localPart'],
     domain: !exists(json, 'domain') ? undefined : json['domain'],
+    accountRegion: !exists(json, 'accountRegion')
+      ? undefined
+      : json['accountRegion'],
   };
 }
 
@@ -202,5 +219,6 @@ export function InboxDtoToJSON(value?: InboxDto | null): any {
     functionsAs: value.functionsAs,
     localPart: value.localPart,
     domain: value.domain,
+    accountRegion: value.accountRegion,
   };
 }

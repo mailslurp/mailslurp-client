@@ -13,6 +13,7 @@
 - [CATCH\_ALL](OrganizationInboxProjectionFunctionsAsEnum.md#catch_all)
 - [CONNECTOR](OrganizationInboxProjectionFunctionsAsEnum.md#connector)
 - [GUEST](OrganizationInboxProjectionFunctionsAsEnum.md#guest)
+- [OAUTH\_CONNECTION\_GMAIL](OrganizationInboxProjectionFunctionsAsEnum.md#oauth_connection_gmail)
 - [THREAD](OrganizationInboxProjectionFunctionsAsEnum.md#thread)
 
 ## Enumeration Members
@@ -44,6 +45,12 @@ ___
 ### GUEST
 
 • **GUEST** = ``"GUEST"``
+
+___
+
+### OAUTH\_CONNECTION\_GMAIL
+
+• **OAUTH\_CONNECTION\_GMAIL** = ``"OAUTH_CONNECTION_GMAIL"``
 
 ___
 

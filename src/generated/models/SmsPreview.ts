@@ -51,6 +51,12 @@ export interface SmsPreview {
   fromNumber: string;
   /**
    *
+   * @type {boolean}
+   * @memberof SmsPreview
+   */
+  read: boolean;
+  /**
+   *
    * @type {Date}
    * @memberof SmsPreview
    */
@@ -74,6 +80,7 @@ export function SmsPreviewFromJSONTyped(
     body: json['body'],
     phoneNumber: json['phoneNumber'],
     fromNumber: json['fromNumber'],
+    read: json['read'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -91,6 +98,7 @@ export function SmsPreviewToJSON(value?: SmsPreview | null): any {
     body: value.body,
     phoneNumber: value.phoneNumber,
     fromNumber: value.fromNumber,
+    read: value.read,
     createdAt: value.createdAt.toISOString(),
   };
 }

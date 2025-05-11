@@ -95,7 +95,16 @@ export interface PhoneNumberDto {
 export declare enum PhoneNumberDtoPhoneCountryEnum {
     US = "US",
     GB = "GB",
-    AU = "AU"
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    CH = "CH",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    SE = "SE"
 }
 export declare function PhoneNumberDtoFromJSON(json: any): PhoneNumberDto;
 export declare function PhoneNumberDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberDto;

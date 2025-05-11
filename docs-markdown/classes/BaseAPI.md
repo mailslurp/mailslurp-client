@@ -20,6 +20,8 @@ This is the base class for all generated API classes.
 
   ↳ [`ConnectorControllerApi`](ConnectorControllerApi.md)
 
+  ↳ [`ConsentControllerApi`](ConsentControllerApi.md)
+
   ↳ [`ContactControllerApi`](ContactControllerApi.md)
 
   ↳ [`DomainControllerApi`](DomainControllerApi.md)
@@ -51,6 +53,8 @@ This is the base class for all generated API classes.
   ↳ [`MailServerControllerApi`](MailServerControllerApi.md)
 
   ↳ [`MissedEmailControllerApi`](MissedEmailControllerApi.md)
+
+  ↳ [`OAuthConnectionApi`](OAuthConnectionApi.md)
 
   ↳ [`PhoneControllerApi`](PhoneControllerApi.md)
 

@@ -14,6 +14,7 @@ OrganizationInboxProjection
 
 ### Properties
 
+- [accountRegion](OrganizationInboxProjection.md#accountregion)
 - [createdAt](OrganizationInboxProjection.md#createdat)
 - [description](OrganizationInboxProjection.md#description)
 - [domainId](OrganizationInboxProjection.md#domainid)
@@ -31,6 +32,18 @@ OrganizationInboxProjection
 - [virtualInbox](OrganizationInboxProjection.md#virtualinbox)
 
 ## Properties
+
+### accountRegion
+
+• `Optional` **accountRegion**: [`US_WEST_2`](../enums/OrganizationInboxProjectionAccountRegionEnum.md#us_west_2)
+
+Region of the inbox
+
+**`Memberof`**
+
+OrganizationInboxProjection
+
+___
 
 ### createdAt
 

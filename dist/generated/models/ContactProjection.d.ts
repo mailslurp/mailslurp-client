@@ -17,16 +17,16 @@
 export interface ContactProjection {
     /**
      *
-     * @type {Date}
-     * @memberof ContactProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof ContactProjection
      */
     emailAddress?: string | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof ContactProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}

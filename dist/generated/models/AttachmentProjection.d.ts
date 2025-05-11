@@ -17,18 +17,6 @@
 export interface AttachmentProjection {
     /**
      *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
-    updatedAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof AttachmentProjection
      */
@@ -39,6 +27,18 @@ export interface AttachmentProjection {
      * @memberof AttachmentProjection
      */
     inboxId?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    createdAt: Date;
     /**
      * Content ID of attachment.
      * @type {string}

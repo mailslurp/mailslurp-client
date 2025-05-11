@@ -48,16 +48,16 @@ export interface PageInboxReplierEvents {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxReplierEvents
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

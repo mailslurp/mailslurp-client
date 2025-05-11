@@ -17,6 +17,7 @@ SmsPreview
 - [fromNumber](SmsPreview.md#fromnumber)
 - [id](SmsPreview.md#id)
 - [phoneNumber](SmsPreview.md#phonenumber)
+- [read](SmsPreview.md#read)
 - [userId](SmsPreview.md#userid)
 
 ## Properties
@@ -64,6 +65,16 @@ ___
 ### phoneNumber
 
 • **phoneNumber**: `string`
+
+**`Memberof`**
+
+SmsPreview
+
+___
+
+### read
+
+• **read**: `boolean`
 
 **`Memberof`**
 

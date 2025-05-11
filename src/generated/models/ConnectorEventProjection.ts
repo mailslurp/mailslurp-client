@@ -21,16 +21,16 @@ import { exists, mapValues } from '../runtime';
 export interface ConnectorEventProjection {
   /**
    *
-   * @type {Date}
-   * @memberof ConnectorEventProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof ConnectorEventProjection
    */
   eventType: ConnectorEventProjectionEventTypeEnum;
+  /**
+   *
+   * @type {Date}
+   * @memberof ConnectorEventProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -103,8 +103,8 @@ export function ConnectorEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     eventType: json['eventType'],
+    createdAt: new Date(json['createdAt']),
     connectorId: json['connectorId'],
     seen: !exists(json, 'seen') ? undefined : json['seen'],
     message: !exists(json, 'message') ? undefined : json['message'],
@@ -124,8 +124,8 @@ export function ConnectorEventProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     eventType: value.eventType,
+    createdAt: value.createdAt.toISOString(),
     connectorId: value.connectorId,
     seen: value.seen,
     message: value.message,

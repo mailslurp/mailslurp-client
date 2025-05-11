@@ -229,6 +229,12 @@ export interface SentEmailDto {
    */
   favourite?: boolean | null;
   /**
+   * Size of raw email message in bytes
+   * @type {number}
+   * @memberof SentEmailDto
+   */
+  sizeBytes?: number | null;
+  /**
    *
    * @type {boolean}
    * @memberof SentEmailDto
@@ -287,6 +293,7 @@ export function SentEmailDtoFromJSONTyped(
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
@@ -332,6 +339,7 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     textExcerpt: value.textExcerpt,
     inReplyTo: value.inReplyTo,
     favourite: value.favourite,
+    sizeBytes: value.sizeBytes,
     html: value.html,
   };
 }

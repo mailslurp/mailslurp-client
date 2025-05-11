@@ -39,6 +39,10 @@ function DomainDtoFromJSONTyped(json, ignoreDiscriminator) {
         domain: json['domain'],
         verificationToken: json['verificationToken'],
         dkimTokens: json['dkimTokens'],
+        duplicateRecordsMessage: !(0, runtime_1.exists)(json, 'duplicateRecordsMessage')
+            ? undefined
+            : json['duplicateRecordsMessage'],
+        hasDuplicateRecords: json['hasDuplicateRecords'],
         missingRecordsMessage: !(0, runtime_1.exists)(json, 'missingRecordsMessage')
             ? undefined
             : json['missingRecordsMessage'],
@@ -67,6 +71,8 @@ function DomainDtoToJSON(value) {
         domain: value.domain,
         verificationToken: value.verificationToken,
         dkimTokens: value.dkimTokens,
+        duplicateRecordsMessage: value.duplicateRecordsMessage,
+        hasDuplicateRecords: value.hasDuplicateRecords,
         missingRecordsMessage: value.missingRecordsMessage,
         hasMissingRecords: value.hasMissingRecords,
         isVerified: value.isVerified,

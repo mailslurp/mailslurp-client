@@ -14,6 +14,7 @@ InboxDto
 
 ### Properties
 
+- [accountRegion](InboxDto.md#accountregion)
 - [createdAt](InboxDto.md#createdat)
 - [description](InboxDto.md#description)
 - [domain](InboxDto.md#domain)
@@ -32,6 +33,18 @@ InboxDto
 - [virtualInbox](InboxDto.md#virtualinbox)
 
 ## Properties
+
+### accountRegion
+
+• `Optional` **accountRegion**: [`US_WEST_2`](../enums/InboxDtoAccountRegionEnum.md#us_west_2)
+
+Region of the inbox
+
+**`Memberof`**
+
+InboxDto
+
+___
 
 ### createdAt
 

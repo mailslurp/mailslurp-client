@@ -24,6 +24,15 @@ var CreateEmergencyAddressOptionsIsoCountryCodeEnum;
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["US"] = "US";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["GB"] = "GB";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["AU"] = "AU";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["CA"] = "CA";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["EE"] = "EE";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["HK"] = "HK";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["PL"] = "PL";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["CH"] = "CH";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["PT"] = "PT";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["NL"] = "NL";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["IL"] = "IL";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["SE"] = "SE";
 })(CreateEmergencyAddressOptionsIsoCountryCodeEnum = exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum || (exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = {}));
 function CreateEmergencyAddressOptionsFromJSON(json) {
     return CreateEmergencyAddressOptionsFromJSONTyped(json, false);

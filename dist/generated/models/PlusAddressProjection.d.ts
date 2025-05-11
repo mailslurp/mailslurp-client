@@ -17,18 +17,6 @@
 export interface PlusAddressProjection {
     /**
      *
-     * @type {Date}
-     * @memberof PlusAddressProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof PlusAddressProjection
-     */
-    updatedAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof PlusAddressProjection
      */
@@ -39,6 +27,18 @@ export interface PlusAddressProjection {
      * @memberof PlusAddressProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof PlusAddressProjection
+     */
+    updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof PlusAddressProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

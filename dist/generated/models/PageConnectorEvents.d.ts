@@ -48,16 +48,16 @@ export interface PageConnectorEvents {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageConnectorEvents
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageConnectorEvents
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageConnectorEvents
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

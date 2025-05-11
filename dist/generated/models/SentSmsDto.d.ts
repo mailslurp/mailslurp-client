@@ -62,13 +62,13 @@ export interface SentSmsDto {
      * @type {string}
      * @memberof SentSmsDto
      */
-    replyToSid: string;
+    replyToSid?: string;
     /**
      *
      * @type {string}
      * @memberof SentSmsDto
      */
-    replyToId: string;
+    replyToId?: string;
     /**
      *
      * @type {Date}

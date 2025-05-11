@@ -66,16 +66,16 @@ export interface PageComplaint {
   last?: boolean;
   /**
    *
-   * @type {boolean}
-   * @memberof PageComplaint
-   */
-  first?: boolean;
-  /**
-   *
    * @type {number}
    * @memberof PageComplaint
    */
   numberOfElements?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageComplaint
+   */
+  first?: boolean;
   /**
    *
    * @type {number}
@@ -123,10 +123,10 @@ export function PageComplaintFromJSONTyped(
     totalElements: json['totalElements'],
     totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
@@ -150,8 +150,8 @@ export function PageComplaintToJSON(value?: PageComplaint | null): any {
     totalElements: value.totalElements,
     totalPages: value.totalPages,
     last: value.last,
-    first: value.first,
     numberOfElements: value.numberOfElements,
+    first: value.first,
     size: value.size,
     number: value.number,
     sort: SortObjectToJSON(value.sort),

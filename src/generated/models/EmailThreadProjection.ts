@@ -31,24 +31,6 @@ import {
  */
 export interface EmailThreadProjection {
   /**
-   * Thread topic subject
-   * @type {string}
-   * @memberof EmailThreadProjection
-   */
-  subject?: string;
-  /**
-   * Created at DateTime
-   * @type {Date}
-   * @memberof EmailThreadProjection
-   */
-  createdAt: Date;
-  /**
-   * Updated at DateTime
-   * @type {Date}
-   * @memberof EmailThreadProjection
-   */
-  updatedAt: Date;
-  /**
    *
    * @type {SenderProjection}
    * @memberof EmailThreadProjection
@@ -72,6 +54,18 @@ export interface EmailThreadProjection {
    * @memberof EmailThreadProjection
    */
   inboxId?: string;
+  /**
+   * Updated at DateTime
+   * @type {Date}
+   * @memberof EmailThreadProjection
+   */
+  updatedAt: Date;
+  /**
+   * Created at DateTime
+   * @type {Date}
+   * @memberof EmailThreadProjection
+   */
+  createdAt: Date;
   /**
    * To recipients
    * @type {Array<string>}
@@ -97,11 +91,11 @@ export interface EmailThreadProjection {
    */
   hasAttachments: boolean;
   /**
-   * Has unread
-   * @type {boolean}
+   * Last text excerpt
+   * @type {string}
    * @memberof EmailThreadProjection
    */
-  unread: boolean;
+  lastTextExcerpt?: string;
   /**
    * Number of messages in the thread
    * @type {number}
@@ -109,23 +103,11 @@ export interface EmailThreadProjection {
    */
   messageCount: number;
   /**
-   * Last body excerpt
-   * @type {string}
+   * Has unread
+   * @type {boolean}
    * @memberof EmailThreadProjection
    */
-  lastBodyExcerpt?: string;
-  /**
-   * Last text excerpt
-   * @type {string}
-   * @memberof EmailThreadProjection
-   */
-  lastTextExcerpt?: string;
-  /**
-   * Last email created time
-   * @type {Date}
-   * @memberof EmailThreadProjection
-   */
-  lastCreatedAt?: Date;
+  unread: boolean;
   /**
    * Last sender
    * @type {string}
@@ -133,11 +115,29 @@ export interface EmailThreadProjection {
    */
   lastFrom?: string;
   /**
+   * Last body excerpt
+   * @type {string}
+   * @memberof EmailThreadProjection
+   */
+  lastBodyExcerpt?: string;
+  /**
+   * Last email created time
+   * @type {Date}
+   * @memberof EmailThreadProjection
+   */
+  lastCreatedAt?: Date;
+  /**
    *
    * @type {SenderProjection}
    * @memberof EmailThreadProjection
    */
   lastSender?: SenderProjection;
+  /**
+   * Thread topic subject
+   * @type {string}
+   * @memberof EmailThreadProjection
+   */
+  subject?: string;
   /**
    * ID of email thread
    * @type {string}
@@ -166,9 +166,6 @@ export function EmailThreadProjectionFromJSONTyped(
     return json;
   }
   return {
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
     sender: !exists(json, 'sender')
       ? undefined
       : SenderProjectionFromJSON(json['sender']),
@@ -177,25 +174,28 @@ export function EmailThreadProjectionFromJSONTyped(
       : EmailRecipientsProjectionFromJSON(json['recipients']),
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     hasAttachments: json['hasAttachments'],
-    unread: json['unread'],
-    messageCount: json['messageCount'],
-    lastBodyExcerpt: !exists(json, 'lastBodyExcerpt')
-      ? undefined
-      : json['lastBodyExcerpt'],
     lastTextExcerpt: !exists(json, 'lastTextExcerpt')
       ? undefined
       : json['lastTextExcerpt'],
+    messageCount: json['messageCount'],
+    unread: json['unread'],
+    lastFrom: !exists(json, 'lastFrom') ? undefined : json['lastFrom'],
+    lastBodyExcerpt: !exists(json, 'lastBodyExcerpt')
+      ? undefined
+      : json['lastBodyExcerpt'],
     lastCreatedAt: !exists(json, 'lastCreatedAt')
       ? undefined
       : new Date(json['lastCreatedAt']),
-    lastFrom: !exists(json, 'lastFrom') ? undefined : json['lastFrom'],
     lastSender: !exists(json, 'lastSender')
       ? undefined
       : SenderProjectionFromJSON(json['lastSender']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
   };
@@ -211,27 +211,27 @@ export function EmailThreadProjectionToJSON(
     return null;
   }
   return {
-    subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     sender: SenderProjectionToJSON(value.sender),
     recipients: EmailRecipientsProjectionToJSON(value.recipients),
     userId: value.userId,
     inboxId: value.inboxId,
+    updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,
     hasAttachments: value.hasAttachments,
-    unread: value.unread,
-    messageCount: value.messageCount,
-    lastBodyExcerpt: value.lastBodyExcerpt,
     lastTextExcerpt: value.lastTextExcerpt,
+    messageCount: value.messageCount,
+    unread: value.unread,
+    lastFrom: value.lastFrom,
+    lastBodyExcerpt: value.lastBodyExcerpt,
     lastCreatedAt:
       value.lastCreatedAt === undefined
         ? undefined
         : value.lastCreatedAt.toISOString(),
-    lastFrom: value.lastFrom,
     lastSender: SenderProjectionToJSON(value.lastSender),
+    subject: value.subject,
     id: value.id,
     from: value.from,
   };

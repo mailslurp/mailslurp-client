@@ -57,7 +57,7 @@ export interface WaitForSmsConditions {
    */
   timeout: number;
   /**
-   * Apply conditions only to **unread** SMS. All SMS messages begin with `read=false`. An SMS is marked `read=true` when an `SMS` has been returned to the user at least once. For example you have called `getSms` or `waitForSms` etc., or you have viewed the SMS in the dashboard.
+   * Apply conditions only to **unread** SMS. All SMS messages begin with `read=false`. An SMS is marked `read=true` when an `SMS` has been returned to the user at least once. For example you have called `getSms`, or you have viewed the SMS in the dashboard.
    * @type {boolean}
    * @memberof WaitForSmsConditions
    */

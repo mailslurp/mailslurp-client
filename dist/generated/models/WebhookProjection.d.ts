@@ -17,22 +17,22 @@
 export interface WebhookProjection {
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof WebhookProjection
      */
-    createdAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof WebhookProjection
-     */
-    updatedAt: Date;
+    url: string;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
-    url: string;
+    password?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    username?: string;
     /**
      *
      * @type {string}
@@ -51,6 +51,18 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     eventName?: WebhookProjectionEventNameEnum;
+    /**
+     *
+     * @type {Date}
+     * @memberof WebhookProjection
+     */
+    updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof WebhookProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -75,18 +87,6 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    username?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    password?: string;
 }
 /**
  * @export

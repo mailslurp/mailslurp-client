@@ -57,6 +57,18 @@ export interface DomainDto {
    */
   dkimTokens: Array<string>;
   /**
+   * If the domain is duplicate records.
+   * @type {string}
+   * @memberof DomainDto
+   */
+  duplicateRecordsMessage?: string | null;
+  /**
+   * Whether the domain has duplicated required records. If true then see the domain in the dashboard app.
+   * @type {boolean}
+   * @memberof DomainDto
+   */
+  hasDuplicateRecords: boolean;
+  /**
    * If the domain is missing records then show which pairs are missing.
    * @type {string}
    * @memberof DomainDto
@@ -132,6 +144,10 @@ export function DomainDtoFromJSONTyped(
     domain: json['domain'],
     verificationToken: json['verificationToken'],
     dkimTokens: json['dkimTokens'],
+    duplicateRecordsMessage: !exists(json, 'duplicateRecordsMessage')
+      ? undefined
+      : json['duplicateRecordsMessage'],
+    hasDuplicateRecords: json['hasDuplicateRecords'],
     missingRecordsMessage: !exists(json, 'missingRecordsMessage')
       ? undefined
       : json['missingRecordsMessage'],
@@ -162,6 +178,8 @@ export function DomainDtoToJSON(value?: DomainDto | null): any {
     domain: value.domain,
     verificationToken: value.verificationToken,
     dkimTokens: value.dkimTokens,
+    duplicateRecordsMessage: value.duplicateRecordsMessage,
+    hasDuplicateRecords: value.hasDuplicateRecords,
     missingRecordsMessage: value.missingRecordsMessage,
     hasMissingRecords: value.hasMissingRecords,
     isVerified: value.isVerified,

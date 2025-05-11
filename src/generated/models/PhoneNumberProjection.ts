@@ -21,16 +21,16 @@ import { exists, mapValues } from '../runtime';
 export interface PhoneNumberProjection {
   /**
    *
-   * @type {Date}
-   * @memberof PhoneNumberProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof PhoneNumberProjection
    */
   userId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof PhoneNumberProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -65,6 +65,15 @@ export enum PhoneNumberProjectionPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
   AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  CH = 'CH',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  SE = 'SE',
 }
 
 export function PhoneNumberProjectionFromJSON(
@@ -81,8 +90,8 @@ export function PhoneNumberProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     userId: json['userId'],
+    createdAt: new Date(json['createdAt']),
     phoneNumber: json['phoneNumber'],
     phoneCountry: json['phoneCountry'],
     name: !exists(json, 'name') ? undefined : json['name'],
@@ -100,8 +109,8 @@ export function PhoneNumberProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     userId: value.userId,
+    createdAt: value.createdAt.toISOString(),
     phoneNumber: value.phoneNumber,
     phoneCountry: value.phoneCountry,
     name: value.name,

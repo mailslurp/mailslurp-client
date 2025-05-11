@@ -219,6 +219,12 @@ export interface Email {
      */
     favourite?: boolean | null;
     /**
+     * Size of raw email message in bytes
+     * @type {number}
+     * @memberof Email
+     */
+    sizeBytes?: number | null;
+    /**
      *
      * @type {boolean}
      * @memberof Email

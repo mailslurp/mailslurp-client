@@ -5,6 +5,7 @@ apis/BounceControllerApi.ts
 apis/BulkActionsControllerApi.ts
 apis/CommonActionsControllerApi.ts
 apis/ConnectorControllerApi.ts
+apis/ConsentControllerApi.ts
 apis/ContactControllerApi.ts
 apis/DomainControllerApi.ts
 apis/EmailControllerApi.ts
@@ -21,6 +22,7 @@ apis/InboxReplierControllerApi.ts
 apis/InboxRulesetControllerApi.ts
 apis/MailServerControllerApi.ts
 apis/MissedEmailControllerApi.ts
+apis/OAuthConnectionApi.ts
 apis/PhoneControllerApi.ts
 apis/SentEmailsControllerApi.ts
 apis/SmsControllerApi.ts
@@ -68,6 +70,7 @@ models/ConnectorSmtpConnectionTestResult.ts
 models/ConnectorSyncRequestResult.ts
 models/ConnectorSyncResult.ts
 models/ConnectorSyncSettingsDto.ts
+models/ConsentStatusDto.ts
 models/ContactDto.ts
 models/ContactProjection.ts
 models/ContentMatchOptions.ts
@@ -86,6 +89,9 @@ models/CreateInboxDto.ts
 models/CreateInboxForwarderOptions.ts
 models/CreateInboxReplierOptions.ts
 models/CreateInboxRulesetOptions.ts
+models/CreateOAuthConnectionResult.ts
+models/CreateOAuthExchangeResult.ts
+models/CreatePhoneNumberOptions.ts
 models/CreatePortalOptions.ts
 models/CreatePortalUserOptions.ts
 models/CreateTemplateOptions.ts
@@ -140,6 +146,9 @@ models/EmailVerificationResult.ts
 models/EmergencyAddress.ts
 models/EmergencyAddressDto.ts
 models/EmptyResponseDto.ts
+models/EntityAutomationItemProjection.ts
+models/EntityEventItemProjection.ts
+models/EntityFavouriteItemProjection.ts
 models/ExpirationDefaults.ts
 models/ExpiredInboxDto.ts
 models/ExpiredInboxRecordProjection.ts
@@ -224,6 +233,10 @@ models/MissedEmailDto.ts
 models/MissedEmailProjection.ts
 models/NameServerRecord.ts
 models/NewFakeEmailAddressResult.ts
+models/OptInConsentOptions.ts
+models/OptInConsentSendResult.ts
+models/OptInIdentityProjection.ts
+models/OptInSendingConsentDto.ts
 models/OptionalConnectorDto.ts
 models/OptionalConnectorImapConnectionDto.ts
 models/OptionalConnectorSmtpConnectionDto.ts
@@ -243,6 +256,9 @@ models/PageEmailPreview.ts
 models/PageEmailProjection.ts
 models/PageEmailThreadProjection.ts
 models/PageEmailValidationRequest.ts
+models/PageEntityAutomationItems.ts
+models/PageEntityEventItems.ts
+models/PageEntityFavouriteItems.ts
 models/PageExpiredInboxRecordProjection.ts
 models/PageGroupProjection.ts
 models/PageGuestPortalUsers.ts
@@ -255,12 +271,17 @@ models/PageInboxRulesetDto.ts
 models/PageInboxTags.ts
 models/PageListUnsubscribeRecipients.ts
 models/PageMissedEmailProjection.ts
+models/PageOptInIdentityProjection.ts
 models/PageOrganizationInboxProjection.ts
+models/PagePhoneMessageThreadItemProjection.ts
+models/PagePhoneMessageThreadProjection.ts
 models/PagePhoneNumberProjection.ts
 models/PagePlusAddressProjection.ts
+models/PageReputationItems.ts
 models/PageScheduledJobs.ts
 models/PageSentEmailProjection.ts
 models/PageSentEmailWithQueueProjection.ts
+models/PageSentSmsProjection.ts
 models/PageSmsProjection.ts
 models/PageTemplateProjection.ts
 models/PageTrackingPixelProjection.ts
@@ -269,8 +290,11 @@ models/PageWebhookEndpointProjection.ts
 models/PageWebhookProjection.ts
 models/PageWebhookResult.ts
 models/PageableObject.ts
+models/PhoneMessageThreadItemProjection.ts
+models/PhoneMessageThreadProjection.ts
 models/PhoneNumberDto.ts
 models/PhoneNumberProjection.ts
+models/PhoneNumberValidationDto.ts
 models/PhonePlanAvailability.ts
 models/PhonePlanAvailabilityItem.ts
 models/PhonePlanDto.ts
@@ -283,12 +307,14 @@ models/RecipientProjection.ts
 models/ReplyForSms.ts
 models/ReplyToAliasEmailOptions.ts
 models/ReplyToEmailOptions.ts
+models/ReputationItemProjection.ts
 models/ScheduledJob.ts
 models/ScheduledJobDto.ts
 models/SearchEmailsOptions.ts
 models/SearchInboxesOptions.ts
 models/SendEmailBodyPart.ts
 models/SendEmailOptions.ts
+models/SendOptInConsentEmailOptions.ts
 models/SendSMTPEnvelopeOptions.ts
 models/SendWithQueueResult.ts
 models/Sender.ts
@@ -296,6 +322,7 @@ models/SenderProjection.ts
 models/SentEmailDto.ts
 models/SentEmailProjection.ts
 models/SentSmsDto.ts
+models/SentSmsProjection.ts
 models/ServerEndpoints.ts
 models/SetInboxFavouritedOptions.ts
 models/SetPhoneFavouritedOptions.ts
@@ -305,6 +332,7 @@ models/SmsMatchOption.ts
 models/SmsPreview.ts
 models/SmsProjection.ts
 models/SmsReplyOptions.ts
+models/SmsSendOptions.ts
 models/SmtpAccessDetails.ts
 models/SortObject.ts
 models/SpellingIssue.ts
@@ -336,6 +364,7 @@ models/UploadAttachmentOptions.ts
 models/UserInfoDto.ts
 models/ValidateEmailAddressListOptions.ts
 models/ValidateEmailAddressListResult.ts
+models/ValidatePhoneNumberOptions.ts
 models/ValidationDto.ts
 models/ValidationMessage.ts
 models/VerifyEmailAddressOptions.ts

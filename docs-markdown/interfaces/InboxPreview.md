@@ -14,6 +14,7 @@ InboxPreview
 
 ### Properties
 
+- [accountRegion](InboxPreview.md#accountregion)
 - [createdAt](InboxPreview.md#createdat)
 - [description](InboxPreview.md#description)
 - [domainId](InboxPreview.md#domainid)
@@ -30,6 +31,18 @@ InboxPreview
 - [virtualInbox](InboxPreview.md#virtualinbox)
 
 ## Properties
+
+### accountRegion
+
+• `Optional` **accountRegion**: [`US_WEST_2`](../enums/InboxPreviewAccountRegionEnum.md#us_west_2)
+
+Region of the inbox
+
+**`Memberof`**
+
+InboxPreview
+
+___
 
 ### createdAt
 

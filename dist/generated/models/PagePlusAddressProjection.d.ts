@@ -48,16 +48,16 @@ export interface PagePlusAddressProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PagePlusAddressProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PagePlusAddressProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePlusAddressProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

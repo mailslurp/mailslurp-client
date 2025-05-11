@@ -44,6 +44,9 @@ import {
   PageListUnsubscribeRecipients,
   PageListUnsubscribeRecipientsFromJSON,
   PageListUnsubscribeRecipientsToJSON,
+  PageReputationItems,
+  PageReputationItemsFromJSON,
+  PageReputationItemsToJSON,
 } from '../models';
 
 export interface FilterBouncedRecipientRequest {
@@ -91,6 +94,14 @@ export interface GetListUnsubscribeRecipientsRequest {
   size?: number;
   sort?: GetListUnsubscribeRecipientsSortEnum;
   domainId?: string;
+}
+
+export interface GetReputationItemsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetReputationItemsSortEnum;
+  since?: Date;
+  before?: Date;
 }
 
 /**
@@ -632,6 +643,74 @@ export class BounceControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * List of complaints and bounces
+   * Get paginated list of reputation items.
+   */
+  async getReputationItemsRaw(
+    requestParameters: GetReputationItemsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageReputationItems>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/reputation-items`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageReputationItemsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List of complaints and bounces
+   * Get paginated list of reputation items.
+   */
+  async getReputationItems(
+    requestParameters: GetReputationItemsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageReputationItems> {
+    const response = await this.getReputationItemsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
@@ -663,6 +742,14 @@ export enum GetComplaintsSortEnum {
  * @enum {string}
  */
 export enum GetListUnsubscribeRecipientsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetReputationItemsSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

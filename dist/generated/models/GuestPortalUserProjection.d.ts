@@ -17,16 +17,10 @@
 export interface GuestPortalUserProjection {
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    createdAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof GuestPortalUserProjection
-     */
-    updatedAt: Date;
+    username: string;
     /**
      *
      * @type {string}
@@ -47,6 +41,18 @@ export interface GuestPortalUserProjection {
     inboxId?: string;
     /**
      *
+     * @type {Date}
+     * @memberof GuestPortalUserProjection
+     */
+    updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof GuestPortalUserProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
@@ -63,12 +69,6 @@ export interface GuestPortalUserProjection {
      * @memberof GuestPortalUserProjection
      */
     id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof GuestPortalUserProjection
-     */
-    username: string;
 }
 export declare function GuestPortalUserProjectionFromJSON(json: any): GuestPortalUserProjection;
 export declare function GuestPortalUserProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GuestPortalUserProjection;

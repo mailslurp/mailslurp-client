@@ -65,7 +65,16 @@ export interface CreateEmergencyAddressOptions {
 export declare enum CreateEmergencyAddressOptionsIsoCountryCodeEnum {
     US = "US",
     GB = "GB",
-    AU = "AU"
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    CH = "CH",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    SE = "SE"
 }
 export declare function CreateEmergencyAddressOptionsFromJSON(json: any): CreateEmergencyAddressOptions;
 export declare function CreateEmergencyAddressOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateEmergencyAddressOptions;

@@ -219,6 +219,12 @@ export interface SentEmailDto {
      */
     favourite?: boolean | null;
     /**
+     * Size of raw email message in bytes
+     * @type {number}
+     * @memberof SentEmailDto
+     */
+    sizeBytes?: number | null;
+    /**
      *
      * @type {boolean}
      * @memberof SentEmailDto

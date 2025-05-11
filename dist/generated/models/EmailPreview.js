@@ -50,6 +50,7 @@ function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : json['bodyPartContentTypes'],
         plusAddress: !(0, runtime_1.exists)(json, 'plusAddress') ? undefined : json['plusAddress'],
+        sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     };
 }
 exports.EmailPreviewFromJSONTyped = EmailPreviewFromJSONTyped;
@@ -80,6 +81,7 @@ function EmailPreviewToJSON(value) {
         favourite: value.favourite,
         bodyPartContentTypes: value.bodyPartContentTypes,
         plusAddress: value.plusAddress,
+        sizeBytes: value.sizeBytes,
     };
 }
 exports.EmailPreviewToJSON = EmailPreviewToJSON;

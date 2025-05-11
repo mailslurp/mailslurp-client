@@ -21,18 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface AliasProjection {
   /**
    *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  updatedAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof AliasProjection
    */
@@ -49,6 +37,18 @@ export interface AliasProjection {
    * @memberof AliasProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof AliasProjection
+   */
+  updatedAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof AliasProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {boolean}
@@ -81,11 +81,11 @@ export function AliasProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
     userId: json['userId'],
     emailAddress: json['emailAddress'],
     inboxId: json['inboxId'],
+    updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
@@ -100,11 +100,11 @@ export function AliasProjectionToJSON(value?: AliasProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     userId: value.userId,
     emailAddress: value.emailAddress,
     inboxId: value.inboxId,
+    updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     useThreads: value.useThreads,
     name: value.name,
     id: value.id,

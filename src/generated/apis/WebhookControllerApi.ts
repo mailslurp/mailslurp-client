@@ -270,6 +270,7 @@ export interface UpdateWebhookRequest {
   createWebhookOptions: CreateWebhookOptions;
   inboxId?: string;
   phoneNumberId?: string;
+  overrideAuth?: boolean;
 }
 
 export interface UpdateWebhookHeadersRequest {
@@ -2389,6 +2390,10 @@ export class WebhookControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.phoneNumberId !== undefined) {
       queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+    }
+
+    if (requestParameters.overrideAuth !== undefined) {
+      queryParameters['overrideAuth'] = requestParameters.overrideAuth;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

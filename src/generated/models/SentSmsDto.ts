@@ -66,13 +66,13 @@ export interface SentSmsDto {
    * @type {string}
    * @memberof SentSmsDto
    */
-  replyToSid: string;
+  replyToSid?: string;
   /**
    *
    * @type {string}
    * @memberof SentSmsDto
    */
-  replyToId: string;
+  replyToId?: string;
   /**
    *
    * @type {Date}
@@ -106,8 +106,8 @@ export function SentSmsDtoFromJSONTyped(
     toNumber: json['toNumber'],
     body: json['body'],
     sid: json['sid'],
-    replyToSid: json['replyToSid'],
-    replyToId: json['replyToId'],
+    replyToSid: !exists(json, 'replyToSid') ? undefined : json['replyToSid'],
+    replyToId: !exists(json, 'replyToId') ? undefined : json['replyToId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
   };

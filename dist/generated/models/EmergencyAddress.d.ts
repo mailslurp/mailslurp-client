@@ -101,7 +101,16 @@ export interface EmergencyAddress {
 export declare enum EmergencyAddressPhoneCountryEnum {
     US = "US",
     GB = "GB",
-    AU = "AU"
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    CH = "CH",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    SE = "SE"
 }
 export declare function EmergencyAddressFromJSON(json: any): EmergencyAddress;
 export declare function EmergencyAddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmergencyAddress;

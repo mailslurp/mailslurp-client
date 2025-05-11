@@ -28,6 +28,7 @@ function SmsPreviewFromJSONTyped(json, ignoreDiscriminator) {
         body: json['body'],
         phoneNumber: json['phoneNumber'],
         fromNumber: json['fromNumber'],
+        read: json['read'],
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -45,6 +46,7 @@ function SmsPreviewToJSON(value) {
         body: value.body,
         phoneNumber: value.phoneNumber,
         fromNumber: value.fromNumber,
+        read: value.read,
         createdAt: value.createdAt.toISOString(),
     };
 }

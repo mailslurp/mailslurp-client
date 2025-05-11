@@ -48,16 +48,16 @@ export interface PageEmailPreview {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageEmailPreview
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageEmailPreview
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEmailPreview
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

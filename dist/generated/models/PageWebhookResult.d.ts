@@ -48,16 +48,16 @@ export interface PageWebhookResult {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageWebhookResult
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageWebhookResult
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageWebhookResult
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

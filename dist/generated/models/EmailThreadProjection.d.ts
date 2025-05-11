@@ -17,24 +17,6 @@ import { EmailRecipientsProjection, SenderProjection } from './';
  */
 export interface EmailThreadProjection {
     /**
-     * Thread topic subject
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    subject?: string;
-    /**
-     * Created at DateTime
-     * @type {Date}
-     * @memberof EmailThreadProjection
-     */
-    createdAt: Date;
-    /**
-     * Updated at DateTime
-     * @type {Date}
-     * @memberof EmailThreadProjection
-     */
-    updatedAt: Date;
-    /**
      *
      * @type {SenderProjection}
      * @memberof EmailThreadProjection
@@ -58,6 +40,18 @@ export interface EmailThreadProjection {
      * @memberof EmailThreadProjection
      */
     inboxId?: string;
+    /**
+     * Updated at DateTime
+     * @type {Date}
+     * @memberof EmailThreadProjection
+     */
+    updatedAt: Date;
+    /**
+     * Created at DateTime
+     * @type {Date}
+     * @memberof EmailThreadProjection
+     */
+    createdAt: Date;
     /**
      * To recipients
      * @type {Array<string>}
@@ -83,11 +77,11 @@ export interface EmailThreadProjection {
      */
     hasAttachments: boolean;
     /**
-     * Has unread
-     * @type {boolean}
+     * Last text excerpt
+     * @type {string}
      * @memberof EmailThreadProjection
      */
-    unread: boolean;
+    lastTextExcerpt?: string;
     /**
      * Number of messages in the thread
      * @type {number}
@@ -95,23 +89,11 @@ export interface EmailThreadProjection {
      */
     messageCount: number;
     /**
-     * Last body excerpt
-     * @type {string}
+     * Has unread
+     * @type {boolean}
      * @memberof EmailThreadProjection
      */
-    lastBodyExcerpt?: string;
-    /**
-     * Last text excerpt
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    lastTextExcerpt?: string;
-    /**
-     * Last email created time
-     * @type {Date}
-     * @memberof EmailThreadProjection
-     */
-    lastCreatedAt?: Date;
+    unread: boolean;
     /**
      * Last sender
      * @type {string}
@@ -119,11 +101,29 @@ export interface EmailThreadProjection {
      */
     lastFrom?: string;
     /**
+     * Last body excerpt
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    lastBodyExcerpt?: string;
+    /**
+     * Last email created time
+     * @type {Date}
+     * @memberof EmailThreadProjection
+     */
+    lastCreatedAt?: Date;
+    /**
      *
      * @type {SenderProjection}
      * @memberof EmailThreadProjection
      */
     lastSender?: SenderProjection;
+    /**
+     * Thread topic subject
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    subject?: string;
     /**
      * ID of email thread
      * @type {string}

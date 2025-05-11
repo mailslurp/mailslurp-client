@@ -105,6 +105,12 @@ export interface OrganizationInboxProjection {
      * @memberof OrganizationInboxProjection
      */
     expiresAt?: Date | null;
+    /**
+     * Region of the inbox
+     * @type {string}
+     * @memberof OrganizationInboxProjection
+     */
+    accountRegion?: OrganizationInboxProjectionAccountRegionEnum;
 }
 /**
  * @export
@@ -124,7 +130,15 @@ export declare enum OrganizationInboxProjectionFunctionsAsEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
-    GUEST = "GUEST"
+    GUEST = "GUEST",
+    OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum OrganizationInboxProjectionAccountRegionEnum {
+    US_WEST_2 = "US_WEST_2"
 }
 export declare function OrganizationInboxProjectionFromJSON(json: any): OrganizationInboxProjection;
 export declare function OrganizationInboxProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): OrganizationInboxProjection;

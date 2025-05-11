@@ -32,10 +32,10 @@ function PageInboxTagsFromJSONTyped(json, ignoreDiscriminator) {
         totalElements: json['totalElements'],
         totalPages: json['totalPages'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
         numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
             ? undefined
             : json['numberOfElements'],
+        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
         size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
         number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
         sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
@@ -56,8 +56,8 @@ function PageInboxTagsToJSON(value) {
         totalElements: value.totalElements,
         totalPages: value.totalPages,
         last: value.last,
-        first: value.first,
         numberOfElements: value.numberOfElements,
+        first: value.first,
         size: value.size,
         number: value.number,
         sort: (0, _1.SortObjectToJSON)(value.sort),

@@ -45,8 +45,8 @@ function ConnectorEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
         eventType: json['eventType'],
+        createdAt: new Date(json['createdAt']),
         connectorId: json['connectorId'],
         seen: !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
@@ -64,8 +64,8 @@ function ConnectorEventProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
         eventType: value.eventType,
+        createdAt: value.createdAt.toISOString(),
         connectorId: value.connectorId,
         seen: value.seen,
         message: value.message,

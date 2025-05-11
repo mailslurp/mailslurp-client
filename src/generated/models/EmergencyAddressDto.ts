@@ -47,6 +47,15 @@ export enum EmergencyAddressDtoPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
   AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  CH = 'CH',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  SE = 'SE',
 }
 
 export function EmergencyAddressDtoFromJSON(json: any): EmergencyAddressDto {

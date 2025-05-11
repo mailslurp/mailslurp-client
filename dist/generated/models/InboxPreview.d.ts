@@ -99,6 +99,12 @@ export interface InboxPreview {
      * @memberof InboxPreview
      */
     description?: string | null;
+    /**
+     * Region of the inbox
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    accountRegion?: InboxPreviewAccountRegionEnum;
 }
 /**
  * @export
@@ -118,7 +124,15 @@ export declare enum InboxPreviewFunctionsAsEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
-    GUEST = "GUEST"
+    GUEST = "GUEST",
+    OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxPreviewAccountRegionEnum {
+    US_WEST_2 = "US_WEST_2"
 }
 export declare function InboxPreviewFromJSON(json: any): InboxPreview;
 export declare function InboxPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxPreview;

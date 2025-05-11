@@ -752,6 +752,50 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Check if an inbox has automations.
+     * Does inbox have automations
+     */
+    InboxControllerApi.prototype.doesInboxHaveAutomationsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/automations",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Check if an inbox has automations.
+     * Does inbox have automations
+     */
+    InboxControllerApi.prototype.doesInboxHaveAutomations = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.doesInboxHaveAutomationsRaw(initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
      * Remove expired inboxes
      */
@@ -3710,6 +3754,7 @@ var GetAllInboxesInboxFunctionEnum;
     GetAllInboxesInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
     GetAllInboxesInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
     GetAllInboxesInboxFunctionEnum["GUEST"] = "GUEST";
+    GetAllInboxesInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
 /**
  * @export
@@ -3741,6 +3786,7 @@ var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["GUEST"] = "GUEST";
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));
 /**
  * @export

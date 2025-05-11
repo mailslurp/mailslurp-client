@@ -64,6 +64,7 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
         inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
@@ -109,6 +110,7 @@ function SentEmailDtoToJSON(value) {
         textExcerpt: value.textExcerpt,
         inReplyTo: value.inReplyTo,
         favourite: value.favourite,
+        sizeBytes: value.sizeBytes,
         html: value.html,
     };
 }

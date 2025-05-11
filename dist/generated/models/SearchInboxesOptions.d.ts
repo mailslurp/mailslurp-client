@@ -108,7 +108,8 @@ export declare enum SearchInboxesOptionsInboxFunctionEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
-    GUEST = "GUEST"
+    GUEST = "GUEST",
+    OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
 export declare function SearchInboxesOptionsFromJSON(json: any): SearchInboxesOptions;
 export declare function SearchInboxesOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchInboxesOptions;

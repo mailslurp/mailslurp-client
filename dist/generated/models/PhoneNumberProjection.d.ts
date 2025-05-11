@@ -17,16 +17,16 @@
 export interface PhoneNumberProjection {
     /**
      *
-     * @type {Date}
-     * @memberof PhoneNumberProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
     userId: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof PhoneNumberProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -59,7 +59,16 @@ export interface PhoneNumberProjection {
 export declare enum PhoneNumberProjectionPhoneCountryEnum {
     US = "US",
     GB = "GB",
-    AU = "AU"
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    CH = "CH",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    SE = "SE"
 }
 export declare function PhoneNumberProjectionFromJSON(json: any): PhoneNumberProjection;
 export declare function PhoneNumberProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberProjection;

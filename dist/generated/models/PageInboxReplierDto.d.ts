@@ -48,16 +48,16 @@ export interface PageInboxReplierDto {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxReplierDto
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxReplierDto
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierDto
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

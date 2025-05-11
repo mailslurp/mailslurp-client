@@ -109,6 +109,12 @@ export interface OrganizationInboxProjection {
    * @memberof OrganizationInboxProjection
    */
   expiresAt?: Date | null;
+  /**
+   * Region of the inbox
+   * @type {string}
+   * @memberof OrganizationInboxProjection
+   */
+  accountRegion?: OrganizationInboxProjectionAccountRegionEnum;
 }
 
 /**
@@ -130,6 +136,14 @@ export enum OrganizationInboxProjectionFunctionsAsEnum {
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
   GUEST = 'GUEST',
+  OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum OrganizationInboxProjectionAccountRegionEnum {
+  US_WEST_2 = 'US_WEST_2',
 }
 
 export function OrganizationInboxProjectionFromJSON(
@@ -165,6 +179,9 @@ export function OrganizationInboxProjectionFromJSONTyped(
       : json['expiresAt'] === null
       ? null
       : new Date(json['expiresAt']),
+    accountRegion: !exists(json, 'accountRegion')
+      ? undefined
+      : json['accountRegion'],
   };
 }
 
@@ -198,5 +215,6 @@ export function OrganizationInboxProjectionToJSON(
         : value.expiresAt === null
         ? null
         : value.expiresAt.toISOString(),
+    accountRegion: value.accountRegion,
   };
 }

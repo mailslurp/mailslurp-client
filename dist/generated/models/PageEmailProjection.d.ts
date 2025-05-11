@@ -48,16 +48,16 @@ export interface PageEmailProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageEmailProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageEmailProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEmailProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

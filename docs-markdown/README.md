@@ -28,6 +28,9 @@ MailSlurp JS
 - [CreateInboxRulesetOptionsActionEnum](enums/CreateInboxRulesetOptionsActionEnum.md)
 - [CreateInboxRulesetOptionsScopeEnum](enums/CreateInboxRulesetOptionsScopeEnum.md)
 - [CreateNewEmailAddressInboxTypeEnum](enums/CreateNewEmailAddressInboxTypeEnum.md)
+- [CreateOAuthConnectionOAuthConnectionTypeEnum](enums/CreateOAuthConnectionOAuthConnectionTypeEnum.md)
+- [CreatePhoneNumberOptionsPhoneCountryEnum](enums/CreatePhoneNumberOptionsPhoneCountryEnum.md)
+- [CreatePhoneNumberOptionsScheduleEnum](enums/CreatePhoneNumberOptionsScheduleEnum.md)
 - [CreateRandomInboxInboxTypeEnum](enums/CreateRandomInboxInboxTypeEnum.md)
 - [CreateWebhookOptionsEventNameEnum](enums/CreateWebhookOptionsEventNameEnum.md)
 - [DNSLookupOptionsRecordTypesEnum](enums/DNSLookupOptionsRecordTypesEnum.md)
@@ -53,6 +56,10 @@ MailSlurp JS
 - [EmailThreadItemItemTypeEnum](enums/EmailThreadItemItemTypeEnum.md)
 - [EmergencyAddressDtoPhoneCountryEnum](enums/EmergencyAddressDtoPhoneCountryEnum.md)
 - [EmergencyAddressPhoneCountryEnum](enums/EmergencyAddressPhoneCountryEnum.md)
+- [EntityAutomationItemProjectionAutomationTypeEnum](enums/EntityAutomationItemProjectionAutomationTypeEnum.md)
+- [EntityEventItemProjectionEventTypeEnum](enums/EntityEventItemProjectionEventTypeEnum.md)
+- [EntityEventItemProjectionSeverityEnum](enums/EntityEventItemProjectionSeverityEnum.md)
+- [EntityFavouriteItemProjectionEntityTypeEnum](enums/EntityFavouriteItemProjectionEntityTypeEnum.md)
 - [ExportEntitiesExportTypeEnum](enums/ExportEntitiesExportTypeEnum.md)
 - [ExportEntitiesOutputFormatEnum](enums/ExportEntitiesOutputFormatEnum.md)
 - [ExportOptionsOutputFormatEnum](enums/ExportOptionsOutputFormatEnum.md)
@@ -94,6 +101,7 @@ MailSlurp JS
 - [GetAllPlusAddressesSortEnum](enums/GetAllPlusAddressesSortEnum.md)
 - [GetAllScheduledJobsSortEnum](enums/GetAllScheduledJobsSortEnum.md)
 - [GetAllSentTrackingPixelsSortEnum](enums/GetAllSentTrackingPixelsSortEnum.md)
+- [GetAllSmsMessagesSortEnum](enums/GetAllSmsMessagesSortEnum.md)
 - [GetAllTemplatesSortEnum](enums/GetAllTemplatesSortEnum.md)
 - [GetAllTrackingPixelsSortEnum](enums/GetAllTrackingPixelsSortEnum.md)
 - [GetAllUnknownMissedEmailsSortEnum](enums/GetAllUnknownMissedEmailsSortEnum.md)
@@ -120,6 +128,12 @@ MailSlurp JS
 - [GetEmailsOffsetPaginatedSortEnum](enums/GetEmailsOffsetPaginatedSortEnum.md)
 - [GetEmailsPaginatedSortEnum](enums/GetEmailsPaginatedSortEnum.md)
 - [GetEmailsSortEnum](enums/GetEmailsSortEnum.md)
+- [GetEntityAutomationsFilterEnum](enums/GetEntityAutomationsFilterEnum.md)
+- [GetEntityAutomationsSortEnum](enums/GetEntityAutomationsSortEnum.md)
+- [GetEntityEventsFilterEnum](enums/GetEntityEventsFilterEnum.md)
+- [GetEntityEventsSortEnum](enums/GetEntityEventsSortEnum.md)
+- [GetEntityFavoritesFilterEnum](enums/GetEntityFavoritesFilterEnum.md)
+- [GetEntityFavoritesSortEnum](enums/GetEntityFavoritesSortEnum.md)
 - [GetExpiredInboxesSortEnum](enums/GetExpiredInboxesSortEnum.md)
 - [GetExportLinkExportTypeEnum](enums/GetExportLinkExportTypeEnum.md)
 - [GetGroupWithContactsPaginatedSortEnum](enums/GetGroupWithContactsPaginatedSortEnum.md)
@@ -144,6 +158,7 @@ MailSlurp JS
 - [GetJsonSchemaForWebhookEventEventEnum](enums/GetJsonSchemaForWebhookEventEventEnum.md)
 - [GetListUnsubscribeRecipientsSortEnum](enums/GetListUnsubscribeRecipientsSortEnum.md)
 - [GetMailSlurpDomainsInboxTypeEnum](enums/GetMailSlurpDomainsInboxTypeEnum.md)
+- [GetOptInIdentitiesSortEnum](enums/GetOptInIdentitiesSortEnum.md)
 - [GetOrganizationEmailsPaginatedSortEnum](enums/GetOrganizationEmailsPaginatedSortEnum.md)
 - [GetOrganizationInboxesSortEnum](enums/GetOrganizationInboxesSortEnum.md)
 - [GetOutboxesSortEnum](enums/GetOutboxesSortEnum.md)
@@ -152,6 +167,7 @@ MailSlurp JS
 - [GetPhoneNumberWebhooksPaginatedSortEnum](enums/GetPhoneNumberWebhooksPaginatedSortEnum.md)
 - [GetPhoneNumbersPhoneCountryEnum](enums/GetPhoneNumbersPhoneCountryEnum.md)
 - [GetPhoneNumbersSortEnum](enums/GetPhoneNumbersSortEnum.md)
+- [GetReputationItemsSortEnum](enums/GetReputationItemsSortEnum.md)
 - [GetScheduledJobsByInboxIdSortEnum](enums/GetScheduledJobsByInboxIdSortEnum.md)
 - [GetSentDeliveryStatusesBySentIdSortEnum](enums/GetSentDeliveryStatusesBySentIdSortEnum.md)
 - [GetSentDeliveryStatusesSortEnum](enums/GetSentDeliveryStatusesSortEnum.md)
@@ -159,7 +175,9 @@ MailSlurp JS
 - [GetSentEmailsSortEnum](enums/GetSentEmailsSortEnum.md)
 - [GetSentEmailsWithQueueResultsSortEnum](enums/GetSentEmailsWithQueueResultsSortEnum.md)
 - [GetSentOrganizationEmailsSortEnum](enums/GetSentOrganizationEmailsSortEnum.md)
-- [GetSmsMessagesPaginatedSortEnum](enums/GetSmsMessagesPaginatedSortEnum.md)
+- [GetSentSmsByPhoneNumberSortEnum](enums/GetSentSmsByPhoneNumberSortEnum.md)
+- [GetSentSmsMessagesPaginatedSortEnum](enums/GetSentSmsMessagesPaginatedSortEnum.md)
+- [GetSmsByPhoneNumberSortEnum](enums/GetSmsByPhoneNumberSortEnum.md)
 - [GetTestWebhookPayloadEventNameEnum](enums/GetTestWebhookPayloadEventNameEnum.md)
 - [GetThreadsPaginatedSortEnum](enums/GetThreadsPaginatedSortEnum.md)
 - [GetValidationRequestsSortEnum](enums/GetValidationRequestsSortEnum.md)
@@ -170,11 +188,13 @@ MailSlurp JS
 - [ImageIssueSeverityEnum](enums/ImageIssueSeverityEnum.md)
 - [ImapFlagOperationOptionsFlagOperationEnum](enums/ImapFlagOperationOptionsFlagOperationEnum.md)
 - [ImapServerStatusOptionsStatusItemsEnum](enums/ImapServerStatusOptionsStatusItemsEnum.md)
+- [InboxDtoAccountRegionEnum](enums/InboxDtoAccountRegionEnum.md)
 - [InboxDtoFunctionsAsEnum](enums/InboxDtoFunctionsAsEnum.md)
 - [InboxDtoInboxTypeEnum](enums/InboxDtoInboxTypeEnum.md)
 - [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
 - [InboxForwarderEventDtoStatusEnum](enums/InboxForwarderEventDtoStatusEnum.md)
 - [InboxForwarderEventProjectionStatusEnum](enums/InboxForwarderEventProjectionStatusEnum.md)
+- [InboxPreviewAccountRegionEnum](enums/InboxPreviewAccountRegionEnum.md)
 - [InboxPreviewFunctionsAsEnum](enums/InboxPreviewFunctionsAsEnum.md)
 - [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
 - [InboxReplierDtoFieldEnum](enums/InboxReplierDtoFieldEnum.md)
@@ -187,8 +207,11 @@ MailSlurp JS
 - [ListInboxTrackingPixelsSortEnum](enums/ListInboxTrackingPixelsSortEnum.md)
 - [MatchOptionFieldEnum](enums/MatchOptionFieldEnum.md)
 - [MatchOptionShouldEnum](enums/MatchOptionShouldEnum.md)
+- [OrganizationInboxProjectionAccountRegionEnum](enums/OrganizationInboxProjectionAccountRegionEnum.md)
 - [OrganizationInboxProjectionFunctionsAsEnum](enums/OrganizationInboxProjectionFunctionsAsEnum.md)
 - [OrganizationInboxProjectionInboxTypeEnum](enums/OrganizationInboxProjectionInboxTypeEnum.md)
+- [PhoneMessageThreadItemProjectionMessageDirectionEnum](enums/PhoneMessageThreadItemProjectionMessageDirectionEnum.md)
+- [PhoneMessageThreadProjectionLastMessageDirectionEnum](enums/PhoneMessageThreadProjectionLastMessageDirectionEnum.md)
 - [PhoneNumberDtoPhoneCountryEnum](enums/PhoneNumberDtoPhoneCountryEnum.md)
 - [PhoneNumberProjectionPhoneCountryEnum](enums/PhoneNumberProjectionPhoneCountryEnum.md)
 - [PhonePlanAvailabilityItemAvailabilityStatusEnum](enums/PhonePlanAvailabilityItemAvailabilityStatusEnum.md)
@@ -197,6 +220,8 @@ MailSlurp JS
 - [ProviderSettingsMailProviderEnum](enums/ProviderSettingsMailProviderEnum.md)
 - [ReplyToAliasEmailOptionsSendStrategyEnum](enums/ReplyToAliasEmailOptionsSendStrategyEnum.md)
 - [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
+- [ReputationItemProjectionReputationTypeEnum](enums/ReputationItemProjectionReputationTypeEnum.md)
+- [ReputationItemProjectionSeverityEnum](enums/ReputationItemProjectionSeverityEnum.md)
 - [ScheduledJobDtoStatusEnum](enums/ScheduledJobDtoStatusEnum.md)
 - [ScheduledJobStatusEnum](enums/ScheduledJobStatusEnum.md)
 - [SearchEmailsOptionsSortDirectionEnum](enums/SearchEmailsOptionsSortDirectionEnum.md)
@@ -254,6 +279,7 @@ MailSlurp JS
 - [CommonActionsControllerApi](classes/CommonActionsControllerApi.md)
 - [Configuration](classes/Configuration.md)
 - [ConnectorControllerApi](classes/ConnectorControllerApi.md)
+- [ConsentControllerApi](classes/ConsentControllerApi.md)
 - [ContactControllerApi](classes/ContactControllerApi.md)
 - [DomainControllerApi](classes/DomainControllerApi.md)
 - [EmailControllerApi](classes/EmailControllerApi.md)
@@ -272,6 +298,7 @@ MailSlurp JS
 - [MailServerControllerApi](classes/MailServerControllerApi.md)
 - [MailSlurp](classes/MailSlurp.md)
 - [MissedEmailControllerApi](classes/MissedEmailControllerApi.md)
+- [OAuthConnectionApi](classes/OAuthConnectionApi.md)
 - [PhoneControllerApi](classes/PhoneControllerApi.md)
 - [RequiredError](classes/RequiredError.md)
 - [SentEmailsControllerApi](classes/SentEmailsControllerApi.md)
@@ -322,6 +349,7 @@ MailSlurp JS
 - [CheckEmailFeaturesClientSupportOptions](interfaces/CheckEmailFeaturesClientSupportOptions.md)
 - [CheckEmailFeaturesClientSupportRequest](interfaces/CheckEmailFeaturesClientSupportRequest.md)
 - [CheckEmailFeaturesClientSupportResults](interfaces/CheckEmailFeaturesClientSupportResults.md)
+- [CheckSendingConsentForEmailAddressRequest](interfaces/CheckSendingConsentForEmailAddressRequest.md)
 - [Complaint](interfaces/Complaint.md)
 - [ConditionOption](interfaces/ConditionOption.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
@@ -337,6 +365,7 @@ MailSlurp JS
 - [ConnectorSyncRequestResult](interfaces/ConnectorSyncRequestResult.md)
 - [ConnectorSyncResult](interfaces/ConnectorSyncResult.md)
 - [ConnectorSyncSettingsDto](interfaces/ConnectorSyncSettingsDto.md)
+- [ConsentStatusDto](interfaces/ConsentStatusDto.md)
 - [Consume](interfaces/Consume.md)
 - [ContactDto](interfaces/ContactDto.md)
 - [ContactProjection](interfaces/ContactProjection.md)
@@ -376,6 +405,11 @@ MailSlurp JS
 - [CreateNewInboxForwarderRequest](interfaces/CreateNewInboxForwarderRequest.md)
 - [CreateNewInboxReplierRequest](interfaces/CreateNewInboxReplierRequest.md)
 - [CreateNewInboxRulesetRequest](interfaces/CreateNewInboxRulesetRequest.md)
+- [CreateOAuthConnectionRequest](interfaces/CreateOAuthConnectionRequest.md)
+- [CreateOAuthConnectionResult](interfaces/CreateOAuthConnectionResult.md)
+- [CreateOAuthExchangeResult](interfaces/CreateOAuthExchangeResult.md)
+- [CreatePhoneNumberOptions](interfaces/CreatePhoneNumberOptions.md)
+- [CreatePhoneNumberRequest](interfaces/CreatePhoneNumberRequest.md)
 - [CreatePortalOptions](interfaces/CreatePortalOptions.md)
 - [CreatePortalUserOptions](interfaces/CreatePortalUserOptions.md)
 - [CreateRandomInboxRequest](interfaces/CreateRandomInboxRequest.md)
@@ -417,6 +451,8 @@ MailSlurp JS
 - [DeleteNewFakeEmailAddressRequest](interfaces/DeleteNewFakeEmailAddressRequest.md)
 - [DeletePhoneNumberRequest](interfaces/DeletePhoneNumberRequest.md)
 - [DeleteSentEmailRequest](interfaces/DeleteSentEmailRequest.md)
+- [DeleteSentSmsMessageRequest](interfaces/DeleteSentSmsMessageRequest.md)
+- [DeleteSentSmsMessagesRequest](interfaces/DeleteSentSmsMessagesRequest.md)
 - [DeleteSmsMessageRequest](interfaces/DeleteSmsMessageRequest.md)
 - [DeleteSmsMessagesRequest](interfaces/DeleteSmsMessagesRequest.md)
 - [DeleteTemplateRequest](interfaces/DeleteTemplateRequest.md)
@@ -477,6 +513,10 @@ MailSlurp JS
 - [EmergencyAddressDto](interfaces/EmergencyAddressDto.md)
 - [EmptyInboxRequest](interfaces/EmptyInboxRequest.md)
 - [EmptyResponseDto](interfaces/EmptyResponseDto.md)
+- [EntityAutomationItemProjection](interfaces/EntityAutomationItemProjection.md)
+- [EntityEventItemProjection](interfaces/EntityEventItemProjection.md)
+- [EntityFavouriteItemProjection](interfaces/EntityFavouriteItemProjection.md)
+- [ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest](interfaces/ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest.md)
 - [ExpirationDefaults](interfaces/ExpirationDefaults.md)
 - [ExpiredInboxDto](interfaces/ExpiredInboxDto.md)
 - [ExpiredInboxRecordProjection](interfaces/ExpiredInboxRecordProjection.md)
@@ -520,9 +560,11 @@ MailSlurp JS
 - [GetAllInboxesOffsetPaginatedRequest](interfaces/GetAllInboxesOffsetPaginatedRequest.md)
 - [GetAllInboxesRequest](interfaces/GetAllInboxesRequest.md)
 - [GetAllMissedEmailsRequest](interfaces/GetAllMissedEmailsRequest.md)
+- [GetAllPhoneMessageThreadsRequest](interfaces/GetAllPhoneMessageThreadsRequest.md)
 - [GetAllPlusAddressesRequest](interfaces/GetAllPlusAddressesRequest.md)
 - [GetAllScheduledJobsRequest](interfaces/GetAllScheduledJobsRequest.md)
 - [GetAllSentTrackingPixelsRequest](interfaces/GetAllSentTrackingPixelsRequest.md)
+- [GetAllSmsMessagesRequest](interfaces/GetAllSmsMessagesRequest.md)
 - [GetAllTemplatesRequest](interfaces/GetAllTemplatesRequest.md)
 - [GetAllTrackingPixelsRequest](interfaces/GetAllTrackingPixelsRequest.md)
 - [GetAllUnknownMissedEmailsRequest](interfaces/GetAllUnknownMissedEmailsRequest.md)
@@ -580,6 +622,9 @@ MailSlurp JS
 - [GetEmailsPaginatedRequest](interfaces/GetEmailsPaginatedRequest.md)
 - [GetEmailsRequest](interfaces/GetEmailsRequest.md)
 - [GetEmergencyAddressRequest](interfaces/GetEmergencyAddressRequest.md)
+- [GetEntityAutomationsRequest](interfaces/GetEntityAutomationsRequest.md)
+- [GetEntityEventsRequest](interfaces/GetEntityEventsRequest.md)
+- [GetEntityFavoritesRequest](interfaces/GetEntityFavoritesRequest.md)
 - [GetExpiredInboxByInboxIdRequest](interfaces/GetExpiredInboxByInboxIdRequest.md)
 - [GetExpiredInboxRecordRequest](interfaces/GetExpiredInboxRecordRequest.md)
 - [GetExpiredInboxesRequest](interfaces/GetExpiredInboxesRequest.md)
@@ -636,9 +681,12 @@ MailSlurp JS
 - [GetListUnsubscribeRecipientsRequest](interfaces/GetListUnsubscribeRecipientsRequest.md)
 - [GetMailSlurpDomainsRequest](interfaces/GetMailSlurpDomainsRequest.md)
 - [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
+- [GetOptInIdentitiesRequest](interfaces/GetOptInIdentitiesRequest.md)
 - [GetOrganizationEmailsPaginatedRequest](interfaces/GetOrganizationEmailsPaginatedRequest.md)
 - [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
 - [GetOutboxesRequest](interfaces/GetOutboxesRequest.md)
+- [GetPhoneMessageThreadItemsRequest](interfaces/GetPhoneMessageThreadItemsRequest.md)
+- [GetPhoneMessageThreadsRequest](interfaces/GetPhoneMessageThreadsRequest.md)
 - [GetPhoneNumberRequest](interfaces/GetPhoneNumberRequest.md)
 - [GetPhoneNumberWebhooksPaginatedRequest](interfaces/GetPhoneNumberWebhooksPaginatedRequest.md)
 - [GetPhoneNumbersRequest](interfaces/GetPhoneNumbersRequest.md)
@@ -647,6 +695,7 @@ MailSlurp JS
 - [GetRawSentEmailContentsRequest](interfaces/GetRawSentEmailContentsRequest.md)
 - [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
 - [GetReplyForSmsMessageRequest](interfaces/GetReplyForSmsMessageRequest.md)
+- [GetReputationItemsRequest](interfaces/GetReputationItemsRequest.md)
 - [GetScheduledJobRequest](interfaces/GetScheduledJobRequest.md)
 - [GetScheduledJobsByInboxIdRequest](interfaces/GetScheduledJobsByInboxIdRequest.md)
 - [GetSentDeliveryStatusRequest](interfaces/GetSentDeliveryStatusRequest.md)
@@ -659,8 +708,11 @@ MailSlurp JS
 - [GetSentEmailsRequest](interfaces/GetSentEmailsRequest.md)
 - [GetSentEmailsWithQueueResultsRequest](interfaces/GetSentEmailsWithQueueResultsRequest.md)
 - [GetSentOrganizationEmailsRequest](interfaces/GetSentOrganizationEmailsRequest.md)
+- [GetSentSmsByPhoneNumberRequest](interfaces/GetSentSmsByPhoneNumberRequest.md)
+- [GetSentSmsMessageRequest](interfaces/GetSentSmsMessageRequest.md)
+- [GetSentSmsMessagesPaginatedRequest](interfaces/GetSentSmsMessagesPaginatedRequest.md)
+- [GetSmsByPhoneNumberRequest](interfaces/GetSmsByPhoneNumberRequest.md)
 - [GetSmsMessageRequest](interfaces/GetSmsMessageRequest.md)
-- [GetSmsMessagesPaginatedRequest](interfaces/GetSmsMessagesPaginatedRequest.md)
 - [GetSmtpAccessRequest](interfaces/GetSmtpAccessRequest.md)
 - [GetTemplatePreviewHtmlRequest](interfaces/GetTemplatePreviewHtmlRequest.md)
 - [GetTemplatePreviewJsonRequest](interfaces/GetTemplatePreviewJsonRequest.md)
@@ -757,6 +809,10 @@ MailSlurp JS
 - [MissedEmailProjection](interfaces/MissedEmailProjection.md)
 - [NameServerRecord](interfaces/NameServerRecord.md)
 - [NewFakeEmailAddressResult](interfaces/NewFakeEmailAddressResult.md)
+- [OptInConsentOptions](interfaces/OptInConsentOptions.md)
+- [OptInConsentSendResult](interfaces/OptInConsentSendResult.md)
+- [OptInIdentityProjection](interfaces/OptInIdentityProjection.md)
+- [OptInSendingConsentDto](interfaces/OptInSendingConsentDto.md)
 - [OptionalConnectorDto](interfaces/OptionalConnectorDto.md)
 - [OptionalConnectorImapConnectionDto](interfaces/OptionalConnectorImapConnectionDto.md)
 - [OptionalConnectorSmtpConnectionDto](interfaces/OptionalConnectorSmtpConnectionDto.md)
@@ -776,6 +832,9 @@ MailSlurp JS
 - [PageEmailProjection](interfaces/PageEmailProjection.md)
 - [PageEmailThreadProjection](interfaces/PageEmailThreadProjection.md)
 - [PageEmailValidationRequest](interfaces/PageEmailValidationRequest.md)
+- [PageEntityAutomationItems](interfaces/PageEntityAutomationItems.md)
+- [PageEntityEventItems](interfaces/PageEntityEventItems.md)
+- [PageEntityFavouriteItems](interfaces/PageEntityFavouriteItems.md)
 - [PageExpiredInboxRecordProjection](interfaces/PageExpiredInboxRecordProjection.md)
 - [PageGroupProjection](interfaces/PageGroupProjection.md)
 - [PageGuestPortalUsers](interfaces/PageGuestPortalUsers.md)
@@ -788,12 +847,17 @@ MailSlurp JS
 - [PageInboxTags](interfaces/PageInboxTags.md)
 - [PageListUnsubscribeRecipients](interfaces/PageListUnsubscribeRecipients.md)
 - [PageMissedEmailProjection](interfaces/PageMissedEmailProjection.md)
+- [PageOptInIdentityProjection](interfaces/PageOptInIdentityProjection.md)
 - [PageOrganizationInboxProjection](interfaces/PageOrganizationInboxProjection.md)
+- [PagePhoneMessageThreadItemProjection](interfaces/PagePhoneMessageThreadItemProjection.md)
+- [PagePhoneMessageThreadProjection](interfaces/PagePhoneMessageThreadProjection.md)
 - [PagePhoneNumberProjection](interfaces/PagePhoneNumberProjection.md)
 - [PagePlusAddressProjection](interfaces/PagePlusAddressProjection.md)
+- [PageReputationItems](interfaces/PageReputationItems.md)
 - [PageScheduledJobs](interfaces/PageScheduledJobs.md)
 - [PageSentEmailProjection](interfaces/PageSentEmailProjection.md)
 - [PageSentEmailWithQueueProjection](interfaces/PageSentEmailWithQueueProjection.md)
+- [PageSentSmsProjection](interfaces/PageSentSmsProjection.md)
 - [PageSmsProjection](interfaces/PageSmsProjection.md)
 - [PageTemplateProjection](interfaces/PageTemplateProjection.md)
 - [PageTrackingPixelProjection](interfaces/PageTrackingPixelProjection.md)
@@ -802,8 +866,11 @@ MailSlurp JS
 - [PageWebhookProjection](interfaces/PageWebhookProjection.md)
 - [PageWebhookResult](interfaces/PageWebhookResult.md)
 - [PageableObject](interfaces/PageableObject.md)
+- [PhoneMessageThreadItemProjection](interfaces/PhoneMessageThreadItemProjection.md)
+- [PhoneMessageThreadProjection](interfaces/PhoneMessageThreadProjection.md)
 - [PhoneNumberDto](interfaces/PhoneNumberDto.md)
 - [PhoneNumberProjection](interfaces/PhoneNumberProjection.md)
+- [PhoneNumberValidationDto](interfaces/PhoneNumberValidationDto.md)
 - [PhonePlanAvailability](interfaces/PhonePlanAvailability.md)
 - [PhonePlanAvailabilityItem](interfaces/PhonePlanAvailabilityItem.md)
 - [PhonePlanDto](interfaces/PhonePlanDto.md)
@@ -821,11 +888,13 @@ MailSlurp JS
 - [ReplyToEmailOptions](interfaces/ReplyToEmailOptions.md)
 - [ReplyToEmailRequest](interfaces/ReplyToEmailRequest.md)
 - [ReplyToSmsMessageRequest](interfaces/ReplyToSmsMessageRequest.md)
+- [ReputationItemProjection](interfaces/ReputationItemProjection.md)
 - [RequestContext](interfaces/RequestContext.md)
 - [RequestOpts](interfaces/RequestOpts.md)
 - [ResponseContext](interfaces/ResponseContext.md)
 - [ResponseTransformer](interfaces/ResponseTransformer.md)
 - [Result](interfaces/Result.md)
+- [RevokeOptInConsentForEmailAddressRequest](interfaces/RevokeOptInConsentForEmailAddressRequest.md)
 - [ScheduledJob](interfaces/ScheduledJob.md)
 - [ScheduledJobDto](interfaces/ScheduledJobDto.md)
 - [SearchEmailsOptions](interfaces/SearchEmailsOptions.md)
@@ -842,7 +911,11 @@ MailSlurp JS
 - [SendEmailSimpleRequest](interfaces/SendEmailSimpleRequest.md)
 - [SendEmailSourceOptionalRequest](interfaces/SendEmailSourceOptionalRequest.md)
 - [SendEmailWithQueueRequest](interfaces/SendEmailWithQueueRequest.md)
+- [SendOptInConsentEmailOptions](interfaces/SendOptInConsentEmailOptions.md)
+- [SendOptInConsentForEmailAddressRequest](interfaces/SendOptInConsentForEmailAddressRequest.md)
 - [SendSMTPEnvelopeOptions](interfaces/SendSMTPEnvelopeOptions.md)
+- [SendSmsFromPhoneNumberRequest](interfaces/SendSmsFromPhoneNumberRequest.md)
+- [SendSmsRequest](interfaces/SendSmsRequest.md)
 - [SendSmtpEnvelopeRequest](interfaces/SendSmtpEnvelopeRequest.md)
 - [SendTestDataRequest](interfaces/SendTestDataRequest.md)
 - [SendTestEmailRequest](interfaces/SendTestEmailRequest.md)
@@ -853,7 +926,9 @@ MailSlurp JS
 - [SentEmailDto](interfaces/SentEmailDto.md)
 - [SentEmailProjection](interfaces/SentEmailProjection.md)
 - [SentSmsDto](interfaces/SentSmsDto.md)
+- [SentSmsProjection](interfaces/SentSmsProjection.md)
 - [ServerEndpoints](interfaces/ServerEndpoints.md)
+- [SetConsentStatusRequest](interfaces/SetConsentStatusRequest.md)
 - [SetEmailFavouritedRequest](interfaces/SetEmailFavouritedRequest.md)
 - [SetInboxFavouritedOptions](interfaces/SetInboxFavouritedOptions.md)
 - [SetInboxFavouritedRequest](interfaces/SetInboxFavouritedRequest.md)
@@ -866,6 +941,7 @@ MailSlurp JS
 - [SmsPreview](interfaces/SmsPreview.md)
 - [SmsProjection](interfaces/SmsProjection.md)
 - [SmsReplyOptions](interfaces/SmsReplyOptions.md)
+- [SmsSendOptions](interfaces/SmsSendOptions.md)
 - [SmtpAccessDetails](interfaces/SmtpAccessDetails.md)
 - [SortObject](interfaces/SortObject.md)
 - [SpellingIssue](interfaces/SpellingIssue.md)
@@ -932,6 +1008,8 @@ MailSlurp JS
 - [ValidateEmailAddressListRequest](interfaces/ValidateEmailAddressListRequest.md)
 - [ValidateEmailAddressListResult](interfaces/ValidateEmailAddressListResult.md)
 - [ValidateEmailRequest](interfaces/ValidateEmailRequest.md)
+- [ValidatePhoneNumberOptions](interfaces/ValidatePhoneNumberOptions.md)
+- [ValidatePhoneNumberRequest](interfaces/ValidatePhoneNumberRequest.md)
 - [ValidationDto](interfaces/ValidationDto.md)
 - [ValidationMessage](interfaces/ValidationMessage.md)
 - [VerifyEmailAddressOptions](interfaces/VerifyEmailAddressOptions.md)
@@ -1098,6 +1176,9 @@ MailSlurp JS
 - [ConnectorSyncSettingsDtoFromJSON](README.md#connectorsyncsettingsdtofromjson)
 - [ConnectorSyncSettingsDtoFromJSONTyped](README.md#connectorsyncsettingsdtofromjsontyped)
 - [ConnectorSyncSettingsDtoToJSON](README.md#connectorsyncsettingsdtotojson)
+- [ConsentStatusDtoFromJSON](README.md#consentstatusdtofromjson)
+- [ConsentStatusDtoFromJSONTyped](README.md#consentstatusdtofromjsontyped)
+- [ConsentStatusDtoToJSON](README.md#consentstatusdtotojson)
 - [ContactDtoFromJSON](README.md#contactdtofromjson)
 - [ContactDtoFromJSONTyped](README.md#contactdtofromjsontyped)
 - [ContactDtoToJSON](README.md#contactdtotojson)
@@ -1152,6 +1233,15 @@ MailSlurp JS
 - [CreateInboxRulesetOptionsFromJSON](README.md#createinboxrulesetoptionsfromjson)
 - [CreateInboxRulesetOptionsFromJSONTyped](README.md#createinboxrulesetoptionsfromjsontyped)
 - [CreateInboxRulesetOptionsToJSON](README.md#createinboxrulesetoptionstojson)
+- [CreateOAuthConnectionResultFromJSON](README.md#createoauthconnectionresultfromjson)
+- [CreateOAuthConnectionResultFromJSONTyped](README.md#createoauthconnectionresultfromjsontyped)
+- [CreateOAuthConnectionResultToJSON](README.md#createoauthconnectionresulttojson)
+- [CreateOAuthExchangeResultFromJSON](README.md#createoauthexchangeresultfromjson)
+- [CreateOAuthExchangeResultFromJSONTyped](README.md#createoauthexchangeresultfromjsontyped)
+- [CreateOAuthExchangeResultToJSON](README.md#createoauthexchangeresulttojson)
+- [CreatePhoneNumberOptionsFromJSON](README.md#createphonenumberoptionsfromjson)
+- [CreatePhoneNumberOptionsFromJSONTyped](README.md#createphonenumberoptionsfromjsontyped)
+- [CreatePhoneNumberOptionsToJSON](README.md#createphonenumberoptionstojson)
 - [CreatePortalOptionsFromJSON](README.md#createportaloptionsfromjson)
 - [CreatePortalOptionsFromJSONTyped](README.md#createportaloptionsfromjsontyped)
 - [CreatePortalOptionsToJSON](README.md#createportaloptionstojson)
@@ -1314,6 +1404,15 @@ MailSlurp JS
 - [EmptyResponseDtoFromJSON](README.md#emptyresponsedtofromjson)
 - [EmptyResponseDtoFromJSONTyped](README.md#emptyresponsedtofromjsontyped)
 - [EmptyResponseDtoToJSON](README.md#emptyresponsedtotojson)
+- [EntityAutomationItemProjectionFromJSON](README.md#entityautomationitemprojectionfromjson)
+- [EntityAutomationItemProjectionFromJSONTyped](README.md#entityautomationitemprojectionfromjsontyped)
+- [EntityAutomationItemProjectionToJSON](README.md#entityautomationitemprojectiontojson)
+- [EntityEventItemProjectionFromJSON](README.md#entityeventitemprojectionfromjson)
+- [EntityEventItemProjectionFromJSONTyped](README.md#entityeventitemprojectionfromjsontyped)
+- [EntityEventItemProjectionToJSON](README.md#entityeventitemprojectiontojson)
+- [EntityFavouriteItemProjectionFromJSON](README.md#entityfavouriteitemprojectionfromjson)
+- [EntityFavouriteItemProjectionFromJSONTyped](README.md#entityfavouriteitemprojectionfromjsontyped)
+- [EntityFavouriteItemProjectionToJSON](README.md#entityfavouriteitemprojectiontojson)
 - [ExpirationDefaultsFromJSON](README.md#expirationdefaultsfromjson)
 - [ExpirationDefaultsFromJSONTyped](README.md#expirationdefaultsfromjsontyped)
 - [ExpirationDefaultsToJSON](README.md#expirationdefaultstojson)
@@ -1566,6 +1665,18 @@ MailSlurp JS
 - [NewFakeEmailAddressResultFromJSON](README.md#newfakeemailaddressresultfromjson)
 - [NewFakeEmailAddressResultFromJSONTyped](README.md#newfakeemailaddressresultfromjsontyped)
 - [NewFakeEmailAddressResultToJSON](README.md#newfakeemailaddressresulttojson)
+- [OptInConsentOptionsFromJSON](README.md#optinconsentoptionsfromjson)
+- [OptInConsentOptionsFromJSONTyped](README.md#optinconsentoptionsfromjsontyped)
+- [OptInConsentOptionsToJSON](README.md#optinconsentoptionstojson)
+- [OptInConsentSendResultFromJSON](README.md#optinconsentsendresultfromjson)
+- [OptInConsentSendResultFromJSONTyped](README.md#optinconsentsendresultfromjsontyped)
+- [OptInConsentSendResultToJSON](README.md#optinconsentsendresulttojson)
+- [OptInIdentityProjectionFromJSON](README.md#optinidentityprojectionfromjson)
+- [OptInIdentityProjectionFromJSONTyped](README.md#optinidentityprojectionfromjsontyped)
+- [OptInIdentityProjectionToJSON](README.md#optinidentityprojectiontojson)
+- [OptInSendingConsentDtoFromJSON](README.md#optinsendingconsentdtofromjson)
+- [OptInSendingConsentDtoFromJSONTyped](README.md#optinsendingconsentdtofromjsontyped)
+- [OptInSendingConsentDtoToJSON](README.md#optinsendingconsentdtotojson)
 - [OptionalConnectorDtoFromJSON](README.md#optionalconnectordtofromjson)
 - [OptionalConnectorDtoFromJSONTyped](README.md#optionalconnectordtofromjsontyped)
 - [OptionalConnectorDtoToJSON](README.md#optionalconnectordtotojson)
@@ -1623,6 +1734,15 @@ MailSlurp JS
 - [PageEmailValidationRequestFromJSON](README.md#pageemailvalidationrequestfromjson)
 - [PageEmailValidationRequestFromJSONTyped](README.md#pageemailvalidationrequestfromjsontyped)
 - [PageEmailValidationRequestToJSON](README.md#pageemailvalidationrequesttojson)
+- [PageEntityAutomationItemsFromJSON](README.md#pageentityautomationitemsfromjson)
+- [PageEntityAutomationItemsFromJSONTyped](README.md#pageentityautomationitemsfromjsontyped)
+- [PageEntityAutomationItemsToJSON](README.md#pageentityautomationitemstojson)
+- [PageEntityEventItemsFromJSON](README.md#pageentityeventitemsfromjson)
+- [PageEntityEventItemsFromJSONTyped](README.md#pageentityeventitemsfromjsontyped)
+- [PageEntityEventItemsToJSON](README.md#pageentityeventitemstojson)
+- [PageEntityFavouriteItemsFromJSON](README.md#pageentityfavouriteitemsfromjson)
+- [PageEntityFavouriteItemsFromJSONTyped](README.md#pageentityfavouriteitemsfromjsontyped)
+- [PageEntityFavouriteItemsToJSON](README.md#pageentityfavouriteitemstojson)
 - [PageExpiredInboxRecordProjectionFromJSON](README.md#pageexpiredinboxrecordprojectionfromjson)
 - [PageExpiredInboxRecordProjectionFromJSONTyped](README.md#pageexpiredinboxrecordprojectionfromjsontyped)
 - [PageExpiredInboxRecordProjectionToJSON](README.md#pageexpiredinboxrecordprojectiontojson)
@@ -1659,15 +1779,27 @@ MailSlurp JS
 - [PageMissedEmailProjectionFromJSON](README.md#pagemissedemailprojectionfromjson)
 - [PageMissedEmailProjectionFromJSONTyped](README.md#pagemissedemailprojectionfromjsontyped)
 - [PageMissedEmailProjectionToJSON](README.md#pagemissedemailprojectiontojson)
+- [PageOptInIdentityProjectionFromJSON](README.md#pageoptinidentityprojectionfromjson)
+- [PageOptInIdentityProjectionFromJSONTyped](README.md#pageoptinidentityprojectionfromjsontyped)
+- [PageOptInIdentityProjectionToJSON](README.md#pageoptinidentityprojectiontojson)
 - [PageOrganizationInboxProjectionFromJSON](README.md#pageorganizationinboxprojectionfromjson)
 - [PageOrganizationInboxProjectionFromJSONTyped](README.md#pageorganizationinboxprojectionfromjsontyped)
 - [PageOrganizationInboxProjectionToJSON](README.md#pageorganizationinboxprojectiontojson)
+- [PagePhoneMessageThreadItemProjectionFromJSON](README.md#pagephonemessagethreaditemprojectionfromjson)
+- [PagePhoneMessageThreadItemProjectionFromJSONTyped](README.md#pagephonemessagethreaditemprojectionfromjsontyped)
+- [PagePhoneMessageThreadItemProjectionToJSON](README.md#pagephonemessagethreaditemprojectiontojson)
+- [PagePhoneMessageThreadProjectionFromJSON](README.md#pagephonemessagethreadprojectionfromjson)
+- [PagePhoneMessageThreadProjectionFromJSONTyped](README.md#pagephonemessagethreadprojectionfromjsontyped)
+- [PagePhoneMessageThreadProjectionToJSON](README.md#pagephonemessagethreadprojectiontojson)
 - [PagePhoneNumberProjectionFromJSON](README.md#pagephonenumberprojectionfromjson)
 - [PagePhoneNumberProjectionFromJSONTyped](README.md#pagephonenumberprojectionfromjsontyped)
 - [PagePhoneNumberProjectionToJSON](README.md#pagephonenumberprojectiontojson)
 - [PagePlusAddressProjectionFromJSON](README.md#pageplusaddressprojectionfromjson)
 - [PagePlusAddressProjectionFromJSONTyped](README.md#pageplusaddressprojectionfromjsontyped)
 - [PagePlusAddressProjectionToJSON](README.md#pageplusaddressprojectiontojson)
+- [PageReputationItemsFromJSON](README.md#pagereputationitemsfromjson)
+- [PageReputationItemsFromJSONTyped](README.md#pagereputationitemsfromjsontyped)
+- [PageReputationItemsToJSON](README.md#pagereputationitemstojson)
 - [PageScheduledJobsFromJSON](README.md#pagescheduledjobsfromjson)
 - [PageScheduledJobsFromJSONTyped](README.md#pagescheduledjobsfromjsontyped)
 - [PageScheduledJobsToJSON](README.md#pagescheduledjobstojson)
@@ -1677,6 +1809,9 @@ MailSlurp JS
 - [PageSentEmailWithQueueProjectionFromJSON](README.md#pagesentemailwithqueueprojectionfromjson)
 - [PageSentEmailWithQueueProjectionFromJSONTyped](README.md#pagesentemailwithqueueprojectionfromjsontyped)
 - [PageSentEmailWithQueueProjectionToJSON](README.md#pagesentemailwithqueueprojectiontojson)
+- [PageSentSmsProjectionFromJSON](README.md#pagesentsmsprojectionfromjson)
+- [PageSentSmsProjectionFromJSONTyped](README.md#pagesentsmsprojectionfromjsontyped)
+- [PageSentSmsProjectionToJSON](README.md#pagesentsmsprojectiontojson)
 - [PageSmsProjectionFromJSON](README.md#pagesmsprojectionfromjson)
 - [PageSmsProjectionFromJSONTyped](README.md#pagesmsprojectionfromjsontyped)
 - [PageSmsProjectionToJSON](README.md#pagesmsprojectiontojson)
@@ -1701,12 +1836,21 @@ MailSlurp JS
 - [PageableObjectFromJSON](README.md#pageableobjectfromjson)
 - [PageableObjectFromJSONTyped](README.md#pageableobjectfromjsontyped)
 - [PageableObjectToJSON](README.md#pageableobjecttojson)
+- [PhoneMessageThreadItemProjectionFromJSON](README.md#phonemessagethreaditemprojectionfromjson)
+- [PhoneMessageThreadItemProjectionFromJSONTyped](README.md#phonemessagethreaditemprojectionfromjsontyped)
+- [PhoneMessageThreadItemProjectionToJSON](README.md#phonemessagethreaditemprojectiontojson)
+- [PhoneMessageThreadProjectionFromJSON](README.md#phonemessagethreadprojectionfromjson)
+- [PhoneMessageThreadProjectionFromJSONTyped](README.md#phonemessagethreadprojectionfromjsontyped)
+- [PhoneMessageThreadProjectionToJSON](README.md#phonemessagethreadprojectiontojson)
 - [PhoneNumberDtoFromJSON](README.md#phonenumberdtofromjson)
 - [PhoneNumberDtoFromJSONTyped](README.md#phonenumberdtofromjsontyped)
 - [PhoneNumberDtoToJSON](README.md#phonenumberdtotojson)
 - [PhoneNumberProjectionFromJSON](README.md#phonenumberprojectionfromjson)
 - [PhoneNumberProjectionFromJSONTyped](README.md#phonenumberprojectionfromjsontyped)
 - [PhoneNumberProjectionToJSON](README.md#phonenumberprojectiontojson)
+- [PhoneNumberValidationDtoFromJSON](README.md#phonenumbervalidationdtofromjson)
+- [PhoneNumberValidationDtoFromJSONTyped](README.md#phonenumbervalidationdtofromjsontyped)
+- [PhoneNumberValidationDtoToJSON](README.md#phonenumbervalidationdtotojson)
 - [PhonePlanAvailabilityFromJSON](README.md#phoneplanavailabilityfromjson)
 - [PhonePlanAvailabilityFromJSONTyped](README.md#phoneplanavailabilityfromjsontyped)
 - [PhonePlanAvailabilityItemFromJSON](README.md#phoneplanavailabilityitemfromjson)
@@ -1743,6 +1887,9 @@ MailSlurp JS
 - [ReplyToEmailOptionsFromJSON](README.md#replytoemailoptionsfromjson)
 - [ReplyToEmailOptionsFromJSONTyped](README.md#replytoemailoptionsfromjsontyped)
 - [ReplyToEmailOptionsToJSON](README.md#replytoemailoptionstojson)
+- [ReputationItemProjectionFromJSON](README.md#reputationitemprojectionfromjson)
+- [ReputationItemProjectionFromJSONTyped](README.md#reputationitemprojectionfromjsontyped)
+- [ReputationItemProjectionToJSON](README.md#reputationitemprojectiontojson)
 - [ScheduledJobDtoFromJSON](README.md#scheduledjobdtofromjson)
 - [ScheduledJobDtoFromJSONTyped](README.md#scheduledjobdtofromjsontyped)
 - [ScheduledJobDtoToJSON](README.md#scheduledjobdtotojson)
@@ -1761,6 +1908,9 @@ MailSlurp JS
 - [SendEmailOptionsFromJSON](README.md#sendemailoptionsfromjson)
 - [SendEmailOptionsFromJSONTyped](README.md#sendemailoptionsfromjsontyped)
 - [SendEmailOptionsToJSON](README.md#sendemailoptionstojson)
+- [SendOptInConsentEmailOptionsFromJSON](README.md#sendoptinconsentemailoptionsfromjson)
+- [SendOptInConsentEmailOptionsFromJSONTyped](README.md#sendoptinconsentemailoptionsfromjsontyped)
+- [SendOptInConsentEmailOptionsToJSON](README.md#sendoptinconsentemailoptionstojson)
 - [SendSMTPEnvelopeOptionsFromJSON](README.md#sendsmtpenvelopeoptionsfromjson)
 - [SendSMTPEnvelopeOptionsFromJSONTyped](README.md#sendsmtpenvelopeoptionsfromjsontyped)
 - [SendSMTPEnvelopeOptionsToJSON](README.md#sendsmtpenvelopeoptionstojson)
@@ -1782,6 +1932,9 @@ MailSlurp JS
 - [SentSmsDtoFromJSON](README.md#sentsmsdtofromjson)
 - [SentSmsDtoFromJSONTyped](README.md#sentsmsdtofromjsontyped)
 - [SentSmsDtoToJSON](README.md#sentsmsdtotojson)
+- [SentSmsProjectionFromJSON](README.md#sentsmsprojectionfromjson)
+- [SentSmsProjectionFromJSONTyped](README.md#sentsmsprojectionfromjsontyped)
+- [SentSmsProjectionToJSON](README.md#sentsmsprojectiontojson)
 - [ServerEndpointsFromJSON](README.md#serverendpointsfromjson)
 - [ServerEndpointsFromJSONTyped](README.md#serverendpointsfromjsontyped)
 - [ServerEndpointsToJSON](README.md#serverendpointstojson)
@@ -1809,6 +1962,9 @@ MailSlurp JS
 - [SmsReplyOptionsFromJSON](README.md#smsreplyoptionsfromjson)
 - [SmsReplyOptionsFromJSONTyped](README.md#smsreplyoptionsfromjsontyped)
 - [SmsReplyOptionsToJSON](README.md#smsreplyoptionstojson)
+- [SmsSendOptionsFromJSON](README.md#smssendoptionsfromjson)
+- [SmsSendOptionsFromJSONTyped](README.md#smssendoptionsfromjsontyped)
+- [SmsSendOptionsToJSON](README.md#smssendoptionstojson)
 - [SmtpAccessDetailsFromJSON](README.md#smtpaccessdetailsfromjson)
 - [SmtpAccessDetailsFromJSONTyped](README.md#smtpaccessdetailsfromjsontyped)
 - [SmtpAccessDetailsToJSON](README.md#smtpaccessdetailstojson)
@@ -1902,6 +2058,9 @@ MailSlurp JS
 - [ValidateEmailAddressListResultFromJSON](README.md#validateemailaddresslistresultfromjson)
 - [ValidateEmailAddressListResultFromJSONTyped](README.md#validateemailaddresslistresultfromjsontyped)
 - [ValidateEmailAddressListResultToJSON](README.md#validateemailaddresslistresulttojson)
+- [ValidatePhoneNumberOptionsFromJSON](README.md#validatephonenumberoptionsfromjson)
+- [ValidatePhoneNumberOptionsFromJSONTyped](README.md#validatephonenumberoptionsfromjsontyped)
+- [ValidatePhoneNumberOptionsToJSON](README.md#validatephonenumberoptionstojson)
 - [ValidationDtoFromJSON](README.md#validationdtofromjson)
 - [ValidationDtoFromJSONTyped](README.md#validationdtofromjsontyped)
 - [ValidationDtoToJSON](README.md#validationdtotojson)
@@ -3842,6 +4001,55 @@ ___
 
 ___
 
+### ConsentStatusDtoFromJSON
+
+▸ **ConsentStatusDtoFromJSON**(`json`): [`ConsentStatusDto`](interfaces/ConsentStatusDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConsentStatusDto`](interfaces/ConsentStatusDto.md)
+
+___
+
+### ConsentStatusDtoFromJSONTyped
+
+▸ **ConsentStatusDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConsentStatusDto`](interfaces/ConsentStatusDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConsentStatusDto`](interfaces/ConsentStatusDto.md)
+
+___
+
+### ConsentStatusDtoToJSON
+
+▸ **ConsentStatusDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConsentStatusDto`](interfaces/ConsentStatusDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ContactDtoFromJSON
 
 ▸ **ContactDtoFromJSON**(`json`): [`ContactDto`](interfaces/ContactDto.md)
@@ -4717,6 +4925,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateOAuthConnectionResultFromJSON
+
+▸ **CreateOAuthConnectionResultFromJSON**(`json`): [`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
+
+___
+
+### CreateOAuthConnectionResultFromJSONTyped
+
+▸ **CreateOAuthConnectionResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
+
+___
+
+### CreateOAuthConnectionResultToJSON
+
+▸ **CreateOAuthConnectionResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateOAuthExchangeResultFromJSON
+
+▸ **CreateOAuthExchangeResultFromJSON**(`json`): [`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+
+___
+
+### CreateOAuthExchangeResultFromJSONTyped
+
+▸ **CreateOAuthExchangeResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+
+___
+
+### CreateOAuthExchangeResultToJSON
+
+▸ **CreateOAuthExchangeResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreatePhoneNumberOptionsFromJSON
+
+▸ **CreatePhoneNumberOptionsFromJSON**(`json`): [`CreatePhoneNumberOptions`](interfaces/CreatePhoneNumberOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreatePhoneNumberOptions`](interfaces/CreatePhoneNumberOptions.md)
+
+___
+
+### CreatePhoneNumberOptionsFromJSONTyped
+
+▸ **CreatePhoneNumberOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreatePhoneNumberOptions`](interfaces/CreatePhoneNumberOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreatePhoneNumberOptions`](interfaces/CreatePhoneNumberOptions.md)
+
+___
+
+### CreatePhoneNumberOptionsToJSON
+
+▸ **CreatePhoneNumberOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreatePhoneNumberOptions`](interfaces/CreatePhoneNumberOptions.md) |
 
 #### Returns
 
@@ -7363,6 +7718,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`EmptyResponseDto`](interfaces/EmptyResponseDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EntityAutomationItemProjectionFromJSON
+
+▸ **EntityAutomationItemProjectionFromJSON**(`json`): [`EntityAutomationItemProjection`](interfaces/EntityAutomationItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EntityAutomationItemProjection`](interfaces/EntityAutomationItemProjection.md)
+
+___
+
+### EntityAutomationItemProjectionFromJSONTyped
+
+▸ **EntityAutomationItemProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EntityAutomationItemProjection`](interfaces/EntityAutomationItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EntityAutomationItemProjection`](interfaces/EntityAutomationItemProjection.md)
+
+___
+
+### EntityAutomationItemProjectionToJSON
+
+▸ **EntityAutomationItemProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EntityAutomationItemProjection`](interfaces/EntityAutomationItemProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EntityEventItemProjectionFromJSON
+
+▸ **EntityEventItemProjectionFromJSON**(`json`): [`EntityEventItemProjection`](interfaces/EntityEventItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EntityEventItemProjection`](interfaces/EntityEventItemProjection.md)
+
+___
+
+### EntityEventItemProjectionFromJSONTyped
+
+▸ **EntityEventItemProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EntityEventItemProjection`](interfaces/EntityEventItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EntityEventItemProjection`](interfaces/EntityEventItemProjection.md)
+
+___
+
+### EntityEventItemProjectionToJSON
+
+▸ **EntityEventItemProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EntityEventItemProjection`](interfaces/EntityEventItemProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EntityFavouriteItemProjectionFromJSON
+
+▸ **EntityFavouriteItemProjectionFromJSON**(`json`): [`EntityFavouriteItemProjection`](interfaces/EntityFavouriteItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EntityFavouriteItemProjection`](interfaces/EntityFavouriteItemProjection.md)
+
+___
+
+### EntityFavouriteItemProjectionFromJSONTyped
+
+▸ **EntityFavouriteItemProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EntityFavouriteItemProjection`](interfaces/EntityFavouriteItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EntityFavouriteItemProjection`](interfaces/EntityFavouriteItemProjection.md)
+
+___
+
+### EntityFavouriteItemProjectionToJSON
+
+▸ **EntityFavouriteItemProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EntityFavouriteItemProjection`](interfaces/EntityFavouriteItemProjection.md) |
 
 #### Returns
 
@@ -11486,6 +11988,202 @@ ___
 
 ___
 
+### OptInConsentOptionsFromJSON
+
+▸ **OptInConsentOptionsFromJSON**(`json`): [`OptInConsentOptions`](interfaces/OptInConsentOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptInConsentOptions`](interfaces/OptInConsentOptions.md)
+
+___
+
+### OptInConsentOptionsFromJSONTyped
+
+▸ **OptInConsentOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptInConsentOptions`](interfaces/OptInConsentOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptInConsentOptions`](interfaces/OptInConsentOptions.md)
+
+___
+
+### OptInConsentOptionsToJSON
+
+▸ **OptInConsentOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptInConsentOptions`](interfaces/OptInConsentOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### OptInConsentSendResultFromJSON
+
+▸ **OptInConsentSendResultFromJSON**(`json`): [`OptInConsentSendResult`](interfaces/OptInConsentSendResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptInConsentSendResult`](interfaces/OptInConsentSendResult.md)
+
+___
+
+### OptInConsentSendResultFromJSONTyped
+
+▸ **OptInConsentSendResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptInConsentSendResult`](interfaces/OptInConsentSendResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptInConsentSendResult`](interfaces/OptInConsentSendResult.md)
+
+___
+
+### OptInConsentSendResultToJSON
+
+▸ **OptInConsentSendResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptInConsentSendResult`](interfaces/OptInConsentSendResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### OptInIdentityProjectionFromJSON
+
+▸ **OptInIdentityProjectionFromJSON**(`json`): [`OptInIdentityProjection`](interfaces/OptInIdentityProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptInIdentityProjection`](interfaces/OptInIdentityProjection.md)
+
+___
+
+### OptInIdentityProjectionFromJSONTyped
+
+▸ **OptInIdentityProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptInIdentityProjection`](interfaces/OptInIdentityProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptInIdentityProjection`](interfaces/OptInIdentityProjection.md)
+
+___
+
+### OptInIdentityProjectionToJSON
+
+▸ **OptInIdentityProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptInIdentityProjection`](interfaces/OptInIdentityProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### OptInSendingConsentDtoFromJSON
+
+▸ **OptInSendingConsentDtoFromJSON**(`json`): [`OptInSendingConsentDto`](interfaces/OptInSendingConsentDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OptInSendingConsentDto`](interfaces/OptInSendingConsentDto.md)
+
+___
+
+### OptInSendingConsentDtoFromJSONTyped
+
+▸ **OptInSendingConsentDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OptInSendingConsentDto`](interfaces/OptInSendingConsentDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OptInSendingConsentDto`](interfaces/OptInSendingConsentDto.md)
+
+___
+
+### OptInSendingConsentDtoToJSON
+
+▸ **OptInSendingConsentDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OptInSendingConsentDto`](interfaces/OptInSendingConsentDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### OptionalConnectorDtoFromJSON
 
 ▸ **OptionalConnectorDtoFromJSON**(`json`): [`OptionalConnectorDto`](interfaces/OptionalConnectorDto.md)
@@ -12417,6 +13115,153 @@ ___
 
 ___
 
+### PageEntityAutomationItemsFromJSON
+
+▸ **PageEntityAutomationItemsFromJSON**(`json`): [`PageEntityAutomationItems`](interfaces/PageEntityAutomationItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageEntityAutomationItems`](interfaces/PageEntityAutomationItems.md)
+
+___
+
+### PageEntityAutomationItemsFromJSONTyped
+
+▸ **PageEntityAutomationItemsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEntityAutomationItems`](interfaces/PageEntityAutomationItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageEntityAutomationItems`](interfaces/PageEntityAutomationItems.md)
+
+___
+
+### PageEntityAutomationItemsToJSON
+
+▸ **PageEntityAutomationItemsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageEntityAutomationItems`](interfaces/PageEntityAutomationItems.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageEntityEventItemsFromJSON
+
+▸ **PageEntityEventItemsFromJSON**(`json`): [`PageEntityEventItems`](interfaces/PageEntityEventItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageEntityEventItems`](interfaces/PageEntityEventItems.md)
+
+___
+
+### PageEntityEventItemsFromJSONTyped
+
+▸ **PageEntityEventItemsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEntityEventItems`](interfaces/PageEntityEventItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageEntityEventItems`](interfaces/PageEntityEventItems.md)
+
+___
+
+### PageEntityEventItemsToJSON
+
+▸ **PageEntityEventItemsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageEntityEventItems`](interfaces/PageEntityEventItems.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageEntityFavouriteItemsFromJSON
+
+▸ **PageEntityFavouriteItemsFromJSON**(`json`): [`PageEntityFavouriteItems`](interfaces/PageEntityFavouriteItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageEntityFavouriteItems`](interfaces/PageEntityFavouriteItems.md)
+
+___
+
+### PageEntityFavouriteItemsFromJSONTyped
+
+▸ **PageEntityFavouriteItemsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEntityFavouriteItems`](interfaces/PageEntityFavouriteItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageEntityFavouriteItems`](interfaces/PageEntityFavouriteItems.md)
+
+___
+
+### PageEntityFavouriteItemsToJSON
+
+▸ **PageEntityFavouriteItemsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageEntityFavouriteItems`](interfaces/PageEntityFavouriteItems.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PageExpiredInboxRecordProjectionFromJSON
 
 ▸ **PageExpiredInboxRecordProjectionFromJSON**(`json`): [`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)
@@ -13005,6 +13850,55 @@ ___
 
 ___
 
+### PageOptInIdentityProjectionFromJSON
+
+▸ **PageOptInIdentityProjectionFromJSON**(`json`): [`PageOptInIdentityProjection`](interfaces/PageOptInIdentityProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageOptInIdentityProjection`](interfaces/PageOptInIdentityProjection.md)
+
+___
+
+### PageOptInIdentityProjectionFromJSONTyped
+
+▸ **PageOptInIdentityProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageOptInIdentityProjection`](interfaces/PageOptInIdentityProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageOptInIdentityProjection`](interfaces/PageOptInIdentityProjection.md)
+
+___
+
+### PageOptInIdentityProjectionToJSON
+
+▸ **PageOptInIdentityProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageOptInIdentityProjection`](interfaces/PageOptInIdentityProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PageOrganizationInboxProjectionFromJSON
 
 ▸ **PageOrganizationInboxProjectionFromJSON**(`json`): [`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)
@@ -13047,6 +13941,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PagePhoneMessageThreadItemProjectionFromJSON
+
+▸ **PagePhoneMessageThreadItemProjectionFromJSON**(`json`): [`PagePhoneMessageThreadItemProjection`](interfaces/PagePhoneMessageThreadItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PagePhoneMessageThreadItemProjection`](interfaces/PagePhoneMessageThreadItemProjection.md)
+
+___
+
+### PagePhoneMessageThreadItemProjectionFromJSONTyped
+
+▸ **PagePhoneMessageThreadItemProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PagePhoneMessageThreadItemProjection`](interfaces/PagePhoneMessageThreadItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PagePhoneMessageThreadItemProjection`](interfaces/PagePhoneMessageThreadItemProjection.md)
+
+___
+
+### PagePhoneMessageThreadItemProjectionToJSON
+
+▸ **PagePhoneMessageThreadItemProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PagePhoneMessageThreadItemProjection`](interfaces/PagePhoneMessageThreadItemProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PagePhoneMessageThreadProjectionFromJSON
+
+▸ **PagePhoneMessageThreadProjectionFromJSON**(`json`): [`PagePhoneMessageThreadProjection`](interfaces/PagePhoneMessageThreadProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PagePhoneMessageThreadProjection`](interfaces/PagePhoneMessageThreadProjection.md)
+
+___
+
+### PagePhoneMessageThreadProjectionFromJSONTyped
+
+▸ **PagePhoneMessageThreadProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PagePhoneMessageThreadProjection`](interfaces/PagePhoneMessageThreadProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PagePhoneMessageThreadProjection`](interfaces/PagePhoneMessageThreadProjection.md)
+
+___
+
+### PagePhoneMessageThreadProjectionToJSON
+
+▸ **PagePhoneMessageThreadProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PagePhoneMessageThreadProjection`](interfaces/PagePhoneMessageThreadProjection.md) |
 
 #### Returns
 
@@ -13145,6 +14137,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PagePlusAddressProjection`](interfaces/PagePlusAddressProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageReputationItemsFromJSON
+
+▸ **PageReputationItemsFromJSON**(`json`): [`PageReputationItems`](interfaces/PageReputationItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageReputationItems`](interfaces/PageReputationItems.md)
+
+___
+
+### PageReputationItemsFromJSONTyped
+
+▸ **PageReputationItemsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageReputationItems`](interfaces/PageReputationItems.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageReputationItems`](interfaces/PageReputationItems.md)
+
+___
+
+### PageReputationItemsToJSON
+
+▸ **PageReputationItemsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageReputationItems`](interfaces/PageReputationItems.md) |
 
 #### Returns
 
@@ -13292,6 +14333,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageSentEmailWithQueueProjection`](interfaces/PageSentEmailWithQueueProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageSentSmsProjectionFromJSON
+
+▸ **PageSentSmsProjectionFromJSON**(`json`): [`PageSentSmsProjection`](interfaces/PageSentSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageSentSmsProjection`](interfaces/PageSentSmsProjection.md)
+
+___
+
+### PageSentSmsProjectionFromJSONTyped
+
+▸ **PageSentSmsProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageSentSmsProjection`](interfaces/PageSentSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageSentSmsProjection`](interfaces/PageSentSmsProjection.md)
+
+___
+
+### PageSentSmsProjectionToJSON
+
+▸ **PageSentSmsProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageSentSmsProjection`](interfaces/PageSentSmsProjection.md) |
 
 #### Returns
 
@@ -13691,6 +14781,104 @@ ___
 
 ___
 
+### PhoneMessageThreadItemProjectionFromJSON
+
+▸ **PhoneMessageThreadItemProjectionFromJSON**(`json`): [`PhoneMessageThreadItemProjection`](interfaces/PhoneMessageThreadItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PhoneMessageThreadItemProjection`](interfaces/PhoneMessageThreadItemProjection.md)
+
+___
+
+### PhoneMessageThreadItemProjectionFromJSONTyped
+
+▸ **PhoneMessageThreadItemProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PhoneMessageThreadItemProjection`](interfaces/PhoneMessageThreadItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PhoneMessageThreadItemProjection`](interfaces/PhoneMessageThreadItemProjection.md)
+
+___
+
+### PhoneMessageThreadItemProjectionToJSON
+
+▸ **PhoneMessageThreadItemProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PhoneMessageThreadItemProjection`](interfaces/PhoneMessageThreadItemProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PhoneMessageThreadProjectionFromJSON
+
+▸ **PhoneMessageThreadProjectionFromJSON**(`json`): [`PhoneMessageThreadProjection`](interfaces/PhoneMessageThreadProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PhoneMessageThreadProjection`](interfaces/PhoneMessageThreadProjection.md)
+
+___
+
+### PhoneMessageThreadProjectionFromJSONTyped
+
+▸ **PhoneMessageThreadProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PhoneMessageThreadProjection`](interfaces/PhoneMessageThreadProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PhoneMessageThreadProjection`](interfaces/PhoneMessageThreadProjection.md)
+
+___
+
+### PhoneMessageThreadProjectionToJSON
+
+▸ **PhoneMessageThreadProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PhoneMessageThreadProjection`](interfaces/PhoneMessageThreadProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PhoneNumberDtoFromJSON
 
 ▸ **PhoneNumberDtoFromJSON**(`json`): [`PhoneNumberDto`](interfaces/PhoneNumberDto.md)
@@ -13782,6 +14970,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PhoneNumberProjection`](interfaces/PhoneNumberProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PhoneNumberValidationDtoFromJSON
+
+▸ **PhoneNumberValidationDtoFromJSON**(`json`): [`PhoneNumberValidationDto`](interfaces/PhoneNumberValidationDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PhoneNumberValidationDto`](interfaces/PhoneNumberValidationDto.md)
+
+___
+
+### PhoneNumberValidationDtoFromJSONTyped
+
+▸ **PhoneNumberValidationDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PhoneNumberValidationDto`](interfaces/PhoneNumberValidationDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PhoneNumberValidationDto`](interfaces/PhoneNumberValidationDto.md)
+
+___
+
+### PhoneNumberValidationDtoToJSON
+
+▸ **PhoneNumberValidationDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PhoneNumberValidationDto`](interfaces/PhoneNumberValidationDto.md) |
 
 #### Returns
 
@@ -14377,6 +15614,55 @@ ___
 
 ___
 
+### ReputationItemProjectionFromJSON
+
+▸ **ReputationItemProjectionFromJSON**(`json`): [`ReputationItemProjection`](interfaces/ReputationItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ReputationItemProjection`](interfaces/ReputationItemProjection.md)
+
+___
+
+### ReputationItemProjectionFromJSONTyped
+
+▸ **ReputationItemProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ReputationItemProjection`](interfaces/ReputationItemProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ReputationItemProjection`](interfaces/ReputationItemProjection.md)
+
+___
+
+### ReputationItemProjectionToJSON
+
+▸ **ReputationItemProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ReputationItemProjection`](interfaces/ReputationItemProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ScheduledJobDtoFromJSON
 
 ▸ **ScheduledJobDtoFromJSON**(`json`): [`ScheduledJobDto`](interfaces/ScheduledJobDto.md)
@@ -14664,6 +15950,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`SendEmailOptions`](interfaces/SendEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### SendOptInConsentEmailOptionsFromJSON
+
+▸ **SendOptInConsentEmailOptionsFromJSON**(`json`): [`SendOptInConsentEmailOptions`](interfaces/SendOptInConsentEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`SendOptInConsentEmailOptions`](interfaces/SendOptInConsentEmailOptions.md)
+
+___
+
+### SendOptInConsentEmailOptionsFromJSONTyped
+
+▸ **SendOptInConsentEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SendOptInConsentEmailOptions`](interfaces/SendOptInConsentEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`SendOptInConsentEmailOptions`](interfaces/SendOptInConsentEmailOptions.md)
+
+___
+
+### SendOptInConsentEmailOptionsToJSON
+
+▸ **SendOptInConsentEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`SendOptInConsentEmailOptions`](interfaces/SendOptInConsentEmailOptions.md) |
 
 #### Returns
 
@@ -15007,6 +16342,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`SentSmsDto`](interfaces/SentSmsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### SentSmsProjectionFromJSON
+
+▸ **SentSmsProjectionFromJSON**(`json`): [`SentSmsProjection`](interfaces/SentSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`SentSmsProjection`](interfaces/SentSmsProjection.md)
+
+___
+
+### SentSmsProjectionFromJSONTyped
+
+▸ **SentSmsProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SentSmsProjection`](interfaces/SentSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`SentSmsProjection`](interfaces/SentSmsProjection.md)
+
+___
+
+### SentSmsProjectionToJSON
+
+▸ **SentSmsProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`SentSmsProjection`](interfaces/SentSmsProjection.md) |
 
 #### Returns
 
@@ -15448,6 +16832,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`SmsReplyOptions`](interfaces/SmsReplyOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### SmsSendOptionsFromJSON
+
+▸ **SmsSendOptionsFromJSON**(`json`): [`SmsSendOptions`](interfaces/SmsSendOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`SmsSendOptions`](interfaces/SmsSendOptions.md)
+
+___
+
+### SmsSendOptionsFromJSONTyped
+
+▸ **SmsSendOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SmsSendOptions`](interfaces/SmsSendOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`SmsSendOptions`](interfaces/SmsSendOptions.md)
+
+___
+
+### SmsSendOptionsToJSON
+
+▸ **SmsSendOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`SmsSendOptions`](interfaces/SmsSendOptions.md) |
 
 #### Returns
 
@@ -16967,6 +18400,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ValidatePhoneNumberOptionsFromJSON
+
+▸ **ValidatePhoneNumberOptionsFromJSON**(`json`): [`ValidatePhoneNumberOptions`](interfaces/ValidatePhoneNumberOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidatePhoneNumberOptions`](interfaces/ValidatePhoneNumberOptions.md)
+
+___
+
+### ValidatePhoneNumberOptionsFromJSONTyped
+
+▸ **ValidatePhoneNumberOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidatePhoneNumberOptions`](interfaces/ValidatePhoneNumberOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ValidatePhoneNumberOptions`](interfaces/ValidatePhoneNumberOptions.md)
+
+___
+
+### ValidatePhoneNumberOptionsToJSON
+
+▸ **ValidatePhoneNumberOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ValidatePhoneNumberOptions`](interfaces/ValidatePhoneNumberOptions.md) |
 
 #### Returns
 

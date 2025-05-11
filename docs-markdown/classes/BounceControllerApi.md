@@ -38,6 +38,8 @@
 - [getComplaintsRaw](BounceControllerApi.md#getcomplaintsraw)
 - [getListUnsubscribeRecipients](BounceControllerApi.md#getlistunsubscriberecipients)
 - [getListUnsubscribeRecipientsRaw](BounceControllerApi.md#getlistunsubscriberecipientsraw)
+- [getReputationItems](BounceControllerApi.md#getreputationitems)
+- [getReputationItemsRaw](BounceControllerApi.md#getreputationitemsraw)
 - [request](BounceControllerApi.md#request)
 - [withMiddleware](BounceControllerApi.md#withmiddleware)
 - [withPostMiddleware](BounceControllerApi.md#withpostmiddleware)
@@ -426,6 +428,46 @@ Get paginated list of unsubscribed recipients.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageListUnsubscribeRecipients`](../interfaces/PageListUnsubscribeRecipients.md)\>\>
+
+___
+
+### getReputationItems
+
+▸ **getReputationItems**(`requestParameters`, `initOverrides?`): `Promise`<[`PageReputationItems`](../interfaces/PageReputationItems.md)\>
+
+List of complaints and bounces
+Get paginated list of reputation items.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetReputationItemsRequest`](../interfaces/GetReputationItemsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageReputationItems`](../interfaces/PageReputationItems.md)\>
+
+___
+
+### getReputationItemsRaw
+
+▸ **getReputationItemsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageReputationItems`](../interfaces/PageReputationItems.md)\>\>
+
+List of complaints and bounces
+Get paginated list of reputation items.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetReputationItemsRequest`](../interfaces/GetReputationItemsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageReputationItems`](../interfaces/PageReputationItems.md)\>\>
 
 ___
 

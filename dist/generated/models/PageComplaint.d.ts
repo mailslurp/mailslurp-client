@@ -48,16 +48,16 @@ export interface PageComplaint {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageComplaint
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageComplaint
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

@@ -48,16 +48,16 @@ export interface PageAttachmentEntity {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageAttachmentEntity
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageAttachmentEntity
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAttachmentEntity
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

@@ -164,6 +164,7 @@ export interface UpdateWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
     inboxId?: string;
     phoneNumberId?: string;
+    overrideAuth?: boolean;
 }
 export interface UpdateWebhookHeadersRequest {
     webhookId: string;

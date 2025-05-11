@@ -114,6 +114,7 @@ export enum SearchInboxesOptionsInboxFunctionEnum {
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
   GUEST = 'GUEST',
+  OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
 }
 
 export function SearchInboxesOptionsFromJSON(json: any): SearchInboxesOptions {

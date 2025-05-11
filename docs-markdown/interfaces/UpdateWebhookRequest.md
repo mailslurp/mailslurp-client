@@ -8,6 +8,7 @@
 
 - [createWebhookOptions](UpdateWebhookRequest.md#createwebhookoptions)
 - [inboxId](UpdateWebhookRequest.md#inboxid)
+- [overrideAuth](UpdateWebhookRequest.md#overrideauth)
 - [phoneNumberId](UpdateWebhookRequest.md#phonenumberid)
 - [webhookId](UpdateWebhookRequest.md#webhookid)
 
@@ -22,6 +23,12 @@ ___
 ### inboxId
 
 • `Optional` **inboxId**: `string`
+
+___
+
+### overrideAuth
+
+• `Optional` **overrideAuth**: `boolean`
 
 ___
 

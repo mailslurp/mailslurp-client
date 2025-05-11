@@ -35,18 +35,6 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
-  subject?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentEmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
   id: string;
   /**
    *
@@ -71,6 +59,12 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
   userId: string;
   /**
    *
@@ -84,6 +78,12 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof SentEmailProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -158,8 +158,6 @@ export function SentEmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
     sender: !exists(json, 'sender')
@@ -168,9 +166,11 @@ export function SentEmailProjectionFromJSONTyped(
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     userId: json['userId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: json['cc'],
     bcc: json['bcc'],
@@ -194,15 +194,15 @@ export function SentEmailProjectionToJSON(
     return null;
   }
   return {
-    subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
     id: value.id,
     from: value.from,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
+    subject: value.subject,
     userId: value.userId,
     attachments: value.attachments,
     inboxId: value.inboxId,
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,

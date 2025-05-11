@@ -32,18 +32,6 @@ import {
 export interface EmailProjection {
   /**
    *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof EmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {Sender}
    * @memberof EmailProjection
    */
@@ -66,6 +54,12 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof EmailProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -107,13 +101,19 @@ export interface EmailProjection {
    * @type {string}
    * @memberof EmailProjection
    */
-  plusAddress?: string | null;
+  inReplyTo?: string | null;
   /**
    *
    * @type {string}
    * @memberof EmailProjection
    */
-  inReplyTo?: string | null;
+  plusAddress?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof EmailProjection
+   */
+  sizeBytes?: number | null;
   /**
    *
    * @type {boolean}
@@ -155,6 +155,12 @@ export interface EmailProjection {
    * @type {string}
    * @memberof EmailProjection
    */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
   id: string;
   /**
    *
@@ -182,8 +188,6 @@ export function EmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
     sender: !exists(json, 'sender')
       ? undefined
       : SenderFromJSON(json['sender']),
@@ -192,14 +196,16 @@ export function EmailProjectionFromJSONTyped(
       : EmailRecipientsFromJSON(json['recipients']),
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
-    plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+    plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     read: json['read'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
@@ -208,6 +214,7 @@ export function EmailProjectionFromJSONTyped(
       : json['bodyPartContentTypes'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     teamAccess: json['teamAccess'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     id: json['id'],
     threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
     from: json['from'],
@@ -222,26 +229,27 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     return null;
   }
   return {
-    subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
     attachments: value.attachments,
     inboxId: value.inboxId,
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,
     messageId: value.messageId,
     domainId: value.domainId,
     favourite: value.favourite,
-    plusAddress: value.plusAddress,
     inReplyTo: value.inReplyTo,
+    plusAddress: value.plusAddress,
+    sizeBytes: value.sizeBytes,
     read: value.read,
     bodyExcerpt: value.bodyExcerpt,
     textExcerpt: value.textExcerpt,
     bodyPartContentTypes: value.bodyPartContentTypes,
     bodyMD5Hash: value.bodyMD5Hash,
     teamAccess: value.teamAccess,
+    subject: value.subject,
     id: value.id,
     threadId: value.threadId,
     from: value.from,

@@ -48,16 +48,16 @@ export interface PageWebhookProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageWebhookProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageWebhookProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageWebhookProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

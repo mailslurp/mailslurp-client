@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserControllerApi = void 0;
+exports.GetEntityFavoritesFilterEnum = exports.GetEntityFavoritesSortEnum = exports.GetEntityEventsFilterEnum = exports.GetEntityEventsSortEnum = exports.GetEntityAutomationsFilterEnum = exports.GetEntityAutomationsSortEnum = exports.UserControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -98,6 +98,213 @@ var UserControllerApi = /** @class */ (function (_super) {
     function UserControllerApi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    /**
+     */
+    UserControllerApi.prototype.getEntityAutomationsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.phoneId !== undefined) {
+                            queryParameters['phoneId'] = requestParameters.phoneId;
+                        }
+                        if (requestParameters.filter !== undefined) {
+                            queryParameters['filter'] = requestParameters.filter;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/user/automations",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEntityAutomationItemsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    UserControllerApi.prototype.getEntityAutomations = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEntityAutomationsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
+    UserControllerApi.prototype.getEntityEventsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.emailId !== undefined) {
+                            queryParameters['emailId'] = requestParameters.emailId;
+                        }
+                        if (requestParameters.phoneId !== undefined) {
+                            queryParameters['phoneId'] = requestParameters.phoneId;
+                        }
+                        if (requestParameters.smsId !== undefined) {
+                            queryParameters['smsId'] = requestParameters.smsId;
+                        }
+                        if (requestParameters.attachmentId !== undefined) {
+                            queryParameters['attachmentId'] = requestParameters.attachmentId;
+                        }
+                        if (requestParameters.filter !== undefined) {
+                            queryParameters['filter'] = requestParameters.filter;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/user/events",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEntityEventItemsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    UserControllerApi.prototype.getEntityEvents = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEntityEventsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
+    UserControllerApi.prototype.getEntityFavoritesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.filter !== undefined) {
+                            queryParameters['filter'] = requestParameters.filter;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/user/favorites",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEntityFavouriteItemsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    UserControllerApi.prototype.getEntityFavorites = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEntityFavoritesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     /**
      * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
@@ -204,3 +411,64 @@ var UserControllerApi = /** @class */ (function (_super) {
     return UserControllerApi;
 }(runtime.BaseAPI));
 exports.UserControllerApi = UserControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEntityAutomationsSortEnum;
+(function (GetEntityAutomationsSortEnum) {
+    GetEntityAutomationsSortEnum["ASC"] = "ASC";
+    GetEntityAutomationsSortEnum["DESC"] = "DESC";
+})(GetEntityAutomationsSortEnum = exports.GetEntityAutomationsSortEnum || (exports.GetEntityAutomationsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEntityAutomationsFilterEnum;
+(function (GetEntityAutomationsFilterEnum) {
+    GetEntityAutomationsFilterEnum["FORWARDER"] = "INBOX_FORWARDER";
+    GetEntityAutomationsFilterEnum["REPLIER"] = "INBOX_REPLIER";
+    GetEntityAutomationsFilterEnum["RULESET"] = "INBOX_RULESET";
+})(GetEntityAutomationsFilterEnum = exports.GetEntityAutomationsFilterEnum || (exports.GetEntityAutomationsFilterEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEntityEventsSortEnum;
+(function (GetEntityEventsSortEnum) {
+    GetEntityEventsSortEnum["ASC"] = "ASC";
+    GetEntityEventsSortEnum["DESC"] = "DESC";
+})(GetEntityEventsSortEnum = exports.GetEntityEventsSortEnum || (exports.GetEntityEventsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEntityEventsFilterEnum;
+(function (GetEntityEventsFilterEnum) {
+    GetEntityEventsFilterEnum["WEBHOOK_EVENT"] = "WEBHOOK_EVENT";
+    GetEntityEventsFilterEnum["INBOX_FORWARDER_EVENT"] = "INBOX_FORWARDER_EVENT";
+    GetEntityEventsFilterEnum["INBOX_REPLIER_EVENT"] = "INBOX_REPLIER_EVENT";
+    GetEntityEventsFilterEnum["INBOX_RULESET_EVENT"] = "INBOX_RULESET_EVENT";
+    GetEntityEventsFilterEnum["ALIAS_EVENT"] = "ALIAS_EVENT";
+})(GetEntityEventsFilterEnum = exports.GetEntityEventsFilterEnum || (exports.GetEntityEventsFilterEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEntityFavoritesSortEnum;
+(function (GetEntityFavoritesSortEnum) {
+    GetEntityFavoritesSortEnum["ASC"] = "ASC";
+    GetEntityFavoritesSortEnum["DESC"] = "DESC";
+})(GetEntityFavoritesSortEnum = exports.GetEntityFavoritesSortEnum || (exports.GetEntityFavoritesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEntityFavoritesFilterEnum;
+(function (GetEntityFavoritesFilterEnum) {
+    GetEntityFavoritesFilterEnum["INBOX"] = "INBOX";
+    GetEntityFavoritesFilterEnum["EMAIL"] = "EMAIL";
+    GetEntityFavoritesFilterEnum["ATTACHMENT"] = "ATTACHMENT";
+    GetEntityFavoritesFilterEnum["PHONE"] = "PHONE";
+    GetEntityFavoritesFilterEnum["SMS"] = "SMS";
+})(GetEntityFavoritesFilterEnum = exports.GetEntityFavoritesFilterEnum || (exports.GetEntityFavoritesFilterEnum = {}));

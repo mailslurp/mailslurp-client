@@ -10,9 +10,12 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateEmergencyAddressOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneNumberProjection, PhoneNumberDto, PhonePlanAvailability, PhonePlanDto, SetPhoneFavouritedOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions } from '../models';
+import { ConsentStatusDto, CreateEmergencyAddressOptions, CreatePhoneNumberOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneMessageThreadItemProjection, PagePhoneMessageThreadProjection, PagePhoneNumberProjection, PageSentSmsProjection, PageSmsProjection, PhoneNumberDto, PhoneNumberValidationDto, PhonePlanAvailability, PhonePlanDto, SentSmsDto, SetPhoneFavouritedOptions, SmsSendOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions, ValidatePhoneNumberOptions } from '../models';
 export interface CreateEmergencyAddressRequest {
     createEmergencyAddressOptions: CreateEmergencyAddressOptions;
+}
+export interface CreatePhoneNumberRequest {
+    createPhoneNumberOptions: CreatePhoneNumberOptions;
 }
 export interface DeleteEmergencyAddressRequest {
     addressId: string;
@@ -20,8 +23,23 @@ export interface DeleteEmergencyAddressRequest {
 export interface DeletePhoneNumberRequest {
     phoneNumberId: string;
 }
+export interface GetAllPhoneMessageThreadsRequest {
+    page?: number;
+    size?: number;
+}
 export interface GetEmergencyAddressRequest {
     addressId: string;
+}
+export interface GetPhoneMessageThreadItemsRequest {
+    phoneNumberId: string;
+    otherNumber: string;
+    page?: number;
+    size?: number;
+}
+export interface GetPhoneMessageThreadsRequest {
+    phoneNumberId: string;
+    page?: number;
+    size?: number;
 }
 export interface GetPhoneNumberRequest {
     phoneNumberId: string;
@@ -37,6 +55,33 @@ export interface GetPhoneNumbersRequest {
     include?: Array<string>;
     favourite?: boolean;
 }
+export interface GetSentSmsByPhoneNumberRequest {
+    phoneNumberId: string;
+    page?: number;
+    size?: number;
+    sort?: GetSentSmsByPhoneNumberSortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
+}
+export interface GetSmsByPhoneNumberRequest {
+    phoneNumberId: string;
+    page?: number;
+    size?: number;
+    sort?: GetSmsByPhoneNumberSortEnum;
+    unreadOnly?: boolean;
+    since?: Date;
+    before?: Date;
+    search?: string;
+    favourite?: boolean;
+}
+export interface SendSmsFromPhoneNumberRequest {
+    phoneNumberId: string;
+    smsSendOptions: SmsSendOptions;
+}
+export interface SetConsentStatusRequest {
+    agree: boolean;
+}
 export interface SetPhoneFavouritedRequest {
     phoneNumberId: string;
     setPhoneFavouritedOptions: SetPhoneFavouritedOptions;
@@ -49,6 +94,9 @@ export interface TestPhoneNumberSendSmsRequest {
 export interface UpdatePhoneNumberRequest {
     phoneNumberId: string;
     updatePhoneNumberOptions: UpdatePhoneNumberOptions;
+}
+export interface ValidatePhoneNumberRequest {
+    validatePhoneNumberOptions: ValidatePhoneNumberOptions;
 }
 /**
  *
@@ -64,6 +112,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Create an emergency address
      */
     createEmergencyAddress(requestParameters: CreateEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmergencyAddress>;
+    /**
+     * Create new phone number
+     * Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
+     */
+    createPhoneNumberRaw(requestParameters: CreatePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Create new phone number
+     * Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
+     */
+    createPhoneNumber(requestParameters: CreatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
      * Delete an emergency address
      * Delete an emergency address
@@ -85,6 +143,26 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     deletePhoneNumber(requestParameters: DeletePhoneNumberRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * List all message threads for all phones
+     * Get the latest messages for all phones
+     */
+    getAllPhoneMessageThreadsRaw(requestParameters: GetAllPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneMessageThreadProjection>>;
+    /**
+     * List all message threads for all phones
+     * Get the latest messages for all phones
+     */
+    getAllPhoneMessageThreads(requestParameters: GetAllPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<PagePhoneMessageThreadProjection>;
+    /**
+     * Get the status of phone usage consent
+     * Get consent status
+     */
+    getConsentStatusRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConsentStatusDto>>;
+    /**
+     * Get the status of phone usage consent
+     * Get consent status
+     */
+    getConsentStatus(initOverrides?: RequestInit): Promise<ConsentStatusDto>;
+    /**
      * Fetch an emergency address by ID
      * Get an emergency address
      */
@@ -104,6 +182,26 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Get emergency addresses
      */
     getEmergencyAddresses(initOverrides?: RequestInit): Promise<Array<EmergencyAddressDto>>;
+    /**
+     * List message thread messages for a phone message thread
+     * Get messages in a phone thread
+     */
+    getPhoneMessageThreadItemsRaw(requestParameters: GetPhoneMessageThreadItemsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneMessageThreadItemProjection>>;
+    /**
+     * List message thread messages for a phone message thread
+     * Get messages in a phone thread
+     */
+    getPhoneMessageThreadItems(requestParameters: GetPhoneMessageThreadItemsRequest, initOverrides?: RequestInit): Promise<PagePhoneMessageThreadItemProjection>;
+    /**
+     * List message threads for a phone
+     * Get the latest message preview for a thread
+     */
+    getPhoneMessageThreadsRaw(requestParameters: GetPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneMessageThreadProjection>>;
+    /**
+     * List message threads for a phone
+     * Get the latest message preview for a thread
+     */
+    getPhoneMessageThreads(requestParameters: GetPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<PagePhoneMessageThreadProjection>;
     /**
      * Get a phone number by ID
      * Get a phone number by ID
@@ -143,6 +241,46 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     getPhonePlansAvailability(initOverrides?: RequestInit): Promise<PhonePlanAvailability>;
     /**
+     * Get sent SMS messages for a phone number
+     * List sent TXT messages for a phone number
+     */
+    getSentSmsByPhoneNumberRaw(requestParameters: GetSentSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentSmsProjection>>;
+    /**
+     * Get sent SMS messages for a phone number
+     * List sent TXT messages for a phone number
+     */
+    getSentSmsByPhoneNumber(requestParameters: GetSentSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PageSentSmsProjection>;
+    /**
+     * Get SMS messages for a phone number
+     * List SMS messages for a phone number
+     */
+    getSmsByPhoneNumberRaw(requestParameters: GetSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsProjection>>;
+    /**
+     * Get SMS messages for a phone number
+     * List SMS messages for a phone number
+     */
+    getSmsByPhoneNumber(requestParameters: GetSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PageSmsProjection>;
+    /**
+     * Send SMS from a phone number
+     * Send TXT message from a phone number
+     */
+    sendSmsFromPhoneNumberRaw(requestParameters: SendSmsFromPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>>;
+    /**
+     * Send SMS from a phone number
+     * Send TXT message from a phone number
+     */
+    sendSmsFromPhoneNumber(requestParameters: SendSmsFromPhoneNumberRequest, initOverrides?: RequestInit): Promise<SentSmsDto>;
+    /**
+     * Give or revoke consent for phone usage
+     * Set consent status
+     */
+    setConsentStatusRaw(requestParameters: SetConsentStatusRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConsentStatusDto>>;
+    /**
+     * Give or revoke consent for phone usage
+     * Set consent status
+     */
+    setConsentStatus(requestParameters: SetConsentStatusRequest, initOverrides?: RequestInit): Promise<ConsentStatusDto>;
+    /**
      * Set and return new favorite state for a phone
      * Set phone favourited state
      */
@@ -172,6 +310,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Update a phone number
      */
     updatePhoneNumber(requestParameters: UpdatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
+     * Validate a phone number
+     * Verify validity of a phone number
+     */
+    validatePhoneNumberRaw(requestParameters: ValidatePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberValidationDto>>;
+    /**
+     * Validate a phone number
+     * Verify validity of a phone number
+     */
+    validatePhoneNumber(requestParameters: ValidatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberValidationDto>;
 }
 /**
  * @export
@@ -180,13 +328,38 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
 export declare enum GetPhoneNumbersPhoneCountryEnum {
     US = "US",
     GB = "GB",
-    AU = "AU"
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    CH = "CH",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    SE = "SE"
 }
 /**
  * @export
  * @enum {string}
  */
 export declare enum GetPhoneNumbersSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetSentSmsByPhoneNumberSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetSmsByPhoneNumberSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

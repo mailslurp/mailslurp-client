@@ -51,6 +51,12 @@ export interface SendEmailOptions {
    */
   from?: string | null;
   /**
+   * Optional from name if not passed with address. If you set `useInboxName` to `true` the from field will include the inbox name as a display name
+   * @type {string}
+   * @memberof SendEmailOptions
+   */
+  fromName?: string | null;
+  /**
    * Optional list of cc destination email addresses
    * @type {Array<string>}
    * @memberof SendEmailOptions
@@ -205,6 +211,7 @@ export function SendEmailOptionsFromJSONTyped(
     toGroup: !exists(json, 'toGroup') ? undefined : json['toGroup'],
     to: !exists(json, 'to') ? undefined : json['to'],
     from: !exists(json, 'from') ? undefined : json['from'],
+    fromName: !exists(json, 'fromName') ? undefined : json['fromName'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
@@ -260,6 +267,7 @@ export function SendEmailOptionsToJSON(value?: SendEmailOptions | null): any {
     toGroup: value.toGroup,
     to: value.to,
     from: value.from,
+    fromName: value.fromName,
     cc: value.cc,
     bcc: value.bcc,
     subject: value.subject,

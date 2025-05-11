@@ -2027,6 +2027,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.phoneNumberId !== undefined) {
                             queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
                         }
+                        if (requestParameters.overrideAuth !== undefined) {
+                            queryParameters['overrideAuth'] = requestParameters.overrideAuth;
+                        }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {

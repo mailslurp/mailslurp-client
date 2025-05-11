@@ -33,10 +33,10 @@ function InboxForwarderEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
         userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
         emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        createdAt: new Date(json['createdAt']),
         sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
         forwarderId: !(0, runtime_1.exists)(json, 'forwarderId') ? undefined : json['forwarderId'],
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
@@ -53,10 +53,10 @@ function InboxForwarderEventProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
         userId: value.userId,
         emailId: value.emailId,
         inboxId: value.inboxId,
+        createdAt: value.createdAt.toISOString(),
         sentId: value.sentId,
         forwarderId: value.forwarderId,
         message: value.message,

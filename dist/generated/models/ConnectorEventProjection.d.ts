@@ -17,16 +17,16 @@
 export interface ConnectorEventProjection {
     /**
      *
-     * @type {Date}
-     * @memberof ConnectorEventProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof ConnectorEventProjection
      */
     eventType: ConnectorEventProjectionEventTypeEnum;
+    /**
+     *
+     * @type {Date}
+     * @memberof ConnectorEventProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

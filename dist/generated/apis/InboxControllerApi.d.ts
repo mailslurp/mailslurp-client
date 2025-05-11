@@ -444,6 +444,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     doesInboxExist(requestParameters: DoesInboxExistRequest, initOverrides?: RequestInit): Promise<InboxExistsDto>;
     /**
+     * Check if an inbox has automations.
+     * Does inbox have automations
+     */
+    doesInboxHaveAutomationsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Check if an inbox has automations.
+     * Does inbox have automations
+     */
+    doesInboxHaveAutomations(initOverrides?: RequestInit): Promise<void>;
+    /**
      * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
      * Remove expired inboxes
      */
@@ -946,7 +956,8 @@ export declare enum GetAllInboxesInboxFunctionEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
-    GUEST = "GUEST"
+    GUEST = "GUEST",
+    OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
 /**
  * @export
@@ -974,7 +985,8 @@ export declare enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
-    GUEST = "GUEST"
+    GUEST = "GUEST",
+    OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
 /**
  * @export

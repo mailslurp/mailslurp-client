@@ -48,16 +48,16 @@ export interface PageEmailThreadProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageEmailThreadProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageEmailThreadProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEmailThreadProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

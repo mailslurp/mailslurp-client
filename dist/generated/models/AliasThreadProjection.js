@@ -24,15 +24,15 @@ function AliasThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
         userId: json['userId'],
         inboxId: json['inboxId'],
+        updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
         to: json['to'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         aliasId: json['aliasId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
     };
@@ -46,15 +46,15 @@ function AliasThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        subject: value.subject,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
         userId: value.userId,
         inboxId: value.inboxId,
+        updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
         to: value.to,
         cc: value.cc,
         bcc: value.bcc,
         aliasId: value.aliasId,
+        subject: value.subject,
         name: value.name,
         id: value.id,
     };

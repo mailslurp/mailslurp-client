@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface TrackingPixelProjection {
   /**
    *
-   * @type {Date}
-   * @memberof TrackingPixelProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof TrackingPixelProjection
    */
@@ -43,6 +37,12 @@ export interface TrackingPixelProjection {
    * @memberof TrackingPixelProjection
    */
   sentEmailId?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof TrackingPixelProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -89,10 +89,10 @@ export function TrackingPixelProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
+    createdAt: new Date(json['createdAt']),
     recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
     seen: json['seen'],
     seenAt: !exists(json, 'seenAt') ? undefined : new Date(json['seenAt']),
@@ -111,10 +111,10 @@ export function TrackingPixelProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     userId: value.userId,
     inboxId: value.inboxId,
     sentEmailId: value.sentEmailId,
+    createdAt: value.createdAt.toISOString(),
     recipient: value.recipient,
     seen: value.seen,
     seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),

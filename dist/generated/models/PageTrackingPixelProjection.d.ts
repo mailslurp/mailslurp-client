@@ -48,16 +48,16 @@ export interface PageTrackingPixelProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageTrackingPixelProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageTrackingPixelProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTrackingPixelProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

@@ -48,16 +48,16 @@ export interface PageInboxProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

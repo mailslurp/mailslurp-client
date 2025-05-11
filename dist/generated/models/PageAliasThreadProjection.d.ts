@@ -48,16 +48,16 @@ export interface PageAliasThreadProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageAliasThreadProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageAliasThreadProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAliasThreadProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

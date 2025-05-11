@@ -20,7 +20,7 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    subject?: string | null;
+    sender: string;
     /**
      *
      * @type {Date}
@@ -32,7 +32,7 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    sender: string;
+    bounceType?: string | null;
     /**
      *
      * @type {string}
@@ -44,7 +44,7 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    bounceType?: string | null;
+    subject?: string | null;
     /**
      *
      * @type {string}

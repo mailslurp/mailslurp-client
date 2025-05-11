@@ -17,16 +17,16 @@
 export interface ListUnsubscribeRecipientProjection {
     /**
      *
-     * @type {Date}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof ListUnsubscribeRecipientProjection
      */
     emailAddress: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof ListUnsubscribeRecipientProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

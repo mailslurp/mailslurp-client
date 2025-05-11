@@ -21,18 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface PlusAddressProjection {
   /**
    *
-   * @type {Date}
-   * @memberof PlusAddressProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof PlusAddressProjection
-   */
-  updatedAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof PlusAddressProjection
    */
@@ -43,6 +31,18 @@ export interface PlusAddressProjection {
    * @memberof PlusAddressProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof PlusAddressProjection
+   */
+  updatedAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof PlusAddressProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -77,10 +77,10 @@ export function PlusAddressProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
     userId: json['userId'],
     inboxId: json['inboxId'],
+    updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     plusAddress: json['plusAddress'],
     fullAddress: json['fullAddress'],
     id: json['id'],
@@ -97,10 +97,10 @@ export function PlusAddressProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     userId: value.userId,
     inboxId: value.inboxId,
+    updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     plusAddress: value.plusAddress,
     fullAddress: value.fullAddress,
     id: value.id,

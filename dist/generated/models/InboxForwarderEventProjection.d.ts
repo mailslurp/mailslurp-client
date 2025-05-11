@@ -17,12 +17,6 @@
 export interface InboxForwarderEventProjection {
     /**
      *
-     * @type {Date}
-     * @memberof InboxForwarderEventProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof InboxForwarderEventProjection
      */
@@ -39,6 +33,12 @@ export interface InboxForwarderEventProjection {
      * @memberof InboxForwarderEventProjection
      */
     inboxId?: string | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof InboxForwarderEventProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

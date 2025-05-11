@@ -22,14 +22,24 @@
 
 - [createEmergencyAddress](PhoneControllerApi.md#createemergencyaddress)
 - [createEmergencyAddressRaw](PhoneControllerApi.md#createemergencyaddressraw)
+- [createPhoneNumber](PhoneControllerApi.md#createphonenumber)
+- [createPhoneNumberRaw](PhoneControllerApi.md#createphonenumberraw)
 - [deleteEmergencyAddress](PhoneControllerApi.md#deleteemergencyaddress)
 - [deleteEmergencyAddressRaw](PhoneControllerApi.md#deleteemergencyaddressraw)
 - [deletePhoneNumber](PhoneControllerApi.md#deletephonenumber)
 - [deletePhoneNumberRaw](PhoneControllerApi.md#deletephonenumberraw)
+- [getAllPhoneMessageThreads](PhoneControllerApi.md#getallphonemessagethreads)
+- [getAllPhoneMessageThreadsRaw](PhoneControllerApi.md#getallphonemessagethreadsraw)
+- [getConsentStatus](PhoneControllerApi.md#getconsentstatus)
+- [getConsentStatusRaw](PhoneControllerApi.md#getconsentstatusraw)
 - [getEmergencyAddress](PhoneControllerApi.md#getemergencyaddress)
 - [getEmergencyAddressRaw](PhoneControllerApi.md#getemergencyaddressraw)
 - [getEmergencyAddresses](PhoneControllerApi.md#getemergencyaddresses)
 - [getEmergencyAddressesRaw](PhoneControllerApi.md#getemergencyaddressesraw)
+- [getPhoneMessageThreadItems](PhoneControllerApi.md#getphonemessagethreaditems)
+- [getPhoneMessageThreadItemsRaw](PhoneControllerApi.md#getphonemessagethreaditemsraw)
+- [getPhoneMessageThreads](PhoneControllerApi.md#getphonemessagethreads)
+- [getPhoneMessageThreadsRaw](PhoneControllerApi.md#getphonemessagethreadsraw)
 - [getPhoneNumber](PhoneControllerApi.md#getphonenumber)
 - [getPhoneNumberRaw](PhoneControllerApi.md#getphonenumberraw)
 - [getPhoneNumbers](PhoneControllerApi.md#getphonenumbers)
@@ -38,13 +48,23 @@
 - [getPhonePlansAvailability](PhoneControllerApi.md#getphoneplansavailability)
 - [getPhonePlansAvailabilityRaw](PhoneControllerApi.md#getphoneplansavailabilityraw)
 - [getPhonePlansRaw](PhoneControllerApi.md#getphoneplansraw)
+- [getSentSmsByPhoneNumber](PhoneControllerApi.md#getsentsmsbyphonenumber)
+- [getSentSmsByPhoneNumberRaw](PhoneControllerApi.md#getsentsmsbyphonenumberraw)
+- [getSmsByPhoneNumber](PhoneControllerApi.md#getsmsbyphonenumber)
+- [getSmsByPhoneNumberRaw](PhoneControllerApi.md#getsmsbyphonenumberraw)
 - [request](PhoneControllerApi.md#request)
+- [sendSmsFromPhoneNumber](PhoneControllerApi.md#sendsmsfromphonenumber)
+- [sendSmsFromPhoneNumberRaw](PhoneControllerApi.md#sendsmsfromphonenumberraw)
+- [setConsentStatus](PhoneControllerApi.md#setconsentstatus)
+- [setConsentStatusRaw](PhoneControllerApi.md#setconsentstatusraw)
 - [setPhoneFavourited](PhoneControllerApi.md#setphonefavourited)
 - [setPhoneFavouritedRaw](PhoneControllerApi.md#setphonefavouritedraw)
 - [testPhoneNumberSendSms](PhoneControllerApi.md#testphonenumbersendsms)
 - [testPhoneNumberSendSmsRaw](PhoneControllerApi.md#testphonenumbersendsmsraw)
 - [updatePhoneNumber](PhoneControllerApi.md#updatephonenumber)
 - [updatePhoneNumberRaw](PhoneControllerApi.md#updatephonenumberraw)
+- [validatePhoneNumber](PhoneControllerApi.md#validatephonenumber)
+- [validatePhoneNumberRaw](PhoneControllerApi.md#validatephonenumberraw)
 - [withMiddleware](PhoneControllerApi.md#withmiddleware)
 - [withPostMiddleware](PhoneControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](PhoneControllerApi.md#withpremiddleware)
@@ -114,6 +134,46 @@ Create an emergency address
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>\>
+
+___
+
+### createPhoneNumber
+
+▸ **createPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Create new phone number
+Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePhoneNumberRequest`](../interfaces/CreatePhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### createPhoneNumberRaw
+
+▸ **createPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Create new phone number
+Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePhoneNumberRequest`](../interfaces/CreatePhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
 
 ___
 
@@ -197,6 +257,84 @@ Delete a phone number
 
 ___
 
+### getAllPhoneMessageThreads
+
+▸ **getAllPhoneMessageThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>
+
+List all message threads for all phones
+Get the latest messages for all phones
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllPhoneMessageThreadsRequest`](../interfaces/GetAllPhoneMessageThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>
+
+___
+
+### getAllPhoneMessageThreadsRaw
+
+▸ **getAllPhoneMessageThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>\>
+
+List all message threads for all phones
+Get the latest messages for all phones
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllPhoneMessageThreadsRequest`](../interfaces/GetAllPhoneMessageThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>\>
+
+___
+
+### getConsentStatus
+
+▸ **getConsentStatus**(`initOverrides?`): `Promise`<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>
+
+Get the status of phone usage consent
+Get consent status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>
+
+___
+
+### getConsentStatusRaw
+
+▸ **getConsentStatusRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>\>
+
+Get the status of phone usage consent
+Get consent status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>\>
+
+___
+
 ### getEmergencyAddress
 
 ▸ **getEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>
@@ -272,6 +410,86 @@ Get emergency addresses
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddressDto`](../interfaces/EmergencyAddressDto.md)[]\>\>
+
+___
+
+### getPhoneMessageThreadItems
+
+▸ **getPhoneMessageThreadItems**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneMessageThreadItemProjection`](../interfaces/PagePhoneMessageThreadItemProjection.md)\>
+
+List message thread messages for a phone message thread
+Get messages in a phone thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneMessageThreadItemsRequest`](../interfaces/GetPhoneMessageThreadItemsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PagePhoneMessageThreadItemProjection`](../interfaces/PagePhoneMessageThreadItemProjection.md)\>
+
+___
+
+### getPhoneMessageThreadItemsRaw
+
+▸ **getPhoneMessageThreadItemsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneMessageThreadItemProjection`](../interfaces/PagePhoneMessageThreadItemProjection.md)\>\>
+
+List message thread messages for a phone message thread
+Get messages in a phone thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneMessageThreadItemsRequest`](../interfaces/GetPhoneMessageThreadItemsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneMessageThreadItemProjection`](../interfaces/PagePhoneMessageThreadItemProjection.md)\>\>
+
+___
+
+### getPhoneMessageThreads
+
+▸ **getPhoneMessageThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>
+
+List message threads for a phone
+Get the latest message preview for a thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneMessageThreadsRequest`](../interfaces/GetPhoneMessageThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>
+
+___
+
+### getPhoneMessageThreadsRaw
+
+▸ **getPhoneMessageThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>\>
+
+List message threads for a phone
+Get the latest message preview for a thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneMessageThreadsRequest`](../interfaces/GetPhoneMessageThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>\>
 
 ___
 
@@ -429,6 +647,86 @@ Get phone plans
 
 ___
 
+### getSentSmsByPhoneNumber
+
+▸ **getSentSmsByPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentSmsProjection`](../interfaces/PageSentSmsProjection.md)\>
+
+Get sent SMS messages for a phone number
+List sent TXT messages for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentSmsByPhoneNumberRequest`](../interfaces/GetSentSmsByPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageSentSmsProjection`](../interfaces/PageSentSmsProjection.md)\>
+
+___
+
+### getSentSmsByPhoneNumberRaw
+
+▸ **getSentSmsByPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentSmsProjection`](../interfaces/PageSentSmsProjection.md)\>\>
+
+Get sent SMS messages for a phone number
+List sent TXT messages for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentSmsByPhoneNumberRequest`](../interfaces/GetSentSmsByPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentSmsProjection`](../interfaces/PageSentSmsProjection.md)\>\>
+
+___
+
+### getSmsByPhoneNumber
+
+▸ **getSmsByPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>
+
+Get SMS messages for a phone number
+List SMS messages for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsByPhoneNumberRequest`](../interfaces/GetSmsByPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>
+
+___
+
+### getSmsByPhoneNumberRaw
+
+▸ **getSmsByPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>\>
+
+Get SMS messages for a phone number
+List SMS messages for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsByPhoneNumberRequest`](../interfaces/GetSmsByPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>\>
+
+___
+
 ### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
@@ -447,6 +745,86 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### sendSmsFromPhoneNumber
+
+▸ **sendSmsFromPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>
+
+Send SMS from a phone number
+Send TXT message from a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmsFromPhoneNumberRequest`](../interfaces/SendSmsFromPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>
+
+___
+
+### sendSmsFromPhoneNumberRaw
+
+▸ **sendSmsFromPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>\>
+
+Send SMS from a phone number
+Send TXT message from a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmsFromPhoneNumberRequest`](../interfaces/SendSmsFromPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>\>
+
+___
+
+### setConsentStatus
+
+▸ **setConsentStatus**(`requestParameters`, `initOverrides?`): `Promise`<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>
+
+Give or revoke consent for phone usage
+Set consent status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetConsentStatusRequest`](../interfaces/SetConsentStatusRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>
+
+___
+
+### setConsentStatusRaw
+
+▸ **setConsentStatusRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>\>
+
+Give or revoke consent for phone usage
+Set consent status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetConsentStatusRequest`](../interfaces/SetConsentStatusRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConsentStatusDto`](../interfaces/ConsentStatusDto.md)\>\>
 
 ___
 
@@ -567,6 +945,46 @@ Update a phone number
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
+### validatePhoneNumber
+
+▸ **validatePhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberValidationDto`](../interfaces/PhoneNumberValidationDto.md)\>
+
+Validate a phone number
+Verify validity of a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ValidatePhoneNumberRequest`](../interfaces/ValidatePhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberValidationDto`](../interfaces/PhoneNumberValidationDto.md)\>
+
+___
+
+### validatePhoneNumberRaw
+
+▸ **validatePhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberValidationDto`](../interfaces/PhoneNumberValidationDto.md)\>\>
+
+Validate a phone number
+Verify validity of a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ValidatePhoneNumberRequest`](../interfaces/ValidatePhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberValidationDto`](../interfaces/PhoneNumberValidationDto.md)\>\>
 
 ___
 

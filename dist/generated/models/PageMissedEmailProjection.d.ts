@@ -48,16 +48,16 @@ export interface PageMissedEmailProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageMissedEmailProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageMissedEmailProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageMissedEmailProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

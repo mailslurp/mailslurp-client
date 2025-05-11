@@ -45,6 +45,7 @@ var SearchInboxesOptionsInboxFunctionEnum;
     SearchInboxesOptionsInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
     SearchInboxesOptionsInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
     SearchInboxesOptionsInboxFunctionEnum["GUEST"] = "GUEST";
+    SearchInboxesOptionsInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxFunctionEnum || (exports.SearchInboxesOptionsInboxFunctionEnum = {}));
 function SearchInboxesOptionsFromJSON(json) {
     return SearchInboxesOptionsFromJSONTyped(json, false);

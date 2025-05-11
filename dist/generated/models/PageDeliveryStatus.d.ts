@@ -48,16 +48,16 @@ export interface PageDeliveryStatus {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDeliveryStatus
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

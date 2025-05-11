@@ -103,6 +103,12 @@ export interface InboxPreview {
    * @memberof InboxPreview
    */
   description?: string | null;
+  /**
+   * Region of the inbox
+   * @type {string}
+   * @memberof InboxPreview
+   */
+  accountRegion?: InboxPreviewAccountRegionEnum;
 }
 
 /**
@@ -124,6 +130,14 @@ export enum InboxPreviewFunctionsAsEnum {
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
   GUEST = 'GUEST',
+  OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxPreviewAccountRegionEnum {
+  US_WEST_2 = 'US_WEST_2',
 }
 
 export function InboxPreviewFromJSON(json: any): InboxPreview {
@@ -156,6 +170,9 @@ export function InboxPreviewFromJSONTyped(
     functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
     userId: json['userId'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    accountRegion: !exists(json, 'accountRegion')
+      ? undefined
+      : json['accountRegion'],
   };
 }
 
@@ -186,5 +203,6 @@ export function InboxPreviewToJSON(value?: InboxPreview | null): any {
     functionsAs: value.functionsAs,
     userId: value.userId,
     description: value.description,
+    accountRegion: value.accountRegion,
   };
 }

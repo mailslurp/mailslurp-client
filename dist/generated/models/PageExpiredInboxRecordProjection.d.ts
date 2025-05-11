@@ -48,16 +48,16 @@ export interface PageExpiredInboxRecordProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

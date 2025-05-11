@@ -18,18 +18,6 @@ import { EmailRecipients, Sender } from './';
 export interface EmailProjection {
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    subject?: string | null;
-    /**
-     *
-     * @type {Date}
-     * @memberof EmailProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {Sender}
      * @memberof EmailProjection
      */
@@ -52,6 +40,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof EmailProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}
@@ -93,13 +87,19 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    plusAddress?: string | null;
+    inReplyTo?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailProjection
      */
-    inReplyTo?: string | null;
+    plusAddress?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof EmailProjection
+     */
+    sizeBytes?: number | null;
     /**
      *
      * @type {boolean}
@@ -136,6 +136,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     teamAccess: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {string}

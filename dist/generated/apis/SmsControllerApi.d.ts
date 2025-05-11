@@ -10,33 +10,55 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, UnreadCount } from '../models';
+import { CountDto, PageSentSmsProjection, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, SmsSendOptions, UnreadCount } from '../models';
+export interface DeleteSentSmsMessageRequest {
+    sentSmsId: string;
+}
+export interface DeleteSentSmsMessagesRequest {
+    phoneNumberId?: string;
+}
 export interface DeleteSmsMessageRequest {
     smsId: string;
 }
 export interface DeleteSmsMessagesRequest {
     phoneNumberId?: string;
 }
-export interface GetReplyForSmsMessageRequest {
-    smsId: string;
-}
-export interface GetSmsMessageRequest {
-    smsId: string;
-}
-export interface GetSmsMessagesPaginatedRequest {
+export interface GetAllSmsMessagesRequest {
     phoneNumber?: string;
     page?: number;
     size?: number;
-    sort?: GetSmsMessagesPaginatedSortEnum;
-    unreadOnly?: boolean;
+    sort?: GetAllSmsMessagesSortEnum;
     since?: Date;
     before?: Date;
     search?: string;
     favourite?: boolean;
 }
+export interface GetReplyForSmsMessageRequest {
+    smsId: string;
+}
+export interface GetSentSmsMessageRequest {
+    sentSmsId: string;
+}
+export interface GetSentSmsMessagesPaginatedRequest {
+    phoneNumber?: string;
+    page?: number;
+    size?: number;
+    sort?: GetSentSmsMessagesPaginatedSortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
+}
+export interface GetSmsMessageRequest {
+    smsId: string;
+}
 export interface ReplyToSmsMessageRequest {
     smsId: string;
     smsReplyOptions: SmsReplyOptions;
+}
+export interface SendSmsRequest {
+    smsSendOptions: SmsSendOptions;
+    fromPhoneNumber?: string;
+    fromPhoneId?: string;
 }
 export interface SetSmsFavouritedRequest {
     smsId: string;
@@ -46,6 +68,26 @@ export interface SetSmsFavouritedRequest {
  *
  */
 export declare class SmsControllerApi extends runtime.BaseAPI {
+    /**
+     * Delete a sent SMS message
+     * Delete sent SMS message.
+     */
+    deleteSentSmsMessageRaw(requestParameters: DeleteSentSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a sent SMS message
+     * Delete sent SMS message.
+     */
+    deleteSentSmsMessage(requestParameters: DeleteSentSmsMessageRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete all sent SMS messages or all messages for a given phone number
+     * Delete all sent SMS messages
+     */
+    deleteSentSmsMessagesRaw(requestParameters: DeleteSentSmsMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete all sent SMS messages or all messages for a given phone number
+     * Delete all sent SMS messages
+     */
+    deleteSentSmsMessages(requestParameters: DeleteSentSmsMessagesRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Delete an SMS message
      * Delete SMS message.
@@ -67,6 +109,12 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      */
     deleteSmsMessages(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     */
+    getAllSmsMessagesRaw(requestParameters: GetAllSmsMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsProjection>>;
+    /**
+     */
+    getAllSmsMessages(requestParameters: GetAllSmsMessagesRequest, initOverrides?: RequestInit): Promise<PageSmsProjection>;
+    /**
      * Get reply for an SMS message.
      * Get reply for an SMS message
      */
@@ -76,6 +124,36 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get reply for an SMS message
      */
     getReplyForSmsMessage(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<ReplyForSms>;
+    /**
+     * Get number of sent SMS
+     * Get sent SMS count
+     */
+    getSentSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get number of sent SMS
+     * Get sent SMS count
+     */
+    getSentSmsCount(initOverrides?: RequestInit): Promise<CountDto>;
+    /**
+     * Returns an SMS summary object with content.
+     * Get sent SMS content including body. Expects sent SMS to exist by ID.
+     */
+    getSentSmsMessageRaw(requestParameters: GetSentSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>>;
+    /**
+     * Returns an SMS summary object with content.
+     * Get sent SMS content including body. Expects sent SMS to exist by ID.
+     */
+    getSentSmsMessage(requestParameters: GetSentSmsMessageRequest, initOverrides?: RequestInit): Promise<SentSmsDto>;
+    /**
+     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+     * Get all SMS messages in all phone numbers in paginated form. .
+     */
+    getSentSmsMessagesPaginatedRaw(requestParameters: GetSentSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentSmsProjection>>;
+    /**
+     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+     * Get all SMS messages in all phone numbers in paginated form. .
+     */
+    getSentSmsMessagesPaginated(requestParameters: GetSentSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<PageSentSmsProjection>;
     /**
      * Get number of SMS
      * Get SMS count
@@ -96,16 +174,6 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
      */
     getSmsMessage(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<SmsDto>;
-    /**
-     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-     * Get all SMS messages in all phone numbers in paginated form. .
-     */
-    getSmsMessagesPaginatedRaw(requestParameters: GetSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsProjection>>;
-    /**
-     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-     * Get all SMS messages in all phone numbers in paginated form. .
-     */
-    getSmsMessagesPaginated(requestParameters: GetSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<PageSmsProjection>;
     /**
      * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread SMS count
@@ -128,6 +196,12 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
     replyToSmsMessage(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<SentSmsDto>;
     /**
      */
+    sendSmsRaw(requestParameters: SendSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>>;
+    /**
+     */
+    sendSms(requestParameters: SendSmsRequest, initOverrides?: RequestInit): Promise<SentSmsDto>;
+    /**
+     */
     setSmsFavouritedRaw(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>>;
     /**
      */
@@ -137,7 +211,15 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
  * @export
  * @enum {string}
  */
-export declare enum GetSmsMessagesPaginatedSortEnum {
+export declare enum GetAllSmsMessagesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetSentSmsMessagesPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

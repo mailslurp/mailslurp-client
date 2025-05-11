@@ -10,7 +10,38 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { UserInfoDto } from '../models';
+import { PageEntityAutomationItems, PageEntityEventItems, PageEntityFavouriteItems, UserInfoDto } from '../models';
+export interface GetEntityAutomationsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetEntityAutomationsSortEnum;
+    since?: Date;
+    before?: Date;
+    inboxId?: string;
+    phoneId?: string;
+    filter?: GetEntityAutomationsFilterEnum;
+}
+export interface GetEntityEventsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetEntityEventsSortEnum;
+    since?: Date;
+    before?: Date;
+    inboxId?: string;
+    emailId?: string;
+    phoneId?: string;
+    smsId?: string;
+    attachmentId?: string;
+    filter?: GetEntityEventsFilterEnum;
+}
+export interface GetEntityFavoritesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetEntityFavoritesSortEnum;
+    since?: Date;
+    before?: Date;
+    filter?: GetEntityFavoritesFilterEnum;
+}
 export interface GetJsonPropertyAsStringRequest {
     property: string;
     body: object | null;
@@ -19,6 +50,24 @@ export interface GetJsonPropertyAsStringRequest {
  *
  */
 export declare class UserControllerApi extends runtime.BaseAPI {
+    /**
+     */
+    getEntityAutomationsRaw(requestParameters: GetEntityAutomationsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEntityAutomationItems>>;
+    /**
+     */
+    getEntityAutomations(requestParameters: GetEntityAutomationsRequest, initOverrides?: RequestInit): Promise<PageEntityAutomationItems>;
+    /**
+     */
+    getEntityEventsRaw(requestParameters: GetEntityEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEntityEventItems>>;
+    /**
+     */
+    getEntityEvents(requestParameters: GetEntityEventsRequest, initOverrides?: RequestInit): Promise<PageEntityEventItems>;
+    /**
+     */
+    getEntityFavoritesRaw(requestParameters: GetEntityFavoritesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEntityFavouriteItems>>;
+    /**
+     */
+    getEntityFavorites(requestParameters: GetEntityFavoritesRequest, initOverrides?: RequestInit): Promise<PageEntityFavouriteItems>;
     /**
      * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
@@ -35,4 +84,59 @@ export declare class UserControllerApi extends runtime.BaseAPI {
      * Get account information for your user
      */
     getUserInfo(initOverrides?: RequestInit): Promise<UserInfoDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEntityAutomationsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEntityAutomationsFilterEnum {
+    FORWARDER = "INBOX_FORWARDER",
+    REPLIER = "INBOX_REPLIER",
+    RULESET = "INBOX_RULESET"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEntityEventsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEntityEventsFilterEnum {
+    WEBHOOK_EVENT = "WEBHOOK_EVENT",
+    INBOX_FORWARDER_EVENT = "INBOX_FORWARDER_EVENT",
+    INBOX_REPLIER_EVENT = "INBOX_REPLIER_EVENT",
+    INBOX_RULESET_EVENT = "INBOX_RULESET_EVENT",
+    ALIAS_EVENT = "ALIAS_EVENT"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEntityFavoritesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEntityFavoritesFilterEnum {
+    INBOX = "INBOX",
+    EMAIL = "EMAIL",
+    ATTACHMENT = "ATTACHMENT",
+    PHONE = "PHONE",
+    SMS = "SMS"
 }

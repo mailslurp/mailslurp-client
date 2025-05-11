@@ -21,22 +21,22 @@ import { exists, mapValues } from '../runtime';
 export interface WebhookProjection {
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof WebhookProjection
    */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookProjection
-   */
-  updatedAt: Date;
+  url: string;
   /**
    *
    * @type {string}
    * @memberof WebhookProjection
    */
-  url: string;
+  password?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  username?: string;
   /**
    *
    * @type {string}
@@ -55,6 +55,18 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   eventName?: WebhookProjectionEventNameEnum;
+  /**
+   *
+   * @type {Date}
+   * @memberof WebhookProjection
+   */
+  updatedAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof WebhookProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -79,18 +91,6 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  username?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  password?: string;
 }
 
 /**
@@ -131,12 +131,14 @@ export function WebhookProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
     url: json['url'],
+    password: !exists(json, 'password') ? undefined : json['password'],
+    username: !exists(json, 'username') ? undefined : json['username'],
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
+    updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     healthStatus: !exists(json, 'healthStatus')
       ? undefined
       : json['healthStatus'],
@@ -145,8 +147,6 @@ export function WebhookProjectionFromJSONTyped(
       : json['phoneNumberId'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
-    username: !exists(json, 'username') ? undefined : json['username'],
-    password: !exists(json, 'password') ? undefined : json['password'],
   };
 }
 
@@ -158,17 +158,17 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     url: value.url,
+    password: value.password,
+    username: value.username,
     userId: value.userId,
     inboxId: value.inboxId,
     eventName: value.eventName,
+    updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     healthStatus: value.healthStatus,
     phoneNumberId: value.phoneNumberId,
     name: value.name,
     id: value.id,
-    username: value.username,
-    password: value.password,
   };
 }

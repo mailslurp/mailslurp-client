@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface InboxForwarderEventProjection {
   /**
    *
-   * @type {Date}
-   * @memberof InboxForwarderEventProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
@@ -43,6 +37,12 @@ export interface InboxForwarderEventProjection {
    * @memberof InboxForwarderEventProjection
    */
   inboxId?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof InboxForwarderEventProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -98,10 +98,10 @@ export function InboxForwarderEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    createdAt: new Date(json['createdAt']),
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
     message: !exists(json, 'message') ? undefined : json['message'],
@@ -120,10 +120,10 @@ export function InboxForwarderEventProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,
+    createdAt: value.createdAt.toISOString(),
     sentId: value.sentId,
     forwarderId: value.forwarderId,
     message: value.message,

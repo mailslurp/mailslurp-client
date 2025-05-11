@@ -17,16 +17,16 @@
 export interface BounceRecipientProjection {
     /**
      *
-     * @type {Date}
-     * @memberof BounceRecipientProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof BounceRecipientProjection
      */
     sentEmailId?: string | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof BounceRecipientProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -38,13 +38,13 @@ export interface BounceRecipientProjection {
      * @type {string}
      * @memberof BounceRecipientProjection
      */
-    action?: string | null;
+    bounceType?: string | null;
     /**
      *
      * @type {string}
      * @memberof BounceRecipientProjection
      */
-    bounceType?: string | null;
+    action?: string | null;
     /**
      *
      * @type {string}

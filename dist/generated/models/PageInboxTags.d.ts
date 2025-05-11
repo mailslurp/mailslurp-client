@@ -48,16 +48,16 @@ export interface PageInboxTags {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxTags
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxTags
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxTags
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

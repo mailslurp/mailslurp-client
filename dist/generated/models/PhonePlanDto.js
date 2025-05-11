@@ -23,6 +23,15 @@ var PhonePlanDtoPhoneCountryEnum;
     PhonePlanDtoPhoneCountryEnum["US"] = "US";
     PhonePlanDtoPhoneCountryEnum["GB"] = "GB";
     PhonePlanDtoPhoneCountryEnum["AU"] = "AU";
+    PhonePlanDtoPhoneCountryEnum["CA"] = "CA";
+    PhonePlanDtoPhoneCountryEnum["EE"] = "EE";
+    PhonePlanDtoPhoneCountryEnum["HK"] = "HK";
+    PhonePlanDtoPhoneCountryEnum["PL"] = "PL";
+    PhonePlanDtoPhoneCountryEnum["CH"] = "CH";
+    PhonePlanDtoPhoneCountryEnum["PT"] = "PT";
+    PhonePlanDtoPhoneCountryEnum["NL"] = "NL";
+    PhonePlanDtoPhoneCountryEnum["IL"] = "IL";
+    PhonePlanDtoPhoneCountryEnum["SE"] = "SE";
 })(PhonePlanDtoPhoneCountryEnum = exports.PhonePlanDtoPhoneCountryEnum || (exports.PhonePlanDtoPhoneCountryEnum = {}));
 function PhonePlanDtoFromJSON(json) {
     return PhonePlanDtoFromJSONTyped(json, false);

@@ -41,6 +41,7 @@ Email
 - [recipients](Email.md#recipients)
 - [replyTo](Email.md#replyto)
 - [sender](Email.md#sender)
+- [sizeBytes](Email.md#sizebytes)
 - [subject](Email.md#subject)
 - [teamAccess](Email.md#teamaccess)
 - [textExcerpt](Email.md#textexcerpt)
@@ -369,6 +370,18 @@ ___
 ### sender
 
 • `Optional` **sender**: [`Sender`](Sender.md)
+
+**`Memberof`**
+
+Email
+
+___
+
+### sizeBytes
+
+• `Optional` **sizeBytes**: `number`
+
+Size of raw email message in bytes
 
 **`Memberof`**
 

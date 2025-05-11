@@ -24,9 +24,9 @@ function MissedEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        createdAt: new Date(json['createdAt']),
         userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        createdAt: new Date(json['createdAt']),
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
     };
@@ -40,9 +40,9 @@ function MissedEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        subject: value.subject,
-        createdAt: value.createdAt.toISOString(),
         userId: value.userId,
+        createdAt: value.createdAt.toISOString(),
+        subject: value.subject,
         id: value.id,
         from: value.from,
     };

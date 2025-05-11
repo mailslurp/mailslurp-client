@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxDtoToJSON = exports.InboxDtoFromJSONTyped = exports.InboxDtoFromJSON = exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
+exports.InboxDtoToJSON = exports.InboxDtoFromJSONTyped = exports.InboxDtoFromJSON = exports.InboxDtoAccountRegionEnum = exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -36,7 +36,16 @@ var InboxDtoFunctionsAsEnum;
     InboxDtoFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
     InboxDtoFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
     InboxDtoFunctionsAsEnum["GUEST"] = "GUEST";
+    InboxDtoFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxDtoAccountRegionEnum;
+(function (InboxDtoAccountRegionEnum) {
+    InboxDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+})(InboxDtoAccountRegionEnum = exports.InboxDtoAccountRegionEnum || (exports.InboxDtoAccountRegionEnum = {}));
 function InboxDtoFromJSON(json) {
     return InboxDtoFromJSONTyped(json, false);
 }
@@ -66,6 +75,9 @@ function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
         localPart: !(0, runtime_1.exists)(json, 'localPart') ? undefined : json['localPart'],
         domain: !(0, runtime_1.exists)(json, 'domain') ? undefined : json['domain'],
+        accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
+            ? undefined
+            : json['accountRegion'],
     };
 }
 exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
@@ -97,6 +109,7 @@ function InboxDtoToJSON(value) {
         functionsAs: value.functionsAs,
         localPart: value.localPart,
         domain: value.domain,
+        accountRegion: value.accountRegion,
     };
 }
 exports.InboxDtoToJSON = InboxDtoToJSON;

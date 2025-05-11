@@ -1205,6 +1205,42 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Check if an inbox has automations.
+   * Does inbox have automations
+   */
+  async doesInboxHaveAutomationsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/automations`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Check if an inbox has automations.
+   * Does inbox have automations
+   */
+  async doesInboxHaveAutomations(initOverrides?: RequestInit): Promise<void> {
+    await this.doesInboxHaveAutomationsRaw(initOverrides);
+  }
+
+  /**
    * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
    * Remove expired inboxes
    */
@@ -4549,6 +4585,7 @@ export enum GetAllInboxesInboxFunctionEnum {
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
   GUEST = 'GUEST',
+  OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
 }
 /**
  * @export
@@ -4577,6 +4614,7 @@ export enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
   GUEST = 'GUEST',
+  OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
 }
 /**
  * @export

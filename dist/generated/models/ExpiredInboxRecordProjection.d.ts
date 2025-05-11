@@ -17,12 +17,6 @@
 export interface ExpiredInboxRecordProjection {
     /**
      *
-     * @type {Date}
-     * @memberof ExpiredInboxRecordProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof ExpiredInboxRecordProjection
      */
@@ -33,6 +27,12 @@ export interface ExpiredInboxRecordProjection {
      * @memberof ExpiredInboxRecordProjection
      */
     emailAddress: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof ExpiredInboxRecordProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

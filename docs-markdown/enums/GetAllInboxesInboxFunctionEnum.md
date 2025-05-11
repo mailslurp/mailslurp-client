@@ -13,6 +13,7 @@
 - [CATCH\_ALL](GetAllInboxesInboxFunctionEnum.md#catch_all)
 - [CONNECTOR](GetAllInboxesInboxFunctionEnum.md#connector)
 - [GUEST](GetAllInboxesInboxFunctionEnum.md#guest)
+- [OAUTH\_CONNECTION\_GMAIL](GetAllInboxesInboxFunctionEnum.md#oauth_connection_gmail)
 - [THREAD](GetAllInboxesInboxFunctionEnum.md#thread)
 
 ## Enumeration Members
@@ -44,6 +45,12 @@ ___
 ### GUEST
 
 • **GUEST** = ``"GUEST"``
+
+___
+
+### OAUTH\_CONNECTION\_GMAIL
+
+• **OAUTH\_CONNECTION\_GMAIL** = ``"OAUTH_CONNECTION_GMAIL"``
 
 ___
 

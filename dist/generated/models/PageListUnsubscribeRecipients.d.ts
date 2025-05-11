@@ -48,16 +48,16 @@ export interface PageListUnsubscribeRecipients {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

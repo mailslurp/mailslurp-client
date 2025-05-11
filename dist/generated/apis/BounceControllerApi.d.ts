@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, Complaint, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models';
+import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, Complaint, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients, PageReputationItems } from '../models';
 export interface FilterBouncedRecipientRequest {
     filterBouncedRecipientsOptions: FilterBouncedRecipientsOptions;
 }
@@ -49,6 +49,13 @@ export interface GetListUnsubscribeRecipientsRequest {
     size?: number;
     sort?: GetListUnsubscribeRecipientsSortEnum;
     domainId?: string;
+}
+export interface GetReputationItemsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetReputationItemsSortEnum;
+    since?: Date;
+    before?: Date;
 }
 /**
  *
@@ -144,6 +151,16 @@ export declare class BounceControllerApi extends runtime.BaseAPI {
      * Get paginated list of unsubscribed recipients.
      */
     getListUnsubscribeRecipients(requestParameters: GetListUnsubscribeRecipientsRequest, initOverrides?: RequestInit): Promise<PageListUnsubscribeRecipients>;
+    /**
+     * List of complaints and bounces
+     * Get paginated list of reputation items.
+     */
+    getReputationItemsRaw(requestParameters: GetReputationItemsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageReputationItems>>;
+    /**
+     * List of complaints and bounces
+     * Get paginated list of reputation items.
+     */
+    getReputationItems(requestParameters: GetReputationItemsRequest, initOverrides?: RequestInit): Promise<PageReputationItems>;
 }
 /**
  * @export
@@ -174,6 +191,14 @@ export declare enum GetComplaintsSortEnum {
  * @enum {string}
  */
 export declare enum GetListUnsubscribeRecipientsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetReputationItemsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

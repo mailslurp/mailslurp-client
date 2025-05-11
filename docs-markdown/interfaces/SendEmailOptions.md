@@ -24,6 +24,7 @@ SendEmailOptions
 - [customHeaders](SendEmailOptions.md#customheaders)
 - [filterBouncedRecipients](SendEmailOptions.md#filterbouncedrecipients)
 - [from](SendEmailOptions.md#from)
+- [fromName](SendEmailOptions.md#fromname)
 - [html](SendEmailOptions.md#html)
 - [ignoreEmptyRecipients](SendEmailOptions.md#ignoreemptyrecipients)
 - [isHTML](SendEmailOptions.md#ishtml)
@@ -158,6 +159,18 @@ ___
 • `Optional` **from**: `string`
 
 Optional from address. Email address is RFC 5322 format and may include a display name and email in angle brackets (`my@address.com` or `My inbox <my@address.com>`). If no sender is set the source inbox address will be used for this field. If you set `useInboxName` to `true` the from field will include the inbox name as a display name: `inbox_name <inbox@address.com>`. For this to work use the name field when creating an inbox. Beware of potential spam penalties when setting the from field to an address not used by the inbox. Your emails may get blocked by services if you impersonate another address. To use a custom email addresses use a custom domain. You can create domains with the DomainController. The domain must be verified in the dashboard before it can be used.
+
+**`Memberof`**
+
+SendEmailOptions
+
+___
+
+### fromName
+
+• `Optional` **fromName**: `string`
+
+Optional from name if not passed with address. If you set `useInboxName` to `true` the from field will include the inbox name as a display name
 
 **`Memberof`**
 

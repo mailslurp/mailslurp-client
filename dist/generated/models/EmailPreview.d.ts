@@ -130,6 +130,12 @@ export interface EmailPreview {
      * @memberof EmailPreview
      */
     plusAddress?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof EmailPreview
+     */
+    sizeBytes?: number | null;
 }
 export declare function EmailPreviewFromJSON(json: any): EmailPreview;
 export declare function EmailPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreview;

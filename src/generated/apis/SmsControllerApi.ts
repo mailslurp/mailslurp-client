@@ -17,6 +17,9 @@ import {
   CountDto,
   CountDtoFromJSON,
   CountDtoToJSON,
+  PageSentSmsProjection,
+  PageSentSmsProjectionFromJSON,
+  PageSentSmsProjectionToJSON,
   PageSmsProjection,
   PageSmsProjectionFromJSON,
   PageSmsProjectionToJSON,
@@ -32,10 +35,21 @@ import {
   SmsReplyOptions,
   SmsReplyOptionsFromJSON,
   SmsReplyOptionsToJSON,
+  SmsSendOptions,
+  SmsSendOptionsFromJSON,
+  SmsSendOptionsToJSON,
   UnreadCount,
   UnreadCountFromJSON,
   UnreadCountToJSON,
 } from '../models';
+
+export interface DeleteSentSmsMessageRequest {
+  sentSmsId: string;
+}
+
+export interface DeleteSentSmsMessagesRequest {
+  phoneNumberId?: string;
+}
 
 export interface DeleteSmsMessageRequest {
   smsId: string;
@@ -45,29 +59,48 @@ export interface DeleteSmsMessagesRequest {
   phoneNumberId?: string;
 }
 
-export interface GetReplyForSmsMessageRequest {
-  smsId: string;
-}
-
-export interface GetSmsMessageRequest {
-  smsId: string;
-}
-
-export interface GetSmsMessagesPaginatedRequest {
+export interface GetAllSmsMessagesRequest {
   phoneNumber?: string;
   page?: number;
   size?: number;
-  sort?: GetSmsMessagesPaginatedSortEnum;
-  unreadOnly?: boolean;
+  sort?: GetAllSmsMessagesSortEnum;
   since?: Date;
   before?: Date;
   search?: string;
   favourite?: boolean;
 }
 
+export interface GetReplyForSmsMessageRequest {
+  smsId: string;
+}
+
+export interface GetSentSmsMessageRequest {
+  sentSmsId: string;
+}
+
+export interface GetSentSmsMessagesPaginatedRequest {
+  phoneNumber?: string;
+  page?: number;
+  size?: number;
+  sort?: GetSentSmsMessagesPaginatedSortEnum;
+  since?: Date;
+  before?: Date;
+  search?: string;
+}
+
+export interface GetSmsMessageRequest {
+  smsId: string;
+}
+
 export interface ReplyToSmsMessageRequest {
   smsId: string;
   smsReplyOptions: SmsReplyOptions;
+}
+
+export interface SendSmsRequest {
+  smsSendOptions: SmsSendOptions;
+  fromPhoneNumber?: string;
+  fromPhoneId?: string;
 }
 
 export interface SetSmsFavouritedRequest {
@@ -79,6 +112,103 @@ export interface SetSmsFavouritedRequest {
  *
  */
 export class SmsControllerApi extends runtime.BaseAPI {
+  /**
+   * Delete a sent SMS message
+   * Delete sent SMS message.
+   */
+  async deleteSentSmsMessageRaw(
+    requestParameters: DeleteSentSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.sentSmsId === null ||
+      requestParameters.sentSmsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sentSmsId',
+        'Required parameter requestParameters.sentSmsId was null or undefined when calling deleteSentSmsMessage.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/sent/{sentSmsId}`.replace(
+          `{${'sentSmsId'}}`,
+          encodeURIComponent(String(requestParameters.sentSmsId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete a sent SMS message
+   * Delete sent SMS message.
+   */
+  async deleteSentSmsMessage(
+    requestParameters: DeleteSentSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteSentSmsMessageRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Delete all sent SMS messages or all messages for a given phone number
+   * Delete all sent SMS messages
+   */
+  async deleteSentSmsMessagesRaw(
+    requestParameters: DeleteSentSmsMessagesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.phoneNumberId !== undefined) {
+      queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/sent`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete all sent SMS messages or all messages for a given phone number
+   * Delete all sent SMS messages
+   */
+  async deleteSentSmsMessages(
+    requestParameters: DeleteSentSmsMessagesRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteSentSmsMessagesRaw(requestParameters, initOverrides);
+  }
+
   /**
    * Delete an SMS message
    * Delete SMS message.
@@ -177,6 +307,82 @@ export class SmsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   */
+  async getAllSmsMessagesRaw(
+    requestParameters: GetAllSmsMessagesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageSmsProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.phoneNumber !== undefined) {
+      queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    if (requestParameters.favourite !== undefined) {
+      queryParameters['favourite'] = requestParameters.favourite;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageSmsProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getAllSmsMessages(
+    requestParameters: GetAllSmsMessagesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageSmsProjection> {
+    const response = await this.getAllSmsMessagesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get reply for an SMS message.
    * Get reply for an SMS message
    */
@@ -229,6 +435,180 @@ export class SmsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<ReplyForSms> {
     const response = await this.getReplyForSmsMessageRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get number of sent SMS
+   * Get sent SMS count
+   */
+  async getSentSmsCountRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CountDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/sent/count`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CountDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get number of sent SMS
+   * Get sent SMS count
+   */
+  async getSentSmsCount(initOverrides?: RequestInit): Promise<CountDto> {
+    const response = await this.getSentSmsCountRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Returns an SMS summary object with content.
+   * Get sent SMS content including body. Expects sent SMS to exist by ID.
+   */
+  async getSentSmsMessageRaw(
+    requestParameters: GetSentSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentSmsDto>> {
+    if (
+      requestParameters.sentSmsId === null ||
+      requestParameters.sentSmsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sentSmsId',
+        'Required parameter requestParameters.sentSmsId was null or undefined when calling getSentSmsMessage.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/sent/{sentSmsId}`.replace(
+          `{${'sentSmsId'}}`,
+          encodeURIComponent(String(requestParameters.sentSmsId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentSmsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns an SMS summary object with content.
+   * Get sent SMS content including body. Expects sent SMS to exist by ID.
+   */
+  async getSentSmsMessage(
+    requestParameters: GetSentSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<SentSmsDto> {
+    const response = await this.getSentSmsMessageRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+   * Get all SMS messages in all phone numbers in paginated form. .
+   */
+  async getSentSmsMessagesPaginatedRaw(
+    requestParameters: GetSentSmsMessagesPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageSentSmsProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.phoneNumber !== undefined) {
+      queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/sent`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageSentSmsProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+   * Get all SMS messages in all phone numbers in paginated form. .
+   */
+  async getSentSmsMessagesPaginated(
+    requestParameters: GetSentSmsMessagesPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageSentSmsProjection> {
+    const response = await this.getSentSmsMessagesPaginatedRaw(
       requestParameters,
       initOverrides
     );
@@ -327,90 +707,6 @@ export class SmsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<SmsDto> {
     const response = await this.getSmsMessageRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-   * Get all SMS messages in all phone numbers in paginated form. .
-   */
-  async getSmsMessagesPaginatedRaw(
-    requestParameters: GetSmsMessagesPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageSmsProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.phoneNumber !== undefined) {
-      queryParameters['phoneNumber'] = requestParameters.phoneNumber;
-    }
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.unreadOnly !== undefined) {
-      queryParameters['unreadOnly'] = requestParameters.unreadOnly;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
-    }
-
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sms`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageSmsProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-   * Get all SMS messages in all phone numbers in paginated form. .
-   */
-  async getSmsMessagesPaginated(
-    requestParameters: GetSmsMessagesPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageSmsProjection> {
-    const response = await this.getSmsMessagesPaginatedRaw(
       requestParameters,
       initOverrides
     );
@@ -530,6 +826,66 @@ export class SmsControllerApi extends runtime.BaseAPI {
 
   /**
    */
+  async sendSmsRaw(
+    requestParameters: SendSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentSmsDto>> {
+    if (
+      requestParameters.smsSendOptions === null ||
+      requestParameters.smsSendOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsSendOptions',
+        'Required parameter requestParameters.smsSendOptions was null or undefined when calling sendSms.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.fromPhoneNumber !== undefined) {
+      queryParameters['fromPhoneNumber'] = requestParameters.fromPhoneNumber;
+    }
+
+    if (requestParameters.fromPhoneId !== undefined) {
+      queryParameters['fromPhoneId'] = requestParameters.fromPhoneId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/send`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SmsSendOptionsToJSON(requestParameters.smsSendOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentSmsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async sendSms(
+    requestParameters: SendSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<SentSmsDto> {
+    const response = await this.sendSmsRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   */
   async setSmsFavouritedRaw(
     requestParameters: SetSmsFavouritedRequest,
     initOverrides?: RequestInit
@@ -602,7 +958,15 @@ export class SmsControllerApi extends runtime.BaseAPI {
  * @export
  * @enum {string}
  */
-export enum GetSmsMessagesPaginatedSortEnum {
+export enum GetAllSmsMessagesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetSentSmsMessagesPaginatedSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

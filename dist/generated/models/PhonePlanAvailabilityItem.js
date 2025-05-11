@@ -23,6 +23,15 @@ var PhonePlanAvailabilityItemPhoneCountryEnum;
     PhonePlanAvailabilityItemPhoneCountryEnum["US"] = "US";
     PhonePlanAvailabilityItemPhoneCountryEnum["GB"] = "GB";
     PhonePlanAvailabilityItemPhoneCountryEnum["AU"] = "AU";
+    PhonePlanAvailabilityItemPhoneCountryEnum["CA"] = "CA";
+    PhonePlanAvailabilityItemPhoneCountryEnum["EE"] = "EE";
+    PhonePlanAvailabilityItemPhoneCountryEnum["HK"] = "HK";
+    PhonePlanAvailabilityItemPhoneCountryEnum["PL"] = "PL";
+    PhonePlanAvailabilityItemPhoneCountryEnum["CH"] = "CH";
+    PhonePlanAvailabilityItemPhoneCountryEnum["PT"] = "PT";
+    PhonePlanAvailabilityItemPhoneCountryEnum["NL"] = "NL";
+    PhonePlanAvailabilityItemPhoneCountryEnum["IL"] = "IL";
+    PhonePlanAvailabilityItemPhoneCountryEnum["SE"] = "SE";
 })(PhonePlanAvailabilityItemPhoneCountryEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum || (exports.PhonePlanAvailabilityItemPhoneCountryEnum = {}));
 /**
  * @export

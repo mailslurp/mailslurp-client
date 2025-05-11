@@ -7,9 +7,11 @@
 ### Properties
 
 - [before](GetAttachmentsRequest.md#before)
+- [emailId](GetAttachmentsRequest.md#emailid)
 - [fileNameFilter](GetAttachmentsRequest.md#filenamefilter)
 - [inboxId](GetAttachmentsRequest.md#inboxid)
 - [page](GetAttachmentsRequest.md#page)
+- [sentEmailId](GetAttachmentsRequest.md#sentemailid)
 - [since](GetAttachmentsRequest.md#since)
 - [size](GetAttachmentsRequest.md#size)
 - [sort](GetAttachmentsRequest.md#sort)
@@ -19,6 +21,12 @@
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### emailId
+
+• `Optional` **emailId**: `string`
 
 ___
 
@@ -37,6 +45,12 @@ ___
 ### page
 
 • `Optional` **page**: `number`
+
+___
+
+### sentEmailId
+
+• `Optional` **sentEmailId**: `string`
 
 ___
 

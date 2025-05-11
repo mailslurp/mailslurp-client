@@ -111,6 +111,12 @@ export interface InboxDto {
      * @memberof InboxDto
      */
     domain?: string | null;
+    /**
+     * Region of the inbox
+     * @type {string}
+     * @memberof InboxDto
+     */
+    accountRegion?: InboxDtoAccountRegionEnum;
 }
 /**
  * @export
@@ -130,7 +136,15 @@ export declare enum InboxDtoFunctionsAsEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
-    GUEST = "GUEST"
+    GUEST = "GUEST",
+    OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxDtoAccountRegionEnum {
+    US_WEST_2 = "US_WEST_2"
 }
 export declare function InboxDtoFromJSON(json: any): InboxDto;
 export declare function InboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxDto;

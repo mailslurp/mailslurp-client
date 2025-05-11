@@ -48,16 +48,16 @@ export interface PageInboxRulesetDto {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxRulesetDto
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxRulesetDto
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

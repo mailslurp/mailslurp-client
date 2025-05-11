@@ -48,16 +48,16 @@ export interface PageAlias {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageAlias
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageAlias
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAlias
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

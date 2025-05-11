@@ -48,16 +48,16 @@ export interface PageScheduledJobs {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageScheduledJobs
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageScheduledJobs
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

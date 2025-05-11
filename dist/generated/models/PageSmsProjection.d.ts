@@ -48,16 +48,16 @@ export interface PageSmsProjection {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageSmsProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageSmsProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageSmsProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

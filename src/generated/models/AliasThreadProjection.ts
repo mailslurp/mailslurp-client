@@ -20,24 +20,6 @@ import { exists, mapValues } from '../runtime';
  */
 export interface AliasThreadProjection {
   /**
-   * Thread subject
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  subject?: string;
-  /**
-   * Created at DateTime
-   * @type {Date}
-   * @memberof AliasThreadProjection
-   */
-  createdAt: Date;
-  /**
-   * Updated at DateTime
-   * @type {Date}
-   * @memberof AliasThreadProjection
-   */
-  updatedAt: Date;
-  /**
    * User ID
    * @type {string}
    * @memberof AliasThreadProjection
@@ -49,6 +31,18 @@ export interface AliasThreadProjection {
    * @memberof AliasThreadProjection
    */
   inboxId: string;
+  /**
+   * Updated at DateTime
+   * @type {Date}
+   * @memberof AliasThreadProjection
+   */
+  updatedAt: Date;
+  /**
+   * Created at DateTime
+   * @type {Date}
+   * @memberof AliasThreadProjection
+   */
+  createdAt: Date;
   /**
    * To recipients
    * @type {Array<string>}
@@ -73,6 +67,12 @@ export interface AliasThreadProjection {
    * @memberof AliasThreadProjection
    */
   aliasId: string;
+  /**
+   * Thread subject
+   * @type {string}
+   * @memberof AliasThreadProjection
+   */
+  subject?: string;
   /**
    * Name of thread
    * @type {string}
@@ -101,15 +101,15 @@ export function AliasThreadProjectionFromJSONTyped(
     return json;
   }
   return {
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
     userId: json['userId'],
     inboxId: json['inboxId'],
+    updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     aliasId: json['aliasId'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
   };
@@ -125,15 +125,15 @@ export function AliasThreadProjectionToJSON(
     return null;
   }
   return {
-    subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     userId: value.userId,
     inboxId: value.inboxId,
+    updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,
     aliasId: value.aliasId,
+    subject: value.subject,
     name: value.name,
     id: value.id,
   };

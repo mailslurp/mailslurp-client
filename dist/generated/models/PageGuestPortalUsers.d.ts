@@ -48,16 +48,16 @@ export interface PageGuestPortalUsers {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageGuestPortalUsers
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageGuestPortalUsers
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageGuestPortalUsers
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

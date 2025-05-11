@@ -38,6 +38,7 @@ SentEmailDto
 - [replyTo](SentEmailDto.md#replyto)
 - [sender](SentEmailDto.md#sender)
 - [sentAt](SentEmailDto.md#sentat)
+- [sizeBytes](SentEmailDto.md#sizebytes)
 - [subject](SentEmailDto.md#subject)
 - [templateId](SentEmailDto.md#templateid)
 - [templateVariables](SentEmailDto.md#templatevariables)
@@ -310,6 +311,18 @@ ___
 ### sentAt
 
 • **sentAt**: `Date`
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
+### sizeBytes
+
+• `Optional` **sizeBytes**: `number`
+
+Size of raw email message in bytes
 
 **`Memberof`**
 

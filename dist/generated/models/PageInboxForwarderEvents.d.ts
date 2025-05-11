@@ -48,16 +48,16 @@ export interface PageInboxForwarderEvents {
     last?: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxForwarderEvents
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxForwarderEvents
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderEvents
+     */
+    first?: boolean;
     /**
      *
      * @type {number}

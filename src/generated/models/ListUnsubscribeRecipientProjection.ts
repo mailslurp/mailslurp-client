@@ -21,16 +21,16 @@ import { exists, mapValues } from '../runtime';
 export interface ListUnsubscribeRecipientProjection {
   /**
    *
-   * @type {Date}
-   * @memberof ListUnsubscribeRecipientProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof ListUnsubscribeRecipientProjection
    */
   emailAddress: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof ListUnsubscribeRecipientProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -59,8 +59,8 @@ export function ListUnsubscribeRecipientProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     emailAddress: json['emailAddress'],
+    createdAt: new Date(json['createdAt']),
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     id: json['id'],
   };
@@ -76,8 +76,8 @@ export function ListUnsubscribeRecipientProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     emailAddress: value.emailAddress,
+    createdAt: value.createdAt.toISOString(),
     domainId: value.domainId,
     id: value.id,
   };

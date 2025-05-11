@@ -13,7 +13,54 @@
  */
 
 import * as runtime from '../runtime';
-import { UserInfoDto, UserInfoDtoFromJSON, UserInfoDtoToJSON } from '../models';
+import {
+  PageEntityAutomationItems,
+  PageEntityAutomationItemsFromJSON,
+  PageEntityAutomationItemsToJSON,
+  PageEntityEventItems,
+  PageEntityEventItemsFromJSON,
+  PageEntityEventItemsToJSON,
+  PageEntityFavouriteItems,
+  PageEntityFavouriteItemsFromJSON,
+  PageEntityFavouriteItemsToJSON,
+  UserInfoDto,
+  UserInfoDtoFromJSON,
+  UserInfoDtoToJSON,
+} from '../models';
+
+export interface GetEntityAutomationsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetEntityAutomationsSortEnum;
+  since?: Date;
+  before?: Date;
+  inboxId?: string;
+  phoneId?: string;
+  filter?: GetEntityAutomationsFilterEnum;
+}
+
+export interface GetEntityEventsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetEntityEventsSortEnum;
+  since?: Date;
+  before?: Date;
+  inboxId?: string;
+  emailId?: string;
+  phoneId?: string;
+  smsId?: string;
+  attachmentId?: string;
+  filter?: GetEntityEventsFilterEnum;
+}
+
+export interface GetEntityFavoritesRequest {
+  page?: number;
+  size?: number;
+  sort?: GetEntityFavoritesSortEnum;
+  since?: Date;
+  before?: Date;
+  filter?: GetEntityFavoritesFilterEnum;
+}
 
 export interface GetJsonPropertyAsStringRequest {
   property: string;
@@ -24,6 +71,238 @@ export interface GetJsonPropertyAsStringRequest {
  *
  */
 export class UserControllerApi extends runtime.BaseAPI {
+  /**
+   */
+  async getEntityAutomationsRaw(
+    requestParameters: GetEntityAutomationsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEntityAutomationItems>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.phoneId !== undefined) {
+      queryParameters['phoneId'] = requestParameters.phoneId;
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/automations`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEntityAutomationItemsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getEntityAutomations(
+    requestParameters: GetEntityAutomationsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEntityAutomationItems> {
+    const response = await this.getEntityAutomationsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getEntityEventsRaw(
+    requestParameters: GetEntityEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEntityEventItems>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.emailId !== undefined) {
+      queryParameters['emailId'] = requestParameters.emailId;
+    }
+
+    if (requestParameters.phoneId !== undefined) {
+      queryParameters['phoneId'] = requestParameters.phoneId;
+    }
+
+    if (requestParameters.smsId !== undefined) {
+      queryParameters['smsId'] = requestParameters.smsId;
+    }
+
+    if (requestParameters.attachmentId !== undefined) {
+      queryParameters['attachmentId'] = requestParameters.attachmentId;
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/events`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEntityEventItemsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getEntityEvents(
+    requestParameters: GetEntityEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEntityEventItems> {
+    const response = await this.getEntityEventsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getEntityFavoritesRaw(
+    requestParameters: GetEntityFavoritesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEntityFavouriteItems>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.filter !== undefined) {
+      queryParameters['filter'] = requestParameters.filter;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/favorites`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEntityFavouriteItemsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getEntityFavorites(
+    requestParameters: GetEntityFavoritesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEntityFavouriteItems> {
+    const response = await this.getEntityFavoritesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Utility function to extract properties from JSON objects in language where this is cumbersome.
    */
@@ -129,4 +408,60 @@ export class UserControllerApi extends runtime.BaseAPI {
     const response = await this.getUserInfoRaw(initOverrides);
     return await response.value();
   }
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEntityAutomationsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEntityAutomationsFilterEnum {
+  FORWARDER = 'INBOX_FORWARDER',
+  REPLIER = 'INBOX_REPLIER',
+  RULESET = 'INBOX_RULESET',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEntityEventsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEntityEventsFilterEnum {
+  WEBHOOK_EVENT = 'WEBHOOK_EVENT',
+  INBOX_FORWARDER_EVENT = 'INBOX_FORWARDER_EVENT',
+  INBOX_REPLIER_EVENT = 'INBOX_REPLIER_EVENT',
+  INBOX_RULESET_EVENT = 'INBOX_RULESET_EVENT',
+  ALIAS_EVENT = 'ALIAS_EVENT',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEntityFavoritesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEntityFavoritesFilterEnum {
+  INBOX = 'INBOX',
+  EMAIL = 'EMAIL',
+  ATTACHMENT = 'ATTACHMENT',
+  PHONE = 'PHONE',
+  SMS = 'SMS',
 }

@@ -44,6 +44,8 @@
 - [deleteInboxRaw](InboxControllerApi.md#deleteinboxraw)
 - [doesInboxExist](InboxControllerApi.md#doesinboxexist)
 - [doesInboxExistRaw](InboxControllerApi.md#doesinboxexistraw)
+- [doesInboxHaveAutomations](InboxControllerApi.md#doesinboxhaveautomations)
+- [doesInboxHaveAutomationsRaw](InboxControllerApi.md#doesinboxhaveautomationsraw)
 - [flushExpired](InboxControllerApi.md#flushexpired)
 - [flushExpiredRaw](InboxControllerApi.md#flushexpiredraw)
 - [getAllInboxes](InboxControllerApi.md#getallinboxes)
@@ -646,6 +648,44 @@ Does inbox exist
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxExistsDto`](../interfaces/InboxExistsDto.md)\>\>
+
+___
+
+### doesInboxHaveAutomations
+
+▸ **doesInboxHaveAutomations**(`initOverrides?`): `Promise`<`void`\>
+
+Check if an inbox has automations.
+Does inbox have automations
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### doesInboxHaveAutomationsRaw
+
+▸ **doesInboxHaveAutomationsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Check if an inbox has automations.
+Does inbox have automations
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

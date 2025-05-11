@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
+exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewAccountRegionEnum = exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -36,7 +36,16 @@ var InboxPreviewFunctionsAsEnum;
     InboxPreviewFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
     InboxPreviewFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
     InboxPreviewFunctionsAsEnum["GUEST"] = "GUEST";
+    InboxPreviewFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxPreviewAccountRegionEnum;
+(function (InboxPreviewAccountRegionEnum) {
+    InboxPreviewAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+})(InboxPreviewAccountRegionEnum = exports.InboxPreviewAccountRegionEnum || (exports.InboxPreviewAccountRegionEnum = {}));
 function InboxPreviewFromJSON(json) {
     return InboxPreviewFromJSONTyped(json, false);
 }
@@ -64,6 +73,9 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
         functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
         userId: json['userId'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
+            ? undefined
+            : json['accountRegion'],
     };
 }
 exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
@@ -93,6 +105,7 @@ function InboxPreviewToJSON(value) {
         functionsAs: value.functionsAs,
         userId: value.userId,
         description: value.description,
+        accountRegion: value.accountRegion,
     };
 }
 exports.InboxPreviewToJSON = InboxPreviewToJSON;

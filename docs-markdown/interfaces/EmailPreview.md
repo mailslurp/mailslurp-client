@@ -30,6 +30,7 @@ EmailPreview
 - [read](EmailPreview.md#read)
 - [recipients](EmailPreview.md#recipients)
 - [sender](EmailPreview.md#sender)
+- [sizeBytes](EmailPreview.md#sizebytes)
 - [subject](EmailPreview.md#subject)
 - [threadId](EmailPreview.md#threadid)
 - [to](EmailPreview.md#to)
@@ -211,6 +212,16 @@ ___
 ### sender
 
 • `Optional` **sender**: [`Sender`](Sender.md)
+
+**`Memberof`**
+
+EmailPreview
+
+___
+
+### sizeBytes
+
+• `Optional` **sizeBytes**: `number`
 
 **`Memberof`**
 

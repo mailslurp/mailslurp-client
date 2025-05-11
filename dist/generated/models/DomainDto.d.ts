@@ -47,6 +47,18 @@ export interface DomainDto {
      */
     dkimTokens: Array<string>;
     /**
+     * If the domain is duplicate records.
+     * @type {string}
+     * @memberof DomainDto
+     */
+    duplicateRecordsMessage?: string | null;
+    /**
+     * Whether the domain has duplicated required records. If true then see the domain in the dashboard app.
+     * @type {boolean}
+     * @memberof DomainDto
+     */
+    hasDuplicateRecords: boolean;
+    /**
      * If the domain is missing records then show which pairs are missing.
      * @type {string}
      * @memberof DomainDto

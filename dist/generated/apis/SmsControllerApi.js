@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetSmsMessagesPaginatedSortEnum = exports.SmsControllerApi = void 0;
+exports.GetSentSmsMessagesPaginatedSortEnum = exports.GetAllSmsMessagesSortEnum = exports.SmsControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -98,6 +98,101 @@ var SmsControllerApi = /** @class */ (function (_super) {
     function SmsControllerApi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    /**
+     * Delete a sent SMS message
+     * Delete sent SMS message.
+     */
+    SmsControllerApi.prototype.deleteSentSmsMessageRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.sentSmsId === null ||
+                            requestParameters.sentSmsId === undefined) {
+                            throw new runtime.RequiredError('sentSmsId', 'Required parameter requestParameters.sentSmsId was null or undefined when calling deleteSentSmsMessage.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/sent/{sentSmsId}".replace("{".concat('sentSmsId', "}"), encodeURIComponent(String(requestParameters.sentSmsId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete a sent SMS message
+     * Delete sent SMS message.
+     */
+    SmsControllerApi.prototype.deleteSentSmsMessage = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteSentSmsMessageRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete all sent SMS messages or all messages for a given phone number
+     * Delete all sent SMS messages
+     */
+    SmsControllerApi.prototype.deleteSentSmsMessagesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.phoneNumberId !== undefined) {
+                            queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/sent",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete all sent SMS messages or all messages for a given phone number
+     * Delete all sent SMS messages
+     */
+    SmsControllerApi.prototype.deleteSentSmsMessages = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteSentSmsMessagesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     /**
      * Delete an SMS message
      * Delete SMS message.
@@ -194,6 +289,74 @@ var SmsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     */
+    SmsControllerApi.prototype.getAllSmsMessagesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.phoneNumber !== undefined) {
+                            queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
+                        if (requestParameters.favourite !== undefined) {
+                            queryParameters['favourite'] = requestParameters.favourite;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageSmsProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    SmsControllerApi.prototype.getAllSmsMessages = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllSmsMessagesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get reply for an SMS message.
      * Get reply for an SMS message
      */
@@ -237,6 +400,175 @@ var SmsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getReplyForSmsMessageRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get number of sent SMS
+     * Get sent SMS count
+     */
+    SmsControllerApi.prototype.getSentSmsCountRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/sent/count",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CountDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get number of sent SMS
+     * Get sent SMS count
+     */
+    SmsControllerApi.prototype.getSentSmsCount = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSentSmsCountRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns an SMS summary object with content.
+     * Get sent SMS content including body. Expects sent SMS to exist by ID.
+     */
+    SmsControllerApi.prototype.getSentSmsMessageRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.sentSmsId === null ||
+                            requestParameters.sentSmsId === undefined) {
+                            throw new runtime.RequiredError('sentSmsId', 'Required parameter requestParameters.sentSmsId was null or undefined when calling getSentSmsMessage.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/sent/{sentSmsId}".replace("{".concat('sentSmsId', "}"), encodeURIComponent(String(requestParameters.sentSmsId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentSmsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns an SMS summary object with content.
+     * Get sent SMS content including body. Expects sent SMS to exist by ID.
+     */
+    SmsControllerApi.prototype.getSentSmsMessage = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSentSmsMessageRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+     * Get all SMS messages in all phone numbers in paginated form. .
+     */
+    SmsControllerApi.prototype.getSentSmsMessagesPaginatedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.phoneNumber !== undefined) {
+                            queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/sent",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageSentSmsProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+     * Get all SMS messages in all phone numbers in paginated form. .
+     */
+    SmsControllerApi.prototype.getSentSmsMessagesPaginated = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSentSmsMessagesPaginatedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -337,81 +669,6 @@ var SmsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getSmsMessageRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    /**
-     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-     * Get all SMS messages in all phone numbers in paginated form. .
-     */
-    SmsControllerApi.prototype.getSmsMessagesPaginatedRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        if (requestParameters.phoneNumber !== undefined) {
-                            queryParameters['phoneNumber'] = requestParameters.phoneNumber;
-                        }
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
-                        }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
-                        }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
-                        }
-                        if (requestParameters.unreadOnly !== undefined) {
-                            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
-                        }
-                        if (requestParameters.since !== undefined) {
-                            queryParameters['since'] = requestParameters.since.toISOString();
-                        }
-                        if (requestParameters.before !== undefined) {
-                            queryParameters['before'] = requestParameters.before.toISOString();
-                        }
-                        if (requestParameters.search !== undefined) {
-                            queryParameters['search'] = requestParameters.search;
-                        }
-                        if (requestParameters.favourite !== undefined) {
-                            queryParameters['favourite'] = requestParameters.favourite;
-                        }
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/sms",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageSmsProjectionFromJSON)(jsonValue);
-                            })];
-                }
-            });
-        });
-    };
-    /**
-     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-     * Get all SMS messages in all phone numbers in paginated form. .
-     */
-    SmsControllerApi.prototype.getSmsMessagesPaginated = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getSmsMessagesPaginatedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -528,6 +785,62 @@ var SmsControllerApi = /** @class */ (function (_super) {
     };
     /**
      */
+    SmsControllerApi.prototype.sendSmsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.smsSendOptions === null ||
+                            requestParameters.smsSendOptions === undefined) {
+                            throw new runtime.RequiredError('smsSendOptions', 'Required parameter requestParameters.smsSendOptions was null or undefined when calling sendSms.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.fromPhoneNumber !== undefined) {
+                            queryParameters['fromPhoneNumber'] = requestParameters.fromPhoneNumber;
+                        }
+                        if (requestParameters.fromPhoneId !== undefined) {
+                            queryParameters['fromPhoneId'] = requestParameters.fromPhoneId;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/send",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SmsSendOptionsToJSON)(requestParameters.smsSendOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentSmsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    SmsControllerApi.prototype.sendSms = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendSmsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
     SmsControllerApi.prototype.setSmsFavouritedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
@@ -588,8 +901,17 @@ exports.SmsControllerApi = SmsControllerApi;
  * @export
  * @enum {string}
  */
-var GetSmsMessagesPaginatedSortEnum;
-(function (GetSmsMessagesPaginatedSortEnum) {
-    GetSmsMessagesPaginatedSortEnum["ASC"] = "ASC";
-    GetSmsMessagesPaginatedSortEnum["DESC"] = "DESC";
-})(GetSmsMessagesPaginatedSortEnum = exports.GetSmsMessagesPaginatedSortEnum || (exports.GetSmsMessagesPaginatedSortEnum = {}));
+var GetAllSmsMessagesSortEnum;
+(function (GetAllSmsMessagesSortEnum) {
+    GetAllSmsMessagesSortEnum["ASC"] = "ASC";
+    GetAllSmsMessagesSortEnum["DESC"] = "DESC";
+})(GetAllSmsMessagesSortEnum = exports.GetAllSmsMessagesSortEnum || (exports.GetAllSmsMessagesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetSentSmsMessagesPaginatedSortEnum;
+(function (GetSentSmsMessagesPaginatedSortEnum) {
+    GetSentSmsMessagesPaginatedSortEnum["ASC"] = "ASC";
+    GetSentSmsMessagesPaginatedSortEnum["DESC"] = "DESC";
+})(GetSentSmsMessagesPaginatedSortEnum = exports.GetSentSmsMessagesPaginatedSortEnum || (exports.GetSentSmsMessagesPaginatedSortEnum = {}));

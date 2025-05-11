@@ -17,12 +17,6 @@
 export interface ConnectorProjection {
     /**
      *
-     * @type {Date}
-     * @memberof ConnectorProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {boolean}
      * @memberof ConnectorProjection
      */
@@ -45,6 +39,12 @@ export interface ConnectorProjection {
      * @memberof ConnectorProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof ConnectorProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

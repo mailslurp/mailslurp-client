@@ -21,18 +21,6 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
-    subject?: string | null;
-    /**
-     *
-     * @type {Date}
-     * @memberof SentEmailProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
     id: string;
     /**
      *
@@ -57,6 +45,12 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
+    subject?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
     userId: string;
     /**
      *
@@ -70,6 +64,12 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof SentEmailProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}
