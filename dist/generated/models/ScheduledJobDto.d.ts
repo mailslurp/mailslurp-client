@@ -77,9 +77,9 @@ export interface ScheduledJobDto {
     updatedAt: Date;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum ScheduledJobDtoStatusEnum {
     SUBMITTED = "SUBMITTED",
     COMPLETED = "COMPLETED",

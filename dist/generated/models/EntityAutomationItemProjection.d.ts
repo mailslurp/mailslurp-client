@@ -53,9 +53,9 @@ export interface EntityAutomationItemProjection {
     id: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EntityAutomationItemProjectionAutomationTypeEnum {
     FORWARDER = "INBOX_FORWARDER",
     REPLIER = "INBOX_REPLIER",

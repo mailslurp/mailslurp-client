@@ -21,13 +21,11 @@ function ImapServerStatusResultFromJSON(json) {
 }
 exports.ImapServerStatusResultFromJSON = ImapServerStatusResultFromJSON;
 function ImapServerStatusResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        result: !(0, runtime_1.exists)(json, 'result')
-            ? undefined
-            : (0, _1.ImapMailboxStatusFromJSON)(json['result']),
+        'result': !(0, runtime_1.exists)(json, 'result') ? undefined : (0, _1.ImapMailboxStatusFromJSON)(json['result']),
     };
 }
 exports.ImapServerStatusResultFromJSONTyped = ImapServerStatusResultFromJSONTyped;
@@ -39,7 +37,7 @@ function ImapServerStatusResultToJSON(value) {
         return null;
     }
     return {
-        result: (0, _1.ImapMailboxStatusToJSON)(value.result),
+        'result': (0, _1.ImapMailboxStatusToJSON)(value.result),
     };
 }
 exports.ImapServerStatusResultToJSON = ImapServerStatusResultToJSON;

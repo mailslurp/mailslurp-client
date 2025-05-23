@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateDomainOptionsToJSON = exports.CreateDomainOptionsFromJSONTyped = exports.CreateDomainOptionsFromJSON = exports.CreateDomainOptionsDomainTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var CreateDomainOptionsDomainTypeEnum;
 (function (CreateDomainOptionsDomainTypeEnum) {
     CreateDomainOptionsDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -29,16 +29,14 @@ function CreateDomainOptionsFromJSON(json) {
 }
 exports.CreateDomainOptionsFromJSON = CreateDomainOptionsFromJSON;
 function CreateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        domain: json['domain'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        createdCatchAllInbox: !(0, runtime_1.exists)(json, 'createdCatchAllInbox')
-            ? undefined
-            : json['createdCatchAllInbox'],
-        domainType: !(0, runtime_1.exists)(json, 'domainType') ? undefined : json['domainType'],
+        'domain': json['domain'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'createdCatchAllInbox': !(0, runtime_1.exists)(json, 'createdCatchAllInbox') ? undefined : json['createdCatchAllInbox'],
+        'domainType': !(0, runtime_1.exists)(json, 'domainType') ? undefined : json['domainType'],
     };
 }
 exports.CreateDomainOptionsFromJSONTyped = CreateDomainOptionsFromJSONTyped;
@@ -50,10 +48,10 @@ function CreateDomainOptionsToJSON(value) {
         return null;
     }
     return {
-        domain: value.domain,
-        description: value.description,
-        createdCatchAllInbox: value.createdCatchAllInbox,
-        domainType: value.domainType,
+        'domain': value.domain,
+        'description': value.description,
+        'createdCatchAllInbox': value.createdCatchAllInbox,
+        'domainType': value.domainType,
     };
 }
 exports.CreateDomainOptionsToJSON = CreateDomainOptionsToJSON;

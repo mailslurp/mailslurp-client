@@ -12,531 +12,443 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  InboxDto,
-  InboxDtoFromJSON,
-  InboxDtoToJSON,
-  SimpleSendEmailOptions,
-  SimpleSendEmailOptionsFromJSON,
-  SimpleSendEmailOptionsToJSON,
+    InboxDto,
+    InboxDtoFromJSON,
+    InboxDtoToJSON,
+    SimpleSendEmailOptions,
+    SimpleSendEmailOptionsFromJSON,
+    SimpleSendEmailOptionsToJSON,
 } from '../models';
 
 export interface CreateNewEmailAddressRequest {
-  allowTeamAccess?: boolean;
-  useDomainPool?: boolean;
-  expiresAt?: Date;
-  expiresIn?: number;
-  emailAddress?: string;
-  inboxType?: CreateNewEmailAddressInboxTypeEnum;
-  description?: string;
-  name?: string;
-  tags?: Array<string>;
-  favourite?: boolean;
-  virtualInbox?: boolean;
-  useShortAddress?: boolean;
-  domainName?: string;
-  domainId?: string;
-  prefix?: string;
+    allowTeamAccess?: boolean;
+    useDomainPool?: boolean;
+    expiresAt?: Date;
+    expiresIn?: number;
+    emailAddress?: string;
+    inboxType?: CreateNewEmailAddressInboxTypeEnum;
+    description?: string;
+    name?: string;
+    tags?: Array<string>;
+    favourite?: boolean;
+    virtualInbox?: boolean;
+    useShortAddress?: boolean;
+    domainName?: string;
+    domainId?: string;
+    prefix?: string;
 }
 
 export interface CreateRandomInboxRequest {
-  allowTeamAccess?: boolean;
-  useDomainPool?: boolean;
-  expiresAt?: Date;
-  expiresIn?: number;
-  emailAddress?: string;
-  inboxType?: CreateRandomInboxInboxTypeEnum;
-  description?: string;
-  name?: string;
-  tags?: Array<string>;
-  favourite?: boolean;
-  virtualInbox?: boolean;
-  useShortAddress?: boolean;
-  domainName?: string;
-  domainId?: string;
-  prefix?: string;
+    allowTeamAccess?: boolean;
+    useDomainPool?: boolean;
+    expiresAt?: Date;
+    expiresIn?: number;
+    emailAddress?: string;
+    inboxType?: CreateRandomInboxInboxTypeEnum;
+    description?: string;
+    name?: string;
+    tags?: Array<string>;
+    favourite?: boolean;
+    virtualInbox?: boolean;
+    useShortAddress?: boolean;
+    domainName?: string;
+    domainId?: string;
+    prefix?: string;
 }
 
 export interface DeleteEmailAddressRequest {
-  inboxId: string;
+    inboxId: string;
 }
 
 export interface EmptyInboxRequest {
-  inboxId: string;
+    inboxId: string;
 }
 
 export interface SendEmailQueryRequest {
-  to: string;
-  senderId?: string;
-  body?: string;
-  subject?: string;
+    to: string;
+    senderId?: string;
+    body?: string;
+    subject?: string;
 }
 
 export interface SendEmailSimpleRequest {
-  simpleSendEmailOptions: SimpleSendEmailOptions;
+    simpleSendEmailOptions: SimpleSendEmailOptions;
 }
 
 /**
- *
+ * 
  */
 export class CommonActionsControllerApi extends runtime.BaseAPI {
-  /**
-   * Returns an Inbox with an `id` and an `emailAddress`
-   * Create new random inbox
-   */
-  async createNewEmailAddressRaw(
-    requestParameters: CreateNewEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    const queryParameters: any = {};
 
-    if (requestParameters.allowTeamAccess !== undefined) {
-      queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
+    /**
+     * Returns an Inbox with an `id` and an `emailAddress`
+     * Create new random inbox
+     */
+    async createNewEmailAddressRaw(requestParameters: CreateNewEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.allowTeamAccess !== undefined) {
+            queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
+        }
+
+        if (requestParameters.useDomainPool !== undefined) {
+            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+        }
+
+        if (requestParameters.expiresAt !== undefined) {
+            queryParameters['expiresAt'] = (requestParameters.expiresAt as any).toISOString();
+        }
+
+        if (requestParameters.expiresIn !== undefined) {
+            queryParameters['expiresIn'] = requestParameters.expiresIn;
+        }
+
+        if (requestParameters.emailAddress !== undefined) {
+            queryParameters['emailAddress'] = requestParameters.emailAddress;
+        }
+
+        if (requestParameters.inboxType !== undefined) {
+            queryParameters['inboxType'] = requestParameters.inboxType;
+        }
+
+        if (requestParameters.description !== undefined) {
+            queryParameters['description'] = requestParameters.description;
+        }
+
+        if (requestParameters.name !== undefined) {
+            queryParameters['name'] = requestParameters.name;
+        }
+
+        if (requestParameters.tags) {
+            queryParameters['tags'] = requestParameters.tags;
+        }
+
+        if (requestParameters.favourite !== undefined) {
+            queryParameters['favourite'] = requestParameters.favourite;
+        }
+
+        if (requestParameters.virtualInbox !== undefined) {
+            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+        }
+
+        if (requestParameters.useShortAddress !== undefined) {
+            queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+        }
+
+        if (requestParameters.domainName !== undefined) {
+            queryParameters['domainName'] = requestParameters.domainName;
+        }
+
+        if (requestParameters.domainId !== undefined) {
+            queryParameters['domainId'] = requestParameters.domainId;
+        }
+
+        if (requestParameters.prefix !== undefined) {
+            queryParameters['prefix'] = requestParameters.prefix;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/newEmailAddress`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.useDomainPool !== undefined) {
-      queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+    /**
+     * Returns an Inbox with an `id` and an `emailAddress`
+     * Create new random inbox
+     */
+    async createNewEmailAddress(requestParameters: CreateNewEmailAddressRequest, initOverrides?: RequestInit): Promise<InboxDto> {
+        const response = await this.createNewEmailAddressRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.expiresAt !== undefined) {
-      queryParameters['expiresAt'] = (
-        requestParameters.expiresAt as any
-      ).toISOString();
+    /**
+     * Returns an Inbox with an `id` and an `emailAddress`
+     * Create new random inbox
+     */
+    async createRandomInboxRaw(requestParameters: CreateRandomInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.allowTeamAccess !== undefined) {
+            queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
+        }
+
+        if (requestParameters.useDomainPool !== undefined) {
+            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+        }
+
+        if (requestParameters.expiresAt !== undefined) {
+            queryParameters['expiresAt'] = (requestParameters.expiresAt as any).toISOString();
+        }
+
+        if (requestParameters.expiresIn !== undefined) {
+            queryParameters['expiresIn'] = requestParameters.expiresIn;
+        }
+
+        if (requestParameters.emailAddress !== undefined) {
+            queryParameters['emailAddress'] = requestParameters.emailAddress;
+        }
+
+        if (requestParameters.inboxType !== undefined) {
+            queryParameters['inboxType'] = requestParameters.inboxType;
+        }
+
+        if (requestParameters.description !== undefined) {
+            queryParameters['description'] = requestParameters.description;
+        }
+
+        if (requestParameters.name !== undefined) {
+            queryParameters['name'] = requestParameters.name;
+        }
+
+        if (requestParameters.tags) {
+            queryParameters['tags'] = requestParameters.tags;
+        }
+
+        if (requestParameters.favourite !== undefined) {
+            queryParameters['favourite'] = requestParameters.favourite;
+        }
+
+        if (requestParameters.virtualInbox !== undefined) {
+            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+        }
+
+        if (requestParameters.useShortAddress !== undefined) {
+            queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+        }
+
+        if (requestParameters.domainName !== undefined) {
+            queryParameters['domainName'] = requestParameters.domainName;
+        }
+
+        if (requestParameters.domainId !== undefined) {
+            queryParameters['domainId'] = requestParameters.domainId;
+        }
+
+        if (requestParameters.prefix !== undefined) {
+            queryParameters['prefix'] = requestParameters.prefix;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/createInbox`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.expiresIn !== undefined) {
-      queryParameters['expiresIn'] = requestParameters.expiresIn;
+    /**
+     * Returns an Inbox with an `id` and an `emailAddress`
+     * Create new random inbox
+     */
+    async createRandomInbox(requestParameters: CreateRandomInboxRequest, initOverrides?: RequestInit): Promise<InboxDto> {
+        const response = await this.createRandomInboxRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.emailAddress !== undefined) {
-      queryParameters['emailAddress'] = requestParameters.emailAddress;
+    /**
+     * Deletes inbox email address
+     * Delete inbox email address by inbox id
+     */
+    async deleteEmailAddressRaw(requestParameters: DeleteEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling deleteEmailAddress.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/deleteEmailAddress`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    if (requestParameters.inboxType !== undefined) {
-      queryParameters['inboxType'] = requestParameters.inboxType;
+    /**
+     * Deletes inbox email address
+     * Delete inbox email address by inbox id
+     */
+    async deleteEmailAddress(requestParameters: DeleteEmailAddressRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteEmailAddressRaw(requestParameters, initOverrides);
     }
 
-    if (requestParameters.description !== undefined) {
-      queryParameters['description'] = requestParameters.description;
+    /**
+     * Deletes all emails
+     * Delete all emails in an inbox
+     */
+    async emptyInboxRaw(requestParameters: EmptyInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling emptyInbox.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/emptyInbox`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    if (requestParameters.name !== undefined) {
-      queryParameters['name'] = requestParameters.name;
+    /**
+     * Deletes all emails
+     * Delete all emails in an inbox
+     */
+    async emptyInbox(requestParameters: EmptyInboxRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.emptyInboxRaw(requestParameters, initOverrides);
     }
 
-    if (requestParameters.tags) {
-      queryParameters['tags'] = requestParameters.tags;
+    /**
+     * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+     * Send an email using query parameters
+     */
+    async sendEmailQueryRaw(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.to === null || requestParameters.to === undefined) {
+            throw new runtime.RequiredError('to','Required parameter requestParameters.to was null or undefined when calling sendEmailQuery.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.senderId !== undefined) {
+            queryParameters['senderId'] = requestParameters.senderId;
+        }
+
+        if (requestParameters.to !== undefined) {
+            queryParameters['to'] = requestParameters.to;
+        }
+
+        if (requestParameters.body !== undefined) {
+            queryParameters['body'] = requestParameters.body;
+        }
+
+        if (requestParameters.subject !== undefined) {
+            queryParameters['subject'] = requestParameters.subject;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sendEmailQuery`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
+    /**
+     * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+     * Send an email using query parameters
+     */
+    async sendEmailQuery(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.sendEmailQueryRaw(requestParameters, initOverrides);
     }
 
-    if (requestParameters.virtualInbox !== undefined) {
-      queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+    /**
+     * If no senderId or inboxId provided a random email address will be used to send from.
+     * Send an email
+     */
+    async sendEmailSimpleRaw(requestParameters: SendEmailSimpleRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.simpleSendEmailOptions === null || requestParameters.simpleSendEmailOptions === undefined) {
+            throw new runtime.RequiredError('simpleSendEmailOptions','Required parameter requestParameters.simpleSendEmailOptions was null or undefined when calling sendEmailSimple.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sendEmail`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SimpleSendEmailOptionsToJSON(requestParameters.simpleSendEmailOptions),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    if (requestParameters.useShortAddress !== undefined) {
-      queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+    /**
+     * If no senderId or inboxId provided a random email address will be used to send from.
+     * Send an email
+     */
+    async sendEmailSimple(requestParameters: SendEmailSimpleRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.sendEmailSimpleRaw(requestParameters, initOverrides);
     }
 
-    if (requestParameters.domainName !== undefined) {
-      queryParameters['domainName'] = requestParameters.domainName;
-    }
-
-    if (requestParameters.domainId !== undefined) {
-      queryParameters['domainId'] = requestParameters.domainId;
-    }
-
-    if (requestParameters.prefix !== undefined) {
-      queryParameters['prefix'] = requestParameters.prefix;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/newEmailAddress`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns an Inbox with an `id` and an `emailAddress`
-   * Create new random inbox
-   */
-  async createNewEmailAddress(
-    requestParameters: CreateNewEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.createNewEmailAddressRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Returns an Inbox with an `id` and an `emailAddress`
-   * Create new random inbox
-   */
-  async createRandomInboxRaw(
-    requestParameters: CreateRandomInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxDto>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.allowTeamAccess !== undefined) {
-      queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
-    }
-
-    if (requestParameters.useDomainPool !== undefined) {
-      queryParameters['useDomainPool'] = requestParameters.useDomainPool;
-    }
-
-    if (requestParameters.expiresAt !== undefined) {
-      queryParameters['expiresAt'] = (
-        requestParameters.expiresAt as any
-      ).toISOString();
-    }
-
-    if (requestParameters.expiresIn !== undefined) {
-      queryParameters['expiresIn'] = requestParameters.expiresIn;
-    }
-
-    if (requestParameters.emailAddress !== undefined) {
-      queryParameters['emailAddress'] = requestParameters.emailAddress;
-    }
-
-    if (requestParameters.inboxType !== undefined) {
-      queryParameters['inboxType'] = requestParameters.inboxType;
-    }
-
-    if (requestParameters.description !== undefined) {
-      queryParameters['description'] = requestParameters.description;
-    }
-
-    if (requestParameters.name !== undefined) {
-      queryParameters['name'] = requestParameters.name;
-    }
-
-    if (requestParameters.tags) {
-      queryParameters['tags'] = requestParameters.tags;
-    }
-
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
-    }
-
-    if (requestParameters.virtualInbox !== undefined) {
-      queryParameters['virtualInbox'] = requestParameters.virtualInbox;
-    }
-
-    if (requestParameters.useShortAddress !== undefined) {
-      queryParameters['useShortAddress'] = requestParameters.useShortAddress;
-    }
-
-    if (requestParameters.domainName !== undefined) {
-      queryParameters['domainName'] = requestParameters.domainName;
-    }
-
-    if (requestParameters.domainId !== undefined) {
-      queryParameters['domainId'] = requestParameters.domainId;
-    }
-
-    if (requestParameters.prefix !== undefined) {
-      queryParameters['prefix'] = requestParameters.prefix;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/createInbox`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns an Inbox with an `id` and an `emailAddress`
-   * Create new random inbox
-   */
-  async createRandomInbox(
-    requestParameters: CreateRandomInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxDto> {
-    const response = await this.createRandomInboxRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Deletes inbox email address
-   * Delete inbox email address by inbox id
-   */
-  async deleteEmailAddressRaw(
-    requestParameters: DeleteEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling deleteEmailAddress.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/deleteEmailAddress`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Deletes inbox email address
-   * Delete inbox email address by inbox id
-   */
-  async deleteEmailAddress(
-    requestParameters: DeleteEmailAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteEmailAddressRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Deletes all emails
-   * Delete all emails in an inbox
-   */
-  async emptyInboxRaw(
-    requestParameters: EmptyInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling emptyInbox.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/emptyInbox`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Deletes all emails
-   * Delete all emails in an inbox
-   */
-  async emptyInbox(
-    requestParameters: EmptyInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.emptyInboxRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
-   * Send an email using query parameters
-   */
-  async sendEmailQueryRaw(
-    requestParameters: SendEmailQueryRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (requestParameters.to === null || requestParameters.to === undefined) {
-      throw new runtime.RequiredError(
-        'to',
-        'Required parameter requestParameters.to was null or undefined when calling sendEmailQuery.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.senderId !== undefined) {
-      queryParameters['senderId'] = requestParameters.senderId;
-    }
-
-    if (requestParameters.to !== undefined) {
-      queryParameters['to'] = requestParameters.to;
-    }
-
-    if (requestParameters.body !== undefined) {
-      queryParameters['body'] = requestParameters.body;
-    }
-
-    if (requestParameters.subject !== undefined) {
-      queryParameters['subject'] = requestParameters.subject;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sendEmailQuery`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
-   * Send an email using query parameters
-   */
-  async sendEmailQuery(
-    requestParameters: SendEmailQueryRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.sendEmailQueryRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * If no senderId or inboxId provided a random email address will be used to send from.
-   * Send an email
-   */
-  async sendEmailSimpleRaw(
-    requestParameters: SendEmailSimpleRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.simpleSendEmailOptions === null ||
-      requestParameters.simpleSendEmailOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'simpleSendEmailOptions',
-        'Required parameter requestParameters.simpleSendEmailOptions was null or undefined when calling sendEmailSimple.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sendEmail`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SimpleSendEmailOptionsToJSON(
-          requestParameters.simpleSendEmailOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * If no senderId or inboxId provided a random email address will be used to send from.
-   * Send an email
-   */
-  async sendEmailSimple(
-    requestParameters: SendEmailSimpleRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.sendEmailSimpleRaw(requestParameters, initOverrides);
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum CreateNewEmailAddressInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
+    HTTP_INBOX = 'HTTP_INBOX',
+    SMTP_INBOX = 'SMTP_INBOX'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum CreateRandomInboxInboxTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_INBOX = 'SMTP_INBOX',
+    HTTP_INBOX = 'HTTP_INBOX',
+    SMTP_INBOX = 'SMTP_INBOX'
 }

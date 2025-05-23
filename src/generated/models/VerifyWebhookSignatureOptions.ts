@@ -14,55 +14,52 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface VerifyWebhookSignatureOptions
  */
 export interface VerifyWebhookSignatureOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof VerifyWebhookSignatureOptions
-   */
-  messageId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof VerifyWebhookSignatureOptions
-   */
-  signature: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifyWebhookSignatureOptions
+     */
+    messageId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifyWebhookSignatureOptions
+     */
+    signature: string;
 }
 
-export function VerifyWebhookSignatureOptionsFromJSON(
-  json: any
-): VerifyWebhookSignatureOptions {
-  return VerifyWebhookSignatureOptionsFromJSONTyped(json, false);
+export function VerifyWebhookSignatureOptionsFromJSON(json: any): VerifyWebhookSignatureOptions {
+    return VerifyWebhookSignatureOptionsFromJSONTyped(json, false);
 }
 
-export function VerifyWebhookSignatureOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): VerifyWebhookSignatureOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    messageId: json['messageId'],
-    signature: json['signature'],
-  };
+export function VerifyWebhookSignatureOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyWebhookSignatureOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'messageId': json['messageId'],
+        'signature': json['signature'],
+    };
 }
 
-export function VerifyWebhookSignatureOptionsToJSON(
-  value?: VerifyWebhookSignatureOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    messageId: value.messageId,
-    signature: value.signature,
-  };
+export function VerifyWebhookSignatureOptionsToJSON(value?: VerifyWebhookSignatureOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'messageId': value.messageId,
+        'signature': value.signature,
+    };
 }
+
+

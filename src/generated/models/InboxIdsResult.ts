@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  InboxIdItem,
-  InboxIdItemFromJSON,
-  InboxIdItemFromJSONTyped,
-  InboxIdItemToJSON,
+    InboxIdItem,
+    InboxIdItemFromJSON,
+    InboxIdItemFromJSONTyped,
+    InboxIdItemToJSON,
 } from './';
 
 /**
@@ -26,38 +26,39 @@ import {
  * @interface InboxIdsResult
  */
 export interface InboxIdsResult {
-  /**
-   *
-   * @type {Array<InboxIdItem>}
-   * @memberof InboxIdsResult
-   */
-  inboxIds: Array<InboxIdItem>;
+    /**
+     * 
+     * @type {Array<InboxIdItem>}
+     * @memberof InboxIdsResult
+     */
+    inboxIds: Array<InboxIdItem>;
 }
 
 export function InboxIdsResultFromJSON(json: any): InboxIdsResult {
-  return InboxIdsResultFromJSONTyped(json, false);
+    return InboxIdsResultFromJSONTyped(json, false);
 }
 
-export function InboxIdsResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxIdsResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxIds: (json['inboxIds'] as Array<any>).map(InboxIdItemFromJSON),
-  };
+export function InboxIdsResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxIdsResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'inboxIds': ((json['inboxIds'] as Array<any>).map(InboxIdItemFromJSON)),
+    };
 }
 
 export function InboxIdsResultToJSON(value?: InboxIdsResult | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxIds: (value.inboxIds as Array<any>).map(InboxIdItemToJSON),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'inboxIds': ((value.inboxIds as Array<any>).map(InboxIdItemToJSON)),
+    };
 }
+
+

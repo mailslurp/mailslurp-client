@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImageIssueToJSON = exports.ImageIssueFromJSONTyped = exports.ImageIssueFromJSON = exports.ImageIssueSeverityEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var ImageIssueSeverityEnum;
 (function (ImageIssueSeverityEnum) {
     ImageIssueSeverityEnum["Warning"] = "Warning";
@@ -29,16 +29,14 @@ function ImageIssueFromJSON(json) {
 }
 exports.ImageIssueFromJSON = ImageIssueFromJSON;
 function ImageIssueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        url: json['url'],
-        responseStatus: !(0, runtime_1.exists)(json, 'responseStatus')
-            ? undefined
-            : json['responseStatus'],
-        severity: json['severity'],
-        message: json['message'],
+        'url': json['url'],
+        'responseStatus': !(0, runtime_1.exists)(json, 'responseStatus') ? undefined : json['responseStatus'],
+        'severity': json['severity'],
+        'message': json['message'],
     };
 }
 exports.ImageIssueFromJSONTyped = ImageIssueFromJSONTyped;
@@ -50,10 +48,10 @@ function ImageIssueToJSON(value) {
         return null;
     }
     return {
-        url: value.url,
-        responseStatus: value.responseStatus,
-        severity: value.severity,
-        message: value.message,
+        'url': value.url,
+        'responseStatus': value.responseStatus,
+        'severity': value.severity,
+        'message': value.message,
     };
 }
 exports.ImageIssueToJSON = ImageIssueToJSON;

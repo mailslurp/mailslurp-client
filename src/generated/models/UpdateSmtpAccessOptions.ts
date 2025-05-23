@@ -19,54 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface UpdateSmtpAccessOptions
  */
 export interface UpdateSmtpAccessOptions {
-  /**
-   * SMTP username for login
-   * @type {string}
-   * @memberof UpdateSmtpAccessOptions
-   */
-  smtpUsername?: string | null;
-  /**
-   * SMTP password for login
-   * @type {string}
-   * @memberof UpdateSmtpAccessOptions
-   */
-  smtpPassword?: string | null;
+    /**
+     * SMTP username for login
+     * @type {string}
+     * @memberof UpdateSmtpAccessOptions
+     */
+    smtpUsername?: string | null;
+    /**
+     * SMTP password for login
+     * @type {string}
+     * @memberof UpdateSmtpAccessOptions
+     */
+    smtpPassword?: string | null;
 }
 
-export function UpdateSmtpAccessOptionsFromJSON(
-  json: any
-): UpdateSmtpAccessOptions {
-  return UpdateSmtpAccessOptionsFromJSONTyped(json, false);
+export function UpdateSmtpAccessOptionsFromJSON(json: any): UpdateSmtpAccessOptions {
+    return UpdateSmtpAccessOptionsFromJSONTyped(json, false);
 }
 
-export function UpdateSmtpAccessOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UpdateSmtpAccessOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    smtpUsername: !exists(json, 'smtpUsername')
-      ? undefined
-      : json['smtpUsername'],
-    smtpPassword: !exists(json, 'smtpPassword')
-      ? undefined
-      : json['smtpPassword'],
-  };
+export function UpdateSmtpAccessOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateSmtpAccessOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'smtpUsername': !exists(json, 'smtpUsername') ? undefined : json['smtpUsername'],
+        'smtpPassword': !exists(json, 'smtpPassword') ? undefined : json['smtpPassword'],
+    };
 }
 
-export function UpdateSmtpAccessOptionsToJSON(
-  value?: UpdateSmtpAccessOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    smtpUsername: value.smtpUsername,
-    smtpPassword: value.smtpPassword,
-  };
+export function UpdateSmtpAccessOptionsToJSON(value?: UpdateSmtpAccessOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'smtpUsername': value.smtpUsername,
+        'smtpPassword': value.smtpPassword,
+    };
 }
+
+

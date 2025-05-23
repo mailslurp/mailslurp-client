@@ -84,17 +84,16 @@ export interface WaitForSmsConditions {
     before?: Date | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum WaitForSmsConditionsCountTypeEnum {
     EXACTLY = "EXACTLY",
     ATLEAST = "ATLEAST"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum WaitForSmsConditionsSortDirectionEnum {
     ASC = "ASC",
     DESC = "DESC"

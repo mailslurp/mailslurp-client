@@ -19,46 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxByNameResult
  */
 export interface InboxByNameResult {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxByNameResult
-   */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxByNameResult
-   */
-  _exists: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxByNameResult
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxByNameResult
+     */
+    _exists: boolean;
 }
 
 export function InboxByNameResultFromJSON(json: any): InboxByNameResult {
-  return InboxByNameResultFromJSONTyped(json, false);
+    return InboxByNameResultFromJSONTyped(json, false);
 }
 
-export function InboxByNameResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxByNameResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    _exists: json['exists'],
-  };
+export function InboxByNameResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxByNameResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        '_exists': json['exists'],
+    };
 }
 
 export function InboxByNameResultToJSON(value?: InboxByNameResult | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    exists: value._exists,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'inboxId': value.inboxId,
+        'exists': value._exists,
+    };
 }
+
+

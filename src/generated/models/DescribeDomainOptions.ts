@@ -19,42 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface DescribeDomainOptions
  */
 export interface DescribeDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof DescribeDomainOptions
-   */
-  domain: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DescribeDomainOptions
+     */
+    domain: string;
 }
 
-export function DescribeDomainOptionsFromJSON(
-  json: any
-): DescribeDomainOptions {
-  return DescribeDomainOptionsFromJSONTyped(json, false);
+export function DescribeDomainOptionsFromJSON(json: any): DescribeDomainOptions {
+    return DescribeDomainOptionsFromJSONTyped(json, false);
 }
 
-export function DescribeDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DescribeDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domain: json['domain'],
-  };
+export function DescribeDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): DescribeDomainOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'domain': json['domain'],
+    };
 }
 
-export function DescribeDomainOptionsToJSON(
-  value?: DescribeDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domain: value.domain,
-  };
+export function DescribeDomainOptionsToJSON(value?: DescribeDomainOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'domain': value.domain,
+    };
 }
+
+

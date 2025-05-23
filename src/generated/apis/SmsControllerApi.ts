@@ -12,961 +12,713 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  CountDto,
-  CountDtoFromJSON,
-  CountDtoToJSON,
-  PageSentSmsProjection,
-  PageSentSmsProjectionFromJSON,
-  PageSentSmsProjectionToJSON,
-  PageSmsProjection,
-  PageSmsProjectionFromJSON,
-  PageSmsProjectionToJSON,
-  ReplyForSms,
-  ReplyForSmsFromJSON,
-  ReplyForSmsToJSON,
-  SentSmsDto,
-  SentSmsDtoFromJSON,
-  SentSmsDtoToJSON,
-  SmsDto,
-  SmsDtoFromJSON,
-  SmsDtoToJSON,
-  SmsReplyOptions,
-  SmsReplyOptionsFromJSON,
-  SmsReplyOptionsToJSON,
-  SmsSendOptions,
-  SmsSendOptionsFromJSON,
-  SmsSendOptionsToJSON,
-  UnreadCount,
-  UnreadCountFromJSON,
-  UnreadCountToJSON,
+    CountDto,
+    CountDtoFromJSON,
+    CountDtoToJSON,
+    PageSentSmsProjection,
+    PageSentSmsProjectionFromJSON,
+    PageSentSmsProjectionToJSON,
+    PageSmsProjection,
+    PageSmsProjectionFromJSON,
+    PageSmsProjectionToJSON,
+    ReplyForSms,
+    ReplyForSmsFromJSON,
+    ReplyForSmsToJSON,
+    SentSmsDto,
+    SentSmsDtoFromJSON,
+    SentSmsDtoToJSON,
+    SmsDto,
+    SmsDtoFromJSON,
+    SmsDtoToJSON,
+    SmsReplyOptions,
+    SmsReplyOptionsFromJSON,
+    SmsReplyOptionsToJSON,
+    SmsSendOptions,
+    SmsSendOptionsFromJSON,
+    SmsSendOptionsToJSON,
+    UnreadCount,
+    UnreadCountFromJSON,
+    UnreadCountToJSON,
 } from '../models';
 
 export interface DeleteSentSmsMessageRequest {
-  sentSmsId: string;
+    sentSmsId: string;
 }
 
 export interface DeleteSentSmsMessagesRequest {
-  phoneNumberId?: string;
+    phoneNumberId?: string;
 }
 
 export interface DeleteSmsMessageRequest {
-  smsId: string;
+    smsId: string;
 }
 
 export interface DeleteSmsMessagesRequest {
-  phoneNumberId?: string;
+    phoneNumberId?: string;
 }
 
 export interface GetAllSmsMessagesRequest {
-  phoneNumber?: string;
-  page?: number;
-  size?: number;
-  sort?: GetAllSmsMessagesSortEnum;
-  since?: Date;
-  before?: Date;
-  search?: string;
-  favourite?: boolean;
+    phoneNumber?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllSmsMessagesSortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
+    favourite?: boolean;
 }
 
 export interface GetReplyForSmsMessageRequest {
-  smsId: string;
+    smsId: string;
 }
 
 export interface GetSentSmsMessageRequest {
-  sentSmsId: string;
+    sentSmsId: string;
 }
 
 export interface GetSentSmsMessagesPaginatedRequest {
-  phoneNumber?: string;
-  page?: number;
-  size?: number;
-  sort?: GetSentSmsMessagesPaginatedSortEnum;
-  since?: Date;
-  before?: Date;
-  search?: string;
+    phoneNumber?: string;
+    page?: number;
+    size?: number;
+    sort?: GetSentSmsMessagesPaginatedSortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
 }
 
 export interface GetSmsMessageRequest {
-  smsId: string;
+    smsId: string;
 }
 
 export interface ReplyToSmsMessageRequest {
-  smsId: string;
-  smsReplyOptions: SmsReplyOptions;
+    smsId: string;
+    smsReplyOptions: SmsReplyOptions;
 }
 
 export interface SendSmsRequest {
-  smsSendOptions: SmsSendOptions;
-  fromPhoneNumber?: string;
-  fromPhoneId?: string;
+    smsSendOptions: SmsSendOptions;
+    fromPhoneNumber?: string;
+    fromPhoneId?: string;
 }
 
 export interface SetSmsFavouritedRequest {
-  smsId: string;
-  favourited: boolean;
+    smsId: string;
+    favourited: boolean;
 }
 
 /**
- *
+ * 
  */
 export class SmsControllerApi extends runtime.BaseAPI {
-  /**
-   * Delete a sent SMS message
-   * Delete sent SMS message.
-   */
-  async deleteSentSmsMessageRaw(
-    requestParameters: DeleteSentSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.sentSmsId === null ||
-      requestParameters.sentSmsId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'sentSmsId',
-        'Required parameter requestParameters.sentSmsId was null or undefined when calling deleteSentSmsMessage.'
-      );
+
+    /**
+     * Delete a sent SMS message
+     * Delete sent SMS message.
+     */
+    async deleteSentSmsMessageRaw(requestParameters: DeleteSentSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.sentSmsId === null || requestParameters.sentSmsId === undefined) {
+            throw new runtime.RequiredError('sentSmsId','Required parameter requestParameters.sentSmsId was null or undefined when calling deleteSentSmsMessage.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/sent/{sentSmsId}`.replace(`{${"sentSmsId"}}`, encodeURIComponent(String(requestParameters.sentSmsId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete a sent SMS message
+     * Delete sent SMS message.
+     */
+    async deleteSentSmsMessage(requestParameters: DeleteSentSmsMessageRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteSentSmsMessageRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/sms/sent/{sentSmsId}`.replace(
-          `{${'sentSmsId'}}`,
-          encodeURIComponent(String(requestParameters.sentSmsId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Delete all sent SMS messages or all messages for a given phone number
+     * Delete all sent SMS messages
+     */
+    async deleteSentSmsMessagesRaw(requestParameters: DeleteSentSmsMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
 
-    return new runtime.VoidApiResponse(response);
-  }
+        if (requestParameters.phoneNumberId !== undefined) {
+            queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+        }
 
-  /**
-   * Delete a sent SMS message
-   * Delete sent SMS message.
-   */
-  async deleteSentSmsMessage(
-    requestParameters: DeleteSentSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteSentSmsMessageRaw(requestParameters, initOverrides);
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete all sent SMS messages or all messages for a given phone number
-   * Delete all sent SMS messages
-   */
-  async deleteSentSmsMessagesRaw(
-    requestParameters: DeleteSentSmsMessagesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-    if (requestParameters.phoneNumberId !== undefined) {
-      queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+        const response = await this.request({
+            path: `/sms/sent`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete all sent SMS messages or all messages for a given phone number
+     * Delete all sent SMS messages
+     */
+    async deleteSentSmsMessages(requestParameters: DeleteSentSmsMessagesRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteSentSmsMessagesRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/sms/sent`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Delete an SMS message
+     * Delete SMS message.
+     */
+    async deleteSmsMessageRaw(requestParameters: DeleteSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.smsId === null || requestParameters.smsId === undefined) {
+            throw new runtime.RequiredError('smsId','Required parameter requestParameters.smsId was null or undefined when calling deleteSmsMessage.');
+        }
 
-    return new runtime.VoidApiResponse(response);
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Delete all sent SMS messages or all messages for a given phone number
-   * Delete all sent SMS messages
-   */
-  async deleteSentSmsMessages(
-    requestParameters: DeleteSentSmsMessagesRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteSentSmsMessagesRaw(requestParameters, initOverrides);
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete an SMS message
-   * Delete SMS message.
-   */
-  async deleteSmsMessageRaw(
-    requestParameters: DeleteSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.smsId === null ||
-      requestParameters.smsId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsId',
-        'Required parameter requestParameters.smsId was null or undefined when calling deleteSmsMessage.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/{smsId}`.replace(`{${"smsId"}}`, encodeURIComponent(String(requestParameters.smsId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete an SMS message
+     * Delete SMS message.
+     */
+    async deleteSmsMessage(requestParameters: DeleteSmsMessageRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteSmsMessageRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/sms/{smsId}`.replace(
-          `{${'smsId'}}`,
-          encodeURIComponent(String(requestParameters.smsId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Delete all SMS messages or all messages for a given phone number
+     * Delete all SMS messages
+     */
+    async deleteSmsMessagesRaw(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
 
-    return new runtime.VoidApiResponse(response);
-  }
+        if (requestParameters.phoneNumberId !== undefined) {
+            queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+        }
 
-  /**
-   * Delete an SMS message
-   * Delete SMS message.
-   */
-  async deleteSmsMessage(
-    requestParameters: DeleteSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteSmsMessageRaw(requestParameters, initOverrides);
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete all SMS messages or all messages for a given phone number
-   * Delete all SMS messages
-   */
-  async deleteSmsMessagesRaw(
-    requestParameters: DeleteSmsMessagesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-    if (requestParameters.phoneNumberId !== undefined) {
-      queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+        const response = await this.request({
+            path: `/sms`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete all SMS messages or all messages for a given phone number
+     * Delete all SMS messages
+     */
+    async deleteSmsMessages(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteSmsMessagesRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/sms`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     */
+    async getAllSmsMessagesRaw(requestParameters: GetAllSmsMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsProjection>> {
+        const queryParameters: any = {};
 
-    return new runtime.VoidApiResponse(response);
-  }
+        if (requestParameters.phoneNumber !== undefined) {
+            queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+        }
 
-  /**
-   * Delete all SMS messages or all messages for a given phone number
-   * Delete all SMS messages
-   */
-  async deleteSmsMessages(
-    requestParameters: DeleteSmsMessagesRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteSmsMessagesRaw(requestParameters, initOverrides);
-  }
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
 
-  /**
-   */
-  async getAllSmsMessagesRaw(
-    requestParameters: GetAllSmsMessagesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageSmsProjection>> {
-    const queryParameters: any = {};
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
 
-    if (requestParameters.phoneNumber !== undefined) {
-      queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.search !== undefined) {
+            queryParameters['search'] = requestParameters.search;
+        }
+
+        if (requestParameters.favourite !== undefined) {
+            queryParameters['favourite'] = requestParameters.favourite;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageSmsProjectionFromJSON(jsonValue));
     }
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+    /**
+     */
+    async getAllSmsMessages(requestParameters: GetAllSmsMessagesRequest, initOverrides?: RequestInit): Promise<PageSmsProjection> {
+        const response = await this.getAllSmsMessagesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Get reply for an SMS message.
+     * Get reply for an SMS message
+     */
+    async getReplyForSmsMessageRaw(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ReplyForSms>> {
+        if (requestParameters.smsId === null || requestParameters.smsId === undefined) {
+            throw new runtime.RequiredError('smsId','Required parameter requestParameters.smsId was null or undefined when calling getReplyForSmsMessage.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/{smsId}/reply`.replace(`{${"smsId"}}`, encodeURIComponent(String(requestParameters.smsId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReplyForSmsFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Get reply for an SMS message.
+     * Get reply for an SMS message
+     */
+    async getReplyForSmsMessage(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<ReplyForSms> {
+        const response = await this.getReplyForSmsMessageRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    /**
+     * Get number of sent SMS
+     * Get sent SMS count
+     */
+    async getSentSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/sent/count`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CountDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
+    /**
+     * Get number of sent SMS
+     * Get sent SMS count
+     */
+    async getSentSmsCount(initOverrides?: RequestInit): Promise<CountDto> {
+        const response = await this.getSentSmsCountRaw(initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
+    /**
+     * Returns an SMS summary object with content.
+     * Get sent SMS content including body. Expects sent SMS to exist by ID.
+     */
+    async getSentSmsMessageRaw(requestParameters: GetSentSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>> {
+        if (requestParameters.sentSmsId === null || requestParameters.sentSmsId === undefined) {
+            throw new runtime.RequiredError('sentSmsId','Required parameter requestParameters.sentSmsId was null or undefined when calling getSentSmsMessage.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/sent/{sentSmsId}`.replace(`{${"sentSmsId"}}`, encodeURIComponent(String(requestParameters.sentSmsId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SentSmsDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
+    /**
+     * Returns an SMS summary object with content.
+     * Get sent SMS content including body. Expects sent SMS to exist by ID.
+     */
+    async getSentSmsMessage(requestParameters: GetSentSmsMessageRequest, initOverrides?: RequestInit): Promise<SentSmsDto> {
+        const response = await this.getSentSmsMessageRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+     * Get all SMS messages in all phone numbers in paginated form. .
+     */
+    async getSentSmsMessagesPaginatedRaw(requestParameters: GetSentSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentSmsProjection>> {
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (requestParameters.phoneNumber !== undefined) {
+            queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+        }
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.search !== undefined) {
+            queryParameters['search'] = requestParameters.search;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/sent`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageSentSmsProjectionFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/sms`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageSmsProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   */
-  async getAllSmsMessages(
-    requestParameters: GetAllSmsMessagesRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageSmsProjection> {
-    const response = await this.getAllSmsMessagesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get reply for an SMS message.
-   * Get reply for an SMS message
-   */
-  async getReplyForSmsMessageRaw(
-    requestParameters: GetReplyForSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ReplyForSms>> {
-    if (
-      requestParameters.smsId === null ||
-      requestParameters.smsId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsId',
-        'Required parameter requestParameters.smsId was null or undefined when calling getReplyForSmsMessage.'
-      );
+    /**
+     * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
+     * Get all SMS messages in all phone numbers in paginated form. .
+     */
+    async getSentSmsMessagesPaginated(requestParameters: GetSentSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<PageSentSmsProjection> {
+        const response = await this.getSentSmsMessagesPaginatedRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Get number of SMS
+     * Get SMS count
+     */
+    async getSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>> {
+        const queryParameters: any = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/count`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CountDtoFromJSON(jsonValue));
     }
 
-    const response = await this.request(
-      {
-        path: `/sms/{smsId}/reply`.replace(
-          `{${'smsId'}}`,
-          encodeURIComponent(String(requestParameters.smsId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ReplyForSmsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get reply for an SMS message.
-   * Get reply for an SMS message
-   */
-  async getReplyForSmsMessage(
-    requestParameters: GetReplyForSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<ReplyForSms> {
-    const response = await this.getReplyForSmsMessageRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get number of sent SMS
-   * Get sent SMS count
-   */
-  async getSentSmsCountRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CountDto>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get number of SMS
+     * Get SMS count
+     */
+    async getSmsCount(initOverrides?: RequestInit): Promise<CountDto> {
+        const response = await this.getSmsCountRaw(initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/sms/sent/count`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Returns a SMS summary object with content.
+     * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
+     */
+    async getSmsMessageRaw(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>> {
+        if (requestParameters.smsId === null || requestParameters.smsId === undefined) {
+            throw new runtime.RequiredError('smsId','Required parameter requestParameters.smsId was null or undefined when calling getSmsMessage.');
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CountDtoFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Get number of sent SMS
-   * Get sent SMS count
-   */
-  async getSentSmsCount(initOverrides?: RequestInit): Promise<CountDto> {
-    const response = await this.getSentSmsCountRaw(initOverrides);
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Returns an SMS summary object with content.
-   * Get sent SMS content including body. Expects sent SMS to exist by ID.
-   */
-  async getSentSmsMessageRaw(
-    requestParameters: GetSentSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SentSmsDto>> {
-    if (
-      requestParameters.sentSmsId === null ||
-      requestParameters.sentSmsId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'sentSmsId',
-        'Required parameter requestParameters.sentSmsId was null or undefined when calling getSentSmsMessage.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/{smsId}`.replace(`{${"smsId"}}`, encodeURIComponent(String(requestParameters.smsId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SmsDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Returns a SMS summary object with content.
+     * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
+     */
+    async getSmsMessage(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<SmsDto> {
+        const response = await this.getSmsMessageRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/sms/sent/{sentSmsId}`.replace(
-          `{${'sentSmsId'}}`,
-          encodeURIComponent(String(requestParameters.sentSmsId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+     * Get unread SMS count
+     */
+    async getUnreadSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnreadCount>> {
+        const queryParameters: any = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SentSmsDtoFromJSON(jsonValue)
-    );
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Returns an SMS summary object with content.
-   * Get sent SMS content including body. Expects sent SMS to exist by ID.
-   */
-  async getSentSmsMessage(
-    requestParameters: GetSentSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<SentSmsDto> {
-    const response = await this.getSentSmsMessageRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-  /**
-   * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-   * Get all SMS messages in all phone numbers in paginated form. .
-   */
-  async getSentSmsMessagesPaginatedRaw(
-    requestParameters: GetSentSmsMessagesPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageSentSmsProjection>> {
-    const queryParameters: any = {};
+        const response = await this.request({
+            path: `/sms/unreadCount`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
 
-    if (requestParameters.phoneNumber !== undefined) {
-      queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnreadCountFromJSON(jsonValue));
     }
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+    /**
+     * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+     * Get unread SMS count
+     */
+    async getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount> {
+        const response = await this.getUnreadSmsCountRaw(initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Reply to an SMS message.
+     * Send a reply to a received SMS message. Replies are sent from the receiving number.
+     */
+    async replyToSmsMessageRaw(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>> {
+        if (requestParameters.smsId === null || requestParameters.smsId === undefined) {
+            throw new runtime.RequiredError('smsId','Required parameter requestParameters.smsId was null or undefined when calling replyToSmsMessage.');
+        }
+
+        if (requestParameters.smsReplyOptions === null || requestParameters.smsReplyOptions === undefined) {
+            throw new runtime.RequiredError('smsReplyOptions','Required parameter requestParameters.smsReplyOptions was null or undefined when calling replyToSmsMessage.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/{smsId}/reply`.replace(`{${"smsId"}}`, encodeURIComponent(String(requestParameters.smsId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SmsReplyOptionsToJSON(requestParameters.smsReplyOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SentSmsDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Reply to an SMS message.
+     * Send a reply to a received SMS message. Replies are sent from the receiving number.
+     */
+    async replyToSmsMessage(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<SentSmsDto> {
+        const response = await this.replyToSmsMessageRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    /**
+     */
+    async sendSmsRaw(requestParameters: SendSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>> {
+        if (requestParameters.smsSendOptions === null || requestParameters.smsSendOptions === undefined) {
+            throw new runtime.RequiredError('smsSendOptions','Required parameter requestParameters.smsSendOptions was null or undefined when calling sendSms.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.fromPhoneNumber !== undefined) {
+            queryParameters['fromPhoneNumber'] = requestParameters.fromPhoneNumber;
+        }
+
+        if (requestParameters.fromPhoneId !== undefined) {
+            queryParameters['fromPhoneId'] = requestParameters.fromPhoneId;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/send`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SmsSendOptionsToJSON(requestParameters.smsSendOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SentSmsDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
+    /**
+     */
+    async sendSms(requestParameters: SendSmsRequest, initOverrides?: RequestInit): Promise<SentSmsDto> {
+        const response = await this.sendSmsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
+    /**
+     */
+    async setSmsFavouritedRaw(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>> {
+        if (requestParameters.smsId === null || requestParameters.smsId === undefined) {
+            throw new runtime.RequiredError('smsId','Required parameter requestParameters.smsId was null or undefined when calling setSmsFavourited.');
+        }
+
+        if (requestParameters.favourited === null || requestParameters.favourited === undefined) {
+            throw new runtime.RequiredError('favourited','Required parameter requestParameters.favourited was null or undefined when calling setSmsFavourited.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.favourited !== undefined) {
+            queryParameters['favourited'] = requestParameters.favourited;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/sms/{smsId}/favourite`.replace(`{${"smsId"}}`, encodeURIComponent(String(requestParameters.smsId))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SmsDtoFromJSON(jsonValue));
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     */
+    async setSmsFavourited(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit): Promise<SmsDto> {
+        const response = await this.setSmsFavouritedRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/sms/sent`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageSentSmsProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
-   * Get all SMS messages in all phone numbers in paginated form. .
-   */
-  async getSentSmsMessagesPaginated(
-    requestParameters: GetSentSmsMessagesPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageSentSmsProjection> {
-    const response = await this.getSentSmsMessagesPaginatedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get number of SMS
-   * Get SMS count
-   */
-  async getSmsCountRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CountDto>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sms/count`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CountDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get number of SMS
-   * Get SMS count
-   */
-  async getSmsCount(initOverrides?: RequestInit): Promise<CountDto> {
-    const response = await this.getSmsCountRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Returns a SMS summary object with content.
-   * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
-   */
-  async getSmsMessageRaw(
-    requestParameters: GetSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SmsDto>> {
-    if (
-      requestParameters.smsId === null ||
-      requestParameters.smsId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsId',
-        'Required parameter requestParameters.smsId was null or undefined when calling getSmsMessage.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sms/{smsId}`.replace(
-          `{${'smsId'}}`,
-          encodeURIComponent(String(requestParameters.smsId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SmsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Returns a SMS summary object with content.
-   * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
-   */
-  async getSmsMessage(
-    requestParameters: GetSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<SmsDto> {
-    const response = await this.getSmsMessageRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
-   * Get unread SMS count
-   */
-  async getUnreadSmsCountRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<UnreadCount>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sms/unreadCount`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      UnreadCountFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
-   * Get unread SMS count
-   */
-  async getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount> {
-    const response = await this.getUnreadSmsCountRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Reply to an SMS message.
-   * Send a reply to a received SMS message. Replies are sent from the receiving number.
-   */
-  async replyToSmsMessageRaw(
-    requestParameters: ReplyToSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SentSmsDto>> {
-    if (
-      requestParameters.smsId === null ||
-      requestParameters.smsId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsId',
-        'Required parameter requestParameters.smsId was null or undefined when calling replyToSmsMessage.'
-      );
-    }
-
-    if (
-      requestParameters.smsReplyOptions === null ||
-      requestParameters.smsReplyOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsReplyOptions',
-        'Required parameter requestParameters.smsReplyOptions was null or undefined when calling replyToSmsMessage.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sms/{smsId}/reply`.replace(
-          `{${'smsId'}}`,
-          encodeURIComponent(String(requestParameters.smsId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SmsReplyOptionsToJSON(requestParameters.smsReplyOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SentSmsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Reply to an SMS message.
-   * Send a reply to a received SMS message. Replies are sent from the receiving number.
-   */
-  async replyToSmsMessage(
-    requestParameters: ReplyToSmsMessageRequest,
-    initOverrides?: RequestInit
-  ): Promise<SentSmsDto> {
-    const response = await this.replyToSmsMessageRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   */
-  async sendSmsRaw(
-    requestParameters: SendSmsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SentSmsDto>> {
-    if (
-      requestParameters.smsSendOptions === null ||
-      requestParameters.smsSendOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsSendOptions',
-        'Required parameter requestParameters.smsSendOptions was null or undefined when calling sendSms.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.fromPhoneNumber !== undefined) {
-      queryParameters['fromPhoneNumber'] = requestParameters.fromPhoneNumber;
-    }
-
-    if (requestParameters.fromPhoneId !== undefined) {
-      queryParameters['fromPhoneId'] = requestParameters.fromPhoneId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sms/send`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SmsSendOptionsToJSON(requestParameters.smsSendOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SentSmsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   */
-  async sendSms(
-    requestParameters: SendSmsRequest,
-    initOverrides?: RequestInit
-  ): Promise<SentSmsDto> {
-    const response = await this.sendSmsRaw(requestParameters, initOverrides);
-    return await response.value();
-  }
-
-  /**
-   */
-  async setSmsFavouritedRaw(
-    requestParameters: SetSmsFavouritedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SmsDto>> {
-    if (
-      requestParameters.smsId === null ||
-      requestParameters.smsId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsId',
-        'Required parameter requestParameters.smsId was null or undefined when calling setSmsFavourited.'
-      );
-    }
-
-    if (
-      requestParameters.favourited === null ||
-      requestParameters.favourited === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'favourited',
-        'Required parameter requestParameters.favourited was null or undefined when calling setSmsFavourited.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.favourited !== undefined) {
-      queryParameters['favourited'] = requestParameters.favourited;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/sms/{smsId}/favourite`.replace(
-          `{${'smsId'}}`,
-          encodeURIComponent(String(requestParameters.smsId))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SmsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   */
-  async setSmsFavourited(
-    requestParameters: SetSmsFavouritedRequest,
-    initOverrides?: RequestInit
-  ): Promise<SmsDto> {
-    const response = await this.setSmsFavouritedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllSmsMessagesSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetSentSmsMessagesPaginatedSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }

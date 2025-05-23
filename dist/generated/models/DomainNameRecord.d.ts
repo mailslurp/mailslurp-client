@@ -59,20 +59,19 @@ export interface DomainNameRecord {
     alternativeRecordEntries?: Array<string> | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum DomainNameRecordLabelEnum {
     VERIFICATION = "VERIFICATION",
     MX = "MX",
     SPF = "SPF",
     DKIM = "DKIM",
     DMARC = "DMARC"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum DomainNameRecordRecordTypeEnum {
     A = "A",
     NS = "NS",

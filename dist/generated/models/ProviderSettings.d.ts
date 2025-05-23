@@ -71,9 +71,9 @@ export interface ProviderSettings {
     smtpStartTls?: boolean;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum ProviderSettingsMailProviderEnum {
     GOOGLE = "GOOGLE",
     MICROSOFT = "MICROSOFT"

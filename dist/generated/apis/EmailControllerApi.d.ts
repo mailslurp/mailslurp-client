@@ -692,41 +692,41 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
     validateEmail(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit): Promise<ValidationDto>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEmailThreadItemsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEmailThreadsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEmailsOffsetPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEmailsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetOrganizationEmailsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"

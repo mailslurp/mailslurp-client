@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReplyToAliasEmailOptionsToJSON = exports.ReplyToAliasEmailOptionsFromJSONTyped = exports.ReplyToAliasEmailOptionsFromJSON = exports.ReplyToAliasEmailOptionsSendStrategyEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var ReplyToAliasEmailOptionsSendStrategyEnum;
 (function (ReplyToAliasEmailOptionsSendStrategyEnum) {
     ReplyToAliasEmailOptionsSendStrategyEnum["SINGLE_MESSAGE"] = "SINGLE_MESSAGE";
@@ -28,28 +28,20 @@ function ReplyToAliasEmailOptionsFromJSON(json) {
 }
 exports.ReplyToAliasEmailOptionsFromJSON = ReplyToAliasEmailOptionsFromJSON;
 function ReplyToAliasEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        body: json['body'],
-        isHTML: json['isHTML'],
-        charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
-            ? undefined
-            : json['templateVariables'],
-        template: !(0, runtime_1.exists)(json, 'template') ? undefined : json['template'],
-        sendStrategy: !(0, runtime_1.exists)(json, 'sendStrategy')
-            ? undefined
-            : json['sendStrategy'],
-        customHeaders: !(0, runtime_1.exists)(json, 'customHeaders')
-            ? undefined
-            : json['customHeaders'],
-        useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
-            ? undefined
-            : json['useInboxName'],
-        html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
+        'body': json['body'],
+        'isHTML': json['isHTML'],
+        'charset': !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
+        'attachments': !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        'templateVariables': !(0, runtime_1.exists)(json, 'templateVariables') ? undefined : json['templateVariables'],
+        'template': !(0, runtime_1.exists)(json, 'template') ? undefined : json['template'],
+        'sendStrategy': !(0, runtime_1.exists)(json, 'sendStrategy') ? undefined : json['sendStrategy'],
+        'customHeaders': !(0, runtime_1.exists)(json, 'customHeaders') ? undefined : json['customHeaders'],
+        'useInboxName': !(0, runtime_1.exists)(json, 'useInboxName') ? undefined : json['useInboxName'],
+        'html': !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
 exports.ReplyToAliasEmailOptionsFromJSONTyped = ReplyToAliasEmailOptionsFromJSONTyped;
@@ -61,16 +53,16 @@ function ReplyToAliasEmailOptionsToJSON(value) {
         return null;
     }
     return {
-        body: value.body,
-        isHTML: value.isHTML,
-        charset: value.charset,
-        attachments: value.attachments,
-        templateVariables: value.templateVariables,
-        template: value.template,
-        sendStrategy: value.sendStrategy,
-        customHeaders: value.customHeaders,
-        useInboxName: value.useInboxName,
-        html: value.html,
+        'body': value.body,
+        'isHTML': value.isHTML,
+        'charset': value.charset,
+        'attachments': value.attachments,
+        'templateVariables': value.templateVariables,
+        'template': value.template,
+        'sendStrategy': value.sendStrategy,
+        'customHeaders': value.customHeaders,
+        'useInboxName': value.useInboxName,
+        'html': value.html,
     };
 }
 exports.ReplyToAliasEmailOptionsToJSON = ReplyToAliasEmailOptionsToJSON;

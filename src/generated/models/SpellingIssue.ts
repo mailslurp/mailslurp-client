@@ -14,76 +14,77 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SpellingIssue
  */
 export interface SpellingIssue {
-  /**
-   *
-   * @type {string}
-   * @memberof SpellingIssue
-   */
-  group: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SpellingIssue
-   */
-  suggestion: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SpellingIssue
-   */
-  severity: SpellingIssueSeverityEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof SpellingIssue
-   */
-  message: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpellingIssue
+     */
+    group: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpellingIssue
+     */
+    suggestion: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpellingIssue
+     */
+    severity: SpellingIssueSeverityEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpellingIssue
+     */
+    message: string;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum SpellingIssueSeverityEnum {
-  Warning = 'Warning',
-  Error = 'Error',
+    Warning = 'Warning',
+    Error = 'Error'
 }
 
 export function SpellingIssueFromJSON(json: any): SpellingIssue {
-  return SpellingIssueFromJSONTyped(json, false);
+    return SpellingIssueFromJSONTyped(json, false);
 }
 
-export function SpellingIssueFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SpellingIssue {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    group: json['group'],
-    suggestion: json['suggestion'],
-    severity: json['severity'],
-    message: json['message'],
-  };
+export function SpellingIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): SpellingIssue {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'group': json['group'],
+        'suggestion': json['suggestion'],
+        'severity': json['severity'],
+        'message': json['message'],
+    };
 }
 
 export function SpellingIssueToJSON(value?: SpellingIssue | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    group: value.group,
-    suggestion: value.suggestion,
-    severity: value.severity,
-    message: value.message,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'group': value.group,
+        'suggestion': value.suggestion,
+        'severity': value.severity,
+        'message': value.message,
+    };
 }
+
+

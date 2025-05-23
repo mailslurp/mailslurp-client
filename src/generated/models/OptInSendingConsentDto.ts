@@ -14,63 +14,60 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface OptInSendingConsentDto
  */
 export interface OptInSendingConsentDto {
-  /**
-   *
-   * @type {boolean}
-   * @memberof OptInSendingConsentDto
-   */
-  verificationCodeSent: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof OptInSendingConsentDto
-   */
-  userHasConsented: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof OptInSendingConsentDto
-   */
-  canSend: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof OptInSendingConsentDto
+     */
+    verificationCodeSent: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof OptInSendingConsentDto
+     */
+    userHasConsented: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof OptInSendingConsentDto
+     */
+    canSend: boolean;
 }
 
-export function OptInSendingConsentDtoFromJSON(
-  json: any
-): OptInSendingConsentDto {
-  return OptInSendingConsentDtoFromJSONTyped(json, false);
+export function OptInSendingConsentDtoFromJSON(json: any): OptInSendingConsentDto {
+    return OptInSendingConsentDtoFromJSONTyped(json, false);
 }
 
-export function OptInSendingConsentDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): OptInSendingConsentDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    verificationCodeSent: json['verificationCodeSent'],
-    userHasConsented: json['userHasConsented'],
-    canSend: json['canSend'],
-  };
+export function OptInSendingConsentDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptInSendingConsentDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'verificationCodeSent': json['verificationCodeSent'],
+        'userHasConsented': json['userHasConsented'],
+        'canSend': json['canSend'],
+    };
 }
 
-export function OptInSendingConsentDtoToJSON(
-  value?: OptInSendingConsentDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    verificationCodeSent: value.verificationCodeSent,
-    userHasConsented: value.userHasConsented,
-    canSend: value.canSend,
-  };
+export function OptInSendingConsentDtoToJSON(value?: OptInSendingConsentDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'verificationCodeSent': value.verificationCodeSent,
+        'userHasConsented': value.userHasConsented,
+        'canSend': value.canSend,
+    };
 }
+
+

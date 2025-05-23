@@ -15,18 +15,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateInboxRulesetOptionsToJSON = exports.CreateInboxRulesetOptionsFromJSONTyped = exports.CreateInboxRulesetOptionsFromJSON = exports.CreateInboxRulesetOptionsActionEnum = exports.CreateInboxRulesetOptionsScopeEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var CreateInboxRulesetOptionsScopeEnum;
 (function (CreateInboxRulesetOptionsScopeEnum) {
     CreateInboxRulesetOptionsScopeEnum["RECEIVING_EMAILS"] = "RECEIVING_EMAILS";
     CreateInboxRulesetOptionsScopeEnum["SENDING_EMAILS"] = "SENDING_EMAILS";
-})(CreateInboxRulesetOptionsScopeEnum = exports.CreateInboxRulesetOptionsScopeEnum || (exports.CreateInboxRulesetOptionsScopeEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(CreateInboxRulesetOptionsScopeEnum = exports.CreateInboxRulesetOptionsScopeEnum || (exports.CreateInboxRulesetOptionsScopeEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var CreateInboxRulesetOptionsActionEnum;
 (function (CreateInboxRulesetOptionsActionEnum) {
     CreateInboxRulesetOptionsActionEnum["BLOCK"] = "BLOCK";
@@ -38,13 +37,13 @@ function CreateInboxRulesetOptionsFromJSON(json) {
 }
 exports.CreateInboxRulesetOptionsFromJSON = CreateInboxRulesetOptionsFromJSON;
 function CreateInboxRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        scope: json['scope'],
-        action: json['action'],
-        target: json['target'],
+        'scope': json['scope'],
+        'action': json['action'],
+        'target': json['target'],
     };
 }
 exports.CreateInboxRulesetOptionsFromJSONTyped = CreateInboxRulesetOptionsFromJSONTyped;
@@ -56,9 +55,9 @@ function CreateInboxRulesetOptionsToJSON(value) {
         return null;
     }
     return {
-        scope: value.scope,
-        action: value.action,
-        target: value.target,
+        'scope': value.scope,
+        'action': value.action,
+        'target': value.target,
     };
 }
 exports.CreateInboxRulesetOptionsToJSON = CreateInboxRulesetOptionsToJSON;

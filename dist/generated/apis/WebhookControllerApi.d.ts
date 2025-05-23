@@ -506,17 +506,17 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
     waitForWebhookResults(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<Array<WebhookResultDto>>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllAccountWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllAccountWebhooksEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -531,33 +531,33 @@ export declare enum GetAllAccountWebhooksEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllAccountWebhooksHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookEndpointsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookEndpointsHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookEndpointsEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -572,17 +572,17 @@ export declare enum GetAllWebhookEndpointsEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookResultsResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
@@ -590,9 +590,9 @@ export declare enum GetAllWebhookResultsResultTypeEnum {
     REDRIVEN = "REDRIVEN"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookResultsEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -607,25 +607,25 @@ export declare enum GetAllWebhookResultsEventNameEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhooksHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhooksEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -640,25 +640,25 @@ export declare enum GetAllWebhooksEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxWebhooksPaginatedHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxWebhooksPaginatedEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -673,9 +673,9 @@ export declare enum GetInboxWebhooksPaginatedEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetJsonSchemaForWebhookEventEventEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -690,17 +690,17 @@ export declare enum GetJsonSchemaForWebhookEventEventEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumberWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumberWebhooksPaginatedEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -715,17 +715,17 @@ export declare enum GetPhoneNumberWebhooksPaginatedEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumberWebhooksPaginatedHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetTestWebhookPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -740,17 +740,17 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhookResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhookResultsResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
@@ -758,9 +758,9 @@ export declare enum GetWebhookResultsResultTypeEnum {
     REDRIVEN = "REDRIVEN"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhookResultsEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -775,9 +775,9 @@ export declare enum GetWebhookResultsEventNameEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"

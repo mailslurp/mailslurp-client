@@ -19,11 +19,11 @@ function CountDtoFromJSON(json) {
 }
 exports.CountDtoFromJSON = CountDtoFromJSON;
 function CountDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        totalElements: json['totalElements'],
+        'totalElements': json['totalElements'],
     };
 }
 exports.CountDtoFromJSONTyped = CountDtoFromJSONTyped;
@@ -35,7 +35,7 @@ function CountDtoToJSON(value) {
         return null;
     }
     return {
-        totalElements: value.totalElements,
+        'totalElements': value.totalElements,
     };
 }
 exports.CountDtoToJSON = CountDtoToJSON;

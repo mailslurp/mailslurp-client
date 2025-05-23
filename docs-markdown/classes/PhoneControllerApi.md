@@ -41,6 +41,10 @@
 - [getPhoneMessageThreads](PhoneControllerApi.md#getphonemessagethreads)
 - [getPhoneMessageThreadsRaw](PhoneControllerApi.md#getphonemessagethreadsraw)
 - [getPhoneNumber](PhoneControllerApi.md#getphonenumber)
+- [getPhoneNumberByName](PhoneControllerApi.md#getphonenumberbyname)
+- [getPhoneNumberByNameRaw](PhoneControllerApi.md#getphonenumberbynameraw)
+- [getPhoneNumberByPhoneNumber](PhoneControllerApi.md#getphonenumberbyphonenumber)
+- [getPhoneNumberByPhoneNumberRaw](PhoneControllerApi.md#getphonenumberbyphonenumberraw)
 - [getPhoneNumberRaw](PhoneControllerApi.md#getphonenumberraw)
 - [getPhoneNumbers](PhoneControllerApi.md#getphonenumbers)
 - [getPhoneNumbersRaw](PhoneControllerApi.md#getphonenumbersraw)
@@ -510,6 +514,82 @@ Get a phone number by ID
 #### Returns
 
 `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### getPhoneNumberByName
+
+▸ **getPhoneNumberByName**(`initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Get a phone number by name
+Get a phone number by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### getPhoneNumberByNameRaw
+
+▸ **getPhoneNumberByNameRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Get a phone number by name
+Get a phone number by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
+### getPhoneNumberByPhoneNumber
+
+▸ **getPhoneNumberByPhoneNumber**(`initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Get a phone number by phone number
+Get a phone number by phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### getPhoneNumberByPhoneNumberRaw
+
+▸ **getPhoneNumberByPhoneNumberRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Get a phone number by phone number
+Get a phone number by phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
 
 ___
 

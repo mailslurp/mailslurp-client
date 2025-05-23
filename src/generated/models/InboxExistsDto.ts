@@ -19,38 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxExistsDto
  */
 export interface InboxExistsDto {
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxExistsDto
-   */
-  _exists: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxExistsDto
+     */
+    _exists: boolean;
 }
 
 export function InboxExistsDtoFromJSON(json: any): InboxExistsDto {
-  return InboxExistsDtoFromJSONTyped(json, false);
+    return InboxExistsDtoFromJSONTyped(json, false);
 }
 
-export function InboxExistsDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxExistsDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    _exists: json['exists'],
-  };
+export function InboxExistsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxExistsDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        '_exists': json['exists'],
+    };
 }
 
 export function InboxExistsDtoToJSON(value?: InboxExistsDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    exists: value._exists,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'exists': value._exists,
+    };
 }
+
+

@@ -107,8 +107,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.seqNum === null ||
-                            requestParameters.seqNum === undefined) {
+                        if (requestParameters.seqNum === null || requestParameters.seqNum === undefined) {
                             throw new runtime.RequiredError('seqNum', 'Required parameter requestParameters.seqNum was null or undefined when calling imapServerFetch.');
                         }
                         queryParameters = {};
@@ -120,7 +119,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/imap/server/fetch",
@@ -130,9 +129,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapServerFetchResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapServerFetchResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -163,8 +160,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
+                        if (requestParameters.emailId === null || requestParameters.emailId === undefined) {
                             throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling imapServerGet.');
                         }
                         queryParameters = {};
@@ -176,7 +172,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/imap/server/get",
@@ -186,9 +182,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapServerGetResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapServerGetResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -219,8 +213,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.imapServerListOptions === null ||
-                            requestParameters.imapServerListOptions === undefined) {
+                        if (requestParameters.imapServerListOptions === null || requestParameters.imapServerListOptions === undefined) {
                             throw new runtime.RequiredError('imapServerListOptions', 'Required parameter requestParameters.imapServerListOptions was null or undefined when calling imapServerList.');
                         }
                         queryParameters = {};
@@ -230,7 +223,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/imap/server/list",
@@ -241,9 +234,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapServerListResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapServerListResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -274,8 +265,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.name === null ||
-                            requestParameters.name === undefined) {
+                        if (requestParameters.name === null || requestParameters.name === undefined) {
                             throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling imapServerMailbox.');
                         }
                         queryParameters = {};
@@ -284,7 +274,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/imap/server/mailbox",
@@ -294,9 +284,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapServerMailboxResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapServerMailboxResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -327,8 +315,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.imapServerSearchOptions === null ||
-                            requestParameters.imapServerSearchOptions === undefined) {
+                        if (requestParameters.imapServerSearchOptions === null || requestParameters.imapServerSearchOptions === undefined) {
                             throw new runtime.RequiredError('imapServerSearchOptions', 'Required parameter requestParameters.imapServerSearchOptions was null or undefined when calling imapServerSearch.');
                         }
                         queryParameters = {};
@@ -338,7 +325,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/imap/server/search",
@@ -349,9 +336,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapServerSearchResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapServerSearchResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -382,8 +367,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.imapServerStatusOptions === null ||
-                            requestParameters.imapServerStatusOptions === undefined) {
+                        if (requestParameters.imapServerStatusOptions === null || requestParameters.imapServerStatusOptions === undefined) {
                             throw new runtime.RequiredError('imapServerStatusOptions', 'Required parameter requestParameters.imapServerStatusOptions was null or undefined when calling imapServerStatus.');
                         }
                         queryParameters = {};
@@ -393,7 +377,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/imap/server/status",
@@ -404,9 +388,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ImapServerStatusResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapServerStatusResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -437,8 +419,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.imapUpdateFlagsOptions === null ||
-                            requestParameters.imapUpdateFlagsOptions === undefined) {
+                        if (requestParameters.imapUpdateFlagsOptions === null || requestParameters.imapUpdateFlagsOptions === undefined) {
                             throw new runtime.RequiredError('imapUpdateFlagsOptions', 'Required parameter requestParameters.imapUpdateFlagsOptions was null or undefined when calling imapServerUpdateFlags.');
                         }
                         queryParameters = {};
@@ -448,7 +429,7 @@ var ImapControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/imap/server/update-flags",

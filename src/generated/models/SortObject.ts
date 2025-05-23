@@ -14,59 +14,60 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SortObject
  */
 export interface SortObject {
-  /**
-   *
-   * @type {boolean}
-   * @memberof SortObject
-   */
-  sorted?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SortObject
-   */
-  unsorted?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SortObject
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SortObject
+     */
+    unsorted?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SortObject
+     */
+    sorted?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SortObject
+     */
+    empty?: boolean;
 }
 
 export function SortObjectFromJSON(json: any): SortObject {
-  return SortObjectFromJSONTyped(json, false);
+    return SortObjectFromJSONTyped(json, false);
 }
 
-export function SortObjectFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SortObject {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    sorted: !exists(json, 'sorted') ? undefined : json['sorted'],
-    unsorted: !exists(json, 'unsorted') ? undefined : json['unsorted'],
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function SortObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): SortObject {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'unsorted': !exists(json, 'unsorted') ? undefined : json['unsorted'],
+        'sorted': !exists(json, 'sorted') ? undefined : json['sorted'],
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
 export function SortObjectToJSON(value?: SortObject | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    sorted: value.sorted,
-    unsorted: value.unsorted,
-    empty: value.empty,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'unsorted': value.unsorted,
+        'sorted': value.sorted,
+        'empty': value.empty,
+    };
 }
+
+

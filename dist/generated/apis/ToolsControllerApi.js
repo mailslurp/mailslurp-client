@@ -107,15 +107,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.checkEmailFeaturesClientSupportOptions === null ||
-                            requestParameters.checkEmailFeaturesClientSupportOptions === undefined) {
+                        if (requestParameters.checkEmailFeaturesClientSupportOptions === null || requestParameters.checkEmailFeaturesClientSupportOptions === undefined) {
                             throw new runtime.RequiredError('checkEmailFeaturesClientSupportOptions', 'Required parameter requestParameters.checkEmailFeaturesClientSupportOptions was null or undefined when calling checkEmailFeaturesClientSupport.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/check-email-features-client-support",
@@ -126,9 +125,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CheckEmailFeaturesClientSupportResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.CheckEmailFeaturesClientSupportResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -162,7 +159,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/fake-email",
@@ -172,9 +169,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.NewFakeEmailAddressResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.NewFakeEmailAddressResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -206,8 +201,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null ||
-                            requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling deleteNewFakeEmailAddress.');
                         }
                         queryParameters = {};
@@ -216,7 +210,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/fake-email",
@@ -256,15 +250,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateBimiRecordOptions === null ||
-                            requestParameters.generateBimiRecordOptions === undefined) {
+                        if (requestParameters.generateBimiRecordOptions === null || requestParameters.generateBimiRecordOptions === undefined) {
                             throw new runtime.RequiredError('generateBimiRecordOptions', 'Required parameter requestParameters.generateBimiRecordOptions was null or undefined when calling generateBimiRecord.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/generate-bimi-record",
@@ -275,9 +268,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GenerateBimiRecordResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GenerateBimiRecordResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -308,15 +299,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateDmarcRecordOptions === null ||
-                            requestParameters.generateDmarcRecordOptions === undefined) {
+                        if (requestParameters.generateDmarcRecordOptions === null || requestParameters.generateDmarcRecordOptions === undefined) {
                             throw new runtime.RequiredError('generateDmarcRecordOptions', 'Required parameter requestParameters.generateDmarcRecordOptions was null or undefined when calling generateDmarcRecord.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/generate-dmarc-record",
@@ -327,9 +317,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GenerateDmarcRecordResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GenerateDmarcRecordResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -360,15 +348,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateMtaStsRecordOptions === null ||
-                            requestParameters.generateMtaStsRecordOptions === undefined) {
+                        if (requestParameters.generateMtaStsRecordOptions === null || requestParameters.generateMtaStsRecordOptions === undefined) {
                             throw new runtime.RequiredError('generateMtaStsRecordOptions', 'Required parameter requestParameters.generateMtaStsRecordOptions was null or undefined when calling generateMtaStsRecord.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/generate-mta-sts-record",
@@ -379,9 +366,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GenerateMtaStsRecordResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GenerateMtaStsRecordResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -412,15 +397,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateTlsReportingRecordOptions === null ||
-                            requestParameters.generateTlsReportingRecordOptions === undefined) {
+                        if (requestParameters.generateTlsReportingRecordOptions === null || requestParameters.generateTlsReportingRecordOptions === undefined) {
                             throw new runtime.RequiredError('generateTlsReportingRecordOptions', 'Required parameter requestParameters.generateTlsReportingRecordOptions was null or undefined when calling generateTlsReportingRecord.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/generate-tls-reporting-record",
@@ -431,9 +415,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GenerateTlsReportingRecordResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GenerateTlsReportingRecordResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -463,8 +445,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null ||
-                            requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailByEmailAddress.');
                         }
                         queryParameters = {};
@@ -473,7 +454,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/fake-email/byEmailAddress",
@@ -483,9 +464,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.FakeEmailResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.FakeEmailResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -525,7 +504,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/fake-email",
@@ -535,9 +514,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.FakeEmailResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.FakeEmailResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -579,7 +556,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/fake-email/html",
@@ -622,8 +599,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null ||
-                            requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailsForAddress.');
                         }
                         queryParameters = {};
@@ -635,7 +611,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/fake-emails",
@@ -645,9 +621,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.FakeEmailPreviewFromJSON);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.FakeEmailPreviewFromJSON); })];
                 }
             });
         });
@@ -679,15 +653,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.lookupBimiDomainOptions === null ||
-                            requestParameters.lookupBimiDomainOptions === undefined) {
+                        if (requestParameters.lookupBimiDomainOptions === null || requestParameters.lookupBimiDomainOptions === undefined) {
                             throw new runtime.RequiredError('lookupBimiDomainOptions', 'Required parameter requestParameters.lookupBimiDomainOptions was null or undefined when calling lookupBimiDomain.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/lookup-bimi-domain",
@@ -698,9 +671,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.LookupBimiDomainResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.LookupBimiDomainResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -731,15 +702,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.lookupDmarcDomainOptions === null ||
-                            requestParameters.lookupDmarcDomainOptions === undefined) {
+                        if (requestParameters.lookupDmarcDomainOptions === null || requestParameters.lookupDmarcDomainOptions === undefined) {
                             throw new runtime.RequiredError('lookupDmarcDomainOptions', 'Required parameter requestParameters.lookupDmarcDomainOptions was null or undefined when calling lookupDmarcDomain.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/lookup-dmarc-domain",
@@ -750,9 +720,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.LookupDmarcDomainResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.LookupDmarcDomainResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -783,15 +751,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.lookupMtaStsDomainOptions === null ||
-                            requestParameters.lookupMtaStsDomainOptions === undefined) {
+                        if (requestParameters.lookupMtaStsDomainOptions === null || requestParameters.lookupMtaStsDomainOptions === undefined) {
                             throw new runtime.RequiredError('lookupMtaStsDomainOptions', 'Required parameter requestParameters.lookupMtaStsDomainOptions was null or undefined when calling lookupMtaStsDomain.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/lookup-mta-sts-domain",
@@ -802,9 +769,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.LookupMtaStsDomainResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.LookupMtaStsDomainResultsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -835,15 +800,14 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.lookupTlsReportingDomainOptions === null ||
-                            requestParameters.lookupTlsReportingDomainOptions === undefined) {
+                        if (requestParameters.lookupTlsReportingDomainOptions === null || requestParameters.lookupTlsReportingDomainOptions === undefined) {
                             throw new runtime.RequiredError('lookupTlsReportingDomainOptions', 'Required parameter requestParameters.lookupTlsReportingDomainOptions was null or undefined when calling lookupTlsReportingDomain.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tools/lookup-tls-reporting-domain",
@@ -854,9 +818,7 @@ var ToolsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.LookupTlsReportingDomainResultsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.LookupTlsReportingDomainResultsFromJSON)(jsonValue); })];
                 }
             });
         });

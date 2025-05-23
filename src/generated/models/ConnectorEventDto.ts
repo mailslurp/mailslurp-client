@@ -14,127 +14,127 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ConnectorEventDto
  */
 export interface ConnectorEventDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorEventDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorEventDto
-   */
-  connectorId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorEventDto
-   */
-  status: ConnectorEventDtoStatusEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorEventDto
-   */
-  eventType: ConnectorEventDtoEventTypeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorEventDto
-   */
-  size: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorEventDto
-   */
-  message?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorEventDto
-   */
-  logs?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorEventDto
-   */
-  seen?: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorEventDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorEventDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorEventDto
+     */
+    connectorId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorEventDto
+     */
+    status: ConnectorEventDtoStatusEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorEventDto
+     */
+    eventType: ConnectorEventDtoEventTypeEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof ConnectorEventDto
+     */
+    size: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorEventDto
+     */
+    message?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorEventDto
+     */
+    logs?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorEventDto
+     */
+    seen?: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ConnectorEventDto
+     */
+    createdAt: Date;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum ConnectorEventDtoStatusEnum {
-  SUCCESS = 'SUCCESS',
-  INTERNAL_ERROR = 'INTERNAL_ERROR',
-  SUBSCRIPTION_ERROR = 'SUBSCRIPTION_ERROR',
-  CONNECTION_ERROR = 'CONNECTION_ERROR',
-  NOT_FOUND = 'NOT_FOUND',
-}
-/**
- * @export
- * @enum {string}
- */
+    SUCCESS = 'SUCCESS',
+    INTERNAL_ERROR = 'INTERNAL_ERROR',
+    SUBSCRIPTION_ERROR = 'SUBSCRIPTION_ERROR',
+    CONNECTION_ERROR = 'CONNECTION_ERROR',
+    NOT_FOUND = 'NOT_FOUND'
+}/**
+* @export
+* @enum {string}
+*/
 export enum ConnectorEventDtoEventTypeEnum {
-  SEND = 'SEND',
-  SYNC = 'SYNC',
+    SEND = 'SEND',
+    SYNC = 'SYNC'
 }
 
 export function ConnectorEventDtoFromJSON(json: any): ConnectorEventDto {
-  return ConnectorEventDtoFromJSONTyped(json, false);
+    return ConnectorEventDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorEventDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorEventDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    connectorId: json['connectorId'],
-    status: json['status'],
-    eventType: json['eventType'],
-    size: json['size'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-    logs: !exists(json, 'logs') ? undefined : json['logs'],
-    seen: !exists(json, 'seen') ? undefined : json['seen'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function ConnectorEventDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorEventDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'connectorId': json['connectorId'],
+        'status': json['status'],
+        'eventType': json['eventType'],
+        'size': json['size'],
+        'message': !exists(json, 'message') ? undefined : json['message'],
+        'logs': !exists(json, 'logs') ? undefined : json['logs'],
+        'seen': !exists(json, 'seen') ? undefined : json['seen'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
 export function ConnectorEventDtoToJSON(value?: ConnectorEventDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    connectorId: value.connectorId,
-    status: value.status,
-    eventType: value.eventType,
-    size: value.size,
-    message: value.message,
-    logs: value.logs,
-    seen: value.seen,
-    createdAt: value.createdAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'connectorId': value.connectorId,
+        'status': value.status,
+        'eventType': value.eventType,
+        'size': value.size,
+        'message': value.message,
+        'logs': value.logs,
+        'seen': value.seen,
+        'createdAt': (value.createdAt.toISOString()),
+    };
 }
+
+

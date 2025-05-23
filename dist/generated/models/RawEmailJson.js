@@ -19,11 +19,11 @@ function RawEmailJsonFromJSON(json) {
 }
 exports.RawEmailJsonFromJSON = RawEmailJsonFromJSON;
 function RawEmailJsonFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        content: json['content'],
+        'content': json['content'],
     };
 }
 exports.RawEmailJsonFromJSONTyped = RawEmailJsonFromJSONTyped;
@@ -35,7 +35,7 @@ function RawEmailJsonToJSON(value) {
         return null;
     }
     return {
-        content: value.content,
+        'content': value.content,
     };
 }
 exports.RawEmailJsonToJSON = RawEmailJsonToJSON;

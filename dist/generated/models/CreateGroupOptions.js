@@ -20,12 +20,12 @@ function CreateGroupOptionsFromJSON(json) {
 }
 exports.CreateGroupOptionsFromJSON = CreateGroupOptionsFromJSON;
 function CreateGroupOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        name: json['name'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'name': json['name'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
 exports.CreateGroupOptionsFromJSONTyped = CreateGroupOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function CreateGroupOptionsToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        description: value.description,
+        'name': value.name,
+        'description': value.description,
     };
 }
 exports.CreateGroupOptionsToJSON = CreateGroupOptionsToJSON;

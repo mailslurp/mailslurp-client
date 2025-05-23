@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConnectorEventDtoToJSON = exports.ConnectorEventDtoFromJSONTyped = exports.ConnectorEventDtoFromJSON = exports.ConnectorEventDtoEventTypeEnum = exports.ConnectorEventDtoStatusEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var ConnectorEventDtoStatusEnum;
 (function (ConnectorEventDtoStatusEnum) {
     ConnectorEventDtoStatusEnum["SUCCESS"] = "SUCCESS";
@@ -26,11 +26,10 @@ var ConnectorEventDtoStatusEnum;
     ConnectorEventDtoStatusEnum["SUBSCRIPTION_ERROR"] = "SUBSCRIPTION_ERROR";
     ConnectorEventDtoStatusEnum["CONNECTION_ERROR"] = "CONNECTION_ERROR";
     ConnectorEventDtoStatusEnum["NOT_FOUND"] = "NOT_FOUND";
-})(ConnectorEventDtoStatusEnum = exports.ConnectorEventDtoStatusEnum || (exports.ConnectorEventDtoStatusEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(ConnectorEventDtoStatusEnum = exports.ConnectorEventDtoStatusEnum || (exports.ConnectorEventDtoStatusEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var ConnectorEventDtoEventTypeEnum;
 (function (ConnectorEventDtoEventTypeEnum) {
     ConnectorEventDtoEventTypeEnum["SEND"] = "SEND";
@@ -41,19 +40,19 @@ function ConnectorEventDtoFromJSON(json) {
 }
 exports.ConnectorEventDtoFromJSON = ConnectorEventDtoFromJSON;
 function ConnectorEventDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        connectorId: json['connectorId'],
-        status: json['status'],
-        eventType: json['eventType'],
-        size: json['size'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        logs: !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
-        seen: !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'connectorId': json['connectorId'],
+        'status': json['status'],
+        'eventType': json['eventType'],
+        'size': json['size'],
+        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'logs': !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
+        'seen': !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.ConnectorEventDtoFromJSONTyped = ConnectorEventDtoFromJSONTyped;
@@ -65,15 +64,15 @@ function ConnectorEventDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        connectorId: value.connectorId,
-        status: value.status,
-        eventType: value.eventType,
-        size: value.size,
-        message: value.message,
-        logs: value.logs,
-        seen: value.seen,
-        createdAt: value.createdAt.toISOString(),
+        'id': value.id,
+        'connectorId': value.connectorId,
+        'status': value.status,
+        'eventType': value.eventType,
+        'size': value.size,
+        'message': value.message,
+        'logs': value.logs,
+        'seen': value.seen,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.ConnectorEventDtoToJSON = ConnectorEventDtoToJSON;

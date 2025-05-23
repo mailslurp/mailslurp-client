@@ -20,14 +20,14 @@ function ConnectorSmtpConnectionTestResultFromJSON(json) {
 }
 exports.ConnectorSmtpConnectionTestResultFromJSON = ConnectorSmtpConnectionTestResultFromJSON;
 function ConnectorSmtpConnectionTestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
-        success: json['success'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        logs: !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
+        'error': !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
+        'success': json['success'],
+        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'logs': !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
     };
 }
 exports.ConnectorSmtpConnectionTestResultFromJSONTyped = ConnectorSmtpConnectionTestResultFromJSONTyped;
@@ -39,10 +39,10 @@ function ConnectorSmtpConnectionTestResultToJSON(value) {
         return null;
     }
     return {
-        error: value.error,
-        success: value.success,
-        message: value.message,
-        logs: value.logs,
+        'error': value.error,
+        'success': value.success,
+        'message': value.message,
+        'logs': value.logs,
     };
 }
 exports.ConnectorSmtpConnectionTestResultToJSON = ConnectorSmtpConnectionTestResultToJSON;

@@ -19,11 +19,11 @@ function DescribeDomainOptionsFromJSON(json) {
 }
 exports.DescribeDomainOptionsFromJSON = DescribeDomainOptionsFromJSON;
 function DescribeDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        domain: json['domain'],
+        'domain': json['domain'],
     };
 }
 exports.DescribeDomainOptionsFromJSONTyped = DescribeDomainOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function DescribeDomainOptionsToJSON(value) {
         return null;
     }
     return {
-        domain: value.domain,
+        'domain': value.domain,
     };
 }
 exports.DescribeDomainOptionsToJSON = DescribeDomainOptionsToJSON;

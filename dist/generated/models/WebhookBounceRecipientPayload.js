@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookBounceRecipientPayloadToJSON = exports.WebhookBounceRecipientPayloadFromJSONTyped = exports.WebhookBounceRecipientPayloadFromJSON = exports.WebhookBounceRecipientPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WebhookBounceRecipientPayloadEventNameEnum;
 (function (WebhookBounceRecipientPayloadEventNameEnum) {
     WebhookBounceRecipientPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -38,15 +38,15 @@ function WebhookBounceRecipientPayloadFromJSON(json) {
 }
 exports.WebhookBounceRecipientPayloadFromJSON = WebhookBounceRecipientPayloadFromJSON;
 function WebhookBounceRecipientPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        eventName: json['eventName'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        recipient: json['recipient'],
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        'recipient': json['recipient'],
     };
 }
 exports.WebhookBounceRecipientPayloadFromJSONTyped = WebhookBounceRecipientPayloadFromJSONTyped;
@@ -58,11 +58,11 @@ function WebhookBounceRecipientPayloadToJSON(value) {
         return null;
     }
     return {
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        eventName: value.eventName,
-        webhookName: value.webhookName,
-        recipient: value.recipient,
+        'messageId': value.messageId,
+        'webhookId': value.webhookId,
+        'eventName': value.eventName,
+        'webhookName': value.webhookName,
+        'recipient': value.recipient,
     };
 }
 exports.WebhookBounceRecipientPayloadToJSON = WebhookBounceRecipientPayloadToJSON;

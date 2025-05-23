@@ -19,114 +19,111 @@ import { exists, mapValues } from '../runtime';
  * @interface AttachmentEntityDto
  */
 export interface AttachmentEntityDto {
-  /**
-   * The unique identifier for this attachment.
-   * @type {string}
-   * @memberof AttachmentEntityDto
-   */
-  id: string;
-  /**
-   * The identifier of the attachment file
-   * @type {string}
-   * @memberof AttachmentEntityDto
-   */
-  attachmentId: string;
-  /**
-   * The user identifier associated with this attachment.
-   * @type {string}
-   * @memberof AttachmentEntityDto
-   */
-  userId: string;
-  /**
-   * The content type of the attachment.
-   * @type {string}
-   * @memberof AttachmentEntityDto
-   */
-  contentType?: string | null;
-  /**
-   * The content length of the attachment in bytes.
-   * @type {number}
-   * @memberof AttachmentEntityDto
-   */
-  contentLength?: number | null;
-  /**
-   * The content identifier, which is a unique ID for the content part of the email.
-   * @type {string}
-   * @memberof AttachmentEntityDto
-   */
-  contentId?: string | null;
-  /**
-   * The name of the attachment file.
-   * @type {string}
-   * @memberof AttachmentEntityDto
-   */
-  name?: string | null;
-  /**
-   * The inbox identifier associated with this attachment.
-   * @type {string}
-   * @memberof AttachmentEntityDto
-   */
-  inboxId?: string | null;
-  /**
-   * The timestamp when this attachment was created.
-   * @type {Date}
-   * @memberof AttachmentEntityDto
-   */
-  createdAt: Date;
-  /**
-   * The timestamp when this attachment was last updated.
-   * @type {Date}
-   * @memberof AttachmentEntityDto
-   */
-  updatedAt: Date;
+    /**
+     * The unique identifier for this attachment.
+     * @type {string}
+     * @memberof AttachmentEntityDto
+     */
+    id: string;
+    /**
+     * The identifier of the attachment file
+     * @type {string}
+     * @memberof AttachmentEntityDto
+     */
+    attachmentId: string;
+    /**
+     * The user identifier associated with this attachment.
+     * @type {string}
+     * @memberof AttachmentEntityDto
+     */
+    userId: string;
+    /**
+     * The content type of the attachment.
+     * @type {string}
+     * @memberof AttachmentEntityDto
+     */
+    contentType?: string | null;
+    /**
+     * The content length of the attachment in bytes.
+     * @type {number}
+     * @memberof AttachmentEntityDto
+     */
+    contentLength?: number | null;
+    /**
+     * The content identifier, which is a unique ID for the content part of the email.
+     * @type {string}
+     * @memberof AttachmentEntityDto
+     */
+    contentId?: string | null;
+    /**
+     * The name of the attachment file.
+     * @type {string}
+     * @memberof AttachmentEntityDto
+     */
+    name?: string | null;
+    /**
+     * The inbox identifier associated with this attachment.
+     * @type {string}
+     * @memberof AttachmentEntityDto
+     */
+    inboxId?: string | null;
+    /**
+     * The timestamp when this attachment was created.
+     * @type {Date}
+     * @memberof AttachmentEntityDto
+     */
+    createdAt: Date;
+    /**
+     * The timestamp when this attachment was last updated.
+     * @type {Date}
+     * @memberof AttachmentEntityDto
+     */
+    updatedAt: Date;
 }
 
 export function AttachmentEntityDtoFromJSON(json: any): AttachmentEntityDto {
-  return AttachmentEntityDtoFromJSONTyped(json, false);
+    return AttachmentEntityDtoFromJSONTyped(json, false);
 }
 
-export function AttachmentEntityDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AttachmentEntityDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    attachmentId: json['attachmentId'],
-    userId: json['userId'],
-    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
-    contentLength: !exists(json, 'contentLength')
-      ? undefined
-      : json['contentLength'],
-    contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function AttachmentEntityDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentEntityDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'attachmentId': json['attachmentId'],
+        'userId': json['userId'],
+        'contentType': !exists(json, 'contentType') ? undefined : json['contentType'],
+        'contentLength': !exists(json, 'contentLength') ? undefined : json['contentLength'],
+        'contentId': !exists(json, 'contentId') ? undefined : json['contentId'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
-export function AttachmentEntityDtoToJSON(
-  value?: AttachmentEntityDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    attachmentId: value.attachmentId,
-    userId: value.userId,
-    contentType: value.contentType,
-    contentLength: value.contentLength,
-    contentId: value.contentId,
-    name: value.name,
-    inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function AttachmentEntityDtoToJSON(value?: AttachmentEntityDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'attachmentId': value.attachmentId,
+        'userId': value.userId,
+        'contentType': value.contentType,
+        'contentLength': value.contentLength,
+        'contentId': value.contentId,
+        'name': value.name,
+        'inboxId': value.inboxId,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+    };
 }
+
+

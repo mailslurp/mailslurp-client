@@ -20,15 +20,15 @@ function EmailVerificationResultFromJSON(json) {
 }
 exports.EmailVerificationResultFromJSON = EmailVerificationResultFromJSON;
 function EmailVerificationResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        domainName: json['domainName'],
-        port: json['port'],
-        emailAddress: json['emailAddress'],
-        isValid: json['isValid'],
-        error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
+        'domainName': json['domainName'],
+        'port': json['port'],
+        'emailAddress': json['emailAddress'],
+        'isValid': json['isValid'],
+        'error': !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
     };
 }
 exports.EmailVerificationResultFromJSONTyped = EmailVerificationResultFromJSONTyped;
@@ -40,11 +40,11 @@ function EmailVerificationResultToJSON(value) {
         return null;
     }
     return {
-        domainName: value.domainName,
-        port: value.port,
-        emailAddress: value.emailAddress,
-        isValid: value.isValid,
-        error: value.error,
+        'domainName': value.domainName,
+        'port': value.port,
+        'emailAddress': value.emailAddress,
+        'isValid': value.isValid,
+        'error': value.error,
     };
 }
 exports.EmailVerificationResultToJSON = EmailVerificationResultToJSON;

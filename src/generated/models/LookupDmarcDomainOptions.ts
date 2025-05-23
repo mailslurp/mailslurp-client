@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface LookupDmarcDomainOptions
  */
 export interface LookupDmarcDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof LookupDmarcDomainOptions
-   */
-  host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupDmarcDomainOptions
+     */
+    host: string;
 }
 
-export function LookupDmarcDomainOptionsFromJSON(
-  json: any
-): LookupDmarcDomainOptions {
-  return LookupDmarcDomainOptionsFromJSONTyped(json, false);
+export function LookupDmarcDomainOptionsFromJSON(json: any): LookupDmarcDomainOptions {
+    return LookupDmarcDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupDmarcDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupDmarcDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-  };
+export function LookupDmarcDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupDmarcDomainOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+    };
 }
 
-export function LookupDmarcDomainOptionsToJSON(
-  value?: LookupDmarcDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-  };
+export function LookupDmarcDomainOptionsToJSON(value?: LookupDmarcDomainOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'host': value.host,
+    };
 }
+
+

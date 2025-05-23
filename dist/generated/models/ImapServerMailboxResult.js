@@ -20,12 +20,12 @@ function ImapServerMailboxResultFromJSON(json) {
 }
 exports.ImapServerMailboxResultFromJSON = ImapServerMailboxResultFromJSON;
 function ImapServerMailboxResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        success: json['success'],
+        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'success': json['success'],
     };
 }
 exports.ImapServerMailboxResultFromJSONTyped = ImapServerMailboxResultFromJSONTyped;
@@ -37,8 +37,8 @@ function ImapServerMailboxResultToJSON(value) {
         return null;
     }
     return {
-        message: value.message,
-        success: value.success,
+        'message': value.message,
+        'success': value.success,
     };
 }
 exports.ImapServerMailboxResultToJSON = ImapServerMailboxResultToJSON;

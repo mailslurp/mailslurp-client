@@ -14,105 +14,101 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ReputationItemProjection
  */
 export interface ReputationItemProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof ReputationItemProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ReputationItemProjection
-   */
-  recipient?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ReputationItemProjection
-   */
-  reputationType: ReputationItemProjectionReputationTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof ReputationItemProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ReputationItemProjection
-   */
-  severity: ReputationItemProjectionSeverityEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof ReputationItemProjection
-   */
-  source?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ReputationItemProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ReputationItemProjection
+     */
+    recipient?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ReputationItemProjection
+     */
+    reputationType: ReputationItemProjectionReputationTypeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof ReputationItemProjection
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ReputationItemProjection
+     */
+    severity: ReputationItemProjectionSeverityEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof ReputationItemProjection
+     */
+    source?: string;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum ReputationItemProjectionReputationTypeEnum {
-  COMPLAINT = 'COMPLAINT',
-  BOUNCE = 'BOUNCE',
-}
-/**
- * @export
- * @enum {string}
- */
+    COMPLAINT = 'COMPLAINT',
+    BOUNCE = 'BOUNCE'
+}/**
+* @export
+* @enum {string}
+*/
 export enum ReputationItemProjectionSeverityEnum {
-  INFO = 'INFO',
-  WARNING = 'WARNING',
-  DANGER = 'DANGER',
+    INFO = 'INFO',
+    WARNING = 'WARNING',
+    DANGER = 'DANGER'
 }
 
-export function ReputationItemProjectionFromJSON(
-  json: any
-): ReputationItemProjection {
-  return ReputationItemProjectionFromJSONTyped(json, false);
+export function ReputationItemProjectionFromJSON(json: any): ReputationItemProjection {
+    return ReputationItemProjectionFromJSONTyped(json, false);
 }
 
-export function ReputationItemProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ReputationItemProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
-    reputationType: json['reputationType'],
-    id: json['id'],
-    severity: json['severity'],
-    source: !exists(json, 'source') ? undefined : json['source'],
-  };
+export function ReputationItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReputationItemProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'recipient': !exists(json, 'recipient') ? undefined : json['recipient'],
+        'reputationType': json['reputationType'],
+        'id': json['id'],
+        'severity': json['severity'],
+        'source': !exists(json, 'source') ? undefined : json['source'],
+    };
 }
 
-export function ReputationItemProjectionToJSON(
-  value?: ReputationItemProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    recipient: value.recipient,
-    reputationType: value.reputationType,
-    id: value.id,
-    severity: value.severity,
-    source: value.source,
-  };
+export function ReputationItemProjectionToJSON(value?: ReputationItemProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'createdAt': (value.createdAt.toISOString()),
+        'recipient': value.recipient,
+        'reputationType': value.reputationType,
+        'id': value.id,
+        'severity': value.severity,
+        'source': value.source,
+    };
 }
+
+

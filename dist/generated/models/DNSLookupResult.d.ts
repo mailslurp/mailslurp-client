@@ -41,9 +41,9 @@ export interface DNSLookupResult {
     name: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum DNSLookupResultRecordTypeEnum {
     A = "A",
     NS = "NS",

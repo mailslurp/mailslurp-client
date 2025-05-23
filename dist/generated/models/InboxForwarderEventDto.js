@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxForwarderEventDtoToJSON = exports.InboxForwarderEventDtoFromJSONTyped = exports.InboxForwarderEventDtoFromJSON = exports.InboxForwarderEventDtoStatusEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var InboxForwarderEventDtoStatusEnum;
 (function (InboxForwarderEventDtoStatusEnum) {
     InboxForwarderEventDtoStatusEnum["SUCCESS"] = "SUCCESS";
@@ -29,19 +29,19 @@ function InboxForwarderEventDtoFromJSON(json) {
 }
 exports.InboxForwarderEventDtoFromJSON = InboxForwarderEventDtoFromJSON;
 function InboxForwarderEventDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
-        sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        forwarderId: !(0, runtime_1.exists)(json, 'forwarderId') ? undefined : json['forwarderId'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
-        createdAt: new Date(json['createdAt']),
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'emailId': !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        'sentId': !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
+        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        'forwarderId': !(0, runtime_1.exists)(json, 'forwarderId') ? undefined : json['forwarderId'],
+        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'status': !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.InboxForwarderEventDtoFromJSONTyped = InboxForwarderEventDtoFromJSONTyped;
@@ -53,15 +53,15 @@ function InboxForwarderEventDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        inboxId: value.inboxId,
-        emailId: value.emailId,
-        sentId: value.sentId,
-        userId: value.userId,
-        forwarderId: value.forwarderId,
-        message: value.message,
-        status: value.status,
-        createdAt: value.createdAt.toISOString(),
+        'id': value.id,
+        'inboxId': value.inboxId,
+        'emailId': value.emailId,
+        'sentId': value.sentId,
+        'userId': value.userId,
+        'forwarderId': value.forwarderId,
+        'message': value.message,
+        'status': value.status,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.InboxForwarderEventDtoToJSON = InboxForwarderEventDtoToJSON;

@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  GuestPortalUserProjection,
-  GuestPortalUserProjectionFromJSON,
-  GuestPortalUserProjectionFromJSONTyped,
-  GuestPortalUserProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    GuestPortalUserProjection,
+    GuestPortalUserProjectionFromJSON,
+    GuestPortalUserProjectionFromJSONTyped,
+    GuestPortalUserProjectionToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,129 +34,119 @@ import {
  * @interface PageGuestPortalUsers
  */
 export interface PageGuestPortalUsers {
-  /**
-   *
-   * @type {Array<GuestPortalUserProjection>}
-   * @memberof PageGuestPortalUsers
-   */
-  content?: Array<GuestPortalUserProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageGuestPortalUsers
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGuestPortalUsers
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGuestPortalUsers
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageGuestPortalUsers
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGuestPortalUsers
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageGuestPortalUsers
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGuestPortalUsers
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGuestPortalUsers
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageGuestPortalUsers
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageGuestPortalUsers
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<GuestPortalUserProjection>}
+     * @memberof PageGuestPortalUsers
+     */
+    content?: Array<GuestPortalUserProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageGuestPortalUsers
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGuestPortalUsers
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGuestPortalUsers
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageGuestPortalUsers
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGuestPortalUsers
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageGuestPortalUsers
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGuestPortalUsers
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGuestPortalUsers
+     */
+    number?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageGuestPortalUsers
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageGuestPortalUsers
+     */
+    empty?: boolean;
 }
 
 export function PageGuestPortalUsersFromJSON(json: any): PageGuestPortalUsers {
-  return PageGuestPortalUsersFromJSONTyped(json, false);
+    return PageGuestPortalUsersFromJSONTyped(json, false);
 }
 
-export function PageGuestPortalUsersFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageGuestPortalUsers {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(GuestPortalUserProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageGuestPortalUsersFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageGuestPortalUsers {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(GuestPortalUserProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PageGuestPortalUsersToJSON(
-  value?: PageGuestPortalUsers | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(GuestPortalUserProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageGuestPortalUsersToJSON(value?: PageGuestPortalUsers | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(GuestPortalUserProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'sort': SortObjectToJSON(value.sort),
+        'empty': value.empty,
+    };
 }
+
+

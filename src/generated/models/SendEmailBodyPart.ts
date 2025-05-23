@@ -19,46 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface SendEmailBodyPart
  */
 export interface SendEmailBodyPart {
-  /**
-   *
-   * @type {string}
-   * @memberof SendEmailBodyPart
-   */
-  contentType: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendEmailBodyPart
-   */
-  contentBody: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendEmailBodyPart
+     */
+    contentType: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendEmailBodyPart
+     */
+    contentBody: string;
 }
 
 export function SendEmailBodyPartFromJSON(json: any): SendEmailBodyPart {
-  return SendEmailBodyPartFromJSONTyped(json, false);
+    return SendEmailBodyPartFromJSONTyped(json, false);
 }
 
-export function SendEmailBodyPartFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SendEmailBodyPart {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    contentType: json['contentType'],
-    contentBody: json['contentBody'],
-  };
+export function SendEmailBodyPartFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendEmailBodyPart {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'contentType': json['contentType'],
+        'contentBody': json['contentBody'],
+    };
 }
 
 export function SendEmailBodyPartToJSON(value?: SendEmailBodyPart | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    contentType: value.contentType,
-    contentBody: value.contentBody,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'contentType': value.contentType,
+        'contentBody': value.contentBody,
+    };
 }
+
+

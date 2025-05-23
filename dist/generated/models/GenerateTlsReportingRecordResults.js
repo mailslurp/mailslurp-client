@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateTlsReportingRecordResultsToJSON = exports.GenerateTlsReportingRecordResultsFromJSONTyped = exports.GenerateTlsReportingRecordResultsFromJSON = exports.GenerateTlsReportingRecordResultsTypeEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var GenerateTlsReportingRecordResultsTypeEnum;
 (function (GenerateTlsReportingRecordResultsTypeEnum) {
     GenerateTlsReportingRecordResultsTypeEnum["A"] = "A";
@@ -115,14 +115,14 @@ function GenerateTlsReportingRecordResultsFromJSON(json) {
 }
 exports.GenerateTlsReportingRecordResultsFromJSON = GenerateTlsReportingRecordResultsFromJSON;
 function GenerateTlsReportingRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        name: json['name'],
-        type: json['type'],
-        ttl: json['ttl'],
-        value: json['value'],
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
     };
 }
 exports.GenerateTlsReportingRecordResultsFromJSONTyped = GenerateTlsReportingRecordResultsFromJSONTyped;
@@ -134,10 +134,10 @@ function GenerateTlsReportingRecordResultsToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        type: value.type,
-        ttl: value.ttl,
-        value: value.value,
+        'name': value.name,
+        'type': value.type,
+        'ttl': value.ttl,
+        'value': value.value,
     };
 }
 exports.GenerateTlsReportingRecordResultsToJSON = GenerateTlsReportingRecordResultsToJSON;

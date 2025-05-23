@@ -14,62 +14,59 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ProviderSettings,
-  ProviderSettingsFromJSON,
-  ProviderSettingsFromJSONTyped,
-  ProviderSettingsToJSON,
+    ProviderSettings,
+    ProviderSettingsFromJSON,
+    ProviderSettingsFromJSONTyped,
+    ProviderSettingsToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface ConnectorProviderSettingsDto
  */
 export interface ConnectorProviderSettingsDto {
-  /**
-   *
-   * @type {ProviderSettings}
-   * @memberof ConnectorProviderSettingsDto
-   */
-  googleSettings: ProviderSettings;
-  /**
-   *
-   * @type {ProviderSettings}
-   * @memberof ConnectorProviderSettingsDto
-   */
-  microsoftSettings: ProviderSettings;
+    /**
+     * 
+     * @type {ProviderSettings}
+     * @memberof ConnectorProviderSettingsDto
+     */
+    googleSettings: ProviderSettings;
+    /**
+     * 
+     * @type {ProviderSettings}
+     * @memberof ConnectorProviderSettingsDto
+     */
+    microsoftSettings: ProviderSettings;
 }
 
-export function ConnectorProviderSettingsDtoFromJSON(
-  json: any
-): ConnectorProviderSettingsDto {
-  return ConnectorProviderSettingsDtoFromJSONTyped(json, false);
+export function ConnectorProviderSettingsDtoFromJSON(json: any): ConnectorProviderSettingsDto {
+    return ConnectorProviderSettingsDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorProviderSettingsDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorProviderSettingsDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    googleSettings: ProviderSettingsFromJSON(json['googleSettings']),
-    microsoftSettings: ProviderSettingsFromJSON(json['microsoftSettings']),
-  };
+export function ConnectorProviderSettingsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorProviderSettingsDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'googleSettings': ProviderSettingsFromJSON(json['googleSettings']),
+        'microsoftSettings': ProviderSettingsFromJSON(json['microsoftSettings']),
+    };
 }
 
-export function ConnectorProviderSettingsDtoToJSON(
-  value?: ConnectorProviderSettingsDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    googleSettings: ProviderSettingsToJSON(value.googleSettings),
-    microsoftSettings: ProviderSettingsToJSON(value.microsoftSettings),
-  };
+export function ConnectorProviderSettingsDtoToJSON(value?: ConnectorProviderSettingsDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'googleSettings': ProviderSettingsToJSON(value.googleSettings),
+        'microsoftSettings': ProviderSettingsToJSON(value.microsoftSettings),
+    };
 }
+
+

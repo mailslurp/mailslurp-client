@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainInformationToJSON = exports.DomainInformationFromJSONTyped = exports.DomainInformationFromJSON = exports.DomainInformationDomainTypeEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var DomainInformationDomainTypeEnum;
 (function (DomainInformationDomainTypeEnum) {
     DomainInformationDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -28,13 +28,13 @@ function DomainInformationFromJSON(json) {
 }
 exports.DomainInformationFromJSON = DomainInformationFromJSON;
 function DomainInformationFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        domainName: json['domainName'],
-        verified: json['verified'],
-        domainType: json['domainType'],
+        'domainName': json['domainName'],
+        'verified': json['verified'],
+        'domainType': json['domainType'],
     };
 }
 exports.DomainInformationFromJSONTyped = DomainInformationFromJSONTyped;
@@ -46,9 +46,9 @@ function DomainInformationToJSON(value) {
         return null;
     }
     return {
-        domainName: value.domainName,
-        verified: value.verified,
-        domainType: value.domainType,
+        'domainName': value.domainName,
+        'verified': value.verified,
+        'domainType': value.domainType,
     };
 }
 exports.DomainInformationToJSON = DomainInformationToJSON;

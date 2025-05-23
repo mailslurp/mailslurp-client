@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  GroupProjection,
-  GroupProjectionFromJSON,
-  GroupProjectionFromJSONTyped,
-  GroupProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    GroupProjection,
+    GroupProjectionFromJSON,
+    GroupProjectionFromJSONTyped,
+    GroupProjectionToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,129 +34,119 @@ import {
  * @interface PageGroupProjection
  */
 export interface PageGroupProjection {
-  /**
-   *
-   * @type {Array<GroupProjection>}
-   * @memberof PageGroupProjection
-   */
-  content?: Array<GroupProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageGroupProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGroupProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGroupProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageGroupProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGroupProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageGroupProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGroupProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGroupProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageGroupProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageGroupProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<GroupProjection>}
+     * @memberof PageGroupProjection
+     */
+    content?: Array<GroupProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageGroupProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGroupProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGroupProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageGroupProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGroupProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageGroupProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGroupProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageGroupProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageGroupProjection
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageGroupProjection
+     */
+    empty?: boolean;
 }
 
 export function PageGroupProjectionFromJSON(json: any): PageGroupProjection {
-  return PageGroupProjectionFromJSONTyped(json, false);
+    return PageGroupProjectionFromJSONTyped(json, false);
 }
 
-export function PageGroupProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageGroupProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(GroupProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageGroupProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageGroupProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(GroupProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PageGroupProjectionToJSON(
-  value?: PageGroupProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(GroupProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageGroupProjectionToJSON(value?: PageGroupProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(GroupProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'sort': SortObjectToJSON(value.sort),
+        'empty': value.empty,
+    };
 }
+
+

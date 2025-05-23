@@ -19,42 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface FilterBouncedRecipientsOptions
  */
 export interface FilterBouncedRecipientsOptions {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof FilterBouncedRecipientsOptions
-   */
-  emailRecipients: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof FilterBouncedRecipientsOptions
+     */
+    emailRecipients: Array<string>;
 }
 
-export function FilterBouncedRecipientsOptionsFromJSON(
-  json: any
-): FilterBouncedRecipientsOptions {
-  return FilterBouncedRecipientsOptionsFromJSONTyped(json, false);
+export function FilterBouncedRecipientsOptionsFromJSON(json: any): FilterBouncedRecipientsOptions {
+    return FilterBouncedRecipientsOptionsFromJSONTyped(json, false);
 }
 
-export function FilterBouncedRecipientsOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): FilterBouncedRecipientsOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailRecipients: json['emailRecipients'],
-  };
+export function FilterBouncedRecipientsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilterBouncedRecipientsOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'emailRecipients': json['emailRecipients'],
+    };
 }
 
-export function FilterBouncedRecipientsOptionsToJSON(
-  value?: FilterBouncedRecipientsOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailRecipients: value.emailRecipients,
-  };
+export function FilterBouncedRecipientsOptionsToJSON(value?: FilterBouncedRecipientsOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'emailRecipients': value.emailRecipients,
+    };
 }
+
+

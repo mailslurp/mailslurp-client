@@ -12,233 +12,178 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  CreateTrackingPixelOptions,
-  CreateTrackingPixelOptionsFromJSON,
-  CreateTrackingPixelOptionsToJSON,
-  PageTrackingPixelProjection,
-  PageTrackingPixelProjectionFromJSON,
-  PageTrackingPixelProjectionToJSON,
-  TrackingPixelDto,
-  TrackingPixelDtoFromJSON,
-  TrackingPixelDtoToJSON,
+    CreateTrackingPixelOptions,
+    CreateTrackingPixelOptionsFromJSON,
+    CreateTrackingPixelOptionsToJSON,
+    PageTrackingPixelProjection,
+    PageTrackingPixelProjectionFromJSON,
+    PageTrackingPixelProjectionToJSON,
+    TrackingPixelDto,
+    TrackingPixelDtoFromJSON,
+    TrackingPixelDtoToJSON,
 } from '../models';
 
 export interface CreateTrackingPixelRequest {
-  createTrackingPixelOptions: CreateTrackingPixelOptions;
+    createTrackingPixelOptions: CreateTrackingPixelOptions;
 }
 
 export interface GetAllTrackingPixelsRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllTrackingPixelsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
+    page?: number;
+    size?: number;
+    sort?: GetAllTrackingPixelsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
 }
 
 export interface GetTrackingPixelRequest {
-  id: string;
+    id: string;
 }
 
 /**
- *
+ * 
  */
 export class TrackingControllerApi extends runtime.BaseAPI {
-  /**
-   * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
-   * Create tracking pixel
-   */
-  async createTrackingPixelRaw(
-    requestParameters: CreateTrackingPixelRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<TrackingPixelDto>> {
-    if (
-      requestParameters.createTrackingPixelOptions === null ||
-      requestParameters.createTrackingPixelOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createTrackingPixelOptions',
-        'Required parameter requestParameters.createTrackingPixelOptions was null or undefined when calling createTrackingPixel.'
-      );
+
+    /**
+     * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
+     * Create tracking pixel
+     */
+    async createTrackingPixelRaw(requestParameters: CreateTrackingPixelRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TrackingPixelDto>> {
+        if (requestParameters.createTrackingPixelOptions === null || requestParameters.createTrackingPixelOptions === undefined) {
+            throw new runtime.RequiredError('createTrackingPixelOptions','Required parameter requestParameters.createTrackingPixelOptions was null or undefined when calling createTrackingPixel.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/tracking/pixels`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateTrackingPixelOptionsToJSON(requestParameters.createTrackingPixelOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TrackingPixelDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
+     * Create tracking pixel
+     */
+    async createTrackingPixel(requestParameters: CreateTrackingPixelRequest, initOverrides?: RequestInit): Promise<TrackingPixelDto> {
+        const response = await this.createTrackingPixelRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/tracking/pixels`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateTrackingPixelOptionsToJSON(
-          requestParameters.createTrackingPixelOptions
-        ),
-      },
-      initOverrides
-    );
+    /**
+     * List tracking pixels in paginated form
+     * Get tracking pixels
+     */
+    async getAllTrackingPixelsRaw(requestParameters: GetAllTrackingPixelsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTrackingPixelProjection>> {
+        const queryParameters: any = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TrackingPixelDtoFromJSON(jsonValue)
-    );
-  }
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
 
-  /**
-   * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
-   * Create tracking pixel
-   */
-  async createTrackingPixel(
-    requestParameters: CreateTrackingPixelRequest,
-    initOverrides?: RequestInit
-  ): Promise<TrackingPixelDto> {
-    const response = await this.createTrackingPixelRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
 
-  /**
-   * List tracking pixels in paginated form
-   * Get tracking pixels
-   */
-  async getAllTrackingPixelsRaw(
-    requestParameters: GetAllTrackingPixelsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageTrackingPixelProjection>> {
-    const queryParameters: any = {};
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/tracking/pixels`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageTrackingPixelProjectionFromJSON(jsonValue));
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * List tracking pixels in paginated form
+     * Get tracking pixels
+     */
+    async getAllTrackingPixels(requestParameters: GetAllTrackingPixelsRequest, initOverrides?: RequestInit): Promise<PageTrackingPixelProjection> {
+        const response = await this.getAllTrackingPixelsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Get pixel
+     */
+    async getTrackingPixelRaw(requestParameters: GetTrackingPixelRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TrackingPixelDto>> {
+        if (requestParameters.id === null || requestParameters.id === undefined) {
+            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getTrackingPixel.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/tracking/pixels/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TrackingPixelDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    /**
+     * Get pixel
+     */
+    async getTrackingPixel(requestParameters: GetTrackingPixelRequest, initOverrides?: RequestInit): Promise<TrackingPixelDto> {
+        const response = await this.getTrackingPixelRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/tracking/pixels`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageTrackingPixelProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List tracking pixels in paginated form
-   * Get tracking pixels
-   */
-  async getAllTrackingPixels(
-    requestParameters: GetAllTrackingPixelsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageTrackingPixelProjection> {
-    const response = await this.getAllTrackingPixelsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get pixel
-   */
-  async getTrackingPixelRaw(
-    requestParameters: GetTrackingPixelRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<TrackingPixelDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getTrackingPixel.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/tracking/pixels/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TrackingPixelDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get pixel
-   */
-  async getTrackingPixel(
-    requestParameters: GetTrackingPixelRequest,
-    initOverrides?: RequestInit
-  ): Promise<TrackingPixelDto> {
-    const response = await this.getTrackingPixelRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllTrackingPixelsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }

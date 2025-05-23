@@ -59,9 +59,9 @@ export interface CreateEmergencyAddressOptions {
     displayName?: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum CreateEmergencyAddressOptionsIsoCountryCodeEnum {
     US = "US",
     GB = "GB",

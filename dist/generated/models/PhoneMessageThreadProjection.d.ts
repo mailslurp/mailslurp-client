@@ -53,9 +53,9 @@ export interface PhoneMessageThreadProjection {
     lastCreated: Date;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum PhoneMessageThreadProjectionLastMessageDirectionEnum {
     OUTBOUND = "OUTBOUND",
     INBOUND = "INBOUND"

@@ -1,5 +1,4 @@
 import { ApiResponse, Configuration, InboxDto, MailSlurp } from '../dist';
-import crossFetch from 'cross-fetch';
 
 test('quick start', async () => {
   //<gen>quick_start

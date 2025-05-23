@@ -16,6 +16,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 /* eslint-disable */
+__exportStar(require("./AIControllerApi"), exports);
 __exportStar(require("./AliasControllerApi"), exports);
 __exportStar(require("./AttachmentControllerApi"), exports);
 __exportStar(require("./BounceControllerApi"), exports);
@@ -43,7 +44,6 @@ __exportStar(require("./OAuthConnectionApi"), exports);
 __exportStar(require("./PhoneControllerApi"), exports);
 __exportStar(require("./SentEmailsControllerApi"), exports);
 __exportStar(require("./SmsControllerApi"), exports);
-__exportStar(require("./SseControllerApi"), exports);
 __exportStar(require("./TemplateControllerApi"), exports);
 __exportStar(require("./ToolsControllerApi"), exports);
 __exportStar(require("./TrackingControllerApi"), exports);

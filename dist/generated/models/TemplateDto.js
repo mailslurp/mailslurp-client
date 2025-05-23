@@ -20,15 +20,15 @@ function TemplateDtoFromJSON(json) {
 }
 exports.TemplateDtoFromJSON = TemplateDtoFromJSON;
 function TemplateDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        name: json['name'],
-        variables: json['variables'].map(_1.TemplateVariableFromJSON),
-        content: json['content'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'name': json['name'],
+        'variables': (json['variables'].map(_1.TemplateVariableFromJSON)),
+        'content': json['content'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.TemplateDtoFromJSONTyped = TemplateDtoFromJSONTyped;
@@ -40,11 +40,11 @@ function TemplateDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        name: value.name,
-        variables: value.variables.map(_1.TemplateVariableToJSON),
-        content: value.content,
-        createdAt: value.createdAt.toISOString(),
+        'id': value.id,
+        'name': value.name,
+        'variables': (value.variables.map(_1.TemplateVariableToJSON)),
+        'content': value.content,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.TemplateDtoToJSON = TemplateDtoToJSON;

@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface LookupBimiDomainOptions
  */
 export interface LookupBimiDomainOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof LookupBimiDomainOptions
-   */
-  host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupBimiDomainOptions
+     */
+    host: string;
 }
 
-export function LookupBimiDomainOptionsFromJSON(
-  json: any
-): LookupBimiDomainOptions {
-  return LookupBimiDomainOptionsFromJSONTyped(json, false);
+export function LookupBimiDomainOptionsFromJSON(json: any): LookupBimiDomainOptions {
+    return LookupBimiDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupBimiDomainOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupBimiDomainOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-  };
+export function LookupBimiDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupBimiDomainOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+    };
 }
 
-export function LookupBimiDomainOptionsToJSON(
-  value?: LookupBimiDomainOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-  };
+export function LookupBimiDomainOptionsToJSON(value?: LookupBimiDomainOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'host': value.host,
+    };
 }
+
+

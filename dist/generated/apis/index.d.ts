@@ -1,3 +1,4 @@
+export * from './AIControllerApi';
 export * from './AliasControllerApi';
 export * from './AttachmentControllerApi';
 export * from './BounceControllerApi';
@@ -25,7 +26,6 @@ export * from './OAuthConnectionApi';
 export * from './PhoneControllerApi';
 export * from './SentEmailsControllerApi';
 export * from './SmsControllerApi';
-export * from './SseControllerApi';
 export * from './TemplateControllerApi';
 export * from './ToolsControllerApi';
 export * from './TrackingControllerApi';

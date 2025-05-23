@@ -20,11 +20,11 @@ function EmailContentPartResultFromJSON(json) {
 }
 exports.EmailContentPartResultFromJSON = EmailContentPartResultFromJSON;
 function EmailContentPartResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        content: !(0, runtime_1.exists)(json, 'content') ? undefined : json['content'],
+        'content': !(0, runtime_1.exists)(json, 'content') ? undefined : json['content'],
     };
 }
 exports.EmailContentPartResultFromJSONTyped = EmailContentPartResultFromJSONTyped;
@@ -36,7 +36,7 @@ function EmailContentPartResultToJSON(value) {
         return null;
     }
     return {
-        content: value.content,
+        'content': value.content,
     };
 }
 exports.EmailContentPartResultToJSON = EmailContentPartResultToJSON;

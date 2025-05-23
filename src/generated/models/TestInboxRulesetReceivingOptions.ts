@@ -19,50 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface TestInboxRulesetReceivingOptions
  */
 export interface TestInboxRulesetReceivingOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof TestInboxRulesetReceivingOptions
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TestInboxRulesetReceivingOptions
-   */
-  fromSender: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestInboxRulesetReceivingOptions
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestInboxRulesetReceivingOptions
+     */
+    fromSender: string;
 }
 
-export function TestInboxRulesetReceivingOptionsFromJSON(
-  json: any
-): TestInboxRulesetReceivingOptions {
-  return TestInboxRulesetReceivingOptionsFromJSONTyped(json, false);
+export function TestInboxRulesetReceivingOptionsFromJSON(json: any): TestInboxRulesetReceivingOptions {
+    return TestInboxRulesetReceivingOptionsFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetReceivingOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestInboxRulesetReceivingOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: json['inboxId'],
-    fromSender: json['fromSender'],
-  };
+export function TestInboxRulesetReceivingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetReceivingOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'inboxId': json['inboxId'],
+        'fromSender': json['fromSender'],
+    };
 }
 
-export function TestInboxRulesetReceivingOptionsToJSON(
-  value?: TestInboxRulesetReceivingOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    fromSender: value.fromSender,
-  };
+export function TestInboxRulesetReceivingOptionsToJSON(value?: TestInboxRulesetReceivingOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'inboxId': value.inboxId,
+        'fromSender': value.fromSender,
+    };
 }
+
+

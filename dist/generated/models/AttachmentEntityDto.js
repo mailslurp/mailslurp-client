@@ -20,22 +20,20 @@ function AttachmentEntityDtoFromJSON(json) {
 }
 exports.AttachmentEntityDtoFromJSON = AttachmentEntityDtoFromJSON;
 function AttachmentEntityDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        attachmentId: json['attachmentId'],
-        userId: json['userId'],
-        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
-        contentLength: !(0, runtime_1.exists)(json, 'contentLength')
-            ? undefined
-            : json['contentLength'],
-        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'attachmentId': json['attachmentId'],
+        'userId': json['userId'],
+        'contentType': !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        'contentLength': !(0, runtime_1.exists)(json, 'contentLength') ? undefined : json['contentLength'],
+        'contentId': !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.AttachmentEntityDtoFromJSONTyped = AttachmentEntityDtoFromJSONTyped;
@@ -47,16 +45,16 @@ function AttachmentEntityDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        attachmentId: value.attachmentId,
-        userId: value.userId,
-        contentType: value.contentType,
-        contentLength: value.contentLength,
-        contentId: value.contentId,
-        name: value.name,
-        inboxId: value.inboxId,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'attachmentId': value.attachmentId,
+        'userId': value.userId,
+        'contentType': value.contentType,
+        'contentLength': value.contentLength,
+        'contentId': value.contentId,
+        'name': value.name,
+        'inboxId': value.inboxId,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.AttachmentEntityDtoToJSON = AttachmentEntityDtoToJSON;

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailFeatureSupportFlagsToJSON = exports.EmailFeatureSupportFlagsFromJSONTyped = exports.EmailFeatureSupportFlagsFromJSON = exports.EmailFeatureSupportFlagsStatusEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var EmailFeatureSupportFlagsStatusEnum;
 (function (EmailFeatureSupportFlagsStatusEnum) {
     EmailFeatureSupportFlagsStatusEnum["SUPPORTED"] = "SUPPORTED";
@@ -31,12 +31,12 @@ function EmailFeatureSupportFlagsFromJSON(json) {
 }
 exports.EmailFeatureSupportFlagsFromJSON = EmailFeatureSupportFlagsFromJSON;
 function EmailFeatureSupportFlagsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        status: json['status'],
-        notes: !(0, runtime_1.exists)(json, 'notes') ? undefined : json['notes'],
+        'status': json['status'],
+        'notes': !(0, runtime_1.exists)(json, 'notes') ? undefined : json['notes'],
     };
 }
 exports.EmailFeatureSupportFlagsFromJSONTyped = EmailFeatureSupportFlagsFromJSONTyped;
@@ -48,8 +48,8 @@ function EmailFeatureSupportFlagsToJSON(value) {
         return null;
     }
     return {
-        status: value.status,
-        notes: value.notes,
+        'status': value.status,
+        'notes': value.notes,
     };
 }
 exports.EmailFeatureSupportFlagsToJSON = EmailFeatureSupportFlagsToJSON;

@@ -20,14 +20,14 @@ function CheckEmailBodyResultsFromJSON(json) {
 }
 exports.CheckEmailBodyResultsFromJSON = CheckEmailBodyResultsFromJSON;
 function CheckEmailBodyResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        hasIssues: json['hasIssues'],
-        linkIssues: json['linkIssues'].map(_1.LinkIssueFromJSON),
-        imageIssues: json['imageIssues'].map(_1.ImageIssueFromJSON),
-        spellingIssues: json['spellingIssues'].map(_1.SpellingIssueFromJSON),
+        'hasIssues': json['hasIssues'],
+        'linkIssues': (json['linkIssues'].map(_1.LinkIssueFromJSON)),
+        'imageIssues': (json['imageIssues'].map(_1.ImageIssueFromJSON)),
+        'spellingIssues': (json['spellingIssues'].map(_1.SpellingIssueFromJSON)),
     };
 }
 exports.CheckEmailBodyResultsFromJSONTyped = CheckEmailBodyResultsFromJSONTyped;
@@ -39,10 +39,10 @@ function CheckEmailBodyResultsToJSON(value) {
         return null;
     }
     return {
-        hasIssues: value.hasIssues,
-        linkIssues: value.linkIssues.map(_1.LinkIssueToJSON),
-        imageIssues: value.imageIssues.map(_1.ImageIssueToJSON),
-        spellingIssues: value.spellingIssues.map(_1.SpellingIssueToJSON),
+        'hasIssues': value.hasIssues,
+        'linkIssues': (value.linkIssues.map(_1.LinkIssueToJSON)),
+        'imageIssues': (value.imageIssues.map(_1.ImageIssueToJSON)),
+        'spellingIssues': (value.spellingIssues.map(_1.SpellingIssueToJSON)),
     };
 }
 exports.CheckEmailBodyResultsToJSON = CheckEmailBodyResultsToJSON;

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxForwarderDtoToJSON = exports.InboxForwarderDtoFromJSONTyped = exports.InboxForwarderDtoFromJSON = exports.InboxForwarderDtoFieldEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var InboxForwarderDtoFieldEnum;
 (function (InboxForwarderDtoFieldEnum) {
     InboxForwarderDtoFieldEnum["RECIPIENTS"] = "RECIPIENTS";
@@ -31,17 +31,17 @@ function InboxForwarderDtoFromJSON(json) {
 }
 exports.InboxForwarderDtoFromJSON = InboxForwarderDtoFromJSON;
 function InboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        field: json['field'],
-        match: json['match'],
-        forwardToRecipients: json['forwardToRecipients'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'forwardToRecipients': json['forwardToRecipients'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.InboxForwarderDtoFromJSONTyped = InboxForwarderDtoFromJSONTyped;
@@ -53,13 +53,13 @@ function InboxForwarderDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        inboxId: value.inboxId,
-        name: value.name,
-        field: value.field,
-        match: value.match,
-        forwardToRecipients: value.forwardToRecipients,
-        createdAt: value.createdAt.toISOString(),
+        'id': value.id,
+        'inboxId': value.inboxId,
+        'name': value.name,
+        'field': value.field,
+        'match': value.match,
+        'forwardToRecipients': value.forwardToRecipients,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.InboxForwarderDtoToJSON = InboxForwarderDtoToJSON;

@@ -16,18 +16,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewAccountRegionEnum = exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var InboxPreviewInboxTypeEnum;
 (function (InboxPreviewInboxTypeEnum) {
     InboxPreviewInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     InboxPreviewInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(InboxPreviewInboxTypeEnum = exports.InboxPreviewInboxTypeEnum || (exports.InboxPreviewInboxTypeEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(InboxPreviewInboxTypeEnum = exports.InboxPreviewInboxTypeEnum || (exports.InboxPreviewInboxTypeEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var InboxPreviewFunctionsAsEnum;
 (function (InboxPreviewFunctionsAsEnum) {
     InboxPreviewFunctionsAsEnum["ALIAS"] = "ALIAS";
@@ -37,11 +36,10 @@ var InboxPreviewFunctionsAsEnum;
     InboxPreviewFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
     InboxPreviewFunctionsAsEnum["GUEST"] = "GUEST";
     InboxPreviewFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var InboxPreviewAccountRegionEnum;
 (function (InboxPreviewAccountRegionEnum) {
     InboxPreviewAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
@@ -51,31 +49,25 @@ function InboxPreviewFromJSON(json) {
 }
 exports.InboxPreviewFromJSON = InboxPreviewFromJSON;
 function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        emailAddress: json['emailAddress'],
-        createdAt: new Date(json['createdAt']),
-        favourite: json['favourite'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        teamAccess: json['teamAccess'],
-        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        virtualInbox: json['virtualInbox'],
-        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
-            ? undefined
-            : json['expiresAt'] === null
-                ? null
-                : new Date(json['expiresAt']),
-        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
-        userId: json['userId'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
-            ? undefined
-            : json['accountRegion'],
+        'id': json['id'],
+        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        'emailAddress': json['emailAddress'],
+        'createdAt': (new Date(json['createdAt'])),
+        'favourite': json['favourite'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        'teamAccess': json['teamAccess'],
+        'inboxType': !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        'virtualInbox': json['virtualInbox'],
+        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : (json['expiresAt'] === null ? null : new Date(json['expiresAt'])),
+        'functionsAs': !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        'userId': json['userId'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'accountRegion': !(0, runtime_1.exists)(json, 'accountRegion') ? undefined : json['accountRegion'],
     };
 }
 exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
@@ -87,25 +79,21 @@ function InboxPreviewToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        domainId: value.domainId,
-        emailAddress: value.emailAddress,
-        createdAt: value.createdAt.toISOString(),
-        favourite: value.favourite,
-        name: value.name,
-        tags: value.tags,
-        teamAccess: value.teamAccess,
-        inboxType: value.inboxType,
-        virtualInbox: value.virtualInbox,
-        expiresAt: value.expiresAt === undefined
-            ? undefined
-            : value.expiresAt === null
-                ? null
-                : value.expiresAt.toISOString(),
-        functionsAs: value.functionsAs,
-        userId: value.userId,
-        description: value.description,
-        accountRegion: value.accountRegion,
+        'id': value.id,
+        'domainId': value.domainId,
+        'emailAddress': value.emailAddress,
+        'createdAt': (value.createdAt.toISOString()),
+        'favourite': value.favourite,
+        'name': value.name,
+        'tags': value.tags,
+        'teamAccess': value.teamAccess,
+        'inboxType': value.inboxType,
+        'virtualInbox': value.virtualInbox,
+        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt === null ? null : value.expiresAt.toISOString()),
+        'functionsAs': value.functionsAs,
+        'userId': value.userId,
+        'description': value.description,
+        'accountRegion': value.accountRegion,
     };
 }
 exports.InboxPreviewToJSON = InboxPreviewToJSON;

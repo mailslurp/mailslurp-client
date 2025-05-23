@@ -65,17 +65,16 @@ export interface ConnectorEventProjection {
     status: ConnectorEventProjectionStatusEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum ConnectorEventProjectionEventTypeEnum {
     SEND = "SEND",
     SYNC = "SYNC"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum ConnectorEventProjectionStatusEnum {
     SUCCESS = "SUCCESS",
     INTERNAL_ERROR = "INTERNAL_ERROR",

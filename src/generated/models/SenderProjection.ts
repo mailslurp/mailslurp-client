@@ -19,54 +19,55 @@ import { exists, mapValues } from '../runtime';
  * @interface SenderProjection
  */
 export interface SenderProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof SenderProjection
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SenderProjection
-   */
-  rawValue: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SenderProjection
-   */
-  name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SenderProjection
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SenderProjection
+     */
+    rawValue: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SenderProjection
+     */
+    name?: string;
 }
 
 export function SenderProjectionFromJSON(json: any): SenderProjection {
-  return SenderProjectionFromJSONTyped(json, false);
+    return SenderProjectionFromJSONTyped(json, false);
 }
 
-export function SenderProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SenderProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailAddress: json['emailAddress'],
-    rawValue: json['rawValue'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-  };
+export function SenderProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SenderProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'emailAddress': json['emailAddress'],
+        'rawValue': json['rawValue'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+    };
 }
 
 export function SenderProjectionToJSON(value?: SenderProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailAddress: value.emailAddress,
-    rawValue: value.rawValue,
-    name: value.name,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'emailAddress': value.emailAddress,
+        'rawValue': value.rawValue,
+        'name': value.name,
+    };
 }
+
+

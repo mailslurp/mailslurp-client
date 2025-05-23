@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface VerifyWebhookSignatureResults
  */
 export interface VerifyWebhookSignatureResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof VerifyWebhookSignatureResults
-   */
-  isValid: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof VerifyWebhookSignatureResults
+     */
+    isValid: boolean;
 }
 
-export function VerifyWebhookSignatureResultsFromJSON(
-  json: any
-): VerifyWebhookSignatureResults {
-  return VerifyWebhookSignatureResultsFromJSONTyped(json, false);
+export function VerifyWebhookSignatureResultsFromJSON(json: any): VerifyWebhookSignatureResults {
+    return VerifyWebhookSignatureResultsFromJSONTyped(json, false);
 }
 
-export function VerifyWebhookSignatureResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): VerifyWebhookSignatureResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    isValid: json['isValid'],
-  };
+export function VerifyWebhookSignatureResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyWebhookSignatureResults {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'isValid': json['isValid'],
+    };
 }
 
-export function VerifyWebhookSignatureResultsToJSON(
-  value?: VerifyWebhookSignatureResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    isValid: value.isValid,
-  };
+export function VerifyWebhookSignatureResultsToJSON(value?: VerifyWebhookSignatureResults | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'isValid': value.isValid,
+    };
 }
+
+

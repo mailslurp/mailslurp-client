@@ -19,42 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface SetPhoneFavouritedOptions
  */
 export interface SetPhoneFavouritedOptions {
-  /**
-   * Phone favourite state
-   * @type {boolean}
-   * @memberof SetPhoneFavouritedOptions
-   */
-  state: boolean;
+    /**
+     * Phone favourite state
+     * @type {boolean}
+     * @memberof SetPhoneFavouritedOptions
+     */
+    state: boolean;
 }
 
-export function SetPhoneFavouritedOptionsFromJSON(
-  json: any
-): SetPhoneFavouritedOptions {
-  return SetPhoneFavouritedOptionsFromJSONTyped(json, false);
+export function SetPhoneFavouritedOptionsFromJSON(json: any): SetPhoneFavouritedOptions {
+    return SetPhoneFavouritedOptionsFromJSONTyped(json, false);
 }
 
-export function SetPhoneFavouritedOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SetPhoneFavouritedOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    state: json['state'],
-  };
+export function SetPhoneFavouritedOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SetPhoneFavouritedOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'state': json['state'],
+    };
 }
 
-export function SetPhoneFavouritedOptionsToJSON(
-  value?: SetPhoneFavouritedOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    state: value.state,
-  };
+export function SetPhoneFavouritedOptionsToJSON(value?: SetPhoneFavouritedOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'state': value.state,
+    };
 }
+
+

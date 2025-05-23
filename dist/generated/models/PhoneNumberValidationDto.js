@@ -20,19 +20,15 @@ function PhoneNumberValidationDtoFromJSON(json) {
 }
 exports.PhoneNumberValidationDtoFromJSON = PhoneNumberValidationDtoFromJSON;
 function PhoneNumberValidationDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        countryCode: !(0, runtime_1.exists)(json, 'countryCode') ? undefined : json['countryCode'],
-        countryPrefix: !(0, runtime_1.exists)(json, 'countryPrefix')
-            ? undefined
-            : json['countryPrefix'],
-        phoneNumber: json['phoneNumber'],
-        isValid: json['isValid'],
-        validationErrors: !(0, runtime_1.exists)(json, 'validationErrors')
-            ? undefined
-            : json['validationErrors'],
+        'countryCode': !(0, runtime_1.exists)(json, 'countryCode') ? undefined : json['countryCode'],
+        'countryPrefix': !(0, runtime_1.exists)(json, 'countryPrefix') ? undefined : json['countryPrefix'],
+        'phoneNumber': json['phoneNumber'],
+        'isValid': json['isValid'],
+        'validationErrors': !(0, runtime_1.exists)(json, 'validationErrors') ? undefined : json['validationErrors'],
     };
 }
 exports.PhoneNumberValidationDtoFromJSONTyped = PhoneNumberValidationDtoFromJSONTyped;
@@ -44,11 +40,11 @@ function PhoneNumberValidationDtoToJSON(value) {
         return null;
     }
     return {
-        countryCode: value.countryCode,
-        countryPrefix: value.countryPrefix,
-        phoneNumber: value.phoneNumber,
-        isValid: value.isValid,
-        validationErrors: value.validationErrors,
+        'countryCode': value.countryCode,
+        'countryPrefix': value.countryPrefix,
+        'phoneNumber': value.phoneNumber,
+        'isValid': value.isValid,
+        'validationErrors': value.validationErrors,
     };
 }
 exports.PhoneNumberValidationDtoToJSON = PhoneNumberValidationDtoToJSON;

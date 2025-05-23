@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EntityAutomationItemProjectionToJSON = exports.EntityAutomationItemProjectionFromJSONTyped = exports.EntityAutomationItemProjectionFromJSON = exports.EntityAutomationItemProjectionAutomationTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var EntityAutomationItemProjectionAutomationTypeEnum;
 (function (EntityAutomationItemProjectionAutomationTypeEnum) {
     EntityAutomationItemProjectionAutomationTypeEnum["FORWARDER"] = "INBOX_FORWARDER";
@@ -30,16 +30,16 @@ function EntityAutomationItemProjectionFromJSON(json) {
 }
 exports.EntityAutomationItemProjectionFromJSON = EntityAutomationItemProjectionFromJSON;
 function EntityAutomationItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
-        action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
-        automationType: json['automationType'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'phoneId': !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        'action': !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
+        'automationType': json['automationType'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
     };
 }
 exports.EntityAutomationItemProjectionFromJSONTyped = EntityAutomationItemProjectionFromJSONTyped;
@@ -51,12 +51,12 @@ function EntityAutomationItemProjectionToJSON(value) {
         return null;
     }
     return {
-        inboxId: value.inboxId,
-        phoneId: value.phoneId,
-        action: value.action,
-        automationType: value.automationType,
-        name: value.name,
-        id: value.id,
+        'inboxId': value.inboxId,
+        'phoneId': value.phoneId,
+        'action': value.action,
+        'automationType': value.automationType,
+        'name': value.name,
+        'id': value.id,
     };
 }
 exports.EntityAutomationItemProjectionToJSON = EntityAutomationItemProjectionToJSON;

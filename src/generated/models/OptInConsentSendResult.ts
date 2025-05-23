@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface OptInConsentSendResult
  */
 export interface OptInConsentSendResult {
-  /**
-   *
-   * @type {boolean}
-   * @memberof OptInConsentSendResult
-   */
-  sent: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof OptInConsentSendResult
+     */
+    sent: boolean;
 }
 
-export function OptInConsentSendResultFromJSON(
-  json: any
-): OptInConsentSendResult {
-  return OptInConsentSendResultFromJSONTyped(json, false);
+export function OptInConsentSendResultFromJSON(json: any): OptInConsentSendResult {
+    return OptInConsentSendResultFromJSONTyped(json, false);
 }
 
-export function OptInConsentSendResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): OptInConsentSendResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    sent: json['sent'],
-  };
+export function OptInConsentSendResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptInConsentSendResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'sent': json['sent'],
+    };
 }
 
-export function OptInConsentSendResultToJSON(
-  value?: OptInConsentSendResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    sent: value.sent,
-  };
+export function OptInConsentSendResultToJSON(value?: OptInConsentSendResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'sent': value.sent,
+    };
 }
+
+

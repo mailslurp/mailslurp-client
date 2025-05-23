@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  BounceProjection,
-  BounceProjectionFromJSON,
-  BounceProjectionFromJSONTyped,
-  BounceProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    BounceProjection,
+    BounceProjectionFromJSON,
+    BounceProjectionFromJSONTyped,
+    BounceProjectionToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,127 +34,119 @@ import {
  * @interface PageBouncedEmail
  */
 export interface PageBouncedEmail {
-  /**
-   *
-   * @type {Array<BounceProjection>}
-   * @memberof PageBouncedEmail
-   */
-  content?: Array<BounceProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageBouncedEmail
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageBouncedEmail
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageBouncedEmail
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageBouncedEmail
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageBouncedEmail
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageBouncedEmail
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageBouncedEmail
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageBouncedEmail
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageBouncedEmail
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageBouncedEmail
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<BounceProjection>}
+     * @memberof PageBouncedEmail
+     */
+    content?: Array<BounceProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageBouncedEmail
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    number?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageBouncedEmail
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    empty?: boolean;
 }
 
 export function PageBouncedEmailFromJSON(json: any): PageBouncedEmail {
-  return PageBouncedEmailFromJSONTyped(json, false);
+    return PageBouncedEmailFromJSONTyped(json, false);
 }
 
-export function PageBouncedEmailFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageBouncedEmail {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(BounceProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageBouncedEmailFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageBouncedEmail {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(BounceProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
 export function PageBouncedEmailToJSON(value?: PageBouncedEmail | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(BounceProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(BounceProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'sort': SortObjectToJSON(value.sort),
+        'empty': value.empty,
+    };
 }
+
+

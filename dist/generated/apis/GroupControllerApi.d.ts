@@ -124,17 +124,17 @@ export declare class GroupControllerApi extends runtime.BaseAPI {
     removeContactsFromGroup(requestParameters: RemoveContactsFromGroupRequest, initOverrides?: RequestInit): Promise<GroupContactsDto>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllGroupsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetGroupWithContactsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"

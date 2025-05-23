@@ -20,12 +20,12 @@ function GetEmailScreenshotOptionsFromJSON(json) {
 }
 exports.GetEmailScreenshotOptionsFromJSON = GetEmailScreenshotOptionsFromJSON;
 function GetEmailScreenshotOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        height: !(0, runtime_1.exists)(json, 'height') ? undefined : json['height'],
-        width: !(0, runtime_1.exists)(json, 'width') ? undefined : json['width'],
+        'height': !(0, runtime_1.exists)(json, 'height') ? undefined : json['height'],
+        'width': !(0, runtime_1.exists)(json, 'width') ? undefined : json['width'],
     };
 }
 exports.GetEmailScreenshotOptionsFromJSONTyped = GetEmailScreenshotOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function GetEmailScreenshotOptionsToJSON(value) {
         return null;
     }
     return {
-        height: value.height,
-        width: value.width,
+        'height': value.height,
+        'width': value.width,
     };
 }
 exports.GetEmailScreenshotOptionsToJSON = GetEmailScreenshotOptionsToJSON;

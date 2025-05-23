@@ -14,55 +14,52 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ImapServerMailboxResult
  */
 export interface ImapServerMailboxResult {
-  /**
-   *
-   * @type {string}
-   * @memberof ImapServerMailboxResult
-   */
-  message?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ImapServerMailboxResult
-   */
-  success: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImapServerMailboxResult
+     */
+    message?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ImapServerMailboxResult
+     */
+    success: boolean;
 }
 
-export function ImapServerMailboxResultFromJSON(
-  json: any
-): ImapServerMailboxResult {
-  return ImapServerMailboxResultFromJSONTyped(json, false);
+export function ImapServerMailboxResultFromJSON(json: any): ImapServerMailboxResult {
+    return ImapServerMailboxResultFromJSONTyped(json, false);
 }
 
-export function ImapServerMailboxResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerMailboxResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-    success: json['success'],
-  };
+export function ImapServerMailboxResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerMailboxResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'message': !exists(json, 'message') ? undefined : json['message'],
+        'success': json['success'],
+    };
 }
 
-export function ImapServerMailboxResultToJSON(
-  value?: ImapServerMailboxResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    message: value.message,
-    success: value.success,
-  };
+export function ImapServerMailboxResultToJSON(value?: ImapServerMailboxResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'message': value.message,
+        'success': value.success,
+    };
 }
+
+

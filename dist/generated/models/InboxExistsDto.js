@@ -19,11 +19,11 @@ function InboxExistsDtoFromJSON(json) {
 }
 exports.InboxExistsDtoFromJSON = InboxExistsDtoFromJSON;
 function InboxExistsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        _exists: json['exists'],
+        '_exists': json['exists'],
     };
 }
 exports.InboxExistsDtoFromJSONTyped = InboxExistsDtoFromJSONTyped;
@@ -35,7 +35,7 @@ function InboxExistsDtoToJSON(value) {
         return null;
     }
     return {
-        exists: value._exists,
+        'exists': value._exists,
     };
 }
 exports.InboxExistsDtoToJSON = InboxExistsDtoToJSON;

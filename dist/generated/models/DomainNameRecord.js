@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainNameRecordToJSON = exports.DomainNameRecordFromJSONTyped = exports.DomainNameRecordFromJSON = exports.DomainNameRecordRecordTypeEnum = exports.DomainNameRecordLabelEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var DomainNameRecordLabelEnum;
 (function (DomainNameRecordLabelEnum) {
     DomainNameRecordLabelEnum["VERIFICATION"] = "VERIFICATION";
@@ -26,11 +26,10 @@ var DomainNameRecordLabelEnum;
     DomainNameRecordLabelEnum["SPF"] = "SPF";
     DomainNameRecordLabelEnum["DKIM"] = "DKIM";
     DomainNameRecordLabelEnum["DMARC"] = "DMARC";
-})(DomainNameRecordLabelEnum = exports.DomainNameRecordLabelEnum || (exports.DomainNameRecordLabelEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(DomainNameRecordLabelEnum = exports.DomainNameRecordLabelEnum || (exports.DomainNameRecordLabelEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var DomainNameRecordRecordTypeEnum;
 (function (DomainNameRecordRecordTypeEnum) {
     DomainNameRecordRecordTypeEnum["A"] = "A";
@@ -128,19 +127,17 @@ function DomainNameRecordFromJSON(json) {
 }
 exports.DomainNameRecordFromJSON = DomainNameRecordFromJSON;
 function DomainNameRecordFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        label: json['label'],
-        required: json['required'],
-        recordType: json['recordType'],
-        name: json['name'],
-        recordEntries: json['recordEntries'],
-        ttl: json['ttl'],
-        alternativeRecordEntries: !(0, runtime_1.exists)(json, 'alternativeRecordEntries')
-            ? undefined
-            : json['alternativeRecordEntries'],
+        'label': json['label'],
+        'required': json['required'],
+        'recordType': json['recordType'],
+        'name': json['name'],
+        'recordEntries': json['recordEntries'],
+        'ttl': json['ttl'],
+        'alternativeRecordEntries': !(0, runtime_1.exists)(json, 'alternativeRecordEntries') ? undefined : json['alternativeRecordEntries'],
     };
 }
 exports.DomainNameRecordFromJSONTyped = DomainNameRecordFromJSONTyped;
@@ -152,13 +149,13 @@ function DomainNameRecordToJSON(value) {
         return null;
     }
     return {
-        label: value.label,
-        required: value.required,
-        recordType: value.recordType,
-        name: value.name,
-        recordEntries: value.recordEntries,
-        ttl: value.ttl,
-        alternativeRecordEntries: value.alternativeRecordEntries,
+        'label': value.label,
+        'required': value.required,
+        'recordType': value.recordType,
+        'name': value.name,
+        'recordEntries': value.recordEntries,
+        'ttl': value.ttl,
+        'alternativeRecordEntries': value.alternativeRecordEntries,
     };
 }
 exports.DomainNameRecordToJSON = DomainNameRecordToJSON;

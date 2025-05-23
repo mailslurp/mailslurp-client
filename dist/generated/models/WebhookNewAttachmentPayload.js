@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookNewAttachmentPayloadToJSON = exports.WebhookNewAttachmentPayloadFromJSONTyped = exports.WebhookNewAttachmentPayloadFromJSON = exports.WebhookNewAttachmentPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WebhookNewAttachmentPayloadEventNameEnum;
 (function (WebhookNewAttachmentPayloadEventNameEnum) {
     WebhookNewAttachmentPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -38,18 +38,18 @@ function WebhookNewAttachmentPayloadFromJSON(json) {
 }
 exports.WebhookNewAttachmentPayloadFromJSON = WebhookNewAttachmentPayloadFromJSON;
 function WebhookNewAttachmentPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        eventName: json['eventName'],
-        attachmentId: json['attachmentId'],
-        name: json['name'],
-        contentType: json['contentType'],
-        contentLength: json['contentLength'],
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        'eventName': json['eventName'],
+        'attachmentId': json['attachmentId'],
+        'name': json['name'],
+        'contentType': json['contentType'],
+        'contentLength': json['contentLength'],
     };
 }
 exports.WebhookNewAttachmentPayloadFromJSONTyped = WebhookNewAttachmentPayloadFromJSONTyped;
@@ -61,14 +61,14 @@ function WebhookNewAttachmentPayloadToJSON(value) {
         return null;
     }
     return {
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        webhookName: value.webhookName,
-        eventName: value.eventName,
-        attachmentId: value.attachmentId,
-        name: value.name,
-        contentType: value.contentType,
-        contentLength: value.contentLength,
+        'messageId': value.messageId,
+        'webhookId': value.webhookId,
+        'webhookName': value.webhookName,
+        'eventName': value.eventName,
+        'attachmentId': value.attachmentId,
+        'name': value.name,
+        'contentType': value.contentType,
+        'contentLength': value.contentLength,
     };
 }
 exports.WebhookNewAttachmentPayloadToJSON = WebhookNewAttachmentPayloadToJSON;

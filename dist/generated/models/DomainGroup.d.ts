@@ -30,9 +30,9 @@ export interface DomainGroup {
     domains: Array<DomainInformation>;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum DomainGroupLabelEnum {
     DEFAULT = "DEFAULT",
     DOMAIN_POOL = "DOMAIN_POOL",

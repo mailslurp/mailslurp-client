@@ -19,54 +19,55 @@ import { exists, mapValues } from '../runtime';
  * @interface ExpiredInboxDto
  */
 export interface ExpiredInboxDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxDto
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ExpiredInboxDto
-   */
-  emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxDto
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExpiredInboxDto
+     */
+    emailAddress: string;
 }
 
 export function ExpiredInboxDtoFromJSON(json: any): ExpiredInboxDto {
-  return ExpiredInboxDtoFromJSONTyped(json, false);
+    return ExpiredInboxDtoFromJSONTyped(json, false);
 }
 
-export function ExpiredInboxDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ExpiredInboxDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    inboxId: json['inboxId'],
-    emailAddress: json['emailAddress'],
-  };
+export function ExpiredInboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'inboxId': json['inboxId'],
+        'emailAddress': json['emailAddress'],
+    };
 }
 
 export function ExpiredInboxDtoToJSON(value?: ExpiredInboxDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    emailAddress: value.emailAddress,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'inboxId': value.inboxId,
+        'emailAddress': value.emailAddress,
+    };
 }
+
+

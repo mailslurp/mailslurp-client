@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ExpiredInboxRecordProjection,
-  ExpiredInboxRecordProjectionFromJSON,
-  ExpiredInboxRecordProjectionFromJSONTyped,
-  ExpiredInboxRecordProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    ExpiredInboxRecordProjection,
+    ExpiredInboxRecordProjectionFromJSON,
+    ExpiredInboxRecordProjectionFromJSONTyped,
+    ExpiredInboxRecordProjectionToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,133 +34,119 @@ import {
  * @interface PageExpiredInboxRecordProjection
  */
 export interface PageExpiredInboxRecordProjection {
-  /**
-   *
-   * @type {Array<ExpiredInboxRecordProjection>}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  content?: Array<ExpiredInboxRecordProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageExpiredInboxRecordProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<ExpiredInboxRecordProjection>}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    content?: Array<ExpiredInboxRecordProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    empty?: boolean;
 }
 
-export function PageExpiredInboxRecordProjectionFromJSON(
-  json: any
-): PageExpiredInboxRecordProjection {
-  return PageExpiredInboxRecordProjectionFromJSONTyped(json, false);
+export function PageExpiredInboxRecordProjectionFromJSON(json: any): PageExpiredInboxRecordProjection {
+    return PageExpiredInboxRecordProjectionFromJSONTyped(json, false);
 }
 
-export function PageExpiredInboxRecordProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageExpiredInboxRecordProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(
-          ExpiredInboxRecordProjectionFromJSON
-        ),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageExpiredInboxRecordProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageExpiredInboxRecordProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(ExpiredInboxRecordProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PageExpiredInboxRecordProjectionToJSON(
-  value?: PageExpiredInboxRecordProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(ExpiredInboxRecordProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageExpiredInboxRecordProjectionToJSON(value?: PageExpiredInboxRecordProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(ExpiredInboxRecordProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'sort': SortObjectToJSON(value.sort),
+        'empty': value.empty,
+    };
 }
+
+

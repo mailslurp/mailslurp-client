@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  RecipientProjection,
-  RecipientProjectionFromJSON,
-  RecipientProjectionFromJSONTyped,
-  RecipientProjectionToJSON,
+    RecipientProjection,
+    RecipientProjectionFromJSON,
+    RecipientProjectionFromJSONTyped,
+    RecipientProjectionToJSON,
 } from './';
 
 /**
@@ -26,73 +26,55 @@ import {
  * @interface EmailRecipientsProjection
  */
 export interface EmailRecipientsProjection {
-  /**
-   *
-   * @type {Array<RecipientProjection>}
-   * @memberof EmailRecipientsProjection
-   */
-  to?: Array<RecipientProjection>;
-  /**
-   *
-   * @type {Array<RecipientProjection>}
-   * @memberof EmailRecipientsProjection
-   */
-  cc?: Array<RecipientProjection>;
-  /**
-   *
-   * @type {Array<RecipientProjection>}
-   * @memberof EmailRecipientsProjection
-   */
-  bcc?: Array<RecipientProjection>;
+    /**
+     * 
+     * @type {Array<RecipientProjection>}
+     * @memberof EmailRecipientsProjection
+     */
+    to?: Array<RecipientProjection>;
+    /**
+     * 
+     * @type {Array<RecipientProjection>}
+     * @memberof EmailRecipientsProjection
+     */
+    cc?: Array<RecipientProjection>;
+    /**
+     * 
+     * @type {Array<RecipientProjection>}
+     * @memberof EmailRecipientsProjection
+     */
+    bcc?: Array<RecipientProjection>;
 }
 
-export function EmailRecipientsProjectionFromJSON(
-  json: any
-): EmailRecipientsProjection {
-  return EmailRecipientsProjectionFromJSONTyped(json, false);
+export function EmailRecipientsProjectionFromJSON(json: any): EmailRecipientsProjection {
+    return EmailRecipientsProjectionFromJSONTyped(json, false);
 }
 
-export function EmailRecipientsProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailRecipientsProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    to: !exists(json, 'to')
-      ? undefined
-      : (json['to'] as Array<any>).map(RecipientProjectionFromJSON),
-    cc: !exists(json, 'cc')
-      ? undefined
-      : (json['cc'] as Array<any>).map(RecipientProjectionFromJSON),
-    bcc: !exists(json, 'bcc')
-      ? undefined
-      : (json['bcc'] as Array<any>).map(RecipientProjectionFromJSON),
-  };
+export function EmailRecipientsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailRecipientsProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'to': !exists(json, 'to') ? undefined : ((json['to'] as Array<any>).map(RecipientProjectionFromJSON)),
+        'cc': !exists(json, 'cc') ? undefined : ((json['cc'] as Array<any>).map(RecipientProjectionFromJSON)),
+        'bcc': !exists(json, 'bcc') ? undefined : ((json['bcc'] as Array<any>).map(RecipientProjectionFromJSON)),
+    };
 }
 
-export function EmailRecipientsProjectionToJSON(
-  value?: EmailRecipientsProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    to:
-      value.to === undefined
-        ? undefined
-        : (value.to as Array<any>).map(RecipientProjectionToJSON),
-    cc:
-      value.cc === undefined
-        ? undefined
-        : (value.cc as Array<any>).map(RecipientProjectionToJSON),
-    bcc:
-      value.bcc === undefined
-        ? undefined
-        : (value.bcc as Array<any>).map(RecipientProjectionToJSON),
-  };
+export function EmailRecipientsProjectionToJSON(value?: EmailRecipientsProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'to': value.to === undefined ? undefined : ((value.to as Array<any>).map(RecipientProjectionToJSON)),
+        'cc': value.cc === undefined ? undefined : ((value.cc as Array<any>).map(RecipientProjectionToJSON)),
+        'bcc': value.bcc === undefined ? undefined : ((value.bcc as Array<any>).map(RecipientProjectionToJSON)),
+    };
 }
+
+

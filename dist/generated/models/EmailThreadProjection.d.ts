@@ -77,11 +77,11 @@ export interface EmailThreadProjection {
      */
     hasAttachments: boolean;
     /**
-     * Last text excerpt
-     * @type {string}
+     * Has unread
+     * @type {boolean}
      * @memberof EmailThreadProjection
      */
-    lastTextExcerpt?: string;
+    unread: boolean;
     /**
      * Number of messages in the thread
      * @type {number}
@@ -89,29 +89,29 @@ export interface EmailThreadProjection {
      */
     messageCount: number;
     /**
-     * Has unread
-     * @type {boolean}
-     * @memberof EmailThreadProjection
-     */
-    unread: boolean;
-    /**
-     * Last sender
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    lastFrom?: string;
-    /**
      * Last body excerpt
      * @type {string}
      * @memberof EmailThreadProjection
      */
     lastBodyExcerpt?: string;
     /**
+     * Last text excerpt
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    lastTextExcerpt?: string;
+    /**
      * Last email created time
      * @type {Date}
      * @memberof EmailThreadProjection
      */
     lastCreatedAt?: Date;
+    /**
+     * Last sender
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    lastFrom?: string;
     /**
      *
      * @type {SenderProjection}

@@ -35,17 +35,16 @@ export interface CreateInboxRulesetOptions {
     target: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum CreateInboxRulesetOptionsScopeEnum {
     RECEIVING_EMAILS = "RECEIVING_EMAILS",
     SENDING_EMAILS = "SENDING_EMAILS"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum CreateInboxRulesetOptionsActionEnum {
     BLOCK = "BLOCK",
     ALLOW = "ALLOW",

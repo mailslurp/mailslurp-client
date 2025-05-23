@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ImapServerFetchItem,
-  ImapServerFetchItemFromJSON,
-  ImapServerFetchItemFromJSONTyped,
-  ImapServerFetchItemToJSON,
+    ImapServerFetchItem,
+    ImapServerFetchItemFromJSON,
+    ImapServerFetchItemFromJSONTyped,
+    ImapServerFetchItemToJSON,
 } from './';
 
 /**
@@ -26,44 +26,39 @@ import {
  * @interface ImapServerFetchResult
  */
 export interface ImapServerFetchResult {
-  /**
-   *
-   * @type {ImapServerFetchItem}
-   * @memberof ImapServerFetchResult
-   */
-  result?: ImapServerFetchItem | null;
+    /**
+     * 
+     * @type {ImapServerFetchItem}
+     * @memberof ImapServerFetchResult
+     */
+    result?: ImapServerFetchItem | null;
 }
 
-export function ImapServerFetchResultFromJSON(
-  json: any
-): ImapServerFetchResult {
-  return ImapServerFetchResultFromJSONTyped(json, false);
+export function ImapServerFetchResultFromJSON(json: any): ImapServerFetchResult {
+    return ImapServerFetchResultFromJSONTyped(json, false);
 }
 
-export function ImapServerFetchResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerFetchResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    result: !exists(json, 'result')
-      ? undefined
-      : ImapServerFetchItemFromJSON(json['result']),
-  };
+export function ImapServerFetchResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerFetchResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'result': !exists(json, 'result') ? undefined : ImapServerFetchItemFromJSON(json['result']),
+    };
 }
 
-export function ImapServerFetchResultToJSON(
-  value?: ImapServerFetchResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    result: ImapServerFetchItemToJSON(value.result),
-  };
+export function ImapServerFetchResultToJSON(value?: ImapServerFetchResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'result': ImapServerFetchItemToJSON(value.result),
+    };
 }
+
+

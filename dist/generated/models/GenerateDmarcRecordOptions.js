@@ -16,63 +16,57 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateDmarcRecordOptionsToJSON = exports.GenerateDmarcRecordOptionsFromJSONTyped = exports.GenerateDmarcRecordOptionsFromJSON = exports.GenerateDmarcRecordOptionsFoEnum = exports.GenerateDmarcRecordOptionsAspfEnum = exports.GenerateDmarcRecordOptionsAdkimEnum = exports.GenerateDmarcRecordOptionsReportFormatEnum = exports.GenerateDmarcRecordOptionsSubdomainPolicyEnum = exports.GenerateDmarcRecordOptionsPolicyEnum = exports.GenerateDmarcRecordOptionsVersionEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordOptionsVersionEnum;
 (function (GenerateDmarcRecordOptionsVersionEnum) {
     GenerateDmarcRecordOptionsVersionEnum["DMARC1"] = "DMARC1";
-})(GenerateDmarcRecordOptionsVersionEnum = exports.GenerateDmarcRecordOptionsVersionEnum || (exports.GenerateDmarcRecordOptionsVersionEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(GenerateDmarcRecordOptionsVersionEnum = exports.GenerateDmarcRecordOptionsVersionEnum || (exports.GenerateDmarcRecordOptionsVersionEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordOptionsPolicyEnum;
 (function (GenerateDmarcRecordOptionsPolicyEnum) {
     GenerateDmarcRecordOptionsPolicyEnum["NONE"] = "NONE";
     GenerateDmarcRecordOptionsPolicyEnum["QUARANTINE"] = "QUARANTINE";
     GenerateDmarcRecordOptionsPolicyEnum["REJECT"] = "REJECT";
-})(GenerateDmarcRecordOptionsPolicyEnum = exports.GenerateDmarcRecordOptionsPolicyEnum || (exports.GenerateDmarcRecordOptionsPolicyEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(GenerateDmarcRecordOptionsPolicyEnum = exports.GenerateDmarcRecordOptionsPolicyEnum || (exports.GenerateDmarcRecordOptionsPolicyEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordOptionsSubdomainPolicyEnum;
 (function (GenerateDmarcRecordOptionsSubdomainPolicyEnum) {
     GenerateDmarcRecordOptionsSubdomainPolicyEnum["NONE"] = "NONE";
     GenerateDmarcRecordOptionsSubdomainPolicyEnum["QUARANTINE"] = "QUARANTINE";
     GenerateDmarcRecordOptionsSubdomainPolicyEnum["REJECT"] = "REJECT";
-})(GenerateDmarcRecordOptionsSubdomainPolicyEnum = exports.GenerateDmarcRecordOptionsSubdomainPolicyEnum || (exports.GenerateDmarcRecordOptionsSubdomainPolicyEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(GenerateDmarcRecordOptionsSubdomainPolicyEnum = exports.GenerateDmarcRecordOptionsSubdomainPolicyEnum || (exports.GenerateDmarcRecordOptionsSubdomainPolicyEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordOptionsReportFormatEnum;
 (function (GenerateDmarcRecordOptionsReportFormatEnum) {
     GenerateDmarcRecordOptionsReportFormatEnum["AFRF"] = "AFRF";
-})(GenerateDmarcRecordOptionsReportFormatEnum = exports.GenerateDmarcRecordOptionsReportFormatEnum || (exports.GenerateDmarcRecordOptionsReportFormatEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(GenerateDmarcRecordOptionsReportFormatEnum = exports.GenerateDmarcRecordOptionsReportFormatEnum || (exports.GenerateDmarcRecordOptionsReportFormatEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordOptionsAdkimEnum;
 (function (GenerateDmarcRecordOptionsAdkimEnum) {
     GenerateDmarcRecordOptionsAdkimEnum["STRICT"] = "STRICT";
     GenerateDmarcRecordOptionsAdkimEnum["RELAXED"] = "RELAXED";
-})(GenerateDmarcRecordOptionsAdkimEnum = exports.GenerateDmarcRecordOptionsAdkimEnum || (exports.GenerateDmarcRecordOptionsAdkimEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(GenerateDmarcRecordOptionsAdkimEnum = exports.GenerateDmarcRecordOptionsAdkimEnum || (exports.GenerateDmarcRecordOptionsAdkimEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordOptionsAspfEnum;
 (function (GenerateDmarcRecordOptionsAspfEnum) {
     GenerateDmarcRecordOptionsAspfEnum["STRICT"] = "STRICT";
     GenerateDmarcRecordOptionsAspfEnum["RELAXED"] = "RELAXED";
-})(GenerateDmarcRecordOptionsAspfEnum = exports.GenerateDmarcRecordOptionsAspfEnum || (exports.GenerateDmarcRecordOptionsAspfEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(GenerateDmarcRecordOptionsAspfEnum = exports.GenerateDmarcRecordOptionsAspfEnum || (exports.GenerateDmarcRecordOptionsAspfEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordOptionsFoEnum;
 (function (GenerateDmarcRecordOptionsFoEnum) {
     GenerateDmarcRecordOptionsFoEnum["_0"] = "FO_0";
@@ -85,32 +79,22 @@ function GenerateDmarcRecordOptionsFromJSON(json) {
 }
 exports.GenerateDmarcRecordOptionsFromJSON = GenerateDmarcRecordOptionsFromJSON;
 function GenerateDmarcRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        domain: json['domain'],
-        version: json['version'],
-        policy: json['policy'],
-        subdomainPolicy: !(0, runtime_1.exists)(json, 'subdomainPolicy')
-            ? undefined
-            : json['subdomainPolicy'],
-        reportEmailAddress: !(0, runtime_1.exists)(json, 'reportEmailAddress')
-            ? undefined
-            : json['reportEmailAddress'],
-        forensicEmailAddress: !(0, runtime_1.exists)(json, 'forensicEmailAddress')
-            ? undefined
-            : json['forensicEmailAddress'],
-        percentage: !(0, runtime_1.exists)(json, 'percentage') ? undefined : json['percentage'],
-        reportFormat: !(0, runtime_1.exists)(json, 'reportFormat')
-            ? undefined
-            : json['reportFormat'],
-        secondsBetweenReports: !(0, runtime_1.exists)(json, 'secondsBetweenReports')
-            ? undefined
-            : json['secondsBetweenReports'],
-        adkim: !(0, runtime_1.exists)(json, 'adkim') ? undefined : json['adkim'],
-        aspf: !(0, runtime_1.exists)(json, 'aspf') ? undefined : json['aspf'],
-        fo: !(0, runtime_1.exists)(json, 'fo') ? undefined : json['fo'],
+        'domain': json['domain'],
+        'version': json['version'],
+        'policy': json['policy'],
+        'subdomainPolicy': !(0, runtime_1.exists)(json, 'subdomainPolicy') ? undefined : json['subdomainPolicy'],
+        'reportEmailAddress': !(0, runtime_1.exists)(json, 'reportEmailAddress') ? undefined : json['reportEmailAddress'],
+        'forensicEmailAddress': !(0, runtime_1.exists)(json, 'forensicEmailAddress') ? undefined : json['forensicEmailAddress'],
+        'percentage': !(0, runtime_1.exists)(json, 'percentage') ? undefined : json['percentage'],
+        'reportFormat': !(0, runtime_1.exists)(json, 'reportFormat') ? undefined : json['reportFormat'],
+        'secondsBetweenReports': !(0, runtime_1.exists)(json, 'secondsBetweenReports') ? undefined : json['secondsBetweenReports'],
+        'adkim': !(0, runtime_1.exists)(json, 'adkim') ? undefined : json['adkim'],
+        'aspf': !(0, runtime_1.exists)(json, 'aspf') ? undefined : json['aspf'],
+        'fo': !(0, runtime_1.exists)(json, 'fo') ? undefined : json['fo'],
     };
 }
 exports.GenerateDmarcRecordOptionsFromJSONTyped = GenerateDmarcRecordOptionsFromJSONTyped;
@@ -122,18 +106,18 @@ function GenerateDmarcRecordOptionsToJSON(value) {
         return null;
     }
     return {
-        domain: value.domain,
-        version: value.version,
-        policy: value.policy,
-        subdomainPolicy: value.subdomainPolicy,
-        reportEmailAddress: value.reportEmailAddress,
-        forensicEmailAddress: value.forensicEmailAddress,
-        percentage: value.percentage,
-        reportFormat: value.reportFormat,
-        secondsBetweenReports: value.secondsBetweenReports,
-        adkim: value.adkim,
-        aspf: value.aspf,
-        fo: value.fo,
+        'domain': value.domain,
+        'version': value.version,
+        'policy': value.policy,
+        'subdomainPolicy': value.subdomainPolicy,
+        'reportEmailAddress': value.reportEmailAddress,
+        'forensicEmailAddress': value.forensicEmailAddress,
+        'percentage': value.percentage,
+        'reportFormat': value.reportFormat,
+        'secondsBetweenReports': value.secondsBetweenReports,
+        'adkim': value.adkim,
+        'aspf': value.aspf,
+        'fo': value.fo,
     };
 }
 exports.GenerateDmarcRecordOptionsToJSON = GenerateDmarcRecordOptionsToJSON;

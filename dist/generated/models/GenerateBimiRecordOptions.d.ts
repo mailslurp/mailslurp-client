@@ -41,9 +41,9 @@ export interface GenerateBimiRecordOptions {
     vmcUrl?: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum GenerateBimiRecordOptionsVersionEnum {
     BIMI1 = "BIMI1"
 }

@@ -14,167 +14,164 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface GenerateDmarcRecordResults
  */
 export interface GenerateDmarcRecordResults {
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordResults
-   */
-  name: string;
-  /**
-   * Domain Name Server Record Types
-   * @type {string}
-   * @memberof GenerateDmarcRecordResults
-   */
-  type: GenerateDmarcRecordResultsTypeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateDmarcRecordResults
-   */
-  ttl: number;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateDmarcRecordResults
-   */
-  value: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordResults
+     */
+    name: string;
+    /**
+     * Domain Name Server Record Types
+     * @type {string}
+     * @memberof GenerateDmarcRecordResults
+     */
+    type: GenerateDmarcRecordResultsTypeEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateDmarcRecordResults
+     */
+    ttl: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateDmarcRecordResults
+     */
+    value: string;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum GenerateDmarcRecordResultsTypeEnum {
-  A = 'A',
-  NS = 'NS',
-  MD = 'MD',
-  MF = 'MF',
-  CNAME = 'CNAME',
-  SOA = 'SOA',
-  MB = 'MB',
-  MG = 'MG',
-  MR = 'MR',
-  NULL = 'NULL',
-  WKS = 'WKS',
-  PTR = 'PTR',
-  HINFO = 'HINFO',
-  MINFO = 'MINFO',
-  MX = 'MX',
-  TXT = 'TXT',
-  RP = 'RP',
-  AFSDB = 'AFSDB',
-  X25 = 'X25',
-  ISDN = 'ISDN',
-  RT = 'RT',
-  NSAP = 'NSAP',
-  NSAP_PTR = 'NSAP_PTR',
-  SIG = 'SIG',
-  KEY = 'KEY',
-  PX = 'PX',
-  GPOS = 'GPOS',
-  AAAA = 'AAAA',
-  LOC = 'LOC',
-  NXT = 'NXT',
-  EID = 'EID',
-  NIMLOC = 'NIMLOC',
-  SRV = 'SRV',
-  ATMA = 'ATMA',
-  NAPTR = 'NAPTR',
-  KX = 'KX',
-  CERT = 'CERT',
-  A6 = 'A6',
-  DNAME = 'DNAME',
-  SINK = 'SINK',
-  OPT = 'OPT',
-  APL = 'APL',
-  DS = 'DS',
-  SSHFP = 'SSHFP',
-  IPSECKEY = 'IPSECKEY',
-  RRSIG = 'RRSIG',
-  NSEC = 'NSEC',
-  DNSKEY = 'DNSKEY',
-  DHCID = 'DHCID',
-  NSEC3 = 'NSEC3',
-  NSEC3PARAM = 'NSEC3PARAM',
-  TLSA = 'TLSA',
-  SMIMEA = 'SMIMEA',
-  HIP = 'HIP',
-  NINFO = 'NINFO',
-  RKEY = 'RKEY',
-  TALINK = 'TALINK',
-  CDS = 'CDS',
-  CDNSKEY = 'CDNSKEY',
-  OPENPGPKEY = 'OPENPGPKEY',
-  CSYNC = 'CSYNC',
-  ZONEMD = 'ZONEMD',
-  SVCB = 'SVCB',
-  HTTPS = 'HTTPS',
-  SPF = 'SPF',
-  UINFO = 'UINFO',
-  UID = 'UID',
-  GID = 'GID',
-  UNSPEC = 'UNSPEC',
-  NID = 'NID',
-  L32 = 'L32',
-  L64 = 'L64',
-  LP = 'LP',
-  EUI48 = 'EUI48',
-  EUI64 = 'EUI64',
-  TKEY = 'TKEY',
-  TSIG = 'TSIG',
-  IXFR = 'IXFR',
-  AXFR = 'AXFR',
-  MAILB = 'MAILB',
-  MAILA = 'MAILA',
-  ANY = 'ANY',
-  URI = 'URI',
-  CAA = 'CAA',
-  AVC = 'AVC',
-  DOA = 'DOA',
-  AMTRELAY = 'AMTRELAY',
-  TA = 'TA',
-  DLV = 'DLV',
+    A = 'A',
+    NS = 'NS',
+    MD = 'MD',
+    MF = 'MF',
+    CNAME = 'CNAME',
+    SOA = 'SOA',
+    MB = 'MB',
+    MG = 'MG',
+    MR = 'MR',
+    NULL = 'NULL',
+    WKS = 'WKS',
+    PTR = 'PTR',
+    HINFO = 'HINFO',
+    MINFO = 'MINFO',
+    MX = 'MX',
+    TXT = 'TXT',
+    RP = 'RP',
+    AFSDB = 'AFSDB',
+    X25 = 'X25',
+    ISDN = 'ISDN',
+    RT = 'RT',
+    NSAP = 'NSAP',
+    NSAP_PTR = 'NSAP_PTR',
+    SIG = 'SIG',
+    KEY = 'KEY',
+    PX = 'PX',
+    GPOS = 'GPOS',
+    AAAA = 'AAAA',
+    LOC = 'LOC',
+    NXT = 'NXT',
+    EID = 'EID',
+    NIMLOC = 'NIMLOC',
+    SRV = 'SRV',
+    ATMA = 'ATMA',
+    NAPTR = 'NAPTR',
+    KX = 'KX',
+    CERT = 'CERT',
+    A6 = 'A6',
+    DNAME = 'DNAME',
+    SINK = 'SINK',
+    OPT = 'OPT',
+    APL = 'APL',
+    DS = 'DS',
+    SSHFP = 'SSHFP',
+    IPSECKEY = 'IPSECKEY',
+    RRSIG = 'RRSIG',
+    NSEC = 'NSEC',
+    DNSKEY = 'DNSKEY',
+    DHCID = 'DHCID',
+    NSEC3 = 'NSEC3',
+    NSEC3PARAM = 'NSEC3PARAM',
+    TLSA = 'TLSA',
+    SMIMEA = 'SMIMEA',
+    HIP = 'HIP',
+    NINFO = 'NINFO',
+    RKEY = 'RKEY',
+    TALINK = 'TALINK',
+    CDS = 'CDS',
+    CDNSKEY = 'CDNSKEY',
+    OPENPGPKEY = 'OPENPGPKEY',
+    CSYNC = 'CSYNC',
+    ZONEMD = 'ZONEMD',
+    SVCB = 'SVCB',
+    HTTPS = 'HTTPS',
+    SPF = 'SPF',
+    UINFO = 'UINFO',
+    UID = 'UID',
+    GID = 'GID',
+    UNSPEC = 'UNSPEC',
+    NID = 'NID',
+    L32 = 'L32',
+    L64 = 'L64',
+    LP = 'LP',
+    EUI48 = 'EUI48',
+    EUI64 = 'EUI64',
+    TKEY = 'TKEY',
+    TSIG = 'TSIG',
+    IXFR = 'IXFR',
+    AXFR = 'AXFR',
+    MAILB = 'MAILB',
+    MAILA = 'MAILA',
+    ANY = 'ANY',
+    URI = 'URI',
+    CAA = 'CAA',
+    AVC = 'AVC',
+    DOA = 'DOA',
+    AMTRELAY = 'AMTRELAY',
+    TA = 'TA',
+    DLV = 'DLV'
 }
 
-export function GenerateDmarcRecordResultsFromJSON(
-  json: any
-): GenerateDmarcRecordResults {
-  return GenerateDmarcRecordResultsFromJSONTyped(json, false);
+export function GenerateDmarcRecordResultsFromJSON(json: any): GenerateDmarcRecordResults {
+    return GenerateDmarcRecordResultsFromJSONTyped(json, false);
 }
 
-export function GenerateDmarcRecordResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateDmarcRecordResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    type: json['type'],
-    ttl: json['ttl'],
-    value: json['value'],
-  };
+export function GenerateDmarcRecordResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateDmarcRecordResults {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
+    };
 }
 
-export function GenerateDmarcRecordResultsToJSON(
-  value?: GenerateDmarcRecordResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    type: value.type,
-    ttl: value.ttl,
-    value: value.value,
-  };
+export function GenerateDmarcRecordResultsToJSON(value?: GenerateDmarcRecordResults | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'name': value.name,
+        'type': value.type,
+        'ttl': value.ttl,
+        'value': value.value,
+    };
 }
+
+

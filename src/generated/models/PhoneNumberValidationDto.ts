@@ -14,83 +14,76 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface PhoneNumberValidationDto
  */
 export interface PhoneNumberValidationDto {
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberValidationDto
-   */
-  countryCode?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberValidationDto
-   */
-  countryPrefix?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberValidationDto
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PhoneNumberValidationDto
-   */
-  isValid: boolean;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof PhoneNumberValidationDto
-   */
-  validationErrors?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberValidationDto
+     */
+    countryCode?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberValidationDto
+     */
+    countryPrefix?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberValidationDto
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PhoneNumberValidationDto
+     */
+    isValid: boolean;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof PhoneNumberValidationDto
+     */
+    validationErrors?: Array<string>;
 }
 
-export function PhoneNumberValidationDtoFromJSON(
-  json: any
-): PhoneNumberValidationDto {
-  return PhoneNumberValidationDtoFromJSONTyped(json, false);
+export function PhoneNumberValidationDtoFromJSON(json: any): PhoneNumberValidationDto {
+    return PhoneNumberValidationDtoFromJSONTyped(json, false);
 }
 
-export function PhoneNumberValidationDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PhoneNumberValidationDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    countryCode: !exists(json, 'countryCode') ? undefined : json['countryCode'],
-    countryPrefix: !exists(json, 'countryPrefix')
-      ? undefined
-      : json['countryPrefix'],
-    phoneNumber: json['phoneNumber'],
-    isValid: json['isValid'],
-    validationErrors: !exists(json, 'validationErrors')
-      ? undefined
-      : json['validationErrors'],
-  };
+export function PhoneNumberValidationDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberValidationDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'countryCode': !exists(json, 'countryCode') ? undefined : json['countryCode'],
+        'countryPrefix': !exists(json, 'countryPrefix') ? undefined : json['countryPrefix'],
+        'phoneNumber': json['phoneNumber'],
+        'isValid': json['isValid'],
+        'validationErrors': !exists(json, 'validationErrors') ? undefined : json['validationErrors'],
+    };
 }
 
-export function PhoneNumberValidationDtoToJSON(
-  value?: PhoneNumberValidationDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    countryCode: value.countryCode,
-    countryPrefix: value.countryPrefix,
-    phoneNumber: value.phoneNumber,
-    isValid: value.isValid,
-    validationErrors: value.validationErrors,
-  };
+export function PhoneNumberValidationDtoToJSON(value?: PhoneNumberValidationDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'countryCode': value.countryCode,
+        'countryPrefix': value.countryPrefix,
+        'phoneNumber': value.phoneNumber,
+        'isValid': value.isValid,
+        'validationErrors': value.validationErrors,
+    };
 }
+
+

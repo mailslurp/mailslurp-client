@@ -19,12 +19,12 @@ function WebhookHeaderNameValueFromJSON(json) {
 }
 exports.WebhookHeaderNameValueFromJSON = WebhookHeaderNameValueFromJSON;
 function WebhookHeaderNameValueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        name: json['name'],
-        value: json['value'],
+        'name': json['name'],
+        'value': json['value'],
     };
 }
 exports.WebhookHeaderNameValueFromJSONTyped = WebhookHeaderNameValueFromJSONTyped;
@@ -36,8 +36,8 @@ function WebhookHeaderNameValueToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        value: value.value,
+        'name': value.name,
+        'value': value.value,
     };
 }
 exports.WebhookHeaderNameValueToJSON = WebhookHeaderNameValueToJSON;

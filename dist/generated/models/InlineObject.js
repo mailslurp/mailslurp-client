@@ -19,11 +19,11 @@ function InlineObjectFromJSON(json) {
 }
 exports.InlineObjectFromJSON = InlineObjectFromJSON;
 function InlineObjectFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        file: json['file'],
+        'file': json['file'],
     };
 }
 exports.InlineObjectFromJSONTyped = InlineObjectFromJSONTyped;
@@ -35,7 +35,7 @@ function InlineObjectToJSON(value) {
         return null;
     }
     return {
-        file: value.file,
+        'file': value.file,
     };
 }
 exports.InlineObjectToJSON = InlineObjectToJSON;

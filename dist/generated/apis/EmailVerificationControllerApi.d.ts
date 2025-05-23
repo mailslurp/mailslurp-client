@@ -72,9 +72,9 @@ export declare class EmailVerificationControllerApi extends runtime.BaseAPI {
     validateEmailAddressList(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit): Promise<ValidateEmailAddressListResult>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetValidationRequestsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

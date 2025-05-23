@@ -14,86 +14,87 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface PhonePlanDto
  */
 export interface PhonePlanDto {
-  /**
-   *
-   * @type {string}
-   * @memberof PhonePlanDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhonePlanDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhonePlanDto
-   */
-  phoneCountry: PhonePlanDtoPhoneCountryEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof PhonePlanDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhonePlanDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhonePlanDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhonePlanDto
+     */
+    phoneCountry: PhonePlanDtoPhoneCountryEnum;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PhonePlanDto
+     */
+    createdAt: Date;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum PhonePlanDtoPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
-  CA = 'CA',
-  EE = 'EE',
-  HK = 'HK',
-  PL = 'PL',
-  CH = 'CH',
-  PT = 'PT',
-  NL = 'NL',
-  IL = 'IL',
-  SE = 'SE',
+    US = 'US',
+    GB = 'GB',
+    AU = 'AU',
+    CA = 'CA',
+    EE = 'EE',
+    HK = 'HK',
+    PL = 'PL',
+    CH = 'CH',
+    PT = 'PT',
+    NL = 'NL',
+    IL = 'IL',
+    SE = 'SE'
 }
 
 export function PhonePlanDtoFromJSON(json: any): PhonePlanDto {
-  return PhonePlanDtoFromJSONTyped(json, false);
+    return PhonePlanDtoFromJSONTyped(json, false);
 }
 
-export function PhonePlanDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PhonePlanDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    phoneCountry: json['phoneCountry'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function PhonePlanDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'phoneCountry': json['phoneCountry'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
 export function PhonePlanDtoToJSON(value?: PhonePlanDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    phoneCountry: value.phoneCountry,
-    createdAt: value.createdAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'userId': value.userId,
+        'phoneCountry': value.phoneCountry,
+        'createdAt': (value.createdAt.toISOString()),
+    };
 }
+
+

@@ -65,9 +65,9 @@ export interface WebhookBouncePayload {
     bounceRecipients?: Array<string> | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum WebhookBouncePayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",

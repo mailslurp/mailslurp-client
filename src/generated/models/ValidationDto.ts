@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  HTMLValidationResult,
-  HTMLValidationResultFromJSON,
-  HTMLValidationResultFromJSONTyped,
-  HTMLValidationResultToJSON,
+    HTMLValidationResult,
+    HTMLValidationResultFromJSON,
+    HTMLValidationResultFromJSONTyped,
+    HTMLValidationResultToJSON,
 } from './';
 
 /**
@@ -26,46 +26,47 @@ import {
  * @interface ValidationDto
  */
 export interface ValidationDto {
-  /**
-   * ID of the email validated
-   * @type {string}
-   * @memberof ValidationDto
-   */
-  emailId: string;
-  /**
-   *
-   * @type {HTMLValidationResult}
-   * @memberof ValidationDto
-   */
-  html: HTMLValidationResult;
+    /**
+     * ID of the email validated
+     * @type {string}
+     * @memberof ValidationDto
+     */
+    emailId: string;
+    /**
+     * 
+     * @type {HTMLValidationResult}
+     * @memberof ValidationDto
+     */
+    html: HTMLValidationResult;
 }
 
 export function ValidationDtoFromJSON(json: any): ValidationDto {
-  return ValidationDtoFromJSONTyped(json, false);
+    return ValidationDtoFromJSONTyped(json, false);
 }
 
-export function ValidationDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ValidationDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailId: json['emailId'],
-    html: HTMLValidationResultFromJSON(json['html']),
-  };
+export function ValidationDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'emailId': json['emailId'],
+        'html': HTMLValidationResultFromJSON(json['html']),
+    };
 }
 
 export function ValidationDtoToJSON(value?: ValidationDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailId: value.emailId,
-    html: HTMLValidationResultToJSON(value.html),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'emailId': value.emailId,
+        'html': HTMLValidationResultToJSON(value.html),
+    };
 }
+
+

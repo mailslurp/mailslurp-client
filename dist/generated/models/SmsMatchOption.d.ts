@@ -35,17 +35,16 @@ export interface SmsMatchOption {
     value: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum SmsMatchOptionFieldEnum {
     BODY = "BODY",
     FROM = "FROM"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum SmsMatchOptionShouldEnum {
     MATCH = "MATCH",
     CONTAIN = "CONTAIN",

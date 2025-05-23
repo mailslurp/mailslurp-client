@@ -156,9 +156,9 @@ export declare class AttachmentControllerApi extends runtime.BaseAPI {
     uploadMultipartForm(requestParameters: UploadMultipartFormRequest, initOverrides?: RequestInit): Promise<Array<string>>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAttachmentsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

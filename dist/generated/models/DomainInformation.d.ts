@@ -35,9 +35,9 @@ export interface DomainInformation {
     domainType: DomainInformationDomainTypeEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum DomainInformationDomainTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_DOMAIN = "SMTP_DOMAIN"

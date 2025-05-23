@@ -89,9 +89,9 @@ export interface WebhookProjection {
     id: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum WebhookProjectionEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -104,11 +104,10 @@ export declare enum WebhookProjectionEventNameEnum {
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS",
     NEW_GUEST_USER = "NEW_GUEST_USER"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum WebhookProjectionHealthStatusEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"

@@ -41,9 +41,9 @@ export interface PhonePlanDto {
     createdAt: Date;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum PhonePlanDtoPhoneCountryEnum {
     US = "US",
     GB = "GB",

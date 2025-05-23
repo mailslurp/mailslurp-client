@@ -19,58 +19,55 @@ import { exists, mapValues } from '../runtime';
  * @interface SendSMTPEnvelopeOptions
  */
 export interface SendSMTPEnvelopeOptions {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SendSMTPEnvelopeOptions
-   */
-  rcptTo: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof SendSMTPEnvelopeOptions
-   */
-  mailFrom: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendSMTPEnvelopeOptions
-   */
-  data: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SendSMTPEnvelopeOptions
+     */
+    rcptTo: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendSMTPEnvelopeOptions
+     */
+    mailFrom: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendSMTPEnvelopeOptions
+     */
+    data: string;
 }
 
-export function SendSMTPEnvelopeOptionsFromJSON(
-  json: any
-): SendSMTPEnvelopeOptions {
-  return SendSMTPEnvelopeOptionsFromJSONTyped(json, false);
+export function SendSMTPEnvelopeOptionsFromJSON(json: any): SendSMTPEnvelopeOptions {
+    return SendSMTPEnvelopeOptionsFromJSONTyped(json, false);
 }
 
-export function SendSMTPEnvelopeOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SendSMTPEnvelopeOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    rcptTo: json['rcptTo'],
-    mailFrom: json['mailFrom'],
-    data: json['data'],
-  };
+export function SendSMTPEnvelopeOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendSMTPEnvelopeOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'rcptTo': json['rcptTo'],
+        'mailFrom': json['mailFrom'],
+        'data': json['data'],
+    };
 }
 
-export function SendSMTPEnvelopeOptionsToJSON(
-  value?: SendSMTPEnvelopeOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    rcptTo: value.rcptTo,
-    mailFrom: value.mailFrom,
-    data: value.data,
-  };
+export function SendSMTPEnvelopeOptionsToJSON(value?: SendSMTPEnvelopeOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'rcptTo': value.rcptTo,
+        'mailFrom': value.mailFrom,
+        'data': value.data,
+    };
 }
+
+

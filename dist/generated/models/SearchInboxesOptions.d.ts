@@ -83,25 +83,23 @@ export interface SearchInboxesOptions {
     domainId?: string | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum SearchInboxesOptionsSortDirectionEnum {
     ASC = "ASC",
     DESC = "DESC"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum SearchInboxesOptionsInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum SearchInboxesOptionsInboxFunctionEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",

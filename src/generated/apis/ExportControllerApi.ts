@@ -12,248 +12,189 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  ExportLink,
-  ExportLinkFromJSON,
-  ExportLinkToJSON,
-  ExportOptions,
-  ExportOptionsFromJSON,
-  ExportOptionsToJSON,
+    ExportLink,
+    ExportLinkFromJSON,
+    ExportLinkToJSON,
+    ExportOptions,
+    ExportOptionsFromJSON,
+    ExportOptionsToJSON,
 } from '../models';
 
 export interface ExportEntitiesRequest {
-  exportType: ExportEntitiesExportTypeEnum;
-  apiKey: string;
-  outputFormat: ExportEntitiesOutputFormatEnum;
-  filter?: string;
-  listSeparatorToken?: string;
-  excludePreviouslyExported?: boolean;
-  createdEarliestTime?: Date;
-  createdOldestTime?: Date;
+    exportType: ExportEntitiesExportTypeEnum;
+    apiKey: string;
+    outputFormat: ExportEntitiesOutputFormatEnum;
+    filter?: string;
+    listSeparatorToken?: string;
+    excludePreviouslyExported?: boolean;
+    createdEarliestTime?: Date;
+    createdOldestTime?: Date;
 }
 
 export interface GetExportLinkRequest {
-  exportType: GetExportLinkExportTypeEnum;
-  exportOptions: ExportOptions;
-  apiKey?: string;
+    exportType: GetExportLinkExportTypeEnum;
+    exportOptions: ExportOptions;
+    apiKey?: string;
 }
 
 /**
- *
+ * 
  */
 export class ExportControllerApi extends runtime.BaseAPI {
-  /**
-   * Export inboxes link callable via browser
-   */
-  async exportEntitiesRaw(
-    requestParameters: ExportEntitiesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<string>> {
-    if (
-      requestParameters.exportType === null ||
-      requestParameters.exportType === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'exportType',
-        'Required parameter requestParameters.exportType was null or undefined when calling exportEntities.'
-      );
+
+    /**
+     * Export inboxes link callable via browser
+     */
+    async exportEntitiesRaw(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>> {
+        if (requestParameters.exportType === null || requestParameters.exportType === undefined) {
+            throw new runtime.RequiredError('exportType','Required parameter requestParameters.exportType was null or undefined when calling exportEntities.');
+        }
+
+        if (requestParameters.apiKey === null || requestParameters.apiKey === undefined) {
+            throw new runtime.RequiredError('apiKey','Required parameter requestParameters.apiKey was null or undefined when calling exportEntities.');
+        }
+
+        if (requestParameters.outputFormat === null || requestParameters.outputFormat === undefined) {
+            throw new runtime.RequiredError('outputFormat','Required parameter requestParameters.outputFormat was null or undefined when calling exportEntities.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.exportType !== undefined) {
+            queryParameters['exportType'] = requestParameters.exportType;
+        }
+
+        if (requestParameters.apiKey !== undefined) {
+            queryParameters['apiKey'] = requestParameters.apiKey;
+        }
+
+        if (requestParameters.outputFormat !== undefined) {
+            queryParameters['outputFormat'] = requestParameters.outputFormat;
+        }
+
+        if (requestParameters.filter !== undefined) {
+            queryParameters['filter'] = requestParameters.filter;
+        }
+
+        if (requestParameters.listSeparatorToken !== undefined) {
+            queryParameters['listSeparatorToken'] = requestParameters.listSeparatorToken;
+        }
+
+        if (requestParameters.excludePreviouslyExported !== undefined) {
+            queryParameters['excludePreviouslyExported'] = requestParameters.excludePreviouslyExported;
+        }
+
+        if (requestParameters.createdEarliestTime !== undefined) {
+            queryParameters['createdEarliestTime'] = (requestParameters.createdEarliestTime as any).toISOString();
+        }
+
+        if (requestParameters.createdOldestTime !== undefined) {
+            queryParameters['createdOldestTime'] = (requestParameters.createdOldestTime as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/export`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.TextApiResponse(response) as any;
     }
 
-    if (
-      requestParameters.apiKey === null ||
-      requestParameters.apiKey === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'apiKey',
-        'Required parameter requestParameters.apiKey was null or undefined when calling exportEntities.'
-      );
+    /**
+     * Export inboxes link callable via browser
+     */
+    async exportEntities(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<string> {
+        const response = await this.exportEntitiesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (
-      requestParameters.outputFormat === null ||
-      requestParameters.outputFormat === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'outputFormat',
-        'Required parameter requestParameters.outputFormat was null or undefined when calling exportEntities.'
-      );
+    /**
+     * Get export link
+     */
+    async getExportLinkRaw(requestParameters: GetExportLinkRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ExportLink>> {
+        if (requestParameters.exportType === null || requestParameters.exportType === undefined) {
+            throw new runtime.RequiredError('exportType','Required parameter requestParameters.exportType was null or undefined when calling getExportLink.');
+        }
+
+        if (requestParameters.exportOptions === null || requestParameters.exportOptions === undefined) {
+            throw new runtime.RequiredError('exportOptions','Required parameter requestParameters.exportOptions was null or undefined when calling getExportLink.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.exportType !== undefined) {
+            queryParameters['exportType'] = requestParameters.exportType;
+        }
+
+        if (requestParameters.apiKey !== undefined) {
+            queryParameters['apiKey'] = requestParameters.apiKey;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/export`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ExportOptionsToJSON(requestParameters.exportOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ExportLinkFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    if (requestParameters.exportType !== undefined) {
-      queryParameters['exportType'] = requestParameters.exportType;
+    /**
+     * Get export link
+     */
+    async getExportLink(requestParameters: GetExportLinkRequest, initOverrides?: RequestInit): Promise<ExportLink> {
+        const response = await this.getExportLinkRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.apiKey !== undefined) {
-      queryParameters['apiKey'] = requestParameters.apiKey;
-    }
-
-    if (requestParameters.outputFormat !== undefined) {
-      queryParameters['outputFormat'] = requestParameters.outputFormat;
-    }
-
-    if (requestParameters.filter !== undefined) {
-      queryParameters['filter'] = requestParameters.filter;
-    }
-
-    if (requestParameters.listSeparatorToken !== undefined) {
-      queryParameters['listSeparatorToken'] =
-        requestParameters.listSeparatorToken;
-    }
-
-    if (requestParameters.excludePreviouslyExported !== undefined) {
-      queryParameters['excludePreviouslyExported'] =
-        requestParameters.excludePreviouslyExported;
-    }
-
-    if (requestParameters.createdEarliestTime !== undefined) {
-      queryParameters['createdEarliestTime'] = (
-        requestParameters.createdEarliestTime as any
-      ).toISOString();
-    }
-
-    if (requestParameters.createdOldestTime !== undefined) {
-      queryParameters['createdOldestTime'] = (
-        requestParameters.createdOldestTime as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/export`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.TextApiResponse(response) as any;
-  }
-
-  /**
-   * Export inboxes link callable via browser
-   */
-  async exportEntities(
-    requestParameters: ExportEntitiesRequest,
-    initOverrides?: RequestInit
-  ): Promise<string> {
-    const response = await this.exportEntitiesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get export link
-   */
-  async getExportLinkRaw(
-    requestParameters: GetExportLinkRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ExportLink>> {
-    if (
-      requestParameters.exportType === null ||
-      requestParameters.exportType === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'exportType',
-        'Required parameter requestParameters.exportType was null or undefined when calling getExportLink.'
-      );
-    }
-
-    if (
-      requestParameters.exportOptions === null ||
-      requestParameters.exportOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'exportOptions',
-        'Required parameter requestParameters.exportOptions was null or undefined when calling getExportLink.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.exportType !== undefined) {
-      queryParameters['exportType'] = requestParameters.exportType;
-    }
-
-    if (requestParameters.apiKey !== undefined) {
-      queryParameters['apiKey'] = requestParameters.apiKey;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/export`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: ExportOptionsToJSON(requestParameters.exportOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ExportLinkFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get export link
-   */
-  async getExportLink(
-    requestParameters: GetExportLinkRequest,
-    initOverrides?: RequestInit
-  ): Promise<ExportLink> {
-    const response = await this.getExportLinkRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum ExportEntitiesExportTypeEnum {
-  INBOXES = 'INBOXES',
-  CONTACTS = 'CONTACTS',
-  ATTACHMENTS = 'ATTACHMENTS',
-  EMAILS = 'EMAILS',
+    INBOXES = 'INBOXES',
+    CONTACTS = 'CONTACTS',
+    ATTACHMENTS = 'ATTACHMENTS',
+    EMAILS = 'EMAILS'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum ExportEntitiesOutputFormatEnum {
-  DEFAULT = 'CSV_DEFAULT',
-  EXCEL = 'CSV_EXCEL',
+    DEFAULT = 'CSV_DEFAULT',
+    EXCEL = 'CSV_EXCEL'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetExportLinkExportTypeEnum {
-  INBOXES = 'INBOXES',
-  CONTACTS = 'CONTACTS',
-  ATTACHMENTS = 'ATTACHMENTS',
-  EMAILS = 'EMAILS',
+    INBOXES = 'INBOXES',
+    CONTACTS = 'CONTACTS',
+    ATTACHMENTS = 'ATTACHMENTS',
+    EMAILS = 'EMAILS'
 }

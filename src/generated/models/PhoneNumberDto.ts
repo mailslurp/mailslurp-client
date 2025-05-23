@@ -14,154 +14,151 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface PhoneNumberDto
  */
 export interface PhoneNumberDto {
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  description?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  complianceAddress?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  emergencyAddress?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  phoneCountry: PhoneNumberDtoPhoneCountryEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberDto
-   */
-  phonePlan: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof PhoneNumberDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof PhoneNumberDto
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PhoneNumberDto
-   */
-  favourite: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    complianceAddress?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    emergencyAddress?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    phoneCountry: PhoneNumberDtoPhoneCountryEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    phonePlan: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PhoneNumberDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PhoneNumberDto
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PhoneNumberDto
+     */
+    favourite: boolean;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum PhoneNumberDtoPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
-  CA = 'CA',
-  EE = 'EE',
-  HK = 'HK',
-  PL = 'PL',
-  CH = 'CH',
-  PT = 'PT',
-  NL = 'NL',
-  IL = 'IL',
-  SE = 'SE',
+    US = 'US',
+    GB = 'GB',
+    AU = 'AU',
+    CA = 'CA',
+    EE = 'EE',
+    HK = 'HK',
+    PL = 'PL',
+    CH = 'CH',
+    PT = 'PT',
+    NL = 'NL',
+    IL = 'IL',
+    SE = 'SE'
 }
 
 export function PhoneNumberDtoFromJSON(json: any): PhoneNumberDto {
-  return PhoneNumberDtoFromJSONTyped(json, false);
+    return PhoneNumberDtoFromJSONTyped(json, false);
 }
 
-export function PhoneNumberDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PhoneNumberDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-    userId: json['userId'],
-    complianceAddress: !exists(json, 'complianceAddress')
-      ? undefined
-      : json['complianceAddress'],
-    emergencyAddress: !exists(json, 'emergencyAddress')
-      ? undefined
-      : json['emergencyAddress'],
-    phoneNumber: json['phoneNumber'],
-    phoneCountry: json['phoneCountry'],
-    phonePlan: json['phonePlan'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    favourite: json['favourite'],
-  };
+export function PhoneNumberDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'description': !exists(json, 'description') ? undefined : json['description'],
+        'userId': json['userId'],
+        'complianceAddress': !exists(json, 'complianceAddress') ? undefined : json['complianceAddress'],
+        'emergencyAddress': !exists(json, 'emergencyAddress') ? undefined : json['emergencyAddress'],
+        'phoneNumber': json['phoneNumber'],
+        'phoneCountry': json['phoneCountry'],
+        'phonePlan': json['phonePlan'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'favourite': json['favourite'],
+    };
 }
 
 export function PhoneNumberDtoToJSON(value?: PhoneNumberDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    name: value.name,
-    description: value.description,
-    userId: value.userId,
-    complianceAddress: value.complianceAddress,
-    emergencyAddress: value.emergencyAddress,
-    phoneNumber: value.phoneNumber,
-    phoneCountry: value.phoneCountry,
-    phonePlan: value.phonePlan,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    favourite: value.favourite,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'name': value.name,
+        'description': value.description,
+        'userId': value.userId,
+        'complianceAddress': value.complianceAddress,
+        'emergencyAddress': value.emergencyAddress,
+        'phoneNumber': value.phoneNumber,
+        'phoneCountry': value.phoneCountry,
+        'phonePlan': value.phonePlan,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'favourite': value.favourite,
+    };
 }
+
+

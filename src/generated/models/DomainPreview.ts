@@ -19,97 +19,96 @@ import { exists, mapValues } from '../runtime';
  * @interface DomainPreview
  */
 export interface DomainPreview {
-  /**
-   *
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  domain: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  catchAllInboxId?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof DomainPreview
-   */
-  createdAt: Date;
-  /**
-   * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
-   * @type {string}
-   * @memberof DomainPreview
-   */
-  domainType: DomainPreviewDomainTypeEnum;
-  /**
-   *
-   * @type {boolean}
-   * @memberof DomainPreview
-   */
-  isVerified: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof DomainPreview
-   */
-  hasMissingRecords: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    domain: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    catchAllInboxId?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof DomainPreview
+     */
+    createdAt: Date;
+    /**
+     * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+     * @type {string}
+     * @memberof DomainPreview
+     */
+    domainType: DomainPreviewDomainTypeEnum;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DomainPreview
+     */
+    isVerified: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DomainPreview
+     */
+    hasMissingRecords: boolean;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum DomainPreviewDomainTypeEnum {
-  HTTP_INBOX = 'HTTP_INBOX',
-  SMTP_DOMAIN = 'SMTP_DOMAIN',
+    HTTP_INBOX = 'HTTP_INBOX',
+    SMTP_DOMAIN = 'SMTP_DOMAIN'
 }
 
 export function DomainPreviewFromJSON(json: any): DomainPreview {
-  return DomainPreviewFromJSONTyped(json, false);
+    return DomainPreviewFromJSONTyped(json, false);
 }
 
-export function DomainPreviewFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DomainPreview {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    domain: json['domain'],
-    catchAllInboxId: !exists(json, 'catchAllInboxId')
-      ? undefined
-      : json['catchAllInboxId'],
-    createdAt: new Date(json['createdAt']),
-    domainType: json['domainType'],
-    isVerified: json['isVerified'],
-    hasMissingRecords: json['hasMissingRecords'],
-  };
+export function DomainPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainPreview {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'domain': json['domain'],
+        'catchAllInboxId': !exists(json, 'catchAllInboxId') ? undefined : json['catchAllInboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'domainType': json['domainType'],
+        'isVerified': json['isVerified'],
+        'hasMissingRecords': json['hasMissingRecords'],
+    };
 }
 
 export function DomainPreviewToJSON(value?: DomainPreview | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    domain: value.domain,
-    catchAllInboxId: value.catchAllInboxId,
-    createdAt: value.createdAt.toISOString(),
-    domainType: value.domainType,
-    isVerified: value.isVerified,
-    hasMissingRecords: value.hasMissingRecords,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'domain': value.domain,
+        'catchAllInboxId': value.catchAllInboxId,
+        'createdAt': (value.createdAt.toISOString()),
+        'domainType': value.domainType,
+        'isVerified': value.isVerified,
+        'hasMissingRecords': value.hasMissingRecords,
+    };
 }
+
+

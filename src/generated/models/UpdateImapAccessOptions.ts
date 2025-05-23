@@ -19,54 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface UpdateImapAccessOptions
  */
 export interface UpdateImapAccessOptions {
-  /**
-   * IMAP username for login
-   * @type {string}
-   * @memberof UpdateImapAccessOptions
-   */
-  imapUsername?: string | null;
-  /**
-   * IMAP password for login
-   * @type {string}
-   * @memberof UpdateImapAccessOptions
-   */
-  imapPassword?: string | null;
+    /**
+     * IMAP username for login
+     * @type {string}
+     * @memberof UpdateImapAccessOptions
+     */
+    imapUsername?: string | null;
+    /**
+     * IMAP password for login
+     * @type {string}
+     * @memberof UpdateImapAccessOptions
+     */
+    imapPassword?: string | null;
 }
 
-export function UpdateImapAccessOptionsFromJSON(
-  json: any
-): UpdateImapAccessOptions {
-  return UpdateImapAccessOptionsFromJSONTyped(json, false);
+export function UpdateImapAccessOptionsFromJSON(json: any): UpdateImapAccessOptions {
+    return UpdateImapAccessOptionsFromJSONTyped(json, false);
 }
 
-export function UpdateImapAccessOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UpdateImapAccessOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    imapUsername: !exists(json, 'imapUsername')
-      ? undefined
-      : json['imapUsername'],
-    imapPassword: !exists(json, 'imapPassword')
-      ? undefined
-      : json['imapPassword'],
-  };
+export function UpdateImapAccessOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateImapAccessOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'imapUsername': !exists(json, 'imapUsername') ? undefined : json['imapUsername'],
+        'imapPassword': !exists(json, 'imapPassword') ? undefined : json['imapPassword'],
+    };
 }
 
-export function UpdateImapAccessOptionsToJSON(
-  value?: UpdateImapAccessOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    imapUsername: value.imapUsername,
-    imapPassword: value.imapPassword,
-  };
+export function UpdateImapAccessOptionsToJSON(value?: UpdateImapAccessOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'imapUsername': value.imapUsername,
+        'imapPassword': value.imapPassword,
+    };
 }
+
+

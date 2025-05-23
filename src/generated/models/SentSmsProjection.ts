@@ -19,94 +19,95 @@ import { exists, mapValues } from '../runtime';
  * @interface SentSmsProjection
  */
 export interface SentSmsProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentSmsProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  fromNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  toNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  replyToId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  body: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    body: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SentSmsProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    fromNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    toNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    replyToId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    id: string;
 }
 
 export function SentSmsProjectionFromJSON(json: any): SentSmsProjection {
-  return SentSmsProjectionFromJSONTyped(json, false);
+    return SentSmsProjectionFromJSONTyped(json, false);
 }
 
-export function SentSmsProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SentSmsProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json['userId'],
-    createdAt: new Date(json['createdAt']),
-    phoneNumber: json['phoneNumber'],
-    fromNumber: json['fromNumber'],
-    toNumber: json['toNumber'],
-    replyToId: !exists(json, 'replyToId') ? undefined : json['replyToId'],
-    body: json['body'],
-    id: json['id'],
-  };
+export function SentSmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentSmsProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'body': json['body'],
+        'userId': json['userId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'toNumber': json['toNumber'],
+        'replyToId': !exists(json, 'replyToId') ? undefined : json['replyToId'],
+        'id': json['id'],
+    };
 }
 
 export function SentSmsProjectionToJSON(value?: SentSmsProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
-    phoneNumber: value.phoneNumber,
-    fromNumber: value.fromNumber,
-    toNumber: value.toNumber,
-    replyToId: value.replyToId,
-    body: value.body,
-    id: value.id,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'body': value.body,
+        'userId': value.userId,
+        'createdAt': (value.createdAt.toISOString()),
+        'phoneNumber': value.phoneNumber,
+        'fromNumber': value.fromNumber,
+        'toNumber': value.toNumber,
+        'replyToId': value.replyToId,
+        'id': value.id,
+    };
 }
+
+

@@ -20,23 +20,19 @@ function CreateContactOptionsFromJSON(json) {
 }
 exports.CreateContactOptionsFromJSON = CreateContactOptionsFromJSON;
 function CreateContactOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
-        emailAddresses: !(0, runtime_1.exists)(json, 'emailAddresses')
-            ? undefined
-            : json['emailAddresses'],
-        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
-        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
-        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
-        verifyEmailAddresses: !(0, runtime_1.exists)(json, 'verifyEmailAddresses')
-            ? undefined
-            : json['verifyEmailAddresses'],
+        'firstName': !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
+        'lastName': !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
+        'company': !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
+        'emailAddresses': !(0, runtime_1.exists)(json, 'emailAddresses') ? undefined : json['emailAddresses'],
+        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        'metaData': !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
+        'optOut': !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
+        'groupId': !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        'verifyEmailAddresses': !(0, runtime_1.exists)(json, 'verifyEmailAddresses') ? undefined : json['verifyEmailAddresses'],
     };
 }
 exports.CreateContactOptionsFromJSONTyped = CreateContactOptionsFromJSONTyped;
@@ -48,15 +44,15 @@ function CreateContactOptionsToJSON(value) {
         return null;
     }
     return {
-        firstName: value.firstName,
-        lastName: value.lastName,
-        company: value.company,
-        emailAddresses: value.emailAddresses,
-        tags: value.tags,
-        metaData: value.metaData,
-        optOut: value.optOut,
-        groupId: value.groupId,
-        verifyEmailAddresses: value.verifyEmailAddresses,
+        'firstName': value.firstName,
+        'lastName': value.lastName,
+        'company': value.company,
+        'emailAddresses': value.emailAddresses,
+        'tags': value.tags,
+        'metaData': value.metaData,
+        'optOut': value.optOut,
+        'groupId': value.groupId,
+        'verifyEmailAddresses': value.verifyEmailAddresses,
     };
 }
 exports.CreateContactOptionsToJSON = CreateContactOptionsToJSON;

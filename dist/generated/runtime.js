@@ -112,10 +112,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.canConsumeForm = exports.mapValues = exports.querystring = exports.exists = exports.Configuration = exports.COLLECTION_FORMATS = exports.RequiredError = exports.BaseAPI = exports.BASE_PATH = void 0;
-exports.BASE_PATH = 'https://api.mailslurp.com'.replace(/\/+$/, '');
-var isBlob = function (value) {
-    return typeof Blob !== 'undefined' && value instanceof Blob;
-};
+exports.BASE_PATH = "https://api.mailslurp.com".replace(/\/+$/, "");
+var isBlob = function (value) { return typeof Blob !== 'undefined' && value instanceof Blob; };
 /**
  * This is the base class for all generated API classes.
  */
@@ -142,8 +140,7 @@ var BaseAPI = /** @class */ (function () {
                         if (!middleware.pre) return [3 /*break*/, 4];
                         return [4 /*yield*/, middleware.pre(__assign({ fetch: this.fetchApi }, fetchParams))];
                     case 3:
-                        fetchParams =
-                            (_g.sent()) || fetchParams;
+                        fetchParams = (_g.sent()) || fetchParams;
                         _g.label = 4;
                     case 4:
                         _b = _a.next();
@@ -178,8 +175,7 @@ var BaseAPI = /** @class */ (function () {
                                 response: response.clone(),
                             })];
                     case 12:
-                        response =
-                            (_g.sent()) || response;
+                        response = (_g.sent()) || response;
                         _g.label = 13;
                     case 13:
                         _d = _c.next();
@@ -247,16 +243,13 @@ var BaseAPI = /** @class */ (function () {
     };
     BaseAPI.prototype.createFetchParams = function (context, initOverrides) {
         var url = this.configuration.basePath + context.path;
-        if (context.query !== undefined &&
-            Object.keys(context.query).length !== 0) {
+        if (context.query !== undefined && Object.keys(context.query).length !== 0) {
             // only add the querystring to the URL if there are query parameters.
             // this is done to avoid urls ending with a "?" character which buggy webservers
             // do not handle correctly sometimes.
             url += '?' + this.configuration.queryParamsStringify(context.query);
         }
-        var body = (typeof FormData !== 'undefined' && context.body instanceof FormData) ||
-            context.body instanceof URLSearchParams ||
-            isBlob(context.body)
+        var body = ((typeof FormData !== "undefined" && context.body instanceof FormData) || context.body instanceof URLSearchParams || isBlob(context.body))
             ? context.body
             : JSON.stringify(context.body);
         var headers = Object.assign({}, this.configuration.headers, context.headers);
@@ -276,22 +269,23 @@ var BaseAPI = /** @class */ (function () {
     return BaseAPI;
 }());
 exports.BaseAPI = BaseAPI;
+;
 var RequiredError = /** @class */ (function (_super) {
     __extends(RequiredError, _super);
     function RequiredError(field, msg) {
         var _this = _super.call(this, msg) || this;
         _this.field = field;
-        _this.name = 'RequiredError';
+        _this.name = "RequiredError";
         return _this;
     }
     return RequiredError;
 }(Error));
 exports.RequiredError = RequiredError;
 exports.COLLECTION_FORMATS = {
-    csv: ',',
-    ssv: ' ',
-    tsv: '\t',
-    pipes: '|',
+    csv: ",",
+    ssv: " ",
+    tsv: "\t",
+    pipes: "|",
 };
 var Configuration = /** @class */ (function () {
     function Configuration(configuration) {
@@ -300,9 +294,7 @@ var Configuration = /** @class */ (function () {
     }
     Object.defineProperty(Configuration.prototype, "basePath", {
         get: function () {
-            return this.configuration.basePath != null
-                ? this.configuration.basePath
-                : exports.BASE_PATH;
+            return this.configuration.basePath != null ? this.configuration.basePath : exports.BASE_PATH;
         },
         enumerable: false,
         configurable: true
@@ -358,11 +350,9 @@ var Configuration = /** @class */ (function () {
             var _this = this;
             var accessToken = this.configuration.accessToken;
             if (accessToken) {
-                return typeof accessToken === 'function'
-                    ? accessToken
-                    : function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
-                        return [2 /*return*/, accessToken];
-                    }); }); };
+                return typeof accessToken === 'function' ? accessToken : function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
+                    return [2 /*return*/, accessToken];
+                }); }); };
             }
             return undefined;
         },
@@ -398,8 +388,7 @@ function querystring(params, prefix) {
         var fullKey = prefix + (prefix.length ? "[".concat(key, "]") : key);
         var value = params[key];
         if (value instanceof Array) {
-            var multiValue = value
-                .map(function (singleValue) { return encodeURIComponent(String(singleValue)); })
+            var multiValue = value.map(function (singleValue) { return encodeURIComponent(String(singleValue)); })
                 .join("&".concat(encodeURIComponent(fullKey), "="));
             return "".concat(encodeURIComponent(fullKey), "=").concat(multiValue);
         }
@@ -492,6 +481,7 @@ var BlobApiResponse = /** @class */ (function () {
             });
         });
     };
+    ;
     return BlobApiResponse;
 }());
 exports.BlobApiResponse = BlobApiResponse;
@@ -509,6 +499,7 @@ var TextApiResponse = /** @class */ (function () {
             });
         });
     };
+    ;
     return TextApiResponse;
 }());
 exports.TextApiResponse = TextApiResponse;

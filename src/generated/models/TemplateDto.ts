@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  TemplateVariable,
-  TemplateVariableFromJSON,
-  TemplateVariableFromJSONTyped,
-  TemplateVariableToJSON,
+    TemplateVariable,
+    TemplateVariableFromJSON,
+    TemplateVariableFromJSONTyped,
+    TemplateVariableToJSON,
 } from './';
 
 /**
@@ -26,70 +26,71 @@ import {
  * @interface TemplateDto
  */
 export interface TemplateDto {
-  /**
-   * ID of template
-   * @type {string}
-   * @memberof TemplateDto
-   */
-  id: string;
-  /**
-   * Template name
-   * @type {string}
-   * @memberof TemplateDto
-   */
-  name: string;
-  /**
-   * Variables available in template that can be replaced with values
-   * @type {Array<TemplateVariable>}
-   * @memberof TemplateDto
-   */
-  variables: Array<TemplateVariable>;
-  /**
-   * Content of the template
-   * @type {string}
-   * @memberof TemplateDto
-   */
-  content: string;
-  /**
-   * Created at time
-   * @type {Date}
-   * @memberof TemplateDto
-   */
-  createdAt: Date;
+    /**
+     * ID of template
+     * @type {string}
+     * @memberof TemplateDto
+     */
+    id: string;
+    /**
+     * Template name
+     * @type {string}
+     * @memberof TemplateDto
+     */
+    name: string;
+    /**
+     * Variables available in template that can be replaced with values
+     * @type {Array<TemplateVariable>}
+     * @memberof TemplateDto
+     */
+    variables: Array<TemplateVariable>;
+    /**
+     * Content of the template
+     * @type {string}
+     * @memberof TemplateDto
+     */
+    content: string;
+    /**
+     * Created at time
+     * @type {Date}
+     * @memberof TemplateDto
+     */
+    createdAt: Date;
 }
 
 export function TemplateDtoFromJSON(json: any): TemplateDto {
-  return TemplateDtoFromJSONTyped(json, false);
+    return TemplateDtoFromJSONTyped(json, false);
 }
 
-export function TemplateDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TemplateDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    name: json['name'],
-    variables: (json['variables'] as Array<any>).map(TemplateVariableFromJSON),
-    content: json['content'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function TemplateDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'name': json['name'],
+        'variables': ((json['variables'] as Array<any>).map(TemplateVariableFromJSON)),
+        'content': json['content'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
 export function TemplateDtoToJSON(value?: TemplateDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    name: value.name,
-    variables: (value.variables as Array<any>).map(TemplateVariableToJSON),
-    content: value.content,
-    createdAt: value.createdAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'name': value.name,
+        'variables': ((value.variables as Array<any>).map(TemplateVariableToJSON)),
+        'content': value.content,
+        'createdAt': (value.createdAt.toISOString()),
+    };
 }
+
+

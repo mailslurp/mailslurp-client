@@ -14,77 +14,76 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ImapEmailProjection
  */
 export interface ImapEmailProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof ImapEmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ImapEmailProjection
-   */
-  read?: boolean | null;
-  /**
-   *
-   * @type {number}
-   * @memberof ImapEmailProjection
-   */
-  uid: number;
-  /**
-   *
-   * @type {number}
-   * @memberof ImapEmailProjection
-   */
-  seqNum: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ImapEmailProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ImapEmailProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ImapEmailProjection
+     */
+    read?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ImapEmailProjection
+     */
+    uid: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ImapEmailProjection
+     */
+    seqNum: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImapEmailProjection
+     */
+    id: string;
 }
 
 export function ImapEmailProjectionFromJSON(json: any): ImapEmailProjection {
-  return ImapEmailProjectionFromJSONTyped(json, false);
+    return ImapEmailProjectionFromJSONTyped(json, false);
 }
 
-export function ImapEmailProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapEmailProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    read: !exists(json, 'read') ? undefined : json['read'],
-    uid: json['uid'],
-    seqNum: json['seqNum'],
-    id: json['id'],
-  };
+export function ImapEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapEmailProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'read': !exists(json, 'read') ? undefined : json['read'],
+        'uid': json['uid'],
+        'seqNum': json['seqNum'],
+        'id': json['id'],
+    };
 }
 
-export function ImapEmailProjectionToJSON(
-  value?: ImapEmailProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    read: value.read,
-    uid: value.uid,
-    seqNum: value.seqNum,
-    id: value.id,
-  };
+export function ImapEmailProjectionToJSON(value?: ImapEmailProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'createdAt': (value.createdAt.toISOString()),
+        'read': value.read,
+        'uid': value.uid,
+        'seqNum': value.seqNum,
+        'id': value.id,
+    };
 }
+
+

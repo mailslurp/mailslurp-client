@@ -19,11 +19,11 @@ function LookupMtaStsDomainOptionsFromJSON(json) {
 }
 exports.LookupMtaStsDomainOptionsFromJSON = LookupMtaStsDomainOptionsFromJSON;
 function LookupMtaStsDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        host: json['host'],
+        'host': json['host'],
     };
 }
 exports.LookupMtaStsDomainOptionsFromJSONTyped = LookupMtaStsDomainOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function LookupMtaStsDomainOptionsToJSON(value) {
         return null;
     }
     return {
-        host: value.host,
+        'host': value.host,
     };
 }
 exports.LookupMtaStsDomainOptionsToJSON = LookupMtaStsDomainOptionsToJSON;

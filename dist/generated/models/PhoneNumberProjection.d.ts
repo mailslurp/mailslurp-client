@@ -53,9 +53,9 @@ export interface PhoneNumberProjection {
     id: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum PhoneNumberProjectionPhoneCountryEnum {
     US = "US",
     GB = "GB",

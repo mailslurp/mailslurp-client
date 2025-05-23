@@ -59,9 +59,9 @@ export interface InboxForwarderDto {
     createdAt: Date;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum InboxForwarderDtoFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",

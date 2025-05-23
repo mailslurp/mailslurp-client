@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -30,122 +30,119 @@ import {
  * @interface PageInboxTags
  */
 export interface PageInboxTags {
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof PageInboxTags
-   */
-  content?: Array<string>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageInboxTags
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxTags
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxTags
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxTags
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxTags
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxTags
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxTags
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxTags
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageInboxTags
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxTags
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof PageInboxTags
+     */
+    content?: Array<string>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageInboxTags
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxTags
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxTags
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageInboxTags
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxTags
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageInboxTags
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxTags
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageInboxTags
+     */
+    number?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageInboxTags
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageInboxTags
+     */
+    empty?: boolean;
 }
 
 export function PageInboxTagsFromJSON(json: any): PageInboxTags {
-  return PageInboxTagsFromJSONTyped(json, false);
+    return PageInboxTagsFromJSONTyped(json, false);
 }
 
-export function PageInboxTagsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageInboxTags {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content') ? undefined : json['content'],
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageInboxTagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageInboxTags {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : json['content'],
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
 export function PageInboxTagsToJSON(value?: PageInboxTags | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content: value.content,
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content,
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'sort': SortObjectToJSON(value.sort),
+        'empty': value.empty,
+    };
 }
+
+

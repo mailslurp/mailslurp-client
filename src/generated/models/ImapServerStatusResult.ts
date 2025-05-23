@@ -14,56 +14,51 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ImapMailboxStatus,
-  ImapMailboxStatusFromJSON,
-  ImapMailboxStatusFromJSONTyped,
-  ImapMailboxStatusToJSON,
+    ImapMailboxStatus,
+    ImapMailboxStatusFromJSON,
+    ImapMailboxStatusFromJSONTyped,
+    ImapMailboxStatusToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface ImapServerStatusResult
  */
 export interface ImapServerStatusResult {
-  /**
-   *
-   * @type {ImapMailboxStatus}
-   * @memberof ImapServerStatusResult
-   */
-  result?: ImapMailboxStatus | null;
+    /**
+     * 
+     * @type {ImapMailboxStatus}
+     * @memberof ImapServerStatusResult
+     */
+    result?: ImapMailboxStatus | null;
 }
 
-export function ImapServerStatusResultFromJSON(
-  json: any
-): ImapServerStatusResult {
-  return ImapServerStatusResultFromJSONTyped(json, false);
+export function ImapServerStatusResultFromJSON(json: any): ImapServerStatusResult {
+    return ImapServerStatusResultFromJSONTyped(json, false);
 }
 
-export function ImapServerStatusResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerStatusResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    result: !exists(json, 'result')
-      ? undefined
-      : ImapMailboxStatusFromJSON(json['result']),
-  };
+export function ImapServerStatusResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerStatusResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'result': !exists(json, 'result') ? undefined : ImapMailboxStatusFromJSON(json['result']),
+    };
 }
 
-export function ImapServerStatusResultToJSON(
-  value?: ImapServerStatusResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    result: ImapMailboxStatusToJSON(value.result),
-  };
+export function ImapServerStatusResultToJSON(value?: ImapServerStatusResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'result': ImapMailboxStatusToJSON(value.result),
+    };
 }
+
+

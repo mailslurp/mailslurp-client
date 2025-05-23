@@ -20,6 +20,12 @@ export interface PhoneMessageThreadItemProjection {
      * @type {string}
      * @memberof PhoneMessageThreadItemProjection
      */
+    body: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadItemProjection
+     */
     phoneNumberId: string;
     /**
      *
@@ -45,17 +51,11 @@ export interface PhoneMessageThreadItemProjection {
      * @memberof PhoneMessageThreadItemProjection
      */
     messageDirection: PhoneMessageThreadItemProjectionMessageDirectionEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneMessageThreadItemProjection
-     */
-    body: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum PhoneMessageThreadItemProjectionMessageDirectionEnum {
     OUTBOUND = "OUTBOUND",
     INBOUND = "INBOUND"

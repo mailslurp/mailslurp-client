@@ -19,14 +19,14 @@ function ServerEndpointsFromJSON(json) {
 }
 exports.ServerEndpointsFromJSON = ServerEndpointsFromJSON;
 function ServerEndpointsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        host: json['host'],
-        port: json['port'],
-        tls: json['tls'],
-        altPorts: json['altPorts'],
+        'host': json['host'],
+        'port': json['port'],
+        'tls': json['tls'],
+        'altPorts': json['altPorts'],
     };
 }
 exports.ServerEndpointsFromJSONTyped = ServerEndpointsFromJSONTyped;
@@ -38,10 +38,10 @@ function ServerEndpointsToJSON(value) {
         return null;
     }
     return {
-        host: value.host,
-        port: value.port,
-        tls: value.tls,
-        altPorts: value.altPorts,
+        'host': value.host,
+        'port': value.port,
+        'tls': value.tls,
+        'altPorts': value.altPorts,
     };
 }
 exports.ServerEndpointsToJSON = ServerEndpointsToJSON;

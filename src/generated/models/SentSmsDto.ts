@@ -14,123 +14,124 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SentSmsDto
  */
 export interface SentSmsDto {
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  fromNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  toNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  body: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  sid: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  replyToSid?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsDto
-   */
-  replyToId?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentSmsDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentSmsDto
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    fromNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    toNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    body: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    sid: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    replyToSid?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentSmsDto
+     */
+    replyToId?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SentSmsDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SentSmsDto
+     */
+    updatedAt: Date;
 }
 
 export function SentSmsDtoFromJSON(json: any): SentSmsDto {
-  return SentSmsDtoFromJSONTyped(json, false);
+    return SentSmsDtoFromJSONTyped(json, false);
 }
 
-export function SentSmsDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SentSmsDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    phoneNumber: json['phoneNumber'],
-    fromNumber: json['fromNumber'],
-    toNumber: json['toNumber'],
-    body: json['body'],
-    sid: json['sid'],
-    replyToSid: !exists(json, 'replyToSid') ? undefined : json['replyToSid'],
-    replyToId: !exists(json, 'replyToId') ? undefined : json['replyToId'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function SentSmsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentSmsDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'toNumber': json['toNumber'],
+        'body': json['body'],
+        'sid': json['sid'],
+        'replyToSid': !exists(json, 'replyToSid') ? undefined : json['replyToSid'],
+        'replyToId': !exists(json, 'replyToId') ? undefined : json['replyToId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
 export function SentSmsDtoToJSON(value?: SentSmsDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    phoneNumber: value.phoneNumber,
-    fromNumber: value.fromNumber,
-    toNumber: value.toNumber,
-    body: value.body,
-    sid: value.sid,
-    replyToSid: value.replyToSid,
-    replyToId: value.replyToId,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'userId': value.userId,
+        'phoneNumber': value.phoneNumber,
+        'fromNumber': value.fromNumber,
+        'toNumber': value.toNumber,
+        'body': value.body,
+        'sid': value.sid,
+        'replyToSid': value.replyToSid,
+        'replyToId': value.replyToId,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+    };
 }
+
+

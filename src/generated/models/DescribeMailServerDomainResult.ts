@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  NameServerRecord,
-  NameServerRecordFromJSON,
-  NameServerRecordFromJSONTyped,
-  NameServerRecordToJSON,
+    NameServerRecord,
+    NameServerRecordFromJSON,
+    NameServerRecordFromJSONTyped,
+    NameServerRecordToJSON,
 } from './';
 
 /**
@@ -26,58 +26,55 @@ import {
  * @interface DescribeMailServerDomainResult
  */
 export interface DescribeMailServerDomainResult {
-  /**
-   *
-   * @type {Array<NameServerRecord>}
-   * @memberof DescribeMailServerDomainResult
-   */
-  mxRecords: Array<NameServerRecord>;
-  /**
-   *
-   * @type {string}
-   * @memberof DescribeMailServerDomainResult
-   */
-  domain: string;
-  /**
-   *
-   * @type {string}
-   * @memberof DescribeMailServerDomainResult
-   */
-  message?: string | null;
+    /**
+     * 
+     * @type {Array<NameServerRecord>}
+     * @memberof DescribeMailServerDomainResult
+     */
+    mxRecords: Array<NameServerRecord>;
+    /**
+     * 
+     * @type {string}
+     * @memberof DescribeMailServerDomainResult
+     */
+    domain: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DescribeMailServerDomainResult
+     */
+    message?: string | null;
 }
 
-export function DescribeMailServerDomainResultFromJSON(
-  json: any
-): DescribeMailServerDomainResult {
-  return DescribeMailServerDomainResultFromJSONTyped(json, false);
+export function DescribeMailServerDomainResultFromJSON(json: any): DescribeMailServerDomainResult {
+    return DescribeMailServerDomainResultFromJSONTyped(json, false);
 }
 
-export function DescribeMailServerDomainResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): DescribeMailServerDomainResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    mxRecords: (json['mxRecords'] as Array<any>).map(NameServerRecordFromJSON),
-    domain: json['domain'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-  };
+export function DescribeMailServerDomainResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): DescribeMailServerDomainResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'mxRecords': ((json['mxRecords'] as Array<any>).map(NameServerRecordFromJSON)),
+        'domain': json['domain'],
+        'message': !exists(json, 'message') ? undefined : json['message'],
+    };
 }
 
-export function DescribeMailServerDomainResultToJSON(
-  value?: DescribeMailServerDomainResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    mxRecords: (value.mxRecords as Array<any>).map(NameServerRecordToJSON),
-    domain: value.domain,
-    message: value.message,
-  };
+export function DescribeMailServerDomainResultToJSON(value?: DescribeMailServerDomainResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'mxRecords': ((value.mxRecords as Array<any>).map(NameServerRecordToJSON)),
+        'domain': value.domain,
+        'message': value.message,
+    };
 }
+
+

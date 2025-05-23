@@ -14,96 +14,93 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface PhoneMessageThreadProjection
  */
 export interface PhoneMessageThreadProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneMessageThreadProjection
-   */
-  phoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneMessageThreadProjection
-   */
-  phoneNumberId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneMessageThreadProjection
-   */
-  otherPhoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneMessageThreadProjection
-   */
-  lastMessageDirection: PhoneMessageThreadProjectionLastMessageDirectionEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneMessageThreadProjection
-   */
-  lastBody: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof PhoneMessageThreadProjection
-   */
-  lastCreated: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    phoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    phoneNumberId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    otherPhoneNumber: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    lastMessageDirection: PhoneMessageThreadProjectionLastMessageDirectionEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    lastBody: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PhoneMessageThreadProjection
+     */
+    lastCreated: Date;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum PhoneMessageThreadProjectionLastMessageDirectionEnum {
-  OUTBOUND = 'OUTBOUND',
-  INBOUND = 'INBOUND',
+    OUTBOUND = 'OUTBOUND',
+    INBOUND = 'INBOUND'
 }
 
-export function PhoneMessageThreadProjectionFromJSON(
-  json: any
-): PhoneMessageThreadProjection {
-  return PhoneMessageThreadProjectionFromJSONTyped(json, false);
+export function PhoneMessageThreadProjectionFromJSON(json: any): PhoneMessageThreadProjection {
+    return PhoneMessageThreadProjectionFromJSONTyped(json, false);
 }
 
-export function PhoneMessageThreadProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PhoneMessageThreadProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    phoneNumber: json['phoneNumber'],
-    phoneNumberId: json['phoneNumberId'],
-    otherPhoneNumber: json['otherPhoneNumber'],
-    lastMessageDirection: json['lastMessageDirection'],
-    lastBody: json['lastBody'],
-    lastCreated: new Date(json['lastCreated']),
-  };
+export function PhoneMessageThreadProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneMessageThreadProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'phoneNumber': json['phoneNumber'],
+        'phoneNumberId': json['phoneNumberId'],
+        'otherPhoneNumber': json['otherPhoneNumber'],
+        'lastMessageDirection': json['lastMessageDirection'],
+        'lastBody': json['lastBody'],
+        'lastCreated': (new Date(json['lastCreated'])),
+    };
 }
 
-export function PhoneMessageThreadProjectionToJSON(
-  value?: PhoneMessageThreadProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    phoneNumber: value.phoneNumber,
-    phoneNumberId: value.phoneNumberId,
-    otherPhoneNumber: value.otherPhoneNumber,
-    lastMessageDirection: value.lastMessageDirection,
-    lastBody: value.lastBody,
-    lastCreated: value.lastCreated.toISOString(),
-  };
+export function PhoneMessageThreadProjectionToJSON(value?: PhoneMessageThreadProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'phoneNumber': value.phoneNumber,
+        'phoneNumberId': value.phoneNumberId,
+        'otherPhoneNumber': value.otherPhoneNumber,
+        'lastMessageDirection': value.lastMessageDirection,
+        'lastBody': value.lastBody,
+        'lastCreated': (value.lastCreated.toISOString()),
+    };
 }
+
+

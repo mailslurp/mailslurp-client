@@ -19,11 +19,11 @@ function ExportLinkFromJSON(json) {
 }
 exports.ExportLinkFromJSON = ExportLinkFromJSON;
 function ExportLinkFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        downloadLink: json['downloadLink'],
+        'downloadLink': json['downloadLink'],
     };
 }
 exports.ExportLinkFromJSONTyped = ExportLinkFromJSONTyped;
@@ -35,7 +35,7 @@ function ExportLinkToJSON(value) {
         return null;
     }
     return {
-        downloadLink: value.downloadLink,
+        'downloadLink': value.downloadLink,
     };
 }
 exports.ExportLinkToJSON = ExportLinkToJSON;

@@ -19,50 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxForwarderTestResult
  */
 export interface InboxForwarderTestResult {
-  /**
-   *
-   * @type {{ [key: string]: boolean; }}
-   * @memberof InboxForwarderTestResult
-   */
-  matches: { [key: string]: boolean };
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxForwarderTestResult
-   */
-  doesMatch: boolean;
+    /**
+     * 
+     * @type {{ [key: string]: boolean; }}
+     * @memberof InboxForwarderTestResult
+     */
+    matches: { [key: string]: boolean; };
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxForwarderTestResult
+     */
+    doesMatch: boolean;
 }
 
-export function InboxForwarderTestResultFromJSON(
-  json: any
-): InboxForwarderTestResult {
-  return InboxForwarderTestResultFromJSONTyped(json, false);
+export function InboxForwarderTestResultFromJSON(json: any): InboxForwarderTestResult {
+    return InboxForwarderTestResultFromJSONTyped(json, false);
 }
 
-export function InboxForwarderTestResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxForwarderTestResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    matches: json['matches'],
-    doesMatch: json['doesMatch'],
-  };
+export function InboxForwarderTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderTestResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'matches': json['matches'],
+        'doesMatch': json['doesMatch'],
+    };
 }
 
-export function InboxForwarderTestResultToJSON(
-  value?: InboxForwarderTestResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    matches: value.matches,
-    doesMatch: value.doesMatch,
-  };
+export function InboxForwarderTestResultToJSON(value?: InboxForwarderTestResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'matches': value.matches,
+        'doesMatch': value.doesMatch,
+    };
 }
+
+

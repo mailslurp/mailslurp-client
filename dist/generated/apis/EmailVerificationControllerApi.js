@@ -111,7 +111,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/email-verification",
@@ -158,10 +158,10 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/email-verification/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/email-verification/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -223,7 +223,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/email-verification/validation-requests",
@@ -233,9 +233,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEmailValidationRequestFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageEmailValidationRequestFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -268,15 +266,14 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.validateEmailAddressListOptions === null ||
-                            requestParameters.validateEmailAddressListOptions === undefined) {
+                        if (requestParameters.validateEmailAddressListOptions === null || requestParameters.validateEmailAddressListOptions === undefined) {
                             throw new runtime.RequiredError('validateEmailAddressListOptions', 'Required parameter requestParameters.validateEmailAddressListOptions was null or undefined when calling validateEmailAddressList.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/email-verification/email-address-list",
@@ -287,9 +284,7 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ValidateEmailAddressListResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ValidateEmailAddressListResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -316,9 +311,9 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.EmailVerificationControllerApi = EmailVerificationControllerApi;
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetValidationRequestsSortEnum;
 (function (GetValidationRequestsSortEnum) {
     GetValidationRequestsSortEnum["ASC"] = "ASC";

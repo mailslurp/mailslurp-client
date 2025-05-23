@@ -14,97 +14,94 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EntityAutomationItemProjection
  */
 export interface EntityAutomationItemProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  inboxId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  phoneId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  action?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  automationType: EntityAutomationItemProjectionAutomationTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    inboxId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    phoneId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    action?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    automationType: EntityAutomationItemProjectionAutomationTypeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    id: string;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum EntityAutomationItemProjectionAutomationTypeEnum {
-  FORWARDER = 'INBOX_FORWARDER',
-  REPLIER = 'INBOX_REPLIER',
-  RULESET = 'INBOX_RULESET',
+    FORWARDER = 'INBOX_FORWARDER',
+    REPLIER = 'INBOX_REPLIER',
+    RULESET = 'INBOX_RULESET'
 }
 
-export function EntityAutomationItemProjectionFromJSON(
-  json: any
-): EntityAutomationItemProjection {
-  return EntityAutomationItemProjectionFromJSONTyped(json, false);
+export function EntityAutomationItemProjectionFromJSON(json: any): EntityAutomationItemProjection {
+    return EntityAutomationItemProjectionFromJSONTyped(json, false);
 }
 
-export function EntityAutomationItemProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EntityAutomationItemProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
-    action: !exists(json, 'action') ? undefined : json['action'],
-    automationType: json['automationType'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function EntityAutomationItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EntityAutomationItemProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        'phoneId': !exists(json, 'phoneId') ? undefined : json['phoneId'],
+        'action': !exists(json, 'action') ? undefined : json['action'],
+        'automationType': json['automationType'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
 
-export function EntityAutomationItemProjectionToJSON(
-  value?: EntityAutomationItemProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    phoneId: value.phoneId,
-    action: value.action,
-    automationType: value.automationType,
-    name: value.name,
-    id: value.id,
-  };
+export function EntityAutomationItemProjectionToJSON(value?: EntityAutomationItemProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'inboxId': value.inboxId,
+        'phoneId': value.phoneId,
+        'action': value.action,
+        'automationType': value.automationType,
+        'name': value.name,
+        'id': value.id,
+    };
 }
+
+

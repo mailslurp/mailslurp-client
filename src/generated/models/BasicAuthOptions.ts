@@ -19,46 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface BasicAuthOptions
  */
 export interface BasicAuthOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof BasicAuthOptions
-   */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BasicAuthOptions
-   */
-  password: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BasicAuthOptions
+     */
+    username: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BasicAuthOptions
+     */
+    password: string;
 }
 
 export function BasicAuthOptionsFromJSON(json: any): BasicAuthOptions {
-  return BasicAuthOptionsFromJSONTyped(json, false);
+    return BasicAuthOptionsFromJSONTyped(json, false);
 }
 
-export function BasicAuthOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): BasicAuthOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    username: json['username'],
-    password: json['password'],
-  };
+export function BasicAuthOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): BasicAuthOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'username': json['username'],
+        'password': json['password'],
+    };
 }
 
 export function BasicAuthOptionsToJSON(value?: BasicAuthOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    username: value.username,
-    password: value.password,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'username': value.username,
+        'password': value.password,
+    };
 }
+
+

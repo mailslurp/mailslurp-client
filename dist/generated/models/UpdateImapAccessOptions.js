@@ -20,16 +20,12 @@ function UpdateImapAccessOptionsFromJSON(json) {
 }
 exports.UpdateImapAccessOptionsFromJSON = UpdateImapAccessOptionsFromJSON;
 function UpdateImapAccessOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        imapUsername: !(0, runtime_1.exists)(json, 'imapUsername')
-            ? undefined
-            : json['imapUsername'],
-        imapPassword: !(0, runtime_1.exists)(json, 'imapPassword')
-            ? undefined
-            : json['imapPassword'],
+        'imapUsername': !(0, runtime_1.exists)(json, 'imapUsername') ? undefined : json['imapUsername'],
+        'imapPassword': !(0, runtime_1.exists)(json, 'imapPassword') ? undefined : json['imapPassword'],
     };
 }
 exports.UpdateImapAccessOptionsFromJSONTyped = UpdateImapAccessOptionsFromJSONTyped;
@@ -41,8 +37,8 @@ function UpdateImapAccessOptionsToJSON(value) {
         return null;
     }
     return {
-        imapUsername: value.imapUsername,
-        imapPassword: value.imapPassword,
+        'imapUsername': value.imapUsername,
+        'imapPassword': value.imapPassword,
     };
 }
 exports.UpdateImapAccessOptionsToJSON = UpdateImapAccessOptionsToJSON;

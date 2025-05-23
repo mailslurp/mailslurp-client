@@ -14,52 +14,51 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  SentSmsDto,
-  SentSmsDtoFromJSON,
-  SentSmsDtoFromJSONTyped,
-  SentSmsDtoToJSON,
+    SentSmsDto,
+    SentSmsDtoFromJSON,
+    SentSmsDtoFromJSONTyped,
+    SentSmsDtoToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface ReplyForSms
  */
 export interface ReplyForSms {
-  /**
-   *
-   * @type {SentSmsDto}
-   * @memberof ReplyForSms
-   */
-  reply?: SentSmsDto;
+    /**
+     * 
+     * @type {SentSmsDto}
+     * @memberof ReplyForSms
+     */
+    reply?: SentSmsDto;
 }
 
 export function ReplyForSmsFromJSON(json: any): ReplyForSms {
-  return ReplyForSmsFromJSONTyped(json, false);
+    return ReplyForSmsFromJSONTyped(json, false);
 }
 
-export function ReplyForSmsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ReplyForSms {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    reply: !exists(json, 'reply')
-      ? undefined
-      : SentSmsDtoFromJSON(json['reply']),
-  };
+export function ReplyForSmsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyForSms {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'reply': !exists(json, 'reply') ? undefined : SentSmsDtoFromJSON(json['reply']),
+    };
 }
 
 export function ReplyForSmsToJSON(value?: ReplyForSms | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    reply: SentSmsDtoToJSON(value.reply),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'reply': SentSmsDtoToJSON(value.reply),
+    };
 }
+
+

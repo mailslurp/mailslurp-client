@@ -12,540 +12,380 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  CreateTemplateOptions,
-  CreateTemplateOptionsFromJSON,
-  CreateTemplateOptionsToJSON,
-  PageTemplateProjection,
-  PageTemplateProjectionFromJSON,
-  PageTemplateProjectionToJSON,
-  TemplateDto,
-  TemplateDtoFromJSON,
-  TemplateDtoToJSON,
-  TemplatePreview,
-  TemplatePreviewFromJSON,
-  TemplatePreviewToJSON,
-  TemplateProjection,
-  TemplateProjectionFromJSON,
-  TemplateProjectionToJSON,
+    CreateTemplateOptions,
+    CreateTemplateOptionsFromJSON,
+    CreateTemplateOptionsToJSON,
+    PageTemplateProjection,
+    PageTemplateProjectionFromJSON,
+    PageTemplateProjectionToJSON,
+    TemplateDto,
+    TemplateDtoFromJSON,
+    TemplateDtoToJSON,
+    TemplatePreview,
+    TemplatePreviewFromJSON,
+    TemplatePreviewToJSON,
+    TemplateProjection,
+    TemplateProjectionFromJSON,
+    TemplateProjectionToJSON,
 } from '../models';
 
 export interface CreateTemplateRequest {
-  createTemplateOptions: CreateTemplateOptions;
+    createTemplateOptions: CreateTemplateOptions;
 }
 
 export interface DeleteTemplateRequest {
-  templateId: string;
+    templateId: string;
 }
 
 export interface GetAllTemplatesRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllTemplatesSortEnum;
-  since?: Date;
-  before?: Date;
+    page?: number;
+    size?: number;
+    sort?: GetAllTemplatesSortEnum;
+    since?: Date;
+    before?: Date;
 }
 
 export interface GetTemplateRequest {
-  templateId: string;
+    templateId: string;
 }
 
 export interface GetTemplatePreviewHtmlRequest {
-  templateId: string;
+    templateId: string;
 }
 
 export interface GetTemplatePreviewJsonRequest {
-  templateId: string;
+    templateId: string;
 }
 
 export interface UpdateTemplateRequest {
-  templateId: string;
-  createTemplateOptions: CreateTemplateOptions;
+    templateId: string;
+    createTemplateOptions: CreateTemplateOptions;
 }
 
 /**
- *
+ * 
  */
 export class TemplateControllerApi extends runtime.BaseAPI {
-  /**
-   * Create an email template with variables for use with templated transactional emails.
-   * Create a Template
-   */
-  async createTemplateRaw(
-    requestParameters: CreateTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<TemplateDto>> {
-    if (
-      requestParameters.createTemplateOptions === null ||
-      requestParameters.createTemplateOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createTemplateOptions',
-        'Required parameter requestParameters.createTemplateOptions was null or undefined when calling createTemplate.'
-      );
+
+    /**
+     * Create an email template with variables for use with templated transactional emails.
+     * Create a Template
+     */
+    async createTemplateRaw(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>> {
+        if (requestParameters.createTemplateOptions === null || requestParameters.createTemplateOptions === undefined) {
+            throw new runtime.RequiredError('createTemplateOptions','Required parameter requestParameters.createTemplateOptions was null or undefined when calling createTemplate.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/templates`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateTemplateOptionsToJSON(requestParameters.createTemplateOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TemplateDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Create an email template with variables for use with templated transactional emails.
+     * Create a Template
+     */
+    async createTemplate(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto> {
+        const response = await this.createTemplateRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/templates`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateTemplateOptionsToJSON(
-          requestParameters.createTemplateOptions
-        ),
-      },
-      initOverrides
-    );
+    /**
+     * Delete template
+     * Delete email template
+     */
+    async deleteTemplateRaw(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+            throw new runtime.RequiredError('templateId','Required parameter requestParameters.templateId was null or undefined when calling deleteTemplate.');
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TemplateDtoFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Create an email template with variables for use with templated transactional emails.
-   * Create a Template
-   */
-  async createTemplate(
-    requestParameters: CreateTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<TemplateDto> {
-    const response = await this.createTemplateRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete template
-   * Delete email template
-   */
-  async deleteTemplateRaw(
-    requestParameters: DeleteTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.templateId === null ||
-      requestParameters.templateId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'templateId',
-        'Required parameter requestParameters.templateId was null or undefined when calling deleteTemplate.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/templates/{templateId}`.replace(`{${"templateId"}}`, encodeURIComponent(String(requestParameters.templateId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete template
+     * Delete email template
+     */
+    async deleteTemplate(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteTemplateRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/templates/{templateId}`.replace(
-          `{${'templateId'}}`,
-          encodeURIComponent(String(requestParameters.templateId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get all templates in paginated format
+     * List templates
+     */
+    async getAllTemplatesRaw(requestParameters: GetAllTemplatesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTemplateProjection>> {
+        const queryParameters: any = {};
 
-    return new runtime.VoidApiResponse(response);
-  }
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
 
-  /**
-   * Delete template
-   * Delete email template
-   */
-  async deleteTemplate(
-    requestParameters: DeleteTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteTemplateRaw(requestParameters, initOverrides);
-  }
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
 
-  /**
-   * Get all templates in paginated format
-   * List templates
-   */
-  async getAllTemplatesRaw(
-    requestParameters: GetAllTemplatesRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageTemplateProjection>> {
-    const queryParameters: any = {};
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/templates/paginated`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageTemplateProjectionFromJSON(jsonValue));
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Get all templates in paginated format
+     * List templates
+     */
+    async getAllTemplates(requestParameters: GetAllTemplatesRequest, initOverrides?: RequestInit): Promise<PageTemplateProjection> {
+        const response = await this.getAllTemplatesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Get email template
+     * Get template
+     */
+    async getTemplateRaw(requestParameters: GetTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>> {
+        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+            throw new runtime.RequiredError('templateId','Required parameter requestParameters.templateId was null or undefined when calling getTemplate.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/templates/{templateId}`.replace(`{${"templateId"}}`, encodeURIComponent(String(requestParameters.templateId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TemplateDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    /**
+     * Get email template
+     * Get template
+     */
+    async getTemplate(requestParameters: GetTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto> {
+        const response = await this.getTemplateRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
+    /**
+     * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+     * Get template preview HTML
+     */
+    async getTemplatePreviewHtmlRaw(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>> {
+        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+            throw new runtime.RequiredError('templateId','Required parameter requestParameters.templateId was null or undefined when calling getTemplatePreviewHtml.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/templates/{templateId}/preview/html`.replace(`{${"templateId"}}`, encodeURIComponent(String(requestParameters.templateId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.TextApiResponse(response) as any;
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+     * Get template preview HTML
+     */
+    async getTemplatePreviewHtml(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit): Promise<string> {
+        const response = await this.getTemplatePreviewHtmlRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/templates/paginated`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+     * Get template preview Json
+     */
+    async getTemplatePreviewJsonRaw(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplatePreview>> {
+        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+            throw new runtime.RequiredError('templateId','Required parameter requestParameters.templateId was null or undefined when calling getTemplatePreviewJson.');
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageTemplateProjectionFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Get all templates in paginated format
-   * List templates
-   */
-  async getAllTemplates(
-    requestParameters: GetAllTemplatesRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageTemplateProjection> {
-    const response = await this.getAllTemplatesRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Get email template
-   * Get template
-   */
-  async getTemplateRaw(
-    requestParameters: GetTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<TemplateDto>> {
-    if (
-      requestParameters.templateId === null ||
-      requestParameters.templateId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'templateId',
-        'Required parameter requestParameters.templateId was null or undefined when calling getTemplate.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/templates/{templateId}/preview/json`.replace(`{${"templateId"}}`, encodeURIComponent(String(requestParameters.templateId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TemplatePreviewFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+     * Get template preview Json
+     */
+    async getTemplatePreviewJson(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit): Promise<TemplatePreview> {
+        const response = await this.getTemplatePreviewJsonRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/templates/{templateId}`.replace(
-          `{${'templateId'}}`,
-          encodeURIComponent(String(requestParameters.templateId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get all templates
+     * List templates
+     */
+    async getTemplatesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<TemplateProjection>>> {
+        const queryParameters: any = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TemplateDtoFromJSON(jsonValue)
-    );
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Get email template
-   * Get template
-   */
-  async getTemplate(
-    requestParameters: GetTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<TemplateDto> {
-    const response = await this.getTemplateRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-  /**
-   * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
-   * Get template preview HTML
-   */
-  async getTemplatePreviewHtmlRaw(
-    requestParameters: GetTemplatePreviewHtmlRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<string>> {
-    if (
-      requestParameters.templateId === null ||
-      requestParameters.templateId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'templateId',
-        'Required parameter requestParameters.templateId was null or undefined when calling getTemplatePreviewHtml.'
-      );
+        const response = await this.request({
+            path: `/templates`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TemplateProjectionFromJSON));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get all templates
+     * List templates
+     */
+    async getTemplates(initOverrides?: RequestInit): Promise<Array<TemplateProjection>> {
+        const response = await this.getTemplatesRaw(initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/templates/{templateId}/preview/html`.replace(
-          `{${'templateId'}}`,
-          encodeURIComponent(String(requestParameters.templateId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Update email template
+     * Update template
+     */
+    async updateTemplateRaw(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>> {
+        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+            throw new runtime.RequiredError('templateId','Required parameter requestParameters.templateId was null or undefined when calling updateTemplate.');
+        }
 
-    return new runtime.TextApiResponse(response) as any;
-  }
+        if (requestParameters.createTemplateOptions === null || requestParameters.createTemplateOptions === undefined) {
+            throw new runtime.RequiredError('createTemplateOptions','Required parameter requestParameters.createTemplateOptions was null or undefined when calling updateTemplate.');
+        }
 
-  /**
-   * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
-   * Get template preview HTML
-   */
-  async getTemplatePreviewHtml(
-    requestParameters: GetTemplatePreviewHtmlRequest,
-    initOverrides?: RequestInit
-  ): Promise<string> {
-    const response = await this.getTemplatePreviewHtmlRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
-   * Get template preview Json
-   */
-  async getTemplatePreviewJsonRaw(
-    requestParameters: GetTemplatePreviewJsonRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<TemplatePreview>> {
-    if (
-      requestParameters.templateId === null ||
-      requestParameters.templateId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'templateId',
-        'Required parameter requestParameters.templateId was null or undefined when calling getTemplatePreviewJson.'
-      );
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/templates/{templateId}`.replace(`{${"templateId"}}`, encodeURIComponent(String(requestParameters.templateId))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateTemplateOptionsToJSON(requestParameters.createTemplateOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TemplateDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Update email template
+     * Update template
+     */
+    async updateTemplate(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto> {
+        const response = await this.updateTemplateRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/templates/{templateId}/preview/json`.replace(
-          `{${'templateId'}}`,
-          encodeURIComponent(String(requestParameters.templateId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TemplatePreviewFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
-   * Get template preview Json
-   */
-  async getTemplatePreviewJson(
-    requestParameters: GetTemplatePreviewJsonRequest,
-    initOverrides?: RequestInit
-  ): Promise<TemplatePreview> {
-    const response = await this.getTemplatePreviewJsonRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get all templates
-   * List templates
-   */
-  async getTemplatesRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<TemplateProjection>>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/templates`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(TemplateProjectionFromJSON)
-    );
-  }
-
-  /**
-   * Get all templates
-   * List templates
-   */
-  async getTemplates(
-    initOverrides?: RequestInit
-  ): Promise<Array<TemplateProjection>> {
-    const response = await this.getTemplatesRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Update email template
-   * Update template
-   */
-  async updateTemplateRaw(
-    requestParameters: UpdateTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<TemplateDto>> {
-    if (
-      requestParameters.templateId === null ||
-      requestParameters.templateId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'templateId',
-        'Required parameter requestParameters.templateId was null or undefined when calling updateTemplate.'
-      );
-    }
-
-    if (
-      requestParameters.createTemplateOptions === null ||
-      requestParameters.createTemplateOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createTemplateOptions',
-        'Required parameter requestParameters.createTemplateOptions was null or undefined when calling updateTemplate.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/templates/{templateId}`.replace(
-          `{${'templateId'}}`,
-          encodeURIComponent(String(requestParameters.templateId))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateTemplateOptionsToJSON(
-          requestParameters.createTemplateOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TemplateDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update email template
-   * Update template
-   */
-  async updateTemplate(
-    requestParameters: UpdateTemplateRequest,
-    initOverrides?: RequestInit
-  ): Promise<TemplateDto> {
-    const response = await this.updateTemplateRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllTemplatesSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }

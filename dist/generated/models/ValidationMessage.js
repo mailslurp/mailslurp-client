@@ -20,12 +20,12 @@ function ValidationMessageFromJSON(json) {
 }
 exports.ValidationMessageFromJSON = ValidationMessageFromJSON;
 function ValidationMessageFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        lineNumber: json['lineNumber'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        'lineNumber': json['lineNumber'],
+        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
 exports.ValidationMessageFromJSONTyped = ValidationMessageFromJSONTyped;
@@ -37,8 +37,8 @@ function ValidationMessageToJSON(value) {
         return null;
     }
     return {
-        lineNumber: value.lineNumber,
-        message: value.message,
+        'lineNumber': value.lineNumber,
+        'message': value.message,
     };
 }
 exports.ValidationMessageToJSON = ValidationMessageToJSON;

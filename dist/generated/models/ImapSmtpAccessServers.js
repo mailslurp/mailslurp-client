@@ -20,14 +20,14 @@ function ImapSmtpAccessServersFromJSON(json) {
 }
 exports.ImapSmtpAccessServersFromJSON = ImapSmtpAccessServersFromJSON;
 function ImapSmtpAccessServersFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        imapServer: (0, _1.ServerEndpointsFromJSON)(json['imapServer']),
-        secureImapServer: (0, _1.ServerEndpointsFromJSON)(json['secureImapServer']),
-        smtpServer: (0, _1.ServerEndpointsFromJSON)(json['smtpServer']),
-        secureSmtpServer: (0, _1.ServerEndpointsFromJSON)(json['secureSmtpServer']),
+        'imapServer': (0, _1.ServerEndpointsFromJSON)(json['imapServer']),
+        'secureImapServer': (0, _1.ServerEndpointsFromJSON)(json['secureImapServer']),
+        'smtpServer': (0, _1.ServerEndpointsFromJSON)(json['smtpServer']),
+        'secureSmtpServer': (0, _1.ServerEndpointsFromJSON)(json['secureSmtpServer']),
     };
 }
 exports.ImapSmtpAccessServersFromJSONTyped = ImapSmtpAccessServersFromJSONTyped;
@@ -39,10 +39,10 @@ function ImapSmtpAccessServersToJSON(value) {
         return null;
     }
     return {
-        imapServer: (0, _1.ServerEndpointsToJSON)(value.imapServer),
-        secureImapServer: (0, _1.ServerEndpointsToJSON)(value.secureImapServer),
-        smtpServer: (0, _1.ServerEndpointsToJSON)(value.smtpServer),
-        secureSmtpServer: (0, _1.ServerEndpointsToJSON)(value.secureSmtpServer),
+        'imapServer': (0, _1.ServerEndpointsToJSON)(value.imapServer),
+        'secureImapServer': (0, _1.ServerEndpointsToJSON)(value.secureImapServer),
+        'smtpServer': (0, _1.ServerEndpointsToJSON)(value.smtpServer),
+        'secureSmtpServer': (0, _1.ServerEndpointsToJSON)(value.secureSmtpServer),
     };
 }
 exports.ImapSmtpAccessServersToJSON = ImapSmtpAccessServersToJSON;

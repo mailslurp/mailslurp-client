@@ -19,74 +19,71 @@ import { exists, mapValues } from '../runtime';
  * @interface EmailAnalysis
  */
 export interface EmailAnalysis {
-  /**
-   * Verdict of spam ranking analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  spamVerdict?: string | null;
-  /**
-   * Verdict of virus scan analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  virusVerdict?: string | null;
-  /**
-   * Verdict of Send Policy Framework record spoofing analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  spfVerdict?: string | null;
-  /**
-   * Verdict of DomainKeys Identified Mail analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  dkimVerdict?: string | null;
-  /**
-   * Verdict of Domain-based Message Authentication Reporting and Conformance analysis
-   * @type {string}
-   * @memberof EmailAnalysis
-   */
-  dmarcVerdict?: string | null;
+    /**
+     * Verdict of spam ranking analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    spamVerdict?: string | null;
+    /**
+     * Verdict of virus scan analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    virusVerdict?: string | null;
+    /**
+     * Verdict of Send Policy Framework record spoofing analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    spfVerdict?: string | null;
+    /**
+     * Verdict of DomainKeys Identified Mail analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    dkimVerdict?: string | null;
+    /**
+     * Verdict of Domain-based Message Authentication Reporting and Conformance analysis
+     * @type {string}
+     * @memberof EmailAnalysis
+     */
+    dmarcVerdict?: string | null;
 }
 
 export function EmailAnalysisFromJSON(json: any): EmailAnalysis {
-  return EmailAnalysisFromJSONTyped(json, false);
+    return EmailAnalysisFromJSONTyped(json, false);
 }
 
-export function EmailAnalysisFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailAnalysis {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    spamVerdict: !exists(json, 'spamVerdict') ? undefined : json['spamVerdict'],
-    virusVerdict: !exists(json, 'virusVerdict')
-      ? undefined
-      : json['virusVerdict'],
-    spfVerdict: !exists(json, 'spfVerdict') ? undefined : json['spfVerdict'],
-    dkimVerdict: !exists(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
-    dmarcVerdict: !exists(json, 'dmarcVerdict')
-      ? undefined
-      : json['dmarcVerdict'],
-  };
+export function EmailAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailAnalysis {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'spamVerdict': !exists(json, 'spamVerdict') ? undefined : json['spamVerdict'],
+        'virusVerdict': !exists(json, 'virusVerdict') ? undefined : json['virusVerdict'],
+        'spfVerdict': !exists(json, 'spfVerdict') ? undefined : json['spfVerdict'],
+        'dkimVerdict': !exists(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
+        'dmarcVerdict': !exists(json, 'dmarcVerdict') ? undefined : json['dmarcVerdict'],
+    };
 }
 
 export function EmailAnalysisToJSON(value?: EmailAnalysis | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    spamVerdict: value.spamVerdict,
-    virusVerdict: value.virusVerdict,
-    spfVerdict: value.spfVerdict,
-    dkimVerdict: value.dkimVerdict,
-    dmarcVerdict: value.dmarcVerdict,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'spamVerdict': value.spamVerdict,
+        'virusVerdict': value.virusVerdict,
+        'spfVerdict': value.spfVerdict,
+        'dkimVerdict': value.dkimVerdict,
+        'dmarcVerdict': value.dmarcVerdict,
+    };
 }
+
+

@@ -19,122 +19,119 @@ import { exists, mapValues } from '../runtime';
  * @interface AliasThreadProjection
  */
 export interface AliasThreadProjection {
-  /**
-   * User ID
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  userId: string;
-  /**
-   * Inbox ID
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  inboxId: string;
-  /**
-   * Updated at DateTime
-   * @type {Date}
-   * @memberof AliasThreadProjection
-   */
-  updatedAt: Date;
-  /**
-   * Created at DateTime
-   * @type {Date}
-   * @memberof AliasThreadProjection
-   */
-  createdAt: Date;
-  /**
-   * To recipients
-   * @type {Array<string>}
-   * @memberof AliasThreadProjection
-   */
-  to: Array<string>;
-  /**
-   * CC recipients
-   * @type {Array<string>}
-   * @memberof AliasThreadProjection
-   */
-  cc?: Array<string>;
-  /**
-   * BCC recipients
-   * @type {Array<string>}
-   * @memberof AliasThreadProjection
-   */
-  bcc?: Array<string>;
-  /**
-   * Alias ID
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  aliasId: string;
-  /**
-   * Thread subject
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  subject?: string;
-  /**
-   * Name of thread
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  name?: string;
-  /**
-   * ID of email thread
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  id: string;
+    /**
+     * User ID
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    userId: string;
+    /**
+     * Inbox ID
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    inboxId: string;
+    /**
+     * Updated at DateTime
+     * @type {Date}
+     * @memberof AliasThreadProjection
+     */
+    updatedAt: Date;
+    /**
+     * Created at DateTime
+     * @type {Date}
+     * @memberof AliasThreadProjection
+     */
+    createdAt: Date;
+    /**
+     * To recipients
+     * @type {Array<string>}
+     * @memberof AliasThreadProjection
+     */
+    to: Array<string>;
+    /**
+     * CC recipients
+     * @type {Array<string>}
+     * @memberof AliasThreadProjection
+     */
+    cc?: Array<string>;
+    /**
+     * BCC recipients
+     * @type {Array<string>}
+     * @memberof AliasThreadProjection
+     */
+    bcc?: Array<string>;
+    /**
+     * Alias ID
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    aliasId: string;
+    /**
+     * Thread subject
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    subject?: string;
+    /**
+     * Name of thread
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    name?: string;
+    /**
+     * ID of email thread
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    id: string;
 }
 
-export function AliasThreadProjectionFromJSON(
-  json: any
-): AliasThreadProjection {
-  return AliasThreadProjectionFromJSONTyped(json, false);
+export function AliasThreadProjectionFromJSON(json: any): AliasThreadProjection {
+    return AliasThreadProjectionFromJSONTyped(json, false);
 }
 
-export function AliasThreadProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AliasThreadProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    updatedAt: new Date(json['updatedAt']),
-    createdAt: new Date(json['createdAt']),
-    to: json['to'],
-    cc: !exists(json, 'cc') ? undefined : json['cc'],
-    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
-    aliasId: json['aliasId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function AliasThreadProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasThreadProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'updatedAt': (new Date(json['updatedAt'])),
+        'createdAt': (new Date(json['createdAt'])),
+        'to': json['to'],
+        'cc': !exists(json, 'cc') ? undefined : json['cc'],
+        'bcc': !exists(json, 'bcc') ? undefined : json['bcc'],
+        'aliasId': json['aliasId'],
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
 
-export function AliasThreadProjectionToJSON(
-  value?: AliasThreadProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    userId: value.userId,
-    inboxId: value.inboxId,
-    updatedAt: value.updatedAt.toISOString(),
-    createdAt: value.createdAt.toISOString(),
-    to: value.to,
-    cc: value.cc,
-    bcc: value.bcc,
-    aliasId: value.aliasId,
-    subject: value.subject,
-    name: value.name,
-    id: value.id,
-  };
+export function AliasThreadProjectionToJSON(value?: AliasThreadProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'updatedAt': (value.updatedAt.toISOString()),
+        'createdAt': (value.createdAt.toISOString()),
+        'to': value.to,
+        'cc': value.cc,
+        'bcc': value.bcc,
+        'aliasId': value.aliasId,
+        'subject': value.subject,
+        'name': value.name,
+        'id': value.id,
+    };
 }
+
+

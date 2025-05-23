@@ -14,95 +14,92 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface PlusAddressProjection
  */
 export interface PlusAddressProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressProjection
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof PlusAddressProjection
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof PlusAddressProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressProjection
-   */
-  plusAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressProjection
-   */
-  fullAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressProjection
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PlusAddressProjection
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PlusAddressProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressProjection
+     */
+    plusAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressProjection
+     */
+    fullAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressProjection
+     */
+    id: string;
 }
 
-export function PlusAddressProjectionFromJSON(
-  json: any
-): PlusAddressProjection {
-  return PlusAddressProjectionFromJSONTyped(json, false);
+export function PlusAddressProjectionFromJSON(json: any): PlusAddressProjection {
+    return PlusAddressProjectionFromJSONTyped(json, false);
 }
 
-export function PlusAddressProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PlusAddressProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    updatedAt: new Date(json['updatedAt']),
-    createdAt: new Date(json['createdAt']),
-    plusAddress: json['plusAddress'],
-    fullAddress: json['fullAddress'],
-    id: json['id'],
-  };
+export function PlusAddressProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlusAddressProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'updatedAt': (new Date(json['updatedAt'])),
+        'createdAt': (new Date(json['createdAt'])),
+        'plusAddress': json['plusAddress'],
+        'fullAddress': json['fullAddress'],
+        'id': json['id'],
+    };
 }
 
-export function PlusAddressProjectionToJSON(
-  value?: PlusAddressProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    userId: value.userId,
-    inboxId: value.inboxId,
-    updatedAt: value.updatedAt.toISOString(),
-    createdAt: value.createdAt.toISOString(),
-    plusAddress: value.plusAddress,
-    fullAddress: value.fullAddress,
-    id: value.id,
-  };
+export function PlusAddressProjectionToJSON(value?: PlusAddressProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'updatedAt': (value.updatedAt.toISOString()),
+        'createdAt': (value.createdAt.toISOString()),
+        'plusAddress': value.plusAddress,
+        'fullAddress': value.fullAddress,
+        'id': value.id,
+    };
 }
+
+

@@ -46,9 +46,9 @@ export declare class OAuthConnectionApi extends runtime.BaseAPI {
     exchangeAuthorizationTokenAndCreateOrUpdateInbox(requestParameters: ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest, initOverrides?: RequestInit): Promise<CreateOAuthExchangeResult>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum CreateOAuthConnectionOAuthConnectionTypeEnum {
     GOOGLE = "GOOGLE",
     MICROSOFT = "MICROSOFT"

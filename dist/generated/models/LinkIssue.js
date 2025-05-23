@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LinkIssueToJSON = exports.LinkIssueFromJSONTyped = exports.LinkIssueFromJSON = exports.LinkIssueSeverityEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var LinkIssueSeverityEnum;
 (function (LinkIssueSeverityEnum) {
     LinkIssueSeverityEnum["Warning"] = "Warning";
@@ -29,16 +29,14 @@ function LinkIssueFromJSON(json) {
 }
 exports.LinkIssueFromJSON = LinkIssueFromJSON;
 function LinkIssueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        url: json['url'],
-        responseStatus: !(0, runtime_1.exists)(json, 'responseStatus')
-            ? undefined
-            : json['responseStatus'],
-        severity: json['severity'],
-        message: json['message'],
+        'url': json['url'],
+        'responseStatus': !(0, runtime_1.exists)(json, 'responseStatus') ? undefined : json['responseStatus'],
+        'severity': json['severity'],
+        'message': json['message'],
     };
 }
 exports.LinkIssueFromJSONTyped = LinkIssueFromJSONTyped;
@@ -50,10 +48,10 @@ function LinkIssueToJSON(value) {
         return null;
     }
     return {
-        url: value.url,
-        responseStatus: value.responseStatus,
-        severity: value.severity,
-        message: value.message,
+        'url': value.url,
+        'responseStatus': value.responseStatus,
+        'severity': value.severity,
+        'message': value.message,
     };
 }
 exports.LinkIssueToJSON = LinkIssueToJSON;

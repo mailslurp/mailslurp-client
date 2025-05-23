@@ -41,9 +41,9 @@ export interface ImageIssue {
     message: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum ImageIssueSeverityEnum {
     Warning = "Warning",
     Error = "Error"

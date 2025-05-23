@@ -133,7 +133,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/user/automations",
@@ -143,9 +143,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEntityAutomationItemsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageEntityAutomationItemsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -210,7 +208,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/user/events",
@@ -220,9 +218,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEntityEventItemsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageEntityEventItemsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -272,7 +268,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/user/favorites",
@@ -282,9 +278,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageEntityFavouriteItemsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageEntityFavouriteItemsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -314,12 +308,10 @@ var UserControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.property === null ||
-                            requestParameters.property === undefined) {
+                        if (requestParameters.property === null || requestParameters.property === undefined) {
                             throw new runtime.RequiredError('property', 'Required parameter requestParameters.property was null or undefined when calling getJsonPropertyAsString.');
                         }
-                        if (requestParameters.body === null ||
-                            requestParameters.body === undefined) {
+                        if (requestParameters.body === null || requestParameters.body === undefined) {
                             throw new runtime.RequiredError('body', 'Required parameter requestParameters.body was null or undefined when calling getJsonPropertyAsString.');
                         }
                         queryParameters = {};
@@ -329,7 +321,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/user/json/pluck",
@@ -374,7 +366,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/user/info",
@@ -384,9 +376,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.UserInfoDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.UserInfoDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -412,18 +402,18 @@ var UserControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.UserControllerApi = UserControllerApi;
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetEntityAutomationsSortEnum;
 (function (GetEntityAutomationsSortEnum) {
     GetEntityAutomationsSortEnum["ASC"] = "ASC";
     GetEntityAutomationsSortEnum["DESC"] = "DESC";
 })(GetEntityAutomationsSortEnum = exports.GetEntityAutomationsSortEnum || (exports.GetEntityAutomationsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetEntityAutomationsFilterEnum;
 (function (GetEntityAutomationsFilterEnum) {
     GetEntityAutomationsFilterEnum["FORWARDER"] = "INBOX_FORWARDER";
@@ -431,18 +421,18 @@ var GetEntityAutomationsFilterEnum;
     GetEntityAutomationsFilterEnum["RULESET"] = "INBOX_RULESET";
 })(GetEntityAutomationsFilterEnum = exports.GetEntityAutomationsFilterEnum || (exports.GetEntityAutomationsFilterEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetEntityEventsSortEnum;
 (function (GetEntityEventsSortEnum) {
     GetEntityEventsSortEnum["ASC"] = "ASC";
     GetEntityEventsSortEnum["DESC"] = "DESC";
 })(GetEntityEventsSortEnum = exports.GetEntityEventsSortEnum || (exports.GetEntityEventsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetEntityEventsFilterEnum;
 (function (GetEntityEventsFilterEnum) {
     GetEntityEventsFilterEnum["WEBHOOK_EVENT"] = "WEBHOOK_EVENT";
@@ -452,18 +442,18 @@ var GetEntityEventsFilterEnum;
     GetEntityEventsFilterEnum["ALIAS_EVENT"] = "ALIAS_EVENT";
 })(GetEntityEventsFilterEnum = exports.GetEntityEventsFilterEnum || (exports.GetEntityEventsFilterEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetEntityFavoritesSortEnum;
 (function (GetEntityFavoritesSortEnum) {
     GetEntityFavoritesSortEnum["ASC"] = "ASC";
     GetEntityFavoritesSortEnum["DESC"] = "DESC";
 })(GetEntityFavoritesSortEnum = exports.GetEntityFavoritesSortEnum || (exports.GetEntityFavoritesSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetEntityFavoritesFilterEnum;
 (function (GetEntityFavoritesFilterEnum) {
     GetEntityFavoritesFilterEnum["INBOX"] = "INBOX";

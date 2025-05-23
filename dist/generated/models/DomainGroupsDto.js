@@ -20,11 +20,11 @@ function DomainGroupsDtoFromJSON(json) {
 }
 exports.DomainGroupsDtoFromJSON = DomainGroupsDtoFromJSON;
 function DomainGroupsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        domainGroups: json['domainGroups'].map(_1.DomainGroupFromJSON),
+        'domainGroups': (json['domainGroups'].map(_1.DomainGroupFromJSON)),
     };
 }
 exports.DomainGroupsDtoFromJSONTyped = DomainGroupsDtoFromJSONTyped;
@@ -36,7 +36,7 @@ function DomainGroupsDtoToJSON(value) {
         return null;
     }
     return {
-        domainGroups: value.domainGroups.map(_1.DomainGroupToJSON),
+        'domainGroups': (value.domainGroups.map(_1.DomainGroupToJSON)),
     };
 }
 exports.DomainGroupsDtoToJSON = DomainGroupsDtoToJSON;

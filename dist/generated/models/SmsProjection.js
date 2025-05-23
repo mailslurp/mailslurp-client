@@ -19,17 +19,17 @@ function SmsProjectionFromJSON(json) {
 }
 exports.SmsProjectionFromJSON = SmsProjectionFromJSON;
 function SmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        userId: json['userId'],
-        createdAt: new Date(json['createdAt']),
-        phoneNumber: json['phoneNumber'],
-        fromNumber: json['fromNumber'],
-        read: json['read'],
-        body: json['body'],
-        id: json['id'],
+        'body': json['body'],
+        'userId': json['userId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'read': json['read'],
+        'id': json['id'],
     };
 }
 exports.SmsProjectionFromJSONTyped = SmsProjectionFromJSONTyped;
@@ -41,13 +41,13 @@ function SmsProjectionToJSON(value) {
         return null;
     }
     return {
-        userId: value.userId,
-        createdAt: value.createdAt.toISOString(),
-        phoneNumber: value.phoneNumber,
-        fromNumber: value.fromNumber,
-        read: value.read,
-        body: value.body,
-        id: value.id,
+        'body': value.body,
+        'userId': value.userId,
+        'createdAt': (value.createdAt.toISOString()),
+        'phoneNumber': value.phoneNumber,
+        'fromNumber': value.fromNumber,
+        'read': value.read,
+        'id': value.id,
     };
 }
 exports.SmsProjectionToJSON = SmsProjectionToJSON;

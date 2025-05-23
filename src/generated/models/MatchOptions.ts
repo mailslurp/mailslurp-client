@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ConditionOption,
-  ConditionOptionFromJSON,
-  ConditionOptionFromJSONTyped,
-  ConditionOptionToJSON,
-  MatchOption,
-  MatchOptionFromJSON,
-  MatchOptionFromJSONTyped,
-  MatchOptionToJSON,
+    ConditionOption,
+    ConditionOptionFromJSON,
+    ConditionOptionFromJSONTyped,
+    ConditionOptionToJSON,
+    MatchOption,
+    MatchOptionFromJSON,
+    MatchOptionFromJSONTyped,
+    MatchOptionToJSON,
 } from './';
 
 /**
@@ -30,64 +30,47 @@ import {
  * @interface MatchOptions
  */
 export interface MatchOptions {
-  /**
-   * Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }`. Options are additive so if one does not match the email is excluded from results
-   * @type {Array<MatchOption>}
-   * @memberof MatchOptions
-   */
-  matches?: Array<MatchOption> | null;
-  /**
-   * Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
-   * @type {Array<ConditionOption>}
-   * @memberof MatchOptions
-   */
-  conditions?: Array<ConditionOption> | null;
+    /**
+     * Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }`. Options are additive so if one does not match the email is excluded from results
+     * @type {Array<MatchOption>}
+     * @memberof MatchOptions
+     */
+    matches?: Array<MatchOption> | null;
+    /**
+     * Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
+     * @type {Array<ConditionOption>}
+     * @memberof MatchOptions
+     */
+    conditions?: Array<ConditionOption> | null;
 }
 
 export function MatchOptionsFromJSON(json: any): MatchOptions {
-  return MatchOptionsFromJSONTyped(json, false);
+    return MatchOptionsFromJSONTyped(json, false);
 }
 
-export function MatchOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): MatchOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    matches: !exists(json, 'matches')
-      ? undefined
-      : json['matches'] === null
-      ? null
-      : (json['matches'] as Array<any>).map(MatchOptionFromJSON),
-    conditions: !exists(json, 'conditions')
-      ? undefined
-      : json['conditions'] === null
-      ? null
-      : (json['conditions'] as Array<any>).map(ConditionOptionFromJSON),
-  };
+export function MatchOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): MatchOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'matches': !exists(json, 'matches') ? undefined : (json['matches'] === null ? null : (json['matches'] as Array<any>).map(MatchOptionFromJSON)),
+        'conditions': !exists(json, 'conditions') ? undefined : (json['conditions'] === null ? null : (json['conditions'] as Array<any>).map(ConditionOptionFromJSON)),
+    };
 }
 
 export function MatchOptionsToJSON(value?: MatchOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    matches:
-      value.matches === undefined
-        ? undefined
-        : value.matches === null
-        ? null
-        : (value.matches as Array<any>).map(MatchOptionToJSON),
-    conditions:
-      value.conditions === undefined
-        ? undefined
-        : value.conditions === null
-        ? null
-        : (value.conditions as Array<any>).map(ConditionOptionToJSON),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'matches': value.matches === undefined ? undefined : (value.matches === null ? null : (value.matches as Array<any>).map(MatchOptionToJSON)),
+        'conditions': value.conditions === undefined ? undefined : (value.conditions === null ? null : (value.conditions as Array<any>).map(ConditionOptionToJSON)),
+    };
 }
+
+

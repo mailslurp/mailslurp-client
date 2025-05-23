@@ -14,45 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailAvailableResult
  */
 export interface EmailAvailableResult {
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailAvailableResult
-   */
-  available: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof EmailAvailableResult
+     */
+    available: boolean;
 }
 
 export function EmailAvailableResultFromJSON(json: any): EmailAvailableResult {
-  return EmailAvailableResultFromJSONTyped(json, false);
+    return EmailAvailableResultFromJSONTyped(json, false);
 }
 
-export function EmailAvailableResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailAvailableResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    available: json['available'],
-  };
+export function EmailAvailableResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailAvailableResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'available': json['available'],
+    };
 }
 
-export function EmailAvailableResultToJSON(
-  value?: EmailAvailableResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    available: value.available,
-  };
+export function EmailAvailableResultToJSON(value?: EmailAvailableResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'available': value.available,
+    };
 }
+
+

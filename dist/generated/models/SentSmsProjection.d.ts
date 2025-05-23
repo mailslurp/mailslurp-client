@@ -20,6 +20,12 @@ export interface SentSmsProjection {
      * @type {string}
      * @memberof SentSmsProjection
      */
+    body: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
     userId: string;
     /**
      *
@@ -51,12 +57,6 @@ export interface SentSmsProjection {
      * @memberof SentSmsProjection
      */
     replyToId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentSmsProjection
-     */
-    body: string;
     /**
      *
      * @type {string}

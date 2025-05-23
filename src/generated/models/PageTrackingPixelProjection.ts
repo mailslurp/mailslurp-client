@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
-  TrackingPixelProjection,
-  TrackingPixelProjectionFromJSON,
-  TrackingPixelProjectionFromJSONTyped,
-  TrackingPixelProjectionToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
+    TrackingPixelProjection,
+    TrackingPixelProjectionFromJSON,
+    TrackingPixelProjectionFromJSONTyped,
+    TrackingPixelProjectionToJSON,
 } from './';
 
 /**
@@ -34,131 +34,119 @@ import {
  * @interface PageTrackingPixelProjection
  */
 export interface PageTrackingPixelProjection {
-  /**
-   *
-   * @type {Array<TrackingPixelProjection>}
-   * @memberof PageTrackingPixelProjection
-   */
-  content?: Array<TrackingPixelProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageTrackingPixelProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageTrackingPixelProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageTrackingPixelProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageTrackingPixelProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageTrackingPixelProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageTrackingPixelProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageTrackingPixelProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageTrackingPixelProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageTrackingPixelProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageTrackingPixelProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<TrackingPixelProjection>}
+     * @memberof PageTrackingPixelProjection
+     */
+    content?: Array<TrackingPixelProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageTrackingPixelProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageTrackingPixelProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageTrackingPixelProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageTrackingPixelProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageTrackingPixelProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageTrackingPixelProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageTrackingPixelProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageTrackingPixelProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageTrackingPixelProjection
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageTrackingPixelProjection
+     */
+    empty?: boolean;
 }
 
-export function PageTrackingPixelProjectionFromJSON(
-  json: any
-): PageTrackingPixelProjection {
-  return PageTrackingPixelProjectionFromJSONTyped(json, false);
+export function PageTrackingPixelProjectionFromJSON(json: any): PageTrackingPixelProjection {
+    return PageTrackingPixelProjectionFromJSONTyped(json, false);
 }
 
-export function PageTrackingPixelProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageTrackingPixelProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(TrackingPixelProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageTrackingPixelProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageTrackingPixelProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(TrackingPixelProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PageTrackingPixelProjectionToJSON(
-  value?: PageTrackingPixelProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(TrackingPixelProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageTrackingPixelProjectionToJSON(value?: PageTrackingPixelProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(TrackingPixelProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'sort': SortObjectToJSON(value.sort),
+        'empty': value.empty,
+    };
 }
+
+

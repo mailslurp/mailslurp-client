@@ -14,119 +14,116 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SendWithQueueResult
  */
 export interface SendWithQueueResult {
-  /**
-   *
-   * @type {string}
-   * @memberof SendWithQueueResult
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendWithQueueResult
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendWithQueueResult
-   */
-  subject?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendWithQueueResult
-   */
-  inboxId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendWithQueueResult
-   */
-  headerId: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SendWithQueueResult
-   */
-  delivered: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof SendWithQueueResult
-   */
-  exceptionName?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendWithQueueResult
-   */
-  message?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof SendWithQueueResult
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof SendWithQueueResult
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendWithQueueResult
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendWithQueueResult
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendWithQueueResult
+     */
+    subject?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendWithQueueResult
+     */
+    inboxId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendWithQueueResult
+     */
+    headerId: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SendWithQueueResult
+     */
+    delivered: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendWithQueueResult
+     */
+    exceptionName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendWithQueueResult
+     */
+    message?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SendWithQueueResult
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SendWithQueueResult
+     */
+    updatedAt: Date;
 }
 
 export function SendWithQueueResultFromJSON(json: any): SendWithQueueResult {
-  return SendWithQueueResultFromJSONTyped(json, false);
+    return SendWithQueueResultFromJSONTyped(json, false);
 }
 
-export function SendWithQueueResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SendWithQueueResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    headerId: json['headerId'],
-    delivered: json['delivered'],
-    exceptionName: !exists(json, 'exceptionName')
-      ? undefined
-      : json['exceptionName'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function SendWithQueueResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendWithQueueResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        'headerId': json['headerId'],
+        'delivered': json['delivered'],
+        'exceptionName': !exists(json, 'exceptionName') ? undefined : json['exceptionName'],
+        'message': !exists(json, 'message') ? undefined : json['message'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
-export function SendWithQueueResultToJSON(
-  value?: SendWithQueueResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    subject: value.subject,
-    inboxId: value.inboxId,
-    headerId: value.headerId,
-    delivered: value.delivered,
-    exceptionName: value.exceptionName,
-    message: value.message,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function SendWithQueueResultToJSON(value?: SendWithQueueResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'userId': value.userId,
+        'subject': value.subject,
+        'inboxId': value.inboxId,
+        'headerId': value.headerId,
+        'delivered': value.delivered,
+        'exceptionName': value.exceptionName,
+        'message': value.message,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+    };
 }
+
+

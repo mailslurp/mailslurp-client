@@ -1,4 +1,5 @@
 .openapi-generator-ignore
+apis/AIControllerApi.ts
 apis/AliasControllerApi.ts
 apis/AttachmentControllerApi.ts
 apis/BounceControllerApi.ts
@@ -26,7 +27,6 @@ apis/OAuthConnectionApi.ts
 apis/PhoneControllerApi.ts
 apis/SentEmailsControllerApi.ts
 apis/SmsControllerApi.ts
-apis/SseControllerApi.ts
 apis/TemplateControllerApi.ts
 apis/ToolsControllerApi.ts
 apis/TrackingControllerApi.ts
@@ -167,6 +167,7 @@ models/GenerateDmarcRecordOptions.ts
 models/GenerateDmarcRecordResults.ts
 models/GenerateMtaStsRecordOptions.ts
 models/GenerateMtaStsRecordResults.ts
+models/GenerateStructuredContentEmailOptions.ts
 models/GenerateTlsReportingRecordOptions.ts
 models/GenerateTlsReportingRecordResults.ts
 models/GetEmailScreenshotOptions.ts
@@ -336,6 +337,8 @@ models/SmsSendOptions.ts
 models/SmtpAccessDetails.ts
 models/SortObject.ts
 models/SpellingIssue.ts
+models/StructuredContentResult.ts
+models/StructuredOutputSchema.ts
 models/TemplateDto.ts
 models/TemplatePreview.ts
 models/TemplateProjection.ts

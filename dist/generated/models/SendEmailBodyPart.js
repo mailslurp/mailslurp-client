@@ -19,12 +19,12 @@ function SendEmailBodyPartFromJSON(json) {
 }
 exports.SendEmailBodyPartFromJSON = SendEmailBodyPartFromJSON;
 function SendEmailBodyPartFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        contentType: json['contentType'],
-        contentBody: json['contentBody'],
+        'contentType': json['contentType'],
+        'contentBody': json['contentBody'],
     };
 }
 exports.SendEmailBodyPartFromJSONTyped = SendEmailBodyPartFromJSONTyped;
@@ -36,8 +36,8 @@ function SendEmailBodyPartToJSON(value) {
         return null;
     }
     return {
-        contentType: value.contentType,
-        contentBody: value.contentBody,
+        'contentType': value.contentType,
+        'contentBody': value.contentBody,
     };
 }
 exports.SendEmailBodyPartToJSON = SendEmailBodyPartToJSON;

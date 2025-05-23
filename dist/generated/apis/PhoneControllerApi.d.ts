@@ -44,6 +44,12 @@ export interface GetPhoneMessageThreadsRequest {
 export interface GetPhoneNumberRequest {
     phoneNumberId: string;
 }
+export interface GetPhoneNumberByNameRequest {
+    name: string;
+}
+export interface GetPhoneNumberByPhoneNumberRequest {
+    phoneNumber: string;
+}
 export interface GetPhoneNumbersRequest {
     phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
     page?: number;
@@ -213,6 +219,26 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     getPhoneNumber(requestParameters: GetPhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
+     * Get a phone number by name
+     * Get a phone number by name
+     */
+    getPhoneNumberByNameRaw(requestParameters: GetPhoneNumberByNameRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Get a phone number by name
+     * Get a phone number by name
+     */
+    getPhoneNumberByName(requestParameters: GetPhoneNumberByNameRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
+     * Get a phone number by phone number
+     * Get a phone number by phone number
+     */
+    getPhoneNumberByPhoneNumberRaw(requestParameters: GetPhoneNumberByPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Get a phone number by phone number
+     * Get a phone number by phone number
+     */
+    getPhoneNumberByPhoneNumber(requestParameters: GetPhoneNumberByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
      * List phone numbers for account
      * Get phone numbers
      */
@@ -322,9 +348,9 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
     validatePhoneNumber(requestParameters: ValidatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberValidationDto>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumbersPhoneCountryEnum {
     US = "US",
     GB = "GB",
@@ -340,25 +366,25 @@ export declare enum GetPhoneNumbersPhoneCountryEnum {
     SE = "SE"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumbersSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetSentSmsByPhoneNumberSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetSmsByPhoneNumberSortEnum {
     ASC = "ASC",
     DESC = "DESC"

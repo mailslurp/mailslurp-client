@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookEndpointProjectionToJSON = exports.WebhookEndpointProjectionFromJSONTyped = exports.WebhookEndpointProjectionFromJSON = exports.WebhookEndpointProjectionHealthEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WebhookEndpointProjectionHealthEnum;
 (function (WebhookEndpointProjectionHealthEnum) {
     WebhookEndpointProjectionHealthEnum["HEALTHY"] = "HEALTHY";
@@ -28,12 +28,12 @@ function WebhookEndpointProjectionFromJSON(json) {
 }
 exports.WebhookEndpointProjectionFromJSON = WebhookEndpointProjectionFromJSON;
 function WebhookEndpointProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        url: json['url'],
-        health: json['health'],
+        'url': json['url'],
+        'health': json['health'],
     };
 }
 exports.WebhookEndpointProjectionFromJSONTyped = WebhookEndpointProjectionFromJSONTyped;
@@ -45,8 +45,8 @@ function WebhookEndpointProjectionToJSON(value) {
         return null;
     }
     return {
-        url: value.url,
-        health: value.health,
+        'url': value.url,
+        'health': value.health,
     };
 }
 exports.WebhookEndpointProjectionToJSON = WebhookEndpointProjectionToJSON;

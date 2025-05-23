@@ -20,11 +20,11 @@ function EmailThreadItemsDtoFromJSON(json) {
 }
 exports.EmailThreadItemsDtoFromJSON = EmailThreadItemsDtoFromJSON;
 function EmailThreadItemsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        items: json['items'].map(_1.EmailThreadItemFromJSON),
+        'items': (json['items'].map(_1.EmailThreadItemFromJSON)),
     };
 }
 exports.EmailThreadItemsDtoFromJSONTyped = EmailThreadItemsDtoFromJSONTyped;
@@ -36,7 +36,7 @@ function EmailThreadItemsDtoToJSON(value) {
         return null;
     }
     return {
-        items: value.items.map(_1.EmailThreadItemToJSON),
+        'items': (value.items.map(_1.EmailThreadItemToJSON)),
     };
 }
 exports.EmailThreadItemsDtoToJSON = EmailThreadItemsDtoToJSON;

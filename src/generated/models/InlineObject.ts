@@ -14,43 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface InlineObject
  */
 export interface InlineObject {
-  /**
-   *
-   * @type {Blob}
-   * @memberof InlineObject
-   */
-  file: Blob;
+    /**
+     * 
+     * @type {Blob}
+     * @memberof InlineObject
+     */
+    file: Blob;
 }
 
 export function InlineObjectFromJSON(json: any): InlineObject {
-  return InlineObjectFromJSONTyped(json, false);
+    return InlineObjectFromJSONTyped(json, false);
 }
 
-export function InlineObjectFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InlineObject {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    file: json['file'],
-  };
+export function InlineObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'file': json['file'],
+    };
 }
 
 export function InlineObjectToJSON(value?: InlineObject | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    file: value.file,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'file': value.file,
+    };
 }
+
+

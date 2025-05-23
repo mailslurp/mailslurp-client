@@ -19,38 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface RawEmailJson
  */
 export interface RawEmailJson {
-  /**
-   *
-   * @type {string}
-   * @memberof RawEmailJson
-   */
-  content: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RawEmailJson
+     */
+    content: string;
 }
 
 export function RawEmailJsonFromJSON(json: any): RawEmailJson {
-  return RawEmailJsonFromJSONTyped(json, false);
+    return RawEmailJsonFromJSONTyped(json, false);
 }
 
-export function RawEmailJsonFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): RawEmailJson {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: json['content'],
-  };
+export function RawEmailJsonFromJSONTyped(json: any, ignoreDiscriminator: boolean): RawEmailJson {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': json['content'],
+    };
 }
 
 export function RawEmailJsonToJSON(value?: RawEmailJson | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content: value.content,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content,
+    };
 }
+
+

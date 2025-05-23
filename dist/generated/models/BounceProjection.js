@@ -20,16 +20,16 @@ function BounceProjectionFromJSON(json) {
 }
 exports.BounceProjectionFromJSON = BounceProjectionFromJSON;
 function BounceProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        sender: json['sender'],
-        createdAt: new Date(json['createdAt']),
-        bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
-        bounceMta: !(0, runtime_1.exists)(json, 'bounceMta') ? undefined : json['bounceMta'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'sender': json['sender'],
+        'createdAt': (new Date(json['createdAt'])),
+        'bounceType': !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
+        'bounceMta': !(0, runtime_1.exists)(json, 'bounceMta') ? undefined : json['bounceMta'],
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
 exports.BounceProjectionFromJSONTyped = BounceProjectionFromJSONTyped;
@@ -41,12 +41,12 @@ function BounceProjectionToJSON(value) {
         return null;
     }
     return {
-        sender: value.sender,
-        createdAt: value.createdAt.toISOString(),
-        bounceType: value.bounceType,
-        bounceMta: value.bounceMta,
-        subject: value.subject,
-        id: value.id,
+        'sender': value.sender,
+        'createdAt': (value.createdAt.toISOString()),
+        'bounceType': value.bounceType,
+        'bounceMta': value.bounceMta,
+        'subject': value.subject,
+        'id': value.id,
     };
 }
 exports.BounceProjectionToJSON = BounceProjectionToJSON;

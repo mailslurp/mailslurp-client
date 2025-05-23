@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpellingIssueToJSON = exports.SpellingIssueFromJSONTyped = exports.SpellingIssueFromJSON = exports.SpellingIssueSeverityEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var SpellingIssueSeverityEnum;
 (function (SpellingIssueSeverityEnum) {
     SpellingIssueSeverityEnum["Warning"] = "Warning";
@@ -28,14 +28,14 @@ function SpellingIssueFromJSON(json) {
 }
 exports.SpellingIssueFromJSON = SpellingIssueFromJSON;
 function SpellingIssueFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        group: json['group'],
-        suggestion: json['suggestion'],
-        severity: json['severity'],
-        message: json['message'],
+        'group': json['group'],
+        'suggestion': json['suggestion'],
+        'severity': json['severity'],
+        'message': json['message'],
     };
 }
 exports.SpellingIssueFromJSONTyped = SpellingIssueFromJSONTyped;
@@ -47,10 +47,10 @@ function SpellingIssueToJSON(value) {
         return null;
     }
     return {
-        group: value.group,
-        suggestion: value.suggestion,
-        severity: value.severity,
-        message: value.message,
+        'group': value.group,
+        'suggestion': value.suggestion,
+        'severity': value.severity,
+        'message': value.message,
     };
 }
 exports.SpellingIssueToJSON = SpellingIssueToJSON;

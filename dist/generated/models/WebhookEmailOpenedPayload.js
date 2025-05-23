@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookEmailOpenedPayloadToJSON = exports.WebhookEmailOpenedPayloadFromJSONTyped = exports.WebhookEmailOpenedPayloadFromJSON = exports.WebhookEmailOpenedPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WebhookEmailOpenedPayloadEventNameEnum;
 (function (WebhookEmailOpenedPayloadEventNameEnum) {
     WebhookEmailOpenedPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -38,19 +38,19 @@ function WebhookEmailOpenedPayloadFromJSON(json) {
 }
 exports.WebhookEmailOpenedPayloadFromJSON = WebhookEmailOpenedPayloadFromJSON;
 function WebhookEmailOpenedPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        eventName: json['eventName'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        inboxId: json['inboxId'],
-        pixelId: json['pixelId'],
-        sentEmailId: json['sentEmailId'],
-        recipient: json['recipient'],
-        createdAt: new Date(json['createdAt']),
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        'inboxId': json['inboxId'],
+        'pixelId': json['pixelId'],
+        'sentEmailId': json['sentEmailId'],
+        'recipient': json['recipient'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.WebhookEmailOpenedPayloadFromJSONTyped = WebhookEmailOpenedPayloadFromJSONTyped;
@@ -62,15 +62,15 @@ function WebhookEmailOpenedPayloadToJSON(value) {
         return null;
     }
     return {
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        eventName: value.eventName,
-        webhookName: value.webhookName,
-        inboxId: value.inboxId,
-        pixelId: value.pixelId,
-        sentEmailId: value.sentEmailId,
-        recipient: value.recipient,
-        createdAt: value.createdAt.toISOString(),
+        'messageId': value.messageId,
+        'webhookId': value.webhookId,
+        'eventName': value.eventName,
+        'webhookName': value.webhookName,
+        'inboxId': value.inboxId,
+        'pixelId': value.pixelId,
+        'sentEmailId': value.sentEmailId,
+        'recipient': value.recipient,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.WebhookEmailOpenedPayloadToJSON = WebhookEmailOpenedPayloadToJSON;
