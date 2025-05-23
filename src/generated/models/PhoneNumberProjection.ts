@@ -19,98 +19,101 @@ import { exists, mapValues } from '../runtime';
  * @interface PhoneNumberProjection
  */
 export interface PhoneNumberProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    userId: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof PhoneNumberProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    phoneNumber: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberProjection
+   */
+  userId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof PhoneNumberProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberProjection
+   */
+  phoneNumber: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberProjection
+   */
+  phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberProjection
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberProjection
+   */
+  id: string;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum PhoneNumberProjectionPhoneCountryEnum {
-    US = 'US',
-    GB = 'GB',
-    AU = 'AU',
-    CA = 'CA',
-    EE = 'EE',
-    HK = 'HK',
-    PL = 'PL',
-    CH = 'CH',
-    PT = 'PT',
-    NL = 'NL',
-    IL = 'IL',
-    SE = 'SE'
+  US = 'US',
+  GB = 'GB',
+  AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  CH = 'CH',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  SE = 'SE',
 }
 
-export function PhoneNumberProjectionFromJSON(json: any): PhoneNumberProjection {
-    return PhoneNumberProjectionFromJSONTyped(json, false);
+export function PhoneNumberProjectionFromJSON(
+  json: any
+): PhoneNumberProjection {
+  return PhoneNumberProjectionFromJSONTyped(json, false);
 }
 
-export function PhoneNumberProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'userId': json['userId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'phoneNumber': json['phoneNumber'],
-        'phoneCountry': json['phoneCountry'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
-    };
+export function PhoneNumberProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PhoneNumberProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    userId: json['userId'],
+    createdAt: new Date(json['createdAt']),
+    phoneNumber: json['phoneNumber'],
+    phoneCountry: json['phoneCountry'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
+  };
 }
 
-export function PhoneNumberProjectionToJSON(value?: PhoneNumberProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'userId': value.userId,
-        'createdAt': (value.createdAt.toISOString()),
-        'phoneNumber': value.phoneNumber,
-        'phoneCountry': value.phoneCountry,
-        'name': value.name,
-        'id': value.id,
-    };
+export function PhoneNumberProjectionToJSON(
+  value?: PhoneNumberProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    userId: value.userId,
+    createdAt: value.createdAt.toISOString(),
+    phoneNumber: value.phoneNumber,
+    phoneCountry: value.phoneCountry,
+    name: value.name,
+    id: value.id,
+  };
 }
-
-

@@ -12,63 +12,153 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    GenerateStructuredContentEmailOptions,
-    GenerateStructuredContentEmailOptionsFromJSON,
-    GenerateStructuredContentEmailOptionsToJSON,
-    StructuredContentResult,
-    StructuredContentResultFromJSON,
-    StructuredContentResultToJSON,
+  GenerateStructuredContentEmailOptions,
+  GenerateStructuredContentEmailOptionsFromJSON,
+  GenerateStructuredContentEmailOptionsToJSON,
+  StructuredContentResult,
+  StructuredContentResultFromJSON,
+  StructuredContentResultToJSON,
+  StructuredOutputSchema,
+  StructuredOutputSchemaFromJSON,
+  StructuredOutputSchemaToJSON,
+  StructuredOutputSchemaValidation,
+  StructuredOutputSchemaValidationFromJSON,
+  StructuredOutputSchemaValidationToJSON,
 } from '../models';
 
 export interface GenerateStructuredContentFromEmailRequest {
-    generateStructuredContentEmailOptions: GenerateStructuredContentEmailOptions;
+  generateStructuredContentEmailOptions: GenerateStructuredContentEmailOptions;
+}
+
+export interface ValidateStructuredOutputSchemaRequest {
+  structuredOutputSchema: StructuredOutputSchema;
 }
 
 /**
- * 
+ *
  */
 export class AIControllerApi extends runtime.BaseAPI {
-
-    /**
-     * Use output schemas to extract data from an email using AI
-     * Generate structured content for an email
-     */
-    async generateStructuredContentFromEmailRaw(requestParameters: GenerateStructuredContentFromEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredContentResult>> {
-        if (requestParameters.generateStructuredContentEmailOptions === null || requestParameters.generateStructuredContentEmailOptions === undefined) {
-            throw new runtime.RequiredError('generateStructuredContentEmailOptions','Required parameter requestParameters.generateStructuredContentEmailOptions was null or undefined when calling generateStructuredContentFromEmail.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/ai/structured-content/email`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: GenerateStructuredContentEmailOptionsToJSON(requestParameters.generateStructuredContentEmailOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => StructuredContentResultFromJSON(jsonValue));
+  /**
+   * Use output schemas to extract data from an email using AI
+   * Generate structured content for an email
+   */
+  async generateStructuredContentFromEmailRaw(
+    requestParameters: GenerateStructuredContentFromEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<StructuredContentResult>> {
+    if (
+      requestParameters.generateStructuredContentEmailOptions === null ||
+      requestParameters.generateStructuredContentEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateStructuredContentEmailOptions',
+        'Required parameter requestParameters.generateStructuredContentEmailOptions was null or undefined when calling generateStructuredContentFromEmail.'
+      );
     }
 
-    /**
-     * Use output schemas to extract data from an email using AI
-     * Generate structured content for an email
-     */
-    async generateStructuredContentFromEmail(requestParameters: GenerateStructuredContentFromEmailRequest, initOverrides?: RequestInit): Promise<StructuredContentResult> {
-        const response = await this.generateStructuredContentFromEmailRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
+    const response = await this.request(
+      {
+        path: `/ai/structured-content/email`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateStructuredContentEmailOptionsToJSON(
+          requestParameters.generateStructuredContentEmailOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      StructuredContentResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Use output schemas to extract data from an email using AI
+   * Generate structured content for an email
+   */
+  async generateStructuredContentFromEmail(
+    requestParameters: GenerateStructuredContentFromEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<StructuredContentResult> {
+    const response = await this.generateStructuredContentFromEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Check if a schema is valid and can be used to extract data using AI
+   * Validate structured content schema
+   */
+  async validateStructuredOutputSchemaRaw(
+    requestParameters: ValidateStructuredOutputSchemaRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<StructuredOutputSchemaValidation>> {
+    if (
+      requestParameters.structuredOutputSchema === null ||
+      requestParameters.structuredOutputSchema === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'structuredOutputSchema',
+        'Required parameter requestParameters.structuredOutputSchema was null or undefined when calling validateStructuredOutputSchema.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/structured-content/validate`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: StructuredOutputSchemaToJSON(
+          requestParameters.structuredOutputSchema
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      StructuredOutputSchemaValidationFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Check if a schema is valid and can be used to extract data using AI
+   * Validate structured content schema
+   */
+  async validateStructuredOutputSchema(
+    requestParameters: ValidateStructuredOutputSchemaRequest,
+    initOverrides?: RequestInit
+  ): Promise<StructuredOutputSchemaValidation> {
+    const response = await this.validateStructuredOutputSchemaRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }

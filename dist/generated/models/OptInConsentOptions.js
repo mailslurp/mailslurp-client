@@ -21,13 +21,15 @@ function OptInConsentOptionsFromJSON(json) {
 }
 exports.OptInConsentOptionsFromJSON = OptInConsentOptionsFromJSON;
 function OptInConsentOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': json['emailAddress'],
-        'companyName': !(0, runtime_1.exists)(json, 'companyName') ? undefined : json['companyName'],
-        'sendOptInOptions': !(0, runtime_1.exists)(json, 'sendOptInOptions') ? undefined : (0, _1.SendOptInConsentEmailOptionsFromJSON)(json['sendOptInOptions']),
+        emailAddress: json['emailAddress'],
+        companyName: !(0, runtime_1.exists)(json, 'companyName') ? undefined : json['companyName'],
+        sendOptInOptions: !(0, runtime_1.exists)(json, 'sendOptInOptions')
+            ? undefined
+            : (0, _1.SendOptInConsentEmailOptionsFromJSON)(json['sendOptInOptions']),
     };
 }
 exports.OptInConsentOptionsFromJSONTyped = OptInConsentOptionsFromJSONTyped;
@@ -39,9 +41,9 @@ function OptInConsentOptionsToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'companyName': value.companyName,
-        'sendOptInOptions': (0, _1.SendOptInConsentEmailOptionsToJSON)(value.sendOptInOptions),
+        emailAddress: value.emailAddress,
+        companyName: value.companyName,
+        sendOptInOptions: (0, _1.SendOptInConsentEmailOptionsToJSON)(value.sendOptInOptions),
     };
 }
 exports.OptInConsentOptionsToJSON = OptInConsentOptionsToJSON;

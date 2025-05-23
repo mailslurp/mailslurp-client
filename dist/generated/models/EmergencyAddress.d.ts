@@ -95,9 +95,9 @@ export interface EmergencyAddress {
     updatedAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum EmergencyAddressPhoneCountryEnum {
     US = "US",
     GB = "GB",

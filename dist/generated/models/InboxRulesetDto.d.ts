@@ -59,24 +59,26 @@ export interface InboxRulesetDto {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxRulesetDtoScopeEnum {
     RECEIVING_EMAILS = "RECEIVING_EMAILS",
     SENDING_EMAILS = "SENDING_EMAILS"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxRulesetDtoActionEnum {
     BLOCK = "BLOCK",
     ALLOW = "ALLOW",
     FILTER_REMOVE = "FILTER_REMOVE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxRulesetDtoHandlerEnum {
     EXCEPTION = "EXCEPTION"
 }

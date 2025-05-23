@@ -16,17 +16,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionAccountRegionEnum = exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var OrganizationInboxProjectionInboxTypeEnum;
 (function (OrganizationInboxProjectionInboxTypeEnum) {
     OrganizationInboxProjectionInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     OrganizationInboxProjectionInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(OrganizationInboxProjectionInboxTypeEnum = exports.OrganizationInboxProjectionInboxTypeEnum || (exports.OrganizationInboxProjectionInboxTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(OrganizationInboxProjectionInboxTypeEnum = exports.OrganizationInboxProjectionInboxTypeEnum || (exports.OrganizationInboxProjectionInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var OrganizationInboxProjectionFunctionsAsEnum;
 (function (OrganizationInboxProjectionFunctionsAsEnum) {
     OrganizationInboxProjectionFunctionsAsEnum["ALIAS"] = "ALIAS";
@@ -36,10 +37,11 @@ var OrganizationInboxProjectionFunctionsAsEnum;
     OrganizationInboxProjectionFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
     OrganizationInboxProjectionFunctionsAsEnum["GUEST"] = "GUEST";
     OrganizationInboxProjectionFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var OrganizationInboxProjectionAccountRegionEnum;
 (function (OrganizationInboxProjectionAccountRegionEnum) {
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
@@ -49,26 +51,32 @@ function OrganizationInboxProjectionFromJSON(json) {
 }
 exports.OrganizationInboxProjectionFromJSON = OrganizationInboxProjectionFromJSON;
 function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'emailAddress': json['emailAddress'],
-        'favourite': json['favourite'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'teamAccess': json['teamAccess'],
-        'inboxType': !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        'readOnly': json['readOnly'],
-        'virtualInbox': json['virtualInbox'],
-        'functionsAs': !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
-        'userId': json['userId'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : (json['expiresAt'] === null ? null : new Date(json['expiresAt'])),
-        'accountRegion': !(0, runtime_1.exists)(json, 'accountRegion') ? undefined : json['accountRegion'],
+        id: json['id'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        createdAt: new Date(json['createdAt']),
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        emailAddress: json['emailAddress'],
+        favourite: json['favourite'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        teamAccess: json['teamAccess'],
+        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        readOnly: json['readOnly'],
+        virtualInbox: json['virtualInbox'],
+        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        userId: json['userId'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
+        accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
+            ? undefined
+            : json['accountRegion'],
     };
 }
 exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
@@ -80,22 +88,26 @@ function OrganizationInboxProjectionToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'domainId': value.domainId,
-        'createdAt': (value.createdAt.toISOString()),
-        'name': value.name,
-        'emailAddress': value.emailAddress,
-        'favourite': value.favourite,
-        'tags': value.tags,
-        'teamAccess': value.teamAccess,
-        'inboxType': value.inboxType,
-        'readOnly': value.readOnly,
-        'virtualInbox': value.virtualInbox,
-        'functionsAs': value.functionsAs,
-        'userId': value.userId,
-        'description': value.description,
-        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt === null ? null : value.expiresAt.toISOString()),
-        'accountRegion': value.accountRegion,
+        id: value.id,
+        domainId: value.domainId,
+        createdAt: value.createdAt.toISOString(),
+        name: value.name,
+        emailAddress: value.emailAddress,
+        favourite: value.favourite,
+        tags: value.tags,
+        teamAccess: value.teamAccess,
+        inboxType: value.inboxType,
+        readOnly: value.readOnly,
+        virtualInbox: value.virtualInbox,
+        functionsAs: value.functionsAs,
+        userId: value.userId,
+        description: value.description,
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
+        accountRegion: value.accountRegion,
     };
 }
 exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

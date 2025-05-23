@@ -114,17 +114,19 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/domains/{id}/wildcard".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/domains/{id}/wildcard".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DomainDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -157,14 +159,15 @@ var DomainControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createDomainOptions === null || requestParameters.createDomainOptions === undefined) {
+                        if (requestParameters.createDomainOptions === null ||
+                            requestParameters.createDomainOptions === undefined) {
                             throw new runtime.RequiredError('createDomainOptions', 'Required parameter requestParameters.createDomainOptions was null or undefined when calling createDomain.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/domains",
@@ -175,7 +178,9 @@ var DomainControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DomainDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -214,10 +219,10 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/domains/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/domains/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -263,7 +268,7 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/domains/available-domains",
@@ -273,7 +278,9 @@ var DomainControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DomainGroupsDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainGroupsDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -315,17 +322,19 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/domains/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/domains/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DomainDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -361,7 +370,7 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/domains/issues",
@@ -371,7 +380,9 @@ var DomainControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DomainIssuesDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainIssuesDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -410,17 +421,19 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/domains/{id}/wildcard".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/domains/{id}/wildcard".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -456,7 +469,7 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/domains",
@@ -466,7 +479,9 @@ var DomainControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.DomainPreviewFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.DomainPreviewFromJSON);
+                            })];
                 }
             });
         });
@@ -505,7 +520,7 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/domains/mailslurp-domains",
@@ -515,7 +530,9 @@ var DomainControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DomainGroupsDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainGroupsDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -551,17 +568,18 @@ var DomainControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateDomain.');
                         }
-                        if (requestParameters.updateDomainOptions === null || requestParameters.updateDomainOptions === undefined) {
+                        if (requestParameters.updateDomainOptions === null ||
+                            requestParameters.updateDomainOptions === undefined) {
                             throw new runtime.RequiredError('updateDomainOptions', 'Required parameter requestParameters.updateDomainOptions was null or undefined when calling updateDomain.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/domains/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/domains/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -569,7 +587,9 @@ var DomainControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DomainDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -596,18 +616,18 @@ var DomainControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.DomainControllerApi = DomainControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAvailableDomainsInboxTypeEnum;
 (function (GetAvailableDomainsInboxTypeEnum) {
     GetAvailableDomainsInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     GetAvailableDomainsInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(GetAvailableDomainsInboxTypeEnum = exports.GetAvailableDomainsInboxTypeEnum || (exports.GetAvailableDomainsInboxTypeEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetMailSlurpDomainsInboxTypeEnum;
 (function (GetMailSlurpDomainsInboxTypeEnum) {
     GetMailSlurpDomainsInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";

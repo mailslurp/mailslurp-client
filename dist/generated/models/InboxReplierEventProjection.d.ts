@@ -77,9 +77,9 @@ export interface InboxReplierEventProjection {
     status?: InboxReplierEventProjectionStatusEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxReplierEventProjectionStatusEnum {
     SUCCESS = "SUCCESS",
     FAILURE = "FAILURE"

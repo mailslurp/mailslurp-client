@@ -19,110 +19,111 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxRulesetDto
  */
 export interface InboxRulesetDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxRulesetDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxRulesetDto
-     */
-    inboxId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxRulesetDto
-     */
-    scope: InboxRulesetDtoScopeEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxRulesetDto
-     */
-    action: InboxRulesetDtoActionEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxRulesetDto
-     */
-    target: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxRulesetDto
-     */
-    handler: InboxRulesetDtoHandlerEnum;
-    /**
-     * 
-     * @type {Date}
-     * @memberof InboxRulesetDto
-     */
-    createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRulesetDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRulesetDto
+   */
+  inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRulesetDto
+   */
+  scope: InboxRulesetDtoScopeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRulesetDto
+   */
+  action: InboxRulesetDtoActionEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRulesetDto
+   */
+  target: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRulesetDto
+   */
+  handler: InboxRulesetDtoHandlerEnum;
+  /**
+   *
+   * @type {Date}
+   * @memberof InboxRulesetDto
+   */
+  createdAt: Date;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum InboxRulesetDtoScopeEnum {
-    RECEIVING_EMAILS = 'RECEIVING_EMAILS',
-    SENDING_EMAILS = 'SENDING_EMAILS'
-}/**
-* @export
-* @enum {string}
-*/
+  RECEIVING_EMAILS = 'RECEIVING_EMAILS',
+  SENDING_EMAILS = 'SENDING_EMAILS',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum InboxRulesetDtoActionEnum {
-    BLOCK = 'BLOCK',
-    ALLOW = 'ALLOW',
-    FILTER_REMOVE = 'FILTER_REMOVE'
-}/**
-* @export
-* @enum {string}
-*/
+  BLOCK = 'BLOCK',
+  ALLOW = 'ALLOW',
+  FILTER_REMOVE = 'FILTER_REMOVE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum InboxRulesetDtoHandlerEnum {
-    EXCEPTION = 'EXCEPTION'
+  EXCEPTION = 'EXCEPTION',
 }
 
 export function InboxRulesetDtoFromJSON(json: any): InboxRulesetDto {
-    return InboxRulesetDtoFromJSONTyped(json, false);
+  return InboxRulesetDtoFromJSONTyped(json, false);
 }
 
-export function InboxRulesetDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRulesetDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'scope': json['scope'],
-        'action': json['action'],
-        'target': json['target'],
-        'handler': json['handler'],
-        'createdAt': (new Date(json['createdAt'])),
-    };
+export function InboxRulesetDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): InboxRulesetDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    scope: json['scope'],
+    action: json['action'],
+    target: json['target'],
+    handler: json['handler'],
+    createdAt: new Date(json['createdAt']),
+  };
 }
 
 export function InboxRulesetDtoToJSON(value?: InboxRulesetDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'scope': value.scope,
-        'action': value.action,
-        'target': value.target,
-        'handler': value.handler,
-        'createdAt': (value.createdAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    inboxId: value.inboxId,
+    scope: value.scope,
+    action: value.action,
+    target: value.target,
+    handler: value.handler,
+    createdAt: value.createdAt.toISOString(),
+  };
 }
-
-

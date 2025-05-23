@@ -19,63 +19,62 @@ import { exists, mapValues } from '../runtime';
  * @interface NameServerRecord
  */
 export interface NameServerRecord {
-    /**
-     * 
-     * @type {string}
-     * @memberof NameServerRecord
-     */
-    raw: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof NameServerRecord
-     */
-    recordType: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof NameServerRecord
-     */
-    priority: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof NameServerRecord
-     */
-    value: string;
+  /**
+   *
+   * @type {string}
+   * @memberof NameServerRecord
+   */
+  raw: string;
+  /**
+   *
+   * @type {string}
+   * @memberof NameServerRecord
+   */
+  recordType: string;
+  /**
+   *
+   * @type {string}
+   * @memberof NameServerRecord
+   */
+  priority: string;
+  /**
+   *
+   * @type {string}
+   * @memberof NameServerRecord
+   */
+  value: string;
 }
 
 export function NameServerRecordFromJSON(json: any): NameServerRecord {
-    return NameServerRecordFromJSONTyped(json, false);
+  return NameServerRecordFromJSONTyped(json, false);
 }
 
-export function NameServerRecordFromJSONTyped(json: any, ignoreDiscriminator: boolean): NameServerRecord {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'raw': json['raw'],
-        'recordType': json['recordType'],
-        'priority': json['priority'],
-        'value': json['value'],
-    };
+export function NameServerRecordFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): NameServerRecord {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    raw: json['raw'],
+    recordType: json['recordType'],
+    priority: json['priority'],
+    value: json['value'],
+  };
 }
 
 export function NameServerRecordToJSON(value?: NameServerRecord | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'raw': value.raw,
-        'recordType': value.recordType,
-        'priority': value.priority,
-        'value': value.value,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    raw: value.raw,
+    recordType: value.recordType,
+    priority: value.priority,
+    value: value.value,
+  };
 }
-
-

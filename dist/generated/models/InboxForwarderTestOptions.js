@@ -19,11 +19,11 @@ function InboxForwarderTestOptionsFromJSON(json) {
 }
 exports.InboxForwarderTestOptionsFromJSON = InboxForwarderTestOptionsFromJSON;
 function InboxForwarderTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'testValue': json['testValue'],
+        testValue: json['testValue'],
     };
 }
 exports.InboxForwarderTestOptionsFromJSONTyped = InboxForwarderTestOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function InboxForwarderTestOptionsToJSON(value) {
         return null;
     }
     return {
-        'testValue': value.testValue,
+        testValue: value.testValue,
     };
 }
 exports.InboxForwarderTestOptionsToJSON = InboxForwarderTestOptionsToJSON;

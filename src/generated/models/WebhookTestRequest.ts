@@ -19,78 +19,79 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookTestRequest
  */
 export interface WebhookTestRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof WebhookTestRequest
-     */
-    url: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof WebhookTestRequest
-     */
-    method: WebhookTestRequestMethodEnum;
-    /**
-     * 
-     * @type {{ [key: string]: string; }}
-     * @memberof WebhookTestRequest
-     */
-    headers: { [key: string]: string; };
-    /**
-     * 
-     * @type {string}
-     * @memberof WebhookTestRequest
-     */
-    payload?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookTestRequest
+   */
+  url: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookTestRequest
+   */
+  method: WebhookTestRequestMethodEnum;
+  /**
+   *
+   * @type {{ [key: string]: string; }}
+   * @memberof WebhookTestRequest
+   */
+  headers: { [key: string]: string };
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookTestRequest
+   */
+  payload?: string | null;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WebhookTestRequestMethodEnum {
-    POST = 'POST',
-    DELETE = 'DELETE',
-    GET = 'GET',
-    PUT = 'PUT',
-    PATCH = 'PATCH',
-    HEAD = 'HEAD',
-    OPTIONS = 'OPTIONS',
-    TRACE = 'TRACE'
+  POST = 'POST',
+  DELETE = 'DELETE',
+  GET = 'GET',
+  PUT = 'PUT',
+  PATCH = 'PATCH',
+  HEAD = 'HEAD',
+  OPTIONS = 'OPTIONS',
+  TRACE = 'TRACE',
 }
 
 export function WebhookTestRequestFromJSON(json: any): WebhookTestRequest {
-    return WebhookTestRequestFromJSONTyped(json, false);
+  return WebhookTestRequestFromJSONTyped(json, false);
 }
 
-export function WebhookTestRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestRequest {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'url': json['url'],
-        'method': json['method'],
-        'headers': json['headers'],
-        'payload': !exists(json, 'payload') ? undefined : json['payload'],
-    };
+export function WebhookTestRequestFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookTestRequest {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    url: json['url'],
+    method: json['method'],
+    headers: json['headers'],
+    payload: !exists(json, 'payload') ? undefined : json['payload'],
+  };
 }
 
-export function WebhookTestRequestToJSON(value?: WebhookTestRequest | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'url': value.url,
-        'method': value.method,
-        'headers': value.headers,
-        'payload': value.payload,
-    };
+export function WebhookTestRequestToJSON(
+  value?: WebhookTestRequest | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    url: value.url,
+    method: value.method,
+    headers: value.headers,
+    payload: value.payload,
+  };
 }
-
-

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreatePhoneNumberOptionsToJSON = exports.CreatePhoneNumberOptionsFromJSONTyped = exports.CreatePhoneNumberOptionsFromJSON = exports.CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreatePhoneNumberOptionsPhoneCountryEnum;
 (function (CreatePhoneNumberOptionsPhoneCountryEnum) {
     CreatePhoneNumberOptionsPhoneCountryEnum["US"] = "US";
@@ -33,10 +33,11 @@ var CreatePhoneNumberOptionsPhoneCountryEnum;
     CreatePhoneNumberOptionsPhoneCountryEnum["NL"] = "NL";
     CreatePhoneNumberOptionsPhoneCountryEnum["IL"] = "IL";
     CreatePhoneNumberOptionsPhoneCountryEnum["SE"] = "SE";
-})(CreatePhoneNumberOptionsPhoneCountryEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum || (exports.CreatePhoneNumberOptionsPhoneCountryEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(CreatePhoneNumberOptionsPhoneCountryEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum || (exports.CreatePhoneNumberOptionsPhoneCountryEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var CreatePhoneNumberOptionsScheduleEnum;
 (function (CreatePhoneNumberOptionsScheduleEnum) {
     CreatePhoneNumberOptionsScheduleEnum["MONTHLY"] = "MONTHLY";
@@ -47,14 +48,14 @@ function CreatePhoneNumberOptionsFromJSON(json) {
 }
 exports.CreatePhoneNumberOptionsFromJSON = CreatePhoneNumberOptionsFromJSON;
 function CreatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'phoneCountry': json['phoneCountry'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'schedule': !(0, runtime_1.exists)(json, 'schedule') ? undefined : json['schedule'],
+        phoneCountry: json['phoneCountry'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        schedule: !(0, runtime_1.exists)(json, 'schedule') ? undefined : json['schedule'],
     };
 }
 exports.CreatePhoneNumberOptionsFromJSONTyped = CreatePhoneNumberOptionsFromJSONTyped;
@@ -66,10 +67,10 @@ function CreatePhoneNumberOptionsToJSON(value) {
         return null;
     }
     return {
-        'phoneCountry': value.phoneCountry,
-        'name': value.name,
-        'description': value.description,
-        'schedule': value.schedule,
+        phoneCountry: value.phoneCountry,
+        name: value.name,
+        description: value.description,
+        schedule: value.schedule,
     };
 }
 exports.CreatePhoneNumberOptionsToJSON = CreatePhoneNumberOptionsToJSON;

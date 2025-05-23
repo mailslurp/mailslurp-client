@@ -19,11 +19,11 @@ function UnreadCountFromJSON(json) {
 }
 exports.UnreadCountFromJSON = UnreadCountFromJSON;
 function UnreadCountFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'count': json['count'],
+        count: json['count'],
     };
 }
 exports.UnreadCountFromJSONTyped = UnreadCountFromJSONTyped;
@@ -35,7 +35,7 @@ function UnreadCountToJSON(value) {
         return null;
     }
     return {
-        'count': value.count,
+        count: value.count,
     };
 }
 exports.UnreadCountToJSON = UnreadCountToJSON;

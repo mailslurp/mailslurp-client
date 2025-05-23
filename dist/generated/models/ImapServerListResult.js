@@ -20,11 +20,11 @@ function ImapServerListResultFromJSON(json) {
 }
 exports.ImapServerListResultFromJSON = ImapServerListResultFromJSON;
 function ImapServerListResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'results': (json['results'].map(_1.ImapEmailProjectionFromJSON)),
+        results: json['results'].map(_1.ImapEmailProjectionFromJSON),
     };
 }
 exports.ImapServerListResultFromJSONTyped = ImapServerListResultFromJSONTyped;
@@ -36,7 +36,7 @@ function ImapServerListResultToJSON(value) {
         return null;
     }
     return {
-        'results': (value.results.map(_1.ImapEmailProjectionToJSON)),
+        results: value.results.map(_1.ImapEmailProjectionToJSON),
     };
 }
 exports.ImapServerListResultToJSON = ImapServerListResultToJSON;

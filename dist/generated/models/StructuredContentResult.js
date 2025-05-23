@@ -19,11 +19,11 @@ function StructuredContentResultFromJSON(json) {
 }
 exports.StructuredContentResultFromJSON = StructuredContentResultFromJSON;
 function StructuredContentResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'result': json['result'],
+        result: json['result'],
     };
 }
 exports.StructuredContentResultFromJSONTyped = StructuredContentResultFromJSONTyped;
@@ -35,7 +35,7 @@ function StructuredContentResultToJSON(value) {
         return null;
     }
     return {
-        'result': value.result,
+        result: value.result,
     };
 }
 exports.StructuredContentResultToJSON = StructuredContentResultToJSON;

@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImapFlagOperationOptionsToJSON = exports.ImapFlagOperationOptionsFromJSONTyped = exports.ImapFlagOperationOptionsFromJSON = exports.ImapFlagOperationOptionsFlagOperationEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var ImapFlagOperationOptionsFlagOperationEnum;
 (function (ImapFlagOperationOptionsFlagOperationEnum) {
     ImapFlagOperationOptionsFlagOperationEnum["SET_FLAGS"] = "SET_FLAGS";
@@ -29,12 +29,12 @@ function ImapFlagOperationOptionsFromJSON(json) {
 }
 exports.ImapFlagOperationOptionsFromJSON = ImapFlagOperationOptionsFromJSON;
 function ImapFlagOperationOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'flagOperation': json['flagOperation'],
-        'flags': json['flags'],
+        flagOperation: json['flagOperation'],
+        flags: json['flags'],
     };
 }
 exports.ImapFlagOperationOptionsFromJSONTyped = ImapFlagOperationOptionsFromJSONTyped;
@@ -46,8 +46,8 @@ function ImapFlagOperationOptionsToJSON(value) {
         return null;
     }
     return {
-        'flagOperation': value.flagOperation,
-        'flags': value.flags,
+        flagOperation: value.flagOperation,
+        flags: value.flags,
     };
 }
 exports.ImapFlagOperationOptionsToJSON = ImapFlagOperationOptionsToJSON;

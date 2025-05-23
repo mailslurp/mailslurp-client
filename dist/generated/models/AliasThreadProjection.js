@@ -20,21 +20,21 @@ function AliasThreadProjectionFromJSON(json) {
 }
 exports.AliasThreadProjectionFromJSON = AliasThreadProjectionFromJSON;
 function AliasThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'userId': json['userId'],
-        'inboxId': json['inboxId'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'createdAt': (new Date(json['createdAt'])),
-        'to': json['to'],
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        'aliasId': json['aliasId'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
+        userId: json['userId'],
+        inboxId: json['inboxId'],
+        updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
+        to: json['to'],
+        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        aliasId: json['aliasId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.AliasThreadProjectionFromJSONTyped = AliasThreadProjectionFromJSONTyped;
@@ -46,17 +46,17 @@ function AliasThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        'userId': value.userId,
-        'inboxId': value.inboxId,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'createdAt': (value.createdAt.toISOString()),
-        'to': value.to,
-        'cc': value.cc,
-        'bcc': value.bcc,
-        'aliasId': value.aliasId,
-        'subject': value.subject,
-        'name': value.name,
-        'id': value.id,
+        userId: value.userId,
+        inboxId: value.inboxId,
+        updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
+        to: value.to,
+        cc: value.cc,
+        bcc: value.bcc,
+        aliasId: value.aliasId,
+        subject: value.subject,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.AliasThreadProjectionToJSON = AliasThreadProjectionToJSON;

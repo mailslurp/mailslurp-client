@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    SmsMatchOption,
-    SmsMatchOptionFromJSON,
-    SmsMatchOptionFromJSONTyped,
-    SmsMatchOptionToJSON,
+  SmsMatchOption,
+  SmsMatchOptionFromJSON,
+  SmsMatchOptionFromJSONTyped,
+  SmsMatchOptionToJSON,
 } from './';
 
 /**
@@ -26,135 +26,168 @@ import {
  * @interface WaitForSmsConditions
  */
 export interface WaitForSmsConditions {
-    /**
-     * ID of phone number to search within and apply conditions to. Essentially filtering the SMS found to give a count.
-     * @type {string}
-     * @memberof WaitForSmsConditions
-     */
-    phoneNumberId: string;
-    /**
-     * Limit results
-     * @type {number}
-     * @memberof WaitForSmsConditions
-     */
-    limit?: number | null;
-    /**
-     * Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
-     * @type {number}
-     * @memberof WaitForSmsConditions
-     */
-    count: number;
-    /**
-     * Max time in milliseconds to wait between retries if a `timeout` is specified.
-     * @type {number}
-     * @memberof WaitForSmsConditions
-     */
-    delayTimeout?: number | null;
-    /**
-     * Max time in milliseconds to retry the `waitFor` operation until conditions are met.
-     * @type {number}
-     * @memberof WaitForSmsConditions
-     */
-    timeout: number;
-    /**
-     * Apply conditions only to **unread** SMS. All SMS messages begin with `read=false`. An SMS is marked `read=true` when an `SMS` has been returned to the user at least once. For example you have called `getSms`, or you have viewed the SMS in the dashboard.
-     * @type {boolean}
-     * @memberof WaitForSmsConditions
-     */
-    unreadOnly?: boolean | null;
-    /**
-     * How result size should be compared with the expected size. Exactly or at-least matching result?
-     * @type {string}
-     * @memberof WaitForSmsConditions
-     */
-    countType?: WaitForSmsConditionsCountTypeEnum;
-    /**
-     * Conditions that should be matched for an SMS to qualify for results. Each condition will be applied in order to each SMS within a phone number to filter a result list of matching SMSs you are waiting for.
-     * @type {Array<SmsMatchOption>}
-     * @memberof WaitForSmsConditions
-     */
-    matches?: Array<SmsMatchOption> | null;
-    /**
-     * Direction to sort matching SMSs by created time
-     * @type {string}
-     * @memberof WaitForSmsConditions
-     */
-    sortDirection?: WaitForSmsConditionsSortDirectionEnum;
-    /**
-     * ISO Date Time earliest time of SMS to consider. Filter for matching SMSs that were received after this date
-     * @type {Date}
-     * @memberof WaitForSmsConditions
-     */
-    since?: Date | null;
-    /**
-     * ISO Date Time latest time of SMS to consider. Filter for matching SMSs that were received before this date
-     * @type {Date}
-     * @memberof WaitForSmsConditions
-     */
-    before?: Date | null;
+  /**
+   * ID of phone number to search within and apply conditions to. Essentially filtering the SMS found to give a count.
+   * @type {string}
+   * @memberof WaitForSmsConditions
+   */
+  phoneNumberId: string;
+  /**
+   * Limit results
+   * @type {number}
+   * @memberof WaitForSmsConditions
+   */
+  limit?: number | null;
+  /**
+   * Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
+   * @type {number}
+   * @memberof WaitForSmsConditions
+   */
+  count: number;
+  /**
+   * Max time in milliseconds to wait between retries if a `timeout` is specified.
+   * @type {number}
+   * @memberof WaitForSmsConditions
+   */
+  delayTimeout?: number | null;
+  /**
+   * Max time in milliseconds to retry the `waitFor` operation until conditions are met.
+   * @type {number}
+   * @memberof WaitForSmsConditions
+   */
+  timeout: number;
+  /**
+   * Apply conditions only to **unread** SMS. All SMS messages begin with `read=false`. An SMS is marked `read=true` when an `SMS` has been returned to the user at least once. For example you have called `getSms`, or you have viewed the SMS in the dashboard.
+   * @type {boolean}
+   * @memberof WaitForSmsConditions
+   */
+  unreadOnly?: boolean | null;
+  /**
+   * How result size should be compared with the expected size. Exactly or at-least matching result?
+   * @type {string}
+   * @memberof WaitForSmsConditions
+   */
+  countType?: WaitForSmsConditionsCountTypeEnum;
+  /**
+   * Conditions that should be matched for an SMS to qualify for results. Each condition will be applied in order to each SMS within a phone number to filter a result list of matching SMSs you are waiting for.
+   * @type {Array<SmsMatchOption>}
+   * @memberof WaitForSmsConditions
+   */
+  matches?: Array<SmsMatchOption> | null;
+  /**
+   * Direction to sort matching SMSs by created time
+   * @type {string}
+   * @memberof WaitForSmsConditions
+   */
+  sortDirection?: WaitForSmsConditionsSortDirectionEnum;
+  /**
+   * ISO Date Time earliest time of SMS to consider. Filter for matching SMSs that were received after this date
+   * @type {Date}
+   * @memberof WaitForSmsConditions
+   */
+  since?: Date | null;
+  /**
+   * ISO Date Time latest time of SMS to consider. Filter for matching SMSs that were received before this date
+   * @type {Date}
+   * @memberof WaitForSmsConditions
+   */
+  before?: Date | null;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WaitForSmsConditionsCountTypeEnum {
-    EXACTLY = 'EXACTLY',
-    ATLEAST = 'ATLEAST'
-}/**
-* @export
-* @enum {string}
-*/
+  EXACTLY = 'EXACTLY',
+  ATLEAST = 'ATLEAST',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum WaitForSmsConditionsSortDirectionEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 
 export function WaitForSmsConditionsFromJSON(json: any): WaitForSmsConditions {
-    return WaitForSmsConditionsFromJSONTyped(json, false);
+  return WaitForSmsConditionsFromJSONTyped(json, false);
 }
 
-export function WaitForSmsConditionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): WaitForSmsConditions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'phoneNumberId': json['phoneNumberId'],
-        'limit': !exists(json, 'limit') ? undefined : json['limit'],
-        'count': json['count'],
-        'delayTimeout': !exists(json, 'delayTimeout') ? undefined : json['delayTimeout'],
-        'timeout': json['timeout'],
-        'unreadOnly': !exists(json, 'unreadOnly') ? undefined : json['unreadOnly'],
-        'countType': !exists(json, 'countType') ? undefined : json['countType'],
-        'matches': !exists(json, 'matches') ? undefined : (json['matches'] === null ? null : (json['matches'] as Array<any>).map(SmsMatchOptionFromJSON)),
-        'sortDirection': !exists(json, 'sortDirection') ? undefined : json['sortDirection'],
-        'since': !exists(json, 'since') ? undefined : (json['since'] === null ? null : new Date(json['since'])),
-        'before': !exists(json, 'before') ? undefined : (json['before'] === null ? null : new Date(json['before'])),
-    };
+export function WaitForSmsConditionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WaitForSmsConditions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    phoneNumberId: json['phoneNumberId'],
+    limit: !exists(json, 'limit') ? undefined : json['limit'],
+    count: json['count'],
+    delayTimeout: !exists(json, 'delayTimeout')
+      ? undefined
+      : json['delayTimeout'],
+    timeout: json['timeout'],
+    unreadOnly: !exists(json, 'unreadOnly') ? undefined : json['unreadOnly'],
+    countType: !exists(json, 'countType') ? undefined : json['countType'],
+    matches: !exists(json, 'matches')
+      ? undefined
+      : json['matches'] === null
+      ? null
+      : (json['matches'] as Array<any>).map(SmsMatchOptionFromJSON),
+    sortDirection: !exists(json, 'sortDirection')
+      ? undefined
+      : json['sortDirection'],
+    since: !exists(json, 'since')
+      ? undefined
+      : json['since'] === null
+      ? null
+      : new Date(json['since']),
+    before: !exists(json, 'before')
+      ? undefined
+      : json['before'] === null
+      ? null
+      : new Date(json['before']),
+  };
 }
 
-export function WaitForSmsConditionsToJSON(value?: WaitForSmsConditions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'phoneNumberId': value.phoneNumberId,
-        'limit': value.limit,
-        'count': value.count,
-        'delayTimeout': value.delayTimeout,
-        'timeout': value.timeout,
-        'unreadOnly': value.unreadOnly,
-        'countType': value.countType,
-        'matches': value.matches === undefined ? undefined : (value.matches === null ? null : (value.matches as Array<any>).map(SmsMatchOptionToJSON)),
-        'sortDirection': value.sortDirection,
-        'since': value.since === undefined ? undefined : (value.since === null ? null : value.since.toISOString()),
-        'before': value.before === undefined ? undefined : (value.before === null ? null : value.before.toISOString()),
-    };
+export function WaitForSmsConditionsToJSON(
+  value?: WaitForSmsConditions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    phoneNumberId: value.phoneNumberId,
+    limit: value.limit,
+    count: value.count,
+    delayTimeout: value.delayTimeout,
+    timeout: value.timeout,
+    unreadOnly: value.unreadOnly,
+    countType: value.countType,
+    matches:
+      value.matches === undefined
+        ? undefined
+        : value.matches === null
+        ? null
+        : (value.matches as Array<any>).map(SmsMatchOptionToJSON),
+    sortDirection: value.sortDirection,
+    since:
+      value.since === undefined
+        ? undefined
+        : value.since === null
+        ? null
+        : value.since.toISOString(),
+    before:
+      value.before === undefined
+        ? undefined
+        : value.before === null
+        ? null
+        : value.before.toISOString(),
+  };
 }
-
-

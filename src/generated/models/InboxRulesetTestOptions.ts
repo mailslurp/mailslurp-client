@@ -19,39 +19,42 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxRulesetTestOptions
  */
 export interface InboxRulesetTestOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxRulesetTestOptions
-     */
-    testTarget: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRulesetTestOptions
+   */
+  testTarget: string;
 }
 
-export function InboxRulesetTestOptionsFromJSON(json: any): InboxRulesetTestOptions {
-    return InboxRulesetTestOptionsFromJSONTyped(json, false);
+export function InboxRulesetTestOptionsFromJSON(
+  json: any
+): InboxRulesetTestOptions {
+  return InboxRulesetTestOptionsFromJSONTyped(json, false);
 }
 
-export function InboxRulesetTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRulesetTestOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'testTarget': json['testTarget'],
-    };
+export function InboxRulesetTestOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): InboxRulesetTestOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    testTarget: json['testTarget'],
+  };
 }
 
-export function InboxRulesetTestOptionsToJSON(value?: InboxRulesetTestOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'testTarget': value.testTarget,
-    };
+export function InboxRulesetTestOptionsToJSON(
+  value?: InboxRulesetTestOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    testTarget: value.testTarget,
+  };
 }
-
-

@@ -10,9 +10,12 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { GenerateStructuredContentEmailOptions, StructuredContentResult } from '../models';
+import { GenerateStructuredContentEmailOptions, StructuredContentResult, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
 export interface GenerateStructuredContentFromEmailRequest {
     generateStructuredContentEmailOptions: GenerateStructuredContentEmailOptions;
+}
+export interface ValidateStructuredOutputSchemaRequest {
+    structuredOutputSchema: StructuredOutputSchema;
 }
 /**
  *
@@ -28,4 +31,14 @@ export declare class AIControllerApi extends runtime.BaseAPI {
      * Generate structured content for an email
      */
     generateStructuredContentFromEmail(requestParameters: GenerateStructuredContentFromEmailRequest, initOverrides?: RequestInit): Promise<StructuredContentResult>;
+    /**
+     * Check if a schema is valid and can be used to extract data using AI
+     * Validate structured content schema
+     */
+    validateStructuredOutputSchemaRaw(requestParameters: ValidateStructuredOutputSchemaRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredOutputSchemaValidation>>;
+    /**
+     * Check if a schema is valid and can be used to extract data using AI
+     * Validate structured content schema
+     */
+    validateStructuredOutputSchema(requestParameters: ValidateStructuredOutputSchemaRequest, initOverrides?: RequestInit): Promise<StructuredOutputSchemaValidation>;
 }

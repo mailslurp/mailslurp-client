@@ -14,77 +14,78 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface LinkIssue
  */
 export interface LinkIssue {
-    /**
-     * 
-     * @type {string}
-     * @memberof LinkIssue
-     */
-    url: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof LinkIssue
-     */
-    responseStatus?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof LinkIssue
-     */
-    severity: LinkIssueSeverityEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof LinkIssue
-     */
-    message: string;
+  /**
+   *
+   * @type {string}
+   * @memberof LinkIssue
+   */
+  url: string;
+  /**
+   *
+   * @type {number}
+   * @memberof LinkIssue
+   */
+  responseStatus?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof LinkIssue
+   */
+  severity: LinkIssueSeverityEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof LinkIssue
+   */
+  message: string;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum LinkIssueSeverityEnum {
-    Warning = 'Warning',
-    Error = 'Error'
+  Warning = 'Warning',
+  Error = 'Error',
 }
 
 export function LinkIssueFromJSON(json: any): LinkIssue {
-    return LinkIssueFromJSONTyped(json, false);
+  return LinkIssueFromJSONTyped(json, false);
 }
 
-export function LinkIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): LinkIssue {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'url': json['url'],
-        'responseStatus': !exists(json, 'responseStatus') ? undefined : json['responseStatus'],
-        'severity': json['severity'],
-        'message': json['message'],
-    };
+export function LinkIssueFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): LinkIssue {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    url: json['url'],
+    responseStatus: !exists(json, 'responseStatus')
+      ? undefined
+      : json['responseStatus'],
+    severity: json['severity'],
+    message: json['message'],
+  };
 }
 
 export function LinkIssueToJSON(value?: LinkIssue | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'url': value.url,
-        'responseStatus': value.responseStatus,
-        'severity': value.severity,
-        'message': value.message,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    url: value.url,
+    responseStatus: value.responseStatus,
+    severity: value.severity,
+    message: value.message,
+  };
 }
-
-

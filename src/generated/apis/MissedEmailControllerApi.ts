@@ -12,313 +12,392 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    MissedEmailDto,
-    MissedEmailDtoFromJSON,
-    MissedEmailDtoToJSON,
-    PageMissedEmailProjection,
-    PageMissedEmailProjectionFromJSON,
-    PageMissedEmailProjectionToJSON,
-    PageUnknownMissedEmailProjection,
-    PageUnknownMissedEmailProjectionFromJSON,
-    PageUnknownMissedEmailProjectionToJSON,
+  MissedEmailDto,
+  MissedEmailDtoFromJSON,
+  MissedEmailDtoToJSON,
+  PageMissedEmailProjection,
+  PageMissedEmailProjectionFromJSON,
+  PageMissedEmailProjectionToJSON,
+  PageUnknownMissedEmailProjection,
+  PageUnknownMissedEmailProjectionFromJSON,
+  PageUnknownMissedEmailProjectionToJSON,
 } from '../models';
 
 export interface GetAllMissedEmailsRequest {
-    page?: number;
-    size?: number;
-    sort?: GetAllMissedEmailsSortEnum;
-    searchFilter?: string;
-    since?: Date;
-    before?: Date;
-    inboxId?: string;
+  page?: number;
+  size?: number;
+  sort?: GetAllMissedEmailsSortEnum;
+  searchFilter?: string;
+  since?: Date;
+  before?: Date;
+  inboxId?: string;
 }
 
 export interface GetAllUnknownMissedEmailsRequest {
-    page?: number;
-    size?: number;
-    sort?: GetAllUnknownMissedEmailsSortEnum;
-    searchFilter?: string;
-    since?: Date;
-    before?: Date;
-    inboxId?: string;
+  page?: number;
+  size?: number;
+  sort?: GetAllUnknownMissedEmailsSortEnum;
+  searchFilter?: string;
+  since?: Date;
+  before?: Date;
+  inboxId?: string;
 }
 
 export interface GetMissedEmailRequest {
-    missedEmailId: string;
+  missedEmailId: string;
 }
 
 export interface WaitForNthMissedEmailRequest {
-    index: number;
-    inboxId?: string;
-    timeout?: number;
-    since?: Date;
-    before?: Date;
+  index: number;
+  inboxId?: string;
+  timeout?: number;
+  since?: Date;
+  before?: Date;
 }
 
 /**
- * 
+ *
  */
 export class MissedEmailControllerApi extends runtime.BaseAPI {
+  /**
+   * Get all MissedEmails in paginated format
+   */
+  async getAllMissedEmailsRaw(
+    requestParameters: GetAllMissedEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageMissedEmailProjection>> {
+    const queryParameters: any = {};
 
-    /**
-     * Get all MissedEmails in paginated format
-     */
-    async getAllMissedEmailsRaw(requestParameters: GetAllMissedEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageMissedEmailProjection>> {
-        const queryParameters: any = {};
-
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
-
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.searchFilter !== undefined) {
-            queryParameters['searchFilter'] = requestParameters.searchFilter;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/missed-emails`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageMissedEmailProjectionFromJSON(jsonValue));
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Get all MissedEmails in paginated format
-     */
-    async getAllMissedEmails(requestParameters: GetAllMissedEmailsRequest, initOverrides?: RequestInit): Promise<PageMissedEmailProjection> {
-        const response = await this.getAllMissedEmailsRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
-    /**
-     * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
-     * Get all unknown missed emails in paginated format
-     */
-    async getAllUnknownMissedEmailsRaw(requestParameters: GetAllUnknownMissedEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageUnknownMissedEmailProjection>> {
-        const queryParameters: any = {};
-
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
-
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.searchFilter !== undefined) {
-            queryParameters['searchFilter'] = requestParameters.searchFilter;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/missed-emails/unknown`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageUnknownMissedEmailProjectionFromJSON(jsonValue));
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
     }
 
-    /**
-     * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
-     * Get all unknown missed emails in paginated format
-     */
-    async getAllUnknownMissedEmails(requestParameters: GetAllUnknownMissedEmailsRequest, initOverrides?: RequestInit): Promise<PageUnknownMissedEmailProjection> {
-        const response = await this.getAllUnknownMissedEmailsRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
     }
 
-    /**
-     * List emails that were missed due to plan limits.
-     * Get MissedEmail
-     */
-    async getMissedEmailRaw(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmailDto>> {
-        if (requestParameters.missedEmailId === null || requestParameters.missedEmailId === undefined) {
-            throw new runtime.RequiredError('missedEmailId','Required parameter requestParameters.missedEmailId was null or undefined when calling getMissedEmail.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/missed-emails/{missedEmailId}`.replace(`{${"missedEmailId"}}`, encodeURIComponent(String(requestParameters.missedEmailId))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => MissedEmailDtoFromJSON(jsonValue));
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
 
-    /**
-     * List emails that were missed due to plan limits.
-     * Get MissedEmail
-     */
-    async getMissedEmail(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmailDto> {
-        const response = await this.getMissedEmailRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
     }
 
-    /**
-     * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
-     * Restore missed emails
-     */
-    async restoreMissedEmailsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/missed-emails/restore`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
-    /**
-     * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
-     * Restore missed emails
-     */
-    async restoreMissedEmails(initOverrides?: RequestInit): Promise<void> {
-        await this.restoreMissedEmailsRaw(initOverrides);
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Wait for 0 based index missed email
-     * Wait for Nth missed email
-     */
-    async waitForNthMissedEmailRaw(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmailDto>> {
-        if (requestParameters.index === null || requestParameters.index === undefined) {
-            throw new runtime.RequiredError('index','Required parameter requestParameters.index was null or undefined when calling waitForNthMissedEmail.');
-        }
+    const response = await this.request(
+      {
+        path: `/missed-emails`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageMissedEmailProjectionFromJSON(jsonValue)
+    );
+  }
 
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
+  /**
+   * Get all MissedEmails in paginated format
+   */
+  async getAllMissedEmails(
+    requestParameters: GetAllMissedEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageMissedEmailProjection> {
+    const response = await this.getAllMissedEmailsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (requestParameters.timeout !== undefined) {
-            queryParameters['timeout'] = requestParameters.timeout;
-        }
+  /**
+   * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+   * Get all unknown missed emails in paginated format
+   */
+  async getAllUnknownMissedEmailsRaw(
+    requestParameters: GetAllUnknownMissedEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageUnknownMissedEmailProjection>> {
+    const queryParameters: any = {};
 
-        if (requestParameters.index !== undefined) {
-            queryParameters['index'] = requestParameters.index;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/missed-emails/waitForNthMissedEmail`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => MissedEmailDtoFromJSON(jsonValue));
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Wait for 0 based index missed email
-     * Wait for Nth missed email
-     */
-    async waitForNthMissedEmail(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmailDto> {
-        const response = await this.waitForNthMissedEmailRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/missed-emails/unknown`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageUnknownMissedEmailProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+   * Get all unknown missed emails in paginated format
+   */
+  async getAllUnknownMissedEmails(
+    requestParameters: GetAllUnknownMissedEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageUnknownMissedEmailProjection> {
+    const response = await this.getAllUnknownMissedEmailsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List emails that were missed due to plan limits.
+   * Get MissedEmail
+   */
+  async getMissedEmailRaw(
+    requestParameters: GetMissedEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<MissedEmailDto>> {
+    if (
+      requestParameters.missedEmailId === null ||
+      requestParameters.missedEmailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'missedEmailId',
+        'Required parameter requestParameters.missedEmailId was null or undefined when calling getMissedEmail.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/missed-emails/{missedEmailId}`.replace(
+          `{${'missedEmailId'}}`,
+          encodeURIComponent(String(requestParameters.missedEmailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      MissedEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List emails that were missed due to plan limits.
+   * Get MissedEmail
+   */
+  async getMissedEmail(
+    requestParameters: GetMissedEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<MissedEmailDto> {
+    const response = await this.getMissedEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+   * Restore missed emails
+   */
+  async restoreMissedEmailsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/missed-emails/restore`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+   * Restore missed emails
+   */
+  async restoreMissedEmails(initOverrides?: RequestInit): Promise<void> {
+    await this.restoreMissedEmailsRaw(initOverrides);
+  }
+
+  /**
+   * Wait for 0 based index missed email
+   * Wait for Nth missed email
+   */
+  async waitForNthMissedEmailRaw(
+    requestParameters: WaitForNthMissedEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<MissedEmailDto>> {
+    if (
+      requestParameters.index === null ||
+      requestParameters.index === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'index',
+        'Required parameter requestParameters.index was null or undefined when calling waitForNthMissedEmail.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.timeout !== undefined) {
+      queryParameters['timeout'] = requestParameters.timeout;
+    }
+
+    if (requestParameters.index !== undefined) {
+      queryParameters['index'] = requestParameters.index;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/missed-emails/waitForNthMissedEmail`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      MissedEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait for 0 based index missed email
+   * Wait for Nth missed email
+   */
+  async waitForNthMissedEmail(
+    requestParameters: WaitForNthMissedEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<MissedEmailDto> {
+    const response = await this.waitForNthMissedEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetAllMissedEmailsSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetAllUnknownMissedEmailsSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

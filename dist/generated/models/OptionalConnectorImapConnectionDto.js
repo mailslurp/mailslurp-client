@@ -21,12 +21,14 @@ function OptionalConnectorImapConnectionDtoFromJSON(json) {
 }
 exports.OptionalConnectorImapConnectionDtoFromJSON = OptionalConnectorImapConnectionDtoFromJSON;
 function OptionalConnectorImapConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'present': json['present'],
-        'result': !(0, runtime_1.exists)(json, 'result') ? undefined : (0, _1.ConnectorImapConnectionDtoFromJSON)(json['result']),
+        present: json['present'],
+        result: !(0, runtime_1.exists)(json, 'result')
+            ? undefined
+            : (0, _1.ConnectorImapConnectionDtoFromJSON)(json['result']),
     };
 }
 exports.OptionalConnectorImapConnectionDtoFromJSONTyped = OptionalConnectorImapConnectionDtoFromJSONTyped;
@@ -38,8 +40,8 @@ function OptionalConnectorImapConnectionDtoToJSON(value) {
         return null;
     }
     return {
-        'present': value.present,
-        'result': (0, _1.ConnectorImapConnectionDtoToJSON)(value.result),
+        present: value.present,
+        result: (0, _1.ConnectorImapConnectionDtoToJSON)(value.result),
     };
 }
 exports.OptionalConnectorImapConnectionDtoToJSON = OptionalConnectorImapConnectionDtoToJSON;

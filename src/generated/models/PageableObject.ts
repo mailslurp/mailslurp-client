@@ -14,91 +14,90 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface PageableObject
  */
 export interface PageableObject {
-    /**
-     * 
-     * @type {number}
-     * @memberof PageableObject
-     */
-    pageSize?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageableObject
-     */
-    paged?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageableObject
-     */
-    pageNumber?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageableObject
-     */
-    unpaged?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageableObject
-     */
-    offset?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageableObject
-     */
-    sort?: SortObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageableObject
+   */
+  pageSize?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageableObject
+   */
+  paged?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageableObject
+   */
+  pageNumber?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageableObject
+   */
+  unpaged?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageableObject
+   */
+  offset?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageableObject
+   */
+  sort?: SortObject;
 }
 
 export function PageableObjectFromJSON(json: any): PageableObject {
-    return PageableObjectFromJSONTyped(json, false);
+  return PageableObjectFromJSONTyped(json, false);
 }
 
-export function PageableObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageableObject {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'pageSize': !exists(json, 'pageSize') ? undefined : json['pageSize'],
-        'paged': !exists(json, 'paged') ? undefined : json['paged'],
-        'pageNumber': !exists(json, 'pageNumber') ? undefined : json['pageNumber'],
-        'unpaged': !exists(json, 'unpaged') ? undefined : json['unpaged'],
-        'offset': !exists(json, 'offset') ? undefined : json['offset'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    };
+export function PageableObjectFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageableObject {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    pageSize: !exists(json, 'pageSize') ? undefined : json['pageSize'],
+    paged: !exists(json, 'paged') ? undefined : json['paged'],
+    pageNumber: !exists(json, 'pageNumber') ? undefined : json['pageNumber'],
+    unpaged: !exists(json, 'unpaged') ? undefined : json['unpaged'],
+    offset: !exists(json, 'offset') ? undefined : json['offset'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+  };
 }
 
 export function PageableObjectToJSON(value?: PageableObject | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'pageSize': value.pageSize,
-        'paged': value.paged,
-        'pageNumber': value.pageNumber,
-        'unpaged': value.unpaged,
-        'offset': value.offset,
-        'sort': SortObjectToJSON(value.sort),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    pageSize: value.pageSize,
+    paged: value.paged,
+    pageNumber: value.pageNumber,
+    unpaged: value.unpaged,
+    offset: value.offset,
+    sort: SortObjectToJSON(value.sort),
+  };
 }
-
-

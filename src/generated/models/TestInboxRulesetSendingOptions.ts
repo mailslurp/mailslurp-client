@@ -19,47 +19,50 @@ import { exists, mapValues } from '../runtime';
  * @interface TestInboxRulesetSendingOptions
  */
 export interface TestInboxRulesetSendingOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof TestInboxRulesetSendingOptions
-     */
-    inboxId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestInboxRulesetSendingOptions
-     */
-    recipient: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TestInboxRulesetSendingOptions
+   */
+  inboxId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TestInboxRulesetSendingOptions
+   */
+  recipient: string;
 }
 
-export function TestInboxRulesetSendingOptionsFromJSON(json: any): TestInboxRulesetSendingOptions {
-    return TestInboxRulesetSendingOptionsFromJSONTyped(json, false);
+export function TestInboxRulesetSendingOptionsFromJSON(
+  json: any
+): TestInboxRulesetSendingOptions {
+  return TestInboxRulesetSendingOptionsFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetSendingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetSendingOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'inboxId': json['inboxId'],
-        'recipient': json['recipient'],
-    };
+export function TestInboxRulesetSendingOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TestInboxRulesetSendingOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    inboxId: json['inboxId'],
+    recipient: json['recipient'],
+  };
 }
 
-export function TestInboxRulesetSendingOptionsToJSON(value?: TestInboxRulesetSendingOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'inboxId': value.inboxId,
-        'recipient': value.recipient,
-    };
+export function TestInboxRulesetSendingOptionsToJSON(
+  value?: TestInboxRulesetSendingOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    inboxId: value.inboxId,
+    recipient: value.recipient,
+  };
 }
-
-

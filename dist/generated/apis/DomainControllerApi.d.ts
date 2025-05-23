@@ -143,17 +143,17 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
     updateDomain(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAvailableDomainsInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetMailSlurpDomainsInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"

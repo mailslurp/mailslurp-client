@@ -42,9 +42,9 @@ export interface GenerateStructuredContentEmailOptions {
     outputSchema: StructuredOutputSchema;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateStructuredContentEmailOptionsContentSelectorEnum {
     RAW = "RAW",
     BODY = "BODY"

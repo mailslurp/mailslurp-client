@@ -19,11 +19,11 @@ function ConsentStatusDtoFromJSON(json) {
 }
 exports.ConsentStatusDtoFromJSON = ConsentStatusDtoFromJSON;
 function ConsentStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'consented': json['consented'],
+        consented: json['consented'],
     };
 }
 exports.ConsentStatusDtoFromJSONTyped = ConsentStatusDtoFromJSONTyped;
@@ -35,7 +35,7 @@ function ConsentStatusDtoToJSON(value) {
         return null;
     }
     return {
-        'consented': value.consented,
+        consented: value.consented,
     };
 }
 exports.ConsentStatusDtoToJSON = ConsentStatusDtoToJSON;

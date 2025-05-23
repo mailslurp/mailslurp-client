@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EntityEventItemProjectionToJSON = exports.EntityEventItemProjectionFromJSONTyped = exports.EntityEventItemProjectionFromJSON = exports.EntityEventItemProjectionSeverityEnum = exports.EntityEventItemProjectionEventTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EntityEventItemProjectionEventTypeEnum;
 (function (EntityEventItemProjectionEventTypeEnum) {
     EntityEventItemProjectionEventTypeEnum["WEBHOOK_EVENT"] = "WEBHOOK_EVENT";
@@ -26,10 +26,11 @@ var EntityEventItemProjectionEventTypeEnum;
     EntityEventItemProjectionEventTypeEnum["INBOX_REPLIER_EVENT"] = "INBOX_REPLIER_EVENT";
     EntityEventItemProjectionEventTypeEnum["INBOX_RULESET_EVENT"] = "INBOX_RULESET_EVENT";
     EntityEventItemProjectionEventTypeEnum["ALIAS_EVENT"] = "ALIAS_EVENT";
-})(EntityEventItemProjectionEventTypeEnum = exports.EntityEventItemProjectionEventTypeEnum || (exports.EntityEventItemProjectionEventTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(EntityEventItemProjectionEventTypeEnum = exports.EntityEventItemProjectionEventTypeEnum || (exports.EntityEventItemProjectionEventTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var EntityEventItemProjectionSeverityEnum;
 (function (EntityEventItemProjectionSeverityEnum) {
     EntityEventItemProjectionSeverityEnum["INFO"] = "INFO";
@@ -42,15 +43,15 @@ function EntityEventItemProjectionFromJSON(json) {
 }
 exports.EntityEventItemProjectionFromJSON = EntityEventItemProjectionFromJSON;
 function EntityEventItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'eventType': json['eventType'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'phoneId': !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
-        'id': json['id'],
-        'severity': json['severity'],
+        eventType: json['eventType'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        id: json['id'],
+        severity: json['severity'],
     };
 }
 exports.EntityEventItemProjectionFromJSONTyped = EntityEventItemProjectionFromJSONTyped;
@@ -62,11 +63,11 @@ function EntityEventItemProjectionToJSON(value) {
         return null;
     }
     return {
-        'eventType': value.eventType,
-        'inboxId': value.inboxId,
-        'phoneId': value.phoneId,
-        'id': value.id,
-        'severity': value.severity,
+        eventType: value.eventType,
+        inboxId: value.inboxId,
+        phoneId: value.phoneId,
+        id: value.id,
+        severity: value.severity,
     };
 }
 exports.EntityEventItemProjectionToJSON = EntityEventItemProjectionToJSON;

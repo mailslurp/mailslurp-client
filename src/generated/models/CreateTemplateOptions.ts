@@ -19,47 +19,50 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateTemplateOptions
  */
 export interface CreateTemplateOptions {
-    /**
-     * Name of template
-     * @type {string}
-     * @memberof CreateTemplateOptions
-     */
-    name: string;
-    /**
-     * Template content. Can include moustache style variables such as {{var_name}}
-     * @type {string}
-     * @memberof CreateTemplateOptions
-     */
-    content: string;
+  /**
+   * Name of template
+   * @type {string}
+   * @memberof CreateTemplateOptions
+   */
+  name: string;
+  /**
+   * Template content. Can include moustache style variables such as {{var_name}}
+   * @type {string}
+   * @memberof CreateTemplateOptions
+   */
+  content: string;
 }
 
-export function CreateTemplateOptionsFromJSON(json: any): CreateTemplateOptions {
-    return CreateTemplateOptionsFromJSONTyped(json, false);
+export function CreateTemplateOptionsFromJSON(
+  json: any
+): CreateTemplateOptions {
+  return CreateTemplateOptionsFromJSONTyped(json, false);
 }
 
-export function CreateTemplateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTemplateOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'name': json['name'],
-        'content': json['content'],
-    };
+export function CreateTemplateOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateTemplateOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    name: json['name'],
+    content: json['content'],
+  };
 }
 
-export function CreateTemplateOptionsToJSON(value?: CreateTemplateOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'name': value.name,
-        'content': value.content,
-    };
+export function CreateTemplateOptionsToJSON(
+  value?: CreateTemplateOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    name: value.name,
+    content: value.content,
+  };
 }
-
-

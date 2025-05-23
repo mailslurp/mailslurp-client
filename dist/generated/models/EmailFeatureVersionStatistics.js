@@ -20,12 +20,12 @@ function EmailFeatureVersionStatisticsFromJSON(json) {
 }
 exports.EmailFeatureVersionStatisticsFromJSON = EmailFeatureVersionStatisticsFromJSON;
 function EmailFeatureVersionStatisticsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'version': json['version'],
-        'supportFlags': (0, _1.EmailFeatureSupportFlagsFromJSON)(json['supportFlags']),
+        version: json['version'],
+        supportFlags: (0, _1.EmailFeatureSupportFlagsFromJSON)(json['supportFlags']),
     };
 }
 exports.EmailFeatureVersionStatisticsFromJSONTyped = EmailFeatureVersionStatisticsFromJSONTyped;
@@ -37,8 +37,8 @@ function EmailFeatureVersionStatisticsToJSON(value) {
         return null;
     }
     return {
-        'version': value.version,
-        'supportFlags': (0, _1.EmailFeatureSupportFlagsToJSON)(value.supportFlags),
+        version: value.version,
+        supportFlags: (0, _1.EmailFeatureSupportFlagsToJSON)(value.supportFlags),
     };
 }
 exports.EmailFeatureVersionStatisticsToJSON = EmailFeatureVersionStatisticsToJSON;

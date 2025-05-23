@@ -14,75 +14,82 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    EmailFeatureCategoryName,
-    EmailFeatureCategoryNameFromJSON,
-    EmailFeatureCategoryNameFromJSONTyped,
-    EmailFeatureCategoryNameToJSON,
-    EmailFeatureFamilyName,
-    EmailFeatureFamilyNameFromJSON,
-    EmailFeatureFamilyNameFromJSONTyped,
-    EmailFeatureFamilyNameToJSON,
-    EmailFeaturePlatformName,
-    EmailFeaturePlatformNameFromJSON,
-    EmailFeaturePlatformNameFromJSONTyped,
-    EmailFeaturePlatformNameToJSON,
+  EmailFeatureCategoryName,
+  EmailFeatureCategoryNameFromJSON,
+  EmailFeatureCategoryNameFromJSONTyped,
+  EmailFeatureCategoryNameToJSON,
+  EmailFeatureFamilyName,
+  EmailFeatureFamilyNameFromJSON,
+  EmailFeatureFamilyNameFromJSONTyped,
+  EmailFeatureFamilyNameToJSON,
+  EmailFeaturePlatformName,
+  EmailFeaturePlatformNameFromJSON,
+  EmailFeaturePlatformNameFromJSONTyped,
+  EmailFeaturePlatformNameToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface EmailFeatureNames
  */
 export interface EmailFeatureNames {
-    /**
-     * 
-     * @type {Array<EmailFeatureFamilyName>}
-     * @memberof EmailFeatureNames
-     */
-    family: Array<EmailFeatureFamilyName>;
-    /**
-     * 
-     * @type {Array<EmailFeaturePlatformName>}
-     * @memberof EmailFeatureNames
-     */
-    platform: Array<EmailFeaturePlatformName>;
-    /**
-     * 
-     * @type {Array<EmailFeatureCategoryName>}
-     * @memberof EmailFeatureNames
-     */
-    category: Array<EmailFeatureCategoryName>;
+  /**
+   *
+   * @type {Array<EmailFeatureFamilyName>}
+   * @memberof EmailFeatureNames
+   */
+  family: Array<EmailFeatureFamilyName>;
+  /**
+   *
+   * @type {Array<EmailFeaturePlatformName>}
+   * @memberof EmailFeatureNames
+   */
+  platform: Array<EmailFeaturePlatformName>;
+  /**
+   *
+   * @type {Array<EmailFeatureCategoryName>}
+   * @memberof EmailFeatureNames
+   */
+  category: Array<EmailFeatureCategoryName>;
 }
 
 export function EmailFeatureNamesFromJSON(json: any): EmailFeatureNames {
-    return EmailFeatureNamesFromJSONTyped(json, false);
+  return EmailFeatureNamesFromJSONTyped(json, false);
 }
 
-export function EmailFeatureNamesFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureNames {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'family': ((json['family'] as Array<any>).map(EmailFeatureFamilyNameFromJSON)),
-        'platform': ((json['platform'] as Array<any>).map(EmailFeaturePlatformNameFromJSON)),
-        'category': ((json['category'] as Array<any>).map(EmailFeatureCategoryNameFromJSON)),
-    };
+export function EmailFeatureNamesFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailFeatureNames {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    family: (json['family'] as Array<any>).map(EmailFeatureFamilyNameFromJSON),
+    platform: (json['platform'] as Array<any>).map(
+      EmailFeaturePlatformNameFromJSON
+    ),
+    category: (json['category'] as Array<any>).map(
+      EmailFeatureCategoryNameFromJSON
+    ),
+  };
 }
 
 export function EmailFeatureNamesToJSON(value?: EmailFeatureNames | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'family': ((value.family as Array<any>).map(EmailFeatureFamilyNameToJSON)),
-        'platform': ((value.platform as Array<any>).map(EmailFeaturePlatformNameToJSON)),
-        'category': ((value.category as Array<any>).map(EmailFeatureCategoryNameToJSON)),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    family: (value.family as Array<any>).map(EmailFeatureFamilyNameToJSON),
+    platform: (value.platform as Array<any>).map(
+      EmailFeaturePlatformNameToJSON
+    ),
+    category: (value.category as Array<any>).map(
+      EmailFeatureCategoryNameToJSON
+    ),
+  };
 }
-
-

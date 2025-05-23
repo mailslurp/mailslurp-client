@@ -53,9 +53,9 @@ export interface ExportOptions {
     listSeparatorToken?: string | null;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum ExportOptionsOutputFormatEnum {
     DEFAULT = "CSV_DEFAULT",
     EXCEL = "CSV_EXCEL"

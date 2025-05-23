@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface StructuredContentResult
  */
 export interface StructuredContentResult {
-    /**
-     * 
-     * @type {object}
-     * @memberof StructuredContentResult
-     */
-    result: object;
+  /**
+   *
+   * @type {object}
+   * @memberof StructuredContentResult
+   */
+  result: object;
 }
 
-export function StructuredContentResultFromJSON(json: any): StructuredContentResult {
-    return StructuredContentResultFromJSONTyped(json, false);
+export function StructuredContentResultFromJSON(
+  json: any
+): StructuredContentResult {
+  return StructuredContentResultFromJSONTyped(json, false);
 }
 
-export function StructuredContentResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): StructuredContentResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'result': json['result'],
-    };
+export function StructuredContentResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): StructuredContentResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    result: json['result'],
+  };
 }
 
-export function StructuredContentResultToJSON(value?: StructuredContentResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'result': value.result,
-    };
+export function StructuredContentResultToJSON(
+  value?: StructuredContentResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    result: value.result,
+  };
 }
-
-

@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    AttachmentMetaData,
-    AttachmentMetaDataFromJSON,
-    AttachmentMetaDataFromJSONTyped,
-    AttachmentMetaDataToJSON,
+  AttachmentMetaData,
+  AttachmentMetaDataFromJSON,
+  AttachmentMetaDataFromJSONTyped,
+  AttachmentMetaDataToJSON,
 } from './';
 
 /**
@@ -26,161 +26,168 @@ import {
  * @interface WebhookNewEmailPayload
  */
 export interface WebhookNewEmailPayload {
-    /**
-     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    messageId: string;
-    /**
-     * ID of webhook entity being triggered
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    webhookId: string;
-    /**
-     * Name of the event type webhook is being triggered for.
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    eventName: WebhookNewEmailPayloadEventNameEnum;
-    /**
-     * Name of the webhook being triggered
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    webhookName?: string | null;
-    /**
-     * Id of the inbox
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    inboxId: string;
-    /**
-     * Id of the domain that received an email
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    domainId?: string | null;
-    /**
-     * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    emailId: string;
-    /**
-     * Date time of event creation
-     * @type {Date}
-     * @memberof WebhookNewEmailPayload
-     */
-    createdAt: Date;
-    /**
-     * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
-     * @memberof WebhookNewEmailPayload
-     */
-    to: Array<string>;
-    /**
-     * Who the email was sent from. An email address - see fromName for the sender name.
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    from: string;
-    /**
-     * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
-     * @memberof WebhookNewEmailPayload
-     */
-    cc: Array<string>;
-    /**
-     * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
-     * @type {Array<string>}
-     * @memberof WebhookNewEmailPayload
-     */
-    bcc: Array<string>;
-    /**
-     * The subject line of the email message as specified by SMTP subject header
-     * @type {string}
-     * @memberof WebhookNewEmailPayload
-     */
-    subject?: string | null;
-    /**
-     * List of attachment meta data objects if attachments present
-     * @type {Array<AttachmentMetaData>}
-     * @memberof WebhookNewEmailPayload
-     */
-    attachmentMetaDatas: Array<AttachmentMetaData>;
+  /**
+   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  messageId: string;
+  /**
+   * ID of webhook entity being triggered
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  webhookId: string;
+  /**
+   * Name of the event type webhook is being triggered for.
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  eventName: WebhookNewEmailPayloadEventNameEnum;
+  /**
+   * Name of the webhook being triggered
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  webhookName?: string | null;
+  /**
+   * Id of the inbox
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  inboxId: string;
+  /**
+   * Id of the domain that received an email
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  domainId?: string | null;
+  /**
+   * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  emailId: string;
+  /**
+   * Date time of event creation
+   * @type {Date}
+   * @memberof WebhookNewEmailPayload
+   */
+  createdAt: Date;
+  /**
+   * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
+   * @type {Array<string>}
+   * @memberof WebhookNewEmailPayload
+   */
+  to: Array<string>;
+  /**
+   * Who the email was sent from. An email address - see fromName for the sender name.
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  from: string;
+  /**
+   * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
+   * @type {Array<string>}
+   * @memberof WebhookNewEmailPayload
+   */
+  cc: Array<string>;
+  /**
+   * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
+   * @type {Array<string>}
+   * @memberof WebhookNewEmailPayload
+   */
+  bcc: Array<string>;
+  /**
+   * The subject line of the email message as specified by SMTP subject header
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  subject?: string | null;
+  /**
+   * List of attachment meta data objects if attachments present
+   * @type {Array<AttachmentMetaData>}
+   * @memberof WebhookNewEmailPayload
+   */
+  attachmentMetaDatas: Array<AttachmentMetaData>;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WebhookNewEmailPayloadEventNameEnum {
-    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-    NEW_EMAIL = 'NEW_EMAIL',
-    NEW_CONTACT = 'NEW_CONTACT',
-    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-    EMAIL_OPENED = 'EMAIL_OPENED',
-    EMAIL_READ = 'EMAIL_READ',
-    DELIVERY_STATUS = 'DELIVERY_STATUS',
-    BOUNCE = 'BOUNCE',
-    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-    NEW_SMS = 'NEW_SMS',
-    NEW_GUEST_USER = 'NEW_GUEST_USER'
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 
-export function WebhookNewEmailPayloadFromJSON(json: any): WebhookNewEmailPayload {
-    return WebhookNewEmailPayloadFromJSONTyped(json, false);
+export function WebhookNewEmailPayloadFromJSON(
+  json: any
+): WebhookNewEmailPayload {
+  return WebhookNewEmailPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookNewEmailPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookNewEmailPayload {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !exists(json, 'webhookName') ? undefined : json['webhookName'],
-        'inboxId': json['inboxId'],
-        'domainId': !exists(json, 'domainId') ? undefined : json['domainId'],
-        'emailId': json['emailId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'to': json['to'],
-        'from': json['from'],
-        'cc': json['cc'],
-        'bcc': json['bcc'],
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'attachmentMetaDatas': ((json['attachmentMetaDatas'] as Array<any>).map(AttachmentMetaDataFromJSON)),
-    };
+export function WebhookNewEmailPayloadFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookNewEmailPayload {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    messageId: json['messageId'],
+    webhookId: json['webhookId'],
+    eventName: json['eventName'],
+    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
+    inboxId: json['inboxId'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
+    emailId: json['emailId'],
+    createdAt: new Date(json['createdAt']),
+    to: json['to'],
+    from: json['from'],
+    cc: json['cc'],
+    bcc: json['bcc'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    attachmentMetaDatas: (json['attachmentMetaDatas'] as Array<any>).map(
+      AttachmentMetaDataFromJSON
+    ),
+  };
 }
 
-export function WebhookNewEmailPayloadToJSON(value?: WebhookNewEmailPayload | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'inboxId': value.inboxId,
-        'domainId': value.domainId,
-        'emailId': value.emailId,
-        'createdAt': (value.createdAt.toISOString()),
-        'to': value.to,
-        'from': value.from,
-        'cc': value.cc,
-        'bcc': value.bcc,
-        'subject': value.subject,
-        'attachmentMetaDatas': ((value.attachmentMetaDatas as Array<any>).map(AttachmentMetaDataToJSON)),
-    };
+export function WebhookNewEmailPayloadToJSON(
+  value?: WebhookNewEmailPayload | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    messageId: value.messageId,
+    webhookId: value.webhookId,
+    eventName: value.eventName,
+    webhookName: value.webhookName,
+    inboxId: value.inboxId,
+    domainId: value.domainId,
+    emailId: value.emailId,
+    createdAt: value.createdAt.toISOString(),
+    to: value.to,
+    from: value.from,
+    cc: value.cc,
+    bcc: value.bcc,
+    subject: value.subject,
+    attachmentMetaDatas: (value.attachmentMetaDatas as Array<any>).map(
+      AttachmentMetaDataToJSON
+    ),
+  };
 }
-
-

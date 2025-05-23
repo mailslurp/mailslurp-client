@@ -14,63 +14,66 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface EmailFeatureSupportStatusPercentage
  */
 export interface EmailFeatureSupportStatusPercentage {
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailFeatureSupportStatusPercentage
-     */
-    status: EmailFeatureSupportStatusPercentageStatusEnum;
-    /**
-     * 
-     * @type {number}
-     * @memberof EmailFeatureSupportStatusPercentage
-     */
-    percentage: number;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailFeatureSupportStatusPercentage
+   */
+  status: EmailFeatureSupportStatusPercentageStatusEnum;
+  /**
+   *
+   * @type {number}
+   * @memberof EmailFeatureSupportStatusPercentage
+   */
+  percentage: number;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum EmailFeatureSupportStatusPercentageStatusEnum {
-    SUPPORTED = 'SUPPORTED',
-    PARTIAL = 'PARTIAL',
-    NOT_SUPPORTED = 'NOT_SUPPORTED',
-    UNKNOWN = 'UNKNOWN'
+  SUPPORTED = 'SUPPORTED',
+  PARTIAL = 'PARTIAL',
+  NOT_SUPPORTED = 'NOT_SUPPORTED',
+  UNKNOWN = 'UNKNOWN',
 }
 
-export function EmailFeatureSupportStatusPercentageFromJSON(json: any): EmailFeatureSupportStatusPercentage {
-    return EmailFeatureSupportStatusPercentageFromJSONTyped(json, false);
+export function EmailFeatureSupportStatusPercentageFromJSON(
+  json: any
+): EmailFeatureSupportStatusPercentage {
+  return EmailFeatureSupportStatusPercentageFromJSONTyped(json, false);
 }
 
-export function EmailFeatureSupportStatusPercentageFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureSupportStatusPercentage {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'status': json['status'],
-        'percentage': json['percentage'],
-    };
+export function EmailFeatureSupportStatusPercentageFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailFeatureSupportStatusPercentage {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    status: json['status'],
+    percentage: json['percentage'],
+  };
 }
 
-export function EmailFeatureSupportStatusPercentageToJSON(value?: EmailFeatureSupportStatusPercentage | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'status': value.status,
-        'percentage': value.percentage,
-    };
+export function EmailFeatureSupportStatusPercentageToJSON(
+  value?: EmailFeatureSupportStatusPercentage | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    status: value.status,
+    percentage: value.percentage,
+  };
 }
-
-

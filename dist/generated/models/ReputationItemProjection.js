@@ -16,17 +16,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReputationItemProjectionToJSON = exports.ReputationItemProjectionFromJSONTyped = exports.ReputationItemProjectionFromJSON = exports.ReputationItemProjectionSeverityEnum = exports.ReputationItemProjectionReputationTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var ReputationItemProjectionReputationTypeEnum;
 (function (ReputationItemProjectionReputationTypeEnum) {
     ReputationItemProjectionReputationTypeEnum["COMPLAINT"] = "COMPLAINT";
     ReputationItemProjectionReputationTypeEnum["BOUNCE"] = "BOUNCE";
-})(ReputationItemProjectionReputationTypeEnum = exports.ReputationItemProjectionReputationTypeEnum || (exports.ReputationItemProjectionReputationTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(ReputationItemProjectionReputationTypeEnum = exports.ReputationItemProjectionReputationTypeEnum || (exports.ReputationItemProjectionReputationTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var ReputationItemProjectionSeverityEnum;
 (function (ReputationItemProjectionSeverityEnum) {
     ReputationItemProjectionSeverityEnum["INFO"] = "INFO";
@@ -38,16 +39,16 @@ function ReputationItemProjectionFromJSON(json) {
 }
 exports.ReputationItemProjectionFromJSON = ReputationItemProjectionFromJSON;
 function ReputationItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'recipient': !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
-        'reputationType': json['reputationType'],
-        'id': json['id'],
-        'severity': json['severity'],
-        'source': !(0, runtime_1.exists)(json, 'source') ? undefined : json['source'],
+        createdAt: new Date(json['createdAt']),
+        recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
+        reputationType: json['reputationType'],
+        id: json['id'],
+        severity: json['severity'],
+        source: !(0, runtime_1.exists)(json, 'source') ? undefined : json['source'],
     };
 }
 exports.ReputationItemProjectionFromJSONTyped = ReputationItemProjectionFromJSONTyped;
@@ -59,12 +60,12 @@ function ReputationItemProjectionToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'recipient': value.recipient,
-        'reputationType': value.reputationType,
-        'id': value.id,
-        'severity': value.severity,
-        'source': value.source,
+        createdAt: value.createdAt.toISOString(),
+        recipient: value.recipient,
+        reputationType: value.reputationType,
+        id: value.id,
+        severity: value.severity,
+        source: value.source,
     };
 }
 exports.ReputationItemProjectionToJSON = ReputationItemProjectionToJSON;

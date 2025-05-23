@@ -106,7 +106,8 @@ var ConsentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling checkSendingConsentForEmailAddress.');
                         }
                         queryParameters = {};
@@ -115,7 +116,7 @@ var ConsentControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/consent/opt-in/sending-consent",
@@ -125,7 +126,9 @@ var ConsentControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptInSendingConsentDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptInSendingConsentDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -166,7 +169,7 @@ var ConsentControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/consent/opt-in",
@@ -176,7 +179,9 @@ var ConsentControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageOptInIdentityProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageOptInIdentityProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -205,7 +210,8 @@ var ConsentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling revokeOptInConsentForEmailAddress.');
                         }
                         queryParameters = {};
@@ -214,7 +220,7 @@ var ConsentControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/consent/opt-in",
@@ -224,7 +230,9 @@ var ConsentControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptInSendingConsentDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptInSendingConsentDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -255,14 +263,15 @@ var ConsentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.optInConsentOptions === null || requestParameters.optInConsentOptions === undefined) {
+                        if (requestParameters.optInConsentOptions === null ||
+                            requestParameters.optInConsentOptions === undefined) {
                             throw new runtime.RequiredError('optInConsentOptions', 'Required parameter requestParameters.optInConsentOptions was null or undefined when calling sendOptInConsentForEmailAddress.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/consent/opt-in/send",
@@ -273,7 +282,9 @@ var ConsentControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptInConsentSendResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.OptInConsentSendResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -300,9 +311,9 @@ var ConsentControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.ConsentControllerApi = ConsentControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetOptInIdentitiesSortEnum;
 (function (GetOptInIdentitiesSortEnum) {
     GetOptInIdentitiesSortEnum["ASC"] = "ASC";

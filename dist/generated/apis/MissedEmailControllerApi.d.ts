@@ -93,17 +93,17 @@ export declare class MissedEmailControllerApi extends runtime.BaseAPI {
     waitForNthMissedEmail(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmailDto>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllMissedEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllUnknownMissedEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

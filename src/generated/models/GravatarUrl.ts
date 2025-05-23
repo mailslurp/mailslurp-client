@@ -19,47 +19,46 @@ import { exists, mapValues } from '../runtime';
  * @interface GravatarUrl
  */
 export interface GravatarUrl {
-    /**
-     * 
-     * @type {string}
-     * @memberof GravatarUrl
-     */
-    url: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GravatarUrl
-     */
-    hash: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GravatarUrl
+   */
+  url: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GravatarUrl
+   */
+  hash: string;
 }
 
 export function GravatarUrlFromJSON(json: any): GravatarUrl {
-    return GravatarUrlFromJSONTyped(json, false);
+  return GravatarUrlFromJSONTyped(json, false);
 }
 
-export function GravatarUrlFromJSONTyped(json: any, ignoreDiscriminator: boolean): GravatarUrl {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'url': json['url'],
-        'hash': json['hash'],
-    };
+export function GravatarUrlFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): GravatarUrl {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    url: json['url'],
+    hash: json['hash'],
+  };
 }
 
 export function GravatarUrlToJSON(value?: GravatarUrl | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'url': value.url,
-        'hash': value.hash,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    url: value.url,
+    hash: value.hash,
+  };
 }
-
-

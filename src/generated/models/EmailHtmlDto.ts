@@ -14,52 +14,51 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface EmailHtmlDto
  */
 export interface EmailHtmlDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailHtmlDto
-     */
-    subject?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailHtmlDto
-     */
-    body?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailHtmlDto
+   */
+  subject?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailHtmlDto
+   */
+  body?: string;
 }
 
 export function EmailHtmlDtoFromJSON(json: any): EmailHtmlDto {
-    return EmailHtmlDtoFromJSONTyped(json, false);
+  return EmailHtmlDtoFromJSONTyped(json, false);
 }
 
-export function EmailHtmlDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailHtmlDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'body': !exists(json, 'body') ? undefined : json['body'],
-    };
+export function EmailHtmlDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailHtmlDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    body: !exists(json, 'body') ? undefined : json['body'],
+  };
 }
 
 export function EmailHtmlDtoToJSON(value?: EmailHtmlDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'subject': value.subject,
-        'body': value.body,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    subject: value.subject,
+    body: value.body,
+  };
 }
-
-

@@ -108,14 +108,15 @@ var BounceControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.filterBouncedRecipientsOptions === null || requestParameters.filterBouncedRecipientsOptions === undefined) {
+                        if (requestParameters.filterBouncedRecipientsOptions === null ||
+                            requestParameters.filterBouncedRecipientsOptions === undefined) {
                             throw new runtime.RequiredError('filterBouncedRecipientsOptions', 'Required parameter requestParameters.filterBouncedRecipientsOptions was null or undefined when calling filterBouncedRecipient.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/filter-recipients",
@@ -126,7 +127,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.FilterBouncedRecipientsResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.FilterBouncedRecipientsResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -162,7 +165,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/account-block",
@@ -172,7 +175,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AccountBounceBlockDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AccountBounceBlockDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -211,17 +216,19 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/bounce/emails/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/bounce/emails/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.BouncedEmailDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.BouncedEmailDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -272,7 +279,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/emails",
@@ -282,7 +289,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageBouncedEmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageBouncedEmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -321,17 +330,19 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/bounce/recipients/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/bounce/recipients/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.BouncedRecipientDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.BouncedRecipientDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -382,7 +393,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/recipients",
@@ -392,7 +403,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageBouncedRecipientsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageBouncedRecipientsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -431,17 +444,19 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/bounce/complaints/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/bounce/complaints/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ComplaintFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ComplaintFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -492,7 +507,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/complaints",
@@ -502,7 +517,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageComplaintFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageComplaintFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -550,7 +567,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/list-unsubscribe-recipients",
@@ -560,7 +577,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageListUnsubscribeRecipientsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageListUnsubscribeRecipientsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -611,7 +630,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/reputation-items",
@@ -621,7 +640,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageReputationItemsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageReputationItemsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -648,45 +669,45 @@ var BounceControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.BounceControllerApi = BounceControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetBouncedEmailsSortEnum;
 (function (GetBouncedEmailsSortEnum) {
     GetBouncedEmailsSortEnum["ASC"] = "ASC";
     GetBouncedEmailsSortEnum["DESC"] = "DESC";
 })(GetBouncedEmailsSortEnum = exports.GetBouncedEmailsSortEnum || (exports.GetBouncedEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetBouncedRecipientsSortEnum;
 (function (GetBouncedRecipientsSortEnum) {
     GetBouncedRecipientsSortEnum["ASC"] = "ASC";
     GetBouncedRecipientsSortEnum["DESC"] = "DESC";
 })(GetBouncedRecipientsSortEnum = exports.GetBouncedRecipientsSortEnum || (exports.GetBouncedRecipientsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetComplaintsSortEnum;
 (function (GetComplaintsSortEnum) {
     GetComplaintsSortEnum["ASC"] = "ASC";
     GetComplaintsSortEnum["DESC"] = "DESC";
 })(GetComplaintsSortEnum = exports.GetComplaintsSortEnum || (exports.GetComplaintsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetListUnsubscribeRecipientsSortEnum;
 (function (GetListUnsubscribeRecipientsSortEnum) {
     GetListUnsubscribeRecipientsSortEnum["ASC"] = "ASC";
     GetListUnsubscribeRecipientsSortEnum["DESC"] = "DESC";
 })(GetListUnsubscribeRecipientsSortEnum = exports.GetListUnsubscribeRecipientsSortEnum || (exports.GetListUnsubscribeRecipientsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetReputationItemsSortEnum;
 (function (GetReputationItemsSortEnum) {
     GetReputationItemsSortEnum["ASC"] = "ASC";

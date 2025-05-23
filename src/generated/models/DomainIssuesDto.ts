@@ -14,44 +14,43 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface DomainIssuesDto
  */
 export interface DomainIssuesDto {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof DomainIssuesDto
-     */
-    hasIssues: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainIssuesDto
+   */
+  hasIssues: boolean;
 }
 
 export function DomainIssuesDtoFromJSON(json: any): DomainIssuesDto {
-    return DomainIssuesDtoFromJSONTyped(json, false);
+  return DomainIssuesDtoFromJSONTyped(json, false);
 }
 
-export function DomainIssuesDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainIssuesDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'hasIssues': json['hasIssues'],
-    };
+export function DomainIssuesDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): DomainIssuesDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    hasIssues: json['hasIssues'],
+  };
 }
 
 export function DomainIssuesDtoToJSON(value?: DomainIssuesDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'hasIssues': value.hasIssues,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    hasIssues: value.hasIssues,
+  };
 }
-
-

@@ -53,16 +53,17 @@ export interface ReputationItemProjection {
     source?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum ReputationItemProjectionReputationTypeEnum {
     COMPLAINT = "COMPLAINT",
     BOUNCE = "BOUNCE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum ReputationItemProjectionSeverityEnum {
     INFO = "INFO",
     WARNING = "WARNING",

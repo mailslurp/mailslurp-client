@@ -339,6 +339,7 @@ models/SortObject.ts
 models/SpellingIssue.ts
 models/StructuredContentResult.ts
 models/StructuredOutputSchema.ts
+models/StructuredOutputSchemaValidation.ts
 models/TemplateDto.ts
 models/TemplatePreview.ts
 models/TemplateProjection.ts

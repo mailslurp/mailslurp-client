@@ -20,11 +20,11 @@ function EmptyResponseDtoFromJSON(json) {
 }
 exports.EmptyResponseDtoFromJSON = EmptyResponseDtoFromJSON;
 function EmptyResponseDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
 exports.EmptyResponseDtoFromJSONTyped = EmptyResponseDtoFromJSONTyped;
@@ -36,7 +36,7 @@ function EmptyResponseDtoToJSON(value) {
         return null;
     }
     return {
-        'message': value.message,
+        message: value.message,
     };
 }
 exports.EmptyResponseDtoToJSON = EmptyResponseDtoToJSON;

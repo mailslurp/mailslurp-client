@@ -302,6 +302,7 @@ export * from './SortObject';
 export * from './SpellingIssue';
 export * from './StructuredContentResult';
 export * from './StructuredOutputSchema';
+export * from './StructuredOutputSchemaValidation';
 export * from './TemplateDto';
 export * from './TemplatePreview';
 export * from './TemplateProjection';

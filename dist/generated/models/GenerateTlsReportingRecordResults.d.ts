@@ -41,9 +41,9 @@ export interface GenerateTlsReportingRecordResults {
     value: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateTlsReportingRecordResultsTypeEnum {
     A = "A",
     NS = "NS",

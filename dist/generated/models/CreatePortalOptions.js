@@ -20,14 +20,14 @@ function CreatePortalOptionsFromJSON(json) {
 }
 exports.CreatePortalOptionsFromJSON = CreatePortalOptionsFromJSON;
 function CreatePortalOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'linkHelp': !(0, runtime_1.exists)(json, 'linkHelp') ? undefined : json['linkHelp'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        linkHelp: !(0, runtime_1.exists)(json, 'linkHelp') ? undefined : json['linkHelp'],
     };
 }
 exports.CreatePortalOptionsFromJSONTyped = CreatePortalOptionsFromJSONTyped;
@@ -39,10 +39,10 @@ function CreatePortalOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'domainId': value.domainId,
-        'description': value.description,
-        'linkHelp': value.linkHelp,
+        name: value.name,
+        domainId: value.domainId,
+        description: value.description,
+        linkHelp: value.linkHelp,
     };
 }
 exports.CreatePortalOptionsToJSON = CreatePortalOptionsToJSON;

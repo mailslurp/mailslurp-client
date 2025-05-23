@@ -14,44 +14,43 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ConsentStatusDto
  */
 export interface ConsentStatusDto {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ConsentStatusDto
-     */
-    consented: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConsentStatusDto
+   */
+  consented: boolean;
 }
 
 export function ConsentStatusDtoFromJSON(json: any): ConsentStatusDto {
-    return ConsentStatusDtoFromJSONTyped(json, false);
+  return ConsentStatusDtoFromJSONTyped(json, false);
 }
 
-export function ConsentStatusDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConsentStatusDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'consented': json['consented'],
-    };
+export function ConsentStatusDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ConsentStatusDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    consented: json['consented'],
+  };
 }
 
 export function ConsentStatusDtoToJSON(value?: ConsentStatusDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'consented': value.consented,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    consented: value.consented,
+  };
 }
-
-

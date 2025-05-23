@@ -19,11 +19,11 @@ function TestPhoneNumberOptionsFromJSON(json) {
 }
 exports.TestPhoneNumberOptionsFromJSON = TestPhoneNumberOptionsFromJSON;
 function TestPhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'message': json['message'],
+        message: json['message'],
     };
 }
 exports.TestPhoneNumberOptionsFromJSONTyped = TestPhoneNumberOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function TestPhoneNumberOptionsToJSON(value) {
         return null;
     }
     return {
-        'message': value.message,
+        message: value.message,
     };
 }
 exports.TestPhoneNumberOptionsToJSON = TestPhoneNumberOptionsToJSON;

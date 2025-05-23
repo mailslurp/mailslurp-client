@@ -19,16 +19,16 @@ function EmailValidationRequestDtoFromJSON(json) {
 }
 exports.EmailValidationRequestDtoFromJSON = EmailValidationRequestDtoFromJSON;
 function EmailValidationRequestDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': json['userId'],
-        'emailAddress': json['emailAddress'],
-        'isValid': json['isValid'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
+        id: json['id'],
+        userId: json['userId'],
+        emailAddress: json['emailAddress'],
+        isValid: json['isValid'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
     };
 }
 exports.EmailValidationRequestDtoFromJSONTyped = EmailValidationRequestDtoFromJSONTyped;
@@ -40,12 +40,12 @@ function EmailValidationRequestDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'emailAddress': value.emailAddress,
-        'isValid': value.isValid,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
+        id: value.id,
+        userId: value.userId,
+        emailAddress: value.emailAddress,
+        isValid: value.isValid,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
     };
 }
 exports.EmailValidationRequestDtoToJSON = EmailValidationRequestDtoToJSON;

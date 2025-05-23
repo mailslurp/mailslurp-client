@@ -20,11 +20,11 @@ function PhonePlanAvailabilityFromJSON(json) {
 }
 exports.PhonePlanAvailabilityFromJSON = PhonePlanAvailabilityFromJSON;
 function PhonePlanAvailabilityFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'items': (json['items'].map(_1.PhonePlanAvailabilityItemFromJSON)),
+        items: json['items'].map(_1.PhonePlanAvailabilityItemFromJSON),
     };
 }
 exports.PhonePlanAvailabilityFromJSONTyped = PhonePlanAvailabilityFromJSONTyped;
@@ -36,7 +36,7 @@ function PhonePlanAvailabilityToJSON(value) {
         return null;
     }
     return {
-        'items': (value.items.map(_1.PhonePlanAvailabilityItemToJSON)),
+        items: value.items.map(_1.PhonePlanAvailabilityItemToJSON),
     };
 }
 exports.PhonePlanAvailabilityToJSON = PhonePlanAvailabilityToJSON;

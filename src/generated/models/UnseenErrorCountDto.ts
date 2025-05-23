@@ -19,39 +19,40 @@ import { exists, mapValues } from '../runtime';
  * @interface UnseenErrorCountDto
  */
 export interface UnseenErrorCountDto {
-    /**
-     * 
-     * @type {number}
-     * @memberof UnseenErrorCountDto
-     */
-    count: number;
+  /**
+   *
+   * @type {number}
+   * @memberof UnseenErrorCountDto
+   */
+  count: number;
 }
 
 export function UnseenErrorCountDtoFromJSON(json: any): UnseenErrorCountDto {
-    return UnseenErrorCountDtoFromJSONTyped(json, false);
+  return UnseenErrorCountDtoFromJSONTyped(json, false);
 }
 
-export function UnseenErrorCountDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnseenErrorCountDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'count': json['count'],
-    };
+export function UnseenErrorCountDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): UnseenErrorCountDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    count: json['count'],
+  };
 }
 
-export function UnseenErrorCountDtoToJSON(value?: UnseenErrorCountDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'count': value.count,
-    };
+export function UnseenErrorCountDtoToJSON(
+  value?: UnseenErrorCountDto | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    count: value.count,
+  };
 }
-
-

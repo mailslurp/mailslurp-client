@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateInboxDtoToJSON = exports.CreateInboxDtoFromJSONTyped = exports.CreateInboxDtoFromJSON = exports.CreateInboxDtoInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateInboxDtoInboxTypeEnum;
 (function (CreateInboxDtoInboxTypeEnum) {
     CreateInboxDtoInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -29,25 +29,39 @@ function CreateInboxDtoFromJSON(json) {
 }
 exports.CreateInboxDtoFromJSON = CreateInboxDtoFromJSON;
 function CreateInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'domainName': !(0, runtime_1.exists)(json, 'domainName') ? undefined : json['domainName'],
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'useDomainPool': !(0, runtime_1.exists)(json, 'useDomainPool') ? undefined : json['useDomainPool'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : (json['expiresAt'] === null ? null : new Date(json['expiresAt'])),
-        'favourite': !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
-        'expiresIn': !(0, runtime_1.exists)(json, 'expiresIn') ? undefined : json['expiresIn'],
-        'allowTeamAccess': !(0, runtime_1.exists)(json, 'allowTeamAccess') ? undefined : json['allowTeamAccess'],
-        'inboxType': !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        'virtualInbox': !(0, runtime_1.exists)(json, 'virtualInbox') ? undefined : json['virtualInbox'],
-        'useShortAddress': !(0, runtime_1.exists)(json, 'useShortAddress') ? undefined : json['useShortAddress'],
-        'prefix': !(0, runtime_1.exists)(json, 'prefix') ? undefined : json['prefix'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        domainName: !(0, runtime_1.exists)(json, 'domainName') ? undefined : json['domainName'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        useDomainPool: !(0, runtime_1.exists)(json, 'useDomainPool')
+            ? undefined
+            : json['useDomainPool'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        expiresIn: !(0, runtime_1.exists)(json, 'expiresIn') ? undefined : json['expiresIn'],
+        allowTeamAccess: !(0, runtime_1.exists)(json, 'allowTeamAccess')
+            ? undefined
+            : json['allowTeamAccess'],
+        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        virtualInbox: !(0, runtime_1.exists)(json, 'virtualInbox')
+            ? undefined
+            : json['virtualInbox'],
+        useShortAddress: !(0, runtime_1.exists)(json, 'useShortAddress')
+            ? undefined
+            : json['useShortAddress'],
+        prefix: !(0, runtime_1.exists)(json, 'prefix') ? undefined : json['prefix'],
     };
 }
 exports.CreateInboxDtoFromJSONTyped = CreateInboxDtoFromJSONTyped;
@@ -59,21 +73,25 @@ function CreateInboxDtoToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'domainName': value.domainName,
-        'domainId': value.domainId,
-        'name': value.name,
-        'description': value.description,
-        'useDomainPool': value.useDomainPool,
-        'tags': value.tags,
-        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt === null ? null : value.expiresAt.toISOString()),
-        'favourite': value.favourite,
-        'expiresIn': value.expiresIn,
-        'allowTeamAccess': value.allowTeamAccess,
-        'inboxType': value.inboxType,
-        'virtualInbox': value.virtualInbox,
-        'useShortAddress': value.useShortAddress,
-        'prefix': value.prefix,
+        emailAddress: value.emailAddress,
+        domainName: value.domainName,
+        domainId: value.domainId,
+        name: value.name,
+        description: value.description,
+        useDomainPool: value.useDomainPool,
+        tags: value.tags,
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
+        favourite: value.favourite,
+        expiresIn: value.expiresIn,
+        allowTeamAccess: value.allowTeamAccess,
+        inboxType: value.inboxType,
+        virtualInbox: value.virtualInbox,
+        useShortAddress: value.useShortAddress,
+        prefix: value.prefix,
     };
 }
 exports.CreateInboxDtoToJSON = CreateInboxDtoToJSON;

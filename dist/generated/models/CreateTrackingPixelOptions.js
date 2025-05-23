@@ -20,12 +20,12 @@ function CreateTrackingPixelOptionsFromJSON(json) {
 }
 exports.CreateTrackingPixelOptionsFromJSON = CreateTrackingPixelOptionsFromJSON;
 function CreateTrackingPixelOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'recipient': !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
     };
 }
 exports.CreateTrackingPixelOptionsFromJSONTyped = CreateTrackingPixelOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function CreateTrackingPixelOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'recipient': value.recipient,
+        name: value.name,
+        recipient: value.recipient,
     };
 }
 exports.CreateTrackingPixelOptionsToJSON = CreateTrackingPixelOptionsToJSON;

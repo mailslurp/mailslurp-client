@@ -20,15 +20,15 @@ function AttachmentMetaDataFromJSON(json) {
 }
 exports.AttachmentMetaDataFromJSON = AttachmentMetaDataFromJSON;
 function AttachmentMetaDataFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': json['name'],
-        'contentType': json['contentType'],
-        'contentLength': json['contentLength'],
-        'id': json['id'],
-        'contentId': !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
+        name: json['name'],
+        contentType: json['contentType'],
+        contentLength: json['contentLength'],
+        id: json['id'],
+        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
     };
 }
 exports.AttachmentMetaDataFromJSONTyped = AttachmentMetaDataFromJSONTyped;
@@ -40,11 +40,11 @@ function AttachmentMetaDataToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'contentType': value.contentType,
-        'contentLength': value.contentLength,
-        'id': value.id,
-        'contentId': value.contentId,
+        name: value.name,
+        contentType: value.contentType,
+        contentLength: value.contentLength,
+        id: value.id,
+        contentId: value.contentId,
     };
 }
 exports.AttachmentMetaDataToJSON = AttachmentMetaDataToJSON;

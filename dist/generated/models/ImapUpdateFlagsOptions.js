@@ -20,14 +20,14 @@ function ImapUpdateFlagsOptionsFromJSON(json) {
 }
 exports.ImapUpdateFlagsOptionsFromJSON = ImapUpdateFlagsOptionsFromJSON;
 function ImapUpdateFlagsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'operation': json['operation'],
-        'flags': !(0, runtime_1.exists)(json, 'flags') ? undefined : json['flags'],
-        'uidSet': !(0, runtime_1.exists)(json, 'uidSet') ? undefined : json['uidSet'],
-        'seqSet': !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
+        operation: json['operation'],
+        flags: !(0, runtime_1.exists)(json, 'flags') ? undefined : json['flags'],
+        uidSet: !(0, runtime_1.exists)(json, 'uidSet') ? undefined : json['uidSet'],
+        seqSet: !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
     };
 }
 exports.ImapUpdateFlagsOptionsFromJSONTyped = ImapUpdateFlagsOptionsFromJSONTyped;
@@ -39,10 +39,10 @@ function ImapUpdateFlagsOptionsToJSON(value) {
         return null;
     }
     return {
-        'operation': value.operation,
-        'flags': value.flags,
-        'uidSet': value.uidSet,
-        'seqSet': value.seqSet,
+        operation: value.operation,
+        flags: value.flags,
+        uidSet: value.uidSet,
+        seqSet: value.seqSet,
     };
 }
 exports.ImapUpdateFlagsOptionsToJSON = ImapUpdateFlagsOptionsToJSON;

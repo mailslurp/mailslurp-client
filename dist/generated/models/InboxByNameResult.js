@@ -20,12 +20,12 @@ function InboxByNameResultFromJSON(json) {
 }
 exports.InboxByNameResultFromJSON = InboxByNameResultFromJSON;
 function InboxByNameResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        '_exists': json['exists'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        _exists: json['exists'],
     };
 }
 exports.InboxByNameResultFromJSONTyped = InboxByNameResultFromJSONTyped;
@@ -37,8 +37,8 @@ function InboxByNameResultToJSON(value) {
         return null;
     }
     return {
-        'inboxId': value.inboxId,
-        'exists': value._exists,
+        inboxId: value.inboxId,
+        exists: value._exists,
     };
 }
 exports.InboxByNameResultToJSON = InboxByNameResultToJSON;

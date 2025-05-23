@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface TestInboxRulesetSendingResult
  */
 export interface TestInboxRulesetSendingResult {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TestInboxRulesetSendingResult
-     */
-    canSend: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof TestInboxRulesetSendingResult
+   */
+  canSend: boolean;
 }
 
-export function TestInboxRulesetSendingResultFromJSON(json: any): TestInboxRulesetSendingResult {
-    return TestInboxRulesetSendingResultFromJSONTyped(json, false);
+export function TestInboxRulesetSendingResultFromJSON(
+  json: any
+): TestInboxRulesetSendingResult {
+  return TestInboxRulesetSendingResultFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetSendingResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetSendingResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'canSend': json['canSend'],
-    };
+export function TestInboxRulesetSendingResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TestInboxRulesetSendingResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    canSend: json['canSend'],
+  };
 }
 
-export function TestInboxRulesetSendingResultToJSON(value?: TestInboxRulesetSendingResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'canSend': value.canSend,
-    };
+export function TestInboxRulesetSendingResultToJSON(
+  value?: TestInboxRulesetSendingResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    canSend: value.canSend,
+  };
 }
-
-

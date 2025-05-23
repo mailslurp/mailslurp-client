@@ -19,63 +19,66 @@ import { exists, mapValues } from '../runtime';
  * @interface ListUnsubscribeRecipientProjection
  */
 export interface ListUnsubscribeRecipientProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    domainId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ListUnsubscribeRecipientProjection
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof ListUnsubscribeRecipientProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof ListUnsubscribeRecipientProjection
+   */
+  domainId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ListUnsubscribeRecipientProjection
+   */
+  id: string;
 }
 
-export function ListUnsubscribeRecipientProjectionFromJSON(json: any): ListUnsubscribeRecipientProjection {
-    return ListUnsubscribeRecipientProjectionFromJSONTyped(json, false);
+export function ListUnsubscribeRecipientProjectionFromJSON(
+  json: any
+): ListUnsubscribeRecipientProjection {
+  return ListUnsubscribeRecipientProjectionFromJSONTyped(json, false);
 }
 
-export function ListUnsubscribeRecipientProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ListUnsubscribeRecipientProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'emailAddress': json['emailAddress'],
-        'createdAt': (new Date(json['createdAt'])),
-        'domainId': !exists(json, 'domainId') ? undefined : json['domainId'],
-        'id': json['id'],
-    };
+export function ListUnsubscribeRecipientProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ListUnsubscribeRecipientProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    emailAddress: json['emailAddress'],
+    createdAt: new Date(json['createdAt']),
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
+    id: json['id'],
+  };
 }
 
-export function ListUnsubscribeRecipientProjectionToJSON(value?: ListUnsubscribeRecipientProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'emailAddress': value.emailAddress,
-        'createdAt': (value.createdAt.toISOString()),
-        'domainId': value.domainId,
-        'id': value.id,
-    };
+export function ListUnsubscribeRecipientProjectionToJSON(
+  value?: ListUnsubscribeRecipientProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    emailAddress: value.emailAddress,
+    createdAt: value.createdAt.toISOString(),
+    domainId: value.domainId,
+    id: value.id,
+  };
 }
-
-

@@ -19,55 +19,54 @@ import { exists, mapValues } from '../runtime';
  * @interface EmailPreviewUrls
  */
 export interface EmailPreviewUrls {
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailPreviewUrls
-     */
-    rawSmtpMessageUrl: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailPreviewUrls
-     */
-    plainHtmlBodyUrl: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailPreviewUrls
-     */
-    origin: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailPreviewUrls
+   */
+  rawSmtpMessageUrl: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailPreviewUrls
+   */
+  plainHtmlBodyUrl: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailPreviewUrls
+   */
+  origin: string;
 }
 
 export function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls {
-    return EmailPreviewUrlsFromJSONTyped(json, false);
+  return EmailPreviewUrlsFromJSONTyped(json, false);
 }
 
-export function EmailPreviewUrlsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreviewUrls {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'rawSmtpMessageUrl': json['rawSmtpMessageUrl'],
-        'plainHtmlBodyUrl': json['plainHtmlBodyUrl'],
-        'origin': json['origin'],
-    };
+export function EmailPreviewUrlsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailPreviewUrls {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
+    plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
+    origin: json['origin'],
+  };
 }
 
 export function EmailPreviewUrlsToJSON(value?: EmailPreviewUrls | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'rawSmtpMessageUrl': value.rawSmtpMessageUrl,
-        'plainHtmlBodyUrl': value.plainHtmlBodyUrl,
-        'origin': value.origin,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    rawSmtpMessageUrl: value.rawSmtpMessageUrl,
+    plainHtmlBodyUrl: value.plainHtmlBodyUrl,
+    origin: value.origin,
+  };
 }
-
-

@@ -14,92 +14,99 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ConnectorSyncSettingsDto
  */
 export interface ConnectorSyncSettingsDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorSyncSettingsDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorSyncSettingsDto
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorSyncSettingsDto
-     */
-    connectorId: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ConnectorSyncSettingsDto
-     */
-    syncEnabled: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorSyncSettingsDto
-     */
-    syncScheduleType?: ConnectorSyncSettingsDtoSyncScheduleTypeEnum;
-    /**
-     * 
-     * @type {number}
-     * @memberof ConnectorSyncSettingsDto
-     */
-    syncInterval?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSyncSettingsDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSyncSettingsDto
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSyncSettingsDto
+   */
+  connectorId: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorSyncSettingsDto
+   */
+  syncEnabled: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSyncSettingsDto
+   */
+  syncScheduleType?: ConnectorSyncSettingsDtoSyncScheduleTypeEnum;
+  /**
+   *
+   * @type {number}
+   * @memberof ConnectorSyncSettingsDto
+   */
+  syncInterval?: number | null;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum ConnectorSyncSettingsDtoSyncScheduleTypeEnum {
-    INTERVAL = 'INTERVAL'
+  INTERVAL = 'INTERVAL',
 }
 
-export function ConnectorSyncSettingsDtoFromJSON(json: any): ConnectorSyncSettingsDto {
-    return ConnectorSyncSettingsDtoFromJSONTyped(json, false);
+export function ConnectorSyncSettingsDtoFromJSON(
+  json: any
+): ConnectorSyncSettingsDto {
+  return ConnectorSyncSettingsDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorSyncSettingsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSyncSettingsDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'userId': json['userId'],
-        'connectorId': json['connectorId'],
-        'syncEnabled': json['syncEnabled'],
-        'syncScheduleType': !exists(json, 'syncScheduleType') ? undefined : json['syncScheduleType'],
-        'syncInterval': !exists(json, 'syncInterval') ? undefined : json['syncInterval'],
-    };
+export function ConnectorSyncSettingsDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ConnectorSyncSettingsDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    userId: json['userId'],
+    connectorId: json['connectorId'],
+    syncEnabled: json['syncEnabled'],
+    syncScheduleType: !exists(json, 'syncScheduleType')
+      ? undefined
+      : json['syncScheduleType'],
+    syncInterval: !exists(json, 'syncInterval')
+      ? undefined
+      : json['syncInterval'],
+  };
 }
 
-export function ConnectorSyncSettingsDtoToJSON(value?: ConnectorSyncSettingsDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'userId': value.userId,
-        'connectorId': value.connectorId,
-        'syncEnabled': value.syncEnabled,
-        'syncScheduleType': value.syncScheduleType,
-        'syncInterval': value.syncInterval,
-    };
+export function ConnectorSyncSettingsDtoToJSON(
+  value?: ConnectorSyncSettingsDto | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    userId: value.userId,
+    connectorId: value.connectorId,
+    syncEnabled: value.syncEnabled,
+    syncScheduleType: value.syncScheduleType,
+    syncInterval: value.syncInterval,
+  };
 }
-
-

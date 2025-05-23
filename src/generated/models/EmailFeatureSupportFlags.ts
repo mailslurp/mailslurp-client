@@ -14,63 +14,66 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface EmailFeatureSupportFlags
  */
 export interface EmailFeatureSupportFlags {
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailFeatureSupportFlags
-     */
-    status: EmailFeatureSupportFlagsStatusEnum;
-    /**
-     * 
-     * @type {Set<string>}
-     * @memberof EmailFeatureSupportFlags
-     */
-    notes?: Set<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailFeatureSupportFlags
+   */
+  status: EmailFeatureSupportFlagsStatusEnum;
+  /**
+   *
+   * @type {Set<string>}
+   * @memberof EmailFeatureSupportFlags
+   */
+  notes?: Set<string>;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum EmailFeatureSupportFlagsStatusEnum {
-    SUPPORTED = 'SUPPORTED',
-    PARTIAL = 'PARTIAL',
-    NOT_SUPPORTED = 'NOT_SUPPORTED',
-    UNKNOWN = 'UNKNOWN'
+  SUPPORTED = 'SUPPORTED',
+  PARTIAL = 'PARTIAL',
+  NOT_SUPPORTED = 'NOT_SUPPORTED',
+  UNKNOWN = 'UNKNOWN',
 }
 
-export function EmailFeatureSupportFlagsFromJSON(json: any): EmailFeatureSupportFlags {
-    return EmailFeatureSupportFlagsFromJSONTyped(json, false);
+export function EmailFeatureSupportFlagsFromJSON(
+  json: any
+): EmailFeatureSupportFlags {
+  return EmailFeatureSupportFlagsFromJSONTyped(json, false);
 }
 
-export function EmailFeatureSupportFlagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureSupportFlags {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'status': json['status'],
-        'notes': !exists(json, 'notes') ? undefined : json['notes'],
-    };
+export function EmailFeatureSupportFlagsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailFeatureSupportFlags {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    status: json['status'],
+    notes: !exists(json, 'notes') ? undefined : json['notes'],
+  };
 }
 
-export function EmailFeatureSupportFlagsToJSON(value?: EmailFeatureSupportFlags | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'status': value.status,
-        'notes': value.notes,
-    };
+export function EmailFeatureSupportFlagsToJSON(
+  value?: EmailFeatureSupportFlags | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    status: value.status,
+    notes: value.notes,
+  };
 }
-
-

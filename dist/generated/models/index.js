@@ -320,6 +320,7 @@ __exportStar(require("./SortObject"), exports);
 __exportStar(require("./SpellingIssue"), exports);
 __exportStar(require("./StructuredContentResult"), exports);
 __exportStar(require("./StructuredOutputSchema"), exports);
+__exportStar(require("./StructuredOutputSchemaValidation"), exports);
 __exportStar(require("./TemplateDto"), exports);
 __exportStar(require("./TemplatePreview"), exports);
 __exportStar(require("./TemplateProjection"), exports);

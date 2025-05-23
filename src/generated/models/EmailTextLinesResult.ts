@@ -19,47 +19,48 @@ import { exists, mapValues } from '../runtime';
  * @interface EmailTextLinesResult
  */
 export interface EmailTextLinesResult {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailTextLinesResult
-     */
-    lines: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailTextLinesResult
-     */
-    body: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailTextLinesResult
+   */
+  lines: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailTextLinesResult
+   */
+  body: string;
 }
 
 export function EmailTextLinesResultFromJSON(json: any): EmailTextLinesResult {
-    return EmailTextLinesResultFromJSONTyped(json, false);
+  return EmailTextLinesResultFromJSONTyped(json, false);
 }
 
-export function EmailTextLinesResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailTextLinesResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'lines': json['lines'],
-        'body': json['body'],
-    };
+export function EmailTextLinesResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailTextLinesResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    lines: json['lines'],
+    body: json['body'],
+  };
 }
 
-export function EmailTextLinesResultToJSON(value?: EmailTextLinesResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'lines': value.lines,
-        'body': value.body,
-    };
+export function EmailTextLinesResultToJSON(
+  value?: EmailTextLinesResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    lines: value.lines,
+    body: value.body,
+  };
 }
-
-

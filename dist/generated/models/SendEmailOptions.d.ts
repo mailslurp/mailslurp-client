@@ -172,15 +172,16 @@ export interface SendEmailOptions {
     bodyParts?: Array<SendEmailBodyPart> | null;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum SendEmailOptionsSendStrategyEnum {
     SINGLE_MESSAGE = "SINGLE_MESSAGE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum SendEmailOptionsValidateEmailAddressesEnum {
     VALIDATE_FILTER_REMOVE_INVALID = "VALIDATE_FILTER_REMOVE_INVALID",
     VALIDATE_ERROR_IF_INVALID = "VALIDATE_ERROR_IF_INVALID",

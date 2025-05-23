@@ -132,17 +132,17 @@ export declare class GuestPortalControllerApi extends runtime.BaseAPI {
     getGuestPortals(initOverrides?: RequestInit): Promise<Array<GuestPortalDto>>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllGuestPortalUsersSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetGuestPortalUsersSortEnum {
     ASC = "ASC",
     DESC = "DESC"

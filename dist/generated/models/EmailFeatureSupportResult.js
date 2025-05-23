@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailFeatureSupportResultToJSON = exports.EmailFeatureSupportResultFromJSONTyped = exports.EmailFeatureSupportResultFromJSON = exports.EmailFeatureSupportResultDetectedFeaturesEnum = void 0;
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EmailFeatureSupportResultDetectedFeaturesEnum;
 (function (EmailFeatureSupportResultDetectedFeaturesEnum) {
     EmailFeatureSupportResultDetectedFeaturesEnum["amp"] = "amp";
@@ -207,14 +207,14 @@ function EmailFeatureSupportResultFromJSON(json) {
 }
 exports.EmailFeatureSupportResultFromJSON = EmailFeatureSupportResultFromJSON;
 function EmailFeatureSupportResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'names': (0, _1.EmailFeatureNamesFromJSON)(json['names']),
-        'detectedFeatures': json['detectedFeatures'],
-        'featureOverviews': (json['featureOverviews'].map(_1.EmailFeatureOverviewFromJSON)),
-        'featurePercentages': (json['featurePercentages'].map(_1.EmailFeatureSupportStatusPercentageFromJSON)),
+        names: (0, _1.EmailFeatureNamesFromJSON)(json['names']),
+        detectedFeatures: json['detectedFeatures'],
+        featureOverviews: json['featureOverviews'].map(_1.EmailFeatureOverviewFromJSON),
+        featurePercentages: json['featurePercentages'].map(_1.EmailFeatureSupportStatusPercentageFromJSON),
     };
 }
 exports.EmailFeatureSupportResultFromJSONTyped = EmailFeatureSupportResultFromJSONTyped;
@@ -226,10 +226,10 @@ function EmailFeatureSupportResultToJSON(value) {
         return null;
     }
     return {
-        'names': (0, _1.EmailFeatureNamesToJSON)(value.names),
-        'detectedFeatures': value.detectedFeatures,
-        'featureOverviews': (value.featureOverviews.map(_1.EmailFeatureOverviewToJSON)),
-        'featurePercentages': (value.featurePercentages.map(_1.EmailFeatureSupportStatusPercentageToJSON)),
+        names: (0, _1.EmailFeatureNamesToJSON)(value.names),
+        detectedFeatures: value.detectedFeatures,
+        featureOverviews: value.featureOverviews.map(_1.EmailFeatureOverviewToJSON),
+        featurePercentages: value.featurePercentages.map(_1.EmailFeatureSupportStatusPercentageToJSON),
     };
 }
 exports.EmailFeatureSupportResultToJSON = EmailFeatureSupportResultToJSON;

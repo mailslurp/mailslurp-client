@@ -19,11 +19,11 @@ function InboxRulesetTestOptionsFromJSON(json) {
 }
 exports.InboxRulesetTestOptionsFromJSON = InboxRulesetTestOptionsFromJSON;
 function InboxRulesetTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'testTarget': json['testTarget'],
+        testTarget: json['testTarget'],
     };
 }
 exports.InboxRulesetTestOptionsFromJSONTyped = InboxRulesetTestOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function InboxRulesetTestOptionsToJSON(value) {
         return null;
     }
     return {
-        'testTarget': value.testTarget,
+        testTarget: value.testTarget,
     };
 }
 exports.InboxRulesetTestOptionsToJSON = InboxRulesetTestOptionsToJSON;

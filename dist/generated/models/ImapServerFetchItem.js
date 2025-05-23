@@ -19,15 +19,15 @@ function ImapServerFetchItemFromJSON(json) {
 }
 exports.ImapServerFetchItemFromJSON = ImapServerFetchItemFromJSON;
 function ImapServerFetchItemFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'content': json['content'],
-        'id': json['id'],
-        'uid': json['uid'],
-        'seqNum': json['seqNum'],
-        'read': json['read'],
+        content: json['content'],
+        id: json['id'],
+        uid: json['uid'],
+        seqNum: json['seqNum'],
+        read: json['read'],
     };
 }
 exports.ImapServerFetchItemFromJSONTyped = ImapServerFetchItemFromJSONTyped;
@@ -39,11 +39,11 @@ function ImapServerFetchItemToJSON(value) {
         return null;
     }
     return {
-        'content': value.content,
-        'id': value.id,
-        'uid': value.uid,
-        'seqNum': value.seqNum,
-        'read': value.read,
+        content: value.content,
+        id: value.id,
+        uid: value.uid,
+        seqNum: value.seqNum,
+        read: value.read,
     };
 }
 exports.ImapServerFetchItemToJSON = ImapServerFetchItemToJSON;

@@ -14,128 +14,127 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ScheduledJob
  */
 export interface ScheduledJob {
-    /**
-     * 
-     * @type {string}
-     * @memberof ScheduledJob
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ScheduledJob
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ScheduledJob
-     */
-    inboxId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ScheduledJob
-     */
-    jobId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ScheduledJob
-     */
-    groupId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ScheduledJob
-     */
-    triggerId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ScheduledJob
-     */
-    status: ScheduledJobStatusEnum;
-    /**
-     * 
-     * @type {Date}
-     * @memberof ScheduledJob
-     */
-    sendAtTimestamp: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof ScheduledJob
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof ScheduledJob
-     */
-    updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  inboxId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  jobId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  groupId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  triggerId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  status: ScheduledJobStatusEnum;
+  /**
+   *
+   * @type {Date}
+   * @memberof ScheduledJob
+   */
+  sendAtTimestamp: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof ScheduledJob
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof ScheduledJob
+   */
+  updatedAt: Date;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum ScheduledJobStatusEnum {
-    SUBMITTED = 'SUBMITTED',
-    COMPLETED = 'COMPLETED',
-    ABORTED = 'ABORTED',
-    FAILED = 'FAILED',
-    CANCELLED = 'CANCELLED'
+  SUBMITTED = 'SUBMITTED',
+  COMPLETED = 'COMPLETED',
+  ABORTED = 'ABORTED',
+  FAILED = 'FAILED',
+  CANCELLED = 'CANCELLED',
 }
 
 export function ScheduledJobFromJSON(json: any): ScheduledJob {
-    return ScheduledJobFromJSONTyped(json, false);
+  return ScheduledJobFromJSONTyped(json, false);
 }
 
-export function ScheduledJobFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScheduledJob {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'userId': json['userId'],
-        'inboxId': json['inboxId'],
-        'jobId': json['jobId'],
-        'groupId': json['groupId'],
-        'triggerId': json['triggerId'],
-        'status': json['status'],
-        'sendAtTimestamp': (new Date(json['sendAtTimestamp'])),
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-    };
+export function ScheduledJobFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ScheduledJob {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    userId: json['userId'],
+    inboxId: json['inboxId'],
+    jobId: json['jobId'],
+    groupId: json['groupId'],
+    triggerId: json['triggerId'],
+    status: json['status'],
+    sendAtTimestamp: new Date(json['sendAtTimestamp']),
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+  };
 }
 
 export function ScheduledJobToJSON(value?: ScheduledJob | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'userId': value.userId,
-        'inboxId': value.inboxId,
-        'jobId': value.jobId,
-        'groupId': value.groupId,
-        'triggerId': value.triggerId,
-        'status': value.status,
-        'sendAtTimestamp': (value.sendAtTimestamp.toISOString()),
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    userId: value.userId,
+    inboxId: value.inboxId,
+    jobId: value.jobId,
+    groupId: value.groupId,
+    triggerId: value.triggerId,
+    status: value.status,
+    sendAtTimestamp: value.sendAtTimestamp.toISOString(),
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+  };
 }
-
-

@@ -119,16 +119,17 @@ export interface InboxDto {
     accountRegion?: InboxDtoAccountRegionEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxDtoInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxDtoFunctionsAsEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
@@ -137,10 +138,11 @@ export declare enum InboxDtoFunctionsAsEnum {
     ACCOUNT = "ACCOUNT",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxDtoAccountRegionEnum {
     US_WEST_2 = "US_WEST_2"
 }

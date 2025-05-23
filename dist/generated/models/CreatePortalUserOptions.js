@@ -21,16 +21,20 @@ function CreatePortalUserOptionsFromJSON(json) {
 }
 exports.CreatePortalUserOptionsFromJSON = CreatePortalUserOptionsFromJSON;
 function CreatePortalUserOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'password': !(0, runtime_1.exists)(json, 'password') ? undefined : json['password'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'username': !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
-        'skipInboxCreation': !(0, runtime_1.exists)(json, 'skipInboxCreation') ? undefined : json['skipInboxCreation'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'createInboxOptions': !(0, runtime_1.exists)(json, 'createInboxOptions') ? undefined : (0, _1.CreateInboxDtoFromJSON)(json['createInboxOptions']),
+        password: !(0, runtime_1.exists)(json, 'password') ? undefined : json['password'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
+        skipInboxCreation: !(0, runtime_1.exists)(json, 'skipInboxCreation')
+            ? undefined
+            : json['skipInboxCreation'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        createInboxOptions: !(0, runtime_1.exists)(json, 'createInboxOptions')
+            ? undefined
+            : (0, _1.CreateInboxDtoFromJSON)(json['createInboxOptions']),
     };
 }
 exports.CreatePortalUserOptionsFromJSONTyped = CreatePortalUserOptionsFromJSONTyped;
@@ -42,12 +46,12 @@ function CreatePortalUserOptionsToJSON(value) {
         return null;
     }
     return {
-        'password': value.password,
-        'name': value.name,
-        'username': value.username,
-        'skipInboxCreation': value.skipInboxCreation,
-        'inboxId': value.inboxId,
-        'createInboxOptions': (0, _1.CreateInboxDtoToJSON)(value.createInboxOptions),
+        password: value.password,
+        name: value.name,
+        username: value.username,
+        skipInboxCreation: value.skipInboxCreation,
+        inboxId: value.inboxId,
+        createInboxOptions: (0, _1.CreateInboxDtoToJSON)(value.createInboxOptions),
     };
 }
 exports.CreatePortalUserOptionsToJSON = CreatePortalUserOptionsToJSON;

@@ -20,18 +20,18 @@ function SentSmsProjectionFromJSON(json) {
 }
 exports.SentSmsProjectionFromJSON = SentSmsProjectionFromJSON;
 function SentSmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'body': json['body'],
-        'userId': json['userId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'phoneNumber': json['phoneNumber'],
-        'fromNumber': json['fromNumber'],
-        'toNumber': json['toNumber'],
-        'replyToId': !(0, runtime_1.exists)(json, 'replyToId') ? undefined : json['replyToId'],
-        'id': json['id'],
+        body: json['body'],
+        userId: json['userId'],
+        createdAt: new Date(json['createdAt']),
+        phoneNumber: json['phoneNumber'],
+        fromNumber: json['fromNumber'],
+        toNumber: json['toNumber'],
+        replyToId: !(0, runtime_1.exists)(json, 'replyToId') ? undefined : json['replyToId'],
+        id: json['id'],
     };
 }
 exports.SentSmsProjectionFromJSONTyped = SentSmsProjectionFromJSONTyped;
@@ -43,14 +43,14 @@ function SentSmsProjectionToJSON(value) {
         return null;
     }
     return {
-        'body': value.body,
-        'userId': value.userId,
-        'createdAt': (value.createdAt.toISOString()),
-        'phoneNumber': value.phoneNumber,
-        'fromNumber': value.fromNumber,
-        'toNumber': value.toNumber,
-        'replyToId': value.replyToId,
-        'id': value.id,
+        body: value.body,
+        userId: value.userId,
+        createdAt: value.createdAt.toISOString(),
+        phoneNumber: value.phoneNumber,
+        fromNumber: value.fromNumber,
+        toNumber: value.toNumber,
+        replyToId: value.replyToId,
+        id: value.id,
     };
 }
 exports.SentSmsProjectionToJSON = SentSmsProjectionToJSON;

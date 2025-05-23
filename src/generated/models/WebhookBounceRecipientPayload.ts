@@ -19,89 +19,92 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookBounceRecipientPayload
  */
 export interface WebhookBounceRecipientPayload {
-    /**
-     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-     * @type {string}
-     * @memberof WebhookBounceRecipientPayload
-     */
-    messageId: string;
-    /**
-     * ID of webhook entity being triggered
-     * @type {string}
-     * @memberof WebhookBounceRecipientPayload
-     */
-    webhookId: string;
-    /**
-     * Name of the event type webhook is being triggered for.
-     * @type {string}
-     * @memberof WebhookBounceRecipientPayload
-     */
-    eventName: WebhookBounceRecipientPayloadEventNameEnum;
-    /**
-     * Name of the webhook being triggered
-     * @type {string}
-     * @memberof WebhookBounceRecipientPayload
-     */
-    webhookName?: string | null;
-    /**
-     * Email address that caused a bounce. Make note of the address and try not to message it again to preserve your reputation.
-     * @type {string}
-     * @memberof WebhookBounceRecipientPayload
-     */
-    recipient: string;
+  /**
+   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+   * @type {string}
+   * @memberof WebhookBounceRecipientPayload
+   */
+  messageId: string;
+  /**
+   * ID of webhook entity being triggered
+   * @type {string}
+   * @memberof WebhookBounceRecipientPayload
+   */
+  webhookId: string;
+  /**
+   * Name of the event type webhook is being triggered for.
+   * @type {string}
+   * @memberof WebhookBounceRecipientPayload
+   */
+  eventName: WebhookBounceRecipientPayloadEventNameEnum;
+  /**
+   * Name of the webhook being triggered
+   * @type {string}
+   * @memberof WebhookBounceRecipientPayload
+   */
+  webhookName?: string | null;
+  /**
+   * Email address that caused a bounce. Make note of the address and try not to message it again to preserve your reputation.
+   * @type {string}
+   * @memberof WebhookBounceRecipientPayload
+   */
+  recipient: string;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WebhookBounceRecipientPayloadEventNameEnum {
-    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-    NEW_EMAIL = 'NEW_EMAIL',
-    NEW_CONTACT = 'NEW_CONTACT',
-    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-    EMAIL_OPENED = 'EMAIL_OPENED',
-    EMAIL_READ = 'EMAIL_READ',
-    DELIVERY_STATUS = 'DELIVERY_STATUS',
-    BOUNCE = 'BOUNCE',
-    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-    NEW_SMS = 'NEW_SMS',
-    NEW_GUEST_USER = 'NEW_GUEST_USER'
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 
-export function WebhookBounceRecipientPayloadFromJSON(json: any): WebhookBounceRecipientPayload {
-    return WebhookBounceRecipientPayloadFromJSONTyped(json, false);
+export function WebhookBounceRecipientPayloadFromJSON(
+  json: any
+): WebhookBounceRecipientPayload {
+  return WebhookBounceRecipientPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookBounceRecipientPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookBounceRecipientPayload {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !exists(json, 'webhookName') ? undefined : json['webhookName'],
-        'recipient': json['recipient'],
-    };
+export function WebhookBounceRecipientPayloadFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookBounceRecipientPayload {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    messageId: json['messageId'],
+    webhookId: json['webhookId'],
+    eventName: json['eventName'],
+    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
+    recipient: json['recipient'],
+  };
 }
 
-export function WebhookBounceRecipientPayloadToJSON(value?: WebhookBounceRecipientPayload | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'recipient': value.recipient,
-    };
+export function WebhookBounceRecipientPayloadToJSON(
+  value?: WebhookBounceRecipientPayload | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    messageId: value.messageId,
+    webhookId: value.webhookId,
+    eventName: value.eventName,
+    webhookName: value.webhookName,
+    recipient: value.recipient,
+  };
 }
-
-

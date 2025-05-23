@@ -19,39 +19,38 @@ import { exists, mapValues } from '../runtime';
  * @interface JSONSchemaDto
  */
 export interface JSONSchemaDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof JSONSchemaDto
-     */
-    value: string;
+  /**
+   *
+   * @type {string}
+   * @memberof JSONSchemaDto
+   */
+  value: string;
 }
 
 export function JSONSchemaDtoFromJSON(json: any): JSONSchemaDto {
-    return JSONSchemaDtoFromJSONTyped(json, false);
+  return JSONSchemaDtoFromJSONTyped(json, false);
 }
 
-export function JSONSchemaDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): JSONSchemaDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'value': json['value'],
-    };
+export function JSONSchemaDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): JSONSchemaDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    value: json['value'],
+  };
 }
 
 export function JSONSchemaDtoToJSON(value?: JSONSchemaDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'value': value.value,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    value: value.value,
+  };
 }
-
-

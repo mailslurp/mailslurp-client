@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExportOptionsToJSON = exports.ExportOptionsFromJSONTyped = exports.ExportOptionsFromJSON = exports.ExportOptionsOutputFormatEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var ExportOptionsOutputFormatEnum;
 (function (ExportOptionsOutputFormatEnum) {
     ExportOptionsOutputFormatEnum["DEFAULT"] = "CSV_DEFAULT";
@@ -29,16 +29,28 @@ function ExportOptionsFromJSON(json) {
 }
 exports.ExportOptionsFromJSON = ExportOptionsFromJSON;
 function ExportOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'outputFormat': json['outputFormat'],
-        'excludePreviouslyExported': !(0, runtime_1.exists)(json, 'excludePreviouslyExported') ? undefined : json['excludePreviouslyExported'],
-        'createdEarliestTime': !(0, runtime_1.exists)(json, 'createdEarliestTime') ? undefined : (json['createdEarliestTime'] === null ? null : new Date(json['createdEarliestTime'])),
-        'createdOldestTime': !(0, runtime_1.exists)(json, 'createdOldestTime') ? undefined : (json['createdOldestTime'] === null ? null : new Date(json['createdOldestTime'])),
-        'filter': !(0, runtime_1.exists)(json, 'filter') ? undefined : json['filter'],
-        'listSeparatorToken': !(0, runtime_1.exists)(json, 'listSeparatorToken') ? undefined : json['listSeparatorToken'],
+        outputFormat: json['outputFormat'],
+        excludePreviouslyExported: !(0, runtime_1.exists)(json, 'excludePreviouslyExported')
+            ? undefined
+            : json['excludePreviouslyExported'],
+        createdEarliestTime: !(0, runtime_1.exists)(json, 'createdEarliestTime')
+            ? undefined
+            : json['createdEarliestTime'] === null
+                ? null
+                : new Date(json['createdEarliestTime']),
+        createdOldestTime: !(0, runtime_1.exists)(json, 'createdOldestTime')
+            ? undefined
+            : json['createdOldestTime'] === null
+                ? null
+                : new Date(json['createdOldestTime']),
+        filter: !(0, runtime_1.exists)(json, 'filter') ? undefined : json['filter'],
+        listSeparatorToken: !(0, runtime_1.exists)(json, 'listSeparatorToken')
+            ? undefined
+            : json['listSeparatorToken'],
     };
 }
 exports.ExportOptionsFromJSONTyped = ExportOptionsFromJSONTyped;
@@ -50,12 +62,20 @@ function ExportOptionsToJSON(value) {
         return null;
     }
     return {
-        'outputFormat': value.outputFormat,
-        'excludePreviouslyExported': value.excludePreviouslyExported,
-        'createdEarliestTime': value.createdEarliestTime === undefined ? undefined : (value.createdEarliestTime === null ? null : value.createdEarliestTime.toISOString()),
-        'createdOldestTime': value.createdOldestTime === undefined ? undefined : (value.createdOldestTime === null ? null : value.createdOldestTime.toISOString()),
-        'filter': value.filter,
-        'listSeparatorToken': value.listSeparatorToken,
+        outputFormat: value.outputFormat,
+        excludePreviouslyExported: value.excludePreviouslyExported,
+        createdEarliestTime: value.createdEarliestTime === undefined
+            ? undefined
+            : value.createdEarliestTime === null
+                ? null
+                : value.createdEarliestTime.toISOString(),
+        createdOldestTime: value.createdOldestTime === undefined
+            ? undefined
+            : value.createdOldestTime === null
+                ? null
+                : value.createdOldestTime.toISOString(),
+        filter: value.filter,
+        listSeparatorToken: value.listSeparatorToken,
     };
 }
 exports.ExportOptionsToJSON = ExportOptionsToJSON;

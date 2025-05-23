@@ -14,91 +14,98 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    CreateInboxDto,
-    CreateInboxDtoFromJSON,
-    CreateInboxDtoFromJSONTyped,
-    CreateInboxDtoToJSON,
+  CreateInboxDto,
+  CreateInboxDtoFromJSON,
+  CreateInboxDtoFromJSONTyped,
+  CreateInboxDtoToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface CreatePortalUserOptions
  */
 export interface CreatePortalUserOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreatePortalUserOptions
-     */
-    password?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreatePortalUserOptions
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreatePortalUserOptions
-     */
-    username?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreatePortalUserOptions
-     */
-    skipInboxCreation?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreatePortalUserOptions
-     */
-    inboxId?: string;
-    /**
-     * 
-     * @type {CreateInboxDto}
-     * @memberof CreatePortalUserOptions
-     */
-    createInboxOptions?: CreateInboxDto;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePortalUserOptions
+   */
+  password?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePortalUserOptions
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePortalUserOptions
+   */
+  username?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreatePortalUserOptions
+   */
+  skipInboxCreation?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePortalUserOptions
+   */
+  inboxId?: string;
+  /**
+   *
+   * @type {CreateInboxDto}
+   * @memberof CreatePortalUserOptions
+   */
+  createInboxOptions?: CreateInboxDto;
 }
 
-export function CreatePortalUserOptionsFromJSON(json: any): CreatePortalUserOptions {
-    return CreatePortalUserOptionsFromJSONTyped(json, false);
+export function CreatePortalUserOptionsFromJSON(
+  json: any
+): CreatePortalUserOptions {
+  return CreatePortalUserOptionsFromJSONTyped(json, false);
 }
 
-export function CreatePortalUserOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreatePortalUserOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'password': !exists(json, 'password') ? undefined : json['password'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'username': !exists(json, 'username') ? undefined : json['username'],
-        'skipInboxCreation': !exists(json, 'skipInboxCreation') ? undefined : json['skipInboxCreation'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'createInboxOptions': !exists(json, 'createInboxOptions') ? undefined : CreateInboxDtoFromJSON(json['createInboxOptions']),
-    };
+export function CreatePortalUserOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreatePortalUserOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    password: !exists(json, 'password') ? undefined : json['password'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    username: !exists(json, 'username') ? undefined : json['username'],
+    skipInboxCreation: !exists(json, 'skipInboxCreation')
+      ? undefined
+      : json['skipInboxCreation'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    createInboxOptions: !exists(json, 'createInboxOptions')
+      ? undefined
+      : CreateInboxDtoFromJSON(json['createInboxOptions']),
+  };
 }
 
-export function CreatePortalUserOptionsToJSON(value?: CreatePortalUserOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'password': value.password,
-        'name': value.name,
-        'username': value.username,
-        'skipInboxCreation': value.skipInboxCreation,
-        'inboxId': value.inboxId,
-        'createInboxOptions': CreateInboxDtoToJSON(value.createInboxOptions),
-    };
+export function CreatePortalUserOptionsToJSON(
+  value?: CreatePortalUserOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    password: value.password,
+    name: value.name,
+    username: value.username,
+    skipInboxCreation: value.skipInboxCreation,
+    inboxId: value.inboxId,
+    createInboxOptions: CreateInboxDtoToJSON(value.createInboxOptions),
+  };
 }
-
-

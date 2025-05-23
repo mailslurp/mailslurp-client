@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmergencyAddressDtoToJSON = exports.EmergencyAddressDtoFromJSONTyped = exports.EmergencyAddressDtoFromJSON = exports.EmergencyAddressDtoPhoneCountryEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EmergencyAddressDtoPhoneCountryEnum;
 (function (EmergencyAddressDtoPhoneCountryEnum) {
     EmergencyAddressDtoPhoneCountryEnum["US"] = "US";
@@ -38,13 +38,13 @@ function EmergencyAddressDtoFromJSON(json) {
 }
 exports.EmergencyAddressDtoFromJSON = EmergencyAddressDtoFromJSON;
 function EmergencyAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'address1': json['address1'],
-        'phoneCountry': json['phoneCountry'],
+        id: json['id'],
+        address1: json['address1'],
+        phoneCountry: json['phoneCountry'],
     };
 }
 exports.EmergencyAddressDtoFromJSONTyped = EmergencyAddressDtoFromJSONTyped;
@@ -56,9 +56,9 @@ function EmergencyAddressDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'address1': value.address1,
-        'phoneCountry': value.phoneCountry,
+        id: value.id,
+        address1: value.address1,
+        phoneCountry: value.phoneCountry,
     };
 }
 exports.EmergencyAddressDtoToJSON = EmergencyAddressDtoToJSON;

@@ -17,9 +17,9 @@ exports.WebhookNewEmailPayloadToJSON = exports.WebhookNewEmailPayloadFromJSONTyp
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookNewEmailPayloadEventNameEnum;
 (function (WebhookNewEmailPayloadEventNameEnum) {
     WebhookNewEmailPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -39,24 +39,24 @@ function WebhookNewEmailPayloadFromJSON(json) {
 }
 exports.WebhookNewEmailPayloadFromJSON = WebhookNewEmailPayloadFromJSON;
 function WebhookNewEmailPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        'inboxId': json['inboxId'],
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'emailId': json['emailId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'to': json['to'],
-        'from': json['from'],
-        'cc': json['cc'],
-        'bcc': json['bcc'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'attachmentMetaDatas': (json['attachmentMetaDatas'].map(_1.AttachmentMetaDataFromJSON)),
+        messageId: json['messageId'],
+        webhookId: json['webhookId'],
+        eventName: json['eventName'],
+        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        inboxId: json['inboxId'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        emailId: json['emailId'],
+        createdAt: new Date(json['createdAt']),
+        to: json['to'],
+        from: json['from'],
+        cc: json['cc'],
+        bcc: json['bcc'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        attachmentMetaDatas: json['attachmentMetaDatas'].map(_1.AttachmentMetaDataFromJSON),
     };
 }
 exports.WebhookNewEmailPayloadFromJSONTyped = WebhookNewEmailPayloadFromJSONTyped;
@@ -68,20 +68,20 @@ function WebhookNewEmailPayloadToJSON(value) {
         return null;
     }
     return {
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'inboxId': value.inboxId,
-        'domainId': value.domainId,
-        'emailId': value.emailId,
-        'createdAt': (value.createdAt.toISOString()),
-        'to': value.to,
-        'from': value.from,
-        'cc': value.cc,
-        'bcc': value.bcc,
-        'subject': value.subject,
-        'attachmentMetaDatas': (value.attachmentMetaDatas.map(_1.AttachmentMetaDataToJSON)),
+        messageId: value.messageId,
+        webhookId: value.webhookId,
+        eventName: value.eventName,
+        webhookName: value.webhookName,
+        inboxId: value.inboxId,
+        domainId: value.domainId,
+        emailId: value.emailId,
+        createdAt: value.createdAt.toISOString(),
+        to: value.to,
+        from: value.from,
+        cc: value.cc,
+        bcc: value.bcc,
+        subject: value.subject,
+        attachmentMetaDatas: value.attachmentMetaDatas.map(_1.AttachmentMetaDataToJSON),
     };
 }
 exports.WebhookNewEmailPayloadToJSON = WebhookNewEmailPayloadToJSON;

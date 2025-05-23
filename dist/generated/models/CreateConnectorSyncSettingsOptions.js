@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateConnectorSyncSettingsOptionsToJSON = exports.CreateConnectorSyncSettingsOptionsFromJSONTyped = exports.CreateConnectorSyncSettingsOptionsFromJSON = exports.CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum;
 (function (CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum) {
     CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
@@ -28,13 +28,17 @@ function CreateConnectorSyncSettingsOptionsFromJSON(json) {
 }
 exports.CreateConnectorSyncSettingsOptionsFromJSON = CreateConnectorSyncSettingsOptionsFromJSON;
 function CreateConnectorSyncSettingsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'syncEnabled': !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-        'syncScheduleType': !(0, runtime_1.exists)(json, 'syncScheduleType') ? undefined : json['syncScheduleType'],
-        'syncInterval': !(0, runtime_1.exists)(json, 'syncInterval') ? undefined : json['syncInterval'],
+        syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
+        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
+            ? undefined
+            : json['syncScheduleType'],
+        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
+            ? undefined
+            : json['syncInterval'],
     };
 }
 exports.CreateConnectorSyncSettingsOptionsFromJSONTyped = CreateConnectorSyncSettingsOptionsFromJSONTyped;
@@ -46,9 +50,9 @@ function CreateConnectorSyncSettingsOptionsToJSON(value) {
         return null;
     }
     return {
-        'syncEnabled': value.syncEnabled,
-        'syncScheduleType': value.syncScheduleType,
-        'syncInterval': value.syncInterval,
+        syncEnabled: value.syncEnabled,
+        syncScheduleType: value.syncScheduleType,
+        syncInterval: value.syncInterval,
     };
 }
 exports.CreateConnectorSyncSettingsOptionsToJSON = CreateConnectorSyncSettingsOptionsToJSON;

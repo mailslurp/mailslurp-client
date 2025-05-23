@@ -19,72 +19,72 @@ import { exists, mapValues } from '../runtime';
  * @interface SmsMatchOption
  */
 export interface SmsMatchOption {
-    /**
-     * Fields of an SMS object that can be used to filter results
-     * @type {string}
-     * @memberof SmsMatchOption
-     */
-    field: SmsMatchOptionFieldEnum;
-    /**
-     * How the value of the email field specified should be compared to the value given in the match options.
-     * @type {string}
-     * @memberof SmsMatchOption
-     */
-    should: SmsMatchOptionShouldEnum;
-    /**
-     * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
-     * @type {string}
-     * @memberof SmsMatchOption
-     */
-    value: string;
+  /**
+   * Fields of an SMS object that can be used to filter results
+   * @type {string}
+   * @memberof SmsMatchOption
+   */
+  field: SmsMatchOptionFieldEnum;
+  /**
+   * How the value of the email field specified should be compared to the value given in the match options.
+   * @type {string}
+   * @memberof SmsMatchOption
+   */
+  should: SmsMatchOptionShouldEnum;
+  /**
+   * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
+   * @type {string}
+   * @memberof SmsMatchOption
+   */
+  value: string;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum SmsMatchOptionFieldEnum {
-    BODY = 'BODY',
-    FROM = 'FROM'
-}/**
-* @export
-* @enum {string}
-*/
+  BODY = 'BODY',
+  FROM = 'FROM',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum SmsMatchOptionShouldEnum {
-    MATCH = 'MATCH',
-    CONTAIN = 'CONTAIN',
-    EQUAL = 'EQUAL'
+  MATCH = 'MATCH',
+  CONTAIN = 'CONTAIN',
+  EQUAL = 'EQUAL',
 }
 
 export function SmsMatchOptionFromJSON(json: any): SmsMatchOption {
-    return SmsMatchOptionFromJSONTyped(json, false);
+  return SmsMatchOptionFromJSONTyped(json, false);
 }
 
-export function SmsMatchOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsMatchOption {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'field': json['field'],
-        'should': json['should'],
-        'value': json['value'],
-    };
+export function SmsMatchOptionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): SmsMatchOption {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    field: json['field'],
+    should: json['should'],
+    value: json['value'],
+  };
 }
 
 export function SmsMatchOptionToJSON(value?: SmsMatchOption | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'field': value.field,
-        'should': value.should,
-        'value': value.value,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    field: value.field,
+    should: value.should,
+    value: value.value,
+  };
 }
-
-

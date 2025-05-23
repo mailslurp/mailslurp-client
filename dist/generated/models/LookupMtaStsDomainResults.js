@@ -20,18 +20,18 @@ function LookupMtaStsDomainResultsFromJSON(json) {
 }
 exports.LookupMtaStsDomainResultsFromJSON = LookupMtaStsDomainResultsFromJSON;
 function LookupMtaStsDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'valid': json['valid'],
-        'query': (0, _1.DNSLookupOptionsFromJSON)(json['query']),
-        'records': (json['records'].map(_1.DNSLookupResultFromJSON)),
-        'wellKnownQuery': json['wellKnownQuery'],
-        'wellKnownPresent': json['wellKnownPresent'],
-        'wellKnownValue': json['wellKnownValue'],
-        'errors': json['errors'],
-        'warnings': json['warnings'],
+        valid: json['valid'],
+        query: (0, _1.DNSLookupOptionsFromJSON)(json['query']),
+        records: json['records'].map(_1.DNSLookupResultFromJSON),
+        wellKnownQuery: json['wellKnownQuery'],
+        wellKnownPresent: json['wellKnownPresent'],
+        wellKnownValue: json['wellKnownValue'],
+        errors: json['errors'],
+        warnings: json['warnings'],
     };
 }
 exports.LookupMtaStsDomainResultsFromJSONTyped = LookupMtaStsDomainResultsFromJSONTyped;
@@ -43,14 +43,14 @@ function LookupMtaStsDomainResultsToJSON(value) {
         return null;
     }
     return {
-        'valid': value.valid,
-        'query': (0, _1.DNSLookupOptionsToJSON)(value.query),
-        'records': (value.records.map(_1.DNSLookupResultToJSON)),
-        'wellKnownQuery': value.wellKnownQuery,
-        'wellKnownPresent': value.wellKnownPresent,
-        'wellKnownValue': value.wellKnownValue,
-        'errors': value.errors,
-        'warnings': value.warnings,
+        valid: value.valid,
+        query: (0, _1.DNSLookupOptionsToJSON)(value.query),
+        records: value.records.map(_1.DNSLookupResultToJSON),
+        wellKnownQuery: value.wellKnownQuery,
+        wellKnownPresent: value.wellKnownPresent,
+        wellKnownValue: value.wellKnownValue,
+        errors: value.errors,
+        warnings: value.warnings,
     };
 }
 exports.LookupMtaStsDomainResultsToJSON = LookupMtaStsDomainResultsToJSON;

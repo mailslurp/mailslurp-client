@@ -76,6 +76,7 @@ MailSlurp JS
 - [GenerateMtaStsRecordOptionsModeEnum](enums/GenerateMtaStsRecordOptionsModeEnum.md)
 - [GenerateMtaStsRecordOptionsVersionEnum](enums/GenerateMtaStsRecordOptionsVersionEnum.md)
 - [GenerateMtaStsRecordResultsTypeEnum](enums/GenerateMtaStsRecordResultsTypeEnum.md)
+- [GenerateStructuredContentEmailOptionsContentSelectorEnum](enums/GenerateStructuredContentEmailOptionsContentSelectorEnum.md)
 - [GenerateTlsReportingRecordOptionsVersionEnum](enums/GenerateTlsReportingRecordOptionsVersionEnum.md)
 - [GenerateTlsReportingRecordResultsTypeEnum](enums/GenerateTlsReportingRecordResultsTypeEnum.md)
 - [GetAliasEmailsSortEnum](enums/GetAliasEmailsSortEnum.md)
@@ -233,6 +234,7 @@ MailSlurp JS
 - [SmsMatchOptionFieldEnum](enums/SmsMatchOptionFieldEnum.md)
 - [SmsMatchOptionShouldEnum](enums/SmsMatchOptionShouldEnum.md)
 - [SpellingIssueSeverityEnum](enums/SpellingIssueSeverityEnum.md)
+- [StructuredOutputSchemaTypeEnum](enums/StructuredOutputSchemaTypeEnum.md)
 - [TemplateVariableVariableTypeEnum](enums/TemplateVariableVariableTypeEnum.md)
 - [UpdateInboxReplierOptionsFieldEnum](enums/UpdateInboxReplierOptionsFieldEnum.md)
 - [UserInfoDtoAccountStateEnum](enums/UserInfoDtoAccountStateEnum.md)
@@ -270,6 +272,7 @@ MailSlurp JS
 
 ### Classes
 
+- [AIControllerApi](classes/AIControllerApi.md)
 - [AliasControllerApi](classes/AliasControllerApi.md)
 - [AttachmentControllerApi](classes/AttachmentControllerApi.md)
 - [BaseAPI](classes/BaseAPI.md)
@@ -303,7 +306,6 @@ MailSlurp JS
 - [RequiredError](classes/RequiredError.md)
 - [SentEmailsControllerApi](classes/SentEmailsControllerApi.md)
 - [SmsControllerApi](classes/SmsControllerApi.md)
-- [SseControllerApi](classes/SseControllerApi.md)
 - [TemplateControllerApi](classes/TemplateControllerApi.md)
 - [TextApiResponse](classes/TextApiResponse.md)
 - [ToolsControllerApi](classes/ToolsControllerApi.md)
@@ -543,6 +545,8 @@ MailSlurp JS
 - [GenerateMtaStsRecordOptions](interfaces/GenerateMtaStsRecordOptions.md)
 - [GenerateMtaStsRecordRequest](interfaces/GenerateMtaStsRecordRequest.md)
 - [GenerateMtaStsRecordResults](interfaces/GenerateMtaStsRecordResults.md)
+- [GenerateStructuredContentEmailOptions](interfaces/GenerateStructuredContentEmailOptions.md)
+- [GenerateStructuredContentFromEmailRequest](interfaces/GenerateStructuredContentFromEmailRequest.md)
 - [GenerateTlsReportingRecordOptions](interfaces/GenerateTlsReportingRecordOptions.md)
 - [GenerateTlsReportingRecordRequest](interfaces/GenerateTlsReportingRecordRequest.md)
 - [GenerateTlsReportingRecordResults](interfaces/GenerateTlsReportingRecordResults.md)
@@ -687,6 +691,8 @@ MailSlurp JS
 - [GetOutboxesRequest](interfaces/GetOutboxesRequest.md)
 - [GetPhoneMessageThreadItemsRequest](interfaces/GetPhoneMessageThreadItemsRequest.md)
 - [GetPhoneMessageThreadsRequest](interfaces/GetPhoneMessageThreadsRequest.md)
+- [GetPhoneNumberByNameRequest](interfaces/GetPhoneNumberByNameRequest.md)
+- [GetPhoneNumberByPhoneNumberRequest](interfaces/GetPhoneNumberByPhoneNumberRequest.md)
 - [GetPhoneNumberRequest](interfaces/GetPhoneNumberRequest.md)
 - [GetPhoneNumberWebhooksPaginatedRequest](interfaces/GetPhoneNumberWebhooksPaginatedRequest.md)
 - [GetPhoneNumbersRequest](interfaces/GetPhoneNumbersRequest.md)
@@ -945,7 +951,9 @@ MailSlurp JS
 - [SmtpAccessDetails](interfaces/SmtpAccessDetails.md)
 - [SortObject](interfaces/SortObject.md)
 - [SpellingIssue](interfaces/SpellingIssue.md)
-- [StreamEventsRequest](interfaces/StreamEventsRequest.md)
+- [StructuredContentResult](interfaces/StructuredContentResult.md)
+- [StructuredOutputSchema](interfaces/StructuredOutputSchema.md)
+- [StructuredOutputSchemaValidation](interfaces/StructuredOutputSchemaValidation.md)
 - [SubmitFormRequest](interfaces/SubmitFormRequest.md)
 - [SyncConnectorRequest](interfaces/SyncConnectorRequest.md)
 - [TemplateDto](interfaces/TemplateDto.md)
@@ -1010,6 +1018,7 @@ MailSlurp JS
 - [ValidateEmailRequest](interfaces/ValidateEmailRequest.md)
 - [ValidatePhoneNumberOptions](interfaces/ValidatePhoneNumberOptions.md)
 - [ValidatePhoneNumberRequest](interfaces/ValidatePhoneNumberRequest.md)
+- [ValidateStructuredOutputSchemaRequest](interfaces/ValidateStructuredOutputSchemaRequest.md)
 - [ValidationDto](interfaces/ValidationDto.md)
 - [ValidationMessage](interfaces/ValidationMessage.md)
 - [VerifyEmailAddressOptions](interfaces/VerifyEmailAddressOptions.md)
@@ -1467,6 +1476,9 @@ MailSlurp JS
 - [GenerateMtaStsRecordResultsFromJSON](README.md#generatemtastsrecordresultsfromjson)
 - [GenerateMtaStsRecordResultsFromJSONTyped](README.md#generatemtastsrecordresultsfromjsontyped)
 - [GenerateMtaStsRecordResultsToJSON](README.md#generatemtastsrecordresultstojson)
+- [GenerateStructuredContentEmailOptionsFromJSON](README.md#generatestructuredcontentemailoptionsfromjson)
+- [GenerateStructuredContentEmailOptionsFromJSONTyped](README.md#generatestructuredcontentemailoptionsfromjsontyped)
+- [GenerateStructuredContentEmailOptionsToJSON](README.md#generatestructuredcontentemailoptionstojson)
 - [GenerateTlsReportingRecordOptionsFromJSON](README.md#generatetlsreportingrecordoptionsfromjson)
 - [GenerateTlsReportingRecordOptionsFromJSONTyped](README.md#generatetlsreportingrecordoptionsfromjsontyped)
 - [GenerateTlsReportingRecordOptionsToJSON](README.md#generatetlsreportingrecordoptionstojson)
@@ -1974,6 +1986,15 @@ MailSlurp JS
 - [SpellingIssueFromJSON](README.md#spellingissuefromjson)
 - [SpellingIssueFromJSONTyped](README.md#spellingissuefromjsontyped)
 - [SpellingIssueToJSON](README.md#spellingissuetojson)
+- [StructuredContentResultFromJSON](README.md#structuredcontentresultfromjson)
+- [StructuredContentResultFromJSONTyped](README.md#structuredcontentresultfromjsontyped)
+- [StructuredContentResultToJSON](README.md#structuredcontentresulttojson)
+- [StructuredOutputSchemaFromJSON](README.md#structuredoutputschemafromjson)
+- [StructuredOutputSchemaFromJSONTyped](README.md#structuredoutputschemafromjsontyped)
+- [StructuredOutputSchemaToJSON](README.md#structuredoutputschematojson)
+- [StructuredOutputSchemaValidationFromJSON](README.md#structuredoutputschemavalidationfromjson)
+- [StructuredOutputSchemaValidationFromJSONTyped](README.md#structuredoutputschemavalidationfromjsontyped)
+- [StructuredOutputSchemaValidationToJSON](README.md#structuredoutputschemavalidationtojson)
 - [TemplateDtoFromJSON](README.md#templatedtofromjson)
 - [TemplateDtoFromJSONTyped](README.md#templatedtofromjsontyped)
 - [TemplateDtoToJSON](README.md#templatedtotojson)
@@ -8747,6 +8768,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`GenerateMtaStsRecordResults`](interfaces/GenerateMtaStsRecordResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GenerateStructuredContentEmailOptionsFromJSON
+
+▸ **GenerateStructuredContentEmailOptionsFromJSON**(`json`): [`GenerateStructuredContentEmailOptions`](interfaces/GenerateStructuredContentEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GenerateStructuredContentEmailOptions`](interfaces/GenerateStructuredContentEmailOptions.md)
+
+___
+
+### GenerateStructuredContentEmailOptionsFromJSONTyped
+
+▸ **GenerateStructuredContentEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GenerateStructuredContentEmailOptions`](interfaces/GenerateStructuredContentEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GenerateStructuredContentEmailOptions`](interfaces/GenerateStructuredContentEmailOptions.md)
+
+___
+
+### GenerateStructuredContentEmailOptionsToJSON
+
+▸ **GenerateStructuredContentEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GenerateStructuredContentEmailOptions`](interfaces/GenerateStructuredContentEmailOptions.md) |
 
 #### Returns
 
@@ -17028,6 +17098,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`SpellingIssue`](interfaces/SpellingIssue.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### StructuredContentResultFromJSON
+
+▸ **StructuredContentResultFromJSON**(`json`): [`StructuredContentResult`](interfaces/StructuredContentResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`StructuredContentResult`](interfaces/StructuredContentResult.md)
+
+___
+
+### StructuredContentResultFromJSONTyped
+
+▸ **StructuredContentResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`StructuredContentResult`](interfaces/StructuredContentResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`StructuredContentResult`](interfaces/StructuredContentResult.md)
+
+___
+
+### StructuredContentResultToJSON
+
+▸ **StructuredContentResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`StructuredContentResult`](interfaces/StructuredContentResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### StructuredOutputSchemaFromJSON
+
+▸ **StructuredOutputSchemaFromJSON**(`json`): [`StructuredOutputSchema`](interfaces/StructuredOutputSchema.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`StructuredOutputSchema`](interfaces/StructuredOutputSchema.md)
+
+___
+
+### StructuredOutputSchemaFromJSONTyped
+
+▸ **StructuredOutputSchemaFromJSONTyped**(`json`, `ignoreDiscriminator`): [`StructuredOutputSchema`](interfaces/StructuredOutputSchema.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`StructuredOutputSchema`](interfaces/StructuredOutputSchema.md)
+
+___
+
+### StructuredOutputSchemaToJSON
+
+▸ **StructuredOutputSchemaToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`StructuredOutputSchema`](interfaces/StructuredOutputSchema.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### StructuredOutputSchemaValidationFromJSON
+
+▸ **StructuredOutputSchemaValidationFromJSON**(`json`): [`StructuredOutputSchemaValidation`](interfaces/StructuredOutputSchemaValidation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`StructuredOutputSchemaValidation`](interfaces/StructuredOutputSchemaValidation.md)
+
+___
+
+### StructuredOutputSchemaValidationFromJSONTyped
+
+▸ **StructuredOutputSchemaValidationFromJSONTyped**(`json`, `ignoreDiscriminator`): [`StructuredOutputSchemaValidation`](interfaces/StructuredOutputSchemaValidation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`StructuredOutputSchemaValidation`](interfaces/StructuredOutputSchemaValidation.md)
+
+___
+
+### StructuredOutputSchemaValidationToJSON
+
+▸ **StructuredOutputSchemaValidationToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`StructuredOutputSchemaValidation`](interfaces/StructuredOutputSchemaValidation.md) |
 
 #### Returns
 

@@ -20,12 +20,12 @@ function UpdatePhoneNumberOptionsFromJSON(json) {
 }
 exports.UpdatePhoneNumberOptionsFromJSON = UpdatePhoneNumberOptionsFromJSON;
 function UpdatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
 exports.UpdatePhoneNumberOptionsFromJSONTyped = UpdatePhoneNumberOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function UpdatePhoneNumberOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'description': value.description,
+        name: value.name,
+        description: value.description,
     };
 }
 exports.UpdatePhoneNumberOptionsToJSON = UpdatePhoneNumberOptionsToJSON;

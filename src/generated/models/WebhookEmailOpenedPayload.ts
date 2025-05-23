@@ -19,121 +19,124 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookEmailOpenedPayload
  */
 export interface WebhookEmailOpenedPayload {
-    /**
-     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    messageId: string;
-    /**
-     * ID of webhook entity being triggered
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    webhookId: string;
-    /**
-     * Name of the event type webhook is being triggered for.
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    eventName: WebhookEmailOpenedPayloadEventNameEnum;
-    /**
-     * Name of the webhook being triggered
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    webhookName?: string | null;
-    /**
-     * Id of the inbox
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    inboxId: string;
-    /**
-     * ID of the tracking pixel
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    pixelId: string;
-    /**
-     * ID of sent email
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    sentEmailId: string;
-    /**
-     * Email address for the recipient of the tracking pixel
-     * @type {string}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    recipient: string;
-    /**
-     * Date time of event creation
-     * @type {Date}
-     * @memberof WebhookEmailOpenedPayload
-     */
-    createdAt: Date;
+  /**
+   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  messageId: string;
+  /**
+   * ID of webhook entity being triggered
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  webhookId: string;
+  /**
+   * Name of the event type webhook is being triggered for.
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  eventName: WebhookEmailOpenedPayloadEventNameEnum;
+  /**
+   * Name of the webhook being triggered
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  webhookName?: string | null;
+  /**
+   * Id of the inbox
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  inboxId: string;
+  /**
+   * ID of the tracking pixel
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  pixelId: string;
+  /**
+   * ID of sent email
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  sentEmailId: string;
+  /**
+   * Email address for the recipient of the tracking pixel
+   * @type {string}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  recipient: string;
+  /**
+   * Date time of event creation
+   * @type {Date}
+   * @memberof WebhookEmailOpenedPayload
+   */
+  createdAt: Date;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WebhookEmailOpenedPayloadEventNameEnum {
-    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-    NEW_EMAIL = 'NEW_EMAIL',
-    NEW_CONTACT = 'NEW_CONTACT',
-    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-    EMAIL_OPENED = 'EMAIL_OPENED',
-    EMAIL_READ = 'EMAIL_READ',
-    DELIVERY_STATUS = 'DELIVERY_STATUS',
-    BOUNCE = 'BOUNCE',
-    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-    NEW_SMS = 'NEW_SMS',
-    NEW_GUEST_USER = 'NEW_GUEST_USER'
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 
-export function WebhookEmailOpenedPayloadFromJSON(json: any): WebhookEmailOpenedPayload {
-    return WebhookEmailOpenedPayloadFromJSONTyped(json, false);
+export function WebhookEmailOpenedPayloadFromJSON(
+  json: any
+): WebhookEmailOpenedPayload {
+  return WebhookEmailOpenedPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookEmailOpenedPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookEmailOpenedPayload {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !exists(json, 'webhookName') ? undefined : json['webhookName'],
-        'inboxId': json['inboxId'],
-        'pixelId': json['pixelId'],
-        'sentEmailId': json['sentEmailId'],
-        'recipient': json['recipient'],
-        'createdAt': (new Date(json['createdAt'])),
-    };
+export function WebhookEmailOpenedPayloadFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookEmailOpenedPayload {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    messageId: json['messageId'],
+    webhookId: json['webhookId'],
+    eventName: json['eventName'],
+    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
+    inboxId: json['inboxId'],
+    pixelId: json['pixelId'],
+    sentEmailId: json['sentEmailId'],
+    recipient: json['recipient'],
+    createdAt: new Date(json['createdAt']),
+  };
 }
 
-export function WebhookEmailOpenedPayloadToJSON(value?: WebhookEmailOpenedPayload | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'inboxId': value.inboxId,
-        'pixelId': value.pixelId,
-        'sentEmailId': value.sentEmailId,
-        'recipient': value.recipient,
-        'createdAt': (value.createdAt.toISOString()),
-    };
+export function WebhookEmailOpenedPayloadToJSON(
+  value?: WebhookEmailOpenedPayload | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    messageId: value.messageId,
+    webhookId: value.webhookId,
+    eventName: value.eventName,
+    webhookName: value.webhookName,
+    inboxId: value.inboxId,
+    pixelId: value.pixelId,
+    sentEmailId: value.sentEmailId,
+    recipient: value.recipient,
+    createdAt: value.createdAt.toISOString(),
+  };
 }
-
-

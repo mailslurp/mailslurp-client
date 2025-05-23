@@ -19,11 +19,11 @@ function DomainIssuesDtoFromJSON(json) {
 }
 exports.DomainIssuesDtoFromJSON = DomainIssuesDtoFromJSON;
 function DomainIssuesDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'hasIssues': json['hasIssues'],
+        hasIssues: json['hasIssues'],
     };
 }
 exports.DomainIssuesDtoFromJSONTyped = DomainIssuesDtoFromJSONTyped;
@@ -35,7 +35,7 @@ function DomainIssuesDtoToJSON(value) {
         return null;
     }
     return {
-        'hasIssues': value.hasIssues,
+        hasIssues: value.hasIssues,
     };
 }
 exports.DomainIssuesDtoToJSON = DomainIssuesDtoToJSON;

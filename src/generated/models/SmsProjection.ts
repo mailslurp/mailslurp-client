@@ -19,87 +19,86 @@ import { exists, mapValues } from '../runtime';
  * @interface SmsProjection
  */
 export interface SmsProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    body: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    userId: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof SmsProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    phoneNumber: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    fromNumber: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof SmsProjection
-     */
-    read: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsProjection
+   */
+  body: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsProjection
+   */
+  userId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof SmsProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsProjection
+   */
+  phoneNumber: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsProjection
+   */
+  fromNumber: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SmsProjection
+   */
+  read: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsProjection
+   */
+  id: string;
 }
 
 export function SmsProjectionFromJSON(json: any): SmsProjection {
-    return SmsProjectionFromJSONTyped(json, false);
+  return SmsProjectionFromJSONTyped(json, false);
 }
 
-export function SmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'body': json['body'],
-        'userId': json['userId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'phoneNumber': json['phoneNumber'],
-        'fromNumber': json['fromNumber'],
-        'read': json['read'],
-        'id': json['id'],
-    };
+export function SmsProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): SmsProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    body: json['body'],
+    userId: json['userId'],
+    createdAt: new Date(json['createdAt']),
+    phoneNumber: json['phoneNumber'],
+    fromNumber: json['fromNumber'],
+    read: json['read'],
+    id: json['id'],
+  };
 }
 
 export function SmsProjectionToJSON(value?: SmsProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'body': value.body,
-        'userId': value.userId,
-        'createdAt': (value.createdAt.toISOString()),
-        'phoneNumber': value.phoneNumber,
-        'fromNumber': value.fromNumber,
-        'read': value.read,
-        'id': value.id,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    body: value.body,
+    userId: value.userId,
+    createdAt: value.createdAt.toISOString(),
+    phoneNumber: value.phoneNumber,
+    fromNumber: value.fromNumber,
+    read: value.read,
+    id: value.id,
+  };
 }
-
-

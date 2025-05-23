@@ -16,17 +16,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxDtoToJSON = exports.InboxDtoFromJSONTyped = exports.InboxDtoFromJSON = exports.InboxDtoAccountRegionEnum = exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var InboxDtoInboxTypeEnum;
 (function (InboxDtoInboxTypeEnum) {
     InboxDtoInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     InboxDtoInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(InboxDtoInboxTypeEnum = exports.InboxDtoInboxTypeEnum || (exports.InboxDtoInboxTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(InboxDtoInboxTypeEnum = exports.InboxDtoInboxTypeEnum || (exports.InboxDtoInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var InboxDtoFunctionsAsEnum;
 (function (InboxDtoFunctionsAsEnum) {
     InboxDtoFunctionsAsEnum["ALIAS"] = "ALIAS";
@@ -36,10 +37,11 @@ var InboxDtoFunctionsAsEnum;
     InboxDtoFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
     InboxDtoFunctionsAsEnum["GUEST"] = "GUEST";
     InboxDtoFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var InboxDtoAccountRegionEnum;
 (function (InboxDtoAccountRegionEnum) {
     InboxDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
@@ -49,27 +51,33 @@ function InboxDtoFromJSON(json) {
 }
 exports.InboxDtoFromJSON = InboxDtoFromJSON;
 function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': json['userId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'emailAddress': json['emailAddress'],
-        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : (json['expiresAt'] === null ? null : new Date(json['expiresAt'])),
-        'favourite': json['favourite'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'inboxType': !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        'readOnly': json['readOnly'],
-        'virtualInbox': json['virtualInbox'],
-        'functionsAs': !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
-        'localPart': !(0, runtime_1.exists)(json, 'localPart') ? undefined : json['localPart'],
-        'domain': !(0, runtime_1.exists)(json, 'domain') ? undefined : json['domain'],
-        'accountRegion': !(0, runtime_1.exists)(json, 'accountRegion') ? undefined : json['accountRegion'],
+        id: json['id'],
+        userId: json['userId'],
+        createdAt: new Date(json['createdAt']),
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        emailAddress: json['emailAddress'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
+        favourite: json['favourite'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        readOnly: json['readOnly'],
+        virtualInbox: json['virtualInbox'],
+        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
+        localPart: !(0, runtime_1.exists)(json, 'localPart') ? undefined : json['localPart'],
+        domain: !(0, runtime_1.exists)(json, 'domain') ? undefined : json['domain'],
+        accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
+            ? undefined
+            : json['accountRegion'],
     };
 }
 exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
@@ -81,23 +89,27 @@ function InboxDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'createdAt': (value.createdAt.toISOString()),
-        'name': value.name,
-        'domainId': value.domainId,
-        'description': value.description,
-        'emailAddress': value.emailAddress,
-        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt === null ? null : value.expiresAt.toISOString()),
-        'favourite': value.favourite,
-        'tags': value.tags,
-        'inboxType': value.inboxType,
-        'readOnly': value.readOnly,
-        'virtualInbox': value.virtualInbox,
-        'functionsAs': value.functionsAs,
-        'localPart': value.localPart,
-        'domain': value.domain,
-        'accountRegion': value.accountRegion,
+        id: value.id,
+        userId: value.userId,
+        createdAt: value.createdAt.toISOString(),
+        name: value.name,
+        domainId: value.domainId,
+        description: value.description,
+        emailAddress: value.emailAddress,
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
+        favourite: value.favourite,
+        tags: value.tags,
+        inboxType: value.inboxType,
+        readOnly: value.readOnly,
+        virtualInbox: value.virtualInbox,
+        functionsAs: value.functionsAs,
+        localPart: value.localPart,
+        domain: value.domain,
+        accountRegion: value.accountRegion,
     };
 }
 exports.InboxDtoToJSON = InboxDtoToJSON;

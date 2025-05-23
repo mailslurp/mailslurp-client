@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateInboxForwarderOptionsToJSON = exports.CreateInboxForwarderOptionsFromJSONTyped = exports.CreateInboxForwarderOptionsFromJSON = exports.CreateInboxForwarderOptionsFieldEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateInboxForwarderOptionsFieldEnum;
 (function (CreateInboxForwarderOptionsFieldEnum) {
     CreateInboxForwarderOptionsFieldEnum["RECIPIENTS"] = "RECIPIENTS";
@@ -30,13 +30,13 @@ function CreateInboxForwarderOptionsFromJSON(json) {
 }
 exports.CreateInboxForwarderOptionsFromJSON = CreateInboxForwarderOptionsFromJSON;
 function CreateInboxForwarderOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'field': json['field'],
-        'match': json['match'],
-        'forwardToRecipients': json['forwardToRecipients'],
+        field: json['field'],
+        match: json['match'],
+        forwardToRecipients: json['forwardToRecipients'],
     };
 }
 exports.CreateInboxForwarderOptionsFromJSONTyped = CreateInboxForwarderOptionsFromJSONTyped;
@@ -48,9 +48,9 @@ function CreateInboxForwarderOptionsToJSON(value) {
         return null;
     }
     return {
-        'field': value.field,
-        'match': value.match,
-        'forwardToRecipients': value.forwardToRecipients,
+        field: value.field,
+        match: value.match,
+        forwardToRecipients: value.forwardToRecipients,
     };
 }
 exports.CreateInboxForwarderOptionsToJSON = CreateInboxForwarderOptionsToJSON;

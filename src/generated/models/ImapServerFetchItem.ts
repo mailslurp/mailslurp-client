@@ -19,71 +19,72 @@ import { exists, mapValues } from '../runtime';
  * @interface ImapServerFetchItem
  */
 export interface ImapServerFetchItem {
-    /**
-     * Content of the email
-     * @type {string}
-     * @memberof ImapServerFetchItem
-     */
-    content: string;
-    /**
-     * ID of the email
-     * @type {string}
-     * @memberof ImapServerFetchItem
-     */
-    id: string;
-    /**
-     * UID of the email
-     * @type {number}
-     * @memberof ImapServerFetchItem
-     */
-    uid: number;
-    /**
-     * Sequence number of the email
-     * @type {number}
-     * @memberof ImapServerFetchItem
-     */
-    seqNum: number;
-    /**
-     * Read status of the email
-     * @type {boolean}
-     * @memberof ImapServerFetchItem
-     */
-    read: boolean;
+  /**
+   * Content of the email
+   * @type {string}
+   * @memberof ImapServerFetchItem
+   */
+  content: string;
+  /**
+   * ID of the email
+   * @type {string}
+   * @memberof ImapServerFetchItem
+   */
+  id: string;
+  /**
+   * UID of the email
+   * @type {number}
+   * @memberof ImapServerFetchItem
+   */
+  uid: number;
+  /**
+   * Sequence number of the email
+   * @type {number}
+   * @memberof ImapServerFetchItem
+   */
+  seqNum: number;
+  /**
+   * Read status of the email
+   * @type {boolean}
+   * @memberof ImapServerFetchItem
+   */
+  read: boolean;
 }
 
 export function ImapServerFetchItemFromJSON(json: any): ImapServerFetchItem {
-    return ImapServerFetchItemFromJSONTyped(json, false);
+  return ImapServerFetchItemFromJSONTyped(json, false);
 }
 
-export function ImapServerFetchItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerFetchItem {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': json['content'],
-        'id': json['id'],
-        'uid': json['uid'],
-        'seqNum': json['seqNum'],
-        'read': json['read'],
-    };
+export function ImapServerFetchItemFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ImapServerFetchItem {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: json['content'],
+    id: json['id'],
+    uid: json['uid'],
+    seqNum: json['seqNum'],
+    read: json['read'],
+  };
 }
 
-export function ImapServerFetchItemToJSON(value?: ImapServerFetchItem | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content,
-        'id': value.id,
-        'uid': value.uid,
-        'seqNum': value.seqNum,
-        'read': value.read,
-    };
+export function ImapServerFetchItemToJSON(
+  value?: ImapServerFetchItem | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content: value.content,
+    id: value.id,
+    uid: value.uid,
+    seqNum: value.seqNum,
+    read: value.read,
+  };
 }
-
-

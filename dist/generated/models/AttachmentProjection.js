@@ -20,20 +20,22 @@ function AttachmentProjectionFromJSON(json) {
 }
 exports.AttachmentProjectionFromJSON = AttachmentProjectionFromJSON;
 function AttachmentProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'userId': json['userId'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'createdAt': (new Date(json['createdAt'])),
-        'contentId': !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
-        'attachmentId': json['attachmentId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
-        'contentLength': !(0, runtime_1.exists)(json, 'contentLength') ? undefined : json['contentLength'],
-        'contentType': !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        userId: json['userId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
+        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
+        attachmentId: json['attachmentId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
+        contentLength: !(0, runtime_1.exists)(json, 'contentLength')
+            ? undefined
+            : json['contentLength'],
+        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
     };
 }
 exports.AttachmentProjectionFromJSONTyped = AttachmentProjectionFromJSONTyped;
@@ -45,16 +47,16 @@ function AttachmentProjectionToJSON(value) {
         return null;
     }
     return {
-        'userId': value.userId,
-        'inboxId': value.inboxId,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'createdAt': (value.createdAt.toISOString()),
-        'contentId': value.contentId,
-        'attachmentId': value.attachmentId,
-        'name': value.name,
-        'id': value.id,
-        'contentLength': value.contentLength,
-        'contentType': value.contentType,
+        userId: value.userId,
+        inboxId: value.inboxId,
+        updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
+        contentId: value.contentId,
+        attachmentId: value.attachmentId,
+        name: value.name,
+        id: value.id,
+        contentLength: value.contentLength,
+        contentType: value.contentType,
     };
 }
 exports.AttachmentProjectionToJSON = AttachmentProjectionToJSON;

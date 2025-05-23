@@ -19,11 +19,11 @@ function FilterBouncedRecipientsOptionsFromJSON(json) {
 }
 exports.FilterBouncedRecipientsOptionsFromJSON = FilterBouncedRecipientsOptionsFromJSON;
 function FilterBouncedRecipientsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailRecipients': json['emailRecipients'],
+        emailRecipients: json['emailRecipients'],
     };
 }
 exports.FilterBouncedRecipientsOptionsFromJSONTyped = FilterBouncedRecipientsOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function FilterBouncedRecipientsOptionsToJSON(value) {
         return null;
     }
     return {
-        'emailRecipients': value.emailRecipients,
+        emailRecipients: value.emailRecipients,
     };
 }
 exports.FilterBouncedRecipientsOptionsToJSON = FilterBouncedRecipientsOptionsToJSON;

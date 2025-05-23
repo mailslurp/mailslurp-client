@@ -108,14 +108,15 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createPortalOptions === null || requestParameters.createPortalOptions === undefined) {
+                        if (requestParameters.createPortalOptions === null ||
+                            requestParameters.createPortalOptions === undefined) {
                             throw new runtime.RequiredError('createPortalOptions', 'Required parameter requestParameters.createPortalOptions was null or undefined when calling createGuestPortal.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/guest-portal",
@@ -126,7 +127,9 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GuestPortalDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.GuestPortalDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -159,20 +162,22 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
+                        if (requestParameters.portalId === null ||
+                            requestParameters.portalId === undefined) {
                             throw new runtime.RequiredError('portalId', 'Required parameter requestParameters.portalId was null or undefined when calling createGuestPortalUser.');
                         }
-                        if (requestParameters.createPortalUserOptions === null || requestParameters.createPortalUserOptions === undefined) {
+                        if (requestParameters.createPortalUserOptions === null ||
+                            requestParameters.createPortalUserOptions === undefined) {
                             throw new runtime.RequiredError('createPortalUserOptions', 'Required parameter requestParameters.createPortalUserOptions was null or undefined when calling createGuestPortalUser.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/guest-portal/{portalId}/user".replace("{".concat("portalId", "}"), encodeURIComponent(String(requestParameters.portalId))),
+                                path: "/guest-portal/{portalId}/user".replace("{".concat('portalId', "}"), encodeURIComponent(String(requestParameters.portalId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -180,7 +185,9 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GuestPortalUserCreateDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.GuestPortalUserCreateDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -237,7 +244,7 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/guest-portal/user",
@@ -247,7 +254,9 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageGuestPortalUsersFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageGuestPortalUsersFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -280,23 +289,26 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
+                        if (requestParameters.portalId === null ||
+                            requestParameters.portalId === undefined) {
                             throw new runtime.RequiredError('portalId', 'Required parameter requestParameters.portalId was null or undefined when calling getGuestPortal.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/guest-portal/{portalId}".replace("{".concat("portalId", "}"), encodeURIComponent(String(requestParameters.portalId))),
+                                path: "/guest-portal/{portalId}".replace("{".concat('portalId', "}"), encodeURIComponent(String(requestParameters.portalId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GuestPortalDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.GuestPortalDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -329,26 +341,32 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
+                        if (requestParameters.portalId === null ||
+                            requestParameters.portalId === undefined) {
                             throw new runtime.RequiredError('portalId', 'Required parameter requestParameters.portalId was null or undefined when calling getGuestPortalUser.');
                         }
-                        if (requestParameters.guestId === null || requestParameters.guestId === undefined) {
+                        if (requestParameters.guestId === null ||
+                            requestParameters.guestId === undefined) {
                             throw new runtime.RequiredError('guestId', 'Required parameter requestParameters.guestId was null or undefined when calling getGuestPortalUser.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/guest-portal/{portalId}/user/{guestId}".replace("{".concat("portalId", "}"), encodeURIComponent(String(requestParameters.portalId))).replace("{".concat("guestId", "}"), encodeURIComponent(String(requestParameters.guestId))),
+                                path: "/guest-portal/{portalId}/user/{guestId}"
+                                    .replace("{".concat('portalId', "}"), encodeURIComponent(String(requestParameters.portalId)))
+                                    .replace("{".concat('guestId', "}"), encodeURIComponent(String(requestParameters.guestId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GuestPortalUserDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.GuestPortalUserDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -381,23 +399,26 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.guestId === null || requestParameters.guestId === undefined) {
+                        if (requestParameters.guestId === null ||
+                            requestParameters.guestId === undefined) {
                             throw new runtime.RequiredError('guestId', 'Required parameter requestParameters.guestId was null or undefined when calling getGuestPortalUserById.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/guest-portal/user/{guestId}".replace("{".concat("guestId", "}"), encodeURIComponent(String(requestParameters.guestId))),
+                                path: "/guest-portal/user/{guestId}".replace("{".concat('guestId', "}"), encodeURIComponent(String(requestParameters.guestId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GuestPortalUserDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.GuestPortalUserDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -430,7 +451,8 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
+                        if (requestParameters.portalId === null ||
+                            requestParameters.portalId === undefined) {
                             throw new runtime.RequiredError('portalId', 'Required parameter requestParameters.portalId was null or undefined when calling getGuestPortalUsers.');
                         }
                         queryParameters = {};
@@ -454,17 +476,19 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/guest-portal/{portalId}/user".replace("{".concat("portalId", "}"), encodeURIComponent(String(requestParameters.portalId))),
+                                path: "/guest-portal/{portalId}/user".replace("{".concat('portalId', "}"), encodeURIComponent(String(requestParameters.portalId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageGuestPortalUsersFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageGuestPortalUsersFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -500,7 +524,7 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/guest-portal",
@@ -510,7 +534,9 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.GuestPortalDtoFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.GuestPortalDtoFromJSON);
+                            })];
                 }
             });
         });
@@ -537,18 +563,18 @@ var GuestPortalControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.GuestPortalControllerApi = GuestPortalControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllGuestPortalUsersSortEnum;
 (function (GetAllGuestPortalUsersSortEnum) {
     GetAllGuestPortalUsersSortEnum["ASC"] = "ASC";
     GetAllGuestPortalUsersSortEnum["DESC"] = "DESC";
 })(GetAllGuestPortalUsersSortEnum = exports.GetAllGuestPortalUsersSortEnum || (exports.GetAllGuestPortalUsersSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetGuestPortalUsersSortEnum;
 (function (GetGuestPortalUsersSortEnum) {
     GetGuestPortalUsersSortEnum["ASC"] = "ASC";

@@ -136,25 +136,25 @@ export declare class InboxReplierControllerApi extends runtime.BaseAPI {
     updateInboxReplier(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllInboxReplierEventsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetInboxReplierEventsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetInboxRepliersSortEnum {
     ASC = "ASC",
     DESC = "DESC"

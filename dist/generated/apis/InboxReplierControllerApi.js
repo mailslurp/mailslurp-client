@@ -108,14 +108,15 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createInboxReplierOptions === null || requestParameters.createInboxReplierOptions === undefined) {
+                        if (requestParameters.createInboxReplierOptions === null ||
+                            requestParameters.createInboxReplierOptions === undefined) {
                             throw new runtime.RequiredError('createInboxReplierOptions', 'Required parameter requestParameters.createInboxReplierOptions was null or undefined when calling createNewInboxReplier.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/repliers",
@@ -126,7 +127,9 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxReplierDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxReplierDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -165,10 +168,10 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/repliers/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/repliers/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -212,7 +215,7 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/repliers",
@@ -277,7 +280,7 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/repliers/events",
@@ -287,7 +290,9 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxReplierEventsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxReplierEventsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -326,17 +331,19 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/repliers/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/repliers/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxReplierDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxReplierDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -384,17 +391,19 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/repliers/{id}/events".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/repliers/{id}/events".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxReplierEventsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxReplierEventsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -448,7 +457,7 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/repliers",
@@ -458,7 +467,9 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxReplierDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxReplierDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -494,17 +505,18 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateInboxReplier.');
                         }
-                        if (requestParameters.updateInboxReplierOptions === null || requestParameters.updateInboxReplierOptions === undefined) {
+                        if (requestParameters.updateInboxReplierOptions === null ||
+                            requestParameters.updateInboxReplierOptions === undefined) {
                             throw new runtime.RequiredError('updateInboxReplierOptions', 'Required parameter requestParameters.updateInboxReplierOptions was null or undefined when calling updateInboxReplier.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/repliers/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/repliers/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -512,7 +524,9 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxReplierDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxReplierDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -539,27 +553,27 @@ var InboxReplierControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.InboxReplierControllerApi = InboxReplierControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllInboxReplierEventsSortEnum;
 (function (GetAllInboxReplierEventsSortEnum) {
     GetAllInboxReplierEventsSortEnum["ASC"] = "ASC";
     GetAllInboxReplierEventsSortEnum["DESC"] = "DESC";
 })(GetAllInboxReplierEventsSortEnum = exports.GetAllInboxReplierEventsSortEnum || (exports.GetAllInboxReplierEventsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxReplierEventsSortEnum;
 (function (GetInboxReplierEventsSortEnum) {
     GetInboxReplierEventsSortEnum["ASC"] = "ASC";
     GetInboxReplierEventsSortEnum["DESC"] = "DESC";
 })(GetInboxReplierEventsSortEnum = exports.GetInboxReplierEventsSortEnum || (exports.GetInboxReplierEventsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxRepliersSortEnum;
 (function (GetInboxRepliersSortEnum) {
     GetInboxRepliersSortEnum["ASC"] = "ASC";

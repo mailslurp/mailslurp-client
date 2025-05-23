@@ -8,6 +8,8 @@ This is the base class for all generated API classes.
 
 - **`BaseAPI`**
 
+  ↳ [`AIControllerApi`](AIControllerApi.md)
+
   ↳ [`AliasControllerApi`](AliasControllerApi.md)
 
   ↳ [`AttachmentControllerApi`](AttachmentControllerApi.md)
@@ -61,8 +63,6 @@ This is the base class for all generated API classes.
   ↳ [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
 
   ↳ [`SmsControllerApi`](SmsControllerApi.md)
-
-  ↳ [`SseControllerApi`](SseControllerApi.md)
 
   ↳ [`TemplateControllerApi`](TemplateControllerApi.md)
 

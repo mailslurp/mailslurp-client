@@ -21,11 +21,13 @@ function ReplyForSmsFromJSON(json) {
 }
 exports.ReplyForSmsFromJSON = ReplyForSmsFromJSON;
 function ReplyForSmsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'reply': !(0, runtime_1.exists)(json, 'reply') ? undefined : (0, _1.SentSmsDtoFromJSON)(json['reply']),
+        reply: !(0, runtime_1.exists)(json, 'reply')
+            ? undefined
+            : (0, _1.SentSmsDtoFromJSON)(json['reply']),
     };
 }
 exports.ReplyForSmsFromJSONTyped = ReplyForSmsFromJSONTyped;
@@ -37,7 +39,7 @@ function ReplyForSmsToJSON(value) {
         return null;
     }
     return {
-        'reply': (0, _1.SentSmsDtoToJSON)(value.reply),
+        reply: (0, _1.SentSmsDtoToJSON)(value.reply),
     };
 }
 exports.ReplyForSmsToJSON = ReplyForSmsToJSON;

@@ -47,6 +47,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 
 ### Properties
 
+- [aiController](MailSlurp.md#aicontroller)
 - [aliasController](MailSlurp.md#aliascontroller)
 - [attachmentController](MailSlurp.md#attachmentcontroller)
 - [bounceController](MailSlurp.md#bouncecontroller)
@@ -119,6 +120,12 @@ const mailslurp = new MailSlurp({ apiKey })
 | `opts` | [`Config`](../README.md#config) |
 
 ## Properties
+
+### aiController
+
+• `Readonly` **aiController**: [`AIControllerApi`](AIControllerApi.md)
+
+___
 
 ### aliasController
 

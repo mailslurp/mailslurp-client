@@ -12,518 +12,719 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    CreateInboxRulesetOptions,
-    CreateInboxRulesetOptionsFromJSON,
-    CreateInboxRulesetOptionsToJSON,
-    InboxRulesetDto,
-    InboxRulesetDtoFromJSON,
-    InboxRulesetDtoToJSON,
-    InboxRulesetTestOptions,
-    InboxRulesetTestOptionsFromJSON,
-    InboxRulesetTestOptionsToJSON,
-    InboxRulesetTestResult,
-    InboxRulesetTestResultFromJSON,
-    InboxRulesetTestResultToJSON,
-    PageInboxRulesetDto,
-    PageInboxRulesetDtoFromJSON,
-    PageInboxRulesetDtoToJSON,
-    TestInboxRulesetReceivingOptions,
-    TestInboxRulesetReceivingOptionsFromJSON,
-    TestInboxRulesetReceivingOptionsToJSON,
-    TestInboxRulesetReceivingResult,
-    TestInboxRulesetReceivingResultFromJSON,
-    TestInboxRulesetReceivingResultToJSON,
-    TestInboxRulesetSendingOptions,
-    TestInboxRulesetSendingOptionsFromJSON,
-    TestInboxRulesetSendingOptionsToJSON,
-    TestInboxRulesetSendingResult,
-    TestInboxRulesetSendingResultFromJSON,
-    TestInboxRulesetSendingResultToJSON,
-    TestNewInboxRulesetOptions,
-    TestNewInboxRulesetOptionsFromJSON,
-    TestNewInboxRulesetOptionsToJSON,
+  CreateInboxRulesetOptions,
+  CreateInboxRulesetOptionsFromJSON,
+  CreateInboxRulesetOptionsToJSON,
+  InboxRulesetDto,
+  InboxRulesetDtoFromJSON,
+  InboxRulesetDtoToJSON,
+  InboxRulesetTestOptions,
+  InboxRulesetTestOptionsFromJSON,
+  InboxRulesetTestOptionsToJSON,
+  InboxRulesetTestResult,
+  InboxRulesetTestResultFromJSON,
+  InboxRulesetTestResultToJSON,
+  PageInboxRulesetDto,
+  PageInboxRulesetDtoFromJSON,
+  PageInboxRulesetDtoToJSON,
+  TestInboxRulesetReceivingOptions,
+  TestInboxRulesetReceivingOptionsFromJSON,
+  TestInboxRulesetReceivingOptionsToJSON,
+  TestInboxRulesetReceivingResult,
+  TestInboxRulesetReceivingResultFromJSON,
+  TestInboxRulesetReceivingResultToJSON,
+  TestInboxRulesetSendingOptions,
+  TestInboxRulesetSendingOptionsFromJSON,
+  TestInboxRulesetSendingOptionsToJSON,
+  TestInboxRulesetSendingResult,
+  TestInboxRulesetSendingResultFromJSON,
+  TestInboxRulesetSendingResultToJSON,
+  TestNewInboxRulesetOptions,
+  TestNewInboxRulesetOptionsFromJSON,
+  TestNewInboxRulesetOptionsToJSON,
 } from '../models';
 
 export interface CreateNewInboxRulesetRequest {
-    createInboxRulesetOptions: CreateInboxRulesetOptions;
-    inboxId?: string;
+  createInboxRulesetOptions: CreateInboxRulesetOptions;
+  inboxId?: string;
 }
 
 export interface DeleteInboxRulesetRequest {
-    id: string;
+  id: string;
 }
 
 export interface DeleteInboxRulesetsRequest {
-    inboxId?: string;
+  inboxId?: string;
 }
 
 export interface GetInboxRulesetRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetInboxRulesetsRequest {
-    inboxId?: string;
-    page?: number;
-    size?: number;
-    sort?: GetInboxRulesetsSortEnum;
-    searchFilter?: string;
-    since?: Date;
-    before?: Date;
+  inboxId?: string;
+  page?: number;
+  size?: number;
+  sort?: GetInboxRulesetsSortEnum;
+  searchFilter?: string;
+  since?: Date;
+  before?: Date;
 }
 
 export interface TestInboxRulesetRequest {
-    id: string;
-    inboxRulesetTestOptions: InboxRulesetTestOptions;
+  id: string;
+  inboxRulesetTestOptions: InboxRulesetTestOptions;
 }
 
 export interface TestInboxRulesetReceivingRequest {
-    testInboxRulesetReceivingOptions: TestInboxRulesetReceivingOptions;
+  testInboxRulesetReceivingOptions: TestInboxRulesetReceivingOptions;
 }
 
 export interface TestInboxRulesetSendingRequest {
-    testInboxRulesetSendingOptions: TestInboxRulesetSendingOptions;
+  testInboxRulesetSendingOptions: TestInboxRulesetSendingOptions;
 }
 
 export interface TestInboxRulesetsForInboxRequest {
-    inboxId: string;
-    inboxRulesetTestOptions: InboxRulesetTestOptions;
+  inboxId: string;
+  inboxRulesetTestOptions: InboxRulesetTestOptions;
 }
 
 export interface TestNewInboxRulesetRequest {
-    testNewInboxRulesetOptions: TestNewInboxRulesetOptions;
+  testNewInboxRulesetOptions: TestNewInboxRulesetOptions;
 }
 
 /**
- * 
+ *
  */
 export class InboxRulesetControllerApi extends runtime.BaseAPI {
-
-    /**
-     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-     * Create an inbox ruleset
-     */
-    async createNewInboxRulesetRaw(requestParameters: CreateNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetDto>> {
-        if (requestParameters.createInboxRulesetOptions === null || requestParameters.createInboxRulesetOptions === undefined) {
-            throw new runtime.RequiredError('createInboxRulesetOptions','Required parameter requestParameters.createInboxRulesetOptions was null or undefined when calling createNewInboxRuleset.');
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateInboxRulesetOptionsToJSON(requestParameters.createInboxRulesetOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => InboxRulesetDtoFromJSON(jsonValue));
+  /**
+   * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+   * Create an inbox ruleset
+   */
+  async createNewInboxRulesetRaw(
+    requestParameters: CreateNewInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRulesetDto>> {
+    if (
+      requestParameters.createInboxRulesetOptions === null ||
+      requestParameters.createInboxRulesetOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createInboxRulesetOptions',
+        'Required parameter requestParameters.createInboxRulesetOptions was null or undefined when calling createNewInboxRuleset.'
+      );
     }
 
-    /**
-     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-     * Create an inbox ruleset
-     */
-    async createNewInboxRuleset(requestParameters: CreateNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetDto> {
-        const response = await this.createNewInboxRulesetRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
-    /**
-     * Delete inbox ruleset
-     * Delete an inbox ruleset
-     */
-    async deleteInboxRulesetRaw(requestParameters: DeleteInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling deleteInboxRuleset.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
+    headerParameters['Content-Type'] = 'application/json';
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Delete inbox ruleset
-     * Delete an inbox ruleset
-     */
-    async deleteInboxRuleset(requestParameters: DeleteInboxRulesetRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteInboxRulesetRaw(requestParameters, initOverrides);
+    const response = await this.request(
+      {
+        path: `/rulesets`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateInboxRulesetOptionsToJSON(
+          requestParameters.createInboxRulesetOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRulesetDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+   * Create an inbox ruleset
+   */
+  async createNewInboxRuleset(
+    requestParameters: CreateNewInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRulesetDto> {
+    const response = await this.createNewInboxRulesetRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Delete inbox ruleset
+   * Delete an inbox ruleset
+   */
+  async deleteInboxRulesetRaw(
+    requestParameters: DeleteInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteInboxRuleset.'
+      );
     }
 
-    /**
-     * Delete inbox rulesets. Accepts optional inboxId filter.
-     * Delete inbox rulesets
-     */
-    async deleteInboxRulesetsRaw(requestParameters: DeleteInboxRulesetsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        const queryParameters: any = {};
+    const queryParameters: any = {};
 
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets`,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Delete inbox rulesets. Accepts optional inboxId filter.
-     * Delete inbox rulesets
-     */
-    async deleteInboxRulesets(requestParameters: DeleteInboxRulesetsRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteInboxRulesetsRaw(requestParameters, initOverrides);
+    const response = await this.request(
+      {
+        path: `/rulesets/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete inbox ruleset
+   * Delete an inbox ruleset
+   */
+  async deleteInboxRuleset(
+    requestParameters: DeleteInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteInboxRulesetRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Delete inbox rulesets. Accepts optional inboxId filter.
+   * Delete inbox rulesets
+   */
+  async deleteInboxRulesetsRaw(
+    requestParameters: DeleteInboxRulesetsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
-    /**
-     * Get inbox ruleset
-     * Get an inbox ruleset
-     */
-    async getInboxRulesetRaw(requestParameters: GetInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getInboxRuleset.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => InboxRulesetDtoFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get inbox ruleset
-     * Get an inbox ruleset
-     */
-    async getInboxRuleset(requestParameters: GetInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetDto> {
-        const response = await this.getInboxRulesetRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/rulesets`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete inbox rulesets. Accepts optional inboxId filter.
+   * Delete inbox rulesets
+   */
+  async deleteInboxRulesets(
+    requestParameters: DeleteInboxRulesetsRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteInboxRulesetsRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Get inbox ruleset
+   * Get an inbox ruleset
+   */
+  async getInboxRulesetRaw(
+    requestParameters: GetInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRulesetDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getInboxRuleset.'
+      );
     }
 
-    /**
-     * List all rulesets attached to an inbox
-     * List inbox rulesets
-     */
-    async getInboxRulesetsRaw(requestParameters: GetInboxRulesetsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxRulesetDto>> {
-        const queryParameters: any = {};
+    const queryParameters: any = {};
 
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
-
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.searchFilter !== undefined) {
-            queryParameters['searchFilter'] = requestParameters.searchFilter;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxRulesetDtoFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * List all rulesets attached to an inbox
-     * List inbox rulesets
-     */
-    async getInboxRulesets(requestParameters: GetInboxRulesetsRequest, initOverrides?: RequestInit): Promise<PageInboxRulesetDto> {
-        const response = await this.getInboxRulesetsRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/rulesets/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRulesetDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get inbox ruleset
+   * Get an inbox ruleset
+   */
+  async getInboxRuleset(
+    requestParameters: GetInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRulesetDto> {
+    const response = await this.getInboxRulesetRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List all rulesets attached to an inbox
+   * List inbox rulesets
+   */
+  async getInboxRulesetsRaw(
+    requestParameters: GetInboxRulesetsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageInboxRulesetDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
-    /**
-     * Test an inbox ruleset
-     * Test an inbox ruleset
-     */
-    async testInboxRulesetRaw(requestParameters: TestInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetTestResult>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling testInboxRuleset.');
-        }
-
-        if (requestParameters.inboxRulesetTestOptions === null || requestParameters.inboxRulesetTestOptions === undefined) {
-            throw new runtime.RequiredError('inboxRulesetTestOptions','Required parameter requestParameters.inboxRulesetTestOptions was null or undefined when calling testInboxRuleset.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets/{id}/test`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: InboxRulesetTestOptionsToJSON(requestParameters.inboxRulesetTestOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => InboxRulesetTestResultFromJSON(jsonValue));
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Test an inbox ruleset
-     * Test an inbox ruleset
-     */
-    async testInboxRuleset(requestParameters: TestInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult> {
-        const response = await this.testInboxRulesetRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
-    /**
-     * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
-     * Test receiving with inbox rulesets
-     */
-    async testInboxRulesetReceivingRaw(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TestInboxRulesetReceivingResult>> {
-        if (requestParameters.testInboxRulesetReceivingOptions === null || requestParameters.testInboxRulesetReceivingOptions === undefined) {
-            throw new runtime.RequiredError('testInboxRulesetReceivingOptions','Required parameter requestParameters.testInboxRulesetReceivingOptions was null or undefined when calling testInboxRulesetReceiving.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets/test-receiving`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: TestInboxRulesetReceivingOptionsToJSON(requestParameters.testInboxRulesetReceivingOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TestInboxRulesetReceivingResultFromJSON(jsonValue));
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
     }
 
-    /**
-     * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
-     * Test receiving with inbox rulesets
-     */
-    async testInboxRulesetReceiving(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit): Promise<TestInboxRulesetReceivingResult> {
-        const response = await this.testInboxRulesetReceivingRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
     }
 
-    /**
-     * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
-     * Test sending with inbox rulesets
-     */
-    async testInboxRulesetSendingRaw(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TestInboxRulesetSendingResult>> {
-        if (requestParameters.testInboxRulesetSendingOptions === null || requestParameters.testInboxRulesetSendingOptions === undefined) {
-            throw new runtime.RequiredError('testInboxRulesetSendingOptions','Required parameter requestParameters.testInboxRulesetSendingOptions was null or undefined when calling testInboxRulesetSending.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets/test-sending`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: TestInboxRulesetSendingOptionsToJSON(requestParameters.testInboxRulesetSendingOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TestInboxRulesetSendingResultFromJSON(jsonValue));
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
 
-    /**
-     * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
-     * Test sending with inbox rulesets
-     */
-    async testInboxRulesetSending(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit): Promise<TestInboxRulesetSendingResult> {
-        const response = await this.testInboxRulesetSendingRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
     }
 
-    /**
-     * Test inbox rulesets for inbox
-     * Test inbox rulesets for inbox
-     */
-    async testInboxRulesetsForInboxRaw(requestParameters: TestInboxRulesetsForInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetTestResult>> {
-        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
-            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling testInboxRulesetsForInbox.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        if (requestParameters.inboxRulesetTestOptions === null || requestParameters.inboxRulesetTestOptions === undefined) {
-            throw new runtime.RequiredError('inboxRulesetTestOptions','Required parameter requestParameters.inboxRulesetTestOptions was null or undefined when calling testInboxRulesetsForInbox.');
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets`,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: InboxRulesetTestOptionsToJSON(requestParameters.inboxRulesetTestOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => InboxRulesetTestResultFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Test inbox rulesets for inbox
-     * Test inbox rulesets for inbox
-     */
-    async testInboxRulesetsForInbox(requestParameters: TestInboxRulesetsForInboxRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult> {
-        const response = await this.testInboxRulesetsForInboxRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/rulesets`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageInboxRulesetDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List all rulesets attached to an inbox
+   * List inbox rulesets
+   */
+  async getInboxRulesets(
+    requestParameters: GetInboxRulesetsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageInboxRulesetDto> {
+    const response = await this.getInboxRulesetsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test an inbox ruleset
+   * Test an inbox ruleset
+   */
+  async testInboxRulesetRaw(
+    requestParameters: TestInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRulesetTestResult>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling testInboxRuleset.'
+      );
     }
 
-    /**
-     * Test new inbox ruleset
-     * Test new inbox ruleset
-     */
-    async testNewInboxRulesetRaw(requestParameters: TestNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetTestResult>> {
-        if (requestParameters.testNewInboxRulesetOptions === null || requestParameters.testNewInboxRulesetOptions === undefined) {
-            throw new runtime.RequiredError('testNewInboxRulesetOptions','Required parameter requestParameters.testNewInboxRulesetOptions was null or undefined when calling testNewInboxRuleset.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/rulesets`,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-            body: TestNewInboxRulesetOptionsToJSON(requestParameters.testNewInboxRulesetOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => InboxRulesetTestResultFromJSON(jsonValue));
+    if (
+      requestParameters.inboxRulesetTestOptions === null ||
+      requestParameters.inboxRulesetTestOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxRulesetTestOptions',
+        'Required parameter requestParameters.inboxRulesetTestOptions was null or undefined when calling testInboxRuleset.'
+      );
     }
 
-    /**
-     * Test new inbox ruleset
-     * Test new inbox ruleset
-     */
-    async testNewInboxRuleset(requestParameters: TestNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult> {
-        const response = await this.testNewInboxRulesetRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
+    const response = await this.request(
+      {
+        path: `/rulesets/{id}/test`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: InboxRulesetTestOptionsToJSON(
+          requestParameters.inboxRulesetTestOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRulesetTestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test an inbox ruleset
+   * Test an inbox ruleset
+   */
+  async testInboxRuleset(
+    requestParameters: TestInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRulesetTestResult> {
+    const response = await this.testInboxRulesetRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+   * Test receiving with inbox rulesets
+   */
+  async testInboxRulesetReceivingRaw(
+    requestParameters: TestInboxRulesetReceivingRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TestInboxRulesetReceivingResult>> {
+    if (
+      requestParameters.testInboxRulesetReceivingOptions === null ||
+      requestParameters.testInboxRulesetReceivingOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'testInboxRulesetReceivingOptions',
+        'Required parameter requestParameters.testInboxRulesetReceivingOptions was null or undefined when calling testInboxRulesetReceiving.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/rulesets/test-receiving`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: TestInboxRulesetReceivingOptionsToJSON(
+          requestParameters.testInboxRulesetReceivingOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TestInboxRulesetReceivingResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+   * Test receiving with inbox rulesets
+   */
+  async testInboxRulesetReceiving(
+    requestParameters: TestInboxRulesetReceivingRequest,
+    initOverrides?: RequestInit
+  ): Promise<TestInboxRulesetReceivingResult> {
+    const response = await this.testInboxRulesetReceivingRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+   * Test sending with inbox rulesets
+   */
+  async testInboxRulesetSendingRaw(
+    requestParameters: TestInboxRulesetSendingRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TestInboxRulesetSendingResult>> {
+    if (
+      requestParameters.testInboxRulesetSendingOptions === null ||
+      requestParameters.testInboxRulesetSendingOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'testInboxRulesetSendingOptions',
+        'Required parameter requestParameters.testInboxRulesetSendingOptions was null or undefined when calling testInboxRulesetSending.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/rulesets/test-sending`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: TestInboxRulesetSendingOptionsToJSON(
+          requestParameters.testInboxRulesetSendingOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TestInboxRulesetSendingResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+   * Test sending with inbox rulesets
+   */
+  async testInboxRulesetSending(
+    requestParameters: TestInboxRulesetSendingRequest,
+    initOverrides?: RequestInit
+  ): Promise<TestInboxRulesetSendingResult> {
+    const response = await this.testInboxRulesetSendingRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test inbox rulesets for inbox
+   * Test inbox rulesets for inbox
+   */
+  async testInboxRulesetsForInboxRaw(
+    requestParameters: TestInboxRulesetsForInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRulesetTestResult>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling testInboxRulesetsForInbox.'
+      );
+    }
+
+    if (
+      requestParameters.inboxRulesetTestOptions === null ||
+      requestParameters.inboxRulesetTestOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxRulesetTestOptions',
+        'Required parameter requestParameters.inboxRulesetTestOptions was null or undefined when calling testInboxRulesetsForInbox.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/rulesets`,
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: InboxRulesetTestOptionsToJSON(
+          requestParameters.inboxRulesetTestOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRulesetTestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test inbox rulesets for inbox
+   * Test inbox rulesets for inbox
+   */
+  async testInboxRulesetsForInbox(
+    requestParameters: TestInboxRulesetsForInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRulesetTestResult> {
+    const response = await this.testInboxRulesetsForInboxRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test new inbox ruleset
+   * Test new inbox ruleset
+   */
+  async testNewInboxRulesetRaw(
+    requestParameters: TestNewInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRulesetTestResult>> {
+    if (
+      requestParameters.testNewInboxRulesetOptions === null ||
+      requestParameters.testNewInboxRulesetOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'testNewInboxRulesetOptions',
+        'Required parameter requestParameters.testNewInboxRulesetOptions was null or undefined when calling testNewInboxRuleset.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/rulesets`,
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: TestNewInboxRulesetOptionsToJSON(
+          requestParameters.testNewInboxRulesetOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRulesetTestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test new inbox ruleset
+   * Test new inbox ruleset
+   */
+  async testNewInboxRuleset(
+    requestParameters: TestNewInboxRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRulesetTestResult> {
+    const response = await this.testNewInboxRulesetRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetInboxRulesetsSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

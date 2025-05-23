@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailFeaturePlatformNameToJSON = exports.EmailFeaturePlatformNameFromJSONTyped = exports.EmailFeaturePlatformNameFromJSON = exports.EmailFeaturePlatformNameSlugEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EmailFeaturePlatformNameSlugEnum;
 (function (EmailFeaturePlatformNameSlugEnum) {
     EmailFeaturePlatformNameSlugEnum["android"] = "android";
@@ -36,12 +36,12 @@ function EmailFeaturePlatformNameFromJSON(json) {
 }
 exports.EmailFeaturePlatformNameFromJSON = EmailFeaturePlatformNameFromJSON;
 function EmailFeaturePlatformNameFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'slug': json['slug'],
-        'name': json['name'],
+        slug: json['slug'],
+        name: json['name'],
     };
 }
 exports.EmailFeaturePlatformNameFromJSONTyped = EmailFeaturePlatformNameFromJSONTyped;
@@ -53,8 +53,8 @@ function EmailFeaturePlatformNameToJSON(value) {
         return null;
     }
     return {
-        'slug': value.slug,
-        'name': value.name,
+        slug: value.slug,
+        name: value.name,
     };
 }
 exports.EmailFeaturePlatformNameToJSON = EmailFeaturePlatformNameToJSON;

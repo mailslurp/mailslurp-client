@@ -41,9 +41,9 @@ export interface GenerateBimiRecordResults {
     value: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateBimiRecordResultsTypeEnum {
     A = "A",
     NS = "NS",

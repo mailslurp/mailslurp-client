@@ -19,87 +19,90 @@ import { exists, mapValues } from '../runtime';
  * @interface ConnectorProjection
  */
 export interface ConnectorProjection {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ConnectorProjection
-     */
-    enabled?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    emailAddress?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    inboxId: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof ConnectorProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    id: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorProjection
+   */
+  enabled?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  emailAddress?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  inboxId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof ConnectorProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  id: string;
 }
 
 export function ConnectorProjectionFromJSON(json: any): ConnectorProjection {
-    return ConnectorProjectionFromJSONTyped(json, false);
+  return ConnectorProjectionFromJSONTyped(json, false);
 }
 
-export function ConnectorProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'enabled': !exists(json, 'enabled') ? undefined : json['enabled'],
-        'userId': json['userId'],
-        'emailAddress': !exists(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'inboxId': json['inboxId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
-    };
+export function ConnectorProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ConnectorProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
+    userId: json['userId'],
+    emailAddress: !exists(json, 'emailAddress')
+      ? undefined
+      : json['emailAddress'],
+    inboxId: json['inboxId'],
+    createdAt: new Date(json['createdAt']),
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
+  };
 }
 
-export function ConnectorProjectionToJSON(value?: ConnectorProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'enabled': value.enabled,
-        'userId': value.userId,
-        'emailAddress': value.emailAddress,
-        'inboxId': value.inboxId,
-        'createdAt': (value.createdAt.toISOString()),
-        'name': value.name,
-        'id': value.id,
-    };
+export function ConnectorProjectionToJSON(
+  value?: ConnectorProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    enabled: value.enabled,
+    userId: value.userId,
+    emailAddress: value.emailAddress,
+    inboxId: value.inboxId,
+    createdAt: value.createdAt.toISOString(),
+    name: value.name,
+    id: value.id,
+  };
 }
-
-

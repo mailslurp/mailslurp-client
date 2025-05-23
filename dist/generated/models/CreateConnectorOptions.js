@@ -20,13 +20,15 @@ function CreateConnectorOptionsFromJSON(json) {
 }
 exports.CreateConnectorOptionsFromJSON = CreateConnectorOptionsFromJSON;
 function CreateConnectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'enabled': !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
     };
 }
 exports.CreateConnectorOptionsFromJSONTyped = CreateConnectorOptionsFromJSONTyped;
@@ -38,9 +40,9 @@ function CreateConnectorOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'emailAddress': value.emailAddress,
-        'enabled': value.enabled,
+        name: value.name,
+        emailAddress: value.emailAddress,
+        enabled: value.enabled,
     };
 }
 exports.CreateConnectorOptionsToJSON = CreateConnectorOptionsToJSON;

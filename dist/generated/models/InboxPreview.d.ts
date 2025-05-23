@@ -107,16 +107,17 @@ export interface InboxPreview {
     accountRegion?: InboxPreviewAccountRegionEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxPreviewInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxPreviewFunctionsAsEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
@@ -125,10 +126,11 @@ export declare enum InboxPreviewFunctionsAsEnum {
     ACCOUNT = "ACCOUNT",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxPreviewAccountRegionEnum {
     US_WEST_2 = "US_WEST_2"
 }

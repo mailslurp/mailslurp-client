@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SearchEmailsOptionsToJSON = exports.SearchEmailsOptionsFromJSONTyped = exports.SearchEmailsOptionsFromJSON = exports.SearchEmailsOptionsSortDirectionEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var SearchEmailsOptionsSortDirectionEnum;
 (function (SearchEmailsOptionsSortDirectionEnum) {
     SearchEmailsOptionsSortDirectionEnum["ASC"] = "ASC";
@@ -29,18 +29,22 @@ function SearchEmailsOptionsFromJSON(json) {
 }
 exports.SearchEmailsOptionsFromJSON = SearchEmailsOptionsFromJSON;
 function SearchEmailsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'inboxIds': !(0, runtime_1.exists)(json, 'inboxIds') ? undefined : json['inboxIds'],
-        'pageIndex': !(0, runtime_1.exists)(json, 'pageIndex') ? undefined : json['pageIndex'],
-        'pageSize': !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
-        'sortDirection': !(0, runtime_1.exists)(json, 'sortDirection') ? undefined : json['sortDirection'],
-        'unreadOnly': !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
-        'searchFilter': !(0, runtime_1.exists)(json, 'searchFilter') ? undefined : json['searchFilter'],
-        'since': !(0, runtime_1.exists)(json, 'since') ? undefined : (new Date(json['since'])),
-        'before': !(0, runtime_1.exists)(json, 'before') ? undefined : (new Date(json['before'])),
+        inboxIds: !(0, runtime_1.exists)(json, 'inboxIds') ? undefined : json['inboxIds'],
+        pageIndex: !(0, runtime_1.exists)(json, 'pageIndex') ? undefined : json['pageIndex'],
+        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
+        sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
+            ? undefined
+            : json['sortDirection'],
+        unreadOnly: !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
+        searchFilter: !(0, runtime_1.exists)(json, 'searchFilter')
+            ? undefined
+            : json['searchFilter'],
+        since: !(0, runtime_1.exists)(json, 'since') ? undefined : new Date(json['since']),
+        before: !(0, runtime_1.exists)(json, 'before') ? undefined : new Date(json['before']),
     };
 }
 exports.SearchEmailsOptionsFromJSONTyped = SearchEmailsOptionsFromJSONTyped;
@@ -52,14 +56,14 @@ function SearchEmailsOptionsToJSON(value) {
         return null;
     }
     return {
-        'inboxIds': value.inboxIds,
-        'pageIndex': value.pageIndex,
-        'pageSize': value.pageSize,
-        'sortDirection': value.sortDirection,
-        'unreadOnly': value.unreadOnly,
-        'searchFilter': value.searchFilter,
-        'since': value.since === undefined ? undefined : (value.since.toISOString()),
-        'before': value.before === undefined ? undefined : (value.before.toISOString()),
+        inboxIds: value.inboxIds,
+        pageIndex: value.pageIndex,
+        pageSize: value.pageSize,
+        sortDirection: value.sortDirection,
+        unreadOnly: value.unreadOnly,
+        searchFilter: value.searchFilter,
+        since: value.since === undefined ? undefined : value.since.toISOString(),
+        before: value.before === undefined ? undefined : value.before.toISOString(),
     };
 }
 exports.SearchEmailsOptionsToJSON = SearchEmailsOptionsToJSON;

@@ -19,11 +19,11 @@ function TemplatePreviewFromJSON(json) {
 }
 exports.TemplatePreviewFromJSON = TemplatePreviewFromJSON;
 function TemplatePreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'preview': json['preview'],
+        preview: json['preview'],
     };
 }
 exports.TemplatePreviewFromJSONTyped = TemplatePreviewFromJSONTyped;
@@ -35,7 +35,7 @@ function TemplatePreviewToJSON(value) {
         return null;
     }
     return {
-        'preview': value.preview,
+        preview: value.preview,
     };
 }
 exports.TemplatePreviewToJSON = TemplatePreviewToJSON;

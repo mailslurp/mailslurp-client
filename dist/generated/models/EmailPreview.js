@@ -21,30 +21,36 @@ function EmailPreviewFromJSON(json) {
 }
 exports.EmailPreviewFromJSON = EmailPreviewFromJSON;
 function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': json['to'],
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        'createdAt': (new Date(json['createdAt'])),
-        'read': json['read'],
-        'attachments': !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        'threadId': !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
-        'messageId': !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
-        'inReplyTo': !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-        'sender': !(0, runtime_1.exists)(json, 'sender') ? undefined : (0, _1.SenderFromJSON)(json['sender']),
-        'recipients': !(0, runtime_1.exists)(json, 'recipients') ? undefined : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        'favourite': !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
-        'bodyPartContentTypes': !(0, runtime_1.exists)(json, 'bodyPartContentTypes') ? undefined : json['bodyPartContentTypes'],
-        'plusAddress': !(0, runtime_1.exists)(json, 'plusAddress') ? undefined : json['plusAddress'],
-        'sizeBytes': !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+        id: json['id'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: json['to'],
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        createdAt: new Date(json['createdAt']),
+        read: json['read'],
+        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
+        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+        sender: !(0, runtime_1.exists)(json, 'sender')
+            ? undefined
+            : (0, _1.SenderFromJSON)(json['sender']),
+        recipients: !(0, runtime_1.exists)(json, 'recipients')
+            ? undefined
+            : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        bodyPartContentTypes: !(0, runtime_1.exists)(json, 'bodyPartContentTypes')
+            ? undefined
+            : json['bodyPartContentTypes'],
+        plusAddress: !(0, runtime_1.exists)(json, 'plusAddress') ? undefined : json['plusAddress'],
+        sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     };
 }
 exports.EmailPreviewFromJSONTyped = EmailPreviewFromJSONTyped;
@@ -56,26 +62,26 @@ function EmailPreviewToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'domainId': value.domainId,
-        'subject': value.subject,
-        'to': value.to,
-        'from': value.from,
-        'bcc': value.bcc,
-        'cc': value.cc,
-        'createdAt': (value.createdAt.toISOString()),
-        'read': value.read,
-        'attachments': value.attachments,
-        'threadId': value.threadId,
-        'messageId': value.messageId,
-        'inReplyTo': value.inReplyTo,
-        'sender': (0, _1.SenderToJSON)(value.sender),
-        'recipients': (0, _1.EmailRecipientsToJSON)(value.recipients),
-        'favourite': value.favourite,
-        'bodyPartContentTypes': value.bodyPartContentTypes,
-        'plusAddress': value.plusAddress,
-        'sizeBytes': value.sizeBytes,
+        id: value.id,
+        inboxId: value.inboxId,
+        domainId: value.domainId,
+        subject: value.subject,
+        to: value.to,
+        from: value.from,
+        bcc: value.bcc,
+        cc: value.cc,
+        createdAt: value.createdAt.toISOString(),
+        read: value.read,
+        attachments: value.attachments,
+        threadId: value.threadId,
+        messageId: value.messageId,
+        inReplyTo: value.inReplyTo,
+        sender: (0, _1.SenderToJSON)(value.sender),
+        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
+        favourite: value.favourite,
+        bodyPartContentTypes: value.bodyPartContentTypes,
+        plusAddress: value.plusAddress,
+        sizeBytes: value.sizeBytes,
     };
 }
 exports.EmailPreviewToJSON = EmailPreviewToJSON;

@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface TestInboxRulesetReceivingResult
  */
 export interface TestInboxRulesetReceivingResult {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TestInboxRulesetReceivingResult
-     */
-    canReceive: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof TestInboxRulesetReceivingResult
+   */
+  canReceive: boolean;
 }
 
-export function TestInboxRulesetReceivingResultFromJSON(json: any): TestInboxRulesetReceivingResult {
-    return TestInboxRulesetReceivingResultFromJSONTyped(json, false);
+export function TestInboxRulesetReceivingResultFromJSON(
+  json: any
+): TestInboxRulesetReceivingResult {
+  return TestInboxRulesetReceivingResultFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetReceivingResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestInboxRulesetReceivingResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'canReceive': json['canReceive'],
-    };
+export function TestInboxRulesetReceivingResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TestInboxRulesetReceivingResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    canReceive: json['canReceive'],
+  };
 }
 
-export function TestInboxRulesetReceivingResultToJSON(value?: TestInboxRulesetReceivingResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'canReceive': value.canReceive,
-    };
+export function TestInboxRulesetReceivingResultToJSON(
+  value?: TestInboxRulesetReceivingResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    canReceive: value.canReceive,
+  };
 }
-
-

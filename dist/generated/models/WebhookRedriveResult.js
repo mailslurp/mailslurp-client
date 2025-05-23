@@ -20,13 +20,13 @@ function WebhookRedriveResultFromJSON(json) {
 }
 exports.WebhookRedriveResultFromJSON = WebhookRedriveResultFromJSON;
 function WebhookRedriveResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'webhookResultId': json['webhookResultId'],
-        'success': json['success'],
-        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        webhookResultId: json['webhookResultId'],
+        success: json['success'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
 exports.WebhookRedriveResultFromJSONTyped = WebhookRedriveResultFromJSONTyped;
@@ -38,9 +38,9 @@ function WebhookRedriveResultToJSON(value) {
         return null;
     }
     return {
-        'webhookResultId': value.webhookResultId,
-        'success': value.success,
-        'message': value.message,
+        webhookResultId: value.webhookResultId,
+        success: value.success,
+        message: value.message,
     };
 }
 exports.WebhookRedriveResultToJSON = WebhookRedriveResultToJSON;

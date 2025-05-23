@@ -19,14 +19,14 @@ function NameServerRecordFromJSON(json) {
 }
 exports.NameServerRecordFromJSON = NameServerRecordFromJSON;
 function NameServerRecordFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'raw': json['raw'],
-        'recordType': json['recordType'],
-        'priority': json['priority'],
-        'value': json['value'],
+        raw: json['raw'],
+        recordType: json['recordType'],
+        priority: json['priority'],
+        value: json['value'],
     };
 }
 exports.NameServerRecordFromJSONTyped = NameServerRecordFromJSONTyped;
@@ -38,10 +38,10 @@ function NameServerRecordToJSON(value) {
         return null;
     }
     return {
-        'raw': value.raw,
-        'recordType': value.recordType,
-        'priority': value.priority,
-        'value': value.value,
+        raw: value.raw,
+        recordType: value.recordType,
+        priority: value.priority,
+        value: value.value,
     };
 }
 exports.NameServerRecordToJSON = NameServerRecordToJSON;

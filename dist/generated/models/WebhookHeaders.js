@@ -20,11 +20,11 @@ function WebhookHeadersFromJSON(json) {
 }
 exports.WebhookHeadersFromJSON = WebhookHeadersFromJSON;
 function WebhookHeadersFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'headers': (json['headers'].map(_1.WebhookHeaderNameValueFromJSON)),
+        headers: json['headers'].map(_1.WebhookHeaderNameValueFromJSON),
     };
 }
 exports.WebhookHeadersFromJSONTyped = WebhookHeadersFromJSONTyped;
@@ -36,7 +36,7 @@ function WebhookHeadersToJSON(value) {
         return null;
     }
     return {
-        'headers': (value.headers.map(_1.WebhookHeaderNameValueToJSON)),
+        headers: value.headers.map(_1.WebhookHeaderNameValueToJSON),
     };
 }
 exports.WebhookHeadersToJSON = WebhookHeadersToJSON;

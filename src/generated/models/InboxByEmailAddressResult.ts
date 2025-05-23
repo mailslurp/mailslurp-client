@@ -19,47 +19,50 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxByEmailAddressResult
  */
 export interface InboxByEmailAddressResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof InboxByEmailAddressResult
-     */
-    inboxId?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof InboxByEmailAddressResult
-     */
-    _exists: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxByEmailAddressResult
+   */
+  inboxId?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof InboxByEmailAddressResult
+   */
+  _exists: boolean;
 }
 
-export function InboxByEmailAddressResultFromJSON(json: any): InboxByEmailAddressResult {
-    return InboxByEmailAddressResultFromJSONTyped(json, false);
+export function InboxByEmailAddressResultFromJSON(
+  json: any
+): InboxByEmailAddressResult {
+  return InboxByEmailAddressResultFromJSONTyped(json, false);
 }
 
-export function InboxByEmailAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxByEmailAddressResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        '_exists': json['exists'],
-    };
+export function InboxByEmailAddressResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): InboxByEmailAddressResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    _exists: json['exists'],
+  };
 }
 
-export function InboxByEmailAddressResultToJSON(value?: InboxByEmailAddressResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'inboxId': value.inboxId,
-        'exists': value._exists,
-    };
+export function InboxByEmailAddressResultToJSON(
+  value?: InboxByEmailAddressResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    inboxId: value.inboxId,
+    exists: value._exists,
+  };
 }
-
-

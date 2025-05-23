@@ -19,39 +19,40 @@ import { exists, mapValues } from '../runtime';
  * @interface ContentMatchOptions
  */
 export interface ContentMatchOptions {
-    /**
-     * Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `['code is: 123456', '123456']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
-     * @type {string}
-     * @memberof ContentMatchOptions
-     */
-    pattern: string;
+  /**
+   * Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `['code is: 123456', '123456']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
+   * @type {string}
+   * @memberof ContentMatchOptions
+   */
+  pattern: string;
 }
 
 export function ContentMatchOptionsFromJSON(json: any): ContentMatchOptions {
-    return ContentMatchOptionsFromJSONTyped(json, false);
+  return ContentMatchOptionsFromJSONTyped(json, false);
 }
 
-export function ContentMatchOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContentMatchOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'pattern': json['pattern'],
-    };
+export function ContentMatchOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ContentMatchOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    pattern: json['pattern'],
+  };
 }
 
-export function ContentMatchOptionsToJSON(value?: ContentMatchOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'pattern': value.pattern,
-    };
+export function ContentMatchOptionsToJSON(
+  value?: ContentMatchOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    pattern: value.pattern,
+  };
 }
-
-

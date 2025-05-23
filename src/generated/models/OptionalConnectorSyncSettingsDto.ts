@@ -14,59 +14,64 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    ConnectorSyncSettingsDto,
-    ConnectorSyncSettingsDtoFromJSON,
-    ConnectorSyncSettingsDtoFromJSONTyped,
-    ConnectorSyncSettingsDtoToJSON,
+  ConnectorSyncSettingsDto,
+  ConnectorSyncSettingsDtoFromJSON,
+  ConnectorSyncSettingsDtoFromJSONTyped,
+  ConnectorSyncSettingsDtoToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface OptionalConnectorSyncSettingsDto
  */
 export interface OptionalConnectorSyncSettingsDto {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof OptionalConnectorSyncSettingsDto
-     */
-    present: boolean;
-    /**
-     * 
-     * @type {ConnectorSyncSettingsDto}
-     * @memberof OptionalConnectorSyncSettingsDto
-     */
-    result?: ConnectorSyncSettingsDto;
+  /**
+   *
+   * @type {boolean}
+   * @memberof OptionalConnectorSyncSettingsDto
+   */
+  present: boolean;
+  /**
+   *
+   * @type {ConnectorSyncSettingsDto}
+   * @memberof OptionalConnectorSyncSettingsDto
+   */
+  result?: ConnectorSyncSettingsDto;
 }
 
-export function OptionalConnectorSyncSettingsDtoFromJSON(json: any): OptionalConnectorSyncSettingsDto {
-    return OptionalConnectorSyncSettingsDtoFromJSONTyped(json, false);
+export function OptionalConnectorSyncSettingsDtoFromJSON(
+  json: any
+): OptionalConnectorSyncSettingsDto {
+  return OptionalConnectorSyncSettingsDtoFromJSONTyped(json, false);
 }
 
-export function OptionalConnectorSyncSettingsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptionalConnectorSyncSettingsDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'present': json['present'],
-        'result': !exists(json, 'result') ? undefined : ConnectorSyncSettingsDtoFromJSON(json['result']),
-    };
+export function OptionalConnectorSyncSettingsDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): OptionalConnectorSyncSettingsDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    present: json['present'],
+    result: !exists(json, 'result')
+      ? undefined
+      : ConnectorSyncSettingsDtoFromJSON(json['result']),
+  };
 }
 
-export function OptionalConnectorSyncSettingsDtoToJSON(value?: OptionalConnectorSyncSettingsDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'present': value.present,
-        'result': ConnectorSyncSettingsDtoToJSON(value.result),
-    };
+export function OptionalConnectorSyncSettingsDtoToJSON(
+  value?: OptionalConnectorSyncSettingsDto | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    present: value.present,
+    result: ConnectorSyncSettingsDtoToJSON(value.result),
+  };
 }
-
-

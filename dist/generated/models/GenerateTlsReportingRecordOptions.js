@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateTlsReportingRecordOptionsToJSON = exports.GenerateTlsReportingRecordOptionsFromJSONTyped = exports.GenerateTlsReportingRecordOptionsFromJSON = exports.GenerateTlsReportingRecordOptionsVersionEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var GenerateTlsReportingRecordOptionsVersionEnum;
 (function (GenerateTlsReportingRecordOptionsVersionEnum) {
     GenerateTlsReportingRecordOptionsVersionEnum["TLSRPTv1"] = "TLSRPTv1";
@@ -28,15 +28,17 @@ function GenerateTlsReportingRecordOptionsFromJSON(json) {
 }
 exports.GenerateTlsReportingRecordOptionsFromJSON = GenerateTlsReportingRecordOptionsFromJSON;
 function GenerateTlsReportingRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'reportingAddresses': json['reportingAddresses'],
-        'reportingUrl': !(0, runtime_1.exists)(json, 'reportingUrl') ? undefined : json['reportingUrl'],
-        'host': json['host'],
-        'version': json['version'],
-        'ttl': json['ttl'],
+        reportingAddresses: json['reportingAddresses'],
+        reportingUrl: !(0, runtime_1.exists)(json, 'reportingUrl')
+            ? undefined
+            : json['reportingUrl'],
+        host: json['host'],
+        version: json['version'],
+        ttl: json['ttl'],
     };
 }
 exports.GenerateTlsReportingRecordOptionsFromJSONTyped = GenerateTlsReportingRecordOptionsFromJSONTyped;
@@ -48,11 +50,11 @@ function GenerateTlsReportingRecordOptionsToJSON(value) {
         return null;
     }
     return {
-        'reportingAddresses': value.reportingAddresses,
-        'reportingUrl': value.reportingUrl,
-        'host': value.host,
-        'version': value.version,
-        'ttl': value.ttl,
+        reportingAddresses: value.reportingAddresses,
+        reportingUrl: value.reportingUrl,
+        host: value.host,
+        version: value.version,
+        ttl: value.ttl,
     };
 }
 exports.GenerateTlsReportingRecordOptionsToJSON = GenerateTlsReportingRecordOptionsToJSON;

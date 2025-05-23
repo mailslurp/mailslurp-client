@@ -17,9 +17,9 @@ exports.GenerateStructuredContentEmailOptionsToJSON = exports.GenerateStructured
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var GenerateStructuredContentEmailOptionsContentSelectorEnum;
 (function (GenerateStructuredContentEmailOptionsContentSelectorEnum) {
     GenerateStructuredContentEmailOptionsContentSelectorEnum["RAW"] = "RAW";
@@ -30,14 +30,18 @@ function GenerateStructuredContentEmailOptionsFromJSON(json) {
 }
 exports.GenerateStructuredContentEmailOptionsFromJSON = GenerateStructuredContentEmailOptionsFromJSON;
 function GenerateStructuredContentEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailId': json['emailId'],
-        'contentSelector': !(0, runtime_1.exists)(json, 'contentSelector') ? undefined : json['contentSelector'],
-        'instructions': !(0, runtime_1.exists)(json, 'instructions') ? undefined : json['instructions'],
-        'outputSchema': (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        emailId: json['emailId'],
+        contentSelector: !(0, runtime_1.exists)(json, 'contentSelector')
+            ? undefined
+            : json['contentSelector'],
+        instructions: !(0, runtime_1.exists)(json, 'instructions')
+            ? undefined
+            : json['instructions'],
+        outputSchema: (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
     };
 }
 exports.GenerateStructuredContentEmailOptionsFromJSONTyped = GenerateStructuredContentEmailOptionsFromJSONTyped;
@@ -49,10 +53,10 @@ function GenerateStructuredContentEmailOptionsToJSON(value) {
         return null;
     }
     return {
-        'emailId': value.emailId,
-        'contentSelector': value.contentSelector,
-        'instructions': value.instructions,
-        'outputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        emailId: value.emailId,
+        contentSelector: value.contentSelector,
+        instructions: value.instructions,
+        outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
     };
 }
 exports.GenerateStructuredContentEmailOptionsToJSON = GenerateStructuredContentEmailOptionsToJSON;

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookNewContactPayloadToJSON = exports.WebhookNewContactPayloadFromJSONTyped = exports.WebhookNewContactPayloadFromJSON = exports.WebhookNewContactPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookNewContactPayloadEventNameEnum;
 (function (WebhookNewContactPayloadEventNameEnum) {
     WebhookNewContactPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -38,25 +38,27 @@ function WebhookNewContactPayloadFromJSON(json) {
 }
 exports.WebhookNewContactPayloadFromJSON = WebhookNewContactPayloadFromJSON;
 function WebhookNewContactPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        'eventName': json['eventName'],
-        'contactId': json['contactId'],
-        'groupId': !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
-        'firstName': !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        'lastName': !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        'company': !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
-        'primaryEmailAddress': !(0, runtime_1.exists)(json, 'primaryEmailAddress') ? undefined : json['primaryEmailAddress'],
-        'emailAddresses': json['emailAddresses'],
-        'tags': json['tags'],
-        'metaData': !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
-        'optOut': json['optOut'],
-        'createdAt': (new Date(json['createdAt'])),
+        messageId: json['messageId'],
+        webhookId: json['webhookId'],
+        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        eventName: json['eventName'],
+        contactId: json['contactId'],
+        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
+        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
+        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
+        primaryEmailAddress: !(0, runtime_1.exists)(json, 'primaryEmailAddress')
+            ? undefined
+            : json['primaryEmailAddress'],
+        emailAddresses: json['emailAddresses'],
+        tags: json['tags'],
+        metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
+        optOut: json['optOut'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.WebhookNewContactPayloadFromJSONTyped = WebhookNewContactPayloadFromJSONTyped;
@@ -68,21 +70,21 @@ function WebhookNewContactPayloadToJSON(value) {
         return null;
     }
     return {
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'webhookName': value.webhookName,
-        'eventName': value.eventName,
-        'contactId': value.contactId,
-        'groupId': value.groupId,
-        'firstName': value.firstName,
-        'lastName': value.lastName,
-        'company': value.company,
-        'primaryEmailAddress': value.primaryEmailAddress,
-        'emailAddresses': value.emailAddresses,
-        'tags': value.tags,
-        'metaData': value.metaData,
-        'optOut': value.optOut,
-        'createdAt': (value.createdAt.toISOString()),
+        messageId: value.messageId,
+        webhookId: value.webhookId,
+        webhookName: value.webhookName,
+        eventName: value.eventName,
+        contactId: value.contactId,
+        groupId: value.groupId,
+        firstName: value.firstName,
+        lastName: value.lastName,
+        company: value.company,
+        primaryEmailAddress: value.primaryEmailAddress,
+        emailAddresses: value.emailAddresses,
+        tags: value.tags,
+        metaData: value.metaData,
+        optOut: value.optOut,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.WebhookNewContactPayloadToJSON = WebhookNewContactPayloadToJSON;

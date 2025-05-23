@@ -97,9 +97,9 @@ export interface CreateInboxReplierOptions {
     } | null;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum CreateInboxReplierOptionsFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",

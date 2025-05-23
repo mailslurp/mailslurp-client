@@ -20,15 +20,15 @@ function OptInIdentityProjectionFromJSON(json) {
 }
 exports.OptInIdentityProjectionFromJSON = OptInIdentityProjectionFromJSON;
 function OptInIdentityProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'emailAddress': json['emailAddress'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'createdAt': (new Date(json['createdAt'])),
-        'verified': !(0, runtime_1.exists)(json, 'verified') ? undefined : json['verified'],
+        id: json['id'],
+        emailAddress: json['emailAddress'],
+        updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
+        verified: !(0, runtime_1.exists)(json, 'verified') ? undefined : json['verified'],
     };
 }
 exports.OptInIdentityProjectionFromJSONTyped = OptInIdentityProjectionFromJSONTyped;
@@ -40,11 +40,11 @@ function OptInIdentityProjectionToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'emailAddress': value.emailAddress,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'createdAt': (value.createdAt.toISOString()),
-        'verified': value.verified,
+        id: value.id,
+        emailAddress: value.emailAddress,
+        updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
+        verified: value.verified,
     };
 }
 exports.OptInIdentityProjectionToJSON = OptInIdentityProjectionToJSON;

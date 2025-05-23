@@ -19,113 +19,116 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookEmailReadPayload
  */
 export interface WebhookEmailReadPayload {
-    /**
-     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-     * @type {string}
-     * @memberof WebhookEmailReadPayload
-     */
-    messageId: string;
-    /**
-     * ID of webhook entity being triggered
-     * @type {string}
-     * @memberof WebhookEmailReadPayload
-     */
-    webhookId: string;
-    /**
-     * Name of the event type webhook is being triggered for.
-     * @type {string}
-     * @memberof WebhookEmailReadPayload
-     */
-    eventName: WebhookEmailReadPayloadEventNameEnum;
-    /**
-     * Name of the webhook being triggered
-     * @type {string}
-     * @memberof WebhookEmailReadPayload
-     */
-    webhookName?: string | null;
-    /**
-     * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
-     * @type {string}
-     * @memberof WebhookEmailReadPayload
-     */
-    emailId: string;
-    /**
-     * Id of the inbox
-     * @type {string}
-     * @memberof WebhookEmailReadPayload
-     */
-    inboxId: string;
-    /**
-     * Is the email read
-     * @type {boolean}
-     * @memberof WebhookEmailReadPayload
-     */
-    emailIsRead: boolean;
-    /**
-     * Date time of event creation
-     * @type {Date}
-     * @memberof WebhookEmailReadPayload
-     */
-    createdAt: Date;
+  /**
+   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+   * @type {string}
+   * @memberof WebhookEmailReadPayload
+   */
+  messageId: string;
+  /**
+   * ID of webhook entity being triggered
+   * @type {string}
+   * @memberof WebhookEmailReadPayload
+   */
+  webhookId: string;
+  /**
+   * Name of the event type webhook is being triggered for.
+   * @type {string}
+   * @memberof WebhookEmailReadPayload
+   */
+  eventName: WebhookEmailReadPayloadEventNameEnum;
+  /**
+   * Name of the webhook being triggered
+   * @type {string}
+   * @memberof WebhookEmailReadPayload
+   */
+  webhookName?: string | null;
+  /**
+   * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
+   * @type {string}
+   * @memberof WebhookEmailReadPayload
+   */
+  emailId: string;
+  /**
+   * Id of the inbox
+   * @type {string}
+   * @memberof WebhookEmailReadPayload
+   */
+  inboxId: string;
+  /**
+   * Is the email read
+   * @type {boolean}
+   * @memberof WebhookEmailReadPayload
+   */
+  emailIsRead: boolean;
+  /**
+   * Date time of event creation
+   * @type {Date}
+   * @memberof WebhookEmailReadPayload
+   */
+  createdAt: Date;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WebhookEmailReadPayloadEventNameEnum {
-    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-    NEW_EMAIL = 'NEW_EMAIL',
-    NEW_CONTACT = 'NEW_CONTACT',
-    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-    EMAIL_OPENED = 'EMAIL_OPENED',
-    EMAIL_READ = 'EMAIL_READ',
-    DELIVERY_STATUS = 'DELIVERY_STATUS',
-    BOUNCE = 'BOUNCE',
-    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-    NEW_SMS = 'NEW_SMS',
-    NEW_GUEST_USER = 'NEW_GUEST_USER'
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 
-export function WebhookEmailReadPayloadFromJSON(json: any): WebhookEmailReadPayload {
-    return WebhookEmailReadPayloadFromJSONTyped(json, false);
+export function WebhookEmailReadPayloadFromJSON(
+  json: any
+): WebhookEmailReadPayload {
+  return WebhookEmailReadPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookEmailReadPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookEmailReadPayload {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !exists(json, 'webhookName') ? undefined : json['webhookName'],
-        'emailId': json['emailId'],
-        'inboxId': json['inboxId'],
-        'emailIsRead': json['emailIsRead'],
-        'createdAt': (new Date(json['createdAt'])),
-    };
+export function WebhookEmailReadPayloadFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookEmailReadPayload {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    messageId: json['messageId'],
+    webhookId: json['webhookId'],
+    eventName: json['eventName'],
+    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
+    emailId: json['emailId'],
+    inboxId: json['inboxId'],
+    emailIsRead: json['emailIsRead'],
+    createdAt: new Date(json['createdAt']),
+  };
 }
 
-export function WebhookEmailReadPayloadToJSON(value?: WebhookEmailReadPayload | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'emailId': value.emailId,
-        'inboxId': value.inboxId,
-        'emailIsRead': value.emailIsRead,
-        'createdAt': (value.createdAt.toISOString()),
-    };
+export function WebhookEmailReadPayloadToJSON(
+  value?: WebhookEmailReadPayload | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    messageId: value.messageId,
+    webhookId: value.webhookId,
+    eventName: value.eventName,
+    webhookName: value.webhookName,
+    emailId: value.emailId,
+    inboxId: value.inboxId,
+    emailIsRead: value.emailIsRead,
+    createdAt: value.createdAt.toISOString(),
+  };
 }
-
-

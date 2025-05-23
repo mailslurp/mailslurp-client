@@ -68,9 +68,9 @@ export interface EmailFeatureOverview {
     statuses: Set<EmailFeatureOverviewStatusesEnum>;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeatureOverviewFeatureEnum {
     amp = "amp",
     css_accent_color = "css-accent-color",
@@ -252,19 +252,21 @@ export declare enum EmailFeatureOverviewFeatureEnum {
     image_svg = "image-svg",
     image_webp = "image-webp",
     unsupported = "unsupported"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeatureOverviewCategoryEnum {
     css = "css",
     html = "html",
     image = "image",
     others = "others"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeatureOverviewStatusesEnum {
     SUPPORTED = "SUPPORTED",
     PARTIAL = "PARTIAL",

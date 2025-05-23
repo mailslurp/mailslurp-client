@@ -19,55 +19,54 @@ import { exists, mapValues } from '../runtime';
  * @interface Recipient
  */
 export interface Recipient {
-    /**
-     * 
-     * @type {string}
-     * @memberof Recipient
-     */
-    rawValue: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Recipient
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Recipient
-     */
-    name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof Recipient
+   */
+  rawValue: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Recipient
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Recipient
+   */
+  name?: string | null;
 }
 
 export function RecipientFromJSON(json: any): Recipient {
-    return RecipientFromJSONTyped(json, false);
+  return RecipientFromJSONTyped(json, false);
 }
 
-export function RecipientFromJSONTyped(json: any, ignoreDiscriminator: boolean): Recipient {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'rawValue': json['rawValue'],
-        'emailAddress': json['emailAddress'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-    };
+export function RecipientFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): Recipient {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    rawValue: json['rawValue'],
+    emailAddress: json['emailAddress'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+  };
 }
 
 export function RecipientToJSON(value?: Recipient | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'rawValue': value.rawValue,
-        'emailAddress': value.emailAddress,
-        'name': value.name,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    rawValue: value.rawValue,
+    emailAddress: value.emailAddress,
+    name: value.name,
+  };
 }
-
-

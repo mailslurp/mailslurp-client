@@ -19,39 +19,42 @@ import { exists, mapValues } from '../runtime';
  * @interface UpdateDomainOptions
  */
 export interface UpdateDomainOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateDomainOptions
-     */
-    catchAllInboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof UpdateDomainOptions
+   */
+  catchAllInboxId?: string | null;
 }
 
 export function UpdateDomainOptionsFromJSON(json: any): UpdateDomainOptions {
-    return UpdateDomainOptionsFromJSONTyped(json, false);
+  return UpdateDomainOptionsFromJSONTyped(json, false);
 }
 
-export function UpdateDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateDomainOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'catchAllInboxId': !exists(json, 'catchAllInboxId') ? undefined : json['catchAllInboxId'],
-    };
+export function UpdateDomainOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): UpdateDomainOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    catchAllInboxId: !exists(json, 'catchAllInboxId')
+      ? undefined
+      : json['catchAllInboxId'],
+  };
 }
 
-export function UpdateDomainOptionsToJSON(value?: UpdateDomainOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'catchAllInboxId': value.catchAllInboxId,
-    };
+export function UpdateDomainOptionsToJSON(
+  value?: UpdateDomainOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    catchAllInboxId: value.catchAllInboxId,
+  };
 }
-
-

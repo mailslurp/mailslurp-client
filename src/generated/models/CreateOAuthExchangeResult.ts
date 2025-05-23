@@ -14,60 +14,63 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateOAuthExchangeResult
  */
 export interface CreateOAuthExchangeResult {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreateOAuthExchangeResult
-     */
-    success: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateOAuthExchangeResult
-     */
-    inboxId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateOAuthExchangeResult
-     */
-    error?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateOAuthExchangeResult
+   */
+  success: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateOAuthExchangeResult
+   */
+  inboxId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateOAuthExchangeResult
+   */
+  error?: string;
 }
 
-export function CreateOAuthExchangeResultFromJSON(json: any): CreateOAuthExchangeResult {
-    return CreateOAuthExchangeResultFromJSONTyped(json, false);
+export function CreateOAuthExchangeResultFromJSON(
+  json: any
+): CreateOAuthExchangeResult {
+  return CreateOAuthExchangeResultFromJSONTyped(json, false);
 }
 
-export function CreateOAuthExchangeResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateOAuthExchangeResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'success': json['success'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'error': !exists(json, 'error') ? undefined : json['error'],
-    };
+export function CreateOAuthExchangeResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateOAuthExchangeResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    success: json['success'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    error: !exists(json, 'error') ? undefined : json['error'],
+  };
 }
 
-export function CreateOAuthExchangeResultToJSON(value?: CreateOAuthExchangeResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'success': value.success,
-        'inboxId': value.inboxId,
-        'error': value.error,
-    };
+export function CreateOAuthExchangeResultToJSON(
+  value?: CreateOAuthExchangeResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    success: value.success,
+    inboxId: value.inboxId,
+    error: value.error,
+  };
 }
-
-

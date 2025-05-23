@@ -20,15 +20,15 @@ function ImapEmailProjectionFromJSON(json) {
 }
 exports.ImapEmailProjectionFromJSON = ImapEmailProjectionFromJSON;
 function ImapEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'read': !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
-        'uid': json['uid'],
-        'seqNum': json['seqNum'],
-        'id': json['id'],
+        createdAt: new Date(json['createdAt']),
+        read: !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
+        uid: json['uid'],
+        seqNum: json['seqNum'],
+        id: json['id'],
     };
 }
 exports.ImapEmailProjectionFromJSONTyped = ImapEmailProjectionFromJSONTyped;
@@ -40,11 +40,11 @@ function ImapEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'read': value.read,
-        'uid': value.uid,
-        'seqNum': value.seqNum,
-        'id': value.id,
+        createdAt: value.createdAt.toISOString(),
+        read: value.read,
+        uid: value.uid,
+        seqNum: value.seqNum,
+        id: value.id,
     };
 }
 exports.ImapEmailProjectionToJSON = ImapEmailProjectionToJSON;

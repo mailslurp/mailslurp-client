@@ -14,143 +14,146 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    EmailRecipients,
-    EmailRecipientsFromJSON,
-    EmailRecipientsFromJSONTyped,
-    EmailRecipientsToJSON,
-    Sender,
-    SenderFromJSON,
-    SenderFromJSONTyped,
-    SenderToJSON,
+  EmailRecipients,
+  EmailRecipientsFromJSON,
+  EmailRecipientsFromJSONTyped,
+  EmailRecipientsToJSON,
+  Sender,
+  SenderFromJSON,
+  SenderFromJSONTyped,
+  SenderToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface FakeEmailDto
  */
 export interface FakeEmailDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof FakeEmailDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FakeEmailDto
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {Sender}
-     * @memberof FakeEmailDto
-     */
-    sender?: Sender | null;
-    /**
-     * 
-     * @type {EmailRecipients}
-     * @memberof FakeEmailDto
-     */
-    recipients?: EmailRecipients | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof FakeEmailDto
-     */
-    attachmentNames: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof FakeEmailDto
-     */
-    subject?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FakeEmailDto
-     */
-    preview?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FakeEmailDto
-     */
-    body: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof FakeEmailDto
-     */
-    seen: boolean;
-    /**
-     * 
-     * @type {Date}
-     * @memberof FakeEmailDto
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof FakeEmailDto
-     */
-    contentType: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FakeEmailDto
-     */
-    bodyUrl: string;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {Sender}
+   * @memberof FakeEmailDto
+   */
+  sender?: Sender | null;
+  /**
+   *
+   * @type {EmailRecipients}
+   * @memberof FakeEmailDto
+   */
+  recipients?: EmailRecipients | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof FakeEmailDto
+   */
+  attachmentNames: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  subject?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  preview?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  body: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof FakeEmailDto
+   */
+  seen: boolean;
+  /**
+   *
+   * @type {Date}
+   * @memberof FakeEmailDto
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  contentType: string;
+  /**
+   *
+   * @type {string}
+   * @memberof FakeEmailDto
+   */
+  bodyUrl: string;
 }
 
 export function FakeEmailDtoFromJSON(json: any): FakeEmailDto {
-    return FakeEmailDtoFromJSONTyped(json, false);
+  return FakeEmailDtoFromJSONTyped(json, false);
 }
 
-export function FakeEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'emailAddress': json['emailAddress'],
-        'sender': !exists(json, 'sender') ? undefined : SenderFromJSON(json['sender']),
-        'recipients': !exists(json, 'recipients') ? undefined : EmailRecipientsFromJSON(json['recipients']),
-        'attachmentNames': json['attachmentNames'],
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'preview': !exists(json, 'preview') ? undefined : json['preview'],
-        'body': json['body'],
-        'seen': json['seen'],
-        'createdAt': (new Date(json['createdAt'])),
-        'contentType': json['contentType'],
-        'bodyUrl': json['bodyUrl'],
-    };
+export function FakeEmailDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): FakeEmailDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    emailAddress: json['emailAddress'],
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
+    recipients: !exists(json, 'recipients')
+      ? undefined
+      : EmailRecipientsFromJSON(json['recipients']),
+    attachmentNames: json['attachmentNames'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    preview: !exists(json, 'preview') ? undefined : json['preview'],
+    body: json['body'],
+    seen: json['seen'],
+    createdAt: new Date(json['createdAt']),
+    contentType: json['contentType'],
+    bodyUrl: json['bodyUrl'],
+  };
 }
 
 export function FakeEmailDtoToJSON(value?: FakeEmailDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'emailAddress': value.emailAddress,
-        'sender': SenderToJSON(value.sender),
-        'recipients': EmailRecipientsToJSON(value.recipients),
-        'attachmentNames': value.attachmentNames,
-        'subject': value.subject,
-        'preview': value.preview,
-        'body': value.body,
-        'seen': value.seen,
-        'createdAt': (value.createdAt.toISOString()),
-        'contentType': value.contentType,
-        'bodyUrl': value.bodyUrl,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    emailAddress: value.emailAddress,
+    sender: SenderToJSON(value.sender),
+    recipients: EmailRecipientsToJSON(value.recipients),
+    attachmentNames: value.attachmentNames,
+    subject: value.subject,
+    preview: value.preview,
+    body: value.body,
+    seen: value.seen,
+    createdAt: value.createdAt.toISOString(),
+    contentType: value.contentType,
+    bodyUrl: value.bodyUrl,
+  };
 }
-
-

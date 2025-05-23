@@ -15,17 +15,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SmsMatchOptionToJSON = exports.SmsMatchOptionFromJSONTyped = exports.SmsMatchOptionFromJSON = exports.SmsMatchOptionShouldEnum = exports.SmsMatchOptionFieldEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var SmsMatchOptionFieldEnum;
 (function (SmsMatchOptionFieldEnum) {
     SmsMatchOptionFieldEnum["BODY"] = "BODY";
     SmsMatchOptionFieldEnum["FROM"] = "FROM";
-})(SmsMatchOptionFieldEnum = exports.SmsMatchOptionFieldEnum || (exports.SmsMatchOptionFieldEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(SmsMatchOptionFieldEnum = exports.SmsMatchOptionFieldEnum || (exports.SmsMatchOptionFieldEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var SmsMatchOptionShouldEnum;
 (function (SmsMatchOptionShouldEnum) {
     SmsMatchOptionShouldEnum["MATCH"] = "MATCH";
@@ -37,13 +38,13 @@ function SmsMatchOptionFromJSON(json) {
 }
 exports.SmsMatchOptionFromJSON = SmsMatchOptionFromJSON;
 function SmsMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'field': json['field'],
-        'should': json['should'],
-        'value': json['value'],
+        field: json['field'],
+        should: json['should'],
+        value: json['value'],
     };
 }
 exports.SmsMatchOptionFromJSONTyped = SmsMatchOptionFromJSONTyped;
@@ -55,9 +56,9 @@ function SmsMatchOptionToJSON(value) {
         return null;
     }
     return {
-        'field': value.field,
-        'should': value.should,
-        'value': value.value,
+        field: value.field,
+        should: value.should,
+        value: value.value,
     };
 }
 exports.SmsMatchOptionToJSON = SmsMatchOptionToJSON;

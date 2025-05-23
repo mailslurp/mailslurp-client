@@ -12,1520 +12,2157 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    ConnectorDto,
-    ConnectorDtoFromJSON,
-    ConnectorDtoToJSON,
-    ConnectorEventDto,
-    ConnectorEventDtoFromJSON,
-    ConnectorEventDtoToJSON,
-    ConnectorImapConnectionDto,
-    ConnectorImapConnectionDtoFromJSON,
-    ConnectorImapConnectionDtoToJSON,
-    ConnectorImapConnectionTestResult,
-    ConnectorImapConnectionTestResultFromJSON,
-    ConnectorImapConnectionTestResultToJSON,
-    ConnectorProviderSettingsDto,
-    ConnectorProviderSettingsDtoFromJSON,
-    ConnectorProviderSettingsDtoToJSON,
-    ConnectorSmtpConnectionDto,
-    ConnectorSmtpConnectionDtoFromJSON,
-    ConnectorSmtpConnectionDtoToJSON,
-    ConnectorSmtpConnectionTestResult,
-    ConnectorSmtpConnectionTestResultFromJSON,
-    ConnectorSmtpConnectionTestResultToJSON,
-    ConnectorSyncRequestResult,
-    ConnectorSyncRequestResultFromJSON,
-    ConnectorSyncRequestResultToJSON,
-    ConnectorSyncSettingsDto,
-    ConnectorSyncSettingsDtoFromJSON,
-    ConnectorSyncSettingsDtoToJSON,
-    CreateConnectorImapConnectionOptions,
-    CreateConnectorImapConnectionOptionsFromJSON,
-    CreateConnectorImapConnectionOptionsToJSON,
-    CreateConnectorOptions,
-    CreateConnectorOptionsFromJSON,
-    CreateConnectorOptionsToJSON,
-    CreateConnectorSmtpConnectionOptions,
-    CreateConnectorSmtpConnectionOptionsFromJSON,
-    CreateConnectorSmtpConnectionOptionsToJSON,
-    CreateConnectorSyncSettingsOptions,
-    CreateConnectorSyncSettingsOptionsFromJSON,
-    CreateConnectorSyncSettingsOptionsToJSON,
-    CreateConnectorWithOptions,
-    CreateConnectorWithOptionsFromJSON,
-    CreateConnectorWithOptionsToJSON,
-    OptionalConnectorDto,
-    OptionalConnectorDtoFromJSON,
-    OptionalConnectorDtoToJSON,
-    OptionalConnectorImapConnectionDto,
-    OptionalConnectorImapConnectionDtoFromJSON,
-    OptionalConnectorImapConnectionDtoToJSON,
-    OptionalConnectorSmtpConnectionDto,
-    OptionalConnectorSmtpConnectionDtoFromJSON,
-    OptionalConnectorSmtpConnectionDtoToJSON,
-    OptionalConnectorSyncSettingsDto,
-    OptionalConnectorSyncSettingsDtoFromJSON,
-    OptionalConnectorSyncSettingsDtoToJSON,
-    PageConnector,
-    PageConnectorFromJSON,
-    PageConnectorToJSON,
-    PageConnectorEvents,
-    PageConnectorEventsFromJSON,
-    PageConnectorEventsToJSON,
-    SendEmailOptions,
-    SendEmailOptionsFromJSON,
-    SendEmailOptionsToJSON,
-    SentEmailDto,
-    SentEmailDtoFromJSON,
-    SentEmailDtoToJSON,
+  ConnectorDto,
+  ConnectorDtoFromJSON,
+  ConnectorDtoToJSON,
+  ConnectorEventDto,
+  ConnectorEventDtoFromJSON,
+  ConnectorEventDtoToJSON,
+  ConnectorImapConnectionDto,
+  ConnectorImapConnectionDtoFromJSON,
+  ConnectorImapConnectionDtoToJSON,
+  ConnectorImapConnectionTestResult,
+  ConnectorImapConnectionTestResultFromJSON,
+  ConnectorImapConnectionTestResultToJSON,
+  ConnectorProviderSettingsDto,
+  ConnectorProviderSettingsDtoFromJSON,
+  ConnectorProviderSettingsDtoToJSON,
+  ConnectorSmtpConnectionDto,
+  ConnectorSmtpConnectionDtoFromJSON,
+  ConnectorSmtpConnectionDtoToJSON,
+  ConnectorSmtpConnectionTestResult,
+  ConnectorSmtpConnectionTestResultFromJSON,
+  ConnectorSmtpConnectionTestResultToJSON,
+  ConnectorSyncRequestResult,
+  ConnectorSyncRequestResultFromJSON,
+  ConnectorSyncRequestResultToJSON,
+  ConnectorSyncSettingsDto,
+  ConnectorSyncSettingsDtoFromJSON,
+  ConnectorSyncSettingsDtoToJSON,
+  CreateConnectorImapConnectionOptions,
+  CreateConnectorImapConnectionOptionsFromJSON,
+  CreateConnectorImapConnectionOptionsToJSON,
+  CreateConnectorOptions,
+  CreateConnectorOptionsFromJSON,
+  CreateConnectorOptionsToJSON,
+  CreateConnectorSmtpConnectionOptions,
+  CreateConnectorSmtpConnectionOptionsFromJSON,
+  CreateConnectorSmtpConnectionOptionsToJSON,
+  CreateConnectorSyncSettingsOptions,
+  CreateConnectorSyncSettingsOptionsFromJSON,
+  CreateConnectorSyncSettingsOptionsToJSON,
+  CreateConnectorWithOptions,
+  CreateConnectorWithOptionsFromJSON,
+  CreateConnectorWithOptionsToJSON,
+  OptionalConnectorDto,
+  OptionalConnectorDtoFromJSON,
+  OptionalConnectorDtoToJSON,
+  OptionalConnectorImapConnectionDto,
+  OptionalConnectorImapConnectionDtoFromJSON,
+  OptionalConnectorImapConnectionDtoToJSON,
+  OptionalConnectorSmtpConnectionDto,
+  OptionalConnectorSmtpConnectionDtoFromJSON,
+  OptionalConnectorSmtpConnectionDtoToJSON,
+  OptionalConnectorSyncSettingsDto,
+  OptionalConnectorSyncSettingsDtoFromJSON,
+  OptionalConnectorSyncSettingsDtoToJSON,
+  PageConnector,
+  PageConnectorFromJSON,
+  PageConnectorToJSON,
+  PageConnectorEvents,
+  PageConnectorEventsFromJSON,
+  PageConnectorEventsToJSON,
+  SendEmailOptions,
+  SendEmailOptionsFromJSON,
+  SendEmailOptionsToJSON,
+  SentEmailDto,
+  SentEmailDtoFromJSON,
+  SentEmailDtoToJSON,
 } from '../models';
 
 export interface CreateConnectorRequest {
-    createConnectorOptions: CreateConnectorOptions;
-    inboxId?: string;
+  createConnectorOptions: CreateConnectorOptions;
+  inboxId?: string;
 }
 
 export interface CreateConnectorImapConnectionRequest {
-    id: string;
-    createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
+  id: string;
+  createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
 }
 
 export interface CreateConnectorSmtpConnectionRequest {
-    id: string;
-    createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
+  id: string;
+  createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
 }
 
 export interface CreateConnectorSyncSettingsRequest {
-    id: string;
-    createConnectorSyncSettingsOptions: CreateConnectorSyncSettingsOptions;
+  id: string;
+  createConnectorSyncSettingsOptions: CreateConnectorSyncSettingsOptions;
 }
 
 export interface CreateConnectorWithOptionsRequest {
-    createConnectorWithOptions: CreateConnectorWithOptions;
-    inboxId?: string;
+  createConnectorWithOptions: CreateConnectorWithOptions;
+  inboxId?: string;
 }
 
 export interface DeleteConnectorRequest {
-    id: string;
+  id: string;
 }
 
 export interface DeleteConnectorImapConnectionRequest {
-    id: string;
+  id: string;
 }
 
 export interface DeleteConnectorSmtpConnectionRequest {
-    id: string;
+  id: string;
 }
 
 export interface DeleteConnectorSyncSettingsRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetAllConnectorEventsRequest {
-    id?: string;
-    page?: number;
-    size?: number;
-    sort?: GetAllConnectorEventsSortEnum;
-    since?: Date;
-    before?: Date;
-    eventType?: GetAllConnectorEventsEventTypeEnum;
+  id?: string;
+  page?: number;
+  size?: number;
+  sort?: GetAllConnectorEventsSortEnum;
+  since?: Date;
+  before?: Date;
+  eventType?: GetAllConnectorEventsEventTypeEnum;
 }
 
 export interface GetConnectorRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetConnectorByEmailAddressRequest {
-    emailAddress: string;
+  emailAddress: string;
 }
 
 export interface GetConnectorByInboxIdRequest {
-    inboxId: string;
+  inboxId: string;
 }
 
 export interface GetConnectorByNameRequest {
-    name: string;
+  name: string;
 }
 
 export interface GetConnectorEventRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetConnectorEventsRequest {
-    id: string;
-    page?: number;
-    size?: number;
-    sort?: GetConnectorEventsSortEnum;
-    since?: Date;
-    before?: Date;
-    eventType?: GetConnectorEventsEventTypeEnum;
+  id: string;
+  page?: number;
+  size?: number;
+  sort?: GetConnectorEventsSortEnum;
+  since?: Date;
+  before?: Date;
+  eventType?: GetConnectorEventsEventTypeEnum;
 }
 
 export interface GetConnectorImapConnectionRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetConnectorSmtpConnectionRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetConnectorSyncSettingsRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetConnectorsRequest {
-    page?: number;
-    size?: number;
-    sort?: GetConnectorsSortEnum;
-    since?: Date;
-    before?: Date;
+  page?: number;
+  size?: number;
+  sort?: GetConnectorsSortEnum;
+  since?: Date;
+  before?: Date;
 }
 
 export interface SendEmailFromConnectorRequest {
-    id: string;
-    sendEmailOptions: SendEmailOptions;
-    useFallback?: boolean;
+  id: string;
+  sendEmailOptions: SendEmailOptions;
+  useFallback?: boolean;
 }
 
 export interface SyncConnectorRequest {
-    id: string;
-    since?: Date;
-    folder?: string;
-    logging?: boolean;
+  id: string;
+  since?: Date;
+  folder?: string;
+  logging?: boolean;
 }
 
 export interface TestConnectorImapConnectionRequest {
-    id: string;
-    createConnectorImapConnectionOptions?: CreateConnectorImapConnectionOptions;
+  id: string;
+  createConnectorImapConnectionOptions?: CreateConnectorImapConnectionOptions;
 }
 
 export interface TestConnectorImapConnectionOptionsRequest {
-    createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
+  createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
 }
 
 export interface TestConnectorSmtpConnectionRequest {
-    id: string;
-    createConnectorSmtpConnectionOptions?: CreateConnectorSmtpConnectionOptions;
+  id: string;
+  createConnectorSmtpConnectionOptions?: CreateConnectorSmtpConnectionOptions;
 }
 
 export interface TestConnectorSmtpConnectionOptionsRequest {
-    createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
+  createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
 }
 
 export interface UpdateConnectorRequest {
-    id: string;
-    createConnectorOptions: CreateConnectorOptions;
+  id: string;
+  createConnectorOptions: CreateConnectorOptions;
 }
 
 export interface UpdateConnectorImapConnectionRequest {
-    id: string;
-    createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
+  id: string;
+  createConnectorImapConnectionOptions: CreateConnectorImapConnectionOptions;
 }
 
 export interface UpdateConnectorSmtpConnectionRequest {
-    id: string;
-    createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
+  id: string;
+  createConnectorSmtpConnectionOptions: CreateConnectorSmtpConnectionOptions;
 }
 
 /**
- * 
+ *
  */
 export class ConnectorControllerApi extends runtime.BaseAPI {
-
-    /**
-     * Sync emails between external mailboxes and MailSlurp inboxes
-     * Create an inbox connector
-     */
-    async createConnectorRaw(requestParameters: CreateConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorDto>> {
-        if (requestParameters.createConnectorOptions === null || requestParameters.createConnectorOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorOptions','Required parameter requestParameters.createConnectorOptions was null or undefined when calling createConnector.');
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorOptionsToJSON(requestParameters.createConnectorOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorDtoFromJSON(jsonValue));
+  /**
+   * Sync emails between external mailboxes and MailSlurp inboxes
+   * Create an inbox connector
+   */
+  async createConnectorRaw(
+    requestParameters: CreateConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorDto>> {
+    if (
+      requestParameters.createConnectorOptions === null ||
+      requestParameters.createConnectorOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorOptions',
+        'Required parameter requestParameters.createConnectorOptions was null or undefined when calling createConnector.'
+      );
     }
 
-    /**
-     * Sync emails between external mailboxes and MailSlurp inboxes
-     * Create an inbox connector
-     */
-    async createConnector(requestParameters: CreateConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorDto> {
-        const response = await this.createConnectorRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
-    /**
-     * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
-     * Create an inbox connector IMAP connection
-     */
-    async createConnectorImapConnectionRaw(requestParameters: CreateConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorImapConnectionDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling createConnectorImapConnection.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        if (requestParameters.createConnectorImapConnectionOptions === null || requestParameters.createConnectorImapConnectionOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorImapConnectionOptions','Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling createConnectorImapConnection.');
-        }
+    headerParameters['Content-Type'] = 'application/json';
 
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/imap`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorImapConnectionOptionsToJSON(requestParameters.createConnectorImapConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorImapConnectionDtoFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
-     * Create an inbox connector IMAP connection
-     */
-    async createConnectorImapConnection(requestParameters: CreateConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorImapConnectionDto> {
-        const response = await this.createConnectorImapConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/connectors`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorOptionsToJSON(
+          requestParameters.createConnectorOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Sync emails between external mailboxes and MailSlurp inboxes
+   * Create an inbox connector
+   */
+  async createConnector(
+    requestParameters: CreateConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorDto> {
+    const response = await this.createConnectorRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
+   * Create an inbox connector IMAP connection
+   */
+  async createConnectorImapConnectionRaw(
+    requestParameters: CreateConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorImapConnectionDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling createConnectorImapConnection.'
+      );
     }
 
-    /**
-     * Allows sending via connector and email is routed to connected inbox and sent via SMTP
-     * Create an inbox connector SMTP connection
-     */
-    async createConnectorSmtpConnectionRaw(requestParameters: CreateConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSmtpConnectionDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling createConnectorSmtpConnection.');
-        }
-
-        if (requestParameters.createConnectorSmtpConnectionOptions === null || requestParameters.createConnectorSmtpConnectionOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorSmtpConnectionOptions','Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling createConnectorSmtpConnection.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/smtp`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorSmtpConnectionOptionsToJSON(requestParameters.createConnectorSmtpConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorSmtpConnectionDtoFromJSON(jsonValue));
+    if (
+      requestParameters.createConnectorImapConnectionOptions === null ||
+      requestParameters.createConnectorImapConnectionOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorImapConnectionOptions',
+        'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling createConnectorImapConnection.'
+      );
     }
 
-    /**
-     * Allows sending via connector and email is routed to connected inbox and sent via SMTP
-     * Create an inbox connector SMTP connection
-     */
-    async createConnectorSmtpConnection(requestParameters: CreateConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorSmtpConnectionDto> {
-        const response = await this.createConnectorSmtpConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Configure automatic pull or emails from external inboxes using an interval or schedule
-     * Create an inbox connector sync settings
-     */
-    async createConnectorSyncSettingsRaw(requestParameters: CreateConnectorSyncSettingsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSyncSettingsDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling createConnectorSyncSettings.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/imap`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorImapConnectionOptionsToJSON(
+          requestParameters.createConnectorImapConnectionOptions
+        ),
+      },
+      initOverrides
+    );
 
-        if (requestParameters.createConnectorSyncSettingsOptions === null || requestParameters.createConnectorSyncSettingsOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorSyncSettingsOptions','Required parameter requestParameters.createConnectorSyncSettingsOptions was null or undefined when calling createConnectorSyncSettings.');
-        }
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorImapConnectionDtoFromJSON(jsonValue)
+    );
+  }
 
-        const queryParameters: any = {};
+  /**
+   * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
+   * Create an inbox connector IMAP connection
+   */
+  async createConnectorImapConnection(
+    requestParameters: CreateConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorImapConnectionDto> {
+    const response = await this.createConnectorImapConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/sync-settings`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorSyncSettingsOptionsToJSON(requestParameters.createConnectorSyncSettingsOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorSyncSettingsDtoFromJSON(jsonValue));
+  /**
+   * Allows sending via connector and email is routed to connected inbox and sent via SMTP
+   * Create an inbox connector SMTP connection
+   */
+  async createConnectorSmtpConnectionRaw(
+    requestParameters: CreateConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorSmtpConnectionDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling createConnectorSmtpConnection.'
+      );
     }
 
-    /**
-     * Configure automatic pull or emails from external inboxes using an interval or schedule
-     * Create an inbox connector sync settings
-     */
-    async createConnectorSyncSettings(requestParameters: CreateConnectorSyncSettingsRequest, initOverrides?: RequestInit): Promise<ConnectorSyncSettingsDto> {
-        const response = await this.createConnectorSyncSettingsRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (
+      requestParameters.createConnectorSmtpConnectionOptions === null ||
+      requestParameters.createConnectorSmtpConnectionOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorSmtpConnectionOptions',
+        'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling createConnectorSmtpConnection.'
+      );
     }
 
-    /**
-     * Sync emails between external mailboxes and MailSlurp inboxes
-     * Create an inbox connector with options
-     */
-    async createConnectorWithOptionsRaw(requestParameters: CreateConnectorWithOptionsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorDto>> {
-        if (requestParameters.createConnectorWithOptions === null || requestParameters.createConnectorWithOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorWithOptions','Required parameter requestParameters.createConnectorWithOptions was null or undefined when calling createConnectorWithOptions.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
+    headerParameters['Content-Type'] = 'application/json';
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/withOptions`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorWithOptionsToJSON(requestParameters.createConnectorWithOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorDtoFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Sync emails between external mailboxes and MailSlurp inboxes
-     * Create an inbox connector with options
-     */
-    async createConnectorWithOptions(requestParameters: CreateConnectorWithOptionsRequest, initOverrides?: RequestInit): Promise<ConnectorDto> {
-        const response = await this.createConnectorWithOptionsRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/smtp`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorSmtpConnectionOptionsToJSON(
+          requestParameters.createConnectorSmtpConnectionOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorSmtpConnectionDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Allows sending via connector and email is routed to connected inbox and sent via SMTP
+   * Create an inbox connector SMTP connection
+   */
+  async createConnectorSmtpConnection(
+    requestParameters: CreateConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorSmtpConnectionDto> {
+    const response = await this.createConnectorSmtpConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Configure automatic pull or emails from external inboxes using an interval or schedule
+   * Create an inbox connector sync settings
+   */
+  async createConnectorSyncSettingsRaw(
+    requestParameters: CreateConnectorSyncSettingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorSyncSettingsDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling createConnectorSyncSettings.'
+      );
     }
 
-    /**
-     * Delete all inbox connectors
-     */
-    async deleteAllConnectorRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors`,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+    if (
+      requestParameters.createConnectorSyncSettingsOptions === null ||
+      requestParameters.createConnectorSyncSettingsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorSyncSettingsOptions',
+        'Required parameter requestParameters.createConnectorSyncSettingsOptions was null or undefined when calling createConnectorSyncSettings.'
+      );
     }
 
-    /**
-     * Delete all inbox connectors
-     */
-    async deleteAllConnector(initOverrides?: RequestInit): Promise<void> {
-        await this.deleteAllConnectorRaw(initOverrides);
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Delete an inbox connector
-     */
-    async deleteConnectorRaw(requestParameters: DeleteConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling deleteConnector.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/sync-settings`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorSyncSettingsOptionsToJSON(
+          requestParameters.createConnectorSyncSettingsOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorSyncSettingsDtoFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Configure automatic pull or emails from external inboxes using an interval or schedule
+   * Create an inbox connector sync settings
+   */
+  async createConnectorSyncSettings(
+    requestParameters: CreateConnectorSyncSettingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorSyncSettingsDto> {
+    const response = await this.createConnectorSyncSettingsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+  /**
+   * Sync emails between external mailboxes and MailSlurp inboxes
+   * Create an inbox connector with options
+   */
+  async createConnectorWithOptionsRaw(
+    requestParameters: CreateConnectorWithOptionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorDto>> {
+    if (
+      requestParameters.createConnectorWithOptions === null ||
+      requestParameters.createConnectorWithOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorWithOptions',
+        'Required parameter requestParameters.createConnectorWithOptions was null or undefined when calling createConnectorWithOptions.'
+      );
     }
 
-    /**
-     * Delete an inbox connector
-     */
-    async deleteConnector(requestParameters: DeleteConnectorRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteConnectorRaw(requestParameters, initOverrides);
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
-    /**
-     * Delete IMAP connection for external inbox
-     * Delete an inbox connector IMAP connection
-     */
-    async deleteConnectorImapConnectionRaw(requestParameters: DeleteConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling deleteConnectorImapConnection.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
+    headerParameters['Content-Type'] = 'application/json';
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/imap`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Delete IMAP connection for external inbox
-     * Delete an inbox connector IMAP connection
-     */
-    async deleteConnectorImapConnection(requestParameters: DeleteConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteConnectorImapConnectionRaw(requestParameters, initOverrides);
+    const response = await this.request(
+      {
+        path: `/connectors/withOptions`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorWithOptionsToJSON(
+          requestParameters.createConnectorWithOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Sync emails between external mailboxes and MailSlurp inboxes
+   * Create an inbox connector with options
+   */
+  async createConnectorWithOptions(
+    requestParameters: CreateConnectorWithOptionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorDto> {
+    const response = await this.createConnectorWithOptionsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Delete all inbox connectors
+   */
+  async deleteAllConnectorRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Delete SMTP connection for external inbox
-     * Delete an inbox connector SMTP connection
-     */
-    async deleteConnectorSmtpConnectionRaw(requestParameters: DeleteConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling deleteConnectorSmtpConnection.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.VoidApiResponse(response);
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Delete all inbox connectors
+   */
+  async deleteAllConnector(initOverrides?: RequestInit): Promise<void> {
+    await this.deleteAllConnectorRaw(initOverrides);
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/smtp`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+  /**
+   * Delete an inbox connector
+   */
+  async deleteConnectorRaw(
+    requestParameters: DeleteConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteConnector.'
+      );
     }
 
-    /**
-     * Delete SMTP connection for external inbox
-     * Delete an inbox connector SMTP connection
-     */
-    async deleteConnectorSmtpConnection(requestParameters: DeleteConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteConnectorSmtpConnectionRaw(requestParameters, initOverrides);
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Configure automatic pull or emails from external inboxes using an interval or schedule
-     * Create an inbox connector sync settings
-     */
-    async deleteConnectorSyncSettingsRaw(requestParameters: DeleteConnectorSyncSettingsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling deleteConnectorSyncSettings.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.VoidApiResponse(response);
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Delete an inbox connector
+   */
+  async deleteConnector(
+    requestParameters: DeleteConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteConnectorRaw(requestParameters, initOverrides);
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/sync-settings`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+  /**
+   * Delete IMAP connection for external inbox
+   * Delete an inbox connector IMAP connection
+   */
+  async deleteConnectorImapConnectionRaw(
+    requestParameters: DeleteConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteConnectorImapConnection.'
+      );
     }
 
-    /**
-     * Configure automatic pull or emails from external inboxes using an interval or schedule
-     * Create an inbox connector sync settings
-     */
-    async deleteConnectorSyncSettings(requestParameters: DeleteConnectorSyncSettingsRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteConnectorSyncSettingsRaw(requestParameters, initOverrides);
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get all inbox connector events
-     */
-    async getAllConnectorEventsRaw(requestParameters: GetAllConnectorEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageConnectorEvents>> {
-        const queryParameters: any = {};
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/imap`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        if (requestParameters.id !== undefined) {
-            queryParameters['id'] = requestParameters.id;
-        }
+    return new runtime.VoidApiResponse(response);
+  }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
+  /**
+   * Delete IMAP connection for external inbox
+   * Delete an inbox connector IMAP connection
+   */
+  async deleteConnectorImapConnection(
+    requestParameters: DeleteConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteConnectorImapConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+  }
 
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        if (requestParameters.eventType !== undefined) {
-            queryParameters['eventType'] = requestParameters.eventType;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/events`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageConnectorEventsFromJSON(jsonValue));
+  /**
+   * Delete SMTP connection for external inbox
+   * Delete an inbox connector SMTP connection
+   */
+  async deleteConnectorSmtpConnectionRaw(
+    requestParameters: DeleteConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteConnectorSmtpConnection.'
+      );
     }
 
-    /**
-     * Get all inbox connector events
-     */
-    async getAllConnectorEvents(requestParameters: GetAllConnectorEventsRequest, initOverrides?: RequestInit): Promise<PageConnectorEvents> {
-        const response = await this.getAllConnectorEventsRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get an inbox connector
-     */
-    async getConnectorRaw(requestParameters: GetConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getConnector.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/smtp`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.VoidApiResponse(response);
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Delete SMTP connection for external inbox
+   * Delete an inbox connector SMTP connection
+   */
+  async deleteConnectorSmtpConnection(
+    requestParameters: DeleteConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteConnectorSmtpConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorDtoFromJSON(jsonValue));
+  /**
+   * Configure automatic pull or emails from external inboxes using an interval or schedule
+   * Create an inbox connector sync settings
+   */
+  async deleteConnectorSyncSettingsRaw(
+    requestParameters: DeleteConnectorSyncSettingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteConnectorSyncSettings.'
+      );
     }
 
-    /**
-     * Get an inbox connector
-     */
-    async getConnector(requestParameters: GetConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorDto> {
-        const response = await this.getConnectorRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Find an inbox connector by email address
-     * Get connector by email address
-     */
-    async getConnectorByEmailAddressRaw(requestParameters: GetConnectorByEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<OptionalConnectorDto>> {
-        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
-            throw new runtime.RequiredError('emailAddress','Required parameter requestParameters.emailAddress was null or undefined when calling getConnectorByEmailAddress.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/sync-settings`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.VoidApiResponse(response);
+  }
 
-        if (requestParameters.emailAddress !== undefined) {
-            queryParameters['emailAddress'] = requestParameters.emailAddress;
-        }
+  /**
+   * Configure automatic pull or emails from external inboxes using an interval or schedule
+   * Create an inbox connector sync settings
+   */
+  async deleteConnectorSyncSettings(
+    requestParameters: DeleteConnectorSyncSettingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteConnectorSyncSettingsRaw(requestParameters, initOverrides);
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Get all inbox connector events
+   */
+  async getAllConnectorEventsRaw(
+    requestParameters: GetAllConnectorEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageConnectorEvents>> {
+    const queryParameters: any = {};
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/by-email-address`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OptionalConnectorDtoFromJSON(jsonValue));
+    if (requestParameters.id !== undefined) {
+      queryParameters['id'] = requestParameters.id;
     }
 
-    /**
-     * Find an inbox connector by email address
-     * Get connector by email address
-     */
-    async getConnectorByEmailAddress(requestParameters: GetConnectorByEmailAddressRequest, initOverrides?: RequestInit): Promise<OptionalConnectorDto> {
-        const response = await this.getConnectorByEmailAddressRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Find an inbox connector by inbox ID
-     * Get connector by inbox ID
-     */
-    async getConnectorByInboxIdRaw(requestParameters: GetConnectorByInboxIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<OptionalConnectorDto>> {
-        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
-            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling getConnectorByInboxId.');
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters.inboxId !== undefined) {
-            queryParameters['inboxId'] = requestParameters.inboxId;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/by-inbox-id`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OptionalConnectorDtoFromJSON(jsonValue));
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
-    /**
-     * Find an inbox connector by inbox ID
-     * Get connector by inbox ID
-     */
-    async getConnectorByInboxId(requestParameters: GetConnectorByInboxIdRequest, initOverrides?: RequestInit): Promise<OptionalConnectorDto> {
-        const response = await this.getConnectorByInboxIdRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
     }
 
-    /**
-     * Find an inbox connector by name
-     * Get connector by name
-     */
-    async getConnectorByNameRaw(requestParameters: GetConnectorByNameRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<OptionalConnectorDto>> {
-        if (requestParameters.name === null || requestParameters.name === undefined) {
-            throw new runtime.RequiredError('name','Required parameter requestParameters.name was null or undefined when calling getConnectorByName.');
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters.name !== undefined) {
-            queryParameters['name'] = requestParameters.name;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/by-name`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OptionalConnectorDtoFromJSON(jsonValue));
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
 
-    /**
-     * Find an inbox connector by name
-     * Get connector by name
-     */
-    async getConnectorByName(requestParameters: GetConnectorByNameRequest, initOverrides?: RequestInit): Promise<OptionalConnectorDto> {
-        const response = await this.getConnectorByNameRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
     }
 
-    /**
-     * Get an inbox connector event
-     */
-    async getConnectorEventRaw(requestParameters: GetConnectorEventRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorEventDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getConnectorEvent.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/events/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorEventDtoFromJSON(jsonValue));
+    if (requestParameters.eventType !== undefined) {
+      queryParameters['eventType'] = requestParameters.eventType;
     }
 
-    /**
-     * Get an inbox connector event
-     */
-    async getConnectorEvent(requestParameters: GetConnectorEventRequest, initOverrides?: RequestInit): Promise<ConnectorEventDto> {
-        const response = await this.getConnectorEventRaw(requestParameters, initOverrides);
-        return await response.value();
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get an inbox connector events
-     */
-    async getConnectorEventsRaw(requestParameters: GetConnectorEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageConnectorEvents>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getConnectorEvents.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/events`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageConnectorEventsFromJSON(jsonValue)
+    );
+  }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
+  /**
+   * Get all inbox connector events
+   */
+  async getAllConnectorEvents(
+    requestParameters: GetAllConnectorEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageConnectorEvents> {
+    const response = await this.getAllConnectorEventsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        if (requestParameters.eventType !== undefined) {
-            queryParameters['eventType'] = requestParameters.eventType;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/events`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageConnectorEventsFromJSON(jsonValue));
+  /**
+   * Get an inbox connector
+   */
+  async getConnectorRaw(
+    requestParameters: GetConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getConnector.'
+      );
     }
 
-    /**
-     * Get an inbox connector events
-     */
-    async getConnectorEvents(requestParameters: GetConnectorEventsRequest, initOverrides?: RequestInit): Promise<PageConnectorEvents> {
-        const response = await this.getConnectorEventsRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get IMAP connection for external inbox
-     * Get an inbox connector IMAP connection
-     */
-    async getConnectorImapConnectionRaw(requestParameters: GetConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<OptionalConnectorImapConnectionDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getConnectorImapConnection.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorDtoFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Get an inbox connector
+   */
+  async getConnector(
+    requestParameters: GetConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorDto> {
+    const response = await this.getConnectorRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/imap`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OptionalConnectorImapConnectionDtoFromJSON(jsonValue));
+  /**
+   * Find an inbox connector by email address
+   * Get connector by email address
+   */
+  async getConnectorByEmailAddressRaw(
+    requestParameters: GetConnectorByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<OptionalConnectorDto>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling getConnectorByEmailAddress.'
+      );
     }
 
-    /**
-     * Get IMAP connection for external inbox
-     * Get an inbox connector IMAP connection
-     */
-    async getConnectorImapConnection(requestParameters: GetConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<OptionalConnectorImapConnectionDto> {
-        const response = await this.getConnectorImapConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
     }
 
-    /**
-     * Get common mail provider SMTP and IMAP connection settings
-     * Get SMTP and IMAP connection settings for common mail providers
-     */
-    async getConnectorProviderSettingsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorProviderSettingsDto>> {
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/provider-settings`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorProviderSettingsDtoFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get common mail provider SMTP and IMAP connection settings
-     * Get SMTP and IMAP connection settings for common mail providers
-     */
-    async getConnectorProviderSettings(initOverrides?: RequestInit): Promise<ConnectorProviderSettingsDto> {
-        const response = await this.getConnectorProviderSettingsRaw(initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/connectors/by-email-address`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      OptionalConnectorDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Find an inbox connector by email address
+   * Get connector by email address
+   */
+  async getConnectorByEmailAddress(
+    requestParameters: GetConnectorByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<OptionalConnectorDto> {
+    const response = await this.getConnectorByEmailAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Find an inbox connector by inbox ID
+   * Get connector by inbox ID
+   */
+  async getConnectorByInboxIdRaw(
+    requestParameters: GetConnectorByInboxIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<OptionalConnectorDto>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getConnectorByInboxId.'
+      );
     }
 
-    /**
-     * Get SMTP connection for external inbox
-     * Get an inbox connector SMTP connection
-     */
-    async getConnectorSmtpConnectionRaw(requestParameters: GetConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<OptionalConnectorSmtpConnectionDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getConnectorSmtpConnection.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/smtp`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OptionalConnectorSmtpConnectionDtoFromJSON(jsonValue));
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
-    /**
-     * Get SMTP connection for external inbox
-     * Get an inbox connector SMTP connection
-     */
-    async getConnectorSmtpConnection(requestParameters: GetConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<OptionalConnectorSmtpConnectionDto> {
-        const response = await this.getConnectorSmtpConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get sync settings for connection with external inbox
-     * Get an inbox connector sync settings
-     */
-    async getConnectorSyncSettingsRaw(requestParameters: GetConnectorSyncSettingsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<OptionalConnectorSyncSettingsDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getConnectorSyncSettings.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/by-inbox-id`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      OptionalConnectorDtoFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Find an inbox connector by inbox ID
+   * Get connector by inbox ID
+   */
+  async getConnectorByInboxId(
+    requestParameters: GetConnectorByInboxIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<OptionalConnectorDto> {
+    const response = await this.getConnectorByInboxIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/sync-settings`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OptionalConnectorSyncSettingsDtoFromJSON(jsonValue));
+  /**
+   * Find an inbox connector by name
+   * Get connector by name
+   */
+  async getConnectorByNameRaw(
+    requestParameters: GetConnectorByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<OptionalConnectorDto>> {
+    if (
+      requestParameters.name === null ||
+      requestParameters.name === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'name',
+        'Required parameter requestParameters.name was null or undefined when calling getConnectorByName.'
+      );
     }
 
-    /**
-     * Get sync settings for connection with external inbox
-     * Get an inbox connector sync settings
-     */
-    async getConnectorSyncSettings(requestParameters: GetConnectorSyncSettingsRequest, initOverrides?: RequestInit): Promise<OptionalConnectorSyncSettingsDto> {
-        const response = await this.getConnectorSyncSettingsRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    if (requestParameters.name !== undefined) {
+      queryParameters['name'] = requestParameters.name;
     }
 
-    /**
-     * List inbox connectors that sync external emails to MailSlurp inboxes
-     * Get inbox connectors
-     */
-    async getConnectorsRaw(requestParameters: GetConnectorsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageConnector>> {
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
-
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageConnectorFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * List inbox connectors that sync external emails to MailSlurp inboxes
-     * Get inbox connectors
-     */
-    async getConnectors(requestParameters: GetConnectorsRequest, initOverrides?: RequestInit): Promise<PageConnector> {
-        const response = await this.getConnectorsRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/connectors/by-name`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      OptionalConnectorDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Find an inbox connector by name
+   * Get connector by name
+   */
+  async getConnectorByName(
+    requestParameters: GetConnectorByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<OptionalConnectorDto> {
+    const response = await this.getConnectorByNameRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get an inbox connector event
+   */
+  async getConnectorEventRaw(
+    requestParameters: GetConnectorEventRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorEventDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getConnectorEvent.'
+      );
     }
 
-    /**
-     * Send from an inbox connector
-     */
-    async sendEmailFromConnectorRaw(requestParameters: SendEmailFromConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling sendEmailFromConnector.');
-        }
+    const queryParameters: any = {};
 
-        if (requestParameters.sendEmailOptions === null || requestParameters.sendEmailOptions === undefined) {
-            throw new runtime.RequiredError('sendEmailOptions','Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailFromConnector.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
-
-        if (requestParameters.useFallback !== undefined) {
-            queryParameters['useFallback'] = requestParameters.useFallback;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/send`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => SentEmailDtoFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Send from an inbox connector
-     */
-    async sendEmailFromConnector(requestParameters: SendEmailFromConnectorRequest, initOverrides?: RequestInit): Promise<SentEmailDto> {
-        const response = await this.sendEmailFromConnectorRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/connectors/events/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorEventDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get an inbox connector event
+   */
+  async getConnectorEvent(
+    requestParameters: GetConnectorEventRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorEventDto> {
+    const response = await this.getConnectorEventRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get an inbox connector events
+   */
+  async getConnectorEventsRaw(
+    requestParameters: GetConnectorEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageConnectorEvents>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getConnectorEvents.'
+      );
     }
 
-    /**
-     * Sync an inbox connector
-     */
-    async syncConnectorRaw(requestParameters: SyncConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSyncRequestResult>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling syncConnector.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.folder !== undefined) {
-            queryParameters['folder'] = requestParameters.folder;
-        }
-
-        if (requestParameters.logging !== undefined) {
-            queryParameters['logging'] = requestParameters.logging;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/sync`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorSyncRequestResultFromJSON(jsonValue));
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Sync an inbox connector
-     */
-    async syncConnector(requestParameters: SyncConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorSyncRequestResult> {
-        const response = await this.syncConnectorRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
-    /**
-     * Test the IMAP connection for a connector
-     * Test an inbox connector IMAP connection
-     */
-    async testConnectorImapConnectionRaw(requestParameters: TestConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorImapConnectionTestResult>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling testConnectorImapConnection.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/imap/test`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorImapConnectionOptionsToJSON(requestParameters.createConnectorImapConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorImapConnectionTestResultFromJSON(jsonValue));
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
     }
 
-    /**
-     * Test the IMAP connection for a connector
-     * Test an inbox connector IMAP connection
-     */
-    async testConnectorImapConnection(requestParameters: TestConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorImapConnectionTestResult> {
-        const response = await this.testConnectorImapConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
 
-    /**
-     * Test the IMAP connection options for a connector
-     * Test an inbox connector IMAP connection options
-     */
-    async testConnectorImapConnectionOptionsRaw(requestParameters: TestConnectorImapConnectionOptionsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorImapConnectionTestResult>> {
-        if (requestParameters.createConnectorImapConnectionOptions === null || requestParameters.createConnectorImapConnectionOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorImapConnectionOptions','Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling testConnectorImapConnectionOptions.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/connections/imap/test`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorImapConnectionOptionsToJSON(requestParameters.createConnectorImapConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorImapConnectionTestResultFromJSON(jsonValue));
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
     }
 
-    /**
-     * Test the IMAP connection options for a connector
-     * Test an inbox connector IMAP connection options
-     */
-    async testConnectorImapConnectionOptions(requestParameters: TestConnectorImapConnectionOptionsRequest, initOverrides?: RequestInit): Promise<ConnectorImapConnectionTestResult> {
-        const response = await this.testConnectorImapConnectionOptionsRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.eventType !== undefined) {
+      queryParameters['eventType'] = requestParameters.eventType;
     }
 
-    /**
-     * Test the SMTP connection for a connector
-     * Test an inbox connector SMTP connection
-     */
-    async testConnectorSmtpConnectionRaw(requestParameters: TestConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSmtpConnectionTestResult>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling testConnectorSmtpConnection.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/smtp/test`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorSmtpConnectionOptionsToJSON(requestParameters.createConnectorSmtpConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorSmtpConnectionTestResultFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Test the SMTP connection for a connector
-     * Test an inbox connector SMTP connection
-     */
-    async testConnectorSmtpConnection(requestParameters: TestConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorSmtpConnectionTestResult> {
-        const response = await this.testConnectorSmtpConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/events`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageConnectorEventsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get an inbox connector events
+   */
+  async getConnectorEvents(
+    requestParameters: GetConnectorEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageConnectorEvents> {
+    const response = await this.getConnectorEventsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get IMAP connection for external inbox
+   * Get an inbox connector IMAP connection
+   */
+  async getConnectorImapConnectionRaw(
+    requestParameters: GetConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<OptionalConnectorImapConnectionDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getConnectorImapConnection.'
+      );
     }
 
-    /**
-     * Test the SMTP connection options for a connector
-     * Test an inbox connector SMTP connection options
-     */
-    async testConnectorSmtpConnectionOptionsRaw(requestParameters: TestConnectorSmtpConnectionOptionsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSmtpConnectionTestResult>> {
-        if (requestParameters.createConnectorSmtpConnectionOptions === null || requestParameters.createConnectorSmtpConnectionOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorSmtpConnectionOptions','Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling testConnectorSmtpConnectionOptions.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/connections/smtp/test`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorSmtpConnectionOptionsToJSON(requestParameters.createConnectorSmtpConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorSmtpConnectionTestResultFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Test the SMTP connection options for a connector
-     * Test an inbox connector SMTP connection options
-     */
-    async testConnectorSmtpConnectionOptions(requestParameters: TestConnectorSmtpConnectionOptionsRequest, initOverrides?: RequestInit): Promise<ConnectorSmtpConnectionTestResult> {
-        const response = await this.testConnectorSmtpConnectionOptionsRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/imap`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      OptionalConnectorImapConnectionDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get IMAP connection for external inbox
+   * Get an inbox connector IMAP connection
+   */
+  async getConnectorImapConnection(
+    requestParameters: GetConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<OptionalConnectorImapConnectionDto> {
+    const response = await this.getConnectorImapConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get common mail provider SMTP and IMAP connection settings
+   * Get SMTP and IMAP connection settings for common mail providers
+   */
+  async getConnectorProviderSettingsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorProviderSettingsDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Update an inbox connector
-     */
-    async updateConnectorRaw(requestParameters: UpdateConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling updateConnector.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/provider-settings`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        if (requestParameters.createConnectorOptions === null || requestParameters.createConnectorOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorOptions','Required parameter requestParameters.createConnectorOptions was null or undefined when calling updateConnector.');
-        }
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorProviderSettingsDtoFromJSON(jsonValue)
+    );
+  }
 
-        const queryParameters: any = {};
+  /**
+   * Get common mail provider SMTP and IMAP connection settings
+   * Get SMTP and IMAP connection settings for common mail providers
+   */
+  async getConnectorProviderSettings(
+    initOverrides?: RequestInit
+  ): Promise<ConnectorProviderSettingsDto> {
+    const response = await this.getConnectorProviderSettingsRaw(initOverrides);
+    return await response.value();
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorOptionsToJSON(requestParameters.createConnectorOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorDtoFromJSON(jsonValue));
+  /**
+   * Get SMTP connection for external inbox
+   * Get an inbox connector SMTP connection
+   */
+  async getConnectorSmtpConnectionRaw(
+    requestParameters: GetConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<OptionalConnectorSmtpConnectionDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getConnectorSmtpConnection.'
+      );
     }
 
-    /**
-     * Update an inbox connector
-     */
-    async updateConnector(requestParameters: UpdateConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorDto> {
-        const response = await this.updateConnectorRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Update IMAP connection for external inbox
-     * Update an inbox connector IMAP connection
-     */
-    async updateConnectorImapConnectionRaw(requestParameters: UpdateConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorImapConnectionDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling updateConnectorImapConnection.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/smtp`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        if (requestParameters.createConnectorImapConnectionOptions === null || requestParameters.createConnectorImapConnectionOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorImapConnectionOptions','Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling updateConnectorImapConnection.');
-        }
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      OptionalConnectorSmtpConnectionDtoFromJSON(jsonValue)
+    );
+  }
 
-        const queryParameters: any = {};
+  /**
+   * Get SMTP connection for external inbox
+   * Get an inbox connector SMTP connection
+   */
+  async getConnectorSmtpConnection(
+    requestParameters: GetConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<OptionalConnectorSmtpConnectionDto> {
+    const response = await this.getConnectorSmtpConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/imap`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorImapConnectionOptionsToJSON(requestParameters.createConnectorImapConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorImapConnectionDtoFromJSON(jsonValue));
+  /**
+   * Get sync settings for connection with external inbox
+   * Get an inbox connector sync settings
+   */
+  async getConnectorSyncSettingsRaw(
+    requestParameters: GetConnectorSyncSettingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<OptionalConnectorSyncSettingsDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getConnectorSyncSettings.'
+      );
     }
 
-    /**
-     * Update IMAP connection for external inbox
-     * Update an inbox connector IMAP connection
-     */
-    async updateConnectorImapConnection(requestParameters: UpdateConnectorImapConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorImapConnectionDto> {
-        const response = await this.updateConnectorImapConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Update SMTP connection for external inbox
-     * Update an inbox connector SMTP connection
-     */
-    async updateConnectorSmtpConnectionRaw(requestParameters: UpdateConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConnectorSmtpConnectionDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling updateConnectorSmtpConnection.');
-        }
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/sync-settings`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        if (requestParameters.createConnectorSmtpConnectionOptions === null || requestParameters.createConnectorSmtpConnectionOptions === undefined) {
-            throw new runtime.RequiredError('createConnectorSmtpConnectionOptions','Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling updateConnectorSmtpConnection.');
-        }
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      OptionalConnectorSyncSettingsDtoFromJSON(jsonValue)
+    );
+  }
 
-        const queryParameters: any = {};
+  /**
+   * Get sync settings for connection with external inbox
+   * Get an inbox connector sync settings
+   */
+  async getConnectorSyncSettings(
+    requestParameters: GetConnectorSyncSettingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<OptionalConnectorSyncSettingsDto> {
+    const response = await this.getConnectorSyncSettingsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * List inbox connectors that sync external emails to MailSlurp inboxes
+   * Get inbox connectors
+   */
+  async getConnectorsRaw(
+    requestParameters: GetConnectorsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageConnector>> {
+    const queryParameters: any = {};
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/connectors/{id}/smtp`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateConnectorSmtpConnectionOptionsToJSON(requestParameters.createConnectorSmtpConnectionOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ConnectorSmtpConnectionDtoFromJSON(jsonValue));
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Update SMTP connection for external inbox
-     * Update an inbox connector SMTP connection
-     */
-    async updateConnectorSmtpConnection(requestParameters: UpdateConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorSmtpConnectionDto> {
-        const response = await this.updateConnectorSmtpConnectionRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageConnectorFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List inbox connectors that sync external emails to MailSlurp inboxes
+   * Get inbox connectors
+   */
+  async getConnectors(
+    requestParameters: GetConnectorsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageConnector> {
+    const response = await this.getConnectorsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Send from an inbox connector
+   */
+  async sendEmailFromConnectorRaw(
+    requestParameters: SendEmailFromConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentEmailDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling sendEmailFromConnector.'
+      );
+    }
+
+    if (
+      requestParameters.sendEmailOptions === null ||
+      requestParameters.sendEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendEmailOptions',
+        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailFromConnector.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.useFallback !== undefined) {
+      queryParameters['useFallback'] = requestParameters.useFallback;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/send`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Send from an inbox connector
+   */
+  async sendEmailFromConnector(
+    requestParameters: SendEmailFromConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<SentEmailDto> {
+    const response = await this.sendEmailFromConnectorRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Sync an inbox connector
+   */
+  async syncConnectorRaw(
+    requestParameters: SyncConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorSyncRequestResult>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling syncConnector.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.folder !== undefined) {
+      queryParameters['folder'] = requestParameters.folder;
+    }
+
+    if (requestParameters.logging !== undefined) {
+      queryParameters['logging'] = requestParameters.logging;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/sync`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorSyncRequestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Sync an inbox connector
+   */
+  async syncConnector(
+    requestParameters: SyncConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorSyncRequestResult> {
+    const response = await this.syncConnectorRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test the IMAP connection for a connector
+   * Test an inbox connector IMAP connection
+   */
+  async testConnectorImapConnectionRaw(
+    requestParameters: TestConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorImapConnectionTestResult>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling testConnectorImapConnection.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/imap/test`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorImapConnectionOptionsToJSON(
+          requestParameters.createConnectorImapConnectionOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorImapConnectionTestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test the IMAP connection for a connector
+   * Test an inbox connector IMAP connection
+   */
+  async testConnectorImapConnection(
+    requestParameters: TestConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorImapConnectionTestResult> {
+    const response = await this.testConnectorImapConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test the IMAP connection options for a connector
+   * Test an inbox connector IMAP connection options
+   */
+  async testConnectorImapConnectionOptionsRaw(
+    requestParameters: TestConnectorImapConnectionOptionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorImapConnectionTestResult>> {
+    if (
+      requestParameters.createConnectorImapConnectionOptions === null ||
+      requestParameters.createConnectorImapConnectionOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorImapConnectionOptions',
+        'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling testConnectorImapConnectionOptions.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/connections/imap/test`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorImapConnectionOptionsToJSON(
+          requestParameters.createConnectorImapConnectionOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorImapConnectionTestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test the IMAP connection options for a connector
+   * Test an inbox connector IMAP connection options
+   */
+  async testConnectorImapConnectionOptions(
+    requestParameters: TestConnectorImapConnectionOptionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorImapConnectionTestResult> {
+    const response = await this.testConnectorImapConnectionOptionsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test the SMTP connection for a connector
+   * Test an inbox connector SMTP connection
+   */
+  async testConnectorSmtpConnectionRaw(
+    requestParameters: TestConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorSmtpConnectionTestResult>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling testConnectorSmtpConnection.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/smtp/test`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorSmtpConnectionOptionsToJSON(
+          requestParameters.createConnectorSmtpConnectionOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorSmtpConnectionTestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test the SMTP connection for a connector
+   * Test an inbox connector SMTP connection
+   */
+  async testConnectorSmtpConnection(
+    requestParameters: TestConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorSmtpConnectionTestResult> {
+    const response = await this.testConnectorSmtpConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test the SMTP connection options for a connector
+   * Test an inbox connector SMTP connection options
+   */
+  async testConnectorSmtpConnectionOptionsRaw(
+    requestParameters: TestConnectorSmtpConnectionOptionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorSmtpConnectionTestResult>> {
+    if (
+      requestParameters.createConnectorSmtpConnectionOptions === null ||
+      requestParameters.createConnectorSmtpConnectionOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorSmtpConnectionOptions',
+        'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling testConnectorSmtpConnectionOptions.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/connections/smtp/test`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorSmtpConnectionOptionsToJSON(
+          requestParameters.createConnectorSmtpConnectionOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorSmtpConnectionTestResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test the SMTP connection options for a connector
+   * Test an inbox connector SMTP connection options
+   */
+  async testConnectorSmtpConnectionOptions(
+    requestParameters: TestConnectorSmtpConnectionOptionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorSmtpConnectionTestResult> {
+    const response = await this.testConnectorSmtpConnectionOptionsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update an inbox connector
+   */
+  async updateConnectorRaw(
+    requestParameters: UpdateConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling updateConnector.'
+      );
+    }
+
+    if (
+      requestParameters.createConnectorOptions === null ||
+      requestParameters.createConnectorOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorOptions',
+        'Required parameter requestParameters.createConnectorOptions was null or undefined when calling updateConnector.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorOptionsToJSON(
+          requestParameters.createConnectorOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update an inbox connector
+   */
+  async updateConnector(
+    requestParameters: UpdateConnectorRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorDto> {
+    const response = await this.updateConnectorRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update IMAP connection for external inbox
+   * Update an inbox connector IMAP connection
+   */
+  async updateConnectorImapConnectionRaw(
+    requestParameters: UpdateConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorImapConnectionDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling updateConnectorImapConnection.'
+      );
+    }
+
+    if (
+      requestParameters.createConnectorImapConnectionOptions === null ||
+      requestParameters.createConnectorImapConnectionOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorImapConnectionOptions',
+        'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling updateConnectorImapConnection.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/imap`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorImapConnectionOptionsToJSON(
+          requestParameters.createConnectorImapConnectionOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorImapConnectionDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update IMAP connection for external inbox
+   * Update an inbox connector IMAP connection
+   */
+  async updateConnectorImapConnection(
+    requestParameters: UpdateConnectorImapConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorImapConnectionDto> {
+    const response = await this.updateConnectorImapConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update SMTP connection for external inbox
+   * Update an inbox connector SMTP connection
+   */
+  async updateConnectorSmtpConnectionRaw(
+    requestParameters: UpdateConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ConnectorSmtpConnectionDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling updateConnectorSmtpConnection.'
+      );
+    }
+
+    if (
+      requestParameters.createConnectorSmtpConnectionOptions === null ||
+      requestParameters.createConnectorSmtpConnectionOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createConnectorSmtpConnectionOptions',
+        'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling updateConnectorSmtpConnection.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors/{id}/smtp`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateConnectorSmtpConnectionOptionsToJSON(
+          requestParameters.createConnectorSmtpConnectionOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ConnectorSmtpConnectionDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update SMTP connection for external inbox
+   * Update an inbox connector SMTP connection
+   */
+  async updateConnectorSmtpConnection(
+    requestParameters: UpdateConnectorSmtpConnectionRequest,
+    initOverrides?: RequestInit
+  ): Promise<ConnectorSmtpConnectionDto> {
+    const response = await this.updateConnectorSmtpConnectionRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetAllConnectorEventsSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetAllConnectorEventsEventTypeEnum {
-    SEND = 'SEND',
-    SYNC = 'SYNC'
+  SEND = 'SEND',
+  SYNC = 'SYNC',
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetConnectorEventsSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetConnectorEventsEventTypeEnum {
-    SEND = 'SEND',
-    SYNC = 'SYNC'
+  SEND = 'SEND',
+  SYNC = 'SYNC',
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetConnectorsSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

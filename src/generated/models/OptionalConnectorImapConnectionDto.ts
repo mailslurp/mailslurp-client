@@ -14,59 +14,64 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    ConnectorImapConnectionDto,
-    ConnectorImapConnectionDtoFromJSON,
-    ConnectorImapConnectionDtoFromJSONTyped,
-    ConnectorImapConnectionDtoToJSON,
+  ConnectorImapConnectionDto,
+  ConnectorImapConnectionDtoFromJSON,
+  ConnectorImapConnectionDtoFromJSONTyped,
+  ConnectorImapConnectionDtoToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface OptionalConnectorImapConnectionDto
  */
 export interface OptionalConnectorImapConnectionDto {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof OptionalConnectorImapConnectionDto
-     */
-    present: boolean;
-    /**
-     * 
-     * @type {ConnectorImapConnectionDto}
-     * @memberof OptionalConnectorImapConnectionDto
-     */
-    result?: ConnectorImapConnectionDto;
+  /**
+   *
+   * @type {boolean}
+   * @memberof OptionalConnectorImapConnectionDto
+   */
+  present: boolean;
+  /**
+   *
+   * @type {ConnectorImapConnectionDto}
+   * @memberof OptionalConnectorImapConnectionDto
+   */
+  result?: ConnectorImapConnectionDto;
 }
 
-export function OptionalConnectorImapConnectionDtoFromJSON(json: any): OptionalConnectorImapConnectionDto {
-    return OptionalConnectorImapConnectionDtoFromJSONTyped(json, false);
+export function OptionalConnectorImapConnectionDtoFromJSON(
+  json: any
+): OptionalConnectorImapConnectionDto {
+  return OptionalConnectorImapConnectionDtoFromJSONTyped(json, false);
 }
 
-export function OptionalConnectorImapConnectionDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptionalConnectorImapConnectionDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'present': json['present'],
-        'result': !exists(json, 'result') ? undefined : ConnectorImapConnectionDtoFromJSON(json['result']),
-    };
+export function OptionalConnectorImapConnectionDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): OptionalConnectorImapConnectionDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    present: json['present'],
+    result: !exists(json, 'result')
+      ? undefined
+      : ConnectorImapConnectionDtoFromJSON(json['result']),
+  };
 }
 
-export function OptionalConnectorImapConnectionDtoToJSON(value?: OptionalConnectorImapConnectionDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'present': value.present,
-        'result': ConnectorImapConnectionDtoToJSON(value.result),
-    };
+export function OptionalConnectorImapConnectionDtoToJSON(
+  value?: OptionalConnectorImapConnectionDto | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    present: value.present,
+    result: ConnectorImapConnectionDtoToJSON(value.result),
+  };
 }
-
-

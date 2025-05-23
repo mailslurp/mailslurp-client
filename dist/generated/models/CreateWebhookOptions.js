@@ -17,9 +17,9 @@ exports.CreateWebhookOptionsToJSON = exports.CreateWebhookOptionsFromJSONTyped =
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateWebhookOptionsEventNameEnum;
 (function (CreateWebhookOptionsEventNameEnum) {
     CreateWebhookOptionsEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -39,19 +39,29 @@ function CreateWebhookOptionsFromJSON(json) {
 }
 exports.CreateWebhookOptionsFromJSON = CreateWebhookOptionsFromJSON;
 function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'url': json['url'],
-        'basicAuth': !(0, runtime_1.exists)(json, 'basicAuth') ? undefined : (0, _1.BasicAuthOptionsFromJSON)(json['basicAuth']),
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'eventName': !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        'includeHeaders': !(0, runtime_1.exists)(json, 'includeHeaders') ? undefined : (0, _1.WebhookHeadersFromJSON)(json['includeHeaders']),
-        'requestBodyTemplate': !(0, runtime_1.exists)(json, 'requestBodyTemplate') ? undefined : json['requestBodyTemplate'],
-        'useStaticIpRange': !(0, runtime_1.exists)(json, 'useStaticIpRange') ? undefined : json['useStaticIpRange'],
-        'ignoreInsecureSslCertificates': !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates') ? undefined : json['ignoreInsecureSslCertificates'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        url: json['url'],
+        basicAuth: !(0, runtime_1.exists)(json, 'basicAuth')
+            ? undefined
+            : (0, _1.BasicAuthOptionsFromJSON)(json['basicAuth']),
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        includeHeaders: !(0, runtime_1.exists)(json, 'includeHeaders')
+            ? undefined
+            : (0, _1.WebhookHeadersFromJSON)(json['includeHeaders']),
+        requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
+            ? undefined
+            : json['requestBodyTemplate'],
+        useStaticIpRange: !(0, runtime_1.exists)(json, 'useStaticIpRange')
+            ? undefined
+            : json['useStaticIpRange'],
+        ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
+            ? undefined
+            : json['ignoreInsecureSslCertificates'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
     };
 }
 exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
@@ -63,15 +73,15 @@ function CreateWebhookOptionsToJSON(value) {
         return null;
     }
     return {
-        'url': value.url,
-        'basicAuth': (0, _1.BasicAuthOptionsToJSON)(value.basicAuth),
-        'name': value.name,
-        'eventName': value.eventName,
-        'includeHeaders': (0, _1.WebhookHeadersToJSON)(value.includeHeaders),
-        'requestBodyTemplate': value.requestBodyTemplate,
-        'useStaticIpRange': value.useStaticIpRange,
-        'ignoreInsecureSslCertificates': value.ignoreInsecureSslCertificates,
-        'tags': value.tags,
+        url: value.url,
+        basicAuth: (0, _1.BasicAuthOptionsToJSON)(value.basicAuth),
+        name: value.name,
+        eventName: value.eventName,
+        includeHeaders: (0, _1.WebhookHeadersToJSON)(value.includeHeaders),
+        requestBodyTemplate: value.requestBodyTemplate,
+        useStaticIpRange: value.useStaticIpRange,
+        ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
+        tags: value.tags,
     };
 }
 exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;

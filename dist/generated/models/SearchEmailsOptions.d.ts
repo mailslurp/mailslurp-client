@@ -65,9 +65,9 @@ export interface SearchEmailsOptions {
     before?: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum SearchEmailsOptionsSortDirectionEnum {
     ASC = "ASC",
     DESC = "DESC"

@@ -108,14 +108,15 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateStructuredContentEmailOptions === null || requestParameters.generateStructuredContentEmailOptions === undefined) {
+                        if (requestParameters.generateStructuredContentEmailOptions === null ||
+                            requestParameters.generateStructuredContentEmailOptions === undefined) {
                             throw new runtime.RequiredError('generateStructuredContentEmailOptions', 'Required parameter requestParameters.generateStructuredContentEmailOptions was null or undefined when calling generateStructuredContentFromEmail.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/structured-content/email",
@@ -126,7 +127,9 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.StructuredContentResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.StructuredContentResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -141,6 +144,60 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.generateStructuredContentFromEmailRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Check if a schema is valid and can be used to extract data using AI
+     * Validate structured content schema
+     */
+    AIControllerApi.prototype.validateStructuredOutputSchemaRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.structuredOutputSchema === null ||
+                            requestParameters.structuredOutputSchema === undefined) {
+                            throw new runtime.RequiredError('structuredOutputSchema', 'Required parameter requestParameters.structuredOutputSchema was null or undefined when calling validateStructuredOutputSchema.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/structured-content/validate",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.StructuredOutputSchemaToJSON)(requestParameters.structuredOutputSchema),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.StructuredOutputSchemaValidationFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Check if a schema is valid and can be used to extract data using AI
+     * Validate structured content schema
+     */
+    AIControllerApi.prototype.validateStructuredOutputSchema = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.validateStructuredOutputSchemaRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

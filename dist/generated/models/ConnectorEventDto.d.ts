@@ -71,19 +71,20 @@ export interface ConnectorEventDto {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum ConnectorEventDtoStatusEnum {
     SUCCESS = "SUCCESS",
     INTERNAL_ERROR = "INTERNAL_ERROR",
     SUBSCRIPTION_ERROR = "SUBSCRIPTION_ERROR",
     CONNECTION_ERROR = "CONNECTION_ERROR",
     NOT_FOUND = "NOT_FOUND"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum ConnectorEventDtoEventTypeEnum {
     SEND = "SEND",
     SYNC = "SYNC"

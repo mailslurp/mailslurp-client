@@ -14,80 +14,84 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface PhonePlanAvailabilityItem
  */
 export interface PhonePlanAvailabilityItem {
-    /**
-     * 
-     * @type {string}
-     * @memberof PhonePlanAvailabilityItem
-     */
-    phoneCountry: PhonePlanAvailabilityItemPhoneCountryEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof PhonePlanAvailabilityItem
-     */
-    availabilityStatus: PhonePlanAvailabilityItemAvailabilityStatusEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PhonePlanAvailabilityItem
+   */
+  phoneCountry: PhonePlanAvailabilityItemPhoneCountryEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PhonePlanAvailabilityItem
+   */
+  availabilityStatus: PhonePlanAvailabilityItemAvailabilityStatusEnum;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum PhonePlanAvailabilityItemPhoneCountryEnum {
-    US = 'US',
-    GB = 'GB',
-    AU = 'AU',
-    CA = 'CA',
-    EE = 'EE',
-    HK = 'HK',
-    PL = 'PL',
-    CH = 'CH',
-    PT = 'PT',
-    NL = 'NL',
-    IL = 'IL',
-    SE = 'SE'
-}/**
-* @export
-* @enum {string}
-*/
+  US = 'US',
+  GB = 'GB',
+  AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  CH = 'CH',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  SE = 'SE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum PhonePlanAvailabilityItemAvailabilityStatusEnum {
-    AVAILABLE = 'AVAILABLE',
-    NON_MATCHING_SUBSCRIPTION_CURRENCY = 'NON_MATCHING_SUBSCRIPTION_CURRENCY',
-    NON_MATCHING_SUBSCRIPTION_TYPE = 'NON_MATCHING_SUBSCRIPTION_TYPE',
-    ALREADY_ASSIGNED = 'ALREADY_ASSIGNED'
+  AVAILABLE = 'AVAILABLE',
+  NON_MATCHING_SUBSCRIPTION_CURRENCY = 'NON_MATCHING_SUBSCRIPTION_CURRENCY',
+  NON_MATCHING_SUBSCRIPTION_TYPE = 'NON_MATCHING_SUBSCRIPTION_TYPE',
+  ALREADY_ASSIGNED = 'ALREADY_ASSIGNED',
 }
 
-export function PhonePlanAvailabilityItemFromJSON(json: any): PhonePlanAvailabilityItem {
-    return PhonePlanAvailabilityItemFromJSONTyped(json, false);
+export function PhonePlanAvailabilityItemFromJSON(
+  json: any
+): PhonePlanAvailabilityItem {
+  return PhonePlanAvailabilityItemFromJSONTyped(json, false);
 }
 
-export function PhonePlanAvailabilityItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanAvailabilityItem {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'phoneCountry': json['phoneCountry'],
-        'availabilityStatus': json['availabilityStatus'],
-    };
+export function PhonePlanAvailabilityItemFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PhonePlanAvailabilityItem {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    phoneCountry: json['phoneCountry'],
+    availabilityStatus: json['availabilityStatus'],
+  };
 }
 
-export function PhonePlanAvailabilityItemToJSON(value?: PhonePlanAvailabilityItem | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'phoneCountry': value.phoneCountry,
-        'availabilityStatus': value.availabilityStatus,
-    };
+export function PhonePlanAvailabilityItemToJSON(
+  value?: PhonePlanAvailabilityItem | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    phoneCountry: value.phoneCountry,
+    availabilityStatus: value.availabilityStatus,
+  };
 }
-
-

@@ -19,39 +19,42 @@ import { exists, mapValues } from '../runtime';
  * @interface SetInboxFavouritedOptions
  */
 export interface SetInboxFavouritedOptions {
-    /**
-     * Is the inbox a favorite. Marking an inbox as a favorite is typically done in the dashboard for quick access or filtering
-     * @type {boolean}
-     * @memberof SetInboxFavouritedOptions
-     */
-    state: boolean;
+  /**
+   * Is the inbox a favorite. Marking an inbox as a favorite is typically done in the dashboard for quick access or filtering
+   * @type {boolean}
+   * @memberof SetInboxFavouritedOptions
+   */
+  state: boolean;
 }
 
-export function SetInboxFavouritedOptionsFromJSON(json: any): SetInboxFavouritedOptions {
-    return SetInboxFavouritedOptionsFromJSONTyped(json, false);
+export function SetInboxFavouritedOptionsFromJSON(
+  json: any
+): SetInboxFavouritedOptions {
+  return SetInboxFavouritedOptionsFromJSONTyped(json, false);
 }
 
-export function SetInboxFavouritedOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SetInboxFavouritedOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'state': json['state'],
-    };
+export function SetInboxFavouritedOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): SetInboxFavouritedOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    state: json['state'],
+  };
 }
 
-export function SetInboxFavouritedOptionsToJSON(value?: SetInboxFavouritedOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'state': value.state,
-    };
+export function SetInboxFavouritedOptionsToJSON(
+  value?: SetInboxFavouritedOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    state: value.state,
+  };
 }
-
-

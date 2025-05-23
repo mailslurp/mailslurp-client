@@ -19,47 +19,50 @@ import { exists, mapValues } from '../runtime';
  * @interface EmailContentMatchResult
  */
 export interface EmailContentMatchResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailContentMatchResult
-     */
-    pattern: string;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailContentMatchResult
-     */
-    matches: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailContentMatchResult
+   */
+  pattern: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailContentMatchResult
+   */
+  matches: Array<string>;
 }
 
-export function EmailContentMatchResultFromJSON(json: any): EmailContentMatchResult {
-    return EmailContentMatchResultFromJSONTyped(json, false);
+export function EmailContentMatchResultFromJSON(
+  json: any
+): EmailContentMatchResult {
+  return EmailContentMatchResultFromJSONTyped(json, false);
 }
 
-export function EmailContentMatchResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailContentMatchResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'pattern': json['pattern'],
-        'matches': json['matches'],
-    };
+export function EmailContentMatchResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailContentMatchResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    pattern: json['pattern'],
+    matches: json['matches'],
+  };
 }
 
-export function EmailContentMatchResultToJSON(value?: EmailContentMatchResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'pattern': value.pattern,
-        'matches': value.matches,
-    };
+export function EmailContentMatchResultToJSON(
+  value?: EmailContentMatchResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    pattern: value.pattern,
+    matches: value.matches,
+  };
 }
-
-

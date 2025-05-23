@@ -19,71 +19,74 @@ import { exists, mapValues } from '../runtime';
  * @interface UnknownMissedEmailProjection
  */
 export interface UnknownMissedEmailProjection {
-    /**
-     * 
-     * @type {Date}
-     * @memberof UnknownMissedEmailProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof UnknownMissedEmailProjection
-     */
-    to?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
-    subject?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
-    from?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof UnknownMissedEmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof UnknownMissedEmailProjection
+   */
+  to?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof UnknownMissedEmailProjection
+   */
+  subject?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof UnknownMissedEmailProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof UnknownMissedEmailProjection
+   */
+  from?: string;
 }
 
-export function UnknownMissedEmailProjectionFromJSON(json: any): UnknownMissedEmailProjection {
-    return UnknownMissedEmailProjectionFromJSONTyped(json, false);
+export function UnknownMissedEmailProjectionFromJSON(
+  json: any
+): UnknownMissedEmailProjection {
+  return UnknownMissedEmailProjectionFromJSONTyped(json, false);
 }
 
-export function UnknownMissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnknownMissedEmailProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'createdAt': (new Date(json['createdAt'])),
-        'to': !exists(json, 'to') ? undefined : json['to'],
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'id': json['id'],
-        'from': !exists(json, 'from') ? undefined : json['from'],
-    };
+export function UnknownMissedEmailProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): UnknownMissedEmailProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    createdAt: new Date(json['createdAt']),
+    to: !exists(json, 'to') ? undefined : json['to'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    id: json['id'],
+    from: !exists(json, 'from') ? undefined : json['from'],
+  };
 }
 
-export function UnknownMissedEmailProjectionToJSON(value?: UnknownMissedEmailProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'createdAt': (value.createdAt.toISOString()),
-        'to': value.to,
-        'subject': value.subject,
-        'id': value.id,
-        'from': value.from,
-    };
+export function UnknownMissedEmailProjectionToJSON(
+  value?: UnknownMissedEmailProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    createdAt: value.createdAt.toISOString(),
+    to: value.to,
+    subject: value.subject,
+    id: value.id,
+    from: value.from,
+  };
 }
-
-

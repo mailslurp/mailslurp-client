@@ -19,113 +19,116 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookNewAttachmentPayload
  */
 export interface WebhookNewAttachmentPayload {
-    /**
-     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-     * @type {string}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    messageId: string;
-    /**
-     * ID of webhook entity being triggered
-     * @type {string}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    webhookId: string;
-    /**
-     * Name of the webhook being triggered
-     * @type {string}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    webhookName?: string | null;
-    /**
-     * Name of the event type webhook is being triggered for.
-     * @type {string}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    eventName: WebhookNewAttachmentPayloadEventNameEnum;
-    /**
-     * ID of attachment. Use the `AttachmentController` to
-     * @type {string}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    attachmentId: string;
-    /**
-     * Filename of the attachment if present
-     * @type {string}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    name: string;
-    /**
-     * Content type of attachment such as 'image/png' or 'application/pdf
-     * @type {string}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    contentType: string;
-    /**
-     * Size of attachment in bytes
-     * @type {number}
-     * @memberof WebhookNewAttachmentPayload
-     */
-    contentLength: number;
+  /**
+   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+   * @type {string}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  messageId: string;
+  /**
+   * ID of webhook entity being triggered
+   * @type {string}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  webhookId: string;
+  /**
+   * Name of the webhook being triggered
+   * @type {string}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  webhookName?: string | null;
+  /**
+   * Name of the event type webhook is being triggered for.
+   * @type {string}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  eventName: WebhookNewAttachmentPayloadEventNameEnum;
+  /**
+   * ID of attachment. Use the `AttachmentController` to
+   * @type {string}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  attachmentId: string;
+  /**
+   * Filename of the attachment if present
+   * @type {string}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  name: string;
+  /**
+   * Content type of attachment such as 'image/png' or 'application/pdf
+   * @type {string}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  contentType: string;
+  /**
+   * Size of attachment in bytes
+   * @type {number}
+   * @memberof WebhookNewAttachmentPayload
+   */
+  contentLength: number;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WebhookNewAttachmentPayloadEventNameEnum {
-    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-    NEW_EMAIL = 'NEW_EMAIL',
-    NEW_CONTACT = 'NEW_CONTACT',
-    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-    EMAIL_OPENED = 'EMAIL_OPENED',
-    EMAIL_READ = 'EMAIL_READ',
-    DELIVERY_STATUS = 'DELIVERY_STATUS',
-    BOUNCE = 'BOUNCE',
-    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-    NEW_SMS = 'NEW_SMS',
-    NEW_GUEST_USER = 'NEW_GUEST_USER'
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 
-export function WebhookNewAttachmentPayloadFromJSON(json: any): WebhookNewAttachmentPayload {
-    return WebhookNewAttachmentPayloadFromJSONTyped(json, false);
+export function WebhookNewAttachmentPayloadFromJSON(
+  json: any
+): WebhookNewAttachmentPayload {
+  return WebhookNewAttachmentPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookNewAttachmentPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookNewAttachmentPayload {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'webhookName': !exists(json, 'webhookName') ? undefined : json['webhookName'],
-        'eventName': json['eventName'],
-        'attachmentId': json['attachmentId'],
-        'name': json['name'],
-        'contentType': json['contentType'],
-        'contentLength': json['contentLength'],
-    };
+export function WebhookNewAttachmentPayloadFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookNewAttachmentPayload {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    messageId: json['messageId'],
+    webhookId: json['webhookId'],
+    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
+    eventName: json['eventName'],
+    attachmentId: json['attachmentId'],
+    name: json['name'],
+    contentType: json['contentType'],
+    contentLength: json['contentLength'],
+  };
 }
 
-export function WebhookNewAttachmentPayloadToJSON(value?: WebhookNewAttachmentPayload | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'webhookName': value.webhookName,
-        'eventName': value.eventName,
-        'attachmentId': value.attachmentId,
-        'name': value.name,
-        'contentType': value.contentType,
-        'contentLength': value.contentLength,
-    };
+export function WebhookNewAttachmentPayloadToJSON(
+  value?: WebhookNewAttachmentPayload | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    messageId: value.messageId,
+    webhookId: value.webhookId,
+    webhookName: value.webhookName,
+    eventName: value.eventName,
+    attachmentId: value.attachmentId,
+    name: value.name,
+    contentType: value.contentType,
+    contentLength: value.contentLength,
+  };
 }
-
-

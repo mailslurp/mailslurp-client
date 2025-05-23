@@ -14,51 +14,50 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    DomainGroup,
-    DomainGroupFromJSON,
-    DomainGroupFromJSONTyped,
-    DomainGroupToJSON,
+  DomainGroup,
+  DomainGroupFromJSON,
+  DomainGroupFromJSONTyped,
+  DomainGroupToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface DomainGroupsDto
  */
 export interface DomainGroupsDto {
-    /**
-     * 
-     * @type {Array<DomainGroup>}
-     * @memberof DomainGroupsDto
-     */
-    domainGroups: Array<DomainGroup>;
+  /**
+   *
+   * @type {Array<DomainGroup>}
+   * @memberof DomainGroupsDto
+   */
+  domainGroups: Array<DomainGroup>;
 }
 
 export function DomainGroupsDtoFromJSON(json: any): DomainGroupsDto {
-    return DomainGroupsDtoFromJSONTyped(json, false);
+  return DomainGroupsDtoFromJSONTyped(json, false);
 }
 
-export function DomainGroupsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainGroupsDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'domainGroups': ((json['domainGroups'] as Array<any>).map(DomainGroupFromJSON)),
-    };
+export function DomainGroupsDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): DomainGroupsDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    domainGroups: (json['domainGroups'] as Array<any>).map(DomainGroupFromJSON),
+  };
 }
 
 export function DomainGroupsDtoToJSON(value?: DomainGroupsDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'domainGroups': ((value.domainGroups as Array<any>).map(DomainGroupToJSON)),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    domainGroups: (value.domainGroups as Array<any>).map(DomainGroupToJSON),
+  };
 }
-
-

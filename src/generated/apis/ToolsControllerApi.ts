@@ -12,696 +12,987 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    CheckEmailFeaturesClientSupportOptions,
-    CheckEmailFeaturesClientSupportOptionsFromJSON,
-    CheckEmailFeaturesClientSupportOptionsToJSON,
-    CheckEmailFeaturesClientSupportResults,
-    CheckEmailFeaturesClientSupportResultsFromJSON,
-    CheckEmailFeaturesClientSupportResultsToJSON,
-    FakeEmailPreview,
-    FakeEmailPreviewFromJSON,
-    FakeEmailPreviewToJSON,
-    FakeEmailResult,
-    FakeEmailResultFromJSON,
-    FakeEmailResultToJSON,
-    GenerateBimiRecordOptions,
-    GenerateBimiRecordOptionsFromJSON,
-    GenerateBimiRecordOptionsToJSON,
-    GenerateBimiRecordResults,
-    GenerateBimiRecordResultsFromJSON,
-    GenerateBimiRecordResultsToJSON,
-    GenerateDmarcRecordOptions,
-    GenerateDmarcRecordOptionsFromJSON,
-    GenerateDmarcRecordOptionsToJSON,
-    GenerateDmarcRecordResults,
-    GenerateDmarcRecordResultsFromJSON,
-    GenerateDmarcRecordResultsToJSON,
-    GenerateMtaStsRecordOptions,
-    GenerateMtaStsRecordOptionsFromJSON,
-    GenerateMtaStsRecordOptionsToJSON,
-    GenerateMtaStsRecordResults,
-    GenerateMtaStsRecordResultsFromJSON,
-    GenerateMtaStsRecordResultsToJSON,
-    GenerateTlsReportingRecordOptions,
-    GenerateTlsReportingRecordOptionsFromJSON,
-    GenerateTlsReportingRecordOptionsToJSON,
-    GenerateTlsReportingRecordResults,
-    GenerateTlsReportingRecordResultsFromJSON,
-    GenerateTlsReportingRecordResultsToJSON,
-    LookupBimiDomainOptions,
-    LookupBimiDomainOptionsFromJSON,
-    LookupBimiDomainOptionsToJSON,
-    LookupBimiDomainResults,
-    LookupBimiDomainResultsFromJSON,
-    LookupBimiDomainResultsToJSON,
-    LookupDmarcDomainOptions,
-    LookupDmarcDomainOptionsFromJSON,
-    LookupDmarcDomainOptionsToJSON,
-    LookupDmarcDomainResults,
-    LookupDmarcDomainResultsFromJSON,
-    LookupDmarcDomainResultsToJSON,
-    LookupMtaStsDomainOptions,
-    LookupMtaStsDomainOptionsFromJSON,
-    LookupMtaStsDomainOptionsToJSON,
-    LookupMtaStsDomainResults,
-    LookupMtaStsDomainResultsFromJSON,
-    LookupMtaStsDomainResultsToJSON,
-    LookupTlsReportingDomainOptions,
-    LookupTlsReportingDomainOptionsFromJSON,
-    LookupTlsReportingDomainOptionsToJSON,
-    LookupTlsReportingDomainResults,
-    LookupTlsReportingDomainResultsFromJSON,
-    LookupTlsReportingDomainResultsToJSON,
-    NewFakeEmailAddressResult,
-    NewFakeEmailAddressResultFromJSON,
-    NewFakeEmailAddressResultToJSON,
+  CheckEmailFeaturesClientSupportOptions,
+  CheckEmailFeaturesClientSupportOptionsFromJSON,
+  CheckEmailFeaturesClientSupportOptionsToJSON,
+  CheckEmailFeaturesClientSupportResults,
+  CheckEmailFeaturesClientSupportResultsFromJSON,
+  CheckEmailFeaturesClientSupportResultsToJSON,
+  FakeEmailPreview,
+  FakeEmailPreviewFromJSON,
+  FakeEmailPreviewToJSON,
+  FakeEmailResult,
+  FakeEmailResultFromJSON,
+  FakeEmailResultToJSON,
+  GenerateBimiRecordOptions,
+  GenerateBimiRecordOptionsFromJSON,
+  GenerateBimiRecordOptionsToJSON,
+  GenerateBimiRecordResults,
+  GenerateBimiRecordResultsFromJSON,
+  GenerateBimiRecordResultsToJSON,
+  GenerateDmarcRecordOptions,
+  GenerateDmarcRecordOptionsFromJSON,
+  GenerateDmarcRecordOptionsToJSON,
+  GenerateDmarcRecordResults,
+  GenerateDmarcRecordResultsFromJSON,
+  GenerateDmarcRecordResultsToJSON,
+  GenerateMtaStsRecordOptions,
+  GenerateMtaStsRecordOptionsFromJSON,
+  GenerateMtaStsRecordOptionsToJSON,
+  GenerateMtaStsRecordResults,
+  GenerateMtaStsRecordResultsFromJSON,
+  GenerateMtaStsRecordResultsToJSON,
+  GenerateTlsReportingRecordOptions,
+  GenerateTlsReportingRecordOptionsFromJSON,
+  GenerateTlsReportingRecordOptionsToJSON,
+  GenerateTlsReportingRecordResults,
+  GenerateTlsReportingRecordResultsFromJSON,
+  GenerateTlsReportingRecordResultsToJSON,
+  LookupBimiDomainOptions,
+  LookupBimiDomainOptionsFromJSON,
+  LookupBimiDomainOptionsToJSON,
+  LookupBimiDomainResults,
+  LookupBimiDomainResultsFromJSON,
+  LookupBimiDomainResultsToJSON,
+  LookupDmarcDomainOptions,
+  LookupDmarcDomainOptionsFromJSON,
+  LookupDmarcDomainOptionsToJSON,
+  LookupDmarcDomainResults,
+  LookupDmarcDomainResultsFromJSON,
+  LookupDmarcDomainResultsToJSON,
+  LookupMtaStsDomainOptions,
+  LookupMtaStsDomainOptionsFromJSON,
+  LookupMtaStsDomainOptionsToJSON,
+  LookupMtaStsDomainResults,
+  LookupMtaStsDomainResultsFromJSON,
+  LookupMtaStsDomainResultsToJSON,
+  LookupTlsReportingDomainOptions,
+  LookupTlsReportingDomainOptionsFromJSON,
+  LookupTlsReportingDomainOptionsToJSON,
+  LookupTlsReportingDomainResults,
+  LookupTlsReportingDomainResultsFromJSON,
+  LookupTlsReportingDomainResultsToJSON,
+  NewFakeEmailAddressResult,
+  NewFakeEmailAddressResultFromJSON,
+  NewFakeEmailAddressResultToJSON,
 } from '../models';
 
 export interface CheckEmailFeaturesClientSupportRequest {
-    checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
+  checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
 }
 
 export interface DeleteNewFakeEmailAddressRequest {
-    emailAddress: string;
+  emailAddress: string;
 }
 
 export interface GenerateBimiRecordRequest {
-    generateBimiRecordOptions: GenerateBimiRecordOptions;
+  generateBimiRecordOptions: GenerateBimiRecordOptions;
 }
 
 export interface GenerateDmarcRecordRequest {
-    generateDmarcRecordOptions: GenerateDmarcRecordOptions;
+  generateDmarcRecordOptions: GenerateDmarcRecordOptions;
 }
 
 export interface GenerateMtaStsRecordRequest {
-    generateMtaStsRecordOptions: GenerateMtaStsRecordOptions;
+  generateMtaStsRecordOptions: GenerateMtaStsRecordOptions;
 }
 
 export interface GenerateTlsReportingRecordRequest {
-    generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
+  generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
 }
 
 export interface GetFakeEmailByEmailAddressRequest {
-    emailAddress: string;
+  emailAddress: string;
 }
 
 export interface GetFakeEmailByIdRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetFakeEmailRawRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetFakeEmailsForAddressRequest {
-    emailAddress: string;
-    page?: number;
+  emailAddress: string;
+  page?: number;
 }
 
 export interface LookupBimiDomainRequest {
-    lookupBimiDomainOptions: LookupBimiDomainOptions;
+  lookupBimiDomainOptions: LookupBimiDomainOptions;
 }
 
 export interface LookupDmarcDomainRequest {
-    lookupDmarcDomainOptions: LookupDmarcDomainOptions;
+  lookupDmarcDomainOptions: LookupDmarcDomainOptions;
 }
 
 export interface LookupMtaStsDomainRequest {
-    lookupMtaStsDomainOptions: LookupMtaStsDomainOptions;
+  lookupMtaStsDomainOptions: LookupMtaStsDomainOptions;
 }
 
 export interface LookupTlsReportingDomainRequest {
-    lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
+  lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
 }
 
 /**
- * 
+ *
  */
 export class ToolsControllerApi extends runtime.BaseAPI {
-
-    /**
-     * Check email client support for email HTML and CSS features
-     */
-    async checkEmailFeaturesClientSupportRaw(requestParameters: CheckEmailFeaturesClientSupportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailFeaturesClientSupportResults>> {
-        if (requestParameters.checkEmailFeaturesClientSupportOptions === null || requestParameters.checkEmailFeaturesClientSupportOptions === undefined) {
-            throw new runtime.RequiredError('checkEmailFeaturesClientSupportOptions','Required parameter requestParameters.checkEmailFeaturesClientSupportOptions was null or undefined when calling checkEmailFeaturesClientSupport.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/check-email-features-client-support`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CheckEmailFeaturesClientSupportOptionsToJSON(requestParameters.checkEmailFeaturesClientSupportOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => CheckEmailFeaturesClientSupportResultsFromJSON(jsonValue));
+  /**
+   * Check email client support for email HTML and CSS features
+   */
+  async checkEmailFeaturesClientSupportRaw(
+    requestParameters: CheckEmailFeaturesClientSupportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckEmailFeaturesClientSupportResults>> {
+    if (
+      requestParameters.checkEmailFeaturesClientSupportOptions === null ||
+      requestParameters.checkEmailFeaturesClientSupportOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkEmailFeaturesClientSupportOptions',
+        'Required parameter requestParameters.checkEmailFeaturesClientSupportOptions was null or undefined when calling checkEmailFeaturesClientSupport.'
+      );
     }
 
-    /**
-     * Check email client support for email HTML and CSS features
-     */
-    async checkEmailFeaturesClientSupport(requestParameters: CheckEmailFeaturesClientSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailFeaturesClientSupportResults> {
-        const response = await this.checkEmailFeaturesClientSupportRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a new email address using the fake email domains
-     */
-    async createNewFakeEmailAddressRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<NewFakeEmailAddressResult>> {
-        const queryParameters: any = {};
+    const response = await this.request(
+      {
+        path: `/tools/check-email-features-client-support`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckEmailFeaturesClientSupportOptionsToJSON(
+          requestParameters.checkEmailFeaturesClientSupportOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const headerParameters: runtime.HTTPHeaders = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckEmailFeaturesClientSupportResultsFromJSON(jsonValue)
+    );
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
+  /**
+   * Check email client support for email HTML and CSS features
+   */
+  async checkEmailFeaturesClientSupport(
+    requestParameters: CheckEmailFeaturesClientSupportRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckEmailFeaturesClientSupportResults> {
+    const response = await this.checkEmailFeaturesClientSupportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        const response = await this.request({
-            path: `/tools/fake-email`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
+  /**
+   * Create a new email address using the fake email domains
+   */
+  async createNewFakeEmailAddressRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<NewFakeEmailAddressResult>> {
+    const queryParameters: any = {};
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => NewFakeEmailAddressResultFromJSON(jsonValue));
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a new email address using the fake email domains
-     */
-    async createNewFakeEmailAddress(initOverrides?: RequestInit): Promise<NewFakeEmailAddressResult> {
-        const response = await this.createNewFakeEmailAddressRaw(initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/tools/fake-email`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      NewFakeEmailAddressResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a new email address using the fake email domains
+   */
+  async createNewFakeEmailAddress(
+    initOverrides?: RequestInit
+  ): Promise<NewFakeEmailAddressResult> {
+    const response = await this.createNewFakeEmailAddressRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Delete a fake email address using the fake email domains
+   * Delete a fake email address using the fake email domains
+   */
+  async deleteNewFakeEmailAddressRaw(
+    requestParameters: DeleteNewFakeEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling deleteNewFakeEmailAddress.'
+      );
     }
 
-    /**
-     * Delete a fake email address using the fake email domains
-     * Delete a fake email address using the fake email domains
-     */
-    async deleteNewFakeEmailAddressRaw(requestParameters: DeleteNewFakeEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
-            throw new runtime.RequiredError('emailAddress','Required parameter requestParameters.emailAddress was null or undefined when calling deleteNewFakeEmailAddress.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
-
-        if (requestParameters.emailAddress !== undefined) {
-            queryParameters['emailAddress'] = requestParameters.emailAddress;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/fake-email`,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
     }
 
-    /**
-     * Delete a fake email address using the fake email domains
-     * Delete a fake email address using the fake email domains
-     */
-    async deleteNewFakeEmailAddress(requestParameters: DeleteNewFakeEmailAddressRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteNewFakeEmailAddressRaw(requestParameters, initOverrides);
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a BIMI record policy
-     */
-    async generateBimiRecordRaw(requestParameters: GenerateBimiRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateBimiRecordResults>> {
-        if (requestParameters.generateBimiRecordOptions === null || requestParameters.generateBimiRecordOptions === undefined) {
-            throw new runtime.RequiredError('generateBimiRecordOptions','Required parameter requestParameters.generateBimiRecordOptions was null or undefined when calling generateBimiRecord.');
-        }
+    const response = await this.request(
+      {
+        path: `/tools/fake-email`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.VoidApiResponse(response);
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Delete a fake email address using the fake email domains
+   * Delete a fake email address using the fake email domains
+   */
+  async deleteNewFakeEmailAddress(
+    requestParameters: DeleteNewFakeEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteNewFakeEmailAddressRaw(requestParameters, initOverrides);
+  }
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/generate-bimi-record`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: GenerateBimiRecordOptionsToJSON(requestParameters.generateBimiRecordOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GenerateBimiRecordResultsFromJSON(jsonValue));
+  /**
+   * Create a BIMI record policy
+   */
+  async generateBimiRecordRaw(
+    requestParameters: GenerateBimiRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GenerateBimiRecordResults>> {
+    if (
+      requestParameters.generateBimiRecordOptions === null ||
+      requestParameters.generateBimiRecordOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateBimiRecordOptions',
+        'Required parameter requestParameters.generateBimiRecordOptions was null or undefined when calling generateBimiRecord.'
+      );
     }
 
-    /**
-     * Create a BIMI record policy
-     */
-    async generateBimiRecord(requestParameters: GenerateBimiRecordRequest, initOverrides?: RequestInit): Promise<GenerateBimiRecordResults> {
-        const response = await this.generateBimiRecordRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a DMARC record policy
-     */
-    async generateDmarcRecordRaw(requestParameters: GenerateDmarcRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateDmarcRecordResults>> {
-        if (requestParameters.generateDmarcRecordOptions === null || requestParameters.generateDmarcRecordOptions === undefined) {
-            throw new runtime.RequiredError('generateDmarcRecordOptions','Required parameter requestParameters.generateDmarcRecordOptions was null or undefined when calling generateDmarcRecord.');
-        }
+    const response = await this.request(
+      {
+        path: `/tools/generate-bimi-record`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateBimiRecordOptionsToJSON(
+          requestParameters.generateBimiRecordOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GenerateBimiRecordResultsFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Create a BIMI record policy
+   */
+  async generateBimiRecord(
+    requestParameters: GenerateBimiRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<GenerateBimiRecordResults> {
+    const response = await this.generateBimiRecordRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/generate-dmarc-record`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: GenerateDmarcRecordOptionsToJSON(requestParameters.generateDmarcRecordOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GenerateDmarcRecordResultsFromJSON(jsonValue));
+  /**
+   * Create a DMARC record policy
+   */
+  async generateDmarcRecordRaw(
+    requestParameters: GenerateDmarcRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GenerateDmarcRecordResults>> {
+    if (
+      requestParameters.generateDmarcRecordOptions === null ||
+      requestParameters.generateDmarcRecordOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateDmarcRecordOptions',
+        'Required parameter requestParameters.generateDmarcRecordOptions was null or undefined when calling generateDmarcRecord.'
+      );
     }
 
-    /**
-     * Create a DMARC record policy
-     */
-    async generateDmarcRecord(requestParameters: GenerateDmarcRecordRequest, initOverrides?: RequestInit): Promise<GenerateDmarcRecordResults> {
-        const response = await this.generateDmarcRecordRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a TLS reporting record policy
-     */
-    async generateMtaStsRecordRaw(requestParameters: GenerateMtaStsRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateMtaStsRecordResults>> {
-        if (requestParameters.generateMtaStsRecordOptions === null || requestParameters.generateMtaStsRecordOptions === undefined) {
-            throw new runtime.RequiredError('generateMtaStsRecordOptions','Required parameter requestParameters.generateMtaStsRecordOptions was null or undefined when calling generateMtaStsRecord.');
-        }
+    const response = await this.request(
+      {
+        path: `/tools/generate-dmarc-record`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateDmarcRecordOptionsToJSON(
+          requestParameters.generateDmarcRecordOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GenerateDmarcRecordResultsFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Create a DMARC record policy
+   */
+  async generateDmarcRecord(
+    requestParameters: GenerateDmarcRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<GenerateDmarcRecordResults> {
+    const response = await this.generateDmarcRecordRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/generate-mta-sts-record`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: GenerateMtaStsRecordOptionsToJSON(requestParameters.generateMtaStsRecordOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GenerateMtaStsRecordResultsFromJSON(jsonValue));
+  /**
+   * Create a TLS reporting record policy
+   */
+  async generateMtaStsRecordRaw(
+    requestParameters: GenerateMtaStsRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GenerateMtaStsRecordResults>> {
+    if (
+      requestParameters.generateMtaStsRecordOptions === null ||
+      requestParameters.generateMtaStsRecordOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateMtaStsRecordOptions',
+        'Required parameter requestParameters.generateMtaStsRecordOptions was null or undefined when calling generateMtaStsRecord.'
+      );
     }
 
-    /**
-     * Create a TLS reporting record policy
-     */
-    async generateMtaStsRecord(requestParameters: GenerateMtaStsRecordRequest, initOverrides?: RequestInit): Promise<GenerateMtaStsRecordResults> {
-        const response = await this.generateMtaStsRecordRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a TLS reporting record policy
-     */
-    async generateTlsReportingRecordRaw(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateTlsReportingRecordResults>> {
-        if (requestParameters.generateTlsReportingRecordOptions === null || requestParameters.generateTlsReportingRecordOptions === undefined) {
-            throw new runtime.RequiredError('generateTlsReportingRecordOptions','Required parameter requestParameters.generateTlsReportingRecordOptions was null or undefined when calling generateTlsReportingRecord.');
-        }
+    const response = await this.request(
+      {
+        path: `/tools/generate-mta-sts-record`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateMtaStsRecordOptionsToJSON(
+          requestParameters.generateMtaStsRecordOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GenerateMtaStsRecordResultsFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Create a TLS reporting record policy
+   */
+  async generateMtaStsRecord(
+    requestParameters: GenerateMtaStsRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<GenerateMtaStsRecordResults> {
+    const response = await this.generateMtaStsRecordRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/generate-tls-reporting-record`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: GenerateTlsReportingRecordOptionsToJSON(requestParameters.generateTlsReportingRecordOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GenerateTlsReportingRecordResultsFromJSON(jsonValue));
+  /**
+   * Create a TLS reporting record policy
+   */
+  async generateTlsReportingRecordRaw(
+    requestParameters: GenerateTlsReportingRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GenerateTlsReportingRecordResults>> {
+    if (
+      requestParameters.generateTlsReportingRecordOptions === null ||
+      requestParameters.generateTlsReportingRecordOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateTlsReportingRecordOptions',
+        'Required parameter requestParameters.generateTlsReportingRecordOptions was null or undefined when calling generateTlsReportingRecord.'
+      );
     }
 
-    /**
-     * Create a TLS reporting record policy
-     */
-    async generateTlsReportingRecord(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit): Promise<GenerateTlsReportingRecordResults> {
-        const response = await this.generateTlsReportingRecordRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     */
-    async getFakeEmailByEmailAddressRaw(requestParameters: GetFakeEmailByEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<FakeEmailResult>> {
-        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
-            throw new runtime.RequiredError('emailAddress','Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailByEmailAddress.');
-        }
+    const response = await this.request(
+      {
+        path: `/tools/generate-tls-reporting-record`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateTlsReportingRecordOptionsToJSON(
+          requestParameters.generateTlsReportingRecordOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GenerateTlsReportingRecordResultsFromJSON(jsonValue)
+    );
+  }
 
-        if (requestParameters.emailAddress !== undefined) {
-            queryParameters['emailAddress'] = requestParameters.emailAddress;
-        }
+  /**
+   * Create a TLS reporting record policy
+   */
+  async generateTlsReportingRecord(
+    requestParameters: GenerateTlsReportingRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<GenerateTlsReportingRecordResults> {
+    const response = await this.generateTlsReportingRecordRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/fake-email/byEmailAddress`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => FakeEmailResultFromJSON(jsonValue));
+  /**
+   */
+  async getFakeEmailByEmailAddressRaw(
+    requestParameters: GetFakeEmailByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<FakeEmailResult>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailByEmailAddress.'
+      );
     }
 
-    /**
-     */
-    async getFakeEmailByEmailAddress(requestParameters: GetFakeEmailByEmailAddressRequest, initOverrides?: RequestInit): Promise<FakeEmailResult> {
-        const response = await this.getFakeEmailByEmailAddressRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
     }
 
-    /**
-     * Get a fake email by its ID
-     * Get a fake email by its ID
-     */
-    async getFakeEmailByIdRaw(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<FakeEmailResult>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getFakeEmailById.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
-
-        if (requestParameters.id !== undefined) {
-            queryParameters['id'] = requestParameters.id;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/fake-email`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => FakeEmailResultFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get a fake email by its ID
-     * Get a fake email by its ID
-     */
-    async getFakeEmailById(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<FakeEmailResult> {
-        const response = await this.getFakeEmailByIdRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/tools/fake-email/byEmailAddress`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      FakeEmailResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getFakeEmailByEmailAddress(
+    requestParameters: GetFakeEmailByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<FakeEmailResult> {
+    const response = await this.getFakeEmailByEmailAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a fake email by its ID
+   * Get a fake email by its ID
+   */
+  async getFakeEmailByIdRaw(
+    requestParameters: GetFakeEmailByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<FakeEmailResult>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getFakeEmailById.'
+      );
     }
 
-    /**
-     * Retrieve the raw content of a fake email by its ID
-     * Get raw fake email content
-     */
-    async getFakeEmailRawRaw(requestParameters: GetFakeEmailRawRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getFakeEmailRaw.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
-
-        if (requestParameters.id !== undefined) {
-            queryParameters['id'] = requestParameters.id;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/fake-email/html`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.TextApiResponse(response) as any;
+    if (requestParameters.id !== undefined) {
+      queryParameters['id'] = requestParameters.id;
     }
 
-    /**
-     * Retrieve the raw content of a fake email by its ID
-     * Get raw fake email content
-     */
-    async getFakeEmailRaw(requestParameters: GetFakeEmailRawRequest, initOverrides?: RequestInit): Promise<string> {
-        const response = await this.getFakeEmailRawRaw(requestParameters, initOverrides);
-        return await response.value();
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get fake emails for an address
-     * Get fake emails for an address
-     */
-    async getFakeEmailsForAddressRaw(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<FakeEmailPreview>>> {
-        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
-            throw new runtime.RequiredError('emailAddress','Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailsForAddress.');
-        }
+    const response = await this.request(
+      {
+        path: `/tools/fake-email`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      FakeEmailResultFromJSON(jsonValue)
+    );
+  }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
+  /**
+   * Get a fake email by its ID
+   * Get a fake email by its ID
+   */
+  async getFakeEmailById(
+    requestParameters: GetFakeEmailByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<FakeEmailResult> {
+    const response = await this.getFakeEmailByIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (requestParameters.emailAddress !== undefined) {
-            queryParameters['emailAddress'] = requestParameters.emailAddress;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/fake-emails`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(FakeEmailPreviewFromJSON));
+  /**
+   * Retrieve the raw content of a fake email by its ID
+   * Get raw fake email content
+   */
+  async getFakeEmailRawRaw(
+    requestParameters: GetFakeEmailRawRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getFakeEmailRaw.'
+      );
     }
 
-    /**
-     * Get fake emails for an address
-     * Get fake emails for an address
-     */
-    async getFakeEmailsForAddress(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<Array<FakeEmailPreview>> {
-        const response = await this.getFakeEmailsForAddressRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    if (requestParameters.id !== undefined) {
+      queryParameters['id'] = requestParameters.id;
     }
 
-    /**
-     * Lookup a BIMI record policy
-     */
-    async lookupBimiDomainRaw(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupBimiDomainResults>> {
-        if (requestParameters.lookupBimiDomainOptions === null || requestParameters.lookupBimiDomainOptions === undefined) {
-            throw new runtime.RequiredError('lookupBimiDomainOptions','Required parameter requestParameters.lookupBimiDomainOptions was null or undefined when calling lookupBimiDomain.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/lookup-bimi-domain`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: LookupBimiDomainOptionsToJSON(requestParameters.lookupBimiDomainOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => LookupBimiDomainResultsFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Lookup a BIMI record policy
-     */
-    async lookupBimiDomain(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit): Promise<LookupBimiDomainResults> {
-        const response = await this.lookupBimiDomainRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/tools/fake-email/html`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * Retrieve the raw content of a fake email by its ID
+   * Get raw fake email content
+   */
+  async getFakeEmailRaw(
+    requestParameters: GetFakeEmailRawRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.getFakeEmailRawRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get fake emails for an address
+   * Get fake emails for an address
+   */
+  async getFakeEmailsForAddressRaw(
+    requestParameters: GetFakeEmailsForAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<FakeEmailPreview>>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailsForAddress.'
+      );
     }
 
-    /**
-     * Lookup a DMARC record policy
-     */
-    async lookupDmarcDomainRaw(requestParameters: LookupDmarcDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupDmarcDomainResults>> {
-        if (requestParameters.lookupDmarcDomainOptions === null || requestParameters.lookupDmarcDomainOptions === undefined) {
-            throw new runtime.RequiredError('lookupDmarcDomainOptions','Required parameter requestParameters.lookupDmarcDomainOptions was null or undefined when calling lookupDmarcDomain.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/lookup-dmarc-domain`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: LookupDmarcDomainOptionsToJSON(requestParameters.lookupDmarcDomainOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => LookupDmarcDomainResultsFromJSON(jsonValue));
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Lookup a DMARC record policy
-     */
-    async lookupDmarcDomain(requestParameters: LookupDmarcDomainRequest, initOverrides?: RequestInit): Promise<LookupDmarcDomainResults> {
-        const response = await this.lookupDmarcDomainRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
     }
 
-    /**
-     * Lookup a MTA-STS domain policy
-     */
-    async lookupMtaStsDomainRaw(requestParameters: LookupMtaStsDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupMtaStsDomainResults>> {
-        if (requestParameters.lookupMtaStsDomainOptions === null || requestParameters.lookupMtaStsDomainOptions === undefined) {
-            throw new runtime.RequiredError('lookupMtaStsDomainOptions','Required parameter requestParameters.lookupMtaStsDomainOptions was null or undefined when calling lookupMtaStsDomain.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/lookup-mta-sts-domain`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: LookupMtaStsDomainOptionsToJSON(requestParameters.lookupMtaStsDomainOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => LookupMtaStsDomainResultsFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Lookup a MTA-STS domain policy
-     */
-    async lookupMtaStsDomain(requestParameters: LookupMtaStsDomainRequest, initOverrides?: RequestInit): Promise<LookupMtaStsDomainResults> {
-        const response = await this.lookupMtaStsDomainRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/tools/fake-emails`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(FakeEmailPreviewFromJSON)
+    );
+  }
+
+  /**
+   * Get fake emails for an address
+   * Get fake emails for an address
+   */
+  async getFakeEmailsForAddress(
+    requestParameters: GetFakeEmailsForAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<FakeEmailPreview>> {
+    const response = await this.getFakeEmailsForAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Lookup a BIMI record policy
+   */
+  async lookupBimiDomainRaw(
+    requestParameters: LookupBimiDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<LookupBimiDomainResults>> {
+    if (
+      requestParameters.lookupBimiDomainOptions === null ||
+      requestParameters.lookupBimiDomainOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'lookupBimiDomainOptions',
+        'Required parameter requestParameters.lookupBimiDomainOptions was null or undefined when calling lookupBimiDomain.'
+      );
     }
 
-    /**
-     * Lookup a TLS reporting domain policy
-     */
-    async lookupTlsReportingDomainRaw(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupTlsReportingDomainResults>> {
-        if (requestParameters.lookupTlsReportingDomainOptions === null || requestParameters.lookupTlsReportingDomainOptions === undefined) {
-            throw new runtime.RequiredError('lookupTlsReportingDomainOptions','Required parameter requestParameters.lookupTlsReportingDomainOptions was null or undefined when calling lookupTlsReportingDomain.');
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
+    headerParameters['Content-Type'] = 'application/json';
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/tools/lookup-tls-reporting-domain`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: LookupTlsReportingDomainOptionsToJSON(requestParameters.lookupTlsReportingDomainOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => LookupTlsReportingDomainResultsFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Lookup a TLS reporting domain policy
-     */
-    async lookupTlsReportingDomain(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<LookupTlsReportingDomainResults> {
-        const response = await this.lookupTlsReportingDomainRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/tools/lookup-bimi-domain`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: LookupBimiDomainOptionsToJSON(
+          requestParameters.lookupBimiDomainOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LookupBimiDomainResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup a BIMI record policy
+   */
+  async lookupBimiDomain(
+    requestParameters: LookupBimiDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<LookupBimiDomainResults> {
+    const response = await this.lookupBimiDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Lookup a DMARC record policy
+   */
+  async lookupDmarcDomainRaw(
+    requestParameters: LookupDmarcDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<LookupDmarcDomainResults>> {
+    if (
+      requestParameters.lookupDmarcDomainOptions === null ||
+      requestParameters.lookupDmarcDomainOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'lookupDmarcDomainOptions',
+        'Required parameter requestParameters.lookupDmarcDomainOptions was null or undefined when calling lookupDmarcDomain.'
+      );
     }
 
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/lookup-dmarc-domain`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: LookupDmarcDomainOptionsToJSON(
+          requestParameters.lookupDmarcDomainOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LookupDmarcDomainResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup a DMARC record policy
+   */
+  async lookupDmarcDomain(
+    requestParameters: LookupDmarcDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<LookupDmarcDomainResults> {
+    const response = await this.lookupDmarcDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Lookup a MTA-STS domain policy
+   */
+  async lookupMtaStsDomainRaw(
+    requestParameters: LookupMtaStsDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<LookupMtaStsDomainResults>> {
+    if (
+      requestParameters.lookupMtaStsDomainOptions === null ||
+      requestParameters.lookupMtaStsDomainOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'lookupMtaStsDomainOptions',
+        'Required parameter requestParameters.lookupMtaStsDomainOptions was null or undefined when calling lookupMtaStsDomain.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/lookup-mta-sts-domain`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: LookupMtaStsDomainOptionsToJSON(
+          requestParameters.lookupMtaStsDomainOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LookupMtaStsDomainResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup a MTA-STS domain policy
+   */
+  async lookupMtaStsDomain(
+    requestParameters: LookupMtaStsDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<LookupMtaStsDomainResults> {
+    const response = await this.lookupMtaStsDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Lookup a TLS reporting domain policy
+   */
+  async lookupTlsReportingDomainRaw(
+    requestParameters: LookupTlsReportingDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<LookupTlsReportingDomainResults>> {
+    if (
+      requestParameters.lookupTlsReportingDomainOptions === null ||
+      requestParameters.lookupTlsReportingDomainOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'lookupTlsReportingDomainOptions',
+        'Required parameter requestParameters.lookupTlsReportingDomainOptions was null or undefined when calling lookupTlsReportingDomain.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/lookup-tls-reporting-domain`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: LookupTlsReportingDomainOptionsToJSON(
+          requestParameters.lookupTlsReportingDomainOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LookupTlsReportingDomainResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup a TLS reporting domain policy
+   */
+  async lookupTlsReportingDomain(
+    requestParameters: LookupTlsReportingDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<LookupTlsReportingDomainResults> {
+    const response = await this.lookupTlsReportingDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }

@@ -19,11 +19,11 @@ function ValidatePhoneNumberOptionsFromJSON(json) {
 }
 exports.ValidatePhoneNumberOptionsFromJSON = ValidatePhoneNumberOptionsFromJSON;
 function ValidatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'phoneNumber': json['phoneNumber'],
+        phoneNumber: json['phoneNumber'],
     };
 }
 exports.ValidatePhoneNumberOptionsFromJSONTyped = ValidatePhoneNumberOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function ValidatePhoneNumberOptionsToJSON(value) {
         return null;
     }
     return {
-        'phoneNumber': value.phoneNumber,
+        phoneNumber: value.phoneNumber,
     };
 }
 exports.ValidatePhoneNumberOptionsToJSON = ValidatePhoneNumberOptionsToJSON;

@@ -19,63 +19,70 @@ import { exists, mapValues } from '../runtime';
  * @interface VerifyEmailAddressOptions
  */
 export interface VerifyEmailAddressOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifyEmailAddressOptions
-     */
-    mailServerDomain?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifyEmailAddressOptions
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof VerifyEmailAddressOptions
-     */
-    senderEmailAddress?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof VerifyEmailAddressOptions
-     */
-    port?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof VerifyEmailAddressOptions
+   */
+  mailServerDomain?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof VerifyEmailAddressOptions
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {string}
+   * @memberof VerifyEmailAddressOptions
+   */
+  senderEmailAddress?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof VerifyEmailAddressOptions
+   */
+  port?: number | null;
 }
 
-export function VerifyEmailAddressOptionsFromJSON(json: any): VerifyEmailAddressOptions {
-    return VerifyEmailAddressOptionsFromJSONTyped(json, false);
+export function VerifyEmailAddressOptionsFromJSON(
+  json: any
+): VerifyEmailAddressOptions {
+  return VerifyEmailAddressOptionsFromJSONTyped(json, false);
 }
 
-export function VerifyEmailAddressOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyEmailAddressOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'mailServerDomain': !exists(json, 'mailServerDomain') ? undefined : json['mailServerDomain'],
-        'emailAddress': json['emailAddress'],
-        'senderEmailAddress': !exists(json, 'senderEmailAddress') ? undefined : json['senderEmailAddress'],
-        'port': !exists(json, 'port') ? undefined : json['port'],
-    };
+export function VerifyEmailAddressOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): VerifyEmailAddressOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    mailServerDomain: !exists(json, 'mailServerDomain')
+      ? undefined
+      : json['mailServerDomain'],
+    emailAddress: json['emailAddress'],
+    senderEmailAddress: !exists(json, 'senderEmailAddress')
+      ? undefined
+      : json['senderEmailAddress'],
+    port: !exists(json, 'port') ? undefined : json['port'],
+  };
 }
 
-export function VerifyEmailAddressOptionsToJSON(value?: VerifyEmailAddressOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'mailServerDomain': value.mailServerDomain,
-        'emailAddress': value.emailAddress,
-        'senderEmailAddress': value.senderEmailAddress,
-        'port': value.port,
-    };
+export function VerifyEmailAddressOptionsToJSON(
+  value?: VerifyEmailAddressOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    mailServerDomain: value.mailServerDomain,
+    emailAddress: value.emailAddress,
+    senderEmailAddress: value.senderEmailAddress,
+    port: value.port,
+  };
 }
-
-
