@@ -111,6 +111,12 @@ export interface WebhookDto {
    */
   requestHeaders?: WebhookHeaders;
   /**
+   * ID of AI transformer for payload
+   * @type {string}
+   * @memberof WebhookDto
+   */
+  aiTransformId?: string | null;
+  /**
    * Should notifier ignore insecure SSL certificates
    * @type {boolean}
    * @memberof WebhookDto
@@ -200,6 +206,9 @@ export function WebhookDtoFromJSONTyped(
     requestHeaders: !exists(json, 'requestHeaders')
       ? undefined
       : WebhookHeadersFromJSON(json['requestHeaders']),
+    aiTransformId: !exists(json, 'aiTransformId')
+      ? undefined
+      : json['aiTransformId'],
     ignoreInsecureSslCertificates: !exists(
       json,
       'ignoreInsecureSslCertificates'
@@ -237,6 +246,7 @@ export function WebhookDtoToJSON(value?: WebhookDto | null): any {
     updatedAt: value.updatedAt.toISOString(),
     eventName: value.eventName,
     requestHeaders: WebhookHeadersToJSON(value.requestHeaders),
+    aiTransformId: value.aiTransformId,
     ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
     useStaticIpRange: value.useStaticIpRange,
     healthStatus: value.healthStatus,

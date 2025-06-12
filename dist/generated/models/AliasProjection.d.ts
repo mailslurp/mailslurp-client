@@ -20,6 +20,12 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AliasProjection
+     */
     userId: string;
     /**
      *
@@ -27,12 +33,6 @@ export interface AliasProjection {
      * @memberof AliasProjection
      */
     emailAddress: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
-     */
-    inboxId: string;
     /**
      *
      * @type {Date}

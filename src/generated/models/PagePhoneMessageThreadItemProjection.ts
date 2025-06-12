@@ -51,13 +51,13 @@ export interface PagePhoneMessageThreadItemProjection {
    * @type {number}
    * @memberof PagePhoneMessageThreadItemProjection
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {number}
    * @memberof PagePhoneMessageThreadItemProjection
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -124,8 +124,8 @@ export function PagePhoneMessageThreadItemProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
     totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -155,8 +155,8 @@ export function PagePhoneMessageThreadItemProjectionToJSON(
             PhoneMessageThreadItemProjectionToJSON
           ),
     pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

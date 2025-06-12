@@ -24,6 +24,7 @@ var GenerateStructuredContentEmailOptionsContentSelectorEnum;
 (function (GenerateStructuredContentEmailOptionsContentSelectorEnum) {
     GenerateStructuredContentEmailOptionsContentSelectorEnum["RAW"] = "RAW";
     GenerateStructuredContentEmailOptionsContentSelectorEnum["BODY"] = "BODY";
+    GenerateStructuredContentEmailOptionsContentSelectorEnum["BODY_ATTACHMENTS"] = "BODY_ATTACHMENTS";
 })(GenerateStructuredContentEmailOptionsContentSelectorEnum = exports.GenerateStructuredContentEmailOptionsContentSelectorEnum || (exports.GenerateStructuredContentEmailOptionsContentSelectorEnum = {}));
 function GenerateStructuredContentEmailOptionsFromJSON(json) {
     return GenerateStructuredContentEmailOptionsFromJSONTyped(json, false);
@@ -41,7 +42,10 @@ function GenerateStructuredContentEmailOptionsFromJSONTyped(json, ignoreDiscrimi
         instructions: !(0, runtime_1.exists)(json, 'instructions')
             ? undefined
             : json['instructions'],
-        outputSchema: (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
+            ? undefined
+            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        transformId: !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
     };
 }
 exports.GenerateStructuredContentEmailOptionsFromJSONTyped = GenerateStructuredContentEmailOptionsFromJSONTyped;
@@ -57,6 +61,7 @@ function GenerateStructuredContentEmailOptionsToJSON(value) {
         contentSelector: value.contentSelector,
         instructions: value.instructions,
         outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        transformId: value.transformId,
     };
 }
 exports.GenerateStructuredContentEmailOptionsToJSON = GenerateStructuredContentEmailOptionsToJSON;

@@ -42,13 +42,13 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
-  userId: string;
+  inboxId?: string;
   /**
    *
    * @type {string}
    * @memberof WebhookProjection
    */
-  inboxId?: string;
+  userId: string;
   /**
    *
    * @type {string}
@@ -67,6 +67,12 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  aiTransformId?: string;
   /**
    *
    * @type {string}
@@ -134,11 +140,14 @@ export function WebhookProjectionFromJSONTyped(
     url: json['url'],
     password: !exists(json, 'password') ? undefined : json['password'],
     username: !exists(json, 'username') ? undefined : json['username'],
-    userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    userId: json['userId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
+    aiTransformId: !exists(json, 'aiTransformId')
+      ? undefined
+      : json['aiTransformId'],
     healthStatus: !exists(json, 'healthStatus')
       ? undefined
       : json['healthStatus'],
@@ -161,11 +170,12 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     url: value.url,
     password: value.password,
     username: value.username,
-    userId: value.userId,
     inboxId: value.inboxId,
+    userId: value.userId,
     eventName: value.eventName,
     updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
+    aiTransformId: value.aiTransformId,
     healthStatus: value.healthStatus,
     phoneNumberId: value.phoneNumberId,
     name: value.name,

@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIControllerApi = void 0;
+exports.GetTransformerResultsSortEnum = exports.GetTransformerResultsEntityTypeEnum = exports.GetTransformerMappingsSortEnum = exports.GetTransformerMappingsEntityTypeEnum = exports.CreateTransformerSortEnum = exports.AIControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -98,6 +98,316 @@ var AIControllerApi = /** @class */ (function (_super) {
     function AIControllerApi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    /**
+     * List all AI transforms
+     * List transformers
+     */
+    AIControllerApi.prototype.createTransformerRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.options === null ||
+                            requestParameters.options === undefined) {
+                            throw new runtime.RequiredError('options', 'Required parameter requestParameters.options was null or undefined when calling createTransformer.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.options !== undefined) {
+                            queryParameters['options'] = requestParameters.options;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageAITransformProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List all AI transforms
+     * List transformers
+     */
+    AIControllerApi.prototype.createTransformer = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createTransformerRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Save an AI transform instructions and schema for use with webhooks and automations
+     * Create a transformer for reuse in automations
+     */
+    AIControllerApi.prototype.createTransformer1Raw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.aITranformCreateOptions === null ||
+                            requestParameters.aITranformCreateOptions === undefined) {
+                            throw new runtime.RequiredError('aITranformCreateOptions', 'Required parameter requestParameters.aITranformCreateOptions was null or undefined when calling createTransformer1.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.AITranformCreateOptionsToJSON)(requestParameters.aITranformCreateOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AITransformDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Save an AI transform instructions and schema for use with webhooks and automations
+     * Create a transformer for reuse in automations
+     */
+    AIControllerApi.prototype.createTransformer1 = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createTransformer1Raw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Create AI transformer mappings to other entities
+     * Create transformer mapping
+     */
+    AIControllerApi.prototype.createTransformerMappingsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createAITransformerMappingOptions === null ||
+                            requestParameters.createAITransformerMappingOptions === undefined) {
+                            throw new runtime.RequiredError('createAITransformerMappingOptions', 'Required parameter requestParameters.createAITransformerMappingOptions was null or undefined when calling createTransformerMappings.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/mappings",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateAITransformerMappingOptionsToJSON)(requestParameters.createAITransformerMappingOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AITransformMappingDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create AI transformer mappings to other entities
+     * Create transformer mapping
+     */
+    AIControllerApi.prototype.createTransformerMappings = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createTransformerMappingsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Delete an AI transformer and schemas by ID
+     * Delete a transformer
+     */
+    AIControllerApi.prototype.deleteTransformerRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling deleteTransformer.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete an AI transformer and schemas by ID
+     * Delete a transformer
+     */
+    AIControllerApi.prototype.deleteTransformer = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteTransformerRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete an AI transformer mapping
+     * Delete transformer mapping
+     */
+    AIControllerApi.prototype.deleteTransformerMappingRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling deleteTransformerMapping.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/mappings/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete an AI transformer mapping
+     * Delete transformer mapping
+     */
+    AIControllerApi.prototype.deleteTransformerMapping = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteTransformerMappingRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete all AI transformers and schemas
+     * Delete all transformers
+     */
+    AIControllerApi.prototype.deleteTransformersRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete all AI transformers and schemas
+     * Delete all transformers
+     */
+    AIControllerApi.prototype.deleteTransformers = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteTransformersRaw(initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     /**
      * Use output schemas to extract data from an attachment using AI
      * Generate structured content for an attachment
@@ -128,7 +438,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.StructuredContentResultFromJSON)(jsonValue);
+                                return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue);
                             })];
                 }
             });
@@ -182,7 +492,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.StructuredContentResultFromJSON)(jsonValue);
+                                return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue);
                             })];
                 }
             });
@@ -198,6 +508,349 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.generateStructuredContentFromEmailRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Use output schemas to extract data from an SMS using AI
+     * Generate structured content for a TXT message
+     */
+    AIControllerApi.prototype.generateStructuredContentFromSmsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.generateStructuredContentSmsOptions === null ||
+                            requestParameters.generateStructuredContentSmsOptions === undefined) {
+                            throw new runtime.RequiredError('generateStructuredContentSmsOptions', 'Required parameter requestParameters.generateStructuredContentSmsOptions was null or undefined when calling generateStructuredContentFromSms.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/structured-content/sms",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.GenerateStructuredContentSmsOptionsToJSON)(requestParameters.generateStructuredContentSmsOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Use output schemas to extract data from an SMS using AI
+     * Generate structured content for a TXT message
+     */
+    AIControllerApi.prototype.generateStructuredContentFromSms = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.generateStructuredContentFromSmsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer and schemas by ID
+     * Get a transformer
+     */
+    AIControllerApi.prototype.getTransformerRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getTransformer.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AITransformDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer and schemas by ID
+     * Get a transformer
+     */
+    AIControllerApi.prototype.getTransformer = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTransformerRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get an AI transformer mapping
+     * Get transformer mapping
+     */
+    AIControllerApi.prototype.getTransformerMappingRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getTransformerMapping.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/mappings/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AITransformMappingDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get an AI transformer mapping
+     * Get transformer mapping
+     */
+    AIControllerApi.prototype.getTransformerMapping = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTransformerMappingRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer mappings to other entities
+     * Get transformer mappings
+     */
+    AIControllerApi.prototype.getTransformerMappingsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.aiTransformId !== undefined) {
+                            queryParameters['aiTransformId'] = requestParameters.aiTransformId;
+                        }
+                        if (requestParameters.entityId !== undefined) {
+                            queryParameters['entityId'] = requestParameters.entityId;
+                        }
+                        if (requestParameters.entityType !== undefined) {
+                            queryParameters['entityType'] = requestParameters.entityType;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/mappings",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageAITransformMappingProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer mappings to other entities
+     * Get transformer mappings
+     */
+    AIControllerApi.prototype.getTransformerMappings = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTransformerMappingsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer result
+     * Get transformer result
+     */
+    AIControllerApi.prototype.getTransformerResultRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getTransformerResult.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/results/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AITransformResultDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer result
+     * Get transformer result
+     */
+    AIControllerApi.prototype.getTransformerResult = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTransformerResultRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer results
+     * Get transformer results
+     */
+    AIControllerApi.prototype.getTransformerResultsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.aiTransformId !== undefined) {
+                            queryParameters['aiTransformId'] = requestParameters.aiTransformId;
+                        }
+                        if (requestParameters.aiTransformMappingId !== undefined) {
+                            queryParameters['aiTransformMappingId'] =
+                                requestParameters.aiTransformMappingId;
+                        }
+                        if (requestParameters.entityId !== undefined) {
+                            queryParameters['entityId'] = requestParameters.entityId;
+                        }
+                        if (requestParameters.entityType !== undefined) {
+                            queryParameters['entityType'] = requestParameters.entityType;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/results",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageAITransformResultProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer results
+     * Get transformer results
+     */
+    AIControllerApi.prototype.getTransformerResults = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTransformerResultsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -263,3 +916,48 @@ var AIControllerApi = /** @class */ (function (_super) {
     return AIControllerApi;
 }(runtime.BaseAPI));
 exports.AIControllerApi = AIControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var CreateTransformerSortEnum;
+(function (CreateTransformerSortEnum) {
+    CreateTransformerSortEnum["ASC"] = "ASC";
+    CreateTransformerSortEnum["DESC"] = "DESC";
+})(CreateTransformerSortEnum = exports.CreateTransformerSortEnum || (exports.CreateTransformerSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTransformerMappingsEntityTypeEnum;
+(function (GetTransformerMappingsEntityTypeEnum) {
+    GetTransformerMappingsEntityTypeEnum["INBOX"] = "INBOX";
+    GetTransformerMappingsEntityTypeEnum["PHONE"] = "PHONE";
+})(GetTransformerMappingsEntityTypeEnum = exports.GetTransformerMappingsEntityTypeEnum || (exports.GetTransformerMappingsEntityTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTransformerMappingsSortEnum;
+(function (GetTransformerMappingsSortEnum) {
+    GetTransformerMappingsSortEnum["ASC"] = "ASC";
+    GetTransformerMappingsSortEnum["DESC"] = "DESC";
+})(GetTransformerMappingsSortEnum = exports.GetTransformerMappingsSortEnum || (exports.GetTransformerMappingsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTransformerResultsEntityTypeEnum;
+(function (GetTransformerResultsEntityTypeEnum) {
+    GetTransformerResultsEntityTypeEnum["INBOX"] = "INBOX";
+    GetTransformerResultsEntityTypeEnum["PHONE"] = "PHONE";
+})(GetTransformerResultsEntityTypeEnum = exports.GetTransformerResultsEntityTypeEnum || (exports.GetTransformerResultsEntityTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTransformerResultsSortEnum;
+(function (GetTransformerResultsSortEnum) {
+    GetTransformerResultsSortEnum["ASC"] = "ASC";
+    GetTransformerResultsSortEnum["DESC"] = "DESC";
+})(GetTransformerResultsSortEnum = exports.GetTransformerResultsSortEnum || (exports.GetTransformerResultsSortEnum = {}));

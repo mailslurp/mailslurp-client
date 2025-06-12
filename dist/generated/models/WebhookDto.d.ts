@@ -101,6 +101,12 @@ export interface WebhookDto {
      */
     requestHeaders?: WebhookHeaders;
     /**
+     * ID of AI transformer for payload
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    aiTransformId?: string | null;
+    /**
      * Should notifier ignore insecure SSL certificates
      * @type {boolean}
      * @memberof WebhookDto

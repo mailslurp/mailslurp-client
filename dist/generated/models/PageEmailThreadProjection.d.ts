@@ -33,13 +33,13 @@ export interface PageEmailThreadProjection {
      * @type {number}
      * @memberof PageEmailThreadProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailThreadProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

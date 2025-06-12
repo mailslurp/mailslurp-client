@@ -20,17 +20,17 @@ import { exists, mapValues } from '../runtime';
  */
 export interface AliasThreadProjection {
   /**
-   * User ID
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  userId: string;
-  /**
    * Inbox ID
    * @type {string}
    * @memberof AliasThreadProjection
    */
   inboxId: string;
+  /**
+   * User ID
+   * @type {string}
+   * @memberof AliasThreadProjection
+   */
+  userId: string;
   /**
    * Updated at DateTime
    * @type {Date}
@@ -101,8 +101,8 @@ export function AliasThreadProjectionFromJSONTyped(
     return json;
   }
   return {
-    userId: json['userId'],
     inboxId: json['inboxId'],
+    userId: json['userId'],
     updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
     to: json['to'],
@@ -125,8 +125,8 @@ export function AliasThreadProjectionToJSON(
     return null;
   }
   return {
-    userId: value.userId,
     inboxId: value.inboxId,
+    userId: value.userId,
     updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
     to: value.to,

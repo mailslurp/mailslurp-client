@@ -21,6 +21,7 @@ apis/InboxControllerApi.ts
 apis/InboxForwarderControllerApi.ts
 apis/InboxReplierControllerApi.ts
 apis/InboxRulesetControllerApi.ts
+apis/MFAControllerApi.ts
 apis/MailServerControllerApi.ts
 apis/MissedEmailControllerApi.ts
 apis/OAuthConnectionApi.ts
@@ -35,6 +36,13 @@ apis/WaitForControllerApi.ts
 apis/WebhookControllerApi.ts
 apis/index.ts
 index.ts
+models/AITranformCreateOptions.ts
+models/AITransformDto.ts
+models/AITransformMappingDto.ts
+models/AITransformMappingProjection.ts
+models/AITransformProjection.ts
+models/AITransformResultDto.ts
+models/AITransformResultProjection.ts
 models/AbstractWebhookPayload.ts
 models/AccountBounceBlockDto.ts
 models/AliasDto.ts
@@ -75,6 +83,7 @@ models/ContactDto.ts
 models/ContactProjection.ts
 models/ContentMatchOptions.ts
 models/CountDto.ts
+models/CreateAITransformerMappingOptions.ts
 models/CreateAliasOptions.ts
 models/CreateConnectorImapConnectionOptions.ts
 models/CreateConnectorOptions.ts
@@ -95,6 +104,7 @@ models/CreatePhoneNumberOptions.ts
 models/CreatePortalOptions.ts
 models/CreatePortalUserOptions.ts
 models/CreateTemplateOptions.ts
+models/CreateTotpDeviceOtpAuthUrlOptions.ts
 models/CreateTrackingPixelOptions.ts
 models/CreateWebhookOptions.ts
 models/DNSLookupOptions.ts
@@ -169,6 +179,7 @@ models/GenerateMtaStsRecordOptions.ts
 models/GenerateMtaStsRecordResults.ts
 models/GenerateStructuredContentAttachmentOptions.ts
 models/GenerateStructuredContentEmailOptions.ts
+models/GenerateStructuredContentSmsOptions.ts
 models/GenerateTlsReportingRecordOptions.ts
 models/GenerateTlsReportingRecordResults.ts
 models/GetEmailScreenshotOptions.ts
@@ -244,6 +255,9 @@ models/OptionalConnectorImapConnectionDto.ts
 models/OptionalConnectorSmtpConnectionDto.ts
 models/OptionalConnectorSyncSettingsDto.ts
 models/OrganizationInboxProjection.ts
+models/PageAITransformMappingProjection.ts
+models/PageAITransformProjection.ts
+models/PageAITransformResultProjection.ts
 models/PageAlias.ts
 models/PageAliasThreadProjection.ts
 models/PageAttachmentEntity.ts
@@ -338,7 +352,7 @@ models/SmsSendOptions.ts
 models/SmtpAccessDetails.ts
 models/SortObject.ts
 models/SpellingIssue.ts
-models/StructuredContentResult.ts
+models/StructuredContentResultDto.ts
 models/StructuredOutputSchema.ts
 models/StructuredOutputSchemaValidation.ts
 models/TemplateDto.ts
@@ -352,6 +366,9 @@ models/TestInboxRulesetSendingResult.ts
 models/TestNewInboxForwarderOptions.ts
 models/TestNewInboxRulesetOptions.ts
 models/TestPhoneNumberOptions.ts
+models/TotpDeviceCodeDto.ts
+models/TotpDeviceDto.ts
+models/TotpDeviceOptionalDto.ts
 models/TrackingPixelDto.ts
 models/TrackingPixelProjection.ts
 models/UnknownMissedEmailProjection.ts

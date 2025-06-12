@@ -20,6 +20,7 @@ export * from './InboxControllerApi';
 export * from './InboxForwarderControllerApi';
 export * from './InboxReplierControllerApi';
 export * from './InboxRulesetControllerApi';
+export * from './MFAControllerApi';
 export * from './MailServerControllerApi';
 export * from './MissedEmailControllerApi';
 export * from './OAuthConnectionApi';

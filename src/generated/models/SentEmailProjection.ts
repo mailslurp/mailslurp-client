@@ -41,6 +41,12 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
   from?: string | null;
   /**
    *
@@ -56,18 +62,6 @@ export interface SentEmailProjection {
   recipients?: EmailRecipients | null;
   /**
    *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  userId: string;
-  /**
-   *
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
@@ -78,6 +72,12 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  userId: string;
   /**
    *
    * @type {Date}
@@ -159,6 +159,7 @@ export function SentEmailProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     from: !exists(json, 'from') ? undefined : json['from'],
     sender: !exists(json, 'sender')
       ? undefined
@@ -166,10 +167,9 @@ export function SentEmailProjectionFromJSONTyped(
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    userId: json['userId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
+    userId: json['userId'],
     createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: json['cc'],
@@ -195,13 +195,13 @@ export function SentEmailProjectionToJSON(
   }
   return {
     id: value.id,
+    subject: value.subject,
     from: value.from,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
-    subject: value.subject,
-    userId: value.userId,
     attachments: value.attachments,
     inboxId: value.inboxId,
+    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,

@@ -26,6 +26,7 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         sender: !(0, runtime_1.exists)(json, 'sender')
             ? undefined
@@ -33,10 +34,9 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         recipients: !(0, runtime_1.exists)(json, 'recipients')
             ? undefined
             : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        userId: json['userId'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         inboxId: json['inboxId'],
+        userId: json['userId'],
         createdAt: new Date(json['createdAt']),
         to: json['to'],
         cc: json['cc'],
@@ -60,13 +60,13 @@ function SentEmailProjectionToJSON(value) {
     }
     return {
         id: value.id,
+        subject: value.subject,
         from: value.from,
         sender: (0, _1.SenderToJSON)(value.sender),
         recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
-        subject: value.subject,
-        userId: value.userId,
         attachments: value.attachments,
         inboxId: value.inboxId,
+        userId: value.userId,
         createdAt: value.createdAt.toISOString(),
         to: value.to,
         cc: value.cc,

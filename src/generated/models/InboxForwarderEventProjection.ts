@@ -24,12 +24,6 @@ export interface InboxForwarderEventProjection {
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
-  userId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
   emailId?: string | null;
   /**
    *
@@ -37,6 +31,12 @@ export interface InboxForwarderEventProjection {
    * @memberof InboxForwarderEventProjection
    */
   inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventProjection
+   */
+  userId?: string | null;
   /**
    *
    * @type {Date}
@@ -98,9 +98,9 @@ export function InboxForwarderEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
@@ -120,9 +120,9 @@ export function InboxForwarderEventProjectionToJSON(
     return null;
   }
   return {
-    userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,
+    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     sentId: value.sentId,
     forwarderId: value.forwarderId,

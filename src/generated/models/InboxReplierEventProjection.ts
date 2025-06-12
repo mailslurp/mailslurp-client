@@ -30,12 +30,6 @@ export interface InboxReplierEventProjection {
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
-  userId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
   emailId?: string | null;
   /**
    *
@@ -43,6 +37,12 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  userId?: string | null;
   /**
    *
    * @type {Date}
@@ -105,9 +105,9 @@ export function InboxReplierEventProjectionFromJSONTyped(
   }
   return {
     recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
@@ -128,9 +128,9 @@ export function InboxReplierEventProjectionToJSON(
   }
   return {
     recipients: value.recipients,
-    userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,
+    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     sentId: value.sentId,
     replierId: value.replierId,

@@ -14,15 +14,42 @@
 
 import * as runtime from '../runtime';
 import {
+  AITranformCreateOptions,
+  AITranformCreateOptionsFromJSON,
+  AITranformCreateOptionsToJSON,
+  AITransformDto,
+  AITransformDtoFromJSON,
+  AITransformDtoToJSON,
+  AITransformMappingDto,
+  AITransformMappingDtoFromJSON,
+  AITransformMappingDtoToJSON,
+  AITransformResultDto,
+  AITransformResultDtoFromJSON,
+  AITransformResultDtoToJSON,
+  CreateAITransformerMappingOptions,
+  CreateAITransformerMappingOptionsFromJSON,
+  CreateAITransformerMappingOptionsToJSON,
   GenerateStructuredContentAttachmentOptions,
   GenerateStructuredContentAttachmentOptionsFromJSON,
   GenerateStructuredContentAttachmentOptionsToJSON,
   GenerateStructuredContentEmailOptions,
   GenerateStructuredContentEmailOptionsFromJSON,
   GenerateStructuredContentEmailOptionsToJSON,
-  StructuredContentResult,
-  StructuredContentResultFromJSON,
-  StructuredContentResultToJSON,
+  GenerateStructuredContentSmsOptions,
+  GenerateStructuredContentSmsOptionsFromJSON,
+  GenerateStructuredContentSmsOptionsToJSON,
+  PageAITransformMappingProjection,
+  PageAITransformMappingProjectionFromJSON,
+  PageAITransformMappingProjectionToJSON,
+  PageAITransformProjection,
+  PageAITransformProjectionFromJSON,
+  PageAITransformProjectionToJSON,
+  PageAITransformResultProjection,
+  PageAITransformResultProjectionFromJSON,
+  PageAITransformResultProjectionToJSON,
+  StructuredContentResultDto,
+  StructuredContentResultDtoFromJSON,
+  StructuredContentResultDtoToJSON,
   StructuredOutputSchema,
   StructuredOutputSchemaFromJSON,
   StructuredOutputSchemaToJSON,
@@ -31,12 +58,70 @@ import {
   StructuredOutputSchemaValidationToJSON,
 } from '../models';
 
+export interface CreateTransformerRequest {
+  options: AITranformCreateOptions;
+  page?: number;
+  size?: number;
+  sort?: CreateTransformerSortEnum;
+}
+
+export interface CreateTransformer1Request {
+  aITranformCreateOptions: AITranformCreateOptions;
+}
+
+export interface CreateTransformerMappingsRequest {
+  createAITransformerMappingOptions: CreateAITransformerMappingOptions;
+}
+
+export interface DeleteTransformerRequest {
+  id: string;
+}
+
+export interface DeleteTransformerMappingRequest {
+  id: string;
+}
+
 export interface GenerateStructuredContentFromAttachmentRequest {
   generateStructuredContentAttachmentOptions: GenerateStructuredContentAttachmentOptions;
 }
 
 export interface GenerateStructuredContentFromEmailRequest {
   generateStructuredContentEmailOptions: GenerateStructuredContentEmailOptions;
+}
+
+export interface GenerateStructuredContentFromSmsRequest {
+  generateStructuredContentSmsOptions: GenerateStructuredContentSmsOptions;
+}
+
+export interface GetTransformerRequest {
+  id: string;
+}
+
+export interface GetTransformerMappingRequest {
+  id: string;
+}
+
+export interface GetTransformerMappingsRequest {
+  aiTransformId?: string;
+  entityId?: string;
+  entityType?: GetTransformerMappingsEntityTypeEnum;
+  page?: number;
+  size?: number;
+  sort?: GetTransformerMappingsSortEnum;
+}
+
+export interface GetTransformerResultRequest {
+  id: string;
+}
+
+export interface GetTransformerResultsRequest {
+  aiTransformId?: string;
+  aiTransformMappingId?: string;
+  entityId?: string;
+  entityType?: GetTransformerResultsEntityTypeEnum;
+  page?: number;
+  size?: number;
+  sort?: GetTransformerResultsSortEnum;
 }
 
 export interface ValidateStructuredOutputSchemaRequest {
@@ -48,13 +133,343 @@ export interface ValidateStructuredOutputSchemaRequest {
  */
 export class AIControllerApi extends runtime.BaseAPI {
   /**
+   * List all AI transforms
+   * List transformers
+   */
+  async createTransformerRaw(
+    requestParameters: CreateTransformerRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageAITransformProjection>> {
+    if (
+      requestParameters.options === null ||
+      requestParameters.options === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'options',
+        'Required parameter requestParameters.options was null or undefined when calling createTransformer.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.options !== undefined) {
+      queryParameters['options'] = requestParameters.options;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageAITransformProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List all AI transforms
+   * List transformers
+   */
+  async createTransformer(
+    requestParameters: CreateTransformerRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageAITransformProjection> {
+    const response = await this.createTransformerRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Save an AI transform instructions and schema for use with webhooks and automations
+   * Create a transformer for reuse in automations
+   */
+  async createTransformer1Raw(
+    requestParameters: CreateTransformer1Request,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AITransformDto>> {
+    if (
+      requestParameters.aITranformCreateOptions === null ||
+      requestParameters.aITranformCreateOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'aITranformCreateOptions',
+        'Required parameter requestParameters.aITranformCreateOptions was null or undefined when calling createTransformer1.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: AITranformCreateOptionsToJSON(
+          requestParameters.aITranformCreateOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AITransformDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Save an AI transform instructions and schema for use with webhooks and automations
+   * Create a transformer for reuse in automations
+   */
+  async createTransformer1(
+    requestParameters: CreateTransformer1Request,
+    initOverrides?: RequestInit
+  ): Promise<AITransformDto> {
+    const response = await this.createTransformer1Raw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create AI transformer mappings to other entities
+   * Create transformer mapping
+   */
+  async createTransformerMappingsRaw(
+    requestParameters: CreateTransformerMappingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AITransformMappingDto>> {
+    if (
+      requestParameters.createAITransformerMappingOptions === null ||
+      requestParameters.createAITransformerMappingOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createAITransformerMappingOptions',
+        'Required parameter requestParameters.createAITransformerMappingOptions was null or undefined when calling createTransformerMappings.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/mappings`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateAITransformerMappingOptionsToJSON(
+          requestParameters.createAITransformerMappingOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AITransformMappingDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create AI transformer mappings to other entities
+   * Create transformer mapping
+   */
+  async createTransformerMappings(
+    requestParameters: CreateTransformerMappingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<AITransformMappingDto> {
+    const response = await this.createTransformerMappingsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Delete an AI transformer and schemas by ID
+   * Delete a transformer
+   */
+  async deleteTransformerRaw(
+    requestParameters: DeleteTransformerRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteTransformer.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete an AI transformer and schemas by ID
+   * Delete a transformer
+   */
+  async deleteTransformer(
+    requestParameters: DeleteTransformerRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteTransformerRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Delete an AI transformer mapping
+   * Delete transformer mapping
+   */
+  async deleteTransformerMappingRaw(
+    requestParameters: DeleteTransformerMappingRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteTransformerMapping.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/mappings/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete an AI transformer mapping
+   * Delete transformer mapping
+   */
+  async deleteTransformerMapping(
+    requestParameters: DeleteTransformerMappingRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteTransformerMappingRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Delete all AI transformers and schemas
+   * Delete all transformers
+   */
+  async deleteTransformersRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete all AI transformers and schemas
+   * Delete all transformers
+   */
+  async deleteTransformers(initOverrides?: RequestInit): Promise<void> {
+    await this.deleteTransformersRaw(initOverrides);
+  }
+
+  /**
    * Use output schemas to extract data from an attachment using AI
    * Generate structured content for an attachment
    */
   async generateStructuredContentFromAttachmentRaw(
     requestParameters: GenerateStructuredContentFromAttachmentRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<StructuredContentResult>> {
+  ): Promise<runtime.ApiResponse<StructuredContentResultDto>> {
     if (
       requestParameters.generateStructuredContentAttachmentOptions === null ||
       requestParameters.generateStructuredContentAttachmentOptions === undefined
@@ -89,7 +504,7 @@ export class AIControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      StructuredContentResultFromJSON(jsonValue)
+      StructuredContentResultDtoFromJSON(jsonValue)
     );
   }
 
@@ -100,7 +515,7 @@ export class AIControllerApi extends runtime.BaseAPI {
   async generateStructuredContentFromAttachment(
     requestParameters: GenerateStructuredContentFromAttachmentRequest,
     initOverrides?: RequestInit
-  ): Promise<StructuredContentResult> {
+  ): Promise<StructuredContentResultDto> {
     const response = await this.generateStructuredContentFromAttachmentRaw(
       requestParameters,
       initOverrides
@@ -115,7 +530,7 @@ export class AIControllerApi extends runtime.BaseAPI {
   async generateStructuredContentFromEmailRaw(
     requestParameters: GenerateStructuredContentFromEmailRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<StructuredContentResult>> {
+  ): Promise<runtime.ApiResponse<StructuredContentResultDto>> {
     if (
       requestParameters.generateStructuredContentEmailOptions === null ||
       requestParameters.generateStructuredContentEmailOptions === undefined
@@ -150,7 +565,7 @@ export class AIControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      StructuredContentResultFromJSON(jsonValue)
+      StructuredContentResultDtoFromJSON(jsonValue)
     );
   }
 
@@ -161,8 +576,382 @@ export class AIControllerApi extends runtime.BaseAPI {
   async generateStructuredContentFromEmail(
     requestParameters: GenerateStructuredContentFromEmailRequest,
     initOverrides?: RequestInit
-  ): Promise<StructuredContentResult> {
+  ): Promise<StructuredContentResultDto> {
     const response = await this.generateStructuredContentFromEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Use output schemas to extract data from an SMS using AI
+   * Generate structured content for a TXT message
+   */
+  async generateStructuredContentFromSmsRaw(
+    requestParameters: GenerateStructuredContentFromSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<StructuredContentResultDto>> {
+    if (
+      requestParameters.generateStructuredContentSmsOptions === null ||
+      requestParameters.generateStructuredContentSmsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateStructuredContentSmsOptions',
+        'Required parameter requestParameters.generateStructuredContentSmsOptions was null or undefined when calling generateStructuredContentFromSms.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/structured-content/sms`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateStructuredContentSmsOptionsToJSON(
+          requestParameters.generateStructuredContentSmsOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      StructuredContentResultDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Use output schemas to extract data from an SMS using AI
+   * Generate structured content for a TXT message
+   */
+  async generateStructuredContentFromSms(
+    requestParameters: GenerateStructuredContentFromSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<StructuredContentResultDto> {
+    const response = await this.generateStructuredContentFromSmsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get AI transformer and schemas by ID
+   * Get a transformer
+   */
+  async getTransformerRaw(
+    requestParameters: GetTransformerRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AITransformDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getTransformer.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AITransformDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get AI transformer and schemas by ID
+   * Get a transformer
+   */
+  async getTransformer(
+    requestParameters: GetTransformerRequest,
+    initOverrides?: RequestInit
+  ): Promise<AITransformDto> {
+    const response = await this.getTransformerRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get an AI transformer mapping
+   * Get transformer mapping
+   */
+  async getTransformerMappingRaw(
+    requestParameters: GetTransformerMappingRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AITransformMappingDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getTransformerMapping.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/mappings/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AITransformMappingDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get an AI transformer mapping
+   * Get transformer mapping
+   */
+  async getTransformerMapping(
+    requestParameters: GetTransformerMappingRequest,
+    initOverrides?: RequestInit
+  ): Promise<AITransformMappingDto> {
+    const response = await this.getTransformerMappingRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get AI transformer mappings to other entities
+   * Get transformer mappings
+   */
+  async getTransformerMappingsRaw(
+    requestParameters: GetTransformerMappingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageAITransformMappingProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.aiTransformId !== undefined) {
+      queryParameters['aiTransformId'] = requestParameters.aiTransformId;
+    }
+
+    if (requestParameters.entityId !== undefined) {
+      queryParameters['entityId'] = requestParameters.entityId;
+    }
+
+    if (requestParameters.entityType !== undefined) {
+      queryParameters['entityType'] = requestParameters.entityType;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/mappings`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageAITransformMappingProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get AI transformer mappings to other entities
+   * Get transformer mappings
+   */
+  async getTransformerMappings(
+    requestParameters: GetTransformerMappingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageAITransformMappingProjection> {
+    const response = await this.getTransformerMappingsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get AI transformer result
+   * Get transformer result
+   */
+  async getTransformerResultRaw(
+    requestParameters: GetTransformerResultRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AITransformResultDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getTransformerResult.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/results/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AITransformResultDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get AI transformer result
+   * Get transformer result
+   */
+  async getTransformerResult(
+    requestParameters: GetTransformerResultRequest,
+    initOverrides?: RequestInit
+  ): Promise<AITransformResultDto> {
+    const response = await this.getTransformerResultRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get AI transformer results
+   * Get transformer results
+   */
+  async getTransformerResultsRaw(
+    requestParameters: GetTransformerResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageAITransformResultProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.aiTransformId !== undefined) {
+      queryParameters['aiTransformId'] = requestParameters.aiTransformId;
+    }
+
+    if (requestParameters.aiTransformMappingId !== undefined) {
+      queryParameters['aiTransformMappingId'] =
+        requestParameters.aiTransformMappingId;
+    }
+
+    if (requestParameters.entityId !== undefined) {
+      queryParameters['entityId'] = requestParameters.entityId;
+    }
+
+    if (requestParameters.entityType !== undefined) {
+      queryParameters['entityType'] = requestParameters.entityType;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/results`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageAITransformResultProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get AI transformer results
+   * Get transformer results
+   */
+  async getTransformerResults(
+    requestParameters: GetTransformerResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageAITransformResultProjection> {
+    const response = await this.getTransformerResultsRaw(
       requestParameters,
       initOverrides
     );
@@ -229,4 +1018,45 @@ export class AIControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreateTransformerSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTransformerMappingsEntityTypeEnum {
+  INBOX = 'INBOX',
+  PHONE = 'PHONE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTransformerMappingsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTransformerResultsEntityTypeEnum {
+  INBOX = 'INBOX',
+  PHONE = 'PHONE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTransformerResultsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

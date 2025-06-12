@@ -27,13 +27,25 @@ export interface GenerateStructuredContentAttachmentOptions {
      * @type {string}
      * @memberof GenerateStructuredContentAttachmentOptions
      */
-    instructions?: string;
+    instructions?: string | null;
     /**
      *
      * @type {StructuredOutputSchema}
      * @memberof GenerateStructuredContentAttachmentOptions
      */
-    outputSchema: StructuredOutputSchema;
+    outputSchema?: StructuredOutputSchema;
+    /**
+     * ID of transformer to apply
+     * @type {string}
+     * @memberof GenerateStructuredContentAttachmentOptions
+     */
+    transformId?: string | null;
+    /**
+     * Optional email ID for more context
+     * @type {string}
+     * @memberof GenerateStructuredContentAttachmentOptions
+     */
+    emailId?: string | null;
 }
 export declare function GenerateStructuredContentAttachmentOptionsFromJSON(json: any): GenerateStructuredContentAttachmentOptions;
 export declare function GenerateStructuredContentAttachmentOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateStructuredContentAttachmentOptions;

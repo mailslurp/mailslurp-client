@@ -33,13 +33,13 @@ export interface PageConnector {
      * @type {number}
      * @memberof PageConnector
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageConnector
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

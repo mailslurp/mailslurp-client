@@ -16,17 +16,17 @@
  */
 export interface AttachmentProjection {
     /**
-     *
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    userId: string;
-    /**
      * Inbox ID
      * @type {string}
      * @memberof AttachmentProjection
      */
     inboxId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    userId: string;
     /**
      *
      * @type {Date}

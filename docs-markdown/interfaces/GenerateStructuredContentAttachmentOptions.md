@@ -15,8 +15,10 @@ GenerateStructuredContentAttachmentOptions
 ### Properties
 
 - [attachmentId](GenerateStructuredContentAttachmentOptions.md#attachmentid)
+- [emailId](GenerateStructuredContentAttachmentOptions.md#emailid)
 - [instructions](GenerateStructuredContentAttachmentOptions.md#instructions)
 - [outputSchema](GenerateStructuredContentAttachmentOptions.md#outputschema)
+- [transformId](GenerateStructuredContentAttachmentOptions.md#transformid)
 
 ## Properties
 
@@ -25,6 +27,18 @@ GenerateStructuredContentAttachmentOptions
 • **attachmentId**: `string`
 
 Attachment ID to read and pass to AI
+
+**`Memberof`**
+
+GenerateStructuredContentAttachmentOptions
+
+___
+
+### emailId
+
+• `Optional` **emailId**: `string`
+
+Optional email ID for more context
 
 **`Memberof`**
 
@@ -46,7 +60,19 @@ ___
 
 ### outputSchema
 
-• **outputSchema**: [`StructuredOutputSchema`](StructuredOutputSchema.md)
+• `Optional` **outputSchema**: [`StructuredOutputSchema`](StructuredOutputSchema.md)
+
+**`Memberof`**
+
+GenerateStructuredContentAttachmentOptions
+
+___
+
+### transformId
+
+• `Optional` **transformId**: `string`
+
+ID of transformer to apply
 
 **`Memberof`**
 

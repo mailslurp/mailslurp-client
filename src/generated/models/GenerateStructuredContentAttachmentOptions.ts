@@ -37,13 +37,25 @@ export interface GenerateStructuredContentAttachmentOptions {
    * @type {string}
    * @memberof GenerateStructuredContentAttachmentOptions
    */
-  instructions?: string;
+  instructions?: string | null;
   /**
    *
    * @type {StructuredOutputSchema}
    * @memberof GenerateStructuredContentAttachmentOptions
    */
-  outputSchema: StructuredOutputSchema;
+  outputSchema?: StructuredOutputSchema;
+  /**
+   * ID of transformer to apply
+   * @type {string}
+   * @memberof GenerateStructuredContentAttachmentOptions
+   */
+  transformId?: string | null;
+  /**
+   * Optional email ID for more context
+   * @type {string}
+   * @memberof GenerateStructuredContentAttachmentOptions
+   */
+  emailId?: string | null;
 }
 
 export function GenerateStructuredContentAttachmentOptionsFromJSON(
@@ -64,7 +76,11 @@ export function GenerateStructuredContentAttachmentOptionsFromJSONTyped(
     instructions: !exists(json, 'instructions')
       ? undefined
       : json['instructions'],
-    outputSchema: StructuredOutputSchemaFromJSON(json['outputSchema']),
+    outputSchema: !exists(json, 'outputSchema')
+      ? undefined
+      : StructuredOutputSchemaFromJSON(json['outputSchema']),
+    transformId: !exists(json, 'transformId') ? undefined : json['transformId'],
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
   };
 }
 
@@ -81,5 +97,7 @@ export function GenerateStructuredContentAttachmentOptionsToJSON(
     attachmentId: value.attachmentId,
     instructions: value.instructions,
     outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
+    transformId: value.transformId,
+    emailId: value.emailId,
   };
 }

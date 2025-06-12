@@ -24,8 +24,8 @@ function AliasThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        userId: json['userId'],
         inboxId: json['inboxId'],
+        userId: json['userId'],
         updatedAt: new Date(json['updatedAt']),
         createdAt: new Date(json['createdAt']),
         to: json['to'],
@@ -46,8 +46,8 @@ function AliasThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        userId: value.userId,
         inboxId: value.inboxId,
+        userId: value.userId,
         updatedAt: value.updatedAt.toISOString(),
         createdAt: value.createdAt.toISOString(),
         to: value.to,

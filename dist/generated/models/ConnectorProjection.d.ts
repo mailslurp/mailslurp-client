@@ -26,6 +26,12 @@ export interface ConnectorProjection {
      * @type {string}
      * @memberof ConnectorProjection
      */
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
     userId: string;
     /**
      *
@@ -33,12 +39,6 @@ export interface ConnectorProjection {
      * @memberof ConnectorProjection
      */
     emailAddress?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    inboxId: string;
     /**
      *
      * @type {Date}

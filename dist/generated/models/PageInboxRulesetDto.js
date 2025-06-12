@@ -31,8 +31,8 @@ function PageInboxRulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
         pageable: !(0, runtime_1.exists)(json, 'pageable')
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        totalPages: json['totalPages'],
         totalElements: json['totalElements'],
+        totalPages: json['totalPages'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
         numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
             ? undefined
@@ -57,8 +57,8 @@ function PageInboxRulesetDtoToJSON(value) {
             ? undefined
             : value.content.map(_1.InboxRulesetDtoToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
-        totalPages: value.totalPages,
         totalElements: value.totalElements,
+        totalPages: value.totalPages,
         last: value.last,
         numberOfElements: value.numberOfElements,
         first: value.first,

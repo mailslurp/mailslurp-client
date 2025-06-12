@@ -10,6 +10,12 @@ MailSlurp JS
 
 ### Enumerations
 
+- [AITransformMappingDtoEntityTypeEnum](enums/AITransformMappingDtoEntityTypeEnum.md)
+- [AITransformMappingProjectionContentSelectorEnum](enums/AITransformMappingProjectionContentSelectorEnum.md)
+- [AITransformMappingProjectionEntityTypeEnum](enums/AITransformMappingProjectionEntityTypeEnum.md)
+- [AITransformMappingProjectionTriggerSelectorEnum](enums/AITransformMappingProjectionTriggerSelectorEnum.md)
+- [AITransformResultDtoEntityTypeEnum](enums/AITransformResultDtoEntityTypeEnum.md)
+- [AITransformResultProjectionEntityTypeEnum](enums/AITransformResultProjectionEntityTypeEnum.md)
 - [AbstractWebhookPayloadEventNameEnum](enums/AbstractWebhookPayloadEventNameEnum.md)
 - [ConditionOptionConditionEnum](enums/ConditionOptionConditionEnum.md)
 - [ConditionOptionValueEnum](enums/ConditionOptionValueEnum.md)
@@ -18,6 +24,9 @@ MailSlurp JS
 - [ConnectorEventProjectionEventTypeEnum](enums/ConnectorEventProjectionEventTypeEnum.md)
 - [ConnectorEventProjectionStatusEnum](enums/ConnectorEventProjectionStatusEnum.md)
 - [ConnectorSyncSettingsDtoSyncScheduleTypeEnum](enums/ConnectorSyncSettingsDtoSyncScheduleTypeEnum.md)
+- [CreateAITransformerMappingOptionsContentSelectorEnum](enums/CreateAITransformerMappingOptionsContentSelectorEnum.md)
+- [CreateAITransformerMappingOptionsEntityTypeEnum](enums/CreateAITransformerMappingOptionsEntityTypeEnum.md)
+- [CreateAITransformerMappingOptionsTriggerSelectorEnum](enums/CreateAITransformerMappingOptionsTriggerSelectorEnum.md)
 - [CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum](enums/CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum.md)
 - [CreateDomainOptionsDomainTypeEnum](enums/CreateDomainOptionsDomainTypeEnum.md)
 - [CreateEmergencyAddressOptionsIsoCountryCodeEnum](enums/CreateEmergencyAddressOptionsIsoCountryCodeEnum.md)
@@ -32,6 +41,7 @@ MailSlurp JS
 - [CreatePhoneNumberOptionsPhoneCountryEnum](enums/CreatePhoneNumberOptionsPhoneCountryEnum.md)
 - [CreatePhoneNumberOptionsScheduleEnum](enums/CreatePhoneNumberOptionsScheduleEnum.md)
 - [CreateRandomInboxInboxTypeEnum](enums/CreateRandomInboxInboxTypeEnum.md)
+- [CreateTransformerSortEnum](enums/CreateTransformerSortEnum.md)
 - [CreateWebhookOptionsEventNameEnum](enums/CreateWebhookOptionsEventNameEnum.md)
 - [DNSLookupOptionsRecordTypesEnum](enums/DNSLookupOptionsRecordTypesEnum.md)
 - [DNSLookupResultRecordTypeEnum](enums/DNSLookupResultRecordTypeEnum.md)
@@ -181,6 +191,10 @@ MailSlurp JS
 - [GetSmsByPhoneNumberSortEnum](enums/GetSmsByPhoneNumberSortEnum.md)
 - [GetTestWebhookPayloadEventNameEnum](enums/GetTestWebhookPayloadEventNameEnum.md)
 - [GetThreadsPaginatedSortEnum](enums/GetThreadsPaginatedSortEnum.md)
+- [GetTransformerMappingsEntityTypeEnum](enums/GetTransformerMappingsEntityTypeEnum.md)
+- [GetTransformerMappingsSortEnum](enums/GetTransformerMappingsSortEnum.md)
+- [GetTransformerResultsEntityTypeEnum](enums/GetTransformerResultsEntityTypeEnum.md)
+- [GetTransformerResultsSortEnum](enums/GetTransformerResultsSortEnum.md)
 - [GetValidationRequestsSortEnum](enums/GetValidationRequestsSortEnum.md)
 - [GetWebhookResultsEventNameEnum](enums/GetWebhookResultsEventNameEnum.md)
 - [GetWebhookResultsResultTypeEnum](enums/GetWebhookResultsResultTypeEnum.md)
@@ -298,6 +312,7 @@ MailSlurp JS
 - [InboxReplierControllerApi](classes/InboxReplierControllerApi.md)
 - [InboxRulesetControllerApi](classes/InboxRulesetControllerApi.md)
 - [JSONApiResponse](classes/JSONApiResponse.md)
+- [MFAControllerApi](classes/MFAControllerApi.md)
 - [MailServerControllerApi](classes/MailServerControllerApi.md)
 - [MailSlurp](classes/MailSlurp.md)
 - [MissedEmailControllerApi](classes/MissedEmailControllerApi.md)
@@ -317,6 +332,13 @@ MailSlurp JS
 
 ### Interfaces
 
+- [AITranformCreateOptions](interfaces/AITranformCreateOptions.md)
+- [AITransformDto](interfaces/AITransformDto.md)
+- [AITransformMappingDto](interfaces/AITransformMappingDto.md)
+- [AITransformMappingProjection](interfaces/AITransformMappingProjection.md)
+- [AITransformProjection](interfaces/AITransformProjection.md)
+- [AITransformResultDto](interfaces/AITransformResultDto.md)
+- [AITransformResultProjection](interfaces/AITransformResultProjection.md)
 - [AbstractWebhookPayload](interfaces/AbstractWebhookPayload.md)
 - [AccountBounceBlockDto](interfaces/AccountBounceBlockDto.md)
 - [AddContactsToGroupRequest](interfaces/AddContactsToGroupRequest.md)
@@ -373,6 +395,7 @@ MailSlurp JS
 - [ContactProjection](interfaces/ContactProjection.md)
 - [ContentMatchOptions](interfaces/ContentMatchOptions.md)
 - [CountDto](interfaces/CountDto.md)
+- [CreateAITransformerMappingOptions](interfaces/CreateAITransformerMappingOptions.md)
 - [CreateAccountWebhookRequest](interfaces/CreateAccountWebhookRequest.md)
 - [CreateAliasOptions](interfaces/CreateAliasOptions.md)
 - [CreateAliasRequest](interfaces/CreateAliasRequest.md)
@@ -417,8 +440,14 @@ MailSlurp JS
 - [CreateRandomInboxRequest](interfaces/CreateRandomInboxRequest.md)
 - [CreateTemplateOptions](interfaces/CreateTemplateOptions.md)
 - [CreateTemplateRequest](interfaces/CreateTemplateRequest.md)
+- [CreateTotpDeviceForCustomRequest](interfaces/CreateTotpDeviceForCustomRequest.md)
+- [CreateTotpDeviceForOtpAuthUrlRequest](interfaces/CreateTotpDeviceForOtpAuthUrlRequest.md)
+- [CreateTotpDeviceOtpAuthUrlOptions](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md)
 - [CreateTrackingPixelOptions](interfaces/CreateTrackingPixelOptions.md)
 - [CreateTrackingPixelRequest](interfaces/CreateTrackingPixelRequest.md)
+- [CreateTransformer1Request](interfaces/CreateTransformer1Request.md)
+- [CreateTransformerMappingsRequest](interfaces/CreateTransformerMappingsRequest.md)
+- [CreateTransformerRequest](interfaces/CreateTransformerRequest.md)
 - [CreateWebhookForPhoneNumberRequest](interfaces/CreateWebhookForPhoneNumberRequest.md)
 - [CreateWebhookOptions](interfaces/CreateWebhookOptions.md)
 - [CreateWebhookRequest](interfaces/CreateWebhookRequest.md)
@@ -458,6 +487,8 @@ MailSlurp JS
 - [DeleteSmsMessageRequest](interfaces/DeleteSmsMessageRequest.md)
 - [DeleteSmsMessagesRequest](interfaces/DeleteSmsMessagesRequest.md)
 - [DeleteTemplateRequest](interfaces/DeleteTemplateRequest.md)
+- [DeleteTransformerMappingRequest](interfaces/DeleteTransformerMappingRequest.md)
+- [DeleteTransformerRequest](interfaces/DeleteTransformerRequest.md)
 - [DeleteValidationRequestRequest](interfaces/DeleteValidationRequestRequest.md)
 - [DeleteWebhookByIdRequest](interfaces/DeleteWebhookByIdRequest.md)
 - [DeleteWebhookRequest](interfaces/DeleteWebhookRequest.md)
@@ -549,6 +580,8 @@ MailSlurp JS
 - [GenerateStructuredContentEmailOptions](interfaces/GenerateStructuredContentEmailOptions.md)
 - [GenerateStructuredContentFromAttachmentRequest](interfaces/GenerateStructuredContentFromAttachmentRequest.md)
 - [GenerateStructuredContentFromEmailRequest](interfaces/GenerateStructuredContentFromEmailRequest.md)
+- [GenerateStructuredContentFromSmsRequest](interfaces/GenerateStructuredContentFromSmsRequest.md)
+- [GenerateStructuredContentSmsOptions](interfaces/GenerateStructuredContentSmsOptions.md)
 - [GenerateTlsReportingRecordOptions](interfaces/GenerateTlsReportingRecordOptions.md)
 - [GenerateTlsReportingRecordRequest](interfaces/GenerateTlsReportingRecordRequest.md)
 - [GenerateTlsReportingRecordResults](interfaces/GenerateTlsReportingRecordResults.md)
@@ -729,7 +762,15 @@ MailSlurp JS
 - [GetTestWebhookPayloadRequest](interfaces/GetTestWebhookPayloadRequest.md)
 - [GetThreadRequest](interfaces/GetThreadRequest.md)
 - [GetThreadsPaginatedRequest](interfaces/GetThreadsPaginatedRequest.md)
+- [GetTotpDeviceByRequest](interfaces/GetTotpDeviceByRequest.md)
+- [GetTotpDeviceCodeRequest](interfaces/GetTotpDeviceCodeRequest.md)
+- [GetTotpDeviceRequest](interfaces/GetTotpDeviceRequest.md)
 - [GetTrackingPixelRequest](interfaces/GetTrackingPixelRequest.md)
+- [GetTransformerMappingRequest](interfaces/GetTransformerMappingRequest.md)
+- [GetTransformerMappingsRequest](interfaces/GetTransformerMappingsRequest.md)
+- [GetTransformerRequest](interfaces/GetTransformerRequest.md)
+- [GetTransformerResultRequest](interfaces/GetTransformerResultRequest.md)
+- [GetTransformerResultsRequest](interfaces/GetTransformerResultsRequest.md)
 - [GetUnreadEmailCountRequest](interfaces/GetUnreadEmailCountRequest.md)
 - [GetValidationRequestsRequest](interfaces/GetValidationRequestsRequest.md)
 - [GetWebhookRequest](interfaces/GetWebhookRequest.md)
@@ -826,6 +867,9 @@ MailSlurp JS
 - [OptionalConnectorSmtpConnectionDto](interfaces/OptionalConnectorSmtpConnectionDto.md)
 - [OptionalConnectorSyncSettingsDto](interfaces/OptionalConnectorSyncSettingsDto.md)
 - [OrganizationInboxProjection](interfaces/OrganizationInboxProjection.md)
+- [PageAITransformMappingProjection](interfaces/PageAITransformMappingProjection.md)
+- [PageAITransformProjection](interfaces/PageAITransformProjection.md)
+- [PageAITransformResultProjection](interfaces/PageAITransformResultProjection.md)
 - [PageAlias](interfaces/PageAlias.md)
 - [PageAliasThreadProjection](interfaces/PageAliasThreadProjection.md)
 - [PageAttachmentEntity](interfaces/PageAttachmentEntity.md)
@@ -953,7 +997,7 @@ MailSlurp JS
 - [SmtpAccessDetails](interfaces/SmtpAccessDetails.md)
 - [SortObject](interfaces/SortObject.md)
 - [SpellingIssue](interfaces/SpellingIssue.md)
-- [StructuredContentResult](interfaces/StructuredContentResult.md)
+- [StructuredContentResultDto](interfaces/StructuredContentResultDto.md)
 - [StructuredOutputSchema](interfaces/StructuredOutputSchema.md)
 - [StructuredOutputSchemaValidation](interfaces/StructuredOutputSchemaValidation.md)
 - [SubmitFormRequest](interfaces/SubmitFormRequest.md)
@@ -982,6 +1026,9 @@ MailSlurp JS
 - [TestNewInboxRulesetRequest](interfaces/TestNewInboxRulesetRequest.md)
 - [TestPhoneNumberOptions](interfaces/TestPhoneNumberOptions.md)
 - [TestPhoneNumberSendSmsRequest](interfaces/TestPhoneNumberSendSmsRequest.md)
+- [TotpDeviceCodeDto](interfaces/TotpDeviceCodeDto.md)
+- [TotpDeviceDto](interfaces/TotpDeviceDto.md)
+- [TotpDeviceOptionalDto](interfaces/TotpDeviceOptionalDto.md)
 - [TrackingPixelDto](interfaces/TrackingPixelDto.md)
 - [TrackingPixelProjection](interfaces/TrackingPixelProjection.md)
 - [UnknownMissedEmailProjection](interfaces/UnknownMissedEmailProjection.md)
@@ -1082,6 +1129,27 @@ MailSlurp JS
 
 ### Functions
 
+- [AITranformCreateOptionsFromJSON](README.md#aitranformcreateoptionsfromjson)
+- [AITranformCreateOptionsFromJSONTyped](README.md#aitranformcreateoptionsfromjsontyped)
+- [AITranformCreateOptionsToJSON](README.md#aitranformcreateoptionstojson)
+- [AITransformDtoFromJSON](README.md#aitransformdtofromjson)
+- [AITransformDtoFromJSONTyped](README.md#aitransformdtofromjsontyped)
+- [AITransformDtoToJSON](README.md#aitransformdtotojson)
+- [AITransformMappingDtoFromJSON](README.md#aitransformmappingdtofromjson)
+- [AITransformMappingDtoFromJSONTyped](README.md#aitransformmappingdtofromjsontyped)
+- [AITransformMappingDtoToJSON](README.md#aitransformmappingdtotojson)
+- [AITransformMappingProjectionFromJSON](README.md#aitransformmappingprojectionfromjson)
+- [AITransformMappingProjectionFromJSONTyped](README.md#aitransformmappingprojectionfromjsontyped)
+- [AITransformMappingProjectionToJSON](README.md#aitransformmappingprojectiontojson)
+- [AITransformProjectionFromJSON](README.md#aitransformprojectionfromjson)
+- [AITransformProjectionFromJSONTyped](README.md#aitransformprojectionfromjsontyped)
+- [AITransformProjectionToJSON](README.md#aitransformprojectiontojson)
+- [AITransformResultDtoFromJSON](README.md#aitransformresultdtofromjson)
+- [AITransformResultDtoFromJSONTyped](README.md#aitransformresultdtofromjsontyped)
+- [AITransformResultDtoToJSON](README.md#aitransformresultdtotojson)
+- [AITransformResultProjectionFromJSON](README.md#aitransformresultprojectionfromjson)
+- [AITransformResultProjectionFromJSONTyped](README.md#aitransformresultprojectionfromjsontyped)
+- [AITransformResultProjectionToJSON](README.md#aitransformresultprojectiontojson)
 - [AbstractWebhookPayloadFromJSON](README.md#abstractwebhookpayloadfromjson)
 - [AbstractWebhookPayloadFromJSONTyped](README.md#abstractwebhookpayloadfromjsontyped)
 - [AbstractWebhookPayloadToJSON](README.md#abstractwebhookpayloadtojson)
@@ -1202,6 +1270,9 @@ MailSlurp JS
 - [CountDtoFromJSON](README.md#countdtofromjson)
 - [CountDtoFromJSONTyped](README.md#countdtofromjsontyped)
 - [CountDtoToJSON](README.md#countdtotojson)
+- [CreateAITransformerMappingOptionsFromJSON](README.md#createaitransformermappingoptionsfromjson)
+- [CreateAITransformerMappingOptionsFromJSONTyped](README.md#createaitransformermappingoptionsfromjsontyped)
+- [CreateAITransformerMappingOptionsToJSON](README.md#createaitransformermappingoptionstojson)
 - [CreateAliasOptionsFromJSON](README.md#createaliasoptionsfromjson)
 - [CreateAliasOptionsFromJSONTyped](README.md#createaliasoptionsfromjsontyped)
 - [CreateAliasOptionsToJSON](README.md#createaliasoptionstojson)
@@ -1262,6 +1333,9 @@ MailSlurp JS
 - [CreateTemplateOptionsFromJSON](README.md#createtemplateoptionsfromjson)
 - [CreateTemplateOptionsFromJSONTyped](README.md#createtemplateoptionsfromjsontyped)
 - [CreateTemplateOptionsToJSON](README.md#createtemplateoptionstojson)
+- [CreateTotpDeviceOtpAuthUrlOptionsFromJSON](README.md#createtotpdeviceotpauthurloptionsfromjson)
+- [CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped](README.md#createtotpdeviceotpauthurloptionsfromjsontyped)
+- [CreateTotpDeviceOtpAuthUrlOptionsToJSON](README.md#createtotpdeviceotpauthurloptionstojson)
 - [CreateTrackingPixelOptionsFromJSON](README.md#createtrackingpixeloptionsfromjson)
 - [CreateTrackingPixelOptionsFromJSONTyped](README.md#createtrackingpixeloptionsfromjsontyped)
 - [CreateTrackingPixelOptionsToJSON](README.md#createtrackingpixeloptionstojson)
@@ -1484,6 +1558,9 @@ MailSlurp JS
 - [GenerateStructuredContentEmailOptionsFromJSON](README.md#generatestructuredcontentemailoptionsfromjson)
 - [GenerateStructuredContentEmailOptionsFromJSONTyped](README.md#generatestructuredcontentemailoptionsfromjsontyped)
 - [GenerateStructuredContentEmailOptionsToJSON](README.md#generatestructuredcontentemailoptionstojson)
+- [GenerateStructuredContentSmsOptionsFromJSON](README.md#generatestructuredcontentsmsoptionsfromjson)
+- [GenerateStructuredContentSmsOptionsFromJSONTyped](README.md#generatestructuredcontentsmsoptionsfromjsontyped)
+- [GenerateStructuredContentSmsOptionsToJSON](README.md#generatestructuredcontentsmsoptionstojson)
 - [GenerateTlsReportingRecordOptionsFromJSON](README.md#generatetlsreportingrecordoptionsfromjson)
 - [GenerateTlsReportingRecordOptionsFromJSONTyped](README.md#generatetlsreportingrecordoptionsfromjsontyped)
 - [GenerateTlsReportingRecordOptionsToJSON](README.md#generatetlsreportingrecordoptionstojson)
@@ -1709,6 +1786,15 @@ MailSlurp JS
 - [OrganizationInboxProjectionFromJSON](README.md#organizationinboxprojectionfromjson)
 - [OrganizationInboxProjectionFromJSONTyped](README.md#organizationinboxprojectionfromjsontyped)
 - [OrganizationInboxProjectionToJSON](README.md#organizationinboxprojectiontojson)
+- [PageAITransformMappingProjectionFromJSON](README.md#pageaitransformmappingprojectionfromjson)
+- [PageAITransformMappingProjectionFromJSONTyped](README.md#pageaitransformmappingprojectionfromjsontyped)
+- [PageAITransformMappingProjectionToJSON](README.md#pageaitransformmappingprojectiontojson)
+- [PageAITransformProjectionFromJSON](README.md#pageaitransformprojectionfromjson)
+- [PageAITransformProjectionFromJSONTyped](README.md#pageaitransformprojectionfromjsontyped)
+- [PageAITransformProjectionToJSON](README.md#pageaitransformprojectiontojson)
+- [PageAITransformResultProjectionFromJSON](README.md#pageaitransformresultprojectionfromjson)
+- [PageAITransformResultProjectionFromJSONTyped](README.md#pageaitransformresultprojectionfromjsontyped)
+- [PageAITransformResultProjectionToJSON](README.md#pageaitransformresultprojectiontojson)
 - [PageAliasFromJSON](README.md#pagealiasfromjson)
 - [PageAliasFromJSONTyped](README.md#pagealiasfromjsontyped)
 - [PageAliasThreadProjectionFromJSON](README.md#pagealiasthreadprojectionfromjson)
@@ -1991,9 +2077,9 @@ MailSlurp JS
 - [SpellingIssueFromJSON](README.md#spellingissuefromjson)
 - [SpellingIssueFromJSONTyped](README.md#spellingissuefromjsontyped)
 - [SpellingIssueToJSON](README.md#spellingissuetojson)
-- [StructuredContentResultFromJSON](README.md#structuredcontentresultfromjson)
-- [StructuredContentResultFromJSONTyped](README.md#structuredcontentresultfromjsontyped)
-- [StructuredContentResultToJSON](README.md#structuredcontentresulttojson)
+- [StructuredContentResultDtoFromJSON](README.md#structuredcontentresultdtofromjson)
+- [StructuredContentResultDtoFromJSONTyped](README.md#structuredcontentresultdtofromjsontyped)
+- [StructuredContentResultDtoToJSON](README.md#structuredcontentresultdtotojson)
 - [StructuredOutputSchemaFromJSON](README.md#structuredoutputschemafromjson)
 - [StructuredOutputSchemaFromJSONTyped](README.md#structuredoutputschemafromjsontyped)
 - [StructuredOutputSchemaToJSON](README.md#structuredoutputschematojson)
@@ -2033,6 +2119,15 @@ MailSlurp JS
 - [TestPhoneNumberOptionsFromJSON](README.md#testphonenumberoptionsfromjson)
 - [TestPhoneNumberOptionsFromJSONTyped](README.md#testphonenumberoptionsfromjsontyped)
 - [TestPhoneNumberOptionsToJSON](README.md#testphonenumberoptionstojson)
+- [TotpDeviceCodeDtoFromJSON](README.md#totpdevicecodedtofromjson)
+- [TotpDeviceCodeDtoFromJSONTyped](README.md#totpdevicecodedtofromjsontyped)
+- [TotpDeviceCodeDtoToJSON](README.md#totpdevicecodedtotojson)
+- [TotpDeviceDtoFromJSON](README.md#totpdevicedtofromjson)
+- [TotpDeviceDtoFromJSONTyped](README.md#totpdevicedtofromjsontyped)
+- [TotpDeviceDtoToJSON](README.md#totpdevicedtotojson)
+- [TotpDeviceOptionalDtoFromJSON](README.md#totpdeviceoptionaldtofromjson)
+- [TotpDeviceOptionalDtoFromJSONTyped](README.md#totpdeviceoptionaldtofromjsontyped)
+- [TotpDeviceOptionalDtoToJSON](README.md#totpdeviceoptionaldtotojson)
 - [TrackingPixelDtoFromJSON](README.md#trackingpixeldtofromjson)
 - [TrackingPixelDtoFromJSONTyped](README.md#trackingpixeldtofromjsontyped)
 - [TrackingPixelDtoToJSON](README.md#trackingpixeldtotojson)
@@ -2311,6 +2406,349 @@ ___
 | `tsv` | `string` |
 
 ## Functions
+
+### AITranformCreateOptionsFromJSON
+
+▸ **AITranformCreateOptionsFromJSON**(`json`): [`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+
+___
+
+### AITranformCreateOptionsFromJSONTyped
+
+▸ **AITranformCreateOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+
+___
+
+### AITranformCreateOptionsToJSON
+
+▸ **AITranformCreateOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AITransformDtoFromJSON
+
+▸ **AITransformDtoFromJSON**(`json`): [`AITransformDto`](interfaces/AITransformDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITransformDto`](interfaces/AITransformDto.md)
+
+___
+
+### AITransformDtoFromJSONTyped
+
+▸ **AITransformDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformDto`](interfaces/AITransformDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITransformDto`](interfaces/AITransformDto.md)
+
+___
+
+### AITransformDtoToJSON
+
+▸ **AITransformDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITransformDto`](interfaces/AITransformDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AITransformMappingDtoFromJSON
+
+▸ **AITransformMappingDtoFromJSON**(`json`): [`AITransformMappingDto`](interfaces/AITransformMappingDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITransformMappingDto`](interfaces/AITransformMappingDto.md)
+
+___
+
+### AITransformMappingDtoFromJSONTyped
+
+▸ **AITransformMappingDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformMappingDto`](interfaces/AITransformMappingDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITransformMappingDto`](interfaces/AITransformMappingDto.md)
+
+___
+
+### AITransformMappingDtoToJSON
+
+▸ **AITransformMappingDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITransformMappingDto`](interfaces/AITransformMappingDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AITransformMappingProjectionFromJSON
+
+▸ **AITransformMappingProjectionFromJSON**(`json`): [`AITransformMappingProjection`](interfaces/AITransformMappingProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITransformMappingProjection`](interfaces/AITransformMappingProjection.md)
+
+___
+
+### AITransformMappingProjectionFromJSONTyped
+
+▸ **AITransformMappingProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformMappingProjection`](interfaces/AITransformMappingProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITransformMappingProjection`](interfaces/AITransformMappingProjection.md)
+
+___
+
+### AITransformMappingProjectionToJSON
+
+▸ **AITransformMappingProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITransformMappingProjection`](interfaces/AITransformMappingProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AITransformProjectionFromJSON
+
+▸ **AITransformProjectionFromJSON**(`json`): [`AITransformProjection`](interfaces/AITransformProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITransformProjection`](interfaces/AITransformProjection.md)
+
+___
+
+### AITransformProjectionFromJSONTyped
+
+▸ **AITransformProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformProjection`](interfaces/AITransformProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITransformProjection`](interfaces/AITransformProjection.md)
+
+___
+
+### AITransformProjectionToJSON
+
+▸ **AITransformProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITransformProjection`](interfaces/AITransformProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AITransformResultDtoFromJSON
+
+▸ **AITransformResultDtoFromJSON**(`json`): [`AITransformResultDto`](interfaces/AITransformResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITransformResultDto`](interfaces/AITransformResultDto.md)
+
+___
+
+### AITransformResultDtoFromJSONTyped
+
+▸ **AITransformResultDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformResultDto`](interfaces/AITransformResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITransformResultDto`](interfaces/AITransformResultDto.md)
+
+___
+
+### AITransformResultDtoToJSON
+
+▸ **AITransformResultDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITransformResultDto`](interfaces/AITransformResultDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AITransformResultProjectionFromJSON
+
+▸ **AITransformResultProjectionFromJSON**(`json`): [`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+
+___
+
+### AITransformResultProjectionFromJSONTyped
+
+▸ **AITransformResultProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+
+___
+
+### AITransformResultProjectionToJSON
+
+▸ **AITransformResultProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITransformResultProjection`](interfaces/AITransformResultProjection.md) |
+
+#### Returns
+
+`any`
+
+___
 
 ### AbstractWebhookPayloadFromJSON
 
@@ -4272,6 +4710,55 @@ ___
 
 ___
 
+### CreateAITransformerMappingOptionsFromJSON
+
+▸ **CreateAITransformerMappingOptionsFromJSON**(`json`): [`CreateAITransformerMappingOptions`](interfaces/CreateAITransformerMappingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateAITransformerMappingOptions`](interfaces/CreateAITransformerMappingOptions.md)
+
+___
+
+### CreateAITransformerMappingOptionsFromJSONTyped
+
+▸ **CreateAITransformerMappingOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateAITransformerMappingOptions`](interfaces/CreateAITransformerMappingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateAITransformerMappingOptions`](interfaces/CreateAITransformerMappingOptions.md)
+
+___
+
+### CreateAITransformerMappingOptionsToJSON
+
+▸ **CreateAITransformerMappingOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateAITransformerMappingOptions`](interfaces/CreateAITransformerMappingOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### CreateAliasOptionsFromJSON
 
 ▸ **CreateAliasOptionsFromJSON**(`json`): [`CreateAliasOptions`](interfaces/CreateAliasOptions.md)
@@ -5245,6 +5732,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateTotpDeviceOtpAuthUrlOptionsFromJSON
+
+▸ **CreateTotpDeviceOtpAuthUrlOptionsFromJSON**(`json`): [`CreateTotpDeviceOtpAuthUrlOptions`](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateTotpDeviceOtpAuthUrlOptions`](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md)
+
+___
+
+### CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped
+
+▸ **CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateTotpDeviceOtpAuthUrlOptions`](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateTotpDeviceOtpAuthUrlOptions`](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md)
+
+___
+
+### CreateTotpDeviceOtpAuthUrlOptionsToJSON
+
+▸ **CreateTotpDeviceOtpAuthUrlOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateTotpDeviceOtpAuthUrlOptions`](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md) |
 
 #### Returns
 
@@ -8871,6 +9407,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`GenerateStructuredContentEmailOptions`](interfaces/GenerateStructuredContentEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GenerateStructuredContentSmsOptionsFromJSON
+
+▸ **GenerateStructuredContentSmsOptionsFromJSON**(`json`): [`GenerateStructuredContentSmsOptions`](interfaces/GenerateStructuredContentSmsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GenerateStructuredContentSmsOptions`](interfaces/GenerateStructuredContentSmsOptions.md)
+
+___
+
+### GenerateStructuredContentSmsOptionsFromJSONTyped
+
+▸ **GenerateStructuredContentSmsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GenerateStructuredContentSmsOptions`](interfaces/GenerateStructuredContentSmsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GenerateStructuredContentSmsOptions`](interfaces/GenerateStructuredContentSmsOptions.md)
+
+___
+
+### GenerateStructuredContentSmsOptionsToJSON
+
+▸ **GenerateStructuredContentSmsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GenerateStructuredContentSmsOptions`](interfaces/GenerateStructuredContentSmsOptions.md) |
 
 #### Returns
 
@@ -12546,6 +13131,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageAITransformMappingProjectionFromJSON
+
+▸ **PageAITransformMappingProjectionFromJSON**(`json`): [`PageAITransformMappingProjection`](interfaces/PageAITransformMappingProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageAITransformMappingProjection`](interfaces/PageAITransformMappingProjection.md)
+
+___
+
+### PageAITransformMappingProjectionFromJSONTyped
+
+▸ **PageAITransformMappingProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageAITransformMappingProjection`](interfaces/PageAITransformMappingProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageAITransformMappingProjection`](interfaces/PageAITransformMappingProjection.md)
+
+___
+
+### PageAITransformMappingProjectionToJSON
+
+▸ **PageAITransformMappingProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageAITransformMappingProjection`](interfaces/PageAITransformMappingProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageAITransformProjectionFromJSON
+
+▸ **PageAITransformProjectionFromJSON**(`json`): [`PageAITransformProjection`](interfaces/PageAITransformProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageAITransformProjection`](interfaces/PageAITransformProjection.md)
+
+___
+
+### PageAITransformProjectionFromJSONTyped
+
+▸ **PageAITransformProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageAITransformProjection`](interfaces/PageAITransformProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageAITransformProjection`](interfaces/PageAITransformProjection.md)
+
+___
+
+### PageAITransformProjectionToJSON
+
+▸ **PageAITransformProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageAITransformProjection`](interfaces/PageAITransformProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageAITransformResultProjectionFromJSON
+
+▸ **PageAITransformResultProjectionFromJSON**(`json`): [`PageAITransformResultProjection`](interfaces/PageAITransformResultProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageAITransformResultProjection`](interfaces/PageAITransformResultProjection.md)
+
+___
+
+### PageAITransformResultProjectionFromJSONTyped
+
+▸ **PageAITransformResultProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageAITransformResultProjection`](interfaces/PageAITransformResultProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageAITransformResultProjection`](interfaces/PageAITransformResultProjection.md)
+
+___
+
+### PageAITransformResultProjectionToJSON
+
+▸ **PageAITransformResultProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageAITransformResultProjection`](interfaces/PageAITransformResultProjection.md) |
 
 #### Returns
 
@@ -17159,9 +17891,9 @@ ___
 
 ___
 
-### StructuredContentResultFromJSON
+### StructuredContentResultDtoFromJSON
 
-▸ **StructuredContentResultFromJSON**(`json`): [`StructuredContentResult`](interfaces/StructuredContentResult.md)
+▸ **StructuredContentResultDtoFromJSON**(`json`): [`StructuredContentResultDto`](interfaces/StructuredContentResultDto.md)
 
 #### Parameters
 
@@ -17171,13 +17903,13 @@ ___
 
 #### Returns
 
-[`StructuredContentResult`](interfaces/StructuredContentResult.md)
+[`StructuredContentResultDto`](interfaces/StructuredContentResultDto.md)
 
 ___
 
-### StructuredContentResultFromJSONTyped
+### StructuredContentResultDtoFromJSONTyped
 
-▸ **StructuredContentResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`StructuredContentResult`](interfaces/StructuredContentResult.md)
+▸ **StructuredContentResultDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`StructuredContentResultDto`](interfaces/StructuredContentResultDto.md)
 
 #### Parameters
 
@@ -17188,19 +17920,19 @@ ___
 
 #### Returns
 
-[`StructuredContentResult`](interfaces/StructuredContentResult.md)
+[`StructuredContentResultDto`](interfaces/StructuredContentResultDto.md)
 
 ___
 
-### StructuredContentResultToJSON
+### StructuredContentResultDtoToJSON
 
-▸ **StructuredContentResultToJSON**(`value?`): `any`
+▸ **StructuredContentResultDtoToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`StructuredContentResult`](interfaces/StructuredContentResult.md) |
+| `value?` | [`StructuredContentResultDto`](interfaces/StructuredContentResultDto.md) |
 
 #### Returns
 
@@ -17838,6 +18570,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`TestPhoneNumberOptions`](interfaces/TestPhoneNumberOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TotpDeviceCodeDtoFromJSON
+
+▸ **TotpDeviceCodeDtoFromJSON**(`json`): [`TotpDeviceCodeDto`](interfaces/TotpDeviceCodeDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TotpDeviceCodeDto`](interfaces/TotpDeviceCodeDto.md)
+
+___
+
+### TotpDeviceCodeDtoFromJSONTyped
+
+▸ **TotpDeviceCodeDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TotpDeviceCodeDto`](interfaces/TotpDeviceCodeDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TotpDeviceCodeDto`](interfaces/TotpDeviceCodeDto.md)
+
+___
+
+### TotpDeviceCodeDtoToJSON
+
+▸ **TotpDeviceCodeDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TotpDeviceCodeDto`](interfaces/TotpDeviceCodeDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TotpDeviceDtoFromJSON
+
+▸ **TotpDeviceDtoFromJSON**(`json`): [`TotpDeviceDto`](interfaces/TotpDeviceDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TotpDeviceDto`](interfaces/TotpDeviceDto.md)
+
+___
+
+### TotpDeviceDtoFromJSONTyped
+
+▸ **TotpDeviceDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TotpDeviceDto`](interfaces/TotpDeviceDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TotpDeviceDto`](interfaces/TotpDeviceDto.md)
+
+___
+
+### TotpDeviceDtoToJSON
+
+▸ **TotpDeviceDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TotpDeviceDto`](interfaces/TotpDeviceDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TotpDeviceOptionalDtoFromJSON
+
+▸ **TotpDeviceOptionalDtoFromJSON**(`json`): [`TotpDeviceOptionalDto`](interfaces/TotpDeviceOptionalDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TotpDeviceOptionalDto`](interfaces/TotpDeviceOptionalDto.md)
+
+___
+
+### TotpDeviceOptionalDtoFromJSONTyped
+
+▸ **TotpDeviceOptionalDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TotpDeviceOptionalDto`](interfaces/TotpDeviceOptionalDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TotpDeviceOptionalDto`](interfaces/TotpDeviceOptionalDto.md)
+
+___
+
+### TotpDeviceOptionalDtoToJSON
+
+▸ **TotpDeviceOptionalDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TotpDeviceOptionalDto`](interfaces/TotpDeviceOptionalDto.md) |
 
 #### Returns
 

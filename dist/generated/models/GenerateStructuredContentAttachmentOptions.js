@@ -29,7 +29,11 @@ function GenerateStructuredContentAttachmentOptionsFromJSONTyped(json, ignoreDis
         instructions: !(0, runtime_1.exists)(json, 'instructions')
             ? undefined
             : json['instructions'],
-        outputSchema: (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
+            ? undefined
+            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        transformId: !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
     };
 }
 exports.GenerateStructuredContentAttachmentOptionsFromJSONTyped = GenerateStructuredContentAttachmentOptionsFromJSONTyped;
@@ -44,6 +48,8 @@ function GenerateStructuredContentAttachmentOptionsToJSON(value) {
         attachmentId: value.attachmentId,
         instructions: value.instructions,
         outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        transformId: value.transformId,
+        emailId: value.emailId,
     };
 }
 exports.GenerateStructuredContentAttachmentOptionsToJSON = GenerateStructuredContentAttachmentOptionsToJSON;

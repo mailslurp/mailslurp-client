@@ -33,13 +33,13 @@ export interface PagePlusAddressProjection {
      * @type {number}
      * @memberof PagePlusAddressProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PagePlusAddressProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

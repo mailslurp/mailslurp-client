@@ -20,17 +20,17 @@ import { exists, mapValues } from '../runtime';
  */
 export interface AttachmentProjection {
   /**
-   *
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  userId: string;
-  /**
    * Inbox ID
    * @type {string}
    * @memberof AttachmentProjection
    */
   inboxId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  userId: string;
   /**
    *
    * @type {Date}
@@ -93,8 +93,8 @@ export function AttachmentProjectionFromJSONTyped(
     return json;
   }
   return {
-    userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    userId: json['userId'],
     updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
     contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
@@ -118,8 +118,8 @@ export function AttachmentProjectionToJSON(
     return null;
   }
   return {
-    userId: value.userId,
     inboxId: value.inboxId,
+    userId: value.userId,
     updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
     contentId: value.contentId,

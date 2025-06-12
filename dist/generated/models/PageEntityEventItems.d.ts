@@ -33,13 +33,13 @@ export interface PageEntityEventItems {
      * @type {number}
      * @memberof PageEntityEventItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageEntityEventItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

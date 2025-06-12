@@ -51,13 +51,13 @@ export interface PageDeliveryStatus {
    * @type {number}
    * @memberof PageDeliveryStatus
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {number}
    * @memberof PageDeliveryStatus
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -120,8 +120,8 @@ export function PageDeliveryStatusFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
     totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -149,8 +149,8 @@ export function PageDeliveryStatusToJSON(
         ? undefined
         : (value.content as Array<any>).map(DeliveryStatusDtoToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

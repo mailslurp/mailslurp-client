@@ -53,6 +53,12 @@ export interface CreateWebhookOptions {
      */
     requestBodyTemplate?: string | null;
     /**
+     * AI Transform ID to apply to the webhook event and send a payload matching transform output schema
+     * @type {string}
+     * @memberof CreateWebhookOptions
+     */
+    aiTransformId?: string | null;
+    /**
      * Use static IP range when calling webhook endpoint
      * @type {boolean}
      * @memberof CreateWebhookOptions

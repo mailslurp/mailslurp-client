@@ -33,13 +33,13 @@ export interface PageEntityAutomationItems {
      * @type {number}
      * @memberof PageEntityAutomationItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageEntityAutomationItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

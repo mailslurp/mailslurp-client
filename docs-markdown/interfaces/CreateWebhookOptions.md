@@ -14,6 +14,7 @@ CreateWebhookOptions
 
 ### Properties
 
+- [aiTransformId](CreateWebhookOptions.md#aitransformid)
 - [basicAuth](CreateWebhookOptions.md#basicauth)
 - [eventName](CreateWebhookOptions.md#eventname)
 - [ignoreInsecureSslCertificates](CreateWebhookOptions.md#ignoreinsecuresslcertificates)
@@ -25,6 +26,18 @@ CreateWebhookOptions
 - [useStaticIpRange](CreateWebhookOptions.md#usestaticiprange)
 
 ## Properties
+
+### aiTransformId
+
+• `Optional` **aiTransformId**: `string`
+
+AI Transform ID to apply to the webhook event and send a payload matching transform output schema
+
+**`Memberof`**
+
+CreateWebhookOptions
+
+___
 
 ### basicAuth
 

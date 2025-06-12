@@ -26,12 +26,6 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    userId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
     emailId?: string | null;
     /**
      *
@@ -39,6 +33,12 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     inboxId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    userId?: string | null;
     /**
      *
      * @type {Date}

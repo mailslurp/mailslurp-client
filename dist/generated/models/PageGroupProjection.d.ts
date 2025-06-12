@@ -33,13 +33,13 @@ export interface PageGroupProjection {
      * @type {number}
      * @memberof PageGroupProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageGroupProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

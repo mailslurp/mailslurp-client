@@ -10,12 +10,59 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { GenerateStructuredContentAttachmentOptions, GenerateStructuredContentEmailOptions, StructuredContentResult, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
+import { AITranformCreateOptions, AITransformDto, AITransformMappingDto, AITransformResultDto, CreateAITransformerMappingOptions, GenerateStructuredContentAttachmentOptions, GenerateStructuredContentEmailOptions, GenerateStructuredContentSmsOptions, PageAITransformMappingProjection, PageAITransformProjection, PageAITransformResultProjection, StructuredContentResultDto, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
+export interface CreateTransformerRequest {
+    options: AITranformCreateOptions;
+    page?: number;
+    size?: number;
+    sort?: CreateTransformerSortEnum;
+}
+export interface CreateTransformer1Request {
+    aITranformCreateOptions: AITranformCreateOptions;
+}
+export interface CreateTransformerMappingsRequest {
+    createAITransformerMappingOptions: CreateAITransformerMappingOptions;
+}
+export interface DeleteTransformerRequest {
+    id: string;
+}
+export interface DeleteTransformerMappingRequest {
+    id: string;
+}
 export interface GenerateStructuredContentFromAttachmentRequest {
     generateStructuredContentAttachmentOptions: GenerateStructuredContentAttachmentOptions;
 }
 export interface GenerateStructuredContentFromEmailRequest {
     generateStructuredContentEmailOptions: GenerateStructuredContentEmailOptions;
+}
+export interface GenerateStructuredContentFromSmsRequest {
+    generateStructuredContentSmsOptions: GenerateStructuredContentSmsOptions;
+}
+export interface GetTransformerRequest {
+    id: string;
+}
+export interface GetTransformerMappingRequest {
+    id: string;
+}
+export interface GetTransformerMappingsRequest {
+    aiTransformId?: string;
+    entityId?: string;
+    entityType?: GetTransformerMappingsEntityTypeEnum;
+    page?: number;
+    size?: number;
+    sort?: GetTransformerMappingsSortEnum;
+}
+export interface GetTransformerResultRequest {
+    id: string;
+}
+export interface GetTransformerResultsRequest {
+    aiTransformId?: string;
+    aiTransformMappingId?: string;
+    entityId?: string;
+    entityType?: GetTransformerResultsEntityTypeEnum;
+    page?: number;
+    size?: number;
+    sort?: GetTransformerResultsSortEnum;
 }
 export interface ValidateStructuredOutputSchemaRequest {
     structuredOutputSchema: StructuredOutputSchema;
@@ -25,25 +72,145 @@ export interface ValidateStructuredOutputSchemaRequest {
  */
 export declare class AIControllerApi extends runtime.BaseAPI {
     /**
-     * Use output schemas to extract data from an attachment using AI
-     * Generate structured content for an attachment
+     * List all AI transforms
+     * List transformers
      */
-    generateStructuredContentFromAttachmentRaw(requestParameters: GenerateStructuredContentFromAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredContentResult>>;
+    createTransformerRaw(requestParameters: CreateTransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAITransformProjection>>;
+    /**
+     * List all AI transforms
+     * List transformers
+     */
+    createTransformer(requestParameters: CreateTransformerRequest, initOverrides?: RequestInit): Promise<PageAITransformProjection>;
+    /**
+     * Save an AI transform instructions and schema for use with webhooks and automations
+     * Create a transformer for reuse in automations
+     */
+    createTransformer1Raw(requestParameters: CreateTransformer1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AITransformDto>>;
+    /**
+     * Save an AI transform instructions and schema for use with webhooks and automations
+     * Create a transformer for reuse in automations
+     */
+    createTransformer1(requestParameters: CreateTransformer1Request, initOverrides?: RequestInit): Promise<AITransformDto>;
+    /**
+     * Create AI transformer mappings to other entities
+     * Create transformer mapping
+     */
+    createTransformerMappingsRaw(requestParameters: CreateTransformerMappingsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AITransformMappingDto>>;
+    /**
+     * Create AI transformer mappings to other entities
+     * Create transformer mapping
+     */
+    createTransformerMappings(requestParameters: CreateTransformerMappingsRequest, initOverrides?: RequestInit): Promise<AITransformMappingDto>;
+    /**
+     * Delete an AI transformer and schemas by ID
+     * Delete a transformer
+     */
+    deleteTransformerRaw(requestParameters: DeleteTransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete an AI transformer and schemas by ID
+     * Delete a transformer
+     */
+    deleteTransformer(requestParameters: DeleteTransformerRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete an AI transformer mapping
+     * Delete transformer mapping
+     */
+    deleteTransformerMappingRaw(requestParameters: DeleteTransformerMappingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete an AI transformer mapping
+     * Delete transformer mapping
+     */
+    deleteTransformerMapping(requestParameters: DeleteTransformerMappingRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete all AI transformers and schemas
+     * Delete all transformers
+     */
+    deleteTransformersRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete all AI transformers and schemas
+     * Delete all transformers
+     */
+    deleteTransformers(initOverrides?: RequestInit): Promise<void>;
     /**
      * Use output schemas to extract data from an attachment using AI
      * Generate structured content for an attachment
      */
-    generateStructuredContentFromAttachment(requestParameters: GenerateStructuredContentFromAttachmentRequest, initOverrides?: RequestInit): Promise<StructuredContentResult>;
+    generateStructuredContentFromAttachmentRaw(requestParameters: GenerateStructuredContentFromAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredContentResultDto>>;
+    /**
+     * Use output schemas to extract data from an attachment using AI
+     * Generate structured content for an attachment
+     */
+    generateStructuredContentFromAttachment(requestParameters: GenerateStructuredContentFromAttachmentRequest, initOverrides?: RequestInit): Promise<StructuredContentResultDto>;
     /**
      * Use output schemas to extract data from an email using AI
      * Generate structured content for an email
      */
-    generateStructuredContentFromEmailRaw(requestParameters: GenerateStructuredContentFromEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredContentResult>>;
+    generateStructuredContentFromEmailRaw(requestParameters: GenerateStructuredContentFromEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredContentResultDto>>;
     /**
      * Use output schemas to extract data from an email using AI
      * Generate structured content for an email
      */
-    generateStructuredContentFromEmail(requestParameters: GenerateStructuredContentFromEmailRequest, initOverrides?: RequestInit): Promise<StructuredContentResult>;
+    generateStructuredContentFromEmail(requestParameters: GenerateStructuredContentFromEmailRequest, initOverrides?: RequestInit): Promise<StructuredContentResultDto>;
+    /**
+     * Use output schemas to extract data from an SMS using AI
+     * Generate structured content for a TXT message
+     */
+    generateStructuredContentFromSmsRaw(requestParameters: GenerateStructuredContentFromSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredContentResultDto>>;
+    /**
+     * Use output schemas to extract data from an SMS using AI
+     * Generate structured content for a TXT message
+     */
+    generateStructuredContentFromSms(requestParameters: GenerateStructuredContentFromSmsRequest, initOverrides?: RequestInit): Promise<StructuredContentResultDto>;
+    /**
+     * Get AI transformer and schemas by ID
+     * Get a transformer
+     */
+    getTransformerRaw(requestParameters: GetTransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AITransformDto>>;
+    /**
+     * Get AI transformer and schemas by ID
+     * Get a transformer
+     */
+    getTransformer(requestParameters: GetTransformerRequest, initOverrides?: RequestInit): Promise<AITransformDto>;
+    /**
+     * Get an AI transformer mapping
+     * Get transformer mapping
+     */
+    getTransformerMappingRaw(requestParameters: GetTransformerMappingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AITransformMappingDto>>;
+    /**
+     * Get an AI transformer mapping
+     * Get transformer mapping
+     */
+    getTransformerMapping(requestParameters: GetTransformerMappingRequest, initOverrides?: RequestInit): Promise<AITransformMappingDto>;
+    /**
+     * Get AI transformer mappings to other entities
+     * Get transformer mappings
+     */
+    getTransformerMappingsRaw(requestParameters: GetTransformerMappingsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAITransformMappingProjection>>;
+    /**
+     * Get AI transformer mappings to other entities
+     * Get transformer mappings
+     */
+    getTransformerMappings(requestParameters: GetTransformerMappingsRequest, initOverrides?: RequestInit): Promise<PageAITransformMappingProjection>;
+    /**
+     * Get AI transformer result
+     * Get transformer result
+     */
+    getTransformerResultRaw(requestParameters: GetTransformerResultRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AITransformResultDto>>;
+    /**
+     * Get AI transformer result
+     * Get transformer result
+     */
+    getTransformerResult(requestParameters: GetTransformerResultRequest, initOverrides?: RequestInit): Promise<AITransformResultDto>;
+    /**
+     * Get AI transformer results
+     * Get transformer results
+     */
+    getTransformerResultsRaw(requestParameters: GetTransformerResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAITransformResultProjection>>;
+    /**
+     * Get AI transformer results
+     * Get transformer results
+     */
+    getTransformerResults(requestParameters: GetTransformerResultsRequest, initOverrides?: RequestInit): Promise<PageAITransformResultProjection>;
     /**
      * Check if a schema is valid and can be used to extract data using AI
      * Validate structured content schema
@@ -54,4 +221,44 @@ export declare class AIControllerApi extends runtime.BaseAPI {
      * Validate structured content schema
      */
     validateStructuredOutputSchema(requestParameters: ValidateStructuredOutputSchemaRequest, initOverrides?: RequestInit): Promise<StructuredOutputSchemaValidation>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreateTransformerSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetTransformerMappingsEntityTypeEnum {
+    INBOX = "INBOX",
+    PHONE = "PHONE"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetTransformerMappingsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetTransformerResultsEntityTypeEnum {
+    INBOX = "INBOX",
+    PHONE = "PHONE"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetTransformerResultsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }

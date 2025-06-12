@@ -33,13 +33,13 @@ export interface PageComplaint {
      * @type {number}
      * @memberof PageComplaint
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageComplaint
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

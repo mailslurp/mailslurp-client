@@ -33,13 +33,19 @@ export interface GenerateStructuredContentEmailOptions {
      * @type {string}
      * @memberof GenerateStructuredContentEmailOptions
      */
-    instructions?: string;
+    instructions?: string | null;
     /**
      *
      * @type {StructuredOutputSchema}
      * @memberof GenerateStructuredContentEmailOptions
      */
-    outputSchema: StructuredOutputSchema;
+    outputSchema?: StructuredOutputSchema;
+    /**
+     * ID of transformer to apply
+     * @type {string}
+     * @memberof GenerateStructuredContentEmailOptions
+     */
+    transformId?: string | null;
 }
 /**
  * @export
@@ -47,7 +53,8 @@ export interface GenerateStructuredContentEmailOptions {
  */
 export declare enum GenerateStructuredContentEmailOptionsContentSelectorEnum {
     RAW = "RAW",
-    BODY = "BODY"
+    BODY = "BODY",
+    BODY_ATTACHMENTS = "BODY_ATTACHMENTS"
 }
 export declare function GenerateStructuredContentEmailOptionsFromJSON(json: any): GenerateStructuredContentEmailOptions;
 export declare function GenerateStructuredContentEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateStructuredContentEmailOptions;

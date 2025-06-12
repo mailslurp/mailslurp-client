@@ -54,11 +54,14 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         url: json['url'],
         password: !(0, runtime_1.exists)(json, 'password') ? undefined : json['password'],
         username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
-        userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        userId: json['userId'],
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
         updatedAt: new Date(json['updatedAt']),
         createdAt: new Date(json['createdAt']),
+        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
+            ? undefined
+            : json['aiTransformId'],
         healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
             ? undefined
             : json['healthStatus'],
@@ -81,11 +84,12 @@ function WebhookProjectionToJSON(value) {
         url: value.url,
         password: value.password,
         username: value.username,
-        userId: value.userId,
         inboxId: value.inboxId,
+        userId: value.userId,
         eventName: value.eventName,
         updatedAt: value.updatedAt.toISOString(),
         createdAt: value.createdAt.toISOString(),
+        aiTransformId: value.aiTransformId,
         healthStatus: value.healthStatus,
         phoneNumberId: value.phoneNumberId,
         name: value.name,

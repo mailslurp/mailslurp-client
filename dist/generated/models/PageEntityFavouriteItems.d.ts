@@ -33,13 +33,13 @@ export interface PageEntityFavouriteItems {
      * @type {number}
      * @memberof PageEntityFavouriteItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageEntityFavouriteItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

@@ -38,13 +38,13 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    userId: string;
+    inboxId?: string;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
-    inboxId?: string;
+    userId: string;
     /**
      *
      * @type {string}
@@ -63,6 +63,12 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    aiTransformId?: string;
     /**
      *
      * @type {string}

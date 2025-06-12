@@ -51,13 +51,13 @@ export interface PageReputationItems {
    * @type {number}
    * @memberof PageReputationItems
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {number}
    * @memberof PageReputationItems
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -120,8 +120,8 @@ export function PageReputationItemsFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
     totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -149,8 +149,8 @@ export function PageReputationItemsToJSON(
         ? undefined
         : (value.content as Array<any>).map(ReputationItemProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

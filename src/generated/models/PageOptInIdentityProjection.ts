@@ -51,13 +51,13 @@ export interface PageOptInIdentityProjection {
    * @type {number}
    * @memberof PageOptInIdentityProjection
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {number}
    * @memberof PageOptInIdentityProjection
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -122,8 +122,8 @@ export function PageOptInIdentityProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalPages: json['totalPages'],
     totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -151,8 +151,8 @@ export function PageOptInIdentityProjectionToJSON(
         ? undefined
         : (value.content as Array<any>).map(OptInIdentityProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

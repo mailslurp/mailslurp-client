@@ -43,13 +43,19 @@ export interface GenerateStructuredContentEmailOptions {
    * @type {string}
    * @memberof GenerateStructuredContentEmailOptions
    */
-  instructions?: string;
+  instructions?: string | null;
   /**
    *
    * @type {StructuredOutputSchema}
    * @memberof GenerateStructuredContentEmailOptions
    */
-  outputSchema: StructuredOutputSchema;
+  outputSchema?: StructuredOutputSchema;
+  /**
+   * ID of transformer to apply
+   * @type {string}
+   * @memberof GenerateStructuredContentEmailOptions
+   */
+  transformId?: string | null;
 }
 
 /**
@@ -59,6 +65,7 @@ export interface GenerateStructuredContentEmailOptions {
 export enum GenerateStructuredContentEmailOptionsContentSelectorEnum {
   RAW = 'RAW',
   BODY = 'BODY',
+  BODY_ATTACHMENTS = 'BODY_ATTACHMENTS',
 }
 
 export function GenerateStructuredContentEmailOptionsFromJSON(
@@ -82,7 +89,10 @@ export function GenerateStructuredContentEmailOptionsFromJSONTyped(
     instructions: !exists(json, 'instructions')
       ? undefined
       : json['instructions'],
-    outputSchema: StructuredOutputSchemaFromJSON(json['outputSchema']),
+    outputSchema: !exists(json, 'outputSchema')
+      ? undefined
+      : StructuredOutputSchemaFromJSON(json['outputSchema']),
+    transformId: !exists(json, 'transformId') ? undefined : json['transformId'],
   };
 }
 
@@ -100,5 +110,6 @@ export function GenerateStructuredContentEmailOptionsToJSON(
     contentSelector: value.contentSelector,
     instructions: value.instructions,
     outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
+    transformId: value.transformId,
   };
 }

@@ -18,6 +18,7 @@ GenerateStructuredContentEmailOptions
 - [emailId](GenerateStructuredContentEmailOptions.md#emailid)
 - [instructions](GenerateStructuredContentEmailOptions.md#instructions)
 - [outputSchema](GenerateStructuredContentEmailOptions.md#outputschema)
+- [transformId](GenerateStructuredContentEmailOptions.md#transformid)
 
 ## Properties
 
@@ -59,7 +60,19 @@ ___
 
 ### outputSchema
 
-• **outputSchema**: [`StructuredOutputSchema`](StructuredOutputSchema.md)
+• `Optional` **outputSchema**: [`StructuredOutputSchema`](StructuredOutputSchema.md)
+
+**`Memberof`**
+
+GenerateStructuredContentEmailOptions
+
+___
+
+### transformId
+
+• `Optional` **transformId**: `string`
+
+ID of transformer to apply
 
 **`Memberof`**
 

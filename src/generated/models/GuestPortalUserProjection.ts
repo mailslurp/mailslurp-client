@@ -30,6 +30,12 @@ export interface GuestPortalUserProjection {
    * @type {string}
    * @memberof GuestPortalUserProjection
    */
+  inboxId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalUserProjection
+   */
   userId: string;
   /**
    *
@@ -37,12 +43,6 @@ export interface GuestPortalUserProjection {
    * @memberof GuestPortalUserProjection
    */
   emailAddress?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  inboxId?: string;
   /**
    *
    * @type {Date}
@@ -90,11 +90,11 @@ export function GuestPortalUserProjectionFromJSONTyped(
   }
   return {
     username: json['username'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     userId: json['userId'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
     portalId: json['portalId'],
@@ -114,9 +114,9 @@ export function GuestPortalUserProjectionToJSON(
   }
   return {
     username: value.username,
+    inboxId: value.inboxId,
     userId: value.userId,
     emailAddress: value.emailAddress,
-    inboxId: value.inboxId,
     updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
     portalId: value.portalId,

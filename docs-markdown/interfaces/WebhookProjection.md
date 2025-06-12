@@ -14,6 +14,7 @@ WebhookProjection
 
 ### Properties
 
+- [aiTransformId](WebhookProjection.md#aitransformid)
 - [createdAt](WebhookProjection.md#createdat)
 - [eventName](WebhookProjection.md#eventname)
 - [healthStatus](WebhookProjection.md#healthstatus)
@@ -28,6 +29,16 @@ WebhookProjection
 - [username](WebhookProjection.md#username)
 
 ## Properties
+
+### aiTransformId
+
+• `Optional` **aiTransformId**: `string`
+
+**`Memberof`**
+
+WebhookProjection
+
+___
 
 ### createdAt
 

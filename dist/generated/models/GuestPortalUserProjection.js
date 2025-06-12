@@ -25,11 +25,11 @@ function GuestPortalUserProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         username: json['username'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         userId: json['userId'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         updatedAt: new Date(json['updatedAt']),
         createdAt: new Date(json['createdAt']),
         portalId: json['portalId'],
@@ -47,9 +47,9 @@ function GuestPortalUserProjectionToJSON(value) {
     }
     return {
         username: value.username,
+        inboxId: value.inboxId,
         userId: value.userId,
         emailAddress: value.emailAddress,
-        inboxId: value.inboxId,
         updatedAt: value.updatedAt.toISOString(),
         createdAt: value.createdAt.toISOString(),
         portalId: value.portalId,

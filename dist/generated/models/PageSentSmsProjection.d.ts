@@ -33,13 +33,13 @@ export interface PageSentSmsProjection {
      * @type {number}
      * @memberof PageSentSmsProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageSentSmsProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

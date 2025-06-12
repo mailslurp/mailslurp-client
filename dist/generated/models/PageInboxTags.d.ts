@@ -33,13 +33,13 @@ export interface PageInboxTags {
      * @type {number}
      * @memberof PageInboxTags
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxTags
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}

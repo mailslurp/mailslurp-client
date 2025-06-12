@@ -14,6 +14,7 @@ WebhookDto
 
 ### Properties
 
+- [aiTransformId](WebhookDto.md#aitransformid)
 - [basicAuth](WebhookDto.md#basicauth)
 - [createdAt](WebhookDto.md#createdat)
 - [eventName](WebhookDto.md#eventname)
@@ -33,6 +34,18 @@ WebhookDto
 - [userId](WebhookDto.md#userid)
 
 ## Properties
+
+### aiTransformId
+
+• `Optional` **aiTransformId**: `string`
+
+ID of AI transformer for payload
+
+**`Memberof`**
+
+WebhookDto
+
+___
 
 ### basicAuth
 
