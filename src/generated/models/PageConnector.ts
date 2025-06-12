@@ -51,13 +51,13 @@ export interface PageConnector {
    * @type {number}
    * @memberof PageConnector
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageConnector
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
@@ -120,8 +120,8 @@ export function PageConnectorFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -147,8 +147,8 @@ export function PageConnectorToJSON(value?: PageConnector | null): any {
         ? undefined
         : (value.content as Array<any>).map(ConnectorProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

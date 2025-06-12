@@ -33,13 +33,13 @@ export interface PageWebhookEndpointProjection {
      * @type {number}
      * @memberof PageWebhookEndpointProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageWebhookEndpointProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

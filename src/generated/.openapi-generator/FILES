@@ -167,6 +167,7 @@ models/GenerateDmarcRecordOptions.ts
 models/GenerateDmarcRecordResults.ts
 models/GenerateMtaStsRecordOptions.ts
 models/GenerateMtaStsRecordResults.ts
+models/GenerateStructuredContentAttachmentOptions.ts
 models/GenerateStructuredContentEmailOptions.ts
 models/GenerateTlsReportingRecordOptions.ts
 models/GenerateTlsReportingRecordResults.ts

@@ -33,13 +33,13 @@ export interface PageDeliveryStatus {
      * @type {number}
      * @memberof PageDeliveryStatus
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

@@ -51,13 +51,13 @@ export interface PageAliasThreadProjection {
    * @type {number}
    * @memberof PageAliasThreadProjection
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageAliasThreadProjection
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
@@ -122,8 +122,8 @@ export function PageAliasThreadProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -151,8 +151,8 @@ export function PageAliasThreadProjectionToJSON(
         ? undefined
         : (value.content as Array<any>).map(AliasThreadProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

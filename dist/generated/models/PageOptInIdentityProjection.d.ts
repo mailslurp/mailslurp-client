@@ -33,13 +33,13 @@ export interface PageOptInIdentityProjection {
      * @type {number}
      * @memberof PageOptInIdentityProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageOptInIdentityProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

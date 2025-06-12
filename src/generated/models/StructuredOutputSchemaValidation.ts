@@ -31,6 +31,12 @@ export interface StructuredOutputSchemaValidation {
    * @memberof StructuredOutputSchemaValidation
    */
   errors?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof StructuredOutputSchemaValidation
+   */
+  exampleOutput?: string;
 }
 
 export function StructuredOutputSchemaValidationFromJSON(
@@ -49,6 +55,9 @@ export function StructuredOutputSchemaValidationFromJSONTyped(
   return {
     valid: json['valid'],
     errors: !exists(json, 'errors') ? undefined : json['errors'],
+    exampleOutput: !exists(json, 'exampleOutput')
+      ? undefined
+      : json['exampleOutput'],
   };
 }
 
@@ -64,5 +73,6 @@ export function StructuredOutputSchemaValidationToJSON(
   return {
     valid: value.valid,
     errors: value.errors,
+    exampleOutput: value.exampleOutput,
   };
 }

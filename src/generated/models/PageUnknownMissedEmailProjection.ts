@@ -51,13 +51,13 @@ export interface PageUnknownMissedEmailProjection {
    * @type {number}
    * @memberof PageUnknownMissedEmailProjection
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageUnknownMissedEmailProjection
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
@@ -124,8 +124,8 @@ export function PageUnknownMissedEmailProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -153,8 +153,8 @@ export function PageUnknownMissedEmailProjectionToJSON(
         ? undefined
         : (value.content as Array<any>).map(UnknownMissedEmailProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

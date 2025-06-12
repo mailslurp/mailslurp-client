@@ -33,13 +33,13 @@ export interface PageGuestPortalUsers {
      * @type {number}
      * @memberof PageGuestPortalUsers
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageGuestPortalUsers
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

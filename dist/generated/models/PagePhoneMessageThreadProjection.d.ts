@@ -33,13 +33,13 @@ export interface PagePhoneMessageThreadProjection {
      * @type {number}
      * @memberof PagePhoneMessageThreadProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PagePhoneMessageThreadProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

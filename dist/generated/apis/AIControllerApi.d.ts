@@ -10,7 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { GenerateStructuredContentEmailOptions, StructuredContentResult, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
+import { GenerateStructuredContentAttachmentOptions, GenerateStructuredContentEmailOptions, StructuredContentResult, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
+export interface GenerateStructuredContentFromAttachmentRequest {
+    generateStructuredContentAttachmentOptions: GenerateStructuredContentAttachmentOptions;
+}
 export interface GenerateStructuredContentFromEmailRequest {
     generateStructuredContentEmailOptions: GenerateStructuredContentEmailOptions;
 }
@@ -21,6 +24,16 @@ export interface ValidateStructuredOutputSchemaRequest {
  *
  */
 export declare class AIControllerApi extends runtime.BaseAPI {
+    /**
+     * Use output schemas to extract data from an attachment using AI
+     * Generate structured content for an attachment
+     */
+    generateStructuredContentFromAttachmentRaw(requestParameters: GenerateStructuredContentFromAttachmentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<StructuredContentResult>>;
+    /**
+     * Use output schemas to extract data from an attachment using AI
+     * Generate structured content for an attachment
+     */
+    generateStructuredContentFromAttachment(requestParameters: GenerateStructuredContentFromAttachmentRequest, initOverrides?: RequestInit): Promise<StructuredContentResult>;
     /**
      * Use output schemas to extract data from an email using AI
      * Generate structured content for an email

@@ -20,6 +20,8 @@
 
 ### Methods
 
+- [generateStructuredContentFromAttachment](AIControllerApi.md#generatestructuredcontentfromattachment)
+- [generateStructuredContentFromAttachmentRaw](AIControllerApi.md#generatestructuredcontentfromattachmentraw)
 - [generateStructuredContentFromEmail](AIControllerApi.md#generatestructuredcontentfromemail)
 - [generateStructuredContentFromEmailRaw](AIControllerApi.md#generatestructuredcontentfromemailraw)
 - [request](AIControllerApi.md#request)
@@ -56,6 +58,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### generateStructuredContentFromAttachment
+
+▸ **generateStructuredContentFromAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`StructuredContentResult`](../interfaces/StructuredContentResult.md)\>
+
+Use output schemas to extract data from an attachment using AI
+Generate structured content for an attachment
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GenerateStructuredContentFromAttachmentRequest`](../interfaces/GenerateStructuredContentFromAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`StructuredContentResult`](../interfaces/StructuredContentResult.md)\>
+
+___
+
+### generateStructuredContentFromAttachmentRaw
+
+▸ **generateStructuredContentFromAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`StructuredContentResult`](../interfaces/StructuredContentResult.md)\>\>
+
+Use output schemas to extract data from an attachment using AI
+Generate structured content for an attachment
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GenerateStructuredContentFromAttachmentRequest`](../interfaces/GenerateStructuredContentFromAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`StructuredContentResult`](../interfaces/StructuredContentResult.md)\>\>
+
+___
 
 ### generateStructuredContentFromEmail
 

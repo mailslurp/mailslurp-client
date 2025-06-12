@@ -91,18 +91,6 @@ export interface EmailThreadProjection {
    */
   hasAttachments: boolean;
   /**
-   * Has unread
-   * @type {boolean}
-   * @memberof EmailThreadProjection
-   */
-  unread: boolean;
-  /**
-   * Number of messages in the thread
-   * @type {number}
-   * @memberof EmailThreadProjection
-   */
-  messageCount: number;
-  /**
    * Last body excerpt
    * @type {string}
    * @memberof EmailThreadProjection
@@ -132,6 +120,18 @@ export interface EmailThreadProjection {
    * @memberof EmailThreadProjection
    */
   lastSender?: SenderProjection;
+  /**
+   * Number of messages in the thread
+   * @type {number}
+   * @memberof EmailThreadProjection
+   */
+  messageCount: number;
+  /**
+   * Has unread
+   * @type {boolean}
+   * @memberof EmailThreadProjection
+   */
+  unread: boolean;
   /**
    * Thread topic subject
    * @type {string}
@@ -180,8 +180,6 @@ export function EmailThreadProjectionFromJSONTyped(
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     hasAttachments: json['hasAttachments'],
-    unread: json['unread'],
-    messageCount: json['messageCount'],
     lastBodyExcerpt: !exists(json, 'lastBodyExcerpt')
       ? undefined
       : json['lastBodyExcerpt'],
@@ -195,6 +193,8 @@ export function EmailThreadProjectionFromJSONTyped(
     lastSender: !exists(json, 'lastSender')
       ? undefined
       : SenderProjectionFromJSON(json['lastSender']),
+    messageCount: json['messageCount'],
+    unread: json['unread'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
@@ -221,8 +221,6 @@ export function EmailThreadProjectionToJSON(
     cc: value.cc,
     bcc: value.bcc,
     hasAttachments: value.hasAttachments,
-    unread: value.unread,
-    messageCount: value.messageCount,
     lastBodyExcerpt: value.lastBodyExcerpt,
     lastTextExcerpt: value.lastTextExcerpt,
     lastCreatedAt:
@@ -231,6 +229,8 @@ export function EmailThreadProjectionToJSON(
         : value.lastCreatedAt.toISOString(),
     lastFrom: value.lastFrom,
     lastSender: SenderProjectionToJSON(value.lastSender),
+    messageCount: value.messageCount,
+    unread: value.unread,
     subject: value.subject,
     id: value.id,
     from: value.from,

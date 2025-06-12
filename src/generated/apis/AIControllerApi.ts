@@ -14,6 +14,9 @@
 
 import * as runtime from '../runtime';
 import {
+  GenerateStructuredContentAttachmentOptions,
+  GenerateStructuredContentAttachmentOptionsFromJSON,
+  GenerateStructuredContentAttachmentOptionsToJSON,
   GenerateStructuredContentEmailOptions,
   GenerateStructuredContentEmailOptionsFromJSON,
   GenerateStructuredContentEmailOptionsToJSON,
@@ -28,6 +31,10 @@ import {
   StructuredOutputSchemaValidationToJSON,
 } from '../models';
 
+export interface GenerateStructuredContentFromAttachmentRequest {
+  generateStructuredContentAttachmentOptions: GenerateStructuredContentAttachmentOptions;
+}
+
 export interface GenerateStructuredContentFromEmailRequest {
   generateStructuredContentEmailOptions: GenerateStructuredContentEmailOptions;
 }
@@ -40,6 +47,67 @@ export interface ValidateStructuredOutputSchemaRequest {
  *
  */
 export class AIControllerApi extends runtime.BaseAPI {
+  /**
+   * Use output schemas to extract data from an attachment using AI
+   * Generate structured content for an attachment
+   */
+  async generateStructuredContentFromAttachmentRaw(
+    requestParameters: GenerateStructuredContentFromAttachmentRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<StructuredContentResult>> {
+    if (
+      requestParameters.generateStructuredContentAttachmentOptions === null ||
+      requestParameters.generateStructuredContentAttachmentOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateStructuredContentAttachmentOptions',
+        'Required parameter requestParameters.generateStructuredContentAttachmentOptions was null or undefined when calling generateStructuredContentFromAttachment.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/structured-content/attachment`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateStructuredContentAttachmentOptionsToJSON(
+          requestParameters.generateStructuredContentAttachmentOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      StructuredContentResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Use output schemas to extract data from an attachment using AI
+   * Generate structured content for an attachment
+   */
+  async generateStructuredContentFromAttachment(
+    requestParameters: GenerateStructuredContentFromAttachmentRequest,
+    initOverrides?: RequestInit
+  ): Promise<StructuredContentResult> {
+    const response = await this.generateStructuredContentFromAttachmentRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Use output schemas to extract data from an email using AI
    * Generate structured content for an email

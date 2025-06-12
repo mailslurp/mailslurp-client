@@ -77,18 +77,6 @@ export interface EmailThreadProjection {
      */
     hasAttachments: boolean;
     /**
-     * Has unread
-     * @type {boolean}
-     * @memberof EmailThreadProjection
-     */
-    unread: boolean;
-    /**
-     * Number of messages in the thread
-     * @type {number}
-     * @memberof EmailThreadProjection
-     */
-    messageCount: number;
-    /**
      * Last body excerpt
      * @type {string}
      * @memberof EmailThreadProjection
@@ -118,6 +106,18 @@ export interface EmailThreadProjection {
      * @memberof EmailThreadProjection
      */
     lastSender?: SenderProjection;
+    /**
+     * Number of messages in the thread
+     * @type {number}
+     * @memberof EmailThreadProjection
+     */
+    messageCount: number;
+    /**
+     * Has unread
+     * @type {boolean}
+     * @memberof EmailThreadProjection
+     */
+    unread: boolean;
     /**
      * Thread topic subject
      * @type {string}

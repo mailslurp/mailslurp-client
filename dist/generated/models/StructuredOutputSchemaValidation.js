@@ -26,6 +26,9 @@ function StructuredOutputSchemaValidationFromJSONTyped(json, ignoreDiscriminator
     return {
         valid: json['valid'],
         errors: !(0, runtime_1.exists)(json, 'errors') ? undefined : json['errors'],
+        exampleOutput: !(0, runtime_1.exists)(json, 'exampleOutput')
+            ? undefined
+            : json['exampleOutput'],
     };
 }
 exports.StructuredOutputSchemaValidationFromJSONTyped = StructuredOutputSchemaValidationFromJSONTyped;
@@ -39,6 +42,7 @@ function StructuredOutputSchemaValidationToJSON(value) {
     return {
         valid: value.valid,
         errors: value.errors,
+        exampleOutput: value.exampleOutput,
     };
 }
 exports.StructuredOutputSchemaValidationToJSON = StructuredOutputSchemaValidationToJSON;

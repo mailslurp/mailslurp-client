@@ -33,13 +33,13 @@ export interface PageReputationItems {
      * @type {number}
      * @memberof PageReputationItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageReputationItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

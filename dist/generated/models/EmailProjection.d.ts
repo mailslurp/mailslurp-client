@@ -87,12 +87,6 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    inReplyTo?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
     plusAddress?: string | null;
     /**
      *
@@ -100,6 +94,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     sizeBytes?: number | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    inReplyTo?: string | null;
     /**
      *
      * @type {boolean}

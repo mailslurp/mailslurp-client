@@ -33,13 +33,13 @@ export interface PageBouncedRecipients {
      * @type {number}
      * @memberof PageBouncedRecipients
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageBouncedRecipients
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

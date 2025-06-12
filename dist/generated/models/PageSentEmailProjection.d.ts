@@ -33,13 +33,13 @@ export interface PageSentEmailProjection {
      * @type {number}
      * @memberof PageSentEmailProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageSentEmailProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

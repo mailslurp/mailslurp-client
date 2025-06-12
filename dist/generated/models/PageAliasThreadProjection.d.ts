@@ -33,13 +33,13 @@ export interface PageAliasThreadProjection {
      * @type {number}
      * @memberof PageAliasThreadProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageAliasThreadProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

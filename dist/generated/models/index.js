@@ -148,6 +148,7 @@ __exportStar(require("./GenerateDmarcRecordOptions"), exports);
 __exportStar(require("./GenerateDmarcRecordResults"), exports);
 __exportStar(require("./GenerateMtaStsRecordOptions"), exports);
 __exportStar(require("./GenerateMtaStsRecordResults"), exports);
+__exportStar(require("./GenerateStructuredContentAttachmentOptions"), exports);
 __exportStar(require("./GenerateStructuredContentEmailOptions"), exports);
 __exportStar(require("./GenerateTlsReportingRecordOptions"), exports);
 __exportStar(require("./GenerateTlsReportingRecordResults"), exports);

@@ -101,12 +101,6 @@ export interface EmailProjection {
    * @type {string}
    * @memberof EmailProjection
    */
-  inReplyTo?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
   plusAddress?: string | null;
   /**
    *
@@ -114,6 +108,12 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   sizeBytes?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  inReplyTo?: string | null;
   /**
    *
    * @type {boolean}
@@ -203,9 +203,9 @@ export function EmailProjectionFromJSONTyped(
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
-    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
     sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     read: json['read'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
@@ -240,9 +240,9 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     messageId: value.messageId,
     domainId: value.domainId,
     favourite: value.favourite,
-    inReplyTo: value.inReplyTo,
     plusAddress: value.plusAddress,
     sizeBytes: value.sizeBytes,
+    inReplyTo: value.inReplyTo,
     read: value.read,
     bodyExcerpt: value.bodyExcerpt,
     textExcerpt: value.textExcerpt,

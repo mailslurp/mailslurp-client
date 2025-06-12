@@ -130,6 +130,7 @@ export * from './GenerateDmarcRecordOptions';
 export * from './GenerateDmarcRecordResults';
 export * from './GenerateMtaStsRecordOptions';
 export * from './GenerateMtaStsRecordResults';
+export * from './GenerateStructuredContentAttachmentOptions';
 export * from './GenerateStructuredContentEmailOptions';
 export * from './GenerateTlsReportingRecordOptions';
 export * from './GenerateTlsReportingRecordResults';

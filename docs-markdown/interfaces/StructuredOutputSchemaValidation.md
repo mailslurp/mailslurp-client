@@ -13,6 +13,7 @@ StructuredOutputSchemaValidation
 ### Properties
 
 - [errors](StructuredOutputSchemaValidation.md#errors)
+- [exampleOutput](StructuredOutputSchemaValidation.md#exampleoutput)
 - [valid](StructuredOutputSchemaValidation.md#valid)
 
 ## Properties
@@ -20,6 +21,16 @@ StructuredOutputSchemaValidation
 ### errors
 
 • `Optional` **errors**: `string`[]
+
+**`Memberof`**
+
+StructuredOutputSchemaValidation
+
+___
+
+### exampleOutput
+
+• `Optional` **exampleOutput**: `string`
 
 **`Memberof`**
 

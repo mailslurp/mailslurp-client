@@ -3,6 +3,7 @@ import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
 require('cross-fetch/polyfill');
 import {
   AIControllerApi,
+  MFAControllerApi,
   AliasControllerApi,
   UserControllerApi,
   AttachmentControllerApi,
@@ -123,6 +124,7 @@ export class MailSlurp {
   public readonly waitController: WaitForControllerApi;
 
   public readonly aiController: AIControllerApi;
+  public readonly mfaController: MFAControllerApi;
   public readonly aliasController: AliasControllerApi;
   public readonly formController: FormControllerApi;
   public readonly domainController: DomainControllerApi;
@@ -176,6 +178,7 @@ export class MailSlurp {
     this.sentController = new SentEmailsControllerApi(...args);
 
     this.aiController = new AIControllerApi(...args);
+    this.mfaController = new MFAControllerApi(...args);
     this.aliasController = new AliasControllerApi(...args);
     this.formController = new FormControllerApi(...args);
     this.contactController = new ContactControllerApi(...args);

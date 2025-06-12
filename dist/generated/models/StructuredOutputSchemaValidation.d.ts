@@ -27,6 +27,12 @@ export interface StructuredOutputSchemaValidation {
      * @memberof StructuredOutputSchemaValidation
      */
     errors?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof StructuredOutputSchemaValidation
+     */
+    exampleOutput?: string;
 }
 export declare function StructuredOutputSchemaValidationFromJSON(json: any): StructuredOutputSchemaValidation;
 export declare function StructuredOutputSchemaValidationFromJSONTyped(json: any, ignoreDiscriminator: boolean): StructuredOutputSchemaValidation;

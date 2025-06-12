@@ -33,13 +33,13 @@ export interface PageSentEmailWithQueueProjection {
      * @type {number}
      * @memberof PageSentEmailWithQueueProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageSentEmailWithQueueProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

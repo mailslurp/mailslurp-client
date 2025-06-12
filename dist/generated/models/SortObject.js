@@ -24,8 +24,8 @@ function SortObjectFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        sorted: !(0, runtime_1.exists)(json, 'sorted') ? undefined : json['sorted'],
         unsorted: !(0, runtime_1.exists)(json, 'unsorted') ? undefined : json['unsorted'],
+        sorted: !(0, runtime_1.exists)(json, 'sorted') ? undefined : json['sorted'],
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
@@ -38,8 +38,8 @@ function SortObjectToJSON(value) {
         return null;
     }
     return {
-        sorted: value.sorted,
         unsorted: value.unsorted,
+        sorted: value.sorted,
         empty: value.empty,
     };
 }

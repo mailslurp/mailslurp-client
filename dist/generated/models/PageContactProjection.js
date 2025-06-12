@@ -31,8 +31,8 @@ function PageContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
         pageable: !(0, runtime_1.exists)(json, 'pageable')
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        totalElements: json['totalElements'],
         totalPages: json['totalPages'],
+        totalElements: json['totalElements'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
         numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
             ? undefined
@@ -57,8 +57,8 @@ function PageContactProjectionToJSON(value) {
             ? undefined
             : value.content.map(_1.ContactProjectionToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
-        totalElements: value.totalElements,
         totalPages: value.totalPages,
+        totalElements: value.totalElements,
         last: value.last,
         numberOfElements: value.numberOfElements,
         first: value.first,

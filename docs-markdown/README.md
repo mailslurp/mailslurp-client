@@ -545,7 +545,9 @@ MailSlurp JS
 - [GenerateMtaStsRecordOptions](interfaces/GenerateMtaStsRecordOptions.md)
 - [GenerateMtaStsRecordRequest](interfaces/GenerateMtaStsRecordRequest.md)
 - [GenerateMtaStsRecordResults](interfaces/GenerateMtaStsRecordResults.md)
+- [GenerateStructuredContentAttachmentOptions](interfaces/GenerateStructuredContentAttachmentOptions.md)
 - [GenerateStructuredContentEmailOptions](interfaces/GenerateStructuredContentEmailOptions.md)
+- [GenerateStructuredContentFromAttachmentRequest](interfaces/GenerateStructuredContentFromAttachmentRequest.md)
 - [GenerateStructuredContentFromEmailRequest](interfaces/GenerateStructuredContentFromEmailRequest.md)
 - [GenerateTlsReportingRecordOptions](interfaces/GenerateTlsReportingRecordOptions.md)
 - [GenerateTlsReportingRecordRequest](interfaces/GenerateTlsReportingRecordRequest.md)
@@ -1476,6 +1478,9 @@ MailSlurp JS
 - [GenerateMtaStsRecordResultsFromJSON](README.md#generatemtastsrecordresultsfromjson)
 - [GenerateMtaStsRecordResultsFromJSONTyped](README.md#generatemtastsrecordresultsfromjsontyped)
 - [GenerateMtaStsRecordResultsToJSON](README.md#generatemtastsrecordresultstojson)
+- [GenerateStructuredContentAttachmentOptionsFromJSON](README.md#generatestructuredcontentattachmentoptionsfromjson)
+- [GenerateStructuredContentAttachmentOptionsFromJSONTyped](README.md#generatestructuredcontentattachmentoptionsfromjsontyped)
+- [GenerateStructuredContentAttachmentOptionsToJSON](README.md#generatestructuredcontentattachmentoptionstojson)
 - [GenerateStructuredContentEmailOptionsFromJSON](README.md#generatestructuredcontentemailoptionsfromjson)
 - [GenerateStructuredContentEmailOptionsFromJSONTyped](README.md#generatestructuredcontentemailoptionsfromjsontyped)
 - [GenerateStructuredContentEmailOptionsToJSON](README.md#generatestructuredcontentemailoptionstojson)
@@ -8768,6 +8773,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`GenerateMtaStsRecordResults`](interfaces/GenerateMtaStsRecordResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GenerateStructuredContentAttachmentOptionsFromJSON
+
+▸ **GenerateStructuredContentAttachmentOptionsFromJSON**(`json`): [`GenerateStructuredContentAttachmentOptions`](interfaces/GenerateStructuredContentAttachmentOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GenerateStructuredContentAttachmentOptions`](interfaces/GenerateStructuredContentAttachmentOptions.md)
+
+___
+
+### GenerateStructuredContentAttachmentOptionsFromJSONTyped
+
+▸ **GenerateStructuredContentAttachmentOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GenerateStructuredContentAttachmentOptions`](interfaces/GenerateStructuredContentAttachmentOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GenerateStructuredContentAttachmentOptions`](interfaces/GenerateStructuredContentAttachmentOptions.md)
+
+___
+
+### GenerateStructuredContentAttachmentOptionsToJSON
+
+▸ **GenerateStructuredContentAttachmentOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GenerateStructuredContentAttachmentOptions`](interfaces/GenerateStructuredContentAttachmentOptions.md) |
 
 #### Returns
 
