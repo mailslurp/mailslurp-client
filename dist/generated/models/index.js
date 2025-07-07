@@ -84,6 +84,7 @@ __exportStar(require("./CreatePhoneNumberOptions"), exports);
 __exportStar(require("./CreatePortalOptions"), exports);
 __exportStar(require("./CreatePortalUserOptions"), exports);
 __exportStar(require("./CreateTemplateOptions"), exports);
+__exportStar(require("./CreateTotpDeviceBase32SecretKeyOptions"), exports);
 __exportStar(require("./CreateTotpDeviceOtpAuthUrlOptions"), exports);
 __exportStar(require("./CreateTrackingPixelOptions"), exports);
 __exportStar(require("./CreateWebhookOptions"), exports);

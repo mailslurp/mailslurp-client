@@ -91,12 +91,6 @@ export interface EmailThreadProjection {
    */
   hasAttachments: boolean;
   /**
-   * Has unread
-   * @type {boolean}
-   * @memberof EmailThreadProjection
-   */
-  unread: boolean;
-  /**
    * Number of messages in the thread
    * @type {number}
    * @memberof EmailThreadProjection
@@ -132,6 +126,12 @@ export interface EmailThreadProjection {
    * @memberof EmailThreadProjection
    */
   lastSender?: SenderProjection;
+  /**
+   * Has unread
+   * @type {boolean}
+   * @memberof EmailThreadProjection
+   */
+  unread: boolean;
   /**
    * Thread topic subject
    * @type {string}
@@ -180,7 +180,6 @@ export function EmailThreadProjectionFromJSONTyped(
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     hasAttachments: json['hasAttachments'],
-    unread: json['unread'],
     messageCount: json['messageCount'],
     lastBodyExcerpt: !exists(json, 'lastBodyExcerpt')
       ? undefined
@@ -195,6 +194,7 @@ export function EmailThreadProjectionFromJSONTyped(
     lastSender: !exists(json, 'lastSender')
       ? undefined
       : SenderProjectionFromJSON(json['lastSender']),
+    unread: json['unread'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
@@ -221,7 +221,6 @@ export function EmailThreadProjectionToJSON(
     cc: value.cc,
     bcc: value.bcc,
     hasAttachments: value.hasAttachments,
-    unread: value.unread,
     messageCount: value.messageCount,
     lastBodyExcerpt: value.lastBodyExcerpt,
     lastTextExcerpt: value.lastTextExcerpt,
@@ -231,6 +230,7 @@ export function EmailThreadProjectionToJSON(
         : value.lastCreatedAt.toISOString(),
     lastFrom: value.lastFrom,
     lastSender: SenderProjectionToJSON(value.lastSender),
+    unread: value.unread,
     subject: value.subject,
     id: value.id,
     from: value.from,

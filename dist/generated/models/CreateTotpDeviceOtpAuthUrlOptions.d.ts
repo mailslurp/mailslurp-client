@@ -16,43 +16,43 @@
  */
 export interface CreateTotpDeviceOtpAuthUrlOptions {
     /**
-     *
+     * OTP Auth URI for connecting a TOTP device.
      * @type {string}
      * @memberof CreateTotpDeviceOtpAuthUrlOptions
      */
     otpAuthUrl: string;
     /**
-     *
+     * Name for labeling the TOTP device
      * @type {string}
      * @memberof CreateTotpDeviceOtpAuthUrlOptions
      */
     name?: string | null;
     /**
-     *
+     * Optional username for the TOTP device
      * @type {string}
      * @memberof CreateTotpDeviceOtpAuthUrlOptions
      */
     username?: string | null;
     /**
-     *
+     * Optional issuer override for the TOTP device
      * @type {string}
      * @memberof CreateTotpDeviceOtpAuthUrlOptions
      */
     issuer?: string | null;
     /**
-     *
+     * Optional number of digits in TOTP code
      * @type {number}
      * @memberof CreateTotpDeviceOtpAuthUrlOptions
      */
     digits?: number | null;
     /**
-     *
+     * Optional period in seconds for TOTP code expiration
      * @type {number}
      * @memberof CreateTotpDeviceOtpAuthUrlOptions
      */
     period?: number | null;
     /**
-     *
+     * Optional algorithm override
      * @type {string}
      * @memberof CreateTotpDeviceOtpAuthUrlOptions
      */

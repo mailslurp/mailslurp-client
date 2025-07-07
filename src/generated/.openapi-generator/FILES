@@ -104,6 +104,7 @@ models/CreatePhoneNumberOptions.ts
 models/CreatePortalOptions.ts
 models/CreatePortalUserOptions.ts
 models/CreateTemplateOptions.ts
+models/CreateTotpDeviceBase32SecretKeyOptions.ts
 models/CreateTotpDeviceOtpAuthUrlOptions.ts
 models/CreateTrackingPixelOptions.ts
 models/CreateWebhookOptions.ts

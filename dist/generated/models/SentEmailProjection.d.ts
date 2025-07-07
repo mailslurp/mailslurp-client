@@ -27,12 +27,6 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
-    subject?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
     from?: string | null;
     /**
      *
@@ -46,6 +40,12 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     recipients?: EmailRecipients | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {Array<string>}

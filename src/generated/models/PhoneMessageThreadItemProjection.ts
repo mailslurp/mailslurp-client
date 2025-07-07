@@ -42,12 +42,6 @@ export interface PhoneMessageThreadItemProjection {
    * @type {string}
    * @memberof PhoneMessageThreadItemProjection
    */
-  fromPhoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneMessageThreadItemProjection
-   */
   toPhoneNumber: string;
   /**
    *
@@ -55,6 +49,12 @@ export interface PhoneMessageThreadItemProjection {
    * @memberof PhoneMessageThreadItemProjection
    */
   messageDirection: PhoneMessageThreadItemProjectionMessageDirectionEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneMessageThreadItemProjection
+   */
+  fromPhoneNumber: string;
 }
 
 /**
@@ -83,9 +83,9 @@ export function PhoneMessageThreadItemProjectionFromJSONTyped(
     body: json['body'],
     phoneNumberId: json['phoneNumberId'],
     created: new Date(json['created']),
-    fromPhoneNumber: json['fromPhoneNumber'],
     toPhoneNumber: json['toPhoneNumber'],
     messageDirection: json['messageDirection'],
+    fromPhoneNumber: json['fromPhoneNumber'],
   };
 }
 
@@ -102,8 +102,8 @@ export function PhoneMessageThreadItemProjectionToJSON(
     body: value.body,
     phoneNumberId: value.phoneNumberId,
     created: value.created.toISOString(),
-    fromPhoneNumber: value.fromPhoneNumber,
     toPhoneNumber: value.toPhoneNumber,
     messageDirection: value.messageDirection,
+    fromPhoneNumber: value.fromPhoneNumber,
   };
 }

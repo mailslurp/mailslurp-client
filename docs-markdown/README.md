@@ -440,6 +440,8 @@ MailSlurp JS
 - [CreateRandomInboxRequest](interfaces/CreateRandomInboxRequest.md)
 - [CreateTemplateOptions](interfaces/CreateTemplateOptions.md)
 - [CreateTemplateRequest](interfaces/CreateTemplateRequest.md)
+- [CreateTotpDeviceBase32SecretKeyOptions](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md)
+- [CreateTotpDeviceForBase32SecretKeyRequest](interfaces/CreateTotpDeviceForBase32SecretKeyRequest.md)
 - [CreateTotpDeviceForCustomRequest](interfaces/CreateTotpDeviceForCustomRequest.md)
 - [CreateTotpDeviceForOtpAuthUrlRequest](interfaces/CreateTotpDeviceForOtpAuthUrlRequest.md)
 - [CreateTotpDeviceOtpAuthUrlOptions](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md)
@@ -1333,6 +1335,9 @@ MailSlurp JS
 - [CreateTemplateOptionsFromJSON](README.md#createtemplateoptionsfromjson)
 - [CreateTemplateOptionsFromJSONTyped](README.md#createtemplateoptionsfromjsontyped)
 - [CreateTemplateOptionsToJSON](README.md#createtemplateoptionstojson)
+- [CreateTotpDeviceBase32SecretKeyOptionsFromJSON](README.md#createtotpdevicebase32secretkeyoptionsfromjson)
+- [CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped](README.md#createtotpdevicebase32secretkeyoptionsfromjsontyped)
+- [CreateTotpDeviceBase32SecretKeyOptionsToJSON](README.md#createtotpdevicebase32secretkeyoptionstojson)
 - [CreateTotpDeviceOtpAuthUrlOptionsFromJSON](README.md#createtotpdeviceotpauthurloptionsfromjson)
 - [CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped](README.md#createtotpdeviceotpauthurloptionsfromjsontyped)
 - [CreateTotpDeviceOtpAuthUrlOptionsToJSON](README.md#createtotpdeviceotpauthurloptionstojson)
@@ -5732,6 +5737,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateTotpDeviceBase32SecretKeyOptionsFromJSON
+
+▸ **CreateTotpDeviceBase32SecretKeyOptionsFromJSON**(`json`): [`CreateTotpDeviceBase32SecretKeyOptions`](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateTotpDeviceBase32SecretKeyOptions`](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md)
+
+___
+
+### CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped
+
+▸ **CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateTotpDeviceBase32SecretKeyOptions`](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateTotpDeviceBase32SecretKeyOptions`](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md)
+
+___
+
+### CreateTotpDeviceBase32SecretKeyOptionsToJSON
+
+▸ **CreateTotpDeviceBase32SecretKeyOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateTotpDeviceBase32SecretKeyOptions`](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md) |
 
 #### Returns
 

@@ -20,6 +20,8 @@
 
 ### Methods
 
+- [createTotpDeviceForBase32SecretKey](MFAControllerApi.md#createtotpdeviceforbase32secretkey)
+- [createTotpDeviceForBase32SecretKeyRaw](MFAControllerApi.md#createtotpdeviceforbase32secretkeyraw)
 - [createTotpDeviceForCustom](MFAControllerApi.md#createtotpdeviceforcustom)
 - [createTotpDeviceForCustomRaw](MFAControllerApi.md#createtotpdeviceforcustomraw)
 - [createTotpDeviceForOtpAuthUrl](MFAControllerApi.md#createtotpdeviceforotpauthurl)
@@ -62,6 +64,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### createTotpDeviceForBase32SecretKey
+
+▸ **createTotpDeviceForBase32SecretKey**(`requestParameters`, `initOverrides?`): `Promise`<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>
+
+Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+Create a TOTP device from an base32 secret key
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateTotpDeviceForBase32SecretKeyRequest`](../interfaces/CreateTotpDeviceForBase32SecretKeyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>
+
+___
+
+### createTotpDeviceForBase32SecretKeyRaw
+
+▸ **createTotpDeviceForBase32SecretKeyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>\>
+
+Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+Create a TOTP device from an base32 secret key
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateTotpDeviceForBase32SecretKeyRequest`](../interfaces/CreateTotpDeviceForBase32SecretKeyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>\>
+
+___
 
 ### createTotpDeviceForCustom
 

@@ -41,12 +41,6 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
   from?: string | null;
   /**
    *
@@ -60,6 +54,12 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   recipients?: EmailRecipients | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  subject?: string | null;
   /**
    *
    * @type {Array<string>}
@@ -159,7 +159,6 @@ export function SentEmailProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     from: !exists(json, 'from') ? undefined : json['from'],
     sender: !exists(json, 'sender')
       ? undefined
@@ -167,6 +166,7 @@ export function SentEmailProjectionFromJSONTyped(
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
     userId: json['userId'],
@@ -195,10 +195,10 @@ export function SentEmailProjectionToJSON(
   }
   return {
     id: value.id,
-    subject: value.subject,
     from: value.from,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
+    subject: value.subject,
     attachments: value.attachments,
     inboxId: value.inboxId,
     userId: value.userId,

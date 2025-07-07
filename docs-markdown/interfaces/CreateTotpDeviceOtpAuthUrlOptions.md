@@ -26,6 +26,8 @@ CreateTotpDeviceOtpAuthUrlOptions
 
 • `Optional` **algorithm**: `string`
 
+Optional algorithm override
+
 **`Memberof`**
 
 CreateTotpDeviceOtpAuthUrlOptions
@@ -35,6 +37,8 @@ ___
 ### digits
 
 • `Optional` **digits**: `number`
+
+Optional number of digits in TOTP code
 
 **`Memberof`**
 
@@ -46,6 +50,8 @@ ___
 
 • `Optional` **issuer**: `string`
 
+Optional issuer override for the TOTP device
+
 **`Memberof`**
 
 CreateTotpDeviceOtpAuthUrlOptions
@@ -55,6 +61,8 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+Name for labeling the TOTP device
 
 **`Memberof`**
 
@@ -66,6 +74,8 @@ ___
 
 • **otpAuthUrl**: `string`
 
+OTP Auth URI for connecting a TOTP device.
+
 **`Memberof`**
 
 CreateTotpDeviceOtpAuthUrlOptions
@@ -76,6 +86,8 @@ ___
 
 • `Optional` **period**: `number`
 
+Optional period in seconds for TOTP code expiration
+
 **`Memberof`**
 
 CreateTotpDeviceOtpAuthUrlOptions
@@ -85,6 +97,8 @@ ___
 ### username
 
 • `Optional` **username**: `string`
+
+Optional username for the TOTP device
 
 **`Memberof`**
 

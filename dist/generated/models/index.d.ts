@@ -66,6 +66,7 @@ export * from './CreatePhoneNumberOptions';
 export * from './CreatePortalOptions';
 export * from './CreatePortalUserOptions';
 export * from './CreateTemplateOptions';
+export * from './CreateTotpDeviceBase32SecretKeyOptions';
 export * from './CreateTotpDeviceOtpAuthUrlOptions';
 export * from './CreateTrackingPixelOptions';
 export * from './CreateWebhookOptions';

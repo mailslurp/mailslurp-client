@@ -99,6 +99,60 @@ var MFAControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+     * Create a TOTP device from an base32 secret key
+     */
+    MFAControllerApi.prototype.createTotpDeviceForBase32SecretKeyRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createTotpDeviceBase32SecretKeyOptions === null ||
+                            requestParameters.createTotpDeviceBase32SecretKeyOptions === undefined) {
+                            throw new runtime.RequiredError('createTotpDeviceBase32SecretKeyOptions', 'Required parameter requestParameters.createTotpDeviceBase32SecretKeyOptions was null or undefined when calling createTotpDeviceForBase32SecretKey.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/mfa/totp/device/base32SecretKey",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateTotpDeviceBase32SecretKeyOptionsToJSON)(requestParameters.createTotpDeviceBase32SecretKeyOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+     * Create a TOTP device from an base32 secret key
+     */
+    MFAControllerApi.prototype.createTotpDeviceForBase32SecretKey = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createTotpDeviceForBase32SecretKeyRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
      * Create a TOTP device from custom options
      */

@@ -10,7 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateTotpDeviceOtpAuthUrlOptions, TotpDeviceCodeDto, TotpDeviceDto, TotpDeviceOptionalDto } from '../models';
+import { CreateTotpDeviceBase32SecretKeyOptions, CreateTotpDeviceOtpAuthUrlOptions, TotpDeviceCodeDto, TotpDeviceDto, TotpDeviceOptionalDto } from '../models';
+export interface CreateTotpDeviceForBase32SecretKeyRequest {
+    createTotpDeviceBase32SecretKeyOptions: CreateTotpDeviceBase32SecretKeyOptions;
+}
 export interface CreateTotpDeviceForCustomRequest {
     createTotpDeviceOtpAuthUrlOptions: CreateTotpDeviceOtpAuthUrlOptions;
 }
@@ -34,6 +37,16 @@ export interface GetTotpDeviceCodeRequest {
  *
  */
 export declare class MFAControllerApi extends runtime.BaseAPI {
+    /**
+     * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+     * Create a TOTP device from an base32 secret key
+     */
+    createTotpDeviceForBase32SecretKeyRaw(requestParameters: CreateTotpDeviceForBase32SecretKeyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceDto>>;
+    /**
+     * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+     * Create a TOTP device from an base32 secret key
+     */
+    createTotpDeviceForBase32SecretKey(requestParameters: CreateTotpDeviceForBase32SecretKeyRequest, initOverrides?: RequestInit): Promise<TotpDeviceDto>;
     /**
      * Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
      * Create a TOTP device from custom options
