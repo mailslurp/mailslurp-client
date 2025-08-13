@@ -59,9 +59,9 @@ export interface WaitForSingleSmsOptions {
     delay?: number;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum WaitForSingleSmsOptionsSortDirectionEnum {
     ASC = "ASC",
     DESC = "DESC"

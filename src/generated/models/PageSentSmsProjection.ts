@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SentSmsProjection,
-  SentSmsProjectionFromJSON,
-  SentSmsProjectionFromJSONTyped,
-  SentSmsProjectionToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SentSmsProjection,
+    SentSmsProjectionFromJSON,
+    SentSmsProjectionFromJSONTyped,
+    SentSmsProjectionToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,131 +34,119 @@ import {
  * @interface PageSentSmsProjection
  */
 export interface PageSentSmsProjection {
-  /**
-   *
-   * @type {Array<SentSmsProjection>}
-   * @memberof PageSentSmsProjection
-   */
-  content?: Array<SentSmsProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageSentSmsProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentSmsProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentSmsProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageSentSmsProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentSmsProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageSentSmsProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentSmsProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentSmsProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageSentSmsProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageSentSmsProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<SentSmsProjection>}
+     * @memberof PageSentSmsProjection
+     */
+    content?: Array<SentSmsProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageSentSmsProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentSmsProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentSmsProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageSentSmsProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentSmsProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageSentSmsProjection
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageSentSmsProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentSmsProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageSentSmsProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageSentSmsProjection
+     */
+    empty?: boolean;
 }
 
-export function PageSentSmsProjectionFromJSON(
-  json: any
-): PageSentSmsProjection {
-  return PageSentSmsProjectionFromJSONTyped(json, false);
+export function PageSentSmsProjectionFromJSON(json: any): PageSentSmsProjection {
+    return PageSentSmsProjectionFromJSONTyped(json, false);
 }
 
-export function PageSentSmsProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageSentSmsProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(SentSmsProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageSentSmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageSentSmsProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(SentSmsProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PageSentSmsProjectionToJSON(
-  value?: PageSentSmsProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(SentSmsProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageSentSmsProjectionToJSON(value?: PageSentSmsProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(SentSmsProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'sort': SortObjectToJSON(value.sort),
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'empty': value.empty,
+    };
 }
+
+

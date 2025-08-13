@@ -19,11 +19,11 @@ function FilterBouncedRecipientsResultFromJSON(json) {
 }
 exports.FilterBouncedRecipientsResultFromJSON = FilterBouncedRecipientsResultFromJSON;
 function FilterBouncedRecipientsResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        filteredRecipients: json['filteredRecipients'],
+        'filteredRecipients': json['filteredRecipients'],
     };
 }
 exports.FilterBouncedRecipientsResultFromJSONTyped = FilterBouncedRecipientsResultFromJSONTyped;
@@ -35,7 +35,7 @@ function FilterBouncedRecipientsResultToJSON(value) {
         return null;
     }
     return {
-        filteredRecipients: value.filteredRecipients,
+        'filteredRecipients': value.filteredRecipients,
     };
 }
 exports.FilterBouncedRecipientsResultToJSON = FilterBouncedRecipientsResultToJSON;

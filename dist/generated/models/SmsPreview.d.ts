@@ -28,25 +28,25 @@ export interface SmsPreview {
      */
     userId: string;
     /**
-     *
+     * TXT message content
      * @type {string}
      * @memberof SmsPreview
      */
     body: string;
     /**
-     *
+     * ID of the phone number that received this SMS
      * @type {string}
      * @memberof SmsPreview
      */
     phoneNumber: string;
     /**
-     *
+     * Sender number
      * @type {string}
      * @memberof SmsPreview
      */
     fromNumber: string;
     /**
-     *
+     * Is the message read or unread
      * @type {boolean}
      * @memberof SmsPreview
      */

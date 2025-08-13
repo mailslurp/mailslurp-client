@@ -54,6 +54,12 @@ export interface PageTrackingPixelProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageTrackingPixelProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageTrackingPixelProjection
      */
@@ -70,12 +76,6 @@ export interface PageTrackingPixelProjection {
      * @memberof PageTrackingPixelProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageTrackingPixelProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

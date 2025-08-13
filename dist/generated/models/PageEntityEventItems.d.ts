@@ -54,6 +54,12 @@ export interface PageEntityEventItems {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEntityEventItems
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageEntityEventItems
      */
@@ -70,12 +76,6 @@ export interface PageEntityEventItems {
      * @memberof PageEntityEventItems
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageEntityEventItems
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

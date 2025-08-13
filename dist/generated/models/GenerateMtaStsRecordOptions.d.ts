@@ -53,16 +53,15 @@ export interface GenerateMtaStsRecordOptions {
     mxRecords: Array<string>;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum GenerateMtaStsRecordOptionsVersionEnum {
     STSv1 = "STSv1"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum GenerateMtaStsRecordOptionsModeEnum {
     TESTING = "TESTING",
     ENFORCE = "ENFORCE",

@@ -111,7 +111,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/attachments",
@@ -152,17 +152,16 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
+                        if (requestParameters.attachmentId === null || requestParameters.attachmentId === undefined) {
                             throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling deleteAttachment.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/attachments/{attachmentId}".replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
+                                path: "/attachments/{attachmentId}".replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -200,26 +199,23 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
+                        if (requestParameters.attachmentId === null || requestParameters.attachmentId === undefined) {
                             throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling downloadAttachmentAsBase64Encoded.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/attachments/{attachmentId}/base64".replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
+                                path: "/attachments/{attachmentId}/base64".replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.DownloadAttachmentDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DownloadAttachmentDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -252,17 +248,16 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
+                        if (requestParameters.attachmentId === null || requestParameters.attachmentId === undefined) {
                             throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling downloadAttachmentAsBytes.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/attachments/{attachmentId}/bytes".replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
+                                path: "/attachments/{attachmentId}/bytes".replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -301,26 +296,23 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
+                        if (requestParameters.attachmentId === null || requestParameters.attachmentId === undefined) {
                             throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling getAttachment.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/attachments/{attachmentId}".replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
+                                path: "/attachments/{attachmentId}".replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AttachmentEntityDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AttachmentEntityDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -352,26 +344,23 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.attachmentId === null ||
-                            requestParameters.attachmentId === undefined) {
+                        if (requestParameters.attachmentId === null || requestParameters.attachmentId === undefined) {
                             throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling getAttachmentInfo.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/attachments/{attachmentId}/metadata".replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
+                                path: "/attachments/{attachmentId}/metadata".replace("{".concat("attachmentId", "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AttachmentMetaDataFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AttachmentMetaDataFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -432,9 +421,12 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.sentEmailId !== undefined) {
                             queryParameters['sentEmailId'] = requestParameters.sentEmailId;
                         }
+                        if (requestParameters.include) {
+                            queryParameters['include'] = requestParameters.include;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/attachments",
@@ -444,9 +436,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageAttachmentEntityFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageAttachmentEntityFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -478,15 +468,14 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.uploadAttachmentOptions === null ||
-                            requestParameters.uploadAttachmentOptions === undefined) {
+                        if (requestParameters.uploadAttachmentOptions === null || requestParameters.uploadAttachmentOptions === undefined) {
                             throw new runtime.RequiredError('uploadAttachmentOptions', 'Required parameter requestParameters.uploadAttachmentOptions was null or undefined when calling uploadAttachment.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/attachments",
@@ -542,16 +531,14 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                             queryParameters['fileSize'] = requestParameters.fileSize;
                         }
                         headerParameters = {};
-                        if (requestParameters.contentType !== undefined &&
-                            requestParameters.contentType !== null) {
+                        if (requestParameters.contentType !== undefined && requestParameters.contentType !== null) {
                             headerParameters['contentType'] = String(requestParameters.contentType);
                         }
-                        if (requestParameters.filename2 !== undefined &&
-                            requestParameters.filename2 !== null) {
+                        if (requestParameters.filename2 !== undefined && requestParameters.filename2 !== null) {
                             headerParameters['filename'] = String(requestParameters.filename2);
                         }
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/attachments/bytes",
@@ -603,8 +590,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                             queryParameters['filename'] = requestParameters.filename;
                         }
                         if (requestParameters.contentTypeHeader !== undefined) {
-                            queryParameters['contentTypeHeader'] =
-                                requestParameters.contentTypeHeader;
+                            queryParameters['contentTypeHeader'] = requestParameters.contentTypeHeader;
                         }
                         if (requestParameters.xFilename !== undefined) {
                             queryParameters['x-filename'] = requestParameters.xFilename;
@@ -618,14 +604,14 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/attachments/multipart",
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
-                                body: (0, models_1.InlineObjectToJSON)(requestParameters.inlineObject),
+                                body: (0, models_1.InlineObject1ToJSON)(requestParameters.inlineObject1),
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
@@ -655,9 +641,9 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.AttachmentControllerApi = AttachmentControllerApi;
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetAttachmentsSortEnum;
 (function (GetAttachmentsSortEnum) {
     GetAttachmentsSortEnum["ASC"] = "ASC";

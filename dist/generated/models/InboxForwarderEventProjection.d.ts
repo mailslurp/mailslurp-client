@@ -20,6 +20,12 @@ export interface InboxForwarderEventProjection {
      * @type {string}
      * @memberof InboxForwarderEventProjection
      */
+    userId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
     emailId?: string | null;
     /**
      *
@@ -27,12 +33,6 @@ export interface InboxForwarderEventProjection {
      * @memberof InboxForwarderEventProjection
      */
     inboxId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxForwarderEventProjection
-     */
-    userId?: string | null;
     /**
      *
      * @type {Date}
@@ -71,9 +71,9 @@ export interface InboxForwarderEventProjection {
     status?: InboxForwarderEventProjectionStatusEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum InboxForwarderEventProjectionStatusEnum {
     SUCCESS = "SUCCESS",
     FAILURE = "FAILURE"

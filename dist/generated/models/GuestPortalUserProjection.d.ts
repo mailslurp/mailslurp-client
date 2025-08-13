@@ -26,13 +26,13 @@ export interface GuestPortalUserProjection {
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    inboxId?: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    userId: string;
+    inboxId?: string;
     /**
      *
      * @type {string}
@@ -44,13 +44,13 @@ export interface GuestPortalUserProjection {
      * @type {Date}
      * @memberof GuestPortalUserProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof GuestPortalUserProjection
      */
-    createdAt: Date;
+    updatedAt: Date;
     /**
      *
      * @type {string}

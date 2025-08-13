@@ -44,7 +44,7 @@ export interface AITransformResultDto {
      * @type {object}
      * @memberof AITransformResultDto
      */
-    value: object | null;
+    value: object;
     /**
      *
      * @type {string}
@@ -71,9 +71,9 @@ export interface AITransformResultDto {
     updatedAt: Date;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum AITransformResultDtoEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"

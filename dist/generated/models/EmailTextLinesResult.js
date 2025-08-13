@@ -19,12 +19,12 @@ function EmailTextLinesResultFromJSON(json) {
 }
 exports.EmailTextLinesResultFromJSON = EmailTextLinesResultFromJSON;
 function EmailTextLinesResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        lines: json['lines'],
-        body: json['body'],
+        'lines': json['lines'],
+        'body': json['body'],
     };
 }
 exports.EmailTextLinesResultFromJSONTyped = EmailTextLinesResultFromJSONTyped;
@@ -36,8 +36,8 @@ function EmailTextLinesResultToJSON(value) {
         return null;
     }
     return {
-        lines: value.lines,
-        body: value.body,
+        'lines': value.lines,
+        'body': value.body,
     };
 }
 exports.EmailTextLinesResultToJSON = EmailTextLinesResultToJSON;

@@ -23,6 +23,12 @@ export interface OptInIdentityProjection {
     id: string;
     /**
      *
+     * @type {boolean}
+     * @memberof OptInIdentityProjection
+     */
+    verified?: boolean;
+    /**
+     *
      * @type {string}
      * @memberof OptInIdentityProjection
      */
@@ -32,19 +38,13 @@ export interface OptInIdentityProjection {
      * @type {Date}
      * @memberof OptInIdentityProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof OptInIdentityProjection
      */
-    createdAt: Date;
-    /**
-     *
-     * @type {boolean}
-     * @memberof OptInIdentityProjection
-     */
-    verified?: boolean;
+    updatedAt: Date;
 }
 export declare function OptInIdentityProjectionFromJSON(json: any): OptInIdentityProjection;
 export declare function OptInIdentityProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptInIdentityProjection;

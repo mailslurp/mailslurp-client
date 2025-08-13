@@ -20,21 +20,21 @@ function SentSmsDtoFromJSON(json) {
 }
 exports.SentSmsDtoFromJSON = SentSmsDtoFromJSON;
 function SentSmsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        phoneNumber: json['phoneNumber'],
-        fromNumber: json['fromNumber'],
-        toNumber: json['toNumber'],
-        body: json['body'],
-        sid: json['sid'],
-        replyToSid: !(0, runtime_1.exists)(json, 'replyToSid') ? undefined : json['replyToSid'],
-        replyToId: !(0, runtime_1.exists)(json, 'replyToId') ? undefined : json['replyToId'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'toNumber': json['toNumber'],
+        'body': json['body'],
+        'sid': json['sid'],
+        'replyToSid': !(0, runtime_1.exists)(json, 'replyToSid') ? undefined : json['replyToSid'],
+        'replyToId': !(0, runtime_1.exists)(json, 'replyToId') ? undefined : json['replyToId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.SentSmsDtoFromJSONTyped = SentSmsDtoFromJSONTyped;
@@ -46,17 +46,17 @@ function SentSmsDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        phoneNumber: value.phoneNumber,
-        fromNumber: value.fromNumber,
-        toNumber: value.toNumber,
-        body: value.body,
-        sid: value.sid,
-        replyToSid: value.replyToSid,
-        replyToId: value.replyToId,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'userId': value.userId,
+        'phoneNumber': value.phoneNumber,
+        'fromNumber': value.fromNumber,
+        'toNumber': value.toNumber,
+        'body': value.body,
+        'sid': value.sid,
+        'replyToSid': value.replyToSid,
+        'replyToId': value.replyToId,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.SentSmsDtoToJSON = SentSmsDtoToJSON;

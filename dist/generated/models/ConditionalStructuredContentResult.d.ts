@@ -1,5 +1,3 @@
-/* tslint:disable */
-/* eslint-disable */
 /**
  * MailSlurp API
  * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
@@ -11,46 +9,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
-import { exists, mapValues } from '../runtime';
 /**
  *
  * @export
- * @interface InlineObject
+ * @interface ConditionalStructuredContentResult
  */
-export interface InlineObject {
-  /**
-   *
-   * @type {Blob}
-   * @memberof InlineObject
-   */
-  file: Blob;
+export interface ConditionalStructuredContentResult {
+    /**
+     *
+     * @type {object}
+     * @memberof ConditionalStructuredContentResult
+     */
+    result?: object | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConditionalStructuredContentResult
+     */
+    conditionsMatch: boolean;
 }
-
-export function InlineObjectFromJSON(json: any): InlineObject {
-  return InlineObjectFromJSONTyped(json, false);
-}
-
-export function InlineObjectFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InlineObject {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    file: json['file'],
-  };
-}
-
-export function InlineObjectToJSON(value?: InlineObject | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    file: value.file,
-  };
-}
+export declare function ConditionalStructuredContentResultFromJSON(json: any): ConditionalStructuredContentResult;
+export declare function ConditionalStructuredContentResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConditionalStructuredContentResult;
+export declare function ConditionalStructuredContentResultToJSON(value?: ConditionalStructuredContentResult | null): any;

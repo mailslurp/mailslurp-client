@@ -108,12 +108,10 @@ var OAuthConnectionApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.redirectBase === null ||
-                            requestParameters.redirectBase === undefined) {
+                        if (requestParameters.redirectBase === null || requestParameters.redirectBase === undefined) {
                             throw new runtime.RequiredError('redirectBase', 'Required parameter requestParameters.redirectBase was null or undefined when calling createOAuthConnection.');
                         }
-                        if (requestParameters.oAuthConnectionType === null ||
-                            requestParameters.oAuthConnectionType === undefined) {
+                        if (requestParameters.oAuthConnectionType === null || requestParameters.oAuthConnectionType === undefined) {
                             throw new runtime.RequiredError('oAuthConnectionType', 'Required parameter requestParameters.oAuthConnectionType was null or undefined when calling createOAuthConnection.');
                         }
                         queryParameters = {};
@@ -121,15 +119,14 @@ var OAuthConnectionApi = /** @class */ (function (_super) {
                             queryParameters['redirectBase'] = requestParameters.redirectBase;
                         }
                         if (requestParameters.oAuthConnectionType !== undefined) {
-                            queryParameters['oAuthConnectionType'] =
-                                requestParameters.oAuthConnectionType;
+                            queryParameters['oAuthConnectionType'] = requestParameters.oAuthConnectionType;
                         }
                         if (requestParameters.emailAddress !== undefined) {
                             queryParameters['emailAddress'] = requestParameters.emailAddress;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/oauth-connection",
@@ -139,9 +136,7 @@ var OAuthConnectionApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CreateOAuthConnectionResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.CreateOAuthConnectionResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -174,25 +169,22 @@ var OAuthConnectionApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.authorizationCode === null ||
-                            requestParameters.authorizationCode === undefined) {
+                        if (requestParameters.authorizationCode === null || requestParameters.authorizationCode === undefined) {
                             throw new runtime.RequiredError('authorizationCode', 'Required parameter requestParameters.authorizationCode was null or undefined when calling exchangeAuthorizationTokenAndCreateOrUpdateInbox.');
                         }
-                        if (requestParameters.redirectUri === null ||
-                            requestParameters.redirectUri === undefined) {
+                        if (requestParameters.redirectUri === null || requestParameters.redirectUri === undefined) {
                             throw new runtime.RequiredError('redirectUri', 'Required parameter requestParameters.redirectUri was null or undefined when calling exchangeAuthorizationTokenAndCreateOrUpdateInbox.');
                         }
                         queryParameters = {};
                         if (requestParameters.authorizationCode !== undefined) {
-                            queryParameters['authorizationCode'] =
-                                requestParameters.authorizationCode;
+                            queryParameters['authorizationCode'] = requestParameters.authorizationCode;
                         }
                         if (requestParameters.redirectUri !== undefined) {
                             queryParameters['redirectUri'] = requestParameters.redirectUri;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/oauth-connection/oauth-exchange/google",
@@ -202,9 +194,7 @@ var OAuthConnectionApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.CreateOAuthExchangeResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.CreateOAuthExchangeResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -231,9 +221,9 @@ var OAuthConnectionApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.OAuthConnectionApi = OAuthConnectionApi;
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var CreateOAuthConnectionOAuthConnectionTypeEnum;
 (function (CreateOAuthConnectionOAuthConnectionTypeEnum) {
     CreateOAuthConnectionOAuthConnectionTypeEnum["GOOGLE"] = "GOOGLE";

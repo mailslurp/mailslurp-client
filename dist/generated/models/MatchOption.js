@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MatchOptionToJSON = exports.MatchOptionFromJSONTyped = exports.MatchOptionFromJSON = exports.MatchOptionShouldEnum = exports.MatchOptionFieldEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var MatchOptionFieldEnum;
 (function (MatchOptionFieldEnum) {
     MatchOptionFieldEnum["SUBJECT"] = "SUBJECT";
@@ -26,11 +26,10 @@ var MatchOptionFieldEnum;
     MatchOptionFieldEnum["CC"] = "CC";
     MatchOptionFieldEnum["FROM"] = "FROM";
     MatchOptionFieldEnum["HEADERS"] = "HEADERS";
-})(MatchOptionFieldEnum = exports.MatchOptionFieldEnum || (exports.MatchOptionFieldEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(MatchOptionFieldEnum = exports.MatchOptionFieldEnum || (exports.MatchOptionFieldEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var MatchOptionShouldEnum;
 (function (MatchOptionShouldEnum) {
     MatchOptionShouldEnum["MATCH"] = "MATCH";
@@ -42,13 +41,13 @@ function MatchOptionFromJSON(json) {
 }
 exports.MatchOptionFromJSON = MatchOptionFromJSON;
 function MatchOptionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        field: json['field'],
-        should: json['should'],
-        value: json['value'],
+        'field': json['field'],
+        'should': json['should'],
+        'value': json['value'],
     };
 }
 exports.MatchOptionFromJSONTyped = MatchOptionFromJSONTyped;
@@ -60,9 +59,9 @@ function MatchOptionToJSON(value) {
         return null;
     }
     return {
-        field: value.field,
-        should: value.should,
-        value: value.value,
+        'field': value.field,
+        'should': value.should,
+        'value': value.value,
     };
 }
 exports.MatchOptionToJSON = MatchOptionToJSON;

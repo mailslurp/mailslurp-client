@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DNSLookupOptionsToJSON = exports.DNSLookupOptionsFromJSONTyped = exports.DNSLookupOptionsFromJSON = exports.DNSLookupOptionsRecordTypesEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var DNSLookupOptionsRecordTypesEnum;
 (function (DNSLookupOptionsRecordTypesEnum) {
     DNSLookupOptionsRecordTypesEnum["A"] = "A";
@@ -115,13 +115,13 @@ function DNSLookupOptionsFromJSON(json) {
 }
 exports.DNSLookupOptionsFromJSON = DNSLookupOptionsFromJSON;
 function DNSLookupOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        hostname: json['hostname'],
-        recordTypes: json['recordTypes'],
-        omitFinalDNSDot: json['omitFinalDNSDot'],
+        'hostname': json['hostname'],
+        'recordTypes': json['recordTypes'],
+        'omitFinalDNSDot': json['omitFinalDNSDot'],
     };
 }
 exports.DNSLookupOptionsFromJSONTyped = DNSLookupOptionsFromJSONTyped;
@@ -133,9 +133,9 @@ function DNSLookupOptionsToJSON(value) {
         return null;
     }
     return {
-        hostname: value.hostname,
-        recordTypes: value.recordTypes,
-        omitFinalDNSDot: value.omitFinalDNSDot,
+        'hostname': value.hostname,
+        'recordTypes': value.recordTypes,
+        'omitFinalDNSDot': value.omitFinalDNSDot,
     };
 }
 exports.DNSLookupOptionsToJSON = DNSLookupOptionsToJSON;

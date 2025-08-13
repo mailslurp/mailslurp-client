@@ -54,6 +54,12 @@ export interface PageExpiredInboxRecordProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageExpiredInboxRecordProjection
      */
@@ -70,12 +76,6 @@ export interface PageExpiredInboxRecordProjection {
      * @memberof PageExpiredInboxRecordProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

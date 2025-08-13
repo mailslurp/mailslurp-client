@@ -21,14 +21,12 @@ function OptionalConnectorDtoFromJSON(json) {
 }
 exports.OptionalConnectorDtoFromJSON = OptionalConnectorDtoFromJSON;
 function OptionalConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        present: json['present'],
-        result: !(0, runtime_1.exists)(json, 'result')
-            ? undefined
-            : (0, _1.ConnectorDtoFromJSON)(json['result']),
+        'present': json['present'],
+        'result': !(0, runtime_1.exists)(json, 'result') ? undefined : (0, _1.ConnectorDtoFromJSON)(json['result']),
     };
 }
 exports.OptionalConnectorDtoFromJSONTyped = OptionalConnectorDtoFromJSONTyped;
@@ -40,8 +38,8 @@ function OptionalConnectorDtoToJSON(value) {
         return null;
     }
     return {
-        present: value.present,
-        result: (0, _1.ConnectorDtoToJSON)(value.result),
+        'present': value.present,
+        'result': (0, _1.ConnectorDtoToJSON)(value.result),
     };
 }
 exports.OptionalConnectorDtoToJSON = OptionalConnectorDtoToJSON;

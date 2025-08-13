@@ -19,60 +19,55 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateConnectorOptions
  */
 export interface CreateConnectorOptions {
-  /**
-   * Name of connector
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  name?: string | null;
-  /**
-   * Email address of external inbox
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  emailAddress?: string | null;
-  /**
-   * Is connector enabled
-   * @type {boolean}
-   * @memberof CreateConnectorOptions
-   */
-  enabled?: boolean | null;
+    /**
+     * Name of connector
+     * @type {string}
+     * @memberof CreateConnectorOptions
+     */
+    name?: string | null;
+    /**
+     * Email address of external inbox
+     * @type {string}
+     * @memberof CreateConnectorOptions
+     */
+    emailAddress?: string | null;
+    /**
+     * Is connector enabled
+     * @type {boolean}
+     * @memberof CreateConnectorOptions
+     */
+    enabled?: boolean | null;
 }
 
-export function CreateConnectorOptionsFromJSON(
-  json: any
-): CreateConnectorOptions {
-  return CreateConnectorOptionsFromJSONTyped(json, false);
+export function CreateConnectorOptionsFromJSON(json: any): CreateConnectorOptions {
+    return CreateConnectorOptionsFromJSONTyped(json, false);
 }
 
-export function CreateConnectorOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateConnectorOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
-    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-  };
+export function CreateConnectorOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'emailAddress': !exists(json, 'emailAddress') ? undefined : json['emailAddress'],
+        'enabled': !exists(json, 'enabled') ? undefined : json['enabled'],
+    };
 }
 
-export function CreateConnectorOptionsToJSON(
-  value?: CreateConnectorOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    emailAddress: value.emailAddress,
-    enabled: value.enabled,
-  };
+export function CreateConnectorOptionsToJSON(value?: CreateConnectorOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'name': value.name,
+        'emailAddress': value.emailAddress,
+        'enabled': value.enabled,
+    };
 }
+
+

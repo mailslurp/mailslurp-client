@@ -54,6 +54,12 @@ export interface PageMissedEmailProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageMissedEmailProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageMissedEmailProjection
      */
@@ -70,12 +76,6 @@ export interface PageMissedEmailProjection {
      * @memberof PageMissedEmailProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageMissedEmailProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -14,98 +14,94 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface CreatePhoneNumberOptions
  */
 export interface CreatePhoneNumberOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof CreatePhoneNumberOptions
-   */
-  phoneCountry: CreatePhoneNumberOptionsPhoneCountryEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof CreatePhoneNumberOptions
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof CreatePhoneNumberOptions
-   */
-  description?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof CreatePhoneNumberOptions
-   */
-  schedule?: CreatePhoneNumberOptionsScheduleEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    phoneCountry: CreatePhoneNumberOptionsPhoneCountryEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    schedule?: CreatePhoneNumberOptionsScheduleEnum;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum CreatePhoneNumberOptionsPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
-  CA = 'CA',
-  EE = 'EE',
-  HK = 'HK',
-  PL = 'PL',
-  CH = 'CH',
-  PT = 'PT',
-  NL = 'NL',
-  IL = 'IL',
-  SE = 'SE',
-}
-/**
- * @export
- * @enum {string}
- */
+    US = 'US',
+    GB = 'GB',
+    AU = 'AU',
+    CA = 'CA',
+    EE = 'EE',
+    HK = 'HK',
+    PL = 'PL',
+    CH = 'CH',
+    PT = 'PT',
+    NL = 'NL',
+    IL = 'IL',
+    SE = 'SE'
+}/**
+* @export
+* @enum {string}
+*/
 export enum CreatePhoneNumberOptionsScheduleEnum {
-  MONTHLY = 'MONTHLY',
-  YEARLY = 'YEARLY',
+    MONTHLY = 'MONTHLY',
+    YEARLY = 'YEARLY'
 }
 
-export function CreatePhoneNumberOptionsFromJSON(
-  json: any
-): CreatePhoneNumberOptions {
-  return CreatePhoneNumberOptionsFromJSONTyped(json, false);
+export function CreatePhoneNumberOptionsFromJSON(json: any): CreatePhoneNumberOptions {
+    return CreatePhoneNumberOptionsFromJSONTyped(json, false);
 }
 
-export function CreatePhoneNumberOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreatePhoneNumberOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    phoneCountry: json['phoneCountry'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-    schedule: !exists(json, 'schedule') ? undefined : json['schedule'],
-  };
+export function CreatePhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreatePhoneNumberOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'phoneCountry': json['phoneCountry'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'description': !exists(json, 'description') ? undefined : json['description'],
+        'schedule': !exists(json, 'schedule') ? undefined : json['schedule'],
+    };
 }
 
-export function CreatePhoneNumberOptionsToJSON(
-  value?: CreatePhoneNumberOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    phoneCountry: value.phoneCountry,
-    name: value.name,
-    description: value.description,
-    schedule: value.schedule,
-  };
+export function CreatePhoneNumberOptionsToJSON(value?: CreatePhoneNumberOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'phoneCountry': value.phoneCountry,
+        'name': value.name,
+        'description': value.description,
+        'schedule': value.schedule,
+    };
 }
+
+

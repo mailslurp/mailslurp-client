@@ -14,51 +14,52 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SmsSendOptions
  */
 export interface SmsSendOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof SmsSendOptions
-   */
-  to: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsSendOptions
-   */
-  body: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsSendOptions
+     */
+    to: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsSendOptions
+     */
+    body: string;
 }
 
 export function SmsSendOptionsFromJSON(json: any): SmsSendOptions {
-  return SmsSendOptionsFromJSONTyped(json, false);
+    return SmsSendOptionsFromJSONTyped(json, false);
 }
 
-export function SmsSendOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmsSendOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    to: json['to'],
-    body: json['body'],
-  };
+export function SmsSendOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsSendOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'to': json['to'],
+        'body': json['body'],
+    };
 }
 
 export function SmsSendOptionsToJSON(value?: SmsSendOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    to: value.to,
-    body: value.body,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'to': value.to,
+        'body': value.body,
+    };
 }
+
+

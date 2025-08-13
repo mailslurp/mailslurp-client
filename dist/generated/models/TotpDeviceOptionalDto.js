@@ -21,13 +21,11 @@ function TotpDeviceOptionalDtoFromJSON(json) {
 }
 exports.TotpDeviceOptionalDtoFromJSON = TotpDeviceOptionalDtoFromJSON;
 function TotpDeviceOptionalDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        device: !(0, runtime_1.exists)(json, 'device')
-            ? undefined
-            : (0, _1.TotpDeviceDtoFromJSON)(json['device']),
+        'device': !(0, runtime_1.exists)(json, 'device') ? undefined : (0, _1.TotpDeviceDtoFromJSON)(json['device']),
     };
 }
 exports.TotpDeviceOptionalDtoFromJSONTyped = TotpDeviceOptionalDtoFromJSONTyped;
@@ -39,7 +37,7 @@ function TotpDeviceOptionalDtoToJSON(value) {
         return null;
     }
     return {
-        device: (0, _1.TotpDeviceDtoToJSON)(value.device),
+        'device': (0, _1.TotpDeviceDtoToJSON)(value.device),
     };
 }
 exports.TotpDeviceOptionalDtoToJSON = TotpDeviceOptionalDtoToJSON;

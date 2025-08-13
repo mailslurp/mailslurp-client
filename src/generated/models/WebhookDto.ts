@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  WebhookHeaders,
-  WebhookHeadersFromJSON,
-  WebhookHeadersFromJSONTyped,
-  WebhookHeadersToJSON,
+    WebhookHeaders,
+    WebhookHeadersFromJSON,
+    WebhookHeadersFromJSONTyped,
+    WebhookHeadersToJSON,
 } from './';
 
 /**
@@ -26,229 +26,214 @@ import {
  * @interface WebhookDto
  */
 export interface WebhookDto {
-  /**
-   * ID of the Webhook
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  id: string;
-  /**
-   * User ID of the Webhook
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  userId: string;
-  /**
-   * Does webhook expect basic authentication? If true it means you created this webhook with a username and password. MailSlurp will use these in the URL to authenticate itself.
-   * @type {boolean}
-   * @memberof WebhookDto
-   */
-  basicAuth: boolean;
-  /**
-   * Name of the webhook
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  name?: string | null;
-  /**
-   * The phoneNumberId that the Webhook will be triggered by. If null then webhook triggered at account level or inbox level if inboxId set
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  phoneId?: string | null;
-  /**
-   * The inbox that the Webhook will be triggered by. If null then webhook triggered at account level or phone level if phoneId set
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  inboxId?: string | null;
-  /**
-   * Request body template for HTTP request that will be sent for the webhook. Use Moustache style template variables to insert values from the original event payload.
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  requestBodyTemplate?: string | null;
-  /**
-   * URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  url: string;
-  /**
-   * HTTP method that your server endpoint must listen for
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  method: WebhookDtoMethodEnum;
-  /**
-   * Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPayload method
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  payloadJsonSchema: string;
-  /**
-   * When the webhook was created
-   * @type {Date}
-   * @memberof WebhookDto
-   */
-  createdAt: Date | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookDto
-   */
-  updatedAt: Date;
-  /**
-   * Webhook trigger event name
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  eventName?: WebhookDtoEventNameEnum;
-  /**
-   *
-   * @type {WebhookHeaders}
-   * @memberof WebhookDto
-   */
-  requestHeaders?: WebhookHeaders;
-  /**
-   * ID of AI transformer for payload
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  aiTransformId?: string | null;
-  /**
-   * Should notifier ignore insecure SSL certificates
-   * @type {boolean}
-   * @memberof WebhookDto
-   */
-  ignoreInsecureSslCertificates?: boolean | null;
-  /**
-   * Should notifier use static IP range when sending webhook payload
-   * @type {boolean}
-   * @memberof WebhookDto
-   */
-  useStaticIpRange?: boolean | null;
-  /**
-   * Webhook health
-   * @type {string}
-   * @memberof WebhookDto
-   */
-  healthStatus?: WebhookDtoHealthStatusEnum;
+    /**
+     * ID of the Webhook
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    id: string;
+    /**
+     * User ID of the Webhook
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    userId: string;
+    /**
+     * Does webhook expect basic authentication? If true it means you created this webhook with a username and password. MailSlurp will use these in the URL to authenticate itself.
+     * @type {boolean}
+     * @memberof WebhookDto
+     */
+    basicAuth: boolean;
+    /**
+     * Name of the webhook
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    name?: string | null;
+    /**
+     * The phoneNumberId that the Webhook will be triggered by. If null then webhook triggered at account level or inbox level if inboxId set
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    phoneId?: string | null;
+    /**
+     * The inbox that the Webhook will be triggered by. If null then webhook triggered at account level or phone level if phoneId set
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    inboxId?: string | null;
+    /**
+     * Request body template for HTTP request that will be sent for the webhook. Use Moustache style template variables to insert values from the original event payload.
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    requestBodyTemplate?: string | null;
+    /**
+     * URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    url: string;
+    /**
+     * HTTP method that your server endpoint must listen for
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    method: WebhookDtoMethodEnum;
+    /**
+     * Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPayload method
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    payloadJsonSchema: string;
+    /**
+     * When the webhook was created
+     * @type {Date}
+     * @memberof WebhookDto
+     */
+    createdAt: Date | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof WebhookDto
+     */
+    updatedAt: Date;
+    /**
+     * Webhook trigger event name
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    eventName?: WebhookDtoEventNameEnum;
+    /**
+     * 
+     * @type {WebhookHeaders}
+     * @memberof WebhookDto
+     */
+    requestHeaders?: WebhookHeaders;
+    /**
+     * ID of AI transformer for payload
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    aiTransformId?: string | null;
+    /**
+     * Should notifier ignore insecure SSL certificates
+     * @type {boolean}
+     * @memberof WebhookDto
+     */
+    ignoreInsecureSslCertificates?: boolean | null;
+    /**
+     * Should notifier use static IP range when sending webhook payload
+     * @type {boolean}
+     * @memberof WebhookDto
+     */
+    useStaticIpRange?: boolean | null;
+    /**
+     * Webhook health
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    healthStatus?: WebhookDtoHealthStatusEnum;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum WebhookDtoMethodEnum {
-  POST = 'POST',
-  DELETE = 'DELETE',
-  GET = 'GET',
-  PUT = 'PUT',
-  PATCH = 'PATCH',
-  HEAD = 'HEAD',
-  OPTIONS = 'OPTIONS',
-  TRACE = 'TRACE',
-}
-/**
- * @export
- * @enum {string}
- */
+    POST = 'POST',
+    DELETE = 'DELETE',
+    GET = 'GET',
+    PUT = 'PUT',
+    PATCH = 'PATCH',
+    HEAD = 'HEAD',
+    OPTIONS = 'OPTIONS',
+    TRACE = 'TRACE'
+}/**
+* @export
+* @enum {string}
+*/
 export enum WebhookDtoEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
-}
-/**
- * @export
- * @enum {string}
- */
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
+}/**
+* @export
+* @enum {string}
+*/
 export enum WebhookDtoHealthStatusEnum {
-  HEALTHY = 'HEALTHY',
-  UNHEALTHY = 'UNHEALTHY',
+    HEALTHY = 'HEALTHY',
+    UNHEALTHY = 'UNHEALTHY'
 }
 
 export function WebhookDtoFromJSON(json: any): WebhookDto {
-  return WebhookDtoFromJSONTyped(json, false);
+    return WebhookDtoFromJSONTyped(json, false);
 }
 
-export function WebhookDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    basicAuth: json['basicAuth'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    requestBodyTemplate: !exists(json, 'requestBodyTemplate')
-      ? undefined
-      : json['requestBodyTemplate'],
-    url: json['url'],
-    method: json['method'],
-    payloadJsonSchema: json['payloadJsonSchema'],
-    createdAt: json['createdAt'] === null ? null : new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
-    requestHeaders: !exists(json, 'requestHeaders')
-      ? undefined
-      : WebhookHeadersFromJSON(json['requestHeaders']),
-    aiTransformId: !exists(json, 'aiTransformId')
-      ? undefined
-      : json['aiTransformId'],
-    ignoreInsecureSslCertificates: !exists(
-      json,
-      'ignoreInsecureSslCertificates'
-    )
-      ? undefined
-      : json['ignoreInsecureSslCertificates'],
-    useStaticIpRange: !exists(json, 'useStaticIpRange')
-      ? undefined
-      : json['useStaticIpRange'],
-    healthStatus: !exists(json, 'healthStatus')
-      ? undefined
-      : json['healthStatus'],
-  };
+export function WebhookDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'basicAuth': json['basicAuth'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'phoneId': !exists(json, 'phoneId') ? undefined : json['phoneId'],
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        'requestBodyTemplate': !exists(json, 'requestBodyTemplate') ? undefined : json['requestBodyTemplate'],
+        'url': json['url'],
+        'method': json['method'],
+        'payloadJsonSchema': json['payloadJsonSchema'],
+        'createdAt': (json['createdAt'] === null ? null : new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'eventName': !exists(json, 'eventName') ? undefined : json['eventName'],
+        'requestHeaders': !exists(json, 'requestHeaders') ? undefined : WebhookHeadersFromJSON(json['requestHeaders']),
+        'aiTransformId': !exists(json, 'aiTransformId') ? undefined : json['aiTransformId'],
+        'ignoreInsecureSslCertificates': !exists(json, 'ignoreInsecureSslCertificates') ? undefined : json['ignoreInsecureSslCertificates'],
+        'useStaticIpRange': !exists(json, 'useStaticIpRange') ? undefined : json['useStaticIpRange'],
+        'healthStatus': !exists(json, 'healthStatus') ? undefined : json['healthStatus'],
+    };
 }
 
 export function WebhookDtoToJSON(value?: WebhookDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    basicAuth: value.basicAuth,
-    name: value.name,
-    phoneId: value.phoneId,
-    inboxId: value.inboxId,
-    requestBodyTemplate: value.requestBodyTemplate,
-    url: value.url,
-    method: value.method,
-    payloadJsonSchema: value.payloadJsonSchema,
-    createdAt: value.createdAt === null ? null : value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    eventName: value.eventName,
-    requestHeaders: WebhookHeadersToJSON(value.requestHeaders),
-    aiTransformId: value.aiTransformId,
-    ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
-    useStaticIpRange: value.useStaticIpRange,
-    healthStatus: value.healthStatus,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'userId': value.userId,
+        'basicAuth': value.basicAuth,
+        'name': value.name,
+        'phoneId': value.phoneId,
+        'inboxId': value.inboxId,
+        'requestBodyTemplate': value.requestBodyTemplate,
+        'url': value.url,
+        'method': value.method,
+        'payloadJsonSchema': value.payloadJsonSchema,
+        'createdAt': (value.createdAt === null ? null : value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'eventName': value.eventName,
+        'requestHeaders': WebhookHeadersToJSON(value.requestHeaders),
+        'aiTransformId': value.aiTransformId,
+        'ignoreInsecureSslCertificates': value.ignoreInsecureSslCertificates,
+        'useStaticIpRange': value.useStaticIpRange,
+        'healthStatus': value.healthStatus,
+    };
 }
+
+

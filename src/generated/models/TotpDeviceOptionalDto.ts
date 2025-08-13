@@ -14,56 +14,51 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  TotpDeviceDto,
-  TotpDeviceDtoFromJSON,
-  TotpDeviceDtoFromJSONTyped,
-  TotpDeviceDtoToJSON,
+    TotpDeviceDto,
+    TotpDeviceDtoFromJSON,
+    TotpDeviceDtoFromJSONTyped,
+    TotpDeviceDtoToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface TotpDeviceOptionalDto
  */
 export interface TotpDeviceOptionalDto {
-  /**
-   *
-   * @type {TotpDeviceDto}
-   * @memberof TotpDeviceOptionalDto
-   */
-  device?: TotpDeviceDto;
+    /**
+     * 
+     * @type {TotpDeviceDto}
+     * @memberof TotpDeviceOptionalDto
+     */
+    device?: TotpDeviceDto;
 }
 
-export function TotpDeviceOptionalDtoFromJSON(
-  json: any
-): TotpDeviceOptionalDto {
-  return TotpDeviceOptionalDtoFromJSONTyped(json, false);
+export function TotpDeviceOptionalDtoFromJSON(json: any): TotpDeviceOptionalDto {
+    return TotpDeviceOptionalDtoFromJSONTyped(json, false);
 }
 
-export function TotpDeviceOptionalDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TotpDeviceOptionalDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    device: !exists(json, 'device')
-      ? undefined
-      : TotpDeviceDtoFromJSON(json['device']),
-  };
+export function TotpDeviceOptionalDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TotpDeviceOptionalDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'device': !exists(json, 'device') ? undefined : TotpDeviceDtoFromJSON(json['device']),
+    };
 }
 
-export function TotpDeviceOptionalDtoToJSON(
-  value?: TotpDeviceOptionalDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    device: TotpDeviceDtoToJSON(value.device),
-  };
+export function TotpDeviceOptionalDtoToJSON(value?: TotpDeviceOptionalDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'device': TotpDeviceDtoToJSON(value.device),
+    };
 }
+
+

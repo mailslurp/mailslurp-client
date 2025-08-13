@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WaitForSingleSmsOptionsToJSON = exports.WaitForSingleSmsOptionsFromJSONTyped = exports.WaitForSingleSmsOptionsFromJSON = exports.WaitForSingleSmsOptionsSortDirectionEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WaitForSingleSmsOptionsSortDirectionEnum;
 (function (WaitForSingleSmsOptionsSortDirectionEnum) {
     WaitForSingleSmsOptionsSortDirectionEnum["ASC"] = "ASC";
@@ -29,19 +29,17 @@ function WaitForSingleSmsOptionsFromJSON(json) {
 }
 exports.WaitForSingleSmsOptionsFromJSON = WaitForSingleSmsOptionsFromJSON;
 function WaitForSingleSmsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        phoneNumberId: json['phoneNumberId'],
-        timeout: json['timeout'],
-        unreadOnly: !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
-        before: !(0, runtime_1.exists)(json, 'before') ? undefined : new Date(json['before']),
-        since: !(0, runtime_1.exists)(json, 'since') ? undefined : new Date(json['since']),
-        sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
-            ? undefined
-            : json['sortDirection'],
-        delay: !(0, runtime_1.exists)(json, 'delay') ? undefined : json['delay'],
+        'phoneNumberId': json['phoneNumberId'],
+        'timeout': json['timeout'],
+        'unreadOnly': !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
+        'before': !(0, runtime_1.exists)(json, 'before') ? undefined : (new Date(json['before'])),
+        'since': !(0, runtime_1.exists)(json, 'since') ? undefined : (new Date(json['since'])),
+        'sortDirection': !(0, runtime_1.exists)(json, 'sortDirection') ? undefined : json['sortDirection'],
+        'delay': !(0, runtime_1.exists)(json, 'delay') ? undefined : json['delay'],
     };
 }
 exports.WaitForSingleSmsOptionsFromJSONTyped = WaitForSingleSmsOptionsFromJSONTyped;
@@ -53,13 +51,13 @@ function WaitForSingleSmsOptionsToJSON(value) {
         return null;
     }
     return {
-        phoneNumberId: value.phoneNumberId,
-        timeout: value.timeout,
-        unreadOnly: value.unreadOnly,
-        before: value.before === undefined ? undefined : value.before.toISOString(),
-        since: value.since === undefined ? undefined : value.since.toISOString(),
-        sortDirection: value.sortDirection,
-        delay: value.delay,
+        'phoneNumberId': value.phoneNumberId,
+        'timeout': value.timeout,
+        'unreadOnly': value.unreadOnly,
+        'before': value.before === undefined ? undefined : (value.before.toISOString()),
+        'since': value.since === undefined ? undefined : (value.since.toISOString()),
+        'sortDirection': value.sortDirection,
+        'delay': value.delay,
     };
 }
 exports.WaitForSingleSmsOptionsToJSON = WaitForSingleSmsOptionsToJSON;

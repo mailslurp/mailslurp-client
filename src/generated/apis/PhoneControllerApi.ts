@@ -12,1745 +12,1242 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  ConsentStatusDto,
-  ConsentStatusDtoFromJSON,
-  ConsentStatusDtoToJSON,
-  CreateEmergencyAddressOptions,
-  CreateEmergencyAddressOptionsFromJSON,
-  CreateEmergencyAddressOptionsToJSON,
-  CreatePhoneNumberOptions,
-  CreatePhoneNumberOptionsFromJSON,
-  CreatePhoneNumberOptionsToJSON,
-  EmergencyAddress,
-  EmergencyAddressFromJSON,
-  EmergencyAddressToJSON,
-  EmergencyAddressDto,
-  EmergencyAddressDtoFromJSON,
-  EmergencyAddressDtoToJSON,
-  EmptyResponseDto,
-  EmptyResponseDtoFromJSON,
-  EmptyResponseDtoToJSON,
-  PagePhoneMessageThreadItemProjection,
-  PagePhoneMessageThreadItemProjectionFromJSON,
-  PagePhoneMessageThreadItemProjectionToJSON,
-  PagePhoneMessageThreadProjection,
-  PagePhoneMessageThreadProjectionFromJSON,
-  PagePhoneMessageThreadProjectionToJSON,
-  PagePhoneNumberProjection,
-  PagePhoneNumberProjectionFromJSON,
-  PagePhoneNumberProjectionToJSON,
-  PageSentSmsProjection,
-  PageSentSmsProjectionFromJSON,
-  PageSentSmsProjectionToJSON,
-  PageSmsProjection,
-  PageSmsProjectionFromJSON,
-  PageSmsProjectionToJSON,
-  PhoneNumberDto,
-  PhoneNumberDtoFromJSON,
-  PhoneNumberDtoToJSON,
-  PhoneNumberValidationDto,
-  PhoneNumberValidationDtoFromJSON,
-  PhoneNumberValidationDtoToJSON,
-  PhonePlanAvailability,
-  PhonePlanAvailabilityFromJSON,
-  PhonePlanAvailabilityToJSON,
-  PhonePlanDto,
-  PhonePlanDtoFromJSON,
-  PhonePlanDtoToJSON,
-  SentSmsDto,
-  SentSmsDtoFromJSON,
-  SentSmsDtoToJSON,
-  SetPhoneFavouritedOptions,
-  SetPhoneFavouritedOptionsFromJSON,
-  SetPhoneFavouritedOptionsToJSON,
-  SmsSendOptions,
-  SmsSendOptionsFromJSON,
-  SmsSendOptionsToJSON,
-  TestPhoneNumberOptions,
-  TestPhoneNumberOptionsFromJSON,
-  TestPhoneNumberOptionsToJSON,
-  UpdatePhoneNumberOptions,
-  UpdatePhoneNumberOptionsFromJSON,
-  UpdatePhoneNumberOptionsToJSON,
-  ValidatePhoneNumberOptions,
-  ValidatePhoneNumberOptionsFromJSON,
-  ValidatePhoneNumberOptionsToJSON,
+    ConsentStatusDto,
+    ConsentStatusDtoFromJSON,
+    ConsentStatusDtoToJSON,
+    CreateEmergencyAddressOptions,
+    CreateEmergencyAddressOptionsFromJSON,
+    CreateEmergencyAddressOptionsToJSON,
+    CreatePhoneNumberOptions,
+    CreatePhoneNumberOptionsFromJSON,
+    CreatePhoneNumberOptionsToJSON,
+    EmergencyAddress,
+    EmergencyAddressFromJSON,
+    EmergencyAddressToJSON,
+    EmergencyAddressDto,
+    EmergencyAddressDtoFromJSON,
+    EmergencyAddressDtoToJSON,
+    EmptyResponseDto,
+    EmptyResponseDtoFromJSON,
+    EmptyResponseDtoToJSON,
+    PagePhoneMessageThreadItemProjection,
+    PagePhoneMessageThreadItemProjectionFromJSON,
+    PagePhoneMessageThreadItemProjectionToJSON,
+    PagePhoneMessageThreadProjection,
+    PagePhoneMessageThreadProjectionFromJSON,
+    PagePhoneMessageThreadProjectionToJSON,
+    PagePhoneNumberProjection,
+    PagePhoneNumberProjectionFromJSON,
+    PagePhoneNumberProjectionToJSON,
+    PageSentSmsProjection,
+    PageSentSmsProjectionFromJSON,
+    PageSentSmsProjectionToJSON,
+    PageSmsProjection,
+    PageSmsProjectionFromJSON,
+    PageSmsProjectionToJSON,
+    PhoneNumberDto,
+    PhoneNumberDtoFromJSON,
+    PhoneNumberDtoToJSON,
+    PhoneNumberValidationDto,
+    PhoneNumberValidationDtoFromJSON,
+    PhoneNumberValidationDtoToJSON,
+    PhonePlanAvailability,
+    PhonePlanAvailabilityFromJSON,
+    PhonePlanAvailabilityToJSON,
+    PhonePlanDto,
+    PhonePlanDtoFromJSON,
+    PhonePlanDtoToJSON,
+    SentSmsDto,
+    SentSmsDtoFromJSON,
+    SentSmsDtoToJSON,
+    SetPhoneFavouritedOptions,
+    SetPhoneFavouritedOptionsFromJSON,
+    SetPhoneFavouritedOptionsToJSON,
+    SmsSendOptions,
+    SmsSendOptionsFromJSON,
+    SmsSendOptionsToJSON,
+    TestPhoneNumberOptions,
+    TestPhoneNumberOptionsFromJSON,
+    TestPhoneNumberOptionsToJSON,
+    UpdatePhoneNumberOptions,
+    UpdatePhoneNumberOptionsFromJSON,
+    UpdatePhoneNumberOptionsToJSON,
+    ValidatePhoneNumberOptions,
+    ValidatePhoneNumberOptionsFromJSON,
+    ValidatePhoneNumberOptionsToJSON,
 } from '../models';
 
 export interface CreateEmergencyAddressRequest {
-  createEmergencyAddressOptions: CreateEmergencyAddressOptions;
+    createEmergencyAddressOptions: CreateEmergencyAddressOptions;
 }
 
 export interface CreatePhoneNumberRequest {
-  createPhoneNumberOptions: CreatePhoneNumberOptions;
+    createPhoneNumberOptions: CreatePhoneNumberOptions;
 }
 
 export interface DeleteEmergencyAddressRequest {
-  addressId: string;
+    addressId: string;
 }
 
 export interface DeletePhoneNumberRequest {
-  phoneNumberId: string;
+    phoneNumberId: string;
 }
 
 export interface GetAllPhoneMessageThreadsRequest {
-  page?: number;
-  size?: number;
+    page?: number;
+    size?: number;
 }
 
 export interface GetEmergencyAddressRequest {
-  addressId: string;
+    addressId: string;
 }
 
 export interface GetPhoneMessageThreadItemsRequest {
-  phoneNumberId: string;
-  otherNumber: string;
-  page?: number;
-  size?: number;
+    phoneNumberId: string;
+    otherNumber: string;
+    page?: number;
+    size?: number;
 }
 
 export interface GetPhoneMessageThreadsRequest {
-  phoneNumberId: string;
-  page?: number;
-  size?: number;
+    phoneNumberId: string;
+    page?: number;
+    size?: number;
 }
 
 export interface GetPhoneNumberRequest {
-  phoneNumberId: string;
+    phoneNumberId: string;
 }
 
 export interface GetPhoneNumberByNameRequest {
-  name: string;
+    name: string;
 }
 
 export interface GetPhoneNumberByPhoneNumberRequest {
-  phoneNumber: string;
+    phoneNumber: string;
 }
 
 export interface GetPhoneNumbersRequest {
-  phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
-  page?: number;
-  size?: number;
-  sort?: GetPhoneNumbersSortEnum;
-  since?: Date;
-  before?: Date;
-  search?: string;
-  include?: Array<string>;
-  favourite?: boolean;
+    phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
+    page?: number;
+    size?: number;
+    sort?: GetPhoneNumbersSortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
+    include?: Array<string>;
+    favourite?: boolean;
 }
 
 export interface GetSentSmsByPhoneNumberRequest {
-  phoneNumberId: string;
-  page?: number;
-  size?: number;
-  sort?: GetSentSmsByPhoneNumberSortEnum;
-  since?: Date;
-  before?: Date;
-  search?: string;
+    phoneNumberId: string;
+    page?: number;
+    size?: number;
+    sort?: GetSentSmsByPhoneNumberSortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
 }
 
 export interface GetSmsByPhoneNumberRequest {
-  phoneNumberId: string;
-  page?: number;
-  size?: number;
-  sort?: GetSmsByPhoneNumberSortEnum;
-  unreadOnly?: boolean;
-  since?: Date;
-  before?: Date;
-  search?: string;
-  favourite?: boolean;
+    phoneNumberId: string;
+    page?: number;
+    size?: number;
+    sort?: GetSmsByPhoneNumberSortEnum;
+    unreadOnly?: boolean;
+    since?: Date;
+    before?: Date;
+    search?: string;
+    favourite?: boolean;
 }
 
 export interface SendSmsFromPhoneNumberRequest {
-  phoneNumberId: string;
-  smsSendOptions: SmsSendOptions;
+    phoneNumberId: string;
+    smsSendOptions: SmsSendOptions;
 }
 
 export interface SetConsentStatusRequest {
-  agree: boolean;
+    agree: boolean;
 }
 
 export interface SetPhoneFavouritedRequest {
-  phoneNumberId: string;
-  setPhoneFavouritedOptions: SetPhoneFavouritedOptions;
+    phoneNumberId: string;
+    setPhoneFavouritedOptions: SetPhoneFavouritedOptions;
 }
 
 export interface TestPhoneNumberSendSmsRequest {
-  phoneNumberId: string;
-  testPhoneNumberOptions: TestPhoneNumberOptions;
-  xTestId?: string;
+    phoneNumberId: string;
+    testPhoneNumberOptions: TestPhoneNumberOptions;
+    xTestId?: string;
 }
 
 export interface UpdatePhoneNumberRequest {
-  phoneNumberId: string;
-  updatePhoneNumberOptions: UpdatePhoneNumberOptions;
+    phoneNumberId: string;
+    updatePhoneNumberOptions: UpdatePhoneNumberOptions;
 }
 
 export interface ValidatePhoneNumberRequest {
-  validatePhoneNumberOptions: ValidatePhoneNumberOptions;
+    validatePhoneNumberOptions: ValidatePhoneNumberOptions;
 }
 
 /**
- *
+ * 
  */
 export class PhoneControllerApi extends runtime.BaseAPI {
-  /**
-   * Add an emergency address to a phone number
-   * Create an emergency address
-   */
-  async createEmergencyAddressRaw(
-    requestParameters: CreateEmergencyAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<EmergencyAddress>> {
-    if (
-      requestParameters.createEmergencyAddressOptions === null ||
-      requestParameters.createEmergencyAddressOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createEmergencyAddressOptions',
-        'Required parameter requestParameters.createEmergencyAddressOptions was null or undefined when calling createEmergencyAddress.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/emergency-addresses`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateEmergencyAddressOptionsToJSON(
-          requestParameters.createEmergencyAddressOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      EmergencyAddressFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Add an emergency address to a phone number
-   * Create an emergency address
-   */
-  async createEmergencyAddress(
-    requestParameters: CreateEmergencyAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<EmergencyAddress> {
-    const response = await this.createEmergencyAddressRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Create new phone number
-   * Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
-   */
-  async createPhoneNumberRaw(
-    requestParameters: CreatePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
-    if (
-      requestParameters.createPhoneNumberOptions === null ||
-      requestParameters.createPhoneNumberOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createPhoneNumberOptions',
-        'Required parameter requestParameters.createPhoneNumberOptions was null or undefined when calling createPhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreatePhoneNumberOptionsToJSON(
-          requestParameters.createPhoneNumberOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhoneNumberDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Create new phone number
-   * Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
-   */
-  async createPhoneNumber(
-    requestParameters: CreatePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<PhoneNumberDto> {
-    const response = await this.createPhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Delete an emergency address
-   * Delete an emergency address
-   */
-  async deleteEmergencyAddressRaw(
-    requestParameters: DeleteEmergencyAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<EmptyResponseDto>> {
-    if (
-      requestParameters.addressId === null ||
-      requestParameters.addressId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'addressId',
-        'Required parameter requestParameters.addressId was null or undefined when calling deleteEmergencyAddress.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/emergency-addresses/{addressId}`.replace(
-          `{${'addressId'}}`,
-          encodeURIComponent(String(requestParameters.addressId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      EmptyResponseDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Delete an emergency address
-   * Delete an emergency address
-   */
-  async deleteEmergencyAddress(
-    requestParameters: DeleteEmergencyAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<EmptyResponseDto> {
-    const response = await this.deleteEmergencyAddressRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Remove phone number from account
-   * Delete a phone number
-   */
-  async deletePhoneNumberRaw(
-    requestParameters: DeletePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling deletePhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Remove phone number from account
-   * Delete a phone number
-   */
-  async deletePhoneNumber(
-    requestParameters: DeletePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deletePhoneNumberRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * List all message threads for all phones
-   * Get the latest messages for all phones
-   */
-  async getAllPhoneMessageThreadsRaw(
-    requestParameters: GetAllPhoneMessageThreadsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PagePhoneMessageThreadProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/message-threads`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PagePhoneMessageThreadProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List all message threads for all phones
-   * Get the latest messages for all phones
-   */
-  async getAllPhoneMessageThreads(
-    requestParameters: GetAllPhoneMessageThreadsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PagePhoneMessageThreadProjection> {
-    const response = await this.getAllPhoneMessageThreadsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get the status of phone usage consent
-   * Get consent status
-   */
-  async getConsentStatusRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ConsentStatusDto>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/consent`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ConsentStatusDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get the status of phone usage consent
-   * Get consent status
-   */
-  async getConsentStatus(
-    initOverrides?: RequestInit
-  ): Promise<ConsentStatusDto> {
-    const response = await this.getConsentStatusRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Fetch an emergency address by ID
-   * Get an emergency address
-   */
-  async getEmergencyAddressRaw(
-    requestParameters: GetEmergencyAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<EmergencyAddress>> {
-    if (
-      requestParameters.addressId === null ||
-      requestParameters.addressId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'addressId',
-        'Required parameter requestParameters.addressId was null or undefined when calling getEmergencyAddress.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/emergency-addresses/{addressId}`.replace(
-          `{${'addressId'}}`,
-          encodeURIComponent(String(requestParameters.addressId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      EmergencyAddressFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Fetch an emergency address by ID
-   * Get an emergency address
-   */
-  async getEmergencyAddress(
-    requestParameters: GetEmergencyAddressRequest,
-    initOverrides?: RequestInit
-  ): Promise<EmergencyAddress> {
-    const response = await this.getEmergencyAddressRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List emergency addresses
-   * Get emergency addresses
-   */
-  async getEmergencyAddressesRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<EmergencyAddressDto>>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/emergency-addresses`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(EmergencyAddressDtoFromJSON)
-    );
-  }
-
-  /**
-   * List emergency addresses
-   * Get emergency addresses
-   */
-  async getEmergencyAddresses(
-    initOverrides?: RequestInit
-  ): Promise<Array<EmergencyAddressDto>> {
-    const response = await this.getEmergencyAddressesRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * List message thread messages for a phone message thread
-   * Get messages in a phone thread
-   */
-  async getPhoneMessageThreadItemsRaw(
-    requestParameters: GetPhoneMessageThreadItemsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PagePhoneMessageThreadItemProjection>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneMessageThreadItems.'
-      );
-    }
-
-    if (
-      requestParameters.otherNumber === null ||
-      requestParameters.otherNumber === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'otherNumber',
-        'Required parameter requestParameters.otherNumber was null or undefined when calling getPhoneMessageThreadItems.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/message-threads/{otherNumber}`
-          .replace(
-            `{${'phoneNumberId'}}`,
-            encodeURIComponent(String(requestParameters.phoneNumberId))
-          )
-          .replace(
-            `{${'otherNumber'}}`,
-            encodeURIComponent(String(requestParameters.otherNumber))
-          ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PagePhoneMessageThreadItemProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List message thread messages for a phone message thread
-   * Get messages in a phone thread
-   */
-  async getPhoneMessageThreadItems(
-    requestParameters: GetPhoneMessageThreadItemsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PagePhoneMessageThreadItemProjection> {
-    const response = await this.getPhoneMessageThreadItemsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List message threads for a phone
-   * Get the latest message preview for a thread
-   */
-  async getPhoneMessageThreadsRaw(
-    requestParameters: GetPhoneMessageThreadsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PagePhoneMessageThreadProjection>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneMessageThreads.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/message-threads`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PagePhoneMessageThreadProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List message threads for a phone
-   * Get the latest message preview for a thread
-   */
-  async getPhoneMessageThreads(
-    requestParameters: GetPhoneMessageThreadsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PagePhoneMessageThreadProjection> {
-    const response = await this.getPhoneMessageThreadsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a phone number by ID
-   * Get a phone number by ID
-   */
-  async getPhoneNumberRaw(
-    requestParameters: GetPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhoneNumberDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a phone number by ID
-   * Get a phone number by ID
-   */
-  async getPhoneNumber(
-    requestParameters: GetPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<PhoneNumberDto> {
-    const response = await this.getPhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a phone number by name
-   * Get a phone number by name
-   */
-  async getPhoneNumberByNameRaw(
-    requestParameters: GetPhoneNumberByNameRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
-    if (
-      requestParameters.name === null ||
-      requestParameters.name === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'name',
-        'Required parameter requestParameters.name was null or undefined when calling getPhoneNumberByName.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.name !== undefined) {
-      queryParameters['name'] = requestParameters.name;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/by-name`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhoneNumberDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a phone number by name
-   * Get a phone number by name
-   */
-  async getPhoneNumberByName(
-    requestParameters: GetPhoneNumberByNameRequest,
-    initOverrides?: RequestInit
-  ): Promise<PhoneNumberDto> {
-    const response = await this.getPhoneNumberByNameRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a phone number by phone number
-   * Get a phone number by phone number
-   */
-  async getPhoneNumberByPhoneNumberRaw(
-    requestParameters: GetPhoneNumberByPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
-    if (
-      requestParameters.phoneNumber === null ||
-      requestParameters.phoneNumber === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumber',
-        'Required parameter requestParameters.phoneNumber was null or undefined when calling getPhoneNumberByPhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.phoneNumber !== undefined) {
-      queryParameters['phoneNumber'] = requestParameters.phoneNumber;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/by-phone-number`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhoneNumberDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a phone number by phone number
-   * Get a phone number by phone number
-   */
-  async getPhoneNumberByPhoneNumber(
-    requestParameters: GetPhoneNumberByPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<PhoneNumberDto> {
-    const response = await this.getPhoneNumberByPhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List phone numbers for account
-   * Get phone numbers
-   */
-  async getPhoneNumbersRaw(
-    requestParameters: GetPhoneNumbersRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PagePhoneNumberProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.phoneCountry !== undefined) {
-      queryParameters['phoneCountry'] = requestParameters.phoneCountry;
-    }
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
-    }
-
-    if (requestParameters.include) {
-      queryParameters['include'] = requestParameters.include;
-    }
-
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PagePhoneNumberProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List phone numbers for account
-   * Get phone numbers
-   */
-  async getPhoneNumbers(
-    requestParameters: GetPhoneNumbersRequest,
-    initOverrides?: RequestInit
-  ): Promise<PagePhoneNumberProjection> {
-    const response = await this.getPhoneNumbersRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get phone number plans
-   * Get phone plans
-   */
-  async getPhonePlansRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<PhonePlanDto>>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/plans`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(PhonePlanDtoFromJSON)
-    );
-  }
-
-  /**
-   * Get phone number plans
-   * Get phone plans
-   */
-  async getPhonePlans(
-    initOverrides?: RequestInit
-  ): Promise<Array<PhonePlanDto>> {
-    const response = await this.getPhonePlansRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get phone plans availability
-   */
-  async getPhonePlansAvailabilityRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhonePlanAvailability>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/plans/availability`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhonePlanAvailabilityFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get phone plans availability
-   */
-  async getPhonePlansAvailability(
-    initOverrides?: RequestInit
-  ): Promise<PhonePlanAvailability> {
-    const response = await this.getPhonePlansAvailabilityRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get sent SMS messages for a phone number
-   * List sent TXT messages for a phone number
-   */
-  async getSentSmsByPhoneNumberRaw(
-    requestParameters: GetSentSmsByPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageSentSmsProjection>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling getSentSmsByPhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/sms-sent`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageSentSmsProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get sent SMS messages for a phone number
-   * List sent TXT messages for a phone number
-   */
-  async getSentSmsByPhoneNumber(
-    requestParameters: GetSentSmsByPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageSentSmsProjection> {
-    const response = await this.getSentSmsByPhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get SMS messages for a phone number
-   * List SMS messages for a phone number
-   */
-  async getSmsByPhoneNumberRaw(
-    requestParameters: GetSmsByPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageSmsProjection>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling getSmsByPhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.unreadOnly !== undefined) {
-      queryParameters['unreadOnly'] = requestParameters.unreadOnly;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.search !== undefined) {
-      queryParameters['search'] = requestParameters.search;
-    }
-
-    if (requestParameters.favourite !== undefined) {
-      queryParameters['favourite'] = requestParameters.favourite;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/sms`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageSmsProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get SMS messages for a phone number
-   * List SMS messages for a phone number
-   */
-  async getSmsByPhoneNumber(
-    requestParameters: GetSmsByPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageSmsProjection> {
-    const response = await this.getSmsByPhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Send SMS from a phone number
-   * Send TXT message from a phone number
-   */
-  async sendSmsFromPhoneNumberRaw(
-    requestParameters: SendSmsFromPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SentSmsDto>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling sendSmsFromPhoneNumber.'
-      );
-    }
-
-    if (
-      requestParameters.smsSendOptions === null ||
-      requestParameters.smsSendOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'smsSendOptions',
-        'Required parameter requestParameters.smsSendOptions was null or undefined when calling sendSmsFromPhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/sms`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SmsSendOptionsToJSON(requestParameters.smsSendOptions),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SentSmsDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Send SMS from a phone number
-   * Send TXT message from a phone number
-   */
-  async sendSmsFromPhoneNumber(
-    requestParameters: SendSmsFromPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<SentSmsDto> {
-    const response = await this.sendSmsFromPhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Give or revoke consent for phone usage
-   * Set consent status
-   */
-  async setConsentStatusRaw(
-    requestParameters: SetConsentStatusRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ConsentStatusDto>> {
-    if (
-      requestParameters.agree === null ||
-      requestParameters.agree === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'agree',
-        'Required parameter requestParameters.agree was null or undefined when calling setConsentStatus.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.agree !== undefined) {
-      queryParameters['agree'] = requestParameters.agree;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/consent`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ConsentStatusDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Give or revoke consent for phone usage
-   * Set consent status
-   */
-  async setConsentStatus(
-    requestParameters: SetConsentStatusRequest,
-    initOverrides?: RequestInit
-  ): Promise<ConsentStatusDto> {
-    const response = await this.setConsentStatusRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Set and return new favorite state for a phone
-   * Set phone favourited state
-   */
-  async setPhoneFavouritedRaw(
-    requestParameters: SetPhoneFavouritedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling setPhoneFavourited.'
-      );
-    }
-
-    if (
-      requestParameters.setPhoneFavouritedOptions === null ||
-      requestParameters.setPhoneFavouritedOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'setPhoneFavouritedOptions',
-        'Required parameter requestParameters.setPhoneFavouritedOptions was null or undefined when calling setPhoneFavourited.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/favourite`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: SetPhoneFavouritedOptionsToJSON(
-          requestParameters.setPhoneFavouritedOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhoneNumberDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Set and return new favorite state for a phone
-   * Set phone favourited state
-   */
-  async setPhoneFavourited(
-    requestParameters: SetPhoneFavouritedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PhoneNumberDto> {
-    const response = await this.setPhoneFavouritedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Test a phone number by sending an SMS to it
-   * Test sending an SMS to a number
-   */
-  async testPhoneNumberSendSmsRaw(
-    requestParameters: TestPhoneNumberSendSmsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling testPhoneNumberSendSms.'
-      );
-    }
-
-    if (
-      requestParameters.testPhoneNumberOptions === null ||
-      requestParameters.testPhoneNumberOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'testPhoneNumberOptions',
-        'Required parameter requestParameters.testPhoneNumberOptions was null or undefined when calling testPhoneNumberSendSms.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (
-      requestParameters.xTestId !== undefined &&
-      requestParameters.xTestId !== null
-    ) {
-      headerParameters['x-test-id'] = String(requestParameters.xTestId);
-    }
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/test`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: TestPhoneNumberOptionsToJSON(
-          requestParameters.testPhoneNumberOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Test a phone number by sending an SMS to it
-   * Test sending an SMS to a number
-   */
-  async testPhoneNumberSendSms(
-    requestParameters: TestPhoneNumberSendSmsRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.testPhoneNumberSendSmsRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Set field for phone number
-   * Update a phone number
-   */
-  async updatePhoneNumberRaw(
-    requestParameters: UpdatePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling updatePhoneNumber.'
-      );
-    }
-
-    if (
-      requestParameters.updatePhoneNumberOptions === null ||
-      requestParameters.updatePhoneNumberOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'updatePhoneNumberOptions',
-        'Required parameter requestParameters.updatePhoneNumberOptions was null or undefined when calling updatePhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: UpdatePhoneNumberOptionsToJSON(
-          requestParameters.updatePhoneNumberOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhoneNumberDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Set field for phone number
-   * Update a phone number
-   */
-  async updatePhoneNumber(
-    requestParameters: UpdatePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<PhoneNumberDto> {
-    const response = await this.updatePhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Validate a phone number
-   * Verify validity of a phone number
-   */
-  async validatePhoneNumberRaw(
-    requestParameters: ValidatePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PhoneNumberValidationDto>> {
-    if (
-      requestParameters.validatePhoneNumberOptions === null ||
-      requestParameters.validatePhoneNumberOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'validatePhoneNumberOptions',
-        'Required parameter requestParameters.validatePhoneNumberOptions was null or undefined when calling validatePhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/validate`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: ValidatePhoneNumberOptionsToJSON(
-          requestParameters.validatePhoneNumberOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PhoneNumberValidationDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Validate a phone number
-   * Verify validity of a phone number
-   */
-  async validatePhoneNumber(
-    requestParameters: ValidatePhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<PhoneNumberValidationDto> {
-    const response = await this.validatePhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+
+    /**
+     * Add an emergency address to a phone number
+     * Create an emergency address
+     */
+    async createEmergencyAddressRaw(requestParameters: CreateEmergencyAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmergencyAddress>> {
+        if (requestParameters.createEmergencyAddressOptions === null || requestParameters.createEmergencyAddressOptions === undefined) {
+            throw new runtime.RequiredError('createEmergencyAddressOptions','Required parameter requestParameters.createEmergencyAddressOptions was null or undefined when calling createEmergencyAddress.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/emergency-addresses`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateEmergencyAddressOptionsToJSON(requestParameters.createEmergencyAddressOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EmergencyAddressFromJSON(jsonValue));
+    }
+
+    /**
+     * Add an emergency address to a phone number
+     * Create an emergency address
+     */
+    async createEmergencyAddress(requestParameters: CreateEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmergencyAddress> {
+        const response = await this.createEmergencyAddressRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Create new phone number
+     * Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
+     */
+    async createPhoneNumberRaw(requestParameters: CreatePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+        if (requestParameters.createPhoneNumberOptions === null || requestParameters.createPhoneNumberOptions === undefined) {
+            throw new runtime.RequiredError('createPhoneNumberOptions','Required parameter requestParameters.createPhoneNumberOptions was null or undefined when calling createPhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreatePhoneNumberOptionsToJSON(requestParameters.createPhoneNumberOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhoneNumberDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Create new phone number
+     * Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
+     */
+    async createPhoneNumber(requestParameters: CreatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto> {
+        const response = await this.createPhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Delete an emergency address
+     * Delete an emergency address
+     */
+    async deleteEmergencyAddressRaw(requestParameters: DeleteEmergencyAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmptyResponseDto>> {
+        if (requestParameters.addressId === null || requestParameters.addressId === undefined) {
+            throw new runtime.RequiredError('addressId','Required parameter requestParameters.addressId was null or undefined when calling deleteEmergencyAddress.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/emergency-addresses/{addressId}`.replace(`{${"addressId"}}`, encodeURIComponent(String(requestParameters.addressId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EmptyResponseDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Delete an emergency address
+     * Delete an emergency address
+     */
+    async deleteEmergencyAddress(requestParameters: DeleteEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmptyResponseDto> {
+        const response = await this.deleteEmergencyAddressRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Remove phone number from account
+     * Delete a phone number
+     */
+    async deletePhoneNumberRaw(requestParameters: DeletePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling deletePhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Remove phone number from account
+     * Delete a phone number
+     */
+    async deletePhoneNumber(requestParameters: DeletePhoneNumberRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deletePhoneNumberRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * List all message threads for all phones
+     * Get the latest messages for all phones
+     */
+    async getAllPhoneMessageThreadsRaw(requestParameters: GetAllPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneMessageThreadProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/message-threads`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PagePhoneMessageThreadProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List all message threads for all phones
+     * Get the latest messages for all phones
+     */
+    async getAllPhoneMessageThreads(requestParameters: GetAllPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<PagePhoneMessageThreadProjection> {
+        const response = await this.getAllPhoneMessageThreadsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get the status of phone usage consent
+     * Get consent status
+     */
+    async getConsentStatusRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConsentStatusDto>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/consent`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ConsentStatusDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get the status of phone usage consent
+     * Get consent status
+     */
+    async getConsentStatus(initOverrides?: RequestInit): Promise<ConsentStatusDto> {
+        const response = await this.getConsentStatusRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Fetch an emergency address by ID
+     * Get an emergency address
+     */
+    async getEmergencyAddressRaw(requestParameters: GetEmergencyAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmergencyAddress>> {
+        if (requestParameters.addressId === null || requestParameters.addressId === undefined) {
+            throw new runtime.RequiredError('addressId','Required parameter requestParameters.addressId was null or undefined when calling getEmergencyAddress.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/emergency-addresses/{addressId}`.replace(`{${"addressId"}}`, encodeURIComponent(String(requestParameters.addressId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EmergencyAddressFromJSON(jsonValue));
+    }
+
+    /**
+     * Fetch an emergency address by ID
+     * Get an emergency address
+     */
+    async getEmergencyAddress(requestParameters: GetEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmergencyAddress> {
+        const response = await this.getEmergencyAddressRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List emergency addresses
+     * Get emergency addresses
+     */
+    async getEmergencyAddressesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<EmergencyAddressDto>>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/emergency-addresses`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(EmergencyAddressDtoFromJSON));
+    }
+
+    /**
+     * List emergency addresses
+     * Get emergency addresses
+     */
+    async getEmergencyAddresses(initOverrides?: RequestInit): Promise<Array<EmergencyAddressDto>> {
+        const response = await this.getEmergencyAddressesRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List message thread messages for a phone message thread
+     * Get messages in a phone thread
+     */
+    async getPhoneMessageThreadItemsRaw(requestParameters: GetPhoneMessageThreadItemsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneMessageThreadItemProjection>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneMessageThreadItems.');
+        }
+
+        if (requestParameters.otherNumber === null || requestParameters.otherNumber === undefined) {
+            throw new runtime.RequiredError('otherNumber','Required parameter requestParameters.otherNumber was null or undefined when calling getPhoneMessageThreadItems.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/message-threads/{otherNumber}`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))).replace(`{${"otherNumber"}}`, encodeURIComponent(String(requestParameters.otherNumber))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PagePhoneMessageThreadItemProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List message thread messages for a phone message thread
+     * Get messages in a phone thread
+     */
+    async getPhoneMessageThreadItems(requestParameters: GetPhoneMessageThreadItemsRequest, initOverrides?: RequestInit): Promise<PagePhoneMessageThreadItemProjection> {
+        const response = await this.getPhoneMessageThreadItemsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List message threads for a phone
+     * Get the latest message preview for a thread
+     */
+    async getPhoneMessageThreadsRaw(requestParameters: GetPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneMessageThreadProjection>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneMessageThreads.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/message-threads`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PagePhoneMessageThreadProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List message threads for a phone
+     * Get the latest message preview for a thread
+     */
+    async getPhoneMessageThreads(requestParameters: GetPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<PagePhoneMessageThreadProjection> {
+        const response = await this.getPhoneMessageThreadsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a phone number by ID
+     * Get a phone number by ID
+     */
+    async getPhoneNumberRaw(requestParameters: GetPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhoneNumberDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a phone number by ID
+     * Get a phone number by ID
+     */
+    async getPhoneNumber(requestParameters: GetPhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto> {
+        const response = await this.getPhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a phone number by name
+     * Get a phone number by name
+     */
+    async getPhoneNumberByNameRaw(requestParameters: GetPhoneNumberByNameRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+        if (requestParameters.name === null || requestParameters.name === undefined) {
+            throw new runtime.RequiredError('name','Required parameter requestParameters.name was null or undefined when calling getPhoneNumberByName.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.name !== undefined) {
+            queryParameters['name'] = requestParameters.name;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/by-name`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhoneNumberDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a phone number by name
+     * Get a phone number by name
+     */
+    async getPhoneNumberByName(requestParameters: GetPhoneNumberByNameRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto> {
+        const response = await this.getPhoneNumberByNameRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a phone number by phone number
+     * Get a phone number by phone number
+     */
+    async getPhoneNumberByPhoneNumberRaw(requestParameters: GetPhoneNumberByPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+        if (requestParameters.phoneNumber === null || requestParameters.phoneNumber === undefined) {
+            throw new runtime.RequiredError('phoneNumber','Required parameter requestParameters.phoneNumber was null or undefined when calling getPhoneNumberByPhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.phoneNumber !== undefined) {
+            queryParameters['phoneNumber'] = requestParameters.phoneNumber;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/by-phone-number`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhoneNumberDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get a phone number by phone number
+     * Get a phone number by phone number
+     */
+    async getPhoneNumberByPhoneNumber(requestParameters: GetPhoneNumberByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto> {
+        const response = await this.getPhoneNumberByPhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List phone numbers for account
+     * Get phone numbers
+     */
+    async getPhoneNumbersRaw(requestParameters: GetPhoneNumbersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneNumberProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.phoneCountry !== undefined) {
+            queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+        }
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.search !== undefined) {
+            queryParameters['search'] = requestParameters.search;
+        }
+
+        if (requestParameters.include) {
+            queryParameters['include'] = requestParameters.include;
+        }
+
+        if (requestParameters.favourite !== undefined) {
+            queryParameters['favourite'] = requestParameters.favourite;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PagePhoneNumberProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List phone numbers for account
+     * Get phone numbers
+     */
+    async getPhoneNumbers(requestParameters: GetPhoneNumbersRequest, initOverrides?: RequestInit): Promise<PagePhoneNumberProjection> {
+        const response = await this.getPhoneNumbersRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get phone number plans
+     * Get phone plans
+     */
+    async getPhonePlansRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<PhonePlanDto>>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/plans`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(PhonePlanDtoFromJSON));
+    }
+
+    /**
+     * Get phone number plans
+     * Get phone plans
+     */
+    async getPhonePlans(initOverrides?: RequestInit): Promise<Array<PhonePlanDto>> {
+        const response = await this.getPhonePlansRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get phone plans availability
+     */
+    async getPhonePlansAvailabilityRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePlanAvailability>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/plans/availability`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhonePlanAvailabilityFromJSON(jsonValue));
+    }
+
+    /**
+     * Get phone plans availability
+     */
+    async getPhonePlansAvailability(initOverrides?: RequestInit): Promise<PhonePlanAvailability> {
+        const response = await this.getPhonePlansAvailabilityRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get sent SMS messages for a phone number
+     * List sent TXT messages for a phone number
+     */
+    async getSentSmsByPhoneNumberRaw(requestParameters: GetSentSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentSmsProjection>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling getSentSmsByPhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.search !== undefined) {
+            queryParameters['search'] = requestParameters.search;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/sms-sent`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageSentSmsProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Get sent SMS messages for a phone number
+     * List sent TXT messages for a phone number
+     */
+    async getSentSmsByPhoneNumber(requestParameters: GetSentSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PageSentSmsProjection> {
+        const response = await this.getSentSmsByPhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get SMS messages for a phone number
+     * List SMS messages for a phone number
+     */
+    async getSmsByPhoneNumberRaw(requestParameters: GetSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsProjection>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling getSmsByPhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.unreadOnly !== undefined) {
+            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.search !== undefined) {
+            queryParameters['search'] = requestParameters.search;
+        }
+
+        if (requestParameters.favourite !== undefined) {
+            queryParameters['favourite'] = requestParameters.favourite;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/sms`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageSmsProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Get SMS messages for a phone number
+     * List SMS messages for a phone number
+     */
+    async getSmsByPhoneNumber(requestParameters: GetSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PageSmsProjection> {
+        const response = await this.getSmsByPhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Send SMS from a phone number
+     * Send TXT message from a phone number
+     */
+    async sendSmsFromPhoneNumberRaw(requestParameters: SendSmsFromPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling sendSmsFromPhoneNumber.');
+        }
+
+        if (requestParameters.smsSendOptions === null || requestParameters.smsSendOptions === undefined) {
+            throw new runtime.RequiredError('smsSendOptions','Required parameter requestParameters.smsSendOptions was null or undefined when calling sendSmsFromPhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/sms`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SmsSendOptionsToJSON(requestParameters.smsSendOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SentSmsDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Send SMS from a phone number
+     * Send TXT message from a phone number
+     */
+    async sendSmsFromPhoneNumber(requestParameters: SendSmsFromPhoneNumberRequest, initOverrides?: RequestInit): Promise<SentSmsDto> {
+        const response = await this.sendSmsFromPhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Give or revoke consent for phone usage
+     * Set consent status
+     */
+    async setConsentStatusRaw(requestParameters: SetConsentStatusRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConsentStatusDto>> {
+        if (requestParameters.agree === null || requestParameters.agree === undefined) {
+            throw new runtime.RequiredError('agree','Required parameter requestParameters.agree was null or undefined when calling setConsentStatus.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.agree !== undefined) {
+            queryParameters['agree'] = requestParameters.agree;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/consent`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ConsentStatusDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Give or revoke consent for phone usage
+     * Set consent status
+     */
+    async setConsentStatus(requestParameters: SetConsentStatusRequest, initOverrides?: RequestInit): Promise<ConsentStatusDto> {
+        const response = await this.setConsentStatusRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    async setPhoneFavouritedRaw(requestParameters: SetPhoneFavouritedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling setPhoneFavourited.');
+        }
+
+        if (requestParameters.setPhoneFavouritedOptions === null || requestParameters.setPhoneFavouritedOptions === undefined) {
+            throw new runtime.RequiredError('setPhoneFavouritedOptions','Required parameter requestParameters.setPhoneFavouritedOptions was null or undefined when calling setPhoneFavourited.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/favourite`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SetPhoneFavouritedOptionsToJSON(requestParameters.setPhoneFavouritedOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhoneNumberDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Set and return new favorite state for a phone
+     * Set phone favourited state
+     */
+    async setPhoneFavourited(requestParameters: SetPhoneFavouritedRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto> {
+        const response = await this.setPhoneFavouritedRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Test a phone number by sending an SMS to it
+     * Test sending an SMS to a number
+     */
+    async testPhoneNumberSendSmsRaw(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling testPhoneNumberSendSms.');
+        }
+
+        if (requestParameters.testPhoneNumberOptions === null || requestParameters.testPhoneNumberOptions === undefined) {
+            throw new runtime.RequiredError('testPhoneNumberOptions','Required parameter requestParameters.testPhoneNumberOptions was null or undefined when calling testPhoneNumberSendSms.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters.xTestId !== undefined && requestParameters.xTestId !== null) {
+            headerParameters['x-test-id'] = String(requestParameters.xTestId);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/test`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TestPhoneNumberOptionsToJSON(requestParameters.testPhoneNumberOptions),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Test a phone number by sending an SMS to it
+     * Test sending an SMS to a number
+     */
+    async testPhoneNumberSendSms(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.testPhoneNumberSendSmsRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Set field for phone number
+     * Update a phone number
+     */
+    async updatePhoneNumberRaw(requestParameters: UpdatePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling updatePhoneNumber.');
+        }
+
+        if (requestParameters.updatePhoneNumberOptions === null || requestParameters.updatePhoneNumberOptions === undefined) {
+            throw new runtime.RequiredError('updatePhoneNumberOptions','Required parameter requestParameters.updatePhoneNumberOptions was null or undefined when calling updatePhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdatePhoneNumberOptionsToJSON(requestParameters.updatePhoneNumberOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhoneNumberDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Set field for phone number
+     * Update a phone number
+     */
+    async updatePhoneNumber(requestParameters: UpdatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto> {
+        const response = await this.updatePhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Validate a phone number
+     * Verify validity of a phone number
+     */
+    async validatePhoneNumberRaw(requestParameters: ValidatePhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberValidationDto>> {
+        if (requestParameters.validatePhoneNumberOptions === null || requestParameters.validatePhoneNumberOptions === undefined) {
+            throw new runtime.RequiredError('validatePhoneNumberOptions','Required parameter requestParameters.validatePhoneNumberOptions was null or undefined when calling validatePhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/validate`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ValidatePhoneNumberOptionsToJSON(requestParameters.validatePhoneNumberOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PhoneNumberValidationDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Validate a phone number
+     * Verify validity of a phone number
+     */
+    async validatePhoneNumber(requestParameters: ValidatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberValidationDto> {
+        const response = await this.validatePhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetPhoneNumbersPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
-  CA = 'CA',
-  EE = 'EE',
-  HK = 'HK',
-  PL = 'PL',
-  CH = 'CH',
-  PT = 'PT',
-  NL = 'NL',
-  IL = 'IL',
-  SE = 'SE',
+    US = 'US',
+    GB = 'GB',
+    AU = 'AU',
+    CA = 'CA',
+    EE = 'EE',
+    HK = 'HK',
+    PL = 'PL',
+    CH = 'CH',
+    PT = 'PT',
+    NL = 'NL',
+    IL = 'IL',
+    SE = 'SE'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetPhoneNumbersSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetSentSmsByPhoneNumberSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetSmsByPhoneNumberSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }

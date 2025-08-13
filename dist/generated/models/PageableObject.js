@@ -21,16 +21,16 @@ function PageableObjectFromJSON(json) {
 }
 exports.PageableObjectFromJSON = PageableObjectFromJSON;
 function PageableObjectFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
-        paged: !(0, runtime_1.exists)(json, 'paged') ? undefined : json['paged'],
-        pageNumber: !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
-        unpaged: !(0, runtime_1.exists)(json, 'unpaged') ? undefined : json['unpaged'],
-        offset: !(0, runtime_1.exists)(json, 'offset') ? undefined : json['offset'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
+        'pageSize': !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
+        'sort': !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
+        'paged': !(0, runtime_1.exists)(json, 'paged') ? undefined : json['paged'],
+        'pageNumber': !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
+        'unpaged': !(0, runtime_1.exists)(json, 'unpaged') ? undefined : json['unpaged'],
+        'offset': !(0, runtime_1.exists)(json, 'offset') ? undefined : json['offset'],
     };
 }
 exports.PageableObjectFromJSONTyped = PageableObjectFromJSONTyped;
@@ -42,12 +42,12 @@ function PageableObjectToJSON(value) {
         return null;
     }
     return {
-        pageSize: value.pageSize,
-        paged: value.paged,
-        pageNumber: value.pageNumber,
-        unpaged: value.unpaged,
-        offset: value.offset,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
+        'pageSize': value.pageSize,
+        'sort': (0, _1.SortObjectToJSON)(value.sort),
+        'paged': value.paged,
+        'pageNumber': value.pageNumber,
+        'unpaged': value.unpaged,
+        'offset': value.offset,
     };
 }
 exports.PageableObjectToJSON = PageableObjectToJSON;

@@ -14,93 +14,92 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ConnectorDto
  */
 export interface ConnectorDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorDto
-   */
-  enabled: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  emailAddress?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorDto
+     */
+    enabled: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    emailAddress?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ConnectorDto
+     */
+    createdAt: Date;
 }
 
 export function ConnectorDtoFromJSON(json: any): ConnectorDto {
-  return ConnectorDtoFromJSONTyped(json, false);
+    return ConnectorDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    enabled: json['enabled'],
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function ConnectorDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'enabled': json['enabled'],
+        'emailAddress': !exists(json, 'emailAddress') ? undefined : json['emailAddress'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
 export function ConnectorDtoToJSON(value?: ConnectorDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    name: value.name,
-    enabled: value.enabled,
-    emailAddress: value.emailAddress,
-    userId: value.userId,
-    inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'name': value.name,
+        'enabled': value.enabled,
+        'emailAddress': value.emailAddress,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'createdAt': (value.createdAt.toISOString()),
+    };
 }
+
+

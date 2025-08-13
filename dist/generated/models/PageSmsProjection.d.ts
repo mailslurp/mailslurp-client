@@ -54,6 +54,12 @@ export interface PageSmsProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageSmsProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageSmsProjection
      */
@@ -70,12 +76,6 @@ export interface PageSmsProjection {
      * @memberof PageSmsProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageSmsProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

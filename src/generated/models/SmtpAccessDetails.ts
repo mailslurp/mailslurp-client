@@ -19,104 +19,103 @@ import { exists, mapValues } from '../runtime';
  * @interface SmtpAccessDetails
  */
 export interface SmtpAccessDetails {
-  /**
-   * Secure TLS SMTP server host domain
-   * @type {string}
-   * @memberof SmtpAccessDetails
-   */
-  secureSmtpServerHost: string;
-  /**
-   * Secure TLS SMTP server host port
-   * @type {number}
-   * @memberof SmtpAccessDetails
-   */
-  secureSmtpServerPort: number;
-  /**
-   * Secure TLS SMTP username for login
-   * @type {string}
-   * @memberof SmtpAccessDetails
-   */
-  secureSmtpUsername: string;
-  /**
-   * Secure TLS SMTP password for login
-   * @type {string}
-   * @memberof SmtpAccessDetails
-   */
-  secureSmtpPassword: string;
-  /**
-   * SMTP server host domain
-   * @type {string}
-   * @memberof SmtpAccessDetails
-   */
-  smtpServerHost: string;
-  /**
-   * SMTP server host port
-   * @type {number}
-   * @memberof SmtpAccessDetails
-   */
-  smtpServerPort: number;
-  /**
-   * SMTP username for login
-   * @type {string}
-   * @memberof SmtpAccessDetails
-   */
-  smtpUsername: string;
-  /**
-   * SMTP password for login
-   * @type {string}
-   * @memberof SmtpAccessDetails
-   */
-  smtpPassword: string;
-  /**
-   * Mail from domain or SMTP HELO value
-   * @type {string}
-   * @memberof SmtpAccessDetails
-   */
-  mailFromDomain?: string | null;
+    /**
+     * Secure TLS SMTP server host domain
+     * @type {string}
+     * @memberof SmtpAccessDetails
+     */
+    secureSmtpServerHost: string;
+    /**
+     * Secure TLS SMTP server host port
+     * @type {number}
+     * @memberof SmtpAccessDetails
+     */
+    secureSmtpServerPort: number;
+    /**
+     * Secure TLS SMTP username for login
+     * @type {string}
+     * @memberof SmtpAccessDetails
+     */
+    secureSmtpUsername: string;
+    /**
+     * Secure TLS SMTP password for login
+     * @type {string}
+     * @memberof SmtpAccessDetails
+     */
+    secureSmtpPassword: string;
+    /**
+     * SMTP server host domain
+     * @type {string}
+     * @memberof SmtpAccessDetails
+     */
+    smtpServerHost: string;
+    /**
+     * SMTP server host port
+     * @type {number}
+     * @memberof SmtpAccessDetails
+     */
+    smtpServerPort: number;
+    /**
+     * SMTP username for login
+     * @type {string}
+     * @memberof SmtpAccessDetails
+     */
+    smtpUsername: string;
+    /**
+     * SMTP password for login
+     * @type {string}
+     * @memberof SmtpAccessDetails
+     */
+    smtpPassword: string;
+    /**
+     * Mail from domain or SMTP HELO value
+     * @type {string}
+     * @memberof SmtpAccessDetails
+     */
+    mailFromDomain?: string | null;
 }
 
 export function SmtpAccessDetailsFromJSON(json: any): SmtpAccessDetails {
-  return SmtpAccessDetailsFromJSONTyped(json, false);
+    return SmtpAccessDetailsFromJSONTyped(json, false);
 }
 
-export function SmtpAccessDetailsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmtpAccessDetails {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    secureSmtpServerHost: json['secureSmtpServerHost'],
-    secureSmtpServerPort: json['secureSmtpServerPort'],
-    secureSmtpUsername: json['secureSmtpUsername'],
-    secureSmtpPassword: json['secureSmtpPassword'],
-    smtpServerHost: json['smtpServerHost'],
-    smtpServerPort: json['smtpServerPort'],
-    smtpUsername: json['smtpUsername'],
-    smtpPassword: json['smtpPassword'],
-    mailFromDomain: !exists(json, 'mailFromDomain')
-      ? undefined
-      : json['mailFromDomain'],
-  };
+export function SmtpAccessDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmtpAccessDetails {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'secureSmtpServerHost': json['secureSmtpServerHost'],
+        'secureSmtpServerPort': json['secureSmtpServerPort'],
+        'secureSmtpUsername': json['secureSmtpUsername'],
+        'secureSmtpPassword': json['secureSmtpPassword'],
+        'smtpServerHost': json['smtpServerHost'],
+        'smtpServerPort': json['smtpServerPort'],
+        'smtpUsername': json['smtpUsername'],
+        'smtpPassword': json['smtpPassword'],
+        'mailFromDomain': !exists(json, 'mailFromDomain') ? undefined : json['mailFromDomain'],
+    };
 }
 
 export function SmtpAccessDetailsToJSON(value?: SmtpAccessDetails | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    secureSmtpServerHost: value.secureSmtpServerHost,
-    secureSmtpServerPort: value.secureSmtpServerPort,
-    secureSmtpUsername: value.secureSmtpUsername,
-    secureSmtpPassword: value.secureSmtpPassword,
-    smtpServerHost: value.smtpServerHost,
-    smtpServerPort: value.smtpServerPort,
-    smtpUsername: value.smtpUsername,
-    smtpPassword: value.smtpPassword,
-    mailFromDomain: value.mailFromDomain,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'secureSmtpServerHost': value.secureSmtpServerHost,
+        'secureSmtpServerPort': value.secureSmtpServerPort,
+        'secureSmtpUsername': value.secureSmtpUsername,
+        'secureSmtpPassword': value.secureSmtpPassword,
+        'smtpServerHost': value.smtpServerHost,
+        'smtpServerPort': value.smtpServerPort,
+        'smtpUsername': value.smtpUsername,
+        'smtpPassword': value.smtpPassword,
+        'mailFromDomain': value.mailFromDomain,
+    };
 }
+
+

@@ -17,9 +17,9 @@ exports.EmailThreadItemToJSON = exports.EmailThreadItemFromJSONTyped = exports.E
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var EmailThreadItemItemTypeEnum;
 (function (EmailThreadItemItemTypeEnum) {
     EmailThreadItemItemTypeEnum["RECEIVED_EMAIL"] = "RECEIVED_EMAIL";
@@ -30,31 +30,27 @@ function EmailThreadItemFromJSON(json) {
 }
 exports.EmailThreadItemFromJSON = EmailThreadItemFromJSON;
 function EmailThreadItemFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        itemType: json['itemType'],
-        entityId: json['entityId'],
-        bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-        textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        to: json['to'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        createdAt: new Date(json['createdAt']),
-        read: json['read'],
-        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
-        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
-        sender: !(0, runtime_1.exists)(json, 'sender')
-            ? undefined
-            : (0, _1.SenderFromJSON)(json['sender']),
-        recipients: !(0, runtime_1.exists)(json, 'recipients')
-            ? undefined
-            : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
+        'itemType': json['itemType'],
+        'entityId': json['entityId'],
+        'bodyExcerpt': !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+        'textExcerpt': !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'to': json['to'],
+        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        'attachments': !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        'createdAt': (new Date(json['createdAt'])),
+        'read': json['read'],
+        'inReplyTo': !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+        'messageId': !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        'threadId': !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
+        'sender': !(0, runtime_1.exists)(json, 'sender') ? undefined : (0, _1.SenderFromJSON)(json['sender']),
+        'recipients': !(0, runtime_1.exists)(json, 'recipients') ? undefined : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
     };
 }
 exports.EmailThreadItemFromJSONTyped = EmailThreadItemFromJSONTyped;
@@ -66,23 +62,23 @@ function EmailThreadItemToJSON(value) {
         return null;
     }
     return {
-        itemType: value.itemType,
-        entityId: value.entityId,
-        bodyExcerpt: value.bodyExcerpt,
-        textExcerpt: value.textExcerpt,
-        subject: value.subject,
-        to: value.to,
-        from: value.from,
-        bcc: value.bcc,
-        cc: value.cc,
-        attachments: value.attachments,
-        createdAt: value.createdAt.toISOString(),
-        read: value.read,
-        inReplyTo: value.inReplyTo,
-        messageId: value.messageId,
-        threadId: value.threadId,
-        sender: (0, _1.SenderToJSON)(value.sender),
-        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
+        'itemType': value.itemType,
+        'entityId': value.entityId,
+        'bodyExcerpt': value.bodyExcerpt,
+        'textExcerpt': value.textExcerpt,
+        'subject': value.subject,
+        'to': value.to,
+        'from': value.from,
+        'bcc': value.bcc,
+        'cc': value.cc,
+        'attachments': value.attachments,
+        'createdAt': (value.createdAt.toISOString()),
+        'read': value.read,
+        'inReplyTo': value.inReplyTo,
+        'messageId': value.messageId,
+        'threadId': value.threadId,
+        'sender': (0, _1.SenderToJSON)(value.sender),
+        'recipients': (0, _1.EmailRecipientsToJSON)(value.recipients),
     };
 }
 exports.EmailThreadItemToJSON = EmailThreadItemToJSON;

@@ -17,9 +17,9 @@ exports.EmailFeatureOverviewToJSON = exports.EmailFeatureOverviewFromJSONTyped =
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var EmailFeatureOverviewFeatureEnum;
 (function (EmailFeatureOverviewFeatureEnum) {
     EmailFeatureOverviewFeatureEnum["amp"] = "amp";
@@ -202,22 +202,20 @@ var EmailFeatureOverviewFeatureEnum;
     EmailFeatureOverviewFeatureEnum["image_svg"] = "image-svg";
     EmailFeatureOverviewFeatureEnum["image_webp"] = "image-webp";
     EmailFeatureOverviewFeatureEnum["unsupported"] = "unsupported";
-})(EmailFeatureOverviewFeatureEnum = exports.EmailFeatureOverviewFeatureEnum || (exports.EmailFeatureOverviewFeatureEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(EmailFeatureOverviewFeatureEnum = exports.EmailFeatureOverviewFeatureEnum || (exports.EmailFeatureOverviewFeatureEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var EmailFeatureOverviewCategoryEnum;
 (function (EmailFeatureOverviewCategoryEnum) {
     EmailFeatureOverviewCategoryEnum["css"] = "css";
     EmailFeatureOverviewCategoryEnum["html"] = "html";
     EmailFeatureOverviewCategoryEnum["image"] = "image";
     EmailFeatureOverviewCategoryEnum["others"] = "others";
-})(EmailFeatureOverviewCategoryEnum = exports.EmailFeatureOverviewCategoryEnum || (exports.EmailFeatureOverviewCategoryEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(EmailFeatureOverviewCategoryEnum = exports.EmailFeatureOverviewCategoryEnum || (exports.EmailFeatureOverviewCategoryEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var EmailFeatureOverviewStatusesEnum;
 (function (EmailFeatureOverviewStatusesEnum) {
     EmailFeatureOverviewStatusesEnum["SUPPORTED"] = "SUPPORTED";
@@ -230,22 +228,18 @@ function EmailFeatureOverviewFromJSON(json) {
 }
 exports.EmailFeatureOverviewFromJSON = EmailFeatureOverviewFromJSON;
 function EmailFeatureOverviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        feature: json['feature'],
-        title: !(0, runtime_1.exists)(json, 'title') ? undefined : json['title'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        category: !(0, runtime_1.exists)(json, 'category') ? undefined : json['category'],
-        notes: !(0, runtime_1.exists)(json, 'notes') ? undefined : json['notes'],
-        notesNumbers: !(0, runtime_1.exists)(json, 'notesNumbers')
-            ? undefined
-            : json['notesNumbers'],
-        featureStatistics: !(0, runtime_1.exists)(json, 'featureStatistics')
-            ? undefined
-            : json['featureStatistics'].map(_1.EmailFeatureFamilyStatisticsFromJSON),
-        statuses: json['statuses'],
+        'feature': json['feature'],
+        'title': !(0, runtime_1.exists)(json, 'title') ? undefined : json['title'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'category': !(0, runtime_1.exists)(json, 'category') ? undefined : json['category'],
+        'notes': !(0, runtime_1.exists)(json, 'notes') ? undefined : json['notes'],
+        'notesNumbers': !(0, runtime_1.exists)(json, 'notesNumbers') ? undefined : json['notesNumbers'],
+        'featureStatistics': !(0, runtime_1.exists)(json, 'featureStatistics') ? undefined : (json['featureStatistics'].map(_1.EmailFeatureFamilyStatisticsFromJSON)),
+        'statuses': json['statuses'],
     };
 }
 exports.EmailFeatureOverviewFromJSONTyped = EmailFeatureOverviewFromJSONTyped;
@@ -257,16 +251,14 @@ function EmailFeatureOverviewToJSON(value) {
         return null;
     }
     return {
-        feature: value.feature,
-        title: value.title,
-        description: value.description,
-        category: value.category,
-        notes: value.notes,
-        notesNumbers: value.notesNumbers,
-        featureStatistics: value.featureStatistics === undefined
-            ? undefined
-            : value.featureStatistics.map(_1.EmailFeatureFamilyStatisticsToJSON),
-        statuses: value.statuses,
+        'feature': value.feature,
+        'title': value.title,
+        'description': value.description,
+        'category': value.category,
+        'notes': value.notes,
+        'notesNumbers': value.notesNumbers,
+        'featureStatistics': value.featureStatistics === undefined ? undefined : (value.featureStatistics.map(_1.EmailFeatureFamilyStatisticsToJSON)),
+        'statuses': value.statuses,
     };
 }
 exports.EmailFeatureOverviewToJSON = EmailFeatureOverviewToJSON;

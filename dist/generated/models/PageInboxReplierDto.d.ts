@@ -54,6 +54,12 @@ export interface PageInboxReplierDto {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageInboxReplierDto
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageInboxReplierDto
      */
@@ -70,12 +76,6 @@ export interface PageInboxReplierDto {
      * @memberof PageInboxReplierDto
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageInboxReplierDto
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

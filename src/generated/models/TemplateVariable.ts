@@ -19,54 +19,55 @@ import { exists, mapValues } from '../runtime';
  * @interface TemplateVariable
  */
 export interface TemplateVariable {
-  /**
-   * Name of variable. This can be used in a template as {{name}}
-   * @type {string}
-   * @memberof TemplateVariable
-   */
-  name: string;
-  /**
-   * The type of variable
-   * @type {string}
-   * @memberof TemplateVariable
-   */
-  variableType: TemplateVariableVariableTypeEnum;
+    /**
+     * Name of variable. This can be used in a template as {{name}}
+     * @type {string}
+     * @memberof TemplateVariable
+     */
+    name: string;
+    /**
+     * The type of variable
+     * @type {string}
+     * @memberof TemplateVariable
+     */
+    variableType: TemplateVariableVariableTypeEnum;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum TemplateVariableVariableTypeEnum {
-  STRING = 'STRING',
+    STRING = 'STRING'
 }
 
 export function TemplateVariableFromJSON(json: any): TemplateVariable {
-  return TemplateVariableFromJSONTyped(json, false);
+    return TemplateVariableFromJSONTyped(json, false);
 }
 
-export function TemplateVariableFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TemplateVariable {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    variableType: json['variableType'],
-  };
+export function TemplateVariableFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateVariable {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'variableType': json['variableType'],
+    };
 }
 
 export function TemplateVariableToJSON(value?: TemplateVariable | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    variableType: value.variableType,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'name': value.name,
+        'variableType': value.variableType,
+    };
 }
+
+

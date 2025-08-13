@@ -29,9 +29,9 @@ export interface EmailFeatureFamilyName {
     name: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EmailFeatureFamilyNameSlugEnum {
     aol = "aol",
     apple_mail = "apple-mail",

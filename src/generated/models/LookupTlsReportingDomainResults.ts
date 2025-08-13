@@ -14,90 +14,87 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  DNSLookupOptions,
-  DNSLookupOptionsFromJSON,
-  DNSLookupOptionsFromJSONTyped,
-  DNSLookupOptionsToJSON,
-  DNSLookupResult,
-  DNSLookupResultFromJSON,
-  DNSLookupResultFromJSONTyped,
-  DNSLookupResultToJSON,
+    DNSLookupOptions,
+    DNSLookupOptionsFromJSON,
+    DNSLookupOptionsFromJSONTyped,
+    DNSLookupOptionsToJSON,
+    DNSLookupResult,
+    DNSLookupResultFromJSON,
+    DNSLookupResultFromJSONTyped,
+    DNSLookupResultToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface LookupTlsReportingDomainResults
  */
 export interface LookupTlsReportingDomainResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof LookupTlsReportingDomainResults
-   */
-  valid: boolean;
-  /**
-   *
-   * @type {DNSLookupOptions}
-   * @memberof LookupTlsReportingDomainResults
-   */
-  query: DNSLookupOptions;
-  /**
-   *
-   * @type {Array<DNSLookupResult>}
-   * @memberof LookupTlsReportingDomainResults
-   */
-  records: Array<DNSLookupResult>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupTlsReportingDomainResults
-   */
-  errors: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof LookupTlsReportingDomainResults
-   */
-  warnings: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof LookupTlsReportingDomainResults
+     */
+    valid: boolean;
+    /**
+     * 
+     * @type {DNSLookupOptions}
+     * @memberof LookupTlsReportingDomainResults
+     */
+    query: DNSLookupOptions;
+    /**
+     * 
+     * @type {Array<DNSLookupResult>}
+     * @memberof LookupTlsReportingDomainResults
+     */
+    records: Array<DNSLookupResult>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupTlsReportingDomainResults
+     */
+    errors: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof LookupTlsReportingDomainResults
+     */
+    warnings: Array<string>;
 }
 
-export function LookupTlsReportingDomainResultsFromJSON(
-  json: any
-): LookupTlsReportingDomainResults {
-  return LookupTlsReportingDomainResultsFromJSONTyped(json, false);
+export function LookupTlsReportingDomainResultsFromJSON(json: any): LookupTlsReportingDomainResults {
+    return LookupTlsReportingDomainResultsFromJSONTyped(json, false);
 }
 
-export function LookupTlsReportingDomainResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): LookupTlsReportingDomainResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    valid: json['valid'],
-    query: DNSLookupOptionsFromJSON(json['query']),
-    records: (json['records'] as Array<any>).map(DNSLookupResultFromJSON),
-    errors: json['errors'],
-    warnings: json['warnings'],
-  };
+export function LookupTlsReportingDomainResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupTlsReportingDomainResults {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'valid': json['valid'],
+        'query': DNSLookupOptionsFromJSON(json['query']),
+        'records': ((json['records'] as Array<any>).map(DNSLookupResultFromJSON)),
+        'errors': json['errors'],
+        'warnings': json['warnings'],
+    };
 }
 
-export function LookupTlsReportingDomainResultsToJSON(
-  value?: LookupTlsReportingDomainResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    valid: value.valid,
-    query: DNSLookupOptionsToJSON(value.query),
-    records: (value.records as Array<any>).map(DNSLookupResultToJSON),
-    errors: value.errors,
-    warnings: value.warnings,
-  };
+export function LookupTlsReportingDomainResultsToJSON(value?: LookupTlsReportingDomainResults | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'valid': value.valid,
+        'query': DNSLookupOptionsToJSON(value.query),
+        'records': ((value.records as Array<any>).map(DNSLookupResultToJSON)),
+        'errors': value.errors,
+        'warnings': value.warnings,
+    };
 }
+
+

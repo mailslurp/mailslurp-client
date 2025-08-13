@@ -54,6 +54,12 @@ export interface PageWebhookResult {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageWebhookResult
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageWebhookResult
      */
@@ -70,12 +76,6 @@ export interface PageWebhookResult {
      * @memberof PageWebhookResult
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageWebhookResult
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

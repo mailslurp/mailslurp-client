@@ -54,6 +54,12 @@ export interface PageContactProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageContactProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageContactProjection
      */
@@ -70,12 +76,6 @@ export interface PageContactProjection {
      * @memberof PageContactProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageContactProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

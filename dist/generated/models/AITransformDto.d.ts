@@ -45,7 +45,13 @@ export interface AITransformDto {
      * @type {StructuredOutputSchema}
      * @memberof AITransformDto
      */
-    outputSchema?: StructuredOutputSchema;
+    outputSchema?: StructuredOutputSchema | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof AITransformDto
+     */
+    createdAt: Date;
 }
 export declare function AITransformDtoFromJSON(json: any): AITransformDto;
 export declare function AITransformDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AITransformDto;

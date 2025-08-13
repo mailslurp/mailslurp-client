@@ -19,50 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookHeaderNameValue
  */
 export interface WebhookHeaderNameValue {
-  /**
-   * Name of header
-   * @type {string}
-   * @memberof WebhookHeaderNameValue
-   */
-  name: string;
-  /**
-   * Value of header
-   * @type {string}
-   * @memberof WebhookHeaderNameValue
-   */
-  value: string;
+    /**
+     * Name of header
+     * @type {string}
+     * @memberof WebhookHeaderNameValue
+     */
+    name: string;
+    /**
+     * Value of header
+     * @type {string}
+     * @memberof WebhookHeaderNameValue
+     */
+    value: string;
 }
 
-export function WebhookHeaderNameValueFromJSON(
-  json: any
-): WebhookHeaderNameValue {
-  return WebhookHeaderNameValueFromJSONTyped(json, false);
+export function WebhookHeaderNameValueFromJSON(json: any): WebhookHeaderNameValue {
+    return WebhookHeaderNameValueFromJSONTyped(json, false);
 }
 
-export function WebhookHeaderNameValueFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookHeaderNameValue {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json['name'],
-    value: json['value'],
-  };
+export function WebhookHeaderNameValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookHeaderNameValue {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'name': json['name'],
+        'value': json['value'],
+    };
 }
 
-export function WebhookHeaderNameValueToJSON(
-  value?: WebhookHeaderNameValue | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    value: value.value,
-  };
+export function WebhookHeaderNameValueToJSON(value?: WebhookHeaderNameValue | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'name': value.name,
+        'value': value.value,
+    };
 }
+
+

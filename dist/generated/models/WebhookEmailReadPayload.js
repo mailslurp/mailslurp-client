@@ -16,12 +16,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookEmailReadPayloadToJSON = exports.WebhookEmailReadPayloadFromJSONTyped = exports.WebhookEmailReadPayloadFromJSON = exports.WebhookEmailReadPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WebhookEmailReadPayloadEventNameEnum;
 (function (WebhookEmailReadPayloadEventNameEnum) {
     WebhookEmailReadPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    WebhookEmailReadPayloadEventNameEnum["NEW_AI_TRANSFORM_RESULT"] = "NEW_AI_TRANSFORM_RESULT";
     WebhookEmailReadPayloadEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
     WebhookEmailReadPayloadEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
     WebhookEmailReadPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
@@ -38,18 +39,18 @@ function WebhookEmailReadPayloadFromJSON(json) {
 }
 exports.WebhookEmailReadPayloadFromJSON = WebhookEmailReadPayloadFromJSON;
 function WebhookEmailReadPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        eventName: json['eventName'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        emailId: json['emailId'],
-        inboxId: json['inboxId'],
-        emailIsRead: json['emailIsRead'],
-        createdAt: new Date(json['createdAt']),
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'eventName': json['eventName'],
+        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        'emailId': json['emailId'],
+        'inboxId': json['inboxId'],
+        'emailIsRead': json['emailIsRead'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.WebhookEmailReadPayloadFromJSONTyped = WebhookEmailReadPayloadFromJSONTyped;
@@ -61,14 +62,14 @@ function WebhookEmailReadPayloadToJSON(value) {
         return null;
     }
     return {
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        eventName: value.eventName,
-        webhookName: value.webhookName,
-        emailId: value.emailId,
-        inboxId: value.inboxId,
-        emailIsRead: value.emailIsRead,
-        createdAt: value.createdAt.toISOString(),
+        'messageId': value.messageId,
+        'webhookId': value.webhookId,
+        'eventName': value.eventName,
+        'webhookName': value.webhookName,
+        'emailId': value.emailId,
+        'inboxId': value.inboxId,
+        'emailIsRead': value.emailIsRead,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.WebhookEmailReadPayloadToJSON = WebhookEmailReadPayloadToJSON;

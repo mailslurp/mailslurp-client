@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface StructuredContentResultDto
  */
 export interface StructuredContentResultDto {
-  /**
-   *
-   * @type {object}
-   * @memberof StructuredContentResultDto
-   */
-  result: object;
+    /**
+     * 
+     * @type {object}
+     * @memberof StructuredContentResultDto
+     */
+    result: object;
 }
 
-export function StructuredContentResultDtoFromJSON(
-  json: any
-): StructuredContentResultDto {
-  return StructuredContentResultDtoFromJSONTyped(json, false);
+export function StructuredContentResultDtoFromJSON(json: any): StructuredContentResultDto {
+    return StructuredContentResultDtoFromJSONTyped(json, false);
 }
 
-export function StructuredContentResultDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): StructuredContentResultDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    result: json['result'],
-  };
+export function StructuredContentResultDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): StructuredContentResultDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'result': json['result'],
+    };
 }
 
-export function StructuredContentResultDtoToJSON(
-  value?: StructuredContentResultDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    result: value.result,
-  };
+export function StructuredContentResultDtoToJSON(value?: StructuredContentResultDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'result': value.result,
+    };
 }
+
+

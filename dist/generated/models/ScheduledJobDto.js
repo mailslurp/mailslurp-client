@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScheduledJobDtoToJSON = exports.ScheduledJobDtoFromJSONTyped = exports.ScheduledJobDtoFromJSON = exports.ScheduledJobDtoStatusEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var ScheduledJobDtoStatusEnum;
 (function (ScheduledJobDtoStatusEnum) {
     ScheduledJobDtoStatusEnum["SUBMITTED"] = "SUBMITTED";
@@ -31,20 +31,20 @@ function ScheduledJobDtoFromJSON(json) {
 }
 exports.ScheduledJobDtoFromJSON = ScheduledJobDtoFromJSON;
 function ScheduledJobDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        inboxId: json['inboxId'],
-        jobId: json['jobId'],
-        groupId: json['groupId'],
-        triggerId: json['triggerId'],
-        status: json['status'],
-        sendAtTimestamp: new Date(json['sendAtTimestamp']),
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'jobId': json['jobId'],
+        'groupId': json['groupId'],
+        'triggerId': json['triggerId'],
+        'status': json['status'],
+        'sendAtTimestamp': (new Date(json['sendAtTimestamp'])),
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.ScheduledJobDtoFromJSONTyped = ScheduledJobDtoFromJSONTyped;
@@ -56,16 +56,16 @@ function ScheduledJobDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        inboxId: value.inboxId,
-        jobId: value.jobId,
-        groupId: value.groupId,
-        triggerId: value.triggerId,
-        status: value.status,
-        sendAtTimestamp: value.sendAtTimestamp.toISOString(),
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'jobId': value.jobId,
+        'groupId': value.groupId,
+        'triggerId': value.triggerId,
+        'status': value.status,
+        'sendAtTimestamp': (value.sendAtTimestamp.toISOString()),
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.ScheduledJobDtoToJSON = ScheduledJobDtoToJSON;

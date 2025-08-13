@@ -19,62 +19,63 @@ import { exists, mapValues } from '../runtime';
  * @interface GroupProjection
  */
 export interface GroupProjection {
-  /**
-   *
-   * @type {Date}
-   * @memberof GroupProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
-  description?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof GroupProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupProjection
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupProjection
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GroupProjection
+     */
+    description?: string | null;
 }
 
 export function GroupProjectionFromJSON(json: any): GroupProjection {
-  return GroupProjectionFromJSONTyped(json, false);
+    return GroupProjectionFromJSONTyped(json, false);
 }
 
-export function GroupProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GroupProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    createdAt: new Date(json['createdAt']),
-    name: json['name'],
-    id: json['id'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-  };
+export function GroupProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'createdAt': (new Date(json['createdAt'])),
+        'name': json['name'],
+        'id': json['id'],
+        'description': !exists(json, 'description') ? undefined : json['description'],
+    };
 }
 
 export function GroupProjectionToJSON(value?: GroupProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    createdAt: value.createdAt.toISOString(),
-    name: value.name,
-    id: value.id,
-    description: value.description,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'createdAt': (value.createdAt.toISOString()),
+        'name': value.name,
+        'id': value.id,
+        'description': value.description,
+    };
 }
+
+

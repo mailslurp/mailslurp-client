@@ -205,25 +205,25 @@ export declare class InboxForwarderControllerApi extends runtime.BaseAPI {
     updateInboxForwarder(requestParameters: UpdateInboxForwarderRequest, initOverrides?: RequestInit): Promise<InboxForwarderDto>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllInboxForwarderEventsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxForwarderEventsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxForwardersSortEnum {
     ASC = "ASC",
     DESC = "DESC"

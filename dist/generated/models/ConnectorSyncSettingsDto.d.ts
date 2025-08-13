@@ -53,9 +53,9 @@ export interface ConnectorSyncSettingsDto {
     syncInterval?: number | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum ConnectorSyncSettingsDtoSyncScheduleTypeEnum {
     INTERVAL = "INTERVAL"
 }

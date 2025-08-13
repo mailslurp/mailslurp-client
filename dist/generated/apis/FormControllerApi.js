@@ -103,41 +103,51 @@ var FormControllerApi = /** @class */ (function (_super) {
      */
     FormControllerApi.prototype.submitFormRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
+            var queryParameters, headerParameters, consumes, canConsumeForm, formParams, useForm, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
-                        if (requestParameters.to !== undefined) {
-                            queryParameters['_to'] = requestParameters.to;
-                        }
-                        if (requestParameters.subject !== undefined) {
-                            queryParameters['_subject'] = requestParameters.subject;
-                        }
-                        if (requestParameters.redirectTo !== undefined) {
-                            queryParameters['_redirectTo'] = requestParameters.redirectTo;
-                        }
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['_emailAddress'] = requestParameters.emailAddress;
-                        }
-                        if (requestParameters.successMessage !== undefined) {
-                            queryParameters['_successMessage'] = requestParameters.successMessage;
-                        }
-                        if (requestParameters.spamCheck !== undefined) {
-                            queryParameters['_spamCheck'] = requestParameters.spamCheck;
-                        }
-                        if (requestParameters.otherParameters !== undefined) {
-                            queryParameters['otherParameters'] = requestParameters.otherParameters;
-                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                        }
+                        consumes = [
+                            { contentType: 'application/x-www-form-urlencoded' },
+                            { contentType: 'multipart/form-data' },
+                        ];
+                        canConsumeForm = runtime.canConsumeForm(consumes);
+                        useForm = false;
+                        if (useForm) {
+                            formParams = new FormData();
+                        }
+                        else {
+                            formParams = new URLSearchParams();
+                        }
+                        if (requestParameters.to !== undefined) {
+                            formParams.append('_to', requestParameters.to);
+                        }
+                        if (requestParameters.subject !== undefined) {
+                            formParams.append('_subject', requestParameters.subject);
+                        }
+                        if (requestParameters.emailAddress !== undefined) {
+                            formParams.append('_emailAddress', requestParameters.emailAddress);
+                        }
+                        if (requestParameters.successMessage !== undefined) {
+                            formParams.append('_successMessage', requestParameters.successMessage);
+                        }
+                        if (requestParameters.spamCheck !== undefined) {
+                            formParams.append('_spamCheck', requestParameters.spamCheck);
+                        }
+                        if (requestParameters.otherParameters !== undefined) {
+                            formParams.append('otherParameters', requestParameters.otherParameters);
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/forms",
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
+                                body: formParams,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();

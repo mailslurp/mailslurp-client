@@ -35,9 +35,9 @@ export interface EmergencyAddressDto {
     phoneCountry: EmergencyAddressDtoPhoneCountryEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EmergencyAddressDtoPhoneCountryEnum {
     US = "US",
     GB = "GB",

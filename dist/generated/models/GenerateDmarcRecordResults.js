@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateDmarcRecordResultsToJSON = exports.GenerateDmarcRecordResultsFromJSONTyped = exports.GenerateDmarcRecordResultsFromJSON = exports.GenerateDmarcRecordResultsTypeEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var GenerateDmarcRecordResultsTypeEnum;
 (function (GenerateDmarcRecordResultsTypeEnum) {
     GenerateDmarcRecordResultsTypeEnum["A"] = "A";
@@ -115,14 +115,14 @@ function GenerateDmarcRecordResultsFromJSON(json) {
 }
 exports.GenerateDmarcRecordResultsFromJSON = GenerateDmarcRecordResultsFromJSON;
 function GenerateDmarcRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        name: json['name'],
-        type: json['type'],
-        ttl: json['ttl'],
-        value: json['value'],
+        'name': json['name'],
+        'type': json['type'],
+        'ttl': json['ttl'],
+        'value': json['value'],
     };
 }
 exports.GenerateDmarcRecordResultsFromJSONTyped = GenerateDmarcRecordResultsFromJSONTyped;
@@ -134,10 +134,10 @@ function GenerateDmarcRecordResultsToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        type: value.type,
-        ttl: value.ttl,
-        value: value.value,
+        'name': value.name,
+        'type': value.type,
+        'ttl': value.ttl,
+        'value': value.value,
     };
 }
 exports.GenerateDmarcRecordResultsToJSON = GenerateDmarcRecordResultsToJSON;

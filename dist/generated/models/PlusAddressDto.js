@@ -19,17 +19,17 @@ function PlusAddressDtoFromJSON(json) {
 }
 exports.PlusAddressDtoFromJSON = PlusAddressDtoFromJSON;
 function PlusAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        plusAddress: json['plusAddress'],
-        fullAddress: json['fullAddress'],
-        userId: json['userId'],
-        inboxId: json['inboxId'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'plusAddress': json['plusAddress'],
+        'fullAddress': json['fullAddress'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.PlusAddressDtoFromJSONTyped = PlusAddressDtoFromJSONTyped;
@@ -41,13 +41,13 @@ function PlusAddressDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        plusAddress: value.plusAddress,
-        fullAddress: value.fullAddress,
-        userId: value.userId,
-        inboxId: value.inboxId,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'plusAddress': value.plusAddress,
+        'fullAddress': value.fullAddress,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.PlusAddressDtoToJSON = PlusAddressDtoToJSON;

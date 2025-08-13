@@ -19,94 +19,95 @@ import { exists, mapValues } from '../runtime';
  * @interface AliasProjection
  */
 export interface AliasProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {boolean}
-   * @memberof AliasProjection
-   */
-  useThreads?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AliasProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AliasProjection
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AliasProjection
+     */
+    useThreads?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    id: string;
 }
 
 export function AliasProjectionFromJSON(json: any): AliasProjection {
-  return AliasProjectionFromJSONTyped(json, false);
+    return AliasProjectionFromJSONTyped(json, false);
 }
 
-export function AliasProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AliasProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: json['inboxId'],
-    userId: json['userId'],
-    emailAddress: json['emailAddress'],
-    updatedAt: new Date(json['updatedAt']),
-    createdAt: new Date(json['createdAt']),
-    useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'emailAddress': json['emailAddress'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'useThreads': !exists(json, 'useThreads') ? undefined : json['useThreads'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
 
 export function AliasProjectionToJSON(value?: AliasProjection | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    userId: value.userId,
-    emailAddress: value.emailAddress,
-    updatedAt: value.updatedAt.toISOString(),
-    createdAt: value.createdAt.toISOString(),
-    useThreads: value.useThreads,
-    name: value.name,
-    id: value.id,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'emailAddress': value.emailAddress,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'useThreads': value.useThreads,
+        'name': value.name,
+        'id': value.id,
+    };
 }
+
+

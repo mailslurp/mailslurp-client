@@ -29,9 +29,9 @@ export interface ImapFlagOperationOptions {
     flags: Array<string>;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum ImapFlagOperationOptionsFlagOperationEnum {
     SET_FLAGS = "SET_FLAGS",
     ADD_FLAGS = "ADD_FLAGS",

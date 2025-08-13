@@ -20,22 +20,20 @@ function GuestPortalUserDtoFromJSON(json) {
 }
 exports.GuestPortalUserDtoFromJSON = GuestPortalUserDtoFromJSON;
 function GuestPortalUserDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        portalId: json['portalId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        username: json['username'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        loginUrl: json['loginUrl'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'portalId': json['portalId'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'username': json['username'],
+        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'loginUrl': json['loginUrl'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.GuestPortalUserDtoFromJSONTyped = GuestPortalUserDtoFromJSONTyped;
@@ -47,16 +45,16 @@ function GuestPortalUserDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        portalId: value.portalId,
-        name: value.name,
-        username: value.username,
-        emailAddress: value.emailAddress,
-        inboxId: value.inboxId,
-        loginUrl: value.loginUrl,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'userId': value.userId,
+        'portalId': value.portalId,
+        'name': value.name,
+        'username': value.username,
+        'emailAddress': value.emailAddress,
+        'inboxId': value.inboxId,
+        'loginUrl': value.loginUrl,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.GuestPortalUserDtoToJSON = GuestPortalUserDtoToJSON;

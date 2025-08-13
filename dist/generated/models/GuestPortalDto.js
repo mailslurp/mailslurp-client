@@ -20,19 +20,19 @@ function GuestPortalDtoFromJSON(json) {
 }
 exports.GuestPortalDtoFromJSON = GuestPortalDtoFromJSON;
 function GuestPortalDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        userId: json['userId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        linkHelp: !(0, runtime_1.exists)(json, 'linkHelp') ? undefined : json['linkHelp'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        loginUrl: json['loginUrl'],
+        'id': json['id'],
+        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        'userId': json['userId'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'linkHelp': !(0, runtime_1.exists)(json, 'linkHelp') ? undefined : json['linkHelp'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'loginUrl': json['loginUrl'],
     };
 }
 exports.GuestPortalDtoFromJSONTyped = GuestPortalDtoFromJSONTyped;
@@ -44,15 +44,15 @@ function GuestPortalDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        domainId: value.domainId,
-        userId: value.userId,
-        name: value.name,
-        description: value.description,
-        linkHelp: value.linkHelp,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        loginUrl: value.loginUrl,
+        'id': value.id,
+        'domainId': value.domainId,
+        'userId': value.userId,
+        'name': value.name,
+        'description': value.description,
+        'linkHelp': value.linkHelp,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'loginUrl': value.loginUrl,
     };
 }
 exports.GuestPortalDtoToJSON = GuestPortalDtoToJSON;

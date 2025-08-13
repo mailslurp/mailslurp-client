@@ -19,153 +19,146 @@ import { exists, mapValues } from '../runtime';
  * @interface UpdateInboxReplierOptions
  */
 export interface UpdateInboxReplierOptions {
-  /**
-   * Inbox ID to attach replier to
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  inboxId: string;
-  /**
-   * Name for replier
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  name?: string | null;
-  /**
-   * Field to match against to trigger inbox replier for inbound email
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  field: UpdateInboxReplierOptionsFieldEnum;
-  /**
-   * String or wildcard style match for field specified when evaluating reply rules
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  match: string;
-  /**
-   * Reply-to email address when sending replying
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  replyTo?: string | null;
-  /**
-   * Subject override when replying to email
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  subject?: string | null;
-  /**
-   * Send email from address
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  from?: string | null;
-  /**
-   * Email reply charset
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  charset?: string | null;
-  /**
-   * Send HTML email
-   * @type {boolean}
-   * @memberof UpdateInboxReplierOptions
-   */
-  isHTML?: boolean | null;
-  /**
-   * Ignore sender replyTo when responding. Send directly to the sender if enabled.
-   * @type {boolean}
-   * @memberof UpdateInboxReplierOptions
-   */
-  ignoreReplyTo?: boolean | null;
-  /**
-   * Email body for reply
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  body?: string | null;
-  /**
-   * ID of template to use when sending a reply
-   * @type {string}
-   * @memberof UpdateInboxReplierOptions
-   */
-  templateId?: string | null;
-  /**
-   * Template variable values
-   * @type {{ [key: string]: object; }}
-   * @memberof UpdateInboxReplierOptions
-   */
-  templateVariables?: { [key: string]: object } | null;
+    /**
+     * Inbox ID to attach replier to
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    inboxId: string;
+    /**
+     * Name for replier
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    name?: string | null;
+    /**
+     * Field to match against to trigger inbox replier for inbound email
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    field: UpdateInboxReplierOptionsFieldEnum;
+    /**
+     * String or wildcard style match for field specified when evaluating reply rules
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    match: string;
+    /**
+     * Reply-to email address when sending replying
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    replyTo?: string | null;
+    /**
+     * Subject override when replying to email
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    subject?: string | null;
+    /**
+     * Send email from address
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    from?: string | null;
+    /**
+     * Email reply charset
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    charset?: string | null;
+    /**
+     * Send HTML email
+     * @type {boolean}
+     * @memberof UpdateInboxReplierOptions
+     */
+    isHTML?: boolean | null;
+    /**
+     * Ignore sender replyTo when responding. Send directly to the sender if enabled.
+     * @type {boolean}
+     * @memberof UpdateInboxReplierOptions
+     */
+    ignoreReplyTo?: boolean | null;
+    /**
+     * Email body for reply
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    body?: string | null;
+    /**
+     * ID of template to use when sending a reply
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    templateId?: string | null;
+    /**
+     * Template variable values
+     * @type {{ [key: string]: object; }}
+     * @memberof UpdateInboxReplierOptions
+     */
+    templateVariables?: { [key: string]: object; } | null;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum UpdateInboxReplierOptionsFieldEnum {
-  RECIPIENTS = 'RECIPIENTS',
-  SENDER = 'SENDER',
-  SUBJECT = 'SUBJECT',
-  ATTACHMENTS = 'ATTACHMENTS',
+    RECIPIENTS = 'RECIPIENTS',
+    SENDER = 'SENDER',
+    SUBJECT = 'SUBJECT',
+    ATTACHMENTS = 'ATTACHMENTS'
 }
 
-export function UpdateInboxReplierOptionsFromJSON(
-  json: any
-): UpdateInboxReplierOptions {
-  return UpdateInboxReplierOptionsFromJSONTyped(json, false);
+export function UpdateInboxReplierOptionsFromJSON(json: any): UpdateInboxReplierOptions {
+    return UpdateInboxReplierOptionsFromJSONTyped(json, false);
 }
 
-export function UpdateInboxReplierOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UpdateInboxReplierOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    inboxId: json['inboxId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
-    replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    charset: !exists(json, 'charset') ? undefined : json['charset'],
-    isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
-    ignoreReplyTo: !exists(json, 'ignoreReplyTo')
-      ? undefined
-      : json['ignoreReplyTo'],
-    body: !exists(json, 'body') ? undefined : json['body'],
-    templateId: !exists(json, 'templateId') ? undefined : json['templateId'],
-    templateVariables: !exists(json, 'templateVariables')
-      ? undefined
-      : json['templateVariables'],
-  };
+export function UpdateInboxReplierOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateInboxReplierOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'inboxId': json['inboxId'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'replyTo': !exists(json, 'replyTo') ? undefined : json['replyTo'],
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'from': !exists(json, 'from') ? undefined : json['from'],
+        'charset': !exists(json, 'charset') ? undefined : json['charset'],
+        'isHTML': !exists(json, 'isHTML') ? undefined : json['isHTML'],
+        'ignoreReplyTo': !exists(json, 'ignoreReplyTo') ? undefined : json['ignoreReplyTo'],
+        'body': !exists(json, 'body') ? undefined : json['body'],
+        'templateId': !exists(json, 'templateId') ? undefined : json['templateId'],
+        'templateVariables': !exists(json, 'templateVariables') ? undefined : json['templateVariables'],
+    };
 }
 
-export function UpdateInboxReplierOptionsToJSON(
-  value?: UpdateInboxReplierOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    inboxId: value.inboxId,
-    name: value.name,
-    field: value.field,
-    match: value.match,
-    replyTo: value.replyTo,
-    subject: value.subject,
-    from: value.from,
-    charset: value.charset,
-    isHTML: value.isHTML,
-    ignoreReplyTo: value.ignoreReplyTo,
-    body: value.body,
-    templateId: value.templateId,
-    templateVariables: value.templateVariables,
-  };
+export function UpdateInboxReplierOptionsToJSON(value?: UpdateInboxReplierOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'inboxId': value.inboxId,
+        'name': value.name,
+        'field': value.field,
+        'match': value.match,
+        'replyTo': value.replyTo,
+        'subject': value.subject,
+        'from': value.from,
+        'charset': value.charset,
+        'isHTML': value.isHTML,
+        'ignoreReplyTo': value.ignoreReplyTo,
+        'body': value.body,
+        'templateId': value.templateId,
+        'templateVariables': value.templateVariables,
+    };
 }
+
+

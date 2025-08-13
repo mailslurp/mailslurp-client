@@ -20,19 +20,17 @@ function ConnectorProjectionFromJSON(json) {
 }
 exports.ConnectorProjectionFromJSON = ConnectorProjectionFromJSON;
 function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
-        inboxId: json['inboxId'],
-        userId: json['userId'],
-        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
-            ? undefined
-            : json['emailAddress'],
-        createdAt: new Date(json['createdAt']),
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'enabled': !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
+        'createdAt': (new Date(json['createdAt'])),
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
     };
 }
 exports.ConnectorProjectionFromJSONTyped = ConnectorProjectionFromJSONTyped;
@@ -44,13 +42,13 @@ function ConnectorProjectionToJSON(value) {
         return null;
     }
     return {
-        enabled: value.enabled,
-        inboxId: value.inboxId,
-        userId: value.userId,
-        emailAddress: value.emailAddress,
-        createdAt: value.createdAt.toISOString(),
-        name: value.name,
-        id: value.id,
+        'enabled': value.enabled,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'emailAddress': value.emailAddress,
+        'createdAt': (value.createdAt.toISOString()),
+        'name': value.name,
+        'id': value.id,
     };
 }
 exports.ConnectorProjectionToJSON = ConnectorProjectionToJSON;

@@ -14,101 +14,100 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface Complaint
  */
 export interface Complaint {
-  /**
-   *
-   * @type {string}
-   * @memberof Complaint
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Complaint
-   */
-  userId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Complaint
-   */
-  eventType?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Complaint
-   */
-  mailSource?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Complaint
-   */
-  mailMessageId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Complaint
-   */
-  complaintRecipient: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof Complaint
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof Complaint
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof Complaint
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Complaint
+     */
+    userId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Complaint
+     */
+    eventType?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Complaint
+     */
+    mailSource?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Complaint
+     */
+    mailMessageId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Complaint
+     */
+    complaintRecipient: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof Complaint
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof Complaint
+     */
+    updatedAt: Date;
 }
 
 export function ComplaintFromJSON(json: any): Complaint {
-  return ComplaintFromJSONTyped(json, false);
+    return ComplaintFromJSONTyped(json, false);
 }
 
-export function ComplaintFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): Complaint {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
-    eventType: !exists(json, 'eventType') ? undefined : json['eventType'],
-    mailSource: !exists(json, 'mailSource') ? undefined : json['mailSource'],
-    mailMessageId: !exists(json, 'mailMessageId')
-      ? undefined
-      : json['mailMessageId'],
-    complaintRecipient: json['complaintRecipient'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function ComplaintFromJSONTyped(json: any, ignoreDiscriminator: boolean): Complaint {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': !exists(json, 'userId') ? undefined : json['userId'],
+        'eventType': !exists(json, 'eventType') ? undefined : json['eventType'],
+        'mailSource': !exists(json, 'mailSource') ? undefined : json['mailSource'],
+        'mailMessageId': !exists(json, 'mailMessageId') ? undefined : json['mailMessageId'],
+        'complaintRecipient': json['complaintRecipient'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
 export function ComplaintToJSON(value?: Complaint | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    eventType: value.eventType,
-    mailSource: value.mailSource,
-    mailMessageId: value.mailMessageId,
-    complaintRecipient: value.complaintRecipient,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'userId': value.userId,
+        'eventType': value.eventType,
+        'mailSource': value.mailSource,
+        'mailMessageId': value.mailMessageId,
+        'complaintRecipient': value.complaintRecipient,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+    };
 }
+
+

@@ -54,6 +54,12 @@ export interface PageEmailValidationRequest {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEmailValidationRequest
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageEmailValidationRequest
      */
@@ -70,12 +76,6 @@ export interface PageEmailValidationRequest {
      * @memberof PageEmailValidationRequest
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageEmailValidationRequest
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

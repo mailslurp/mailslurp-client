@@ -16,12 +16,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AbstractWebhookPayloadToJSON = exports.AbstractWebhookPayloadFromJSONTyped = exports.AbstractWebhookPayloadFromJSON = exports.AbstractWebhookPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var AbstractWebhookPayloadEventNameEnum;
 (function (AbstractWebhookPayloadEventNameEnum) {
     AbstractWebhookPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    AbstractWebhookPayloadEventNameEnum["NEW_AI_TRANSFORM_RESULT"] = "NEW_AI_TRANSFORM_RESULT";
     AbstractWebhookPayloadEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
     AbstractWebhookPayloadEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
     AbstractWebhookPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
@@ -38,14 +39,14 @@ function AbstractWebhookPayloadFromJSON(json) {
 }
 exports.AbstractWebhookPayloadFromJSON = AbstractWebhookPayloadFromJSON;
 function AbstractWebhookPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        eventName: json['eventName'],
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
-        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        'eventName': json['eventName'],
+        'messageId': json['messageId'],
+        'webhookId': json['webhookId'],
+        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
     };
 }
 exports.AbstractWebhookPayloadFromJSONTyped = AbstractWebhookPayloadFromJSONTyped;
@@ -57,10 +58,10 @@ function AbstractWebhookPayloadToJSON(value) {
         return null;
     }
     return {
-        eventName: value.eventName,
-        messageId: value.messageId,
-        webhookId: value.webhookId,
-        webhookName: value.webhookName,
+        'eventName': value.eventName,
+        'messageId': value.messageId,
+        'webhookId': value.webhookId,
+        'webhookName': value.webhookName,
     };
 }
 exports.AbstractWebhookPayloadToJSON = AbstractWebhookPayloadToJSON;

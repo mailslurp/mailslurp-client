@@ -19,46 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxIdItem
  */
 export interface InboxIdItem {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxIdItem
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxIdItem
-   */
-  emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxIdItem
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxIdItem
+     */
+    emailAddress: string;
 }
 
 export function InboxIdItemFromJSON(json: any): InboxIdItem {
-  return InboxIdItemFromJSONTyped(json, false);
+    return InboxIdItemFromJSONTyped(json, false);
 }
 
-export function InboxIdItemFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxIdItem {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    emailAddress: json['emailAddress'],
-  };
+export function InboxIdItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxIdItem {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+    };
 }
 
 export function InboxIdItemToJSON(value?: InboxIdItem | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    emailAddress: value.emailAddress,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'emailAddress': value.emailAddress,
+    };
 }
+
+

@@ -19,50 +19,47 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateTrackingPixelOptions
  */
 export interface CreateTrackingPixelOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof CreateTrackingPixelOptions
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateTrackingPixelOptions
-   */
-  recipient?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateTrackingPixelOptions
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateTrackingPixelOptions
+     */
+    recipient?: string | null;
 }
 
-export function CreateTrackingPixelOptionsFromJSON(
-  json: any
-): CreateTrackingPixelOptions {
-  return CreateTrackingPixelOptionsFromJSONTyped(json, false);
+export function CreateTrackingPixelOptionsFromJSON(json: any): CreateTrackingPixelOptions {
+    return CreateTrackingPixelOptionsFromJSONTyped(json, false);
 }
 
-export function CreateTrackingPixelOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateTrackingPixelOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
-  };
+export function CreateTrackingPixelOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTrackingPixelOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'recipient': !exists(json, 'recipient') ? undefined : json['recipient'],
+    };
 }
 
-export function CreateTrackingPixelOptionsToJSON(
-  value?: CreateTrackingPixelOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    recipient: value.recipient,
-  };
+export function CreateTrackingPixelOptionsToJSON(value?: CreateTrackingPixelOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'name': value.name,
+        'recipient': value.recipient,
+    };
 }
+
+

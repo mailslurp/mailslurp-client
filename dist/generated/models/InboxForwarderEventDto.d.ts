@@ -71,9 +71,9 @@ export interface InboxForwarderEventDto {
     createdAt: Date;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum InboxForwarderEventDtoStatusEnum {
     SUCCESS = "SUCCESS",
     FAILURE = "FAILURE"

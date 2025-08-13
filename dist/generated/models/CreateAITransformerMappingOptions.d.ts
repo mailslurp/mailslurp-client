@@ -20,7 +20,7 @@ export interface CreateAITransformerMappingOptions {
      * @type {string}
      * @memberof CreateAITransformerMappingOptions
      */
-    name: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -32,7 +32,7 @@ export interface CreateAITransformerMappingOptions {
      * @type {string}
      * @memberof CreateAITransformerMappingOptions
      */
-    entityId: string;
+    entityId?: string | null;
     /**
      *
      * @type {string}
@@ -56,29 +56,27 @@ export interface CreateAITransformerMappingOptions {
      * @type {boolean}
      * @memberof CreateAITransformerMappingOptions
      */
-    spreadRootArray?: boolean;
+    spreadRootArray?: boolean | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum CreateAITransformerMappingOptionsEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum CreateAITransformerMappingOptionsContentSelectorEnum {
     RAW = "RAW",
     BODY = "BODY",
     BODY_ATTACHMENTS = "BODY_ATTACHMENTS"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum CreateAITransformerMappingOptionsTriggerSelectorEnum {
     MESSAGE = "PER_MESSAGE",
     ATTACHMENT = "PER_ATTACHMENT"

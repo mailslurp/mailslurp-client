@@ -19,17 +19,17 @@ function SmsPreviewFromJSON(json) {
 }
 exports.SmsPreviewFromJSON = SmsPreviewFromJSON;
 function SmsPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        body: json['body'],
-        phoneNumber: json['phoneNumber'],
-        fromNumber: json['fromNumber'],
-        read: json['read'],
-        createdAt: new Date(json['createdAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'body': json['body'],
+        'phoneNumber': json['phoneNumber'],
+        'fromNumber': json['fromNumber'],
+        'read': json['read'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.SmsPreviewFromJSONTyped = SmsPreviewFromJSONTyped;
@@ -41,13 +41,13 @@ function SmsPreviewToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        body: value.body,
-        phoneNumber: value.phoneNumber,
-        fromNumber: value.fromNumber,
-        read: value.read,
-        createdAt: value.createdAt.toISOString(),
+        'id': value.id,
+        'userId': value.userId,
+        'body': value.body,
+        'phoneNumber': value.phoneNumber,
+        'fromNumber': value.fromNumber,
+        'read': value.read,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.SmsPreviewToJSON = SmsPreviewToJSON;

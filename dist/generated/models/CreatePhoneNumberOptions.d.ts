@@ -41,9 +41,9 @@ export interface CreatePhoneNumberOptions {
     schedule?: CreatePhoneNumberOptionsScheduleEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum CreatePhoneNumberOptionsPhoneCountryEnum {
     US = "US",
     GB = "GB",
@@ -57,11 +57,10 @@ export declare enum CreatePhoneNumberOptionsPhoneCountryEnum {
     NL = "NL",
     IL = "IL",
     SE = "SE"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum CreatePhoneNumberOptionsScheduleEnum {
     MONTHLY = "MONTHLY",
     YEARLY = "YEARLY"

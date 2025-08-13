@@ -126,17 +126,17 @@ export declare class CommonActionsControllerApi extends runtime.BaseAPI {
     sendEmailSimple(requestParameters: SendEmailSimpleRequest, initOverrides?: RequestInit): Promise<void>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum CreateNewEmailAddressInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum CreateRandomInboxInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"

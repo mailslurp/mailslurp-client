@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AITransformResultDtoToJSON = exports.AITransformResultDtoFromJSONTyped = exports.AITransformResultDtoFromJSON = exports.AITransformResultDtoEntityTypeEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var AITransformResultDtoEntityTypeEnum;
 (function (AITransformResultDtoEntityTypeEnum) {
     AITransformResultDtoEntityTypeEnum["INBOX"] = "INBOX";
@@ -28,19 +28,19 @@ function AITransformResultDtoFromJSON(json) {
 }
 exports.AITransformResultDtoFromJSON = AITransformResultDtoFromJSON;
 function AITransformResultDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        aiTransformId: json['aiTransformId'],
-        aiTransformMappingId: json['aiTransformMappingId'],
-        value: json['value'],
-        entityId: json['entityId'],
-        entityType: json['entityType'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'aiTransformId': json['aiTransformId'],
+        'aiTransformMappingId': json['aiTransformMappingId'],
+        'value': json['value'],
+        'entityId': json['entityId'],
+        'entityType': json['entityType'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.AITransformResultDtoFromJSONTyped = AITransformResultDtoFromJSONTyped;
@@ -52,15 +52,15 @@ function AITransformResultDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        aiTransformId: value.aiTransformId,
-        aiTransformMappingId: value.aiTransformMappingId,
-        value: value.value,
-        entityId: value.entityId,
-        entityType: value.entityType,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'userId': value.userId,
+        'aiTransformId': value.aiTransformId,
+        'aiTransformMappingId': value.aiTransformMappingId,
+        'value': value.value,
+        'entityId': value.entityId,
+        'entityType': value.entityType,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.AITransformResultDtoToJSON = AITransformResultDtoToJSON;

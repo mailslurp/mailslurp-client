@@ -20,12 +20,12 @@ function EmailHtmlDtoFromJSON(json) {
 }
 exports.EmailHtmlDtoFromJSON = EmailHtmlDtoFromJSON;
 function EmailHtmlDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'body': !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
     };
 }
 exports.EmailHtmlDtoFromJSONTyped = EmailHtmlDtoFromJSONTyped;
@@ -37,8 +37,8 @@ function EmailHtmlDtoToJSON(value) {
         return null;
     }
     return {
-        subject: value.subject,
-        body: value.body,
+        'subject': value.subject,
+        'body': value.body,
     };
 }
 exports.EmailHtmlDtoToJSON = EmailHtmlDtoToJSON;

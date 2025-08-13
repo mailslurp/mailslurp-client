@@ -54,6 +54,12 @@ export interface PageTemplateProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageTemplateProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageTemplateProjection
      */
@@ -70,12 +76,6 @@ export interface PageTemplateProjection {
      * @memberof PageTemplateProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageTemplateProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

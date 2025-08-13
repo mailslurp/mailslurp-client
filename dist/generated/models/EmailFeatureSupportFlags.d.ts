@@ -29,9 +29,9 @@ export interface EmailFeatureSupportFlags {
     notes?: Set<string>;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EmailFeatureSupportFlagsStatusEnum {
     SUPPORTED = "SUPPORTED",
     PARTIAL = "PARTIAL",

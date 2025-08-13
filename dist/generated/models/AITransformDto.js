@@ -21,19 +21,16 @@ function AITransformDtoFromJSON(json) {
 }
 exports.AITransformDtoFromJSON = AITransformDtoFromJSON;
 function AITransformDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        conditions: !(0, runtime_1.exists)(json, 'conditions') ? undefined : json['conditions'],
-        instructions: !(0, runtime_1.exists)(json, 'instructions')
-            ? undefined
-            : json['instructions'],
-        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
-            ? undefined
-            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        'id': json['id'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'conditions': !(0, runtime_1.exists)(json, 'conditions') ? undefined : json['conditions'],
+        'instructions': !(0, runtime_1.exists)(json, 'instructions') ? undefined : json['instructions'],
+        'outputSchema': !(0, runtime_1.exists)(json, 'outputSchema') ? undefined : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.AITransformDtoFromJSONTyped = AITransformDtoFromJSONTyped;
@@ -45,11 +42,12 @@ function AITransformDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        name: value.name,
-        conditions: value.conditions,
-        instructions: value.instructions,
-        outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        'id': value.id,
+        'name': value.name,
+        'conditions': value.conditions,
+        'instructions': value.instructions,
+        'outputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.AITransformDtoToJSON = AITransformDtoToJSON;

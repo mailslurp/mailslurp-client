@@ -54,6 +54,12 @@ export interface PageSentEmailWithQueueProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageSentEmailWithQueueProjection
      */
@@ -70,12 +76,6 @@ export interface PageSentEmailWithQueueProjection {
      * @memberof PageSentEmailWithQueueProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

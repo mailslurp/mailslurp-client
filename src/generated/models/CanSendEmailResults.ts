@@ -14,53 +14,52 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface CanSendEmailResults
  */
 export interface CanSendEmailResults {
-  /**
-   *
-   * @type {boolean}
-   * @memberof CanSendEmailResults
-   */
-  isSendingPermitted: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof CanSendEmailResults
-   */
-  message?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CanSendEmailResults
+     */
+    isSendingPermitted: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof CanSendEmailResults
+     */
+    message?: string;
 }
 
 export function CanSendEmailResultsFromJSON(json: any): CanSendEmailResults {
-  return CanSendEmailResultsFromJSONTyped(json, false);
+    return CanSendEmailResultsFromJSONTyped(json, false);
 }
 
-export function CanSendEmailResultsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CanSendEmailResults {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    isSendingPermitted: json['isSendingPermitted'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-  };
+export function CanSendEmailResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CanSendEmailResults {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'isSendingPermitted': json['isSendingPermitted'],
+        'message': !exists(json, 'message') ? undefined : json['message'],
+    };
 }
 
-export function CanSendEmailResultsToJSON(
-  value?: CanSendEmailResults | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    isSendingPermitted: value.isSendingPermitted,
-    message: value.message,
-  };
+export function CanSendEmailResultsToJSON(value?: CanSendEmailResults | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'isSendingPermitted': value.isSendingPermitted,
+        'message': value.message,
+    };
 }
+
+

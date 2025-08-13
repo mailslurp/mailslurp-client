@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainPreviewToJSON = exports.DomainPreviewFromJSONTyped = exports.DomainPreviewFromJSON = exports.DomainPreviewDomainTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var DomainPreviewDomainTypeEnum;
 (function (DomainPreviewDomainTypeEnum) {
     DomainPreviewDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -29,19 +29,17 @@ function DomainPreviewFromJSON(json) {
 }
 exports.DomainPreviewFromJSON = DomainPreviewFromJSON;
 function DomainPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        domain: json['domain'],
-        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
-            ? undefined
-            : json['catchAllInboxId'],
-        createdAt: new Date(json['createdAt']),
-        domainType: json['domainType'],
-        isVerified: json['isVerified'],
-        hasMissingRecords: json['hasMissingRecords'],
+        'id': json['id'],
+        'domain': json['domain'],
+        'catchAllInboxId': !(0, runtime_1.exists)(json, 'catchAllInboxId') ? undefined : json['catchAllInboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'domainType': json['domainType'],
+        'isVerified': json['isVerified'],
+        'hasMissingRecords': json['hasMissingRecords'],
     };
 }
 exports.DomainPreviewFromJSONTyped = DomainPreviewFromJSONTyped;
@@ -53,13 +51,13 @@ function DomainPreviewToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        domain: value.domain,
-        catchAllInboxId: value.catchAllInboxId,
-        createdAt: value.createdAt.toISOString(),
-        domainType: value.domainType,
-        isVerified: value.isVerified,
-        hasMissingRecords: value.hasMissingRecords,
+        'id': value.id,
+        'domain': value.domain,
+        'catchAllInboxId': value.catchAllInboxId,
+        'createdAt': (value.createdAt.toISOString()),
+        'domainType': value.domainType,
+        'isVerified': value.isVerified,
+        'hasMissingRecords': value.hasMissingRecords,
     };
 }
 exports.DomainPreviewToJSON = DomainPreviewToJSON;

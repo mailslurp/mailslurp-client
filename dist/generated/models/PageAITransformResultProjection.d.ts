@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AITransformResultProjection, PageableObject, SortObject } from './';
+import { AITransformResultProjectionDto, PageableObject, SortObject } from './';
 /**
  * Paginated AI Transform result entities. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -18,10 +18,10 @@ import { AITransformResultProjection, PageableObject, SortObject } from './';
 export interface PageAITransformResultProjection {
     /**
      *
-     * @type {Array<AITransformResultProjection>}
+     * @type {Array<AITransformResultProjectionDto>}
      * @memberof PageAITransformResultProjection
      */
-    content?: Array<AITransformResultProjection>;
+    content?: Array<AITransformResultProjectionDto>;
     /**
      *
      * @type {PageableObject}
@@ -54,6 +54,12 @@ export interface PageAITransformResultProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageAITransformResultProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageAITransformResultProjection
      */
@@ -70,12 +76,6 @@ export interface PageAITransformResultProjection {
      * @memberof PageAITransformResultProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageAITransformResultProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

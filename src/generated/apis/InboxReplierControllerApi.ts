@@ -12,594 +12,453 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  CreateInboxReplierOptions,
-  CreateInboxReplierOptionsFromJSON,
-  CreateInboxReplierOptionsToJSON,
-  InboxReplierDto,
-  InboxReplierDtoFromJSON,
-  InboxReplierDtoToJSON,
-  PageInboxReplierDto,
-  PageInboxReplierDtoFromJSON,
-  PageInboxReplierDtoToJSON,
-  PageInboxReplierEvents,
-  PageInboxReplierEventsFromJSON,
-  PageInboxReplierEventsToJSON,
-  UpdateInboxReplierOptions,
-  UpdateInboxReplierOptionsFromJSON,
-  UpdateInboxReplierOptionsToJSON,
+    CreateInboxReplierOptions,
+    CreateInboxReplierOptionsFromJSON,
+    CreateInboxReplierOptionsToJSON,
+    InboxReplierDto,
+    InboxReplierDtoFromJSON,
+    InboxReplierDtoToJSON,
+    PageInboxReplierDto,
+    PageInboxReplierDtoFromJSON,
+    PageInboxReplierDtoToJSON,
+    PageInboxReplierEvents,
+    PageInboxReplierEventsFromJSON,
+    PageInboxReplierEventsToJSON,
+    UpdateInboxReplierOptions,
+    UpdateInboxReplierOptionsFromJSON,
+    UpdateInboxReplierOptionsToJSON,
 } from '../models';
 
 export interface CreateNewInboxReplierRequest {
-  createInboxReplierOptions: CreateInboxReplierOptions;
+    createInboxReplierOptions: CreateInboxReplierOptions;
 }
 
 export interface DeleteInboxReplierRequest {
-  id: string;
+    id: string;
 }
 
 export interface DeleteInboxRepliersRequest {
-  inboxId?: string;
+    inboxId?: string;
 }
 
 export interface GetAllInboxReplierEventsRequest {
-  inboxReplierId?: string;
-  inboxId?: string;
-  emailId?: string;
-  sentId?: string;
-  page?: number;
-  size?: number;
-  sort?: GetAllInboxReplierEventsSortEnum;
+    inboxReplierId?: string;
+    inboxId?: string;
+    emailId?: string;
+    sentId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllInboxReplierEventsSortEnum;
 }
 
 export interface GetInboxReplierRequest {
-  id: string;
+    id: string;
 }
 
 export interface GetInboxReplierEventsRequest {
-  id: string;
-  page?: number;
-  size?: number;
-  sort?: GetInboxReplierEventsSortEnum;
+    id: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxReplierEventsSortEnum;
 }
 
 export interface GetInboxRepliersRequest {
-  inboxId?: string;
-  page?: number;
-  size?: number;
-  sort?: GetInboxRepliersSortEnum;
-  since?: Date;
-  before?: Date;
+    inboxId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxRepliersSortEnum;
+    since?: Date;
+    before?: Date;
 }
 
 export interface UpdateInboxReplierRequest {
-  id: string;
-  updateInboxReplierOptions: UpdateInboxReplierOptions;
+    id: string;
+    updateInboxReplierOptions: UpdateInboxReplierOptions;
 }
 
 /**
- *
+ * 
  */
 export class InboxReplierControllerApi extends runtime.BaseAPI {
-  /**
-   * Create a new inbox rule for reply toing, blocking, and allowing emails when sending and receiving
-   * Create an inbox replier
-   */
-  async createNewInboxReplierRaw(
-    requestParameters: CreateNewInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxReplierDto>> {
-    if (
-      requestParameters.createInboxReplierOptions === null ||
-      requestParameters.createInboxReplierOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createInboxReplierOptions',
-        'Required parameter requestParameters.createInboxReplierOptions was null or undefined when calling createNewInboxReplier.'
-      );
+
+    /**
+     * Create a new inbox rule for reply toing, blocking, and allowing emails when sending and receiving
+     * Create an inbox replier
+     */
+    async createNewInboxReplierRaw(requestParameters: CreateNewInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxReplierDto>> {
+        if (requestParameters.createInboxReplierOptions === null || requestParameters.createInboxReplierOptions === undefined) {
+            throw new runtime.RequiredError('createInboxReplierOptions','Required parameter requestParameters.createInboxReplierOptions was null or undefined when calling createNewInboxReplier.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/repliers`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateInboxReplierOptionsToJSON(requestParameters.createInboxReplierOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxReplierDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Create a new inbox rule for reply toing, blocking, and allowing emails when sending and receiving
+     * Create an inbox replier
+     */
+    async createNewInboxReplier(requestParameters: CreateNewInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto> {
+        const response = await this.createNewInboxReplierRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/repliers`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateInboxReplierOptionsToJSON(
-          requestParameters.createInboxReplierOptions
-        ),
-      },
-      initOverrides
-    );
+    /**
+     * Delete inbox replier
+     * Delete an inbox replier
+     */
+    async deleteInboxReplierRaw(requestParameters: DeleteInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.id === null || requestParameters.id === undefined) {
+            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling deleteInboxReplier.');
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxReplierDtoFromJSON(jsonValue)
-    );
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Create a new inbox rule for reply toing, blocking, and allowing emails when sending and receiving
-   * Create an inbox replier
-   */
-  async createNewInboxReplier(
-    requestParameters: CreateNewInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxReplierDto> {
-    const response = await this.createNewInboxReplierRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete inbox replier
-   * Delete an inbox replier
-   */
-  async deleteInboxReplierRaw(
-    requestParameters: DeleteInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling deleteInboxReplier.'
-      );
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/repliers/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete inbox replier
+     * Delete an inbox replier
+     */
+    async deleteInboxReplier(requestParameters: DeleteInboxReplierRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteInboxReplierRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/repliers/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Delete inbox repliers. Accepts optional inboxId filter.
+     * Delete inbox repliers
+     */
+    async deleteInboxRepliersRaw(requestParameters: DeleteInboxRepliersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
 
-    return new runtime.VoidApiResponse(response);
-  }
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
 
-  /**
-   * Delete inbox replier
-   * Delete an inbox replier
-   */
-  async deleteInboxReplier(
-    requestParameters: DeleteInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteInboxReplierRaw(requestParameters, initOverrides);
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Delete inbox repliers. Accepts optional inboxId filter.
-   * Delete inbox repliers
-   */
-  async deleteInboxRepliersRaw(
-    requestParameters: DeleteInboxRepliersRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+        const response = await this.request({
+            path: `/repliers`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Delete inbox repliers. Accepts optional inboxId filter.
+     * Delete inbox repliers
+     */
+    async deleteInboxRepliers(requestParameters: DeleteInboxRepliersRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteInboxRepliersRaw(requestParameters, initOverrides);
     }
 
-    const response = await this.request(
-      {
-        path: `/repliers`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    async getAllInboxReplierEventsRaw(requestParameters: GetAllInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxReplierEvents>> {
+        const queryParameters: any = {};
 
-    return new runtime.VoidApiResponse(response);
-  }
+        if (requestParameters.inboxReplierId !== undefined) {
+            queryParameters['inboxReplierId'] = requestParameters.inboxReplierId;
+        }
 
-  /**
-   * Delete inbox repliers. Accepts optional inboxId filter.
-   * Delete inbox repliers
-   */
-  async deleteInboxRepliers(
-    requestParameters: DeleteInboxRepliersRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteInboxRepliersRaw(requestParameters, initOverrides);
-  }
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
 
-  /**
-   * Get all inbox ruleset events
-   * Get inbox replier event list
-   */
-  async getAllInboxReplierEventsRaw(
-    requestParameters: GetAllInboxReplierEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxReplierEvents>> {
-    const queryParameters: any = {};
+        if (requestParameters.emailId !== undefined) {
+            queryParameters['emailId'] = requestParameters.emailId;
+        }
 
-    if (requestParameters.inboxReplierId !== undefined) {
-      queryParameters['inboxReplierId'] = requestParameters.inboxReplierId;
+        if (requestParameters.sentId !== undefined) {
+            queryParameters['sentId'] = requestParameters.sentId;
+        }
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/repliers/events`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxReplierEventsFromJSON(jsonValue));
     }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+    /**
+     * Get all inbox ruleset events
+     * Get inbox replier event list
+     */
+    async getAllInboxReplierEvents(requestParameters: GetAllInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<PageInboxReplierEvents> {
+        const response = await this.getAllInboxReplierEventsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.emailId !== undefined) {
-      queryParameters['emailId'] = requestParameters.emailId;
+    /**
+     * Get inbox ruleset
+     * Get an inbox replier
+     */
+    async getInboxReplierRaw(requestParameters: GetInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxReplierDto>> {
+        if (requestParameters.id === null || requestParameters.id === undefined) {
+            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getInboxReplier.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/repliers/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxReplierDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.sentId !== undefined) {
-      queryParameters['sentId'] = requestParameters.sentId;
+    /**
+     * Get inbox ruleset
+     * Get an inbox replier
+     */
+    async getInboxReplier(requestParameters: GetInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto> {
+        const response = await this.getInboxReplierRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+    /**
+     * Get inbox ruleset events
+     * Get an inbox replier event list
+     */
+    async getInboxReplierEventsRaw(requestParameters: GetInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxReplierEvents>> {
+        if (requestParameters.id === null || requestParameters.id === undefined) {
+            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getInboxReplierEvents.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/repliers/{id}/events`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxReplierEventsFromJSON(jsonValue));
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Get inbox ruleset events
+     * Get an inbox replier event list
+     */
+    async getInboxReplierEvents(requestParameters: GetInboxReplierEventsRequest, initOverrides?: RequestInit): Promise<PageInboxReplierEvents> {
+        const response = await this.getInboxReplierEventsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * List all repliers attached to an inbox
+     * List inbox repliers
+     */
+    async getInboxRepliersRaw(requestParameters: GetInboxRepliersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxReplierDto>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/repliers`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageInboxReplierDtoFromJSON(jsonValue));
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * List all repliers attached to an inbox
+     * List inbox repliers
+     */
+    async getInboxRepliers(requestParameters: GetInboxRepliersRequest, initOverrides?: RequestInit): Promise<PageInboxReplierDto> {
+        const response = await this.getInboxRepliersRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/repliers/events`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+    /**
+     * Update inbox ruleset
+     * Update an inbox replier
+     */
+    async updateInboxReplierRaw(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxReplierDto>> {
+        if (requestParameters.id === null || requestParameters.id === undefined) {
+            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling updateInboxReplier.');
+        }
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxReplierEventsFromJSON(jsonValue)
-    );
-  }
+        if (requestParameters.updateInboxReplierOptions === null || requestParameters.updateInboxReplierOptions === undefined) {
+            throw new runtime.RequiredError('updateInboxReplierOptions','Required parameter requestParameters.updateInboxReplierOptions was null or undefined when calling updateInboxReplier.');
+        }
 
-  /**
-   * Get all inbox ruleset events
-   * Get inbox replier event list
-   */
-  async getAllInboxReplierEvents(
-    requestParameters: GetAllInboxReplierEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxReplierEvents> {
-    const response = await this.getAllInboxReplierEventsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const queryParameters: any = {};
 
-  /**
-   * Get inbox ruleset
-   * Get an inbox replier
-   */
-  async getInboxReplierRaw(
-    requestParameters: GetInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxReplierDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getInboxReplier.'
-      );
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/repliers/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateInboxReplierOptionsToJSON(requestParameters.updateInboxReplierOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InboxReplierDtoFromJSON(jsonValue));
     }
 
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Update inbox ruleset
+     * Update an inbox replier
+     */
+    async updateInboxReplier(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto> {
+        const response = await this.updateInboxReplierRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/repliers/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxReplierDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get inbox ruleset
-   * Get an inbox replier
-   */
-  async getInboxReplier(
-    requestParameters: GetInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxReplierDto> {
-    const response = await this.getInboxReplierRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get inbox ruleset events
-   * Get an inbox replier event list
-   */
-  async getInboxReplierEventsRaw(
-    requestParameters: GetInboxReplierEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxReplierEvents>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling getInboxReplierEvents.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/repliers/{id}/events`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxReplierEventsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get inbox ruleset events
-   * Get an inbox replier event list
-   */
-  async getInboxReplierEvents(
-    requestParameters: GetInboxReplierEventsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxReplierEvents> {
-    const response = await this.getInboxReplierEventsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List all repliers attached to an inbox
-   * List inbox repliers
-   */
-  async getInboxRepliersRaw(
-    requestParameters: GetInboxRepliersRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageInboxReplierDto>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/repliers`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageInboxReplierDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List all repliers attached to an inbox
-   * List inbox repliers
-   */
-  async getInboxRepliers(
-    requestParameters: GetInboxRepliersRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageInboxReplierDto> {
-    const response = await this.getInboxRepliersRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Update inbox ruleset
-   * Update an inbox replier
-   */
-  async updateInboxReplierRaw(
-    requestParameters: UpdateInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<InboxReplierDto>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling updateInboxReplier.'
-      );
-    }
-
-    if (
-      requestParameters.updateInboxReplierOptions === null ||
-      requestParameters.updateInboxReplierOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'updateInboxReplierOptions',
-        'Required parameter requestParameters.updateInboxReplierOptions was null or undefined when calling updateInboxReplier.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/repliers/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: UpdateInboxReplierOptionsToJSON(
-          requestParameters.updateInboxReplierOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      InboxReplierDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update inbox ruleset
-   * Update an inbox replier
-   */
-  async updateInboxReplier(
-    requestParameters: UpdateInboxReplierRequest,
-    initOverrides?: RequestInit
-  ): Promise<InboxReplierDto> {
-    const response = await this.updateInboxReplierRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllInboxReplierEventsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetInboxReplierEventsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetInboxRepliersSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }

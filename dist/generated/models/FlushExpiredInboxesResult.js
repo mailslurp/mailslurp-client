@@ -19,12 +19,12 @@ function FlushExpiredInboxesResultFromJSON(json) {
 }
 exports.FlushExpiredInboxesResultFromJSON = FlushExpiredInboxesResultFromJSON;
 function FlushExpiredInboxesResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        inboxIds: json['inboxIds'],
-        expireBefore: new Date(json['expireBefore']),
+        'inboxIds': json['inboxIds'],
+        'expireBefore': (new Date(json['expireBefore'])),
     };
 }
 exports.FlushExpiredInboxesResultFromJSONTyped = FlushExpiredInboxesResultFromJSONTyped;
@@ -36,8 +36,8 @@ function FlushExpiredInboxesResultToJSON(value) {
         return null;
     }
     return {
-        inboxIds: value.inboxIds,
-        expireBefore: value.expireBefore.toISOString(),
+        'inboxIds': value.inboxIds,
+        'expireBefore': (value.expireBefore.toISOString()),
     };
 }
 exports.FlushExpiredInboxesResultToJSON = FlushExpiredInboxesResultToJSON;

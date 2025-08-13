@@ -20,16 +20,12 @@ function UpdateSmtpAccessOptionsFromJSON(json) {
 }
 exports.UpdateSmtpAccessOptionsFromJSON = UpdateSmtpAccessOptionsFromJSON;
 function UpdateSmtpAccessOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        smtpUsername: !(0, runtime_1.exists)(json, 'smtpUsername')
-            ? undefined
-            : json['smtpUsername'],
-        smtpPassword: !(0, runtime_1.exists)(json, 'smtpPassword')
-            ? undefined
-            : json['smtpPassword'],
+        'smtpUsername': !(0, runtime_1.exists)(json, 'smtpUsername') ? undefined : json['smtpUsername'],
+        'smtpPassword': !(0, runtime_1.exists)(json, 'smtpPassword') ? undefined : json['smtpPassword'],
     };
 }
 exports.UpdateSmtpAccessOptionsFromJSONTyped = UpdateSmtpAccessOptionsFromJSONTyped;
@@ -41,8 +37,8 @@ function UpdateSmtpAccessOptionsToJSON(value) {
         return null;
     }
     return {
-        smtpUsername: value.smtpUsername,
-        smtpPassword: value.smtpPassword,
+        'smtpUsername': value.smtpUsername,
+        'smtpPassword': value.smtpPassword,
     };
 }
 exports.UpdateSmtpAccessOptionsToJSON = UpdateSmtpAccessOptionsToJSON;

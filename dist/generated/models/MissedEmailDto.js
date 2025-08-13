@@ -20,26 +20,26 @@ function MissedEmailDtoFromJSON(json) {
 }
 exports.MissedEmailDtoFromJSON = MissedEmailDtoFromJSON;
 function MissedEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-        attachmentCount: json['attachmentCount'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        rawUrl: !(0, runtime_1.exists)(json, 'rawUrl') ? undefined : json['rawUrl'],
-        rawKey: !(0, runtime_1.exists)(json, 'rawKey') ? undefined : json['rawKey'],
-        rawBucket: !(0, runtime_1.exists)(json, 'rawBucket') ? undefined : json['rawBucket'],
-        canRestore: !(0, runtime_1.exists)(json, 'canRestore') ? undefined : json['canRestore'],
-        to: json['to'],
-        cc: json['cc'],
-        bcc: json['bcc'],
-        inboxIds: json['inboxIds'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'bodyExcerpt': !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+        'attachmentCount': json['attachmentCount'],
+        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        'rawUrl': !(0, runtime_1.exists)(json, 'rawUrl') ? undefined : json['rawUrl'],
+        'rawKey': !(0, runtime_1.exists)(json, 'rawKey') ? undefined : json['rawKey'],
+        'rawBucket': !(0, runtime_1.exists)(json, 'rawBucket') ? undefined : json['rawBucket'],
+        'canRestore': !(0, runtime_1.exists)(json, 'canRestore') ? undefined : json['canRestore'],
+        'to': json['to'],
+        'cc': json['cc'],
+        'bcc': json['bcc'],
+        'inboxIds': json['inboxIds'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.MissedEmailDtoFromJSONTyped = MissedEmailDtoFromJSONTyped;
@@ -51,22 +51,22 @@ function MissedEmailDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        subject: value.subject,
-        bodyExcerpt: value.bodyExcerpt,
-        attachmentCount: value.attachmentCount,
-        from: value.from,
-        rawUrl: value.rawUrl,
-        rawKey: value.rawKey,
-        rawBucket: value.rawBucket,
-        canRestore: value.canRestore,
-        to: value.to,
-        cc: value.cc,
-        bcc: value.bcc,
-        inboxIds: value.inboxIds,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'userId': value.userId,
+        'subject': value.subject,
+        'bodyExcerpt': value.bodyExcerpt,
+        'attachmentCount': value.attachmentCount,
+        'from': value.from,
+        'rawUrl': value.rawUrl,
+        'rawKey': value.rawKey,
+        'rawBucket': value.rawBucket,
+        'canRestore': value.canRestore,
+        'to': value.to,
+        'cc': value.cc,
+        'bcc': value.bcc,
+        'inboxIds': value.inboxIds,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.MissedEmailDtoToJSON = MissedEmailDtoToJSON;

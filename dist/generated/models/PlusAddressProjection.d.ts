@@ -20,25 +20,25 @@ export interface PlusAddressProjection {
      * @type {string}
      * @memberof PlusAddressProjection
      */
-    inboxId: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof PlusAddressProjection
      */
-    userId: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof PlusAddressProjection
-     */
-    updatedAt: Date;
+    inboxId: string;
     /**
      *
      * @type {Date}
      * @memberof PlusAddressProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof PlusAddressProjection
+     */
+    updatedAt: Date;
     /**
      *
      * @type {string}

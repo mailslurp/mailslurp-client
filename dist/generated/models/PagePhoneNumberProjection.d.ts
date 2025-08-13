@@ -54,6 +54,12 @@ export interface PagePhoneNumberProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PagePhoneNumberProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PagePhoneNumberProjection
      */
@@ -70,12 +76,6 @@ export interface PagePhoneNumberProjection {
      * @memberof PagePhoneNumberProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PagePhoneNumberProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

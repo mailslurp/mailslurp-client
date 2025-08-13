@@ -17,9 +17,9 @@ exports.GenerateStructuredContentEmailOptionsToJSON = exports.GenerateStructured
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var GenerateStructuredContentEmailOptionsContentSelectorEnum;
 (function (GenerateStructuredContentEmailOptionsContentSelectorEnum) {
     GenerateStructuredContentEmailOptionsContentSelectorEnum["RAW"] = "RAW";
@@ -31,21 +31,15 @@ function GenerateStructuredContentEmailOptionsFromJSON(json) {
 }
 exports.GenerateStructuredContentEmailOptionsFromJSON = GenerateStructuredContentEmailOptionsFromJSON;
 function GenerateStructuredContentEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        emailId: json['emailId'],
-        contentSelector: !(0, runtime_1.exists)(json, 'contentSelector')
-            ? undefined
-            : json['contentSelector'],
-        instructions: !(0, runtime_1.exists)(json, 'instructions')
-            ? undefined
-            : json['instructions'],
-        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
-            ? undefined
-            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
-        transformId: !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
+        'emailId': json['emailId'],
+        'contentSelector': !(0, runtime_1.exists)(json, 'contentSelector') ? undefined : json['contentSelector'],
+        'instructions': !(0, runtime_1.exists)(json, 'instructions') ? undefined : json['instructions'],
+        'outputSchema': !(0, runtime_1.exists)(json, 'outputSchema') ? undefined : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        'transformId': !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
     };
 }
 exports.GenerateStructuredContentEmailOptionsFromJSONTyped = GenerateStructuredContentEmailOptionsFromJSONTyped;
@@ -57,11 +51,11 @@ function GenerateStructuredContentEmailOptionsToJSON(value) {
         return null;
     }
     return {
-        emailId: value.emailId,
-        contentSelector: value.contentSelector,
-        instructions: value.instructions,
-        outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
-        transformId: value.transformId,
+        'emailId': value.emailId,
+        'contentSelector': value.contentSelector,
+        'instructions': value.instructions,
+        'outputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        'transformId': value.transformId,
     };
 }
 exports.GenerateStructuredContentEmailOptionsToJSON = GenerateStructuredContentEmailOptionsToJSON;

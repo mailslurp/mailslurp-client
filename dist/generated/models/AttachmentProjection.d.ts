@@ -16,6 +16,12 @@
  */
 export interface AttachmentProjection {
     /**
+     *
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    userId: string;
+    /**
      * Inbox ID
      * @type {string}
      * @memberof AttachmentProjection
@@ -23,22 +29,16 @@ export interface AttachmentProjection {
     inboxId?: string;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof AttachmentProjection
      */
-    userId: string;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof AttachmentProjection
      */
     updatedAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
-    createdAt: Date;
     /**
      * Content ID of attachment.
      * @type {string}

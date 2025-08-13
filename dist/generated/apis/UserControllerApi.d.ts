@@ -86,34 +86,34 @@ export declare class UserControllerApi extends runtime.BaseAPI {
     getUserInfo(initOverrides?: RequestInit): Promise<UserInfoDto>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEntityAutomationsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEntityAutomationsFilterEnum {
     FORWARDER = "INBOX_FORWARDER",
     REPLIER = "INBOX_REPLIER",
     RULESET = "INBOX_RULESET"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEntityEventsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEntityEventsFilterEnum {
     WEBHOOK_EVENT = "WEBHOOK_EVENT",
     INBOX_FORWARDER_EVENT = "INBOX_FORWARDER_EVENT",
@@ -122,17 +122,17 @@ export declare enum GetEntityEventsFilterEnum {
     ALIAS_EVENT = "ALIAS_EVENT"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEntityFavoritesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEntityFavoritesFilterEnum {
     INBOX = "INBOX",
     EMAIL = "EMAIL",

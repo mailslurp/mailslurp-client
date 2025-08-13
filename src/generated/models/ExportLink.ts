@@ -19,38 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface ExportLink
  */
 export interface ExportLink {
-  /**
-   *
-   * @type {string}
-   * @memberof ExportLink
-   */
-  downloadLink: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportLink
+     */
+    downloadLink: string;
 }
 
 export function ExportLinkFromJSON(json: any): ExportLink {
-  return ExportLinkFromJSONTyped(json, false);
+    return ExportLinkFromJSONTyped(json, false);
 }
 
-export function ExportLinkFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ExportLink {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    downloadLink: json['downloadLink'],
-  };
+export function ExportLinkFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportLink {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'downloadLink': json['downloadLink'],
+    };
 }
 
 export function ExportLinkToJSON(value?: ExportLink | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    downloadLink: value.downloadLink,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'downloadLink': value.downloadLink,
+    };
 }
+
+

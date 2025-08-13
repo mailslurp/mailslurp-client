@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  EmailRecipients,
-  EmailRecipientsFromJSON,
-  EmailRecipientsFromJSONTyped,
-  EmailRecipientsToJSON,
-  Sender,
-  SenderFromJSON,
-  SenderFromJSONTyped,
-  SenderToJSON,
+    EmailRecipients,
+    EmailRecipientsFromJSON,
+    EmailRecipientsFromJSONTyped,
+    EmailRecipientsToJSON,
+    Sender,
+    SenderFromJSON,
+    SenderFromJSONTyped,
+    SenderToJSON,
 } from './';
 
 /**
@@ -30,316 +30,311 @@ import {
  * @interface SentEmailDto
  */
 export interface SentEmailDto {
-  /**
-   * ID of sent email
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  id: string;
-  /**
-   * User ID
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  userId: string;
-  /**
-   * Inbox ID email was sent from
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  inboxId: string;
-  /**
-   * Domain ID
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  domainId?: string | null;
-  /**
-   * Recipients email was sent to
-   * @type {Array<string>}
-   * @memberof SentEmailDto
-   */
-  to?: Array<string> | null;
-  /**
-   * Sent from address
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  from?: string | null;
-  /**
-   *
-   * @type {Sender}
-   * @memberof SentEmailDto
-   */
-  sender?: Sender | null;
-  /**
-   *
-   * @type {EmailRecipients}
-   * @memberof SentEmailDto
-   */
-  recipients?: EmailRecipients | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  replyTo?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailDto
-   */
-  cc?: Array<string> | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailDto
-   */
-  bcc?: Array<string> | null;
-  /**
-   * Array of IDs of attachments that were sent with this email
-   * @type {Array<string>}
-   * @memberof SentEmailDto
-   */
-  attachments?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  subject?: string | null;
-  /**
-   * MD5 Hash
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  bodyMD5Hash?: string | null;
-  /**
-   * Sent email body
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  body?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailDto
-   */
-  toContacts?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  toGroup?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  charset?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SentEmailDto
-   */
-  isHTML?: boolean | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentEmailDto
-   */
-  sentAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentEmailDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailDto
-   */
-  pixelIds?: Array<string> | null;
-  /**
-   * RFC 5322 Message-ID header value without angle brackets.
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  messageId?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailDto
-   */
-  messageIds?: Array<string> | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SentEmailDto
-   */
-  virtualSend?: boolean | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  templateId?: string | null;
-  /**
-   *
-   * @type {{ [key: string]: object; }}
-   * @memberof SentEmailDto
-   */
-  templateVariables?: { [key: string]: object } | null;
-  /**
-   *
-   * @type {{ [key: string]: string; }}
-   * @memberof SentEmailDto
-   */
-  headers?: { [key: string]: string } | null;
-  /**
-   * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  threadId?: string | null;
-  /**
-   * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  bodyExcerpt?: string | null;
-  /**
-   * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  textExcerpt?: string | null;
-  /**
-   * Parsed value of In-Reply-To header. A Message-ID in a thread.
-   * @type {string}
-   * @memberof SentEmailDto
-   */
-  inReplyTo?: string | null;
-  /**
-   * Is email favourited
-   * @type {boolean}
-   * @memberof SentEmailDto
-   */
-  favourite?: boolean | null;
-  /**
-   * Size of raw email message in bytes
-   * @type {number}
-   * @memberof SentEmailDto
-   */
-  sizeBytes?: number | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SentEmailDto
-   */
-  html?: boolean;
+    /**
+     * ID of sent email
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    id: string;
+    /**
+     * User ID
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    userId: string;
+    /**
+     * Inbox ID email was sent from
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    inboxId: string;
+    /**
+     * Domain ID
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    domainId?: string | null;
+    /**
+     * Recipients email was sent to
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    to?: Array<string> | null;
+    /**
+     * Sent from address
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    from?: string | null;
+    /**
+     * 
+     * @type {Sender}
+     * @memberof SentEmailDto
+     */
+    sender?: Sender | null;
+    /**
+     * 
+     * @type {EmailRecipients}
+     * @memberof SentEmailDto
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    replyTo?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    cc?: Array<string> | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    bcc?: Array<string> | null;
+    /**
+     * Array of IDs of attachments that were sent with this email
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    attachments?: Array<string> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    subject?: string | null;
+    /**
+     * MD5 Hash
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    bodyMD5Hash?: string | null;
+    /**
+     * Sent email body
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    body?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    toContacts?: Array<string> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    toGroup?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    charset?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SentEmailDto
+     */
+    isHTML?: boolean | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SentEmailDto
+     */
+    sentAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof SentEmailDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    pixelIds?: Array<string> | null;
+    /**
+     * RFC 5322 Message-ID header value without angle brackets.
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    messageId?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    messageIds?: Array<string> | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SentEmailDto
+     */
+    virtualSend?: boolean | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    templateId?: string | null;
+    /**
+     * 
+     * @type {{ [key: string]: object; }}
+     * @memberof SentEmailDto
+     */
+    templateVariables?: { [key: string]: object; } | null;
+    /**
+     * 
+     * @type {{ [key: string]: string; }}
+     * @memberof SentEmailDto
+     */
+    headers?: { [key: string]: string; } | null;
+    /**
+     * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    threadId?: string | null;
+    /**
+     * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    bodyExcerpt?: string | null;
+    /**
+     * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    textExcerpt?: string | null;
+    /**
+     * Parsed value of In-Reply-To header. A Message-ID in a thread.
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    inReplyTo?: string | null;
+    /**
+     * Is email favourited
+     * @type {boolean}
+     * @memberof SentEmailDto
+     */
+    favourite?: boolean | null;
+    /**
+     * Size of raw email message in bytes
+     * @type {number}
+     * @memberof SentEmailDto
+     */
+    sizeBytes?: number | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SentEmailDto
+     */
+    html?: boolean;
 }
 
 export function SentEmailDtoFromJSON(json: any): SentEmailDto {
-  return SentEmailDtoFromJSONTyped(json, false);
+    return SentEmailDtoFromJSONTyped(json, false);
 }
 
-export function SentEmailDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SentEmailDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    to: !exists(json, 'to') ? undefined : json['to'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    sender: !exists(json, 'sender')
-      ? undefined
-      : SenderFromJSON(json['sender']),
-    recipients: !exists(json, 'recipients')
-      ? undefined
-      : EmailRecipientsFromJSON(json['recipients']),
-    replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
-    cc: !exists(json, 'cc') ? undefined : json['cc'],
-    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
-    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-    body: !exists(json, 'body') ? undefined : json['body'],
-    toContacts: !exists(json, 'toContacts') ? undefined : json['toContacts'],
-    toGroup: !exists(json, 'toGroup') ? undefined : json['toGroup'],
-    charset: !exists(json, 'charset') ? undefined : json['charset'],
-    isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
-    sentAt: new Date(json['sentAt']),
-    createdAt: new Date(json['createdAt']),
-    pixelIds: !exists(json, 'pixelIds') ? undefined : json['pixelIds'],
-    messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
-    messageIds: !exists(json, 'messageIds') ? undefined : json['messageIds'],
-    virtualSend: !exists(json, 'virtualSend') ? undefined : json['virtualSend'],
-    templateId: !exists(json, 'templateId') ? undefined : json['templateId'],
-    templateVariables: !exists(json, 'templateVariables')
-      ? undefined
-      : json['templateVariables'],
-    headers: !exists(json, 'headers') ? undefined : json['headers'],
-    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
-    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
-    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
-    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
-    html: !exists(json, 'html') ? undefined : json['html'],
-  };
+export function SentEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'domainId': !exists(json, 'domainId') ? undefined : json['domainId'],
+        'to': !exists(json, 'to') ? undefined : json['to'],
+        'from': !exists(json, 'from') ? undefined : json['from'],
+        'sender': !exists(json, 'sender') ? undefined : SenderFromJSON(json['sender']),
+        'recipients': !exists(json, 'recipients') ? undefined : EmailRecipientsFromJSON(json['recipients']),
+        'replyTo': !exists(json, 'replyTo') ? undefined : json['replyTo'],
+        'cc': !exists(json, 'cc') ? undefined : json['cc'],
+        'bcc': !exists(json, 'bcc') ? undefined : json['bcc'],
+        'attachments': !exists(json, 'attachments') ? undefined : json['attachments'],
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'bodyMD5Hash': !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+        'body': !exists(json, 'body') ? undefined : json['body'],
+        'toContacts': !exists(json, 'toContacts') ? undefined : json['toContacts'],
+        'toGroup': !exists(json, 'toGroup') ? undefined : json['toGroup'],
+        'charset': !exists(json, 'charset') ? undefined : json['charset'],
+        'isHTML': !exists(json, 'isHTML') ? undefined : json['isHTML'],
+        'sentAt': (new Date(json['sentAt'])),
+        'createdAt': (new Date(json['createdAt'])),
+        'pixelIds': !exists(json, 'pixelIds') ? undefined : json['pixelIds'],
+        'messageId': !exists(json, 'messageId') ? undefined : json['messageId'],
+        'messageIds': !exists(json, 'messageIds') ? undefined : json['messageIds'],
+        'virtualSend': !exists(json, 'virtualSend') ? undefined : json['virtualSend'],
+        'templateId': !exists(json, 'templateId') ? undefined : json['templateId'],
+        'templateVariables': !exists(json, 'templateVariables') ? undefined : json['templateVariables'],
+        'headers': !exists(json, 'headers') ? undefined : json['headers'],
+        'threadId': !exists(json, 'threadId') ? undefined : json['threadId'],
+        'bodyExcerpt': !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+        'textExcerpt': !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+        'inReplyTo': !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+        'favourite': !exists(json, 'favourite') ? undefined : json['favourite'],
+        'sizeBytes': !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+        'html': !exists(json, 'html') ? undefined : json['html'],
+    };
 }
 
 export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    inboxId: value.inboxId,
-    domainId: value.domainId,
-    to: value.to,
-    from: value.from,
-    sender: SenderToJSON(value.sender),
-    recipients: EmailRecipientsToJSON(value.recipients),
-    replyTo: value.replyTo,
-    cc: value.cc,
-    bcc: value.bcc,
-    attachments: value.attachments,
-    subject: value.subject,
-    bodyMD5Hash: value.bodyMD5Hash,
-    body: value.body,
-    toContacts: value.toContacts,
-    toGroup: value.toGroup,
-    charset: value.charset,
-    isHTML: value.isHTML,
-    sentAt: value.sentAt.toISOString(),
-    createdAt: value.createdAt.toISOString(),
-    pixelIds: value.pixelIds,
-    messageId: value.messageId,
-    messageIds: value.messageIds,
-    virtualSend: value.virtualSend,
-    templateId: value.templateId,
-    templateVariables: value.templateVariables,
-    headers: value.headers,
-    threadId: value.threadId,
-    bodyExcerpt: value.bodyExcerpt,
-    textExcerpt: value.textExcerpt,
-    inReplyTo: value.inReplyTo,
-    favourite: value.favourite,
-    sizeBytes: value.sizeBytes,
-    html: value.html,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'domainId': value.domainId,
+        'to': value.to,
+        'from': value.from,
+        'sender': SenderToJSON(value.sender),
+        'recipients': EmailRecipientsToJSON(value.recipients),
+        'replyTo': value.replyTo,
+        'cc': value.cc,
+        'bcc': value.bcc,
+        'attachments': value.attachments,
+        'subject': value.subject,
+        'bodyMD5Hash': value.bodyMD5Hash,
+        'body': value.body,
+        'toContacts': value.toContacts,
+        'toGroup': value.toGroup,
+        'charset': value.charset,
+        'isHTML': value.isHTML,
+        'sentAt': (value.sentAt.toISOString()),
+        'createdAt': (value.createdAt.toISOString()),
+        'pixelIds': value.pixelIds,
+        'messageId': value.messageId,
+        'messageIds': value.messageIds,
+        'virtualSend': value.virtualSend,
+        'templateId': value.templateId,
+        'templateVariables': value.templateVariables,
+        'headers': value.headers,
+        'threadId': value.threadId,
+        'bodyExcerpt': value.bodyExcerpt,
+        'textExcerpt': value.textExcerpt,
+        'inReplyTo': value.inReplyTo,
+        'favourite': value.favourite,
+        'sizeBytes': value.sizeBytes,
+        'html': value.html,
+    };
 }
+
+

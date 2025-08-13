@@ -20,19 +20,7 @@ export interface PhoneMessageThreadProjection {
      * @type {string}
      * @memberof PhoneMessageThreadProjection
      */
-    phoneNumber: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneMessageThreadProjection
-     */
-    phoneNumberId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneMessageThreadProjection
-     */
-    otherPhoneNumber: string;
+    otherPhoneNumber?: string;
     /**
      *
      * @type {string}
@@ -51,11 +39,23 @@ export interface PhoneMessageThreadProjection {
      * @memberof PhoneMessageThreadProjection
      */
     lastCreated: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    phoneNumber?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    phoneNumberId: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum PhoneMessageThreadProjectionLastMessageDirectionEnum {
     OUTBOUND = "OUTBOUND",
     INBOUND = "INBOUND"

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult } from '../models';
+import { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupMxRecordsOptions, LookupMxRecordsResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult } from '../models';
 export interface CheckEmailFeaturesClientSupportRequest {
     checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
 }
@@ -50,6 +50,9 @@ export interface LookupDmarcDomainRequest {
 }
 export interface LookupMtaStsDomainRequest {
     lookupMtaStsDomainOptions: LookupMtaStsDomainOptions;
+}
+export interface LookupMxRecordRequest {
+    lookupMxRecordsOptions: LookupMxRecordsOptions;
 }
 export interface LookupTlsReportingDomainRequest {
     lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
@@ -176,6 +179,14 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Lookup a MTA-STS domain policy
      */
     lookupMtaStsDomain(requestParameters: LookupMtaStsDomainRequest, initOverrides?: RequestInit): Promise<LookupMtaStsDomainResults>;
+    /**
+     * Lookup a MX records for a domain
+     */
+    lookupMxRecordRaw(requestParameters: LookupMxRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupMxRecordsResults>>;
+    /**
+     * Lookup a MX records for a domain
+     */
+    lookupMxRecord(requestParameters: LookupMxRecordRequest, initOverrides?: RequestInit): Promise<LookupMxRecordsResults>;
     /**
      * Lookup a TLS reporting domain policy
      */

@@ -33,7 +33,7 @@ export interface GenerateStructuredContentSmsOptions {
      * @type {StructuredOutputSchema}
      * @memberof GenerateStructuredContentSmsOptions
      */
-    outputSchema?: StructuredOutputSchema;
+    outputSchema?: StructuredOutputSchema | null;
     /**
      * ID of transformer to apply
      * @type {string}

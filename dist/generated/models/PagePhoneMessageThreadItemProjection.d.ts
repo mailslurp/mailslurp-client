@@ -54,6 +54,12 @@ export interface PagePhoneMessageThreadItemProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PagePhoneMessageThreadItemProjection
      */
@@ -70,12 +76,6 @@ export interface PagePhoneMessageThreadItemProjection {
      * @memberof PagePhoneMessageThreadItemProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PagePhoneMessageThreadItemProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

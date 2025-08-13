@@ -14,52 +14,51 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ImapEmailProjection,
-  ImapEmailProjectionFromJSON,
-  ImapEmailProjectionFromJSONTyped,
-  ImapEmailProjectionToJSON,
+    ImapEmailProjection,
+    ImapEmailProjectionFromJSON,
+    ImapEmailProjectionFromJSONTyped,
+    ImapEmailProjectionToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface ImapServerListResult
  */
 export interface ImapServerListResult {
-  /**
-   *
-   * @type {Array<ImapEmailProjection>}
-   * @memberof ImapServerListResult
-   */
-  results: Array<ImapEmailProjection>;
+    /**
+     * 
+     * @type {Array<ImapEmailProjection>}
+     * @memberof ImapServerListResult
+     */
+    results: Array<ImapEmailProjection>;
 }
 
 export function ImapServerListResultFromJSON(json: any): ImapServerListResult {
-  return ImapServerListResultFromJSONTyped(json, false);
+    return ImapServerListResultFromJSONTyped(json, false);
 }
 
-export function ImapServerListResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerListResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    results: (json['results'] as Array<any>).map(ImapEmailProjectionFromJSON),
-  };
+export function ImapServerListResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerListResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'results': ((json['results'] as Array<any>).map(ImapEmailProjectionFromJSON)),
+    };
 }
 
-export function ImapServerListResultToJSON(
-  value?: ImapServerListResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    results: (value.results as Array<any>).map(ImapEmailProjectionToJSON),
-  };
+export function ImapServerListResultToJSON(value?: ImapServerListResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'results': ((value.results as Array<any>).map(ImapEmailProjectionToJSON)),
+    };
 }
+
+

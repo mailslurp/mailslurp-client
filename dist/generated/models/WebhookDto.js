@@ -17,9 +17,9 @@ exports.WebhookDtoToJSON = exports.WebhookDtoFromJSONTyped = exports.WebhookDtoF
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WebhookDtoMethodEnum;
 (function (WebhookDtoMethodEnum) {
     WebhookDtoMethodEnum["POST"] = "POST";
@@ -30,14 +30,14 @@ var WebhookDtoMethodEnum;
     WebhookDtoMethodEnum["HEAD"] = "HEAD";
     WebhookDtoMethodEnum["OPTIONS"] = "OPTIONS";
     WebhookDtoMethodEnum["TRACE"] = "TRACE";
-})(WebhookDtoMethodEnum = exports.WebhookDtoMethodEnum || (exports.WebhookDtoMethodEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(WebhookDtoMethodEnum = exports.WebhookDtoMethodEnum || (exports.WebhookDtoMethodEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var WebhookDtoEventNameEnum;
 (function (WebhookDtoEventNameEnum) {
     WebhookDtoEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    WebhookDtoEventNameEnum["NEW_AI_TRANSFORM_RESULT"] = "NEW_AI_TRANSFORM_RESULT";
     WebhookDtoEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
     WebhookDtoEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
     WebhookDtoEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
@@ -48,11 +48,10 @@ var WebhookDtoEventNameEnum;
     WebhookDtoEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookDtoEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookDtoEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var WebhookDtoHealthStatusEnum;
 (function (WebhookDtoHealthStatusEnum) {
     WebhookDtoHealthStatusEnum["HEALTHY"] = "HEALTHY";
@@ -63,40 +62,28 @@ function WebhookDtoFromJSON(json) {
 }
 exports.WebhookDtoFromJSON = WebhookDtoFromJSON;
 function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        basicAuth: json['basicAuth'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
-            ? undefined
-            : json['requestBodyTemplate'],
-        url: json['url'],
-        method: json['method'],
-        payloadJsonSchema: json['payloadJsonSchema'],
-        createdAt: json['createdAt'] === null ? null : new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        requestHeaders: !(0, runtime_1.exists)(json, 'requestHeaders')
-            ? undefined
-            : (0, _1.WebhookHeadersFromJSON)(json['requestHeaders']),
-        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
-            ? undefined
-            : json['aiTransformId'],
-        ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
-            ? undefined
-            : json['ignoreInsecureSslCertificates'],
-        useStaticIpRange: !(0, runtime_1.exists)(json, 'useStaticIpRange')
-            ? undefined
-            : json['useStaticIpRange'],
-        healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
-            ? undefined
-            : json['healthStatus'],
+        'id': json['id'],
+        'userId': json['userId'],
+        'basicAuth': json['basicAuth'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'phoneId': !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'requestBodyTemplate': !(0, runtime_1.exists)(json, 'requestBodyTemplate') ? undefined : json['requestBodyTemplate'],
+        'url': json['url'],
+        'method': json['method'],
+        'payloadJsonSchema': json['payloadJsonSchema'],
+        'createdAt': (json['createdAt'] === null ? null : new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'eventName': !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        'requestHeaders': !(0, runtime_1.exists)(json, 'requestHeaders') ? undefined : (0, _1.WebhookHeadersFromJSON)(json['requestHeaders']),
+        'aiTransformId': !(0, runtime_1.exists)(json, 'aiTransformId') ? undefined : json['aiTransformId'],
+        'ignoreInsecureSslCertificates': !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates') ? undefined : json['ignoreInsecureSslCertificates'],
+        'useStaticIpRange': !(0, runtime_1.exists)(json, 'useStaticIpRange') ? undefined : json['useStaticIpRange'],
+        'healthStatus': !(0, runtime_1.exists)(json, 'healthStatus') ? undefined : json['healthStatus'],
     };
 }
 exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
@@ -108,24 +95,24 @@ function WebhookDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        basicAuth: value.basicAuth,
-        name: value.name,
-        phoneId: value.phoneId,
-        inboxId: value.inboxId,
-        requestBodyTemplate: value.requestBodyTemplate,
-        url: value.url,
-        method: value.method,
-        payloadJsonSchema: value.payloadJsonSchema,
-        createdAt: value.createdAt === null ? null : value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        eventName: value.eventName,
-        requestHeaders: (0, _1.WebhookHeadersToJSON)(value.requestHeaders),
-        aiTransformId: value.aiTransformId,
-        ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
-        useStaticIpRange: value.useStaticIpRange,
-        healthStatus: value.healthStatus,
+        'id': value.id,
+        'userId': value.userId,
+        'basicAuth': value.basicAuth,
+        'name': value.name,
+        'phoneId': value.phoneId,
+        'inboxId': value.inboxId,
+        'requestBodyTemplate': value.requestBodyTemplate,
+        'url': value.url,
+        'method': value.method,
+        'payloadJsonSchema': value.payloadJsonSchema,
+        'createdAt': (value.createdAt === null ? null : value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'eventName': value.eventName,
+        'requestHeaders': (0, _1.WebhookHeadersToJSON)(value.requestHeaders),
+        'aiTransformId': value.aiTransformId,
+        'ignoreInsecureSslCertificates': value.ignoreInsecureSslCertificates,
+        'useStaticIpRange': value.useStaticIpRange,
+        'healthStatus': value.healthStatus,
     };
 }
 exports.WebhookDtoToJSON = WebhookDtoToJSON;

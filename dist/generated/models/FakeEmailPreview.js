@@ -21,23 +21,19 @@ function FakeEmailPreviewFromJSON(json) {
 }
 exports.FakeEmailPreviewFromJSON = FakeEmailPreviewFromJSON;
 function FakeEmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        emailAddress: json['emailAddress'],
-        sender: !(0, runtime_1.exists)(json, 'sender')
-            ? undefined
-            : (0, _1.SenderFromJSON)(json['sender']),
-        recipients: !(0, runtime_1.exists)(json, 'recipients')
-            ? undefined
-            : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        hasAttachments: json['hasAttachments'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        preview: !(0, runtime_1.exists)(json, 'preview') ? undefined : json['preview'],
-        createdAt: new Date(json['createdAt']),
-        seen: json['seen'],
+        'id': json['id'],
+        'emailAddress': json['emailAddress'],
+        'sender': !(0, runtime_1.exists)(json, 'sender') ? undefined : (0, _1.SenderFromJSON)(json['sender']),
+        'recipients': !(0, runtime_1.exists)(json, 'recipients') ? undefined : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
+        'hasAttachments': json['hasAttachments'],
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'preview': !(0, runtime_1.exists)(json, 'preview') ? undefined : json['preview'],
+        'createdAt': (new Date(json['createdAt'])),
+        'seen': json['seen'],
     };
 }
 exports.FakeEmailPreviewFromJSONTyped = FakeEmailPreviewFromJSONTyped;
@@ -49,15 +45,15 @@ function FakeEmailPreviewToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        emailAddress: value.emailAddress,
-        sender: (0, _1.SenderToJSON)(value.sender),
-        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
-        hasAttachments: value.hasAttachments,
-        subject: value.subject,
-        preview: value.preview,
-        createdAt: value.createdAt.toISOString(),
-        seen: value.seen,
+        'id': value.id,
+        'emailAddress': value.emailAddress,
+        'sender': (0, _1.SenderToJSON)(value.sender),
+        'recipients': (0, _1.EmailRecipientsToJSON)(value.recipients),
+        'hasAttachments': value.hasAttachments,
+        'subject': value.subject,
+        'preview': value.preview,
+        'createdAt': (value.createdAt.toISOString()),
+        'seen': value.seen,
     };
 }
 exports.FakeEmailPreviewToJSON = FakeEmailPreviewToJSON;

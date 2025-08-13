@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  ScheduledJob,
-  ScheduledJobFromJSON,
-  ScheduledJobFromJSONTyped,
-  ScheduledJobToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    ScheduledJob,
+    ScheduledJobFromJSON,
+    ScheduledJobFromJSONTyped,
+    ScheduledJobToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,127 +34,119 @@ import {
  * @interface PageScheduledJobs
  */
 export interface PageScheduledJobs {
-  /**
-   *
-   * @type {Array<ScheduledJob>}
-   * @memberof PageScheduledJobs
-   */
-  content?: Array<ScheduledJob>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageScheduledJobs
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageScheduledJobs
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageScheduledJobs
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageScheduledJobs
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageScheduledJobs
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<ScheduledJob>}
+     * @memberof PageScheduledJobs
+     */
+    content?: Array<ScheduledJob>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageScheduledJobs
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageScheduledJobs
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    number?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    empty?: boolean;
 }
 
 export function PageScheduledJobsFromJSON(json: any): PageScheduledJobs {
-  return PageScheduledJobsFromJSONTyped(json, false);
+    return PageScheduledJobsFromJSONTyped(json, false);
 }
 
-export function PageScheduledJobsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageScheduledJobs {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(ScheduledJobFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageScheduledJobsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageScheduledJobs {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(ScheduledJobFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
 export function PageScheduledJobsToJSON(value?: PageScheduledJobs | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(ScheduledJobToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(ScheduledJobToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'sort': SortObjectToJSON(value.sort),
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'empty': value.empty,
+    };
 }
+
+

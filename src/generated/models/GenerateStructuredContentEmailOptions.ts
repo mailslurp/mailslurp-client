@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  StructuredOutputSchema,
-  StructuredOutputSchemaFromJSON,
-  StructuredOutputSchemaFromJSONTyped,
-  StructuredOutputSchemaToJSON,
+    StructuredOutputSchema,
+    StructuredOutputSchemaFromJSON,
+    StructuredOutputSchemaFromJSONTyped,
+    StructuredOutputSchemaToJSON,
 } from './';
 
 /**
@@ -26,90 +26,81 @@ import {
  * @interface GenerateStructuredContentEmailOptions
  */
 export interface GenerateStructuredContentEmailOptions {
-  /**
-   * Email ID to read and pass to AI
-   * @type {string}
-   * @memberof GenerateStructuredContentEmailOptions
-   */
-  emailId: string;
-  /**
-   * Content selector to select part of email to operate on
-   * @type {string}
-   * @memberof GenerateStructuredContentEmailOptions
-   */
-  contentSelector?: GenerateStructuredContentEmailOptionsContentSelectorEnum;
-  /**
-   * Optional instructions for the AI to follow. Try to be precise and clear. You can include examples and hints.
-   * @type {string}
-   * @memberof GenerateStructuredContentEmailOptions
-   */
-  instructions?: string | null;
-  /**
-   *
-   * @type {StructuredOutputSchema}
-   * @memberof GenerateStructuredContentEmailOptions
-   */
-  outputSchema?: StructuredOutputSchema;
-  /**
-   * ID of transformer to apply
-   * @type {string}
-   * @memberof GenerateStructuredContentEmailOptions
-   */
-  transformId?: string | null;
+    /**
+     * Email ID to read and pass to AI
+     * @type {string}
+     * @memberof GenerateStructuredContentEmailOptions
+     */
+    emailId: string;
+    /**
+     * Content selector to select part of email to operate on
+     * @type {string}
+     * @memberof GenerateStructuredContentEmailOptions
+     */
+    contentSelector?: GenerateStructuredContentEmailOptionsContentSelectorEnum;
+    /**
+     * Optional instructions for the AI to follow. Try to be precise and clear. You can include examples and hints.
+     * @type {string}
+     * @memberof GenerateStructuredContentEmailOptions
+     */
+    instructions?: string | null;
+    /**
+     * 
+     * @type {StructuredOutputSchema}
+     * @memberof GenerateStructuredContentEmailOptions
+     */
+    outputSchema?: StructuredOutputSchema | null;
+    /**
+     * ID of transformer to apply
+     * @type {string}
+     * @memberof GenerateStructuredContentEmailOptions
+     */
+    transformId?: string | null;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum GenerateStructuredContentEmailOptionsContentSelectorEnum {
-  RAW = 'RAW',
-  BODY = 'BODY',
-  BODY_ATTACHMENTS = 'BODY_ATTACHMENTS',
+    RAW = 'RAW',
+    BODY = 'BODY',
+    BODY_ATTACHMENTS = 'BODY_ATTACHMENTS'
 }
 
-export function GenerateStructuredContentEmailOptionsFromJSON(
-  json: any
-): GenerateStructuredContentEmailOptions {
-  return GenerateStructuredContentEmailOptionsFromJSONTyped(json, false);
+export function GenerateStructuredContentEmailOptionsFromJSON(json: any): GenerateStructuredContentEmailOptions {
+    return GenerateStructuredContentEmailOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateStructuredContentEmailOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateStructuredContentEmailOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailId: json['emailId'],
-    contentSelector: !exists(json, 'contentSelector')
-      ? undefined
-      : json['contentSelector'],
-    instructions: !exists(json, 'instructions')
-      ? undefined
-      : json['instructions'],
-    outputSchema: !exists(json, 'outputSchema')
-      ? undefined
-      : StructuredOutputSchemaFromJSON(json['outputSchema']),
-    transformId: !exists(json, 'transformId') ? undefined : json['transformId'],
-  };
+export function GenerateStructuredContentEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateStructuredContentEmailOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'emailId': json['emailId'],
+        'contentSelector': !exists(json, 'contentSelector') ? undefined : json['contentSelector'],
+        'instructions': !exists(json, 'instructions') ? undefined : json['instructions'],
+        'outputSchema': !exists(json, 'outputSchema') ? undefined : StructuredOutputSchemaFromJSON(json['outputSchema']),
+        'transformId': !exists(json, 'transformId') ? undefined : json['transformId'],
+    };
 }
 
-export function GenerateStructuredContentEmailOptionsToJSON(
-  value?: GenerateStructuredContentEmailOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailId: value.emailId,
-    contentSelector: value.contentSelector,
-    instructions: value.instructions,
-    outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
-    transformId: value.transformId,
-  };
+export function GenerateStructuredContentEmailOptionsToJSON(value?: GenerateStructuredContentEmailOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'emailId': value.emailId,
+        'contentSelector': value.contentSelector,
+        'instructions': value.instructions,
+        'outputSchema': StructuredOutputSchemaToJSON(value.outputSchema),
+        'transformId': value.transformId,
+    };
 }
+
+

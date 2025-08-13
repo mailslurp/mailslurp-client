@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhoneNumberDtoToJSON = exports.PhoneNumberDtoFromJSONTyped = exports.PhoneNumberDtoFromJSON = exports.PhoneNumberDtoPhoneCountryEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var PhoneNumberDtoPhoneCountryEnum;
 (function (PhoneNumberDtoPhoneCountryEnum) {
     PhoneNumberDtoPhoneCountryEnum["US"] = "US";
@@ -39,26 +39,22 @@ function PhoneNumberDtoFromJSON(json) {
 }
 exports.PhoneNumberDtoFromJSON = PhoneNumberDtoFromJSON;
 function PhoneNumberDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        userId: json['userId'],
-        complianceAddress: !(0, runtime_1.exists)(json, 'complianceAddress')
-            ? undefined
-            : json['complianceAddress'],
-        emergencyAddress: !(0, runtime_1.exists)(json, 'emergencyAddress')
-            ? undefined
-            : json['emergencyAddress'],
-        phoneNumber: json['phoneNumber'],
-        phoneCountry: json['phoneCountry'],
-        phonePlan: json['phonePlan'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        favourite: json['favourite'],
+        'id': json['id'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'userId': json['userId'],
+        'complianceAddress': !(0, runtime_1.exists)(json, 'complianceAddress') ? undefined : json['complianceAddress'],
+        'emergencyAddress': !(0, runtime_1.exists)(json, 'emergencyAddress') ? undefined : json['emergencyAddress'],
+        'phoneNumber': json['phoneNumber'],
+        'phoneCountry': json['phoneCountry'],
+        'phonePlan': json['phonePlan'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'favourite': json['favourite'],
     };
 }
 exports.PhoneNumberDtoFromJSONTyped = PhoneNumberDtoFromJSONTyped;
@@ -70,18 +66,18 @@ function PhoneNumberDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        name: value.name,
-        description: value.description,
-        userId: value.userId,
-        complianceAddress: value.complianceAddress,
-        emergencyAddress: value.emergencyAddress,
-        phoneNumber: value.phoneNumber,
-        phoneCountry: value.phoneCountry,
-        phonePlan: value.phonePlan,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        favourite: value.favourite,
+        'id': value.id,
+        'name': value.name,
+        'description': value.description,
+        'userId': value.userId,
+        'complianceAddress': value.complianceAddress,
+        'emergencyAddress': value.emergencyAddress,
+        'phoneNumber': value.phoneNumber,
+        'phoneCountry': value.phoneCountry,
+        'phonePlan': value.phonePlan,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'favourite': value.favourite,
     };
 }
 exports.PhoneNumberDtoToJSON = PhoneNumberDtoToJSON;

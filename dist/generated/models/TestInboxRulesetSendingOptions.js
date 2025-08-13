@@ -14,17 +14,19 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TestInboxRulesetSendingOptionsToJSON = exports.TestInboxRulesetSendingOptionsFromJSONTyped = exports.TestInboxRulesetSendingOptionsFromJSON = void 0;
+var runtime_1 = require("../runtime");
 function TestInboxRulesetSendingOptionsFromJSON(json) {
     return TestInboxRulesetSendingOptionsFromJSONTyped(json, false);
 }
 exports.TestInboxRulesetSendingOptionsFromJSON = TestInboxRulesetSendingOptionsFromJSON;
 function TestInboxRulesetSendingOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        inboxId: json['inboxId'],
-        recipient: json['recipient'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'phoneId': !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        'recipient': json['recipient'],
     };
 }
 exports.TestInboxRulesetSendingOptionsFromJSONTyped = TestInboxRulesetSendingOptionsFromJSONTyped;
@@ -36,8 +38,9 @@ function TestInboxRulesetSendingOptionsToJSON(value) {
         return null;
     }
     return {
-        inboxId: value.inboxId,
-        recipient: value.recipient,
+        'inboxId': value.inboxId,
+        'phoneId': value.phoneId,
+        'recipient': value.recipient,
     };
 }
 exports.TestInboxRulesetSendingOptionsToJSON = TestInboxRulesetSendingOptionsToJSON;

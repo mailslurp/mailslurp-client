@@ -54,6 +54,12 @@ export interface PageEntityAutomationItems {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEntityAutomationItems
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageEntityAutomationItems
      */
@@ -70,12 +76,6 @@ export interface PageEntityAutomationItems {
      * @memberof PageEntityAutomationItems
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageEntityAutomationItems
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  EntityAutomationItemProjection,
-  EntityAutomationItemProjectionFromJSON,
-  EntityAutomationItemProjectionFromJSONTyped,
-  EntityAutomationItemProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    EntityAutomationItemProjection,
+    EntityAutomationItemProjectionFromJSON,
+    EntityAutomationItemProjectionFromJSONTyped,
+    EntityAutomationItemProjectionToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,135 +34,119 @@ import {
  * @interface PageEntityAutomationItems
  */
 export interface PageEntityAutomationItems {
-  /**
-   *
-   * @type {Array<EntityAutomationItemProjection>}
-   * @memberof PageEntityAutomationItems
-   */
-  content?: Array<EntityAutomationItemProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageEntityAutomationItems
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityAutomationItems
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityAutomationItems
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEntityAutomationItems
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityAutomationItems
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEntityAutomationItems
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityAutomationItems
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityAutomationItems
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageEntityAutomationItems
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEntityAutomationItems
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<EntityAutomationItemProjection>}
+     * @memberof PageEntityAutomationItems
+     */
+    content?: Array<EntityAutomationItemProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageEntityAutomationItems
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityAutomationItems
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityAutomationItems
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEntityAutomationItems
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityAutomationItems
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageEntityAutomationItems
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEntityAutomationItems
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityAutomationItems
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityAutomationItems
+     */
+    number?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEntityAutomationItems
+     */
+    empty?: boolean;
 }
 
-export function PageEntityAutomationItemsFromJSON(
-  json: any
-): PageEntityAutomationItems {
-  return PageEntityAutomationItemsFromJSONTyped(json, false);
+export function PageEntityAutomationItemsFromJSON(json: any): PageEntityAutomationItems {
+    return PageEntityAutomationItemsFromJSONTyped(json, false);
 }
 
-export function PageEntityAutomationItemsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageEntityAutomationItems {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(
-          EntityAutomationItemProjectionFromJSON
-        ),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageEntityAutomationItemsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageEntityAutomationItems {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(EntityAutomationItemProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PageEntityAutomationItemsToJSON(
-  value?: PageEntityAutomationItems | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(
-            EntityAutomationItemProjectionToJSON
-          ),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageEntityAutomationItemsToJSON(value?: PageEntityAutomationItems | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(EntityAutomationItemProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'sort': SortObjectToJSON(value.sort),
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'empty': value.empty,
+    };
 }
+
+

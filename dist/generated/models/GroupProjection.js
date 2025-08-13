@@ -20,14 +20,14 @@ function GroupProjectionFromJSON(json) {
 }
 exports.GroupProjectionFromJSON = GroupProjectionFromJSON;
 function GroupProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        name: json['name'],
-        id: json['id'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'createdAt': (new Date(json['createdAt'])),
+        'name': json['name'],
+        'id': json['id'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
 exports.GroupProjectionFromJSONTyped = GroupProjectionFromJSONTyped;
@@ -39,10 +39,10 @@ function GroupProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        name: value.name,
-        id: value.id,
-        description: value.description,
+        'createdAt': (value.createdAt.toISOString()),
+        'name': value.name,
+        'id': value.id,
+        'description': value.description,
     };
 }
 exports.GroupProjectionToJSON = GroupProjectionToJSON;

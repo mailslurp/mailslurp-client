@@ -14,133 +14,132 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface AITransformMappingProjection
  */
 export interface AITransformMappingProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  aiTransformId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  entityId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  entityType: AITransformMappingProjectionEntityTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  contentSelector?: AITransformMappingProjectionContentSelectorEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  triggerSelector?: AITransformMappingProjectionTriggerSelectorEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AITransformMappingProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    aiTransformId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    entityId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    entityType: AITransformMappingProjectionEntityTypeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    contentSelector?: AITransformMappingProjectionContentSelectorEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    triggerSelector?: AITransformMappingProjectionTriggerSelectorEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    id: string;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum AITransformMappingProjectionEntityTypeEnum {
-  INBOX = 'INBOX',
-  PHONE = 'PHONE',
-}
-/**
- * @export
- * @enum {string}
- */
+    INBOX = 'INBOX',
+    PHONE = 'PHONE'
+}/**
+* @export
+* @enum {string}
+*/
 export enum AITransformMappingProjectionContentSelectorEnum {
-  RAW = 'RAW',
-  BODY = 'BODY',
-  BODY_ATTACHMENTS = 'BODY_ATTACHMENTS',
-}
-/**
- * @export
- * @enum {string}
- */
+    RAW = 'RAW',
+    BODY = 'BODY',
+    BODY_ATTACHMENTS = 'BODY_ATTACHMENTS'
+}/**
+* @export
+* @enum {string}
+*/
 export enum AITransformMappingProjectionTriggerSelectorEnum {
-  MESSAGE = 'PER_MESSAGE',
-  ATTACHMENT = 'PER_ATTACHMENT',
+    MESSAGE = 'PER_MESSAGE',
+    ATTACHMENT = 'PER_ATTACHMENT'
 }
 
-export function AITransformMappingProjectionFromJSON(
-  json: any
-): AITransformMappingProjection {
-  return AITransformMappingProjectionFromJSONTyped(json, false);
+export function AITransformMappingProjectionFromJSON(json: any): AITransformMappingProjection {
+    return AITransformMappingProjectionFromJSONTyped(json, false);
 }
 
-export function AITransformMappingProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AITransformMappingProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json['userId'],
-    aiTransformId: json['aiTransformId'],
-    entityId: json['entityId'],
-    entityType: json['entityType'],
-    contentSelector: !exists(json, 'contentSelector')
-      ? undefined
-      : json['contentSelector'],
-    triggerSelector: !exists(json, 'triggerSelector')
-      ? undefined
-      : json['triggerSelector'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function AITransformMappingProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AITransformMappingProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'userId': json['userId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'aiTransformId': json['aiTransformId'],
+        'entityId': !exists(json, 'entityId') ? undefined : json['entityId'],
+        'entityType': json['entityType'],
+        'contentSelector': !exists(json, 'contentSelector') ? undefined : json['contentSelector'],
+        'triggerSelector': !exists(json, 'triggerSelector') ? undefined : json['triggerSelector'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
 
-export function AITransformMappingProjectionToJSON(
-  value?: AITransformMappingProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    userId: value.userId,
-    aiTransformId: value.aiTransformId,
-    entityId: value.entityId,
-    entityType: value.entityType,
-    contentSelector: value.contentSelector,
-    triggerSelector: value.triggerSelector,
-    name: value.name,
-    id: value.id,
-  };
+export function AITransformMappingProjectionToJSON(value?: AITransformMappingProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'userId': value.userId,
+        'createdAt': (value.createdAt.toISOString()),
+        'aiTransformId': value.aiTransformId,
+        'entityId': value.entityId,
+        'entityType': value.entityType,
+        'contentSelector': value.contentSelector,
+        'triggerSelector': value.triggerSelector,
+        'name': value.name,
+        'id': value.id,
+    };
 }
+
+

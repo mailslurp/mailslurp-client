@@ -14,62 +14,59 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  ConnectorDto,
-  ConnectorDtoFromJSON,
-  ConnectorDtoFromJSONTyped,
-  ConnectorDtoToJSON,
+    ConnectorDto,
+    ConnectorDtoFromJSON,
+    ConnectorDtoFromJSONTyped,
+    ConnectorDtoToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface OptionalConnectorDto
  */
 export interface OptionalConnectorDto {
-  /**
-   *
-   * @type {boolean}
-   * @memberof OptionalConnectorDto
-   */
-  present: boolean;
-  /**
-   *
-   * @type {ConnectorDto}
-   * @memberof OptionalConnectorDto
-   */
-  result?: ConnectorDto;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof OptionalConnectorDto
+     */
+    present: boolean;
+    /**
+     * 
+     * @type {ConnectorDto}
+     * @memberof OptionalConnectorDto
+     */
+    result?: ConnectorDto;
 }
 
 export function OptionalConnectorDtoFromJSON(json: any): OptionalConnectorDto {
-  return OptionalConnectorDtoFromJSONTyped(json, false);
+    return OptionalConnectorDtoFromJSONTyped(json, false);
 }
 
-export function OptionalConnectorDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): OptionalConnectorDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    present: json['present'],
-    result: !exists(json, 'result')
-      ? undefined
-      : ConnectorDtoFromJSON(json['result']),
-  };
+export function OptionalConnectorDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptionalConnectorDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'present': json['present'],
+        'result': !exists(json, 'result') ? undefined : ConnectorDtoFromJSON(json['result']),
+    };
 }
 
-export function OptionalConnectorDtoToJSON(
-  value?: OptionalConnectorDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    present: value.present,
-    result: ConnectorDtoToJSON(value.result),
-  };
+export function OptionalConnectorDtoToJSON(value?: OptionalConnectorDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'present': value.present,
+        'result': ConnectorDtoToJSON(value.result),
+    };
 }
+
+

@@ -53,28 +53,26 @@ export interface UserInfoDto {
     createdAt: Date;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum UserInfoDtoAccountStateEnum {
     FROZEN = "FROZEN",
     ACTIVE = "ACTIVE"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum UserInfoDtoSubscriptionTypeEnum {
     PRO_MONTHLY = "PRO_MONTHLY",
     STARTER = "STARTER",
     PRO = "PRO",
     TEAM = "TEAM",
     ENTERPRISE = "ENTERPRISE"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum UserInfoDtoAccountTypeEnum {
     SOLO = "SOLO",
     CHILD_SOLO = "CHILD_SOLO",

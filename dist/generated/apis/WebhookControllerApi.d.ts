@@ -10,12 +10,16 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CountDto, CreateWebhookOptions, JSONSchemaDto, PageWebhookEndpointProjection, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookProjection, WebhookRedriveAllResult, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import { AbstractWebhookPayload, CountDto, CreateWebhookOptions, JSONSchemaDto, PageWebhookEndpointProjection, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAITransformResultPayload, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookProjection, WebhookRedriveAllResult, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
 export interface CreateAccountWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
 }
 export interface CreateWebhookRequest {
     inboxId: string;
+    createWebhookOptions: CreateWebhookOptions;
+}
+export interface CreateWebhookForAITransformerRequest {
+    transformerId: string;
     createWebhookOptions: CreateWebhookOptions;
 }
 export interface CreateWebhookForPhoneNumberRequest {
@@ -71,6 +75,7 @@ export interface GetAllWebhookResultsRequest {
     attachmentId?: string;
     emailId?: string;
     phoneId?: string;
+    aiTransformerId?: string;
 }
 export interface GetAllWebhooksRequest {
     page?: number;
@@ -79,6 +84,7 @@ export interface GetAllWebhooksRequest {
     searchFilter?: string;
     since?: Date;
     inboxId?: string;
+    aiTransformerId?: string;
     phoneId?: string;
     before?: Date;
     health?: GetAllWebhooksHealthEnum;
@@ -143,6 +149,7 @@ export interface GetWebhookResultsRequest {
     attachmentId?: string;
     emailId?: string;
     phoneId?: string;
+    aiTransformerId?: string;
 }
 export interface GetWebhookResultsCountRequest {
     webhookId: string;
@@ -163,6 +170,7 @@ export interface UpdateWebhookRequest {
     webhookId: string;
     createWebhookOptions: CreateWebhookOptions;
     inboxId?: string;
+    aiTransformerId?: string;
     phoneNumberId?: string;
     overrideAuth?: boolean;
 }
@@ -202,6 +210,16 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Attach a WebHook URL to an inbox
      */
     createWebhook(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    /**
+     * Get notified whenever AI transformation pipeline converts and email or SMS into structured data via a WebHook URL.
+     * Attach a WebHook URL to an AI transformer
+     */
+    createWebhookForAITransformerRaw(requestParameters: CreateWebhookForAITransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    /**
+     * Get notified whenever AI transformation pipeline converts and email or SMS into structured data via a WebHook URL.
+     * Attach a WebHook URL to an AI transformer
+     */
+    createWebhookForAITransformer(requestParameters: CreateWebhookForAITransformerRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
     /**
      * Get notified whenever a phone number receives an SMS via a WebHook URL.
      * Attach a WebHook URL to a phone number
@@ -363,6 +381,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      */
     getTestWebhookPayloadForWebhook(requestParameters: GetTestWebhookPayloadForWebhookRequest, initOverrides?: RequestInit): Promise<AbstractWebhookPayload>;
     /**
+     * Get webhook test payload for new ai transform result event
+     */
+    getTestWebhookPayloadNewAITransformResultRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewAITransformResultPayload>>;
+    /**
+     * Get webhook test payload for new ai transform result event
+     */
+    getTestWebhookPayloadNewAITransformResult(initOverrides?: RequestInit): Promise<WebhookNewAITransformResultPayload>;
+    /**
      * Get webhook test payload for new attachment event
      */
     getTestWebhookPayloadNewAttachmentRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewAttachmentPayload>>;
@@ -506,19 +532,20 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
     waitForWebhookResults(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<Array<WebhookResultDto>>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllAccountWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllAccountWebhooksEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -531,35 +558,36 @@ export declare enum GetAllAccountWebhooksEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllAccountWebhooksHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookEndpointsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookEndpointsHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookEndpointsEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -572,17 +600,17 @@ export declare enum GetAllWebhookEndpointsEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookResultsResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
@@ -590,11 +618,12 @@ export declare enum GetAllWebhookResultsResultTypeEnum {
     REDRIVEN = "REDRIVEN"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhookResultsEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -607,27 +636,28 @@ export declare enum GetAllWebhookResultsEventNameEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhooksHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllWebhooksEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -640,27 +670,28 @@ export declare enum GetAllWebhooksEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxWebhooksPaginatedHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxWebhooksPaginatedEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -673,11 +704,12 @@ export declare enum GetInboxWebhooksPaginatedEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetJsonSchemaForWebhookEventEventEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -690,19 +722,20 @@ export declare enum GetJsonSchemaForWebhookEventEventEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumberWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumberWebhooksPaginatedEventTypeEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -715,19 +748,20 @@ export declare enum GetPhoneNumberWebhooksPaginatedEventTypeEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumberWebhooksPaginatedHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetTestWebhookPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -740,17 +774,17 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhookResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhookResultsResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
@@ -758,11 +792,12 @@ export declare enum GetWebhookResultsResultTypeEnum {
     REDRIVEN = "REDRIVEN"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhookResultsEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -775,9 +810,9 @@ export declare enum GetWebhookResultsEventNameEnum {
     NEW_GUEST_USER = "NEW_GUEST_USER"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"

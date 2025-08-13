@@ -14,91 +14,92 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface PlusAddressDto
  */
 export interface PlusAddressDto {
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressDto
-   */
-  plusAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressDto
-   */
-  fullAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressDto
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof PlusAddressDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof PlusAddressDto
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressDto
+     */
+    plusAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressDto
+     */
+    fullAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlusAddressDto
+     */
+    inboxId: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PlusAddressDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof PlusAddressDto
+     */
+    updatedAt: Date;
 }
 
 export function PlusAddressDtoFromJSON(json: any): PlusAddressDto {
-  return PlusAddressDtoFromJSONTyped(json, false);
+    return PlusAddressDtoFromJSONTyped(json, false);
 }
 
-export function PlusAddressDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PlusAddressDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    plusAddress: json['plusAddress'],
-    fullAddress: json['fullAddress'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function PlusAddressDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlusAddressDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'plusAddress': json['plusAddress'],
+        'fullAddress': json['fullAddress'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
 export function PlusAddressDtoToJSON(value?: PlusAddressDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    plusAddress: value.plusAddress,
-    fullAddress: value.fullAddress,
-    userId: value.userId,
-    inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'plusAddress': value.plusAddress,
+        'fullAddress': value.fullAddress,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+    };
 }
+
+

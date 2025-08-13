@@ -52,7 +52,7 @@ export interface MissedEmailDto {
      */
     from?: string | null;
     /**
-     *
+     * use raw key and raw bucket
      * @type {string}
      * @memberof MissedEmailDto
      */

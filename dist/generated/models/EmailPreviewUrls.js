@@ -19,13 +19,13 @@ function EmailPreviewUrlsFromJSON(json) {
 }
 exports.EmailPreviewUrlsFromJSON = EmailPreviewUrlsFromJSON;
 function EmailPreviewUrlsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
-        plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
-        origin: json['origin'],
+        'rawSmtpMessageUrl': json['rawSmtpMessageUrl'],
+        'plainHtmlBodyUrl': json['plainHtmlBodyUrl'],
+        'origin': json['origin'],
     };
 }
 exports.EmailPreviewUrlsFromJSONTyped = EmailPreviewUrlsFromJSONTyped;
@@ -37,9 +37,9 @@ function EmailPreviewUrlsToJSON(value) {
         return null;
     }
     return {
-        rawSmtpMessageUrl: value.rawSmtpMessageUrl,
-        plainHtmlBodyUrl: value.plainHtmlBodyUrl,
-        origin: value.origin,
+        'rawSmtpMessageUrl': value.rawSmtpMessageUrl,
+        'plainHtmlBodyUrl': value.plainHtmlBodyUrl,
+        'origin': value.origin,
     };
 }
 exports.EmailPreviewUrlsToJSON = EmailPreviewUrlsToJSON;

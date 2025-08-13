@@ -26,6 +26,12 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
+    userId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
     emailId?: string | null;
     /**
      *
@@ -33,12 +39,6 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     inboxId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    userId?: string | null;
     /**
      *
      * @type {Date}
@@ -77,9 +77,9 @@ export interface InboxReplierEventProjection {
     status?: InboxReplierEventProjectionStatusEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum InboxReplierEventProjectionStatusEnum {
     SUCCESS = "SUCCESS",
     FAILURE = "FAILURE"

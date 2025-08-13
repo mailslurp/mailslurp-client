@@ -108,8 +108,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createInboxForwarderOptions === null ||
-                            requestParameters.createInboxForwarderOptions === undefined) {
+                        if (requestParameters.createInboxForwarderOptions === null || requestParameters.createInboxForwarderOptions === undefined) {
                             throw new runtime.RequiredError('createInboxForwarderOptions', 'Required parameter requestParameters.createInboxForwarderOptions was null or undefined when calling createNewInboxForwarder.');
                         }
                         queryParameters = {};
@@ -119,7 +118,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/forwarders",
@@ -130,9 +129,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -171,10 +168,10 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/forwarders/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/forwarders/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -218,7 +215,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/forwarders",
@@ -280,7 +277,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/forwarders/events",
@@ -290,9 +287,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxForwarderEventsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxForwarderEventsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -325,26 +320,23 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.eventId === null ||
-                            requestParameters.eventId === undefined) {
+                        if (requestParameters.eventId === null || requestParameters.eventId === undefined) {
                             throw new runtime.RequiredError('eventId', 'Required parameter requestParameters.eventId was null or undefined when calling getForwarderEvent.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/forwarders/events/{eventId}".replace("{".concat('eventId', "}"), encodeURIComponent(String(requestParameters.eventId))),
+                                path: "/forwarders/events/{eventId}".replace("{".concat("eventId", "}"), encodeURIComponent(String(requestParameters.eventId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderEventDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderEventDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -383,19 +375,17 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/forwarders/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/forwarders/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -431,28 +421,23 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getInboxForwarderEvent.');
                         }
-                        if (requestParameters.eventId === null ||
-                            requestParameters.eventId === undefined) {
+                        if (requestParameters.eventId === null || requestParameters.eventId === undefined) {
                             throw new runtime.RequiredError('eventId', 'Required parameter requestParameters.eventId was null or undefined when calling getInboxForwarderEvent.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/forwarders/{id}/events/{eventId}"
-                                    .replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id)))
-                                    .replace("{".concat('eventId', "}"), encodeURIComponent(String(requestParameters.eventId))),
+                                path: "/forwarders/{id}/events/{eventId}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))).replace("{".concat("eventId", "}"), encodeURIComponent(String(requestParameters.eventId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderEventDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderEventDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -500,19 +485,17 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/forwarders/{id}/events".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/forwarders/{id}/events".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxForwarderEventsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxForwarderEventsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -569,7 +552,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/forwarders",
@@ -579,9 +562,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageInboxForwarderDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxForwarderDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -617,18 +598,17 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling testInboxForwarder.');
                         }
-                        if (requestParameters.inboxForwarderTestOptions === null ||
-                            requestParameters.inboxForwarderTestOptions === undefined) {
+                        if (requestParameters.inboxForwarderTestOptions === null || requestParameters.inboxForwarderTestOptions === undefined) {
                             throw new runtime.RequiredError('inboxForwarderTestOptions', 'Required parameter requestParameters.inboxForwarderTestOptions was null or undefined when calling testInboxForwarder.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/forwarders/{id}/test".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/forwarders/{id}/test".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -636,9 +616,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderTestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -671,12 +649,10 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling testInboxForwardersForInbox.');
                         }
-                        if (requestParameters.inboxForwarderTestOptions === null ||
-                            requestParameters.inboxForwarderTestOptions === undefined) {
+                        if (requestParameters.inboxForwarderTestOptions === null || requestParameters.inboxForwarderTestOptions === undefined) {
                             throw new runtime.RequiredError('inboxForwarderTestOptions', 'Required parameter requestParameters.inboxForwarderTestOptions was null or undefined when calling testInboxForwardersForInbox.');
                         }
                         queryParameters = {};
@@ -686,7 +662,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/forwarders",
@@ -697,9 +673,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderTestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -732,15 +706,14 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.testNewInboxForwarderOptions === null ||
-                            requestParameters.testNewInboxForwarderOptions === undefined) {
+                        if (requestParameters.testNewInboxForwarderOptions === null || requestParameters.testNewInboxForwarderOptions === undefined) {
                             throw new runtime.RequiredError('testNewInboxForwarderOptions', 'Required parameter requestParameters.testNewInboxForwarderOptions was null or undefined when calling testNewInboxForwarder.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/forwarders",
@@ -751,9 +724,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderTestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -789,18 +760,17 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateInboxForwarder.');
                         }
-                        if (requestParameters.createInboxForwarderOptions === null ||
-                            requestParameters.createInboxForwarderOptions === undefined) {
+                        if (requestParameters.createInboxForwarderOptions === null || requestParameters.createInboxForwarderOptions === undefined) {
                             throw new runtime.RequiredError('createInboxForwarderOptions', 'Required parameter requestParameters.createInboxForwarderOptions was null or undefined when calling updateInboxForwarder.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/forwarders/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/forwarders/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -808,9 +778,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxForwarderDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxForwarderDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -837,27 +805,27 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.InboxForwarderControllerApi = InboxForwarderControllerApi;
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetAllInboxForwarderEventsSortEnum;
 (function (GetAllInboxForwarderEventsSortEnum) {
     GetAllInboxForwarderEventsSortEnum["ASC"] = "ASC";
     GetAllInboxForwarderEventsSortEnum["DESC"] = "DESC";
 })(GetAllInboxForwarderEventsSortEnum = exports.GetAllInboxForwarderEventsSortEnum || (exports.GetAllInboxForwarderEventsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetInboxForwarderEventsSortEnum;
 (function (GetInboxForwarderEventsSortEnum) {
     GetInboxForwarderEventsSortEnum["ASC"] = "ASC";
     GetInboxForwarderEventsSortEnum["DESC"] = "DESC";
 })(GetInboxForwarderEventsSortEnum = exports.GetInboxForwarderEventsSortEnum || (exports.GetInboxForwarderEventsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetInboxForwardersSortEnum;
 (function (GetInboxForwardersSortEnum) {
     GetInboxForwardersSortEnum["ASC"] = "ASC";

@@ -14,43 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmptyResponseDto
  */
 export interface EmptyResponseDto {
-  /**
-   *
-   * @type {string}
-   * @memberof EmptyResponseDto
-   */
-  message?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmptyResponseDto
+     */
+    message?: string;
 }
 
 export function EmptyResponseDtoFromJSON(json: any): EmptyResponseDto {
-  return EmptyResponseDtoFromJSONTyped(json, false);
+    return EmptyResponseDtoFromJSONTyped(json, false);
 }
 
-export function EmptyResponseDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmptyResponseDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-  };
+export function EmptyResponseDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmptyResponseDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'message': !exists(json, 'message') ? undefined : json['message'],
+    };
 }
 
 export function EmptyResponseDtoToJSON(value?: EmptyResponseDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    message: value.message,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'message': value.message,
+    };
 }
+
+

@@ -54,6 +54,12 @@ export interface PageAliasThreadProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageAliasThreadProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageAliasThreadProjection
      */
@@ -70,12 +76,6 @@ export interface PageAliasThreadProjection {
      * @memberof PageAliasThreadProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageAliasThreadProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

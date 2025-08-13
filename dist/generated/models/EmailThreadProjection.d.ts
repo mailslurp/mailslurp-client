@@ -29,29 +29,29 @@ export interface EmailThreadProjection {
      */
     recipients?: EmailRecipientsProjection;
     /**
-     * Inbox ID
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    inboxId?: string;
-    /**
      * User ID
      * @type {string}
      * @memberof EmailThreadProjection
      */
     userId: string;
     /**
-     * Updated at DateTime
-     * @type {Date}
+     * Inbox ID
+     * @type {string}
      * @memberof EmailThreadProjection
      */
-    updatedAt: Date;
+    inboxId?: string;
     /**
      * Created at DateTime
      * @type {Date}
      * @memberof EmailThreadProjection
      */
     createdAt: Date;
+    /**
+     * Updated at DateTime
+     * @type {Date}
+     * @memberof EmailThreadProjection
+     */
+    updatedAt: Date;
     /**
      * To recipients
      * @type {Array<string>}
@@ -76,6 +76,12 @@ export interface EmailThreadProjection {
      * @memberof EmailThreadProjection
      */
     hasAttachments: boolean;
+    /**
+     * Has unread
+     * @type {boolean}
+     * @memberof EmailThreadProjection
+     */
+    unread: boolean;
     /**
      * Number of messages in the thread
      * @type {number}
@@ -112,12 +118,6 @@ export interface EmailThreadProjection {
      * @memberof EmailThreadProjection
      */
     lastSender?: SenderProjection;
-    /**
-     * Has unread
-     * @type {boolean}
-     * @memberof EmailThreadProjection
-     */
-    unread: boolean;
     /**
      * Thread topic subject
      * @type {string}

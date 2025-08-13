@@ -21,19 +21,16 @@ function AITransformProjectionFromJSON(json) {
 }
 exports.AITransformProjectionFromJSON = AITransformProjectionFromJSON;
 function AITransformProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        conditions: !(0, runtime_1.exists)(json, 'conditions') ? undefined : json['conditions'],
-        instructions: !(0, runtime_1.exists)(json, 'instructions')
-            ? undefined
-            : json['instructions'],
-        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
-            ? undefined
-            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'createdAt': (new Date(json['createdAt'])),
+        'conditions': !(0, runtime_1.exists)(json, 'conditions') ? undefined : json['conditions'],
+        'instructions': !(0, runtime_1.exists)(json, 'instructions') ? undefined : json['instructions'],
+        'outputSchema': !(0, runtime_1.exists)(json, 'outputSchema') ? undefined : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
     };
 }
 exports.AITransformProjectionFromJSONTyped = AITransformProjectionFromJSONTyped;
@@ -45,11 +42,12 @@ function AITransformProjectionToJSON(value) {
         return null;
     }
     return {
-        conditions: value.conditions,
-        instructions: value.instructions,
-        outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
-        name: value.name,
-        id: value.id,
+        'createdAt': (value.createdAt.toISOString()),
+        'conditions': value.conditions,
+        'instructions': value.instructions,
+        'outputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        'name': value.name,
+        'id': value.id,
     };
 }
 exports.AITransformProjectionToJSON = AITransformProjectionToJSON;

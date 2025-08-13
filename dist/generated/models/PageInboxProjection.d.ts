@@ -54,6 +54,12 @@ export interface PageInboxProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageInboxProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageInboxProjection
      */
@@ -70,12 +76,6 @@ export interface PageInboxProjection {
      * @memberof PageInboxProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageInboxProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

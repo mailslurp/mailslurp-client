@@ -59,7 +59,7 @@ export interface FakeEmailDto {
      */
     preview?: string;
     /**
-     *
+     * use read content endpoints instead
      * @type {string}
      * @memberof FakeEmailDto
      */

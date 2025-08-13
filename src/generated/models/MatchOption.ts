@@ -19,76 +19,76 @@ import { exists, mapValues } from '../runtime';
  * @interface MatchOption
  */
 export interface MatchOption {
-  /**
-   * Fields of an email object that can be used to filter results
-   * @type {string}
-   * @memberof MatchOption
-   */
-  field: MatchOptionFieldEnum;
-  /**
-   * How the value of the email field specified should be compared to the value given in the match options.
-   * @type {string}
-   * @memberof MatchOption
-   */
-  should: MatchOptionShouldEnum;
-  /**
-   * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
-   * @type {string}
-   * @memberof MatchOption
-   */
-  value: string;
+    /**
+     * Fields of an email object that can be used to filter results
+     * @type {string}
+     * @memberof MatchOption
+     */
+    field: MatchOptionFieldEnum;
+    /**
+     * How the value of the email field specified should be compared to the value given in the match options.
+     * @type {string}
+     * @memberof MatchOption
+     */
+    should: MatchOptionShouldEnum;
+    /**
+     * The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
+     * @type {string}
+     * @memberof MatchOption
+     */
+    value: string;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum MatchOptionFieldEnum {
-  SUBJECT = 'SUBJECT',
-  TO = 'TO',
-  BCC = 'BCC',
-  CC = 'CC',
-  FROM = 'FROM',
-  HEADERS = 'HEADERS',
-}
-/**
- * @export
- * @enum {string}
- */
+    SUBJECT = 'SUBJECT',
+    TO = 'TO',
+    BCC = 'BCC',
+    CC = 'CC',
+    FROM = 'FROM',
+    HEADERS = 'HEADERS'
+}/**
+* @export
+* @enum {string}
+*/
 export enum MatchOptionShouldEnum {
-  MATCH = 'MATCH',
-  CONTAIN = 'CONTAIN',
-  EQUAL = 'EQUAL',
+    MATCH = 'MATCH',
+    CONTAIN = 'CONTAIN',
+    EQUAL = 'EQUAL'
 }
 
 export function MatchOptionFromJSON(json: any): MatchOption {
-  return MatchOptionFromJSONTyped(json, false);
+    return MatchOptionFromJSONTyped(json, false);
 }
 
-export function MatchOptionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): MatchOption {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    field: json['field'],
-    should: json['should'],
-    value: json['value'],
-  };
+export function MatchOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MatchOption {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'field': json['field'],
+        'should': json['should'],
+        'value': json['value'],
+    };
 }
 
 export function MatchOptionToJSON(value?: MatchOption | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    field: value.field,
-    should: value.should,
-    value: value.value,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'field': value.field,
+        'should': value.should,
+        'value': value.value,
+    };
 }
+
+

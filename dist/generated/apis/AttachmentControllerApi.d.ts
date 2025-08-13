@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, InlineObject, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
+import { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, InlineObject1, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
 export interface DeleteAttachmentRequest {
     attachmentId: string;
 }
@@ -36,6 +36,7 @@ export interface GetAttachmentsRequest {
     inboxId?: string;
     emailId?: string;
     sentEmailId?: string;
+    include?: Array<string>;
 }
 export interface UploadAttachmentRequest {
     uploadAttachmentOptions: UploadAttachmentOptions;
@@ -56,7 +57,7 @@ export interface UploadMultipartFormRequest {
     xFilename?: string;
     xFilenameRaw?: string;
     xFilesize?: number;
-    inlineObject?: InlineObject;
+    inlineObject1?: InlineObject1;
 }
 /**
  *
@@ -156,9 +157,9 @@ export declare class AttachmentControllerApi extends runtime.BaseAPI {
     uploadMultipartForm(requestParameters: UploadMultipartFormRequest, initOverrides?: RequestInit): Promise<Array<string>>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAttachmentsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

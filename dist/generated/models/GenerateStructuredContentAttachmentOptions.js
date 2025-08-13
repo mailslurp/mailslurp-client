@@ -21,19 +21,15 @@ function GenerateStructuredContentAttachmentOptionsFromJSON(json) {
 }
 exports.GenerateStructuredContentAttachmentOptionsFromJSON = GenerateStructuredContentAttachmentOptionsFromJSON;
 function GenerateStructuredContentAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        attachmentId: json['attachmentId'],
-        instructions: !(0, runtime_1.exists)(json, 'instructions')
-            ? undefined
-            : json['instructions'],
-        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
-            ? undefined
-            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
-        transformId: !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
-        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        'attachmentId': json['attachmentId'],
+        'instructions': !(0, runtime_1.exists)(json, 'instructions') ? undefined : json['instructions'],
+        'outputSchema': !(0, runtime_1.exists)(json, 'outputSchema') ? undefined : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        'transformId': !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
+        'emailId': !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
     };
 }
 exports.GenerateStructuredContentAttachmentOptionsFromJSONTyped = GenerateStructuredContentAttachmentOptionsFromJSONTyped;
@@ -45,11 +41,11 @@ function GenerateStructuredContentAttachmentOptionsToJSON(value) {
         return null;
     }
     return {
-        attachmentId: value.attachmentId,
-        instructions: value.instructions,
-        outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
-        transformId: value.transformId,
-        emailId: value.emailId,
+        'attachmentId': value.attachmentId,
+        'instructions': value.instructions,
+        'outputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        'transformId': value.transformId,
+        'emailId': value.emailId,
     };
 }
 exports.GenerateStructuredContentAttachmentOptionsToJSON = GenerateStructuredContentAttachmentOptionsToJSON;

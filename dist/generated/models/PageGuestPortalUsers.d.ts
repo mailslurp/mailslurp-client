@@ -54,6 +54,12 @@ export interface PageGuestPortalUsers {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageGuestPortalUsers
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageGuestPortalUsers
      */
@@ -70,12 +76,6 @@ export interface PageGuestPortalUsers {
      * @memberof PageGuestPortalUsers
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageGuestPortalUsers
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

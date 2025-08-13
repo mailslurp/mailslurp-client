@@ -20,13 +20,13 @@ export interface TemplateProjection {
      * @type {Date}
      * @memberof TemplateProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof TemplateProjection
      */
-    createdAt: Date;
+    updatedAt: Date;
     /**
      *
      * @type {Array<string>}

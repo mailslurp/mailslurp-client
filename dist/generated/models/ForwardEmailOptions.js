@@ -20,21 +20,17 @@ function ForwardEmailOptionsFromJSON(json) {
 }
 exports.ForwardEmailOptionsFromJSON = ForwardEmailOptionsFromJSON;
 function ForwardEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        to: json['to'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
-            ? undefined
-            : json['useInboxName'],
-        filterBouncedRecipients: !(0, runtime_1.exists)(json, 'filterBouncedRecipients')
-            ? undefined
-            : json['filterBouncedRecipients'],
+        'to': json['to'],
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        'useInboxName': !(0, runtime_1.exists)(json, 'useInboxName') ? undefined : json['useInboxName'],
+        'filterBouncedRecipients': !(0, runtime_1.exists)(json, 'filterBouncedRecipients') ? undefined : json['filterBouncedRecipients'],
     };
 }
 exports.ForwardEmailOptionsFromJSONTyped = ForwardEmailOptionsFromJSONTyped;
@@ -46,13 +42,13 @@ function ForwardEmailOptionsToJSON(value) {
         return null;
     }
     return {
-        to: value.to,
-        subject: value.subject,
-        cc: value.cc,
-        bcc: value.bcc,
-        from: value.from,
-        useInboxName: value.useInboxName,
-        filterBouncedRecipients: value.filterBouncedRecipients,
+        'to': value.to,
+        'subject': value.subject,
+        'cc': value.cc,
+        'bcc': value.bcc,
+        'from': value.from,
+        'useInboxName': value.useInboxName,
+        'filterBouncedRecipients': value.filterBouncedRecipients,
     };
 }
 exports.ForwardEmailOptionsToJSON = ForwardEmailOptionsToJSON;

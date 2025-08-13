@@ -30,9 +30,9 @@ export interface EmailFeaturePlatformStatistics {
     versions: Array<EmailFeatureVersionStatistics>;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EmailFeaturePlatformStatisticsPlatformEnum {
     android = "android",
     desktop_app = "desktop-app",

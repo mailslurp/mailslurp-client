@@ -19,11 +19,11 @@ function NewFakeEmailAddressResultFromJSON(json) {
 }
 exports.NewFakeEmailAddressResultFromJSON = NewFakeEmailAddressResultFromJSON;
 function NewFakeEmailAddressResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        emailAddress: json['emailAddress'],
+        'emailAddress': json['emailAddress'],
     };
 }
 exports.NewFakeEmailAddressResultFromJSONTyped = NewFakeEmailAddressResultFromJSONTyped;
@@ -35,7 +35,7 @@ function NewFakeEmailAddressResultToJSON(value) {
         return null;
     }
     return {
-        emailAddress: value.emailAddress,
+        'emailAddress': value.emailAddress,
     };
 }
 exports.NewFakeEmailAddressResultToJSON = NewFakeEmailAddressResultToJSON;

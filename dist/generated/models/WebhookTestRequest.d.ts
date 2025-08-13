@@ -43,9 +43,9 @@ export interface WebhookTestRequest {
     payload?: string | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum WebhookTestRequestMethodEnum {
     POST = "POST",
     DELETE = "DELETE",

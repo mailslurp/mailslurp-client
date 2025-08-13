@@ -34,7 +34,7 @@ export interface ExpirationDefaults {
      */
     defaultExpiresAt?: Date | null;
     /**
-     *
+     * Use nextInboxAllowsPermanent instead
      * @type {boolean}
      * @memberof ExpirationDefaults
      */

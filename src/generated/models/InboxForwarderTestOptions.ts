@@ -19,42 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxForwarderTestOptions
  */
 export interface InboxForwarderTestOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderTestOptions
-   */
-  testValue: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxForwarderTestOptions
+     */
+    testValue: string;
 }
 
-export function InboxForwarderTestOptionsFromJSON(
-  json: any
-): InboxForwarderTestOptions {
-  return InboxForwarderTestOptionsFromJSONTyped(json, false);
+export function InboxForwarderTestOptionsFromJSON(json: any): InboxForwarderTestOptions {
+    return InboxForwarderTestOptionsFromJSONTyped(json, false);
 }
 
-export function InboxForwarderTestOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxForwarderTestOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    testValue: json['testValue'],
-  };
+export function InboxForwarderTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderTestOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'testValue': json['testValue'],
+    };
 }
 
-export function InboxForwarderTestOptionsToJSON(
-  value?: InboxForwarderTestOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    testValue: value.testValue,
-  };
+export function InboxForwarderTestOptionsToJSON(value?: InboxForwarderTestOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'testValue': value.testValue,
+    };
 }
+
+

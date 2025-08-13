@@ -12,2924 +12,2311 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  AbstractWebhookPayload,
-  AbstractWebhookPayloadFromJSON,
-  AbstractWebhookPayloadToJSON,
-  CountDto,
-  CountDtoFromJSON,
-  CountDtoToJSON,
-  CreateWebhookOptions,
-  CreateWebhookOptionsFromJSON,
-  CreateWebhookOptionsToJSON,
-  JSONSchemaDto,
-  JSONSchemaDtoFromJSON,
-  JSONSchemaDtoToJSON,
-  PageWebhookEndpointProjection,
-  PageWebhookEndpointProjectionFromJSON,
-  PageWebhookEndpointProjectionToJSON,
-  PageWebhookProjection,
-  PageWebhookProjectionFromJSON,
-  PageWebhookProjectionToJSON,
-  PageWebhookResult,
-  PageWebhookResultFromJSON,
-  PageWebhookResultToJSON,
-  UnseenErrorCountDto,
-  UnseenErrorCountDtoFromJSON,
-  UnseenErrorCountDtoToJSON,
-  VerifyWebhookSignatureOptions,
-  VerifyWebhookSignatureOptionsFromJSON,
-  VerifyWebhookSignatureOptionsToJSON,
-  VerifyWebhookSignatureResults,
-  VerifyWebhookSignatureResultsFromJSON,
-  VerifyWebhookSignatureResultsToJSON,
-  WebhookBouncePayload,
-  WebhookBouncePayloadFromJSON,
-  WebhookBouncePayloadToJSON,
-  WebhookBounceRecipientPayload,
-  WebhookBounceRecipientPayloadFromJSON,
-  WebhookBounceRecipientPayloadToJSON,
-  WebhookDeliveryStatusPayload,
-  WebhookDeliveryStatusPayloadFromJSON,
-  WebhookDeliveryStatusPayloadToJSON,
-  WebhookDto,
-  WebhookDtoFromJSON,
-  WebhookDtoToJSON,
-  WebhookEmailOpenedPayload,
-  WebhookEmailOpenedPayloadFromJSON,
-  WebhookEmailOpenedPayloadToJSON,
-  WebhookEmailReadPayload,
-  WebhookEmailReadPayloadFromJSON,
-  WebhookEmailReadPayloadToJSON,
-  WebhookHeaders,
-  WebhookHeadersFromJSON,
-  WebhookHeadersToJSON,
-  WebhookNewAttachmentPayload,
-  WebhookNewAttachmentPayloadFromJSON,
-  WebhookNewAttachmentPayloadToJSON,
-  WebhookNewContactPayload,
-  WebhookNewContactPayloadFromJSON,
-  WebhookNewContactPayloadToJSON,
-  WebhookNewEmailPayload,
-  WebhookNewEmailPayloadFromJSON,
-  WebhookNewEmailPayloadToJSON,
-  WebhookNewSmsPayload,
-  WebhookNewSmsPayloadFromJSON,
-  WebhookNewSmsPayloadToJSON,
-  WebhookProjection,
-  WebhookProjectionFromJSON,
-  WebhookProjectionToJSON,
-  WebhookRedriveAllResult,
-  WebhookRedriveAllResultFromJSON,
-  WebhookRedriveAllResultToJSON,
-  WebhookRedriveResult,
-  WebhookRedriveResultFromJSON,
-  WebhookRedriveResultToJSON,
-  WebhookResultDto,
-  WebhookResultDtoFromJSON,
-  WebhookResultDtoToJSON,
-  WebhookTestResult,
-  WebhookTestResultFromJSON,
-  WebhookTestResultToJSON,
+    AbstractWebhookPayload,
+    AbstractWebhookPayloadFromJSON,
+    AbstractWebhookPayloadToJSON,
+    CountDto,
+    CountDtoFromJSON,
+    CountDtoToJSON,
+    CreateWebhookOptions,
+    CreateWebhookOptionsFromJSON,
+    CreateWebhookOptionsToJSON,
+    JSONSchemaDto,
+    JSONSchemaDtoFromJSON,
+    JSONSchemaDtoToJSON,
+    PageWebhookEndpointProjection,
+    PageWebhookEndpointProjectionFromJSON,
+    PageWebhookEndpointProjectionToJSON,
+    PageWebhookProjection,
+    PageWebhookProjectionFromJSON,
+    PageWebhookProjectionToJSON,
+    PageWebhookResult,
+    PageWebhookResultFromJSON,
+    PageWebhookResultToJSON,
+    UnseenErrorCountDto,
+    UnseenErrorCountDtoFromJSON,
+    UnseenErrorCountDtoToJSON,
+    VerifyWebhookSignatureOptions,
+    VerifyWebhookSignatureOptionsFromJSON,
+    VerifyWebhookSignatureOptionsToJSON,
+    VerifyWebhookSignatureResults,
+    VerifyWebhookSignatureResultsFromJSON,
+    VerifyWebhookSignatureResultsToJSON,
+    WebhookBouncePayload,
+    WebhookBouncePayloadFromJSON,
+    WebhookBouncePayloadToJSON,
+    WebhookBounceRecipientPayload,
+    WebhookBounceRecipientPayloadFromJSON,
+    WebhookBounceRecipientPayloadToJSON,
+    WebhookDeliveryStatusPayload,
+    WebhookDeliveryStatusPayloadFromJSON,
+    WebhookDeliveryStatusPayloadToJSON,
+    WebhookDto,
+    WebhookDtoFromJSON,
+    WebhookDtoToJSON,
+    WebhookEmailOpenedPayload,
+    WebhookEmailOpenedPayloadFromJSON,
+    WebhookEmailOpenedPayloadToJSON,
+    WebhookEmailReadPayload,
+    WebhookEmailReadPayloadFromJSON,
+    WebhookEmailReadPayloadToJSON,
+    WebhookHeaders,
+    WebhookHeadersFromJSON,
+    WebhookHeadersToJSON,
+    WebhookNewAITransformResultPayload,
+    WebhookNewAITransformResultPayloadFromJSON,
+    WebhookNewAITransformResultPayloadToJSON,
+    WebhookNewAttachmentPayload,
+    WebhookNewAttachmentPayloadFromJSON,
+    WebhookNewAttachmentPayloadToJSON,
+    WebhookNewContactPayload,
+    WebhookNewContactPayloadFromJSON,
+    WebhookNewContactPayloadToJSON,
+    WebhookNewEmailPayload,
+    WebhookNewEmailPayloadFromJSON,
+    WebhookNewEmailPayloadToJSON,
+    WebhookNewSmsPayload,
+    WebhookNewSmsPayloadFromJSON,
+    WebhookNewSmsPayloadToJSON,
+    WebhookProjection,
+    WebhookProjectionFromJSON,
+    WebhookProjectionToJSON,
+    WebhookRedriveAllResult,
+    WebhookRedriveAllResultFromJSON,
+    WebhookRedriveAllResultToJSON,
+    WebhookRedriveResult,
+    WebhookRedriveResultFromJSON,
+    WebhookRedriveResultToJSON,
+    WebhookResultDto,
+    WebhookResultDtoFromJSON,
+    WebhookResultDtoToJSON,
+    WebhookTestResult,
+    WebhookTestResultFromJSON,
+    WebhookTestResultToJSON,
 } from '../models';
 
 export interface CreateAccountWebhookRequest {
-  createWebhookOptions: CreateWebhookOptions;
+    createWebhookOptions: CreateWebhookOptions;
 }
 
 export interface CreateWebhookRequest {
-  inboxId: string;
-  createWebhookOptions: CreateWebhookOptions;
+    inboxId: string;
+    createWebhookOptions: CreateWebhookOptions;
+}
+
+export interface CreateWebhookForAITransformerRequest {
+    transformerId: string;
+    createWebhookOptions: CreateWebhookOptions;
 }
 
 export interface CreateWebhookForPhoneNumberRequest {
-  phoneNumberId: string;
-  createWebhookOptions: CreateWebhookOptions;
+    phoneNumberId: string;
+    createWebhookOptions: CreateWebhookOptions;
 }
 
 export interface DeleteAllWebhooksRequest {
-  before?: Date;
+    before?: Date;
 }
 
 export interface DeleteWebhookRequest {
-  inboxId: string;
-  webhookId: string;
+    inboxId: string;
+    webhookId: string;
 }
 
 export interface DeleteWebhookByIdRequest {
-  webhookId: string;
+    webhookId: string;
 }
 
 export interface GetAllAccountWebhooksRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllAccountWebhooksSortEnum;
-  since?: Date;
-  before?: Date;
-  eventType?: GetAllAccountWebhooksEventTypeEnum;
-  health?: GetAllAccountWebhooksHealthEnum;
-  searchFilter?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllAccountWebhooksSortEnum;
+    since?: Date;
+    before?: Date;
+    eventType?: GetAllAccountWebhooksEventTypeEnum;
+    health?: GetAllAccountWebhooksHealthEnum;
+    searchFilter?: string;
 }
 
 export interface GetAllWebhookEndpointsRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllWebhookEndpointsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  inboxId?: string;
-  phoneId?: string;
-  before?: Date;
-  health?: GetAllWebhookEndpointsHealthEnum;
-  eventType?: GetAllWebhookEndpointsEventTypeEnum;
+    page?: number;
+    size?: number;
+    sort?: GetAllWebhookEndpointsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    inboxId?: string;
+    phoneId?: string;
+    before?: Date;
+    health?: GetAllWebhookEndpointsHealthEnum;
+    eventType?: GetAllWebhookEndpointsEventTypeEnum;
 }
 
 export interface GetAllWebhookResultsRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllWebhookResultsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
-  unseenOnly?: boolean;
-  resultType?: GetAllWebhookResultsResultTypeEnum;
-  eventName?: GetAllWebhookResultsEventNameEnum;
-  minStatusCode?: number;
-  maxStatusCode?: number;
-  inboxId?: string;
-  smsId?: string;
-  attachmentId?: string;
-  emailId?: string;
-  phoneId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllWebhookResultsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
+    unseenOnly?: boolean;
+    resultType?: GetAllWebhookResultsResultTypeEnum;
+    eventName?: GetAllWebhookResultsEventNameEnum;
+    minStatusCode?: number;
+    maxStatusCode?: number;
+    inboxId?: string;
+    smsId?: string;
+    attachmentId?: string;
+    emailId?: string;
+    phoneId?: string;
+    aiTransformerId?: string;
 }
 
 export interface GetAllWebhooksRequest {
-  page?: number;
-  size?: number;
-  sort?: GetAllWebhooksSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  inboxId?: string;
-  phoneId?: string;
-  before?: Date;
-  health?: GetAllWebhooksHealthEnum;
-  eventType?: GetAllWebhooksEventTypeEnum;
-  url?: string;
+    page?: number;
+    size?: number;
+    sort?: GetAllWebhooksSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    inboxId?: string;
+    aiTransformerId?: string;
+    phoneId?: string;
+    before?: Date;
+    health?: GetAllWebhooksHealthEnum;
+    eventType?: GetAllWebhooksEventTypeEnum;
+    url?: string;
 }
 
 export interface GetInboxWebhooksPaginatedRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: GetInboxWebhooksPaginatedSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
-  health?: GetInboxWebhooksPaginatedHealthEnum;
-  eventType?: GetInboxWebhooksPaginatedEventTypeEnum;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetInboxWebhooksPaginatedSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
+    health?: GetInboxWebhooksPaginatedHealthEnum;
+    eventType?: GetInboxWebhooksPaginatedEventTypeEnum;
 }
 
 export interface GetJsonSchemaForWebhookEventRequest {
-  event: GetJsonSchemaForWebhookEventEventEnum;
+    event: GetJsonSchemaForWebhookEventEventEnum;
 }
 
 export interface GetJsonSchemaForWebhookPayloadRequest {
-  webhookId: string;
+    webhookId: string;
 }
 
 export interface GetPhoneNumberWebhooksPaginatedRequest {
-  phoneId: string;
-  page?: number;
-  size?: number;
-  sort?: GetPhoneNumberWebhooksPaginatedSortEnum;
-  since?: Date;
-  before?: Date;
-  eventType?: GetPhoneNumberWebhooksPaginatedEventTypeEnum;
-  searchFilter?: string;
-  health?: GetPhoneNumberWebhooksPaginatedHealthEnum;
+    phoneId: string;
+    page?: number;
+    size?: number;
+    sort?: GetPhoneNumberWebhooksPaginatedSortEnum;
+    since?: Date;
+    before?: Date;
+    eventType?: GetPhoneNumberWebhooksPaginatedEventTypeEnum;
+    searchFilter?: string;
+    health?: GetPhoneNumberWebhooksPaginatedHealthEnum;
 }
 
 export interface GetTestWebhookPayloadRequest {
-  eventName?: GetTestWebhookPayloadEventNameEnum;
+    eventName?: GetTestWebhookPayloadEventNameEnum;
 }
 
 export interface GetTestWebhookPayloadForWebhookRequest {
-  webhookId: string;
+    webhookId: string;
 }
 
 export interface GetWebhookRequest {
-  webhookId: string;
+    webhookId: string;
 }
 
 export interface GetWebhookResultRequest {
-  webhookResultId: string;
+    webhookResultId: string;
 }
 
 export interface GetWebhookResultsRequest {
-  webhookId: string;
-  page?: number;
-  size?: number;
-  sort?: GetWebhookResultsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
-  unseenOnly?: boolean;
-  resultType?: GetWebhookResultsResultTypeEnum;
-  eventName?: GetWebhookResultsEventNameEnum;
-  minStatusCode?: number;
-  maxStatusCode?: number;
-  inboxId?: string;
-  smsId?: string;
-  attachmentId?: string;
-  emailId?: string;
-  phoneId?: string;
+    webhookId: string;
+    page?: number;
+    size?: number;
+    sort?: GetWebhookResultsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
+    unseenOnly?: boolean;
+    resultType?: GetWebhookResultsResultTypeEnum;
+    eventName?: GetWebhookResultsEventNameEnum;
+    minStatusCode?: number;
+    maxStatusCode?: number;
+    inboxId?: string;
+    smsId?: string;
+    attachmentId?: string;
+    emailId?: string;
+    phoneId?: string;
+    aiTransformerId?: string;
 }
 
 export interface GetWebhookResultsCountRequest {
-  webhookId: string;
+    webhookId: string;
 }
 
 export interface GetWebhooksRequest {
-  inboxId: string;
-  page?: number;
-  size?: number;
-  sort?: GetWebhooksSortEnum;
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetWebhooksSortEnum;
 }
 
 export interface RedriveWebhookResultRequest {
-  webhookResultId: string;
+    webhookResultId: string;
 }
 
 export interface SendTestDataRequest {
-  webhookId: string;
+    webhookId: string;
 }
 
 export interface UpdateWebhookRequest {
-  webhookId: string;
-  createWebhookOptions: CreateWebhookOptions;
-  inboxId?: string;
-  phoneNumberId?: string;
-  overrideAuth?: boolean;
+    webhookId: string;
+    createWebhookOptions: CreateWebhookOptions;
+    inboxId?: string;
+    aiTransformerId?: string;
+    phoneNumberId?: string;
+    overrideAuth?: boolean;
 }
 
 export interface UpdateWebhookHeadersRequest {
-  webhookId: string;
-  webhookHeaders: WebhookHeaders;
+    webhookId: string;
+    webhookHeaders: WebhookHeaders;
 }
 
 export interface VerifyWebhookSignatureRequest {
-  verifyWebhookSignatureOptions: VerifyWebhookSignatureOptions;
+    verifyWebhookSignatureOptions: VerifyWebhookSignatureOptions;
 }
 
 export interface WaitForWebhookResultsRequest {
-  webhookId: string;
-  expectedCount: number;
-  timeout: number;
+    webhookId: string;
+    expectedCount: number;
+    timeout: number;
 }
 
 /**
- *
+ * 
  */
 export class WebhookControllerApi extends runtime.BaseAPI {
-  /**
-   * Get notified of account level events such as bounce and bounce recipient.
-   * Attach a WebHook URL to an inbox
-   */
-  async createAccountWebhookRaw(
-    requestParameters: CreateAccountWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookDto>> {
-    if (
-      requestParameters.createWebhookOptions === null ||
-      requestParameters.createWebhookOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createWebhookOptions',
-        'Required parameter requestParameters.createWebhookOptions was null or undefined when calling createAccountWebhook.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateWebhookOptionsToJSON(
-          requestParameters.createWebhookOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get notified of account level events such as bounce and bounce recipient.
-   * Attach a WebHook URL to an inbox
-   */
-  async createAccountWebhook(
-    requestParameters: CreateAccountWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookDto> {
-    const response = await this.createAccountWebhookRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
-   * Attach a WebHook URL to an inbox
-   */
-  async createWebhookRaw(
-    requestParameters: CreateWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling createWebhook.'
-      );
-    }
-
-    if (
-      requestParameters.createWebhookOptions === null ||
-      requestParameters.createWebhookOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createWebhookOptions',
-        'Required parameter requestParameters.createWebhookOptions was null or undefined when calling createWebhook.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/webhooks`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateWebhookOptionsToJSON(
-          requestParameters.createWebhookOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
-   * Attach a WebHook URL to an inbox
-   */
-  async createWebhook(
-    requestParameters: CreateWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookDto> {
-    const response = await this.createWebhookRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get notified whenever a phone number receives an SMS via a WebHook URL.
-   * Attach a WebHook URL to a phone number
-   */
-  async createWebhookForPhoneNumberRaw(
-    requestParameters: CreateWebhookForPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookDto>> {
-    if (
-      requestParameters.phoneNumberId === null ||
-      requestParameters.phoneNumberId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneNumberId',
-        'Required parameter requestParameters.phoneNumberId was null or undefined when calling createWebhookForPhoneNumber.'
-      );
-    }
-
-    if (
-      requestParameters.createWebhookOptions === null ||
-      requestParameters.createWebhookOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createWebhookOptions',
-        'Required parameter requestParameters.createWebhookOptions was null or undefined when calling createWebhookForPhoneNumber.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneNumberId}/webhooks`.replace(
-          `{${'phoneNumberId'}}`,
-          encodeURIComponent(String(requestParameters.phoneNumberId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateWebhookOptionsToJSON(
-          requestParameters.createWebhookOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get notified whenever a phone number receives an SMS via a WebHook URL.
-   * Attach a WebHook URL to a phone number
-   */
-  async createWebhookForPhoneNumber(
-    requestParameters: CreateWebhookForPhoneNumberRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookDto> {
-    const response = await this.createWebhookForPhoneNumberRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Delete all webhooks
-   */
-  async deleteAllWebhooksRaw(
-    requestParameters: DeleteAllWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Delete all webhooks
-   */
-  async deleteAllWebhooks(
-    requestParameters: DeleteAllWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteAllWebhooksRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Delete and disable a Webhook for an Inbox
-   */
-  async deleteWebhookRaw(
-    requestParameters: DeleteWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling deleteWebhook.'
-      );
-    }
-
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling deleteWebhook.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/webhooks/{webhookId}`
-          .replace(
-            `{${'inboxId'}}`,
-            encodeURIComponent(String(requestParameters.inboxId))
-          )
-          .replace(
-            `{${'webhookId'}}`,
-            encodeURIComponent(String(requestParameters.webhookId))
-          ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Delete and disable a Webhook for an Inbox
-   */
-  async deleteWebhook(
-    requestParameters: DeleteWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteWebhookRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * Delete a webhook
-   */
-  async deleteWebhookByIdRaw(
-    requestParameters: DeleteWebhookByIdRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling deleteWebhookById.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Delete a webhook
-   */
-  async deleteWebhookById(
-    requestParameters: DeleteWebhookByIdRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteWebhookByIdRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
-   * List account webhooks Paginated
-   */
-  async getAllAccountWebhooksRaw(
-    requestParameters: GetAllAccountWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageWebhookProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.eventType !== undefined) {
-      queryParameters['eventType'] = requestParameters.eventType;
-    }
-
-    if (requestParameters.health !== undefined) {
-      queryParameters['health'] = requestParameters.health;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/account/paginated`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageWebhookProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
-   * List account webhooks Paginated
-   */
-  async getAllAccountWebhooks(
-    requestParameters: GetAllAccountWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageWebhookProjection> {
-    const response = await this.getAllAccountWebhooksRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
-   * List Webhooks endpoints Paginated
-   */
-  async getAllWebhookEndpointsRaw(
-    requestParameters: GetAllWebhookEndpointsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageWebhookEndpointProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    if (requestParameters.phoneId !== undefined) {
-      queryParameters['phoneId'] = requestParameters.phoneId;
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.health !== undefined) {
-      queryParameters['health'] = requestParameters.health;
-    }
-
-    if (requestParameters.eventType !== undefined) {
-      queryParameters['eventType'] = requestParameters.eventType;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/endpoints`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageWebhookEndpointProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
-   * List Webhooks endpoints Paginated
-   */
-  async getAllWebhookEndpoints(
-    requestParameters: GetAllWebhookEndpointsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageWebhookEndpointProjection> {
-    const response = await this.getAllWebhookEndpointsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get results for all webhooks
-   */
-  async getAllWebhookResultsRaw(
-    requestParameters: GetAllWebhookResultsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageWebhookResult>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.unseenOnly !== undefined) {
-      queryParameters['unseenOnly'] = requestParameters.unseenOnly;
-    }
-
-    if (requestParameters.resultType !== undefined) {
-      queryParameters['resultType'] = requestParameters.resultType;
-    }
-
-    if (requestParameters.eventName !== undefined) {
-      queryParameters['eventName'] = requestParameters.eventName;
+
+    /**
+     * Get notified of account level events such as bounce and bounce recipient.
+     * Attach a WebHook URL to an inbox
+     */
+    async createAccountWebhookRaw(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>> {
+        if (requestParameters.createWebhookOptions === null || requestParameters.createWebhookOptions === undefined) {
+            throw new runtime.RequiredError('createWebhookOptions','Required parameter requestParameters.createWebhookOptions was null or undefined when calling createAccountWebhook.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateWebhookOptionsToJSON(requestParameters.createWebhookOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get notified of account level events such as bounce and bounce recipient.
+     * Attach a WebHook URL to an inbox
+     */
+    async createAccountWebhook(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto> {
+        const response = await this.createAccountWebhookRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
+     * Attach a WebHook URL to an inbox
+     */
+    async createWebhookRaw(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>> {
+        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling createWebhook.');
+        }
+
+        if (requestParameters.createWebhookOptions === null || requestParameters.createWebhookOptions === undefined) {
+            throw new runtime.RequiredError('createWebhookOptions','Required parameter requestParameters.createWebhookOptions was null or undefined when calling createWebhook.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/webhooks`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters.inboxId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateWebhookOptionsToJSON(requestParameters.createWebhookOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
+     * Attach a WebHook URL to an inbox
+     */
+    async createWebhook(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto> {
+        const response = await this.createWebhookRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get notified whenever AI transformation pipeline converts and email or SMS into structured data via a WebHook URL.
+     * Attach a WebHook URL to an AI transformer
+     */
+    async createWebhookForAITransformerRaw(requestParameters: CreateWebhookForAITransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>> {
+        if (requestParameters.transformerId === null || requestParameters.transformerId === undefined) {
+            throw new runtime.RequiredError('transformerId','Required parameter requestParameters.transformerId was null or undefined when calling createWebhookForAITransformer.');
+        }
+
+        if (requestParameters.createWebhookOptions === null || requestParameters.createWebhookOptions === undefined) {
+            throw new runtime.RequiredError('createWebhookOptions','Required parameter requestParameters.createWebhookOptions was null or undefined when calling createWebhookForAITransformer.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/ai-transformers/{transformerId}/webhooks`.replace(`{${"transformerId"}}`, encodeURIComponent(String(requestParameters.transformerId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateWebhookOptionsToJSON(requestParameters.createWebhookOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get notified whenever AI transformation pipeline converts and email or SMS into structured data via a WebHook URL.
+     * Attach a WebHook URL to an AI transformer
+     */
+    async createWebhookForAITransformer(requestParameters: CreateWebhookForAITransformerRequest, initOverrides?: RequestInit): Promise<WebhookDto> {
+        const response = await this.createWebhookForAITransformerRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get notified whenever a phone number receives an SMS via a WebHook URL.
+     * Attach a WebHook URL to a phone number
+     */
+    async createWebhookForPhoneNumberRaw(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>> {
+        if (requestParameters.phoneNumberId === null || requestParameters.phoneNumberId === undefined) {
+            throw new runtime.RequiredError('phoneNumberId','Required parameter requestParameters.phoneNumberId was null or undefined when calling createWebhookForPhoneNumber.');
+        }
+
+        if (requestParameters.createWebhookOptions === null || requestParameters.createWebhookOptions === undefined) {
+            throw new runtime.RequiredError('createWebhookOptions','Required parameter requestParameters.createWebhookOptions was null or undefined when calling createWebhookForPhoneNumber.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneNumberId}/webhooks`.replace(`{${"phoneNumberId"}}`, encodeURIComponent(String(requestParameters.phoneNumberId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateWebhookOptionsToJSON(requestParameters.createWebhookOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get notified whenever a phone number receives an SMS via a WebHook URL.
+     * Attach a WebHook URL to a phone number
+     */
+    async createWebhookForPhoneNumber(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit): Promise<WebhookDto> {
+        const response = await this.createWebhookForPhoneNumberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Delete all webhooks
+     */
+    async deleteAllWebhooksRaw(requestParameters: DeleteAllWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Delete all webhooks
+     */
+    async deleteAllWebhooks(requestParameters: DeleteAllWebhooksRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteAllWebhooksRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Delete and disable a Webhook for an Inbox
+     */
+    async deleteWebhookRaw(requestParameters: DeleteWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling deleteWebhook.');
+        }
+
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling deleteWebhook.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/webhooks/{webhookId}`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters.inboxId))).replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Delete and disable a Webhook for an Inbox
+     */
+    async deleteWebhook(requestParameters: DeleteWebhookRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteWebhookRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Delete a webhook
+     */
+    async deleteWebhookByIdRaw(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling deleteWebhookById.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Delete a webhook
+     */
+    async deleteWebhookById(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteWebhookByIdRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List account webhooks Paginated
+     */
+    async getAllAccountWebhooksRaw(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.eventType !== undefined) {
+            queryParameters['eventType'] = requestParameters.eventType;
+        }
+
+        if (requestParameters.health !== undefined) {
+            queryParameters['health'] = requestParameters.health;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/account/paginated`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageWebhookProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List account webhooks Paginated
+     */
+    async getAllAccountWebhooks(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection> {
+        const response = await this.getAllAccountWebhooksRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    async getAllWebhookEndpointsRaw(requestParameters: GetAllWebhookEndpointsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookEndpointProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        if (requestParameters.phoneId !== undefined) {
+            queryParameters['phoneId'] = requestParameters.phoneId;
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.health !== undefined) {
+            queryParameters['health'] = requestParameters.health;
+        }
+
+        if (requestParameters.eventType !== undefined) {
+            queryParameters['eventType'] = requestParameters.eventType;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/endpoints`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageWebhookEndpointProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List webhooks URL in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks endpoints Paginated
+     */
+    async getAllWebhookEndpoints(requestParameters: GetAllWebhookEndpointsRequest, initOverrides?: RequestInit): Promise<PageWebhookEndpointProjection> {
+        const response = await this.getAllWebhookEndpointsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get results for all webhooks
+     */
+    async getAllWebhookResultsRaw(requestParameters: GetAllWebhookResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookResult>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.unseenOnly !== undefined) {
+            queryParameters['unseenOnly'] = requestParameters.unseenOnly;
+        }
+
+        if (requestParameters.resultType !== undefined) {
+            queryParameters['resultType'] = requestParameters.resultType;
+        }
+
+        if (requestParameters.eventName !== undefined) {
+            queryParameters['eventName'] = requestParameters.eventName;
+        }
+
+        if (requestParameters.minStatusCode !== undefined) {
+            queryParameters['minStatusCode'] = requestParameters.minStatusCode;
+        }
+
+        if (requestParameters.maxStatusCode !== undefined) {
+            queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
+        }
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        if (requestParameters.smsId !== undefined) {
+            queryParameters['smsId'] = requestParameters.smsId;
+        }
+
+        if (requestParameters.attachmentId !== undefined) {
+            queryParameters['attachmentId'] = requestParameters.attachmentId;
+        }
+
+        if (requestParameters.emailId !== undefined) {
+            queryParameters['emailId'] = requestParameters.emailId;
+        }
+
+        if (requestParameters.phoneId !== undefined) {
+            queryParameters['phoneId'] = requestParameters.phoneId;
+        }
+
+        if (requestParameters.aiTransformerId !== undefined) {
+            queryParameters['aiTransformerId'] = requestParameters.aiTransformerId;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/results`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageWebhookResultFromJSON(jsonValue));
+    }
+
+    /**
+     * Get results for all webhooks
+     */
+    async getAllWebhookResults(requestParameters: GetAllWebhookResultsRequest, initOverrides?: RequestInit): Promise<PageWebhookResult> {
+        const response = await this.getAllWebhookResultsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks Paginated
+     */
+    async getAllWebhooksRaw(requestParameters: GetAllWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        if (requestParameters.aiTransformerId !== undefined) {
+            queryParameters['aiTransformerId'] = requestParameters.aiTransformerId;
+        }
+
+        if (requestParameters.phoneId !== undefined) {
+            queryParameters['phoneId'] = requestParameters.phoneId;
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.health !== undefined) {
+            queryParameters['health'] = requestParameters.health;
+        }
+
+        if (requestParameters.eventType !== undefined) {
+            queryParameters['eventType'] = requestParameters.eventType;
+        }
+
+        if (requestParameters.url !== undefined) {
+            queryParameters['url'] = requestParameters.url;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/paginated`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageWebhookProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * List webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List Webhooks Paginated
+     */
+    async getAllWebhooks(requestParameters: GetAllWebhooksRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection> {
+        const response = await this.getAllWebhooksRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get paginated webhooks for an Inbox
+     */
+    async getInboxWebhooksPaginatedRaw(requestParameters: GetInboxWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>> {
+        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling getInboxWebhooksPaginated.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.health !== undefined) {
+            queryParameters['health'] = requestParameters.health;
+        }
+
+        if (requestParameters.eventType !== undefined) {
+            queryParameters['eventType'] = requestParameters.eventType;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/webhooks/paginated`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters.inboxId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageWebhookProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Get paginated webhooks for an Inbox
+     */
+    async getInboxWebhooksPaginated(requestParameters: GetInboxWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection> {
+        const response = await this.getInboxWebhooksPaginatedRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get JSON Schema definition for webhook payload by event
+     */
+    async getJsonSchemaForWebhookEventRaw(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<JSONSchemaDto>> {
+        if (requestParameters.event === null || requestParameters.event === undefined) {
+            throw new runtime.RequiredError('event','Required parameter requestParameters.event was null or undefined when calling getJsonSchemaForWebhookEvent.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.event !== undefined) {
+            queryParameters['event'] = requestParameters.event;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/schema`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => JSONSchemaDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get JSON Schema definition for webhook payload by event
+     */
+    async getJsonSchemaForWebhookEvent(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit): Promise<JSONSchemaDto> {
+        const response = await this.getJsonSchemaForWebhookEventRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get JSON Schema definition for webhook payload
+     */
+    async getJsonSchemaForWebhookPayloadRaw(requestParameters: GetJsonSchemaForWebhookPayloadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<JSONSchemaDto>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling getJsonSchemaForWebhookPayload.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}/schema`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => JSONSchemaDtoFromJSON(jsonValue));
+    }
+
+    /**
+     * Get JSON Schema definition for webhook payload
+     */
+    async getJsonSchemaForWebhookPayload(requestParameters: GetJsonSchemaForWebhookPayloadRequest, initOverrides?: RequestInit): Promise<JSONSchemaDto> {
+        const response = await this.getJsonSchemaForWebhookPayloadRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get paginated webhooks for a phone number
+     */
+    async getPhoneNumberWebhooksPaginatedRaw(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>> {
+        if (requestParameters.phoneId === null || requestParameters.phoneId === undefined) {
+            throw new runtime.RequiredError('phoneId','Required parameter requestParameters.phoneId was null or undefined when calling getPhoneNumberWebhooksPaginated.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.eventType !== undefined) {
+            queryParameters['eventType'] = requestParameters.eventType;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.health !== undefined) {
+            queryParameters['health'] = requestParameters.health;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/phone/numbers/{phoneId}/webhooks/paginated`.replace(`{${"phoneId"}}`, encodeURIComponent(String(requestParameters.phoneId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageWebhookProjectionFromJSON(jsonValue));
+    }
+
+    /**
+     * Get paginated webhooks for a phone number
+     */
+    async getPhoneNumberWebhooksPaginated(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection> {
+        const response = await this.getPhoneNumberWebhooksPaginatedRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
+     */
+    async getTestWebhookPayloadRaw(requestParameters: GetTestWebhookPayloadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AbstractWebhookPayload>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.eventName !== undefined) {
+            queryParameters['eventName'] = requestParameters.eventName;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AbstractWebhookPayloadFromJSON(jsonValue));
+    }
+
+    /**
+     * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
+     */
+    async getTestWebhookPayload(requestParameters: GetTestWebhookPayloadRequest, initOverrides?: RequestInit): Promise<AbstractWebhookPayload> {
+        const response = await this.getTestWebhookPayloadRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get webhook test payload for bounce
+     */
+    async getTestWebhookPayloadBounceRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookBouncePayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/email-bounce-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookBouncePayloadFromJSON(jsonValue));
+    }
+
+    /**
+     * Get webhook test payload for bounce
+     */
+    async getTestWebhookPayloadBounce(initOverrides?: RequestInit): Promise<WebhookBouncePayload> {
+        const response = await this.getTestWebhookPayloadBounceRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get webhook test payload for bounce recipient
+     */
+    async getTestWebhookPayloadBounceRecipientRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookBounceRecipientPayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/email-bounce-recipient-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookBounceRecipientPayloadFromJSON(jsonValue));
+    }
+
+    /**
+     * Get webhook test payload for bounce recipient
+     */
+    async getTestWebhookPayloadBounceRecipient(initOverrides?: RequestInit): Promise<WebhookBounceRecipientPayload> {
+        const response = await this.getTestWebhookPayloadBounceRecipientRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get webhook test payload for delivery status event
+     */
+    async getTestWebhookPayloadDeliveryStatusRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDeliveryStatusPayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/delivery-status-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDeliveryStatusPayloadFromJSON(jsonValue));
+    }
+
+    /**
+     * Get webhook test payload for delivery status event
+     */
+    async getTestWebhookPayloadDeliveryStatus(initOverrides?: RequestInit): Promise<WebhookDeliveryStatusPayload> {
+        const response = await this.getTestWebhookPayloadDeliveryStatusRaw(initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.minStatusCode !== undefined) {
-      queryParameters['minStatusCode'] = requestParameters.minStatusCode;
+    /**
+     * Get webhook test payload for email opened event
+     */
+    async getTestWebhookPayloadEmailOpenedRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookEmailOpenedPayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/email-opened-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookEmailOpenedPayloadFromJSON(jsonValue));
+    }
+
+    /**
+     * Get webhook test payload for email opened event
+     */
+    async getTestWebhookPayloadEmailOpened(initOverrides?: RequestInit): Promise<WebhookEmailOpenedPayload> {
+        const response = await this.getTestWebhookPayloadEmailOpenedRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get webhook test payload for email opened event
+     */
+    async getTestWebhookPayloadEmailReadRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookEmailReadPayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/email-read-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookEmailReadPayloadFromJSON(jsonValue));
+    }
+
+    /**
+     * Get webhook test payload for email opened event
+     */
+    async getTestWebhookPayloadEmailRead(initOverrides?: RequestInit): Promise<WebhookEmailReadPayload> {
+        const response = await this.getTestWebhookPayloadEmailReadRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get example payload for webhook
+     */
+    async getTestWebhookPayloadForWebhookRaw(requestParameters: GetTestWebhookPayloadForWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AbstractWebhookPayload>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling getTestWebhookPayloadForWebhook.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}/example`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AbstractWebhookPayloadFromJSON(jsonValue));
+    }
+
+    /**
+     * Get example payload for webhook
+     */
+    async getTestWebhookPayloadForWebhook(requestParameters: GetTestWebhookPayloadForWebhookRequest, initOverrides?: RequestInit): Promise<AbstractWebhookPayload> {
+        const response = await this.getTestWebhookPayloadForWebhookRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.maxStatusCode !== undefined) {
-      queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
+    /**
+     * Get webhook test payload for new ai transform result event
+     */
+    async getTestWebhookPayloadNewAITransformResultRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewAITransformResultPayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/new-ai-transform-result-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookNewAITransformResultPayloadFromJSON(jsonValue));
     }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+    /**
+     * Get webhook test payload for new ai transform result event
+     */
+    async getTestWebhookPayloadNewAITransformResult(initOverrides?: RequestInit): Promise<WebhookNewAITransformResultPayload> {
+        const response = await this.getTestWebhookPayloadNewAITransformResultRaw(initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Get webhook test payload for new attachment event
+     */
+    async getTestWebhookPayloadNewAttachmentRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewAttachmentPayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (requestParameters.smsId !== undefined) {
-      queryParameters['smsId'] = requestParameters.smsId;
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/new-attachment-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookNewAttachmentPayloadFromJSON(jsonValue));
     }
 
-    if (requestParameters.attachmentId !== undefined) {
-      queryParameters['attachmentId'] = requestParameters.attachmentId;
+    /**
+     * Get webhook test payload for new attachment event
+     */
+    async getTestWebhookPayloadNewAttachment(initOverrides?: RequestInit): Promise<WebhookNewAttachmentPayload> {
+        const response = await this.getTestWebhookPayloadNewAttachmentRaw(initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Get webhook test payload for new contact event
+     */
+    async getTestWebhookPayloadNewContactRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewContactPayload>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/new-contact-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
 
-    if (requestParameters.emailId !== undefined) {
-      queryParameters['emailId'] = requestParameters.emailId;
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookNewContactPayloadFromJSON(jsonValue));
     }
 
-    if (requestParameters.phoneId !== undefined) {
-      queryParameters['phoneId'] = requestParameters.phoneId;
+    /**
+     * Get webhook test payload for new contact event
+     */
+    async getTestWebhookPayloadNewContact(initOverrides?: RequestInit): Promise<WebhookNewContactPayload> {
+        const response = await this.getTestWebhookPayloadNewContactRaw(initOverrides);
+        return await response.value();
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Get webhook test payload for new email event
+     */
+    async getTestWebhookPayloadNewEmailRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewEmailPayload>> {
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/test/new-email-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookNewEmailPayloadFromJSON(jsonValue));
     }
+
+    /**
+     * Get webhook test payload for new email event
+     */
+    async getTestWebhookPayloadNewEmail(initOverrides?: RequestInit): Promise<WebhookNewEmailPayload> {
+        const response = await this.getTestWebhookPayloadNewEmailRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get webhook test payload for new sms event
+     */
+    async getTestWebhookPayloadNewSmsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewSmsPayload>> {
+        const queryParameters: any = {};
 
-    const response = await this.request(
-      {
-        path: `/webhooks/results`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageWebhookResultFromJSON(jsonValue)
-    );
-  }
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-  /**
-   * Get results for all webhooks
-   */
-  async getAllWebhookResults(
-    requestParameters: GetAllWebhookResultsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageWebhookResult> {
-    const response = await this.getAllWebhookResultsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const response = await this.request({
+            path: `/webhooks/test/new-sms-payload`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
 
-  /**
-   * List webhooks in paginated form. Allows for page index, page size, and sort direction.
-   * List Webhooks Paginated
-   */
-  async getAllWebhooksRaw(
-    requestParameters: GetAllWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageWebhookProjection>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookNewSmsPayloadFromJSON(jsonValue));
     }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+
+    /**
+     * Get webhook test payload for new sms event
+     */
+    async getTestWebhookPayloadNewSms(initOverrides?: RequestInit): Promise<WebhookNewSmsPayload> {
+        const response = await this.getTestWebhookPayloadNewSmsRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get a webhook
+     */
+    async getWebhookRaw(requestParameters: GetWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling getWebhook.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * Get a webhook
+     */
+    async getWebhook(requestParameters: GetWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto> {
+        const response = await this.getWebhookRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Get a webhook result for a webhook
+     */
+    async getWebhookResultRaw(requestParameters: GetWebhookResultRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookResultDto>> {
+        if (requestParameters.webhookResultId === null || requestParameters.webhookResultId === undefined) {
+            throw new runtime.RequiredError('webhookResultId','Required parameter requestParameters.webhookResultId was null or undefined when calling getWebhookResult.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/results/{webhookResultId}`.replace(`{${"webhookResultId"}}`, encodeURIComponent(String(requestParameters.webhookResultId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookResultDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    /**
+     * Get a webhook result for a webhook
+     */
+    async getWebhookResult(requestParameters: GetWebhookResultRequest, initOverrides?: RequestInit): Promise<WebhookResultDto> {
+        const response = await this.getWebhookResultRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Get a webhook results for a webhook
+     */
+    async getWebhookResultsRaw(requestParameters: GetWebhookResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookResult>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling getWebhookResults.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.unseenOnly !== undefined) {
+            queryParameters['unseenOnly'] = requestParameters.unseenOnly;
+        }
+
+        if (requestParameters.resultType !== undefined) {
+            queryParameters['resultType'] = requestParameters.resultType;
+        }
+
+        if (requestParameters.eventName !== undefined) {
+            queryParameters['eventName'] = requestParameters.eventName;
+        }
+
+        if (requestParameters.minStatusCode !== undefined) {
+            queryParameters['minStatusCode'] = requestParameters.minStatusCode;
+        }
+
+        if (requestParameters.maxStatusCode !== undefined) {
+            queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
+        }
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        if (requestParameters.smsId !== undefined) {
+            queryParameters['smsId'] = requestParameters.smsId;
+        }
+
+        if (requestParameters.attachmentId !== undefined) {
+            queryParameters['attachmentId'] = requestParameters.attachmentId;
+        }
 
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
+        if (requestParameters.emailId !== undefined) {
+            queryParameters['emailId'] = requestParameters.emailId;
+        }
+
+        if (requestParameters.phoneId !== undefined) {
+            queryParameters['phoneId'] = requestParameters.phoneId;
+        }
+
+        if (requestParameters.aiTransformerId !== undefined) {
+            queryParameters['aiTransformerId'] = requestParameters.aiTransformerId;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}/results`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageWebhookResultFromJSON(jsonValue));
     }
 
-    if (requestParameters.phoneId !== undefined) {
-      queryParameters['phoneId'] = requestParameters.phoneId;
+    /**
+     * Get a webhook results for a webhook
+     */
+    async getWebhookResults(requestParameters: GetWebhookResultsRequest, initOverrides?: RequestInit): Promise<PageWebhookResult> {
+        const response = await this.getWebhookResultsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Get a webhook results count for a webhook
+     */
+    async getWebhookResultsCountRaw(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling getWebhookResultsCount.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}/results/count`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
+        return new runtime.JSONApiResponse(response, (jsonValue) => CountDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.health !== undefined) {
-      queryParameters['health'] = requestParameters.health;
+    /**
+     * Get a webhook results count for a webhook
+     */
+    async getWebhookResultsCount(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit): Promise<CountDto> {
+        const response = await this.getWebhookResultsCountRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.eventType !== undefined) {
-      queryParameters['eventType'] = requestParameters.eventType;
+    /**
+     * Get count of unseen webhook results with error status
+     */
+    async getWebhookResultsUnseenErrorCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnseenErrorCountDto>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/results/unseen-count`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => UnseenErrorCountDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.url !== undefined) {
-      queryParameters['url'] = requestParameters.url;
+    /**
+     * Get count of unseen webhook results with error status
+     */
+    async getWebhookResultsUnseenErrorCount(initOverrides?: RequestInit): Promise<UnseenErrorCountDto> {
+        const response = await this.getWebhookResultsUnseenErrorCountRaw(initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Get all webhooks for an Inbox
+     */
+    async getWebhooksRaw(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<WebhookProjection>>> {
+        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+            throw new runtime.RequiredError('inboxId','Required parameter requestParameters.inboxId was null or undefined when calling getWebhooks.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/inboxes/{inboxId}/webhooks`.replace(`{${"inboxId"}}`, encodeURIComponent(String(requestParameters.inboxId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(WebhookProjectionFromJSON));
+    }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Get all webhooks for an Inbox
+     */
+    async getWebhooks(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<Array<WebhookProjection>> {
+        const response = await this.getWebhooksRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+     * Redrive all webhook results that have failed status
+     */
+    async redriveAllWebhookResultsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookRedriveAllResult>> {
+        const queryParameters: any = {};
 
-    const response = await this.request(
-      {
-        path: `/webhooks/paginated`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageWebhookProjectionFromJSON(jsonValue)
-    );
-  }
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-  /**
-   * List webhooks in paginated form. Allows for page index, page size, and sort direction.
-   * List Webhooks Paginated
-   */
-  async getAllWebhooks(
-    requestParameters: GetAllWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageWebhookProjection> {
-    const response = await this.getAllWebhooksRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
+        const response = await this.request({
+            path: `/webhooks/results/redrive`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
 
-  /**
-   * Get paginated webhooks for an Inbox
-   */
-  async getInboxWebhooksPaginatedRaw(
-    requestParameters: GetInboxWebhooksPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageWebhookProjection>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxWebhooksPaginated.'
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookRedriveAllResultFromJSON(jsonValue));
     }
+
+    /**
+     * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+     * Redrive all webhook results that have failed status
+     */
+    async redriveAllWebhookResults(initOverrides?: RequestInit): Promise<WebhookRedriveAllResult> {
+        const response = await this.redriveAllWebhookResultsRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * Get a webhook result and try to resend the original webhook payload
+     */
+    async redriveWebhookResultRaw(requestParameters: RedriveWebhookResultRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookRedriveResult>> {
+        if (requestParameters.webhookResultId === null || requestParameters.webhookResultId === undefined) {
+            throw new runtime.RequiredError('webhookResultId','Required parameter requestParameters.webhookResultId was null or undefined when calling redriveWebhookResult.');
+        }
 
-    const queryParameters: any = {};
+        const queryParameters: any = {};
 
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/results/{webhookResultId}/redrive`.replace(`{${"webhookResultId"}}`, encodeURIComponent(String(requestParameters.webhookResultId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookRedriveResultFromJSON(jsonValue));
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * Get a webhook result and try to resend the original webhook payload
+     */
+    async redriveWebhookResult(requestParameters: RedriveWebhookResultRequest, initOverrides?: RequestInit): Promise<WebhookRedriveResult> {
+        const response = await this.redriveWebhookResultRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Send webhook test data
+     */
+    async sendTestDataRaw(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookTestResult>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling sendTestData.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}/test`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookTestResultFromJSON(jsonValue));
     }
 
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    /**
+     * Send webhook test data
+     */
+    async sendTestData(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<WebhookTestResult> {
+        const response = await this.sendTestDataRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Update a webhook
+     */
+    async updateWebhookRaw(requestParameters: UpdateWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling updateWebhook.');
+        }
+
+        if (requestParameters.createWebhookOptions === null || requestParameters.createWebhookOptions === undefined) {
+            throw new runtime.RequiredError('createWebhookOptions','Required parameter requestParameters.createWebhookOptions was null or undefined when calling updateWebhook.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.inboxId !== undefined) {
+            queryParameters['inboxId'] = requestParameters.inboxId;
+        }
+
+        if (requestParameters.aiTransformerId !== undefined) {
+            queryParameters['aiTransformerId'] = requestParameters.aiTransformerId;
+        }
+
+        if (requestParameters.phoneNumberId !== undefined) {
+            queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+        }
+
+        if (requestParameters.overrideAuth !== undefined) {
+            queryParameters['overrideAuth'] = requestParameters.overrideAuth;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+        const response = await this.request({
+            path: `/webhooks/{webhookId}`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateWebhookOptionsToJSON(requestParameters.createWebhookOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
+    /**
+     * Update a webhook
+     */
+    async updateWebhook(requestParameters: UpdateWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto> {
+        const response = await this.updateWebhookRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Update a webhook request headers
+     */
+    async updateWebhookHeadersRaw(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling updateWebhookHeaders.');
+        }
+
+        if (requestParameters.webhookHeaders === null || requestParameters.webhookHeaders === undefined) {
+            throw new runtime.RequiredError('webhookHeaders','Required parameter requestParameters.webhookHeaders was null or undefined when calling updateWebhookHeaders.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
 
-    if (requestParameters.health !== undefined) {
-      queryParameters['health'] = requestParameters.health;
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}/headers`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: WebhookHeadersToJSON(requestParameters.webhookHeaders),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => WebhookDtoFromJSON(jsonValue));
     }
 
-    if (requestParameters.eventType !== undefined) {
-      queryParameters['eventType'] = requestParameters.eventType;
+    /**
+     * Update a webhook request headers
+     */
+    async updateWebhookHeaders(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit): Promise<WebhookDto> {
+        const response = await this.updateWebhookHeadersRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+     * Verify a webhook payload signature
+     */
+    async verifyWebhookSignatureRaw(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<VerifyWebhookSignatureResults>> {
+        if (requestParameters.verifyWebhookSignatureOptions === null || requestParameters.verifyWebhookSignatureOptions === undefined) {
+            throw new runtime.RequiredError('verifyWebhookSignatureOptions','Required parameter requestParameters.verifyWebhookSignatureOptions was null or undefined when calling verifyWebhookSignature.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/webhooks/paginated`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageWebhookProjectionFromJSON(jsonValue)
-    );
-  }
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
 
-  /**
-   * Get paginated webhooks for an Inbox
-   */
-  async getInboxWebhooksPaginated(
-    requestParameters: GetInboxWebhooksPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageWebhookProjection> {
-    const response = await this.getInboxWebhooksPaginatedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get JSON Schema definition for webhook payload by event
-   */
-  async getJsonSchemaForWebhookEventRaw(
-    requestParameters: GetJsonSchemaForWebhookEventRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<JSONSchemaDto>> {
-    if (
-      requestParameters.event === null ||
-      requestParameters.event === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'event',
-        'Required parameter requestParameters.event was null or undefined when calling getJsonSchemaForWebhookEvent.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.event !== undefined) {
-      queryParameters['event'] = requestParameters.event;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/schema`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      JSONSchemaDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get JSON Schema definition for webhook payload by event
-   */
-  async getJsonSchemaForWebhookEvent(
-    requestParameters: GetJsonSchemaForWebhookEventRequest,
-    initOverrides?: RequestInit
-  ): Promise<JSONSchemaDto> {
-    const response = await this.getJsonSchemaForWebhookEventRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get JSON Schema definition for webhook payload
-   */
-  async getJsonSchemaForWebhookPayloadRaw(
-    requestParameters: GetJsonSchemaForWebhookPayloadRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<JSONSchemaDto>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling getJsonSchemaForWebhookPayload.'
-      );
+        const response = await this.request({
+            path: `/webhooks/verify`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: VerifyWebhookSignatureOptionsToJSON(requestParameters.verifyWebhookSignatureOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => VerifyWebhookSignatureResultsFromJSON(jsonValue));
+    }
+
+    /**
+     * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+     * Verify a webhook payload signature
+     */
+    async verifyWebhookSignature(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<VerifyWebhookSignatureResults> {
+        const response = await this.verifyWebhookSignatureRaw(requestParameters, initOverrides);
+        return await response.value();
     }
+
+    /**
+     * Wait for webhook results for a webhook
+     */
+    async waitForWebhookResultsRaw(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<WebhookResultDto>>> {
+        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+            throw new runtime.RequiredError('webhookId','Required parameter requestParameters.webhookId was null or undefined when calling waitForWebhookResults.');
+        }
+
+        if (requestParameters.expectedCount === null || requestParameters.expectedCount === undefined) {
+            throw new runtime.RequiredError('expectedCount','Required parameter requestParameters.expectedCount was null or undefined when calling waitForWebhookResults.');
+        }
+
+        if (requestParameters.timeout === null || requestParameters.timeout === undefined) {
+            throw new runtime.RequiredError('timeout','Required parameter requestParameters.timeout was null or undefined when calling waitForWebhookResults.');
+        }
 
-    const queryParameters: any = {};
+        const queryParameters: any = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (requestParameters.expectedCount !== undefined) {
+            queryParameters['expectedCount'] = requestParameters.expectedCount;
+        }
+
+        if (requestParameters.timeout !== undefined) {
+            queryParameters['timeout'] = requestParameters.timeout;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/webhooks/{webhookId}/wait`.replace(`{${"webhookId"}}`, encodeURIComponent(String(requestParameters.webhookId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(WebhookResultDtoFromJSON));
+    }
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    /**
+     * Wait for webhook results for a webhook
+     */
+    async waitForWebhookResults(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<Array<WebhookResultDto>> {
+        const response = await this.waitForWebhookResultsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}/schema`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      JSONSchemaDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get JSON Schema definition for webhook payload
-   */
-  async getJsonSchemaForWebhookPayload(
-    requestParameters: GetJsonSchemaForWebhookPayloadRequest,
-    initOverrides?: RequestInit
-  ): Promise<JSONSchemaDto> {
-    const response = await this.getJsonSchemaForWebhookPayloadRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get paginated webhooks for a phone number
-   */
-  async getPhoneNumberWebhooksPaginatedRaw(
-    requestParameters: GetPhoneNumberWebhooksPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageWebhookProjection>> {
-    if (
-      requestParameters.phoneId === null ||
-      requestParameters.phoneId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'phoneId',
-        'Required parameter requestParameters.phoneId was null or undefined when calling getPhoneNumberWebhooksPaginated.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.eventType !== undefined) {
-      queryParameters['eventType'] = requestParameters.eventType;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.health !== undefined) {
-      queryParameters['health'] = requestParameters.health;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/phone/numbers/{phoneId}/webhooks/paginated`.replace(
-          `{${'phoneId'}}`,
-          encodeURIComponent(String(requestParameters.phoneId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageWebhookProjectionFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get paginated webhooks for a phone number
-   */
-  async getPhoneNumberWebhooksPaginated(
-    requestParameters: GetPhoneNumberWebhooksPaginatedRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageWebhookProjection> {
-    const response = await this.getPhoneNumberWebhooksPaginatedRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-   */
-  async getTestWebhookPayloadRaw(
-    requestParameters: GetTestWebhookPayloadRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<AbstractWebhookPayload>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.eventName !== undefined) {
-      queryParameters['eventName'] = requestParameters.eventName;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      AbstractWebhookPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-   */
-  async getTestWebhookPayload(
-    requestParameters: GetTestWebhookPayloadRequest,
-    initOverrides?: RequestInit
-  ): Promise<AbstractWebhookPayload> {
-    const response = await this.getTestWebhookPayloadRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for bounce
-   */
-  async getTestWebhookPayloadBounceRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookBouncePayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/email-bounce-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookBouncePayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for bounce
-   */
-  async getTestWebhookPayloadBounce(
-    initOverrides?: RequestInit
-  ): Promise<WebhookBouncePayload> {
-    const response = await this.getTestWebhookPayloadBounceRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for bounce recipient
-   */
-  async getTestWebhookPayloadBounceRecipientRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookBounceRecipientPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/email-bounce-recipient-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookBounceRecipientPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for bounce recipient
-   */
-  async getTestWebhookPayloadBounceRecipient(
-    initOverrides?: RequestInit
-  ): Promise<WebhookBounceRecipientPayload> {
-    const response = await this.getTestWebhookPayloadBounceRecipientRaw(
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for delivery status event
-   */
-  async getTestWebhookPayloadDeliveryStatusRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookDeliveryStatusPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/delivery-status-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookDeliveryStatusPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for delivery status event
-   */
-  async getTestWebhookPayloadDeliveryStatus(
-    initOverrides?: RequestInit
-  ): Promise<WebhookDeliveryStatusPayload> {
-    const response = await this.getTestWebhookPayloadDeliveryStatusRaw(
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for email opened event
-   */
-  async getTestWebhookPayloadEmailOpenedRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookEmailOpenedPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/email-opened-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookEmailOpenedPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for email opened event
-   */
-  async getTestWebhookPayloadEmailOpened(
-    initOverrides?: RequestInit
-  ): Promise<WebhookEmailOpenedPayload> {
-    const response = await this.getTestWebhookPayloadEmailOpenedRaw(
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for email opened event
-   */
-  async getTestWebhookPayloadEmailReadRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookEmailReadPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/email-read-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookEmailReadPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for email opened event
-   */
-  async getTestWebhookPayloadEmailRead(
-    initOverrides?: RequestInit
-  ): Promise<WebhookEmailReadPayload> {
-    const response = await this.getTestWebhookPayloadEmailReadRaw(
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get example payload for webhook
-   */
-  async getTestWebhookPayloadForWebhookRaw(
-    requestParameters: GetTestWebhookPayloadForWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<AbstractWebhookPayload>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling getTestWebhookPayloadForWebhook.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}/example`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      AbstractWebhookPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get example payload for webhook
-   */
-  async getTestWebhookPayloadForWebhook(
-    requestParameters: GetTestWebhookPayloadForWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<AbstractWebhookPayload> {
-    const response = await this.getTestWebhookPayloadForWebhookRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for new attachment event
-   */
-  async getTestWebhookPayloadNewAttachmentRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookNewAttachmentPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/new-attachment-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookNewAttachmentPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for new attachment event
-   */
-  async getTestWebhookPayloadNewAttachment(
-    initOverrides?: RequestInit
-  ): Promise<WebhookNewAttachmentPayload> {
-    const response = await this.getTestWebhookPayloadNewAttachmentRaw(
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for new contact event
-   */
-  async getTestWebhookPayloadNewContactRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookNewContactPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/new-contact-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookNewContactPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for new contact event
-   */
-  async getTestWebhookPayloadNewContact(
-    initOverrides?: RequestInit
-  ): Promise<WebhookNewContactPayload> {
-    const response = await this.getTestWebhookPayloadNewContactRaw(
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for new email event
-   */
-  async getTestWebhookPayloadNewEmailRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookNewEmailPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/new-email-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookNewEmailPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for new email event
-   */
-  async getTestWebhookPayloadNewEmail(
-    initOverrides?: RequestInit
-  ): Promise<WebhookNewEmailPayload> {
-    const response = await this.getTestWebhookPayloadNewEmailRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get webhook test payload for new sms event
-   */
-  async getTestWebhookPayloadNewSmsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookNewSmsPayload>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/test/new-sms-payload`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookNewSmsPayloadFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get webhook test payload for new sms event
-   */
-  async getTestWebhookPayloadNewSms(
-    initOverrides?: RequestInit
-  ): Promise<WebhookNewSmsPayload> {
-    const response = await this.getTestWebhookPayloadNewSmsRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get a webhook
-   */
-  async getWebhookRaw(
-    requestParameters: GetWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookDto>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling getWebhook.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a webhook
-   */
-  async getWebhook(
-    requestParameters: GetWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookDto> {
-    const response = await this.getWebhookRaw(requestParameters, initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Get a webhook result for a webhook
-   */
-  async getWebhookResultRaw(
-    requestParameters: GetWebhookResultRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookResultDto>> {
-    if (
-      requestParameters.webhookResultId === null ||
-      requestParameters.webhookResultId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookResultId',
-        'Required parameter requestParameters.webhookResultId was null or undefined when calling getWebhookResult.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/results/{webhookResultId}`.replace(
-          `{${'webhookResultId'}}`,
-          encodeURIComponent(String(requestParameters.webhookResultId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookResultDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a webhook result for a webhook
-   */
-  async getWebhookResult(
-    requestParameters: GetWebhookResultRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookResultDto> {
-    const response = await this.getWebhookResultRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a webhook results for a webhook
-   */
-  async getWebhookResultsRaw(
-    requestParameters: GetWebhookResultsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageWebhookResult>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling getWebhookResults.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
-    }
-
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
-    }
-
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.unseenOnly !== undefined) {
-      queryParameters['unseenOnly'] = requestParameters.unseenOnly;
-    }
-
-    if (requestParameters.resultType !== undefined) {
-      queryParameters['resultType'] = requestParameters.resultType;
-    }
-
-    if (requestParameters.eventName !== undefined) {
-      queryParameters['eventName'] = requestParameters.eventName;
-    }
-
-    if (requestParameters.minStatusCode !== undefined) {
-      queryParameters['minStatusCode'] = requestParameters.minStatusCode;
-    }
-
-    if (requestParameters.maxStatusCode !== undefined) {
-      queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
-    }
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    if (requestParameters.smsId !== undefined) {
-      queryParameters['smsId'] = requestParameters.smsId;
-    }
-
-    if (requestParameters.attachmentId !== undefined) {
-      queryParameters['attachmentId'] = requestParameters.attachmentId;
-    }
-
-    if (requestParameters.emailId !== undefined) {
-      queryParameters['emailId'] = requestParameters.emailId;
-    }
-
-    if (requestParameters.phoneId !== undefined) {
-      queryParameters['phoneId'] = requestParameters.phoneId;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}/results`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageWebhookResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a webhook results for a webhook
-   */
-  async getWebhookResults(
-    requestParameters: GetWebhookResultsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageWebhookResult> {
-    const response = await this.getWebhookResultsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get a webhook results count for a webhook
-   */
-  async getWebhookResultsCountRaw(
-    requestParameters: GetWebhookResultsCountRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CountDto>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling getWebhookResultsCount.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}/results/count`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CountDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get a webhook results count for a webhook
-   */
-  async getWebhookResultsCount(
-    requestParameters: GetWebhookResultsCountRequest,
-    initOverrides?: RequestInit
-  ): Promise<CountDto> {
-    const response = await this.getWebhookResultsCountRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get count of unseen webhook results with error status
-   */
-  async getWebhookResultsUnseenErrorCountRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<UnseenErrorCountDto>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/results/unseen-count`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      UnseenErrorCountDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Get count of unseen webhook results with error status
-   */
-  async getWebhookResultsUnseenErrorCount(
-    initOverrides?: RequestInit
-  ): Promise<UnseenErrorCountDto> {
-    const response = await this.getWebhookResultsUnseenErrorCountRaw(
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Get all webhooks for an Inbox
-   */
-  async getWebhooksRaw(
-    requestParameters: GetWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<WebhookProjection>>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getWebhooks.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
-    }
-
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
-    }
-
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/inboxes/{inboxId}/webhooks`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(WebhookProjectionFromJSON)
-    );
-  }
-
-  /**
-   * Get all webhooks for an Inbox
-   */
-  async getWebhooks(
-    requestParameters: GetWebhooksRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<WebhookProjection>> {
-    const response = await this.getWebhooksRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
-   * Redrive all webhook results that have failed status
-   */
-  async redriveAllWebhookResultsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookRedriveAllResult>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/results/redrive`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookRedriveAllResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
-   * Redrive all webhook results that have failed status
-   */
-  async redriveAllWebhookResults(
-    initOverrides?: RequestInit
-  ): Promise<WebhookRedriveAllResult> {
-    const response = await this.redriveAllWebhookResultsRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
-   * Get a webhook result and try to resend the original webhook payload
-   */
-  async redriveWebhookResultRaw(
-    requestParameters: RedriveWebhookResultRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookRedriveResult>> {
-    if (
-      requestParameters.webhookResultId === null ||
-      requestParameters.webhookResultId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookResultId',
-        'Required parameter requestParameters.webhookResultId was null or undefined when calling redriveWebhookResult.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/results/{webhookResultId}/redrive`.replace(
-          `{${'webhookResultId'}}`,
-          encodeURIComponent(String(requestParameters.webhookResultId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookRedriveResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
-   * Get a webhook result and try to resend the original webhook payload
-   */
-  async redriveWebhookResult(
-    requestParameters: RedriveWebhookResultRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookRedriveResult> {
-    const response = await this.redriveWebhookResultRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Send webhook test data
-   */
-  async sendTestDataRaw(
-    requestParameters: SendTestDataRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookTestResult>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling sendTestData.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}/test`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookTestResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Send webhook test data
-   */
-  async sendTestData(
-    requestParameters: SendTestDataRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookTestResult> {
-    const response = await this.sendTestDataRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Update a webhook
-   */
-  async updateWebhookRaw(
-    requestParameters: UpdateWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookDto>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling updateWebhook.'
-      );
-    }
-
-    if (
-      requestParameters.createWebhookOptions === null ||
-      requestParameters.createWebhookOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'createWebhookOptions',
-        'Required parameter requestParameters.createWebhookOptions was null or undefined when calling updateWebhook.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.inboxId !== undefined) {
-      queryParameters['inboxId'] = requestParameters.inboxId;
-    }
-
-    if (requestParameters.phoneNumberId !== undefined) {
-      queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
-    }
-
-    if (requestParameters.overrideAuth !== undefined) {
-      queryParameters['overrideAuth'] = requestParameters.overrideAuth;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'PATCH',
-        headers: headerParameters,
-        query: queryParameters,
-        body: CreateWebhookOptionsToJSON(
-          requestParameters.createWebhookOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update a webhook
-   */
-  async updateWebhook(
-    requestParameters: UpdateWebhookRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookDto> {
-    const response = await this.updateWebhookRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Update a webhook request headers
-   */
-  async updateWebhookHeadersRaw(
-    requestParameters: UpdateWebhookHeadersRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<WebhookDto>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling updateWebhookHeaders.'
-      );
-    }
-
-    if (
-      requestParameters.webhookHeaders === null ||
-      requestParameters.webhookHeaders === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookHeaders',
-        'Required parameter requestParameters.webhookHeaders was null or undefined when calling updateWebhookHeaders.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}/headers`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'PUT',
-        headers: headerParameters,
-        query: queryParameters,
-        body: WebhookHeadersToJSON(requestParameters.webhookHeaders),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      WebhookDtoFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update a webhook request headers
-   */
-  async updateWebhookHeaders(
-    requestParameters: UpdateWebhookHeadersRequest,
-    initOverrides?: RequestInit
-  ): Promise<WebhookDto> {
-    const response = await this.updateWebhookHeadersRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
-   * Verify a webhook payload signature
-   */
-  async verifyWebhookSignatureRaw(
-    requestParameters: VerifyWebhookSignatureRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<VerifyWebhookSignatureResults>> {
-    if (
-      requestParameters.verifyWebhookSignatureOptions === null ||
-      requestParameters.verifyWebhookSignatureOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'verifyWebhookSignatureOptions',
-        'Required parameter requestParameters.verifyWebhookSignatureOptions was null or undefined when calling verifyWebhookSignature.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/verify`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: VerifyWebhookSignatureOptionsToJSON(
-          requestParameters.verifyWebhookSignatureOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      VerifyWebhookSignatureResultsFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
-   * Verify a webhook payload signature
-   */
-  async verifyWebhookSignature(
-    requestParameters: VerifyWebhookSignatureRequest,
-    initOverrides?: RequestInit
-  ): Promise<VerifyWebhookSignatureResults> {
-    const response = await this.verifyWebhookSignatureRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Wait for webhook results for a webhook
-   */
-  async waitForWebhookResultsRaw(
-    requestParameters: WaitForWebhookResultsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<WebhookResultDto>>> {
-    if (
-      requestParameters.webhookId === null ||
-      requestParameters.webhookId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'webhookId',
-        'Required parameter requestParameters.webhookId was null or undefined when calling waitForWebhookResults.'
-      );
-    }
-
-    if (
-      requestParameters.expectedCount === null ||
-      requestParameters.expectedCount === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'expectedCount',
-        'Required parameter requestParameters.expectedCount was null or undefined when calling waitForWebhookResults.'
-      );
-    }
-
-    if (
-      requestParameters.timeout === null ||
-      requestParameters.timeout === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'timeout',
-        'Required parameter requestParameters.timeout was null or undefined when calling waitForWebhookResults.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.expectedCount !== undefined) {
-      queryParameters['expectedCount'] = requestParameters.expectedCount;
-    }
-
-    if (requestParameters.timeout !== undefined) {
-      queryParameters['timeout'] = requestParameters.timeout;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/webhooks/{webhookId}/wait`.replace(
-          `{${'webhookId'}}`,
-          encodeURIComponent(String(requestParameters.webhookId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(WebhookResultDtoFromJSON)
-    );
-  }
-
-  /**
-   * Wait for webhook results for a webhook
-   */
-  async waitForWebhookResults(
-    requestParameters: WaitForWebhookResultsRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<WebhookResultDto>> {
-    const response = await this.waitForWebhookResultsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllAccountWebhooksSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllAccountWebhooksEventTypeEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllAccountWebhooksHealthEnum {
-  HEALTHY = 'HEALTHY',
-  UNHEALTHY = 'UNHEALTHY',
+    HEALTHY = 'HEALTHY',
+    UNHEALTHY = 'UNHEALTHY'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhookEndpointsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhookEndpointsHealthEnum {
-  HEALTHY = 'HEALTHY',
-  UNHEALTHY = 'UNHEALTHY',
+    HEALTHY = 'HEALTHY',
+    UNHEALTHY = 'UNHEALTHY'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhookEndpointsEventTypeEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhookResultsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhookResultsResultTypeEnum {
-  BAD_RESPONSE = 'BAD_RESPONSE',
-  EXCEPTION = 'EXCEPTION',
-  SUCCESS = 'SUCCESS',
-  REDRIVEN = 'REDRIVEN',
+    BAD_RESPONSE = 'BAD_RESPONSE',
+    EXCEPTION = 'EXCEPTION',
+    SUCCESS = 'SUCCESS',
+    REDRIVEN = 'REDRIVEN'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhookResultsEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhooksSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhooksHealthEnum {
-  HEALTHY = 'HEALTHY',
-  UNHEALTHY = 'UNHEALTHY',
+    HEALTHY = 'HEALTHY',
+    UNHEALTHY = 'UNHEALTHY'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetAllWebhooksEventTypeEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetInboxWebhooksPaginatedSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetInboxWebhooksPaginatedHealthEnum {
-  HEALTHY = 'HEALTHY',
-  UNHEALTHY = 'UNHEALTHY',
+    HEALTHY = 'HEALTHY',
+    UNHEALTHY = 'UNHEALTHY'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetInboxWebhooksPaginatedEventTypeEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetJsonSchemaForWebhookEventEventEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetPhoneNumberWebhooksPaginatedSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetPhoneNumberWebhooksPaginatedEventTypeEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetPhoneNumberWebhooksPaginatedHealthEnum {
-  HEALTHY = 'HEALTHY',
-  UNHEALTHY = 'UNHEALTHY',
+    HEALTHY = 'HEALTHY',
+    UNHEALTHY = 'UNHEALTHY'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetTestWebhookPayloadEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetWebhookResultsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetWebhookResultsResultTypeEnum {
-  BAD_RESPONSE = 'BAD_RESPONSE',
-  EXCEPTION = 'EXCEPTION',
-  SUCCESS = 'SUCCESS',
-  REDRIVEN = 'REDRIVEN',
+    BAD_RESPONSE = 'BAD_RESPONSE',
+    EXCEPTION = 'EXCEPTION',
+    SUCCESS = 'SUCCESS',
+    REDRIVEN = 'REDRIVEN'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetWebhookResultsEventNameEnum {
-  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-  NEW_EMAIL = 'NEW_EMAIL',
-  NEW_CONTACT = 'NEW_CONTACT',
-  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-  EMAIL_OPENED = 'EMAIL_OPENED',
-  EMAIL_READ = 'EMAIL_READ',
-  DELIVERY_STATUS = 'DELIVERY_STATUS',
-  BOUNCE = 'BOUNCE',
-  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-  NEW_SMS = 'NEW_SMS',
-  NEW_GUEST_USER = 'NEW_GUEST_USER',
+    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+    NEW_EMAIL = 'NEW_EMAIL',
+    NEW_CONTACT = 'NEW_CONTACT',
+    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+    EMAIL_OPENED = 'EMAIL_OPENED',
+    EMAIL_READ = 'EMAIL_READ',
+    DELIVERY_STATUS = 'DELIVERY_STATUS',
+    BOUNCE = 'BOUNCE',
+    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+    NEW_SMS = 'NEW_SMS',
+    NEW_GUEST_USER = 'NEW_GUEST_USER'
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetWebhooksSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }

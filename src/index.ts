@@ -30,7 +30,7 @@ import {
   InboxControllerApi,
   InboxDto,
   InboxForwarderControllerApi,
-  InboxRulesetControllerApi,
+  RulesetControllerApi,
   MailServerControllerApi,
   MatchOptions,
   MissedEmailControllerApi,
@@ -134,7 +134,7 @@ export class MailSlurp {
   public readonly webhookController: WebhookControllerApi;
   public readonly mailServerController: MailServerControllerApi;
   public readonly missedEmailController: MissedEmailControllerApi;
-  public readonly inboxRulesetController: InboxRulesetControllerApi;
+  public readonly rulesetController: RulesetControllerApi;
   public readonly inboxForwarderController: InboxForwarderControllerApi;
   public readonly trackingController: TrackingControllerApi;
   public readonly bounceController: BounceControllerApi;
@@ -191,7 +191,7 @@ export class MailSlurp {
     this.waitController = new WaitForControllerApi(...args);
     this.mailServerController = new MailServerControllerApi(...args);
     this.missedEmailController = new MissedEmailControllerApi(...args);
-    this.inboxRulesetController = new InboxRulesetControllerApi(...args);
+    this.rulesetController = new RulesetControllerApi(...args);
     this.inboxForwarderController = new InboxForwarderControllerApi(...args);
     this.inboxReplierController = new InboxReplierControllerApi(...args);
     this.trackingController = new TrackingControllerApi(...args);

@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetTransformerResultsSortEnum = exports.GetTransformerResultsEntityTypeEnum = exports.GetTransformerMappingsSortEnum = exports.GetTransformerMappingsEntityTypeEnum = exports.CreateTransformerSortEnum = exports.AIControllerApi = void 0;
+exports.GetTransformersSortEnum = exports.GetTransformerResultsSortEnum = exports.GetTransformerResultsEntityTypeEnum = exports.GetTransformerMappingsSortEnum = exports.GetTransformerMappingsEntityTypeEnum = exports.AIControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -99,8 +99,8 @@ var AIControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * List all AI transforms
-     * List transformers
+     * Save an AI transform instructions and schema for use with webhooks and automations
+     * Create a transformer for reuse in automations
      */
     AIControllerApi.prototype.createTransformerRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -108,45 +108,32 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.options === null ||
-                            requestParameters.options === undefined) {
-                            throw new runtime.RequiredError('options', 'Required parameter requestParameters.options was null or undefined when calling createTransformer.');
+                        if (requestParameters.aITransformCreateOptions === null || requestParameters.aITransformCreateOptions === undefined) {
+                            throw new runtime.RequiredError('aITransformCreateOptions', 'Required parameter requestParameters.aITransformCreateOptions was null or undefined when calling createTransformer.');
                         }
                         queryParameters = {};
-                        if (requestParameters.page !== undefined) {
-                            queryParameters['page'] = requestParameters.page;
-                        }
-                        if (requestParameters.size !== undefined) {
-                            queryParameters['size'] = requestParameters.size;
-                        }
-                        if (requestParameters.sort !== undefined) {
-                            queryParameters['sort'] = requestParameters.sort;
-                        }
-                        if (requestParameters.options !== undefined) {
-                            queryParameters['options'] = requestParameters.options;
-                        }
                         headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/transformer",
-                                method: 'GET',
+                                method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
+                                body: (0, models_1.AITransformCreateOptionsToJSON)(requestParameters.aITransformCreateOptions),
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageAITransformProjectionFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AITransformDtoFromJSON)(jsonValue); })];
                 }
             });
         });
     };
     /**
-     * List all AI transforms
-     * List transformers
+     * Save an AI transform instructions and schema for use with webhooks and automations
+     * Create a transformer for reuse in automations
      */
     AIControllerApi.prototype.createTransformer = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -154,60 +141,6 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.createTransformerRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    /**
-     * Save an AI transform instructions and schema for use with webhooks and automations
-     * Create a transformer for reuse in automations
-     */
-    AIControllerApi.prototype.createTransformer1Raw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (requestParameters.aITranformCreateOptions === null ||
-                            requestParameters.aITranformCreateOptions === undefined) {
-                            throw new runtime.RequiredError('aITranformCreateOptions', 'Required parameter requestParameters.aITranformCreateOptions was null or undefined when calling createTransformer1.');
-                        }
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json';
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/ai/transformer",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: (0, models_1.AITranformCreateOptionsToJSON)(requestParameters.aITranformCreateOptions),
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AITransformDtoFromJSON)(jsonValue);
-                            })];
-                }
-            });
-        });
-    };
-    /**
-     * Save an AI transform instructions and schema for use with webhooks and automations
-     * Create a transformer for reuse in automations
-     */
-    AIControllerApi.prototype.createTransformer1 = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.createTransformer1Raw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -226,15 +159,14 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createAITransformerMappingOptions === null ||
-                            requestParameters.createAITransformerMappingOptions === undefined) {
+                        if (requestParameters.createAITransformerMappingOptions === null || requestParameters.createAITransformerMappingOptions === undefined) {
                             throw new runtime.RequiredError('createAITransformerMappingOptions', 'Required parameter requestParameters.createAITransformerMappingOptions was null or undefined when calling createTransformerMappings.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/transformer/mappings",
@@ -245,9 +177,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AITransformMappingDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AITransformMappingDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -271,6 +201,50 @@ var AIControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Delete all AI transformer mappings
+     * Delete all transformer mapping
+     */
+    AIControllerApi.prototype.deleteAllTransformerMappingsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/mappings",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete all AI transformer mappings
+     * Delete all transformer mapping
+     */
+    AIControllerApi.prototype.deleteAllTransformerMappings = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteAllTransformerMappingsRaw(initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Delete an AI transformer and schemas by ID
      * Delete a transformer
      */
@@ -286,10 +260,10 @@ var AIControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/ai/transformer/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/ai/transformer/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -333,10 +307,10 @@ var AIControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/ai/transformer/mappings/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/ai/transformer/mappings/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -377,7 +351,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/transformer",
@@ -418,15 +392,14 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateStructuredContentAttachmentOptions === null ||
-                            requestParameters.generateStructuredContentAttachmentOptions === undefined) {
+                        if (requestParameters.generateStructuredContentAttachmentOptions === null || requestParameters.generateStructuredContentAttachmentOptions === undefined) {
                             throw new runtime.RequiredError('generateStructuredContentAttachmentOptions', 'Required parameter requestParameters.generateStructuredContentAttachmentOptions was null or undefined when calling generateStructuredContentFromAttachment.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/structured-content/attachment",
@@ -437,9 +410,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -472,15 +443,14 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateStructuredContentEmailOptions === null ||
-                            requestParameters.generateStructuredContentEmailOptions === undefined) {
+                        if (requestParameters.generateStructuredContentEmailOptions === null || requestParameters.generateStructuredContentEmailOptions === undefined) {
                             throw new runtime.RequiredError('generateStructuredContentEmailOptions', 'Required parameter requestParameters.generateStructuredContentEmailOptions was null or undefined when calling generateStructuredContentFromEmail.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/structured-content/email",
@@ -491,9 +461,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -526,15 +494,14 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.generateStructuredContentSmsOptions === null ||
-                            requestParameters.generateStructuredContentSmsOptions === undefined) {
+                        if (requestParameters.generateStructuredContentSmsOptions === null || requestParameters.generateStructuredContentSmsOptions === undefined) {
                             throw new runtime.RequiredError('generateStructuredContentSmsOptions', 'Required parameter requestParameters.generateStructuredContentSmsOptions was null or undefined when calling generateStructuredContentFromSms.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/structured-content/sms",
@@ -545,9 +512,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.StructuredContentResultDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -586,19 +551,17 @@ var AIControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/ai/transformer/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/ai/transformer/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AITransformDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AITransformDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -637,19 +600,17 @@ var AIControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/ai/transformer/mappings/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/ai/transformer/mappings/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AITransformMappingDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AITransformMappingDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -703,7 +664,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/transformer/mappings",
@@ -713,9 +674,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageAITransformMappingProjectionFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageAITransformMappingProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -754,19 +713,17 @@ var AIControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/ai/transformer/results/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/ai/transformer/results/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.AITransformResultDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AITransformResultDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -804,8 +761,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             queryParameters['aiTransformId'] = requestParameters.aiTransformId;
                         }
                         if (requestParameters.aiTransformMappingId !== undefined) {
-                            queryParameters['aiTransformMappingId'] =
-                                requestParameters.aiTransformMappingId;
+                            queryParameters['aiTransformMappingId'] = requestParameters.aiTransformMappingId;
                         }
                         if (requestParameters.entityId !== undefined) {
                             queryParameters['entityId'] = requestParameters.entityId;
@@ -824,7 +780,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/transformer/results",
@@ -834,9 +790,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageAITransformResultProjectionFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageAITransformResultProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -860,6 +814,115 @@ var AIControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List all AI transforms
+     * List transformers
+     */
+    AIControllerApi.prototype.getTransformersRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.include) {
+                            queryParameters['include'] = requestParameters.include;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageAITransformProjectionFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * List all AI transforms
+     * List transformers
+     */
+    AIControllerApi.prototype.getTransformers = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTransformersRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Execute an AI transformer to generate structured content
+     * Invoke a transformer
+     */
+    AIControllerApi.prototype.invokeTransformerRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.invokeTransformerOptions === null || requestParameters.invokeTransformerOptions === undefined) {
+                            throw new runtime.RequiredError('invokeTransformerOptions', 'Required parameter requestParameters.invokeTransformerOptions was null or undefined when calling invokeTransformer.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/invoke",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.InvokeTransformerOptionsToJSON)(requestParameters.invokeTransformerOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConditionalStructuredContentResultFromJSON)(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     * Execute an AI transformer to generate structured content
+     * Invoke a transformer
+     */
+    AIControllerApi.prototype.invokeTransformer = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.invokeTransformerRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Check if a schema is valid and can be used to extract data using AI
      * Validate structured content schema
      */
@@ -869,15 +932,14 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.structuredOutputSchema === null ||
-                            requestParameters.structuredOutputSchema === undefined) {
+                        if (requestParameters.structuredOutputSchema === null || requestParameters.structuredOutputSchema === undefined) {
                             throw new runtime.RequiredError('structuredOutputSchema', 'Required parameter requestParameters.structuredOutputSchema was null or undefined when calling validateStructuredOutputSchema.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/ai/structured-content/validate",
@@ -888,9 +950,7 @@ var AIControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.StructuredOutputSchemaValidationFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.StructuredOutputSchemaValidationFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -917,47 +977,47 @@ var AIControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.AIControllerApi = AIControllerApi;
 /**
- * @export
- * @enum {string}
- */
-var CreateTransformerSortEnum;
-(function (CreateTransformerSortEnum) {
-    CreateTransformerSortEnum["ASC"] = "ASC";
-    CreateTransformerSortEnum["DESC"] = "DESC";
-})(CreateTransformerSortEnum = exports.CreateTransformerSortEnum || (exports.CreateTransformerSortEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetTransformerMappingsEntityTypeEnum;
 (function (GetTransformerMappingsEntityTypeEnum) {
     GetTransformerMappingsEntityTypeEnum["INBOX"] = "INBOX";
     GetTransformerMappingsEntityTypeEnum["PHONE"] = "PHONE";
 })(GetTransformerMappingsEntityTypeEnum = exports.GetTransformerMappingsEntityTypeEnum || (exports.GetTransformerMappingsEntityTypeEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetTransformerMappingsSortEnum;
 (function (GetTransformerMappingsSortEnum) {
     GetTransformerMappingsSortEnum["ASC"] = "ASC";
     GetTransformerMappingsSortEnum["DESC"] = "DESC";
 })(GetTransformerMappingsSortEnum = exports.GetTransformerMappingsSortEnum || (exports.GetTransformerMappingsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetTransformerResultsEntityTypeEnum;
 (function (GetTransformerResultsEntityTypeEnum) {
     GetTransformerResultsEntityTypeEnum["INBOX"] = "INBOX";
     GetTransformerResultsEntityTypeEnum["PHONE"] = "PHONE";
 })(GetTransformerResultsEntityTypeEnum = exports.GetTransformerResultsEntityTypeEnum || (exports.GetTransformerResultsEntityTypeEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetTransformerResultsSortEnum;
 (function (GetTransformerResultsSortEnum) {
     GetTransformerResultsSortEnum["ASC"] = "ASC";
     GetTransformerResultsSortEnum["DESC"] = "DESC";
 })(GetTransformerResultsSortEnum = exports.GetTransformerResultsSortEnum || (exports.GetTransformerResultsSortEnum = {}));
+/**
+    * @export
+    * @enum {string}
+    */
+var GetTransformersSortEnum;
+(function (GetTransformersSortEnum) {
+    GetTransformersSortEnum["ASC"] = "ASC";
+    GetTransformersSortEnum["DESC"] = "DESC";
+})(GetTransformersSortEnum = exports.GetTransformersSortEnum || (exports.GetTransformersSortEnum = {}));

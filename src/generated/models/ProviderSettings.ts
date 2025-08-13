@@ -14,120 +14,117 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ProviderSettings
  */
 export interface ProviderSettings {
-  /**
-   *
-   * @type {string}
-   * @memberof ProviderSettings
-   */
-  mailProvider: ProviderSettingsMailProviderEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof ProviderSettings
-   */
-  imapHost: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ProviderSettings
-   */
-  imapPort: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ProviderSettings
-   */
-  imapSsl: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ProviderSettings
-   */
-  imapStartTls?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ProviderSettings
-   */
-  smtpHost: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ProviderSettings
-   */
-  smtpPort: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ProviderSettings
-   */
-  smtpSsl: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ProviderSettings
-   */
-  smtpStartTls?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSettings
+     */
+    mailProvider: ProviderSettingsMailProviderEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSettings
+     */
+    imapHost: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ProviderSettings
+     */
+    imapPort: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProviderSettings
+     */
+    imapSsl: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProviderSettings
+     */
+    imapStartTls?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSettings
+     */
+    smtpHost: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ProviderSettings
+     */
+    smtpPort: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProviderSettings
+     */
+    smtpSsl: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProviderSettings
+     */
+    smtpStartTls?: boolean;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum ProviderSettingsMailProviderEnum {
-  GOOGLE = 'GOOGLE',
-  MICROSOFT = 'MICROSOFT',
+    GOOGLE = 'GOOGLE',
+    MICROSOFT = 'MICROSOFT'
 }
 
 export function ProviderSettingsFromJSON(json: any): ProviderSettings {
-  return ProviderSettingsFromJSONTyped(json, false);
+    return ProviderSettingsFromJSONTyped(json, false);
 }
 
-export function ProviderSettingsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ProviderSettings {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    mailProvider: json['mailProvider'],
-    imapHost: json['imapHost'],
-    imapPort: json['imapPort'],
-    imapSsl: json['imapSsl'],
-    imapStartTls: !exists(json, 'imapStartTls')
-      ? undefined
-      : json['imapStartTls'],
-    smtpHost: json['smtpHost'],
-    smtpPort: json['smtpPort'],
-    smtpSsl: json['smtpSsl'],
-    smtpStartTls: !exists(json, 'smtpStartTls')
-      ? undefined
-      : json['smtpStartTls'],
-  };
+export function ProviderSettingsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ProviderSettings {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'mailProvider': json['mailProvider'],
+        'imapHost': json['imapHost'],
+        'imapPort': json['imapPort'],
+        'imapSsl': json['imapSsl'],
+        'imapStartTls': !exists(json, 'imapStartTls') ? undefined : json['imapStartTls'],
+        'smtpHost': json['smtpHost'],
+        'smtpPort': json['smtpPort'],
+        'smtpSsl': json['smtpSsl'],
+        'smtpStartTls': !exists(json, 'smtpStartTls') ? undefined : json['smtpStartTls'],
+    };
 }
 
 export function ProviderSettingsToJSON(value?: ProviderSettings | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    mailProvider: value.mailProvider,
-    imapHost: value.imapHost,
-    imapPort: value.imapPort,
-    imapSsl: value.imapSsl,
-    imapStartTls: value.imapStartTls,
-    smtpHost: value.smtpHost,
-    smtpPort: value.smtpPort,
-    smtpSsl: value.smtpSsl,
-    smtpStartTls: value.smtpStartTls,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'mailProvider': value.mailProvider,
+        'imapHost': value.imapHost,
+        'imapPort': value.imapPort,
+        'imapSsl': value.imapSsl,
+        'imapStartTls': value.imapStartTls,
+        'smtpHost': value.smtpHost,
+        'smtpPort': value.smtpPort,
+        'smtpSsl': value.smtpSsl,
+        'smtpStartTls': value.smtpStartTls,
+    };
 }
+
+

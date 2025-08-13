@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailAvailableResult, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageInboxTags, PageOrganizationInboxProjection, PagePlusAddressProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, PlusAddressDto, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateImapAccessOptions, UpdateInboxOptions, UpdateSmtpAccessOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateRulesetOptions, Email, EmailAvailableResult, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxTags, PageOrganizationInboxProjection, PagePlusAddressProjection, PageRulesetDto, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, PlusAddressDto, RulesetDto, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateImapAccessOptions, UpdateInboxOptions, UpdateSmtpAccessOptions } from '../models';
 export interface CancelScheduledJobRequest {
     jobId: string;
 }
@@ -33,7 +33,7 @@ export interface CreateInboxRequest {
 }
 export interface CreateInboxRulesetRequest {
     inboxId: string;
-    createInboxRulesetOptions: CreateInboxRulesetOptions;
+    createRulesetOptions: CreateRulesetOptions;
 }
 export interface CreateInboxWithOptionsRequest {
     createInboxDto: CreateInboxDto;
@@ -56,6 +56,8 @@ export interface DeleteInboxRequest {
 export interface DoesInboxExistRequest {
     emailAddress: string;
     allowCatchAll?: boolean;
+    ipAddress?: string;
+    sender?: string;
 }
 export interface FlushExpiredRequest {
     before?: Date;
@@ -349,12 +351,12 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
      * Create an inbox ruleset
      */
-    createInboxRulesetRaw(requestParameters: CreateInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRulesetDto>>;
+    createInboxRulesetRaw(requestParameters: CreateInboxRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<RulesetDto>>;
     /**
      * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
      * Create an inbox ruleset
      */
-    createInboxRuleset(requestParameters: CreateInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetDto>;
+    createInboxRuleset(requestParameters: CreateInboxRulesetRequest, initOverrides?: RequestInit): Promise<RulesetDto>;
     /**
      * Create an inbox with default options. Uses MailSlurp domain pool address and is private.
      */
@@ -799,12 +801,12 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List all rulesets attached to an inbox
      * List inbox rulesets
      */
-    listInboxRulesetsRaw(requestParameters: ListInboxRulesetsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxRulesetDto>>;
+    listInboxRulesetsRaw(requestParameters: ListInboxRulesetsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageRulesetDto>>;
     /**
      * List all rulesets attached to an inbox
      * List inbox rulesets
      */
-    listInboxRulesets(requestParameters: ListInboxRulesetsRequest, initOverrides?: RequestInit): Promise<PageInboxRulesetDto>;
+    listInboxRulesets(requestParameters: ListInboxRulesetsRequest, initOverrides?: RequestInit): Promise<PageRulesetDto>;
     /**
      * List all tracking pixels sent from an inbox
      * List inbox tracking pixels
@@ -923,33 +925,33 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
     updateSmtpAccess(requestParameters: UpdateSmtpAccessRequest, initOverrides?: RequestInit): Promise<void>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum CreateInboxInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllInboxesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllInboxesInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllInboxesInboxFunctionEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
@@ -960,25 +962,25 @@ export declare enum GetAllInboxesInboxFunctionEnum {
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllInboxesOffsetPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllInboxesOffsetPaginatedInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
@@ -989,145 +991,145 @@ export declare enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllPlusAddressesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAllScheduledJobsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetDeliveryStatusesByInboxIdSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxEmailsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxPlusAddressEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxPlusAddressEmailsForPlusAddressIdSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxPlusAddressesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxSentEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxTagsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxTagsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetInboxesByTagSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetOrganizationInboxesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetOutboxesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetScheduledJobsByInboxIdSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum ListInboxRulesetsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum ListInboxTrackingPixelsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

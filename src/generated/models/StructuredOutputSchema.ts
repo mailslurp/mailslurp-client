@@ -19,250 +19,221 @@ import { exists, mapValues } from '../runtime';
  * @interface StructuredOutputSchema
  */
 export interface StructuredOutputSchema {
-  /**
-   *
-   * @type {Array<StructuredOutputSchema>}
-   * @memberof StructuredOutputSchema
-   */
-  anyOf?: Array<StructuredOutputSchema> | null;
-  /**
-   *
-   * @type {object}
-   * @memberof StructuredOutputSchema
-   */
-  _default?: object | null;
-  /**
-   * Provide a description of the schema to help the AI understand the schema.
-   * @type {string}
-   * @memberof StructuredOutputSchema
-   */
-  description?: string | null;
-  /**
-   * When using type string and format enum pass a collection of enum values here.
-   * @type {Array<string>}
-   * @memberof StructuredOutputSchema
-   */
-  _enum?: Array<string> | null;
-  /**
-   *
-   * @type {object}
-   * @memberof StructuredOutputSchema
-   */
-  example?: object | null;
-  /**
-   * Format for string types. Can be null, date-time or enum.
-   * @type {string}
-   * @memberof StructuredOutputSchema
-   */
-  format?: string | null;
-  /**
-   *
-   * @type {StructuredOutputSchema}
-   * @memberof StructuredOutputSchema
-   */
-  items?: StructuredOutputSchema;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  maxItems?: number | null;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  minItems?: number | null;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  maxLength?: number | null;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  minLength?: number | null;
-  /**
-   *
-   * @type {string}
-   * @memberof StructuredOutputSchema
-   */
-  pattern?: string | null;
-  /**
-   * Properties of an OBJECT schema. These are key value pairs where the key is the property name and the value is the schema for that property.
-   * @type {{ [key: string]: StructuredOutputSchema; }}
-   * @memberof StructuredOutputSchema
-   */
-  properties?: { [key: string]: StructuredOutputSchema } | null;
-  /**
-   * Pass an array of property names to specify the order of properties in the generated JSON object if required.
-   * @type {Array<string>}
-   * @memberof StructuredOutputSchema
-   */
-  propertyOrdering?: Array<string> | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof StructuredOutputSchema
-   */
-  required?: Array<string> | null;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  maxProperties?: number | null;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  minProperties?: number | null;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  maximum?: number | null;
-  /**
-   *
-   * @type {number}
-   * @memberof StructuredOutputSchema
-   */
-  minimum?: number | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof StructuredOutputSchema
-   */
-  nullable?: boolean | null;
-  /**
-   *
-   * @type {string}
-   * @memberof StructuredOutputSchema
-   */
-  title?: string | null;
-  /**
-   * Primitive JSON schema types with a fallback CUSTOM for unknown values.
-   * @type {string}
-   * @memberof StructuredOutputSchema
-   */
-  type?: StructuredOutputSchemaTypeEnum;
+    /**
+     * 
+     * @type {Array<StructuredOutputSchema>}
+     * @memberof StructuredOutputSchema
+     */
+    anyOf?: Array<StructuredOutputSchema> | null;
+    /**
+     * 
+     * @type {object}
+     * @memberof StructuredOutputSchema
+     */
+    _default?: object | null;
+    /**
+     * Provide a description of the schema to help the AI understand the schema.
+     * @type {string}
+     * @memberof StructuredOutputSchema
+     */
+    description?: string | null;
+    /**
+     * When using type string and format enum pass a collection of enum values here.
+     * @type {Array<string>}
+     * @memberof StructuredOutputSchema
+     */
+    enumValues?: Array<string> | null;
+    /**
+     * 
+     * @type {object}
+     * @memberof StructuredOutputSchema
+     */
+    example?: object | null;
+    /**
+     * Format for string types. Can be null, date-time or enum.
+     * @type {string}
+     * @memberof StructuredOutputSchema
+     */
+    format?: string | null;
+    /**
+     * 
+     * @type {StructuredOutputSchema}
+     * @memberof StructuredOutputSchema
+     */
+    items?: StructuredOutputSchema | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    maxItems?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    minItems?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    maxLength?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    minLength?: number | null;
+    /**
+     * Regex pattern for STRING type
+     * @type {string}
+     * @memberof StructuredOutputSchema
+     */
+    pattern?: string | null;
+    /**
+     * Properties of an OBJECT schema. These are key value pairs where the key is the property name and the value is the schema for that property.
+     * @type {{ [key: string]: StructuredOutputSchema; }}
+     * @memberof StructuredOutputSchema
+     */
+    properties?: { [key: string]: StructuredOutputSchema; } | null;
+    /**
+     * Pass an array of property names to specify the order of properties in the generated JSON object if required.
+     * @type {Array<string>}
+     * @memberof StructuredOutputSchema
+     */
+    propertyOrdering?: Array<string> | null;
+    /**
+     * Is field required
+     * @type {Array<string>}
+     * @memberof StructuredOutputSchema
+     */
+    required?: Array<string> | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    maxProperties?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    minProperties?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    maximum?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StructuredOutputSchema
+     */
+    minimum?: number | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof StructuredOutputSchema
+     */
+    nullable?: boolean | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof StructuredOutputSchema
+     */
+    title?: string | null;
+    /**
+     * Primitive JSON schema types with a fallback CUSTOM for unknown values.
+     * @type {string}
+     * @memberof StructuredOutputSchema
+     */
+    type?: StructuredOutputSchemaTypeEnum;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum StructuredOutputSchemaTypeEnum {
-  string = 'string',
-  number = 'number',
-  integer = 'integer',
-  boolean = 'boolean',
-  object = 'object',
-  array = 'array',
-  null = 'null',
+    string = 'string',
+    number = 'number',
+    integer = 'integer',
+    boolean = 'boolean',
+    object = 'object',
+    array = 'array',
+    null = 'null'
 }
 
-export function StructuredOutputSchemaFromJSON(
-  json: any
-): StructuredOutputSchema {
-  return StructuredOutputSchemaFromJSONTyped(json, false);
+export function StructuredOutputSchemaFromJSON(json: any): StructuredOutputSchema {
+    return StructuredOutputSchemaFromJSONTyped(json, false);
 }
 
-export function StructuredOutputSchemaFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): StructuredOutputSchema {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    anyOf: !exists(json, 'anyOf')
-      ? undefined
-      : json['anyOf'] === null
-      ? null
-      : (json['anyOf'] as Array<any>).map(StructuredOutputSchemaFromJSON),
-    _default: !exists(json, 'default') ? undefined : json['default'],
-    description: !exists(json, 'description') ? undefined : json['description'],
-    _enum: !exists(json, 'enum') ? undefined : json['enum'],
-    example: !exists(json, 'example') ? undefined : json['example'],
-    format: !exists(json, 'format') ? undefined : json['format'],
-    items: !exists(json, 'items')
-      ? undefined
-      : StructuredOutputSchemaFromJSON(json['items']),
-    maxItems: !exists(json, 'maxItems') ? undefined : json['maxItems'],
-    minItems: !exists(json, 'minItems') ? undefined : json['minItems'],
-    maxLength: !exists(json, 'maxLength') ? undefined : json['maxLength'],
-    minLength: !exists(json, 'minLength') ? undefined : json['minLength'],
-    pattern: !exists(json, 'pattern') ? undefined : json['pattern'],
-    properties: !exists(json, 'properties')
-      ? undefined
-      : json['properties'] === null
-      ? null
-      : mapValues(json['properties'], StructuredOutputSchemaFromJSON),
-    propertyOrdering: !exists(json, 'propertyOrdering')
-      ? undefined
-      : json['propertyOrdering'],
-    required: !exists(json, 'required') ? undefined : json['required'],
-    maxProperties: !exists(json, 'maxProperties')
-      ? undefined
-      : json['maxProperties'],
-    minProperties: !exists(json, 'minProperties')
-      ? undefined
-      : json['minProperties'],
-    maximum: !exists(json, 'maximum') ? undefined : json['maximum'],
-    minimum: !exists(json, 'minimum') ? undefined : json['minimum'],
-    nullable: !exists(json, 'nullable') ? undefined : json['nullable'],
-    title: !exists(json, 'title') ? undefined : json['title'],
-    type: !exists(json, 'type') ? undefined : json['type'],
-  };
+export function StructuredOutputSchemaFromJSONTyped(json: any, ignoreDiscriminator: boolean): StructuredOutputSchema {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'anyOf': !exists(json, 'anyOf') ? undefined : (json['anyOf'] === null ? null : (json['anyOf'] as Array<any>).map(StructuredOutputSchemaFromJSON)),
+        '_default': !exists(json, 'default') ? undefined : json['default'],
+        'description': !exists(json, 'description') ? undefined : json['description'],
+        'enumValues': !exists(json, 'enumValues') ? undefined : json['enumValues'],
+        'example': !exists(json, 'example') ? undefined : json['example'],
+        'format': !exists(json, 'format') ? undefined : json['format'],
+        'items': !exists(json, 'items') ? undefined : StructuredOutputSchemaFromJSON(json['items']),
+        'maxItems': !exists(json, 'maxItems') ? undefined : json['maxItems'],
+        'minItems': !exists(json, 'minItems') ? undefined : json['minItems'],
+        'maxLength': !exists(json, 'maxLength') ? undefined : json['maxLength'],
+        'minLength': !exists(json, 'minLength') ? undefined : json['minLength'],
+        'pattern': !exists(json, 'pattern') ? undefined : json['pattern'],
+        'properties': !exists(json, 'properties') ? undefined : (json['properties'] === null ? null : mapValues(json['properties'], StructuredOutputSchemaFromJSON)),
+        'propertyOrdering': !exists(json, 'propertyOrdering') ? undefined : json['propertyOrdering'],
+        'required': !exists(json, 'required') ? undefined : json['required'],
+        'maxProperties': !exists(json, 'maxProperties') ? undefined : json['maxProperties'],
+        'minProperties': !exists(json, 'minProperties') ? undefined : json['minProperties'],
+        'maximum': !exists(json, 'maximum') ? undefined : json['maximum'],
+        'minimum': !exists(json, 'minimum') ? undefined : json['minimum'],
+        'nullable': !exists(json, 'nullable') ? undefined : json['nullable'],
+        'title': !exists(json, 'title') ? undefined : json['title'],
+        'type': !exists(json, 'type') ? undefined : json['type'],
+    };
 }
 
-export function StructuredOutputSchemaToJSON(
-  value?: StructuredOutputSchema | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    anyOf:
-      value.anyOf === undefined
-        ? undefined
-        : value.anyOf === null
-        ? null
-        : (value.anyOf as Array<any>).map(StructuredOutputSchemaToJSON),
-    default: value._default,
-    description: value.description,
-    enum: value._enum,
-    example: value.example,
-    format: value.format,
-    items: StructuredOutputSchemaToJSON(value.items),
-    maxItems: value.maxItems,
-    minItems: value.minItems,
-    maxLength: value.maxLength,
-    minLength: value.minLength,
-    pattern: value.pattern,
-    properties:
-      value.properties === undefined
-        ? undefined
-        : value.properties === null
-        ? null
-        : mapValues(value.properties, StructuredOutputSchemaToJSON),
-    propertyOrdering: value.propertyOrdering,
-    required: value.required,
-    maxProperties: value.maxProperties,
-    minProperties: value.minProperties,
-    maximum: value.maximum,
-    minimum: value.minimum,
-    nullable: value.nullable,
-    title: value.title,
-    type: value.type,
-  };
+export function StructuredOutputSchemaToJSON(value?: StructuredOutputSchema | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'anyOf': value.anyOf === undefined ? undefined : (value.anyOf === null ? null : (value.anyOf as Array<any>).map(StructuredOutputSchemaToJSON)),
+        'default': value._default,
+        'description': value.description,
+        'enumValues': value.enumValues,
+        'example': value.example,
+        'format': value.format,
+        'items': StructuredOutputSchemaToJSON(value.items),
+        'maxItems': value.maxItems,
+        'minItems': value.minItems,
+        'maxLength': value.maxLength,
+        'minLength': value.minLength,
+        'pattern': value.pattern,
+        'properties': value.properties === undefined ? undefined : (value.properties === null ? null : mapValues(value.properties, StructuredOutputSchemaToJSON)),
+        'propertyOrdering': value.propertyOrdering,
+        'required': value.required,
+        'maxProperties': value.maxProperties,
+        'minProperties': value.minProperties,
+        'maximum': value.maximum,
+        'minimum': value.minimum,
+        'nullable': value.nullable,
+        'title': value.title,
+        'type': value.type,
+    };
 }
+
+

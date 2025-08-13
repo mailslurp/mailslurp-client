@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateTotpDeviceBase32SecretKeyOptions, CreateTotpDeviceOtpAuthUrlOptions, TotpDeviceCodeDto, TotpDeviceDto, TotpDeviceOptionalDto } from '../models';
+import { CreateTotpDeviceBase32SecretKeyOptions, CreateTotpDeviceCustomOptions, CreateTotpDeviceOtpAuthUrlOptions, TotpDeviceCodeDto, TotpDeviceDto, TotpDeviceOptionalDto } from '../models';
 export interface CreateTotpDeviceForBase32SecretKeyRequest {
     createTotpDeviceBase32SecretKeyOptions: CreateTotpDeviceBase32SecretKeyOptions;
 }
 export interface CreateTotpDeviceForCustomRequest {
-    createTotpDeviceOtpAuthUrlOptions: CreateTotpDeviceOtpAuthUrlOptions;
+    createTotpDeviceCustomOptions: CreateTotpDeviceCustomOptions;
 }
 export interface CreateTotpDeviceForOtpAuthUrlRequest {
     createTotpDeviceOtpAuthUrlOptions: CreateTotpDeviceOtpAuthUrlOptions;

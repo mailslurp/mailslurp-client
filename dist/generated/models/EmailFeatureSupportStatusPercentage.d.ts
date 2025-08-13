@@ -29,9 +29,9 @@ export interface EmailFeatureSupportStatusPercentage {
     percentage: number;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EmailFeatureSupportStatusPercentageStatusEnum {
     SUPPORTED = "SUPPORTED",
     PARTIAL = "PARTIAL",

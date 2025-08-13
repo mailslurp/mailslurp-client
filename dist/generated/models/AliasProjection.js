@@ -20,18 +20,18 @@ function AliasProjectionFromJSON(json) {
 }
 exports.AliasProjectionFromJSON = AliasProjectionFromJSON;
 function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        inboxId: json['inboxId'],
-        userId: json['userId'],
-        emailAddress: json['emailAddress'],
-        updatedAt: new Date(json['updatedAt']),
-        createdAt: new Date(json['createdAt']),
-        useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'userId': json['userId'],
+        'inboxId': json['inboxId'],
+        'emailAddress': json['emailAddress'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'useThreads': !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
     };
 }
 exports.AliasProjectionFromJSONTyped = AliasProjectionFromJSONTyped;
@@ -43,14 +43,14 @@ function AliasProjectionToJSON(value) {
         return null;
     }
     return {
-        inboxId: value.inboxId,
-        userId: value.userId,
-        emailAddress: value.emailAddress,
-        updatedAt: value.updatedAt.toISOString(),
-        createdAt: value.createdAt.toISOString(),
-        useThreads: value.useThreads,
-        name: value.name,
-        id: value.id,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'emailAddress': value.emailAddress,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'useThreads': value.useThreads,
+        'name': value.name,
+        'id': value.id,
     };
 }
 exports.AliasProjectionToJSON = AliasProjectionToJSON;

@@ -18,6 +18,12 @@ import { StructuredOutputSchema } from './';
 export interface AITransformProjection {
     /**
      *
+     * @type {Date}
+     * @memberof AITransformProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {Array<string>}
      * @memberof AITransformProjection
      */
@@ -33,7 +39,7 @@ export interface AITransformProjection {
      * @type {StructuredOutputSchema}
      * @memberof AITransformProjection
      */
-    outputSchema?: StructuredOutputSchema;
+    outputSchema?: StructuredOutputSchema | null;
     /**
      *
      * @type {string}

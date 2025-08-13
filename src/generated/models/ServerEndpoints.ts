@@ -14,67 +14,68 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ServerEndpoints
  */
 export interface ServerEndpoints {
-  /**
-   *
-   * @type {string}
-   * @memberof ServerEndpoints
-   */
-  host: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ServerEndpoints
-   */
-  port: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ServerEndpoints
-   */
-  tls: boolean;
-  /**
-   *
-   * @type {Array<number>}
-   * @memberof ServerEndpoints
-   */
-  altPorts: Array<number>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServerEndpoints
+     */
+    host: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServerEndpoints
+     */
+    port: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServerEndpoints
+     */
+    tls: boolean;
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof ServerEndpoints
+     */
+    altPorts: Array<number>;
 }
 
 export function ServerEndpointsFromJSON(json: any): ServerEndpoints {
-  return ServerEndpointsFromJSONTyped(json, false);
+    return ServerEndpointsFromJSONTyped(json, false);
 }
 
-export function ServerEndpointsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ServerEndpoints {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-    port: json['port'],
-    tls: json['tls'],
-    altPorts: json['altPorts'],
-  };
+export function ServerEndpointsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServerEndpoints {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+        'port': json['port'],
+        'tls': json['tls'],
+        'altPorts': json['altPorts'],
+    };
 }
 
 export function ServerEndpointsToJSON(value?: ServerEndpoints | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-    port: value.port,
-    tls: value.tls,
-    altPorts: value.altPorts,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'host': value.host,
+        'port': value.port,
+        'tls': value.tls,
+        'altPorts': value.altPorts,
+    };
 }
+
+

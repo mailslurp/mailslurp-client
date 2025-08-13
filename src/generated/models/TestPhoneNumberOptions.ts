@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface TestPhoneNumberOptions
  */
 export interface TestPhoneNumberOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof TestPhoneNumberOptions
-   */
-  message: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestPhoneNumberOptions
+     */
+    message: string;
 }
 
-export function TestPhoneNumberOptionsFromJSON(
-  json: any
-): TestPhoneNumberOptions {
-  return TestPhoneNumberOptionsFromJSONTyped(json, false);
+export function TestPhoneNumberOptionsFromJSON(json: any): TestPhoneNumberOptions {
+    return TestPhoneNumberOptionsFromJSONTyped(json, false);
 }
 
-export function TestPhoneNumberOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestPhoneNumberOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    message: json['message'],
-  };
+export function TestPhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestPhoneNumberOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'message': json['message'],
+    };
 }
 
-export function TestPhoneNumberOptionsToJSON(
-  value?: TestPhoneNumberOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    message: value.message,
-  };
+export function TestPhoneNumberOptionsToJSON(value?: TestPhoneNumberOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'message': value.message,
+    };
 }
+
+

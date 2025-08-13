@@ -20,12 +20,6 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    inboxId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
     userId: string;
     /**
      *
@@ -33,6 +27,12 @@ export interface TrackingPixelProjection {
      * @memberof TrackingPixelProjection
      */
     sentEmailId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    inboxId?: string;
     /**
      *
      * @type {Date}

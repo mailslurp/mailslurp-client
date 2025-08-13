@@ -54,6 +54,12 @@ export interface PageWebhookEndpointProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageWebhookEndpointProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageWebhookEndpointProjection
      */
@@ -70,12 +76,6 @@ export interface PageWebhookEndpointProjection {
      * @memberof PageWebhookEndpointProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageWebhookEndpointProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

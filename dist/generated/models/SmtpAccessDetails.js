@@ -20,21 +20,19 @@ function SmtpAccessDetailsFromJSON(json) {
 }
 exports.SmtpAccessDetailsFromJSON = SmtpAccessDetailsFromJSON;
 function SmtpAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        secureSmtpServerHost: json['secureSmtpServerHost'],
-        secureSmtpServerPort: json['secureSmtpServerPort'],
-        secureSmtpUsername: json['secureSmtpUsername'],
-        secureSmtpPassword: json['secureSmtpPassword'],
-        smtpServerHost: json['smtpServerHost'],
-        smtpServerPort: json['smtpServerPort'],
-        smtpUsername: json['smtpUsername'],
-        smtpPassword: json['smtpPassword'],
-        mailFromDomain: !(0, runtime_1.exists)(json, 'mailFromDomain')
-            ? undefined
-            : json['mailFromDomain'],
+        'secureSmtpServerHost': json['secureSmtpServerHost'],
+        'secureSmtpServerPort': json['secureSmtpServerPort'],
+        'secureSmtpUsername': json['secureSmtpUsername'],
+        'secureSmtpPassword': json['secureSmtpPassword'],
+        'smtpServerHost': json['smtpServerHost'],
+        'smtpServerPort': json['smtpServerPort'],
+        'smtpUsername': json['smtpUsername'],
+        'smtpPassword': json['smtpPassword'],
+        'mailFromDomain': !(0, runtime_1.exists)(json, 'mailFromDomain') ? undefined : json['mailFromDomain'],
     };
 }
 exports.SmtpAccessDetailsFromJSONTyped = SmtpAccessDetailsFromJSONTyped;
@@ -46,15 +44,15 @@ function SmtpAccessDetailsToJSON(value) {
         return null;
     }
     return {
-        secureSmtpServerHost: value.secureSmtpServerHost,
-        secureSmtpServerPort: value.secureSmtpServerPort,
-        secureSmtpUsername: value.secureSmtpUsername,
-        secureSmtpPassword: value.secureSmtpPassword,
-        smtpServerHost: value.smtpServerHost,
-        smtpServerPort: value.smtpServerPort,
-        smtpUsername: value.smtpUsername,
-        smtpPassword: value.smtpPassword,
-        mailFromDomain: value.mailFromDomain,
+        'secureSmtpServerHost': value.secureSmtpServerHost,
+        'secureSmtpServerPort': value.secureSmtpServerPort,
+        'secureSmtpUsername': value.secureSmtpUsername,
+        'secureSmtpPassword': value.secureSmtpPassword,
+        'smtpServerHost': value.smtpServerHost,
+        'smtpServerPort': value.smtpServerPort,
+        'smtpUsername': value.smtpUsername,
+        'smtpPassword': value.smtpPassword,
+        'mailFromDomain': value.mailFromDomain,
     };
 }
 exports.SmtpAccessDetailsToJSON = SmtpAccessDetailsToJSON;

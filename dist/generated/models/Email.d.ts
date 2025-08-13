@@ -229,13 +229,13 @@ export interface Email {
      * @type {boolean}
      * @memberof Email
      */
-    html?: boolean;
+    xampHtml?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof Email
      */
-    xampHtml?: boolean;
+    html?: boolean;
 }
 export declare function EmailFromJSON(json: any): Email;
 export declare function EmailFromJSONTyped(json: any, ignoreDiscriminator: boolean): Email;

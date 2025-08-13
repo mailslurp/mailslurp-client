@@ -19,12 +19,12 @@ function VerifyWebhookSignatureOptionsFromJSON(json) {
 }
 exports.VerifyWebhookSignatureOptionsFromJSON = VerifyWebhookSignatureOptionsFromJSON;
 function VerifyWebhookSignatureOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        messageId: json['messageId'],
-        signature: json['signature'],
+        'messageId': json['messageId'],
+        'signature': json['signature'],
     };
 }
 exports.VerifyWebhookSignatureOptionsFromJSONTyped = VerifyWebhookSignatureOptionsFromJSONTyped;
@@ -36,8 +36,8 @@ function VerifyWebhookSignatureOptionsToJSON(value) {
         return null;
     }
     return {
-        messageId: value.messageId,
-        signature: value.signature,
+        'messageId': value.messageId,
+        'signature': value.signature,
     };
 }
 exports.VerifyWebhookSignatureOptionsToJSON = VerifyWebhookSignatureOptionsToJSON;

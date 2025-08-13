@@ -54,6 +54,12 @@ export interface PageGroupProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageGroupProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageGroupProjection
      */
@@ -70,12 +76,6 @@ export interface PageGroupProjection {
      * @memberof PageGroupProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageGroupProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

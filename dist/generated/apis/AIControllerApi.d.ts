@@ -10,15 +10,9 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AITranformCreateOptions, AITransformDto, AITransformMappingDto, AITransformResultDto, CreateAITransformerMappingOptions, GenerateStructuredContentAttachmentOptions, GenerateStructuredContentEmailOptions, GenerateStructuredContentSmsOptions, PageAITransformMappingProjection, PageAITransformProjection, PageAITransformResultProjection, StructuredContentResultDto, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
+import { AITransformCreateOptions, AITransformDto, AITransformMappingDto, AITransformResultDto, ConditionalStructuredContentResult, CreateAITransformerMappingOptions, GenerateStructuredContentAttachmentOptions, GenerateStructuredContentEmailOptions, GenerateStructuredContentSmsOptions, InvokeTransformerOptions, PageAITransformMappingProjection, PageAITransformProjection, PageAITransformResultProjection, StructuredContentResultDto, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
 export interface CreateTransformerRequest {
-    options: AITranformCreateOptions;
-    page?: number;
-    size?: number;
-    sort?: CreateTransformerSortEnum;
-}
-export interface CreateTransformer1Request {
-    aITranformCreateOptions: AITranformCreateOptions;
+    aITransformCreateOptions: AITransformCreateOptions;
 }
 export interface CreateTransformerMappingsRequest {
     createAITransformerMappingOptions: CreateAITransformerMappingOptions;
@@ -64,33 +58,32 @@ export interface GetTransformerResultsRequest {
     size?: number;
     sort?: GetTransformerResultsSortEnum;
 }
+export interface GetTransformersRequest {
+    page?: number;
+    size?: number;
+    sort?: GetTransformersSortEnum;
+    include?: Array<string>;
+}
+export interface InvokeTransformerRequest {
+    invokeTransformerOptions: InvokeTransformerOptions;
+}
 export interface ValidateStructuredOutputSchemaRequest {
-    structuredOutputSchema: StructuredOutputSchema;
+    structuredOutputSchema: StructuredOutputSchema | null;
 }
 /**
  *
  */
 export declare class AIControllerApi extends runtime.BaseAPI {
     /**
-     * List all AI transforms
-     * List transformers
+     * Save an AI transform instructions and schema for use with webhooks and automations
+     * Create a transformer for reuse in automations
      */
-    createTransformerRaw(requestParameters: CreateTransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAITransformProjection>>;
-    /**
-     * List all AI transforms
-     * List transformers
-     */
-    createTransformer(requestParameters: CreateTransformerRequest, initOverrides?: RequestInit): Promise<PageAITransformProjection>;
+    createTransformerRaw(requestParameters: CreateTransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AITransformDto>>;
     /**
      * Save an AI transform instructions and schema for use with webhooks and automations
      * Create a transformer for reuse in automations
      */
-    createTransformer1Raw(requestParameters: CreateTransformer1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AITransformDto>>;
-    /**
-     * Save an AI transform instructions and schema for use with webhooks and automations
-     * Create a transformer for reuse in automations
-     */
-    createTransformer1(requestParameters: CreateTransformer1Request, initOverrides?: RequestInit): Promise<AITransformDto>;
+    createTransformer(requestParameters: CreateTransformerRequest, initOverrides?: RequestInit): Promise<AITransformDto>;
     /**
      * Create AI transformer mappings to other entities
      * Create transformer mapping
@@ -101,6 +94,16 @@ export declare class AIControllerApi extends runtime.BaseAPI {
      * Create transformer mapping
      */
     createTransformerMappings(requestParameters: CreateTransformerMappingsRequest, initOverrides?: RequestInit): Promise<AITransformMappingDto>;
+    /**
+     * Delete all AI transformer mappings
+     * Delete all transformer mapping
+     */
+    deleteAllTransformerMappingsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete all AI transformer mappings
+     * Delete all transformer mapping
+     */
+    deleteAllTransformerMappings(initOverrides?: RequestInit): Promise<void>;
     /**
      * Delete an AI transformer and schemas by ID
      * Delete a transformer
@@ -212,6 +215,26 @@ export declare class AIControllerApi extends runtime.BaseAPI {
      */
     getTransformerResults(requestParameters: GetTransformerResultsRequest, initOverrides?: RequestInit): Promise<PageAITransformResultProjection>;
     /**
+     * List all AI transforms
+     * List transformers
+     */
+    getTransformersRaw(requestParameters: GetTransformersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageAITransformProjection>>;
+    /**
+     * List all AI transforms
+     * List transformers
+     */
+    getTransformers(requestParameters: GetTransformersRequest, initOverrides?: RequestInit): Promise<PageAITransformProjection>;
+    /**
+     * Execute an AI transformer to generate structured content
+     * Invoke a transformer
+     */
+    invokeTransformerRaw(requestParameters: InvokeTransformerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ConditionalStructuredContentResult>>;
+    /**
+     * Execute an AI transformer to generate structured content
+     * Invoke a transformer
+     */
+    invokeTransformer(requestParameters: InvokeTransformerRequest, initOverrides?: RequestInit): Promise<ConditionalStructuredContentResult>;
+    /**
      * Check if a schema is valid and can be used to extract data using AI
      * Validate structured content schema
      */
@@ -223,42 +246,42 @@ export declare class AIControllerApi extends runtime.BaseAPI {
     validateStructuredOutputSchema(requestParameters: ValidateStructuredOutputSchemaRequest, initOverrides?: RequestInit): Promise<StructuredOutputSchemaValidation>;
 }
 /**
- * @export
- * @enum {string}
- */
-export declare enum CreateTransformerSortEnum {
-    ASC = "ASC",
-    DESC = "DESC"
-}
-/**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetTransformerMappingsEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetTransformerMappingsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetTransformerResultsEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetTransformerResultsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum GetTransformersSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

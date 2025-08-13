@@ -54,6 +54,12 @@ export interface PageAlias {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageAlias
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageAlias
      */
@@ -70,12 +76,6 @@ export interface PageAlias {
      * @memberof PageAlias
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageAlias
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

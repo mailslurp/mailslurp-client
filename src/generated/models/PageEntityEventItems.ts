@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  EntityEventItemProjection,
-  EntityEventItemProjectionFromJSON,
-  EntityEventItemProjectionFromJSONTyped,
-  EntityEventItemProjectionToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    EntityEventItemProjection,
+    EntityEventItemProjectionFromJSON,
+    EntityEventItemProjectionFromJSONTyped,
+    EntityEventItemProjectionToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,129 +34,119 @@ import {
  * @interface PageEntityEventItems
  */
 export interface PageEntityEventItems {
-  /**
-   *
-   * @type {Array<EntityEventItemProjection>}
-   * @memberof PageEntityEventItems
-   */
-  content?: Array<EntityEventItemProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageEntityEventItems
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityEventItems
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityEventItems
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEntityEventItems
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityEventItems
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEntityEventItems
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityEventItems
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEntityEventItems
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageEntityEventItems
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEntityEventItems
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<EntityEventItemProjection>}
+     * @memberof PageEntityEventItems
+     */
+    content?: Array<EntityEventItemProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageEntityEventItems
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityEventItems
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityEventItems
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEntityEventItems
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityEventItems
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageEntityEventItems
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEntityEventItems
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityEventItems
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageEntityEventItems
+     */
+    number?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageEntityEventItems
+     */
+    empty?: boolean;
 }
 
 export function PageEntityEventItemsFromJSON(json: any): PageEntityEventItems {
-  return PageEntityEventItemsFromJSONTyped(json, false);
+    return PageEntityEventItemsFromJSONTyped(json, false);
 }
 
-export function PageEntityEventItemsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageEntityEventItems {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(EntityEventItemProjectionFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageEntityEventItemsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageEntityEventItems {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(EntityEventItemProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PageEntityEventItemsToJSON(
-  value?: PageEntityEventItems | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(EntityEventItemProjectionToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PageEntityEventItemsToJSON(value?: PageEntityEventItems | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(EntityEventItemProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'sort': SortObjectToJSON(value.sort),
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'empty': value.empty,
+    };
 }
+
+

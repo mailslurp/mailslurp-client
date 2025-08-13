@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  WebhookTestRequest,
-  WebhookTestRequestFromJSON,
-  WebhookTestRequestFromJSONTyped,
-  WebhookTestRequestToJSON,
-  WebhookTestResponse,
-  WebhookTestResponseFromJSON,
-  WebhookTestResponseFromJSONTyped,
-  WebhookTestResponseToJSON,
+    WebhookTestRequest,
+    WebhookTestRequestFromJSON,
+    WebhookTestRequestFromJSONTyped,
+    WebhookTestRequestToJSON,
+    WebhookTestResponse,
+    WebhookTestResponseFromJSON,
+    WebhookTestResponseFromJSONTyped,
+    WebhookTestResponseToJSON,
 } from './';
 
 /**
@@ -30,54 +30,55 @@ import {
  * @interface WebhookTestResult
  */
 export interface WebhookTestResult {
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookTestResult
-   */
-  message?: string | null;
-  /**
-   *
-   * @type {WebhookTestResponse}
-   * @memberof WebhookTestResult
-   */
-  response: WebhookTestResponse;
-  /**
-   *
-   * @type {WebhookTestRequest}
-   * @memberof WebhookTestResult
-   */
-  request: WebhookTestRequest;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookTestResult
+     */
+    message?: string | null;
+    /**
+     * 
+     * @type {WebhookTestResponse}
+     * @memberof WebhookTestResult
+     */
+    response: WebhookTestResponse;
+    /**
+     * 
+     * @type {WebhookTestRequest}
+     * @memberof WebhookTestResult
+     */
+    request: WebhookTestRequest;
 }
 
 export function WebhookTestResultFromJSON(json: any): WebhookTestResult {
-  return WebhookTestResultFromJSONTyped(json, false);
+    return WebhookTestResultFromJSONTyped(json, false);
 }
 
-export function WebhookTestResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): WebhookTestResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-    response: WebhookTestResponseFromJSON(json['response']),
-    request: WebhookTestRequestFromJSON(json['request']),
-  };
+export function WebhookTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'message': !exists(json, 'message') ? undefined : json['message'],
+        'response': WebhookTestResponseFromJSON(json['response']),
+        'request': WebhookTestRequestFromJSON(json['request']),
+    };
 }
 
 export function WebhookTestResultToJSON(value?: WebhookTestResult | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    message: value.message,
-    response: WebhookTestResponseToJSON(value.response),
-    request: WebhookTestRequestToJSON(value.request),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'message': value.message,
+        'response': WebhookTestResponseToJSON(value.response),
+        'request': WebhookTestRequestToJSON(value.request),
+    };
 }
+
+

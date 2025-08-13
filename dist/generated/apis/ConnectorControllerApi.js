@@ -108,8 +108,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createConnectorOptions === null ||
-                            requestParameters.createConnectorOptions === undefined) {
+                        if (requestParameters.createConnectorOptions === null || requestParameters.createConnectorOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorOptions', 'Required parameter requestParameters.createConnectorOptions was null or undefined when calling createConnector.');
                         }
                         queryParameters = {};
@@ -119,7 +118,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors",
@@ -130,9 +129,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -168,18 +165,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling createConnectorImapConnection.');
                         }
-                        if (requestParameters.createConnectorImapConnectionOptions === null ||
-                            requestParameters.createConnectorImapConnectionOptions === undefined) {
+                        if (requestParameters.createConnectorImapConnectionOptions === null || requestParameters.createConnectorImapConnectionOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorImapConnectionOptions', 'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling createConnectorImapConnection.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/imap".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -187,9 +183,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorImapConnectionDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorImapConnectionDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -225,18 +219,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling createConnectorSmtpConnection.');
                         }
-                        if (requestParameters.createConnectorSmtpConnectionOptions === null ||
-                            requestParameters.createConnectorSmtpConnectionOptions === undefined) {
+                        if (requestParameters.createConnectorSmtpConnectionOptions === null || requestParameters.createConnectorSmtpConnectionOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorSmtpConnectionOptions', 'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling createConnectorSmtpConnection.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/smtp".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -244,9 +237,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorSmtpConnectionDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorSmtpConnectionDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -282,18 +273,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling createConnectorSyncSettings.');
                         }
-                        if (requestParameters.createConnectorSyncSettingsOptions === null ||
-                            requestParameters.createConnectorSyncSettingsOptions === undefined) {
+                        if (requestParameters.createConnectorSyncSettingsOptions === null || requestParameters.createConnectorSyncSettingsOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorSyncSettingsOptions', 'Required parameter requestParameters.createConnectorSyncSettingsOptions was null or undefined when calling createConnectorSyncSettings.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/sync-settings".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/sync-settings".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -301,9 +291,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorSyncSettingsDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorSyncSettingsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -336,8 +324,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createConnectorWithOptions === null ||
-                            requestParameters.createConnectorWithOptions === undefined) {
+                        if (requestParameters.createConnectorWithOptions === null || requestParameters.createConnectorWithOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorWithOptions', 'Required parameter requestParameters.createConnectorWithOptions was null or undefined when calling createConnectorWithOptions.');
                         }
                         queryParameters = {};
@@ -347,7 +334,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/withOptions",
@@ -358,9 +345,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -395,7 +380,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors",
@@ -440,10 +425,10 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -486,10 +471,10 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/imap".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -533,10 +518,10 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/smtp".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -580,10 +565,10 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/sync-settings".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/sync-settings".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -644,7 +629,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/events",
@@ -654,9 +639,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageConnectorEventsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageConnectorEventsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -693,19 +676,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -737,8 +718,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null ||
-                            requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getConnectorByEmailAddress.');
                         }
                         queryParameters = {};
@@ -747,7 +727,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/by-email-address",
@@ -757,9 +737,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -792,8 +770,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getConnectorByInboxId.');
                         }
                         queryParameters = {};
@@ -802,7 +779,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/by-inbox-id",
@@ -812,9 +789,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -847,8 +822,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.name === null ||
-                            requestParameters.name === undefined) {
+                        if (requestParameters.name === null || requestParameters.name === undefined) {
                             throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling getConnectorByName.');
                         }
                         queryParameters = {};
@@ -857,7 +831,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/by-name",
@@ -867,9 +841,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptionalConnectorDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -907,19 +879,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/events/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/events/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorEventDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorEventDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -974,19 +944,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/events".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/events".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageConnectorEventsFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageConnectorEventsFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1024,19 +992,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/imap".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.OptionalConnectorImapConnectionDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptionalConnectorImapConnectionDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1072,7 +1038,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/provider-settings",
@@ -1082,9 +1048,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorProviderSettingsDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorProviderSettingsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1123,19 +1087,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/smtp".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.OptionalConnectorSmtpConnectionDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptionalConnectorSmtpConnectionDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1174,19 +1136,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/sync-settings".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/sync-settings".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.OptionalConnectorSyncSettingsDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.OptionalConnectorSyncSettingsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1237,7 +1197,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors",
@@ -1247,9 +1207,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageConnectorFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageConnectorFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1284,8 +1242,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling sendEmailFromConnector.');
                         }
-                        if (requestParameters.sendEmailOptions === null ||
-                            requestParameters.sendEmailOptions === undefined) {
+                        if (requestParameters.sendEmailOptions === null || requestParameters.sendEmailOptions === undefined) {
                             throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailFromConnector.');
                         }
                         queryParameters = {};
@@ -1295,10 +1252,10 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/send".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/send".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1306,9 +1263,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.SentEmailDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1354,19 +1309,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/sync".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/sync".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorSyncRequestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorSyncRequestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1405,10 +1358,10 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/imap/test".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/imap/test".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1416,9 +1369,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorImapConnectionTestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorImapConnectionTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1451,15 +1402,14 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createConnectorImapConnectionOptions === null ||
-                            requestParameters.createConnectorImapConnectionOptions === undefined) {
+                        if (requestParameters.createConnectorImapConnectionOptions === null || requestParameters.createConnectorImapConnectionOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorImapConnectionOptions', 'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling testConnectorImapConnectionOptions.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/connections/imap/test",
@@ -1470,9 +1420,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorImapConnectionTestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorImapConnectionTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1512,10 +1460,10 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/smtp/test".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/smtp/test".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1523,9 +1471,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorSmtpConnectionTestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorSmtpConnectionTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1558,15 +1504,14 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createConnectorSmtpConnectionOptions === null ||
-                            requestParameters.createConnectorSmtpConnectionOptions === undefined) {
+                        if (requestParameters.createConnectorSmtpConnectionOptions === null || requestParameters.createConnectorSmtpConnectionOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorSmtpConnectionOptions', 'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling testConnectorSmtpConnectionOptions.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/connectors/connections/smtp/test",
@@ -1577,9 +1522,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorSmtpConnectionTestResultFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorSmtpConnectionTestResultFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1614,18 +1557,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateConnector.');
                         }
-                        if (requestParameters.createConnectorOptions === null ||
-                            requestParameters.createConnectorOptions === undefined) {
+                        if (requestParameters.createConnectorOptions === null || requestParameters.createConnectorOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorOptions', 'Required parameter requestParameters.createConnectorOptions was null or undefined when calling updateConnector.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1633,9 +1575,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1670,18 +1610,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateConnectorImapConnection.');
                         }
-                        if (requestParameters.createConnectorImapConnectionOptions === null ||
-                            requestParameters.createConnectorImapConnectionOptions === undefined) {
+                        if (requestParameters.createConnectorImapConnectionOptions === null || requestParameters.createConnectorImapConnectionOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorImapConnectionOptions', 'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling updateConnectorImapConnection.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/imap".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'PATCH',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1689,9 +1628,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorImapConnectionDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorImapConnectionDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1727,18 +1664,17 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.id === null || requestParameters.id === undefined) {
                             throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling updateConnectorSmtpConnection.');
                         }
-                        if (requestParameters.createConnectorSmtpConnectionOptions === null ||
-                            requestParameters.createConnectorSmtpConnectionOptions === undefined) {
+                        if (requestParameters.createConnectorSmtpConnectionOptions === null || requestParameters.createConnectorSmtpConnectionOptions === undefined) {
                             throw new runtime.RequiredError('createConnectorSmtpConnectionOptions', 'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling updateConnectorSmtpConnection.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/connectors/{id}/smtp".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'PATCH',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1746,9 +1682,7 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.ConnectorSmtpConnectionDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ConnectorSmtpConnectionDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -1775,45 +1709,45 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.ConnectorControllerApi = ConnectorControllerApi;
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetAllConnectorEventsSortEnum;
 (function (GetAllConnectorEventsSortEnum) {
     GetAllConnectorEventsSortEnum["ASC"] = "ASC";
     GetAllConnectorEventsSortEnum["DESC"] = "DESC";
 })(GetAllConnectorEventsSortEnum = exports.GetAllConnectorEventsSortEnum || (exports.GetAllConnectorEventsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetAllConnectorEventsEventTypeEnum;
 (function (GetAllConnectorEventsEventTypeEnum) {
     GetAllConnectorEventsEventTypeEnum["SEND"] = "SEND";
     GetAllConnectorEventsEventTypeEnum["SYNC"] = "SYNC";
 })(GetAllConnectorEventsEventTypeEnum = exports.GetAllConnectorEventsEventTypeEnum || (exports.GetAllConnectorEventsEventTypeEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetConnectorEventsSortEnum;
 (function (GetConnectorEventsSortEnum) {
     GetConnectorEventsSortEnum["ASC"] = "ASC";
     GetConnectorEventsSortEnum["DESC"] = "DESC";
 })(GetConnectorEventsSortEnum = exports.GetConnectorEventsSortEnum || (exports.GetConnectorEventsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetConnectorEventsEventTypeEnum;
 (function (GetConnectorEventsEventTypeEnum) {
     GetConnectorEventsEventTypeEnum["SEND"] = "SEND";
     GetConnectorEventsEventTypeEnum["SYNC"] = "SYNC";
 })(GetConnectorEventsEventTypeEnum = exports.GetConnectorEventsEventTypeEnum || (exports.GetConnectorEventsEventTypeEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetConnectorsSortEnum;
 (function (GetConnectorsSortEnum) {
     GetConnectorsSortEnum["ASC"] = "ASC";

@@ -20,22 +20,22 @@ function ImapMailboxStatusFromJSON(json) {
 }
 exports.ImapMailboxStatusFromJSON = ImapMailboxStatusFromJSON;
 function ImapMailboxStatusFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        name: json['name'],
-        readOnly: json['readOnly'],
-        items: json['items'],
-        flags: json['flags'],
-        permanentFlags: json['permanentFlags'],
-        unseenSeqNum: json['unseenSeqNum'],
-        messages: json['messages'],
-        recent: json['recent'],
-        unseen: json['unseen'],
-        uidNext: json['uidNext'],
-        uidValidity: json['uidValidity'],
-        appendLimit: !(0, runtime_1.exists)(json, 'appendLimit') ? undefined : json['appendLimit'],
+        'name': json['name'],
+        'readOnly': json['readOnly'],
+        'items': json['items'],
+        'flags': json['flags'],
+        'permanentFlags': json['permanentFlags'],
+        'unseenSeqNum': json['unseenSeqNum'],
+        'messages': json['messages'],
+        'recent': json['recent'],
+        'unseen': json['unseen'],
+        'uidNext': json['uidNext'],
+        'uidValidity': json['uidValidity'],
+        'appendLimit': !(0, runtime_1.exists)(json, 'appendLimit') ? undefined : json['appendLimit'],
     };
 }
 exports.ImapMailboxStatusFromJSONTyped = ImapMailboxStatusFromJSONTyped;
@@ -47,18 +47,18 @@ function ImapMailboxStatusToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        readOnly: value.readOnly,
-        items: value.items,
-        flags: value.flags,
-        permanentFlags: value.permanentFlags,
-        unseenSeqNum: value.unseenSeqNum,
-        messages: value.messages,
-        recent: value.recent,
-        unseen: value.unseen,
-        uidNext: value.uidNext,
-        uidValidity: value.uidValidity,
-        appendLimit: value.appendLimit,
+        'name': value.name,
+        'readOnly': value.readOnly,
+        'items': value.items,
+        'flags': value.flags,
+        'permanentFlags': value.permanentFlags,
+        'unseenSeqNum': value.unseenSeqNum,
+        'messages': value.messages,
+        'recent': value.recent,
+        'unseen': value.unseen,
+        'uidNext': value.uidNext,
+        'uidValidity': value.uidValidity,
+        'appendLimit': value.appendLimit,
     };
 }
 exports.ImapMailboxStatusToJSON = ImapMailboxStatusToJSON;

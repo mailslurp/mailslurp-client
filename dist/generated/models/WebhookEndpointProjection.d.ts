@@ -29,9 +29,9 @@ export interface WebhookEndpointProjection {
     health: WebhookEndpointProjectionHealthEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum WebhookEndpointProjectionHealthEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"

@@ -20,19 +20,15 @@ function EmailAnalysisFromJSON(json) {
 }
 exports.EmailAnalysisFromJSON = EmailAnalysisFromJSON;
 function EmailAnalysisFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        spamVerdict: !(0, runtime_1.exists)(json, 'spamVerdict') ? undefined : json['spamVerdict'],
-        virusVerdict: !(0, runtime_1.exists)(json, 'virusVerdict')
-            ? undefined
-            : json['virusVerdict'],
-        spfVerdict: !(0, runtime_1.exists)(json, 'spfVerdict') ? undefined : json['spfVerdict'],
-        dkimVerdict: !(0, runtime_1.exists)(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
-        dmarcVerdict: !(0, runtime_1.exists)(json, 'dmarcVerdict')
-            ? undefined
-            : json['dmarcVerdict'],
+        'spamVerdict': !(0, runtime_1.exists)(json, 'spamVerdict') ? undefined : json['spamVerdict'],
+        'virusVerdict': !(0, runtime_1.exists)(json, 'virusVerdict') ? undefined : json['virusVerdict'],
+        'spfVerdict': !(0, runtime_1.exists)(json, 'spfVerdict') ? undefined : json['spfVerdict'],
+        'dkimVerdict': !(0, runtime_1.exists)(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
+        'dmarcVerdict': !(0, runtime_1.exists)(json, 'dmarcVerdict') ? undefined : json['dmarcVerdict'],
     };
 }
 exports.EmailAnalysisFromJSONTyped = EmailAnalysisFromJSONTyped;
@@ -44,11 +40,11 @@ function EmailAnalysisToJSON(value) {
         return null;
     }
     return {
-        spamVerdict: value.spamVerdict,
-        virusVerdict: value.virusVerdict,
-        spfVerdict: value.spfVerdict,
-        dkimVerdict: value.dkimVerdict,
-        dmarcVerdict: value.dmarcVerdict,
+        'spamVerdict': value.spamVerdict,
+        'virusVerdict': value.virusVerdict,
+        'spfVerdict': value.spfVerdict,
+        'dkimVerdict': value.dkimVerdict,
+        'dmarcVerdict': value.dmarcVerdict,
     };
 }
 exports.EmailAnalysisToJSON = EmailAnalysisToJSON;

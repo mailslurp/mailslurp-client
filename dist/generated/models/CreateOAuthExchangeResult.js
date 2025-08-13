@@ -20,13 +20,13 @@ function CreateOAuthExchangeResultFromJSON(json) {
 }
 exports.CreateOAuthExchangeResultFromJSON = CreateOAuthExchangeResultFromJSON;
 function CreateOAuthExchangeResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        success: json['success'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
+        'success': json['success'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'error': !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
     };
 }
 exports.CreateOAuthExchangeResultFromJSONTyped = CreateOAuthExchangeResultFromJSONTyped;
@@ -38,9 +38,9 @@ function CreateOAuthExchangeResultToJSON(value) {
         return null;
     }
     return {
-        success: value.success,
-        inboxId: value.inboxId,
-        error: value.error,
+        'success': value.success,
+        'inboxId': value.inboxId,
+        'error': value.error,
     };
 }
 exports.CreateOAuthExchangeResultToJSON = CreateOAuthExchangeResultToJSON;

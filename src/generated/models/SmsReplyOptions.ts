@@ -14,43 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SmsReplyOptions
  */
 export interface SmsReplyOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof SmsReplyOptions
-   */
-  body: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SmsReplyOptions
+     */
+    body: string;
 }
 
 export function SmsReplyOptionsFromJSON(json: any): SmsReplyOptions {
-  return SmsReplyOptionsFromJSONTyped(json, false);
+    return SmsReplyOptionsFromJSONTyped(json, false);
 }
 
-export function SmsReplyOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SmsReplyOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    body: json['body'],
-  };
+export function SmsReplyOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsReplyOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'body': json['body'],
+    };
 }
 
 export function SmsReplyOptionsToJSON(value?: SmsReplyOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    body: value.body,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'body': value.body,
+    };
 }
+
+

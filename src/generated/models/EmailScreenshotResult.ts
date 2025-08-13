@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailScreenshotResult
  */
 export interface EmailScreenshotResult {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailScreenshotResult
-   */
-  base64EncodedImage: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailScreenshotResult
+     */
+    base64EncodedImage: string;
 }
 
-export function EmailScreenshotResultFromJSON(
-  json: any
-): EmailScreenshotResult {
-  return EmailScreenshotResultFromJSONTyped(json, false);
+export function EmailScreenshotResultFromJSON(json: any): EmailScreenshotResult {
+    return EmailScreenshotResultFromJSONTyped(json, false);
 }
 
-export function EmailScreenshotResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailScreenshotResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    base64EncodedImage: json['base64EncodedImage'],
-  };
+export function EmailScreenshotResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailScreenshotResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'base64EncodedImage': json['base64EncodedImage'],
+    };
 }
 
-export function EmailScreenshotResultToJSON(
-  value?: EmailScreenshotResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    base64EncodedImage: value.base64EncodedImage,
-  };
+export function EmailScreenshotResultToJSON(value?: EmailScreenshotResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'base64EncodedImage': value.base64EncodedImage,
+    };
 }
+
+

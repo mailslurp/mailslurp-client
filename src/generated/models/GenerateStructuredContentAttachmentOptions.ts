@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  StructuredOutputSchema,
-  StructuredOutputSchemaFromJSON,
-  StructuredOutputSchemaFromJSONTyped,
-  StructuredOutputSchemaToJSON,
+    StructuredOutputSchema,
+    StructuredOutputSchemaFromJSON,
+    StructuredOutputSchemaFromJSONTyped,
+    StructuredOutputSchemaToJSON,
 } from './';
 
 /**
@@ -26,78 +26,71 @@ import {
  * @interface GenerateStructuredContentAttachmentOptions
  */
 export interface GenerateStructuredContentAttachmentOptions {
-  /**
-   * Attachment ID to read and pass to AI
-   * @type {string}
-   * @memberof GenerateStructuredContentAttachmentOptions
-   */
-  attachmentId: string;
-  /**
-   * Optional instructions for the AI to follow. Try to be precise and clear. You can include examples and hints.
-   * @type {string}
-   * @memberof GenerateStructuredContentAttachmentOptions
-   */
-  instructions?: string | null;
-  /**
-   *
-   * @type {StructuredOutputSchema}
-   * @memberof GenerateStructuredContentAttachmentOptions
-   */
-  outputSchema?: StructuredOutputSchema;
-  /**
-   * ID of transformer to apply
-   * @type {string}
-   * @memberof GenerateStructuredContentAttachmentOptions
-   */
-  transformId?: string | null;
-  /**
-   * Optional email ID for more context
-   * @type {string}
-   * @memberof GenerateStructuredContentAttachmentOptions
-   */
-  emailId?: string | null;
+    /**
+     * Attachment ID to read and pass to AI
+     * @type {string}
+     * @memberof GenerateStructuredContentAttachmentOptions
+     */
+    attachmentId: string;
+    /**
+     * Optional instructions for the AI to follow. Try to be precise and clear. You can include examples and hints.
+     * @type {string}
+     * @memberof GenerateStructuredContentAttachmentOptions
+     */
+    instructions?: string | null;
+    /**
+     * 
+     * @type {StructuredOutputSchema}
+     * @memberof GenerateStructuredContentAttachmentOptions
+     */
+    outputSchema?: StructuredOutputSchema | null;
+    /**
+     * ID of transformer to apply
+     * @type {string}
+     * @memberof GenerateStructuredContentAttachmentOptions
+     */
+    transformId?: string | null;
+    /**
+     * Optional email ID for more context
+     * @type {string}
+     * @memberof GenerateStructuredContentAttachmentOptions
+     */
+    emailId?: string | null;
 }
 
-export function GenerateStructuredContentAttachmentOptionsFromJSON(
-  json: any
-): GenerateStructuredContentAttachmentOptions {
-  return GenerateStructuredContentAttachmentOptionsFromJSONTyped(json, false);
+export function GenerateStructuredContentAttachmentOptionsFromJSON(json: any): GenerateStructuredContentAttachmentOptions {
+    return GenerateStructuredContentAttachmentOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateStructuredContentAttachmentOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateStructuredContentAttachmentOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    attachmentId: json['attachmentId'],
-    instructions: !exists(json, 'instructions')
-      ? undefined
-      : json['instructions'],
-    outputSchema: !exists(json, 'outputSchema')
-      ? undefined
-      : StructuredOutputSchemaFromJSON(json['outputSchema']),
-    transformId: !exists(json, 'transformId') ? undefined : json['transformId'],
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
-  };
+export function GenerateStructuredContentAttachmentOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateStructuredContentAttachmentOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'attachmentId': json['attachmentId'],
+        'instructions': !exists(json, 'instructions') ? undefined : json['instructions'],
+        'outputSchema': !exists(json, 'outputSchema') ? undefined : StructuredOutputSchemaFromJSON(json['outputSchema']),
+        'transformId': !exists(json, 'transformId') ? undefined : json['transformId'],
+        'emailId': !exists(json, 'emailId') ? undefined : json['emailId'],
+    };
 }
 
-export function GenerateStructuredContentAttachmentOptionsToJSON(
-  value?: GenerateStructuredContentAttachmentOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    attachmentId: value.attachmentId,
-    instructions: value.instructions,
-    outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
-    transformId: value.transformId,
-    emailId: value.emailId,
-  };
+export function GenerateStructuredContentAttachmentOptionsToJSON(value?: GenerateStructuredContentAttachmentOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'attachmentId': value.attachmentId,
+        'instructions': value.instructions,
+        'outputSchema': StructuredOutputSchemaToJSON(value.outputSchema),
+        'transformId': value.transformId,
+        'emailId': value.emailId,
+    };
 }
+
+

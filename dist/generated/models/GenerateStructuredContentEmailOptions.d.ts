@@ -39,7 +39,7 @@ export interface GenerateStructuredContentEmailOptions {
      * @type {StructuredOutputSchema}
      * @memberof GenerateStructuredContentEmailOptions
      */
-    outputSchema?: StructuredOutputSchema;
+    outputSchema?: StructuredOutputSchema | null;
     /**
      * ID of transformer to apply
      * @type {string}
@@ -48,9 +48,9 @@ export interface GenerateStructuredContentEmailOptions {
     transformId?: string | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum GenerateStructuredContentEmailOptionsContentSelectorEnum {
     RAW = "RAW",
     BODY = "BODY",

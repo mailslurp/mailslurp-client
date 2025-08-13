@@ -38,13 +38,13 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    inboxId?: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
-    userId: string;
+    inboxId?: string;
     /**
      *
      * @type {string}
@@ -56,25 +56,31 @@ export interface WebhookProjection {
      * @type {Date}
      * @memberof WebhookProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof WebhookProjection
      */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    aiTransformId?: string;
+    updatedAt: Date;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
     healthStatus?: WebhookProjectionHealthStatusEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    aiTransformerId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    aiTransformId?: string;
     /**
      *
      * @type {string}
@@ -95,11 +101,12 @@ export interface WebhookProjection {
     id: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum WebhookProjectionEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
@@ -110,11 +117,10 @@ export declare enum WebhookProjectionEventNameEnum {
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS",
     NEW_GUEST_USER = "NEW_GUEST_USER"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum WebhookProjectionHealthStatusEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"

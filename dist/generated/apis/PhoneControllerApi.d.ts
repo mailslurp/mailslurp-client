@@ -348,9 +348,9 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
     validatePhoneNumber(requestParameters: ValidatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberValidationDto>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumbersPhoneCountryEnum {
     US = "US",
     GB = "GB",
@@ -366,25 +366,25 @@ export declare enum GetPhoneNumbersPhoneCountryEnum {
     SE = "SE"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetPhoneNumbersSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetSentSmsByPhoneNumberSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetSmsByPhoneNumberSortEnum {
     ASC = "ASC",
     DESC = "DESC"

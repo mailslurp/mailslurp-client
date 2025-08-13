@@ -38,7 +38,7 @@ export interface StructuredOutputSchema {
      * @type {Array<string>}
      * @memberof StructuredOutputSchema
      */
-    _enum?: Array<string> | null;
+    enumValues?: Array<string> | null;
     /**
      *
      * @type {object}
@@ -56,7 +56,7 @@ export interface StructuredOutputSchema {
      * @type {StructuredOutputSchema}
      * @memberof StructuredOutputSchema
      */
-    items?: StructuredOutputSchema;
+    items?: StructuredOutputSchema | null;
     /**
      *
      * @type {number}
@@ -82,7 +82,7 @@ export interface StructuredOutputSchema {
      */
     minLength?: number | null;
     /**
-     *
+     * Regex pattern for STRING type
      * @type {string}
      * @memberof StructuredOutputSchema
      */
@@ -102,7 +102,7 @@ export interface StructuredOutputSchema {
      */
     propertyOrdering?: Array<string> | null;
     /**
-     *
+     * Is field required
      * @type {Array<string>}
      * @memberof StructuredOutputSchema
      */
@@ -151,9 +151,9 @@ export interface StructuredOutputSchema {
     type?: StructuredOutputSchemaTypeEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum StructuredOutputSchemaTypeEnum {
     string = "string",
     number = "number",

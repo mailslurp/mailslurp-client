@@ -20,12 +20,12 @@ function BulkSendEmailOptionsFromJSON(json) {
 }
 exports.BulkSendEmailOptionsFromJSON = BulkSendEmailOptionsFromJSON;
 function BulkSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        inboxIds: json['inboxIds'],
-        sendEmailOptions: (0, _1.SendEmailOptionsFromJSON)(json['sendEmailOptions']),
+        'inboxIds': json['inboxIds'],
+        'sendEmailOptions': (0, _1.SendEmailOptionsFromJSON)(json['sendEmailOptions']),
     };
 }
 exports.BulkSendEmailOptionsFromJSONTyped = BulkSendEmailOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function BulkSendEmailOptionsToJSON(value) {
         return null;
     }
     return {
-        inboxIds: value.inboxIds,
-        sendEmailOptions: (0, _1.SendEmailOptionsToJSON)(value.sendEmailOptions),
+        'inboxIds': value.inboxIds,
+        'sendEmailOptions': (0, _1.SendEmailOptionsToJSON)(value.sendEmailOptions),
     };
 }
 exports.BulkSendEmailOptionsToJSON = BulkSendEmailOptionsToJSON;

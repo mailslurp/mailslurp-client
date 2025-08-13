@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AITransformMappingDtoToJSON = exports.AITransformMappingDtoFromJSONTyped = exports.AITransformMappingDtoFromJSON = exports.AITransformMappingDtoEntityTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var AITransformMappingDtoEntityTypeEnum;
 (function (AITransformMappingDtoEntityTypeEnum) {
     AITransformMappingDtoEntityTypeEnum["INBOX"] = "INBOX";
@@ -29,16 +29,17 @@ function AITransformMappingDtoFromJSON(json) {
 }
 exports.AITransformMappingDtoFromJSON = AITransformMappingDtoFromJSON;
 function AITransformMappingDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        aiTransformId: json['aiTransformId'],
-        userId: json['userId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        entityId: json['entityId'],
-        entityType: json['entityType'],
+        'id': json['id'],
+        'aiTransformId': json['aiTransformId'],
+        'userId': json['userId'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'entityId': !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
+        'entityType': json['entityType'],
+        'createdAt': (new Date(json['createdAt'])),
     };
 }
 exports.AITransformMappingDtoFromJSONTyped = AITransformMappingDtoFromJSONTyped;
@@ -50,12 +51,13 @@ function AITransformMappingDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        aiTransformId: value.aiTransformId,
-        userId: value.userId,
-        name: value.name,
-        entityId: value.entityId,
-        entityType: value.entityType,
+        'id': value.id,
+        'aiTransformId': value.aiTransformId,
+        'userId': value.userId,
+        'name': value.name,
+        'entityId': value.entityId,
+        'entityType': value.entityType,
+        'createdAt': (value.createdAt.toISOString()),
     };
 }
 exports.AITransformMappingDtoToJSON = AITransformMappingDtoToJSON;

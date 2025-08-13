@@ -19,155 +19,154 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxReplierDto
  */
 export interface InboxReplierDto {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  field: InboxReplierDtoFieldEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  match: string;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  replyTo?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  from?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  charset?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxReplierDto
-   */
-  isHTML: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierDto
-   */
-  templateId?: string | null;
-  /**
-   *
-   * @type {{ [key: string]: object; }}
-   * @memberof InboxReplierDto
-   */
-  templateVariables?: { [key: string]: object } | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof InboxReplierDto
-   */
-  ignoreReplyTo: boolean;
-  /**
-   *
-   * @type {Date}
-   * @memberof InboxReplierDto
-   */
-  createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    inboxId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    field: InboxReplierDtoFieldEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    match: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    replyTo?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    subject?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    from?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    charset?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxReplierDto
+     */
+    isHTML: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    templateId?: string | null;
+    /**
+     * 
+     * @type {{ [key: string]: object; }}
+     * @memberof InboxReplierDto
+     */
+    templateVariables?: { [key: string]: object; } | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InboxReplierDto
+     */
+    ignoreReplyTo: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof InboxReplierDto
+     */
+    createdAt: Date;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum InboxReplierDtoFieldEnum {
-  RECIPIENTS = 'RECIPIENTS',
-  SENDER = 'SENDER',
-  SUBJECT = 'SUBJECT',
-  ATTACHMENTS = 'ATTACHMENTS',
+    RECIPIENTS = 'RECIPIENTS',
+    SENDER = 'SENDER',
+    SUBJECT = 'SUBJECT',
+    ATTACHMENTS = 'ATTACHMENTS'
 }
 
 export function InboxReplierDtoFromJSON(json: any): InboxReplierDto {
-  return InboxReplierDtoFromJSONTyped(json, false);
+    return InboxReplierDtoFromJSONTyped(json, false);
 }
 
-export function InboxReplierDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxReplierDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
-    replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    charset: !exists(json, 'charset') ? undefined : json['charset'],
-    isHTML: json['isHTML'],
-    templateId: !exists(json, 'templateId') ? undefined : json['templateId'],
-    templateVariables: !exists(json, 'templateVariables')
-      ? undefined
-      : json['templateVariables'],
-    ignoreReplyTo: json['ignoreReplyTo'],
-    createdAt: new Date(json['createdAt']),
-  };
+export function InboxReplierDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxReplierDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'field': json['field'],
+        'match': json['match'],
+        'replyTo': !exists(json, 'replyTo') ? undefined : json['replyTo'],
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'from': !exists(json, 'from') ? undefined : json['from'],
+        'charset': !exists(json, 'charset') ? undefined : json['charset'],
+        'isHTML': json['isHTML'],
+        'templateId': !exists(json, 'templateId') ? undefined : json['templateId'],
+        'templateVariables': !exists(json, 'templateVariables') ? undefined : json['templateVariables'],
+        'ignoreReplyTo': json['ignoreReplyTo'],
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
 export function InboxReplierDtoToJSON(value?: InboxReplierDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    name: value.name,
-    field: value.field,
-    match: value.match,
-    replyTo: value.replyTo,
-    subject: value.subject,
-    from: value.from,
-    charset: value.charset,
-    isHTML: value.isHTML,
-    templateId: value.templateId,
-    templateVariables: value.templateVariables,
-    ignoreReplyTo: value.ignoreReplyTo,
-    createdAt: value.createdAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'inboxId': value.inboxId,
+        'name': value.name,
+        'field': value.field,
+        'match': value.match,
+        'replyTo': value.replyTo,
+        'subject': value.subject,
+        'from': value.from,
+        'charset': value.charset,
+        'isHTML': value.isHTML,
+        'templateId': value.templateId,
+        'templateVariables': value.templateVariables,
+        'ignoreReplyTo': value.ignoreReplyTo,
+        'createdAt': (value.createdAt.toISOString()),
+    };
 }
+
+

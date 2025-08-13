@@ -19,11 +19,11 @@ function EmailScreenshotResultFromJSON(json) {
 }
 exports.EmailScreenshotResultFromJSON = EmailScreenshotResultFromJSON;
 function EmailScreenshotResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        base64EncodedImage: json['base64EncodedImage'],
+        'base64EncodedImage': json['base64EncodedImage'],
     };
 }
 exports.EmailScreenshotResultFromJSONTyped = EmailScreenshotResultFromJSONTyped;
@@ -35,7 +35,7 @@ function EmailScreenshotResultToJSON(value) {
         return null;
     }
     return {
-        base64EncodedImage: value.base64EncodedImage,
+        'base64EncodedImage': value.base64EncodedImage,
     };
 }
 exports.EmailScreenshotResultToJSON = EmailScreenshotResultToJSON;

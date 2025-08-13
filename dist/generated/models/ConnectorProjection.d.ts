@@ -26,13 +26,13 @@ export interface ConnectorProjection {
      * @type {string}
      * @memberof ConnectorProjection
      */
-    inboxId: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof ConnectorProjection
      */
-    userId: string;
+    inboxId: string;
     /**
      *
      * @type {string}

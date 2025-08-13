@@ -19,12 +19,12 @@ function BasicAuthOptionsFromJSON(json) {
 }
 exports.BasicAuthOptionsFromJSON = BasicAuthOptionsFromJSON;
 function BasicAuthOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        username: json['username'],
-        password: json['password'],
+        'username': json['username'],
+        'password': json['password'],
     };
 }
 exports.BasicAuthOptionsFromJSONTyped = BasicAuthOptionsFromJSONTyped;
@@ -36,8 +36,8 @@ function BasicAuthOptionsToJSON(value) {
         return null;
     }
     return {
-        username: value.username,
-        password: value.password,
+        'username': value.username,
+        'password': value.password,
     };
 }
 exports.BasicAuthOptionsToJSON = BasicAuthOptionsToJSON;

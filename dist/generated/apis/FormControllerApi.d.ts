@@ -13,7 +13,6 @@ import * as runtime from '../runtime';
 export interface SubmitFormRequest {
     to?: string;
     subject?: string;
-    redirectTo?: string;
     emailAddress?: string;
     successMessage?: string;
     spamCheck?: string;

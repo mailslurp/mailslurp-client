@@ -20,34 +20,24 @@ function DeliveryStatusDtoFromJSON(json) {
 }
 exports.DeliveryStatusDtoFromJSON = DeliveryStatusDtoFromJSON;
 function DeliveryStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        id: json['id'],
-        userId: json['userId'],
-        sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
-        remoteMtaIp: !(0, runtime_1.exists)(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        reportingMta: !(0, runtime_1.exists)(json, 'reportingMta')
-            ? undefined
-            : json['reportingMta'],
-        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
-        smtpResponse: !(0, runtime_1.exists)(json, 'smtpResponse')
-            ? undefined
-            : json['smtpResponse'],
-        smtpStatusCode: !(0, runtime_1.exists)(json, 'smtpStatusCode')
-            ? undefined
-            : json['smtpStatusCode'],
-        processingTimeMillis: !(0, runtime_1.exists)(json, 'processingTimeMillis')
-            ? undefined
-            : json['processingTimeMillis'],
-        received: !(0, runtime_1.exists)(json, 'received')
-            ? undefined
-            : new Date(json['received']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
+        'id': json['id'],
+        'userId': json['userId'],
+        'sentId': !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
+        'remoteMtaIp': !(0, runtime_1.exists)(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
+        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        'reportingMta': !(0, runtime_1.exists)(json, 'reportingMta') ? undefined : json['reportingMta'],
+        'recipients': !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
+        'smtpResponse': !(0, runtime_1.exists)(json, 'smtpResponse') ? undefined : json['smtpResponse'],
+        'smtpStatusCode': !(0, runtime_1.exists)(json, 'smtpStatusCode') ? undefined : json['smtpStatusCode'],
+        'processingTimeMillis': !(0, runtime_1.exists)(json, 'processingTimeMillis') ? undefined : json['processingTimeMillis'],
+        'received': !(0, runtime_1.exists)(json, 'received') ? undefined : (new Date(json['received'])),
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 exports.DeliveryStatusDtoFromJSONTyped = DeliveryStatusDtoFromJSONTyped;
@@ -59,20 +49,20 @@ function DeliveryStatusDtoToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
-        userId: value.userId,
-        sentId: value.sentId,
-        remoteMtaIp: value.remoteMtaIp,
-        inboxId: value.inboxId,
-        reportingMta: value.reportingMta,
-        recipients: value.recipients,
-        smtpResponse: value.smtpResponse,
-        smtpStatusCode: value.smtpStatusCode,
-        processingTimeMillis: value.processingTimeMillis,
-        received: value.received === undefined ? undefined : value.received.toISOString(),
-        subject: value.subject,
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
+        'id': value.id,
+        'userId': value.userId,
+        'sentId': value.sentId,
+        'remoteMtaIp': value.remoteMtaIp,
+        'inboxId': value.inboxId,
+        'reportingMta': value.reportingMta,
+        'recipients': value.recipients,
+        'smtpResponse': value.smtpResponse,
+        'smtpStatusCode': value.smtpStatusCode,
+        'processingTimeMillis': value.processingTimeMillis,
+        'received': value.received === undefined ? undefined : (value.received.toISOString()),
+        'subject': value.subject,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
     };
 }
 exports.DeliveryStatusDtoToJSON = DeliveryStatusDtoToJSON;

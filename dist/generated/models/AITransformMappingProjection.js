@@ -16,28 +16,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AITransformMappingProjectionToJSON = exports.AITransformMappingProjectionFromJSONTyped = exports.AITransformMappingProjectionFromJSON = exports.AITransformMappingProjectionTriggerSelectorEnum = exports.AITransformMappingProjectionContentSelectorEnum = exports.AITransformMappingProjectionEntityTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var AITransformMappingProjectionEntityTypeEnum;
 (function (AITransformMappingProjectionEntityTypeEnum) {
     AITransformMappingProjectionEntityTypeEnum["INBOX"] = "INBOX";
     AITransformMappingProjectionEntityTypeEnum["PHONE"] = "PHONE";
-})(AITransformMappingProjectionEntityTypeEnum = exports.AITransformMappingProjectionEntityTypeEnum || (exports.AITransformMappingProjectionEntityTypeEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(AITransformMappingProjectionEntityTypeEnum = exports.AITransformMappingProjectionEntityTypeEnum || (exports.AITransformMappingProjectionEntityTypeEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var AITransformMappingProjectionContentSelectorEnum;
 (function (AITransformMappingProjectionContentSelectorEnum) {
     AITransformMappingProjectionContentSelectorEnum["RAW"] = "RAW";
     AITransformMappingProjectionContentSelectorEnum["BODY"] = "BODY";
     AITransformMappingProjectionContentSelectorEnum["BODY_ATTACHMENTS"] = "BODY_ATTACHMENTS";
-})(AITransformMappingProjectionContentSelectorEnum = exports.AITransformMappingProjectionContentSelectorEnum || (exports.AITransformMappingProjectionContentSelectorEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(AITransformMappingProjectionContentSelectorEnum = exports.AITransformMappingProjectionContentSelectorEnum || (exports.AITransformMappingProjectionContentSelectorEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var AITransformMappingProjectionTriggerSelectorEnum;
 (function (AITransformMappingProjectionTriggerSelectorEnum) {
     AITransformMappingProjectionTriggerSelectorEnum["MESSAGE"] = "PER_MESSAGE";
@@ -48,22 +46,19 @@ function AITransformMappingProjectionFromJSON(json) {
 }
 exports.AITransformMappingProjectionFromJSON = AITransformMappingProjectionFromJSON;
 function AITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        userId: json['userId'],
-        aiTransformId: json['aiTransformId'],
-        entityId: json['entityId'],
-        entityType: json['entityType'],
-        contentSelector: !(0, runtime_1.exists)(json, 'contentSelector')
-            ? undefined
-            : json['contentSelector'],
-        triggerSelector: !(0, runtime_1.exists)(json, 'triggerSelector')
-            ? undefined
-            : json['triggerSelector'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        'userId': json['userId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'aiTransformId': json['aiTransformId'],
+        'entityId': !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
+        'entityType': json['entityType'],
+        'contentSelector': !(0, runtime_1.exists)(json, 'contentSelector') ? undefined : json['contentSelector'],
+        'triggerSelector': !(0, runtime_1.exists)(json, 'triggerSelector') ? undefined : json['triggerSelector'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
     };
 }
 exports.AITransformMappingProjectionFromJSONTyped = AITransformMappingProjectionFromJSONTyped;
@@ -75,14 +70,15 @@ function AITransformMappingProjectionToJSON(value) {
         return null;
     }
     return {
-        userId: value.userId,
-        aiTransformId: value.aiTransformId,
-        entityId: value.entityId,
-        entityType: value.entityType,
-        contentSelector: value.contentSelector,
-        triggerSelector: value.triggerSelector,
-        name: value.name,
-        id: value.id,
+        'userId': value.userId,
+        'createdAt': (value.createdAt.toISOString()),
+        'aiTransformId': value.aiTransformId,
+        'entityId': value.entityId,
+        'entityType': value.entityType,
+        'contentSelector': value.contentSelector,
+        'triggerSelector': value.triggerSelector,
+        'name': value.name,
+        'id': value.id,
     };
 }
 exports.AITransformMappingProjectionToJSON = AITransformMappingProjectionToJSON;

@@ -54,6 +54,12 @@ export interface PageBouncedRecipients {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageBouncedRecipients
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageBouncedRecipients
      */
@@ -70,12 +76,6 @@ export interface PageBouncedRecipients {
      * @memberof PageBouncedRecipients
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageBouncedRecipients
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -20,17 +20,17 @@ function CreateTotpDeviceOtpAuthUrlOptionsFromJSON(json) {
 }
 exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSON = CreateTotpDeviceOtpAuthUrlOptionsFromJSON;
 function CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        otpAuthUrl: json['otpAuthUrl'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
-        issuer: !(0, runtime_1.exists)(json, 'issuer') ? undefined : json['issuer'],
-        digits: !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
-        period: !(0, runtime_1.exists)(json, 'period') ? undefined : json['period'],
-        algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
+        'otpAuthUrl': json['otpAuthUrl'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'username': !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
+        'issuer': !(0, runtime_1.exists)(json, 'issuer') ? undefined : json['issuer'],
+        'digits': !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
+        'period': !(0, runtime_1.exists)(json, 'period') ? undefined : json['period'],
+        'algorithm': !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
     };
 }
 exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped = CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped;
@@ -42,13 +42,13 @@ function CreateTotpDeviceOtpAuthUrlOptionsToJSON(value) {
         return null;
     }
     return {
-        otpAuthUrl: value.otpAuthUrl,
-        name: value.name,
-        username: value.username,
-        issuer: value.issuer,
-        digits: value.digits,
-        period: value.period,
-        algorithm: value.algorithm,
+        'otpAuthUrl': value.otpAuthUrl,
+        'name': value.name,
+        'username': value.username,
+        'issuer': value.issuer,
+        'digits': value.digits,
+        'period': value.period,
+        'algorithm': value.algorithm,
     };
 }
 exports.CreateTotpDeviceOtpAuthUrlOptionsToJSON = CreateTotpDeviceOtpAuthUrlOptionsToJSON;

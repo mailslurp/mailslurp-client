@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
- * @interface TestInboxRulesetSendingResult
+ * @interface LookupMxRecordsOptions
  */
-export interface TestInboxRulesetSendingResult {
-  /**
-   *
-   * @type {boolean}
-   * @memberof TestInboxRulesetSendingResult
-   */
-  canSend: boolean;
+export interface LookupMxRecordsOptions {
+    /**
+     * 
+     * @type {string}
+     * @memberof LookupMxRecordsOptions
+     */
+    host: string;
 }
 
-export function TestInboxRulesetSendingResultFromJSON(
-  json: any
-): TestInboxRulesetSendingResult {
-  return TestInboxRulesetSendingResultFromJSONTyped(json, false);
+export function LookupMxRecordsOptionsFromJSON(json: any): LookupMxRecordsOptions {
+    return LookupMxRecordsOptionsFromJSONTyped(json, false);
 }
 
-export function TestInboxRulesetSendingResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TestInboxRulesetSendingResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    canSend: json['canSend'],
-  };
+export function LookupMxRecordsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupMxRecordsOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+    };
 }
 
-export function TestInboxRulesetSendingResultToJSON(
-  value?: TestInboxRulesetSendingResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    canSend: value.canSend,
-  };
+export function LookupMxRecordsOptionsToJSON(value?: LookupMxRecordsOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'host': value.host,
+    };
 }
+
+

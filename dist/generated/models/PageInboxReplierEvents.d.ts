@@ -54,6 +54,12 @@ export interface PageInboxReplierEvents {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageInboxReplierEvents
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageInboxReplierEvents
      */
@@ -70,12 +76,6 @@ export interface PageInboxReplierEvents {
      * @memberof PageInboxReplierEvents
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageInboxReplierEvents
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

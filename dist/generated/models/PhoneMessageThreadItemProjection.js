@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhoneMessageThreadItemProjectionToJSON = exports.PhoneMessageThreadItemProjectionFromJSONTyped = exports.PhoneMessageThreadItemProjectionFromJSON = exports.PhoneMessageThreadItemProjectionMessageDirectionEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var PhoneMessageThreadItemProjectionMessageDirectionEnum;
 (function (PhoneMessageThreadItemProjectionMessageDirectionEnum) {
     PhoneMessageThreadItemProjectionMessageDirectionEnum["OUTBOUND"] = "OUTBOUND";
@@ -28,16 +28,16 @@ function PhoneMessageThreadItemProjectionFromJSON(json) {
 }
 exports.PhoneMessageThreadItemProjectionFromJSON = PhoneMessageThreadItemProjectionFromJSON;
 function PhoneMessageThreadItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        body: json['body'],
-        phoneNumberId: json['phoneNumberId'],
-        created: new Date(json['created']),
-        toPhoneNumber: json['toPhoneNumber'],
-        messageDirection: json['messageDirection'],
-        fromPhoneNumber: json['fromPhoneNumber'],
+        'body': json['body'],
+        'phoneNumberId': json['phoneNumberId'],
+        'created': (new Date(json['created'])),
+        'fromPhoneNumber': json['fromPhoneNumber'],
+        'toPhoneNumber': json['toPhoneNumber'],
+        'messageDirection': json['messageDirection'],
     };
 }
 exports.PhoneMessageThreadItemProjectionFromJSONTyped = PhoneMessageThreadItemProjectionFromJSONTyped;
@@ -49,12 +49,12 @@ function PhoneMessageThreadItemProjectionToJSON(value) {
         return null;
     }
     return {
-        body: value.body,
-        phoneNumberId: value.phoneNumberId,
-        created: value.created.toISOString(),
-        toPhoneNumber: value.toPhoneNumber,
-        messageDirection: value.messageDirection,
-        fromPhoneNumber: value.fromPhoneNumber,
+        'body': value.body,
+        'phoneNumberId': value.phoneNumberId,
+        'created': (value.created.toISOString()),
+        'fromPhoneNumber': value.fromPhoneNumber,
+        'toPhoneNumber': value.toPhoneNumber,
+        'messageDirection': value.messageDirection,
     };
 }
 exports.PhoneMessageThreadItemProjectionToJSON = PhoneMessageThreadItemProjectionToJSON;

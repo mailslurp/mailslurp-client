@@ -12,272 +12,215 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  PageEmailValidationRequest,
-  PageEmailValidationRequestFromJSON,
-  PageEmailValidationRequestToJSON,
-  ValidateEmailAddressListOptions,
-  ValidateEmailAddressListOptionsFromJSON,
-  ValidateEmailAddressListOptionsToJSON,
-  ValidateEmailAddressListResult,
-  ValidateEmailAddressListResultFromJSON,
-  ValidateEmailAddressListResultToJSON,
+    PageEmailValidationRequest,
+    PageEmailValidationRequestFromJSON,
+    PageEmailValidationRequestToJSON,
+    ValidateEmailAddressListOptions,
+    ValidateEmailAddressListOptionsFromJSON,
+    ValidateEmailAddressListOptionsToJSON,
+    ValidateEmailAddressListResult,
+    ValidateEmailAddressListResultFromJSON,
+    ValidateEmailAddressListResultToJSON,
 } from '../models';
 
 export interface DeleteValidationRequestRequest {
-  id: string;
+    id: string;
 }
 
 export interface GetValidationRequestsRequest {
-  page?: number;
-  size?: number;
-  sort?: GetValidationRequestsSortEnum;
-  searchFilter?: string;
-  since?: Date;
-  before?: Date;
-  isValid?: boolean;
+    page?: number;
+    size?: number;
+    sort?: GetValidationRequestsSortEnum;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
+    isValid?: boolean;
 }
 
 export interface ValidateEmailAddressListRequest {
-  validateEmailAddressListOptions: ValidateEmailAddressListOptions;
+    validateEmailAddressListOptions: ValidateEmailAddressListOptions;
 }
 
 /**
- *
+ * 
  */
 export class EmailVerificationControllerApi extends runtime.BaseAPI {
-  /**
-   * Remove validation requests
-   * Delete all validation requests
-   */
-  async deleteAllValidationRequestsRaw(
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    const queryParameters: any = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Remove validation requests
+     * Delete all validation requests
+     */
+    async deleteAllValidationRequestsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/email-verification`,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/email-verification`,
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Remove validation requests
-   * Delete all validation requests
-   */
-  async deleteAllValidationRequests(
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteAllValidationRequestsRaw(initOverrides);
-  }
-
-  /**
-   * Delete a validation record
-   * Delete a validation record
-   */
-  async deleteValidationRequestRaw(
-    requestParameters: DeleteValidationRequestRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
-    if (requestParameters.id === null || requestParameters.id === undefined) {
-      throw new runtime.RequiredError(
-        'id',
-        'Required parameter requestParameters.id was null or undefined when calling deleteValidationRequest.'
-      );
+    /**
+     * Remove validation requests
+     * Delete all validation requests
+     */
+    async deleteAllValidationRequests(initOverrides?: RequestInit): Promise<void> {
+        await this.deleteAllValidationRequestsRaw(initOverrides);
     }
 
-    const queryParameters: any = {};
+    /**
+     * Delete a validation record
+     * Delete a validation record
+     */
+    async deleteValidationRequestRaw(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.id === null || requestParameters.id === undefined) {
+            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling deleteValidationRequest.');
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: any = {};
 
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/email-verification/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
     }
 
-    const response = await this.request(
-      {
-        path: `/email-verification/{id}`.replace(
-          `{${'id'}}`,
-          encodeURIComponent(String(requestParameters.id))
-        ),
-        method: 'DELETE',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.VoidApiResponse(response);
-  }
-
-  /**
-   * Delete a validation record
-   * Delete a validation record
-   */
-  async deleteValidationRequest(
-    requestParameters: DeleteValidationRequestRequest,
-    initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.deleteValidationRequestRaw(requestParameters, initOverrides);
-  }
-
-  /**
-   * List email verification requests
-   * Validate a list of email addresses. Per unit billing. See your plan for pricing.
-   */
-  async getValidationRequestsRaw(
-    requestParameters: GetValidationRequestsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<PageEmailValidationRequest>> {
-    const queryParameters: any = {};
-
-    if (requestParameters.page !== undefined) {
-      queryParameters['page'] = requestParameters.page;
+    /**
+     * Delete a validation record
+     * Delete a validation record
+     */
+    async deleteValidationRequest(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<void> {
+        await this.deleteValidationRequestRaw(requestParameters, initOverrides);
     }
 
-    if (requestParameters.size !== undefined) {
-      queryParameters['size'] = requestParameters.size;
+    /**
+     * List email verification requests
+     * Validate a list of email addresses. Per unit billing. See your plan for pricing.
+     */
+    async getValidationRequestsRaw(requestParameters: GetValidationRequestsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailValidationRequest>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.page !== undefined) {
+            queryParameters['page'] = requestParameters.page;
+        }
+
+        if (requestParameters.size !== undefined) {
+            queryParameters['size'] = requestParameters.size;
+        }
+
+        if (requestParameters.sort !== undefined) {
+            queryParameters['sort'] = requestParameters.sort;
+        }
+
+        if (requestParameters.searchFilter !== undefined) {
+            queryParameters['searchFilter'] = requestParameters.searchFilter;
+        }
+
+        if (requestParameters.since !== undefined) {
+            queryParameters['since'] = (requestParameters.since as any).toISOString();
+        }
+
+        if (requestParameters.before !== undefined) {
+            queryParameters['before'] = (requestParameters.before as any).toISOString();
+        }
+
+        if (requestParameters.isValid !== undefined) {
+            queryParameters['isValid'] = requestParameters.isValid;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/email-verification/validation-requests`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PageEmailValidationRequestFromJSON(jsonValue));
     }
 
-    if (requestParameters.sort !== undefined) {
-      queryParameters['sort'] = requestParameters.sort;
+    /**
+     * List email verification requests
+     * Validate a list of email addresses. Per unit billing. See your plan for pricing.
+     */
+    async getValidationRequests(requestParameters: GetValidationRequestsRequest, initOverrides?: RequestInit): Promise<PageEmailValidationRequest> {
+        const response = await this.getValidationRequestsRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.searchFilter !== undefined) {
-      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    /**
+     * Verify a list of email addresses is valid and can be contacted.
+     * Validate a list of email addresses. Per unit billing. See your plan for pricing.
+     */
+    async validateEmailAddressListRaw(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ValidateEmailAddressListResult>> {
+        if (requestParameters.validateEmailAddressListOptions === null || requestParameters.validateEmailAddressListOptions === undefined) {
+            throw new runtime.RequiredError('validateEmailAddressListOptions','Required parameter requestParameters.validateEmailAddressListOptions was null or undefined when calling validateEmailAddressList.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/email-verification/email-address-list`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ValidateEmailAddressListOptionsToJSON(requestParameters.validateEmailAddressListOptions),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ValidateEmailAddressListResultFromJSON(jsonValue));
     }
 
-    if (requestParameters.since !== undefined) {
-      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    /**
+     * Verify a list of email addresses is valid and can be contacted.
+     * Validate a list of email addresses. Per unit billing. See your plan for pricing.
+     */
+    async validateEmailAddressList(requestParameters: ValidateEmailAddressListRequest, initOverrides?: RequestInit): Promise<ValidateEmailAddressListResult> {
+        const response = await this.validateEmailAddressListRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.before !== undefined) {
-      queryParameters['before'] = (
-        requestParameters.before as any
-      ).toISOString();
-    }
-
-    if (requestParameters.isValid !== undefined) {
-      queryParameters['isValid'] = requestParameters.isValid;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/email-verification/validation-requests`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PageEmailValidationRequestFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * List email verification requests
-   * Validate a list of email addresses. Per unit billing. See your plan for pricing.
-   */
-  async getValidationRequests(
-    requestParameters: GetValidationRequestsRequest,
-    initOverrides?: RequestInit
-  ): Promise<PageEmailValidationRequest> {
-    const response = await this.getValidationRequestsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Verify a list of email addresses is valid and can be contacted.
-   * Validate a list of email addresses. Per unit billing. See your plan for pricing.
-   */
-  async validateEmailAddressListRaw(
-    requestParameters: ValidateEmailAddressListRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<ValidateEmailAddressListResult>> {
-    if (
-      requestParameters.validateEmailAddressListOptions === null ||
-      requestParameters.validateEmailAddressListOptions === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'validateEmailAddressListOptions',
-        'Required parameter requestParameters.validateEmailAddressListOptions was null or undefined when calling validateEmailAddressList.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters['Content-Type'] = 'application/json';
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/email-verification/email-address-list`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-        body: ValidateEmailAddressListOptionsToJSON(
-          requestParameters.validateEmailAddressListOptions
-        ),
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      ValidateEmailAddressListResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Verify a list of email addresses is valid and can be contacted.
-   * Validate a list of email addresses. Per unit billing. See your plan for pricing.
-   */
-  async validateEmailAddressList(
-    requestParameters: ValidateEmailAddressListRequest,
-    initOverrides?: RequestInit
-  ): Promise<ValidateEmailAddressListResult> {
-    const response = await this.validateEmailAddressListRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum GetValidationRequestsSortEnum {
-  ASC = 'ASC',
-  DESC = 'DESC',
+    ASC = 'ASC',
+    DESC = 'DESC'
 }

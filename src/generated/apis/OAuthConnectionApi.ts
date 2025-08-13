@@ -12,192 +12,140 @@
  * Do not edit the class manually.
  */
 
+
 import * as runtime from '../runtime';
 import {
-  CreateOAuthConnectionResult,
-  CreateOAuthConnectionResultFromJSON,
-  CreateOAuthConnectionResultToJSON,
-  CreateOAuthExchangeResult,
-  CreateOAuthExchangeResultFromJSON,
-  CreateOAuthExchangeResultToJSON,
+    CreateOAuthConnectionResult,
+    CreateOAuthConnectionResultFromJSON,
+    CreateOAuthConnectionResultToJSON,
+    CreateOAuthExchangeResult,
+    CreateOAuthExchangeResultFromJSON,
+    CreateOAuthExchangeResultToJSON,
 } from '../models';
 
 export interface CreateOAuthConnectionRequest {
-  redirectBase: string;
-  oAuthConnectionType: CreateOAuthConnectionOAuthConnectionTypeEnum;
-  emailAddress?: string;
+    redirectBase: string;
+    oAuthConnectionType: CreateOAuthConnectionOAuthConnectionTypeEnum;
+    emailAddress?: string;
 }
 
 export interface ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest {
-  authorizationCode: string;
-  redirectUri: string;
+    authorizationCode: string;
+    redirectUri: string;
 }
 
 /**
- *
+ * 
  */
 export class OAuthConnectionApi extends runtime.BaseAPI {
-  /**
-   * Configure an inbox for OAuth sync with MailSlurp
-   * Create an OAuth connection
-   */
-  async createOAuthConnectionRaw(
-    requestParameters: CreateOAuthConnectionRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CreateOAuthConnectionResult>> {
-    if (
-      requestParameters.redirectBase === null ||
-      requestParameters.redirectBase === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'redirectBase',
-        'Required parameter requestParameters.redirectBase was null or undefined when calling createOAuthConnection.'
-      );
+
+    /**
+     * Configure an inbox for OAuth sync with MailSlurp
+     * Create an OAuth connection
+     */
+    async createOAuthConnectionRaw(requestParameters: CreateOAuthConnectionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateOAuthConnectionResult>> {
+        if (requestParameters.redirectBase === null || requestParameters.redirectBase === undefined) {
+            throw new runtime.RequiredError('redirectBase','Required parameter requestParameters.redirectBase was null or undefined when calling createOAuthConnection.');
+        }
+
+        if (requestParameters.oAuthConnectionType === null || requestParameters.oAuthConnectionType === undefined) {
+            throw new runtime.RequiredError('oAuthConnectionType','Required parameter requestParameters.oAuthConnectionType was null or undefined when calling createOAuthConnection.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.redirectBase !== undefined) {
+            queryParameters['redirectBase'] = requestParameters.redirectBase;
+        }
+
+        if (requestParameters.oAuthConnectionType !== undefined) {
+            queryParameters['oAuthConnectionType'] = requestParameters.oAuthConnectionType;
+        }
+
+        if (requestParameters.emailAddress !== undefined) {
+            queryParameters['emailAddress'] = requestParameters.emailAddress;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/oauth-connection`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateOAuthConnectionResultFromJSON(jsonValue));
     }
 
-    if (
-      requestParameters.oAuthConnectionType === null ||
-      requestParameters.oAuthConnectionType === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'oAuthConnectionType',
-        'Required parameter requestParameters.oAuthConnectionType was null or undefined when calling createOAuthConnection.'
-      );
+    /**
+     * Configure an inbox for OAuth sync with MailSlurp
+     * Create an OAuth connection
+     */
+    async createOAuthConnection(requestParameters: CreateOAuthConnectionRequest, initOverrides?: RequestInit): Promise<CreateOAuthConnectionResult> {
+        const response = await this.createOAuthConnectionRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    const queryParameters: any = {};
+    /**
+     * Exchange an OAuth code for an access token and create an inbox connection in MailSlurp
+     * Exchange authorization code for access token and create inbox
+     */
+    async exchangeAuthorizationTokenAndCreateOrUpdateInboxRaw(requestParameters: ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateOAuthExchangeResult>> {
+        if (requestParameters.authorizationCode === null || requestParameters.authorizationCode === undefined) {
+            throw new runtime.RequiredError('authorizationCode','Required parameter requestParameters.authorizationCode was null or undefined when calling exchangeAuthorizationTokenAndCreateOrUpdateInbox.');
+        }
 
-    if (requestParameters.redirectBase !== undefined) {
-      queryParameters['redirectBase'] = requestParameters.redirectBase;
+        if (requestParameters.redirectUri === null || requestParameters.redirectUri === undefined) {
+            throw new runtime.RequiredError('redirectUri','Required parameter requestParameters.redirectUri was null or undefined when calling exchangeAuthorizationTokenAndCreateOrUpdateInbox.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.authorizationCode !== undefined) {
+            queryParameters['authorizationCode'] = requestParameters.authorizationCode;
+        }
+
+        if (requestParameters.redirectUri !== undefined) {
+            queryParameters['redirectUri'] = requestParameters.redirectUri;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+        }
+
+        const response = await this.request({
+            path: `/oauth-connection/oauth-exchange/google`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateOAuthExchangeResultFromJSON(jsonValue));
     }
 
-    if (requestParameters.oAuthConnectionType !== undefined) {
-      queryParameters['oAuthConnectionType'] =
-        requestParameters.oAuthConnectionType;
+    /**
+     * Exchange an OAuth code for an access token and create an inbox connection in MailSlurp
+     * Exchange authorization code for access token and create inbox
+     */
+    async exchangeAuthorizationTokenAndCreateOrUpdateInbox(requestParameters: ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest, initOverrides?: RequestInit): Promise<CreateOAuthExchangeResult> {
+        const response = await this.exchangeAuthorizationTokenAndCreateOrUpdateInboxRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
-    if (requestParameters.emailAddress !== undefined) {
-      queryParameters['emailAddress'] = requestParameters.emailAddress;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/oauth-connection`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CreateOAuthConnectionResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Configure an inbox for OAuth sync with MailSlurp
-   * Create an OAuth connection
-   */
-  async createOAuthConnection(
-    requestParameters: CreateOAuthConnectionRequest,
-    initOverrides?: RequestInit
-  ): Promise<CreateOAuthConnectionResult> {
-    const response = await this.createOAuthConnectionRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
-   * Exchange an OAuth code for an access token and create an inbox connection in MailSlurp
-   * Exchange authorization code for access token and create inbox
-   */
-  async exchangeAuthorizationTokenAndCreateOrUpdateInboxRaw(
-    requestParameters: ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<CreateOAuthExchangeResult>> {
-    if (
-      requestParameters.authorizationCode === null ||
-      requestParameters.authorizationCode === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'authorizationCode',
-        'Required parameter requestParameters.authorizationCode was null or undefined when calling exchangeAuthorizationTokenAndCreateOrUpdateInbox.'
-      );
-    }
-
-    if (
-      requestParameters.redirectUri === null ||
-      requestParameters.redirectUri === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'redirectUri',
-        'Required parameter requestParameters.redirectUri was null or undefined when calling exchangeAuthorizationTokenAndCreateOrUpdateInbox.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    if (requestParameters.authorizationCode !== undefined) {
-      queryParameters['authorizationCode'] =
-        requestParameters.authorizationCode;
-    }
-
-    if (requestParameters.redirectUri !== undefined) {
-      queryParameters['redirectUri'] = requestParameters.redirectUri;
-    }
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/oauth-connection/oauth-exchange/google`,
-        method: 'POST',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CreateOAuthExchangeResultFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Exchange an OAuth code for an access token and create an inbox connection in MailSlurp
-   * Exchange authorization code for access token and create inbox
-   */
-  async exchangeAuthorizationTokenAndCreateOrUpdateInbox(
-    requestParameters: ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest,
-    initOverrides?: RequestInit
-  ): Promise<CreateOAuthExchangeResult> {
-    const response =
-      await this.exchangeAuthorizationTokenAndCreateOrUpdateInboxRaw(
-        requestParameters,
-        initOverrides
-      );
-    return await response.value();
-  }
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum CreateOAuthConnectionOAuthConnectionTypeEnum {
-  GOOGLE = 'GOOGLE',
-  MICROSOFT = 'MICROSOFT',
+    GOOGLE = 'GOOGLE',
+    MICROSOFT = 'MICROSOFT'
 }

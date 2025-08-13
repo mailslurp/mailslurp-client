@@ -179,33 +179,33 @@ export declare class AliasControllerApi extends runtime.BaseAPI {
     updateAlias(requestParameters: UpdateAliasRequest, initOverrides?: RequestInit): Promise<AliasDto>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAliasEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAliasThreadsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetAliasesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetThreadsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"

@@ -14,47 +14,44 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Test options for inbox ruleset
+ * 
  * @export
- * @interface InboxRulesetTestOptions
+ * @interface InlineObject1
  */
-export interface InboxRulesetTestOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof InboxRulesetTestOptions
-   */
-  testTarget: string;
+export interface InlineObject1 {
+    /**
+     * 
+     * @type {Blob}
+     * @memberof InlineObject1
+     */
+    file: Blob;
 }
 
-export function InboxRulesetTestOptionsFromJSON(
-  json: any
-): InboxRulesetTestOptions {
-  return InboxRulesetTestOptionsFromJSONTyped(json, false);
+export function InlineObject1FromJSON(json: any): InlineObject1 {
+    return InlineObject1FromJSONTyped(json, false);
 }
 
-export function InboxRulesetTestOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): InboxRulesetTestOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    testTarget: json['testTarget'],
-  };
+export function InlineObject1FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject1 {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'file': json['file'],
+    };
 }
 
-export function InboxRulesetTestOptionsToJSON(
-  value?: InboxRulesetTestOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    testTarget: value.testTarget,
-  };
+export function InlineObject1ToJSON(value?: InlineObject1 | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'file': value.file,
+    };
 }
+
+

@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  EmailRecipients,
-  EmailRecipientsFromJSON,
-  EmailRecipientsFromJSONTyped,
-  EmailRecipientsToJSON,
-  Sender,
-  SenderFromJSON,
-  SenderFromJSONTyped,
-  SenderToJSON,
+    EmailRecipients,
+    EmailRecipientsFromJSON,
+    EmailRecipientsFromJSONTyped,
+    EmailRecipientsToJSON,
+    Sender,
+    SenderFromJSON,
+    SenderFromJSONTyped,
+    SenderToJSON,
 } from './';
 
 /**
@@ -30,196 +30,191 @@ import {
  * @interface EmailPreview
  */
 export interface EmailPreview {
-  /**
-   * ID of the email entity
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  id: string;
-  /**
-   * ID of the inbox that received the email
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  inboxId?: string | null;
-  /**
-   * ID of the domain that received the email
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  domainId?: string | null;
-  /**
-   * The subject line of the email message as specified by SMTP subject header
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  subject?: string | null;
-  /**
-   * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
-   * @type {Array<string>}
-   * @memberof EmailPreview
-   */
-  to: Array<string> | null;
-  /**
-   * Who the email was sent from. An email address - see fromName for the sender name.
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  from?: string | null;
-  /**
-   * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
-   * @type {Array<string>}
-   * @memberof EmailPreview
-   */
-  bcc?: Array<string> | null;
-  /**
-   * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
-   * @type {Array<string>}
-   * @memberof EmailPreview
-   */
-  cc?: Array<string> | null;
-  /**
-   * When was the email received by MailSlurp
-   * @type {Date}
-   * @memberof EmailPreview
-   */
-  createdAt: Date;
-  /**
-   * Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
-   * @type {boolean}
-   * @memberof EmailPreview
-   */
-  read: boolean;
-  /**
-   * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
-   * @type {Array<string>}
-   * @memberof EmailPreview
-   */
-  attachments?: Array<string> | null;
-  /**
-   * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  threadId?: string | null;
-  /**
-   * RFC 5322 Message-ID header value without angle brackets.
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  messageId?: string | null;
-  /**
-   * Parsed value of In-Reply-To header. A Message-ID in a thread.
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  inReplyTo?: string | null;
-  /**
-   *
-   * @type {Sender}
-   * @memberof EmailPreview
-   */
-  sender?: Sender | null;
-  /**
-   *
-   * @type {EmailRecipients}
-   * @memberof EmailPreview
-   */
-  recipients?: EmailRecipients | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailPreview
-   */
-  favourite?: boolean | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailPreview
-   */
-  bodyPartContentTypes?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailPreview
-   */
-  plusAddress?: string | null;
-  /**
-   *
-   * @type {number}
-   * @memberof EmailPreview
-   */
-  sizeBytes?: number | null;
+    /**
+     * ID of the email entity
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    id: string;
+    /**
+     * ID of the inbox that received the email
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    inboxId?: string | null;
+    /**
+     * ID of the domain that received the email
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    domainId?: string | null;
+    /**
+     * The subject line of the email message as specified by SMTP subject header
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    subject?: string | null;
+    /**
+     * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
+     * @type {Array<string>}
+     * @memberof EmailPreview
+     */
+    to: Array<string> | null;
+    /**
+     * Who the email was sent from. An email address - see fromName for the sender name.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    from?: string | null;
+    /**
+     * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
+     * @type {Array<string>}
+     * @memberof EmailPreview
+     */
+    bcc?: Array<string> | null;
+    /**
+     * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
+     * @type {Array<string>}
+     * @memberof EmailPreview
+     */
+    cc?: Array<string> | null;
+    /**
+     * When was the email received by MailSlurp
+     * @type {Date}
+     * @memberof EmailPreview
+     */
+    createdAt: Date;
+    /**
+     * Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
+     * @type {boolean}
+     * @memberof EmailPreview
+     */
+    read: boolean;
+    /**
+     * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
+     * @type {Array<string>}
+     * @memberof EmailPreview
+     */
+    attachments?: Array<string> | null;
+    /**
+     * MailSlurp thread ID for email chain that enables lookup for In-Reply-To and References fields.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    threadId?: string | null;
+    /**
+     * RFC 5322 Message-ID header value without angle brackets.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    messageId?: string | null;
+    /**
+     * Parsed value of In-Reply-To header. A Message-ID in a thread.
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    inReplyTo?: string | null;
+    /**
+     * 
+     * @type {Sender}
+     * @memberof EmailPreview
+     */
+    sender?: Sender | null;
+    /**
+     * 
+     * @type {EmailRecipients}
+     * @memberof EmailPreview
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof EmailPreview
+     */
+    favourite?: boolean | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof EmailPreview
+     */
+    bodyPartContentTypes?: Array<string> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    plusAddress?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof EmailPreview
+     */
+    sizeBytes?: number | null;
 }
 
 export function EmailPreviewFromJSON(json: any): EmailPreview {
-  return EmailPreviewFromJSONTyped(json, false);
+    return EmailPreviewFromJSONTyped(json, false);
 }
 
-export function EmailPreviewFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailPreview {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    to: json['to'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
-    cc: !exists(json, 'cc') ? undefined : json['cc'],
-    createdAt: new Date(json['createdAt']),
-    read: json['read'],
-    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
-    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
-    messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
-    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-    sender: !exists(json, 'sender')
-      ? undefined
-      : SenderFromJSON(json['sender']),
-    recipients: !exists(json, 'recipients')
-      ? undefined
-      : EmailRecipientsFromJSON(json['recipients']),
-    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
-    bodyPartContentTypes: !exists(json, 'bodyPartContentTypes')
-      ? undefined
-      : json['bodyPartContentTypes'],
-    plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
-    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
-  };
+export function EmailPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreview {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        'domainId': !exists(json, 'domainId') ? undefined : json['domainId'],
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'to': json['to'],
+        'from': !exists(json, 'from') ? undefined : json['from'],
+        'bcc': !exists(json, 'bcc') ? undefined : json['bcc'],
+        'cc': !exists(json, 'cc') ? undefined : json['cc'],
+        'createdAt': (new Date(json['createdAt'])),
+        'read': json['read'],
+        'attachments': !exists(json, 'attachments') ? undefined : json['attachments'],
+        'threadId': !exists(json, 'threadId') ? undefined : json['threadId'],
+        'messageId': !exists(json, 'messageId') ? undefined : json['messageId'],
+        'inReplyTo': !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+        'sender': !exists(json, 'sender') ? undefined : SenderFromJSON(json['sender']),
+        'recipients': !exists(json, 'recipients') ? undefined : EmailRecipientsFromJSON(json['recipients']),
+        'favourite': !exists(json, 'favourite') ? undefined : json['favourite'],
+        'bodyPartContentTypes': !exists(json, 'bodyPartContentTypes') ? undefined : json['bodyPartContentTypes'],
+        'plusAddress': !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
+        'sizeBytes': !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+    };
 }
 
 export function EmailPreviewToJSON(value?: EmailPreview | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    inboxId: value.inboxId,
-    domainId: value.domainId,
-    subject: value.subject,
-    to: value.to,
-    from: value.from,
-    bcc: value.bcc,
-    cc: value.cc,
-    createdAt: value.createdAt.toISOString(),
-    read: value.read,
-    attachments: value.attachments,
-    threadId: value.threadId,
-    messageId: value.messageId,
-    inReplyTo: value.inReplyTo,
-    sender: SenderToJSON(value.sender),
-    recipients: EmailRecipientsToJSON(value.recipients),
-    favourite: value.favourite,
-    bodyPartContentTypes: value.bodyPartContentTypes,
-    plusAddress: value.plusAddress,
-    sizeBytes: value.sizeBytes,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'inboxId': value.inboxId,
+        'domainId': value.domainId,
+        'subject': value.subject,
+        'to': value.to,
+        'from': value.from,
+        'bcc': value.bcc,
+        'cc': value.cc,
+        'createdAt': (value.createdAt.toISOString()),
+        'read': value.read,
+        'attachments': value.attachments,
+        'threadId': value.threadId,
+        'messageId': value.messageId,
+        'inReplyTo': value.inReplyTo,
+        'sender': SenderToJSON(value.sender),
+        'recipients': EmailRecipientsToJSON(value.recipients),
+        'favourite': value.favourite,
+        'bodyPartContentTypes': value.bodyPartContentTypes,
+        'plusAddress': value.plusAddress,
+        'sizeBytes': value.sizeBytes,
+    };
 }
+
+

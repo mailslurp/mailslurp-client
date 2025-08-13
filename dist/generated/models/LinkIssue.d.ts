@@ -41,9 +41,9 @@ export interface LinkIssue {
     message: string;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum LinkIssueSeverityEnum {
     Warning = "Warning",
     Error = "Error"

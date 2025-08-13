@@ -19,42 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface CheckEmailClientSupportOptions
  */
 export interface CheckEmailClientSupportOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof CheckEmailClientSupportOptions
-   */
-  emailBody: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CheckEmailClientSupportOptions
+     */
+    emailBody: string;
 }
 
-export function CheckEmailClientSupportOptionsFromJSON(
-  json: any
-): CheckEmailClientSupportOptions {
-  return CheckEmailClientSupportOptionsFromJSONTyped(json, false);
+export function CheckEmailClientSupportOptionsFromJSON(json: any): CheckEmailClientSupportOptions {
+    return CheckEmailClientSupportOptionsFromJSONTyped(json, false);
 }
 
-export function CheckEmailClientSupportOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CheckEmailClientSupportOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailBody: json['emailBody'],
-  };
+export function CheckEmailClientSupportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailClientSupportOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'emailBody': json['emailBody'],
+    };
 }
 
-export function CheckEmailClientSupportOptionsToJSON(
-  value?: CheckEmailClientSupportOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailBody: value.emailBody,
-  };
+export function CheckEmailClientSupportOptionsToJSON(value?: CheckEmailClientSupportOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'emailBody': value.emailBody,
+    };
 }
+
+

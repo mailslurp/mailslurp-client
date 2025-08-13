@@ -54,6 +54,12 @@ export interface PageComplaint {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageComplaint
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageComplaint
      */
@@ -70,12 +76,6 @@ export interface PageComplaint {
      * @memberof PageComplaint
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageComplaint
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

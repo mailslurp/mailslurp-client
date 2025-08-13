@@ -14,187 +14,172 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ConnectorSmtpConnectionDto
  */
 export interface ConnectorSmtpConnectionDto {
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  connectorId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpHost: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpPort?: number | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpUsername?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpPassword?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpSsl?: boolean | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  startTls?: boolean | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  smtpMechanisms?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  localHostName?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  proxyHost?: string | null;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  proxyPort?: number | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  proxyEnabled?: boolean | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  enabled?: boolean | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  sslTrust?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  sslProtocols?: Array<string> | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionDto
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    connectorId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpHost: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpPort?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpUsername?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpPassword?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpSsl?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    startTls?: boolean | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    smtpMechanisms?: Array<string> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    localHostName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyHost?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyPort?: number | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    proxyEnabled?: boolean | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    enabled?: boolean | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslTrust?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    sslProtocols?: Array<string> | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionDto
+     */
+    id: string;
 }
 
-export function ConnectorSmtpConnectionDtoFromJSON(
-  json: any
-): ConnectorSmtpConnectionDto {
-  return ConnectorSmtpConnectionDtoFromJSONTyped(json, false);
+export function ConnectorSmtpConnectionDtoFromJSON(json: any): ConnectorSmtpConnectionDto {
+    return ConnectorSmtpConnectionDtoFromJSONTyped(json, false);
 }
 
-export function ConnectorSmtpConnectionDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorSmtpConnectionDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    connectorId: json['connectorId'],
-    smtpHost: json['smtpHost'],
-    smtpPort: !exists(json, 'smtpPort') ? undefined : json['smtpPort'],
-    smtpUsername: !exists(json, 'smtpUsername')
-      ? undefined
-      : json['smtpUsername'],
-    smtpPassword: !exists(json, 'smtpPassword')
-      ? undefined
-      : json['smtpPassword'],
-    smtpSsl: !exists(json, 'smtpSsl') ? undefined : json['smtpSsl'],
-    startTls: !exists(json, 'startTls') ? undefined : json['startTls'],
-    smtpMechanisms: !exists(json, 'smtpMechanisms')
-      ? undefined
-      : json['smtpMechanisms'],
-    localHostName: !exists(json, 'localHostName')
-      ? undefined
-      : json['localHostName'],
-    proxyHost: !exists(json, 'proxyHost') ? undefined : json['proxyHost'],
-    proxyPort: !exists(json, 'proxyPort') ? undefined : json['proxyPort'],
-    proxyEnabled: !exists(json, 'proxyEnabled')
-      ? undefined
-      : json['proxyEnabled'],
-    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-    sslTrust: !exists(json, 'sslTrust') ? undefined : json['sslTrust'],
-    sslProtocols: !exists(json, 'sslProtocols')
-      ? undefined
-      : json['sslProtocols'],
-    createdAt: new Date(json['createdAt']),
-    id: json['id'],
-  };
+export function ConnectorSmtpConnectionDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSmtpConnectionDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'connectorId': json['connectorId'],
+        'smtpHost': json['smtpHost'],
+        'smtpPort': !exists(json, 'smtpPort') ? undefined : json['smtpPort'],
+        'smtpUsername': !exists(json, 'smtpUsername') ? undefined : json['smtpUsername'],
+        'smtpPassword': !exists(json, 'smtpPassword') ? undefined : json['smtpPassword'],
+        'smtpSsl': !exists(json, 'smtpSsl') ? undefined : json['smtpSsl'],
+        'startTls': !exists(json, 'startTls') ? undefined : json['startTls'],
+        'smtpMechanisms': !exists(json, 'smtpMechanisms') ? undefined : json['smtpMechanisms'],
+        'localHostName': !exists(json, 'localHostName') ? undefined : json['localHostName'],
+        'proxyHost': !exists(json, 'proxyHost') ? undefined : json['proxyHost'],
+        'proxyPort': !exists(json, 'proxyPort') ? undefined : json['proxyPort'],
+        'proxyEnabled': !exists(json, 'proxyEnabled') ? undefined : json['proxyEnabled'],
+        'enabled': !exists(json, 'enabled') ? undefined : json['enabled'],
+        'sslTrust': !exists(json, 'sslTrust') ? undefined : json['sslTrust'],
+        'sslProtocols': !exists(json, 'sslProtocols') ? undefined : json['sslProtocols'],
+        'createdAt': (new Date(json['createdAt'])),
+        'id': json['id'],
+    };
 }
 
-export function ConnectorSmtpConnectionDtoToJSON(
-  value?: ConnectorSmtpConnectionDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    connectorId: value.connectorId,
-    smtpHost: value.smtpHost,
-    smtpPort: value.smtpPort,
-    smtpUsername: value.smtpUsername,
-    smtpPassword: value.smtpPassword,
-    smtpSsl: value.smtpSsl,
-    startTls: value.startTls,
-    smtpMechanisms: value.smtpMechanisms,
-    localHostName: value.localHostName,
-    proxyHost: value.proxyHost,
-    proxyPort: value.proxyPort,
-    proxyEnabled: value.proxyEnabled,
-    enabled: value.enabled,
-    sslTrust: value.sslTrust,
-    sslProtocols: value.sslProtocols,
-    createdAt: value.createdAt.toISOString(),
-    id: value.id,
-  };
+export function ConnectorSmtpConnectionDtoToJSON(value?: ConnectorSmtpConnectionDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'connectorId': value.connectorId,
+        'smtpHost': value.smtpHost,
+        'smtpPort': value.smtpPort,
+        'smtpUsername': value.smtpUsername,
+        'smtpPassword': value.smtpPassword,
+        'smtpSsl': value.smtpSsl,
+        'startTls': value.startTls,
+        'smtpMechanisms': value.smtpMechanisms,
+        'localHostName': value.localHostName,
+        'proxyHost': value.proxyHost,
+        'proxyPort': value.proxyPort,
+        'proxyEnabled': value.proxyEnabled,
+        'enabled': value.enabled,
+        'sslTrust': value.sslTrust,
+        'sslProtocols': value.sslProtocols,
+        'createdAt': (value.createdAt.toISOString()),
+        'id': value.id,
+    };
 }
+
+

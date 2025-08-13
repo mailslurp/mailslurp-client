@@ -20,13 +20,13 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    inboxId: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof AliasProjection
      */
-    userId: string;
+    inboxId: string;
     /**
      *
      * @type {string}
@@ -38,13 +38,13 @@ export interface AliasProjection {
      * @type {Date}
      * @memberof AliasProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof AliasProjection
      */
-    createdAt: Date;
+    updatedAt: Date;
     /**
      *
      * @type {boolean}

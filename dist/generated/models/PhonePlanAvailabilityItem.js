@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhonePlanAvailabilityItemToJSON = exports.PhonePlanAvailabilityItemFromJSONTyped = exports.PhonePlanAvailabilityItemFromJSON = exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var PhonePlanAvailabilityItemPhoneCountryEnum;
 (function (PhonePlanAvailabilityItemPhoneCountryEnum) {
     PhonePlanAvailabilityItemPhoneCountryEnum["US"] = "US";
@@ -32,11 +32,10 @@ var PhonePlanAvailabilityItemPhoneCountryEnum;
     PhonePlanAvailabilityItemPhoneCountryEnum["NL"] = "NL";
     PhonePlanAvailabilityItemPhoneCountryEnum["IL"] = "IL";
     PhonePlanAvailabilityItemPhoneCountryEnum["SE"] = "SE";
-})(PhonePlanAvailabilityItemPhoneCountryEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum || (exports.PhonePlanAvailabilityItemPhoneCountryEnum = {}));
-/**
- * @export
- * @enum {string}
- */
+})(PhonePlanAvailabilityItemPhoneCountryEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum || (exports.PhonePlanAvailabilityItemPhoneCountryEnum = {})); /**
+* @export
+* @enum {string}
+*/
 var PhonePlanAvailabilityItemAvailabilityStatusEnum;
 (function (PhonePlanAvailabilityItemAvailabilityStatusEnum) {
     PhonePlanAvailabilityItemAvailabilityStatusEnum["AVAILABLE"] = "AVAILABLE";
@@ -49,12 +48,12 @@ function PhonePlanAvailabilityItemFromJSON(json) {
 }
 exports.PhonePlanAvailabilityItemFromJSON = PhonePlanAvailabilityItemFromJSON;
 function PhonePlanAvailabilityItemFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        phoneCountry: json['phoneCountry'],
-        availabilityStatus: json['availabilityStatus'],
+        'phoneCountry': json['phoneCountry'],
+        'availabilityStatus': json['availabilityStatus'],
     };
 }
 exports.PhonePlanAvailabilityItemFromJSONTyped = PhonePlanAvailabilityItemFromJSONTyped;
@@ -66,8 +65,8 @@ function PhonePlanAvailabilityItemToJSON(value) {
         return null;
     }
     return {
-        phoneCountry: value.phoneCountry,
-        availabilityStatus: value.availabilityStatus,
+        'phoneCountry': value.phoneCountry,
+        'availabilityStatus': value.availabilityStatus,
     };
 }
 exports.PhonePlanAvailabilityItemToJSON = PhonePlanAvailabilityItemToJSON;

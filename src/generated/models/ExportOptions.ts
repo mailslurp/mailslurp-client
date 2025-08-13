@@ -19,109 +19,88 @@ import { exists, mapValues } from '../runtime';
  * @interface ExportOptions
  */
 export interface ExportOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof ExportOptions
-   */
-  outputFormat: ExportOptionsOutputFormatEnum;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ExportOptions
-   */
-  excludePreviouslyExported?: boolean | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof ExportOptions
-   */
-  createdEarliestTime?: Date | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof ExportOptions
-   */
-  createdOldestTime?: Date | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ExportOptions
-   */
-  filter?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ExportOptions
-   */
-  listSeparatorToken?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportOptions
+     */
+    outputFormat: ExportOptionsOutputFormatEnum;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExportOptions
+     */
+    excludePreviouslyExported?: boolean | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ExportOptions
+     */
+    createdEarliestTime?: Date | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ExportOptions
+     */
+    createdOldestTime?: Date | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportOptions
+     */
+    filter?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExportOptions
+     */
+    listSeparatorToken?: string | null;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum ExportOptionsOutputFormatEnum {
-  DEFAULT = 'CSV_DEFAULT',
-  EXCEL = 'CSV_EXCEL',
+    DEFAULT = 'CSV_DEFAULT',
+    EXCEL = 'CSV_EXCEL'
 }
 
 export function ExportOptionsFromJSON(json: any): ExportOptions {
-  return ExportOptionsFromJSONTyped(json, false);
+    return ExportOptionsFromJSONTyped(json, false);
 }
 
-export function ExportOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ExportOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    outputFormat: json['outputFormat'],
-    excludePreviouslyExported: !exists(json, 'excludePreviouslyExported')
-      ? undefined
-      : json['excludePreviouslyExported'],
-    createdEarliestTime: !exists(json, 'createdEarliestTime')
-      ? undefined
-      : json['createdEarliestTime'] === null
-      ? null
-      : new Date(json['createdEarliestTime']),
-    createdOldestTime: !exists(json, 'createdOldestTime')
-      ? undefined
-      : json['createdOldestTime'] === null
-      ? null
-      : new Date(json['createdOldestTime']),
-    filter: !exists(json, 'filter') ? undefined : json['filter'],
-    listSeparatorToken: !exists(json, 'listSeparatorToken')
-      ? undefined
-      : json['listSeparatorToken'],
-  };
+export function ExportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExportOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'outputFormat': json['outputFormat'],
+        'excludePreviouslyExported': !exists(json, 'excludePreviouslyExported') ? undefined : json['excludePreviouslyExported'],
+        'createdEarliestTime': !exists(json, 'createdEarliestTime') ? undefined : (json['createdEarliestTime'] === null ? null : new Date(json['createdEarliestTime'])),
+        'createdOldestTime': !exists(json, 'createdOldestTime') ? undefined : (json['createdOldestTime'] === null ? null : new Date(json['createdOldestTime'])),
+        'filter': !exists(json, 'filter') ? undefined : json['filter'],
+        'listSeparatorToken': !exists(json, 'listSeparatorToken') ? undefined : json['listSeparatorToken'],
+    };
 }
 
 export function ExportOptionsToJSON(value?: ExportOptions | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    outputFormat: value.outputFormat,
-    excludePreviouslyExported: value.excludePreviouslyExported,
-    createdEarliestTime:
-      value.createdEarliestTime === undefined
-        ? undefined
-        : value.createdEarliestTime === null
-        ? null
-        : value.createdEarliestTime.toISOString(),
-    createdOldestTime:
-      value.createdOldestTime === undefined
-        ? undefined
-        : value.createdOldestTime === null
-        ? null
-        : value.createdOldestTime.toISOString(),
-    filter: value.filter,
-    listSeparatorToken: value.listSeparatorToken,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'outputFormat': value.outputFormat,
+        'excludePreviouslyExported': value.excludePreviouslyExported,
+        'createdEarliestTime': value.createdEarliestTime === undefined ? undefined : (value.createdEarliestTime === null ? null : value.createdEarliestTime.toISOString()),
+        'createdOldestTime': value.createdOldestTime === undefined ? undefined : (value.createdOldestTime === null ? null : value.createdOldestTime.toISOString()),
+        'filter': value.filter,
+        'listSeparatorToken': value.listSeparatorToken,
+    };
 }
+
+

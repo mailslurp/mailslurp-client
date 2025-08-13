@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImapServerStatusOptionsToJSON = exports.ImapServerStatusOptionsFromJSONTyped = exports.ImapServerStatusOptionsFromJSON = exports.ImapServerStatusOptionsStatusItemsEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var ImapServerStatusOptionsStatusItemsEnum;
 (function (ImapServerStatusOptionsStatusItemsEnum) {
     ImapServerStatusOptionsStatusItemsEnum["MESSAGES"] = "MESSAGES";
@@ -33,12 +33,12 @@ function ImapServerStatusOptionsFromJSON(json) {
 }
 exports.ImapServerStatusOptionsFromJSON = ImapServerStatusOptionsFromJSON;
 function ImapServerStatusOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        statusItems: !(0, runtime_1.exists)(json, 'statusItems') ? undefined : json['statusItems'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'statusItems': !(0, runtime_1.exists)(json, 'statusItems') ? undefined : json['statusItems'],
     };
 }
 exports.ImapServerStatusOptionsFromJSONTyped = ImapServerStatusOptionsFromJSONTyped;
@@ -50,8 +50,8 @@ function ImapServerStatusOptionsToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        statusItems: value.statusItems,
+        'name': value.name,
+        'statusItems': value.statusItems,
     };
 }
 exports.ImapServerStatusOptionsToJSON = ImapServerStatusOptionsToJSON;

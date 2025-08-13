@@ -21,6 +21,18 @@ export interface InboxExistsDto {
      * @memberof InboxExistsDto
      */
     _exists: boolean;
+    /**
+     * Inbox is full or simulating a soft bounce via inbox replier or rulesets
+     * @type {boolean}
+     * @memberof InboxExistsDto
+     */
+    softBounce?: boolean | null;
+    /**
+     * Inbox is blocking receiving emails or simulating a hard bounce via inbox replier or rulesets
+     * @type {boolean}
+     * @memberof InboxExistsDto
+     */
+    hardBounce?: boolean | null;
 }
 export declare function InboxExistsDtoFromJSON(json: any): InboxExistsDto;
 export declare function InboxExistsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxExistsDto;

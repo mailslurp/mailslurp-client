@@ -14,68 +14,65 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ImapServerStatusOptions
  */
 export interface ImapServerStatusOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof ImapServerStatusOptions
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ImapServerStatusOptions
-   */
-  statusItems?: Array<ImapServerStatusOptionsStatusItemsEnum>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImapServerStatusOptions
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ImapServerStatusOptions
+     */
+    statusItems?: Array<ImapServerStatusOptionsStatusItemsEnum>;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum ImapServerStatusOptionsStatusItemsEnum {
-  MESSAGES = 'MESSAGES',
-  RECENT = 'RECENT',
-  UIDNEXT = 'UIDNEXT',
-  UIDVALIDITY = 'UIDVALIDITY',
-  UNSEEN = 'UNSEEN',
-  APPENDLIMIT = 'APPENDLIMIT',
+    MESSAGES = 'MESSAGES',
+    RECENT = 'RECENT',
+    UIDNEXT = 'UIDNEXT',
+    UIDVALIDITY = 'UIDVALIDITY',
+    UNSEEN = 'UNSEEN',
+    APPENDLIMIT = 'APPENDLIMIT'
 }
 
-export function ImapServerStatusOptionsFromJSON(
-  json: any
-): ImapServerStatusOptions {
-  return ImapServerStatusOptionsFromJSONTyped(json, false);
+export function ImapServerStatusOptionsFromJSON(json: any): ImapServerStatusOptions {
+    return ImapServerStatusOptionsFromJSONTyped(json, false);
 }
 
-export function ImapServerStatusOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ImapServerStatusOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    statusItems: !exists(json, 'statusItems') ? undefined : json['statusItems'],
-  };
+export function ImapServerStatusOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerStatusOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'statusItems': !exists(json, 'statusItems') ? undefined : json['statusItems'],
+    };
 }
 
-export function ImapServerStatusOptionsToJSON(
-  value?: ImapServerStatusOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    statusItems: value.statusItems,
-  };
+export function ImapServerStatusOptionsToJSON(value?: ImapServerStatusOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'name': value.name,
+        'statusItems': value.statusItems,
+    };
 }
+
+

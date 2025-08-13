@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProviderSettingsToJSON = exports.ProviderSettingsFromJSONTyped = exports.ProviderSettingsFromJSON = exports.ProviderSettingsMailProviderEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var ProviderSettingsMailProviderEnum;
 (function (ProviderSettingsMailProviderEnum) {
     ProviderSettingsMailProviderEnum["GOOGLE"] = "GOOGLE";
@@ -29,23 +29,19 @@ function ProviderSettingsFromJSON(json) {
 }
 exports.ProviderSettingsFromJSON = ProviderSettingsFromJSON;
 function ProviderSettingsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        mailProvider: json['mailProvider'],
-        imapHost: json['imapHost'],
-        imapPort: json['imapPort'],
-        imapSsl: json['imapSsl'],
-        imapStartTls: !(0, runtime_1.exists)(json, 'imapStartTls')
-            ? undefined
-            : json['imapStartTls'],
-        smtpHost: json['smtpHost'],
-        smtpPort: json['smtpPort'],
-        smtpSsl: json['smtpSsl'],
-        smtpStartTls: !(0, runtime_1.exists)(json, 'smtpStartTls')
-            ? undefined
-            : json['smtpStartTls'],
+        'mailProvider': json['mailProvider'],
+        'imapHost': json['imapHost'],
+        'imapPort': json['imapPort'],
+        'imapSsl': json['imapSsl'],
+        'imapStartTls': !(0, runtime_1.exists)(json, 'imapStartTls') ? undefined : json['imapStartTls'],
+        'smtpHost': json['smtpHost'],
+        'smtpPort': json['smtpPort'],
+        'smtpSsl': json['smtpSsl'],
+        'smtpStartTls': !(0, runtime_1.exists)(json, 'smtpStartTls') ? undefined : json['smtpStartTls'],
     };
 }
 exports.ProviderSettingsFromJSONTyped = ProviderSettingsFromJSONTyped;
@@ -57,15 +53,15 @@ function ProviderSettingsToJSON(value) {
         return null;
     }
     return {
-        mailProvider: value.mailProvider,
-        imapHost: value.imapHost,
-        imapPort: value.imapPort,
-        imapSsl: value.imapSsl,
-        imapStartTls: value.imapStartTls,
-        smtpHost: value.smtpHost,
-        smtpPort: value.smtpPort,
-        smtpSsl: value.smtpSsl,
-        smtpStartTls: value.smtpStartTls,
+        'mailProvider': value.mailProvider,
+        'imapHost': value.imapHost,
+        'imapPort': value.imapPort,
+        'imapSsl': value.imapSsl,
+        'imapStartTls': value.imapStartTls,
+        'smtpHost': value.smtpHost,
+        'smtpPort': value.smtpPort,
+        'smtpSsl': value.smtpSsl,
+        'smtpStartTls': value.smtpStartTls,
     };
 }
 exports.ProviderSettingsToJSON = ProviderSettingsToJSON;

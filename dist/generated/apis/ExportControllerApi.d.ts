@@ -48,9 +48,9 @@ export declare class ExportControllerApi extends runtime.BaseAPI {
     getExportLink(requestParameters: GetExportLinkRequest, initOverrides?: RequestInit): Promise<ExportLink>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum ExportEntitiesExportTypeEnum {
     INBOXES = "INBOXES",
     CONTACTS = "CONTACTS",
@@ -58,17 +58,17 @@ export declare enum ExportEntitiesExportTypeEnum {
     EMAILS = "EMAILS"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum ExportEntitiesOutputFormatEnum {
     DEFAULT = "CSV_DEFAULT",
     EXCEL = "CSV_EXCEL"
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetExportLinkExportTypeEnum {
     INBOXES = "INBOXES",
     CONTACTS = "CONTACTS",

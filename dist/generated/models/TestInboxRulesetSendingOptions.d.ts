@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Test options for inbox ruleset sending test
+ * Test options for ruleset sending test
  * @export
  * @interface TestInboxRulesetSendingOptions
  */
@@ -20,7 +20,13 @@ export interface TestInboxRulesetSendingOptions {
      * @type {string}
      * @memberof TestInboxRulesetSendingOptions
      */
-    inboxId: string;
+    inboxId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof TestInboxRulesetSendingOptions
+     */
+    phoneId?: string | null;
     /**
      *
      * @type {string}

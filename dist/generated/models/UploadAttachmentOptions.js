@@ -20,14 +20,14 @@ function UploadAttachmentOptionsFromJSON(json) {
 }
 exports.UploadAttachmentOptionsFromJSON = UploadAttachmentOptionsFromJSON;
 function UploadAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
-        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
-        filename: !(0, runtime_1.exists)(json, 'filename') ? undefined : json['filename'],
-        base64Contents: json['base64Contents'],
+        'contentId': !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
+        'contentType': !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        'filename': !(0, runtime_1.exists)(json, 'filename') ? undefined : json['filename'],
+        'base64Contents': json['base64Contents'],
     };
 }
 exports.UploadAttachmentOptionsFromJSONTyped = UploadAttachmentOptionsFromJSONTyped;
@@ -39,10 +39,10 @@ function UploadAttachmentOptionsToJSON(value) {
         return null;
     }
     return {
-        contentId: value.contentId,
-        contentType: value.contentType,
-        filename: value.filename,
-        base64Contents: value.base64Contents,
+        'contentId': value.contentId,
+        'contentType': value.contentType,
+        'filename': value.filename,
+        'base64Contents': value.base64Contents,
     };
 }
 exports.UploadAttachmentOptionsToJSON = UploadAttachmentOptionsToJSON;

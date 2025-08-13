@@ -20,15 +20,15 @@ function MissedEmailProjectionFromJSON(json) {
 }
 exports.MissedEmailProjectionFromJSON = MissedEmailProjectionFromJSON;
 function MissedEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        createdAt: new Date(json['createdAt']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        id: json['id'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        'id': json['id'],
+        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
     };
 }
 exports.MissedEmailProjectionFromJSONTyped = MissedEmailProjectionFromJSONTyped;
@@ -40,11 +40,11 @@ function MissedEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        userId: value.userId,
-        createdAt: value.createdAt.toISOString(),
-        subject: value.subject,
-        id: value.id,
-        from: value.from,
+        'userId': value.userId,
+        'createdAt': (value.createdAt.toISOString()),
+        'subject': value.subject,
+        'id': value.id,
+        'from': value.from,
     };
 }
 exports.MissedEmailProjectionToJSON = MissedEmailProjectionToJSON;

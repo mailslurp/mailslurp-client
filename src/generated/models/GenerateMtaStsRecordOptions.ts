@@ -14,104 +14,100 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface GenerateMtaStsRecordOptions
  */
 export interface GenerateMtaStsRecordOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  host: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  version: GenerateMtaStsRecordOptionsVersionEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  mode: GenerateMtaStsRecordOptionsModeEnum;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  ttl: number;
-  /**
-   *
-   * @type {number}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  maxAgeSeconds: number;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof GenerateMtaStsRecordOptions
-   */
-  mxRecords: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    host: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    version: GenerateMtaStsRecordOptionsVersionEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    mode: GenerateMtaStsRecordOptionsModeEnum;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    ttl: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    maxAgeSeconds: number;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof GenerateMtaStsRecordOptions
+     */
+    mxRecords: Array<string>;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum GenerateMtaStsRecordOptionsVersionEnum {
-  STSv1 = 'STSv1',
-}
-/**
- * @export
- * @enum {string}
- */
+    STSv1 = 'STSv1'
+}/**
+* @export
+* @enum {string}
+*/
 export enum GenerateMtaStsRecordOptionsModeEnum {
-  TESTING = 'TESTING',
-  ENFORCE = 'ENFORCE',
-  NONE = 'NONE',
+    TESTING = 'TESTING',
+    ENFORCE = 'ENFORCE',
+    NONE = 'NONE'
 }
 
-export function GenerateMtaStsRecordOptionsFromJSON(
-  json: any
-): GenerateMtaStsRecordOptions {
-  return GenerateMtaStsRecordOptionsFromJSONTyped(json, false);
+export function GenerateMtaStsRecordOptionsFromJSON(json: any): GenerateMtaStsRecordOptions {
+    return GenerateMtaStsRecordOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateMtaStsRecordOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GenerateMtaStsRecordOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    host: json['host'],
-    version: json['version'],
-    mode: json['mode'],
-    ttl: json['ttl'],
-    maxAgeSeconds: json['maxAgeSeconds'],
-    mxRecords: json['mxRecords'],
-  };
+export function GenerateMtaStsRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateMtaStsRecordOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'host': json['host'],
+        'version': json['version'],
+        'mode': json['mode'],
+        'ttl': json['ttl'],
+        'maxAgeSeconds': json['maxAgeSeconds'],
+        'mxRecords': json['mxRecords'],
+    };
 }
 
-export function GenerateMtaStsRecordOptionsToJSON(
-  value?: GenerateMtaStsRecordOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    host: value.host,
-    version: value.version,
-    mode: value.mode,
-    ttl: value.ttl,
-    maxAgeSeconds: value.maxAgeSeconds,
-    mxRecords: value.mxRecords,
-  };
+export function GenerateMtaStsRecordOptionsToJSON(value?: GenerateMtaStsRecordOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'host': value.host,
+        'version': value.version,
+        'mode': value.mode,
+        'ttl': value.ttl,
+        'maxAgeSeconds': value.maxAgeSeconds,
+        'mxRecords': value.mxRecords,
+    };
 }
+
+

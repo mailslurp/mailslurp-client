@@ -19,40 +19,39 @@ import { exists, mapValues } from '../runtime';
  * @interface UpdateAliasOptions
  */
 export interface UpdateAliasOptions {
-  /**
-   * Optional name for alias
-   * @type {string}
-   * @memberof UpdateAliasOptions
-   */
-  name?: string | null;
+    /**
+     * Optional name for alias
+     * @type {string}
+     * @memberof UpdateAliasOptions
+     */
+    name?: string | null;
 }
 
 export function UpdateAliasOptionsFromJSON(json: any): UpdateAliasOptions {
-  return UpdateAliasOptionsFromJSONTyped(json, false);
+    return UpdateAliasOptionsFromJSONTyped(json, false);
 }
 
-export function UpdateAliasOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): UpdateAliasOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-  };
+export function UpdateAliasOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateAliasOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'name': !exists(json, 'name') ? undefined : json['name'],
+    };
 }
 
-export function UpdateAliasOptionsToJSON(
-  value?: UpdateAliasOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-  };
+export function UpdateAliasOptionsToJSON(value?: UpdateAliasOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'name': value.name,
+    };
 }
+
+

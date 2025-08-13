@@ -19,11 +19,11 @@ function OptInConsentSendResultFromJSON(json) {
 }
 exports.OptInConsentSendResultFromJSON = OptInConsentSendResultFromJSON;
 function OptInConsentSendResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        sent: json['sent'],
+        'sent': json['sent'],
     };
 }
 exports.OptInConsentSendResultFromJSONTyped = OptInConsentSendResultFromJSONTyped;
@@ -35,7 +35,7 @@ function OptInConsentSendResultToJSON(value) {
         return null;
     }
     return {
-        sent: value.sent,
+        'sent': value.sent,
     };
 }
 exports.OptInConsentSendResultToJSON = OptInConsentSendResultToJSON;

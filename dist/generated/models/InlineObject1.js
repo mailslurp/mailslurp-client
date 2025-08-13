@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -14,24 +14,16 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InlineObject1ToJSON = exports.InlineObject1FromJSONTyped = exports.InlineObject1FromJSON = void 0;
-var runtime_1 = require("../runtime");
 function InlineObject1FromJSON(json) {
     return InlineObject1FromJSONTyped(json, false);
 }
 exports.InlineObject1FromJSON = InlineObject1FromJSON;
 function InlineObject1FromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        _short: !(0, runtime_1.exists)(json, 'short') ? undefined : json['short'],
-        _char: !(0, runtime_1.exists)(json, 'char') ? undefined : json['char'],
-        _int: !(0, runtime_1.exists)(json, 'int') ? undefined : json['int'],
-        _long: !(0, runtime_1.exists)(json, 'long') ? undefined : json['long'],
-        _float: !(0, runtime_1.exists)(json, 'float') ? undefined : json['float'],
-        _double: !(0, runtime_1.exists)(json, 'double') ? undefined : json['double'],
-        direct: !(0, runtime_1.exists)(json, 'direct') ? undefined : json['direct'],
-        readOnly: !(0, runtime_1.exists)(json, 'readOnly') ? undefined : json['readOnly'],
+        'file': json['file'],
     };
 }
 exports.InlineObject1FromJSONTyped = InlineObject1FromJSONTyped;
@@ -43,14 +35,7 @@ function InlineObject1ToJSON(value) {
         return null;
     }
     return {
-        short: value._short,
-        char: value._char,
-        int: value._int,
-        long: value._long,
-        float: value._float,
-        double: value._double,
-        direct: value.direct,
-        readOnly: value.readOnly,
+        'file': value.file,
     };
 }
 exports.InlineObject1ToJSON = InlineObject1ToJSON;

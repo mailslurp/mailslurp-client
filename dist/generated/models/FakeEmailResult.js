@@ -21,13 +21,11 @@ function FakeEmailResultFromJSON(json) {
 }
 exports.FakeEmailResultFromJSON = FakeEmailResultFromJSON;
 function FakeEmailResultFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        email: !(0, runtime_1.exists)(json, 'email')
-            ? undefined
-            : (0, _1.FakeEmailDtoFromJSON)(json['email']),
+        'email': !(0, runtime_1.exists)(json, 'email') ? undefined : (0, _1.FakeEmailDtoFromJSON)(json['email']),
     };
 }
 exports.FakeEmailResultFromJSONTyped = FakeEmailResultFromJSONTyped;
@@ -39,7 +37,7 @@ function FakeEmailResultToJSON(value) {
         return null;
     }
     return {
-        email: (0, _1.FakeEmailDtoToJSON)(value.email),
+        'email': (0, _1.FakeEmailDtoToJSON)(value.email),
     };
 }
 exports.FakeEmailResultToJSON = FakeEmailResultToJSON;

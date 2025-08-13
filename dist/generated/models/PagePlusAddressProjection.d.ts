@@ -54,6 +54,12 @@ export interface PagePlusAddressProjection {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PagePlusAddressProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PagePlusAddressProjection
      */
@@ -70,12 +76,6 @@ export interface PagePlusAddressProjection {
      * @memberof PagePlusAddressProjection
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PagePlusAddressProjection
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

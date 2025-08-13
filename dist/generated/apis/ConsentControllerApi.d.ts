@@ -59,9 +59,9 @@ export declare class ConsentControllerApi extends runtime.BaseAPI {
     sendOptInConsentForEmailAddress(requestParameters: SendOptInConsentForEmailAddressRequest, initOverrides?: RequestInit): Promise<OptInConsentSendResult>;
 }
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export declare enum GetOptInIdentitiesSortEnum {
     ASC = "ASC",
     DESC = "DESC"

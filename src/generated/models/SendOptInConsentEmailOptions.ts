@@ -14,63 +14,60 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface SendOptInConsentEmailOptions
  */
 export interface SendOptInConsentEmailOptions {
-  /**
-   *
-   * @type {string}
-   * @memberof SendOptInConsentEmailOptions
-   */
-  templateHtml: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendOptInConsentEmailOptions
-   */
-  subject: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SendOptInConsentEmailOptions
-   */
-  senderInbox?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendOptInConsentEmailOptions
+     */
+    templateHtml: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendOptInConsentEmailOptions
+     */
+    subject: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SendOptInConsentEmailOptions
+     */
+    senderInbox?: string;
 }
 
-export function SendOptInConsentEmailOptionsFromJSON(
-  json: any
-): SendOptInConsentEmailOptions {
-  return SendOptInConsentEmailOptionsFromJSONTyped(json, false);
+export function SendOptInConsentEmailOptionsFromJSON(json: any): SendOptInConsentEmailOptions {
+    return SendOptInConsentEmailOptionsFromJSONTyped(json, false);
 }
 
-export function SendOptInConsentEmailOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): SendOptInConsentEmailOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    templateHtml: json['templateHtml'],
-    subject: json['subject'],
-    senderInbox: !exists(json, 'senderInbox') ? undefined : json['senderInbox'],
-  };
+export function SendOptInConsentEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendOptInConsentEmailOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'templateHtml': json['templateHtml'],
+        'subject': json['subject'],
+        'senderInbox': !exists(json, 'senderInbox') ? undefined : json['senderInbox'],
+    };
 }
 
-export function SendOptInConsentEmailOptionsToJSON(
-  value?: SendOptInConsentEmailOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    templateHtml: value.templateHtml,
-    subject: value.subject,
-    senderInbox: value.senderInbox,
-  };
+export function SendOptInConsentEmailOptionsToJSON(value?: SendOptInConsentEmailOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'templateHtml': value.templateHtml,
+        'subject': value.subject,
+        'senderInbox': value.senderInbox,
+    };
 }
+
+

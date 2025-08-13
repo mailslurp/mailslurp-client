@@ -14,66 +14,63 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface EmailFeatureCategoryName
  */
 export interface EmailFeatureCategoryName {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureCategoryName
-   */
-  slug: EmailFeatureCategoryNameSlugEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailFeatureCategoryName
-   */
-  name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureCategoryName
+     */
+    slug: EmailFeatureCategoryNameSlugEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailFeatureCategoryName
+     */
+    name: string;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum EmailFeatureCategoryNameSlugEnum {
-  css = 'css',
-  html = 'html',
-  image = 'image',
-  others = 'others',
+    css = 'css',
+    html = 'html',
+    image = 'image',
+    others = 'others'
 }
 
-export function EmailFeatureCategoryNameFromJSON(
-  json: any
-): EmailFeatureCategoryName {
-  return EmailFeatureCategoryNameFromJSONTyped(json, false);
+export function EmailFeatureCategoryNameFromJSON(json: any): EmailFeatureCategoryName {
+    return EmailFeatureCategoryNameFromJSONTyped(json, false);
 }
 
-export function EmailFeatureCategoryNameFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailFeatureCategoryName {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    slug: json['slug'],
-    name: json['name'],
-  };
+export function EmailFeatureCategoryNameFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailFeatureCategoryName {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'slug': json['slug'],
+        'name': json['name'],
+    };
 }
 
-export function EmailFeatureCategoryNameToJSON(
-  value?: EmailFeatureCategoryName | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    slug: value.slug,
-    name: value.name,
-  };
+export function EmailFeatureCategoryNameToJSON(value?: EmailFeatureCategoryName | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'slug': value.slug,
+        'name': value.name,
+    };
 }
+
+

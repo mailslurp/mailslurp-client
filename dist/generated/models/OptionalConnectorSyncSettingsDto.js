@@ -21,14 +21,12 @@ function OptionalConnectorSyncSettingsDtoFromJSON(json) {
 }
 exports.OptionalConnectorSyncSettingsDtoFromJSON = OptionalConnectorSyncSettingsDtoFromJSON;
 function OptionalConnectorSyncSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        present: json['present'],
-        result: !(0, runtime_1.exists)(json, 'result')
-            ? undefined
-            : (0, _1.ConnectorSyncSettingsDtoFromJSON)(json['result']),
+        'present': json['present'],
+        'result': !(0, runtime_1.exists)(json, 'result') ? undefined : (0, _1.ConnectorSyncSettingsDtoFromJSON)(json['result']),
     };
 }
 exports.OptionalConnectorSyncSettingsDtoFromJSONTyped = OptionalConnectorSyncSettingsDtoFromJSONTyped;
@@ -40,8 +38,8 @@ function OptionalConnectorSyncSettingsDtoToJSON(value) {
         return null;
     }
     return {
-        present: value.present,
-        result: (0, _1.ConnectorSyncSettingsDtoToJSON)(value.result),
+        'present': value.present,
+        'result': (0, _1.ConnectorSyncSettingsDtoToJSON)(value.result),
     };
 }
 exports.OptionalConnectorSyncSettingsDtoToJSON = OptionalConnectorSyncSettingsDtoToJSON;

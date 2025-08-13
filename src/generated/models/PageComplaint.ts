@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  Complaint,
-  ComplaintFromJSON,
-  ComplaintFromJSONTyped,
-  ComplaintToJSON,
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    Complaint,
+    ComplaintFromJSON,
+    ComplaintFromJSONTyped,
+    ComplaintToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,127 +34,119 @@ import {
  * @interface PageComplaint
  */
 export interface PageComplaint {
-  /**
-   *
-   * @type {Array<Complaint>}
-   * @memberof PageComplaint
-   */
-  content?: Array<Complaint>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PageComplaint
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageComplaint
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageComplaint
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageComplaint
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageComplaint
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageComplaint
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageComplaint
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageComplaint
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageComplaint
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageComplaint
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<Complaint>}
+     * @memberof PageComplaint
+     */
+    content?: Array<Complaint>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PageComplaint
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageComplaint
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageComplaint
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageComplaint
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PageComplaint
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageComplaint
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PageComplaint
+     */
+    number?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    empty?: boolean;
 }
 
 export function PageComplaintFromJSON(json: any): PageComplaint {
-  return PageComplaintFromJSONTyped(json, false);
+    return PageComplaintFromJSONTyped(json, false);
 }
 
-export function PageComplaintFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PageComplaint {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(ComplaintFromJSON),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PageComplaintFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageComplaint {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(ComplaintFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
 export function PageComplaintToJSON(value?: PageComplaint | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(ComplaintToJSON),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(ComplaintToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'sort': SortObjectToJSON(value.sort),
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'empty': value.empty,
+    };
 }
+
+

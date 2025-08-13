@@ -14,61 +14,60 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface RecipientProjection
  */
 export interface RecipientProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof RecipientProjection
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {string}
-   * @memberof RecipientProjection
-   */
-  rawValue: string;
-  /**
-   *
-   * @type {string}
-   * @memberof RecipientProjection
-   */
-  name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipientProjection
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipientProjection
+     */
+    rawValue: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipientProjection
+     */
+    name?: string;
 }
 
 export function RecipientProjectionFromJSON(json: any): RecipientProjection {
-  return RecipientProjectionFromJSONTyped(json, false);
+    return RecipientProjectionFromJSONTyped(json, false);
 }
 
-export function RecipientProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): RecipientProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    emailAddress: json['emailAddress'],
-    rawValue: json['rawValue'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-  };
+export function RecipientProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): RecipientProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'emailAddress': json['emailAddress'],
+        'rawValue': json['rawValue'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+    };
 }
 
-export function RecipientProjectionToJSON(
-  value?: RecipientProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    emailAddress: value.emailAddress,
-    rawValue: value.rawValue,
-    name: value.name,
-  };
+export function RecipientProjectionToJSON(value?: RecipientProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'emailAddress': value.emailAddress,
+        'rawValue': value.rawValue,
+        'name': value.name,
+    };
 }
+
+

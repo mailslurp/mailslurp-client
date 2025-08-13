@@ -19,108 +19,103 @@ import { exists, mapValues } from '../runtime';
  * @interface GuestPortalUserProjection
  */
 export interface GuestPortalUserProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  inboxId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  emailAddress?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof GuestPortalUserProjection
-   */
-  updatedAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof GuestPortalUserProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  portalId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    username: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    inboxId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    emailAddress?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof GuestPortalUserProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof GuestPortalUserProjection
+     */
+    updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    portalId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    id: string;
 }
 
-export function GuestPortalUserProjectionFromJSON(
-  json: any
-): GuestPortalUserProjection {
-  return GuestPortalUserProjectionFromJSONTyped(json, false);
+export function GuestPortalUserProjectionFromJSON(json: any): GuestPortalUserProjection {
+    return GuestPortalUserProjectionFromJSONTyped(json, false);
 }
 
-export function GuestPortalUserProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): GuestPortalUserProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    username: json['username'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    userId: json['userId'],
-    emailAddress: !exists(json, 'emailAddress')
-      ? undefined
-      : json['emailAddress'],
-    updatedAt: new Date(json['updatedAt']),
-    createdAt: new Date(json['createdAt']),
-    portalId: json['portalId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-  };
+export function GuestPortalUserProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GuestPortalUserProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'username': json['username'],
+        'userId': json['userId'],
+        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
+        'emailAddress': !exists(json, 'emailAddress') ? undefined : json['emailAddress'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+        'portalId': json['portalId'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'id': json['id'],
+    };
 }
 
-export function GuestPortalUserProjectionToJSON(
-  value?: GuestPortalUserProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    username: value.username,
-    inboxId: value.inboxId,
-    userId: value.userId,
-    emailAddress: value.emailAddress,
-    updatedAt: value.updatedAt.toISOString(),
-    createdAt: value.createdAt.toISOString(),
-    portalId: value.portalId,
-    name: value.name,
-    id: value.id,
-  };
+export function GuestPortalUserProjectionToJSON(value?: GuestPortalUserProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'username': value.username,
+        'userId': value.userId,
+        'inboxId': value.inboxId,
+        'emailAddress': value.emailAddress,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+        'portalId': value.portalId,
+        'name': value.name,
+        'id': value.id,
+    };
 }
+
+

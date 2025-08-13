@@ -14,86 +14,91 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  StructuredOutputSchema,
-  StructuredOutputSchemaFromJSON,
-  StructuredOutputSchemaFromJSONTyped,
-  StructuredOutputSchemaToJSON,
+    StructuredOutputSchema,
+    StructuredOutputSchemaFromJSON,
+    StructuredOutputSchemaFromJSONTyped,
+    StructuredOutputSchemaToJSON,
 } from './';
 
 /**
- *
+ * 
  * @export
  * @interface AITransformDto
  */
 export interface AITransformDto {
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformDto
-   */
-  name?: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof AITransformDto
-   */
-  conditions?: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof AITransformDto
-   */
-  instructions?: Array<string>;
-  /**
-   *
-   * @type {StructuredOutputSchema}
-   * @memberof AITransformDto
-   */
-  outputSchema?: StructuredOutputSchema;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformDto
+     */
+    name?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AITransformDto
+     */
+    conditions?: Array<string>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof AITransformDto
+     */
+    instructions?: Array<string>;
+    /**
+     * 
+     * @type {StructuredOutputSchema}
+     * @memberof AITransformDto
+     */
+    outputSchema?: StructuredOutputSchema | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AITransformDto
+     */
+    createdAt: Date;
 }
 
 export function AITransformDtoFromJSON(json: any): AITransformDto {
-  return AITransformDtoFromJSONTyped(json, false);
+    return AITransformDtoFromJSONTyped(json, false);
 }
 
-export function AITransformDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AITransformDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    conditions: !exists(json, 'conditions') ? undefined : json['conditions'],
-    instructions: !exists(json, 'instructions')
-      ? undefined
-      : json['instructions'],
-    outputSchema: !exists(json, 'outputSchema')
-      ? undefined
-      : StructuredOutputSchemaFromJSON(json['outputSchema']),
-  };
+export function AITransformDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AITransformDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'conditions': !exists(json, 'conditions') ? undefined : json['conditions'],
+        'instructions': !exists(json, 'instructions') ? undefined : json['instructions'],
+        'outputSchema': !exists(json, 'outputSchema') ? undefined : StructuredOutputSchemaFromJSON(json['outputSchema']),
+        'createdAt': (new Date(json['createdAt'])),
+    };
 }
 
 export function AITransformDtoToJSON(value?: AITransformDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    name: value.name,
-    conditions: value.conditions,
-    instructions: value.instructions,
-    outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'name': value.name,
+        'conditions': value.conditions,
+        'instructions': value.instructions,
+        'outputSchema': StructuredOutputSchemaToJSON(value.outputSchema),
+        'createdAt': (value.createdAt.toISOString()),
+    };
 }
+
+

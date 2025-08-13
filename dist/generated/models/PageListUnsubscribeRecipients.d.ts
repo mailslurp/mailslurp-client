@@ -54,6 +54,12 @@ export interface PageListUnsubscribeRecipients {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageListUnsubscribeRecipients
      */
@@ -70,12 +76,6 @@ export interface PageListUnsubscribeRecipients {
      * @memberof PageListUnsubscribeRecipients
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -14,118 +14,117 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface AITransformResultDto
  */
 export interface AITransformResultDto {
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformResultDto
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformResultDto
-   */
-  userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformResultDto
-   */
-  aiTransformId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformResultDto
-   */
-  aiTransformMappingId: string;
-  /**
-   *
-   * @type {object}
-   * @memberof AITransformResultDto
-   */
-  value: object | null;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformResultDto
-   */
-  entityId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformResultDto
-   */
-  entityType: AITransformResultDtoEntityTypeEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof AITransformResultDto
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof AITransformResultDto
-   */
-  updatedAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    userId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    aiTransformId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    aiTransformMappingId: string;
+    /**
+     * 
+     * @type {object}
+     * @memberof AITransformResultDto
+     */
+    value: object;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    entityId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    entityType: AITransformResultDtoEntityTypeEnum;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AITransformResultDto
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof AITransformResultDto
+     */
+    updatedAt: Date;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum AITransformResultDtoEntityTypeEnum {
-  INBOX = 'INBOX',
-  PHONE = 'PHONE',
+    INBOX = 'INBOX',
+    PHONE = 'PHONE'
 }
 
 export function AITransformResultDtoFromJSON(json: any): AITransformResultDto {
-  return AITransformResultDtoFromJSONTyped(json, false);
+    return AITransformResultDtoFromJSONTyped(json, false);
 }
 
-export function AITransformResultDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): AITransformResultDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    id: json['id'],
-    userId: json['userId'],
-    aiTransformId: json['aiTransformId'],
-    aiTransformMappingId: json['aiTransformMappingId'],
-    value: json['value'],
-    entityId: json['entityId'],
-    entityType: json['entityType'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-  };
+export function AITransformResultDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AITransformResultDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['id'],
+        'userId': json['userId'],
+        'aiTransformId': json['aiTransformId'],
+        'aiTransformMappingId': json['aiTransformMappingId'],
+        'value': json['value'],
+        'entityId': json['entityId'],
+        'entityType': json['entityType'],
+        'createdAt': (new Date(json['createdAt'])),
+        'updatedAt': (new Date(json['updatedAt'])),
+    };
 }
 
-export function AITransformResultDtoToJSON(
-  value?: AITransformResultDto | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    id: value.id,
-    userId: value.userId,
-    aiTransformId: value.aiTransformId,
-    aiTransformMappingId: value.aiTransformMappingId,
-    value: value.value,
-    entityId: value.entityId,
-    entityType: value.entityType,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-  };
+export function AITransformResultDtoToJSON(value?: AITransformResultDto | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'id': value.id,
+        'userId': value.userId,
+        'aiTransformId': value.aiTransformId,
+        'aiTransformMappingId': value.aiTransformMappingId,
+        'value': value.value,
+        'entityId': value.entityId,
+        'entityType': value.entityType,
+        'createdAt': (value.createdAt.toISOString()),
+        'updatedAt': (value.updatedAt.toISOString()),
+    };
 }
+
+

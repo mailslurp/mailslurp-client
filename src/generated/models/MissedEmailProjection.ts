@@ -19,74 +19,71 @@ import { exists, mapValues } from '../runtime';
  * @interface MissedEmailProjection
  */
 export interface MissedEmailProjection {
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailProjection
-   */
-  userId?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof MissedEmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedEmailProjection
-   */
-  from?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    userId?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof MissedEmailProjection
+     */
+    createdAt: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    subject?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    from?: string | null;
 }
 
-export function MissedEmailProjectionFromJSON(
-  json: any
-): MissedEmailProjection {
-  return MissedEmailProjectionFromJSONTyped(json, false);
+export function MissedEmailProjectionFromJSON(json: any): MissedEmailProjection {
+    return MissedEmailProjectionFromJSONTyped(json, false);
 }
 
-export function MissedEmailProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): MissedEmailProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
-    createdAt: new Date(json['createdAt']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    id: json['id'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-  };
+export function MissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MissedEmailProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'userId': !exists(json, 'userId') ? undefined : json['userId'],
+        'createdAt': (new Date(json['createdAt'])),
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'id': json['id'],
+        'from': !exists(json, 'from') ? undefined : json['from'],
+    };
 }
 
-export function MissedEmailProjectionToJSON(
-  value?: MissedEmailProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
-    subject: value.subject,
-    id: value.id,
-    from: value.from,
-  };
+export function MissedEmailProjectionToJSON(value?: MissedEmailProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'userId': value.userId,
+        'createdAt': (value.createdAt.toISOString()),
+        'subject': value.subject,
+        'id': value.id,
+        'from': value.from,
+    };
 }
+
+

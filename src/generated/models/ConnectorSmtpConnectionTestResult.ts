@@ -14,71 +14,68 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface ConnectorSmtpConnectionTestResult
  */
 export interface ConnectorSmtpConnectionTestResult {
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionTestResult
-   */
-  error?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof ConnectorSmtpConnectionTestResult
-   */
-  success: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSmtpConnectionTestResult
-   */
-  message?: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ConnectorSmtpConnectionTestResult
-   */
-  logs?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionTestResult
+     */
+    error?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ConnectorSmtpConnectionTestResult
+     */
+    success: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConnectorSmtpConnectionTestResult
+     */
+    message?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ConnectorSmtpConnectionTestResult
+     */
+    logs?: Array<string>;
 }
 
-export function ConnectorSmtpConnectionTestResultFromJSON(
-  json: any
-): ConnectorSmtpConnectionTestResult {
-  return ConnectorSmtpConnectionTestResultFromJSONTyped(json, false);
+export function ConnectorSmtpConnectionTestResultFromJSON(json: any): ConnectorSmtpConnectionTestResult {
+    return ConnectorSmtpConnectionTestResultFromJSONTyped(json, false);
 }
 
-export function ConnectorSmtpConnectionTestResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): ConnectorSmtpConnectionTestResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    error: !exists(json, 'error') ? undefined : json['error'],
-    success: json['success'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-    logs: !exists(json, 'logs') ? undefined : json['logs'],
-  };
+export function ConnectorSmtpConnectionTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSmtpConnectionTestResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'error': !exists(json, 'error') ? undefined : json['error'],
+        'success': json['success'],
+        'message': !exists(json, 'message') ? undefined : json['message'],
+        'logs': !exists(json, 'logs') ? undefined : json['logs'],
+    };
 }
 
-export function ConnectorSmtpConnectionTestResultToJSON(
-  value?: ConnectorSmtpConnectionTestResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    error: value.error,
-    success: value.success,
-    message: value.message,
-    logs: value.logs,
-  };
+export function ConnectorSmtpConnectionTestResultToJSON(value?: ConnectorSmtpConnectionTestResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'error': value.error,
+        'success': value.success,
+        'message': value.message,
+        'logs': value.logs,
+    };
 }
+
+

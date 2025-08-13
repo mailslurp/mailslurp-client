@@ -24,6 +24,12 @@ export interface PageableObject {
     pageSize?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageableObject
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageableObject
      */
@@ -46,12 +52,6 @@ export interface PageableObject {
      * @memberof PageableObject
      */
     offset?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageableObject
-     */
-    sort?: SortObject;
 }
 export declare function PageableObjectFromJSON(json: any): PageableObject;
 export declare function PageableObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageableObject;

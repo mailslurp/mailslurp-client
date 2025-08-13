@@ -19,11 +19,11 @@ function UpdateGroupContactsFromJSON(json) {
 }
 exports.UpdateGroupContactsFromJSON = UpdateGroupContactsFromJSON;
 function UpdateGroupContactsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        contactIds: json['contactIds'],
+        'contactIds': json['contactIds'],
     };
 }
 exports.UpdateGroupContactsFromJSONTyped = UpdateGroupContactsFromJSONTyped;
@@ -35,7 +35,7 @@ function UpdateGroupContactsToJSON(value) {
         return null;
     }
     return {
-        contactIds: value.contactIds,
+        'contactIds': value.contactIds,
     };
 }
 exports.UpdateGroupContactsToJSON = UpdateGroupContactsToJSON;

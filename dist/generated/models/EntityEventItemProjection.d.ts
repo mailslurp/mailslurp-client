@@ -47,20 +47,19 @@ export interface EntityEventItemProjection {
     severity: EntityEventItemProjectionSeverityEnum;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EntityEventItemProjectionEventTypeEnum {
     WEBHOOK_EVENT = "WEBHOOK_EVENT",
     INBOX_FORWARDER_EVENT = "INBOX_FORWARDER_EVENT",
     INBOX_REPLIER_EVENT = "INBOX_REPLIER_EVENT",
     INBOX_RULESET_EVENT = "INBOX_RULESET_EVENT",
     ALIAS_EVENT = "ALIAS_EVENT"
-}
-/**
- * @export
- * @enum {string}
- */
+} /**
+* @export
+* @enum {string}
+*/
 export declare enum EntityEventItemProjectionSeverityEnum {
     INFO = "INFO",
     SUCCESS = "SUCCESS",

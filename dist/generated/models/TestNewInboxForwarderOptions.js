@@ -20,12 +20,12 @@ function TestNewInboxForwarderOptionsFromJSON(json) {
 }
 exports.TestNewInboxForwarderOptionsFromJSON = TestNewInboxForwarderOptionsFromJSON;
 function TestNewInboxForwarderOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        inboxForwarderTestOptions: (0, _1.InboxForwarderTestOptionsFromJSON)(json['inboxForwarderTestOptions']),
-        createInboxForwarderOptions: (0, _1.CreateInboxForwarderOptionsFromJSON)(json['createInboxForwarderOptions']),
+        'inboxForwarderTestOptions': (0, _1.InboxForwarderTestOptionsFromJSON)(json['inboxForwarderTestOptions']),
+        'createInboxForwarderOptions': (0, _1.CreateInboxForwarderOptionsFromJSON)(json['createInboxForwarderOptions']),
     };
 }
 exports.TestNewInboxForwarderOptionsFromJSONTyped = TestNewInboxForwarderOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function TestNewInboxForwarderOptionsToJSON(value) {
         return null;
     }
     return {
-        inboxForwarderTestOptions: (0, _1.InboxForwarderTestOptionsToJSON)(value.inboxForwarderTestOptions),
-        createInboxForwarderOptions: (0, _1.CreateInboxForwarderOptionsToJSON)(value.createInboxForwarderOptions),
+        'inboxForwarderTestOptions': (0, _1.InboxForwarderTestOptionsToJSON)(value.inboxForwarderTestOptions),
+        'createInboxForwarderOptions': (0, _1.CreateInboxForwarderOptionsToJSON)(value.createInboxForwarderOptions),
     };
 }
 exports.TestNewInboxForwarderOptionsToJSON = TestNewInboxForwarderOptionsToJSON;

@@ -20,16 +20,12 @@ function TotpDeviceCodeDtoFromJSON(json) {
 }
 exports.TotpDeviceCodeDtoFromJSON = TotpDeviceCodeDtoFromJSON;
 function TotpDeviceCodeDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        code: json['code'],
-        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
-            ? undefined
-            : json['expiresAt'] === null
-                ? null
-                : new Date(json['expiresAt']),
+        'code': json['code'],
+        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : (json['expiresAt'] === null ? null : new Date(json['expiresAt'])),
     };
 }
 exports.TotpDeviceCodeDtoFromJSONTyped = TotpDeviceCodeDtoFromJSONTyped;
@@ -41,12 +37,8 @@ function TotpDeviceCodeDtoToJSON(value) {
         return null;
     }
     return {
-        code: value.code,
-        expiresAt: value.expiresAt === undefined
-            ? undefined
-            : value.expiresAt === null
-                ? null
-                : value.expiresAt.toISOString(),
+        'code': value.code,
+        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt === null ? null : value.expiresAt.toISOString()),
     };
 }
 exports.TotpDeviceCodeDtoToJSON = TotpDeviceCodeDtoToJSON;

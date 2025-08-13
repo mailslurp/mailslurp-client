@@ -107,22 +107,20 @@ var GroupControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.groupId === null ||
-                            requestParameters.groupId === undefined) {
+                        if (requestParameters.groupId === null || requestParameters.groupId === undefined) {
                             throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling addContactsToGroup.');
                         }
-                        if (requestParameters.updateGroupContacts === null ||
-                            requestParameters.updateGroupContacts === undefined) {
+                        if (requestParameters.updateGroupContacts === null || requestParameters.updateGroupContacts === undefined) {
                             throw new runtime.RequiredError('updateGroupContacts', 'Required parameter requestParameters.updateGroupContacts was null or undefined when calling addContactsToGroup.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/groups/{groupId}/contacts".replace("{".concat('groupId', "}"), encodeURIComponent(String(requestParameters.groupId))),
+                                path: "/groups/{groupId}/contacts".replace("{".concat("groupId", "}"), encodeURIComponent(String(requestParameters.groupId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -130,9 +128,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GroupContactsDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GroupContactsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -163,15 +159,14 @@ var GroupControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createGroupOptions === null ||
-                            requestParameters.createGroupOptions === undefined) {
+                        if (requestParameters.createGroupOptions === null || requestParameters.createGroupOptions === undefined) {
                             throw new runtime.RequiredError('createGroupOptions', 'Required parameter requestParameters.createGroupOptions was null or undefined when calling createGroup.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/groups",
@@ -182,9 +177,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GroupDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GroupDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -215,17 +208,16 @@ var GroupControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.groupId === null ||
-                            requestParameters.groupId === undefined) {
+                        if (requestParameters.groupId === null || requestParameters.groupId === undefined) {
                             throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling deleteGroup.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/groups/{groupId}".replace("{".concat('groupId', "}"), encodeURIComponent(String(requestParameters.groupId))),
+                                path: "/groups/{groupId}".replace("{".concat("groupId", "}"), encodeURIComponent(String(requestParameters.groupId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -279,7 +271,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/groups/paginated",
@@ -289,9 +281,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageGroupProjectionFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageGroupProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -322,26 +312,23 @@ var GroupControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.groupId === null ||
-                            requestParameters.groupId === undefined) {
+                        if (requestParameters.groupId === null || requestParameters.groupId === undefined) {
                             throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling getGroup.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/groups/{groupId}".replace("{".concat('groupId', "}"), encodeURIComponent(String(requestParameters.groupId))),
+                                path: "/groups/{groupId}".replace("{".concat("groupId", "}"), encodeURIComponent(String(requestParameters.groupId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GroupDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GroupDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -372,26 +359,23 @@ var GroupControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.groupId === null ||
-                            requestParameters.groupId === undefined) {
+                        if (requestParameters.groupId === null || requestParameters.groupId === undefined) {
                             throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling getGroupWithContacts.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/groups/{groupId}/contacts".replace("{".concat('groupId', "}"), encodeURIComponent(String(requestParameters.groupId))),
+                                path: "/groups/{groupId}/contacts".replace("{".concat("groupId", "}"), encodeURIComponent(String(requestParameters.groupId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GroupContactsDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GroupContactsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -422,8 +406,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.groupId === null ||
-                            requestParameters.groupId === undefined) {
+                        if (requestParameters.groupId === null || requestParameters.groupId === undefined) {
                             throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling getGroupWithContactsPaginated.');
                         }
                         queryParameters = {};
@@ -444,19 +427,17 @@ var GroupControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/groups/{groupId}/contacts-paginated".replace("{".concat('groupId', "}"), encodeURIComponent(String(requestParameters.groupId))),
+                                path: "/groups/{groupId}/contacts-paginated".replace("{".concat("groupId", "}"), encodeURIComponent(String(requestParameters.groupId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.PageContactProjectionFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageContactProjectionFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -490,7 +471,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/groups",
@@ -500,9 +481,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.GroupProjectionFromJSON);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.GroupProjectionFromJSON); })];
                 }
             });
         });
@@ -533,22 +512,20 @@ var GroupControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.groupId === null ||
-                            requestParameters.groupId === undefined) {
+                        if (requestParameters.groupId === null || requestParameters.groupId === undefined) {
                             throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling removeContactsFromGroup.');
                         }
-                        if (requestParameters.updateGroupContacts === null ||
-                            requestParameters.updateGroupContacts === undefined) {
+                        if (requestParameters.updateGroupContacts === null || requestParameters.updateGroupContacts === undefined) {
                             throw new runtime.RequiredError('updateGroupContacts', 'Required parameter requestParameters.updateGroupContacts was null or undefined when calling removeContactsFromGroup.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/groups/{groupId}/contacts".replace("{".concat('groupId', "}"), encodeURIComponent(String(requestParameters.groupId))),
+                                path: "/groups/{groupId}/contacts".replace("{".concat("groupId", "}"), encodeURIComponent(String(requestParameters.groupId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -556,9 +533,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.GroupContactsDtoFromJSON)(jsonValue);
-                            })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.GroupContactsDtoFromJSON)(jsonValue); })];
                 }
             });
         });
@@ -584,18 +559,18 @@ var GroupControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.GroupControllerApi = GroupControllerApi;
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetAllGroupsSortEnum;
 (function (GetAllGroupsSortEnum) {
     GetAllGroupsSortEnum["ASC"] = "ASC";
     GetAllGroupsSortEnum["DESC"] = "DESC";
 })(GetAllGroupsSortEnum = exports.GetAllGroupsSortEnum || (exports.GetAllGroupsSortEnum = {}));
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 var GetGroupWithContactsPaginatedSortEnum;
 (function (GetGroupWithContactsPaginatedSortEnum) {
     GetGroupWithContactsPaginatedSortEnum["ASC"] = "ASC";

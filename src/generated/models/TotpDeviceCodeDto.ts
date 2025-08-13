@@ -14,60 +14,52 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * 
  * @export
  * @interface TotpDeviceCodeDto
  */
 export interface TotpDeviceCodeDto {
-  /**
-   *
-   * @type {string}
-   * @memberof TotpDeviceCodeDto
-   */
-  code: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof TotpDeviceCodeDto
-   */
-  expiresAt?: Date | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof TotpDeviceCodeDto
+     */
+    code: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TotpDeviceCodeDto
+     */
+    expiresAt?: Date | null;
 }
 
 export function TotpDeviceCodeDtoFromJSON(json: any): TotpDeviceCodeDto {
-  return TotpDeviceCodeDtoFromJSONTyped(json, false);
+    return TotpDeviceCodeDtoFromJSONTyped(json, false);
 }
 
-export function TotpDeviceCodeDtoFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): TotpDeviceCodeDto {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    code: json['code'],
-    expiresAt: !exists(json, 'expiresAt')
-      ? undefined
-      : json['expiresAt'] === null
-      ? null
-      : new Date(json['expiresAt']),
-  };
+export function TotpDeviceCodeDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TotpDeviceCodeDto {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'code': json['code'],
+        'expiresAt': !exists(json, 'expiresAt') ? undefined : (json['expiresAt'] === null ? null : new Date(json['expiresAt'])),
+    };
 }
 
 export function TotpDeviceCodeDtoToJSON(value?: TotpDeviceCodeDto | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    code: value.code,
-    expiresAt:
-      value.expiresAt === undefined
-        ? undefined
-        : value.expiresAt === null
-        ? null
-        : value.expiresAt.toISOString(),
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'code': value.code,
+        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt === null ? null : value.expiresAt.toISOString()),
+    };
 }
+
+

@@ -16,29 +16,29 @@
  */
 export interface AliasThreadProjection {
     /**
-     * Inbox ID
-     * @type {string}
-     * @memberof AliasThreadProjection
-     */
-    inboxId: string;
-    /**
      * User ID
      * @type {string}
      * @memberof AliasThreadProjection
      */
     userId: string;
     /**
-     * Updated at DateTime
-     * @type {Date}
+     * Inbox ID
+     * @type {string}
      * @memberof AliasThreadProjection
      */
-    updatedAt: Date;
+    inboxId: string;
     /**
      * Created at DateTime
      * @type {Date}
      * @memberof AliasThreadProjection
      */
     createdAt: Date;
+    /**
+     * Updated at DateTime
+     * @type {Date}
+     * @memberof AliasThreadProjection
+     */
+    updatedAt: Date;
     /**
      * To recipients
      * @type {Array<string>}

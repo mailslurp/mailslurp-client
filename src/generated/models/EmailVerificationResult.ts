@@ -19,74 +19,71 @@ import { exists, mapValues } from '../runtime';
  * @interface EmailVerificationResult
  */
 export interface EmailVerificationResult {
-  /**
-   *
-   * @type {string}
-   * @memberof EmailVerificationResult
-   */
-  domainName: string;
-  /**
-   *
-   * @type {number}
-   * @memberof EmailVerificationResult
-   */
-  port: number;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailVerificationResult
-   */
-  emailAddress: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailVerificationResult
-   */
-  isValid: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailVerificationResult
-   */
-  error?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailVerificationResult
+     */
+    domainName: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof EmailVerificationResult
+     */
+    port: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailVerificationResult
+     */
+    emailAddress: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof EmailVerificationResult
+     */
+    isValid: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof EmailVerificationResult
+     */
+    error?: string | null;
 }
 
-export function EmailVerificationResultFromJSON(
-  json: any
-): EmailVerificationResult {
-  return EmailVerificationResultFromJSONTyped(json, false);
+export function EmailVerificationResultFromJSON(json: any): EmailVerificationResult {
+    return EmailVerificationResultFromJSONTyped(json, false);
 }
 
-export function EmailVerificationResultFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): EmailVerificationResult {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    domainName: json['domainName'],
-    port: json['port'],
-    emailAddress: json['emailAddress'],
-    isValid: json['isValid'],
-    error: !exists(json, 'error') ? undefined : json['error'],
-  };
+export function EmailVerificationResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailVerificationResult {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'domainName': json['domainName'],
+        'port': json['port'],
+        'emailAddress': json['emailAddress'],
+        'isValid': json['isValid'],
+        'error': !exists(json, 'error') ? undefined : json['error'],
+    };
 }
 
-export function EmailVerificationResultToJSON(
-  value?: EmailVerificationResult | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    domainName: value.domainName,
-    port: value.port,
-    emailAddress: value.emailAddress,
-    isValid: value.isValid,
-    error: value.error,
-  };
+export function EmailVerificationResultToJSON(value?: EmailVerificationResult | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'domainName': value.domainName,
+        'port': value.port,
+        'emailAddress': value.emailAddress,
+        'isValid': value.isValid,
+        'error': value.error,
+    };
 }
+
+

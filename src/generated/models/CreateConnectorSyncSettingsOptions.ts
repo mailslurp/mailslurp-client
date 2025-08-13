@@ -19,70 +19,63 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateConnectorSyncSettingsOptions
  */
 export interface CreateConnectorSyncSettingsOptions {
-  /**
-   * Enable automatic background sync
-   * @type {boolean}
-   * @memberof CreateConnectorSyncSettingsOptions
-   */
-  syncEnabled?: boolean | null;
-  /**
-   * Sync schedule type
-   * @type {string}
-   * @memberof CreateConnectorSyncSettingsOptions
-   */
-  syncScheduleType?: CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum;
-  /**
-   * Sync interval in minutes
-   * @type {number}
-   * @memberof CreateConnectorSyncSettingsOptions
-   */
-  syncInterval?: number | null;
+    /**
+     * Enable automatic background sync
+     * @type {boolean}
+     * @memberof CreateConnectorSyncSettingsOptions
+     */
+    syncEnabled?: boolean | null;
+    /**
+     * Sync schedule type
+     * @type {string}
+     * @memberof CreateConnectorSyncSettingsOptions
+     */
+    syncScheduleType?: CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum;
+    /**
+     * Sync interval in minutes
+     * @type {number}
+     * @memberof CreateConnectorSyncSettingsOptions
+     */
+    syncInterval?: number | null;
 }
 
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export enum CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum {
-  INTERVAL = 'INTERVAL',
+    INTERVAL = 'INTERVAL'
 }
 
-export function CreateConnectorSyncSettingsOptionsFromJSON(
-  json: any
-): CreateConnectorSyncSettingsOptions {
-  return CreateConnectorSyncSettingsOptionsFromJSONTyped(json, false);
+export function CreateConnectorSyncSettingsOptionsFromJSON(json: any): CreateConnectorSyncSettingsOptions {
+    return CreateConnectorSyncSettingsOptionsFromJSONTyped(json, false);
 }
 
-export function CreateConnectorSyncSettingsOptionsFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): CreateConnectorSyncSettingsOptions {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
-    syncScheduleType: !exists(json, 'syncScheduleType')
-      ? undefined
-      : json['syncScheduleType'],
-    syncInterval: !exists(json, 'syncInterval')
-      ? undefined
-      : json['syncInterval'],
-  };
+export function CreateConnectorSyncSettingsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorSyncSettingsOptions {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'syncEnabled': !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
+        'syncScheduleType': !exists(json, 'syncScheduleType') ? undefined : json['syncScheduleType'],
+        'syncInterval': !exists(json, 'syncInterval') ? undefined : json['syncInterval'],
+    };
 }
 
-export function CreateConnectorSyncSettingsOptionsToJSON(
-  value?: CreateConnectorSyncSettingsOptions | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    syncEnabled: value.syncEnabled,
-    syncScheduleType: value.syncScheduleType,
-    syncInterval: value.syncInterval,
-  };
+export function CreateConnectorSyncSettingsOptionsToJSON(value?: CreateConnectorSyncSettingsOptions | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'syncEnabled': value.syncEnabled,
+        'syncScheduleType': value.syncScheduleType,
+        'syncInterval': value.syncInterval,
+    };
 }
+
+

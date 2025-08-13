@@ -27,6 +27,18 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
+    threadId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    inReplyTo?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
     from?: string | null;
     /**
      *
@@ -48,6 +60,12 @@ export interface SentEmailProjection {
     subject?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    userId: string;
+    /**
+     *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
@@ -60,12 +78,6 @@ export interface SentEmailProjection {
     inboxId: string;
     /**
      *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    userId: string;
-    /**
-     *
      * @type {Date}
      * @memberof SentEmailProjection
      */
@@ -75,19 +87,19 @@ export interface SentEmailProjection {
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    to: Array<string>;
+    to?: Array<string>;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    cc: Array<string>;
+    cc?: Array<string>;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    bcc: Array<string>;
+    bcc?: Array<string>;
     /**
      *
      * @type {string}
@@ -96,10 +108,10 @@ export interface SentEmailProjection {
     messageId?: string | null;
     /**
      *
-     * @type {string}
+     * @type {boolean}
      * @memberof SentEmailProjection
      */
-    inReplyTo?: string | null;
+    virtualSend: boolean;
     /**
      *
      * @type {string}
@@ -118,18 +130,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     bodyMD5Hash?: string | null;
-    /**
-     *
-     * @type {boolean}
-     * @memberof SentEmailProjection
-     */
-    virtualSend: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    threadId?: string | null;
 }
 export declare function SentEmailProjectionFromJSON(json: any): SentEmailProjection;
 export declare function SentEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailProjection;

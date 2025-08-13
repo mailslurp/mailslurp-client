@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  PageableObject,
-  PageableObjectFromJSON,
-  PageableObjectFromJSONTyped,
-  PageableObjectToJSON,
-  PhoneMessageThreadItemProjection,
-  PhoneMessageThreadItemProjectionFromJSON,
-  PhoneMessageThreadItemProjectionFromJSONTyped,
-  PhoneMessageThreadItemProjectionToJSON,
-  SortObject,
-  SortObjectFromJSON,
-  SortObjectFromJSONTyped,
-  SortObjectToJSON,
+    PageableObject,
+    PageableObjectFromJSON,
+    PageableObjectFromJSONTyped,
+    PageableObjectToJSON,
+    PhoneMessageThreadItemProjection,
+    PhoneMessageThreadItemProjectionFromJSON,
+    PhoneMessageThreadItemProjectionFromJSONTyped,
+    PhoneMessageThreadItemProjectionToJSON,
+    SortObject,
+    SortObjectFromJSON,
+    SortObjectFromJSONTyped,
+    SortObjectToJSON,
 } from './';
 
 /**
@@ -34,135 +34,119 @@ import {
  * @interface PagePhoneMessageThreadItemProjection
  */
 export interface PagePhoneMessageThreadItemProjection {
-  /**
-   *
-   * @type {Array<PhoneMessageThreadItemProjection>}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  content?: Array<PhoneMessageThreadItemProjection>;
-  /**
-   *
-   * @type {PageableObject}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  pageable?: PageableObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  totalPages: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  first?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  number?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PagePhoneMessageThreadItemProjection
-   */
-  empty?: boolean;
+    /**
+     * 
+     * @type {Array<PhoneMessageThreadItemProjection>}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    content?: Array<PhoneMessageThreadItemProjection>;
+    /**
+     * 
+     * @type {PageableObject}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    pageable?: PageableObject;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    totalElements: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    totalPages: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    last?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    numberOfElements?: number;
+    /**
+     * 
+     * @type {SortObject}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    sort?: SortObject;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    first?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    size?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    number?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PagePhoneMessageThreadItemProjection
+     */
+    empty?: boolean;
 }
 
-export function PagePhoneMessageThreadItemProjectionFromJSON(
-  json: any
-): PagePhoneMessageThreadItemProjection {
-  return PagePhoneMessageThreadItemProjectionFromJSONTyped(json, false);
+export function PagePhoneMessageThreadItemProjectionFromJSON(json: any): PagePhoneMessageThreadItemProjection {
+    return PagePhoneMessageThreadItemProjectionFromJSONTyped(json, false);
 }
 
-export function PagePhoneMessageThreadItemProjectionFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
-): PagePhoneMessageThreadItemProjection {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    content: !exists(json, 'content')
-      ? undefined
-      : (json['content'] as Array<any>).map(
-          PhoneMessageThreadItemProjectionFromJSON
-        ),
-    pageable: !exists(json, 'pageable')
-      ? undefined
-      : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
-    numberOfElements: !exists(json, 'numberOfElements')
-      ? undefined
-      : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-  };
+export function PagePhoneMessageThreadItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PagePhoneMessageThreadItemProjection {
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(PhoneMessageThreadItemProjectionFromJSON)),
+        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
+        'totalElements': json['totalElements'],
+        'totalPages': json['totalPages'],
+        'last': !exists(json, 'last') ? undefined : json['last'],
+        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
+        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+        'first': !exists(json, 'first') ? undefined : json['first'],
+        'size': !exists(json, 'size') ? undefined : json['size'],
+        'number': !exists(json, 'number') ? undefined : json['number'],
+        'empty': !exists(json, 'empty') ? undefined : json['empty'],
+    };
 }
 
-export function PagePhoneMessageThreadItemProjectionToJSON(
-  value?: PagePhoneMessageThreadItemProjection | null
-): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    content:
-      value.content === undefined
-        ? undefined
-        : (value.content as Array<any>).map(
-            PhoneMessageThreadItemProjectionToJSON
-          ),
-    pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
-    totalPages: value.totalPages,
-    last: value.last,
-    numberOfElements: value.numberOfElements,
-    first: value.first,
-    size: value.size,
-    number: value.number,
-    sort: SortObjectToJSON(value.sort),
-    empty: value.empty,
-  };
+export function PagePhoneMessageThreadItemProjectionToJSON(value?: PagePhoneMessageThreadItemProjection | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(PhoneMessageThreadItemProjectionToJSON)),
+        'pageable': PageableObjectToJSON(value.pageable),
+        'totalElements': value.totalElements,
+        'totalPages': value.totalPages,
+        'last': value.last,
+        'numberOfElements': value.numberOfElements,
+        'sort': SortObjectToJSON(value.sort),
+        'first': value.first,
+        'size': value.size,
+        'number': value.number,
+        'empty': value.empty,
+    };
 }
+
+

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookTestRequestToJSON = exports.WebhookTestRequestFromJSONTyped = exports.WebhookTestRequestFromJSON = exports.WebhookTestRequestMethodEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var WebhookTestRequestMethodEnum;
 (function (WebhookTestRequestMethodEnum) {
     WebhookTestRequestMethodEnum["POST"] = "POST";
@@ -35,14 +35,14 @@ function WebhookTestRequestFromJSON(json) {
 }
 exports.WebhookTestRequestFromJSON = WebhookTestRequestFromJSON;
 function WebhookTestRequestFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        url: json['url'],
-        method: json['method'],
-        headers: json['headers'],
-        payload: !(0, runtime_1.exists)(json, 'payload') ? undefined : json['payload'],
+        'url': json['url'],
+        'method': json['method'],
+        'headers': json['headers'],
+        'payload': !(0, runtime_1.exists)(json, 'payload') ? undefined : json['payload'],
     };
 }
 exports.WebhookTestRequestFromJSONTyped = WebhookTestRequestFromJSONTyped;
@@ -54,10 +54,10 @@ function WebhookTestRequestToJSON(value) {
         return null;
     }
     return {
-        url: value.url,
-        method: value.method,
-        headers: value.headers,
-        payload: value.payload,
+        'url': value.url,
+        'method': value.method,
+        'headers': value.headers,
+        'payload': value.payload,
     };
 }
 exports.WebhookTestRequestToJSON = WebhookTestRequestToJSON;

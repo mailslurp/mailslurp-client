@@ -54,6 +54,12 @@ export interface PageInboxForwarderEvents {
     numberOfElements?: number;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageInboxForwarderEvents
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {boolean}
      * @memberof PageInboxForwarderEvents
      */
@@ -70,12 +76,6 @@ export interface PageInboxForwarderEvents {
      * @memberof PageInboxForwarderEvents
      */
     number?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageInboxForwarderEvents
-     */
-    sort?: SortObject;
     /**
      *
      * @type {boolean}

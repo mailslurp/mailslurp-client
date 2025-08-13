@@ -120,9 +120,9 @@ export interface EmailThreadItem {
     recipients?: EmailRecipients | null;
 }
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 export declare enum EmailThreadItemItemTypeEnum {
     RECEIVED_EMAIL = "RECEIVED_EMAIL",
     SENT_EMAIL = "SENT_EMAIL"

@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailFeatureSupportStatusPercentageToJSON = exports.EmailFeatureSupportStatusPercentageFromJSONTyped = exports.EmailFeatureSupportStatusPercentageFromJSON = exports.EmailFeatureSupportStatusPercentageStatusEnum = void 0;
 /**
- * @export
- * @enum {string}
- */
+* @export
+* @enum {string}
+*/
 var EmailFeatureSupportStatusPercentageStatusEnum;
 (function (EmailFeatureSupportStatusPercentageStatusEnum) {
     EmailFeatureSupportStatusPercentageStatusEnum["SUPPORTED"] = "SUPPORTED";
@@ -30,12 +30,12 @@ function EmailFeatureSupportStatusPercentageFromJSON(json) {
 }
 exports.EmailFeatureSupportStatusPercentageFromJSON = EmailFeatureSupportStatusPercentageFromJSON;
 function EmailFeatureSupportStatusPercentageFromJSONTyped(json, ignoreDiscriminator) {
-    if (json === undefined || json === null) {
+    if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        status: json['status'],
-        percentage: json['percentage'],
+        'status': json['status'],
+        'percentage': json['percentage'],
     };
 }
 exports.EmailFeatureSupportStatusPercentageFromJSONTyped = EmailFeatureSupportStatusPercentageFromJSONTyped;
@@ -47,8 +47,8 @@ function EmailFeatureSupportStatusPercentageToJSON(value) {
         return null;
     }
     return {
-        status: value.status,
-        percentage: value.percentage,
+        'status': value.status,
+        'percentage': value.percentage,
     };
 }
 exports.EmailFeatureSupportStatusPercentageToJSON = EmailFeatureSupportStatusPercentageToJSON;
