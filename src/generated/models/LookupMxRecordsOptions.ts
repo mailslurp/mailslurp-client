@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface LookupMxRecordsOptions
  */
 export interface LookupMxRecordsOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof LookupMxRecordsOptions
-     */
-    host: string;
+  /**
+   *
+   * @type {string}
+   * @memberof LookupMxRecordsOptions
+   */
+  host: string;
 }
 
-export function LookupMxRecordsOptionsFromJSON(json: any): LookupMxRecordsOptions {
-    return LookupMxRecordsOptionsFromJSONTyped(json, false);
+export function LookupMxRecordsOptionsFromJSON(
+  json: any
+): LookupMxRecordsOptions {
+  return LookupMxRecordsOptionsFromJSONTyped(json, false);
 }
 
-export function LookupMxRecordsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupMxRecordsOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'host': json['host'],
-    };
+export function LookupMxRecordsOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): LookupMxRecordsOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    host: json['host'],
+  };
 }
 
-export function LookupMxRecordsOptionsToJSON(value?: LookupMxRecordsOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'host': value.host,
-    };
+export function LookupMxRecordsOptionsToJSON(
+  value?: LookupMxRecordsOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    host: value.host,
+  };
 }
-
-

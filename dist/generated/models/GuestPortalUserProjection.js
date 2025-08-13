@@ -20,19 +20,21 @@ function GuestPortalUserProjectionFromJSON(json) {
 }
 exports.GuestPortalUserProjectionFromJSON = GuestPortalUserProjectionFromJSON;
 function GuestPortalUserProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'username': json['username'],
-        'userId': json['userId'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-        'portalId': json['portalId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
+        username: json['username'],
+        userId: json['userId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
+        portalId: json['portalId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.GuestPortalUserProjectionFromJSONTyped = GuestPortalUserProjectionFromJSONTyped;
@@ -44,15 +46,15 @@ function GuestPortalUserProjectionToJSON(value) {
         return null;
     }
     return {
-        'username': value.username,
-        'userId': value.userId,
-        'inboxId': value.inboxId,
-        'emailAddress': value.emailAddress,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-        'portalId': value.portalId,
-        'name': value.name,
-        'id': value.id,
+        username: value.username,
+        userId: value.userId,
+        inboxId: value.inboxId,
+        emailAddress: value.emailAddress,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
+        portalId: value.portalId,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.GuestPortalUserProjectionToJSON = GuestPortalUserProjectionToJSON;

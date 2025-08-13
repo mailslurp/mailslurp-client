@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    PageableObject,
-    PageableObjectFromJSON,
-    PageableObjectFromJSONTyped,
-    PageableObjectToJSON,
-    ReputationItemProjection,
-    ReputationItemProjectionFromJSON,
-    ReputationItemProjectionFromJSONTyped,
-    ReputationItemProjectionToJSON,
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
+  PageableObject,
+  PageableObjectFromJSON,
+  PageableObjectFromJSONTyped,
+  PageableObjectToJSON,
+  ReputationItemProjection,
+  ReputationItemProjectionFromJSON,
+  ReputationItemProjectionFromJSONTyped,
+  ReputationItemProjectionToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
@@ -34,119 +34,129 @@ import {
  * @interface PageReputationItems
  */
 export interface PageReputationItems {
-    /**
-     * 
-     * @type {Array<ReputationItemProjection>}
-     * @memberof PageReputationItems
-     */
-    content?: Array<ReputationItemProjection>;
-    /**
-     * 
-     * @type {PageableObject}
-     * @memberof PageReputationItems
-     */
-    pageable?: PageableObject;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageReputationItems
-     */
-    totalElements: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageReputationItems
-     */
-    totalPages: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageReputationItems
-     */
-    last?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageReputationItems
-     */
-    numberOfElements?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageReputationItems
-     */
-    sort?: SortObject;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageReputationItems
-     */
-    first?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageReputationItems
-     */
-    size?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageReputationItems
-     */
-    number?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageReputationItems
-     */
-    empty?: boolean;
+  /**
+   *
+   * @type {Array<ReputationItemProjection>}
+   * @memberof PageReputationItems
+   */
+  content?: Array<ReputationItemProjection>;
+  /**
+   *
+   * @type {PageableObject}
+   * @memberof PageReputationItems
+   */
+  pageable?: PageableObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageReputationItems
+   */
+  totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageReputationItems
+   */
+  totalPages: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageReputationItems
+   */
+  last?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageReputationItems
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageReputationItems
+   */
+  sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageReputationItems
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageReputationItems
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageReputationItems
+   */
+  number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageReputationItems
+   */
+  empty?: boolean;
 }
 
 export function PageReputationItemsFromJSON(json: any): PageReputationItems {
-    return PageReputationItemsFromJSONTyped(json, false);
+  return PageReputationItemsFromJSONTyped(json, false);
 }
 
-export function PageReputationItemsFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageReputationItems {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(ReputationItemProjectionFromJSON)),
-        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !exists(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-        'first': !exists(json, 'first') ? undefined : json['first'],
-        'size': !exists(json, 'size') ? undefined : json['size'],
-        'number': !exists(json, 'number') ? undefined : json['number'],
-        'empty': !exists(json, 'empty') ? undefined : json['empty'],
-    };
+export function PageReputationItemsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageReputationItems {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(ReputationItemProjectionFromJSON),
+    pageable: !exists(json, 'pageable')
+      ? undefined
+      : PageableObjectFromJSON(json['pageable']),
+    totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+  };
 }
 
-export function PageReputationItemsToJSON(value?: PageReputationItems | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(ReputationItemProjectionToJSON)),
-        'pageable': PageableObjectToJSON(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': SortObjectToJSON(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
-    };
+export function PageReputationItemsToJSON(
+  value?: PageReputationItems | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(ReputationItemProjectionToJSON),
+    pageable: PageableObjectToJSON(value.pageable),
+    totalElements: value.totalElements,
+    totalPages: value.totalPages,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
+    first: value.first,
+    size: value.size,
+    number: value.number,
+    empty: value.empty,
+  };
 }
-
-

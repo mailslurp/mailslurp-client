@@ -6,31 +6,10 @@
 
 ### Properties
 
-- [options](CreateTransformerRequest.md#options)
-- [page](CreateTransformerRequest.md#page)
-- [size](CreateTransformerRequest.md#size)
-- [sort](CreateTransformerRequest.md#sort)
+- [aITransformCreateOptions](CreateTransformerRequest.md#aitransformcreateoptions)
 
 ## Properties
 
-### options
+### aITransformCreateOptions
 
-• **options**: [`AITranformCreateOptions`](AITranformCreateOptions.md)
-
-___
-
-### page
-
-• `Optional` **page**: `number`
-
-___
-
-### size
-
-• `Optional` **size**: `number`
-
-___
-
-### sort
-
-• `Optional` **sort**: [`CreateTransformerSortEnum`](../enums/CreateTransformerSortEnum.md)
+• **aITransformCreateOptions**: [`AITransformCreateOptions`](AITransformCreateOptions.md)

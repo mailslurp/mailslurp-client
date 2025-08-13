@@ -20,14 +20,14 @@ function ListUnsubscribeRecipientProjectionFromJSON(json) {
 }
 exports.ListUnsubscribeRecipientProjectionFromJSON = ListUnsubscribeRecipientProjectionFromJSON;
 function ListUnsubscribeRecipientProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': json['emailAddress'],
-        'createdAt': (new Date(json['createdAt'])),
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'id': json['id'],
+        emailAddress: json['emailAddress'],
+        createdAt: new Date(json['createdAt']),
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        id: json['id'],
     };
 }
 exports.ListUnsubscribeRecipientProjectionFromJSONTyped = ListUnsubscribeRecipientProjectionFromJSONTyped;
@@ -39,10 +39,10 @@ function ListUnsubscribeRecipientProjectionToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'createdAt': (value.createdAt.toISOString()),
-        'domainId': value.domainId,
-        'id': value.id,
+        emailAddress: value.emailAddress,
+        createdAt: value.createdAt.toISOString(),
+        domainId: value.domainId,
+        id: value.id,
     };
 }
 exports.ListUnsubscribeRecipientProjectionToJSON = ListUnsubscribeRecipientProjectionToJSON;

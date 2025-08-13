@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhonePlanDtoToJSON = exports.PhonePlanDtoFromJSONTyped = exports.PhonePlanDtoFromJSON = exports.PhonePlanDtoPhoneCountryEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var PhonePlanDtoPhoneCountryEnum;
 (function (PhonePlanDtoPhoneCountryEnum) {
     PhonePlanDtoPhoneCountryEnum["US"] = "US";
@@ -38,14 +38,14 @@ function PhonePlanDtoFromJSON(json) {
 }
 exports.PhonePlanDtoFromJSON = PhonePlanDtoFromJSON;
 function PhonePlanDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': json['userId'],
-        'phoneCountry': json['phoneCountry'],
-        'createdAt': (new Date(json['createdAt'])),
+        id: json['id'],
+        userId: json['userId'],
+        phoneCountry: json['phoneCountry'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.PhonePlanDtoFromJSONTyped = PhonePlanDtoFromJSONTyped;
@@ -57,10 +57,10 @@ function PhonePlanDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'phoneCountry': value.phoneCountry,
-        'createdAt': (value.createdAt.toISOString()),
+        id: value.id,
+        userId: value.userId,
+        phoneCountry: value.phoneCountry,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.PhonePlanDtoToJSON = PhonePlanDtoToJSON;

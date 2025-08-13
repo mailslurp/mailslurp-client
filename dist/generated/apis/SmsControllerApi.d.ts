@@ -209,17 +209,17 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
     setSmsFavourited(requestParameters: SetSmsFavouritedRequest, initOverrides?: RequestInit): Promise<SmsDto>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllSmsMessagesSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetSentSmsMessagesPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"

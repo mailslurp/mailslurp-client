@@ -19,39 +19,38 @@ import { exists, mapValues } from '../runtime';
  * @interface CountDto
  */
 export interface CountDto {
-    /**
-     * 
-     * @type {number}
-     * @memberof CountDto
-     */
-    totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof CountDto
+   */
+  totalElements: number;
 }
 
 export function CountDtoFromJSON(json: any): CountDto {
-    return CountDtoFromJSONTyped(json, false);
+  return CountDtoFromJSONTyped(json, false);
 }
 
-export function CountDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): CountDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'totalElements': json['totalElements'],
-    };
+export function CountDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CountDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    totalElements: json['totalElements'],
+  };
 }
 
 export function CountDtoToJSON(value?: CountDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'totalElements': value.totalElements,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    totalElements: value.totalElements,
+  };
 }
-
-

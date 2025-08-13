@@ -19,47 +19,46 @@ import { exists, mapValues } from '../runtime';
  * @interface EmailLinksResult
  */
 export interface EmailLinksResult {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailLinksResult
-     */
-    links: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailLinksResult
-     */
-    body: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailLinksResult
+   */
+  links: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailLinksResult
+   */
+  body: string;
 }
 
 export function EmailLinksResultFromJSON(json: any): EmailLinksResult {
-    return EmailLinksResultFromJSONTyped(json, false);
+  return EmailLinksResultFromJSONTyped(json, false);
 }
 
-export function EmailLinksResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailLinksResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'links': json['links'],
-        'body': json['body'],
-    };
+export function EmailLinksResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailLinksResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    links: json['links'],
+    body: json['body'],
+  };
 }
 
 export function EmailLinksResultToJSON(value?: EmailLinksResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'links': value.links,
-        'body': value.body,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    links: value.links,
+    body: value.body,
+  };
 }
-
-

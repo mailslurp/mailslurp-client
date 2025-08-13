@@ -126,9 +126,9 @@ export interface WebhookDto {
     healthStatus?: WebhookDtoHealthStatusEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookDtoMethodEnum {
     POST = "POST",
     DELETE = "DELETE",
@@ -138,10 +138,11 @@ export declare enum WebhookDtoMethodEnum {
     HEAD = "HEAD",
     OPTIONS = "OPTIONS",
     TRACE = "TRACE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookDtoEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
@@ -155,10 +156,11 @@ export declare enum WebhookDtoEventNameEnum {
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS",
     NEW_GUEST_USER = "NEW_GUEST_USER"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookDtoHealthStatusEnum {
     HEALTHY = "HEALTHY",
     UNHEALTHY = "UNHEALTHY"

@@ -19,47 +19,48 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookTestResponse
  */
 export interface WebhookTestResponse {
-    /**
-     * 
-     * @type {number}
-     * @memberof WebhookTestResponse
-     */
-    statusCode?: number | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof WebhookTestResponse
-     */
-    message?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof WebhookTestResponse
+   */
+  statusCode?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookTestResponse
+   */
+  message?: string | null;
 }
 
 export function WebhookTestResponseFromJSON(json: any): WebhookTestResponse {
-    return WebhookTestResponseFromJSONTyped(json, false);
+  return WebhookTestResponseFromJSONTyped(json, false);
 }
 
-export function WebhookTestResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestResponse {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'statusCode': !exists(json, 'statusCode') ? undefined : json['statusCode'],
-        'message': !exists(json, 'message') ? undefined : json['message'],
-    };
+export function WebhookTestResponseFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookTestResponse {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    statusCode: !exists(json, 'statusCode') ? undefined : json['statusCode'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+  };
 }
 
-export function WebhookTestResponseToJSON(value?: WebhookTestResponse | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'statusCode': value.statusCode,
-        'message': value.message,
-    };
+export function WebhookTestResponseToJSON(
+  value?: WebhookTestResponse | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    statusCode: value.statusCode,
+    message: value.message,
+  };
 }
-
-

@@ -19,79 +19,78 @@ import { exists, mapValues } from '../runtime';
  * @interface BounceProjection
  */
 export interface BounceProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof BounceProjection
-     */
-    sender: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof BounceProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof BounceProjection
-     */
-    bounceType?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof BounceProjection
-     */
-    bounceMta?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof BounceProjection
-     */
-    subject?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof BounceProjection
-     */
-    id?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof BounceProjection
+   */
+  sender: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof BounceProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof BounceProjection
+   */
+  bounceType?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof BounceProjection
+   */
+  bounceMta?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof BounceProjection
+   */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof BounceProjection
+   */
+  id?: string;
 }
 
 export function BounceProjectionFromJSON(json: any): BounceProjection {
-    return BounceProjectionFromJSONTyped(json, false);
+  return BounceProjectionFromJSONTyped(json, false);
 }
 
-export function BounceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'sender': json['sender'],
-        'createdAt': (new Date(json['createdAt'])),
-        'bounceType': !exists(json, 'bounceType') ? undefined : json['bounceType'],
-        'bounceMta': !exists(json, 'bounceMta') ? undefined : json['bounceMta'],
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-    };
+export function BounceProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): BounceProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    sender: json['sender'],
+    createdAt: new Date(json['createdAt']),
+    bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
+    bounceMta: !exists(json, 'bounceMta') ? undefined : json['bounceMta'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    id: !exists(json, 'id') ? undefined : json['id'],
+  };
 }
 
 export function BounceProjectionToJSON(value?: BounceProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'sender': value.sender,
-        'createdAt': (value.createdAt.toISOString()),
-        'bounceType': value.bounceType,
-        'bounceMta': value.bounceMta,
-        'subject': value.subject,
-        'id': value.id,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    sender: value.sender,
+    createdAt: value.createdAt.toISOString(),
+    bounceType: value.bounceType,
+    bounceMta: value.bounceMta,
+    subject: value.subject,
+    id: value.id,
+  };
 }
-
-

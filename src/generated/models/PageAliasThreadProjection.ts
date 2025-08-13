@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    AliasThreadProjection,
-    AliasThreadProjectionFromJSON,
-    AliasThreadProjectionFromJSONTyped,
-    AliasThreadProjectionToJSON,
-    PageableObject,
-    PageableObjectFromJSON,
-    PageableObjectFromJSONTyped,
-    PageableObjectToJSON,
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
+  AliasThreadProjection,
+  AliasThreadProjectionFromJSON,
+  AliasThreadProjectionFromJSONTyped,
+  AliasThreadProjectionToJSON,
+  PageableObject,
+  PageableObjectFromJSON,
+  PageableObjectFromJSONTyped,
+  PageableObjectToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
@@ -34,119 +34,131 @@ import {
  * @interface PageAliasThreadProjection
  */
 export interface PageAliasThreadProjection {
-    /**
-     * 
-     * @type {Array<AliasThreadProjection>}
-     * @memberof PageAliasThreadProjection
-     */
-    content?: Array<AliasThreadProjection>;
-    /**
-     * 
-     * @type {PageableObject}
-     * @memberof PageAliasThreadProjection
-     */
-    pageable?: PageableObject;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAliasThreadProjection
-     */
-    totalElements: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAliasThreadProjection
-     */
-    totalPages: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageAliasThreadProjection
-     */
-    last?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAliasThreadProjection
-     */
-    numberOfElements?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageAliasThreadProjection
-     */
-    sort?: SortObject;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageAliasThreadProjection
-     */
-    first?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAliasThreadProjection
-     */
-    size?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAliasThreadProjection
-     */
-    number?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageAliasThreadProjection
-     */
-    empty?: boolean;
+  /**
+   *
+   * @type {Array<AliasThreadProjection>}
+   * @memberof PageAliasThreadProjection
+   */
+  content?: Array<AliasThreadProjection>;
+  /**
+   *
+   * @type {PageableObject}
+   * @memberof PageAliasThreadProjection
+   */
+  pageable?: PageableObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAliasThreadProjection
+   */
+  totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAliasThreadProjection
+   */
+  totalPages: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAliasThreadProjection
+   */
+  last?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAliasThreadProjection
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageAliasThreadProjection
+   */
+  sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAliasThreadProjection
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAliasThreadProjection
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAliasThreadProjection
+   */
+  number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAliasThreadProjection
+   */
+  empty?: boolean;
 }
 
-export function PageAliasThreadProjectionFromJSON(json: any): PageAliasThreadProjection {
-    return PageAliasThreadProjectionFromJSONTyped(json, false);
+export function PageAliasThreadProjectionFromJSON(
+  json: any
+): PageAliasThreadProjection {
+  return PageAliasThreadProjectionFromJSONTyped(json, false);
 }
 
-export function PageAliasThreadProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageAliasThreadProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(AliasThreadProjectionFromJSON)),
-        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !exists(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-        'first': !exists(json, 'first') ? undefined : json['first'],
-        'size': !exists(json, 'size') ? undefined : json['size'],
-        'number': !exists(json, 'number') ? undefined : json['number'],
-        'empty': !exists(json, 'empty') ? undefined : json['empty'],
-    };
+export function PageAliasThreadProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageAliasThreadProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(AliasThreadProjectionFromJSON),
+    pageable: !exists(json, 'pageable')
+      ? undefined
+      : PageableObjectFromJSON(json['pageable']),
+    totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+  };
 }
 
-export function PageAliasThreadProjectionToJSON(value?: PageAliasThreadProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(AliasThreadProjectionToJSON)),
-        'pageable': PageableObjectToJSON(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': SortObjectToJSON(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
-    };
+export function PageAliasThreadProjectionToJSON(
+  value?: PageAliasThreadProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(AliasThreadProjectionToJSON),
+    pageable: PageableObjectToJSON(value.pageable),
+    totalElements: value.totalElements,
+    totalPages: value.totalPages,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
+    first: value.first,
+    size: value.size,
+    number: value.number,
+    empty: value.empty,
+  };
 }
-
-

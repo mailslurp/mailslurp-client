@@ -19,87 +19,92 @@ import { exists, mapValues } from '../runtime';
  * @interface ForwardEmailOptions
  */
 export interface ForwardEmailOptions {
-    /**
-     * To recipients for forwarded email
-     * @type {Array<string>}
-     * @memberof ForwardEmailOptions
-     */
-    to: Array<string>;
-    /**
-     * Subject for forwarded email
-     * @type {string}
-     * @memberof ForwardEmailOptions
-     */
-    subject?: string | null;
-    /**
-     * Optional cc recipients
-     * @type {Array<string>}
-     * @memberof ForwardEmailOptions
-     */
-    cc?: Array<string> | null;
-    /**
-     * Optional bcc recipients
-     * @type {Array<string>}
-     * @memberof ForwardEmailOptions
-     */
-    bcc?: Array<string> | null;
-    /**
-     * Optional from override
-     * @type {string}
-     * @memberof ForwardEmailOptions
-     */
-    from?: string | null;
-    /**
-     * Optionally use inbox name as display name for sender email address
-     * @type {boolean}
-     * @memberof ForwardEmailOptions
-     */
-    useInboxName?: boolean | null;
-    /**
-     * Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
-     * @type {boolean}
-     * @memberof ForwardEmailOptions
-     */
-    filterBouncedRecipients?: boolean | null;
+  /**
+   * To recipients for forwarded email
+   * @type {Array<string>}
+   * @memberof ForwardEmailOptions
+   */
+  to: Array<string>;
+  /**
+   * Subject for forwarded email
+   * @type {string}
+   * @memberof ForwardEmailOptions
+   */
+  subject?: string | null;
+  /**
+   * Optional cc recipients
+   * @type {Array<string>}
+   * @memberof ForwardEmailOptions
+   */
+  cc?: Array<string> | null;
+  /**
+   * Optional bcc recipients
+   * @type {Array<string>}
+   * @memberof ForwardEmailOptions
+   */
+  bcc?: Array<string> | null;
+  /**
+   * Optional from override
+   * @type {string}
+   * @memberof ForwardEmailOptions
+   */
+  from?: string | null;
+  /**
+   * Optionally use inbox name as display name for sender email address
+   * @type {boolean}
+   * @memberof ForwardEmailOptions
+   */
+  useInboxName?: boolean | null;
+  /**
+   * Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
+   * @type {boolean}
+   * @memberof ForwardEmailOptions
+   */
+  filterBouncedRecipients?: boolean | null;
 }
 
 export function ForwardEmailOptionsFromJSON(json: any): ForwardEmailOptions {
-    return ForwardEmailOptionsFromJSONTyped(json, false);
+  return ForwardEmailOptionsFromJSONTyped(json, false);
 }
 
-export function ForwardEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ForwardEmailOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'to': json['to'],
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'cc': !exists(json, 'cc') ? undefined : json['cc'],
-        'bcc': !exists(json, 'bcc') ? undefined : json['bcc'],
-        'from': !exists(json, 'from') ? undefined : json['from'],
-        'useInboxName': !exists(json, 'useInboxName') ? undefined : json['useInboxName'],
-        'filterBouncedRecipients': !exists(json, 'filterBouncedRecipients') ? undefined : json['filterBouncedRecipients'],
-    };
+export function ForwardEmailOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ForwardEmailOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    to: json['to'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    cc: !exists(json, 'cc') ? undefined : json['cc'],
+    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
+    from: !exists(json, 'from') ? undefined : json['from'],
+    useInboxName: !exists(json, 'useInboxName')
+      ? undefined
+      : json['useInboxName'],
+    filterBouncedRecipients: !exists(json, 'filterBouncedRecipients')
+      ? undefined
+      : json['filterBouncedRecipients'],
+  };
 }
 
-export function ForwardEmailOptionsToJSON(value?: ForwardEmailOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'to': value.to,
-        'subject': value.subject,
-        'cc': value.cc,
-        'bcc': value.bcc,
-        'from': value.from,
-        'useInboxName': value.useInboxName,
-        'filterBouncedRecipients': value.filterBouncedRecipients,
-    };
+export function ForwardEmailOptionsToJSON(
+  value?: ForwardEmailOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    to: value.to,
+    subject: value.subject,
+    cc: value.cc,
+    bcc: value.bcc,
+    from: value.from,
+    useInboxName: value.useInboxName,
+    filterBouncedRecipients: value.filterBouncedRecipients,
+  };
 }
-
-

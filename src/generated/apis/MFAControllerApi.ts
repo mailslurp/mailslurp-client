@@ -12,301 +12,419 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    CreateTotpDeviceBase32SecretKeyOptions,
-    CreateTotpDeviceBase32SecretKeyOptionsFromJSON,
-    CreateTotpDeviceBase32SecretKeyOptionsToJSON,
-    CreateTotpDeviceCustomOptions,
-    CreateTotpDeviceCustomOptionsFromJSON,
-    CreateTotpDeviceCustomOptionsToJSON,
-    CreateTotpDeviceOtpAuthUrlOptions,
-    CreateTotpDeviceOtpAuthUrlOptionsFromJSON,
-    CreateTotpDeviceOtpAuthUrlOptionsToJSON,
-    TotpDeviceCodeDto,
-    TotpDeviceCodeDtoFromJSON,
-    TotpDeviceCodeDtoToJSON,
-    TotpDeviceDto,
-    TotpDeviceDtoFromJSON,
-    TotpDeviceDtoToJSON,
-    TotpDeviceOptionalDto,
-    TotpDeviceOptionalDtoFromJSON,
-    TotpDeviceOptionalDtoToJSON,
+  CreateTotpDeviceBase32SecretKeyOptions,
+  CreateTotpDeviceBase32SecretKeyOptionsFromJSON,
+  CreateTotpDeviceBase32SecretKeyOptionsToJSON,
+  CreateTotpDeviceCustomOptions,
+  CreateTotpDeviceCustomOptionsFromJSON,
+  CreateTotpDeviceCustomOptionsToJSON,
+  CreateTotpDeviceOtpAuthUrlOptions,
+  CreateTotpDeviceOtpAuthUrlOptionsFromJSON,
+  CreateTotpDeviceOtpAuthUrlOptionsToJSON,
+  TotpDeviceCodeDto,
+  TotpDeviceCodeDtoFromJSON,
+  TotpDeviceCodeDtoToJSON,
+  TotpDeviceDto,
+  TotpDeviceDtoFromJSON,
+  TotpDeviceDtoToJSON,
+  TotpDeviceOptionalDto,
+  TotpDeviceOptionalDtoFromJSON,
+  TotpDeviceOptionalDtoToJSON,
 } from '../models';
 
 export interface CreateTotpDeviceForBase32SecretKeyRequest {
-    createTotpDeviceBase32SecretKeyOptions: CreateTotpDeviceBase32SecretKeyOptions;
+  createTotpDeviceBase32SecretKeyOptions: CreateTotpDeviceBase32SecretKeyOptions;
 }
 
 export interface CreateTotpDeviceForCustomRequest {
-    createTotpDeviceCustomOptions: CreateTotpDeviceCustomOptions;
+  createTotpDeviceCustomOptions: CreateTotpDeviceCustomOptions;
 }
 
 export interface CreateTotpDeviceForOtpAuthUrlRequest {
-    createTotpDeviceOtpAuthUrlOptions: CreateTotpDeviceOtpAuthUrlOptions;
+  createTotpDeviceOtpAuthUrlOptions: CreateTotpDeviceOtpAuthUrlOptions;
 }
 
 export interface GetTotpDeviceRequest {
-    id: string;
+  id: string;
 }
 
 export interface GetTotpDeviceByRequest {
-    name?: string;
-    issuer?: string;
-    username?: string;
+  name?: string;
+  issuer?: string;
+  username?: string;
 }
 
 export interface GetTotpDeviceCodeRequest {
-    id: string;
-    at?: Date;
-    minSecondsUntilExpire?: number;
+  id: string;
+  at?: Date;
+  minSecondsUntilExpire?: number;
 }
 
 /**
- * 
+ *
  */
 export class MFAControllerApi extends runtime.BaseAPI {
-
-    /**
-     * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
-     * Create a TOTP device from an base32 secret key
-     */
-    async createTotpDeviceForBase32SecretKeyRaw(requestParameters: CreateTotpDeviceForBase32SecretKeyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceDto>> {
-        if (requestParameters.createTotpDeviceBase32SecretKeyOptions === null || requestParameters.createTotpDeviceBase32SecretKeyOptions === undefined) {
-            throw new runtime.RequiredError('createTotpDeviceBase32SecretKeyOptions','Required parameter requestParameters.createTotpDeviceBase32SecretKeyOptions was null or undefined when calling createTotpDeviceForBase32SecretKey.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/mfa/totp/device/base32SecretKey`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateTotpDeviceBase32SecretKeyOptionsToJSON(requestParameters.createTotpDeviceBase32SecretKeyOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TotpDeviceDtoFromJSON(jsonValue));
+  /**
+   * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+   * Create a TOTP device from an base32 secret key
+   */
+  async createTotpDeviceForBase32SecretKeyRaw(
+    requestParameters: CreateTotpDeviceForBase32SecretKeyRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TotpDeviceDto>> {
+    if (
+      requestParameters.createTotpDeviceBase32SecretKeyOptions === null ||
+      requestParameters.createTotpDeviceBase32SecretKeyOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createTotpDeviceBase32SecretKeyOptions',
+        'Required parameter requestParameters.createTotpDeviceBase32SecretKeyOptions was null or undefined when calling createTotpDeviceForBase32SecretKey.'
+      );
     }
 
-    /**
-     * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
-     * Create a TOTP device from an base32 secret key
-     */
-    async createTotpDeviceForBase32SecretKey(requestParameters: CreateTotpDeviceForBase32SecretKeyRequest, initOverrides?: RequestInit): Promise<TotpDeviceDto> {
-        const response = await this.createTotpDeviceForBase32SecretKeyRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
-     * Create a TOTP device from custom options
-     */
-    async createTotpDeviceForCustomRaw(requestParameters: CreateTotpDeviceForCustomRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceDto>> {
-        if (requestParameters.createTotpDeviceCustomOptions === null || requestParameters.createTotpDeviceCustomOptions === undefined) {
-            throw new runtime.RequiredError('createTotpDeviceCustomOptions','Required parameter requestParameters.createTotpDeviceCustomOptions was null or undefined when calling createTotpDeviceForCustom.');
-        }
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/base32SecretKey`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateTotpDeviceBase32SecretKeyOptionsToJSON(
+          requestParameters.createTotpDeviceBase32SecretKeyOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TotpDeviceDtoFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Create a virtual TOTP device for a given secret key. This is usually present as an alternative login option when pairing OTP devices.
+   * Create a TOTP device from an base32 secret key
+   */
+  async createTotpDeviceForBase32SecretKey(
+    requestParameters: CreateTotpDeviceForBase32SecretKeyRequest,
+    initOverrides?: RequestInit
+  ): Promise<TotpDeviceDto> {
+    const response = await this.createTotpDeviceForBase32SecretKeyRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/mfa/totp/device/custom`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateTotpDeviceCustomOptionsToJSON(requestParameters.createTotpDeviceCustomOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TotpDeviceDtoFromJSON(jsonValue));
+  /**
+   * Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
+   * Create a TOTP device from custom options
+   */
+  async createTotpDeviceForCustomRaw(
+    requestParameters: CreateTotpDeviceForCustomRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TotpDeviceDto>> {
+    if (
+      requestParameters.createTotpDeviceCustomOptions === null ||
+      requestParameters.createTotpDeviceCustomOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createTotpDeviceCustomOptions',
+        'Required parameter requestParameters.createTotpDeviceCustomOptions was null or undefined when calling createTotpDeviceForCustom.'
+      );
     }
 
-    /**
-     * Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
-     * Create a TOTP device from custom options
-     */
-    async createTotpDeviceForCustom(requestParameters: CreateTotpDeviceForCustomRequest, initOverrides?: RequestInit): Promise<TotpDeviceDto> {
-        const response = await this.createTotpDeviceForCustomRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&issuer=MyApp&period=30&digits=6&algorithm=SHA1. You can provider overrides in the options for each component of the URL.
-     * Create a TOTP device from an OTP Auth URL
-     */
-    async createTotpDeviceForOtpAuthUrlRaw(requestParameters: CreateTotpDeviceForOtpAuthUrlRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceDto>> {
-        if (requestParameters.createTotpDeviceOtpAuthUrlOptions === null || requestParameters.createTotpDeviceOtpAuthUrlOptions === undefined) {
-            throw new runtime.RequiredError('createTotpDeviceOtpAuthUrlOptions','Required parameter requestParameters.createTotpDeviceOtpAuthUrlOptions was null or undefined when calling createTotpDeviceForOtpAuthUrl.');
-        }
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/custom`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateTotpDeviceCustomOptionsToJSON(
+          requestParameters.createTotpDeviceCustomOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TotpDeviceDtoFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Create a virtual TOTP device for custom options specifying all parameters of the TOTP device.
+   * Create a TOTP device from custom options
+   */
+  async createTotpDeviceForCustom(
+    requestParameters: CreateTotpDeviceForCustomRequest,
+    initOverrides?: RequestInit
+  ): Promise<TotpDeviceDto> {
+    const response = await this.createTotpDeviceForCustomRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/mfa/totp/device/otpAuthUrl`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateTotpDeviceOtpAuthUrlOptionsToJSON(requestParameters.createTotpDeviceOtpAuthUrlOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TotpDeviceDtoFromJSON(jsonValue));
+  /**
+   * Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&issuer=MyApp&period=30&digits=6&algorithm=SHA1. You can provider overrides in the options for each component of the URL.
+   * Create a TOTP device from an OTP Auth URL
+   */
+  async createTotpDeviceForOtpAuthUrlRaw(
+    requestParameters: CreateTotpDeviceForOtpAuthUrlRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TotpDeviceDto>> {
+    if (
+      requestParameters.createTotpDeviceOtpAuthUrlOptions === null ||
+      requestParameters.createTotpDeviceOtpAuthUrlOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createTotpDeviceOtpAuthUrlOptions',
+        'Required parameter requestParameters.createTotpDeviceOtpAuthUrlOptions was null or undefined when calling createTotpDeviceForOtpAuthUrl.'
+      );
     }
 
-    /**
-     * Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&issuer=MyApp&period=30&digits=6&algorithm=SHA1. You can provider overrides in the options for each component of the URL.
-     * Create a TOTP device from an OTP Auth URL
-     */
-    async createTotpDeviceForOtpAuthUrl(requestParameters: CreateTotpDeviceForOtpAuthUrlRequest, initOverrides?: RequestInit): Promise<TotpDeviceDto> {
-        const response = await this.createTotpDeviceForOtpAuthUrlRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get Time-Based One-Time Password (TOTP) device by its ID.
-     * Get a TOTP device by ID
-     */
-    async getTotpDeviceRaw(requestParameters: GetTotpDeviceRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getTotpDevice.');
-        }
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/otpAuthUrl`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateTotpDeviceOtpAuthUrlOptionsToJSON(
+          requestParameters.createTotpDeviceOtpAuthUrlOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TotpDeviceDtoFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Create a virtual TOTP device for a given OTP Auth URL such as otpauth://totp/MyApp:alice@example.com?secret=ABC123&issuer=MyApp&period=30&digits=6&algorithm=SHA1. You can provider overrides in the options for each component of the URL.
+   * Create a TOTP device from an OTP Auth URL
+   */
+  async createTotpDeviceForOtpAuthUrl(
+    requestParameters: CreateTotpDeviceForOtpAuthUrlRequest,
+    initOverrides?: RequestInit
+  ): Promise<TotpDeviceDto> {
+    const response = await this.createTotpDeviceForOtpAuthUrlRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/mfa/totp/device/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TotpDeviceDtoFromJSON(jsonValue));
+  /**
+   * Get Time-Based One-Time Password (TOTP) device by its ID.
+   * Get a TOTP device by ID
+   */
+  async getTotpDeviceRaw(
+    requestParameters: GetTotpDeviceRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TotpDeviceDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getTotpDevice.'
+      );
     }
 
-    /**
-     * Get Time-Based One-Time Password (TOTP) device by its ID.
-     * Get a TOTP device by ID
-     */
-    async getTotpDevice(requestParameters: GetTotpDeviceRequest, initOverrides?: RequestInit): Promise<TotpDeviceDto> {
-        const response = await this.getTotpDeviceRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.
-     * Get a TOTP device by username, issuer, or name. Returns empty if not found.
-     */
-    async getTotpDeviceByRaw(requestParameters: GetTotpDeviceByRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceOptionalDto>> {
-        const queryParameters: any = {};
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        if (requestParameters.name !== undefined) {
-            queryParameters['name'] = requestParameters.name;
-        }
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TotpDeviceDtoFromJSON(jsonValue)
+    );
+  }
 
-        if (requestParameters.issuer !== undefined) {
-            queryParameters['issuer'] = requestParameters.issuer;
-        }
+  /**
+   * Get Time-Based One-Time Password (TOTP) device by its ID.
+   * Get a TOTP device by ID
+   */
+  async getTotpDevice(
+    requestParameters: GetTotpDeviceRequest,
+    initOverrides?: RequestInit
+  ): Promise<TotpDeviceDto> {
+    const response = await this.getTotpDeviceRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (requestParameters.username !== undefined) {
-            queryParameters['username'] = requestParameters.username;
-        }
+  /**
+   * Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.
+   * Get a TOTP device by username, issuer, or name. Returns empty if not found.
+   */
+  async getTotpDeviceByRaw(
+    requestParameters: GetTotpDeviceByRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TotpDeviceOptionalDto>> {
+    const queryParameters: any = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/mfa/totp/device/by`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TotpDeviceOptionalDtoFromJSON(jsonValue));
+    if (requestParameters.name !== undefined) {
+      queryParameters['name'] = requestParameters.name;
     }
 
-    /**
-     * Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.
-     * Get a TOTP device by username, issuer, or name. Returns empty if not found.
-     */
-    async getTotpDeviceBy(requestParameters: GetTotpDeviceByRequest, initOverrides?: RequestInit): Promise<TotpDeviceOptionalDto> {
-        const response = await this.getTotpDeviceByRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.issuer !== undefined) {
+      queryParameters['issuer'] = requestParameters.issuer;
     }
 
-    /**
-     * Get Time-Based One-Time Password for a device by its ID.
-     * Get a TOTP device code by device ID
-     */
-    async getTotpDeviceCodeRaw(requestParameters: GetTotpDeviceCodeRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceCodeDto>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling getTotpDeviceCode.');
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters.at !== undefined) {
-            queryParameters['at'] = (requestParameters.at as any).toISOString();
-        }
-
-        if (requestParameters.minSecondsUntilExpire !== undefined) {
-            queryParameters['minSecondsUntilExpire'] = requestParameters.minSecondsUntilExpire;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/mfa/totp/device/{id}/code`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TotpDeviceCodeDtoFromJSON(jsonValue));
+    if (requestParameters.username !== undefined) {
+      queryParameters['username'] = requestParameters.username;
     }
 
-    /**
-     * Get Time-Based One-Time Password for a device by its ID.
-     * Get a TOTP device code by device ID
-     */
-    async getTotpDeviceCode(requestParameters: GetTotpDeviceCodeRequest, initOverrides?: RequestInit): Promise<TotpDeviceCodeDto> {
-        const response = await this.getTotpDeviceCodeRaw(requestParameters, initOverrides);
-        return await response.value();
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/by`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TotpDeviceOptionalDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get Time-Based One-Time Password (TOTP) device by its username and issuer mapping.
+   * Get a TOTP device by username, issuer, or name. Returns empty if not found.
+   */
+  async getTotpDeviceBy(
+    requestParameters: GetTotpDeviceByRequest,
+    initOverrides?: RequestInit
+  ): Promise<TotpDeviceOptionalDto> {
+    const response = await this.getTotpDeviceByRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get Time-Based One-Time Password for a device by its ID.
+   * Get a TOTP device code by device ID
+   */
+  async getTotpDeviceCodeRaw(
+    requestParameters: GetTotpDeviceCodeRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TotpDeviceCodeDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getTotpDeviceCode.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.at !== undefined) {
+      queryParameters['at'] = (requestParameters.at as any).toISOString();
+    }
+
+    if (requestParameters.minSecondsUntilExpire !== undefined) {
+      queryParameters['minSecondsUntilExpire'] =
+        requestParameters.minSecondsUntilExpire;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/{id}/code`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TotpDeviceCodeDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get Time-Based One-Time Password for a device by its ID.
+   * Get a TOTP device code by device ID
+   */
+  async getTotpDeviceCode(
+    requestParameters: GetTotpDeviceCodeRequest,
+    initOverrides?: RequestInit
+  ): Promise<TotpDeviceCodeDto> {
+    const response = await this.getTotpDeviceCodeRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }

@@ -14,51 +14,54 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    ImapEmailProjection,
-    ImapEmailProjectionFromJSON,
-    ImapEmailProjectionFromJSONTyped,
-    ImapEmailProjectionToJSON,
+  ImapEmailProjection,
+  ImapEmailProjectionFromJSON,
+  ImapEmailProjectionFromJSONTyped,
+  ImapEmailProjectionToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface ImapServerGetResult
  */
 export interface ImapServerGetResult {
-    /**
-     * 
-     * @type {ImapEmailProjection}
-     * @memberof ImapServerGetResult
-     */
-    result?: ImapEmailProjection;
+  /**
+   *
+   * @type {ImapEmailProjection}
+   * @memberof ImapServerGetResult
+   */
+  result?: ImapEmailProjection;
 }
 
 export function ImapServerGetResultFromJSON(json: any): ImapServerGetResult {
-    return ImapServerGetResultFromJSONTyped(json, false);
+  return ImapServerGetResultFromJSONTyped(json, false);
 }
 
-export function ImapServerGetResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerGetResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'result': !exists(json, 'result') ? undefined : ImapEmailProjectionFromJSON(json['result']),
-    };
+export function ImapServerGetResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ImapServerGetResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    result: !exists(json, 'result')
+      ? undefined
+      : ImapEmailProjectionFromJSON(json['result']),
+  };
 }
 
-export function ImapServerGetResultToJSON(value?: ImapServerGetResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'result': ImapEmailProjectionToJSON(value.result),
-    };
+export function ImapServerGetResultToJSON(
+  value?: ImapServerGetResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    result: ImapEmailProjectionToJSON(value.result),
+  };
 }
-
-

@@ -2,7 +2,7 @@
 
 # Interface: TestInboxRulesetSendingOptions
 
-Test options for inbox ruleset sending test
+Test options for ruleset sending test
 
 **`Export`**
 
@@ -15,13 +15,24 @@ TestInboxRulesetSendingOptions
 ### Properties
 
 - [inboxId](TestInboxRulesetSendingOptions.md#inboxid)
+- [phoneId](TestInboxRulesetSendingOptions.md#phoneid)
 - [recipient](TestInboxRulesetSendingOptions.md#recipient)
 
 ## Properties
 
 ### inboxId
 
-• **inboxId**: `string`
+• `Optional` **inboxId**: `string`
+
+**`Memberof`**
+
+TestInboxRulesetSendingOptions
+
+___
+
+### phoneId
+
+• `Optional` **phoneId**: `string`
 
 **`Memberof`**
 

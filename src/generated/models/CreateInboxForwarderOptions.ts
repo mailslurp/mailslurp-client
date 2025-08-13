@@ -19,66 +19,69 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateInboxForwarderOptions
  */
 export interface CreateInboxForwarderOptions {
-    /**
-     * Field to match against to trigger inbox forwarding for inbound email
-     * @type {string}
-     * @memberof CreateInboxForwarderOptions
-     */
-    field: CreateInboxForwarderOptionsFieldEnum;
-    /**
-     * String or wildcard style match for field specified when evaluating forwarding rules
-     * @type {string}
-     * @memberof CreateInboxForwarderOptions
-     */
-    match: string;
-    /**
-     * Email addresses to forward an email to if it matches the field and match criteria of the forwarder
-     * @type {Array<string>}
-     * @memberof CreateInboxForwarderOptions
-     */
-    forwardToRecipients: Array<string>;
+  /**
+   * Field to match against to trigger inbox forwarding for inbound email
+   * @type {string}
+   * @memberof CreateInboxForwarderOptions
+   */
+  field: CreateInboxForwarderOptionsFieldEnum;
+  /**
+   * String or wildcard style match for field specified when evaluating forwarding rules
+   * @type {string}
+   * @memberof CreateInboxForwarderOptions
+   */
+  match: string;
+  /**
+   * Email addresses to forward an email to if it matches the field and match criteria of the forwarder
+   * @type {Array<string>}
+   * @memberof CreateInboxForwarderOptions
+   */
+  forwardToRecipients: Array<string>;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum CreateInboxForwarderOptionsFieldEnum {
-    RECIPIENTS = 'RECIPIENTS',
-    SENDER = 'SENDER',
-    SUBJECT = 'SUBJECT',
-    ATTACHMENTS = 'ATTACHMENTS'
+  RECIPIENTS = 'RECIPIENTS',
+  SENDER = 'SENDER',
+  SUBJECT = 'SUBJECT',
+  ATTACHMENTS = 'ATTACHMENTS',
 }
 
-export function CreateInboxForwarderOptionsFromJSON(json: any): CreateInboxForwarderOptions {
-    return CreateInboxForwarderOptionsFromJSONTyped(json, false);
+export function CreateInboxForwarderOptionsFromJSON(
+  json: any
+): CreateInboxForwarderOptions {
+  return CreateInboxForwarderOptionsFromJSONTyped(json, false);
 }
 
-export function CreateInboxForwarderOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxForwarderOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'field': json['field'],
-        'match': json['match'],
-        'forwardToRecipients': json['forwardToRecipients'],
-    };
+export function CreateInboxForwarderOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateInboxForwarderOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    field: json['field'],
+    match: json['match'],
+    forwardToRecipients: json['forwardToRecipients'],
+  };
 }
 
-export function CreateInboxForwarderOptionsToJSON(value?: CreateInboxForwarderOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'field': value.field,
-        'match': value.match,
-        'forwardToRecipients': value.forwardToRecipients,
-    };
+export function CreateInboxForwarderOptionsToJSON(
+  value?: CreateInboxForwarderOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    field: value.field,
+    match: value.match,
+    forwardToRecipients: value.forwardToRecipients,
+  };
 }
-
-

@@ -19,12 +19,12 @@ function SmsSendOptionsFromJSON(json) {
 }
 exports.SmsSendOptionsFromJSON = SmsSendOptionsFromJSON;
 function SmsSendOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'to': json['to'],
-        'body': json['body'],
+        to: json['to'],
+        body: json['body'],
     };
 }
 exports.SmsSendOptionsFromJSONTyped = SmsSendOptionsFromJSONTyped;
@@ -36,8 +36,8 @@ function SmsSendOptionsToJSON(value) {
         return null;
     }
     return {
-        'to': value.to,
-        'body': value.body,
+        to: value.to,
+        body: value.body,
     };
 }
 exports.SmsSendOptionsToJSON = SmsSendOptionsToJSON;

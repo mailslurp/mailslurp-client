@@ -72,17 +72,18 @@ export interface InvokeTransformerOptions {
     contentSelector?: InvokeTransformerOptionsContentSelectorEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum InvokeTransformerOptionsEntityTypeEnum {
     EMAIL = "EMAIL",
     SMS = "SMS",
     ATTACHMENT = "ATTACHMENT"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum InvokeTransformerOptionsContentSelectorEnum {
     RAW = "RAW",
     BODY = "BODY",

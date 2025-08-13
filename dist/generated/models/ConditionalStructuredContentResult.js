@@ -20,12 +20,12 @@ function ConditionalStructuredContentResultFromJSON(json) {
 }
 exports.ConditionalStructuredContentResultFromJSON = ConditionalStructuredContentResultFromJSON;
 function ConditionalStructuredContentResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'result': !(0, runtime_1.exists)(json, 'result') ? undefined : json['result'],
-        'conditionsMatch': json['conditionsMatch'],
+        result: !(0, runtime_1.exists)(json, 'result') ? undefined : json['result'],
+        conditionsMatch: json['conditionsMatch'],
     };
 }
 exports.ConditionalStructuredContentResultFromJSONTyped = ConditionalStructuredContentResultFromJSONTyped;
@@ -37,8 +37,8 @@ function ConditionalStructuredContentResultToJSON(value) {
         return null;
     }
     return {
-        'result': value.result,
-        'conditionsMatch': value.conditionsMatch,
+        result: value.result,
+        conditionsMatch: value.conditionsMatch,
     };
 }
 exports.ConditionalStructuredContentResultToJSON = ConditionalStructuredContentResultToJSON;

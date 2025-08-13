@@ -14,14 +14,14 @@ TestNewInboxRulesetOptions
 
 ### Properties
 
-- [createInboxRulesetOptions](TestNewInboxRulesetOptions.md#createinboxrulesetoptions)
+- [createRulesetOptions](TestNewInboxRulesetOptions.md#createrulesetoptions)
 - [inboxRulesetTestOptions](TestNewInboxRulesetOptions.md#inboxrulesettestoptions)
 
 ## Properties
 
-### createInboxRulesetOptions
+### createRulesetOptions
 
-• **createInboxRulesetOptions**: [`CreateInboxRulesetOptions`](CreateInboxRulesetOptions.md)
+• **createRulesetOptions**: [`CreateRulesetOptions`](CreateRulesetOptions.md)
 
 **`Memberof`**
 
@@ -31,7 +31,7 @@ ___
 
 ### inboxRulesetTestOptions
 
-• **inboxRulesetTestOptions**: [`InboxRulesetTestOptions`](InboxRulesetTestOptions.md)
+• **inboxRulesetTestOptions**: [`RulesetTestOptions`](RulesetTestOptions.md)
 
 **`Memberof`**
 

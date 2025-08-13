@@ -19,12 +19,12 @@ function EmailLinksResultFromJSON(json) {
 }
 exports.EmailLinksResultFromJSON = EmailLinksResultFromJSON;
 function EmailLinksResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'links': json['links'],
-        'body': json['body'],
+        links: json['links'],
+        body: json['body'],
     };
 }
 exports.EmailLinksResultFromJSONTyped = EmailLinksResultFromJSONTyped;
@@ -36,8 +36,8 @@ function EmailLinksResultToJSON(value) {
         return null;
     }
     return {
-        'links': value.links,
-        'body': value.body,
+        links: value.links,
+        body: value.body,
     };
 }
 exports.EmailLinksResultToJSON = EmailLinksResultToJSON;

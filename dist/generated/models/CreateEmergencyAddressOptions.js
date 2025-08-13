@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateEmergencyAddressOptionsToJSON = exports.CreateEmergencyAddressOptionsFromJSONTyped = exports.CreateEmergencyAddressOptionsFromJSON = exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateEmergencyAddressOptionsIsoCountryCodeEnum;
 (function (CreateEmergencyAddressOptionsIsoCountryCodeEnum) {
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["US"] = "US";
@@ -39,17 +39,17 @@ function CreateEmergencyAddressOptionsFromJSON(json) {
 }
 exports.CreateEmergencyAddressOptionsFromJSON = CreateEmergencyAddressOptionsFromJSON;
 function CreateEmergencyAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'customerName': json['customerName'],
-        'address1': json['address1'],
-        'city': json['city'],
-        'region': json['region'],
-        'postalCode': json['postalCode'],
-        'isoCountryCode': json['isoCountryCode'],
-        'displayName': !(0, runtime_1.exists)(json, 'displayName') ? undefined : json['displayName'],
+        customerName: json['customerName'],
+        address1: json['address1'],
+        city: json['city'],
+        region: json['region'],
+        postalCode: json['postalCode'],
+        isoCountryCode: json['isoCountryCode'],
+        displayName: !(0, runtime_1.exists)(json, 'displayName') ? undefined : json['displayName'],
     };
 }
 exports.CreateEmergencyAddressOptionsFromJSONTyped = CreateEmergencyAddressOptionsFromJSONTyped;
@@ -61,13 +61,13 @@ function CreateEmergencyAddressOptionsToJSON(value) {
         return null;
     }
     return {
-        'customerName': value.customerName,
-        'address1': value.address1,
-        'city': value.city,
-        'region': value.region,
-        'postalCode': value.postalCode,
-        'isoCountryCode': value.isoCountryCode,
-        'displayName': value.displayName,
+        customerName: value.customerName,
+        address1: value.address1,
+        city: value.city,
+        region: value.region,
+        postalCode: value.postalCode,
+        isoCountryCode: value.isoCountryCode,
+        displayName: value.displayName,
     };
 }
 exports.CreateEmergencyAddressOptionsToJSON = CreateEmergencyAddressOptionsToJSON;

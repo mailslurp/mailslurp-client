@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    PageableObject,
-    PageableObjectFromJSON,
-    PageableObjectFromJSONTyped,
-    PageableObjectToJSON,
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
-    WebhookEndpointProjection,
-    WebhookEndpointProjectionFromJSON,
-    WebhookEndpointProjectionFromJSONTyped,
-    WebhookEndpointProjectionToJSON,
+  PageableObject,
+  PageableObjectFromJSON,
+  PageableObjectFromJSONTyped,
+  PageableObjectToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
+  WebhookEndpointProjection,
+  WebhookEndpointProjectionFromJSON,
+  WebhookEndpointProjectionFromJSONTyped,
+  WebhookEndpointProjectionToJSON,
 } from './';
 
 /**
@@ -34,119 +34,131 @@ import {
  * @interface PageWebhookEndpointProjection
  */
 export interface PageWebhookEndpointProjection {
-    /**
-     * 
-     * @type {Array<WebhookEndpointProjection>}
-     * @memberof PageWebhookEndpointProjection
-     */
-    content?: Array<WebhookEndpointProjection>;
-    /**
-     * 
-     * @type {PageableObject}
-     * @memberof PageWebhookEndpointProjection
-     */
-    pageable?: PageableObject;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookEndpointProjection
-     */
-    totalElements: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookEndpointProjection
-     */
-    totalPages: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageWebhookEndpointProjection
-     */
-    last?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookEndpointProjection
-     */
-    numberOfElements?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageWebhookEndpointProjection
-     */
-    sort?: SortObject;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageWebhookEndpointProjection
-     */
-    first?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookEndpointProjection
-     */
-    size?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookEndpointProjection
-     */
-    number?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageWebhookEndpointProjection
-     */
-    empty?: boolean;
+  /**
+   *
+   * @type {Array<WebhookEndpointProjection>}
+   * @memberof PageWebhookEndpointProjection
+   */
+  content?: Array<WebhookEndpointProjection>;
+  /**
+   *
+   * @type {PageableObject}
+   * @memberof PageWebhookEndpointProjection
+   */
+  pageable?: PageableObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookEndpointProjection
+   */
+  totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookEndpointProjection
+   */
+  totalPages: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageWebhookEndpointProjection
+   */
+  last?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookEndpointProjection
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageWebhookEndpointProjection
+   */
+  sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageWebhookEndpointProjection
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookEndpointProjection
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookEndpointProjection
+   */
+  number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageWebhookEndpointProjection
+   */
+  empty?: boolean;
 }
 
-export function PageWebhookEndpointProjectionFromJSON(json: any): PageWebhookEndpointProjection {
-    return PageWebhookEndpointProjectionFromJSONTyped(json, false);
+export function PageWebhookEndpointProjectionFromJSON(
+  json: any
+): PageWebhookEndpointProjection {
+  return PageWebhookEndpointProjectionFromJSONTyped(json, false);
 }
 
-export function PageWebhookEndpointProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageWebhookEndpointProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(WebhookEndpointProjectionFromJSON)),
-        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !exists(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-        'first': !exists(json, 'first') ? undefined : json['first'],
-        'size': !exists(json, 'size') ? undefined : json['size'],
-        'number': !exists(json, 'number') ? undefined : json['number'],
-        'empty': !exists(json, 'empty') ? undefined : json['empty'],
-    };
+export function PageWebhookEndpointProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageWebhookEndpointProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(WebhookEndpointProjectionFromJSON),
+    pageable: !exists(json, 'pageable')
+      ? undefined
+      : PageableObjectFromJSON(json['pageable']),
+    totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+  };
 }
 
-export function PageWebhookEndpointProjectionToJSON(value?: PageWebhookEndpointProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(WebhookEndpointProjectionToJSON)),
-        'pageable': PageableObjectToJSON(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': SortObjectToJSON(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
-    };
+export function PageWebhookEndpointProjectionToJSON(
+  value?: PageWebhookEndpointProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(WebhookEndpointProjectionToJSON),
+    pageable: PageableObjectToJSON(value.pageable),
+    totalElements: value.totalElements,
+    totalPages: value.totalPages,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
+    first: value.first,
+    size: value.size,
+    number: value.number,
+    empty: value.empty,
+  };
 }
-
-

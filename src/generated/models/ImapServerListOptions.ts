@@ -14,52 +14,55 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ImapServerListOptions
  */
 export interface ImapServerListOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof ImapServerListOptions
-     */
-    uidSet?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ImapServerListOptions
-     */
-    seqSet?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ImapServerListOptions
+   */
+  uidSet?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ImapServerListOptions
+   */
+  seqSet?: string | null;
 }
 
-export function ImapServerListOptionsFromJSON(json: any): ImapServerListOptions {
-    return ImapServerListOptionsFromJSONTyped(json, false);
+export function ImapServerListOptionsFromJSON(
+  json: any
+): ImapServerListOptions {
+  return ImapServerListOptionsFromJSONTyped(json, false);
 }
 
-export function ImapServerListOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerListOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'uidSet': !exists(json, 'uidSet') ? undefined : json['uidSet'],
-        'seqSet': !exists(json, 'seqSet') ? undefined : json['seqSet'],
-    };
+export function ImapServerListOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ImapServerListOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    uidSet: !exists(json, 'uidSet') ? undefined : json['uidSet'],
+    seqSet: !exists(json, 'seqSet') ? undefined : json['seqSet'],
+  };
 }
 
-export function ImapServerListOptionsToJSON(value?: ImapServerListOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'uidSet': value.uidSet,
-        'seqSet': value.seqSet,
-    };
+export function ImapServerListOptionsToJSON(
+  value?: ImapServerListOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    uidSet: value.uidSet,
+    seqSet: value.seqSet,
+  };
 }
-
-

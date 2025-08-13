@@ -20,13 +20,13 @@ function EmailFeatureNamesFromJSON(json) {
 }
 exports.EmailFeatureNamesFromJSON = EmailFeatureNamesFromJSON;
 function EmailFeatureNamesFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'family': (json['family'].map(_1.EmailFeatureFamilyNameFromJSON)),
-        'platform': (json['platform'].map(_1.EmailFeaturePlatformNameFromJSON)),
-        'category': (json['category'].map(_1.EmailFeatureCategoryNameFromJSON)),
+        family: json['family'].map(_1.EmailFeatureFamilyNameFromJSON),
+        platform: json['platform'].map(_1.EmailFeaturePlatformNameFromJSON),
+        category: json['category'].map(_1.EmailFeatureCategoryNameFromJSON),
     };
 }
 exports.EmailFeatureNamesFromJSONTyped = EmailFeatureNamesFromJSONTyped;
@@ -38,9 +38,9 @@ function EmailFeatureNamesToJSON(value) {
         return null;
     }
     return {
-        'family': (value.family.map(_1.EmailFeatureFamilyNameToJSON)),
-        'platform': (value.platform.map(_1.EmailFeaturePlatformNameToJSON)),
-        'category': (value.category.map(_1.EmailFeatureCategoryNameToJSON)),
+        family: value.family.map(_1.EmailFeatureFamilyNameToJSON),
+        platform: value.platform.map(_1.EmailFeaturePlatformNameToJSON),
+        category: value.category.map(_1.EmailFeatureCategoryNameToJSON),
     };
 }
 exports.EmailFeatureNamesToJSON = EmailFeatureNamesToJSON;

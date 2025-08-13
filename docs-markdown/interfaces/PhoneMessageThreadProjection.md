@@ -53,7 +53,7 @@ ___
 
 ### otherPhoneNumber
 
-• **otherPhoneNumber**: `string`
+• `Optional` **otherPhoneNumber**: `string`
 
 **`Memberof`**
 
@@ -63,7 +63,7 @@ ___
 
 ### phoneNumber
 
-• **phoneNumber**: `string`
+• `Optional` **phoneNumber**: `string`
 
 **`Memberof`**
 

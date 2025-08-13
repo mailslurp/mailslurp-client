@@ -8,6 +8,7 @@
 
 - [before](GetAllSmsMessagesRequest.md#before)
 - [favourite](GetAllSmsMessagesRequest.md#favourite)
+- [include](GetAllSmsMessagesRequest.md#include)
 - [page](GetAllSmsMessagesRequest.md#page)
 - [phoneNumber](GetAllSmsMessagesRequest.md#phonenumber)
 - [search](GetAllSmsMessagesRequest.md#search)
@@ -26,6 +27,12 @@ ___
 ### favourite
 
 • `Optional` **favourite**: `boolean`
+
+___
+
+### include
+
+• `Optional` **include**: `string`[]
 
 ___
 

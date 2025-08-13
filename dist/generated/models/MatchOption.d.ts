@@ -35,9 +35,9 @@ export interface MatchOption {
     value: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum MatchOptionFieldEnum {
     SUBJECT = "SUBJECT",
     TO = "TO",
@@ -45,10 +45,11 @@ export declare enum MatchOptionFieldEnum {
     CC = "CC",
     FROM = "FROM",
     HEADERS = "HEADERS"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum MatchOptionShouldEnum {
     MATCH = "MATCH",
     CONTAIN = "CONTAIN",

@@ -20,12 +20,12 @@ function ImapServerListOptionsFromJSON(json) {
 }
 exports.ImapServerListOptionsFromJSON = ImapServerListOptionsFromJSON;
 function ImapServerListOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'uidSet': !(0, runtime_1.exists)(json, 'uidSet') ? undefined : json['uidSet'],
-        'seqSet': !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
+        uidSet: !(0, runtime_1.exists)(json, 'uidSet') ? undefined : json['uidSet'],
+        seqSet: !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
     };
 }
 exports.ImapServerListOptionsFromJSONTyped = ImapServerListOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function ImapServerListOptionsToJSON(value) {
         return null;
     }
     return {
-        'uidSet': value.uidSet,
-        'seqSet': value.seqSet,
+        uidSet: value.uidSet,
+        seqSet: value.seqSet,
     };
 }
 exports.ImapServerListOptionsToJSON = ImapServerListOptionsToJSON;

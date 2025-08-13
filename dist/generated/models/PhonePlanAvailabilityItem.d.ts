@@ -29,9 +29,9 @@ export interface PhonePlanAvailabilityItem {
     availabilityStatus: PhonePlanAvailabilityItemAvailabilityStatusEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum PhonePlanAvailabilityItemPhoneCountryEnum {
     US = "US",
     GB = "GB",
@@ -45,10 +45,11 @@ export declare enum PhonePlanAvailabilityItemPhoneCountryEnum {
     NL = "NL",
     IL = "IL",
     SE = "SE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum PhonePlanAvailabilityItemAvailabilityStatusEnum {
     AVAILABLE = "AVAILABLE",
     NON_MATCHING_SUBSCRIPTION_CURRENCY = "NON_MATCHING_SUBSCRIPTION_CURRENCY",

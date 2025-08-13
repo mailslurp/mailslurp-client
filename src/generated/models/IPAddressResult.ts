@@ -19,47 +19,46 @@ import { exists, mapValues } from '../runtime';
  * @interface IPAddressResult
  */
 export interface IPAddressResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof IPAddressResult
-     */
-    address: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof IPAddressResult
-     */
-    hostname: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IPAddressResult
+   */
+  address: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IPAddressResult
+   */
+  hostname: string;
 }
 
 export function IPAddressResultFromJSON(json: any): IPAddressResult {
-    return IPAddressResultFromJSONTyped(json, false);
+  return IPAddressResultFromJSONTyped(json, false);
 }
 
-export function IPAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): IPAddressResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'address': json['address'],
-        'hostname': json['hostname'],
-    };
+export function IPAddressResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): IPAddressResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    address: json['address'],
+    hostname: json['hostname'],
+  };
 }
 
 export function IPAddressResultToJSON(value?: IPAddressResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'address': value.address,
-        'hostname': value.hostname,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    address: value.address,
+    hostname: value.hostname,
+  };
 }
-
-

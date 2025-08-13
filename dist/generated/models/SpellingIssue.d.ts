@@ -41,9 +41,9 @@ export interface SpellingIssue {
     message: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum SpellingIssueSeverityEnum {
     Warning = "Warning",
     Error = "Error"

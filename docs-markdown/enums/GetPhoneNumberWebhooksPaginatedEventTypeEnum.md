@@ -14,6 +14,7 @@
 - [EMAIL\_OPENED](GetPhoneNumberWebhooksPaginatedEventTypeEnum.md#email_opened)
 - [EMAIL\_READ](GetPhoneNumberWebhooksPaginatedEventTypeEnum.md#email_read)
 - [EMAIL\_RECEIVED](GetPhoneNumberWebhooksPaginatedEventTypeEnum.md#email_received)
+- [NEW\_AI\_TRANSFORM\_RESULT](GetPhoneNumberWebhooksPaginatedEventTypeEnum.md#new_ai_transform_result)
 - [NEW\_ATTACHMENT](GetPhoneNumberWebhooksPaginatedEventTypeEnum.md#new_attachment)
 - [NEW\_CONTACT](GetPhoneNumberWebhooksPaginatedEventTypeEnum.md#new_contact)
 - [NEW\_EMAIL](GetPhoneNumberWebhooksPaginatedEventTypeEnum.md#new_email)
@@ -55,6 +56,12 @@ ___
 ### EMAIL\_RECEIVED
 
 • **EMAIL\_RECEIVED** = ``"EMAIL_RECEIVED"``
+
+___
+
+### NEW\_AI\_TRANSFORM\_RESULT
+
+• **NEW\_AI\_TRANSFORM\_RESULT** = ``"NEW_AI_TRANSFORM_RESULT"``
 
 ___
 

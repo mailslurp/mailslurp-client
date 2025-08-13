@@ -41,6 +41,8 @@ ___
 
 • **body**: `string`
 
+use read content endpoints instead
+
 **`Memberof`**
 
 FakeEmailDto

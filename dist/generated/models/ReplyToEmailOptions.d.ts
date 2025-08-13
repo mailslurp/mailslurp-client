@@ -93,9 +93,9 @@ export interface ReplyToEmailOptions {
     html?: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum ReplyToEmailOptionsSendStrategyEnum {
     SINGLE_MESSAGE = "SINGLE_MESSAGE"
 }

@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [aiTransformerId](UpdateWebhookRequest.md#aitransformerid)
 - [createWebhookOptions](UpdateWebhookRequest.md#createwebhookoptions)
 - [inboxId](UpdateWebhookRequest.md#inboxid)
 - [overrideAuth](UpdateWebhookRequest.md#overrideauth)
@@ -13,6 +14,12 @@
 - [webhookId](UpdateWebhookRequest.md#webhookid)
 
 ## Properties
+
+### aiTransformerId
+
+• `Optional` **aiTransformerId**: `string`
+
+___
 
 ### createWebhookOptions
 

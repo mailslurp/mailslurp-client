@@ -29,9 +29,9 @@ export interface EmailFeatureCategoryName {
     name: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeatureCategoryNameSlugEnum {
     css = "css",
     html = "html",

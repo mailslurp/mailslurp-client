@@ -14,116 +14,115 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface SmsDto
  */
 export interface SmsDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsDto
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsDto
-     */
-    phoneNumber: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsDto
-     */
-    fromNumber: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsDto
-     */
-    toNumber?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof SmsDto
-     */
-    favourite: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsDto
-     */
-    body: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof SmsDto
-     */
-    read: boolean;
-    /**
-     * 
-     * @type {Date}
-     * @memberof SmsDto
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof SmsDto
-     */
-    updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsDto
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsDto
+   */
+  phoneNumber: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsDto
+   */
+  fromNumber: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsDto
+   */
+  toNumber?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SmsDto
+   */
+  favourite: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsDto
+   */
+  body: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SmsDto
+   */
+  read: boolean;
+  /**
+   *
+   * @type {Date}
+   * @memberof SmsDto
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof SmsDto
+   */
+  updatedAt: Date;
 }
 
 export function SmsDtoFromJSON(json: any): SmsDto {
-    return SmsDtoFromJSONTyped(json, false);
+  return SmsDtoFromJSONTyped(json, false);
 }
 
-export function SmsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'userId': json['userId'],
-        'phoneNumber': json['phoneNumber'],
-        'fromNumber': json['fromNumber'],
-        'toNumber': !exists(json, 'toNumber') ? undefined : json['toNumber'],
-        'favourite': json['favourite'],
-        'body': json['body'],
-        'read': json['read'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-    };
+export function SmsDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): SmsDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    userId: json['userId'],
+    phoneNumber: json['phoneNumber'],
+    fromNumber: json['fromNumber'],
+    toNumber: !exists(json, 'toNumber') ? undefined : json['toNumber'],
+    favourite: json['favourite'],
+    body: json['body'],
+    read: json['read'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+  };
 }
 
 export function SmsDtoToJSON(value?: SmsDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'userId': value.userId,
-        'phoneNumber': value.phoneNumber,
-        'fromNumber': value.fromNumber,
-        'toNumber': value.toNumber,
-        'favourite': value.favourite,
-        'body': value.body,
-        'read': value.read,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    userId: value.userId,
+    phoneNumber: value.phoneNumber,
+    fromNumber: value.fromNumber,
+    toNumber: value.toNumber,
+    favourite: value.favourite,
+    body: value.body,
+    read: value.read,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+  };
 }
-
-

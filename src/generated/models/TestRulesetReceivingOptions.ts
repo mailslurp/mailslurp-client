@@ -19,55 +19,58 @@ import { exists, mapValues } from '../runtime';
  * @interface TestRulesetReceivingOptions
  */
 export interface TestRulesetReceivingOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof TestRulesetReceivingOptions
-     */
-    inboxId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestRulesetReceivingOptions
-     */
-    phoneId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestRulesetReceivingOptions
-     */
-    fromSender: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TestRulesetReceivingOptions
+   */
+  inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TestRulesetReceivingOptions
+   */
+  phoneId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TestRulesetReceivingOptions
+   */
+  fromSender: string;
 }
 
-export function TestRulesetReceivingOptionsFromJSON(json: any): TestRulesetReceivingOptions {
-    return TestRulesetReceivingOptionsFromJSONTyped(json, false);
+export function TestRulesetReceivingOptionsFromJSON(
+  json: any
+): TestRulesetReceivingOptions {
+  return TestRulesetReceivingOptionsFromJSONTyped(json, false);
 }
 
-export function TestRulesetReceivingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestRulesetReceivingOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'phoneId': !exists(json, 'phoneId') ? undefined : json['phoneId'],
-        'fromSender': json['fromSender'],
-    };
+export function TestRulesetReceivingOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TestRulesetReceivingOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
+    fromSender: json['fromSender'],
+  };
 }
 
-export function TestRulesetReceivingOptionsToJSON(value?: TestRulesetReceivingOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'inboxId': value.inboxId,
-        'phoneId': value.phoneId,
-        'fromSender': value.fromSender,
-    };
+export function TestRulesetReceivingOptionsToJSON(
+  value?: TestRulesetReceivingOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    inboxId: value.inboxId,
+    phoneId: value.phoneId,
+    fromSender: value.fromSender,
+  };
 }
-
-

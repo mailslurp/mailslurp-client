@@ -113,9 +113,9 @@ export interface WebhookDeliveryStatusPayload {
     subject?: string | null;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookDeliveryStatusPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",

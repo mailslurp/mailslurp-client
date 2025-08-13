@@ -14,59 +14,62 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    GuestPortalUserDto,
-    GuestPortalUserDtoFromJSON,
-    GuestPortalUserDtoFromJSONTyped,
-    GuestPortalUserDtoToJSON,
+  GuestPortalUserDto,
+  GuestPortalUserDtoFromJSON,
+  GuestPortalUserDtoFromJSONTyped,
+  GuestPortalUserDtoToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface GuestPortalUserCreateDto
  */
 export interface GuestPortalUserCreateDto {
-    /**
-     * 
-     * @type {GuestPortalUserDto}
-     * @memberof GuestPortalUserCreateDto
-     */
-    guest: GuestPortalUserDto;
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalUserCreateDto
-     */
-    password: string;
+  /**
+   *
+   * @type {GuestPortalUserDto}
+   * @memberof GuestPortalUserCreateDto
+   */
+  guest: GuestPortalUserDto;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalUserCreateDto
+   */
+  password: string;
 }
 
-export function GuestPortalUserCreateDtoFromJSON(json: any): GuestPortalUserCreateDto {
-    return GuestPortalUserCreateDtoFromJSONTyped(json, false);
+export function GuestPortalUserCreateDtoFromJSON(
+  json: any
+): GuestPortalUserCreateDto {
+  return GuestPortalUserCreateDtoFromJSONTyped(json, false);
 }
 
-export function GuestPortalUserCreateDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): GuestPortalUserCreateDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'guest': GuestPortalUserDtoFromJSON(json['guest']),
-        'password': json['password'],
-    };
+export function GuestPortalUserCreateDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): GuestPortalUserCreateDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    guest: GuestPortalUserDtoFromJSON(json['guest']),
+    password: json['password'],
+  };
 }
 
-export function GuestPortalUserCreateDtoToJSON(value?: GuestPortalUserCreateDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'guest': GuestPortalUserDtoToJSON(value.guest),
-        'password': value.password,
-    };
+export function GuestPortalUserCreateDtoToJSON(
+  value?: GuestPortalUserCreateDto | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    guest: GuestPortalUserDtoToJSON(value.guest),
+    password: value.password,
+  };
 }
-
-

@@ -14,76 +14,79 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface OptInIdentityProjection
  */
 export interface OptInIdentityProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof OptInIdentityProjection
-     */
-    id: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof OptInIdentityProjection
-     */
-    verified?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof OptInIdentityProjection
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof OptInIdentityProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof OptInIdentityProjection
-     */
-    updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof OptInIdentityProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof OptInIdentityProjection
+   */
+  verified?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof OptInIdentityProjection
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof OptInIdentityProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof OptInIdentityProjection
+   */
+  updatedAt: Date;
 }
 
-export function OptInIdentityProjectionFromJSON(json: any): OptInIdentityProjection {
-    return OptInIdentityProjectionFromJSONTyped(json, false);
+export function OptInIdentityProjectionFromJSON(
+  json: any
+): OptInIdentityProjection {
+  return OptInIdentityProjectionFromJSONTyped(json, false);
 }
 
-export function OptInIdentityProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptInIdentityProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'verified': !exists(json, 'verified') ? undefined : json['verified'],
-        'emailAddress': json['emailAddress'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-    };
+export function OptInIdentityProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): OptInIdentityProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    verified: !exists(json, 'verified') ? undefined : json['verified'],
+    emailAddress: json['emailAddress'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+  };
 }
 
-export function OptInIdentityProjectionToJSON(value?: OptInIdentityProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'verified': value.verified,
-        'emailAddress': value.emailAddress,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-    };
+export function OptInIdentityProjectionToJSON(
+  value?: OptInIdentityProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    verified: value.verified,
+    emailAddress: value.emailAddress,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+  };
 }
-
-

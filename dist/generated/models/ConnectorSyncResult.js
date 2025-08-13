@@ -20,13 +20,13 @@ function ConnectorSyncResultFromJSON(json) {
 }
 exports.ConnectorSyncResultFromJSON = ConnectorSyncResultFromJSON;
 function ConnectorSyncResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailSyncCount': json['emailSyncCount'],
-        'logs': !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
-        'emailIds': !(0, runtime_1.exists)(json, 'emailIds') ? undefined : json['emailIds'],
+        emailSyncCount: json['emailSyncCount'],
+        logs: !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
+        emailIds: !(0, runtime_1.exists)(json, 'emailIds') ? undefined : json['emailIds'],
     };
 }
 exports.ConnectorSyncResultFromJSONTyped = ConnectorSyncResultFromJSONTyped;
@@ -38,9 +38,9 @@ function ConnectorSyncResultToJSON(value) {
         return null;
     }
     return {
-        'emailSyncCount': value.emailSyncCount,
-        'logs': value.logs,
-        'emailIds': value.emailIds,
+        emailSyncCount: value.emailSyncCount,
+        logs: value.logs,
+        emailIds: value.emailIds,
     };
 }
 exports.ConnectorSyncResultToJSON = ConnectorSyncResultToJSON;

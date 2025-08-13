@@ -20,19 +20,19 @@ function TotpDeviceDtoFromJSON(json) {
 }
 exports.TotpDeviceDtoFromJSON = TotpDeviceDtoFromJSON;
 function TotpDeviceDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'username': !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
-        'issuer': !(0, runtime_1.exists)(json, 'issuer') ? undefined : json['issuer'],
-        'digits': !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
-        'period': !(0, runtime_1.exists)(json, 'period') ? undefined : json['period'],
-        'algorithm': !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
+        id: json['id'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
+        issuer: !(0, runtime_1.exists)(json, 'issuer') ? undefined : json['issuer'],
+        digits: !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
+        period: !(0, runtime_1.exists)(json, 'period') ? undefined : json['period'],
+        algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
     };
 }
 exports.TotpDeviceDtoFromJSONTyped = TotpDeviceDtoFromJSONTyped;
@@ -44,15 +44,15 @@ function TotpDeviceDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'name': value.name,
-        'username': value.username,
-        'issuer': value.issuer,
-        'digits': value.digits,
-        'period': value.period,
-        'algorithm': value.algorithm,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
+        id: value.id,
+        name: value.name,
+        username: value.username,
+        issuer: value.issuer,
+        digits: value.digits,
+        period: value.period,
+        algorithm: value.algorithm,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
     };
 }
 exports.TotpDeviceDtoToJSON = TotpDeviceDtoToJSON;

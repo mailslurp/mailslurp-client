@@ -21,11 +21,13 @@ function ImapServerFetchResultFromJSON(json) {
 }
 exports.ImapServerFetchResultFromJSON = ImapServerFetchResultFromJSON;
 function ImapServerFetchResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'result': !(0, runtime_1.exists)(json, 'result') ? undefined : (0, _1.ImapServerFetchItemFromJSON)(json['result']),
+        result: !(0, runtime_1.exists)(json, 'result')
+            ? undefined
+            : (0, _1.ImapServerFetchItemFromJSON)(json['result']),
     };
 }
 exports.ImapServerFetchResultFromJSONTyped = ImapServerFetchResultFromJSONTyped;
@@ -37,7 +39,7 @@ function ImapServerFetchResultToJSON(value) {
         return null;
     }
     return {
-        'result': (0, _1.ImapServerFetchItemToJSON)(value.result),
+        result: (0, _1.ImapServerFetchItemToJSON)(value.result),
     };
 }
 exports.ImapServerFetchResultToJSON = ImapServerFetchResultToJSON;

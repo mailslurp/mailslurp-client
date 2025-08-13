@@ -31,7 +31,7 @@ export declare class BaseAPI {
 }
 export declare class RequiredError extends Error {
     field: string;
-    name: "RequiredError";
+    name: 'RequiredError';
     constructor(field: string, msg?: string);
 }
 export declare const COLLECTION_FORMATS: {

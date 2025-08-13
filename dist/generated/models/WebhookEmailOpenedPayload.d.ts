@@ -71,9 +71,9 @@ export interface WebhookEmailOpenedPayload {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookEmailOpenedPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",

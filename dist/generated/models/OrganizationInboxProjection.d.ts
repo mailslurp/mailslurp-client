@@ -113,16 +113,17 @@ export interface OrganizationInboxProjection {
     accountRegion?: OrganizationInboxProjectionAccountRegionEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum OrganizationInboxProjectionInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum OrganizationInboxProjectionFunctionsAsEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
@@ -131,10 +132,11 @@ export declare enum OrganizationInboxProjectionFunctionsAsEnum {
     ACCOUNT = "ACCOUNT",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum OrganizationInboxProjectionAccountRegionEnum {
     US_WEST_2 = "US_WEST_2"
 }

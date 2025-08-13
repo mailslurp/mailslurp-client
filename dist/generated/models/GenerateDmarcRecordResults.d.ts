@@ -41,9 +41,9 @@ export interface GenerateDmarcRecordResults {
     value: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordResultsTypeEnum {
     A = "A",
     NS = "NS",

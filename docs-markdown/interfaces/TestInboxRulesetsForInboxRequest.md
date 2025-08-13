@@ -7,7 +7,7 @@
 ### Properties
 
 - [inboxId](TestInboxRulesetsForInboxRequest.md#inboxid)
-- [inboxRulesetTestOptions](TestInboxRulesetsForInboxRequest.md#inboxrulesettestoptions)
+- [rulesetTestOptions](TestInboxRulesetsForInboxRequest.md#rulesettestoptions)
 
 ## Properties
 
@@ -17,6 +17,6 @@
 
 ___
 
-### inboxRulesetTestOptions
+### rulesetTestOptions
 
-• **inboxRulesetTestOptions**: [`InboxRulesetTestOptions`](InboxRulesetTestOptions.md)
+• **rulesetTestOptions**: [`RulesetTestOptions`](RulesetTestOptions.md)

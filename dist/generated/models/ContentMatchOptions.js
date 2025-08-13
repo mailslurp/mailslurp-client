@@ -19,11 +19,11 @@ function ContentMatchOptionsFromJSON(json) {
 }
 exports.ContentMatchOptionsFromJSON = ContentMatchOptionsFromJSON;
 function ContentMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'pattern': json['pattern'],
+        pattern: json['pattern'],
     };
 }
 exports.ContentMatchOptionsFromJSONTyped = ContentMatchOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function ContentMatchOptionsToJSON(value) {
         return null;
     }
     return {
-        'pattern': value.pattern,
+        pattern: value.pattern,
     };
 }
 exports.ContentMatchOptionsToJSON = ContentMatchOptionsToJSON;

@@ -20,20 +20,20 @@ function SmsDtoFromJSON(json) {
 }
 exports.SmsDtoFromJSON = SmsDtoFromJSON;
 function SmsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': json['userId'],
-        'phoneNumber': json['phoneNumber'],
-        'fromNumber': json['fromNumber'],
-        'toNumber': !(0, runtime_1.exists)(json, 'toNumber') ? undefined : json['toNumber'],
-        'favourite': json['favourite'],
-        'body': json['body'],
-        'read': json['read'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
+        id: json['id'],
+        userId: json['userId'],
+        phoneNumber: json['phoneNumber'],
+        fromNumber: json['fromNumber'],
+        toNumber: !(0, runtime_1.exists)(json, 'toNumber') ? undefined : json['toNumber'],
+        favourite: json['favourite'],
+        body: json['body'],
+        read: json['read'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
     };
 }
 exports.SmsDtoFromJSONTyped = SmsDtoFromJSONTyped;
@@ -45,16 +45,16 @@ function SmsDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'phoneNumber': value.phoneNumber,
-        'fromNumber': value.fromNumber,
-        'toNumber': value.toNumber,
-        'favourite': value.favourite,
-        'body': value.body,
-        'read': value.read,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
+        id: value.id,
+        userId: value.userId,
+        phoneNumber: value.phoneNumber,
+        fromNumber: value.fromNumber,
+        toNumber: value.toNumber,
+        favourite: value.favourite,
+        body: value.body,
+        read: value.read,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
     };
 }
 exports.SmsDtoToJSON = SmsDtoToJSON;

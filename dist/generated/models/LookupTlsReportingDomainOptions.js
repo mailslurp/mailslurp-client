@@ -19,11 +19,11 @@ function LookupTlsReportingDomainOptionsFromJSON(json) {
 }
 exports.LookupTlsReportingDomainOptionsFromJSON = LookupTlsReportingDomainOptionsFromJSON;
 function LookupTlsReportingDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'host': json['host'],
+        host: json['host'],
     };
 }
 exports.LookupTlsReportingDomainOptionsFromJSONTyped = LookupTlsReportingDomainOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function LookupTlsReportingDomainOptionsToJSON(value) {
         return null;
     }
     return {
-        'host': value.host,
+        host: value.host,
     };
 }
 exports.LookupTlsReportingDomainOptionsToJSON = LookupTlsReportingDomainOptionsToJSON;

@@ -14,44 +14,43 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface TemplatePreview
  */
 export interface TemplatePreview {
-    /**
-     * 
-     * @type {string}
-     * @memberof TemplatePreview
-     */
-    preview: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TemplatePreview
+   */
+  preview: string;
 }
 
 export function TemplatePreviewFromJSON(json: any): TemplatePreview {
-    return TemplatePreviewFromJSONTyped(json, false);
+  return TemplatePreviewFromJSONTyped(json, false);
 }
 
-export function TemplatePreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplatePreview {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'preview': json['preview'],
-    };
+export function TemplatePreviewFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TemplatePreview {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    preview: json['preview'],
+  };
 }
 
 export function TemplatePreviewToJSON(value?: TemplatePreview | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'preview': value.preview,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    preview: value.preview,
+  };
 }
-
-

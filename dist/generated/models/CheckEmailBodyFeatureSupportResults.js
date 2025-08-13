@@ -20,11 +20,11 @@ function CheckEmailBodyFeatureSupportResultsFromJSON(json) {
 }
 exports.CheckEmailBodyFeatureSupportResultsFromJSON = CheckEmailBodyFeatureSupportResultsFromJSON;
 function CheckEmailBodyFeatureSupportResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'result': (0, _1.EmailFeatureSupportResultFromJSON)(json['result']),
+        result: (0, _1.EmailFeatureSupportResultFromJSON)(json['result']),
     };
 }
 exports.CheckEmailBodyFeatureSupportResultsFromJSONTyped = CheckEmailBodyFeatureSupportResultsFromJSONTyped;
@@ -36,7 +36,7 @@ function CheckEmailBodyFeatureSupportResultsToJSON(value) {
         return null;
     }
     return {
-        'result': (0, _1.EmailFeatureSupportResultToJSON)(value.result),
+        result: (0, _1.EmailFeatureSupportResultToJSON)(value.result),
     };
 }
 exports.CheckEmailBodyFeatureSupportResultsToJSON = CheckEmailBodyFeatureSupportResultsToJSON;

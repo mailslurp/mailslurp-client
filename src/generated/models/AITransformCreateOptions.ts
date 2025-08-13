@@ -14,91 +14,102 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    StructuredOutputSchema,
-    StructuredOutputSchemaFromJSON,
-    StructuredOutputSchemaFromJSONTyped,
-    StructuredOutputSchemaToJSON,
+  StructuredOutputSchema,
+  StructuredOutputSchemaFromJSON,
+  StructuredOutputSchemaFromJSONTyped,
+  StructuredOutputSchemaToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface AITransformCreateOptions
  */
 export interface AITransformCreateOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof AITransformCreateOptions
-     */
-    name?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof AITransformCreateOptions
-     */
-    conditions?: Array<string> | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof AITransformCreateOptions
-     */
-    instructions?: Array<string> | null;
-    /**
-     * 
-     * @type {StructuredOutputSchema}
-     * @memberof AITransformCreateOptions
-     */
-    outputSchema?: StructuredOutputSchema | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof AITransformCreateOptions
-     */
-    outputSchemaId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof AITransformCreateOptions
-     */
-    extractPrompt?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformCreateOptions
+   */
+  name?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof AITransformCreateOptions
+   */
+  conditions?: Array<string> | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof AITransformCreateOptions
+   */
+  instructions?: Array<string> | null;
+  /**
+   *
+   * @type {StructuredOutputSchema}
+   * @memberof AITransformCreateOptions
+   */
+  outputSchema?: StructuredOutputSchema | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformCreateOptions
+   */
+  outputSchemaId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformCreateOptions
+   */
+  extractPrompt?: string | null;
 }
 
-export function AITransformCreateOptionsFromJSON(json: any): AITransformCreateOptions {
-    return AITransformCreateOptionsFromJSONTyped(json, false);
+export function AITransformCreateOptionsFromJSON(
+  json: any
+): AITransformCreateOptions {
+  return AITransformCreateOptionsFromJSONTyped(json, false);
 }
 
-export function AITransformCreateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AITransformCreateOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'conditions': !exists(json, 'conditions') ? undefined : json['conditions'],
-        'instructions': !exists(json, 'instructions') ? undefined : json['instructions'],
-        'outputSchema': !exists(json, 'outputSchema') ? undefined : StructuredOutputSchemaFromJSON(json['outputSchema']),
-        'outputSchemaId': !exists(json, 'outputSchemaId') ? undefined : json['outputSchemaId'],
-        'extractPrompt': !exists(json, 'extractPrompt') ? undefined : json['extractPrompt'],
-    };
+export function AITransformCreateOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): AITransformCreateOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    conditions: !exists(json, 'conditions') ? undefined : json['conditions'],
+    instructions: !exists(json, 'instructions')
+      ? undefined
+      : json['instructions'],
+    outputSchema: !exists(json, 'outputSchema')
+      ? undefined
+      : StructuredOutputSchemaFromJSON(json['outputSchema']),
+    outputSchemaId: !exists(json, 'outputSchemaId')
+      ? undefined
+      : json['outputSchemaId'],
+    extractPrompt: !exists(json, 'extractPrompt')
+      ? undefined
+      : json['extractPrompt'],
+  };
 }
 
-export function AITransformCreateOptionsToJSON(value?: AITransformCreateOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'name': value.name,
-        'conditions': value.conditions,
-        'instructions': value.instructions,
-        'outputSchema': StructuredOutputSchemaToJSON(value.outputSchema),
-        'outputSchemaId': value.outputSchemaId,
-        'extractPrompt': value.extractPrompt,
-    };
+export function AITransformCreateOptionsToJSON(
+  value?: AITransformCreateOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    name: value.name,
+    conditions: value.conditions,
+    instructions: value.instructions,
+    outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
+    outputSchemaId: value.outputSchemaId,
+    extractPrompt: value.extractPrompt,
+  };
 }
-
-

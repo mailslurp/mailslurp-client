@@ -15,7 +15,7 @@ MailSlurp JS
 - [AITransformMappingProjectionEntityTypeEnum](enums/AITransformMappingProjectionEntityTypeEnum.md)
 - [AITransformMappingProjectionTriggerSelectorEnum](enums/AITransformMappingProjectionTriggerSelectorEnum.md)
 - [AITransformResultDtoEntityTypeEnum](enums/AITransformResultDtoEntityTypeEnum.md)
-- [AITransformResultProjectionEntityTypeEnum](enums/AITransformResultProjectionEntityTypeEnum.md)
+- [AITransformResultProjectionDtoEntityTypeEnum](enums/AITransformResultProjectionDtoEntityTypeEnum.md)
 - [AbstractWebhookPayloadEventNameEnum](enums/AbstractWebhookPayloadEventNameEnum.md)
 - [ConditionOptionConditionEnum](enums/ConditionOptionConditionEnum.md)
 - [ConditionOptionValueEnum](enums/ConditionOptionValueEnum.md)
@@ -34,14 +34,13 @@ MailSlurp JS
 - [CreateInboxForwarderOptionsFieldEnum](enums/CreateInboxForwarderOptionsFieldEnum.md)
 - [CreateInboxInboxTypeEnum](enums/CreateInboxInboxTypeEnum.md)
 - [CreateInboxReplierOptionsFieldEnum](enums/CreateInboxReplierOptionsFieldEnum.md)
-- [CreateInboxRulesetOptionsActionEnum](enums/CreateInboxRulesetOptionsActionEnum.md)
-- [CreateInboxRulesetOptionsScopeEnum](enums/CreateInboxRulesetOptionsScopeEnum.md)
 - [CreateNewEmailAddressInboxTypeEnum](enums/CreateNewEmailAddressInboxTypeEnum.md)
 - [CreateOAuthConnectionOAuthConnectionTypeEnum](enums/CreateOAuthConnectionOAuthConnectionTypeEnum.md)
 - [CreatePhoneNumberOptionsPhoneCountryEnum](enums/CreatePhoneNumberOptionsPhoneCountryEnum.md)
 - [CreatePhoneNumberOptionsScheduleEnum](enums/CreatePhoneNumberOptionsScheduleEnum.md)
 - [CreateRandomInboxInboxTypeEnum](enums/CreateRandomInboxInboxTypeEnum.md)
-- [CreateTransformerSortEnum](enums/CreateTransformerSortEnum.md)
+- [CreateRulesetOptionsActionEnum](enums/CreateRulesetOptionsActionEnum.md)
+- [CreateRulesetOptionsScopeEnum](enums/CreateRulesetOptionsScopeEnum.md)
 - [CreateWebhookOptionsEventNameEnum](enums/CreateWebhookOptionsEventNameEnum.md)
 - [DNSLookupOptionsRecordTypesEnum](enums/DNSLookupOptionsRecordTypesEnum.md)
 - [DNSLookupResultRecordTypeEnum](enums/DNSLookupResultRecordTypeEnum.md)
@@ -157,7 +156,6 @@ MailSlurp JS
 - [GetInboxPlusAddressesSortEnum](enums/GetInboxPlusAddressesSortEnum.md)
 - [GetInboxReplierEventsSortEnum](enums/GetInboxReplierEventsSortEnum.md)
 - [GetInboxRepliersSortEnum](enums/GetInboxRepliersSortEnum.md)
-- [GetInboxRulesetsSortEnum](enums/GetInboxRulesetsSortEnum.md)
 - [GetInboxSentEmailsSortEnum](enums/GetInboxSentEmailsSortEnum.md)
 - [GetInboxTagsPaginatedSortEnum](enums/GetInboxTagsPaginatedSortEnum.md)
 - [GetInboxTagsSortEnum](enums/GetInboxTagsSortEnum.md)
@@ -179,6 +177,7 @@ MailSlurp JS
 - [GetPhoneNumbersPhoneCountryEnum](enums/GetPhoneNumbersPhoneCountryEnum.md)
 - [GetPhoneNumbersSortEnum](enums/GetPhoneNumbersSortEnum.md)
 - [GetReputationItemsSortEnum](enums/GetReputationItemsSortEnum.md)
+- [GetRulesetsSortEnum](enums/GetRulesetsSortEnum.md)
 - [GetScheduledJobsByInboxIdSortEnum](enums/GetScheduledJobsByInboxIdSortEnum.md)
 - [GetSentDeliveryStatusesBySentIdSortEnum](enums/GetSentDeliveryStatusesBySentIdSortEnum.md)
 - [GetSentDeliveryStatusesSortEnum](enums/GetSentDeliveryStatusesSortEnum.md)
@@ -195,6 +194,7 @@ MailSlurp JS
 - [GetTransformerMappingsSortEnum](enums/GetTransformerMappingsSortEnum.md)
 - [GetTransformerResultsEntityTypeEnum](enums/GetTransformerResultsEntityTypeEnum.md)
 - [GetTransformerResultsSortEnum](enums/GetTransformerResultsSortEnum.md)
+- [GetTransformersSortEnum](enums/GetTransformersSortEnum.md)
 - [GetValidationRequestsSortEnum](enums/GetValidationRequestsSortEnum.md)
 - [GetWebhookResultsEventNameEnum](enums/GetWebhookResultsEventNameEnum.md)
 - [GetWebhookResultsResultTypeEnum](enums/GetWebhookResultsResultTypeEnum.md)
@@ -214,9 +214,8 @@ MailSlurp JS
 - [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
 - [InboxReplierDtoFieldEnum](enums/InboxReplierDtoFieldEnum.md)
 - [InboxReplierEventProjectionStatusEnum](enums/InboxReplierEventProjectionStatusEnum.md)
-- [InboxRulesetDtoActionEnum](enums/InboxRulesetDtoActionEnum.md)
-- [InboxRulesetDtoHandlerEnum](enums/InboxRulesetDtoHandlerEnum.md)
-- [InboxRulesetDtoScopeEnum](enums/InboxRulesetDtoScopeEnum.md)
+- [InvokeTransformerOptionsContentSelectorEnum](enums/InvokeTransformerOptionsContentSelectorEnum.md)
+- [InvokeTransformerOptionsEntityTypeEnum](enums/InvokeTransformerOptionsEntityTypeEnum.md)
 - [LinkIssueSeverityEnum](enums/LinkIssueSeverityEnum.md)
 - [ListInboxRulesetsSortEnum](enums/ListInboxRulesetsSortEnum.md)
 - [ListInboxTrackingPixelsSortEnum](enums/ListInboxTrackingPixelsSortEnum.md)
@@ -237,6 +236,9 @@ MailSlurp JS
 - [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
 - [ReputationItemProjectionReputationTypeEnum](enums/ReputationItemProjectionReputationTypeEnum.md)
 - [ReputationItemProjectionSeverityEnum](enums/ReputationItemProjectionSeverityEnum.md)
+- [RulesetDtoActionEnum](enums/RulesetDtoActionEnum.md)
+- [RulesetDtoHandlerEnum](enums/RulesetDtoHandlerEnum.md)
+- [RulesetDtoScopeEnum](enums/RulesetDtoScopeEnum.md)
 - [ScheduledJobDtoStatusEnum](enums/ScheduledJobDtoStatusEnum.md)
 - [ScheduledJobStatusEnum](enums/ScheduledJobStatusEnum.md)
 - [SearchEmailsOptionsSortDirectionEnum](enums/SearchEmailsOptionsSortDirectionEnum.md)
@@ -273,6 +275,8 @@ MailSlurp JS
 - [WebhookEmailOpenedPayloadEventNameEnum](enums/WebhookEmailOpenedPayloadEventNameEnum.md)
 - [WebhookEmailReadPayloadEventNameEnum](enums/WebhookEmailReadPayloadEventNameEnum.md)
 - [WebhookEndpointProjectionHealthEnum](enums/WebhookEndpointProjectionHealthEnum.md)
+- [WebhookNewAITransformResultPayloadEntityTypeEnum](enums/WebhookNewAITransformResultPayloadEntityTypeEnum.md)
+- [WebhookNewAITransformResultPayloadEventNameEnum](enums/WebhookNewAITransformResultPayloadEventNameEnum.md)
 - [WebhookNewAttachmentPayloadEventNameEnum](enums/WebhookNewAttachmentPayloadEventNameEnum.md)
 - [WebhookNewContactPayloadEventNameEnum](enums/WebhookNewContactPayloadEventNameEnum.md)
 - [WebhookNewEmailPayloadEventNameEnum](enums/WebhookNewEmailPayloadEventNameEnum.md)
@@ -310,7 +314,6 @@ MailSlurp JS
 - [InboxControllerApi](classes/InboxControllerApi.md)
 - [InboxForwarderControllerApi](classes/InboxForwarderControllerApi.md)
 - [InboxReplierControllerApi](classes/InboxReplierControllerApi.md)
-- [InboxRulesetControllerApi](classes/InboxRulesetControllerApi.md)
 - [JSONApiResponse](classes/JSONApiResponse.md)
 - [MFAControllerApi](classes/MFAControllerApi.md)
 - [MailServerControllerApi](classes/MailServerControllerApi.md)
@@ -319,6 +322,7 @@ MailSlurp JS
 - [OAuthConnectionApi](classes/OAuthConnectionApi.md)
 - [PhoneControllerApi](classes/PhoneControllerApi.md)
 - [RequiredError](classes/RequiredError.md)
+- [RulesetControllerApi](classes/RulesetControllerApi.md)
 - [SentEmailsControllerApi](classes/SentEmailsControllerApi.md)
 - [SmsControllerApi](classes/SmsControllerApi.md)
 - [TemplateControllerApi](classes/TemplateControllerApi.md)
@@ -332,13 +336,13 @@ MailSlurp JS
 
 ### Interfaces
 
-- [AITranformCreateOptions](interfaces/AITranformCreateOptions.md)
+- [AITransformCreateOptions](interfaces/AITransformCreateOptions.md)
 - [AITransformDto](interfaces/AITransformDto.md)
 - [AITransformMappingDto](interfaces/AITransformMappingDto.md)
 - [AITransformMappingProjection](interfaces/AITransformMappingProjection.md)
 - [AITransformProjection](interfaces/AITransformProjection.md)
 - [AITransformResultDto](interfaces/AITransformResultDto.md)
-- [AITransformResultProjection](interfaces/AITransformResultProjection.md)
+- [AITransformResultProjectionDto](interfaces/AITransformResultProjectionDto.md)
 - [AbstractWebhookPayload](interfaces/AbstractWebhookPayload.md)
 - [AccountBounceBlockDto](interfaces/AccountBounceBlockDto.md)
 - [AddContactsToGroupRequest](interfaces/AddContactsToGroupRequest.md)
@@ -376,6 +380,7 @@ MailSlurp JS
 - [CheckSendingConsentForEmailAddressRequest](interfaces/CheckSendingConsentForEmailAddressRequest.md)
 - [Complaint](interfaces/Complaint.md)
 - [ConditionOption](interfaces/ConditionOption.md)
+- [ConditionalStructuredContentResult](interfaces/ConditionalStructuredContentResult.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
 - [ConnectorDto](interfaces/ConnectorDto.md)
 - [ConnectorEventDto](interfaces/ConnectorEventDto.md)
@@ -423,13 +428,12 @@ MailSlurp JS
 - [CreateInboxForwarderOptions](interfaces/CreateInboxForwarderOptions.md)
 - [CreateInboxReplierOptions](interfaces/CreateInboxReplierOptions.md)
 - [CreateInboxRequest](interfaces/CreateInboxRequest.md)
-- [CreateInboxRulesetOptions](interfaces/CreateInboxRulesetOptions.md)
 - [CreateInboxRulesetRequest](interfaces/CreateInboxRulesetRequest.md)
 - [CreateInboxWithOptionsRequest](interfaces/CreateInboxWithOptionsRequest.md)
 - [CreateNewEmailAddressRequest](interfaces/CreateNewEmailAddressRequest.md)
 - [CreateNewInboxForwarderRequest](interfaces/CreateNewInboxForwarderRequest.md)
 - [CreateNewInboxReplierRequest](interfaces/CreateNewInboxReplierRequest.md)
-- [CreateNewInboxRulesetRequest](interfaces/CreateNewInboxRulesetRequest.md)
+- [CreateNewRulesetRequest](interfaces/CreateNewRulesetRequest.md)
 - [CreateOAuthConnectionRequest](interfaces/CreateOAuthConnectionRequest.md)
 - [CreateOAuthConnectionResult](interfaces/CreateOAuthConnectionResult.md)
 - [CreateOAuthExchangeResult](interfaces/CreateOAuthExchangeResult.md)
@@ -438,18 +442,20 @@ MailSlurp JS
 - [CreatePortalOptions](interfaces/CreatePortalOptions.md)
 - [CreatePortalUserOptions](interfaces/CreatePortalUserOptions.md)
 - [CreateRandomInboxRequest](interfaces/CreateRandomInboxRequest.md)
+- [CreateRulesetOptions](interfaces/CreateRulesetOptions.md)
 - [CreateTemplateOptions](interfaces/CreateTemplateOptions.md)
 - [CreateTemplateRequest](interfaces/CreateTemplateRequest.md)
 - [CreateTotpDeviceBase32SecretKeyOptions](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md)
+- [CreateTotpDeviceCustomOptions](interfaces/CreateTotpDeviceCustomOptions.md)
 - [CreateTotpDeviceForBase32SecretKeyRequest](interfaces/CreateTotpDeviceForBase32SecretKeyRequest.md)
 - [CreateTotpDeviceForCustomRequest](interfaces/CreateTotpDeviceForCustomRequest.md)
 - [CreateTotpDeviceForOtpAuthUrlRequest](interfaces/CreateTotpDeviceForOtpAuthUrlRequest.md)
 - [CreateTotpDeviceOtpAuthUrlOptions](interfaces/CreateTotpDeviceOtpAuthUrlOptions.md)
 - [CreateTrackingPixelOptions](interfaces/CreateTrackingPixelOptions.md)
 - [CreateTrackingPixelRequest](interfaces/CreateTrackingPixelRequest.md)
-- [CreateTransformer1Request](interfaces/CreateTransformer1Request.md)
 - [CreateTransformerMappingsRequest](interfaces/CreateTransformerMappingsRequest.md)
 - [CreateTransformerRequest](interfaces/CreateTransformerRequest.md)
+- [CreateWebhookForAITransformerRequest](interfaces/CreateWebhookForAITransformerRequest.md)
 - [CreateWebhookForPhoneNumberRequest](interfaces/CreateWebhookForPhoneNumberRequest.md)
 - [CreateWebhookOptions](interfaces/CreateWebhookOptions.md)
 - [CreateWebhookRequest](interfaces/CreateWebhookRequest.md)
@@ -479,10 +485,10 @@ MailSlurp JS
 - [DeleteInboxReplierRequest](interfaces/DeleteInboxReplierRequest.md)
 - [DeleteInboxRepliersRequest](interfaces/DeleteInboxRepliersRequest.md)
 - [DeleteInboxRequest](interfaces/DeleteInboxRequest.md)
-- [DeleteInboxRulesetRequest](interfaces/DeleteInboxRulesetRequest.md)
-- [DeleteInboxRulesetsRequest](interfaces/DeleteInboxRulesetsRequest.md)
 - [DeleteNewFakeEmailAddressRequest](interfaces/DeleteNewFakeEmailAddressRequest.md)
 - [DeletePhoneNumberRequest](interfaces/DeletePhoneNumberRequest.md)
+- [DeleteRulesetRequest](interfaces/DeleteRulesetRequest.md)
+- [DeleteRulesetsRequest](interfaces/DeleteRulesetsRequest.md)
 - [DeleteSentEmailRequest](interfaces/DeleteSentEmailRequest.md)
 - [DeleteSentSmsMessageRequest](interfaces/DeleteSentSmsMessageRequest.md)
 - [DeleteSentSmsMessagesRequest](interfaces/DeleteSentSmsMessagesRequest.md)
@@ -703,8 +709,6 @@ MailSlurp JS
 - [GetInboxReplierRequest](interfaces/GetInboxReplierRequest.md)
 - [GetInboxRepliersRequest](interfaces/GetInboxRepliersRequest.md)
 - [GetInboxRequest](interfaces/GetInboxRequest.md)
-- [GetInboxRulesetRequest](interfaces/GetInboxRulesetRequest.md)
-- [GetInboxRulesetsRequest](interfaces/GetInboxRulesetsRequest.md)
 - [GetInboxSentCountRequest](interfaces/GetInboxSentCountRequest.md)
 - [GetInboxSentEmailsRequest](interfaces/GetInboxSentEmailsRequest.md)
 - [GetInboxTagsPaginatedRequest](interfaces/GetInboxTagsPaginatedRequest.md)
@@ -739,6 +743,8 @@ MailSlurp JS
 - [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
 - [GetReplyForSmsMessageRequest](interfaces/GetReplyForSmsMessageRequest.md)
 - [GetReputationItemsRequest](interfaces/GetReputationItemsRequest.md)
+- [GetRulesetRequest](interfaces/GetRulesetRequest.md)
+- [GetRulesetsRequest](interfaces/GetRulesetsRequest.md)
 - [GetScheduledJobRequest](interfaces/GetScheduledJobRequest.md)
 - [GetScheduledJobsByInboxIdRequest](interfaces/GetScheduledJobsByInboxIdRequest.md)
 - [GetSentDeliveryStatusRequest](interfaces/GetSentDeliveryStatusRequest.md)
@@ -773,6 +779,7 @@ MailSlurp JS
 - [GetTransformerRequest](interfaces/GetTransformerRequest.md)
 - [GetTransformerResultRequest](interfaces/GetTransformerResultRequest.md)
 - [GetTransformerResultsRequest](interfaces/GetTransformerResultsRequest.md)
+- [GetTransformersRequest](interfaces/GetTransformersRequest.md)
 - [GetUnreadEmailCountRequest](interfaces/GetUnreadEmailCountRequest.md)
 - [GetValidationRequestsRequest](interfaces/GetValidationRequestsRequest.md)
 - [GetWebhookRequest](interfaces/GetWebhookRequest.md)
@@ -829,10 +836,10 @@ MailSlurp JS
 - [InboxPreview](interfaces/InboxPreview.md)
 - [InboxReplierDto](interfaces/InboxReplierDto.md)
 - [InboxReplierEventProjection](interfaces/InboxReplierEventProjection.md)
-- [InboxRulesetDto](interfaces/InboxRulesetDto.md)
-- [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
-- [InlineObject](interfaces/InlineObject.md)
+- [InlineObject1](interfaces/InlineObject1.md)
+- [InvokeTransformerOptions](interfaces/InvokeTransformerOptions.md)
+- [InvokeTransformerRequest](interfaces/InvokeTransformerRequest.md)
 - [IsEmailAddressAvailableRequest](interfaces/IsEmailAddressAvailableRequest.md)
 - [JSONSchemaDto](interfaces/JSONSchemaDto.md)
 - [LinkIssue](interfaces/LinkIssue.md)
@@ -848,6 +855,9 @@ MailSlurp JS
 - [LookupMtaStsDomainOptions](interfaces/LookupMtaStsDomainOptions.md)
 - [LookupMtaStsDomainRequest](interfaces/LookupMtaStsDomainRequest.md)
 - [LookupMtaStsDomainResults](interfaces/LookupMtaStsDomainResults.md)
+- [LookupMxRecordRequest](interfaces/LookupMxRecordRequest.md)
+- [LookupMxRecordsOptions](interfaces/LookupMxRecordsOptions.md)
+- [LookupMxRecordsResults](interfaces/LookupMxRecordsResults.md)
 - [LookupTlsReportingDomainOptions](interfaces/LookupTlsReportingDomainOptions.md)
 - [LookupTlsReportingDomainRequest](interfaces/LookupTlsReportingDomainRequest.md)
 - [LookupTlsReportingDomainResults](interfaces/LookupTlsReportingDomainResults.md)
@@ -897,7 +907,6 @@ MailSlurp JS
 - [PageInboxProjection](interfaces/PageInboxProjection.md)
 - [PageInboxReplierDto](interfaces/PageInboxReplierDto.md)
 - [PageInboxReplierEvents](interfaces/PageInboxReplierEvents.md)
-- [PageInboxRulesetDto](interfaces/PageInboxRulesetDto.md)
 - [PageInboxTags](interfaces/PageInboxTags.md)
 - [PageListUnsubscribeRecipients](interfaces/PageListUnsubscribeRecipients.md)
 - [PageMissedEmailProjection](interfaces/PageMissedEmailProjection.md)
@@ -908,6 +917,7 @@ MailSlurp JS
 - [PagePhoneNumberProjection](interfaces/PagePhoneNumberProjection.md)
 - [PagePlusAddressProjection](interfaces/PagePlusAddressProjection.md)
 - [PageReputationItems](interfaces/PageReputationItems.md)
+- [PageRulesetDto](interfaces/PageRulesetDto.md)
 - [PageScheduledJobs](interfaces/PageScheduledJobs.md)
 - [PageSentEmailProjection](interfaces/PageSentEmailProjection.md)
 - [PageSentEmailWithQueueProjection](interfaces/PageSentEmailWithQueueProjection.md)
@@ -949,6 +959,8 @@ MailSlurp JS
 - [ResponseTransformer](interfaces/ResponseTransformer.md)
 - [Result](interfaces/Result.md)
 - [RevokeOptInConsentForEmailAddressRequest](interfaces/RevokeOptInConsentForEmailAddressRequest.md)
+- [RulesetDto](interfaces/RulesetDto.md)
+- [RulesetTestOptions](interfaces/RulesetTestOptions.md)
 - [ScheduledJob](interfaces/ScheduledJob.md)
 - [ScheduledJobDto](interfaces/ScheduledJobDto.md)
 - [SearchEmailsOptions](interfaces/SearchEmailsOptions.md)
@@ -1014,20 +1026,20 @@ MailSlurp JS
 - [TestConnectorSmtpConnectionRequest](interfaces/TestConnectorSmtpConnectionRequest.md)
 - [TestInboxForwarderRequest](interfaces/TestInboxForwarderRequest.md)
 - [TestInboxForwardersForInboxRequest](interfaces/TestInboxForwardersForInboxRequest.md)
-- [TestInboxRulesetReceivingOptions](interfaces/TestInboxRulesetReceivingOptions.md)
-- [TestInboxRulesetReceivingRequest](interfaces/TestInboxRulesetReceivingRequest.md)
-- [TestInboxRulesetReceivingResult](interfaces/TestInboxRulesetReceivingResult.md)
-- [TestInboxRulesetRequest](interfaces/TestInboxRulesetRequest.md)
 - [TestInboxRulesetSendingOptions](interfaces/TestInboxRulesetSendingOptions.md)
-- [TestInboxRulesetSendingRequest](interfaces/TestInboxRulesetSendingRequest.md)
-- [TestInboxRulesetSendingResult](interfaces/TestInboxRulesetSendingResult.md)
 - [TestInboxRulesetsForInboxRequest](interfaces/TestInboxRulesetsForInboxRequest.md)
 - [TestNewInboxForwarderOptions](interfaces/TestNewInboxForwarderOptions.md)
 - [TestNewInboxForwarderRequest](interfaces/TestNewInboxForwarderRequest.md)
 - [TestNewInboxRulesetOptions](interfaces/TestNewInboxRulesetOptions.md)
-- [TestNewInboxRulesetRequest](interfaces/TestNewInboxRulesetRequest.md)
+- [TestNewRulesetRequest](interfaces/TestNewRulesetRequest.md)
 - [TestPhoneNumberOptions](interfaces/TestPhoneNumberOptions.md)
 - [TestPhoneNumberSendSmsRequest](interfaces/TestPhoneNumberSendSmsRequest.md)
+- [TestRulesetReceivingOptions](interfaces/TestRulesetReceivingOptions.md)
+- [TestRulesetReceivingRequest](interfaces/TestRulesetReceivingRequest.md)
+- [TestRulesetReceivingResult](interfaces/TestRulesetReceivingResult.md)
+- [TestRulesetRequest](interfaces/TestRulesetRequest.md)
+- [TestRulesetSendingRequest](interfaces/TestRulesetSendingRequest.md)
+- [TestRulesetSendingResult](interfaces/TestRulesetSendingResult.md)
 - [TotpDeviceCodeDto](interfaces/TotpDeviceCodeDto.md)
 - [TotpDeviceDto](interfaces/TotpDeviceDto.md)
 - [TotpDeviceOptionalDto](interfaces/TotpDeviceOptionalDto.md)
@@ -1100,6 +1112,7 @@ MailSlurp JS
 - [WebhookEndpointProjection](interfaces/WebhookEndpointProjection.md)
 - [WebhookHeaderNameValue](interfaces/WebhookHeaderNameValue.md)
 - [WebhookHeaders](interfaces/WebhookHeaders.md)
+- [WebhookNewAITransformResultPayload](interfaces/WebhookNewAITransformResultPayload.md)
 - [WebhookNewAttachmentPayload](interfaces/WebhookNewAttachmentPayload.md)
 - [WebhookNewContactPayload](interfaces/WebhookNewContactPayload.md)
 - [WebhookNewEmailPayload](interfaces/WebhookNewEmailPayload.md)
@@ -1131,9 +1144,9 @@ MailSlurp JS
 
 ### Functions
 
-- [AITranformCreateOptionsFromJSON](README.md#aitranformcreateoptionsfromjson)
-- [AITranformCreateOptionsFromJSONTyped](README.md#aitranformcreateoptionsfromjsontyped)
-- [AITranformCreateOptionsToJSON](README.md#aitranformcreateoptionstojson)
+- [AITransformCreateOptionsFromJSON](README.md#aitransformcreateoptionsfromjson)
+- [AITransformCreateOptionsFromJSONTyped](README.md#aitransformcreateoptionsfromjsontyped)
+- [AITransformCreateOptionsToJSON](README.md#aitransformcreateoptionstojson)
 - [AITransformDtoFromJSON](README.md#aitransformdtofromjson)
 - [AITransformDtoFromJSONTyped](README.md#aitransformdtofromjsontyped)
 - [AITransformDtoToJSON](README.md#aitransformdtotojson)
@@ -1149,9 +1162,9 @@ MailSlurp JS
 - [AITransformResultDtoFromJSON](README.md#aitransformresultdtofromjson)
 - [AITransformResultDtoFromJSONTyped](README.md#aitransformresultdtofromjsontyped)
 - [AITransformResultDtoToJSON](README.md#aitransformresultdtotojson)
-- [AITransformResultProjectionFromJSON](README.md#aitransformresultprojectionfromjson)
-- [AITransformResultProjectionFromJSONTyped](README.md#aitransformresultprojectionfromjsontyped)
-- [AITransformResultProjectionToJSON](README.md#aitransformresultprojectiontojson)
+- [AITransformResultProjectionDtoFromJSON](README.md#aitransformresultprojectiondtofromjson)
+- [AITransformResultProjectionDtoFromJSONTyped](README.md#aitransformresultprojectiondtofromjsontyped)
+- [AITransformResultProjectionDtoToJSON](README.md#aitransformresultprojectiondtotojson)
 - [AbstractWebhookPayloadFromJSON](README.md#abstractwebhookpayloadfromjson)
 - [AbstractWebhookPayloadFromJSONTyped](README.md#abstractwebhookpayloadfromjsontyped)
 - [AbstractWebhookPayloadToJSON](README.md#abstractwebhookpayloadtojson)
@@ -1221,6 +1234,9 @@ MailSlurp JS
 - [ConditionOptionFromJSON](README.md#conditionoptionfromjson)
 - [ConditionOptionFromJSONTyped](README.md#conditionoptionfromjsontyped)
 - [ConditionOptionToJSON](README.md#conditionoptiontojson)
+- [ConditionalStructuredContentResultFromJSON](README.md#conditionalstructuredcontentresultfromjson)
+- [ConditionalStructuredContentResultFromJSONTyped](README.md#conditionalstructuredcontentresultfromjsontyped)
+- [ConditionalStructuredContentResultToJSON](README.md#conditionalstructuredcontentresulttojson)
 - [ConnectorDtoFromJSON](README.md#connectordtofromjson)
 - [ConnectorDtoFromJSONTyped](README.md#connectordtofromjsontyped)
 - [ConnectorDtoToJSON](README.md#connectordtotojson)
@@ -1314,9 +1330,6 @@ MailSlurp JS
 - [CreateInboxReplierOptionsFromJSON](README.md#createinboxreplieroptionsfromjson)
 - [CreateInboxReplierOptionsFromJSONTyped](README.md#createinboxreplieroptionsfromjsontyped)
 - [CreateInboxReplierOptionsToJSON](README.md#createinboxreplieroptionstojson)
-- [CreateInboxRulesetOptionsFromJSON](README.md#createinboxrulesetoptionsfromjson)
-- [CreateInboxRulesetOptionsFromJSONTyped](README.md#createinboxrulesetoptionsfromjsontyped)
-- [CreateInboxRulesetOptionsToJSON](README.md#createinboxrulesetoptionstojson)
 - [CreateOAuthConnectionResultFromJSON](README.md#createoauthconnectionresultfromjson)
 - [CreateOAuthConnectionResultFromJSONTyped](README.md#createoauthconnectionresultfromjsontyped)
 - [CreateOAuthConnectionResultToJSON](README.md#createoauthconnectionresulttojson)
@@ -1332,12 +1345,18 @@ MailSlurp JS
 - [CreatePortalUserOptionsFromJSON](README.md#createportaluseroptionsfromjson)
 - [CreatePortalUserOptionsFromJSONTyped](README.md#createportaluseroptionsfromjsontyped)
 - [CreatePortalUserOptionsToJSON](README.md#createportaluseroptionstojson)
+- [CreateRulesetOptionsFromJSON](README.md#createrulesetoptionsfromjson)
+- [CreateRulesetOptionsFromJSONTyped](README.md#createrulesetoptionsfromjsontyped)
+- [CreateRulesetOptionsToJSON](README.md#createrulesetoptionstojson)
 - [CreateTemplateOptionsFromJSON](README.md#createtemplateoptionsfromjson)
 - [CreateTemplateOptionsFromJSONTyped](README.md#createtemplateoptionsfromjsontyped)
 - [CreateTemplateOptionsToJSON](README.md#createtemplateoptionstojson)
 - [CreateTotpDeviceBase32SecretKeyOptionsFromJSON](README.md#createtotpdevicebase32secretkeyoptionsfromjson)
 - [CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped](README.md#createtotpdevicebase32secretkeyoptionsfromjsontyped)
 - [CreateTotpDeviceBase32SecretKeyOptionsToJSON](README.md#createtotpdevicebase32secretkeyoptionstojson)
+- [CreateTotpDeviceCustomOptionsFromJSON](README.md#createtotpdevicecustomoptionsfromjson)
+- [CreateTotpDeviceCustomOptionsFromJSONTyped](README.md#createtotpdevicecustomoptionsfromjsontyped)
+- [CreateTotpDeviceCustomOptionsToJSON](README.md#createtotpdevicecustomoptionstojson)
 - [CreateTotpDeviceOtpAuthUrlOptionsFromJSON](README.md#createtotpdeviceotpauthurloptionsfromjson)
 - [CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped](README.md#createtotpdeviceotpauthurloptionsfromjsontyped)
 - [CreateTotpDeviceOtpAuthUrlOptionsToJSON](README.md#createtotpdeviceotpauthurloptionstojson)
@@ -1701,18 +1720,15 @@ MailSlurp JS
 - [InboxReplierEventProjectionFromJSON](README.md#inboxrepliereventprojectionfromjson)
 - [InboxReplierEventProjectionFromJSONTyped](README.md#inboxrepliereventprojectionfromjsontyped)
 - [InboxReplierEventProjectionToJSON](README.md#inboxrepliereventprojectiontojson)
-- [InboxRulesetDtoFromJSON](README.md#inboxrulesetdtofromjson)
-- [InboxRulesetDtoFromJSONTyped](README.md#inboxrulesetdtofromjsontyped)
-- [InboxRulesetDtoToJSON](README.md#inboxrulesetdtotojson)
-- [InboxRulesetTestOptionsFromJSON](README.md#inboxrulesettestoptionsfromjson)
-- [InboxRulesetTestOptionsFromJSONTyped](README.md#inboxrulesettestoptionsfromjsontyped)
-- [InboxRulesetTestOptionsToJSON](README.md#inboxrulesettestoptionstojson)
 - [InboxRulesetTestResultFromJSON](README.md#inboxrulesettestresultfromjson)
 - [InboxRulesetTestResultFromJSONTyped](README.md#inboxrulesettestresultfromjsontyped)
 - [InboxRulesetTestResultToJSON](README.md#inboxrulesettestresulttojson)
-- [InlineObjectFromJSON](README.md#inlineobjectfromjson)
-- [InlineObjectFromJSONTyped](README.md#inlineobjectfromjsontyped)
-- [InlineObjectToJSON](README.md#inlineobjecttojson)
+- [InlineObject1FromJSON](README.md#inlineobject1fromjson)
+- [InlineObject1FromJSONTyped](README.md#inlineobject1fromjsontyped)
+- [InlineObject1ToJSON](README.md#inlineobject1tojson)
+- [InvokeTransformerOptionsFromJSON](README.md#invoketransformeroptionsfromjson)
+- [InvokeTransformerOptionsFromJSONTyped](README.md#invoketransformeroptionsfromjsontyped)
+- [InvokeTransformerOptionsToJSON](README.md#invoketransformeroptionstojson)
 - [JSONSchemaDtoFromJSON](README.md#jsonschemadtofromjson)
 - [JSONSchemaDtoFromJSONTyped](README.md#jsonschemadtofromjsontyped)
 - [JSONSchemaDtoToJSON](README.md#jsonschemadtotojson)
@@ -1740,6 +1756,12 @@ MailSlurp JS
 - [LookupMtaStsDomainResultsFromJSON](README.md#lookupmtastsdomainresultsfromjson)
 - [LookupMtaStsDomainResultsFromJSONTyped](README.md#lookupmtastsdomainresultsfromjsontyped)
 - [LookupMtaStsDomainResultsToJSON](README.md#lookupmtastsdomainresultstojson)
+- [LookupMxRecordsOptionsFromJSON](README.md#lookupmxrecordsoptionsfromjson)
+- [LookupMxRecordsOptionsFromJSONTyped](README.md#lookupmxrecordsoptionsfromjsontyped)
+- [LookupMxRecordsOptionsToJSON](README.md#lookupmxrecordsoptionstojson)
+- [LookupMxRecordsResultsFromJSON](README.md#lookupmxrecordsresultsfromjson)
+- [LookupMxRecordsResultsFromJSONTyped](README.md#lookupmxrecordsresultsfromjsontyped)
+- [LookupMxRecordsResultsToJSON](README.md#lookupmxrecordsresultstojson)
 - [LookupTlsReportingDomainOptionsFromJSON](README.md#lookuptlsreportingdomainoptionsfromjson)
 - [LookupTlsReportingDomainOptionsFromJSONTyped](README.md#lookuptlsreportingdomainoptionsfromjsontyped)
 - [LookupTlsReportingDomainOptionsToJSON](README.md#lookuptlsreportingdomainoptionstojson)
@@ -1875,9 +1897,6 @@ MailSlurp JS
 - [PageInboxReplierEventsFromJSON](README.md#pageinboxrepliereventsfromjson)
 - [PageInboxReplierEventsFromJSONTyped](README.md#pageinboxrepliereventsfromjsontyped)
 - [PageInboxReplierEventsToJSON](README.md#pageinboxrepliereventstojson)
-- [PageInboxRulesetDtoFromJSON](README.md#pageinboxrulesetdtofromjson)
-- [PageInboxRulesetDtoFromJSONTyped](README.md#pageinboxrulesetdtofromjsontyped)
-- [PageInboxRulesetDtoToJSON](README.md#pageinboxrulesetdtotojson)
 - [PageInboxTagsFromJSON](README.md#pageinboxtagsfromjson)
 - [PageInboxTagsFromJSONTyped](README.md#pageinboxtagsfromjsontyped)
 - [PageInboxTagsToJSON](README.md#pageinboxtagstojson)
@@ -1908,6 +1927,9 @@ MailSlurp JS
 - [PageReputationItemsFromJSON](README.md#pagereputationitemsfromjson)
 - [PageReputationItemsFromJSONTyped](README.md#pagereputationitemsfromjsontyped)
 - [PageReputationItemsToJSON](README.md#pagereputationitemstojson)
+- [PageRulesetDtoFromJSON](README.md#pagerulesetdtofromjson)
+- [PageRulesetDtoFromJSONTyped](README.md#pagerulesetdtofromjsontyped)
+- [PageRulesetDtoToJSON](README.md#pagerulesetdtotojson)
 - [PageScheduledJobsFromJSON](README.md#pagescheduledjobsfromjson)
 - [PageScheduledJobsFromJSONTyped](README.md#pagescheduledjobsfromjsontyped)
 - [PageScheduledJobsToJSON](README.md#pagescheduledjobstojson)
@@ -1998,6 +2020,12 @@ MailSlurp JS
 - [ReputationItemProjectionFromJSON](README.md#reputationitemprojectionfromjson)
 - [ReputationItemProjectionFromJSONTyped](README.md#reputationitemprojectionfromjsontyped)
 - [ReputationItemProjectionToJSON](README.md#reputationitemprojectiontojson)
+- [RulesetDtoFromJSON](README.md#rulesetdtofromjson)
+- [RulesetDtoFromJSONTyped](README.md#rulesetdtofromjsontyped)
+- [RulesetDtoToJSON](README.md#rulesetdtotojson)
+- [RulesetTestOptionsFromJSON](README.md#rulesettestoptionsfromjson)
+- [RulesetTestOptionsFromJSONTyped](README.md#rulesettestoptionsfromjsontyped)
+- [RulesetTestOptionsToJSON](README.md#rulesettestoptionstojson)
 - [ScheduledJobDtoFromJSON](README.md#scheduledjobdtofromjson)
 - [ScheduledJobDtoFromJSONTyped](README.md#scheduledjobdtofromjsontyped)
 - [ScheduledJobDtoToJSON](README.md#scheduledjobdtotojson)
@@ -2103,18 +2131,9 @@ MailSlurp JS
 - [TemplateVariableFromJSON](README.md#templatevariablefromjson)
 - [TemplateVariableFromJSONTyped](README.md#templatevariablefromjsontyped)
 - [TemplateVariableToJSON](README.md#templatevariabletojson)
-- [TestInboxRulesetReceivingOptionsFromJSON](README.md#testinboxrulesetreceivingoptionsfromjson)
-- [TestInboxRulesetReceivingOptionsFromJSONTyped](README.md#testinboxrulesetreceivingoptionsfromjsontyped)
-- [TestInboxRulesetReceivingOptionsToJSON](README.md#testinboxrulesetreceivingoptionstojson)
-- [TestInboxRulesetReceivingResultFromJSON](README.md#testinboxrulesetreceivingresultfromjson)
-- [TestInboxRulesetReceivingResultFromJSONTyped](README.md#testinboxrulesetreceivingresultfromjsontyped)
-- [TestInboxRulesetReceivingResultToJSON](README.md#testinboxrulesetreceivingresulttojson)
 - [TestInboxRulesetSendingOptionsFromJSON](README.md#testinboxrulesetsendingoptionsfromjson)
 - [TestInboxRulesetSendingOptionsFromJSONTyped](README.md#testinboxrulesetsendingoptionsfromjsontyped)
 - [TestInboxRulesetSendingOptionsToJSON](README.md#testinboxrulesetsendingoptionstojson)
-- [TestInboxRulesetSendingResultFromJSON](README.md#testinboxrulesetsendingresultfromjson)
-- [TestInboxRulesetSendingResultFromJSONTyped](README.md#testinboxrulesetsendingresultfromjsontyped)
-- [TestInboxRulesetSendingResultToJSON](README.md#testinboxrulesetsendingresulttojson)
 - [TestNewInboxForwarderOptionsFromJSON](README.md#testnewinboxforwarderoptionsfromjson)
 - [TestNewInboxForwarderOptionsFromJSONTyped](README.md#testnewinboxforwarderoptionsfromjsontyped)
 - [TestNewInboxForwarderOptionsToJSON](README.md#testnewinboxforwarderoptionstojson)
@@ -2124,6 +2143,15 @@ MailSlurp JS
 - [TestPhoneNumberOptionsFromJSON](README.md#testphonenumberoptionsfromjson)
 - [TestPhoneNumberOptionsFromJSONTyped](README.md#testphonenumberoptionsfromjsontyped)
 - [TestPhoneNumberOptionsToJSON](README.md#testphonenumberoptionstojson)
+- [TestRulesetReceivingOptionsFromJSON](README.md#testrulesetreceivingoptionsfromjson)
+- [TestRulesetReceivingOptionsFromJSONTyped](README.md#testrulesetreceivingoptionsfromjsontyped)
+- [TestRulesetReceivingOptionsToJSON](README.md#testrulesetreceivingoptionstojson)
+- [TestRulesetReceivingResultFromJSON](README.md#testrulesetreceivingresultfromjson)
+- [TestRulesetReceivingResultFromJSONTyped](README.md#testrulesetreceivingresultfromjsontyped)
+- [TestRulesetReceivingResultToJSON](README.md#testrulesetreceivingresulttojson)
+- [TestRulesetSendingResultFromJSON](README.md#testrulesetsendingresultfromjson)
+- [TestRulesetSendingResultFromJSONTyped](README.md#testrulesetsendingresultfromjsontyped)
+- [TestRulesetSendingResultToJSON](README.md#testrulesetsendingresulttojson)
 - [TotpDeviceCodeDtoFromJSON](README.md#totpdevicecodedtofromjson)
 - [TotpDeviceCodeDtoFromJSONTyped](README.md#totpdevicecodedtofromjsontyped)
 - [TotpDeviceCodeDtoToJSON](README.md#totpdevicecodedtotojson)
@@ -2238,6 +2266,9 @@ MailSlurp JS
 - [WebhookHeadersFromJSON](README.md#webhookheadersfromjson)
 - [WebhookHeadersFromJSONTyped](README.md#webhookheadersfromjsontyped)
 - [WebhookHeadersToJSON](README.md#webhookheaderstojson)
+- [WebhookNewAITransformResultPayloadFromJSON](README.md#webhooknewaitransformresultpayloadfromjson)
+- [WebhookNewAITransformResultPayloadFromJSONTyped](README.md#webhooknewaitransformresultpayloadfromjsontyped)
+- [WebhookNewAITransformResultPayloadToJSON](README.md#webhooknewaitransformresultpayloadtojson)
 - [WebhookNewAttachmentPayloadFromJSON](README.md#webhooknewattachmentpayloadfromjson)
 - [WebhookNewAttachmentPayloadFromJSONTyped](README.md#webhooknewattachmentpayloadfromjsontyped)
 - [WebhookNewAttachmentPayloadToJSON](README.md#webhooknewattachmentpayloadtojson)
@@ -2412,9 +2443,9 @@ ___
 
 ## Functions
 
-### AITranformCreateOptionsFromJSON
+### AITransformCreateOptionsFromJSON
 
-▸ **AITranformCreateOptionsFromJSON**(`json`): [`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+▸ **AITransformCreateOptionsFromJSON**(`json`): [`AITransformCreateOptions`](interfaces/AITransformCreateOptions.md)
 
 #### Parameters
 
@@ -2424,13 +2455,13 @@ ___
 
 #### Returns
 
-[`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+[`AITransformCreateOptions`](interfaces/AITransformCreateOptions.md)
 
 ___
 
-### AITranformCreateOptionsFromJSONTyped
+### AITransformCreateOptionsFromJSONTyped
 
-▸ **AITranformCreateOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+▸ **AITransformCreateOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformCreateOptions`](interfaces/AITransformCreateOptions.md)
 
 #### Parameters
 
@@ -2441,19 +2472,19 @@ ___
 
 #### Returns
 
-[`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md)
+[`AITransformCreateOptions`](interfaces/AITransformCreateOptions.md)
 
 ___
 
-### AITranformCreateOptionsToJSON
+### AITransformCreateOptionsToJSON
 
-▸ **AITranformCreateOptionsToJSON**(`value?`): `any`
+▸ **AITransformCreateOptionsToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`AITranformCreateOptions`](interfaces/AITranformCreateOptions.md) |
+| `value?` | [`AITransformCreateOptions`](interfaces/AITransformCreateOptions.md) |
 
 #### Returns
 
@@ -2706,9 +2737,9 @@ ___
 
 ___
 
-### AITransformResultProjectionFromJSON
+### AITransformResultProjectionDtoFromJSON
 
-▸ **AITransformResultProjectionFromJSON**(`json`): [`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+▸ **AITransformResultProjectionDtoFromJSON**(`json`): [`AITransformResultProjectionDto`](interfaces/AITransformResultProjectionDto.md)
 
 #### Parameters
 
@@ -2718,13 +2749,13 @@ ___
 
 #### Returns
 
-[`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+[`AITransformResultProjectionDto`](interfaces/AITransformResultProjectionDto.md)
 
 ___
 
-### AITransformResultProjectionFromJSONTyped
+### AITransformResultProjectionDtoFromJSONTyped
 
-▸ **AITransformResultProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+▸ **AITransformResultProjectionDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformResultProjectionDto`](interfaces/AITransformResultProjectionDto.md)
 
 #### Parameters
 
@@ -2735,19 +2766,19 @@ ___
 
 #### Returns
 
-[`AITransformResultProjection`](interfaces/AITransformResultProjection.md)
+[`AITransformResultProjectionDto`](interfaces/AITransformResultProjectionDto.md)
 
 ___
 
-### AITransformResultProjectionToJSON
+### AITransformResultProjectionDtoToJSON
 
-▸ **AITransformResultProjectionToJSON**(`value?`): `any`
+▸ **AITransformResultProjectionDtoToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`AITransformResultProjection`](interfaces/AITransformResultProjection.md) |
+| `value?` | [`AITransformResultProjectionDto`](interfaces/AITransformResultProjectionDto.md) |
 
 #### Returns
 
@@ -3875,6 +3906,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ConditionOption`](interfaces/ConditionOption.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConditionalStructuredContentResultFromJSON
+
+▸ **ConditionalStructuredContentResultFromJSON**(`json`): [`ConditionalStructuredContentResult`](interfaces/ConditionalStructuredContentResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConditionalStructuredContentResult`](interfaces/ConditionalStructuredContentResult.md)
+
+___
+
+### ConditionalStructuredContentResultFromJSONTyped
+
+▸ **ConditionalStructuredContentResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConditionalStructuredContentResult`](interfaces/ConditionalStructuredContentResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConditionalStructuredContentResult`](interfaces/ConditionalStructuredContentResult.md)
+
+___
+
+### ConditionalStructuredContentResultToJSON
+
+▸ **ConditionalStructuredContentResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConditionalStructuredContentResult`](interfaces/ConditionalStructuredContentResult.md) |
 
 #### Returns
 
@@ -5401,55 +5481,6 @@ ___
 
 ___
 
-### CreateInboxRulesetOptionsFromJSON
-
-▸ **CreateInboxRulesetOptionsFromJSON**(`json`): [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
-
-___
-
-### CreateInboxRulesetOptionsFromJSONTyped
-
-▸ **CreateInboxRulesetOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
-
-___
-
-### CreateInboxRulesetOptionsToJSON
-
-▸ **CreateInboxRulesetOptionsToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md) |
-
-#### Returns
-
-`any`
-
-___
-
 ### CreateOAuthConnectionResultFromJSON
 
 ▸ **CreateOAuthConnectionResultFromJSON**(`json`): [`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
@@ -5695,6 +5726,55 @@ ___
 
 ___
 
+### CreateRulesetOptionsFromJSON
+
+▸ **CreateRulesetOptionsFromJSON**(`json`): [`CreateRulesetOptions`](interfaces/CreateRulesetOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateRulesetOptions`](interfaces/CreateRulesetOptions.md)
+
+___
+
+### CreateRulesetOptionsFromJSONTyped
+
+▸ **CreateRulesetOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateRulesetOptions`](interfaces/CreateRulesetOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateRulesetOptions`](interfaces/CreateRulesetOptions.md)
+
+___
+
+### CreateRulesetOptionsToJSON
+
+▸ **CreateRulesetOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateRulesetOptions`](interfaces/CreateRulesetOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### CreateTemplateOptionsFromJSON
 
 ▸ **CreateTemplateOptionsFromJSON**(`json`): [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md)
@@ -5786,6 +5866,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateTotpDeviceBase32SecretKeyOptions`](interfaces/CreateTotpDeviceBase32SecretKeyOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateTotpDeviceCustomOptionsFromJSON
+
+▸ **CreateTotpDeviceCustomOptionsFromJSON**(`json`): [`CreateTotpDeviceCustomOptions`](interfaces/CreateTotpDeviceCustomOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateTotpDeviceCustomOptions`](interfaces/CreateTotpDeviceCustomOptions.md)
+
+___
+
+### CreateTotpDeviceCustomOptionsFromJSONTyped
+
+▸ **CreateTotpDeviceCustomOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateTotpDeviceCustomOptions`](interfaces/CreateTotpDeviceCustomOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateTotpDeviceCustomOptions`](interfaces/CreateTotpDeviceCustomOptions.md)
+
+___
+
+### CreateTotpDeviceCustomOptionsToJSON
+
+▸ **CreateTotpDeviceCustomOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateTotpDeviceCustomOptions`](interfaces/CreateTotpDeviceCustomOptions.md) |
 
 #### Returns
 
@@ -11722,104 +11851,6 @@ ___
 
 ___
 
-### InboxRulesetDtoFromJSON
-
-▸ **InboxRulesetDtoFromJSON**(`json`): [`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
-
-___
-
-### InboxRulesetDtoFromJSONTyped
-
-▸ **InboxRulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
-
-___
-
-### InboxRulesetDtoToJSON
-
-▸ **InboxRulesetDtoToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`InboxRulesetDto`](interfaces/InboxRulesetDto.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### InboxRulesetTestOptionsFromJSON
-
-▸ **InboxRulesetTestOptionsFromJSON**(`json`): [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
-
-___
-
-### InboxRulesetTestOptionsFromJSONTyped
-
-▸ **InboxRulesetTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
-
-___
-
-### InboxRulesetTestOptionsToJSON
-
-▸ **InboxRulesetTestOptionsToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md) |
-
-#### Returns
-
-`any`
-
-___
-
 ### InboxRulesetTestResultFromJSON
 
 ▸ **InboxRulesetTestResultFromJSON**(`json`): [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
@@ -11869,9 +11900,9 @@ ___
 
 ___
 
-### InlineObjectFromJSON
+### InlineObject1FromJSON
 
-▸ **InlineObjectFromJSON**(`json`): [`InlineObject`](interfaces/InlineObject.md)
+▸ **InlineObject1FromJSON**(`json`): [`InlineObject1`](interfaces/InlineObject1.md)
 
 #### Parameters
 
@@ -11881,13 +11912,13 @@ ___
 
 #### Returns
 
-[`InlineObject`](interfaces/InlineObject.md)
+[`InlineObject1`](interfaces/InlineObject1.md)
 
 ___
 
-### InlineObjectFromJSONTyped
+### InlineObject1FromJSONTyped
 
-▸ **InlineObjectFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InlineObject`](interfaces/InlineObject.md)
+▸ **InlineObject1FromJSONTyped**(`json`, `ignoreDiscriminator`): [`InlineObject1`](interfaces/InlineObject1.md)
 
 #### Parameters
 
@@ -11898,19 +11929,68 @@ ___
 
 #### Returns
 
-[`InlineObject`](interfaces/InlineObject.md)
+[`InlineObject1`](interfaces/InlineObject1.md)
 
 ___
 
-### InlineObjectToJSON
+### InlineObject1ToJSON
 
-▸ **InlineObjectToJSON**(`value?`): `any`
+▸ **InlineObject1ToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`InlineObject`](interfaces/InlineObject.md) |
+| `value?` | [`InlineObject1`](interfaces/InlineObject1.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InvokeTransformerOptionsFromJSON
+
+▸ **InvokeTransformerOptionsFromJSON**(`json`): [`InvokeTransformerOptions`](interfaces/InvokeTransformerOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InvokeTransformerOptions`](interfaces/InvokeTransformerOptions.md)
+
+___
+
+### InvokeTransformerOptionsFromJSONTyped
+
+▸ **InvokeTransformerOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InvokeTransformerOptions`](interfaces/InvokeTransformerOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InvokeTransformerOptions`](interfaces/InvokeTransformerOptions.md)
+
+___
+
+### InvokeTransformerOptionsToJSON
+
+▸ **InvokeTransformerOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InvokeTransformerOptions`](interfaces/InvokeTransformerOptions.md) |
 
 #### Returns
 
@@ -12352,6 +12432,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`LookupMtaStsDomainResults`](interfaces/LookupMtaStsDomainResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### LookupMxRecordsOptionsFromJSON
+
+▸ **LookupMxRecordsOptionsFromJSON**(`json`): [`LookupMxRecordsOptions`](interfaces/LookupMxRecordsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`LookupMxRecordsOptions`](interfaces/LookupMxRecordsOptions.md)
+
+___
+
+### LookupMxRecordsOptionsFromJSONTyped
+
+▸ **LookupMxRecordsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`LookupMxRecordsOptions`](interfaces/LookupMxRecordsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`LookupMxRecordsOptions`](interfaces/LookupMxRecordsOptions.md)
+
+___
+
+### LookupMxRecordsOptionsToJSON
+
+▸ **LookupMxRecordsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`LookupMxRecordsOptions`](interfaces/LookupMxRecordsOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### LookupMxRecordsResultsFromJSON
+
+▸ **LookupMxRecordsResultsFromJSON**(`json`): [`LookupMxRecordsResults`](interfaces/LookupMxRecordsResults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`LookupMxRecordsResults`](interfaces/LookupMxRecordsResults.md)
+
+___
+
+### LookupMxRecordsResultsFromJSONTyped
+
+▸ **LookupMxRecordsResultsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`LookupMxRecordsResults`](interfaces/LookupMxRecordsResults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`LookupMxRecordsResults`](interfaces/LookupMxRecordsResults.md)
+
+___
+
+### LookupMxRecordsResultsToJSON
+
+▸ **LookupMxRecordsResultsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`LookupMxRecordsResults`](interfaces/LookupMxRecordsResults.md) |
 
 #### Returns
 
@@ -14564,55 +14742,6 @@ ___
 
 ___
 
-### PageInboxRulesetDtoFromJSON
-
-▸ **PageInboxRulesetDtoFromJSON**(`json`): [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
-
-___
-
-### PageInboxRulesetDtoFromJSONTyped
-
-▸ **PageInboxRulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
-
-___
-
-### PageInboxRulesetDtoToJSON
-
-▸ **PageInboxRulesetDtoToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md) |
-
-#### Returns
-
-`any`
-
-___
-
 ### PageInboxTagsFromJSON
 
 ▸ **PageInboxTagsFromJSON**(`json`): [`PageInboxTags`](interfaces/PageInboxTags.md)
@@ -15096,6 +15225,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageReputationItems`](interfaces/PageReputationItems.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageRulesetDtoFromJSON
+
+▸ **PageRulesetDtoFromJSON**(`json`): [`PageRulesetDto`](interfaces/PageRulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageRulesetDto`](interfaces/PageRulesetDto.md)
+
+___
+
+### PageRulesetDtoFromJSONTyped
+
+▸ **PageRulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageRulesetDto`](interfaces/PageRulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageRulesetDto`](interfaces/PageRulesetDto.md)
+
+___
+
+### PageRulesetDtoToJSON
+
+▸ **PageRulesetDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageRulesetDto`](interfaces/PageRulesetDto.md) |
 
 #### Returns
 
@@ -16566,6 +16744,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ReputationItemProjection`](interfaces/ReputationItemProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### RulesetDtoFromJSON
+
+▸ **RulesetDtoFromJSON**(`json`): [`RulesetDto`](interfaces/RulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`RulesetDto`](interfaces/RulesetDto.md)
+
+___
+
+### RulesetDtoFromJSONTyped
+
+▸ **RulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`RulesetDto`](interfaces/RulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`RulesetDto`](interfaces/RulesetDto.md)
+
+___
+
+### RulesetDtoToJSON
+
+▸ **RulesetDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`RulesetDto`](interfaces/RulesetDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### RulesetTestOptionsFromJSON
+
+▸ **RulesetTestOptionsFromJSON**(`json`): [`RulesetTestOptions`](interfaces/RulesetTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`RulesetTestOptions`](interfaces/RulesetTestOptions.md)
+
+___
+
+### RulesetTestOptionsFromJSONTyped
+
+▸ **RulesetTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`RulesetTestOptions`](interfaces/RulesetTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`RulesetTestOptions`](interfaces/RulesetTestOptions.md)
+
+___
+
+### RulesetTestOptionsToJSON
+
+▸ **RulesetTestOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`RulesetTestOptions`](interfaces/RulesetTestOptions.md) |
 
 #### Returns
 
@@ -18288,104 +18564,6 @@ ___
 
 ___
 
-### TestInboxRulesetReceivingOptionsFromJSON
-
-▸ **TestInboxRulesetReceivingOptionsFromJSON**(`json`): [`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
-
-___
-
-### TestInboxRulesetReceivingOptionsFromJSONTyped
-
-▸ **TestInboxRulesetReceivingOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
-
-___
-
-### TestInboxRulesetReceivingOptionsToJSON
-
-▸ **TestInboxRulesetReceivingOptionsToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### TestInboxRulesetReceivingResultFromJSON
-
-▸ **TestInboxRulesetReceivingResultFromJSON**(`json`): [`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
-
-___
-
-### TestInboxRulesetReceivingResultFromJSONTyped
-
-▸ **TestInboxRulesetReceivingResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
-
-___
-
-### TestInboxRulesetReceivingResultToJSON
-
-▸ **TestInboxRulesetReceivingResultToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md) |
-
-#### Returns
-
-`any`
-
-___
-
 ### TestInboxRulesetSendingOptionsFromJSON
 
 ▸ **TestInboxRulesetSendingOptionsFromJSON**(`json`): [`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md)
@@ -18428,55 +18606,6 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### TestInboxRulesetSendingResultFromJSON
-
-▸ **TestInboxRulesetSendingResultFromJSON**(`json`): [`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
-
-___
-
-### TestInboxRulesetSendingResultFromJSONTyped
-
-▸ **TestInboxRulesetSendingResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
-
-___
-
-### TestInboxRulesetSendingResultToJSON
-
-▸ **TestInboxRulesetSendingResultToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md) |
 
 #### Returns
 
@@ -18624,6 +18753,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`TestPhoneNumberOptions`](interfaces/TestPhoneNumberOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TestRulesetReceivingOptionsFromJSON
+
+▸ **TestRulesetReceivingOptionsFromJSON**(`json`): [`TestRulesetReceivingOptions`](interfaces/TestRulesetReceivingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestRulesetReceivingOptions`](interfaces/TestRulesetReceivingOptions.md)
+
+___
+
+### TestRulesetReceivingOptionsFromJSONTyped
+
+▸ **TestRulesetReceivingOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestRulesetReceivingOptions`](interfaces/TestRulesetReceivingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestRulesetReceivingOptions`](interfaces/TestRulesetReceivingOptions.md)
+
+___
+
+### TestRulesetReceivingOptionsToJSON
+
+▸ **TestRulesetReceivingOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestRulesetReceivingOptions`](interfaces/TestRulesetReceivingOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TestRulesetReceivingResultFromJSON
+
+▸ **TestRulesetReceivingResultFromJSON**(`json`): [`TestRulesetReceivingResult`](interfaces/TestRulesetReceivingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestRulesetReceivingResult`](interfaces/TestRulesetReceivingResult.md)
+
+___
+
+### TestRulesetReceivingResultFromJSONTyped
+
+▸ **TestRulesetReceivingResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestRulesetReceivingResult`](interfaces/TestRulesetReceivingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestRulesetReceivingResult`](interfaces/TestRulesetReceivingResult.md)
+
+___
+
+### TestRulesetReceivingResultToJSON
+
+▸ **TestRulesetReceivingResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestRulesetReceivingResult`](interfaces/TestRulesetReceivingResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TestRulesetSendingResultFromJSON
+
+▸ **TestRulesetSendingResultFromJSON**(`json`): [`TestRulesetSendingResult`](interfaces/TestRulesetSendingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestRulesetSendingResult`](interfaces/TestRulesetSendingResult.md)
+
+___
+
+### TestRulesetSendingResultFromJSONTyped
+
+▸ **TestRulesetSendingResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestRulesetSendingResult`](interfaces/TestRulesetSendingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestRulesetSendingResult`](interfaces/TestRulesetSendingResult.md)
+
+___
+
+### TestRulesetSendingResultToJSON
+
+▸ **TestRulesetSendingResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestRulesetSendingResult`](interfaces/TestRulesetSendingResult.md) |
 
 #### Returns
 
@@ -20486,6 +20762,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`WebhookHeaders`](interfaces/WebhookHeaders.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### WebhookNewAITransformResultPayloadFromJSON
+
+▸ **WebhookNewAITransformResultPayloadFromJSON**(`json`): [`WebhookNewAITransformResultPayload`](interfaces/WebhookNewAITransformResultPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WebhookNewAITransformResultPayload`](interfaces/WebhookNewAITransformResultPayload.md)
+
+___
+
+### WebhookNewAITransformResultPayloadFromJSONTyped
+
+▸ **WebhookNewAITransformResultPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewAITransformResultPayload`](interfaces/WebhookNewAITransformResultPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WebhookNewAITransformResultPayload`](interfaces/WebhookNewAITransformResultPayload.md)
+
+___
+
+### WebhookNewAITransformResultPayloadToJSON
+
+▸ **WebhookNewAITransformResultPayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WebhookNewAITransformResultPayload`](interfaces/WebhookNewAITransformResultPayload.md) |
 
 #### Returns
 

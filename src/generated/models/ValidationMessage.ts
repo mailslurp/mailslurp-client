@@ -19,47 +19,46 @@ import { exists, mapValues } from '../runtime';
  * @interface ValidationMessage
  */
 export interface ValidationMessage {
-    /**
-     * 
-     * @type {number}
-     * @memberof ValidationMessage
-     */
-    lineNumber: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ValidationMessage
-     */
-    message?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof ValidationMessage
+   */
+  lineNumber: number;
+  /**
+   *
+   * @type {string}
+   * @memberof ValidationMessage
+   */
+  message?: string;
 }
 
 export function ValidationMessageFromJSON(json: any): ValidationMessage {
-    return ValidationMessageFromJSONTyped(json, false);
+  return ValidationMessageFromJSONTyped(json, false);
 }
 
-export function ValidationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationMessage {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'lineNumber': json['lineNumber'],
-        'message': !exists(json, 'message') ? undefined : json['message'],
-    };
+export function ValidationMessageFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ValidationMessage {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    lineNumber: json['lineNumber'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+  };
 }
 
 export function ValidationMessageToJSON(value?: ValidationMessage | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'lineNumber': value.lineNumber,
-        'message': value.message,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    lineNumber: value.lineNumber,
+    message: value.message,
+  };
 }
-
-

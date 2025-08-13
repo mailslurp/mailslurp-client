@@ -19,11 +19,11 @@ function SetPhoneFavouritedOptionsFromJSON(json) {
 }
 exports.SetPhoneFavouritedOptionsFromJSON = SetPhoneFavouritedOptionsFromJSON;
 function SetPhoneFavouritedOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'state': json['state'],
+        state: json['state'],
     };
 }
 exports.SetPhoneFavouritedOptionsFromJSONTyped = SetPhoneFavouritedOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function SetPhoneFavouritedOptionsToJSON(value) {
         return null;
     }
     return {
-        'state': value.state,
+        state: value.state,
     };
 }
 exports.SetPhoneFavouritedOptionsToJSON = SetPhoneFavouritedOptionsToJSON;

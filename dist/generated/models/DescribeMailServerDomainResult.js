@@ -21,13 +21,13 @@ function DescribeMailServerDomainResultFromJSON(json) {
 }
 exports.DescribeMailServerDomainResultFromJSON = DescribeMailServerDomainResultFromJSON;
 function DescribeMailServerDomainResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'mxRecords': (json['mxRecords'].map(_1.NameServerRecordFromJSON)),
-        'domain': json['domain'],
-        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        mxRecords: json['mxRecords'].map(_1.NameServerRecordFromJSON),
+        domain: json['domain'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
 exports.DescribeMailServerDomainResultFromJSONTyped = DescribeMailServerDomainResultFromJSONTyped;
@@ -39,9 +39,9 @@ function DescribeMailServerDomainResultToJSON(value) {
         return null;
     }
     return {
-        'mxRecords': (value.mxRecords.map(_1.NameServerRecordToJSON)),
-        'domain': value.domain,
-        'message': value.message,
+        mxRecords: value.mxRecords.map(_1.NameServerRecordToJSON),
+        domain: value.domain,
+        message: value.message,
     };
 }
 exports.DescribeMailServerDomainResultToJSON = DescribeMailServerDomainResultToJSON;

@@ -19,76 +19,78 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateRulesetOptions
  */
 export interface CreateRulesetOptions {
-    /**
-     * What type of emails actions to apply ruleset to. Either `SENDING_EMAILS` or `RECEIVING_EMAILS` will apply action and target to any sending or receiving of emails respectively.
-     * @type {string}
-     * @memberof CreateRulesetOptions
-     */
-    scope: CreateRulesetOptionsScopeEnum;
-    /**
-     * Action to be taken when the ruleset matches an email for the given scope. For example: `BLOCK` action with target `*` and scope `SENDING_EMAILS` blocks sending to all recipients. Note `ALLOW` takes precedent over `BLOCK`. `FILTER_REMOVE` is like block but will remove offending email addresses during a send or receive event instead of blocking the action.
-     * @type {string}
-     * @memberof CreateRulesetOptions
-     */
-    action: CreateRulesetOptionsActionEnum;
-    /**
-     * Target to match emails with. Can be a wild-card type pattern or a valid email address. For instance `*@gmail.com` matches all gmail addresses while `test@gmail.com` matches one address exactly. The target is applied to every recipient field email address when `SENDING_EMAILS` is the scope and is applied to sender of email when `RECEIVING_EMAILS`.
-     * @type {string}
-     * @memberof CreateRulesetOptions
-     */
-    target: string;
+  /**
+   * What type of emails actions to apply ruleset to. Either `SENDING_EMAILS` or `RECEIVING_EMAILS` will apply action and target to any sending or receiving of emails respectively.
+   * @type {string}
+   * @memberof CreateRulesetOptions
+   */
+  scope: CreateRulesetOptionsScopeEnum;
+  /**
+   * Action to be taken when the ruleset matches an email for the given scope. For example: `BLOCK` action with target `*` and scope `SENDING_EMAILS` blocks sending to all recipients. Note `ALLOW` takes precedent over `BLOCK`. `FILTER_REMOVE` is like block but will remove offending email addresses during a send or receive event instead of blocking the action.
+   * @type {string}
+   * @memberof CreateRulesetOptions
+   */
+  action: CreateRulesetOptionsActionEnum;
+  /**
+   * Target to match emails with. Can be a wild-card type pattern or a valid email address. For instance `*@gmail.com` matches all gmail addresses while `test@gmail.com` matches one address exactly. The target is applied to every recipient field email address when `SENDING_EMAILS` is the scope and is applied to sender of email when `RECEIVING_EMAILS`.
+   * @type {string}
+   * @memberof CreateRulesetOptions
+   */
+  target: string;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum CreateRulesetOptionsScopeEnum {
-    RECEIVING_EMAILS = 'RECEIVING_EMAILS',
-    SENDING_EMAILS = 'SENDING_EMAILS',
-    RECEIVING_SMS = 'RECEIVING_SMS',
-    SENDING_SMS = 'SENDING_SMS'
-}/**
-* @export
-* @enum {string}
-*/
+  RECEIVING_EMAILS = 'RECEIVING_EMAILS',
+  SENDING_EMAILS = 'SENDING_EMAILS',
+  RECEIVING_SMS = 'RECEIVING_SMS',
+  SENDING_SMS = 'SENDING_SMS',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum CreateRulesetOptionsActionEnum {
-    BLOCK = 'BLOCK',
-    ALLOW = 'ALLOW',
-    FILTER_REMOVE = 'FILTER_REMOVE',
-    BOUNCE_SOFT = 'BOUNCE_SOFT',
-    BOUNCE_HARD = 'BOUNCE_HARD'
+  BLOCK = 'BLOCK',
+  ALLOW = 'ALLOW',
+  FILTER_REMOVE = 'FILTER_REMOVE',
+  BOUNCE_SOFT = 'BOUNCE_SOFT',
+  BOUNCE_HARD = 'BOUNCE_HARD',
 }
 
 export function CreateRulesetOptionsFromJSON(json: any): CreateRulesetOptions {
-    return CreateRulesetOptionsFromJSONTyped(json, false);
+  return CreateRulesetOptionsFromJSONTyped(json, false);
 }
 
-export function CreateRulesetOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateRulesetOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'scope': json['scope'],
-        'action': json['action'],
-        'target': json['target'],
-    };
+export function CreateRulesetOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateRulesetOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    scope: json['scope'],
+    action: json['action'],
+    target: json['target'],
+  };
 }
 
-export function CreateRulesetOptionsToJSON(value?: CreateRulesetOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'scope': value.scope,
-        'action': value.action,
-        'target': value.target,
-    };
+export function CreateRulesetOptionsToJSON(
+  value?: CreateRulesetOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    scope: value.scope,
+    action: value.action,
+    target: value.target,
+  };
 }
-
-

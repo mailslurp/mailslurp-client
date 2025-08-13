@@ -14,69 +14,68 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    DomainInformation,
-    DomainInformationFromJSON,
-    DomainInformationFromJSONTyped,
-    DomainInformationToJSON,
+  DomainInformation,
+  DomainInformationFromJSON,
+  DomainInformationFromJSONTyped,
+  DomainInformationToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface DomainGroup
  */
 export interface DomainGroup {
-    /**
-     * 
-     * @type {string}
-     * @memberof DomainGroup
-     */
-    label: DomainGroupLabelEnum;
-    /**
-     * 
-     * @type {Array<DomainInformation>}
-     * @memberof DomainGroup
-     */
-    domains: Array<DomainInformation>;
+  /**
+   *
+   * @type {string}
+   * @memberof DomainGroup
+   */
+  label: DomainGroupLabelEnum;
+  /**
+   *
+   * @type {Array<DomainInformation>}
+   * @memberof DomainGroup
+   */
+  domains: Array<DomainInformation>;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum DomainGroupLabelEnum {
-    DEFAULT = 'DEFAULT',
-    DOMAIN_POOL = 'DOMAIN_POOL',
-    CUSTOM = 'CUSTOM'
+  DEFAULT = 'DEFAULT',
+  DOMAIN_POOL = 'DOMAIN_POOL',
+  CUSTOM = 'CUSTOM',
 }
 
 export function DomainGroupFromJSON(json: any): DomainGroup {
-    return DomainGroupFromJSONTyped(json, false);
+  return DomainGroupFromJSONTyped(json, false);
 }
 
-export function DomainGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean): DomainGroup {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'label': json['label'],
-        'domains': ((json['domains'] as Array<any>).map(DomainInformationFromJSON)),
-    };
+export function DomainGroupFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): DomainGroup {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    label: json['label'],
+    domains: (json['domains'] as Array<any>).map(DomainInformationFromJSON),
+  };
 }
 
 export function DomainGroupToJSON(value?: DomainGroup | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'label': value.label,
-        'domains': ((value.domains as Array<any>).map(DomainInformationToJSON)),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    label: value.label,
+    domains: (value.domains as Array<any>).map(DomainInformationToJSON),
+  };
 }
-
-

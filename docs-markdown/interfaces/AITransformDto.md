@@ -13,6 +13,7 @@ AITransformDto
 ### Properties
 
 - [conditions](AITransformDto.md#conditions)
+- [createdAt](AITransformDto.md#createdat)
 - [id](AITransformDto.md#id)
 - [instructions](AITransformDto.md#instructions)
 - [name](AITransformDto.md#name)
@@ -23,6 +24,16 @@ AITransformDto
 ### conditions
 
 • `Optional` **conditions**: `string`[]
+
+**`Memberof`**
+
+AITransformDto
+
+___
+
+### createdAt
+
+• **createdAt**: `Date`
 
 **`Memberof`**
 

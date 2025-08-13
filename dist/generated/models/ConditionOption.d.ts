@@ -29,15 +29,16 @@ export interface ConditionOption {
     value: ConditionOptionValueEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum ConditionOptionConditionEnum {
     HAS_ATTACHMENTS = "HAS_ATTACHMENTS"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum ConditionOptionValueEnum {
     TRUE = "TRUE",
     FALSE = "FALSE"

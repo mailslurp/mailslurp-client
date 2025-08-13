@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    CreateInboxForwarderOptions,
-    CreateInboxForwarderOptionsFromJSON,
-    CreateInboxForwarderOptionsFromJSONTyped,
-    CreateInboxForwarderOptionsToJSON,
-    InboxForwarderTestOptions,
-    InboxForwarderTestOptionsFromJSON,
-    InboxForwarderTestOptionsFromJSONTyped,
-    InboxForwarderTestOptionsToJSON,
+  CreateInboxForwarderOptions,
+  CreateInboxForwarderOptionsFromJSON,
+  CreateInboxForwarderOptionsFromJSONTyped,
+  CreateInboxForwarderOptionsToJSON,
+  InboxForwarderTestOptions,
+  InboxForwarderTestOptionsFromJSON,
+  InboxForwarderTestOptionsFromJSONTyped,
+  InboxForwarderTestOptionsToJSON,
 } from './';
 
 /**
@@ -30,47 +30,58 @@ import {
  * @interface TestNewInboxForwarderOptions
  */
 export interface TestNewInboxForwarderOptions {
-    /**
-     * 
-     * @type {InboxForwarderTestOptions}
-     * @memberof TestNewInboxForwarderOptions
-     */
-    inboxForwarderTestOptions: InboxForwarderTestOptions;
-    /**
-     * 
-     * @type {CreateInboxForwarderOptions}
-     * @memberof TestNewInboxForwarderOptions
-     */
-    createInboxForwarderOptions: CreateInboxForwarderOptions;
+  /**
+   *
+   * @type {InboxForwarderTestOptions}
+   * @memberof TestNewInboxForwarderOptions
+   */
+  inboxForwarderTestOptions: InboxForwarderTestOptions;
+  /**
+   *
+   * @type {CreateInboxForwarderOptions}
+   * @memberof TestNewInboxForwarderOptions
+   */
+  createInboxForwarderOptions: CreateInboxForwarderOptions;
 }
 
-export function TestNewInboxForwarderOptionsFromJSON(json: any): TestNewInboxForwarderOptions {
-    return TestNewInboxForwarderOptionsFromJSONTyped(json, false);
+export function TestNewInboxForwarderOptionsFromJSON(
+  json: any
+): TestNewInboxForwarderOptions {
+  return TestNewInboxForwarderOptionsFromJSONTyped(json, false);
 }
 
-export function TestNewInboxForwarderOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestNewInboxForwarderOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'inboxForwarderTestOptions': InboxForwarderTestOptionsFromJSON(json['inboxForwarderTestOptions']),
-        'createInboxForwarderOptions': CreateInboxForwarderOptionsFromJSON(json['createInboxForwarderOptions']),
-    };
+export function TestNewInboxForwarderOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TestNewInboxForwarderOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    inboxForwarderTestOptions: InboxForwarderTestOptionsFromJSON(
+      json['inboxForwarderTestOptions']
+    ),
+    createInboxForwarderOptions: CreateInboxForwarderOptionsFromJSON(
+      json['createInboxForwarderOptions']
+    ),
+  };
 }
 
-export function TestNewInboxForwarderOptionsToJSON(value?: TestNewInboxForwarderOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'inboxForwarderTestOptions': InboxForwarderTestOptionsToJSON(value.inboxForwarderTestOptions),
-        'createInboxForwarderOptions': CreateInboxForwarderOptionsToJSON(value.createInboxForwarderOptions),
-    };
+export function TestNewInboxForwarderOptionsToJSON(
+  value?: TestNewInboxForwarderOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    inboxForwarderTestOptions: InboxForwarderTestOptionsToJSON(
+      value.inboxForwarderTestOptions
+    ),
+    createInboxForwarderOptions: CreateInboxForwarderOptionsToJSON(
+      value.createInboxForwarderOptions
+    ),
+  };
 }
-
-

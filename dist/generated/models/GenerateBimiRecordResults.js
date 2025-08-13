@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateBimiRecordResultsToJSON = exports.GenerateBimiRecordResultsFromJSONTyped = exports.GenerateBimiRecordResultsFromJSON = exports.GenerateBimiRecordResultsTypeEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var GenerateBimiRecordResultsTypeEnum;
 (function (GenerateBimiRecordResultsTypeEnum) {
     GenerateBimiRecordResultsTypeEnum["A"] = "A";
@@ -115,14 +115,14 @@ function GenerateBimiRecordResultsFromJSON(json) {
 }
 exports.GenerateBimiRecordResultsFromJSON = GenerateBimiRecordResultsFromJSON;
 function GenerateBimiRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': json['name'],
-        'type': json['type'],
-        'ttl': json['ttl'],
-        'value': json['value'],
+        name: json['name'],
+        type: json['type'],
+        ttl: json['ttl'],
+        value: json['value'],
     };
 }
 exports.GenerateBimiRecordResultsFromJSONTyped = GenerateBimiRecordResultsFromJSONTyped;
@@ -134,10 +134,10 @@ function GenerateBimiRecordResultsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'type': value.type,
-        'ttl': value.ttl,
-        'value': value.value,
+        name: value.name,
+        type: value.type,
+        ttl: value.ttl,
+        value: value.value,
     };
 }
 exports.GenerateBimiRecordResultsToJSON = GenerateBimiRecordResultsToJSON;

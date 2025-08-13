@@ -15,9 +15,9 @@ StructuredOutputSchema
 ### Properties
 
 - [\_default](StructuredOutputSchema.md#_default)
-- [\_enum](StructuredOutputSchema.md#_enum)
 - [anyOf](StructuredOutputSchema.md#anyof)
 - [description](StructuredOutputSchema.md#description)
+- [enumValues](StructuredOutputSchema.md#enumvalues)
 - [example](StructuredOutputSchema.md#example)
 - [format](StructuredOutputSchema.md#format)
 - [items](StructuredOutputSchema.md#items)
@@ -49,18 +49,6 @@ StructuredOutputSchema
 
 ___
 
-### \_enum
-
-• `Optional` **\_enum**: `string`[]
-
-When using type string and format enum pass a collection of enum values here.
-
-**`Memberof`**
-
-StructuredOutputSchema
-
-___
-
 ### anyOf
 
 • `Optional` **anyOf**: [`StructuredOutputSchema`](StructuredOutputSchema.md)[]
@@ -76,6 +64,18 @@ ___
 • `Optional` **description**: `string`
 
 Provide a description of the schema to help the AI understand the schema.
+
+**`Memberof`**
+
+StructuredOutputSchema
+
+___
+
+### enumValues
+
+• `Optional` **enumValues**: `string`[]
+
+When using type string and format enum pass a collection of enum values here.
 
 **`Memberof`**
 
@@ -209,6 +209,8 @@ ___
 
 • `Optional` **pattern**: `string`
 
+Regex pattern for STRING type
+
 **`Memberof`**
 
 StructuredOutputSchema
@@ -246,6 +248,8 @@ ___
 ### required
 
 • `Optional` **required**: `string`[]
+
+Is field required
 
 **`Memberof`**
 

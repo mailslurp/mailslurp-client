@@ -246,41 +246,41 @@ export declare class AIControllerApi extends runtime.BaseAPI {
     validateStructuredOutputSchema(requestParameters: ValidateStructuredOutputSchemaRequest, initOverrides?: RequestInit): Promise<StructuredOutputSchemaValidation>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetTransformerMappingsEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetTransformerMappingsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetTransformerResultsEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetTransformerResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetTransformersSortEnum {
     ASC = "ASC",
     DESC = "DESC"

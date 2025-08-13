@@ -19,11 +19,11 @@ function VerifyWebhookSignatureResultsFromJSON(json) {
 }
 exports.VerifyWebhookSignatureResultsFromJSON = VerifyWebhookSignatureResultsFromJSON;
 function VerifyWebhookSignatureResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'isValid': json['isValid'],
+        isValid: json['isValid'],
     };
 }
 exports.VerifyWebhookSignatureResultsFromJSONTyped = VerifyWebhookSignatureResultsFromJSONTyped;
@@ -35,7 +35,7 @@ function VerifyWebhookSignatureResultsToJSON(value) {
         return null;
     }
     return {
-        'isValid': value.isValid,
+        isValid: value.isValid,
     };
 }
 exports.VerifyWebhookSignatureResultsToJSON = VerifyWebhookSignatureResultsToJSON;

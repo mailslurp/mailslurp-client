@@ -12,93 +12,105 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 
 export interface SubmitFormRequest {
-    to?: string;
-    subject?: string;
-    emailAddress?: string;
-    successMessage?: string;
-    spamCheck?: string;
-    otherParameters?: string;
+  to?: string;
+  subject?: string;
+  emailAddress?: string;
+  successMessage?: string;
+  spamCheck?: string;
+  otherParameters?: string;
 }
 
 /**
- * 
+ *
  */
 export class FormControllerApi extends runtime.BaseAPI {
+  /**
+   * This endpoint allows you to submit HTML forms and receive the field values and files via email.   #### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.   You must provide at-least a `_to` email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding `name` attributes or as URL query parameters such as `?_to=test@example.com`  The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.  #### Submitting This endpoint accepts form submission via POST method. It accepts `application/x-www-form-urlencoded`, and `multipart/form-data` content-types.  #### HTML Example ```html <form    action=\"https://api.mailslurp.com/forms\"   method=\"post\" >   <input name=\"_to\" type=\"hidden\" value=\"test@example.com\"/>   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```  #### URL Example ```html <form    action=\"https://api.mailslurp.com/forms?_to=test@example.com\"   method=\"post\" >   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```    The email address is specified by a `_to` field OR is extracted from an email alias specified by a `_toAlias` field (see the alias controller for more information).  Endpoint accepts .  You can specify a content type in HTML forms using the `enctype` attribute, for instance: `<form enctype=\"multipart/form-data\">`.
+   * Submit a form to be parsed and sent as an email to an address determined by the form fields
+   */
+  async submitFormRaw(
+    requestParameters: SubmitFormRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    const queryParameters: any = {};
 
-    /**
-     * This endpoint allows you to submit HTML forms and receive the field values and files via email.   #### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.   You must provide at-least a `_to` email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding `name` attributes or as URL query parameters such as `?_to=test@example.com`  The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.  #### Submitting This endpoint accepts form submission via POST method. It accepts `application/x-www-form-urlencoded`, and `multipart/form-data` content-types.  #### HTML Example ```html <form    action=\"https://api.mailslurp.com/forms\"   method=\"post\" >   <input name=\"_to\" type=\"hidden\" value=\"test@example.com\"/>   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```  #### URL Example ```html <form    action=\"https://api.mailslurp.com/forms?_to=test@example.com\"   method=\"post\" >   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```    The email address is specified by a `_to` field OR is extracted from an email alias specified by a `_toAlias` field (see the alias controller for more information).  Endpoint accepts .  You can specify a content type in HTML forms using the `enctype` attribute, for instance: `<form enctype=\"multipart/form-data\">`.  
-     * Submit a form to be parsed and sent as an email to an address determined by the form fields
-     */
-    async submitFormRaw(requestParameters: SubmitFormRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>> {
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const consumes: runtime.Consume[] = [
-            { contentType: 'application/x-www-form-urlencoded' },
-            { contentType: 'multipart/form-data' },
-        ];
-        // @ts-ignore: canConsumeForm may be unused
-        const canConsumeForm = runtime.canConsumeForm(consumes);
-
-        let formParams: { append(param: string, value: any): any };
-        let useForm = false;
-        if (useForm) {
-            formParams = new FormData();
-        } else {
-            formParams = new URLSearchParams();
-        }
-
-        if (requestParameters.to !== undefined) {
-            formParams.append('_to', requestParameters.to as any);
-        }
-
-        if (requestParameters.subject !== undefined) {
-            formParams.append('_subject', requestParameters.subject as any);
-        }
-
-        if (requestParameters.emailAddress !== undefined) {
-            formParams.append('_emailAddress', requestParameters.emailAddress as any);
-        }
-
-        if (requestParameters.successMessage !== undefined) {
-            formParams.append('_successMessage', requestParameters.successMessage as any);
-        }
-
-        if (requestParameters.spamCheck !== undefined) {
-            formParams.append('_spamCheck', requestParameters.spamCheck as any);
-        }
-
-        if (requestParameters.otherParameters !== undefined) {
-            formParams.append('otherParameters', requestParameters.otherParameters as any);
-        }
-
-        const response = await this.request({
-            path: `/forms`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: formParams,
-        }, initOverrides);
-
-        return new runtime.TextApiResponse(response) as any;
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * This endpoint allows you to submit HTML forms and receive the field values and files via email.   #### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.   You must provide at-least a `_to` email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding `name` attributes or as URL query parameters such as `?_to=test@example.com`  The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.  #### Submitting This endpoint accepts form submission via POST method. It accepts `application/x-www-form-urlencoded`, and `multipart/form-data` content-types.  #### HTML Example ```html <form    action=\"https://api.mailslurp.com/forms\"   method=\"post\" >   <input name=\"_to\" type=\"hidden\" value=\"test@example.com\"/>   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```  #### URL Example ```html <form    action=\"https://api.mailslurp.com/forms?_to=test@example.com\"   method=\"post\" >   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```    The email address is specified by a `_to` field OR is extracted from an email alias specified by a `_toAlias` field (see the alias controller for more information).  Endpoint accepts .  You can specify a content type in HTML forms using the `enctype` attribute, for instance: `<form enctype=\"multipart/form-data\">`.  
-     * Submit a form to be parsed and sent as an email to an address determined by the form fields
-     */
-    async submitForm(requestParameters: SubmitFormRequest, initOverrides?: RequestInit): Promise<string> {
-        const response = await this.submitFormRaw(requestParameters, initOverrides);
-        return await response.value();
+    const consumes: runtime.Consume[] = [
+      { contentType: 'application/x-www-form-urlencoded' },
+      { contentType: 'multipart/form-data' },
+    ];
+    // @ts-ignore: canConsumeForm may be unused
+    const canConsumeForm = runtime.canConsumeForm(consumes);
+
+    let formParams: { append(param: string, value: any): any };
+    let useForm = false;
+    if (useForm) {
+      formParams = new FormData();
+    } else {
+      formParams = new URLSearchParams();
     }
 
+    if (requestParameters.to !== undefined) {
+      formParams.append('_to', requestParameters.to as any);
+    }
+
+    if (requestParameters.subject !== undefined) {
+      formParams.append('_subject', requestParameters.subject as any);
+    }
+
+    if (requestParameters.emailAddress !== undefined) {
+      formParams.append('_emailAddress', requestParameters.emailAddress as any);
+    }
+
+    if (requestParameters.successMessage !== undefined) {
+      formParams.append(
+        '_successMessage',
+        requestParameters.successMessage as any
+      );
+    }
+
+    if (requestParameters.spamCheck !== undefined) {
+      formParams.append('_spamCheck', requestParameters.spamCheck as any);
+    }
+
+    if (requestParameters.otherParameters !== undefined) {
+      formParams.append(
+        'otherParameters',
+        requestParameters.otherParameters as any
+      );
+    }
+
+    const response = await this.request(
+      {
+        path: `/forms`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: formParams,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * This endpoint allows you to submit HTML forms and receive the field values and files via email.   #### Parameters The endpoint looks for special meta parameters in the form fields OR in the URL request parameters. The meta parameters can be used to specify the behaviour of the email.   You must provide at-least a `_to` email address to tell the endpoint where the form should be emailed. These can be submitted as hidden HTML input fields with the corresponding `name` attributes or as URL query parameters such as `?_to=test@example.com`  The endpoint takes all other form fields that are named and includes them in the message body of the email. Files are sent as attachments.  #### Submitting This endpoint accepts form submission via POST method. It accepts `application/x-www-form-urlencoded`, and `multipart/form-data` content-types.  #### HTML Example ```html <form    action=\"https://api.mailslurp.com/forms\"   method=\"post\" >   <input name=\"_to\" type=\"hidden\" value=\"test@example.com\"/>   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```  #### URL Example ```html <form    action=\"https://api.mailslurp.com/forms?_to=test@example.com\"   method=\"post\" >   <textarea name=\"feedback\"></textarea>   <button type=\"submit\">Submit</button> </form> ```    The email address is specified by a `_to` field OR is extracted from an email alias specified by a `_toAlias` field (see the alias controller for more information).  Endpoint accepts .  You can specify a content type in HTML forms using the `enctype` attribute, for instance: `<form enctype=\"multipart/form-data\">`.
+   * Submit a form to be parsed and sent as an email to an address determined by the form fields
+   */
+  async submitForm(
+    requestParameters: SubmitFormRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.submitFormRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
 }

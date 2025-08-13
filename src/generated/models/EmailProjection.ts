@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    EmailRecipients,
-    EmailRecipientsFromJSON,
-    EmailRecipientsFromJSONTyped,
-    EmailRecipientsToJSON,
-    Sender,
-    SenderFromJSON,
-    SenderFromJSONTyped,
-    SenderToJSON,
+  EmailRecipients,
+  EmailRecipientsFromJSON,
+  EmailRecipientsFromJSONTyped,
+  EmailRecipientsToJSON,
+  Sender,
+  SenderFromJSON,
+  SenderFromJSONTyped,
+  SenderToJSON,
 } from './';
 
 /**
@@ -30,223 +30,228 @@ import {
  * @interface EmailProjection
  */
 export interface EmailProjection {
-    /**
-     * 
-     * @type {Sender}
-     * @memberof EmailProjection
-     */
-    sender?: Sender | null;
-    /**
-     * 
-     * @type {EmailRecipients}
-     * @memberof EmailProjection
-     */
-    recipients?: EmailRecipients | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    attachments?: Array<string> | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    inboxId: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof EmailProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    to: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    cc?: Array<string> | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    bcc?: Array<string> | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    messageId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    domainId?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    favourite?: boolean | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    plusAddress?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof EmailProjection
-     */
-    sizeBytes?: number | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    inReplyTo?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    read: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyExcerpt?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    textExcerpt?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    bodyPartContentTypes?: Array<string> | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyMD5Hash?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    teamAccess: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    subject?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    threadId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    from: string | null;
+  /**
+   *
+   * @type {Sender}
+   * @memberof EmailProjection
+   */
+  sender?: Sender | null;
+  /**
+   *
+   * @type {EmailRecipients}
+   * @memberof EmailProjection
+   */
+  recipients?: EmailRecipients | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  attachments?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  inboxId: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof EmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  to: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  cc?: Array<string> | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  bcc?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  messageId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  domainId?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  favourite?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  plusAddress?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof EmailProjection
+   */
+  sizeBytes?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  inReplyTo?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  read: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  bodyExcerpt?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  textExcerpt?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  bodyPartContentTypes?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  bodyMD5Hash?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  teamAccess: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  threadId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  from: string | null;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
-    return EmailProjectionFromJSONTyped(json, false);
+  return EmailProjectionFromJSONTyped(json, false);
 }
 
-export function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'sender': !exists(json, 'sender') ? undefined : SenderFromJSON(json['sender']),
-        'recipients': !exists(json, 'recipients') ? undefined : EmailRecipientsFromJSON(json['recipients']),
-        'attachments': !exists(json, 'attachments') ? undefined : json['attachments'],
-        'inboxId': json['inboxId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'to': json['to'],
-        'cc': !exists(json, 'cc') ? undefined : json['cc'],
-        'bcc': !exists(json, 'bcc') ? undefined : json['bcc'],
-        'messageId': !exists(json, 'messageId') ? undefined : json['messageId'],
-        'domainId': !exists(json, 'domainId') ? undefined : json['domainId'],
-        'favourite': !exists(json, 'favourite') ? undefined : json['favourite'],
-        'plusAddress': !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
-        'sizeBytes': !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
-        'inReplyTo': !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-        'read': json['read'],
-        'bodyExcerpt': !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-        'textExcerpt': !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
-        'bodyPartContentTypes': !exists(json, 'bodyPartContentTypes') ? undefined : json['bodyPartContentTypes'],
-        'bodyMD5Hash': !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-        'teamAccess': json['teamAccess'],
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'id': json['id'],
-        'threadId': !exists(json, 'threadId') ? undefined : json['threadId'],
-        'from': json['from'],
-    };
+export function EmailProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
+    recipients: !exists(json, 'recipients')
+      ? undefined
+      : EmailRecipientsFromJSON(json['recipients']),
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    inboxId: json['inboxId'],
+    createdAt: new Date(json['createdAt']),
+    to: json['to'],
+    cc: !exists(json, 'cc') ? undefined : json['cc'],
+    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
+    messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
+    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+    read: json['read'],
+    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+    bodyPartContentTypes: !exists(json, 'bodyPartContentTypes')
+      ? undefined
+      : json['bodyPartContentTypes'],
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    teamAccess: json['teamAccess'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    id: json['id'],
+    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
+    from: json['from'],
+  };
 }
 
 export function EmailProjectionToJSON(value?: EmailProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'sender': SenderToJSON(value.sender),
-        'recipients': EmailRecipientsToJSON(value.recipients),
-        'attachments': value.attachments,
-        'inboxId': value.inboxId,
-        'createdAt': (value.createdAt.toISOString()),
-        'to': value.to,
-        'cc': value.cc,
-        'bcc': value.bcc,
-        'messageId': value.messageId,
-        'domainId': value.domainId,
-        'favourite': value.favourite,
-        'plusAddress': value.plusAddress,
-        'sizeBytes': value.sizeBytes,
-        'inReplyTo': value.inReplyTo,
-        'read': value.read,
-        'bodyExcerpt': value.bodyExcerpt,
-        'textExcerpt': value.textExcerpt,
-        'bodyPartContentTypes': value.bodyPartContentTypes,
-        'bodyMD5Hash': value.bodyMD5Hash,
-        'teamAccess': value.teamAccess,
-        'subject': value.subject,
-        'id': value.id,
-        'threadId': value.threadId,
-        'from': value.from,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    sender: SenderToJSON(value.sender),
+    recipients: EmailRecipientsToJSON(value.recipients),
+    attachments: value.attachments,
+    inboxId: value.inboxId,
+    createdAt: value.createdAt.toISOString(),
+    to: value.to,
+    cc: value.cc,
+    bcc: value.bcc,
+    messageId: value.messageId,
+    domainId: value.domainId,
+    favourite: value.favourite,
+    plusAddress: value.plusAddress,
+    sizeBytes: value.sizeBytes,
+    inReplyTo: value.inReplyTo,
+    read: value.read,
+    bodyExcerpt: value.bodyExcerpt,
+    textExcerpt: value.textExcerpt,
+    bodyPartContentTypes: value.bodyPartContentTypes,
+    bodyMD5Hash: value.bodyMD5Hash,
+    teamAccess: value.teamAccess,
+    subject: value.subject,
+    id: value.id,
+    threadId: value.threadId,
+    from: value.from,
+  };
 }
-
-

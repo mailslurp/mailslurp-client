@@ -14,60 +14,61 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ConnectorSyncResult
  */
 export interface ConnectorSyncResult {
-    /**
-     * 
-     * @type {number}
-     * @memberof ConnectorSyncResult
-     */
-    emailSyncCount: number;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ConnectorSyncResult
-     */
-    logs?: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ConnectorSyncResult
-     */
-    emailIds?: Array<string>;
+  /**
+   *
+   * @type {number}
+   * @memberof ConnectorSyncResult
+   */
+  emailSyncCount: number;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ConnectorSyncResult
+   */
+  logs?: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ConnectorSyncResult
+   */
+  emailIds?: Array<string>;
 }
 
 export function ConnectorSyncResultFromJSON(json: any): ConnectorSyncResult {
-    return ConnectorSyncResultFromJSONTyped(json, false);
+  return ConnectorSyncResultFromJSONTyped(json, false);
 }
 
-export function ConnectorSyncResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSyncResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'emailSyncCount': json['emailSyncCount'],
-        'logs': !exists(json, 'logs') ? undefined : json['logs'],
-        'emailIds': !exists(json, 'emailIds') ? undefined : json['emailIds'],
-    };
+export function ConnectorSyncResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ConnectorSyncResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    emailSyncCount: json['emailSyncCount'],
+    logs: !exists(json, 'logs') ? undefined : json['logs'],
+    emailIds: !exists(json, 'emailIds') ? undefined : json['emailIds'],
+  };
 }
 
-export function ConnectorSyncResultToJSON(value?: ConnectorSyncResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'emailSyncCount': value.emailSyncCount,
-        'logs': value.logs,
-        'emailIds': value.emailIds,
-    };
+export function ConnectorSyncResultToJSON(
+  value?: ConnectorSyncResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    emailSyncCount: value.emailSyncCount,
+    logs: value.logs,
+    emailIds: value.emailIds,
+  };
 }
-
-

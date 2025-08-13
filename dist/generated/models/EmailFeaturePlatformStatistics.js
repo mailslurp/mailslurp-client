@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailFeaturePlatformStatisticsToJSON = exports.EmailFeaturePlatformStatisticsFromJSONTyped = exports.EmailFeaturePlatformStatisticsFromJSON = exports.EmailFeaturePlatformStatisticsPlatformEnum = void 0;
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EmailFeaturePlatformStatisticsPlatformEnum;
 (function (EmailFeaturePlatformStatisticsPlatformEnum) {
     EmailFeaturePlatformStatisticsPlatformEnum["android"] = "android";
@@ -37,12 +37,12 @@ function EmailFeaturePlatformStatisticsFromJSON(json) {
 }
 exports.EmailFeaturePlatformStatisticsFromJSON = EmailFeaturePlatformStatisticsFromJSON;
 function EmailFeaturePlatformStatisticsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'platform': json['platform'],
-        'versions': (json['versions'].map(_1.EmailFeatureVersionStatisticsFromJSON)),
+        platform: json['platform'],
+        versions: json['versions'].map(_1.EmailFeatureVersionStatisticsFromJSON),
     };
 }
 exports.EmailFeaturePlatformStatisticsFromJSONTyped = EmailFeaturePlatformStatisticsFromJSONTyped;
@@ -54,8 +54,8 @@ function EmailFeaturePlatformStatisticsToJSON(value) {
         return null;
     }
     return {
-        'platform': value.platform,
-        'versions': (value.versions.map(_1.EmailFeatureVersionStatisticsToJSON)),
+        platform: value.platform,
+        versions: value.versions.map(_1.EmailFeatureVersionStatisticsToJSON),
     };
 }
 exports.EmailFeaturePlatformStatisticsToJSON = EmailFeaturePlatformStatisticsToJSON;

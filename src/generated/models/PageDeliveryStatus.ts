@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    DeliveryStatusDto,
-    DeliveryStatusDtoFromJSON,
-    DeliveryStatusDtoFromJSONTyped,
-    DeliveryStatusDtoToJSON,
-    PageableObject,
-    PageableObjectFromJSON,
-    PageableObjectFromJSONTyped,
-    PageableObjectToJSON,
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
+  DeliveryStatusDto,
+  DeliveryStatusDtoFromJSON,
+  DeliveryStatusDtoFromJSONTyped,
+  DeliveryStatusDtoToJSON,
+  PageableObject,
+  PageableObjectFromJSON,
+  PageableObjectFromJSONTyped,
+  PageableObjectToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
@@ -34,119 +34,129 @@ import {
  * @interface PageDeliveryStatus
  */
 export interface PageDeliveryStatus {
-    /**
-     * 
-     * @type {Array<DeliveryStatusDto>}
-     * @memberof PageDeliveryStatus
-     */
-    content?: Array<DeliveryStatusDto>;
-    /**
-     * 
-     * @type {PageableObject}
-     * @memberof PageDeliveryStatus
-     */
-    pageable?: PageableObject;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
-    totalElements: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
-    totalPages: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    last?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
-    numberOfElements?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageDeliveryStatus
-     */
-    sort?: SortObject;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    first?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
-    size?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
-    number?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    empty?: boolean;
+  /**
+   *
+   * @type {Array<DeliveryStatusDto>}
+   * @memberof PageDeliveryStatus
+   */
+  content?: Array<DeliveryStatusDto>;
+  /**
+   *
+   * @type {PageableObject}
+   * @memberof PageDeliveryStatus
+   */
+  pageable?: PageableObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageDeliveryStatus
+   */
+  totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageDeliveryStatus
+   */
+  totalPages: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageDeliveryStatus
+   */
+  last?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageDeliveryStatus
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageDeliveryStatus
+   */
+  sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageDeliveryStatus
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageDeliveryStatus
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageDeliveryStatus
+   */
+  number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageDeliveryStatus
+   */
+  empty?: boolean;
 }
 
 export function PageDeliveryStatusFromJSON(json: any): PageDeliveryStatus {
-    return PageDeliveryStatusFromJSONTyped(json, false);
+  return PageDeliveryStatusFromJSONTyped(json, false);
 }
 
-export function PageDeliveryStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageDeliveryStatus {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(DeliveryStatusDtoFromJSON)),
-        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !exists(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-        'first': !exists(json, 'first') ? undefined : json['first'],
-        'size': !exists(json, 'size') ? undefined : json['size'],
-        'number': !exists(json, 'number') ? undefined : json['number'],
-        'empty': !exists(json, 'empty') ? undefined : json['empty'],
-    };
+export function PageDeliveryStatusFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageDeliveryStatus {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(DeliveryStatusDtoFromJSON),
+    pageable: !exists(json, 'pageable')
+      ? undefined
+      : PageableObjectFromJSON(json['pageable']),
+    totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+  };
 }
 
-export function PageDeliveryStatusToJSON(value?: PageDeliveryStatus | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(DeliveryStatusDtoToJSON)),
-        'pageable': PageableObjectToJSON(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': SortObjectToJSON(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
-    };
+export function PageDeliveryStatusToJSON(
+  value?: PageDeliveryStatus | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(DeliveryStatusDtoToJSON),
+    pageable: PageableObjectToJSON(value.pageable),
+    totalElements: value.totalElements,
+    totalPages: value.totalPages,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
+    first: value.first,
+    size: value.size,
+    number: value.number,
+    empty: value.empty,
+  };
 }
-
-

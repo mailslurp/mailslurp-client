@@ -65,28 +65,30 @@ export interface RulesetDto {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum RulesetDtoScopeEnum {
     RECEIVING_EMAILS = "RECEIVING_EMAILS",
     SENDING_EMAILS = "SENDING_EMAILS",
     RECEIVING_SMS = "RECEIVING_SMS",
     SENDING_SMS = "SENDING_SMS"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum RulesetDtoActionEnum {
     BLOCK = "BLOCK",
     ALLOW = "ALLOW",
     FILTER_REMOVE = "FILTER_REMOVE",
     BOUNCE_SOFT = "BOUNCE_SOFT",
     BOUNCE_HARD = "BOUNCE_HARD"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum RulesetDtoHandlerEnum {
     EXCEPTION = "EXCEPTION"
 }

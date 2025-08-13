@@ -14,67 +14,70 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    DNSLookupResult,
-    DNSLookupResultFromJSON,
-    DNSLookupResultFromJSONTyped,
-    DNSLookupResultToJSON,
+  DNSLookupResult,
+  DNSLookupResultFromJSON,
+  DNSLookupResultFromJSONTyped,
+  DNSLookupResultToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface LookupMxRecordsResults
  */
 export interface LookupMxRecordsResults {
-    /**
-     * 
-     * @type {Array<DNSLookupResult>}
-     * @memberof LookupMxRecordsResults
-     */
-    records: Array<DNSLookupResult>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof LookupMxRecordsResults
-     */
-    errors: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof LookupMxRecordsResults
-     */
-    warnings: Array<string>;
+  /**
+   *
+   * @type {Array<DNSLookupResult>}
+   * @memberof LookupMxRecordsResults
+   */
+  records: Array<DNSLookupResult>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof LookupMxRecordsResults
+   */
+  errors: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof LookupMxRecordsResults
+   */
+  warnings: Array<string>;
 }
 
-export function LookupMxRecordsResultsFromJSON(json: any): LookupMxRecordsResults {
-    return LookupMxRecordsResultsFromJSONTyped(json, false);
+export function LookupMxRecordsResultsFromJSON(
+  json: any
+): LookupMxRecordsResults {
+  return LookupMxRecordsResultsFromJSONTyped(json, false);
 }
 
-export function LookupMxRecordsResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupMxRecordsResults {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'records': ((json['records'] as Array<any>).map(DNSLookupResultFromJSON)),
-        'errors': json['errors'],
-        'warnings': json['warnings'],
-    };
+export function LookupMxRecordsResultsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): LookupMxRecordsResults {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    records: (json['records'] as Array<any>).map(DNSLookupResultFromJSON),
+    errors: json['errors'],
+    warnings: json['warnings'],
+  };
 }
 
-export function LookupMxRecordsResultsToJSON(value?: LookupMxRecordsResults | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'records': ((value.records as Array<any>).map(DNSLookupResultToJSON)),
-        'errors': value.errors,
-        'warnings': value.warnings,
-    };
+export function LookupMxRecordsResultsToJSON(
+  value?: LookupMxRecordsResults | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    records: (value.records as Array<any>).map(DNSLookupResultToJSON),
+    errors: value.errors,
+    warnings: value.warnings,
+  };
 }
-
-

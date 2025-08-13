@@ -14,52 +14,55 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ConditionalStructuredContentResult
  */
 export interface ConditionalStructuredContentResult {
-    /**
-     * 
-     * @type {object}
-     * @memberof ConditionalStructuredContentResult
-     */
-    result?: object | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ConditionalStructuredContentResult
-     */
-    conditionsMatch: boolean;
+  /**
+   *
+   * @type {object}
+   * @memberof ConditionalStructuredContentResult
+   */
+  result?: object | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConditionalStructuredContentResult
+   */
+  conditionsMatch: boolean;
 }
 
-export function ConditionalStructuredContentResultFromJSON(json: any): ConditionalStructuredContentResult {
-    return ConditionalStructuredContentResultFromJSONTyped(json, false);
+export function ConditionalStructuredContentResultFromJSON(
+  json: any
+): ConditionalStructuredContentResult {
+  return ConditionalStructuredContentResultFromJSONTyped(json, false);
 }
 
-export function ConditionalStructuredContentResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConditionalStructuredContentResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'result': !exists(json, 'result') ? undefined : json['result'],
-        'conditionsMatch': json['conditionsMatch'],
-    };
+export function ConditionalStructuredContentResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ConditionalStructuredContentResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    result: !exists(json, 'result') ? undefined : json['result'],
+    conditionsMatch: json['conditionsMatch'],
+  };
 }
 
-export function ConditionalStructuredContentResultToJSON(value?: ConditionalStructuredContentResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'result': value.result,
-        'conditionsMatch': value.conditionsMatch,
-    };
+export function ConditionalStructuredContentResultToJSON(
+  value?: ConditionalStructuredContentResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    result: value.result,
+    conditionsMatch: value.conditionsMatch,
+  };
 }
-
-

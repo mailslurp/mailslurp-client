@@ -12,437 +12,615 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    CreatePortalOptions,
-    CreatePortalOptionsFromJSON,
-    CreatePortalOptionsToJSON,
-    CreatePortalUserOptions,
-    CreatePortalUserOptionsFromJSON,
-    CreatePortalUserOptionsToJSON,
-    GuestPortalDto,
-    GuestPortalDtoFromJSON,
-    GuestPortalDtoToJSON,
-    GuestPortalUserCreateDto,
-    GuestPortalUserCreateDtoFromJSON,
-    GuestPortalUserCreateDtoToJSON,
-    GuestPortalUserDto,
-    GuestPortalUserDtoFromJSON,
-    GuestPortalUserDtoToJSON,
-    PageGuestPortalUsers,
-    PageGuestPortalUsersFromJSON,
-    PageGuestPortalUsersToJSON,
+  CreatePortalOptions,
+  CreatePortalOptionsFromJSON,
+  CreatePortalOptionsToJSON,
+  CreatePortalUserOptions,
+  CreatePortalUserOptionsFromJSON,
+  CreatePortalUserOptionsToJSON,
+  GuestPortalDto,
+  GuestPortalDtoFromJSON,
+  GuestPortalDtoToJSON,
+  GuestPortalUserCreateDto,
+  GuestPortalUserCreateDtoFromJSON,
+  GuestPortalUserCreateDtoToJSON,
+  GuestPortalUserDto,
+  GuestPortalUserDtoFromJSON,
+  GuestPortalUserDtoToJSON,
+  PageGuestPortalUsers,
+  PageGuestPortalUsersFromJSON,
+  PageGuestPortalUsersToJSON,
 } from '../models';
 
 export interface CreateGuestPortalRequest {
-    createPortalOptions: CreatePortalOptions;
+  createPortalOptions: CreatePortalOptions;
 }
 
 export interface CreateGuestPortalUserRequest {
-    portalId: string;
-    createPortalUserOptions: CreatePortalUserOptions;
+  portalId: string;
+  createPortalUserOptions: CreatePortalUserOptions;
 }
 
 export interface GetAllGuestPortalUsersRequest {
-    portalId?: string;
-    search?: string;
-    page?: number;
-    size?: number;
-    sort?: GetAllGuestPortalUsersSortEnum;
-    since?: Date;
-    before?: Date;
+  portalId?: string;
+  search?: string;
+  page?: number;
+  size?: number;
+  sort?: GetAllGuestPortalUsersSortEnum;
+  since?: Date;
+  before?: Date;
 }
 
 export interface GetGuestPortalRequest {
-    portalId: string;
+  portalId: string;
 }
 
 export interface GetGuestPortalUserRequest {
-    portalId: string;
-    guestId: string;
+  portalId: string;
+  guestId: string;
 }
 
 export interface GetGuestPortalUserByIdRequest {
-    guestId: string;
+  guestId: string;
 }
 
 export interface GetGuestPortalUsersRequest {
-    portalId: string;
-    search?: string;
-    page?: number;
-    size?: number;
-    sort?: GetGuestPortalUsersSortEnum;
-    since?: Date;
-    before?: Date;
+  portalId: string;
+  search?: string;
+  page?: number;
+  size?: number;
+  sort?: GetGuestPortalUsersSortEnum;
+  since?: Date;
+  before?: Date;
 }
 
 /**
- * 
+ *
  */
 export class GuestPortalControllerApi extends runtime.BaseAPI {
-
-    /**
-     * Create a guest login page for customers or clients to access assigned email addresses
-     * Create a portal page for your customers or clients to log into email accounts and view emails.
-     */
-    async createGuestPortalRaw(requestParameters: CreateGuestPortalRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GuestPortalDto>> {
-        if (requestParameters.createPortalOptions === null || requestParameters.createPortalOptions === undefined) {
-            throw new runtime.RequiredError('createPortalOptions','Required parameter requestParameters.createPortalOptions was null or undefined when calling createGuestPortal.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreatePortalOptionsToJSON(requestParameters.createPortalOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GuestPortalDtoFromJSON(jsonValue));
+  /**
+   * Create a guest login page for customers or clients to access assigned email addresses
+   * Create a portal page for your customers or clients to log into email accounts and view emails.
+   */
+  async createGuestPortalRaw(
+    requestParameters: CreateGuestPortalRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GuestPortalDto>> {
+    if (
+      requestParameters.createPortalOptions === null ||
+      requestParameters.createPortalOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createPortalOptions',
+        'Required parameter requestParameters.createPortalOptions was null or undefined when calling createGuestPortal.'
+      );
     }
 
-    /**
-     * Create a guest login page for customers or clients to access assigned email addresses
-     * Create a portal page for your customers or clients to log into email accounts and view emails.
-     */
-    async createGuestPortal(requestParameters: CreateGuestPortalRequest, initOverrides?: RequestInit): Promise<GuestPortalDto> {
-        const response = await this.createGuestPortalRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Add customer to portal
-     * Create a portal guest user
-     */
-    async createGuestPortalUserRaw(requestParameters: CreateGuestPortalUserRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GuestPortalUserCreateDto>> {
-        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
-            throw new runtime.RequiredError('portalId','Required parameter requestParameters.portalId was null or undefined when calling createGuestPortalUser.');
-        }
+    const response = await this.request(
+      {
+        path: `/guest-portal`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreatePortalOptionsToJSON(requestParameters.createPortalOptions),
+      },
+      initOverrides
+    );
 
-        if (requestParameters.createPortalUserOptions === null || requestParameters.createPortalUserOptions === undefined) {
-            throw new runtime.RequiredError('createPortalUserOptions','Required parameter requestParameters.createPortalUserOptions was null or undefined when calling createGuestPortalUser.');
-        }
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GuestPortalDtoFromJSON(jsonValue)
+    );
+  }
 
-        const queryParameters: any = {};
+  /**
+   * Create a guest login page for customers or clients to access assigned email addresses
+   * Create a portal page for your customers or clients to log into email accounts and view emails.
+   */
+  async createGuestPortal(
+    requestParameters: CreateGuestPortalRequest,
+    initOverrides?: RequestInit
+  ): Promise<GuestPortalDto> {
+    const response = await this.createGuestPortalRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal/{portalId}/user`.replace(`{${"portalId"}}`, encodeURIComponent(String(requestParameters.portalId))),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreatePortalUserOptionsToJSON(requestParameters.createPortalUserOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GuestPortalUserCreateDtoFromJSON(jsonValue));
+  /**
+   * Add customer to portal
+   * Create a portal guest user
+   */
+  async createGuestPortalUserRaw(
+    requestParameters: CreateGuestPortalUserRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GuestPortalUserCreateDto>> {
+    if (
+      requestParameters.portalId === null ||
+      requestParameters.portalId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'portalId',
+        'Required parameter requestParameters.portalId was null or undefined when calling createGuestPortalUser.'
+      );
     }
 
-    /**
-     * Add customer to portal
-     * Create a portal guest user
-     */
-    async createGuestPortalUser(requestParameters: CreateGuestPortalUserRequest, initOverrides?: RequestInit): Promise<GuestPortalUserCreateDto> {
-        const response = await this.createGuestPortalUserRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (
+      requestParameters.createPortalUserOptions === null ||
+      requestParameters.createPortalUserOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createPortalUserOptions',
+        'Required parameter requestParameters.createPortalUserOptions was null or undefined when calling createGuestPortalUser.'
+      );
     }
 
-    /**
-     * Get all customers for a portal
-     * Get all guest users for portal
-     */
-    async getAllGuestPortalUsersRaw(requestParameters: GetAllGuestPortalUsersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageGuestPortalUsers>> {
-        const queryParameters: any = {};
+    const queryParameters: any = {};
 
-        if (requestParameters.portalId !== undefined) {
-            queryParameters['portalId'] = requestParameters.portalId;
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        if (requestParameters.search !== undefined) {
-            queryParameters['search'] = requestParameters.search;
-        }
+    headerParameters['Content-Type'] = 'application/json';
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
-
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal/user`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageGuestPortalUsersFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get all customers for a portal
-     * Get all guest users for portal
-     */
-    async getAllGuestPortalUsers(requestParameters: GetAllGuestPortalUsersRequest, initOverrides?: RequestInit): Promise<PageGuestPortalUsers> {
-        const response = await this.getAllGuestPortalUsersRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/guest-portal/{portalId}/user`.replace(
+          `{${'portalId'}}`,
+          encodeURIComponent(String(requestParameters.portalId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreatePortalUserOptionsToJSON(
+          requestParameters.createPortalUserOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GuestPortalUserCreateDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Add customer to portal
+   * Create a portal guest user
+   */
+  async createGuestPortalUser(
+    requestParameters: CreateGuestPortalUserRequest,
+    initOverrides?: RequestInit
+  ): Promise<GuestPortalUserCreateDto> {
+    const response = await this.createGuestPortalUserRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get all customers for a portal
+   * Get all guest users for portal
+   */
+  async getAllGuestPortalUsersRaw(
+    requestParameters: GetAllGuestPortalUsersRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageGuestPortalUsers>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.portalId !== undefined) {
+      queryParameters['portalId'] = requestParameters.portalId;
     }
 
-    /**
-     * Fetch a customer guest portal
-     * Get a client email portal
-     */
-    async getGuestPortalRaw(requestParameters: GetGuestPortalRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GuestPortalDto>> {
-        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
-            throw new runtime.RequiredError('portalId','Required parameter requestParameters.portalId was null or undefined when calling getGuestPortal.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal/{portalId}`.replace(`{${"portalId"}}`, encodeURIComponent(String(requestParameters.portalId))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GuestPortalDtoFromJSON(jsonValue));
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
     }
 
-    /**
-     * Fetch a customer guest portal
-     * Get a client email portal
-     */
-    async getGuestPortal(requestParameters: GetGuestPortalRequest, initOverrides?: RequestInit): Promise<GuestPortalDto> {
-        const response = await this.getGuestPortalRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Get customer for portal
-     * Get guest user for portal
-     */
-    async getGuestPortalUserRaw(requestParameters: GetGuestPortalUserRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GuestPortalUserDto>> {
-        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
-            throw new runtime.RequiredError('portalId','Required parameter requestParameters.portalId was null or undefined when calling getGuestPortalUser.');
-        }
-
-        if (requestParameters.guestId === null || requestParameters.guestId === undefined) {
-            throw new runtime.RequiredError('guestId','Required parameter requestParameters.guestId was null or undefined when calling getGuestPortalUser.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal/{portalId}/user/{guestId}`.replace(`{${"portalId"}}`, encodeURIComponent(String(requestParameters.portalId))).replace(`{${"guestId"}}`, encodeURIComponent(String(requestParameters.guestId))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GuestPortalUserDtoFromJSON(jsonValue));
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
-    /**
-     * Get customer for portal
-     * Get guest user for portal
-     */
-    async getGuestPortalUser(requestParameters: GetGuestPortalUserRequest, initOverrides?: RequestInit): Promise<GuestPortalUserDto> {
-        const response = await this.getGuestPortalUserRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
     }
 
-    /**
-     * Get customer by ID
-     * Get guest user
-     */
-    async getGuestPortalUserByIdRaw(requestParameters: GetGuestPortalUserByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GuestPortalUserDto>> {
-        if (requestParameters.guestId === null || requestParameters.guestId === undefined) {
-            throw new runtime.RequiredError('guestId','Required parameter requestParameters.guestId was null or undefined when calling getGuestPortalUserById.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal/user/{guestId}`.replace(`{${"guestId"}}`, encodeURIComponent(String(requestParameters.guestId))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GuestPortalUserDtoFromJSON(jsonValue));
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
 
-    /**
-     * Get customer by ID
-     * Get guest user
-     */
-    async getGuestPortalUserById(requestParameters: GetGuestPortalUserByIdRequest, initOverrides?: RequestInit): Promise<GuestPortalUserDto> {
-        const response = await this.getGuestPortalUserByIdRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
     }
 
-    /**
-     * Get customers for a portal
-     * Get all guest users for portal
-     */
-    async getGuestPortalUsersRaw(requestParameters: GetGuestPortalUsersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageGuestPortalUsers>> {
-        if (requestParameters.portalId === null || requestParameters.portalId === undefined) {
-            throw new runtime.RequiredError('portalId','Required parameter requestParameters.portalId was null or undefined when calling getGuestPortalUsers.');
-        }
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const queryParameters: any = {};
-
-        if (requestParameters.search !== undefined) {
-            queryParameters['search'] = requestParameters.search;
-        }
-
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
-
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
-
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
-
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal/{portalId}/user`.replace(`{${"portalId"}}`, encodeURIComponent(String(requestParameters.portalId))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageGuestPortalUsersFromJSON(jsonValue));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get customers for a portal
-     * Get all guest users for portal
-     */
-    async getGuestPortalUsers(requestParameters: GetGuestPortalUsersRequest, initOverrides?: RequestInit): Promise<PageGuestPortalUsers> {
-        const response = await this.getGuestPortalUsersRaw(requestParameters, initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/guest-portal/user`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageGuestPortalUsersFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all customers for a portal
+   * Get all guest users for portal
+   */
+  async getAllGuestPortalUsers(
+    requestParameters: GetAllGuestPortalUsersRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageGuestPortalUsers> {
+    const response = await this.getAllGuestPortalUsersRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Fetch a customer guest portal
+   * Get a client email portal
+   */
+  async getGuestPortalRaw(
+    requestParameters: GetGuestPortalRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GuestPortalDto>> {
+    if (
+      requestParameters.portalId === null ||
+      requestParameters.portalId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'portalId',
+        'Required parameter requestParameters.portalId was null or undefined when calling getGuestPortal.'
+      );
     }
 
-    /**
-     * Get portals
-     * Get guest portals
-     */
-    async getGuestPortalsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<GuestPortalDto>>> {
-        const queryParameters: any = {};
+    const queryParameters: any = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/guest-portal`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(GuestPortalDtoFromJSON));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get portals
-     * Get guest portals
-     */
-    async getGuestPortals(initOverrides?: RequestInit): Promise<Array<GuestPortalDto>> {
-        const response = await this.getGuestPortalsRaw(initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/guest-portal/{portalId}`.replace(
+          `{${'portalId'}}`,
+          encodeURIComponent(String(requestParameters.portalId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GuestPortalDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Fetch a customer guest portal
+   * Get a client email portal
+   */
+  async getGuestPortal(
+    requestParameters: GetGuestPortalRequest,
+    initOverrides?: RequestInit
+  ): Promise<GuestPortalDto> {
+    const response = await this.getGuestPortalRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get customer for portal
+   * Get guest user for portal
+   */
+  async getGuestPortalUserRaw(
+    requestParameters: GetGuestPortalUserRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GuestPortalUserDto>> {
+    if (
+      requestParameters.portalId === null ||
+      requestParameters.portalId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'portalId',
+        'Required parameter requestParameters.portalId was null or undefined when calling getGuestPortalUser.'
+      );
     }
 
+    if (
+      requestParameters.guestId === null ||
+      requestParameters.guestId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'guestId',
+        'Required parameter requestParameters.guestId was null or undefined when calling getGuestPortalUser.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/guest-portal/{portalId}/user/{guestId}`
+          .replace(
+            `{${'portalId'}}`,
+            encodeURIComponent(String(requestParameters.portalId))
+          )
+          .replace(
+            `{${'guestId'}}`,
+            encodeURIComponent(String(requestParameters.guestId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GuestPortalUserDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get customer for portal
+   * Get guest user for portal
+   */
+  async getGuestPortalUser(
+    requestParameters: GetGuestPortalUserRequest,
+    initOverrides?: RequestInit
+  ): Promise<GuestPortalUserDto> {
+    const response = await this.getGuestPortalUserRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get customer by ID
+   * Get guest user
+   */
+  async getGuestPortalUserByIdRaw(
+    requestParameters: GetGuestPortalUserByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GuestPortalUserDto>> {
+    if (
+      requestParameters.guestId === null ||
+      requestParameters.guestId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'guestId',
+        'Required parameter requestParameters.guestId was null or undefined when calling getGuestPortalUserById.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/guest-portal/user/{guestId}`.replace(
+          `{${'guestId'}}`,
+          encodeURIComponent(String(requestParameters.guestId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GuestPortalUserDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get customer by ID
+   * Get guest user
+   */
+  async getGuestPortalUserById(
+    requestParameters: GetGuestPortalUserByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<GuestPortalUserDto> {
+    const response = await this.getGuestPortalUserByIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get customers for a portal
+   * Get all guest users for portal
+   */
+  async getGuestPortalUsersRaw(
+    requestParameters: GetGuestPortalUsersRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageGuestPortalUsers>> {
+    if (
+      requestParameters.portalId === null ||
+      requestParameters.portalId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'portalId',
+        'Required parameter requestParameters.portalId was null or undefined when calling getGuestPortalUsers.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/guest-portal/{portalId}/user`.replace(
+          `{${'portalId'}}`,
+          encodeURIComponent(String(requestParameters.portalId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageGuestPortalUsersFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get customers for a portal
+   * Get all guest users for portal
+   */
+  async getGuestPortalUsers(
+    requestParameters: GetGuestPortalUsersRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageGuestPortalUsers> {
+    const response = await this.getGuestPortalUsersRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get portals
+   * Get guest portals
+   */
+  async getGuestPortalsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<GuestPortalDto>>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/guest-portal`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(GuestPortalDtoFromJSON)
+    );
+  }
+
+  /**
+   * Get portals
+   * Get guest portals
+   */
+  async getGuestPortals(
+    initOverrides?: RequestInit
+  ): Promise<Array<GuestPortalDto>> {
+    const response = await this.getGuestPortalsRaw(initOverrides);
+    return await response.value();
+  }
 }
 
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetAllGuestPortalUsersSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetGuestPortalUsersSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

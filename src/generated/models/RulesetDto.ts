@@ -19,122 +19,123 @@ import { exists, mapValues } from '../runtime';
  * @interface RulesetDto
  */
 export interface RulesetDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetDto
-     */
-    inboxId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetDto
-     */
-    phoneId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetDto
-     */
-    scope: RulesetDtoScopeEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetDto
-     */
-    action: RulesetDtoActionEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetDto
-     */
-    target: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetDto
-     */
-    handler: RulesetDtoHandlerEnum;
-    /**
-     * 
-     * @type {Date}
-     * @memberof RulesetDto
-     */
-    createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetDto
+   */
+  inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetDto
+   */
+  phoneId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetDto
+   */
+  scope: RulesetDtoScopeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetDto
+   */
+  action: RulesetDtoActionEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetDto
+   */
+  target: string;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetDto
+   */
+  handler: RulesetDtoHandlerEnum;
+  /**
+   *
+   * @type {Date}
+   * @memberof RulesetDto
+   */
+  createdAt: Date;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum RulesetDtoScopeEnum {
-    RECEIVING_EMAILS = 'RECEIVING_EMAILS',
-    SENDING_EMAILS = 'SENDING_EMAILS',
-    RECEIVING_SMS = 'RECEIVING_SMS',
-    SENDING_SMS = 'SENDING_SMS'
-}/**
-* @export
-* @enum {string}
-*/
+  RECEIVING_EMAILS = 'RECEIVING_EMAILS',
+  SENDING_EMAILS = 'SENDING_EMAILS',
+  RECEIVING_SMS = 'RECEIVING_SMS',
+  SENDING_SMS = 'SENDING_SMS',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum RulesetDtoActionEnum {
-    BLOCK = 'BLOCK',
-    ALLOW = 'ALLOW',
-    FILTER_REMOVE = 'FILTER_REMOVE',
-    BOUNCE_SOFT = 'BOUNCE_SOFT',
-    BOUNCE_HARD = 'BOUNCE_HARD'
-}/**
-* @export
-* @enum {string}
-*/
+  BLOCK = 'BLOCK',
+  ALLOW = 'ALLOW',
+  FILTER_REMOVE = 'FILTER_REMOVE',
+  BOUNCE_SOFT = 'BOUNCE_SOFT',
+  BOUNCE_HARD = 'BOUNCE_HARD',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum RulesetDtoHandlerEnum {
-    EXCEPTION = 'EXCEPTION'
+  EXCEPTION = 'EXCEPTION',
 }
 
 export function RulesetDtoFromJSON(json: any): RulesetDto {
-    return RulesetDtoFromJSONTyped(json, false);
+  return RulesetDtoFromJSONTyped(json, false);
 }
 
-export function RulesetDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): RulesetDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'phoneId': !exists(json, 'phoneId') ? undefined : json['phoneId'],
-        'scope': json['scope'],
-        'action': json['action'],
-        'target': json['target'],
-        'handler': json['handler'],
-        'createdAt': (new Date(json['createdAt'])),
-    };
+export function RulesetDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): RulesetDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
+    scope: json['scope'],
+    action: json['action'],
+    target: json['target'],
+    handler: json['handler'],
+    createdAt: new Date(json['createdAt']),
+  };
 }
 
 export function RulesetDtoToJSON(value?: RulesetDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'phoneId': value.phoneId,
-        'scope': value.scope,
-        'action': value.action,
-        'target': value.target,
-        'handler': value.handler,
-        'createdAt': (value.createdAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    inboxId: value.inboxId,
+    phoneId: value.phoneId,
+    scope: value.scope,
+    action: value.action,
+    target: value.target,
+    handler: value.handler,
+    createdAt: value.createdAt.toISOString(),
+  };
 }
-
-

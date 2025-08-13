@@ -19,11 +19,11 @@ function SmsReplyOptionsFromJSON(json) {
 }
 exports.SmsReplyOptionsFromJSON = SmsReplyOptionsFromJSON;
 function SmsReplyOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'body': json['body'],
+        body: json['body'],
     };
 }
 exports.SmsReplyOptionsFromJSONTyped = SmsReplyOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function SmsReplyOptionsToJSON(value) {
         return null;
     }
     return {
-        'body': value.body,
+        body: value.body,
     };
 }
 exports.SmsReplyOptionsToJSON = SmsReplyOptionsToJSON;

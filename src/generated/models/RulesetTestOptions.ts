@@ -19,39 +19,40 @@ import { exists, mapValues } from '../runtime';
  * @interface RulesetTestOptions
  */
 export interface RulesetTestOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof RulesetTestOptions
-     */
-    testTarget: string;
+  /**
+   *
+   * @type {string}
+   * @memberof RulesetTestOptions
+   */
+  testTarget: string;
 }
 
 export function RulesetTestOptionsFromJSON(json: any): RulesetTestOptions {
-    return RulesetTestOptionsFromJSONTyped(json, false);
+  return RulesetTestOptionsFromJSONTyped(json, false);
 }
 
-export function RulesetTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): RulesetTestOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'testTarget': json['testTarget'],
-    };
+export function RulesetTestOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): RulesetTestOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    testTarget: json['testTarget'],
+  };
 }
 
-export function RulesetTestOptionsToJSON(value?: RulesetTestOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'testTarget': value.testTarget,
-    };
+export function RulesetTestOptionsToJSON(
+  value?: RulesetTestOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    testTarget: value.testTarget,
+  };
 }
-
-

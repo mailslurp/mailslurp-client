@@ -14,60 +14,65 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface StructuredOutputSchemaValidation
  */
 export interface StructuredOutputSchemaValidation {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof StructuredOutputSchemaValidation
-     */
-    valid: boolean;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof StructuredOutputSchemaValidation
-     */
-    errors?: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof StructuredOutputSchemaValidation
-     */
-    exampleOutput?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof StructuredOutputSchemaValidation
+   */
+  valid: boolean;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof StructuredOutputSchemaValidation
+   */
+  errors?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof StructuredOutputSchemaValidation
+   */
+  exampleOutput?: string;
 }
 
-export function StructuredOutputSchemaValidationFromJSON(json: any): StructuredOutputSchemaValidation {
-    return StructuredOutputSchemaValidationFromJSONTyped(json, false);
+export function StructuredOutputSchemaValidationFromJSON(
+  json: any
+): StructuredOutputSchemaValidation {
+  return StructuredOutputSchemaValidationFromJSONTyped(json, false);
 }
 
-export function StructuredOutputSchemaValidationFromJSONTyped(json: any, ignoreDiscriminator: boolean): StructuredOutputSchemaValidation {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'valid': json['valid'],
-        'errors': !exists(json, 'errors') ? undefined : json['errors'],
-        'exampleOutput': !exists(json, 'exampleOutput') ? undefined : json['exampleOutput'],
-    };
+export function StructuredOutputSchemaValidationFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): StructuredOutputSchemaValidation {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    valid: json['valid'],
+    errors: !exists(json, 'errors') ? undefined : json['errors'],
+    exampleOutput: !exists(json, 'exampleOutput')
+      ? undefined
+      : json['exampleOutput'],
+  };
 }
 
-export function StructuredOutputSchemaValidationToJSON(value?: StructuredOutputSchemaValidation | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'valid': value.valid,
-        'errors': value.errors,
-        'exampleOutput': value.exampleOutput,
-    };
+export function StructuredOutputSchemaValidationToJSON(
+  value?: StructuredOutputSchemaValidation | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    valid: value.valid,
+    errors: value.errors,
+    exampleOutput: value.exampleOutput,
+  };
 }
-
-

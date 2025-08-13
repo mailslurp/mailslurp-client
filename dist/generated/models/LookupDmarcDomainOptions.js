@@ -19,11 +19,11 @@ function LookupDmarcDomainOptionsFromJSON(json) {
 }
 exports.LookupDmarcDomainOptionsFromJSON = LookupDmarcDomainOptionsFromJSON;
 function LookupDmarcDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'host': json['host'],
+        host: json['host'],
     };
 }
 exports.LookupDmarcDomainOptionsFromJSONTyped = LookupDmarcDomainOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function LookupDmarcDomainOptionsToJSON(value) {
         return null;
     }
     return {
-        'host': value.host,
+        host: value.host,
     };
 }
 exports.LookupDmarcDomainOptionsToJSON = LookupDmarcDomainOptionsToJSON;

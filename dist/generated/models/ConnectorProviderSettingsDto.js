@@ -20,12 +20,12 @@ function ConnectorProviderSettingsDtoFromJSON(json) {
 }
 exports.ConnectorProviderSettingsDtoFromJSON = ConnectorProviderSettingsDtoFromJSON;
 function ConnectorProviderSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'googleSettings': (0, _1.ProviderSettingsFromJSON)(json['googleSettings']),
-        'microsoftSettings': (0, _1.ProviderSettingsFromJSON)(json['microsoftSettings']),
+        googleSettings: (0, _1.ProviderSettingsFromJSON)(json['googleSettings']),
+        microsoftSettings: (0, _1.ProviderSettingsFromJSON)(json['microsoftSettings']),
     };
 }
 exports.ConnectorProviderSettingsDtoFromJSONTyped = ConnectorProviderSettingsDtoFromJSONTyped;
@@ -37,8 +37,8 @@ function ConnectorProviderSettingsDtoToJSON(value) {
         return null;
     }
     return {
-        'googleSettings': (0, _1.ProviderSettingsToJSON)(value.googleSettings),
-        'microsoftSettings': (0, _1.ProviderSettingsToJSON)(value.microsoftSettings),
+        googleSettings: (0, _1.ProviderSettingsToJSON)(value.googleSettings),
+        microsoftSettings: (0, _1.ProviderSettingsToJSON)(value.microsoftSettings),
     };
 }
 exports.ConnectorProviderSettingsDtoToJSON = ConnectorProviderSettingsDtoToJSON;

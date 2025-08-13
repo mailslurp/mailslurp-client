@@ -19,11 +19,11 @@ function EmailAvailableResultFromJSON(json) {
 }
 exports.EmailAvailableResultFromJSON = EmailAvailableResultFromJSON;
 function EmailAvailableResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'available': json['available'],
+        available: json['available'],
     };
 }
 exports.EmailAvailableResultFromJSONTyped = EmailAvailableResultFromJSONTyped;
@@ -35,7 +35,7 @@ function EmailAvailableResultToJSON(value) {
         return null;
     }
     return {
-        'available': value.available,
+        available: value.available,
     };
 }
 exports.EmailAvailableResultToJSON = EmailAvailableResultToJSON;

@@ -53,9 +53,9 @@ export interface GenerateMtaStsRecordResults {
     wellKnownUrl: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateMtaStsRecordResultsTypeEnum {
     A = "A",
     NS = "NS",

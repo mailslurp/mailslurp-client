@@ -14,67 +14,72 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    SendOptInConsentEmailOptions,
-    SendOptInConsentEmailOptionsFromJSON,
-    SendOptInConsentEmailOptionsFromJSONTyped,
-    SendOptInConsentEmailOptionsToJSON,
+  SendOptInConsentEmailOptions,
+  SendOptInConsentEmailOptionsFromJSON,
+  SendOptInConsentEmailOptionsFromJSONTyped,
+  SendOptInConsentEmailOptionsToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface OptInConsentOptions
  */
 export interface OptInConsentOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof OptInConsentOptions
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof OptInConsentOptions
-     */
-    companyName?: string;
-    /**
-     * 
-     * @type {SendOptInConsentEmailOptions}
-     * @memberof OptInConsentOptions
-     */
-    sendOptInOptions?: SendOptInConsentEmailOptions;
+  /**
+   *
+   * @type {string}
+   * @memberof OptInConsentOptions
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {string}
+   * @memberof OptInConsentOptions
+   */
+  companyName?: string;
+  /**
+   *
+   * @type {SendOptInConsentEmailOptions}
+   * @memberof OptInConsentOptions
+   */
+  sendOptInOptions?: SendOptInConsentEmailOptions;
 }
 
 export function OptInConsentOptionsFromJSON(json: any): OptInConsentOptions {
-    return OptInConsentOptionsFromJSONTyped(json, false);
+  return OptInConsentOptionsFromJSONTyped(json, false);
 }
 
-export function OptInConsentOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptInConsentOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'emailAddress': json['emailAddress'],
-        'companyName': !exists(json, 'companyName') ? undefined : json['companyName'],
-        'sendOptInOptions': !exists(json, 'sendOptInOptions') ? undefined : SendOptInConsentEmailOptionsFromJSON(json['sendOptInOptions']),
-    };
+export function OptInConsentOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): OptInConsentOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    emailAddress: json['emailAddress'],
+    companyName: !exists(json, 'companyName') ? undefined : json['companyName'],
+    sendOptInOptions: !exists(json, 'sendOptInOptions')
+      ? undefined
+      : SendOptInConsentEmailOptionsFromJSON(json['sendOptInOptions']),
+  };
 }
 
-export function OptInConsentOptionsToJSON(value?: OptInConsentOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'emailAddress': value.emailAddress,
-        'companyName': value.companyName,
-        'sendOptInOptions': SendOptInConsentEmailOptionsToJSON(value.sendOptInOptions),
-    };
+export function OptInConsentOptionsToJSON(
+  value?: OptInConsentOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    emailAddress: value.emailAddress,
+    companyName: value.companyName,
+    sendOptInOptions: SendOptInConsentEmailOptionsToJSON(
+      value.sendOptInOptions
+    ),
+  };
 }
-
-

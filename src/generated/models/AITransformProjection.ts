@@ -14,91 +14,98 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    StructuredOutputSchema,
-    StructuredOutputSchemaFromJSON,
-    StructuredOutputSchemaFromJSONTyped,
-    StructuredOutputSchemaToJSON,
+  StructuredOutputSchema,
+  StructuredOutputSchemaFromJSON,
+  StructuredOutputSchemaFromJSONTyped,
+  StructuredOutputSchemaToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface AITransformProjection
  */
 export interface AITransformProjection {
-    /**
-     * 
-     * @type {Date}
-     * @memberof AITransformProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof AITransformProjection
-     */
-    conditions?: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof AITransformProjection
-     */
-    instructions?: Array<string>;
-    /**
-     * 
-     * @type {StructuredOutputSchema}
-     * @memberof AITransformProjection
-     */
-    outputSchema?: StructuredOutputSchema | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof AITransformProjection
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AITransformProjection
-     */
-    id: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof AITransformProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof AITransformProjection
+   */
+  conditions?: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof AITransformProjection
+   */
+  instructions?: Array<string>;
+  /**
+   *
+   * @type {StructuredOutputSchema}
+   * @memberof AITransformProjection
+   */
+  outputSchema?: StructuredOutputSchema | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformProjection
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformProjection
+   */
+  id: string;
 }
 
-export function AITransformProjectionFromJSON(json: any): AITransformProjection {
-    return AITransformProjectionFromJSONTyped(json, false);
+export function AITransformProjectionFromJSON(
+  json: any
+): AITransformProjection {
+  return AITransformProjectionFromJSONTyped(json, false);
 }
 
-export function AITransformProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AITransformProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'createdAt': (new Date(json['createdAt'])),
-        'conditions': !exists(json, 'conditions') ? undefined : json['conditions'],
-        'instructions': !exists(json, 'instructions') ? undefined : json['instructions'],
-        'outputSchema': !exists(json, 'outputSchema') ? undefined : StructuredOutputSchemaFromJSON(json['outputSchema']),
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
-    };
+export function AITransformProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): AITransformProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    createdAt: new Date(json['createdAt']),
+    conditions: !exists(json, 'conditions') ? undefined : json['conditions'],
+    instructions: !exists(json, 'instructions')
+      ? undefined
+      : json['instructions'],
+    outputSchema: !exists(json, 'outputSchema')
+      ? undefined
+      : StructuredOutputSchemaFromJSON(json['outputSchema']),
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
+  };
 }
 
-export function AITransformProjectionToJSON(value?: AITransformProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'createdAt': (value.createdAt.toISOString()),
-        'conditions': value.conditions,
-        'instructions': value.instructions,
-        'outputSchema': StructuredOutputSchemaToJSON(value.outputSchema),
-        'name': value.name,
-        'id': value.id,
-    };
+export function AITransformProjectionToJSON(
+  value?: AITransformProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    createdAt: value.createdAt.toISOString(),
+    conditions: value.conditions,
+    instructions: value.instructions,
+    outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
+    name: value.name,
+    id: value.id,
+  };
 }
-
-

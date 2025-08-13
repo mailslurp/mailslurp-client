@@ -19,103 +19,111 @@ import { exists, mapValues } from '../runtime';
  * @interface TrackingPixelDto
  */
 export interface TrackingPixelDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TrackingPixelDto
-     */
-    seen: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelDto
-     */
-    recipient?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelDto
-     */
-    html: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelDto
-     */
-    url: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelDto
-     */
-    inboxId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelDto
-     */
-    sentEmailId?: string | null;
-    /**
-     * 
-     * @type {Date}
-     * @memberof TrackingPixelDto
-     */
-    seenAt?: Date | null;
-    /**
-     * 
-     * @type {Date}
-     * @memberof TrackingPixelDto
-     */
-    createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelDto
+   */
+  id: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof TrackingPixelDto
+   */
+  seen: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelDto
+   */
+  recipient?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelDto
+   */
+  html: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelDto
+   */
+  url: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelDto
+   */
+  inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelDto
+   */
+  sentEmailId?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof TrackingPixelDto
+   */
+  seenAt?: Date | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof TrackingPixelDto
+   */
+  createdAt: Date;
 }
 
 export function TrackingPixelDtoFromJSON(json: any): TrackingPixelDto {
-    return TrackingPixelDtoFromJSONTyped(json, false);
+  return TrackingPixelDtoFromJSONTyped(json, false);
 }
 
-export function TrackingPixelDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackingPixelDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'seen': json['seen'],
-        'recipient': !exists(json, 'recipient') ? undefined : json['recipient'],
-        'html': json['html'],
-        'url': json['url'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'sentEmailId': !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-        'seenAt': !exists(json, 'seenAt') ? undefined : (json['seenAt'] === null ? null : new Date(json['seenAt'])),
-        'createdAt': (new Date(json['createdAt'])),
-    };
+export function TrackingPixelDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TrackingPixelDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    seen: json['seen'],
+    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
+    html: json['html'],
+    url: json['url'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
+    seenAt: !exists(json, 'seenAt')
+      ? undefined
+      : json['seenAt'] === null
+      ? null
+      : new Date(json['seenAt']),
+    createdAt: new Date(json['createdAt']),
+  };
 }
 
 export function TrackingPixelDtoToJSON(value?: TrackingPixelDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'seen': value.seen,
-        'recipient': value.recipient,
-        'html': value.html,
-        'url': value.url,
-        'inboxId': value.inboxId,
-        'sentEmailId': value.sentEmailId,
-        'seenAt': value.seenAt === undefined ? undefined : (value.seenAt === null ? null : value.seenAt.toISOString()),
-        'createdAt': (value.createdAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    seen: value.seen,
+    recipient: value.recipient,
+    html: value.html,
+    url: value.url,
+    inboxId: value.inboxId,
+    sentEmailId: value.sentEmailId,
+    seenAt:
+      value.seenAt === undefined
+        ? undefined
+        : value.seenAt === null
+        ? null
+        : value.seenAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
+  };
 }
-
-

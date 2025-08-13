@@ -123,9 +123,9 @@ export declare class TemplateControllerApi extends runtime.BaseAPI {
     updateTemplate(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllTemplatesSortEnum {
     ASC = "ASC",
     DESC = "DESC"

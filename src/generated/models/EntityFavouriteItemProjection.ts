@@ -14,88 +14,91 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface EntityFavouriteItemProjection
  */
 export interface EntityFavouriteItemProjection {
-    /**
-     * 
-     * @type {Date}
-     * @memberof EntityFavouriteItemProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityFavouriteItemProjection
-     */
-    entityType: EntityFavouriteItemProjectionEntityTypeEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityFavouriteItemProjection
-     */
-    name: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityFavouriteItemProjection
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityFavouriteItemProjection
-     */
-    description?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof EntityFavouriteItemProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityFavouriteItemProjection
+   */
+  entityType: EntityFavouriteItemProjectionEntityTypeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityFavouriteItemProjection
+   */
+  name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityFavouriteItemProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityFavouriteItemProjection
+   */
+  description?: string;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum EntityFavouriteItemProjectionEntityTypeEnum {
-    INBOX = 'INBOX',
-    EMAIL = 'EMAIL',
-    ATTACHMENT = 'ATTACHMENT',
-    PHONE = 'PHONE',
-    SMS = 'SMS'
+  INBOX = 'INBOX',
+  EMAIL = 'EMAIL',
+  ATTACHMENT = 'ATTACHMENT',
+  PHONE = 'PHONE',
+  SMS = 'SMS',
 }
 
-export function EntityFavouriteItemProjectionFromJSON(json: any): EntityFavouriteItemProjection {
-    return EntityFavouriteItemProjectionFromJSONTyped(json, false);
+export function EntityFavouriteItemProjectionFromJSON(
+  json: any
+): EntityFavouriteItemProjection {
+  return EntityFavouriteItemProjectionFromJSONTyped(json, false);
 }
 
-export function EntityFavouriteItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EntityFavouriteItemProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'createdAt': (new Date(json['createdAt'])),
-        'entityType': json['entityType'],
-        'name': json['name'],
-        'id': json['id'],
-        'description': !exists(json, 'description') ? undefined : json['description'],
-    };
+export function EntityFavouriteItemProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EntityFavouriteItemProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    createdAt: new Date(json['createdAt']),
+    entityType: json['entityType'],
+    name: json['name'],
+    id: json['id'],
+    description: !exists(json, 'description') ? undefined : json['description'],
+  };
 }
 
-export function EntityFavouriteItemProjectionToJSON(value?: EntityFavouriteItemProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'createdAt': (value.createdAt.toISOString()),
-        'entityType': value.entityType,
-        'name': value.name,
-        'id': value.id,
-        'description': value.description,
-    };
+export function EntityFavouriteItemProjectionToJSON(
+  value?: EntityFavouriteItemProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    createdAt: value.createdAt.toISOString(),
+    entityType: value.entityType,
+    name: value.name,
+    id: value.id,
+    description: value.description,
+  };
 }
-
-

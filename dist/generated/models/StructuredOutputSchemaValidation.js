@@ -20,13 +20,15 @@ function StructuredOutputSchemaValidationFromJSON(json) {
 }
 exports.StructuredOutputSchemaValidationFromJSON = StructuredOutputSchemaValidationFromJSON;
 function StructuredOutputSchemaValidationFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'valid': json['valid'],
-        'errors': !(0, runtime_1.exists)(json, 'errors') ? undefined : json['errors'],
-        'exampleOutput': !(0, runtime_1.exists)(json, 'exampleOutput') ? undefined : json['exampleOutput'],
+        valid: json['valid'],
+        errors: !(0, runtime_1.exists)(json, 'errors') ? undefined : json['errors'],
+        exampleOutput: !(0, runtime_1.exists)(json, 'exampleOutput')
+            ? undefined
+            : json['exampleOutput'],
     };
 }
 exports.StructuredOutputSchemaValidationFromJSONTyped = StructuredOutputSchemaValidationFromJSONTyped;
@@ -38,9 +40,9 @@ function StructuredOutputSchemaValidationToJSON(value) {
         return null;
     }
     return {
-        'valid': value.valid,
-        'errors': value.errors,
-        'exampleOutput': value.exampleOutput,
+        valid: value.valid,
+        errors: value.errors,
+        exampleOutput: value.exampleOutput,
     };
 }
 exports.StructuredOutputSchemaValidationToJSON = StructuredOutputSchemaValidationToJSON;

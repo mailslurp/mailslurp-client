@@ -12,281 +12,381 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
 import {
-    ContactDto,
-    ContactDtoFromJSON,
-    ContactDtoToJSON,
-    ContactProjection,
-    ContactProjectionFromJSON,
-    ContactProjectionToJSON,
-    CreateContactOptions,
-    CreateContactOptionsFromJSON,
-    CreateContactOptionsToJSON,
-    PageContactProjection,
-    PageContactProjectionFromJSON,
-    PageContactProjectionToJSON,
+  ContactDto,
+  ContactDtoFromJSON,
+  ContactDtoToJSON,
+  ContactProjection,
+  ContactProjectionFromJSON,
+  ContactProjectionToJSON,
+  CreateContactOptions,
+  CreateContactOptionsFromJSON,
+  CreateContactOptionsToJSON,
+  PageContactProjection,
+  PageContactProjectionFromJSON,
+  PageContactProjectionToJSON,
 } from '../models';
 
 export interface CreateContactRequest {
-    createContactOptions: CreateContactOptions;
+  createContactOptions: CreateContactOptions;
 }
 
 export interface DeleteContactRequest {
-    contactId: string;
+  contactId: string;
 }
 
 export interface GetAllContactsRequest {
-    page?: number;
-    size?: number;
-    sort?: GetAllContactsSortEnum;
-    since?: Date;
-    before?: Date;
-    search?: string;
+  page?: number;
+  size?: number;
+  sort?: GetAllContactsSortEnum;
+  since?: Date;
+  before?: Date;
+  search?: string;
 }
 
 export interface GetContactRequest {
-    contactId: string;
+  contactId: string;
 }
 
 export interface GetContactVCardRequest {
-    contactId: string;
+  contactId: string;
 }
 
 /**
- * 
+ *
  */
 export class ContactControllerApi extends runtime.BaseAPI {
-
-    /**
-     * Create a contact
-     */
-    async createContactRaw(requestParameters: CreateContactRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ContactDto>> {
-        if (requestParameters.createContactOptions === null || requestParameters.createContactOptions === undefined) {
-            throw new runtime.RequiredError('createContactOptions','Required parameter requestParameters.createContactOptions was null or undefined when calling createContact.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/contacts`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateContactOptionsToJSON(requestParameters.createContactOptions),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ContactDtoFromJSON(jsonValue));
+  /**
+   * Create a contact
+   */
+  async createContactRaw(
+    requestParameters: CreateContactRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ContactDto>> {
+    if (
+      requestParameters.createContactOptions === null ||
+      requestParameters.createContactOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createContactOptions',
+        'Required parameter requestParameters.createContactOptions was null or undefined when calling createContact.'
+      );
     }
 
-    /**
-     * Create a contact
-     */
-    async createContact(requestParameters: CreateContactRequest, initOverrides?: RequestInit): Promise<ContactDto> {
-        const response = await this.createContactRaw(requestParameters, initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Delete contact
-     */
-    async deleteContactRaw(requestParameters: DeleteContactRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.contactId === null || requestParameters.contactId === undefined) {
-            throw new runtime.RequiredError('contactId','Required parameter requestParameters.contactId was null or undefined when calling deleteContact.');
-        }
+    const response = await this.request(
+      {
+        path: `/contacts`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateContactOptionsToJSON(
+          requestParameters.createContactOptions
+        ),
+      },
+      initOverrides
+    );
 
-        const queryParameters: any = {};
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ContactDtoFromJSON(jsonValue)
+    );
+  }
 
-        const headerParameters: runtime.HTTPHeaders = {};
+  /**
+   * Create a contact
+   */
+  async createContact(
+    requestParameters: CreateContactRequest,
+    initOverrides?: RequestInit
+  ): Promise<ContactDto> {
+    const response = await this.createContactRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/contacts/{contactId}`.replace(`{${"contactId"}}`, encodeURIComponent(String(requestParameters.contactId))),
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+  /**
+   * Delete contact
+   */
+  async deleteContactRaw(
+    requestParameters: DeleteContactRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.contactId === null ||
+      requestParameters.contactId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'contactId',
+        'Required parameter requestParameters.contactId was null or undefined when calling deleteContact.'
+      );
     }
 
-    /**
-     * Delete contact
-     */
-    async deleteContact(requestParameters: DeleteContactRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.deleteContactRaw(requestParameters, initOverrides);
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get all contacts
-     */
-    async getAllContactsRaw(requestParameters: GetAllContactsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageContactProjection>> {
-        const queryParameters: any = {};
+    const response = await this.request(
+      {
+        path: `/contacts/{contactId}`.replace(
+          `{${'contactId'}}`,
+          encodeURIComponent(String(requestParameters.contactId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
-        }
+    return new runtime.VoidApiResponse(response);
+  }
 
-        if (requestParameters.size !== undefined) {
-            queryParameters['size'] = requestParameters.size;
-        }
+  /**
+   * Delete contact
+   */
+  async deleteContact(
+    requestParameters: DeleteContactRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteContactRaw(requestParameters, initOverrides);
+  }
 
-        if (requestParameters.sort !== undefined) {
-            queryParameters['sort'] = requestParameters.sort;
-        }
+  /**
+   * Get all contacts
+   */
+  async getAllContactsRaw(
+    requestParameters: GetAllContactsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageContactProjection>> {
+    const queryParameters: any = {};
 
-        if (requestParameters.since !== undefined) {
-            queryParameters['since'] = (requestParameters.since as any).toISOString();
-        }
-
-        if (requestParameters.before !== undefined) {
-            queryParameters['before'] = (requestParameters.before as any).toISOString();
-        }
-
-        if (requestParameters.search !== undefined) {
-            queryParameters['search'] = requestParameters.search;
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/contacts/paginated`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PageContactProjectionFromJSON(jsonValue));
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
     }
 
-    /**
-     * Get all contacts
-     */
-    async getAllContacts(requestParameters: GetAllContactsRequest, initOverrides?: RequestInit): Promise<PageContactProjection> {
-        const response = await this.getAllContactsRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
     }
 
-    /**
-     * Get contact
-     */
-    async getContactRaw(requestParameters: GetContactRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ContactDto>> {
-        if (requestParameters.contactId === null || requestParameters.contactId === undefined) {
-            throw new runtime.RequiredError('contactId','Required parameter requestParameters.contactId was null or undefined when calling getContact.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/contacts/{contactId}`.replace(`{${"contactId"}}`, encodeURIComponent(String(requestParameters.contactId))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ContactDtoFromJSON(jsonValue));
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
     }
 
-    /**
-     * Get contact
-     */
-    async getContact(requestParameters: GetContactRequest, initOverrides?: RequestInit): Promise<ContactDto> {
-        const response = await this.getContactRaw(requestParameters, initOverrides);
-        return await response.value();
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
 
-    /**
-     * Get contact vCard vcf file
-     */
-    async getContactVCardRaw(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.contactId === null || requestParameters.contactId === undefined) {
-            throw new runtime.RequiredError('contactId','Required parameter requestParameters.contactId was null or undefined when calling getContactVCard.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/contacts/{contactId}/download`.replace(`{${"contactId"}}`, encodeURIComponent(String(requestParameters.contactId))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
     }
 
-    /**
-     * Get contact vCard vcf file
-     */
-    async getContactVCard(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<void> {
-        await this.getContactVCardRaw(requestParameters, initOverrides);
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
     }
 
-    /**
-     * Get all contacts
-     */
-    async getContactsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<ContactProjection>>> {
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
-        }
-
-        const response = await this.request({
-            path: `/contacts`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(ContactProjectionFromJSON));
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
 
-    /**
-     * Get all contacts
-     */
-    async getContacts(initOverrides?: RequestInit): Promise<Array<ContactProjection>> {
-        const response = await this.getContactsRaw(initOverrides);
-        return await response.value();
+    const response = await this.request(
+      {
+        path: `/contacts/paginated`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageContactProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all contacts
+   */
+  async getAllContacts(
+    requestParameters: GetAllContactsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageContactProjection> {
+    const response = await this.getAllContactsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get contact
+   */
+  async getContactRaw(
+    requestParameters: GetContactRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ContactDto>> {
+    if (
+      requestParameters.contactId === null ||
+      requestParameters.contactId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'contactId',
+        'Required parameter requestParameters.contactId was null or undefined when calling getContact.'
+      );
     }
 
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/contacts/{contactId}`.replace(
+          `{${'contactId'}}`,
+          encodeURIComponent(String(requestParameters.contactId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ContactDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get contact
+   */
+  async getContact(
+    requestParameters: GetContactRequest,
+    initOverrides?: RequestInit
+  ): Promise<ContactDto> {
+    const response = await this.getContactRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get contact vCard vcf file
+   */
+  async getContactVCardRaw(
+    requestParameters: GetContactVCardRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.contactId === null ||
+      requestParameters.contactId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'contactId',
+        'Required parameter requestParameters.contactId was null or undefined when calling getContactVCard.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/contacts/{contactId}/download`.replace(
+          `{${'contactId'}}`,
+          encodeURIComponent(String(requestParameters.contactId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Get contact vCard vcf file
+   */
+  async getContactVCard(
+    requestParameters: GetContactVCardRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.getContactVCardRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Get all contacts
+   */
+  async getContactsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<ContactProjection>>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/contacts`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(ContactProjectionFromJSON)
+    );
+  }
+
+  /**
+   * Get all contacts
+   */
+  async getContacts(
+    initOverrides?: RequestInit
+  ): Promise<Array<ContactProjection>> {
+    const response = await this.getContactsRaw(initOverrides);
+    return await response.value();
+  }
 }
 
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export enum GetAllContactsSortEnum {
-    ASC = 'ASC',
-    DESC = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

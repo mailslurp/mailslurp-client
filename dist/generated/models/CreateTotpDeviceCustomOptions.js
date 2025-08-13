@@ -20,17 +20,17 @@ function CreateTotpDeviceCustomOptionsFromJSON(json) {
 }
 exports.CreateTotpDeviceCustomOptionsFromJSON = CreateTotpDeviceCustomOptionsFromJSON;
 function CreateTotpDeviceCustomOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'secret': json['secret'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'username': !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
-        'issuer': !(0, runtime_1.exists)(json, 'issuer') ? undefined : json['issuer'],
-        'digits': !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
-        'period': !(0, runtime_1.exists)(json, 'period') ? undefined : json['period'],
-        'algorithm': !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
+        secret: json['secret'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
+        issuer: !(0, runtime_1.exists)(json, 'issuer') ? undefined : json['issuer'],
+        digits: !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
+        period: !(0, runtime_1.exists)(json, 'period') ? undefined : json['period'],
+        algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
     };
 }
 exports.CreateTotpDeviceCustomOptionsFromJSONTyped = CreateTotpDeviceCustomOptionsFromJSONTyped;
@@ -42,13 +42,13 @@ function CreateTotpDeviceCustomOptionsToJSON(value) {
         return null;
     }
     return {
-        'secret': value.secret,
-        'name': value.name,
-        'username': value.username,
-        'issuer': value.issuer,
-        'digits': value.digits,
-        'period': value.period,
-        'algorithm': value.algorithm,
+        secret: value.secret,
+        name: value.name,
+        username: value.username,
+        issuer: value.issuer,
+        digits: value.digits,
+        period: value.period,
+        algorithm: value.algorithm,
     };
 }
 exports.CreateTotpDeviceCustomOptionsToJSON = CreateTotpDeviceCustomOptionsToJSON;

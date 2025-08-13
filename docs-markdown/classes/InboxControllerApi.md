@@ -259,7 +259,7 @@ ___
 
 ### createInboxRuleset
 
-▸ **createInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
+▸ **createInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`RulesetDto`](../interfaces/RulesetDto.md)\>
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
 Create an inbox ruleset
@@ -273,13 +273,13 @@ Create an inbox ruleset
 
 #### Returns
 
-`Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
+`Promise`<[`RulesetDto`](../interfaces/RulesetDto.md)\>
 
 ___
 
 ### createInboxRulesetRaw
 
-▸ **createInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
+▸ **createInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RulesetDto`](../interfaces/RulesetDto.md)\>\>
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
 Create an inbox ruleset
@@ -293,7 +293,7 @@ Create an inbox ruleset
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RulesetDto`](../interfaces/RulesetDto.md)\>\>
 
 ___
 
@@ -2107,7 +2107,7 @@ ___
 
 ### listInboxRulesets
 
-▸ **listInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
+▸ **listInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageRulesetDto`](../interfaces/PageRulesetDto.md)\>
 
 List all rulesets attached to an inbox
 List inbox rulesets
@@ -2121,13 +2121,13 @@ List inbox rulesets
 
 #### Returns
 
-`Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
+`Promise`<[`PageRulesetDto`](../interfaces/PageRulesetDto.md)\>
 
 ___
 
 ### listInboxRulesetsRaw
 
-▸ **listInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
+▸ **listInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageRulesetDto`](../interfaces/PageRulesetDto.md)\>\>
 
 List all rulesets attached to an inbox
 List inbox rulesets
@@ -2141,7 +2141,7 @@ List inbox rulesets
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageRulesetDto`](../interfaces/PageRulesetDto.md)\>\>
 
 ___
 

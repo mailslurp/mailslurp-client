@@ -42,9 +42,9 @@ export interface EmailFeatureSupportResult {
     featurePercentages: Array<EmailFeatureSupportStatusPercentage>;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeatureSupportResultDetectedFeaturesEnum {
     amp = "amp",
     css_accent_color = "css-accent-color",

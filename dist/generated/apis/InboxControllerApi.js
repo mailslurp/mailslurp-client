@@ -108,23 +108,26 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.jobId === null || requestParameters.jobId === undefined) {
+                        if (requestParameters.jobId === null ||
+                            requestParameters.jobId === undefined) {
                             throw new runtime.RequiredError('jobId', 'Required parameter requestParameters.jobId was null or undefined when calling cancelScheduledJob.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat("jobId", "}"), encodeURIComponent(String(requestParameters.jobId))),
+                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat('jobId', "}"), encodeURIComponent(String(requestParameters.jobId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -205,7 +208,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes",
@@ -215,7 +218,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -248,20 +253,22 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling createInboxRuleset.');
                         }
-                        if (requestParameters.createRulesetOptions === null || requestParameters.createRulesetOptions === undefined) {
+                        if (requestParameters.createRulesetOptions === null ||
+                            requestParameters.createRulesetOptions === undefined) {
                             throw new runtime.RequiredError('createRulesetOptions', 'Required parameter requestParameters.createRulesetOptions was null or undefined when calling createInboxRuleset.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -269,7 +276,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.RulesetDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.RulesetDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -304,7 +313,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/withDefaults",
@@ -314,7 +323,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -346,14 +357,15 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createInboxDto === null || requestParameters.createInboxDto === undefined) {
+                        if (requestParameters.createInboxDto === null ||
+                            requestParameters.createInboxDto === undefined) {
                             throw new runtime.RequiredError('createInboxDto', 'Required parameter requestParameters.createInboxDto was null or undefined when calling createInboxWithOptions.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/withOptions",
@@ -364,7 +376,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -397,16 +411,17 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling deleteAllInboxEmails.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/deleteAllInboxEmails".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/deleteAllInboxEmails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -447,7 +462,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes",
@@ -488,7 +503,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.description === null || requestParameters.description === undefined) {
+                        if (requestParameters.description === null ||
+                            requestParameters.description === undefined) {
                             throw new runtime.RequiredError('description', 'Required parameter requestParameters.description was null or undefined when calling deleteAllInboxesByDescription.');
                         }
                         queryParameters = {};
@@ -497,7 +513,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/by-description",
@@ -538,7 +554,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.name === null || requestParameters.name === undefined) {
+                        if (requestParameters.name === null ||
+                            requestParameters.name === undefined) {
                             throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling deleteAllInboxesByName.');
                         }
                         queryParameters = {};
@@ -547,7 +564,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/by-name",
@@ -597,7 +614,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/by-tag",
@@ -638,16 +655,17 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling deleteInbox.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -685,7 +703,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling doesInboxExist.');
                         }
                         queryParameters = {};
@@ -703,7 +722,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/exists",
@@ -713,7 +732,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxExistsDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxExistsDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -749,7 +770,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/automations",
@@ -796,7 +817,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/expired",
@@ -806,7 +827,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.FlushExpiredInboxesResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.FlushExpiredInboxesResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -878,7 +901,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/paginated",
@@ -888,7 +911,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -960,7 +985,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/offset-paginated",
@@ -970,7 +995,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1018,7 +1045,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/plus-addresses",
@@ -1028,7 +1055,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PagePlusAddressProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PagePlusAddressProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1082,7 +1111,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/scheduled-jobs",
@@ -1092,7 +1121,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageScheduledJobsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageScheduledJobsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1124,7 +1155,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getDeliveryStatusesByInboxId.');
                         }
                         queryParameters = {};
@@ -1145,17 +1177,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/delivery-status".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/delivery-status".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageDeliveryStatusFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageDeliveryStatusFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1187,7 +1221,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getEmails.');
                         }
                         queryParameters = {};
@@ -1220,17 +1255,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/emails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.EmailPreviewFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.EmailPreviewFromJSON);
+                            })];
                 }
             });
         });
@@ -1268,7 +1305,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/imap-access",
@@ -1278,7 +1315,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapAccessDetailsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ImapAccessDetailsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1315,7 +1354,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/imap-smtp-access",
@@ -1325,7 +1364,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapSmtpAccessDetailsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ImapSmtpAccessDetailsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1362,7 +1403,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/imap-smtp-access/env",
@@ -1406,7 +1447,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/imap-smtp-access/servers",
@@ -1416,7 +1457,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ImapSmtpAccessServersFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ImapSmtpAccessServersFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1448,23 +1491,26 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInbox.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1497,7 +1543,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling getInboxByEmailAddress.');
                         }
                         queryParameters = {};
@@ -1506,7 +1553,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/byEmailAddress",
@@ -1516,7 +1563,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxByEmailAddressResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxByEmailAddressResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1549,7 +1598,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.name === null || requestParameters.name === undefined) {
+                        if (requestParameters.name === null ||
+                            requestParameters.name === undefined) {
                             throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling getInboxByName.');
                         }
                         queryParameters = {};
@@ -1558,7 +1608,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/byName",
@@ -1568,7 +1618,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxByNameResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxByNameResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1603,7 +1655,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/count",
@@ -1613,7 +1665,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.CountDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CountDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1644,23 +1698,26 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxEmailCount.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails/count".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/emails/count".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.CountDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CountDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1692,7 +1749,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxEmailsPaginated.');
                         }
                         queryParameters = {};
@@ -1716,17 +1774,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails/paginated".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/emails/paginated".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageEmailPreviewFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailPreviewFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1762,7 +1822,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/ids",
@@ -1772,7 +1832,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxIdsResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxIdsResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1805,26 +1867,32 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.plusAddressId === null || requestParameters.plusAddressId === undefined) {
+                        if (requestParameters.plusAddressId === null ||
+                            requestParameters.plusAddressId === undefined) {
                             throw new runtime.RequiredError('plusAddressId', 'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddress.');
                         }
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddress.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}".replace("{".concat("plusAddressId", "}"), encodeURIComponent(String(requestParameters.plusAddressId))).replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}"
+                                    .replace("{".concat('plusAddressId', "}"), encodeURIComponent(String(requestParameters.plusAddressId)))
+                                    .replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PlusAddressDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PlusAddressDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1857,7 +1925,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.plusAddressId === null || requestParameters.plusAddressId === undefined) {
+                        if (requestParameters.plusAddressId === null ||
+                            requestParameters.plusAddressId === undefined) {
                             throw new runtime.RequiredError('plusAddressId', 'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddressById.');
                         }
                         queryParameters = {};
@@ -1866,17 +1935,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/plus-addresses/{plusAddressId}".replace("{".concat("plusAddressId", "}"), encodeURIComponent(String(requestParameters.plusAddressId))),
+                                path: "/inboxes/plus-addresses/{plusAddressId}".replace("{".concat('plusAddressId', "}"), encodeURIComponent(String(requestParameters.plusAddressId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PlusAddressDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PlusAddressDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1909,10 +1980,12 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.plusAddress === null || requestParameters.plusAddress === undefined) {
+                        if (requestParameters.plusAddress === null ||
+                            requestParameters.plusAddress === undefined) {
                             throw new runtime.RequiredError('plusAddress', 'Required parameter requestParameters.plusAddress was null or undefined when calling getInboxPlusAddressEmails.');
                         }
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddressEmails.');
                         }
                         queryParameters = {};
@@ -1936,17 +2009,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/plus-addresses/emails".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/plus-addresses/emails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageEmailPreviewFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailPreviewFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1979,10 +2054,12 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.plusAddressId === null || requestParameters.plusAddressId === undefined) {
+                        if (requestParameters.plusAddressId === null ||
+                            requestParameters.plusAddressId === undefined) {
                             throw new runtime.RequiredError('plusAddressId', 'Required parameter requestParameters.plusAddressId was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId.');
                         }
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddressEmailsForPlusAddressId.');
                         }
                         queryParameters = {};
@@ -2003,17 +2080,21 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}/emails".replace("{".concat("plusAddressId", "}"), encodeURIComponent(String(requestParameters.plusAddressId))).replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/plus-addresses/{plusAddressId}/emails"
+                                    .replace("{".concat('plusAddressId', "}"), encodeURIComponent(String(requestParameters.plusAddressId)))
+                                    .replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageEmailPreviewFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailPreviewFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2046,7 +2127,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxPlusAddresses.');
                         }
                         queryParameters = {};
@@ -2061,17 +2143,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/plus-addresses".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/plus-addresses".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PagePlusAddressProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PagePlusAddressProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2103,23 +2187,26 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxSentCount.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/sent/count".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/sent/count".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.CountDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CountDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2151,7 +2238,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxSentEmails.');
                         }
                         queryParameters = {};
@@ -2175,17 +2263,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/sent".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/sent".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageSentEmailProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageSentEmailProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2233,7 +2323,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/tags",
@@ -2291,7 +2381,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/tags/paginated",
@@ -2301,7 +2391,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxTagsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxTagsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2345,7 +2437,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             queryParameters['since'] = requestParameters.since.toISOString();
                         }
                         if (requestParameters.excludeCatchAllInboxes !== undefined) {
-                            queryParameters['excludeCatchAllInboxes'] = requestParameters.excludeCatchAllInboxes;
+                            queryParameters['excludeCatchAllInboxes'] =
+                                requestParameters.excludeCatchAllInboxes;
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
@@ -2355,7 +2448,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes",
@@ -2365,7 +2458,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.InboxDtoFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.InboxDtoFromJSON);
+                            })];
                 }
             });
         });
@@ -2419,7 +2514,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/tags/inboxes",
@@ -2429,7 +2524,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2462,10 +2559,12 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox.');
                         }
-                        if (requestParameters.timeoutMillis === null || requestParameters.timeoutMillis === undefined) {
+                        if (requestParameters.timeoutMillis === null ||
+                            requestParameters.timeoutMillis === undefined) {
                             throw new runtime.RequiredError('timeoutMillis', 'Required parameter requestParameters.timeoutMillis was null or undefined when calling getLatestEmailInInbox.');
                         }
                         queryParameters = {};
@@ -2477,7 +2576,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/getLatestEmail",
@@ -2487,7 +2586,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.EmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2541,7 +2642,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/organization",
@@ -2551,7 +2652,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageOrganizationInboxProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageOrganizationInboxProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2596,7 +2699,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/outboxes",
@@ -2606,7 +2709,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2639,23 +2744,26 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.jobId === null || requestParameters.jobId === undefined) {
+                        if (requestParameters.jobId === null ||
+                            requestParameters.jobId === undefined) {
                             throw new runtime.RequiredError('jobId', 'Required parameter requestParameters.jobId was null or undefined when calling getScheduledJob.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat("jobId", "}"), encodeURIComponent(String(requestParameters.jobId))),
+                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat('jobId', "}"), encodeURIComponent(String(requestParameters.jobId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2688,7 +2796,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getScheduledJobsByInboxId.');
                         }
                         queryParameters = {};
@@ -2709,17 +2818,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/scheduled-jobs".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/scheduled-jobs".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageScheduledJobsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageScheduledJobsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2757,7 +2868,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/smtp-access",
@@ -2767,7 +2878,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.SmtpAccessDetailsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SmtpAccessDetailsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2799,7 +2912,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.emailAddress === null || requestParameters.emailAddress === undefined) {
+                        if (requestParameters.emailAddress === null ||
+                            requestParameters.emailAddress === undefined) {
                             throw new runtime.RequiredError('emailAddress', 'Required parameter requestParameters.emailAddress was null or undefined when calling isEmailAddressAvailable.');
                         }
                         queryParameters = {};
@@ -2808,7 +2922,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/available",
@@ -2818,7 +2932,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.EmailAvailableResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailAvailableResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2851,7 +2967,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling listInboxRulesets.');
                         }
                         queryParameters = {};
@@ -2875,17 +2992,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageRulesetDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageRulesetDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2918,7 +3037,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling listInboxTrackingPixels.');
                         }
                         queryParameters = {};
@@ -2942,17 +3062,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/tracking-pixels".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/tracking-pixels".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2985,14 +3107,15 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.searchInboxesOptions === null || requestParameters.searchInboxesOptions === undefined) {
+                        if (requestParameters.searchInboxesOptions === null ||
+                            requestParameters.searchInboxesOptions === undefined) {
                             throw new runtime.RequiredError('searchInboxesOptions', 'Required parameter requestParameters.searchInboxesOptions was null or undefined when calling searchInboxes.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/search",
@@ -3003,7 +3126,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageInboxProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -3036,20 +3161,22 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendEmail.');
                         }
-                        if (requestParameters.sendEmailOptions === null || requestParameters.sendEmailOptions === undefined) {
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
                             throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmail.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3088,20 +3215,22 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailAndConfirm.');
                         }
-                        if (requestParameters.sendEmailOptions === null || requestParameters.sendEmailOptions === undefined) {
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
                             throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailAndConfirm.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/confirm".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/confirm".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3109,7 +3238,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.SentEmailDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -3142,26 +3273,30 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailWithQueue.');
                         }
-                        if (requestParameters.validateBeforeEnqueue === null || requestParameters.validateBeforeEnqueue === undefined) {
+                        if (requestParameters.validateBeforeEnqueue === null ||
+                            requestParameters.validateBeforeEnqueue === undefined) {
                             throw new runtime.RequiredError('validateBeforeEnqueue', 'Required parameter requestParameters.validateBeforeEnqueue was null or undefined when calling sendEmailWithQueue.');
                         }
-                        if (requestParameters.sendEmailOptions === null || requestParameters.sendEmailOptions === undefined) {
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
                             throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailWithQueue.');
                         }
                         queryParameters = {};
                         if (requestParameters.validateBeforeEnqueue !== undefined) {
-                            queryParameters['validateBeforeEnqueue'] = requestParameters.validateBeforeEnqueue;
+                            queryParameters['validateBeforeEnqueue'] =
+                                requestParameters.validateBeforeEnqueue;
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/with-queue".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/with-queue".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3200,20 +3335,22 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelope.');
                         }
-                        if (requestParameters.sendSMTPEnvelopeOptions === null || requestParameters.sendSMTPEnvelopeOptions === undefined) {
+                        if (requestParameters.sendSMTPEnvelopeOptions === null ||
+                            requestParameters.sendSMTPEnvelopeOptions === undefined) {
                             throw new runtime.RequiredError('sendSMTPEnvelopeOptions', 'Required parameter requestParameters.sendSMTPEnvelopeOptions was null or undefined when calling sendSmtpEnvelope.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/smtp-envelope".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/smtp-envelope".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3221,7 +3358,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.SentEmailDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -3254,16 +3393,17 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendTestEmail.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/send-test-email".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/send-test-email".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3301,10 +3441,12 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendWithSchedule.');
                         }
-                        if (requestParameters.sendEmailOptions === null || requestParameters.sendEmailOptions === undefined) {
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
                             throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendWithSchedule.');
                         }
                         queryParameters = {};
@@ -3312,18 +3454,20 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             queryParameters['sendAtTimestamp'] = requestParameters.sendAtTimestamp.toISOString();
                         }
                         if (requestParameters.sendAtNowPlusSeconds !== undefined) {
-                            queryParameters['sendAtNowPlusSeconds'] = requestParameters.sendAtNowPlusSeconds;
+                            queryParameters['sendAtNowPlusSeconds'] =
+                                requestParameters.sendAtNowPlusSeconds;
                         }
                         if (requestParameters.validateBeforeEnqueue !== undefined) {
-                            queryParameters['validateBeforeEnqueue'] = requestParameters.validateBeforeEnqueue;
+                            queryParameters['validateBeforeEnqueue'] =
+                                requestParameters.validateBeforeEnqueue;
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/with-schedule".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/with-schedule".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3331,7 +3475,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -3364,20 +3510,22 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling setInboxFavourited.');
                         }
-                        if (requestParameters.setInboxFavouritedOptions === null || requestParameters.setInboxFavouritedOptions === undefined) {
+                        if (requestParameters.setInboxFavouritedOptions === null ||
+                            requestParameters.setInboxFavouritedOptions === undefined) {
                             throw new runtime.RequiredError('setInboxFavouritedOptions', 'Required parameter requestParameters.setInboxFavouritedOptions was null or undefined when calling setInboxFavourited.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/favourite".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/favourite".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3385,7 +3533,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -3417,7 +3567,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.updateImapAccessOptions === null || requestParameters.updateImapAccessOptions === undefined) {
+                        if (requestParameters.updateImapAccessOptions === null ||
+                            requestParameters.updateImapAccessOptions === undefined) {
                             throw new runtime.RequiredError('updateImapAccessOptions', 'Required parameter requestParameters.updateImapAccessOptions was null or undefined when calling updateImapAccess.');
                         }
                         queryParameters = {};
@@ -3427,7 +3578,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/imap-access",
@@ -3468,20 +3619,22 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling updateInbox.');
                         }
-                        if (requestParameters.updateInboxOptions === null || requestParameters.updateInboxOptions === undefined) {
+                        if (requestParameters.updateInboxOptions === null ||
+                            requestParameters.updateInboxOptions === undefined) {
                             throw new runtime.RequiredError('updateInboxOptions', 'Required parameter requestParameters.updateInboxOptions was null or undefined when calling updateInbox.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{".concat("inboxId", "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'PATCH',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -3489,7 +3642,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.InboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -3521,7 +3676,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.updateSmtpAccessOptions === null || requestParameters.updateSmtpAccessOptions === undefined) {
+                        if (requestParameters.updateSmtpAccessOptions === null ||
+                            requestParameters.updateSmtpAccessOptions === undefined) {
                             throw new runtime.RequiredError('updateSmtpAccessOptions', 'Required parameter requestParameters.updateSmtpAccessOptions was null or undefined when calling updateSmtpAccess.');
                         }
                         queryParameters = {};
@@ -3531,7 +3687,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/smtp-access",
@@ -3566,36 +3722,36 @@ var InboxControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.InboxControllerApi = InboxControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var CreateInboxInboxTypeEnum;
 (function (CreateInboxInboxTypeEnum) {
     CreateInboxInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     CreateInboxInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(CreateInboxInboxTypeEnum = exports.CreateInboxInboxTypeEnum || (exports.CreateInboxInboxTypeEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllInboxesSortEnum;
 (function (GetAllInboxesSortEnum) {
     GetAllInboxesSortEnum["ASC"] = "ASC";
     GetAllInboxesSortEnum["DESC"] = "DESC";
 })(GetAllInboxesSortEnum = exports.GetAllInboxesSortEnum || (exports.GetAllInboxesSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllInboxesInboxTypeEnum;
 (function (GetAllInboxesInboxTypeEnum) {
     GetAllInboxesInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     GetAllInboxesInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(GetAllInboxesInboxTypeEnum = exports.GetAllInboxesInboxTypeEnum || (exports.GetAllInboxesInboxTypeEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllInboxesInboxFunctionEnum;
 (function (GetAllInboxesInboxFunctionEnum) {
     GetAllInboxesInboxFunctionEnum["ALIAS"] = "ALIAS";
@@ -3607,27 +3763,27 @@ var GetAllInboxesInboxFunctionEnum;
     GetAllInboxesInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllInboxesOffsetPaginatedSortEnum;
 (function (GetAllInboxesOffsetPaginatedSortEnum) {
     GetAllInboxesOffsetPaginatedSortEnum["ASC"] = "ASC";
     GetAllInboxesOffsetPaginatedSortEnum["DESC"] = "DESC";
 })(GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesOffsetPaginatedSortEnum || (exports.GetAllInboxesOffsetPaginatedSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllInboxesOffsetPaginatedInboxTypeEnum;
 (function (GetAllInboxesOffsetPaginatedInboxTypeEnum) {
     GetAllInboxesOffsetPaginatedInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     GetAllInboxesOffsetPaginatedInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum || (exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
 (function (GetAllInboxesOffsetPaginatedInboxFunctionEnum) {
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["ALIAS"] = "ALIAS";
@@ -3639,162 +3795,162 @@ var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllPlusAddressesSortEnum;
 (function (GetAllPlusAddressesSortEnum) {
     GetAllPlusAddressesSortEnum["ASC"] = "ASC";
     GetAllPlusAddressesSortEnum["DESC"] = "DESC";
 })(GetAllPlusAddressesSortEnum = exports.GetAllPlusAddressesSortEnum || (exports.GetAllPlusAddressesSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllScheduledJobsSortEnum;
 (function (GetAllScheduledJobsSortEnum) {
     GetAllScheduledJobsSortEnum["ASC"] = "ASC";
     GetAllScheduledJobsSortEnum["DESC"] = "DESC";
 })(GetAllScheduledJobsSortEnum = exports.GetAllScheduledJobsSortEnum || (exports.GetAllScheduledJobsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetDeliveryStatusesByInboxIdSortEnum;
 (function (GetDeliveryStatusesByInboxIdSortEnum) {
     GetDeliveryStatusesByInboxIdSortEnum["ASC"] = "ASC";
     GetDeliveryStatusesByInboxIdSortEnum["DESC"] = "DESC";
 })(GetDeliveryStatusesByInboxIdSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum || (exports.GetDeliveryStatusesByInboxIdSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetEmailsSortEnum;
 (function (GetEmailsSortEnum) {
     GetEmailsSortEnum["ASC"] = "ASC";
     GetEmailsSortEnum["DESC"] = "DESC";
 })(GetEmailsSortEnum = exports.GetEmailsSortEnum || (exports.GetEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxEmailsPaginatedSortEnum;
 (function (GetInboxEmailsPaginatedSortEnum) {
     GetInboxEmailsPaginatedSortEnum["ASC"] = "ASC";
     GetInboxEmailsPaginatedSortEnum["DESC"] = "DESC";
 })(GetInboxEmailsPaginatedSortEnum = exports.GetInboxEmailsPaginatedSortEnum || (exports.GetInboxEmailsPaginatedSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxPlusAddressEmailsSortEnum;
 (function (GetInboxPlusAddressEmailsSortEnum) {
     GetInboxPlusAddressEmailsSortEnum["ASC"] = "ASC";
     GetInboxPlusAddressEmailsSortEnum["DESC"] = "DESC";
 })(GetInboxPlusAddressEmailsSortEnum = exports.GetInboxPlusAddressEmailsSortEnum || (exports.GetInboxPlusAddressEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxPlusAddressEmailsForPlusAddressIdSortEnum;
 (function (GetInboxPlusAddressEmailsForPlusAddressIdSortEnum) {
     GetInboxPlusAddressEmailsForPlusAddressIdSortEnum["ASC"] = "ASC";
     GetInboxPlusAddressEmailsForPlusAddressIdSortEnum["DESC"] = "DESC";
 })(GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum || (exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxPlusAddressesSortEnum;
 (function (GetInboxPlusAddressesSortEnum) {
     GetInboxPlusAddressesSortEnum["ASC"] = "ASC";
     GetInboxPlusAddressesSortEnum["DESC"] = "DESC";
 })(GetInboxPlusAddressesSortEnum = exports.GetInboxPlusAddressesSortEnum || (exports.GetInboxPlusAddressesSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxSentEmailsSortEnum;
 (function (GetInboxSentEmailsSortEnum) {
     GetInboxSentEmailsSortEnum["ASC"] = "ASC";
     GetInboxSentEmailsSortEnum["DESC"] = "DESC";
 })(GetInboxSentEmailsSortEnum = exports.GetInboxSentEmailsSortEnum || (exports.GetInboxSentEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxTagsSortEnum;
 (function (GetInboxTagsSortEnum) {
     GetInboxTagsSortEnum["ASC"] = "ASC";
     GetInboxTagsSortEnum["DESC"] = "DESC";
 })(GetInboxTagsSortEnum = exports.GetInboxTagsSortEnum || (exports.GetInboxTagsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxTagsPaginatedSortEnum;
 (function (GetInboxTagsPaginatedSortEnum) {
     GetInboxTagsPaginatedSortEnum["ASC"] = "ASC";
     GetInboxTagsPaginatedSortEnum["DESC"] = "DESC";
 })(GetInboxTagsPaginatedSortEnum = exports.GetInboxTagsPaginatedSortEnum || (exports.GetInboxTagsPaginatedSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxesSortEnum;
 (function (GetInboxesSortEnum) {
     GetInboxesSortEnum["ASC"] = "ASC";
     GetInboxesSortEnum["DESC"] = "DESC";
 })(GetInboxesSortEnum = exports.GetInboxesSortEnum || (exports.GetInboxesSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxesByTagSortEnum;
 (function (GetInboxesByTagSortEnum) {
     GetInboxesByTagSortEnum["ASC"] = "ASC";
     GetInboxesByTagSortEnum["DESC"] = "DESC";
 })(GetInboxesByTagSortEnum = exports.GetInboxesByTagSortEnum || (exports.GetInboxesByTagSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetOrganizationInboxesSortEnum;
 (function (GetOrganizationInboxesSortEnum) {
     GetOrganizationInboxesSortEnum["ASC"] = "ASC";
     GetOrganizationInboxesSortEnum["DESC"] = "DESC";
 })(GetOrganizationInboxesSortEnum = exports.GetOrganizationInboxesSortEnum || (exports.GetOrganizationInboxesSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetOutboxesSortEnum;
 (function (GetOutboxesSortEnum) {
     GetOutboxesSortEnum["ASC"] = "ASC";
     GetOutboxesSortEnum["DESC"] = "DESC";
 })(GetOutboxesSortEnum = exports.GetOutboxesSortEnum || (exports.GetOutboxesSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetScheduledJobsByInboxIdSortEnum;
 (function (GetScheduledJobsByInboxIdSortEnum) {
     GetScheduledJobsByInboxIdSortEnum["ASC"] = "ASC";
     GetScheduledJobsByInboxIdSortEnum["DESC"] = "DESC";
 })(GetScheduledJobsByInboxIdSortEnum = exports.GetScheduledJobsByInboxIdSortEnum || (exports.GetScheduledJobsByInboxIdSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var ListInboxRulesetsSortEnum;
 (function (ListInboxRulesetsSortEnum) {
     ListInboxRulesetsSortEnum["ASC"] = "ASC";
     ListInboxRulesetsSortEnum["DESC"] = "DESC";
 })(ListInboxRulesetsSortEnum = exports.ListInboxRulesetsSortEnum || (exports.ListInboxRulesetsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var ListInboxTrackingPixelsSortEnum;
 (function (ListInboxTrackingPixelsSortEnum) {
     ListInboxTrackingPixelsSortEnum["ASC"] = "ASC";

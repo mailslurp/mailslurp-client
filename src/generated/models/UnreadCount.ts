@@ -19,39 +19,38 @@ import { exists, mapValues } from '../runtime';
  * @interface UnreadCount
  */
 export interface UnreadCount {
-    /**
-     * 
-     * @type {number}
-     * @memberof UnreadCount
-     */
-    count: number;
+  /**
+   *
+   * @type {number}
+   * @memberof UnreadCount
+   */
+  count: number;
 }
 
 export function UnreadCountFromJSON(json: any): UnreadCount {
-    return UnreadCountFromJSONTyped(json, false);
+  return UnreadCountFromJSONTyped(json, false);
 }
 
-export function UnreadCountFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnreadCount {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'count': json['count'],
-    };
+export function UnreadCountFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): UnreadCount {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    count: json['count'],
+  };
 }
 
 export function UnreadCountToJSON(value?: UnreadCount | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'count': value.count,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    count: value.count,
+  };
 }
-
-

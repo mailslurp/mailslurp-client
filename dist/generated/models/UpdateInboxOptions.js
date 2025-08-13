@@ -20,15 +20,19 @@ function UpdateInboxOptionsFromJSON(json) {
 }
 exports.UpdateInboxOptionsFromJSON = UpdateInboxOptionsFromJSON;
 function UpdateInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : (json['expiresAt'] === null ? null : new Date(json['expiresAt'])),
-        'favourite': !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
     };
 }
 exports.UpdateInboxOptionsFromJSONTyped = UpdateInboxOptionsFromJSONTyped;
@@ -40,11 +44,15 @@ function UpdateInboxOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'description': value.description,
-        'tags': value.tags,
-        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt === null ? null : value.expiresAt.toISOString()),
-        'favourite': value.favourite,
+        name: value.name,
+        description: value.description,
+        tags: value.tags,
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
+        favourite: value.favourite,
     };
 }
 exports.UpdateInboxOptionsToJSON = UpdateInboxOptionsToJSON;

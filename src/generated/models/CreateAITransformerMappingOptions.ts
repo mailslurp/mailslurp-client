@@ -14,116 +14,127 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateAITransformerMappingOptions
  */
 export interface CreateAITransformerMappingOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateAITransformerMappingOptions
-     */
-    name?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateAITransformerMappingOptions
-     */
-    aiTransformId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateAITransformerMappingOptions
-     */
-    entityId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateAITransformerMappingOptions
-     */
-    entityType: CreateAITransformerMappingOptionsEntityTypeEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateAITransformerMappingOptions
-     */
-    contentSelector?: CreateAITransformerMappingOptionsContentSelectorEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateAITransformerMappingOptions
-     */
-    triggerSelector?: CreateAITransformerMappingOptionsTriggerSelectorEnum;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreateAITransformerMappingOptions
-     */
-    spreadRootArray?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  aiTransformId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  entityId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  entityType: CreateAITransformerMappingOptionsEntityTypeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  contentSelector?: CreateAITransformerMappingOptionsContentSelectorEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  triggerSelector?: CreateAITransformerMappingOptionsTriggerSelectorEnum;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  spreadRootArray?: boolean | null;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum CreateAITransformerMappingOptionsEntityTypeEnum {
-    INBOX = 'INBOX',
-    PHONE = 'PHONE'
-}/**
-* @export
-* @enum {string}
-*/
+  INBOX = 'INBOX',
+  PHONE = 'PHONE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum CreateAITransformerMappingOptionsContentSelectorEnum {
-    RAW = 'RAW',
-    BODY = 'BODY',
-    BODY_ATTACHMENTS = 'BODY_ATTACHMENTS'
-}/**
-* @export
-* @enum {string}
-*/
+  RAW = 'RAW',
+  BODY = 'BODY',
+  BODY_ATTACHMENTS = 'BODY_ATTACHMENTS',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum CreateAITransformerMappingOptionsTriggerSelectorEnum {
-    MESSAGE = 'PER_MESSAGE',
-    ATTACHMENT = 'PER_ATTACHMENT'
+  MESSAGE = 'PER_MESSAGE',
+  ATTACHMENT = 'PER_ATTACHMENT',
 }
 
-export function CreateAITransformerMappingOptionsFromJSON(json: any): CreateAITransformerMappingOptions {
-    return CreateAITransformerMappingOptionsFromJSONTyped(json, false);
+export function CreateAITransformerMappingOptionsFromJSON(
+  json: any
+): CreateAITransformerMappingOptions {
+  return CreateAITransformerMappingOptionsFromJSONTyped(json, false);
 }
 
-export function CreateAITransformerMappingOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateAITransformerMappingOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'aiTransformId': json['aiTransformId'],
-        'entityId': !exists(json, 'entityId') ? undefined : json['entityId'],
-        'entityType': json['entityType'],
-        'contentSelector': !exists(json, 'contentSelector') ? undefined : json['contentSelector'],
-        'triggerSelector': !exists(json, 'triggerSelector') ? undefined : json['triggerSelector'],
-        'spreadRootArray': !exists(json, 'spreadRootArray') ? undefined : json['spreadRootArray'],
-    };
+export function CreateAITransformerMappingOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateAITransformerMappingOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    aiTransformId: json['aiTransformId'],
+    entityId: !exists(json, 'entityId') ? undefined : json['entityId'],
+    entityType: json['entityType'],
+    contentSelector: !exists(json, 'contentSelector')
+      ? undefined
+      : json['contentSelector'],
+    triggerSelector: !exists(json, 'triggerSelector')
+      ? undefined
+      : json['triggerSelector'],
+    spreadRootArray: !exists(json, 'spreadRootArray')
+      ? undefined
+      : json['spreadRootArray'],
+  };
 }
 
-export function CreateAITransformerMappingOptionsToJSON(value?: CreateAITransformerMappingOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'name': value.name,
-        'aiTransformId': value.aiTransformId,
-        'entityId': value.entityId,
-        'entityType': value.entityType,
-        'contentSelector': value.contentSelector,
-        'triggerSelector': value.triggerSelector,
-        'spreadRootArray': value.spreadRootArray,
-    };
+export function CreateAITransformerMappingOptionsToJSON(
+  value?: CreateAITransformerMappingOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    name: value.name,
+    aiTransformId: value.aiTransformId,
+    entityId: value.entityId,
+    entityType: value.entityType,
+    contentSelector: value.contentSelector,
+    triggerSelector: value.triggerSelector,
+    spreadRootArray: value.spreadRootArray,
+  };
 }
-
-

@@ -19,11 +19,11 @@ function LookupMxRecordsOptionsFromJSON(json) {
 }
 exports.LookupMxRecordsOptionsFromJSON = LookupMxRecordsOptionsFromJSON;
 function LookupMxRecordsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'host': json['host'],
+        host: json['host'],
     };
 }
 exports.LookupMxRecordsOptionsFromJSONTyped = LookupMxRecordsOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function LookupMxRecordsOptionsToJSON(value) {
         return null;
     }
     return {
-        'host': value.host,
+        host: value.host,
     };
 }
 exports.LookupMxRecordsOptionsToJSON = LookupMxRecordsOptionsToJSON;

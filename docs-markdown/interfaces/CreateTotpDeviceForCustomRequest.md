@@ -6,10 +6,10 @@
 
 ### Properties
 
-- [createTotpDeviceOtpAuthUrlOptions](CreateTotpDeviceForCustomRequest.md#createtotpdeviceotpauthurloptions)
+- [createTotpDeviceCustomOptions](CreateTotpDeviceForCustomRequest.md#createtotpdevicecustomoptions)
 
 ## Properties
 
-### createTotpDeviceOtpAuthUrlOptions
+### createTotpDeviceCustomOptions
 
-• **createTotpDeviceOtpAuthUrlOptions**: [`CreateTotpDeviceOtpAuthUrlOptions`](CreateTotpDeviceOtpAuthUrlOptions.md)
+• **createTotpDeviceCustomOptions**: [`CreateTotpDeviceCustomOptions`](CreateTotpDeviceCustomOptions.md)

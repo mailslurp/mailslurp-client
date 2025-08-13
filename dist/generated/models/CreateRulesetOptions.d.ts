@@ -35,18 +35,19 @@ export interface CreateRulesetOptions {
     target: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum CreateRulesetOptionsScopeEnum {
     RECEIVING_EMAILS = "RECEIVING_EMAILS",
     SENDING_EMAILS = "SENDING_EMAILS",
     RECEIVING_SMS = "RECEIVING_SMS",
     SENDING_SMS = "SENDING_SMS"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum CreateRulesetOptionsActionEnum {
     BLOCK = "BLOCK",
     ALLOW = "ALLOW",

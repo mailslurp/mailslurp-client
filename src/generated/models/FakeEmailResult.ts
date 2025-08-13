@@ -14,51 +14,52 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    FakeEmailDto,
-    FakeEmailDtoFromJSON,
-    FakeEmailDtoFromJSONTyped,
-    FakeEmailDtoToJSON,
+  FakeEmailDto,
+  FakeEmailDtoFromJSON,
+  FakeEmailDtoFromJSONTyped,
+  FakeEmailDtoToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface FakeEmailResult
  */
 export interface FakeEmailResult {
-    /**
-     * 
-     * @type {FakeEmailDto}
-     * @memberof FakeEmailResult
-     */
-    email?: FakeEmailDto;
+  /**
+   *
+   * @type {FakeEmailDto}
+   * @memberof FakeEmailResult
+   */
+  email?: FakeEmailDto;
 }
 
 export function FakeEmailResultFromJSON(json: any): FakeEmailResult {
-    return FakeEmailResultFromJSONTyped(json, false);
+  return FakeEmailResultFromJSONTyped(json, false);
 }
 
-export function FakeEmailResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'email': !exists(json, 'email') ? undefined : FakeEmailDtoFromJSON(json['email']),
-    };
+export function FakeEmailResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): FakeEmailResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    email: !exists(json, 'email')
+      ? undefined
+      : FakeEmailDtoFromJSON(json['email']),
+  };
 }
 
 export function FakeEmailResultToJSON(value?: FakeEmailResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'email': FakeEmailDtoToJSON(value.email),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    email: FakeEmailDtoToJSON(value.email),
+  };
 }
-
-

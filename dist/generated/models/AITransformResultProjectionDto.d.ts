@@ -65,9 +65,9 @@ export interface AITransformResultProjectionDto {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum AITransformResultProjectionDtoEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"

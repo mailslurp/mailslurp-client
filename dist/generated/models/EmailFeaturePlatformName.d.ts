@@ -29,9 +29,9 @@ export interface EmailFeaturePlatformName {
     name: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeaturePlatformNameSlugEnum {
     android = "android",
     desktop_app = "desktop-app",

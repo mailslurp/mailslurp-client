@@ -21,11 +21,11 @@
 ### Methods
 
 - [createTransformer](AIControllerApi.md#createtransformer)
-- [createTransformer1](AIControllerApi.md#createtransformer1)
-- [createTransformer1Raw](AIControllerApi.md#createtransformer1raw)
 - [createTransformerMappings](AIControllerApi.md#createtransformermappings)
 - [createTransformerMappingsRaw](AIControllerApi.md#createtransformermappingsraw)
 - [createTransformerRaw](AIControllerApi.md#createtransformerraw)
+- [deleteAllTransformerMappings](AIControllerApi.md#deletealltransformermappings)
+- [deleteAllTransformerMappingsRaw](AIControllerApi.md#deletealltransformermappingsraw)
 - [deleteTransformer](AIControllerApi.md#deletetransformer)
 - [deleteTransformerMapping](AIControllerApi.md#deletetransformermapping)
 - [deleteTransformerMappingRaw](AIControllerApi.md#deletetransformermappingraw)
@@ -48,6 +48,10 @@
 - [getTransformerResultRaw](AIControllerApi.md#gettransformerresultraw)
 - [getTransformerResults](AIControllerApi.md#gettransformerresults)
 - [getTransformerResultsRaw](AIControllerApi.md#gettransformerresultsraw)
+- [getTransformers](AIControllerApi.md#gettransformers)
+- [getTransformersRaw](AIControllerApi.md#gettransformersraw)
+- [invokeTransformer](AIControllerApi.md#invoketransformer)
+- [invokeTransformerRaw](AIControllerApi.md#invoketransformerraw)
 - [request](AIControllerApi.md#request)
 - [validateStructuredOutputSchema](AIControllerApi.md#validatestructuredoutputschema)
 - [validateStructuredOutputSchemaRaw](AIControllerApi.md#validatestructuredoutputschemaraw)
@@ -85,10 +89,10 @@
 
 ### createTransformer
 
-▸ **createTransformer**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>
+▸ **createTransformer**(`requestParameters`, `initOverrides?`): `Promise`<[`AITransformDto`](../interfaces/AITransformDto.md)\>
 
-List all AI transforms
-List transformers
+Save an AI transform instructions and schema for use with webhooks and automations
+Create a transformer for reuse in automations
 
 #### Parameters
 
@@ -99,47 +103,7 @@ List transformers
 
 #### Returns
 
-`Promise`<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>
-
-___
-
-### createTransformer1
-
-▸ **createTransformer1**(`requestParameters`, `initOverrides?`): `Promise`<[`AITransformDto`](../interfaces/AITransformDto.md)\>
-
-Save an AI transform instructions and schema for use with webhooks and automations
-Create a transformer for reuse in automations
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `requestParameters` | [`CreateTransformer1Request`](../interfaces/CreateTransformer1Request.md) |
-| `initOverrides?` | `RequestInit` |
-
-#### Returns
-
 `Promise`<[`AITransformDto`](../interfaces/AITransformDto.md)\>
-
-___
-
-### createTransformer1Raw
-
-▸ **createTransformer1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AITransformDto`](../interfaces/AITransformDto.md)\>\>
-
-Save an AI transform instructions and schema for use with webhooks and automations
-Create a transformer for reuse in automations
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `requestParameters` | [`CreateTransformer1Request`](../interfaces/CreateTransformer1Request.md) |
-| `initOverrides?` | `RequestInit` |
-
-#### Returns
-
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AITransformDto`](../interfaces/AITransformDto.md)\>\>
 
 ___
 
@@ -185,10 +149,10 @@ ___
 
 ### createTransformerRaw
 
-▸ **createTransformerRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>\>
+▸ **createTransformerRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AITransformDto`](../interfaces/AITransformDto.md)\>\>
 
-List all AI transforms
-List transformers
+Save an AI transform instructions and schema for use with webhooks and automations
+Create a transformer for reuse in automations
 
 #### Parameters
 
@@ -199,7 +163,45 @@ List transformers
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AITransformDto`](../interfaces/AITransformDto.md)\>\>
+
+___
+
+### deleteAllTransformerMappings
+
+▸ **deleteAllTransformerMappings**(`initOverrides?`): `Promise`<`void`\>
+
+Delete all AI transformer mappings
+Delete all transformer mapping
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllTransformerMappingsRaw
+
+▸ **deleteAllTransformerMappingsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete all AI transformer mappings
+Delete all transformer mapping
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
@@ -638,6 +640,86 @@ Get transformer results
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAITransformResultProjection`](../interfaces/PageAITransformResultProjection.md)\>\>
+
+___
+
+### getTransformers
+
+▸ **getTransformers**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>
+
+List all AI transforms
+List transformers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTransformersRequest`](../interfaces/GetTransformersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>
+
+___
+
+### getTransformersRaw
+
+▸ **getTransformersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>\>
+
+List all AI transforms
+List transformers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTransformersRequest`](../interfaces/GetTransformersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>\>
+
+___
+
+### invokeTransformer
+
+▸ **invokeTransformer**(`requestParameters`, `initOverrides?`): `Promise`<[`ConditionalStructuredContentResult`](../interfaces/ConditionalStructuredContentResult.md)\>
+
+Execute an AI transformer to generate structured content
+Invoke a transformer
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`InvokeTransformerRequest`](../interfaces/InvokeTransformerRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConditionalStructuredContentResult`](../interfaces/ConditionalStructuredContentResult.md)\>
+
+___
+
+### invokeTransformerRaw
+
+▸ **invokeTransformerRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConditionalStructuredContentResult`](../interfaces/ConditionalStructuredContentResult.md)\>\>
+
+Execute an AI transformer to generate structured content
+Invoke a transformer
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`InvokeTransformerRequest`](../interfaces/InvokeTransformerRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConditionalStructuredContentResult`](../interfaces/ConditionalStructuredContentResult.md)\>\>
 
 ___
 

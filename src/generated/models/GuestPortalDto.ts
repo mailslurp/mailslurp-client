@@ -14,108 +14,107 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface GuestPortalDto
  */
 export interface GuestPortalDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalDto
-     */
-    domainId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalDto
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalDto
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalDto
-     */
-    description?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalDto
-     */
-    linkHelp?: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof GuestPortalDto
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof GuestPortalDto
-     */
-    updatedAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof GuestPortalDto
-     */
-    loginUrl: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalDto
+   */
+  domainId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalDto
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalDto
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalDto
+   */
+  description?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalDto
+   */
+  linkHelp?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof GuestPortalDto
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof GuestPortalDto
+   */
+  updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalDto
+   */
+  loginUrl: string;
 }
 
 export function GuestPortalDtoFromJSON(json: any): GuestPortalDto {
-    return GuestPortalDtoFromJSONTyped(json, false);
+  return GuestPortalDtoFromJSONTyped(json, false);
 }
 
-export function GuestPortalDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): GuestPortalDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'domainId': !exists(json, 'domainId') ? undefined : json['domainId'],
-        'userId': json['userId'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'description': !exists(json, 'description') ? undefined : json['description'],
-        'linkHelp': !exists(json, 'linkHelp') ? undefined : json['linkHelp'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-        'loginUrl': json['loginUrl'],
-    };
+export function GuestPortalDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): GuestPortalDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
+    userId: json['userId'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    description: !exists(json, 'description') ? undefined : json['description'],
+    linkHelp: !exists(json, 'linkHelp') ? undefined : json['linkHelp'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+    loginUrl: json['loginUrl'],
+  };
 }
 
 export function GuestPortalDtoToJSON(value?: GuestPortalDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'domainId': value.domainId,
-        'userId': value.userId,
-        'name': value.name,
-        'description': value.description,
-        'linkHelp': value.linkHelp,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-        'loginUrl': value.loginUrl,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    domainId: value.domainId,
+    userId: value.userId,
+    name: value.name,
+    description: value.description,
+    linkHelp: value.linkHelp,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+    loginUrl: value.loginUrl,
+  };
 }
-
-

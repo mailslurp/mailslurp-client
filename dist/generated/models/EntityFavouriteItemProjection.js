@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EntityFavouriteItemProjectionToJSON = exports.EntityFavouriteItemProjectionFromJSONTyped = exports.EntityFavouriteItemProjectionFromJSON = exports.EntityFavouriteItemProjectionEntityTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EntityFavouriteItemProjectionEntityTypeEnum;
 (function (EntityFavouriteItemProjectionEntityTypeEnum) {
     EntityFavouriteItemProjectionEntityTypeEnum["INBOX"] = "INBOX";
@@ -32,15 +32,15 @@ function EntityFavouriteItemProjectionFromJSON(json) {
 }
 exports.EntityFavouriteItemProjectionFromJSON = EntityFavouriteItemProjectionFromJSON;
 function EntityFavouriteItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'entityType': json['entityType'],
-        'name': json['name'],
-        'id': json['id'],
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        createdAt: new Date(json['createdAt']),
+        entityType: json['entityType'],
+        name: json['name'],
+        id: json['id'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
 exports.EntityFavouriteItemProjectionFromJSONTyped = EntityFavouriteItemProjectionFromJSONTyped;
@@ -52,11 +52,11 @@ function EntityFavouriteItemProjectionToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'entityType': value.entityType,
-        'name': value.name,
-        'id': value.id,
-        'description': value.description,
+        createdAt: value.createdAt.toISOString(),
+        entityType: value.entityType,
+        name: value.name,
+        id: value.id,
+        description: value.description,
     };
 }
 exports.EntityFavouriteItemProjectionToJSON = EntityFavouriteItemProjectionToJSON;

@@ -19,39 +19,42 @@ import { exists, mapValues } from '../runtime';
  * @interface FilterBouncedRecipientsResult
  */
 export interface FilterBouncedRecipientsResult {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof FilterBouncedRecipientsResult
-     */
-    filteredRecipients: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof FilterBouncedRecipientsResult
+   */
+  filteredRecipients: Array<string>;
 }
 
-export function FilterBouncedRecipientsResultFromJSON(json: any): FilterBouncedRecipientsResult {
-    return FilterBouncedRecipientsResultFromJSONTyped(json, false);
+export function FilterBouncedRecipientsResultFromJSON(
+  json: any
+): FilterBouncedRecipientsResult {
+  return FilterBouncedRecipientsResultFromJSONTyped(json, false);
 }
 
-export function FilterBouncedRecipientsResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FilterBouncedRecipientsResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'filteredRecipients': json['filteredRecipients'],
-    };
+export function FilterBouncedRecipientsResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): FilterBouncedRecipientsResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    filteredRecipients: json['filteredRecipients'],
+  };
 }
 
-export function FilterBouncedRecipientsResultToJSON(value?: FilterBouncedRecipientsResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'filteredRecipients': value.filteredRecipients,
-    };
+export function FilterBouncedRecipientsResultToJSON(
+  value?: FilterBouncedRecipientsResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    filteredRecipients: value.filteredRecipients,
+  };
 }
-
-

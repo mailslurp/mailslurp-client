@@ -20,16 +20,18 @@ function CreateAliasOptionsFromJSON(json) {
 }
 exports.CreateAliasOptionsFromJSON = CreateAliasOptionsFromJSON;
 function CreateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': json['emailAddress'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'useThreads': json['useThreads'],
-        'domainId': !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        'verifyEmailAddress': !(0, runtime_1.exists)(json, 'verifyEmailAddress') ? undefined : json['verifyEmailAddress'],
+        emailAddress: json['emailAddress'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        useThreads: json['useThreads'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
+        verifyEmailAddress: !(0, runtime_1.exists)(json, 'verifyEmailAddress')
+            ? undefined
+            : json['verifyEmailAddress'],
     };
 }
 exports.CreateAliasOptionsFromJSONTyped = CreateAliasOptionsFromJSONTyped;
@@ -41,12 +43,12 @@ function CreateAliasOptionsToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'inboxId': value.inboxId,
-        'name': value.name,
-        'useThreads': value.useThreads,
-        'domainId': value.domainId,
-        'verifyEmailAddress': value.verifyEmailAddress,
+        emailAddress: value.emailAddress,
+        inboxId: value.inboxId,
+        name: value.name,
+        useThreads: value.useThreads,
+        domainId: value.domainId,
+        verifyEmailAddress: value.verifyEmailAddress,
     };
 }
 exports.CreateAliasOptionsToJSON = CreateAliasOptionsToJSON;

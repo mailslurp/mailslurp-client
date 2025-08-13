@@ -21,12 +21,20 @@ function MatchOptionsFromJSON(json) {
 }
 exports.MatchOptionsFromJSON = MatchOptionsFromJSON;
 function MatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'matches': !(0, runtime_1.exists)(json, 'matches') ? undefined : (json['matches'] === null ? null : json['matches'].map(_1.MatchOptionFromJSON)),
-        'conditions': !(0, runtime_1.exists)(json, 'conditions') ? undefined : (json['conditions'] === null ? null : json['conditions'].map(_1.ConditionOptionFromJSON)),
+        matches: !(0, runtime_1.exists)(json, 'matches')
+            ? undefined
+            : json['matches'] === null
+                ? null
+                : json['matches'].map(_1.MatchOptionFromJSON),
+        conditions: !(0, runtime_1.exists)(json, 'conditions')
+            ? undefined
+            : json['conditions'] === null
+                ? null
+                : json['conditions'].map(_1.ConditionOptionFromJSON),
     };
 }
 exports.MatchOptionsFromJSONTyped = MatchOptionsFromJSONTyped;
@@ -38,8 +46,16 @@ function MatchOptionsToJSON(value) {
         return null;
     }
     return {
-        'matches': value.matches === undefined ? undefined : (value.matches === null ? null : value.matches.map(_1.MatchOptionToJSON)),
-        'conditions': value.conditions === undefined ? undefined : (value.conditions === null ? null : value.conditions.map(_1.ConditionOptionToJSON)),
+        matches: value.matches === undefined
+            ? undefined
+            : value.matches === null
+                ? null
+                : value.matches.map(_1.MatchOptionToJSON),
+        conditions: value.conditions === undefined
+            ? undefined
+            : value.conditions === null
+                ? null
+                : value.conditions.map(_1.ConditionOptionToJSON),
     };
 }
 exports.MatchOptionsToJSON = MatchOptionsToJSON;

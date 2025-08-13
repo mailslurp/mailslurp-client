@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    PageableObject,
-    PageableObjectFromJSON,
-    PageableObjectFromJSONTyped,
-    PageableObjectToJSON,
-    RulesetDto,
-    RulesetDtoFromJSON,
-    RulesetDtoFromJSONTyped,
-    RulesetDtoToJSON,
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
+  PageableObject,
+  PageableObjectFromJSON,
+  PageableObjectFromJSONTyped,
+  PageableObjectToJSON,
+  RulesetDto,
+  RulesetDtoFromJSON,
+  RulesetDtoFromJSONTyped,
+  RulesetDtoToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
@@ -34,119 +34,127 @@ import {
  * @interface PageRulesetDto
  */
 export interface PageRulesetDto {
-    /**
-     * 
-     * @type {Array<RulesetDto>}
-     * @memberof PageRulesetDto
-     */
-    content?: Array<RulesetDto>;
-    /**
-     * 
-     * @type {PageableObject}
-     * @memberof PageRulesetDto
-     */
-    pageable?: PageableObject;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageRulesetDto
-     */
-    totalElements: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageRulesetDto
-     */
-    totalPages: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageRulesetDto
-     */
-    last?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageRulesetDto
-     */
-    numberOfElements?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageRulesetDto
-     */
-    sort?: SortObject;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageRulesetDto
-     */
-    first?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageRulesetDto
-     */
-    size?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageRulesetDto
-     */
-    number?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageRulesetDto
-     */
-    empty?: boolean;
+  /**
+   *
+   * @type {Array<RulesetDto>}
+   * @memberof PageRulesetDto
+   */
+  content?: Array<RulesetDto>;
+  /**
+   *
+   * @type {PageableObject}
+   * @memberof PageRulesetDto
+   */
+  pageable?: PageableObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageRulesetDto
+   */
+  totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageRulesetDto
+   */
+  totalPages: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageRulesetDto
+   */
+  last?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageRulesetDto
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageRulesetDto
+   */
+  sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageRulesetDto
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageRulesetDto
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageRulesetDto
+   */
+  number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageRulesetDto
+   */
+  empty?: boolean;
 }
 
 export function PageRulesetDtoFromJSON(json: any): PageRulesetDto {
-    return PageRulesetDtoFromJSONTyped(json, false);
+  return PageRulesetDtoFromJSONTyped(json, false);
 }
 
-export function PageRulesetDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageRulesetDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(RulesetDtoFromJSON)),
-        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !exists(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-        'first': !exists(json, 'first') ? undefined : json['first'],
-        'size': !exists(json, 'size') ? undefined : json['size'],
-        'number': !exists(json, 'number') ? undefined : json['number'],
-        'empty': !exists(json, 'empty') ? undefined : json['empty'],
-    };
+export function PageRulesetDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageRulesetDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(RulesetDtoFromJSON),
+    pageable: !exists(json, 'pageable')
+      ? undefined
+      : PageableObjectFromJSON(json['pageable']),
+    totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+  };
 }
 
 export function PageRulesetDtoToJSON(value?: PageRulesetDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(RulesetDtoToJSON)),
-        'pageable': PageableObjectToJSON(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': SortObjectToJSON(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(RulesetDtoToJSON),
+    pageable: PageableObjectToJSON(value.pageable),
+    totalElements: value.totalElements,
+    totalPages: value.totalPages,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
+    first: value.first,
+    size: value.size,
+    number: value.number,
+    empty: value.empty,
+  };
 }
-
-

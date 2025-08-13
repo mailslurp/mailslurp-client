@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ValidatePhoneNumberOptions
  */
 export interface ValidatePhoneNumberOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof ValidatePhoneNumberOptions
-     */
-    phoneNumber: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ValidatePhoneNumberOptions
+   */
+  phoneNumber: string;
 }
 
-export function ValidatePhoneNumberOptionsFromJSON(json: any): ValidatePhoneNumberOptions {
-    return ValidatePhoneNumberOptionsFromJSONTyped(json, false);
+export function ValidatePhoneNumberOptionsFromJSON(
+  json: any
+): ValidatePhoneNumberOptions {
+  return ValidatePhoneNumberOptionsFromJSONTyped(json, false);
 }
 
-export function ValidatePhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidatePhoneNumberOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'phoneNumber': json['phoneNumber'],
-    };
+export function ValidatePhoneNumberOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ValidatePhoneNumberOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    phoneNumber: json['phoneNumber'],
+  };
 }
 
-export function ValidatePhoneNumberOptionsToJSON(value?: ValidatePhoneNumberOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'phoneNumber': value.phoneNumber,
-    };
+export function ValidatePhoneNumberOptionsToJSON(
+  value?: ValidatePhoneNumberOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    phoneNumber: value.phoneNumber,
+  };
 }
-
-

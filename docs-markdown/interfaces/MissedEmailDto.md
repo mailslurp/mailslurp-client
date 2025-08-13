@@ -147,6 +147,8 @@ ___
 
 • `Optional` **rawUrl**: `string`
 
+use raw key and raw bucket
+
 **`Memberof`**
 
 MissedEmailDto

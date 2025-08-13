@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmergencyAddressToJSON = exports.EmergencyAddressFromJSONTyped = exports.EmergencyAddressFromJSON = exports.EmergencyAddressPhoneCountryEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EmergencyAddressPhoneCountryEnum;
 (function (EmergencyAddressPhoneCountryEnum) {
     EmergencyAddressPhoneCountryEnum["US"] = "US";
@@ -38,23 +38,23 @@ function EmergencyAddressFromJSON(json) {
 }
 exports.EmergencyAddressFromJSON = EmergencyAddressFromJSON;
 function EmergencyAddressFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'sid': json['sid'],
-        'userId': json['userId'],
-        'displayName': json['displayName'],
-        'customerName': json['customerName'],
-        'address1': json['address1'],
-        'city': json['city'],
-        'region': json['region'],
-        'postalCode': json['postalCode'],
-        'phoneCountry': json['phoneCountry'],
-        'accountSid': json['accountSid'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
+        id: json['id'],
+        sid: json['sid'],
+        userId: json['userId'],
+        displayName: json['displayName'],
+        customerName: json['customerName'],
+        address1: json['address1'],
+        city: json['city'],
+        region: json['region'],
+        postalCode: json['postalCode'],
+        phoneCountry: json['phoneCountry'],
+        accountSid: json['accountSid'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
     };
 }
 exports.EmergencyAddressFromJSONTyped = EmergencyAddressFromJSONTyped;
@@ -66,19 +66,19 @@ function EmergencyAddressToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'sid': value.sid,
-        'userId': value.userId,
-        'displayName': value.displayName,
-        'customerName': value.customerName,
-        'address1': value.address1,
-        'city': value.city,
-        'region': value.region,
-        'postalCode': value.postalCode,
-        'phoneCountry': value.phoneCountry,
-        'accountSid': value.accountSid,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
+        id: value.id,
+        sid: value.sid,
+        userId: value.userId,
+        displayName: value.displayName,
+        customerName: value.customerName,
+        address1: value.address1,
+        city: value.city,
+        region: value.region,
+        postalCode: value.postalCode,
+        phoneCountry: value.phoneCountry,
+        accountSid: value.accountSid,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
     };
 }
 exports.EmergencyAddressToJSON = EmergencyAddressToJSON;

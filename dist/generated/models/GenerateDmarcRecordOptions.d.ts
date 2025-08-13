@@ -89,51 +89,57 @@ export interface GenerateDmarcRecordOptions {
     fo?: GenerateDmarcRecordOptionsFoEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordOptionsVersionEnum {
     DMARC1 = "DMARC1"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordOptionsPolicyEnum {
     NONE = "NONE",
     QUARANTINE = "QUARANTINE",
     REJECT = "REJECT"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordOptionsSubdomainPolicyEnum {
     NONE = "NONE",
     QUARANTINE = "QUARANTINE",
     REJECT = "REJECT"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordOptionsReportFormatEnum {
     AFRF = "AFRF"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordOptionsAdkimEnum {
     STRICT = "STRICT",
     RELAXED = "RELAXED"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordOptionsAspfEnum {
     STRICT = "STRICT",
     RELAXED = "RELAXED"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateDmarcRecordOptionsFoEnum {
     _0 = "FO_0",
     _1 = "FO_1",

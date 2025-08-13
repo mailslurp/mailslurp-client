@@ -19,62 +19,62 @@ import { exists, mapValues } from '../runtime';
  * @interface ConditionOption
  */
 export interface ConditionOption {
-    /**
-     * Condition of an email object that can be used to filter results
-     * @type {string}
-     * @memberof ConditionOption
-     */
-    condition: ConditionOptionConditionEnum;
-    /**
-     * Expected condition value
-     * @type {string}
-     * @memberof ConditionOption
-     */
-    value: ConditionOptionValueEnum;
+  /**
+   * Condition of an email object that can be used to filter results
+   * @type {string}
+   * @memberof ConditionOption
+   */
+  condition: ConditionOptionConditionEnum;
+  /**
+   * Expected condition value
+   * @type {string}
+   * @memberof ConditionOption
+   */
+  value: ConditionOptionValueEnum;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum ConditionOptionConditionEnum {
-    HAS_ATTACHMENTS = 'HAS_ATTACHMENTS'
-}/**
-* @export
-* @enum {string}
-*/
+  HAS_ATTACHMENTS = 'HAS_ATTACHMENTS',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum ConditionOptionValueEnum {
-    TRUE = 'TRUE',
-    FALSE = 'FALSE'
+  TRUE = 'TRUE',
+  FALSE = 'FALSE',
 }
 
 export function ConditionOptionFromJSON(json: any): ConditionOption {
-    return ConditionOptionFromJSONTyped(json, false);
+  return ConditionOptionFromJSONTyped(json, false);
 }
 
-export function ConditionOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConditionOption {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'condition': json['condition'],
-        'value': json['value'],
-    };
+export function ConditionOptionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ConditionOption {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    condition: json['condition'],
+    value: json['value'],
+  };
 }
 
 export function ConditionOptionToJSON(value?: ConditionOption | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'condition': value.condition,
-        'value': value.value,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    condition: value.condition,
+    value: value.value,
+  };
 }
-
-

@@ -48,6 +48,8 @@
 - [lookupDmarcDomainRaw](ToolsControllerApi.md#lookupdmarcdomainraw)
 - [lookupMtaStsDomain](ToolsControllerApi.md#lookupmtastsdomain)
 - [lookupMtaStsDomainRaw](ToolsControllerApi.md#lookupmtastsdomainraw)
+- [lookupMxRecord](ToolsControllerApi.md#lookupmxrecord)
+- [lookupMxRecordRaw](ToolsControllerApi.md#lookupmxrecordraw)
 - [lookupTlsReportingDomain](ToolsControllerApi.md#lookuptlsreportingdomain)
 - [lookupTlsReportingDomainRaw](ToolsControllerApi.md#lookuptlsreportingdomainraw)
 - [request](ToolsControllerApi.md#request)
@@ -614,6 +616,44 @@ Lookup a MTA-STS domain policy
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupMtaStsDomainResults`](../interfaces/LookupMtaStsDomainResults.md)\>\>
+
+___
+
+### lookupMxRecord
+
+▸ **lookupMxRecord**(`requestParameters`, `initOverrides?`): `Promise`<[`LookupMxRecordsResults`](../interfaces/LookupMxRecordsResults.md)\>
+
+Lookup a MX records for a domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupMxRecordRequest`](../interfaces/LookupMxRecordRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`LookupMxRecordsResults`](../interfaces/LookupMxRecordsResults.md)\>
+
+___
+
+### lookupMxRecordRaw
+
+▸ **lookupMxRecordRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupMxRecordsResults`](../interfaces/LookupMxRecordsResults.md)\>\>
+
+Lookup a MX records for a domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupMxRecordRequest`](../interfaces/LookupMxRecordRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupMxRecordsResults`](../interfaces/LookupMxRecordsResults.md)\>\>
 
 ___
 

@@ -20,19 +20,21 @@ function BouncedRecipientDtoFromJSON(json) {
 }
 exports.BouncedRecipientDtoFromJSON = BouncedRecipientDtoFromJSON;
 function BouncedRecipientDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        'sentEmailId': !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-        'recipient': json['recipient'],
-        'diagnosticCode': !(0, runtime_1.exists)(json, 'diagnosticCode') ? undefined : json['diagnosticCode'],
-        'action': !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
-        'bounceType': !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
-        'status': !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
-        'createdAt': (new Date(json['createdAt'])),
+        id: json['id'],
+        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
+        recipient: json['recipient'],
+        diagnosticCode: !(0, runtime_1.exists)(json, 'diagnosticCode')
+            ? undefined
+            : json['diagnosticCode'],
+        action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
+        bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
+        status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.BouncedRecipientDtoFromJSONTyped = BouncedRecipientDtoFromJSONTyped;
@@ -44,15 +46,15 @@ function BouncedRecipientDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'sentEmailId': value.sentEmailId,
-        'recipient': value.recipient,
-        'diagnosticCode': value.diagnosticCode,
-        'action': value.action,
-        'bounceType': value.bounceType,
-        'status': value.status,
-        'createdAt': (value.createdAt.toISOString()),
+        id: value.id,
+        userId: value.userId,
+        sentEmailId: value.sentEmailId,
+        recipient: value.recipient,
+        diagnosticCode: value.diagnosticCode,
+        action: value.action,
+        bounceType: value.bounceType,
+        status: value.status,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.BouncedRecipientDtoToJSON = BouncedRecipientDtoToJSON;

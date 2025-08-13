@@ -29,9 +29,9 @@ export interface ImapServerStatusOptions {
     statusItems?: Array<ImapServerStatusOptionsStatusItemsEnum>;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum ImapServerStatusOptionsStatusItemsEnum {
     MESSAGES = "MESSAGES",
     RECENT = "RECENT",

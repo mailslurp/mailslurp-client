@@ -20,12 +20,14 @@ function ValidateEmailAddressListOptionsFromJSON(json) {
 }
 exports.ValidateEmailAddressListOptionsFromJSON = ValidateEmailAddressListOptionsFromJSON;
 function ValidateEmailAddressListOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddressList': json['emailAddressList'],
-        'ignoreOldResults': !(0, runtime_1.exists)(json, 'ignoreOldResults') ? undefined : json['ignoreOldResults'],
+        emailAddressList: json['emailAddressList'],
+        ignoreOldResults: !(0, runtime_1.exists)(json, 'ignoreOldResults')
+            ? undefined
+            : json['ignoreOldResults'],
     };
 }
 exports.ValidateEmailAddressListOptionsFromJSONTyped = ValidateEmailAddressListOptionsFromJSONTyped;
@@ -37,8 +39,8 @@ function ValidateEmailAddressListOptionsToJSON(value) {
         return null;
     }
     return {
-        'emailAddressList': value.emailAddressList,
-        'ignoreOldResults': value.ignoreOldResults,
+        emailAddressList: value.emailAddressList,
+        ignoreOldResults: value.ignoreOldResults,
     };
 }
 exports.ValidateEmailAddressListOptionsToJSON = ValidateEmailAddressListOptionsToJSON;

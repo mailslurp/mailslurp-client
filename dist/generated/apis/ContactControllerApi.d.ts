@@ -85,9 +85,9 @@ export declare class ContactControllerApi extends runtime.BaseAPI {
     getContacts(initOverrides?: RequestInit): Promise<Array<ContactProjection>>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllContactsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

@@ -14,111 +14,114 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateEmergencyAddressOptions
  */
 export interface CreateEmergencyAddressOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateEmergencyAddressOptions
-     */
-    customerName: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateEmergencyAddressOptions
-     */
-    address1: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateEmergencyAddressOptions
-     */
-    city: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateEmergencyAddressOptions
-     */
-    region: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateEmergencyAddressOptions
-     */
-    postalCode: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateEmergencyAddressOptions
-     */
-    isoCountryCode: CreateEmergencyAddressOptionsIsoCountryCodeEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateEmergencyAddressOptions
-     */
-    displayName?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateEmergencyAddressOptions
+   */
+  customerName: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateEmergencyAddressOptions
+   */
+  address1: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateEmergencyAddressOptions
+   */
+  city: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateEmergencyAddressOptions
+   */
+  region: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateEmergencyAddressOptions
+   */
+  postalCode: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateEmergencyAddressOptions
+   */
+  isoCountryCode: CreateEmergencyAddressOptionsIsoCountryCodeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateEmergencyAddressOptions
+   */
+  displayName?: string;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum CreateEmergencyAddressOptionsIsoCountryCodeEnum {
-    US = 'US',
-    GB = 'GB',
-    AU = 'AU',
-    CA = 'CA',
-    EE = 'EE',
-    HK = 'HK',
-    PL = 'PL',
-    CH = 'CH',
-    PT = 'PT',
-    NL = 'NL',
-    IL = 'IL',
-    SE = 'SE'
+  US = 'US',
+  GB = 'GB',
+  AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  CH = 'CH',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  SE = 'SE',
 }
 
-export function CreateEmergencyAddressOptionsFromJSON(json: any): CreateEmergencyAddressOptions {
-    return CreateEmergencyAddressOptionsFromJSONTyped(json, false);
+export function CreateEmergencyAddressOptionsFromJSON(
+  json: any
+): CreateEmergencyAddressOptions {
+  return CreateEmergencyAddressOptionsFromJSONTyped(json, false);
 }
 
-export function CreateEmergencyAddressOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateEmergencyAddressOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'customerName': json['customerName'],
-        'address1': json['address1'],
-        'city': json['city'],
-        'region': json['region'],
-        'postalCode': json['postalCode'],
-        'isoCountryCode': json['isoCountryCode'],
-        'displayName': !exists(json, 'displayName') ? undefined : json['displayName'],
-    };
+export function CreateEmergencyAddressOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateEmergencyAddressOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    customerName: json['customerName'],
+    address1: json['address1'],
+    city: json['city'],
+    region: json['region'],
+    postalCode: json['postalCode'],
+    isoCountryCode: json['isoCountryCode'],
+    displayName: !exists(json, 'displayName') ? undefined : json['displayName'],
+  };
 }
 
-export function CreateEmergencyAddressOptionsToJSON(value?: CreateEmergencyAddressOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'customerName': value.customerName,
-        'address1': value.address1,
-        'city': value.city,
-        'region': value.region,
-        'postalCode': value.postalCode,
-        'isoCountryCode': value.isoCountryCode,
-        'displayName': value.displayName,
-    };
+export function CreateEmergencyAddressOptionsToJSON(
+  value?: CreateEmergencyAddressOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    customerName: value.customerName,
+    address1: value.address1,
+    city: value.city,
+    region: value.region,
+    postalCode: value.postalCode,
+    isoCountryCode: value.isoCountryCode,
+    displayName: value.displayName,
+  };
 }
-
-

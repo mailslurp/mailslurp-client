@@ -20,15 +20,15 @@ function LookupBimiDomainResultsFromJSON(json) {
 }
 exports.LookupBimiDomainResultsFromJSON = LookupBimiDomainResultsFromJSON;
 function LookupBimiDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'valid': json['valid'],
-        'query': (0, _1.DNSLookupOptionsFromJSON)(json['query']),
-        'records': (json['records'].map(_1.DNSLookupResultFromJSON)),
-        'errors': json['errors'],
-        'warnings': json['warnings'],
+        valid: json['valid'],
+        query: (0, _1.DNSLookupOptionsFromJSON)(json['query']),
+        records: json['records'].map(_1.DNSLookupResultFromJSON),
+        errors: json['errors'],
+        warnings: json['warnings'],
     };
 }
 exports.LookupBimiDomainResultsFromJSONTyped = LookupBimiDomainResultsFromJSONTyped;
@@ -40,11 +40,11 @@ function LookupBimiDomainResultsToJSON(value) {
         return null;
     }
     return {
-        'valid': value.valid,
-        'query': (0, _1.DNSLookupOptionsToJSON)(value.query),
-        'records': (value.records.map(_1.DNSLookupResultToJSON)),
-        'errors': value.errors,
-        'warnings': value.warnings,
+        valid: value.valid,
+        query: (0, _1.DNSLookupOptionsToJSON)(value.query),
+        records: value.records.map(_1.DNSLookupResultToJSON),
+        errors: value.errors,
+        warnings: value.warnings,
     };
 }
 exports.LookupBimiDomainResultsToJSON = LookupBimiDomainResultsToJSON;

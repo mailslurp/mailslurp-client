@@ -59,9 +59,9 @@ export interface AITransformMappingDto {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum AITransformMappingDtoEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"

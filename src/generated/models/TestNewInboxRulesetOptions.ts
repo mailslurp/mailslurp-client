@@ -14,14 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    CreateRulesetOptions,
-    CreateRulesetOptionsFromJSON,
-    CreateRulesetOptionsFromJSONTyped,
-    CreateRulesetOptionsToJSON,
-    RulesetTestOptions,
-    RulesetTestOptionsFromJSON,
-    RulesetTestOptionsFromJSONTyped,
-    RulesetTestOptionsToJSON,
+  CreateRulesetOptions,
+  CreateRulesetOptionsFromJSON,
+  CreateRulesetOptionsFromJSONTyped,
+  CreateRulesetOptionsToJSON,
+  RulesetTestOptions,
+  RulesetTestOptionsFromJSON,
+  RulesetTestOptionsFromJSONTyped,
+  RulesetTestOptionsToJSON,
 } from './';
 
 /**
@@ -30,47 +30,58 @@ import {
  * @interface TestNewInboxRulesetOptions
  */
 export interface TestNewInboxRulesetOptions {
-    /**
-     * 
-     * @type {RulesetTestOptions}
-     * @memberof TestNewInboxRulesetOptions
-     */
-    inboxRulesetTestOptions: RulesetTestOptions;
-    /**
-     * 
-     * @type {CreateRulesetOptions}
-     * @memberof TestNewInboxRulesetOptions
-     */
-    createRulesetOptions: CreateRulesetOptions;
+  /**
+   *
+   * @type {RulesetTestOptions}
+   * @memberof TestNewInboxRulesetOptions
+   */
+  inboxRulesetTestOptions: RulesetTestOptions;
+  /**
+   *
+   * @type {CreateRulesetOptions}
+   * @memberof TestNewInboxRulesetOptions
+   */
+  createRulesetOptions: CreateRulesetOptions;
 }
 
-export function TestNewInboxRulesetOptionsFromJSON(json: any): TestNewInboxRulesetOptions {
-    return TestNewInboxRulesetOptionsFromJSONTyped(json, false);
+export function TestNewInboxRulesetOptionsFromJSON(
+  json: any
+): TestNewInboxRulesetOptions {
+  return TestNewInboxRulesetOptionsFromJSONTyped(json, false);
 }
 
-export function TestNewInboxRulesetOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestNewInboxRulesetOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'inboxRulesetTestOptions': RulesetTestOptionsFromJSON(json['inboxRulesetTestOptions']),
-        'createRulesetOptions': CreateRulesetOptionsFromJSON(json['createRulesetOptions']),
-    };
+export function TestNewInboxRulesetOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TestNewInboxRulesetOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    inboxRulesetTestOptions: RulesetTestOptionsFromJSON(
+      json['inboxRulesetTestOptions']
+    ),
+    createRulesetOptions: CreateRulesetOptionsFromJSON(
+      json['createRulesetOptions']
+    ),
+  };
 }
 
-export function TestNewInboxRulesetOptionsToJSON(value?: TestNewInboxRulesetOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'inboxRulesetTestOptions': RulesetTestOptionsToJSON(value.inboxRulesetTestOptions),
-        'createRulesetOptions': CreateRulesetOptionsToJSON(value.createRulesetOptions),
-    };
+export function TestNewInboxRulesetOptionsToJSON(
+  value?: TestNewInboxRulesetOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    inboxRulesetTestOptions: RulesetTestOptionsToJSON(
+      value.inboxRulesetTestOptions
+    ),
+    createRulesetOptions: CreateRulesetOptionsToJSON(
+      value.createRulesetOptions
+    ),
+  };
 }
-
-

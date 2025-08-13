@@ -89,9 +89,9 @@ export interface PhoneNumberDto {
     favourite: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum PhoneNumberDtoPhoneCountryEnum {
     US = "US",
     GB = "GB",

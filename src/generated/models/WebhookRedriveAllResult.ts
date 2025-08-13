@@ -19,47 +19,50 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookRedriveAllResult
  */
 export interface WebhookRedriveAllResult {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof WebhookRedriveAllResult
-     */
-    success: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof WebhookRedriveAllResult
-     */
-    message?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof WebhookRedriveAllResult
+   */
+  success: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookRedriveAllResult
+   */
+  message?: string | null;
 }
 
-export function WebhookRedriveAllResultFromJSON(json: any): WebhookRedriveAllResult {
-    return WebhookRedriveAllResultFromJSONTyped(json, false);
+export function WebhookRedriveAllResultFromJSON(
+  json: any
+): WebhookRedriveAllResult {
+  return WebhookRedriveAllResultFromJSONTyped(json, false);
 }
 
-export function WebhookRedriveAllResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookRedriveAllResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'success': json['success'],
-        'message': !exists(json, 'message') ? undefined : json['message'],
-    };
+export function WebhookRedriveAllResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookRedriveAllResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    success: json['success'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+  };
 }
 
-export function WebhookRedriveAllResultToJSON(value?: WebhookRedriveAllResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'success': value.success,
-        'message': value.message,
-    };
+export function WebhookRedriveAllResultToJSON(
+  value?: WebhookRedriveAllResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    success: value.success,
+    message: value.message,
+  };
 }
-
-

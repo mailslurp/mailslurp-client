@@ -21,13 +21,15 @@ function ConnectorSyncRequestResultFromJSON(json) {
 }
 exports.ConnectorSyncRequestResultFromJSON = ConnectorSyncRequestResultFromJSON;
 function ConnectorSyncRequestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'syncResult': !(0, runtime_1.exists)(json, 'syncResult') ? undefined : (0, _1.ConnectorSyncResultFromJSON)(json['syncResult']),
-        'exception': !(0, runtime_1.exists)(json, 'exception') ? undefined : json['exception'],
-        'eventId': !(0, runtime_1.exists)(json, 'eventId') ? undefined : json['eventId'],
+        syncResult: !(0, runtime_1.exists)(json, 'syncResult')
+            ? undefined
+            : (0, _1.ConnectorSyncResultFromJSON)(json['syncResult']),
+        exception: !(0, runtime_1.exists)(json, 'exception') ? undefined : json['exception'],
+        eventId: !(0, runtime_1.exists)(json, 'eventId') ? undefined : json['eventId'],
     };
 }
 exports.ConnectorSyncRequestResultFromJSONTyped = ConnectorSyncRequestResultFromJSONTyped;
@@ -39,9 +41,9 @@ function ConnectorSyncRequestResultToJSON(value) {
         return null;
     }
     return {
-        'syncResult': (0, _1.ConnectorSyncResultToJSON)(value.syncResult),
-        'exception': value.exception,
-        'eventId': value.eventId,
+        syncResult: (0, _1.ConnectorSyncResultToJSON)(value.syncResult),
+        exception: value.exception,
+        eventId: value.eventId,
     };
 }
 exports.ConnectorSyncRequestResultToJSON = ConnectorSyncRequestResultToJSON;

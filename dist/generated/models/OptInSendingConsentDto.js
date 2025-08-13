@@ -19,13 +19,13 @@ function OptInSendingConsentDtoFromJSON(json) {
 }
 exports.OptInSendingConsentDtoFromJSON = OptInSendingConsentDtoFromJSON;
 function OptInSendingConsentDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'verificationCodeSent': json['verificationCodeSent'],
-        'userHasConsented': json['userHasConsented'],
-        'canSend': json['canSend'],
+        verificationCodeSent: json['verificationCodeSent'],
+        userHasConsented: json['userHasConsented'],
+        canSend: json['canSend'],
     };
 }
 exports.OptInSendingConsentDtoFromJSONTyped = OptInSendingConsentDtoFromJSONTyped;
@@ -37,9 +37,9 @@ function OptInSendingConsentDtoToJSON(value) {
         return null;
     }
     return {
-        'verificationCodeSent': value.verificationCodeSent,
-        'userHasConsented': value.userHasConsented,
-        'canSend': value.canSend,
+        verificationCodeSent: value.verificationCodeSent,
+        userHasConsented: value.userHasConsented,
+        canSend: value.canSend,
     };
 }
 exports.OptInSendingConsentDtoToJSON = OptInSendingConsentDtoToJSON;

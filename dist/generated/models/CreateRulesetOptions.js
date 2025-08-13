@@ -15,19 +15,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateRulesetOptionsToJSON = exports.CreateRulesetOptionsFromJSONTyped = exports.CreateRulesetOptionsFromJSON = exports.CreateRulesetOptionsActionEnum = exports.CreateRulesetOptionsScopeEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateRulesetOptionsScopeEnum;
 (function (CreateRulesetOptionsScopeEnum) {
     CreateRulesetOptionsScopeEnum["RECEIVING_EMAILS"] = "RECEIVING_EMAILS";
     CreateRulesetOptionsScopeEnum["SENDING_EMAILS"] = "SENDING_EMAILS";
     CreateRulesetOptionsScopeEnum["RECEIVING_SMS"] = "RECEIVING_SMS";
     CreateRulesetOptionsScopeEnum["SENDING_SMS"] = "SENDING_SMS";
-})(CreateRulesetOptionsScopeEnum = exports.CreateRulesetOptionsScopeEnum || (exports.CreateRulesetOptionsScopeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(CreateRulesetOptionsScopeEnum = exports.CreateRulesetOptionsScopeEnum || (exports.CreateRulesetOptionsScopeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var CreateRulesetOptionsActionEnum;
 (function (CreateRulesetOptionsActionEnum) {
     CreateRulesetOptionsActionEnum["BLOCK"] = "BLOCK";
@@ -41,13 +42,13 @@ function CreateRulesetOptionsFromJSON(json) {
 }
 exports.CreateRulesetOptionsFromJSON = CreateRulesetOptionsFromJSON;
 function CreateRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'scope': json['scope'],
-        'action': json['action'],
-        'target': json['target'],
+        scope: json['scope'],
+        action: json['action'],
+        target: json['target'],
     };
 }
 exports.CreateRulesetOptionsFromJSONTyped = CreateRulesetOptionsFromJSONTyped;
@@ -59,9 +60,9 @@ function CreateRulesetOptionsToJSON(value) {
         return null;
     }
     return {
-        'scope': value.scope,
-        'action': value.action,
-        'target': value.target,
+        scope: value.scope,
+        action: value.action,
+        target: value.target,
     };
 }
 exports.CreateRulesetOptionsToJSON = CreateRulesetOptionsToJSON;

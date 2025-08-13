@@ -21,14 +21,18 @@ function GenerateStructuredContentSmsOptionsFromJSON(json) {
 }
 exports.GenerateStructuredContentSmsOptionsFromJSON = GenerateStructuredContentSmsOptionsFromJSON;
 function GenerateStructuredContentSmsOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'smsId': json['smsId'],
-        'instructions': !(0, runtime_1.exists)(json, 'instructions') ? undefined : json['instructions'],
-        'outputSchema': !(0, runtime_1.exists)(json, 'outputSchema') ? undefined : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
-        'transformId': !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
+        smsId: json['smsId'],
+        instructions: !(0, runtime_1.exists)(json, 'instructions')
+            ? undefined
+            : json['instructions'],
+        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
+            ? undefined
+            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        transformId: !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
     };
 }
 exports.GenerateStructuredContentSmsOptionsFromJSONTyped = GenerateStructuredContentSmsOptionsFromJSONTyped;
@@ -40,10 +44,10 @@ function GenerateStructuredContentSmsOptionsToJSON(value) {
         return null;
     }
     return {
-        'smsId': value.smsId,
-        'instructions': value.instructions,
-        'outputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
-        'transformId': value.transformId,
+        smsId: value.smsId,
+        instructions: value.instructions,
+        outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        transformId: value.transformId,
     };
 }
 exports.GenerateStructuredContentSmsOptionsToJSON = GenerateStructuredContentSmsOptionsToJSON;

@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateMtaStsRecordResultsToJSON = exports.GenerateMtaStsRecordResultsFromJSONTyped = exports.GenerateMtaStsRecordResultsFromJSON = exports.GenerateMtaStsRecordResultsTypeEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var GenerateMtaStsRecordResultsTypeEnum;
 (function (GenerateMtaStsRecordResultsTypeEnum) {
     GenerateMtaStsRecordResultsTypeEnum["A"] = "A";
@@ -115,16 +115,16 @@ function GenerateMtaStsRecordResultsFromJSON(json) {
 }
 exports.GenerateMtaStsRecordResultsFromJSON = GenerateMtaStsRecordResultsFromJSON;
 function GenerateMtaStsRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': json['name'],
-        'type': json['type'],
-        'ttl': json['ttl'],
-        'value': json['value'],
-        'wellKnownValue': json['wellKnownValue'],
-        'wellKnownUrl': json['wellKnownUrl'],
+        name: json['name'],
+        type: json['type'],
+        ttl: json['ttl'],
+        value: json['value'],
+        wellKnownValue: json['wellKnownValue'],
+        wellKnownUrl: json['wellKnownUrl'],
     };
 }
 exports.GenerateMtaStsRecordResultsFromJSONTyped = GenerateMtaStsRecordResultsFromJSONTyped;
@@ -136,12 +136,12 @@ function GenerateMtaStsRecordResultsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'type': value.type,
-        'ttl': value.ttl,
-        'value': value.value,
-        'wellKnownValue': value.wellKnownValue,
-        'wellKnownUrl': value.wellKnownUrl,
+        name: value.name,
+        type: value.type,
+        ttl: value.ttl,
+        value: value.value,
+        wellKnownValue: value.wellKnownValue,
+        wellKnownUrl: value.wellKnownUrl,
     };
 }
 exports.GenerateMtaStsRecordResultsToJSON = GenerateMtaStsRecordResultsToJSON;

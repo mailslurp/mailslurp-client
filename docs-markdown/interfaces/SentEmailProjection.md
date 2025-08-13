@@ -46,7 +46,7 @@ ___
 
 ### bcc
 
-• **bcc**: `string`[]
+• `Optional` **bcc**: `string`[]
 
 **`Memberof`**
 
@@ -76,7 +76,7 @@ ___
 
 ### cc
 
-• **cc**: `string`[]
+• `Optional` **cc**: `string`[]
 
 **`Memberof`**
 
@@ -196,7 +196,7 @@ ___
 
 ### to
 
-• **to**: `string`[]
+• `Optional` **to**: `string`[]
 
 **`Memberof`**
 

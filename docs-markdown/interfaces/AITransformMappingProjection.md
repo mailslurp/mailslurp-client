@@ -14,6 +14,7 @@ AITransformMappingProjection
 
 - [aiTransformId](AITransformMappingProjection.md#aitransformid)
 - [contentSelector](AITransformMappingProjection.md#contentselector)
+- [createdAt](AITransformMappingProjection.md#createdat)
 - [entityId](AITransformMappingProjection.md#entityid)
 - [entityType](AITransformMappingProjection.md#entitytype)
 - [id](AITransformMappingProjection.md#id)
@@ -43,9 +44,19 @@ AITransformMappingProjection
 
 ___
 
+### createdAt
+
+• **createdAt**: `Date`
+
+**`Memberof`**
+
+AITransformMappingProjection
+
+___
+
 ### entityId
 
-• **entityId**: `string`
+• `Optional` **entityId**: `string`
 
 **`Memberof`**
 

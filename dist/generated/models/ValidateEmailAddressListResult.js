@@ -19,13 +19,13 @@ function ValidateEmailAddressListResultFromJSON(json) {
 }
 exports.ValidateEmailAddressListResultFromJSON = ValidateEmailAddressListResultFromJSON;
 function ValidateEmailAddressListResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'validEmailAddresses': json['validEmailAddresses'],
-        'invalidEmailAddresses': json['invalidEmailAddresses'],
-        'resultMapEmailAddressIsValid': json['resultMapEmailAddressIsValid'],
+        validEmailAddresses: json['validEmailAddresses'],
+        invalidEmailAddresses: json['invalidEmailAddresses'],
+        resultMapEmailAddressIsValid: json['resultMapEmailAddressIsValid'],
     };
 }
 exports.ValidateEmailAddressListResultFromJSONTyped = ValidateEmailAddressListResultFromJSONTyped;
@@ -37,9 +37,9 @@ function ValidateEmailAddressListResultToJSON(value) {
         return null;
     }
     return {
-        'validEmailAddresses': value.validEmailAddresses,
-        'invalidEmailAddresses': value.invalidEmailAddresses,
-        'resultMapEmailAddressIsValid': value.resultMapEmailAddressIsValid,
+        validEmailAddresses: value.validEmailAddresses,
+        invalidEmailAddresses: value.invalidEmailAddresses,
+        resultMapEmailAddressIsValid: value.resultMapEmailAddressIsValid,
     };
 }
 exports.ValidateEmailAddressListResultToJSON = ValidateEmailAddressListResultToJSON;

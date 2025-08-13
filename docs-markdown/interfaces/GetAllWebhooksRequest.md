@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [aiTransformerId](GetAllWebhooksRequest.md#aitransformerid)
 - [before](GetAllWebhooksRequest.md#before)
 - [eventType](GetAllWebhooksRequest.md#eventtype)
 - [health](GetAllWebhooksRequest.md#health)
@@ -19,6 +20,12 @@
 - [url](GetAllWebhooksRequest.md#url)
 
 ## Properties
+
+### aiTransformerId
+
+• `Optional` **aiTransformerId**: `string`
+
+___
 
 ### before
 

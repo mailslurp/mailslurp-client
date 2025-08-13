@@ -8,7 +8,6 @@
 
 - [emailAddress](SubmitFormRequest.md#emailaddress)
 - [otherParameters](SubmitFormRequest.md#otherparameters)
-- [redirectTo](SubmitFormRequest.md#redirectto)
 - [spamCheck](SubmitFormRequest.md#spamcheck)
 - [subject](SubmitFormRequest.md#subject)
 - [successMessage](SubmitFormRequest.md#successmessage)
@@ -25,12 +24,6 @@ ___
 ### otherParameters
 
 • `Optional` **otherParameters**: `string`
-
-___
-
-### redirectTo
-
-• `Optional` **redirectTo**: `string`
 
 ___
 

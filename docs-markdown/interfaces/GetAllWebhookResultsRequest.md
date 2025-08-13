@@ -6,6 +6,7 @@
 
 ### Properties
 
+- [aiTransformerId](GetAllWebhookResultsRequest.md#aitransformerid)
 - [attachmentId](GetAllWebhookResultsRequest.md#attachmentid)
 - [before](GetAllWebhookResultsRequest.md#before)
 - [emailId](GetAllWebhookResultsRequest.md#emailid)
@@ -24,6 +25,12 @@
 - [unseenOnly](GetAllWebhookResultsRequest.md#unseenonly)
 
 ## Properties
+
+### aiTransformerId
+
+• `Optional` **aiTransformerId**: `string`
+
+___
 
 ### attachmentId
 

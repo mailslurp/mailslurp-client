@@ -19,79 +19,82 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateAliasOptions
  */
 export interface CreateAliasOptions {
-    /**
-     * Email address to be hidden behind alias. Emails sent to the alias email address will be forwarded to this address. If you want to enable replies set useThreads true and the reply-to for the email will allow outbound communication via a thread. Some email addresses may require verification if they are not added as a contact first.
-     * @type {string}
-     * @memberof CreateAliasOptions
-     */
-    emailAddress: string;
-    /**
-     * Optional inbox ID to attach to alias. Null by default means an a new inbox will be created for the alias. Use a custom inbox to control what email address the alias uses. To use custom email addresses create a domain and an inbox, the use the inbox ID with this call. Emails received by this inbox will be forwarded to the alias email address
-     * @type {string}
-     * @memberof CreateAliasOptions
-     */
-    inboxId?: string | null;
-    /**
-     * Optional name for alias
-     * @type {string}
-     * @memberof CreateAliasOptions
-     */
-    name?: string | null;
-    /**
-     * Enable threads options. If true emails will be sent with a unique reply-to thread address. This means you can reply to the forwarded email and it will be sent to the recipients via your alias address. That way a thread conversation is preserved.
-     * @type {boolean}
-     * @memberof CreateAliasOptions
-     */
-    useThreads: boolean;
-    /**
-     * Custom domain ID to use when generating alias email addresses
-     * @type {string}
-     * @memberof CreateAliasOptions
-     */
-    domainId?: string | null;
-    /**
-     * Whether to verify the masked email address exists before sending an email to it
-     * @type {boolean}
-     * @memberof CreateAliasOptions
-     */
-    verifyEmailAddress?: boolean | null;
+  /**
+   * Email address to be hidden behind alias. Emails sent to the alias email address will be forwarded to this address. If you want to enable replies set useThreads true and the reply-to for the email will allow outbound communication via a thread. Some email addresses may require verification if they are not added as a contact first.
+   * @type {string}
+   * @memberof CreateAliasOptions
+   */
+  emailAddress: string;
+  /**
+   * Optional inbox ID to attach to alias. Null by default means an a new inbox will be created for the alias. Use a custom inbox to control what email address the alias uses. To use custom email addresses create a domain and an inbox, the use the inbox ID with this call. Emails received by this inbox will be forwarded to the alias email address
+   * @type {string}
+   * @memberof CreateAliasOptions
+   */
+  inboxId?: string | null;
+  /**
+   * Optional name for alias
+   * @type {string}
+   * @memberof CreateAliasOptions
+   */
+  name?: string | null;
+  /**
+   * Enable threads options. If true emails will be sent with a unique reply-to thread address. This means you can reply to the forwarded email and it will be sent to the recipients via your alias address. That way a thread conversation is preserved.
+   * @type {boolean}
+   * @memberof CreateAliasOptions
+   */
+  useThreads: boolean;
+  /**
+   * Custom domain ID to use when generating alias email addresses
+   * @type {string}
+   * @memberof CreateAliasOptions
+   */
+  domainId?: string | null;
+  /**
+   * Whether to verify the masked email address exists before sending an email to it
+   * @type {boolean}
+   * @memberof CreateAliasOptions
+   */
+  verifyEmailAddress?: boolean | null;
 }
 
 export function CreateAliasOptionsFromJSON(json: any): CreateAliasOptions {
-    return CreateAliasOptionsFromJSONTyped(json, false);
+  return CreateAliasOptionsFromJSONTyped(json, false);
 }
 
-export function CreateAliasOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateAliasOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'emailAddress': json['emailAddress'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'useThreads': json['useThreads'],
-        'domainId': !exists(json, 'domainId') ? undefined : json['domainId'],
-        'verifyEmailAddress': !exists(json, 'verifyEmailAddress') ? undefined : json['verifyEmailAddress'],
-    };
+export function CreateAliasOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateAliasOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    emailAddress: json['emailAddress'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    useThreads: json['useThreads'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
+    verifyEmailAddress: !exists(json, 'verifyEmailAddress')
+      ? undefined
+      : json['verifyEmailAddress'],
+  };
 }
 
-export function CreateAliasOptionsToJSON(value?: CreateAliasOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'emailAddress': value.emailAddress,
-        'inboxId': value.inboxId,
-        'name': value.name,
-        'useThreads': value.useThreads,
-        'domainId': value.domainId,
-        'verifyEmailAddress': value.verifyEmailAddress,
-    };
+export function CreateAliasOptionsToJSON(
+  value?: CreateAliasOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    emailAddress: value.emailAddress,
+    inboxId: value.inboxId,
+    name: value.name,
+    useThreads: value.useThreads,
+    domainId: value.domainId,
+    verifyEmailAddress: value.verifyEmailAddress,
+  };
 }
-
-

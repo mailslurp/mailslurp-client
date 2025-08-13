@@ -20,21 +20,39 @@ function ImapServerSearchOptionsFromJSON(json) {
 }
 exports.ImapServerSearchOptionsFromJSON = ImapServerSearchOptionsFromJSON;
 function ImapServerSearchOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'seqNum': !(0, runtime_1.exists)(json, 'seqNum') ? undefined : json['seqNum'],
-        'uid': !(0, runtime_1.exists)(json, 'uid') ? undefined : json['uid'],
-        'since': !(0, runtime_1.exists)(json, 'since') ? undefined : (json['since'] === null ? null : new Date(json['since'])),
-        'before': !(0, runtime_1.exists)(json, 'before') ? undefined : (json['before'] === null ? null : new Date(json['before'])),
-        'sentSince': !(0, runtime_1.exists)(json, 'sentSince') ? undefined : (json['sentSince'] === null ? null : new Date(json['sentSince'])),
-        'sentBefore': !(0, runtime_1.exists)(json, 'sentBefore') ? undefined : (json['sentBefore'] === null ? null : new Date(json['sentBefore'])),
-        'header': !(0, runtime_1.exists)(json, 'header') ? undefined : json['header'],
-        'body': !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
-        'text': !(0, runtime_1.exists)(json, 'text') ? undefined : json['text'],
-        'withFlags': !(0, runtime_1.exists)(json, 'withFlags') ? undefined : json['withFlags'],
-        'withoutFlags': !(0, runtime_1.exists)(json, 'withoutFlags') ? undefined : json['withoutFlags'],
+        seqNum: !(0, runtime_1.exists)(json, 'seqNum') ? undefined : json['seqNum'],
+        uid: !(0, runtime_1.exists)(json, 'uid') ? undefined : json['uid'],
+        since: !(0, runtime_1.exists)(json, 'since')
+            ? undefined
+            : json['since'] === null
+                ? null
+                : new Date(json['since']),
+        before: !(0, runtime_1.exists)(json, 'before')
+            ? undefined
+            : json['before'] === null
+                ? null
+                : new Date(json['before']),
+        sentSince: !(0, runtime_1.exists)(json, 'sentSince')
+            ? undefined
+            : json['sentSince'] === null
+                ? null
+                : new Date(json['sentSince']),
+        sentBefore: !(0, runtime_1.exists)(json, 'sentBefore')
+            ? undefined
+            : json['sentBefore'] === null
+                ? null
+                : new Date(json['sentBefore']),
+        header: !(0, runtime_1.exists)(json, 'header') ? undefined : json['header'],
+        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
+        text: !(0, runtime_1.exists)(json, 'text') ? undefined : json['text'],
+        withFlags: !(0, runtime_1.exists)(json, 'withFlags') ? undefined : json['withFlags'],
+        withoutFlags: !(0, runtime_1.exists)(json, 'withoutFlags')
+            ? undefined
+            : json['withoutFlags'],
     };
 }
 exports.ImapServerSearchOptionsFromJSONTyped = ImapServerSearchOptionsFromJSONTyped;
@@ -46,17 +64,33 @@ function ImapServerSearchOptionsToJSON(value) {
         return null;
     }
     return {
-        'seqNum': value.seqNum,
-        'uid': value.uid,
-        'since': value.since === undefined ? undefined : (value.since === null ? null : value.since.toISOString()),
-        'before': value.before === undefined ? undefined : (value.before === null ? null : value.before.toISOString()),
-        'sentSince': value.sentSince === undefined ? undefined : (value.sentSince === null ? null : value.sentSince.toISOString()),
-        'sentBefore': value.sentBefore === undefined ? undefined : (value.sentBefore === null ? null : value.sentBefore.toISOString()),
-        'header': value.header,
-        'body': value.body,
-        'text': value.text,
-        'withFlags': value.withFlags,
-        'withoutFlags': value.withoutFlags,
+        seqNum: value.seqNum,
+        uid: value.uid,
+        since: value.since === undefined
+            ? undefined
+            : value.since === null
+                ? null
+                : value.since.toISOString(),
+        before: value.before === undefined
+            ? undefined
+            : value.before === null
+                ? null
+                : value.before.toISOString(),
+        sentSince: value.sentSince === undefined
+            ? undefined
+            : value.sentSince === null
+                ? null
+                : value.sentSince.toISOString(),
+        sentBefore: value.sentBefore === undefined
+            ? undefined
+            : value.sentBefore === null
+                ? null
+                : value.sentBefore.toISOString(),
+        header: value.header,
+        body: value.body,
+        text: value.text,
+        withFlags: value.withFlags,
+        withoutFlags: value.withoutFlags,
     };
 }
 exports.ImapServerSearchOptionsToJSON = ImapServerSearchOptionsToJSON;

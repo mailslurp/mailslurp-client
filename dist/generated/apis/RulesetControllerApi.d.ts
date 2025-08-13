@@ -159,9 +159,9 @@ export declare class RulesetControllerApi extends runtime.BaseAPI {
     testRulesetSending(requestParameters: TestRulesetSendingRequest, initOverrides?: RequestInit): Promise<TestRulesetSendingResult>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetRulesetsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

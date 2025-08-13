@@ -19,103 +19,106 @@ import { exists, mapValues } from '../runtime';
  * @interface TrackingPixelProjection
  */
 export interface TrackingPixelProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    sentEmailId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    inboxId?: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof TrackingPixelProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    recipient?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TrackingPixelProjection
-     */
-    seen: boolean;
-    /**
-     * 
-     * @type {Date}
-     * @memberof TrackingPixelProjection
-     */
-    seenAt?: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelProjection
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelProjection
+   */
+  sentEmailId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelProjection
+   */
+  inboxId?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof TrackingPixelProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelProjection
+   */
+  recipient?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof TrackingPixelProjection
+   */
+  seen: boolean;
+  /**
+   *
+   * @type {Date}
+   * @memberof TrackingPixelProjection
+   */
+  seenAt?: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelProjection
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TrackingPixelProjection
+   */
+  id: string;
 }
 
-export function TrackingPixelProjectionFromJSON(json: any): TrackingPixelProjection {
-    return TrackingPixelProjectionFromJSONTyped(json, false);
+export function TrackingPixelProjectionFromJSON(
+  json: any
+): TrackingPixelProjection {
+  return TrackingPixelProjectionFromJSONTyped(json, false);
 }
 
-export function TrackingPixelProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackingPixelProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'userId': json['userId'],
-        'sentEmailId': !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'recipient': !exists(json, 'recipient') ? undefined : json['recipient'],
-        'seen': json['seen'],
-        'seenAt': !exists(json, 'seenAt') ? undefined : (new Date(json['seenAt'])),
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
-    };
+export function TrackingPixelProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TrackingPixelProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    userId: json['userId'],
+    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    createdAt: new Date(json['createdAt']),
+    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
+    seen: json['seen'],
+    seenAt: !exists(json, 'seenAt') ? undefined : new Date(json['seenAt']),
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
+  };
 }
 
-export function TrackingPixelProjectionToJSON(value?: TrackingPixelProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'userId': value.userId,
-        'sentEmailId': value.sentEmailId,
-        'inboxId': value.inboxId,
-        'createdAt': (value.createdAt.toISOString()),
-        'recipient': value.recipient,
-        'seen': value.seen,
-        'seenAt': value.seenAt === undefined ? undefined : (value.seenAt.toISOString()),
-        'name': value.name,
-        'id': value.id,
-    };
+export function TrackingPixelProjectionToJSON(
+  value?: TrackingPixelProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    userId: value.userId,
+    sentEmailId: value.sentEmailId,
+    inboxId: value.inboxId,
+    createdAt: value.createdAt.toISOString(),
+    recipient: value.recipient,
+    seen: value.seen,
+    seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
+    name: value.name,
+    id: value.id,
+  };
 }
-
-

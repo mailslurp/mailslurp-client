@@ -19,72 +19,75 @@ import { exists, mapValues } from '../runtime';
  * @interface CreateDomainOptions
  */
 export interface CreateDomainOptions {
-    /**
-     * The top level domain you wish to use with MailSlurp. Do not specify subdomain just the top level. So `test.com` covers all subdomains such as `mail.test.com`. Don't include a protocol such as `http://`. Once added you must complete the verification steps by adding the returned records to your domain.
-     * @type {string}
-     * @memberof CreateDomainOptions
-     */
-    domain: string;
-    /**
-     * Optional description of the domain.
-     * @type {string}
-     * @memberof CreateDomainOptions
-     */
-    description?: string | null;
-    /**
-     * Whether to create a catch all inbox for the domain. Any email sent to an address using your domain that cannot be matched to an existing inbox you created with the domain will be routed to the created catch all inbox. You can access emails using the regular methods on this inbox ID.
-     * @type {boolean}
-     * @memberof CreateDomainOptions
-     */
-    createdCatchAllInbox?: boolean | null;
-    /**
-     * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
-     * @type {string}
-     * @memberof CreateDomainOptions
-     */
-    domainType?: CreateDomainOptionsDomainTypeEnum;
+  /**
+   * The top level domain you wish to use with MailSlurp. Do not specify subdomain just the top level. So `test.com` covers all subdomains such as `mail.test.com`. Don't include a protocol such as `http://`. Once added you must complete the verification steps by adding the returned records to your domain.
+   * @type {string}
+   * @memberof CreateDomainOptions
+   */
+  domain: string;
+  /**
+   * Optional description of the domain.
+   * @type {string}
+   * @memberof CreateDomainOptions
+   */
+  description?: string | null;
+  /**
+   * Whether to create a catch all inbox for the domain. Any email sent to an address using your domain that cannot be matched to an existing inbox you created with the domain will be routed to the created catch all inbox. You can access emails using the regular methods on this inbox ID.
+   * @type {boolean}
+   * @memberof CreateDomainOptions
+   */
+  createdCatchAllInbox?: boolean | null;
+  /**
+   * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+   * @type {string}
+   * @memberof CreateDomainOptions
+   */
+  domainType?: CreateDomainOptionsDomainTypeEnum;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum CreateDomainOptionsDomainTypeEnum {
-    HTTP_INBOX = 'HTTP_INBOX',
-    SMTP_DOMAIN = 'SMTP_DOMAIN'
+  HTTP_INBOX = 'HTTP_INBOX',
+  SMTP_DOMAIN = 'SMTP_DOMAIN',
 }
 
 export function CreateDomainOptionsFromJSON(json: any): CreateDomainOptions {
-    return CreateDomainOptionsFromJSONTyped(json, false);
+  return CreateDomainOptionsFromJSONTyped(json, false);
 }
 
-export function CreateDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateDomainOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'domain': json['domain'],
-        'description': !exists(json, 'description') ? undefined : json['description'],
-        'createdCatchAllInbox': !exists(json, 'createdCatchAllInbox') ? undefined : json['createdCatchAllInbox'],
-        'domainType': !exists(json, 'domainType') ? undefined : json['domainType'],
-    };
+export function CreateDomainOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateDomainOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    domain: json['domain'],
+    description: !exists(json, 'description') ? undefined : json['description'],
+    createdCatchAllInbox: !exists(json, 'createdCatchAllInbox')
+      ? undefined
+      : json['createdCatchAllInbox'],
+    domainType: !exists(json, 'domainType') ? undefined : json['domainType'],
+  };
 }
 
-export function CreateDomainOptionsToJSON(value?: CreateDomainOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'domain': value.domain,
-        'description': value.description,
-        'createdCatchAllInbox': value.createdCatchAllInbox,
-        'domainType': value.domainType,
-    };
+export function CreateDomainOptionsToJSON(
+  value?: CreateDomainOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    domain: value.domain,
+    description: value.description,
+    createdCatchAllInbox: value.createdCatchAllInbox,
+    domainType: value.domainType,
+  };
 }
-
-

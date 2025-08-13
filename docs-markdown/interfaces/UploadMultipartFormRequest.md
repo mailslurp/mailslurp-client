@@ -10,7 +10,7 @@
 - [contentType](UploadMultipartFormRequest.md#contenttype)
 - [contentTypeHeader](UploadMultipartFormRequest.md#contenttypeheader)
 - [filename](UploadMultipartFormRequest.md#filename)
-- [inlineObject](UploadMultipartFormRequest.md#inlineobject)
+- [inlineObject1](UploadMultipartFormRequest.md#inlineobject1)
 - [xFilename](UploadMultipartFormRequest.md#xfilename)
 - [xFilenameRaw](UploadMultipartFormRequest.md#xfilenameraw)
 - [xFilesize](UploadMultipartFormRequest.md#xfilesize)
@@ -41,9 +41,9 @@ ___
 
 ___
 
-### inlineObject
+### inlineObject1
 
-• `Optional` **inlineObject**: [`InlineObject`](InlineObject.md)
+• `Optional` **inlineObject1**: [`InlineObject1`](InlineObject1.md)
 
 ___
 

@@ -14,159 +14,158 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface EmergencyAddress
  */
 export interface EmergencyAddress {
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    sid: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    displayName: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    customerName: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    address1: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    city: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    region: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    postalCode: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    phoneCountry: EmergencyAddressPhoneCountryEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof EmergencyAddress
-     */
-    accountSid: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof EmergencyAddress
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof EmergencyAddress
-     */
-    updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  sid: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  displayName: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  customerName: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  address1: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  city: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  region: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  postalCode: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  phoneCountry: EmergencyAddressPhoneCountryEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof EmergencyAddress
+   */
+  accountSid: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof EmergencyAddress
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof EmergencyAddress
+   */
+  updatedAt: Date;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum EmergencyAddressPhoneCountryEnum {
-    US = 'US',
-    GB = 'GB',
-    AU = 'AU',
-    CA = 'CA',
-    EE = 'EE',
-    HK = 'HK',
-    PL = 'PL',
-    CH = 'CH',
-    PT = 'PT',
-    NL = 'NL',
-    IL = 'IL',
-    SE = 'SE'
+  US = 'US',
+  GB = 'GB',
+  AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  CH = 'CH',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  SE = 'SE',
 }
 
 export function EmergencyAddressFromJSON(json: any): EmergencyAddress {
-    return EmergencyAddressFromJSONTyped(json, false);
+  return EmergencyAddressFromJSONTyped(json, false);
 }
 
-export function EmergencyAddressFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmergencyAddress {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'sid': json['sid'],
-        'userId': json['userId'],
-        'displayName': json['displayName'],
-        'customerName': json['customerName'],
-        'address1': json['address1'],
-        'city': json['city'],
-        'region': json['region'],
-        'postalCode': json['postalCode'],
-        'phoneCountry': json['phoneCountry'],
-        'accountSid': json['accountSid'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-    };
+export function EmergencyAddressFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmergencyAddress {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    sid: json['sid'],
+    userId: json['userId'],
+    displayName: json['displayName'],
+    customerName: json['customerName'],
+    address1: json['address1'],
+    city: json['city'],
+    region: json['region'],
+    postalCode: json['postalCode'],
+    phoneCountry: json['phoneCountry'],
+    accountSid: json['accountSid'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+  };
 }
 
 export function EmergencyAddressToJSON(value?: EmergencyAddress | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'sid': value.sid,
-        'userId': value.userId,
-        'displayName': value.displayName,
-        'customerName': value.customerName,
-        'address1': value.address1,
-        'city': value.city,
-        'region': value.region,
-        'postalCode': value.postalCode,
-        'phoneCountry': value.phoneCountry,
-        'accountSid': value.accountSid,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    sid: value.sid,
+    userId: value.userId,
+    displayName: value.displayName,
+    customerName: value.customerName,
+    address1: value.address1,
+    city: value.city,
+    region: value.region,
+    postalCode: value.postalCode,
+    phoneCountry: value.phoneCountry,
+    accountSid: value.accountSid,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+  };
 }
-
-

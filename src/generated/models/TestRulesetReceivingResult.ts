@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface TestRulesetReceivingResult
  */
 export interface TestRulesetReceivingResult {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TestRulesetReceivingResult
-     */
-    canReceive: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof TestRulesetReceivingResult
+   */
+  canReceive: boolean;
 }
 
-export function TestRulesetReceivingResultFromJSON(json: any): TestRulesetReceivingResult {
-    return TestRulesetReceivingResultFromJSONTyped(json, false);
+export function TestRulesetReceivingResultFromJSON(
+  json: any
+): TestRulesetReceivingResult {
+  return TestRulesetReceivingResultFromJSONTyped(json, false);
 }
 
-export function TestRulesetReceivingResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestRulesetReceivingResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'canReceive': json['canReceive'],
-    };
+export function TestRulesetReceivingResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TestRulesetReceivingResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    canReceive: json['canReceive'],
+  };
 }
 
-export function TestRulesetReceivingResultToJSON(value?: TestRulesetReceivingResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'canReceive': value.canReceive,
-    };
+export function TestRulesetReceivingResultToJSON(
+  value?: TestRulesetReceivingResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    canReceive: value.canReceive,
+  };
 }
-
-

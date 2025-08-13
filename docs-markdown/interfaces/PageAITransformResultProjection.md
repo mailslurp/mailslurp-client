@@ -30,7 +30,7 @@ PageAITransformResultProjection
 
 ### content
 
-• `Optional` **content**: [`AITransformResultProjection`](AITransformResultProjection.md)[]
+• `Optional` **content**: [`AITransformResultProjectionDto`](AITransformResultProjectionDto.md)[]
 
 **`Memberof`**
 

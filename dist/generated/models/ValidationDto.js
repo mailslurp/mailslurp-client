@@ -20,12 +20,12 @@ function ValidationDtoFromJSON(json) {
 }
 exports.ValidationDtoFromJSON = ValidationDtoFromJSON;
 function ValidationDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailId': json['emailId'],
-        'html': (0, _1.HTMLValidationResultFromJSON)(json['html']),
+        emailId: json['emailId'],
+        html: (0, _1.HTMLValidationResultFromJSON)(json['html']),
     };
 }
 exports.ValidationDtoFromJSONTyped = ValidationDtoFromJSONTyped;
@@ -37,8 +37,8 @@ function ValidationDtoToJSON(value) {
         return null;
     }
     return {
-        'emailId': value.emailId,
-        'html': (0, _1.HTMLValidationResultToJSON)(value.html),
+        emailId: value.emailId,
+        html: (0, _1.HTMLValidationResultToJSON)(value.html),
     };
 }
 exports.ValidationDtoToJSON = ValidationDtoToJSON;

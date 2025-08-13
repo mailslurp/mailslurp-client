@@ -19,12 +19,12 @@ function InboxIdItemFromJSON(json) {
 }
 exports.InboxIdItemFromJSON = InboxIdItemFromJSON;
 function InboxIdItemFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'emailAddress': json['emailAddress'],
+        id: json['id'],
+        emailAddress: json['emailAddress'],
     };
 }
 exports.InboxIdItemFromJSONTyped = InboxIdItemFromJSONTyped;
@@ -36,8 +36,8 @@ function InboxIdItemToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'emailAddress': value.emailAddress,
+        id: value.id,
+        emailAddress: value.emailAddress,
     };
 }
 exports.InboxIdItemToJSON = InboxIdItemToJSON;

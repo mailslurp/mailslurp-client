@@ -21,13 +21,19 @@ function EmailRecipientsProjectionFromJSON(json) {
 }
 exports.EmailRecipientsProjectionFromJSON = EmailRecipientsProjectionFromJSON;
 function EmailRecipientsProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'to': !(0, runtime_1.exists)(json, 'to') ? undefined : (json['to'].map(_1.RecipientProjectionFromJSON)),
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : (json['cc'].map(_1.RecipientProjectionFromJSON)),
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : (json['bcc'].map(_1.RecipientProjectionFromJSON)),
+        to: !(0, runtime_1.exists)(json, 'to')
+            ? undefined
+            : json['to'].map(_1.RecipientProjectionFromJSON),
+        cc: !(0, runtime_1.exists)(json, 'cc')
+            ? undefined
+            : json['cc'].map(_1.RecipientProjectionFromJSON),
+        bcc: !(0, runtime_1.exists)(json, 'bcc')
+            ? undefined
+            : json['bcc'].map(_1.RecipientProjectionFromJSON),
     };
 }
 exports.EmailRecipientsProjectionFromJSONTyped = EmailRecipientsProjectionFromJSONTyped;
@@ -39,9 +45,15 @@ function EmailRecipientsProjectionToJSON(value) {
         return null;
     }
     return {
-        'to': value.to === undefined ? undefined : (value.to.map(_1.RecipientProjectionToJSON)),
-        'cc': value.cc === undefined ? undefined : (value.cc.map(_1.RecipientProjectionToJSON)),
-        'bcc': value.bcc === undefined ? undefined : (value.bcc.map(_1.RecipientProjectionToJSON)),
+        to: value.to === undefined
+            ? undefined
+            : value.to.map(_1.RecipientProjectionToJSON),
+        cc: value.cc === undefined
+            ? undefined
+            : value.cc.map(_1.RecipientProjectionToJSON),
+        bcc: value.bcc === undefined
+            ? undefined
+            : value.bcc.map(_1.RecipientProjectionToJSON),
     };
 }
 exports.EmailRecipientsProjectionToJSON = EmailRecipientsProjectionToJSON;

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxReplierDtoToJSON = exports.InboxReplierDtoFromJSONTyped = exports.InboxReplierDtoFromJSON = exports.InboxReplierDtoFieldEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var InboxReplierDtoFieldEnum;
 (function (InboxReplierDtoFieldEnum) {
     InboxReplierDtoFieldEnum["RECIPIENTS"] = "RECIPIENTS";
@@ -31,24 +31,26 @@ function InboxReplierDtoFromJSON(json) {
 }
 exports.InboxReplierDtoFromJSON = InboxReplierDtoFromJSON;
 function InboxReplierDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'field': json['field'],
-        'match': json['match'],
-        'replyTo': !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'charset': !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
-        'isHTML': json['isHTML'],
-        'templateId': !(0, runtime_1.exists)(json, 'templateId') ? undefined : json['templateId'],
-        'templateVariables': !(0, runtime_1.exists)(json, 'templateVariables') ? undefined : json['templateVariables'],
-        'ignoreReplyTo': json['ignoreReplyTo'],
-        'createdAt': (new Date(json['createdAt'])),
+        id: json['id'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        field: json['field'],
+        match: json['match'],
+        replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
+        isHTML: json['isHTML'],
+        templateId: !(0, runtime_1.exists)(json, 'templateId') ? undefined : json['templateId'],
+        templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
+            ? undefined
+            : json['templateVariables'],
+        ignoreReplyTo: json['ignoreReplyTo'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.InboxReplierDtoFromJSONTyped = InboxReplierDtoFromJSONTyped;
@@ -60,20 +62,20 @@ function InboxReplierDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'name': value.name,
-        'field': value.field,
-        'match': value.match,
-        'replyTo': value.replyTo,
-        'subject': value.subject,
-        'from': value.from,
-        'charset': value.charset,
-        'isHTML': value.isHTML,
-        'templateId': value.templateId,
-        'templateVariables': value.templateVariables,
-        'ignoreReplyTo': value.ignoreReplyTo,
-        'createdAt': (value.createdAt.toISOString()),
+        id: value.id,
+        inboxId: value.inboxId,
+        name: value.name,
+        field: value.field,
+        match: value.match,
+        replyTo: value.replyTo,
+        subject: value.subject,
+        from: value.from,
+        charset: value.charset,
+        isHTML: value.isHTML,
+        templateId: value.templateId,
+        templateVariables: value.templateVariables,
+        ignoreReplyTo: value.ignoreReplyTo,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.InboxReplierDtoToJSON = InboxReplierDtoToJSON;

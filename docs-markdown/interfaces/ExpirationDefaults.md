@@ -26,6 +26,8 @@ ExpirationDefaults
 
 • **canPermanentInbox**: `boolean`
 
+Use nextInboxAllowsPermanent instead
+
 **`Memberof`**
 
 ExpirationDefaults

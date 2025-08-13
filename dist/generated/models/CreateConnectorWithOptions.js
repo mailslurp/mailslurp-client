@@ -21,14 +21,20 @@ function CreateConnectorWithOptionsFromJSON(json) {
 }
 exports.CreateConnectorWithOptionsFromJSON = CreateConnectorWithOptionsFromJSON;
 function CreateConnectorWithOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createConnectorOptions': (0, _1.CreateConnectorOptionsFromJSON)(json['createConnectorOptions']),
-        'createConnectorImapConnectionOptions': !(0, runtime_1.exists)(json, 'createConnectorImapConnectionOptions') ? undefined : (0, _1.CreateConnectorImapConnectionOptionsFromJSON)(json['createConnectorImapConnectionOptions']),
-        'createConnectorSmtpConnectionOptions': !(0, runtime_1.exists)(json, 'createConnectorSmtpConnectionOptions') ? undefined : (0, _1.CreateConnectorSmtpConnectionOptionsFromJSON)(json['createConnectorSmtpConnectionOptions']),
-        'createConnectorSyncSettingsOptions': !(0, runtime_1.exists)(json, 'createConnectorSyncSettingsOptions') ? undefined : (0, _1.CreateConnectorSyncSettingsOptionsFromJSON)(json['createConnectorSyncSettingsOptions']),
+        createConnectorOptions: (0, _1.CreateConnectorOptionsFromJSON)(json['createConnectorOptions']),
+        createConnectorImapConnectionOptions: !(0, runtime_1.exists)(json, 'createConnectorImapConnectionOptions')
+            ? undefined
+            : (0, _1.CreateConnectorImapConnectionOptionsFromJSON)(json['createConnectorImapConnectionOptions']),
+        createConnectorSmtpConnectionOptions: !(0, runtime_1.exists)(json, 'createConnectorSmtpConnectionOptions')
+            ? undefined
+            : (0, _1.CreateConnectorSmtpConnectionOptionsFromJSON)(json['createConnectorSmtpConnectionOptions']),
+        createConnectorSyncSettingsOptions: !(0, runtime_1.exists)(json, 'createConnectorSyncSettingsOptions')
+            ? undefined
+            : (0, _1.CreateConnectorSyncSettingsOptionsFromJSON)(json['createConnectorSyncSettingsOptions']),
     };
 }
 exports.CreateConnectorWithOptionsFromJSONTyped = CreateConnectorWithOptionsFromJSONTyped;
@@ -40,10 +46,10 @@ function CreateConnectorWithOptionsToJSON(value) {
         return null;
     }
     return {
-        'createConnectorOptions': (0, _1.CreateConnectorOptionsToJSON)(value.createConnectorOptions),
-        'createConnectorImapConnectionOptions': (0, _1.CreateConnectorImapConnectionOptionsToJSON)(value.createConnectorImapConnectionOptions),
-        'createConnectorSmtpConnectionOptions': (0, _1.CreateConnectorSmtpConnectionOptionsToJSON)(value.createConnectorSmtpConnectionOptions),
-        'createConnectorSyncSettingsOptions': (0, _1.CreateConnectorSyncSettingsOptionsToJSON)(value.createConnectorSyncSettingsOptions),
+        createConnectorOptions: (0, _1.CreateConnectorOptionsToJSON)(value.createConnectorOptions),
+        createConnectorImapConnectionOptions: (0, _1.CreateConnectorImapConnectionOptionsToJSON)(value.createConnectorImapConnectionOptions),
+        createConnectorSmtpConnectionOptions: (0, _1.CreateConnectorSmtpConnectionOptionsToJSON)(value.createConnectorSmtpConnectionOptions),
+        createConnectorSyncSettingsOptions: (0, _1.CreateConnectorSyncSettingsOptionsToJSON)(value.createConnectorSyncSettingsOptions),
     };
 }
 exports.CreateConnectorWithOptionsToJSON = CreateConnectorWithOptionsToJSON;

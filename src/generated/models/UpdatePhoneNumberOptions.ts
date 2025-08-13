@@ -14,52 +14,55 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface UpdatePhoneNumberOptions
  */
 export interface UpdatePhoneNumberOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdatePhoneNumberOptions
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdatePhoneNumberOptions
-     */
-    description?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof UpdatePhoneNumberOptions
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof UpdatePhoneNumberOptions
+   */
+  description?: string;
 }
 
-export function UpdatePhoneNumberOptionsFromJSON(json: any): UpdatePhoneNumberOptions {
-    return UpdatePhoneNumberOptionsFromJSONTyped(json, false);
+export function UpdatePhoneNumberOptionsFromJSON(
+  json: any
+): UpdatePhoneNumberOptions {
+  return UpdatePhoneNumberOptionsFromJSONTyped(json, false);
 }
 
-export function UpdatePhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdatePhoneNumberOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'description': !exists(json, 'description') ? undefined : json['description'],
-    };
+export function UpdatePhoneNumberOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): UpdatePhoneNumberOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    description: !exists(json, 'description') ? undefined : json['description'],
+  };
 }
 
-export function UpdatePhoneNumberOptionsToJSON(value?: UpdatePhoneNumberOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'name': value.name,
-        'description': value.description,
-    };
+export function UpdatePhoneNumberOptionsToJSON(
+  value?: UpdatePhoneNumberOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    name: value.name,
+    description: value.description,
+  };
 }
-
-

@@ -427,41 +427,41 @@ export declare class ConnectorControllerApi extends runtime.BaseAPI {
     updateConnectorSmtpConnection(requestParameters: UpdateConnectorSmtpConnectionRequest, initOverrides?: RequestInit): Promise<ConnectorSmtpConnectionDto>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllConnectorEventsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllConnectorEventsEventTypeEnum {
     SEND = "SEND",
     SYNC = "SYNC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetConnectorEventsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetConnectorEventsEventTypeEnum {
     SEND = "SEND",
     SYNC = "SYNC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetConnectorsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

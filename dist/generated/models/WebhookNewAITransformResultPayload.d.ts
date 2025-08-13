@@ -83,9 +83,9 @@ export interface WebhookNewAITransformResultPayload {
     result?: string | null;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookNewAITransformResultPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
@@ -99,10 +99,11 @@ export declare enum WebhookNewAITransformResultPayloadEventNameEnum {
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS",
     NEW_GUEST_USER = "NEW_GUEST_USER"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookNewAITransformResultPayloadEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"

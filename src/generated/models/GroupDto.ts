@@ -19,63 +19,62 @@ import { exists, mapValues } from '../runtime';
  * @interface GroupDto
  */
 export interface GroupDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof GroupDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GroupDto
-     */
-    name: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GroupDto
-     */
-    description?: string | null;
-    /**
-     * 
-     * @type {Date}
-     * @memberof GroupDto
-     */
-    createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof GroupDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GroupDto
+   */
+  name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GroupDto
+   */
+  description?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof GroupDto
+   */
+  createdAt: Date;
 }
 
 export function GroupDtoFromJSON(json: any): GroupDto {
-    return GroupDtoFromJSONTyped(json, false);
+  return GroupDtoFromJSONTyped(json, false);
 }
 
-export function GroupDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'name': json['name'],
-        'description': !exists(json, 'description') ? undefined : json['description'],
-        'createdAt': (new Date(json['createdAt'])),
-    };
+export function GroupDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): GroupDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    name: json['name'],
+    description: !exists(json, 'description') ? undefined : json['description'],
+    createdAt: new Date(json['createdAt']),
+  };
 }
 
 export function GroupDtoToJSON(value?: GroupDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'name': value.name,
-        'description': value.description,
-        'createdAt': (value.createdAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    name: value.name,
+    description: value.description,
+    createdAt: value.createdAt.toISOString(),
+  };
 }
-
-

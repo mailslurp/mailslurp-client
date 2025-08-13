@@ -20,26 +20,38 @@ function CreateConnectorImapConnectionOptionsFromJSON(json) {
 }
 exports.CreateConnectorImapConnectionOptionsFromJSON = CreateConnectorImapConnectionOptionsFromJSON;
 function CreateConnectorImapConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'imapSsl': !(0, runtime_1.exists)(json, 'imapSsl') ? undefined : json['imapSsl'],
-        'imapUsername': !(0, runtime_1.exists)(json, 'imapUsername') ? undefined : json['imapUsername'],
-        'imapPassword': !(0, runtime_1.exists)(json, 'imapPassword') ? undefined : json['imapPassword'],
-        'selectFolder': !(0, runtime_1.exists)(json, 'selectFolder') ? undefined : json['selectFolder'],
-        'searchTerms': !(0, runtime_1.exists)(json, 'searchTerms') ? undefined : json['searchTerms'],
-        'imapPort': !(0, runtime_1.exists)(json, 'imapPort') ? undefined : json['imapPort'],
-        'imapHost': json['imapHost'],
-        'enabled': !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
-        'startTls': !(0, runtime_1.exists)(json, 'startTls') ? undefined : json['startTls'],
-        'proxyEnabled': !(0, runtime_1.exists)(json, 'proxyEnabled') ? undefined : json['proxyEnabled'],
-        'proxyPort': !(0, runtime_1.exists)(json, 'proxyPort') ? undefined : json['proxyPort'],
-        'proxyHost': !(0, runtime_1.exists)(json, 'proxyHost') ? undefined : json['proxyHost'],
-        'localHostName': !(0, runtime_1.exists)(json, 'localHostName') ? undefined : json['localHostName'],
-        'mechanisms': !(0, runtime_1.exists)(json, 'mechanisms') ? undefined : json['mechanisms'],
-        'sslTrust': !(0, runtime_1.exists)(json, 'sslTrust') ? undefined : json['sslTrust'],
-        'sslProtocols': !(0, runtime_1.exists)(json, 'sslProtocols') ? undefined : json['sslProtocols'],
+        imapSsl: !(0, runtime_1.exists)(json, 'imapSsl') ? undefined : json['imapSsl'],
+        imapUsername: !(0, runtime_1.exists)(json, 'imapUsername')
+            ? undefined
+            : json['imapUsername'],
+        imapPassword: !(0, runtime_1.exists)(json, 'imapPassword')
+            ? undefined
+            : json['imapPassword'],
+        selectFolder: !(0, runtime_1.exists)(json, 'selectFolder')
+            ? undefined
+            : json['selectFolder'],
+        searchTerms: !(0, runtime_1.exists)(json, 'searchTerms') ? undefined : json['searchTerms'],
+        imapPort: !(0, runtime_1.exists)(json, 'imapPort') ? undefined : json['imapPort'],
+        imapHost: json['imapHost'],
+        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
+        startTls: !(0, runtime_1.exists)(json, 'startTls') ? undefined : json['startTls'],
+        proxyEnabled: !(0, runtime_1.exists)(json, 'proxyEnabled')
+            ? undefined
+            : json['proxyEnabled'],
+        proxyPort: !(0, runtime_1.exists)(json, 'proxyPort') ? undefined : json['proxyPort'],
+        proxyHost: !(0, runtime_1.exists)(json, 'proxyHost') ? undefined : json['proxyHost'],
+        localHostName: !(0, runtime_1.exists)(json, 'localHostName')
+            ? undefined
+            : json['localHostName'],
+        mechanisms: !(0, runtime_1.exists)(json, 'mechanisms') ? undefined : json['mechanisms'],
+        sslTrust: !(0, runtime_1.exists)(json, 'sslTrust') ? undefined : json['sslTrust'],
+        sslProtocols: !(0, runtime_1.exists)(json, 'sslProtocols')
+            ? undefined
+            : json['sslProtocols'],
     };
 }
 exports.CreateConnectorImapConnectionOptionsFromJSONTyped = CreateConnectorImapConnectionOptionsFromJSONTyped;
@@ -51,22 +63,22 @@ function CreateConnectorImapConnectionOptionsToJSON(value) {
         return null;
     }
     return {
-        'imapSsl': value.imapSsl,
-        'imapUsername': value.imapUsername,
-        'imapPassword': value.imapPassword,
-        'selectFolder': value.selectFolder,
-        'searchTerms': value.searchTerms,
-        'imapPort': value.imapPort,
-        'imapHost': value.imapHost,
-        'enabled': value.enabled,
-        'startTls': value.startTls,
-        'proxyEnabled': value.proxyEnabled,
-        'proxyPort': value.proxyPort,
-        'proxyHost': value.proxyHost,
-        'localHostName': value.localHostName,
-        'mechanisms': value.mechanisms,
-        'sslTrust': value.sslTrust,
-        'sslProtocols': value.sslProtocols,
+        imapSsl: value.imapSsl,
+        imapUsername: value.imapUsername,
+        imapPassword: value.imapPassword,
+        selectFolder: value.selectFolder,
+        searchTerms: value.searchTerms,
+        imapPort: value.imapPort,
+        imapHost: value.imapHost,
+        enabled: value.enabled,
+        startTls: value.startTls,
+        proxyEnabled: value.proxyEnabled,
+        proxyPort: value.proxyPort,
+        proxyHost: value.proxyHost,
+        localHostName: value.localHostName,
+        mechanisms: value.mechanisms,
+        sslTrust: value.sslTrust,
+        sslProtocols: value.sslProtocols,
     };
 }
 exports.CreateConnectorImapConnectionOptionsToJSON = CreateConnectorImapConnectionOptionsToJSON;

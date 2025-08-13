@@ -19,138 +19,139 @@ import { exists, mapValues } from '../runtime';
  * @interface WebhookNewSmsPayload
  */
 export interface WebhookNewSmsPayload {
-    /**
-     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    messageId: string;
-    /**
-     * ID of webhook entity being triggered
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    webhookId: string;
-    /**
-     * Name of the event type webhook is being triggered for.
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    eventName: WebhookNewSmsPayloadEventNameEnum;
-    /**
-     * Name of the webhook being triggered
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    webhookName?: string | null;
-    /**
-     * ID of SMS message
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    smsId: string;
-    /**
-     * User ID of event
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    userId: string;
-    /**
-     * ID of phone number receiving SMS
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    phoneNumber: string;
-    /**
-     * Recipient phone number
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    toNumber: string;
-    /**
-     * Sender phone number
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    fromNumber: string;
-    /**
-     * SMS message body
-     * @type {string}
-     * @memberof WebhookNewSmsPayload
-     */
-    body: string;
-    /**
-     * SMS has been read
-     * @type {boolean}
-     * @memberof WebhookNewSmsPayload
-     */
-    read: boolean;
+  /**
+   * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  messageId: string;
+  /**
+   * ID of webhook entity being triggered
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  webhookId: string;
+  /**
+   * Name of the event type webhook is being triggered for.
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  eventName: WebhookNewSmsPayloadEventNameEnum;
+  /**
+   * Name of the webhook being triggered
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  webhookName?: string | null;
+  /**
+   * ID of SMS message
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  smsId: string;
+  /**
+   * User ID of event
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  userId: string;
+  /**
+   * ID of phone number receiving SMS
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  phoneNumber: string;
+  /**
+   * Recipient phone number
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  toNumber: string;
+  /**
+   * Sender phone number
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  fromNumber: string;
+  /**
+   * SMS message body
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  body: string;
+  /**
+   * SMS has been read
+   * @type {boolean}
+   * @memberof WebhookNewSmsPayload
+   */
+  read: boolean;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum WebhookNewSmsPayloadEventNameEnum {
-    EMAIL_RECEIVED = 'EMAIL_RECEIVED',
-    NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
-    NEW_EMAIL = 'NEW_EMAIL',
-    NEW_CONTACT = 'NEW_CONTACT',
-    NEW_ATTACHMENT = 'NEW_ATTACHMENT',
-    EMAIL_OPENED = 'EMAIL_OPENED',
-    EMAIL_READ = 'EMAIL_READ',
-    DELIVERY_STATUS = 'DELIVERY_STATUS',
-    BOUNCE = 'BOUNCE',
-    BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
-    NEW_SMS = 'NEW_SMS',
-    NEW_GUEST_USER = 'NEW_GUEST_USER'
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_AI_TRANSFORM_RESULT = 'NEW_AI_TRANSFORM_RESULT',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+  NEW_GUEST_USER = 'NEW_GUEST_USER',
 }
 
 export function WebhookNewSmsPayloadFromJSON(json: any): WebhookNewSmsPayload {
-    return WebhookNewSmsPayloadFromJSONTyped(json, false);
+  return WebhookNewSmsPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookNewSmsPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookNewSmsPayload {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !exists(json, 'webhookName') ? undefined : json['webhookName'],
-        'smsId': json['smsId'],
-        'userId': json['userId'],
-        'phoneNumber': json['phoneNumber'],
-        'toNumber': json['toNumber'],
-        'fromNumber': json['fromNumber'],
-        'body': json['body'],
-        'read': json['read'],
-    };
+export function WebhookNewSmsPayloadFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): WebhookNewSmsPayload {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    messageId: json['messageId'],
+    webhookId: json['webhookId'],
+    eventName: json['eventName'],
+    webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
+    smsId: json['smsId'],
+    userId: json['userId'],
+    phoneNumber: json['phoneNumber'],
+    toNumber: json['toNumber'],
+    fromNumber: json['fromNumber'],
+    body: json['body'],
+    read: json['read'],
+  };
 }
 
-export function WebhookNewSmsPayloadToJSON(value?: WebhookNewSmsPayload | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'smsId': value.smsId,
-        'userId': value.userId,
-        'phoneNumber': value.phoneNumber,
-        'toNumber': value.toNumber,
-        'fromNumber': value.fromNumber,
-        'body': value.body,
-        'read': value.read,
-    };
+export function WebhookNewSmsPayloadToJSON(
+  value?: WebhookNewSmsPayload | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    messageId: value.messageId,
+    webhookId: value.webhookId,
+    eventName: value.eventName,
+    webhookName: value.webhookName,
+    smsId: value.smsId,
+    userId: value.userId,
+    phoneNumber: value.phoneNumber,
+    toNumber: value.toNumber,
+    fromNumber: value.fromNumber,
+    body: value.body,
+    read: value.read,
+  };
 }
-
-

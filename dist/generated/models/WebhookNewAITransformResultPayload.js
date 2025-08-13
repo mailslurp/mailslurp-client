@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookNewAITransformResultPayloadToJSON = exports.WebhookNewAITransformResultPayloadFromJSONTyped = exports.WebhookNewAITransformResultPayloadFromJSON = exports.WebhookNewAITransformResultPayloadEntityTypeEnum = exports.WebhookNewAITransformResultPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookNewAITransformResultPayloadEventNameEnum;
 (function (WebhookNewAITransformResultPayloadEventNameEnum) {
     WebhookNewAITransformResultPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -33,10 +33,11 @@ var WebhookNewAITransformResultPayloadEventNameEnum;
     WebhookNewAITransformResultPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookNewAITransformResultPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookNewAITransformResultPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookNewAITransformResultPayloadEventNameEnum = exports.WebhookNewAITransformResultPayloadEventNameEnum || (exports.WebhookNewAITransformResultPayloadEventNameEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(WebhookNewAITransformResultPayloadEventNameEnum = exports.WebhookNewAITransformResultPayloadEventNameEnum || (exports.WebhookNewAITransformResultPayloadEventNameEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var WebhookNewAITransformResultPayloadEntityTypeEnum;
 (function (WebhookNewAITransformResultPayloadEntityTypeEnum) {
     WebhookNewAITransformResultPayloadEntityTypeEnum["INBOX"] = "INBOX";
@@ -47,21 +48,23 @@ function WebhookNewAITransformResultPayloadFromJSON(json) {
 }
 exports.WebhookNewAITransformResultPayloadFromJSON = WebhookNewAITransformResultPayloadFromJSON;
 function WebhookNewAITransformResultPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        'aiTransformResultId': json['aiTransformResultId'],
-        'userId': json['userId'],
-        'aiTransformId': json['aiTransformId'],
-        'aiTransformMappingId': !(0, runtime_1.exists)(json, 'aiTransformMappingId') ? undefined : json['aiTransformMappingId'],
-        'entityId': !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
-        'entityType': !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
-        'result': !(0, runtime_1.exists)(json, 'result') ? undefined : json['result'],
+        messageId: json['messageId'],
+        webhookId: json['webhookId'],
+        eventName: json['eventName'],
+        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        aiTransformResultId: json['aiTransformResultId'],
+        userId: json['userId'],
+        aiTransformId: json['aiTransformId'],
+        aiTransformMappingId: !(0, runtime_1.exists)(json, 'aiTransformMappingId')
+            ? undefined
+            : json['aiTransformMappingId'],
+        entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
+        entityType: !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
+        result: !(0, runtime_1.exists)(json, 'result') ? undefined : json['result'],
     };
 }
 exports.WebhookNewAITransformResultPayloadFromJSONTyped = WebhookNewAITransformResultPayloadFromJSONTyped;
@@ -73,17 +76,17 @@ function WebhookNewAITransformResultPayloadToJSON(value) {
         return null;
     }
     return {
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'aiTransformResultId': value.aiTransformResultId,
-        'userId': value.userId,
-        'aiTransformId': value.aiTransformId,
-        'aiTransformMappingId': value.aiTransformMappingId,
-        'entityId': value.entityId,
-        'entityType': value.entityType,
-        'result': value.result,
+        messageId: value.messageId,
+        webhookId: value.webhookId,
+        eventName: value.eventName,
+        webhookName: value.webhookName,
+        aiTransformResultId: value.aiTransformResultId,
+        userId: value.userId,
+        aiTransformId: value.aiTransformId,
+        aiTransformMappingId: value.aiTransformMappingId,
+        entityId: value.entityId,
+        entityType: value.entityType,
+        result: value.result,
     };
 }
 exports.WebhookNewAITransformResultPayloadToJSON = WebhookNewAITransformResultPayloadToJSON;

@@ -71,24 +71,26 @@ export interface AITransformMappingProjection {
     id: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum AITransformMappingProjectionEntityTypeEnum {
     INBOX = "INBOX",
     PHONE = "PHONE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum AITransformMappingProjectionContentSelectorEnum {
     RAW = "RAW",
     BODY = "BODY",
     BODY_ATTACHMENTS = "BODY_ATTACHMENTS"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum AITransformMappingProjectionTriggerSelectorEnum {
     MESSAGE = "PER_MESSAGE",
     ATTACHMENT = "PER_ATTACHMENT"

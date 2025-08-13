@@ -16,26 +16,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateAITransformerMappingOptionsToJSON = exports.CreateAITransformerMappingOptionsFromJSONTyped = exports.CreateAITransformerMappingOptionsFromJSON = exports.CreateAITransformerMappingOptionsTriggerSelectorEnum = exports.CreateAITransformerMappingOptionsContentSelectorEnum = exports.CreateAITransformerMappingOptionsEntityTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateAITransformerMappingOptionsEntityTypeEnum;
 (function (CreateAITransformerMappingOptionsEntityTypeEnum) {
     CreateAITransformerMappingOptionsEntityTypeEnum["INBOX"] = "INBOX";
     CreateAITransformerMappingOptionsEntityTypeEnum["PHONE"] = "PHONE";
-})(CreateAITransformerMappingOptionsEntityTypeEnum = exports.CreateAITransformerMappingOptionsEntityTypeEnum || (exports.CreateAITransformerMappingOptionsEntityTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(CreateAITransformerMappingOptionsEntityTypeEnum = exports.CreateAITransformerMappingOptionsEntityTypeEnum || (exports.CreateAITransformerMappingOptionsEntityTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var CreateAITransformerMappingOptionsContentSelectorEnum;
 (function (CreateAITransformerMappingOptionsContentSelectorEnum) {
     CreateAITransformerMappingOptionsContentSelectorEnum["RAW"] = "RAW";
     CreateAITransformerMappingOptionsContentSelectorEnum["BODY"] = "BODY";
     CreateAITransformerMappingOptionsContentSelectorEnum["BODY_ATTACHMENTS"] = "BODY_ATTACHMENTS";
-})(CreateAITransformerMappingOptionsContentSelectorEnum = exports.CreateAITransformerMappingOptionsContentSelectorEnum || (exports.CreateAITransformerMappingOptionsContentSelectorEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(CreateAITransformerMappingOptionsContentSelectorEnum = exports.CreateAITransformerMappingOptionsContentSelectorEnum || (exports.CreateAITransformerMappingOptionsContentSelectorEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var CreateAITransformerMappingOptionsTriggerSelectorEnum;
 (function (CreateAITransformerMappingOptionsTriggerSelectorEnum) {
     CreateAITransformerMappingOptionsTriggerSelectorEnum["MESSAGE"] = "PER_MESSAGE";
@@ -46,17 +48,23 @@ function CreateAITransformerMappingOptionsFromJSON(json) {
 }
 exports.CreateAITransformerMappingOptionsFromJSON = CreateAITransformerMappingOptionsFromJSON;
 function CreateAITransformerMappingOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'aiTransformId': json['aiTransformId'],
-        'entityId': !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
-        'entityType': json['entityType'],
-        'contentSelector': !(0, runtime_1.exists)(json, 'contentSelector') ? undefined : json['contentSelector'],
-        'triggerSelector': !(0, runtime_1.exists)(json, 'triggerSelector') ? undefined : json['triggerSelector'],
-        'spreadRootArray': !(0, runtime_1.exists)(json, 'spreadRootArray') ? undefined : json['spreadRootArray'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        aiTransformId: json['aiTransformId'],
+        entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
+        entityType: json['entityType'],
+        contentSelector: !(0, runtime_1.exists)(json, 'contentSelector')
+            ? undefined
+            : json['contentSelector'],
+        triggerSelector: !(0, runtime_1.exists)(json, 'triggerSelector')
+            ? undefined
+            : json['triggerSelector'],
+        spreadRootArray: !(0, runtime_1.exists)(json, 'spreadRootArray')
+            ? undefined
+            : json['spreadRootArray'],
     };
 }
 exports.CreateAITransformerMappingOptionsFromJSONTyped = CreateAITransformerMappingOptionsFromJSONTyped;
@@ -68,13 +76,13 @@ function CreateAITransformerMappingOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'aiTransformId': value.aiTransformId,
-        'entityId': value.entityId,
-        'entityType': value.entityType,
-        'contentSelector': value.contentSelector,
-        'triggerSelector': value.triggerSelector,
-        'spreadRootArray': value.spreadRootArray,
+        name: value.name,
+        aiTransformId: value.aiTransformId,
+        entityId: value.entityId,
+        entityType: value.entityType,
+        contentSelector: value.contentSelector,
+        triggerSelector: value.triggerSelector,
+        spreadRootArray: value.spreadRootArray,
     };
 }
 exports.CreateAITransformerMappingOptionsToJSON = CreateAITransformerMappingOptionsToJSON;

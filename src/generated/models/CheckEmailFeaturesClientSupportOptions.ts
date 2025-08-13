@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CheckEmailFeaturesClientSupportOptions
  */
 export interface CheckEmailFeaturesClientSupportOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof CheckEmailFeaturesClientSupportOptions
-     */
-    emailBody: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CheckEmailFeaturesClientSupportOptions
+   */
+  emailBody: string;
 }
 
-export function CheckEmailFeaturesClientSupportOptionsFromJSON(json: any): CheckEmailFeaturesClientSupportOptions {
-    return CheckEmailFeaturesClientSupportOptionsFromJSONTyped(json, false);
+export function CheckEmailFeaturesClientSupportOptionsFromJSON(
+  json: any
+): CheckEmailFeaturesClientSupportOptions {
+  return CheckEmailFeaturesClientSupportOptionsFromJSONTyped(json, false);
 }
 
-export function CheckEmailFeaturesClientSupportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailFeaturesClientSupportOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'emailBody': json['emailBody'],
-    };
+export function CheckEmailFeaturesClientSupportOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CheckEmailFeaturesClientSupportOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    emailBody: json['emailBody'],
+  };
 }
 
-export function CheckEmailFeaturesClientSupportOptionsToJSON(value?: CheckEmailFeaturesClientSupportOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'emailBody': value.emailBody,
-    };
+export function CheckEmailFeaturesClientSupportOptionsToJSON(
+  value?: CheckEmailFeaturesClientSupportOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    emailBody: value.emailBody,
+  };
 }
-
-

@@ -50,8 +50,6 @@ This is the base class for all generated API classes.
 
   ↳ [`InboxReplierControllerApi`](InboxReplierControllerApi.md)
 
-  ↳ [`InboxRulesetControllerApi`](InboxRulesetControllerApi.md)
-
   ↳ [`MFAControllerApi`](MFAControllerApi.md)
 
   ↳ [`MailServerControllerApi`](MailServerControllerApi.md)
@@ -61,6 +59,8 @@ This is the base class for all generated API classes.
   ↳ [`OAuthConnectionApi`](OAuthConnectionApi.md)
 
   ↳ [`PhoneControllerApi`](PhoneControllerApi.md)
+
+  ↳ [`RulesetControllerApi`](RulesetControllerApi.md)
 
   ↳ [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
 

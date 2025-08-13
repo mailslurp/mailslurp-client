@@ -21,21 +21,27 @@ function PageDeliveryStatusFromJSON(json) {
 }
 exports.PageDeliveryStatusFromJSON = PageDeliveryStatusFromJSON;
 function PageDeliveryStatusFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'content': !(0, runtime_1.exists)(json, 'content') ? undefined : (json['content'].map(_1.DeliveryStatusDtoFromJSON)),
-        'pageable': !(0, runtime_1.exists)(json, 'pageable') ? undefined : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !(0, runtime_1.exists)(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
-        'first': !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
-        'size': !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
-        'number': !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
-        'empty': !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        content: !(0, runtime_1.exists)(json, 'content')
+            ? undefined
+            : json['content'].map(_1.DeliveryStatusDtoFromJSON),
+        pageable: !(0, runtime_1.exists)(json, 'pageable')
+            ? undefined
+            : (0, _1.PageableObjectFromJSON)(json['pageable']),
+        totalElements: json['totalElements'],
+        totalPages: json['totalPages'],
+        last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
+        numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
+            ? undefined
+            : json['numberOfElements'],
+        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
+        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
+        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
+        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
+        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
 exports.PageDeliveryStatusFromJSONTyped = PageDeliveryStatusFromJSONTyped;
@@ -47,17 +53,19 @@ function PageDeliveryStatusToJSON(value) {
         return null;
     }
     return {
-        'content': value.content === undefined ? undefined : (value.content.map(_1.DeliveryStatusDtoToJSON)),
-        'pageable': (0, _1.PageableObjectToJSON)(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': (0, _1.SortObjectToJSON)(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
+        content: value.content === undefined
+            ? undefined
+            : value.content.map(_1.DeliveryStatusDtoToJSON),
+        pageable: (0, _1.PageableObjectToJSON)(value.pageable),
+        totalElements: value.totalElements,
+        totalPages: value.totalPages,
+        last: value.last,
+        numberOfElements: value.numberOfElements,
+        sort: (0, _1.SortObjectToJSON)(value.sort),
+        first: value.first,
+        size: value.size,
+        number: value.number,
+        empty: value.empty,
     };
 }
 exports.PageDeliveryStatusToJSON = PageDeliveryStatusToJSON;

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AITransformResultProjectionDtoToJSON = exports.AITransformResultProjectionDtoFromJSONTyped = exports.AITransformResultProjectionDtoFromJSON = exports.AITransformResultProjectionDtoEntityTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var AITransformResultProjectionDtoEntityTypeEnum;
 (function (AITransformResultProjectionDtoEntityTypeEnum) {
     AITransformResultProjectionDtoEntityTypeEnum["INBOX"] = "INBOX";
@@ -29,18 +29,20 @@ function AITransformResultProjectionDtoFromJSON(json) {
 }
 exports.AITransformResultProjectionDtoFromJSON = AITransformResultProjectionDtoFromJSON;
 function AITransformResultProjectionDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'aiTransformId': json['aiTransformId'],
-        'aiTransformMappingId': !(0, runtime_1.exists)(json, 'aiTransformMappingId') ? undefined : json['aiTransformMappingId'],
-        'userId': json['userId'],
-        'value': !(0, runtime_1.exists)(json, 'value') ? undefined : json['value'],
-        'entityId': !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
-        'entityType': !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
-        'createdAt': (new Date(json['createdAt'])),
+        id: json['id'],
+        aiTransformId: json['aiTransformId'],
+        aiTransformMappingId: !(0, runtime_1.exists)(json, 'aiTransformMappingId')
+            ? undefined
+            : json['aiTransformMappingId'],
+        userId: json['userId'],
+        value: !(0, runtime_1.exists)(json, 'value') ? undefined : json['value'],
+        entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
+        entityType: !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.AITransformResultProjectionDtoFromJSONTyped = AITransformResultProjectionDtoFromJSONTyped;
@@ -52,14 +54,14 @@ function AITransformResultProjectionDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'aiTransformId': value.aiTransformId,
-        'aiTransformMappingId': value.aiTransformMappingId,
-        'userId': value.userId,
-        'value': value.value,
-        'entityId': value.entityId,
-        'entityType': value.entityType,
-        'createdAt': (value.createdAt.toISOString()),
+        id: value.id,
+        aiTransformId: value.aiTransformId,
+        aiTransformMappingId: value.aiTransformMappingId,
+        userId: value.userId,
+        value: value.value,
+        entityId: value.entityId,
+        entityType: value.entityType,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.AITransformResultProjectionDtoToJSON = AITransformResultProjectionDtoToJSON;

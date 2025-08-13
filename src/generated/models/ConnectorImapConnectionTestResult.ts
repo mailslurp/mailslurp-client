@@ -14,68 +14,71 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ConnectorImapConnectionTestResult
  */
 export interface ConnectorImapConnectionTestResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorImapConnectionTestResult
-     */
-    error?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ConnectorImapConnectionTestResult
-     */
-    success: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof ConnectorImapConnectionTestResult
-     */
-    message?: string;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ConnectorImapConnectionTestResult
-     */
-    logs?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorImapConnectionTestResult
+   */
+  error?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorImapConnectionTestResult
+   */
+  success: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorImapConnectionTestResult
+   */
+  message?: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ConnectorImapConnectionTestResult
+   */
+  logs?: Array<string>;
 }
 
-export function ConnectorImapConnectionTestResultFromJSON(json: any): ConnectorImapConnectionTestResult {
-    return ConnectorImapConnectionTestResultFromJSONTyped(json, false);
+export function ConnectorImapConnectionTestResultFromJSON(
+  json: any
+): ConnectorImapConnectionTestResult {
+  return ConnectorImapConnectionTestResultFromJSONTyped(json, false);
 }
 
-export function ConnectorImapConnectionTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorImapConnectionTestResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'error': !exists(json, 'error') ? undefined : json['error'],
-        'success': json['success'],
-        'message': !exists(json, 'message') ? undefined : json['message'],
-        'logs': !exists(json, 'logs') ? undefined : json['logs'],
-    };
+export function ConnectorImapConnectionTestResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ConnectorImapConnectionTestResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    error: !exists(json, 'error') ? undefined : json['error'],
+    success: json['success'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+    logs: !exists(json, 'logs') ? undefined : json['logs'],
+  };
 }
 
-export function ConnectorImapConnectionTestResultToJSON(value?: ConnectorImapConnectionTestResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'error': value.error,
-        'success': value.success,
-        'message': value.message,
-        'logs': value.logs,
-    };
+export function ConnectorImapConnectionTestResultToJSON(
+  value?: ConnectorImapConnectionTestResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    error: value.error,
+    success: value.success,
+    message: value.message,
+    logs: value.logs,
+  };
 }
-
-

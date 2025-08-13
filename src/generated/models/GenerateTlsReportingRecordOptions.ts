@@ -14,84 +14,89 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface GenerateTlsReportingRecordOptions
  */
 export interface GenerateTlsReportingRecordOptions {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof GenerateTlsReportingRecordOptions
-     */
-    reportingAddresses: Array<string>;
-    /**
-     * 
-     * @type {string}
-     * @memberof GenerateTlsReportingRecordOptions
-     */
-    reportingUrl?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GenerateTlsReportingRecordOptions
-     */
-    host: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof GenerateTlsReportingRecordOptions
-     */
-    version: GenerateTlsReportingRecordOptionsVersionEnum;
-    /**
-     * 
-     * @type {number}
-     * @memberof GenerateTlsReportingRecordOptions
-     */
-    ttl: number;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof GenerateTlsReportingRecordOptions
+   */
+  reportingAddresses: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof GenerateTlsReportingRecordOptions
+   */
+  reportingUrl?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GenerateTlsReportingRecordOptions
+   */
+  host: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GenerateTlsReportingRecordOptions
+   */
+  version: GenerateTlsReportingRecordOptionsVersionEnum;
+  /**
+   *
+   * @type {number}
+   * @memberof GenerateTlsReportingRecordOptions
+   */
+  ttl: number;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum GenerateTlsReportingRecordOptionsVersionEnum {
-    TLSRPTv1 = 'TLSRPTv1'
+  TLSRPTv1 = 'TLSRPTv1',
 }
 
-export function GenerateTlsReportingRecordOptionsFromJSON(json: any): GenerateTlsReportingRecordOptions {
-    return GenerateTlsReportingRecordOptionsFromJSONTyped(json, false);
+export function GenerateTlsReportingRecordOptionsFromJSON(
+  json: any
+): GenerateTlsReportingRecordOptions {
+  return GenerateTlsReportingRecordOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateTlsReportingRecordOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateTlsReportingRecordOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'reportingAddresses': json['reportingAddresses'],
-        'reportingUrl': !exists(json, 'reportingUrl') ? undefined : json['reportingUrl'],
-        'host': json['host'],
-        'version': json['version'],
-        'ttl': json['ttl'],
-    };
+export function GenerateTlsReportingRecordOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): GenerateTlsReportingRecordOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    reportingAddresses: json['reportingAddresses'],
+    reportingUrl: !exists(json, 'reportingUrl')
+      ? undefined
+      : json['reportingUrl'],
+    host: json['host'],
+    version: json['version'],
+    ttl: json['ttl'],
+  };
 }
 
-export function GenerateTlsReportingRecordOptionsToJSON(value?: GenerateTlsReportingRecordOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'reportingAddresses': value.reportingAddresses,
-        'reportingUrl': value.reportingUrl,
-        'host': value.host,
-        'version': value.version,
-        'ttl': value.ttl,
-    };
+export function GenerateTlsReportingRecordOptionsToJSON(
+  value?: GenerateTlsReportingRecordOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    reportingAddresses: value.reportingAddresses,
+    reportingUrl: value.reportingUrl,
+    host: value.host,
+    version: value.version,
+    ttl: value.ttl,
+  };
 }
-
-

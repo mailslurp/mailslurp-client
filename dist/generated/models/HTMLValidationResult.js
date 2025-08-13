@@ -20,14 +20,14 @@ function HTMLValidationResultFromJSON(json) {
 }
 exports.HTMLValidationResultFromJSON = HTMLValidationResultFromJSON;
 function HTMLValidationResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'isValid': json['isValid'],
-        'infos': (json['infos'].map(_1.ValidationMessageFromJSON)),
-        'errors': (json['errors'].map(_1.ValidationMessageFromJSON)),
-        'warnings': (json['warnings'].map(_1.ValidationMessageFromJSON)),
+        isValid: json['isValid'],
+        infos: json['infos'].map(_1.ValidationMessageFromJSON),
+        errors: json['errors'].map(_1.ValidationMessageFromJSON),
+        warnings: json['warnings'].map(_1.ValidationMessageFromJSON),
     };
 }
 exports.HTMLValidationResultFromJSONTyped = HTMLValidationResultFromJSONTyped;
@@ -39,10 +39,10 @@ function HTMLValidationResultToJSON(value) {
         return null;
     }
     return {
-        'isValid': value.isValid,
-        'infos': (value.infos.map(_1.ValidationMessageToJSON)),
-        'errors': (value.errors.map(_1.ValidationMessageToJSON)),
-        'warnings': (value.warnings.map(_1.ValidationMessageToJSON)),
+        isValid: value.isValid,
+        infos: value.infos.map(_1.ValidationMessageToJSON),
+        errors: value.errors.map(_1.ValidationMessageToJSON),
+        warnings: value.warnings.map(_1.ValidationMessageToJSON),
     };
 }
 exports.HTMLValidationResultToJSON = HTMLValidationResultToJSON;

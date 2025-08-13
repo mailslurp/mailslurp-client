@@ -14,92 +14,95 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateTotpDeviceCustomOptions
  */
 export interface CreateTotpDeviceCustomOptions {
-    /**
-     * The base32 encoded secret provided by the identity provider for the TOTP device.
-     * @type {string}
-     * @memberof CreateTotpDeviceCustomOptions
-     */
-    secret: string;
-    /**
-     * Name for labeling the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceCustomOptions
-     */
-    name?: string | null;
-    /**
-     * Optional username for the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceCustomOptions
-     */
-    username?: string | null;
-    /**
-     * Optional issuer override for the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceCustomOptions
-     */
-    issuer?: string | null;
-    /**
-     * Optional number of digits in TOTP code
-     * @type {number}
-     * @memberof CreateTotpDeviceCustomOptions
-     */
-    digits?: number | null;
-    /**
-     * Optional period in seconds for TOTP code expiration
-     * @type {number}
-     * @memberof CreateTotpDeviceCustomOptions
-     */
-    period?: number | null;
-    /**
-     * Optional algorithm override
-     * @type {string}
-     * @memberof CreateTotpDeviceCustomOptions
-     */
-    algorithm?: string | null;
+  /**
+   * The base32 encoded secret provided by the identity provider for the TOTP device.
+   * @type {string}
+   * @memberof CreateTotpDeviceCustomOptions
+   */
+  secret: string;
+  /**
+   * Name for labeling the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceCustomOptions
+   */
+  name?: string | null;
+  /**
+   * Optional username for the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceCustomOptions
+   */
+  username?: string | null;
+  /**
+   * Optional issuer override for the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceCustomOptions
+   */
+  issuer?: string | null;
+  /**
+   * Optional number of digits in TOTP code
+   * @type {number}
+   * @memberof CreateTotpDeviceCustomOptions
+   */
+  digits?: number | null;
+  /**
+   * Optional period in seconds for TOTP code expiration
+   * @type {number}
+   * @memberof CreateTotpDeviceCustomOptions
+   */
+  period?: number | null;
+  /**
+   * Optional algorithm override
+   * @type {string}
+   * @memberof CreateTotpDeviceCustomOptions
+   */
+  algorithm?: string | null;
 }
 
-export function CreateTotpDeviceCustomOptionsFromJSON(json: any): CreateTotpDeviceCustomOptions {
-    return CreateTotpDeviceCustomOptionsFromJSONTyped(json, false);
+export function CreateTotpDeviceCustomOptionsFromJSON(
+  json: any
+): CreateTotpDeviceCustomOptions {
+  return CreateTotpDeviceCustomOptionsFromJSONTyped(json, false);
 }
 
-export function CreateTotpDeviceCustomOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTotpDeviceCustomOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'secret': json['secret'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'username': !exists(json, 'username') ? undefined : json['username'],
-        'issuer': !exists(json, 'issuer') ? undefined : json['issuer'],
-        'digits': !exists(json, 'digits') ? undefined : json['digits'],
-        'period': !exists(json, 'period') ? undefined : json['period'],
-        'algorithm': !exists(json, 'algorithm') ? undefined : json['algorithm'],
-    };
+export function CreateTotpDeviceCustomOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateTotpDeviceCustomOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    secret: json['secret'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    username: !exists(json, 'username') ? undefined : json['username'],
+    issuer: !exists(json, 'issuer') ? undefined : json['issuer'],
+    digits: !exists(json, 'digits') ? undefined : json['digits'],
+    period: !exists(json, 'period') ? undefined : json['period'],
+    algorithm: !exists(json, 'algorithm') ? undefined : json['algorithm'],
+  };
 }
 
-export function CreateTotpDeviceCustomOptionsToJSON(value?: CreateTotpDeviceCustomOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'secret': value.secret,
-        'name': value.name,
-        'username': value.username,
-        'issuer': value.issuer,
-        'digits': value.digits,
-        'period': value.period,
-        'algorithm': value.algorithm,
-    };
+export function CreateTotpDeviceCustomOptionsToJSON(
+  value?: CreateTotpDeviceCustomOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    secret: value.secret,
+    name: value.name,
+    username: value.username,
+    issuer: value.issuer,
+    digits: value.digits,
+    period: value.period,
+    algorithm: value.algorithm,
+  };
 }
-
-

@@ -19,13 +19,13 @@ function SendSMTPEnvelopeOptionsFromJSON(json) {
 }
 exports.SendSMTPEnvelopeOptionsFromJSON = SendSMTPEnvelopeOptionsFromJSON;
 function SendSMTPEnvelopeOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'rcptTo': json['rcptTo'],
-        'mailFrom': json['mailFrom'],
-        'data': json['data'],
+        rcptTo: json['rcptTo'],
+        mailFrom: json['mailFrom'],
+        data: json['data'],
     };
 }
 exports.SendSMTPEnvelopeOptionsFromJSONTyped = SendSMTPEnvelopeOptionsFromJSONTyped;
@@ -37,9 +37,9 @@ function SendSMTPEnvelopeOptionsToJSON(value) {
         return null;
     }
     return {
-        'rcptTo': value.rcptTo,
-        'mailFrom': value.mailFrom,
-        'data': value.data,
+        rcptTo: value.rcptTo,
+        mailFrom: value.mailFrom,
+        data: value.data,
     };
 }
 exports.SendSMTPEnvelopeOptionsToJSON = SendSMTPEnvelopeOptionsToJSON;

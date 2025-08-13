@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface LookupMtaStsDomainOptions
  */
 export interface LookupMtaStsDomainOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof LookupMtaStsDomainOptions
-     */
-    host: string;
+  /**
+   *
+   * @type {string}
+   * @memberof LookupMtaStsDomainOptions
+   */
+  host: string;
 }
 
-export function LookupMtaStsDomainOptionsFromJSON(json: any): LookupMtaStsDomainOptions {
-    return LookupMtaStsDomainOptionsFromJSONTyped(json, false);
+export function LookupMtaStsDomainOptionsFromJSON(
+  json: any
+): LookupMtaStsDomainOptions {
+  return LookupMtaStsDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupMtaStsDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupMtaStsDomainOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'host': json['host'],
-    };
+export function LookupMtaStsDomainOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): LookupMtaStsDomainOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    host: json['host'],
+  };
 }
 
-export function LookupMtaStsDomainOptionsToJSON(value?: LookupMtaStsDomainOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'host': value.host,
-    };
+export function LookupMtaStsDomainOptionsToJSON(
+  value?: LookupMtaStsDomainOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    host: value.host,
+  };
 }
-
-

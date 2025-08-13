@@ -20,13 +20,13 @@ function TestInboxRulesetSendingOptionsFromJSON(json) {
 }
 exports.TestInboxRulesetSendingOptionsFromJSON = TestInboxRulesetSendingOptionsFromJSON;
 function TestInboxRulesetSendingOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'phoneId': !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
-        'recipient': json['recipient'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        recipient: json['recipient'],
     };
 }
 exports.TestInboxRulesetSendingOptionsFromJSONTyped = TestInboxRulesetSendingOptionsFromJSONTyped;
@@ -38,9 +38,9 @@ function TestInboxRulesetSendingOptionsToJSON(value) {
         return null;
     }
     return {
-        'inboxId': value.inboxId,
-        'phoneId': value.phoneId,
-        'recipient': value.recipient,
+        inboxId: value.inboxId,
+        phoneId: value.phoneId,
+        recipient: value.recipient,
     };
 }
 exports.TestInboxRulesetSendingOptionsToJSON = TestInboxRulesetSendingOptionsToJSON;

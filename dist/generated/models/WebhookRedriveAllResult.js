@@ -20,12 +20,12 @@ function WebhookRedriveAllResultFromJSON(json) {
 }
 exports.WebhookRedriveAllResultFromJSON = WebhookRedriveAllResultFromJSON;
 function WebhookRedriveAllResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'success': json['success'],
-        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        success: json['success'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
 exports.WebhookRedriveAllResultFromJSONTyped = WebhookRedriveAllResultFromJSONTyped;
@@ -37,8 +37,8 @@ function WebhookRedriveAllResultToJSON(value) {
         return null;
     }
     return {
-        'success': value.success,
-        'message': value.message,
+        success: value.success,
+        message: value.message,
     };
 }
 exports.WebhookRedriveAllResultToJSON = WebhookRedriveAllResultToJSON;

@@ -14,108 +14,107 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface TotpDeviceDto
  */
 export interface TotpDeviceDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof TotpDeviceDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TotpDeviceDto
-     */
-    name?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof TotpDeviceDto
-     */
-    username?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof TotpDeviceDto
-     */
-    issuer?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof TotpDeviceDto
-     */
-    digits?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof TotpDeviceDto
-     */
-    period?: number | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof TotpDeviceDto
-     */
-    algorithm?: string | null;
-    /**
-     * 
-     * @type {Date}
-     * @memberof TotpDeviceDto
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof TotpDeviceDto
-     */
-    updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof TotpDeviceDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof TotpDeviceDto
+   */
+  name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TotpDeviceDto
+   */
+  username?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TotpDeviceDto
+   */
+  issuer?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof TotpDeviceDto
+   */
+  digits?: number | null;
+  /**
+   *
+   * @type {number}
+   * @memberof TotpDeviceDto
+   */
+  period?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TotpDeviceDto
+   */
+  algorithm?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof TotpDeviceDto
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof TotpDeviceDto
+   */
+  updatedAt: Date;
 }
 
 export function TotpDeviceDtoFromJSON(json: any): TotpDeviceDto {
-    return TotpDeviceDtoFromJSONTyped(json, false);
+  return TotpDeviceDtoFromJSONTyped(json, false);
 }
 
-export function TotpDeviceDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TotpDeviceDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'username': !exists(json, 'username') ? undefined : json['username'],
-        'issuer': !exists(json, 'issuer') ? undefined : json['issuer'],
-        'digits': !exists(json, 'digits') ? undefined : json['digits'],
-        'period': !exists(json, 'period') ? undefined : json['period'],
-        'algorithm': !exists(json, 'algorithm') ? undefined : json['algorithm'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-    };
+export function TotpDeviceDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): TotpDeviceDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    username: !exists(json, 'username') ? undefined : json['username'],
+    issuer: !exists(json, 'issuer') ? undefined : json['issuer'],
+    digits: !exists(json, 'digits') ? undefined : json['digits'],
+    period: !exists(json, 'period') ? undefined : json['period'],
+    algorithm: !exists(json, 'algorithm') ? undefined : json['algorithm'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+  };
 }
 
 export function TotpDeviceDtoToJSON(value?: TotpDeviceDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'name': value.name,
-        'username': value.username,
-        'issuer': value.issuer,
-        'digits': value.digits,
-        'period': value.period,
-        'algorithm': value.algorithm,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    name: value.name,
+    username: value.username,
+    issuer: value.issuer,
+    digits: value.digits,
+    period: value.period,
+    algorithm: value.algorithm,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+  };
 }
-
-

@@ -20,13 +20,13 @@ function SenderProjectionFromJSON(json) {
 }
 exports.SenderProjectionFromJSON = SenderProjectionFromJSON;
 function SenderProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': json['emailAddress'],
-        'rawValue': json['rawValue'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        emailAddress: json['emailAddress'],
+        rawValue: json['rawValue'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
 exports.SenderProjectionFromJSONTyped = SenderProjectionFromJSONTyped;
@@ -38,9 +38,9 @@ function SenderProjectionToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'rawValue': value.rawValue,
-        'name': value.name,
+        emailAddress: value.emailAddress,
+        rawValue: value.rawValue,
+        name: value.name,
     };
 }
 exports.SenderProjectionToJSON = SenderProjectionToJSON;

@@ -107,9 +107,9 @@ export interface WebhookNewContactPayload {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookNewContactPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",

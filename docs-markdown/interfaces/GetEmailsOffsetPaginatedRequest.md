@@ -9,6 +9,7 @@
 - [before](GetEmailsOffsetPaginatedRequest.md#before)
 - [favourited](GetEmailsOffsetPaginatedRequest.md#favourited)
 - [inboxId](GetEmailsOffsetPaginatedRequest.md#inboxid)
+- [include](GetEmailsOffsetPaginatedRequest.md#include)
 - [page](GetEmailsOffsetPaginatedRequest.md#page)
 - [plusAddressId](GetEmailsOffsetPaginatedRequest.md#plusaddressid)
 - [searchFilter](GetEmailsOffsetPaginatedRequest.md#searchfilter)
@@ -35,6 +36,12 @@ ___
 ### inboxId
 
 • `Optional` **inboxId**: `string`[]
+
+___
+
+### include
+
+• `Optional` **include**: `string`[]
 
 ___
 

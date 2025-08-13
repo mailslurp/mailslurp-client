@@ -26,6 +26,8 @@ SmsPreview
 
 • **body**: `string`
 
+TXT message content
+
 **`Memberof`**
 
 SmsPreview
@@ -45,6 +47,8 @@ ___
 ### fromNumber
 
 • **fromNumber**: `string`
+
+Sender number
 
 **`Memberof`**
 
@@ -66,6 +70,8 @@ ___
 
 • **phoneNumber**: `string`
 
+ID of the phone number that received this SMS
+
 **`Memberof`**
 
 SmsPreview
@@ -75,6 +81,8 @@ ___
 ### read
 
 • **read**: `boolean`
+
+Is the message read or unread
 
 **`Memberof`**
 

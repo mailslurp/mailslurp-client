@@ -19,55 +19,54 @@ import { exists, mapValues } from '../runtime';
  * @interface Sender
  */
 export interface Sender {
-    /**
-     * 
-     * @type {string}
-     * @memberof Sender
-     */
-    rawValue: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Sender
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Sender
-     */
-    name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Sender
+   */
+  rawValue: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Sender
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Sender
+   */
+  name?: string;
 }
 
 export function SenderFromJSON(json: any): Sender {
-    return SenderFromJSONTyped(json, false);
+  return SenderFromJSONTyped(json, false);
 }
 
-export function SenderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sender {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'rawValue': json['rawValue'],
-        'emailAddress': json['emailAddress'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-    };
+export function SenderFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): Sender {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    rawValue: json['rawValue'],
+    emailAddress: json['emailAddress'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+  };
 }
 
 export function SenderToJSON(value?: Sender | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'rawValue': value.rawValue,
-        'emailAddress': value.emailAddress,
-        'name': value.name,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    rawValue: value.rawValue,
+    emailAddress: value.emailAddress,
+    name: value.name,
+  };
 }
-
-

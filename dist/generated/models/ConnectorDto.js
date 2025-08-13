@@ -20,17 +20,19 @@ function ConnectorDtoFromJSON(json) {
 }
 exports.ConnectorDtoFromJSON = ConnectorDtoFromJSON;
 function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'enabled': json['enabled'],
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'userId': json['userId'],
-        'inboxId': json['inboxId'],
-        'createdAt': (new Date(json['createdAt'])),
+        id: json['id'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        enabled: json['enabled'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        userId: json['userId'],
+        inboxId: json['inboxId'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.ConnectorDtoFromJSONTyped = ConnectorDtoFromJSONTyped;
@@ -42,13 +44,13 @@ function ConnectorDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'name': value.name,
-        'enabled': value.enabled,
-        'emailAddress': value.emailAddress,
-        'userId': value.userId,
-        'inboxId': value.inboxId,
-        'createdAt': (value.createdAt.toISOString()),
+        id: value.id,
+        name: value.name,
+        enabled: value.enabled,
+        emailAddress: value.emailAddress,
+        userId: value.userId,
+        inboxId: value.inboxId,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.ConnectorDtoToJSON = ConnectorDtoToJSON;

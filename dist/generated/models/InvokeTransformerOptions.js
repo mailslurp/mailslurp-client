@@ -17,18 +17,19 @@ exports.InvokeTransformerOptionsToJSON = exports.InvokeTransformerOptionsFromJSO
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var InvokeTransformerOptionsEntityTypeEnum;
 (function (InvokeTransformerOptionsEntityTypeEnum) {
     InvokeTransformerOptionsEntityTypeEnum["EMAIL"] = "EMAIL";
     InvokeTransformerOptionsEntityTypeEnum["SMS"] = "SMS";
     InvokeTransformerOptionsEntityTypeEnum["ATTACHMENT"] = "ATTACHMENT";
-})(InvokeTransformerOptionsEntityTypeEnum = exports.InvokeTransformerOptionsEntityTypeEnum || (exports.InvokeTransformerOptionsEntityTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(InvokeTransformerOptionsEntityTypeEnum = exports.InvokeTransformerOptionsEntityTypeEnum || (exports.InvokeTransformerOptionsEntityTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var InvokeTransformerOptionsContentSelectorEnum;
 (function (InvokeTransformerOptionsContentSelectorEnum) {
     InvokeTransformerOptionsContentSelectorEnum["RAW"] = "RAW";
@@ -40,19 +41,31 @@ function InvokeTransformerOptionsFromJSON(json) {
 }
 exports.InvokeTransformerOptionsFromJSON = InvokeTransformerOptionsFromJSON;
 function InvokeTransformerOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'aiTransformId': !(0, runtime_1.exists)(json, 'aiTransformId') ? undefined : json['aiTransformId'],
-        'aiTransformMappingId': !(0, runtime_1.exists)(json, 'aiTransformMappingId') ? undefined : json['aiTransformMappingId'],
-        'rawInput': !(0, runtime_1.exists)(json, 'rawInput') ? undefined : json['rawInput'],
-        'entityId': !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
-        'entityType': !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
-        'rawConditions': !(0, runtime_1.exists)(json, 'rawConditions') ? undefined : json['rawConditions'],
-        'rawInstructions': !(0, runtime_1.exists)(json, 'rawInstructions') ? undefined : json['rawInstructions'],
-        'rawOutputSchema': !(0, runtime_1.exists)(json, 'rawOutputSchema') ? undefined : (0, _1.StructuredOutputSchemaFromJSON)(json['rawOutputSchema']),
-        'contentSelector': !(0, runtime_1.exists)(json, 'contentSelector') ? undefined : json['contentSelector'],
+        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
+            ? undefined
+            : json['aiTransformId'],
+        aiTransformMappingId: !(0, runtime_1.exists)(json, 'aiTransformMappingId')
+            ? undefined
+            : json['aiTransformMappingId'],
+        rawInput: !(0, runtime_1.exists)(json, 'rawInput') ? undefined : json['rawInput'],
+        entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
+        entityType: !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
+        rawConditions: !(0, runtime_1.exists)(json, 'rawConditions')
+            ? undefined
+            : json['rawConditions'],
+        rawInstructions: !(0, runtime_1.exists)(json, 'rawInstructions')
+            ? undefined
+            : json['rawInstructions'],
+        rawOutputSchema: !(0, runtime_1.exists)(json, 'rawOutputSchema')
+            ? undefined
+            : (0, _1.StructuredOutputSchemaFromJSON)(json['rawOutputSchema']),
+        contentSelector: !(0, runtime_1.exists)(json, 'contentSelector')
+            ? undefined
+            : json['contentSelector'],
     };
 }
 exports.InvokeTransformerOptionsFromJSONTyped = InvokeTransformerOptionsFromJSONTyped;
@@ -64,15 +77,15 @@ function InvokeTransformerOptionsToJSON(value) {
         return null;
     }
     return {
-        'aiTransformId': value.aiTransformId,
-        'aiTransformMappingId': value.aiTransformMappingId,
-        'rawInput': value.rawInput,
-        'entityId': value.entityId,
-        'entityType': value.entityType,
-        'rawConditions': value.rawConditions,
-        'rawInstructions': value.rawInstructions,
-        'rawOutputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.rawOutputSchema),
-        'contentSelector': value.contentSelector,
+        aiTransformId: value.aiTransformId,
+        aiTransformMappingId: value.aiTransformMappingId,
+        rawInput: value.rawInput,
+        entityId: value.entityId,
+        entityType: value.entityType,
+        rawConditions: value.rawConditions,
+        rawInstructions: value.rawInstructions,
+        rawOutputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.rawOutputSchema),
+        contentSelector: value.contentSelector,
     };
 }
 exports.InvokeTransformerOptionsToJSON = InvokeTransformerOptionsToJSON;

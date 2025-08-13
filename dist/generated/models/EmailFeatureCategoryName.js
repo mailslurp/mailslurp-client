@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailFeatureCategoryNameToJSON = exports.EmailFeatureCategoryNameFromJSONTyped = exports.EmailFeatureCategoryNameFromJSON = exports.EmailFeatureCategoryNameSlugEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EmailFeatureCategoryNameSlugEnum;
 (function (EmailFeatureCategoryNameSlugEnum) {
     EmailFeatureCategoryNameSlugEnum["css"] = "css";
@@ -30,12 +30,12 @@ function EmailFeatureCategoryNameFromJSON(json) {
 }
 exports.EmailFeatureCategoryNameFromJSON = EmailFeatureCategoryNameFromJSON;
 function EmailFeatureCategoryNameFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'slug': json['slug'],
-        'name': json['name'],
+        slug: json['slug'],
+        name: json['name'],
     };
 }
 exports.EmailFeatureCategoryNameFromJSONTyped = EmailFeatureCategoryNameFromJSONTyped;
@@ -47,8 +47,8 @@ function EmailFeatureCategoryNameToJSON(value) {
         return null;
     }
     return {
-        'slug': value.slug,
-        'name': value.name,
+        slug: value.slug,
+        name: value.name,
     };
 }
 exports.EmailFeatureCategoryNameToJSON = EmailFeatureCategoryNameToJSON;

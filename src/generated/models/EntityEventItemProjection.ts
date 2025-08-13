@@ -14,97 +14,101 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface EntityEventItemProjection
  */
 export interface EntityEventItemProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    eventType: EntityEventItemProjectionEventTypeEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    inboxId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    phoneId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    severity: EntityEventItemProjectionSeverityEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityEventItemProjection
+   */
+  eventType: EntityEventItemProjectionEventTypeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityEventItemProjection
+   */
+  inboxId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityEventItemProjection
+   */
+  phoneId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityEventItemProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityEventItemProjection
+   */
+  severity: EntityEventItemProjectionSeverityEnum;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum EntityEventItemProjectionEventTypeEnum {
-    WEBHOOK_EVENT = 'WEBHOOK_EVENT',
-    INBOX_FORWARDER_EVENT = 'INBOX_FORWARDER_EVENT',
-    INBOX_REPLIER_EVENT = 'INBOX_REPLIER_EVENT',
-    INBOX_RULESET_EVENT = 'INBOX_RULESET_EVENT',
-    ALIAS_EVENT = 'ALIAS_EVENT'
-}/**
-* @export
-* @enum {string}
-*/
+  WEBHOOK_EVENT = 'WEBHOOK_EVENT',
+  INBOX_FORWARDER_EVENT = 'INBOX_FORWARDER_EVENT',
+  INBOX_REPLIER_EVENT = 'INBOX_REPLIER_EVENT',
+  INBOX_RULESET_EVENT = 'INBOX_RULESET_EVENT',
+  ALIAS_EVENT = 'ALIAS_EVENT',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum EntityEventItemProjectionSeverityEnum {
-    INFO = 'INFO',
-    SUCCESS = 'SUCCESS',
-    WARNING = 'WARNING',
-    DANGER = 'DANGER'
+  INFO = 'INFO',
+  SUCCESS = 'SUCCESS',
+  WARNING = 'WARNING',
+  DANGER = 'DANGER',
 }
 
-export function EntityEventItemProjectionFromJSON(json: any): EntityEventItemProjection {
-    return EntityEventItemProjectionFromJSONTyped(json, false);
+export function EntityEventItemProjectionFromJSON(
+  json: any
+): EntityEventItemProjection {
+  return EntityEventItemProjectionFromJSONTyped(json, false);
 }
 
-export function EntityEventItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EntityEventItemProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'eventType': json['eventType'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'phoneId': !exists(json, 'phoneId') ? undefined : json['phoneId'],
-        'id': json['id'],
-        'severity': json['severity'],
-    };
+export function EntityEventItemProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EntityEventItemProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    eventType: json['eventType'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
+    id: json['id'],
+    severity: json['severity'],
+  };
 }
 
-export function EntityEventItemProjectionToJSON(value?: EntityEventItemProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'eventType': value.eventType,
-        'inboxId': value.inboxId,
-        'phoneId': value.phoneId,
-        'id': value.id,
-        'severity': value.severity,
-    };
+export function EntityEventItemProjectionToJSON(
+  value?: EntityEventItemProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    eventType: value.eventType,
+    inboxId: value.inboxId,
+    phoneId: value.phoneId,
+    id: value.id,
+    severity: value.severity,
+  };
 }
-
-

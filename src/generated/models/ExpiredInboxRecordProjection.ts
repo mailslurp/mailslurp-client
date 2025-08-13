@@ -19,63 +19,66 @@ import { exists, mapValues } from '../runtime';
  * @interface ExpiredInboxRecordProjection
  */
 export interface ExpiredInboxRecordProjection {
-    /**
-     * 
-     * @type {string}
-     * @memberof ExpiredInboxRecordProjection
-     */
-    userId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ExpiredInboxRecordProjection
-     */
-    emailAddress: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof ExpiredInboxRecordProjection
-     */
-    createdAt: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof ExpiredInboxRecordProjection
-     */
-    id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ExpiredInboxRecordProjection
+   */
+  userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ExpiredInboxRecordProjection
+   */
+  emailAddress: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof ExpiredInboxRecordProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof ExpiredInboxRecordProjection
+   */
+  id: string;
 }
 
-export function ExpiredInboxRecordProjectionFromJSON(json: any): ExpiredInboxRecordProjection {
-    return ExpiredInboxRecordProjectionFromJSONTyped(json, false);
+export function ExpiredInboxRecordProjectionFromJSON(
+  json: any
+): ExpiredInboxRecordProjection {
+  return ExpiredInboxRecordProjectionFromJSONTyped(json, false);
 }
 
-export function ExpiredInboxRecordProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxRecordProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'userId': json['userId'],
-        'emailAddress': json['emailAddress'],
-        'createdAt': (new Date(json['createdAt'])),
-        'id': json['id'],
-    };
+export function ExpiredInboxRecordProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ExpiredInboxRecordProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    userId: json['userId'],
+    emailAddress: json['emailAddress'],
+    createdAt: new Date(json['createdAt']),
+    id: json['id'],
+  };
 }
 
-export function ExpiredInboxRecordProjectionToJSON(value?: ExpiredInboxRecordProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'userId': value.userId,
-        'emailAddress': value.emailAddress,
-        'createdAt': (value.createdAt.toISOString()),
-        'id': value.id,
-    };
+export function ExpiredInboxRecordProjectionToJSON(
+  value?: ExpiredInboxRecordProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    userId: value.userId,
+    emailAddress: value.emailAddress,
+    createdAt: value.createdAt.toISOString(),
+    id: value.id,
+  };
 }
-
-

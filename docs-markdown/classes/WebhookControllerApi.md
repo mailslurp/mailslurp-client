@@ -23,6 +23,8 @@
 - [createAccountWebhook](WebhookControllerApi.md#createaccountwebhook)
 - [createAccountWebhookRaw](WebhookControllerApi.md#createaccountwebhookraw)
 - [createWebhook](WebhookControllerApi.md#createwebhook)
+- [createWebhookForAITransformer](WebhookControllerApi.md#createwebhookforaitransformer)
+- [createWebhookForAITransformerRaw](WebhookControllerApi.md#createwebhookforaitransformerraw)
 - [createWebhookForPhoneNumber](WebhookControllerApi.md#createwebhookforphonenumber)
 - [createWebhookForPhoneNumberRaw](WebhookControllerApi.md#createwebhookforphonenumberraw)
 - [createWebhookRaw](WebhookControllerApi.md#createwebhookraw)
@@ -61,6 +63,8 @@
 - [getTestWebhookPayloadEmailReadRaw](WebhookControllerApi.md#gettestwebhookpayloademailreadraw)
 - [getTestWebhookPayloadForWebhook](WebhookControllerApi.md#gettestwebhookpayloadforwebhook)
 - [getTestWebhookPayloadForWebhookRaw](WebhookControllerApi.md#gettestwebhookpayloadforwebhookraw)
+- [getTestWebhookPayloadNewAITransformResult](WebhookControllerApi.md#gettestwebhookpayloadnewaitransformresult)
+- [getTestWebhookPayloadNewAITransformResultRaw](WebhookControllerApi.md#gettestwebhookpayloadnewaitransformresultraw)
 - [getTestWebhookPayloadNewAttachment](WebhookControllerApi.md#gettestwebhookpayloadnewattachment)
 - [getTestWebhookPayloadNewAttachmentRaw](WebhookControllerApi.md#gettestwebhookpayloadnewattachmentraw)
 - [getTestWebhookPayloadNewContact](WebhookControllerApi.md#gettestwebhookpayloadnewcontact)
@@ -186,6 +190,46 @@ Attach a WebHook URL to an inbox
 #### Returns
 
 `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+___
+
+### createWebhookForAITransformer
+
+▸ **createWebhookForAITransformer**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+Get notified whenever AI transformation pipeline converts and email or SMS into structured data via a WebHook URL.
+Attach a WebHook URL to an AI transformer
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateWebhookForAITransformerRequest`](../interfaces/CreateWebhookForAITransformerRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+___
+
+### createWebhookForAITransformerRaw
+
+▸ **createWebhookForAITransformerRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
+
+Get notified whenever AI transformation pipeline converts and email or SMS into structured data via a WebHook URL.
+Attach a WebHook URL to an AI transformer
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateWebhookForAITransformerRequest`](../interfaces/CreateWebhookForAITransformerRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
 
 ___
 
@@ -907,6 +951,42 @@ Get example payload for webhook
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AbstractWebhookPayload`](../interfaces/AbstractWebhookPayload.md)\>\>
+
+___
+
+### getTestWebhookPayloadNewAITransformResult
+
+▸ **getTestWebhookPayloadNewAITransformResult**(`initOverrides?`): `Promise`<[`WebhookNewAITransformResultPayload`](../interfaces/WebhookNewAITransformResultPayload.md)\>
+
+Get webhook test payload for new ai transform result event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookNewAITransformResultPayload`](../interfaces/WebhookNewAITransformResultPayload.md)\>
+
+___
+
+### getTestWebhookPayloadNewAITransformResultRaw
+
+▸ **getTestWebhookPayloadNewAITransformResultRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewAITransformResultPayload`](../interfaces/WebhookNewAITransformResultPayload.md)\>\>
+
+Get webhook test payload for new ai transform result event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewAITransformResultPayload`](../interfaces/WebhookNewAITransformResultPayload.md)\>\>
 
 ___
 

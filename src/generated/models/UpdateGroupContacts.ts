@@ -19,39 +19,40 @@ import { exists, mapValues } from '../runtime';
  * @interface UpdateGroupContacts
  */
 export interface UpdateGroupContacts {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof UpdateGroupContacts
-     */
-    contactIds: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof UpdateGroupContacts
+   */
+  contactIds: Array<string>;
 }
 
 export function UpdateGroupContactsFromJSON(json: any): UpdateGroupContacts {
-    return UpdateGroupContactsFromJSONTyped(json, false);
+  return UpdateGroupContactsFromJSONTyped(json, false);
 }
 
-export function UpdateGroupContactsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateGroupContacts {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'contactIds': json['contactIds'],
-    };
+export function UpdateGroupContactsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): UpdateGroupContacts {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    contactIds: json['contactIds'],
+  };
 }
 
-export function UpdateGroupContactsToJSON(value?: UpdateGroupContacts | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'contactIds': value.contactIds,
-    };
+export function UpdateGroupContactsToJSON(
+  value?: UpdateGroupContacts | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    contactIds: value.contactIds,
+  };
 }
-
-

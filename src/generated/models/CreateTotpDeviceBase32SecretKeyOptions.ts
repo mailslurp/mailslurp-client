@@ -14,92 +14,95 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateTotpDeviceBase32SecretKeyOptions
  */
 export interface CreateTotpDeviceBase32SecretKeyOptions {
-    /**
-     * Base32 secret key for TOTP device as alternative to OTP Auth URI or QR code.
-     * @type {string}
-     * @memberof CreateTotpDeviceBase32SecretKeyOptions
-     */
-    base32SecretKey: string;
-    /**
-     * Name for labeling the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceBase32SecretKeyOptions
-     */
-    name?: string | null;
-    /**
-     * Optional username for the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceBase32SecretKeyOptions
-     */
-    username?: string | null;
-    /**
-     * Optional issuer override for the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceBase32SecretKeyOptions
-     */
-    issuer?: string | null;
-    /**
-     * Optional number of digits in TOTP code
-     * @type {number}
-     * @memberof CreateTotpDeviceBase32SecretKeyOptions
-     */
-    digits?: number | null;
-    /**
-     * Optional period in seconds for TOTP code expiration
-     * @type {number}
-     * @memberof CreateTotpDeviceBase32SecretKeyOptions
-     */
-    period?: number | null;
-    /**
-     * Optional algorithm override
-     * @type {string}
-     * @memberof CreateTotpDeviceBase32SecretKeyOptions
-     */
-    algorithm?: string | null;
+  /**
+   * Base32 secret key for TOTP device as alternative to OTP Auth URI or QR code.
+   * @type {string}
+   * @memberof CreateTotpDeviceBase32SecretKeyOptions
+   */
+  base32SecretKey: string;
+  /**
+   * Name for labeling the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceBase32SecretKeyOptions
+   */
+  name?: string | null;
+  /**
+   * Optional username for the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceBase32SecretKeyOptions
+   */
+  username?: string | null;
+  /**
+   * Optional issuer override for the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceBase32SecretKeyOptions
+   */
+  issuer?: string | null;
+  /**
+   * Optional number of digits in TOTP code
+   * @type {number}
+   * @memberof CreateTotpDeviceBase32SecretKeyOptions
+   */
+  digits?: number | null;
+  /**
+   * Optional period in seconds for TOTP code expiration
+   * @type {number}
+   * @memberof CreateTotpDeviceBase32SecretKeyOptions
+   */
+  period?: number | null;
+  /**
+   * Optional algorithm override
+   * @type {string}
+   * @memberof CreateTotpDeviceBase32SecretKeyOptions
+   */
+  algorithm?: string | null;
 }
 
-export function CreateTotpDeviceBase32SecretKeyOptionsFromJSON(json: any): CreateTotpDeviceBase32SecretKeyOptions {
-    return CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped(json, false);
+export function CreateTotpDeviceBase32SecretKeyOptionsFromJSON(
+  json: any
+): CreateTotpDeviceBase32SecretKeyOptions {
+  return CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped(json, false);
 }
 
-export function CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTotpDeviceBase32SecretKeyOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'base32SecretKey': json['base32SecretKey'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'username': !exists(json, 'username') ? undefined : json['username'],
-        'issuer': !exists(json, 'issuer') ? undefined : json['issuer'],
-        'digits': !exists(json, 'digits') ? undefined : json['digits'],
-        'period': !exists(json, 'period') ? undefined : json['period'],
-        'algorithm': !exists(json, 'algorithm') ? undefined : json['algorithm'],
-    };
+export function CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateTotpDeviceBase32SecretKeyOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    base32SecretKey: json['base32SecretKey'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    username: !exists(json, 'username') ? undefined : json['username'],
+    issuer: !exists(json, 'issuer') ? undefined : json['issuer'],
+    digits: !exists(json, 'digits') ? undefined : json['digits'],
+    period: !exists(json, 'period') ? undefined : json['period'],
+    algorithm: !exists(json, 'algorithm') ? undefined : json['algorithm'],
+  };
 }
 
-export function CreateTotpDeviceBase32SecretKeyOptionsToJSON(value?: CreateTotpDeviceBase32SecretKeyOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'base32SecretKey': value.base32SecretKey,
-        'name': value.name,
-        'username': value.username,
-        'issuer': value.issuer,
-        'digits': value.digits,
-        'period': value.period,
-        'algorithm': value.algorithm,
-    };
+export function CreateTotpDeviceBase32SecretKeyOptionsToJSON(
+  value?: CreateTotpDeviceBase32SecretKeyOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    base32SecretKey: value.base32SecretKey,
+    name: value.name,
+    username: value.username,
+    issuer: value.issuer,
+    digits: value.digits,
+    period: value.period,
+    algorithm: value.algorithm,
+  };
 }
-
-

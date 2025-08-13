@@ -19,19 +19,19 @@ function ImapAccessDetailsFromJSON(json) {
 }
 exports.ImapAccessDetailsFromJSON = ImapAccessDetailsFromJSON;
 function ImapAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'secureImapServerHost': json['secureImapServerHost'],
-        'secureImapServerPort': json['secureImapServerPort'],
-        'secureImapUsername': json['secureImapUsername'],
-        'secureImapPassword': json['secureImapPassword'],
-        'imapServerHost': json['imapServerHost'],
-        'imapServerPort': json['imapServerPort'],
-        'imapUsername': json['imapUsername'],
-        'imapPassword': json['imapPassword'],
-        'imapMailbox': json['imapMailbox'],
+        secureImapServerHost: json['secureImapServerHost'],
+        secureImapServerPort: json['secureImapServerPort'],
+        secureImapUsername: json['secureImapUsername'],
+        secureImapPassword: json['secureImapPassword'],
+        imapServerHost: json['imapServerHost'],
+        imapServerPort: json['imapServerPort'],
+        imapUsername: json['imapUsername'],
+        imapPassword: json['imapPassword'],
+        imapMailbox: json['imapMailbox'],
     };
 }
 exports.ImapAccessDetailsFromJSONTyped = ImapAccessDetailsFromJSONTyped;
@@ -43,15 +43,15 @@ function ImapAccessDetailsToJSON(value) {
         return null;
     }
     return {
-        'secureImapServerHost': value.secureImapServerHost,
-        'secureImapServerPort': value.secureImapServerPort,
-        'secureImapUsername': value.secureImapUsername,
-        'secureImapPassword': value.secureImapPassword,
-        'imapServerHost': value.imapServerHost,
-        'imapServerPort': value.imapServerPort,
-        'imapUsername': value.imapUsername,
-        'imapPassword': value.imapPassword,
-        'imapMailbox': value.imapMailbox,
+        secureImapServerHost: value.secureImapServerHost,
+        secureImapServerPort: value.secureImapServerPort,
+        secureImapUsername: value.secureImapUsername,
+        secureImapPassword: value.secureImapPassword,
+        imapServerHost: value.imapServerHost,
+        imapServerPort: value.imapServerPort,
+        imapUsername: value.imapUsername,
+        imapPassword: value.imapPassword,
+        imapMailbox: value.imapMailbox,
     };
 }
 exports.ImapAccessDetailsToJSON = ImapAccessDetailsToJSON;

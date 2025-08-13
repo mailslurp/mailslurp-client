@@ -20,14 +20,18 @@ function VerifyEmailAddressOptionsFromJSON(json) {
 }
 exports.VerifyEmailAddressOptionsFromJSON = VerifyEmailAddressOptionsFromJSON;
 function VerifyEmailAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'mailServerDomain': !(0, runtime_1.exists)(json, 'mailServerDomain') ? undefined : json['mailServerDomain'],
-        'emailAddress': json['emailAddress'],
-        'senderEmailAddress': !(0, runtime_1.exists)(json, 'senderEmailAddress') ? undefined : json['senderEmailAddress'],
-        'port': !(0, runtime_1.exists)(json, 'port') ? undefined : json['port'],
+        mailServerDomain: !(0, runtime_1.exists)(json, 'mailServerDomain')
+            ? undefined
+            : json['mailServerDomain'],
+        emailAddress: json['emailAddress'],
+        senderEmailAddress: !(0, runtime_1.exists)(json, 'senderEmailAddress')
+            ? undefined
+            : json['senderEmailAddress'],
+        port: !(0, runtime_1.exists)(json, 'port') ? undefined : json['port'],
     };
 }
 exports.VerifyEmailAddressOptionsFromJSONTyped = VerifyEmailAddressOptionsFromJSONTyped;
@@ -39,10 +43,10 @@ function VerifyEmailAddressOptionsToJSON(value) {
         return null;
     }
     return {
-        'mailServerDomain': value.mailServerDomain,
-        'emailAddress': value.emailAddress,
-        'senderEmailAddress': value.senderEmailAddress,
-        'port': value.port,
+        mailServerDomain: value.mailServerDomain,
+        emailAddress: value.emailAddress,
+        senderEmailAddress: value.senderEmailAddress,
+        port: value.port,
     };
 }
 exports.VerifyEmailAddressOptionsToJSON = VerifyEmailAddressOptionsToJSON;

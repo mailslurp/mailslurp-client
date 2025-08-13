@@ -21,22 +21,26 @@ function EmailThreadDtoFromJSON(json) {
 }
 exports.EmailThreadDtoFromJSON = EmailThreadDtoFromJSON;
 function EmailThreadDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': json['userId'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'to': json['to'],
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        'sender': !(0, runtime_1.exists)(json, 'sender') ? undefined : (0, _1.SenderFromJSON)(json['sender']),
-        'recipients': !(0, runtime_1.exists)(json, 'recipients') ? undefined : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
+        id: json['id'],
+        userId: json['userId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        to: json['to'],
+        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        sender: !(0, runtime_1.exists)(json, 'sender')
+            ? undefined
+            : (0, _1.SenderFromJSON)(json['sender']),
+        recipients: !(0, runtime_1.exists)(json, 'recipients')
+            ? undefined
+            : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
     };
 }
 exports.EmailThreadDtoFromJSONTyped = EmailThreadDtoFromJSONTyped;
@@ -48,18 +52,18 @@ function EmailThreadDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'inboxId': value.inboxId,
-        'from': value.from,
-        'to': value.to,
-        'cc': value.cc,
-        'bcc': value.bcc,
-        'sender': (0, _1.SenderToJSON)(value.sender),
-        'recipients': (0, _1.EmailRecipientsToJSON)(value.recipients),
-        'subject': value.subject,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
+        id: value.id,
+        userId: value.userId,
+        inboxId: value.inboxId,
+        from: value.from,
+        to: value.to,
+        cc: value.cc,
+        bcc: value.bcc,
+        sender: (0, _1.SenderToJSON)(value.sender),
+        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
+        subject: value.subject,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
     };
 }
 exports.EmailThreadDtoToJSON = EmailThreadDtoToJSON;

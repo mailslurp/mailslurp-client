@@ -14,148 +14,163 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateConnectorSmtpConnectionOptions
  */
 export interface CreateConnectorSmtpConnectionOptions {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    enabled?: boolean | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    smtpHost: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    smtpPort?: number | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    smtpSsl?: boolean | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    smtpUsername?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    smtpPassword?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    smtpMechanisms?: Array<string> | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    startTls?: boolean | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    localHostName?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    proxyHost?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    proxyPort?: number | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    proxyEnabled?: boolean | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    sslTrust?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof CreateConnectorSmtpConnectionOptions
-     */
-    sslProtocols?: Array<string> | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  enabled?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  smtpHost: string;
+  /**
+   *
+   * @type {number}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  smtpPort?: number | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  smtpSsl?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  smtpUsername?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  smtpPassword?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  smtpMechanisms?: Array<string> | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  startTls?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  localHostName?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  proxyHost?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  proxyPort?: number | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  proxyEnabled?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  sslTrust?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof CreateConnectorSmtpConnectionOptions
+   */
+  sslProtocols?: Array<string> | null;
 }
 
-export function CreateConnectorSmtpConnectionOptionsFromJSON(json: any): CreateConnectorSmtpConnectionOptions {
-    return CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, false);
+export function CreateConnectorSmtpConnectionOptionsFromJSON(
+  json: any
+): CreateConnectorSmtpConnectionOptions {
+  return CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, false);
 }
 
-export function CreateConnectorSmtpConnectionOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateConnectorSmtpConnectionOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'enabled': !exists(json, 'enabled') ? undefined : json['enabled'],
-        'smtpHost': json['smtpHost'],
-        'smtpPort': !exists(json, 'smtpPort') ? undefined : json['smtpPort'],
-        'smtpSsl': !exists(json, 'smtpSsl') ? undefined : json['smtpSsl'],
-        'smtpUsername': !exists(json, 'smtpUsername') ? undefined : json['smtpUsername'],
-        'smtpPassword': !exists(json, 'smtpPassword') ? undefined : json['smtpPassword'],
-        'smtpMechanisms': !exists(json, 'smtpMechanisms') ? undefined : json['smtpMechanisms'],
-        'startTls': !exists(json, 'startTls') ? undefined : json['startTls'],
-        'localHostName': !exists(json, 'localHostName') ? undefined : json['localHostName'],
-        'proxyHost': !exists(json, 'proxyHost') ? undefined : json['proxyHost'],
-        'proxyPort': !exists(json, 'proxyPort') ? undefined : json['proxyPort'],
-        'proxyEnabled': !exists(json, 'proxyEnabled') ? undefined : json['proxyEnabled'],
-        'sslTrust': !exists(json, 'sslTrust') ? undefined : json['sslTrust'],
-        'sslProtocols': !exists(json, 'sslProtocols') ? undefined : json['sslProtocols'],
-    };
+export function CreateConnectorSmtpConnectionOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateConnectorSmtpConnectionOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
+    smtpHost: json['smtpHost'],
+    smtpPort: !exists(json, 'smtpPort') ? undefined : json['smtpPort'],
+    smtpSsl: !exists(json, 'smtpSsl') ? undefined : json['smtpSsl'],
+    smtpUsername: !exists(json, 'smtpUsername')
+      ? undefined
+      : json['smtpUsername'],
+    smtpPassword: !exists(json, 'smtpPassword')
+      ? undefined
+      : json['smtpPassword'],
+    smtpMechanisms: !exists(json, 'smtpMechanisms')
+      ? undefined
+      : json['smtpMechanisms'],
+    startTls: !exists(json, 'startTls') ? undefined : json['startTls'],
+    localHostName: !exists(json, 'localHostName')
+      ? undefined
+      : json['localHostName'],
+    proxyHost: !exists(json, 'proxyHost') ? undefined : json['proxyHost'],
+    proxyPort: !exists(json, 'proxyPort') ? undefined : json['proxyPort'],
+    proxyEnabled: !exists(json, 'proxyEnabled')
+      ? undefined
+      : json['proxyEnabled'],
+    sslTrust: !exists(json, 'sslTrust') ? undefined : json['sslTrust'],
+    sslProtocols: !exists(json, 'sslProtocols')
+      ? undefined
+      : json['sslProtocols'],
+  };
 }
 
-export function CreateConnectorSmtpConnectionOptionsToJSON(value?: CreateConnectorSmtpConnectionOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'enabled': value.enabled,
-        'smtpHost': value.smtpHost,
-        'smtpPort': value.smtpPort,
-        'smtpSsl': value.smtpSsl,
-        'smtpUsername': value.smtpUsername,
-        'smtpPassword': value.smtpPassword,
-        'smtpMechanisms': value.smtpMechanisms,
-        'startTls': value.startTls,
-        'localHostName': value.localHostName,
-        'proxyHost': value.proxyHost,
-        'proxyPort': value.proxyPort,
-        'proxyEnabled': value.proxyEnabled,
-        'sslTrust': value.sslTrust,
-        'sslProtocols': value.sslProtocols,
-    };
+export function CreateConnectorSmtpConnectionOptionsToJSON(
+  value?: CreateConnectorSmtpConnectionOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    enabled: value.enabled,
+    smtpHost: value.smtpHost,
+    smtpPort: value.smtpPort,
+    smtpSsl: value.smtpSsl,
+    smtpUsername: value.smtpUsername,
+    smtpPassword: value.smtpPassword,
+    smtpMechanisms: value.smtpMechanisms,
+    startTls: value.startTls,
+    localHostName: value.localHostName,
+    proxyHost: value.proxyHost,
+    proxyPort: value.proxyPort,
+    proxyEnabled: value.proxyEnabled,
+    sslTrust: value.sslTrust,
+    sslProtocols: value.sslProtocols,
+  };
 }
-
-

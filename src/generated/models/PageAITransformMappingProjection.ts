@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    AITransformMappingProjection,
-    AITransformMappingProjectionFromJSON,
-    AITransformMappingProjectionFromJSONTyped,
-    AITransformMappingProjectionToJSON,
-    PageableObject,
-    PageableObjectFromJSON,
-    PageableObjectFromJSONTyped,
-    PageableObjectToJSON,
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
+  AITransformMappingProjection,
+  AITransformMappingProjectionFromJSON,
+  AITransformMappingProjectionFromJSONTyped,
+  AITransformMappingProjectionToJSON,
+  PageableObject,
+  PageableObjectFromJSON,
+  PageableObjectFromJSONTyped,
+  PageableObjectToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
@@ -34,119 +34,133 @@ import {
  * @interface PageAITransformMappingProjection
  */
 export interface PageAITransformMappingProjection {
-    /**
-     * 
-     * @type {Array<AITransformMappingProjection>}
-     * @memberof PageAITransformMappingProjection
-     */
-    content?: Array<AITransformMappingProjection>;
-    /**
-     * 
-     * @type {PageableObject}
-     * @memberof PageAITransformMappingProjection
-     */
-    pageable?: PageableObject;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAITransformMappingProjection
-     */
-    totalElements: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAITransformMappingProjection
-     */
-    totalPages: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageAITransformMappingProjection
-     */
-    last?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAITransformMappingProjection
-     */
-    numberOfElements?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageAITransformMappingProjection
-     */
-    sort?: SortObject;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageAITransformMappingProjection
-     */
-    first?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAITransformMappingProjection
-     */
-    size?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageAITransformMappingProjection
-     */
-    number?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageAITransformMappingProjection
-     */
-    empty?: boolean;
+  /**
+   *
+   * @type {Array<AITransformMappingProjection>}
+   * @memberof PageAITransformMappingProjection
+   */
+  content?: Array<AITransformMappingProjection>;
+  /**
+   *
+   * @type {PageableObject}
+   * @memberof PageAITransformMappingProjection
+   */
+  pageable?: PageableObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAITransformMappingProjection
+   */
+  totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAITransformMappingProjection
+   */
+  totalPages: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAITransformMappingProjection
+   */
+  last?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAITransformMappingProjection
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageAITransformMappingProjection
+   */
+  sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAITransformMappingProjection
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAITransformMappingProjection
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAITransformMappingProjection
+   */
+  number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAITransformMappingProjection
+   */
+  empty?: boolean;
 }
 
-export function PageAITransformMappingProjectionFromJSON(json: any): PageAITransformMappingProjection {
-    return PageAITransformMappingProjectionFromJSONTyped(json, false);
+export function PageAITransformMappingProjectionFromJSON(
+  json: any
+): PageAITransformMappingProjection {
+  return PageAITransformMappingProjectionFromJSONTyped(json, false);
 }
 
-export function PageAITransformMappingProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageAITransformMappingProjection {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(AITransformMappingProjectionFromJSON)),
-        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !exists(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-        'first': !exists(json, 'first') ? undefined : json['first'],
-        'size': !exists(json, 'size') ? undefined : json['size'],
-        'number': !exists(json, 'number') ? undefined : json['number'],
-        'empty': !exists(json, 'empty') ? undefined : json['empty'],
-    };
+export function PageAITransformMappingProjectionFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageAITransformMappingProjection {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(
+          AITransformMappingProjectionFromJSON
+        ),
+    pageable: !exists(json, 'pageable')
+      ? undefined
+      : PageableObjectFromJSON(json['pageable']),
+    totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+  };
 }
 
-export function PageAITransformMappingProjectionToJSON(value?: PageAITransformMappingProjection | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(AITransformMappingProjectionToJSON)),
-        'pageable': PageableObjectToJSON(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': SortObjectToJSON(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
-    };
+export function PageAITransformMappingProjectionToJSON(
+  value?: PageAITransformMappingProjection | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(AITransformMappingProjectionToJSON),
+    pageable: PageableObjectToJSON(value.pageable),
+    totalElements: value.totalElements,
+    totalPages: value.totalPages,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
+    first: value.first,
+    size: value.size,
+    number: value.number,
+    empty: value.empty,
+  };
 }
-
-

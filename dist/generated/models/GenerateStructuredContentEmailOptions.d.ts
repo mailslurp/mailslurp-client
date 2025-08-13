@@ -48,9 +48,9 @@ export interface GenerateStructuredContentEmailOptions {
     transformId?: string | null;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateStructuredContentEmailOptionsContentSelectorEnum {
     RAW = "RAW",
     BODY = "BODY",

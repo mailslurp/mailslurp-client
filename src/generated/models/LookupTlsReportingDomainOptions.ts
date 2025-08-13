@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface LookupTlsReportingDomainOptions
  */
 export interface LookupTlsReportingDomainOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof LookupTlsReportingDomainOptions
-     */
-    host: string;
+  /**
+   *
+   * @type {string}
+   * @memberof LookupTlsReportingDomainOptions
+   */
+  host: string;
 }
 
-export function LookupTlsReportingDomainOptionsFromJSON(json: any): LookupTlsReportingDomainOptions {
-    return LookupTlsReportingDomainOptionsFromJSONTyped(json, false);
+export function LookupTlsReportingDomainOptionsFromJSON(
+  json: any
+): LookupTlsReportingDomainOptions {
+  return LookupTlsReportingDomainOptionsFromJSONTyped(json, false);
 }
 
-export function LookupTlsReportingDomainOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupTlsReportingDomainOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'host': json['host'],
-    };
+export function LookupTlsReportingDomainOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): LookupTlsReportingDomainOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    host: json['host'],
+  };
 }
 
-export function LookupTlsReportingDomainOptionsToJSON(value?: LookupTlsReportingDomainOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'host': value.host,
-    };
+export function LookupTlsReportingDomainOptionsToJSON(
+  value?: LookupTlsReportingDomainOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    host: value.host,
+  };
 }
-
-

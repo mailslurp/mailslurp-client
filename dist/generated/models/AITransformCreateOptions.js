@@ -21,16 +21,24 @@ function AITransformCreateOptionsFromJSON(json) {
 }
 exports.AITransformCreateOptionsFromJSON = AITransformCreateOptionsFromJSON;
 function AITransformCreateOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'conditions': !(0, runtime_1.exists)(json, 'conditions') ? undefined : json['conditions'],
-        'instructions': !(0, runtime_1.exists)(json, 'instructions') ? undefined : json['instructions'],
-        'outputSchema': !(0, runtime_1.exists)(json, 'outputSchema') ? undefined : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
-        'outputSchemaId': !(0, runtime_1.exists)(json, 'outputSchemaId') ? undefined : json['outputSchemaId'],
-        'extractPrompt': !(0, runtime_1.exists)(json, 'extractPrompt') ? undefined : json['extractPrompt'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        conditions: !(0, runtime_1.exists)(json, 'conditions') ? undefined : json['conditions'],
+        instructions: !(0, runtime_1.exists)(json, 'instructions')
+            ? undefined
+            : json['instructions'],
+        outputSchema: !(0, runtime_1.exists)(json, 'outputSchema')
+            ? undefined
+            : (0, _1.StructuredOutputSchemaFromJSON)(json['outputSchema']),
+        outputSchemaId: !(0, runtime_1.exists)(json, 'outputSchemaId')
+            ? undefined
+            : json['outputSchemaId'],
+        extractPrompt: !(0, runtime_1.exists)(json, 'extractPrompt')
+            ? undefined
+            : json['extractPrompt'],
     };
 }
 exports.AITransformCreateOptionsFromJSONTyped = AITransformCreateOptionsFromJSONTyped;
@@ -42,12 +50,12 @@ function AITransformCreateOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'conditions': value.conditions,
-        'instructions': value.instructions,
-        'outputSchema': (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
-        'outputSchemaId': value.outputSchemaId,
-        'extractPrompt': value.extractPrompt,
+        name: value.name,
+        conditions: value.conditions,
+        instructions: value.instructions,
+        outputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.outputSchema),
+        outputSchemaId: value.outputSchemaId,
+        extractPrompt: value.extractPrompt,
     };
 }
 exports.AITransformCreateOptionsToJSON = AITransformCreateOptionsToJSON;

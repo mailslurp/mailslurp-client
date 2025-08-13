@@ -14,68 +14,71 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ImapUpdateFlagsOptions
  */
 export interface ImapUpdateFlagsOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof ImapUpdateFlagsOptions
-     */
-    operation: string;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ImapUpdateFlagsOptions
-     */
-    flags?: Array<string> | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ImapUpdateFlagsOptions
-     */
-    uidSet?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ImapUpdateFlagsOptions
-     */
-    seqSet?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ImapUpdateFlagsOptions
+   */
+  operation: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ImapUpdateFlagsOptions
+   */
+  flags?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ImapUpdateFlagsOptions
+   */
+  uidSet?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ImapUpdateFlagsOptions
+   */
+  seqSet?: string | null;
 }
 
-export function ImapUpdateFlagsOptionsFromJSON(json: any): ImapUpdateFlagsOptions {
-    return ImapUpdateFlagsOptionsFromJSONTyped(json, false);
+export function ImapUpdateFlagsOptionsFromJSON(
+  json: any
+): ImapUpdateFlagsOptions {
+  return ImapUpdateFlagsOptionsFromJSONTyped(json, false);
 }
 
-export function ImapUpdateFlagsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapUpdateFlagsOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'operation': json['operation'],
-        'flags': !exists(json, 'flags') ? undefined : json['flags'],
-        'uidSet': !exists(json, 'uidSet') ? undefined : json['uidSet'],
-        'seqSet': !exists(json, 'seqSet') ? undefined : json['seqSet'],
-    };
+export function ImapUpdateFlagsOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ImapUpdateFlagsOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    operation: json['operation'],
+    flags: !exists(json, 'flags') ? undefined : json['flags'],
+    uidSet: !exists(json, 'uidSet') ? undefined : json['uidSet'],
+    seqSet: !exists(json, 'seqSet') ? undefined : json['seqSet'],
+  };
 }
 
-export function ImapUpdateFlagsOptionsToJSON(value?: ImapUpdateFlagsOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'operation': value.operation,
-        'flags': value.flags,
-        'uidSet': value.uidSet,
-        'seqSet': value.seqSet,
-    };
+export function ImapUpdateFlagsOptionsToJSON(
+  value?: ImapUpdateFlagsOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    operation: value.operation,
+    flags: value.flags,
+    uidSet: value.uidSet,
+    seqSet: value.seqSet,
+  };
 }
-
-

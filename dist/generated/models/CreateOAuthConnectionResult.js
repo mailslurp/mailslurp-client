@@ -19,11 +19,11 @@ function CreateOAuthConnectionResultFromJSON(json) {
 }
 exports.CreateOAuthConnectionResultFromJSON = CreateOAuthConnectionResultFromJSON;
 function CreateOAuthConnectionResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'url': json['url'],
+        url: json['url'],
     };
 }
 exports.CreateOAuthConnectionResultFromJSONTyped = CreateOAuthConnectionResultFromJSONTyped;
@@ -35,7 +35,7 @@ function CreateOAuthConnectionResultToJSON(value) {
         return null;
     }
     return {
-        'url': value.url,
+        url: value.url,
     };
 }
 exports.CreateOAuthConnectionResultToJSON = CreateOAuthConnectionResultToJSON;

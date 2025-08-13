@@ -6,14 +6,14 @@
 
 ### Properties
 
-- [createInboxRulesetOptions](CreateInboxRulesetRequest.md#createinboxrulesetoptions)
+- [createRulesetOptions](CreateInboxRulesetRequest.md#createrulesetoptions)
 - [inboxId](CreateInboxRulesetRequest.md#inboxid)
 
 ## Properties
 
-### createInboxRulesetOptions
+### createRulesetOptions
 
-• **createInboxRulesetOptions**: [`CreateInboxRulesetOptions`](CreateInboxRulesetOptions.md)
+• **createRulesetOptions**: [`CreateRulesetOptions`](CreateRulesetOptions.md)
 
 ___
 

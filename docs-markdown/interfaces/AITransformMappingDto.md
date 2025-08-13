@@ -13,6 +13,7 @@ AITransformMappingDto
 ### Properties
 
 - [aiTransformId](AITransformMappingDto.md#aitransformid)
+- [createdAt](AITransformMappingDto.md#createdat)
 - [entityId](AITransformMappingDto.md#entityid)
 - [entityType](AITransformMappingDto.md#entitytype)
 - [id](AITransformMappingDto.md#id)
@@ -31,9 +32,19 @@ AITransformMappingDto
 
 ___
 
+### createdAt
+
+• **createdAt**: `Date`
+
+**`Memberof`**
+
+AITransformMappingDto
+
+___
+
 ### entityId
 
-• **entityId**: `string`
+• `Optional` **entityId**: `string`
 
 **`Memberof`**
 

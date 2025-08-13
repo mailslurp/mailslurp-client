@@ -17,9 +17,9 @@ exports.DomainDtoToJSON = exports.DomainDtoFromJSONTyped = exports.DomainDtoFrom
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var DomainDtoDomainTypeEnum;
 (function (DomainDtoDomainTypeEnum) {
     DomainDtoDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -30,25 +30,31 @@ function DomainDtoFromJSON(json) {
 }
 exports.DomainDtoFromJSON = DomainDtoFromJSON;
 function DomainDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': json['userId'],
-        'domain': json['domain'],
-        'verificationToken': json['verificationToken'],
-        'dkimTokens': json['dkimTokens'],
-        'duplicateRecordsMessage': !(0, runtime_1.exists)(json, 'duplicateRecordsMessage') ? undefined : json['duplicateRecordsMessage'],
-        'hasDuplicateRecords': json['hasDuplicateRecords'],
-        'missingRecordsMessage': !(0, runtime_1.exists)(json, 'missingRecordsMessage') ? undefined : json['missingRecordsMessage'],
-        'hasMissingRecords': json['hasMissingRecords'],
-        'isVerified': json['isVerified'],
-        'domainNameRecords': (json['domainNameRecords'].map(_1.DomainNameRecordFromJSON)),
-        'catchAllInboxId': !(0, runtime_1.exists)(json, 'catchAllInboxId') ? undefined : json['catchAllInboxId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-        'domainType': json['domainType'],
+        id: json['id'],
+        userId: json['userId'],
+        domain: json['domain'],
+        verificationToken: json['verificationToken'],
+        dkimTokens: json['dkimTokens'],
+        duplicateRecordsMessage: !(0, runtime_1.exists)(json, 'duplicateRecordsMessage')
+            ? undefined
+            : json['duplicateRecordsMessage'],
+        hasDuplicateRecords: json['hasDuplicateRecords'],
+        missingRecordsMessage: !(0, runtime_1.exists)(json, 'missingRecordsMessage')
+            ? undefined
+            : json['missingRecordsMessage'],
+        hasMissingRecords: json['hasMissingRecords'],
+        isVerified: json['isVerified'],
+        domainNameRecords: json['domainNameRecords'].map(_1.DomainNameRecordFromJSON),
+        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
+            ? undefined
+            : json['catchAllInboxId'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
+        domainType: json['domainType'],
     };
 }
 exports.DomainDtoFromJSONTyped = DomainDtoFromJSONTyped;
@@ -60,21 +66,21 @@ function DomainDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'domain': value.domain,
-        'verificationToken': value.verificationToken,
-        'dkimTokens': value.dkimTokens,
-        'duplicateRecordsMessage': value.duplicateRecordsMessage,
-        'hasDuplicateRecords': value.hasDuplicateRecords,
-        'missingRecordsMessage': value.missingRecordsMessage,
-        'hasMissingRecords': value.hasMissingRecords,
-        'isVerified': value.isVerified,
-        'domainNameRecords': (value.domainNameRecords.map(_1.DomainNameRecordToJSON)),
-        'catchAllInboxId': value.catchAllInboxId,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-        'domainType': value.domainType,
+        id: value.id,
+        userId: value.userId,
+        domain: value.domain,
+        verificationToken: value.verificationToken,
+        dkimTokens: value.dkimTokens,
+        duplicateRecordsMessage: value.duplicateRecordsMessage,
+        hasDuplicateRecords: value.hasDuplicateRecords,
+        missingRecordsMessage: value.missingRecordsMessage,
+        hasMissingRecords: value.hasMissingRecords,
+        isVerified: value.isVerified,
+        domainNameRecords: value.domainNameRecords.map(_1.DomainNameRecordToJSON),
+        catchAllInboxId: value.catchAllInboxId,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
+        domainType: value.domainType,
     };
 }
 exports.DomainDtoToJSON = DomainDtoToJSON;

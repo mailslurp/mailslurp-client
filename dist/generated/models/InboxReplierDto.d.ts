@@ -103,9 +103,9 @@ export interface InboxReplierDto {
     createdAt: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum InboxReplierDtoFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",

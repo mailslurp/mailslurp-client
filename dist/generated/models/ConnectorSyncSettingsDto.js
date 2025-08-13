@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConnectorSyncSettingsDtoToJSON = exports.ConnectorSyncSettingsDtoFromJSONTyped = exports.ConnectorSyncSettingsDtoFromJSON = exports.ConnectorSyncSettingsDtoSyncScheduleTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var ConnectorSyncSettingsDtoSyncScheduleTypeEnum;
 (function (ConnectorSyncSettingsDtoSyncScheduleTypeEnum) {
     ConnectorSyncSettingsDtoSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
@@ -28,16 +28,20 @@ function ConnectorSyncSettingsDtoFromJSON(json) {
 }
 exports.ConnectorSyncSettingsDtoFromJSON = ConnectorSyncSettingsDtoFromJSON;
 function ConnectorSyncSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': json['userId'],
-        'connectorId': json['connectorId'],
-        'syncEnabled': json['syncEnabled'],
-        'syncScheduleType': !(0, runtime_1.exists)(json, 'syncScheduleType') ? undefined : json['syncScheduleType'],
-        'syncInterval': !(0, runtime_1.exists)(json, 'syncInterval') ? undefined : json['syncInterval'],
+        id: json['id'],
+        userId: json['userId'],
+        connectorId: json['connectorId'],
+        syncEnabled: json['syncEnabled'],
+        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
+            ? undefined
+            : json['syncScheduleType'],
+        syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
+            ? undefined
+            : json['syncInterval'],
     };
 }
 exports.ConnectorSyncSettingsDtoFromJSONTyped = ConnectorSyncSettingsDtoFromJSONTyped;
@@ -49,12 +53,12 @@ function ConnectorSyncSettingsDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'connectorId': value.connectorId,
-        'syncEnabled': value.syncEnabled,
-        'syncScheduleType': value.syncScheduleType,
-        'syncInterval': value.syncInterval,
+        id: value.id,
+        userId: value.userId,
+        connectorId: value.connectorId,
+        syncEnabled: value.syncEnabled,
+        syncScheduleType: value.syncScheduleType,
+        syncInterval: value.syncInterval,
     };
 }
 exports.ConnectorSyncSettingsDtoToJSON = ConnectorSyncSettingsDtoToJSON;

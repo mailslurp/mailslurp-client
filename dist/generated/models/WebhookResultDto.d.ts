@@ -143,9 +143,9 @@ export interface WebhookResultDto {
     aiTransformerId?: string | null;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookResultDtoHttpMethodEnum {
     POST = "POST",
     DELETE = "DELETE",
@@ -155,10 +155,11 @@ export declare enum WebhookResultDtoHttpMethodEnum {
     HEAD = "HEAD",
     OPTIONS = "OPTIONS",
     TRACE = "TRACE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookResultDtoWebhookEventEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_AI_TRANSFORM_RESULT = "NEW_AI_TRANSFORM_RESULT",
@@ -172,10 +173,11 @@ export declare enum WebhookResultDtoWebhookEventEnum {
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS",
     NEW_GUEST_USER = "NEW_GUEST_USER"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookResultDtoResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",

@@ -14,6 +14,7 @@ WebhookResultDto
 
 ### Properties
 
+- [aiTransformerId](WebhookResultDto.md#aitransformerid)
 - [attachmentId](WebhookResultDto.md#attachmentid)
 - [createdAt](WebhookResultDto.md#createdat)
 - [emailId](WebhookResultDto.md#emailid)
@@ -36,6 +37,16 @@ WebhookResultDto
 - [webhookUrl](WebhookResultDto.md#webhookurl)
 
 ## Properties
+
+### aiTransformerId
+
+• `Optional` **aiTransformerId**: `string`
+
+**`Memberof`**
+
+WebhookResultDto
+
+___
 
 ### attachmentId
 

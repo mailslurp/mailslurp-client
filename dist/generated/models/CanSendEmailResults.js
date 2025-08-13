@@ -20,12 +20,12 @@ function CanSendEmailResultsFromJSON(json) {
 }
 exports.CanSendEmailResultsFromJSON = CanSendEmailResultsFromJSON;
 function CanSendEmailResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'isSendingPermitted': json['isSendingPermitted'],
-        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        isSendingPermitted: json['isSendingPermitted'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
 exports.CanSendEmailResultsFromJSONTyped = CanSendEmailResultsFromJSONTyped;
@@ -37,8 +37,8 @@ function CanSendEmailResultsToJSON(value) {
         return null;
     }
     return {
-        'isSendingPermitted': value.isSendingPermitted,
-        'message': value.message,
+        isSendingPermitted: value.isSendingPermitted,
+        message: value.message,
     };
 }
 exports.CanSendEmailResultsToJSON = CanSendEmailResultsToJSON;

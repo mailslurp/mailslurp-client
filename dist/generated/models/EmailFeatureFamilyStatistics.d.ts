@@ -36,9 +36,9 @@ export interface EmailFeatureFamilyStatistics {
     platforms: Array<EmailFeaturePlatformStatistics>;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeatureFamilyStatisticsFeatureEnum {
     amp = "amp",
     css_accent_color = "css-accent-color",
@@ -220,10 +220,11 @@ export declare enum EmailFeatureFamilyStatisticsFeatureEnum {
     image_svg = "image-svg",
     image_webp = "image-webp",
     unsupported = "unsupported"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum EmailFeatureFamilyStatisticsFamilyEnum {
     aol = "aol",
     apple_mail = "apple-mail",

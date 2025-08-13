@@ -47,9 +47,9 @@ export interface EntityFavouriteItemProjection {
     description?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum EntityFavouriteItemProjectionEntityTypeEnum {
     INBOX = "INBOX",
     EMAIL = "EMAIL",

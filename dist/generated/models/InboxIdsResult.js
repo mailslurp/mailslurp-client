@@ -20,11 +20,11 @@ function InboxIdsResultFromJSON(json) {
 }
 exports.InboxIdsResultFromJSON = InboxIdsResultFromJSON;
 function InboxIdsResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'inboxIds': (json['inboxIds'].map(_1.InboxIdItemFromJSON)),
+        inboxIds: json['inboxIds'].map(_1.InboxIdItemFromJSON),
     };
 }
 exports.InboxIdsResultFromJSONTyped = InboxIdsResultFromJSONTyped;
@@ -36,7 +36,7 @@ function InboxIdsResultToJSON(value) {
         return null;
     }
     return {
-        'inboxIds': (value.inboxIds.map(_1.InboxIdItemToJSON)),
+        inboxIds: value.inboxIds.map(_1.InboxIdItemToJSON),
     };
 }
 exports.InboxIdsResultToJSON = InboxIdsResultToJSON;

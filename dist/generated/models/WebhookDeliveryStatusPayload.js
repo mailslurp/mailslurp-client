@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookDeliveryStatusPayloadToJSON = exports.WebhookDeliveryStatusPayloadFromJSONTyped = exports.WebhookDeliveryStatusPayloadFromJSON = exports.WebhookDeliveryStatusPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookDeliveryStatusPayloadEventNameEnum;
 (function (WebhookDeliveryStatusPayloadEventNameEnum) {
     WebhookDeliveryStatusPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -39,26 +39,38 @@ function WebhookDeliveryStatusPayloadFromJSON(json) {
 }
 exports.WebhookDeliveryStatusPayloadFromJSON = WebhookDeliveryStatusPayloadFromJSON;
 function WebhookDeliveryStatusPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'messageId': json['messageId'],
-        'webhookId': json['webhookId'],
-        'eventName': json['eventName'],
-        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
-        'id': json['id'],
-        'userId': json['userId'],
-        'sentId': !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
-        'remoteMtaIp': !(0, runtime_1.exists)(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'reportingMta': !(0, runtime_1.exists)(json, 'reportingMta') ? undefined : json['reportingMta'],
-        'recipients': !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
-        'smtpResponse': !(0, runtime_1.exists)(json, 'smtpResponse') ? undefined : json['smtpResponse'],
-        'smtpStatusCode': !(0, runtime_1.exists)(json, 'smtpStatusCode') ? undefined : json['smtpStatusCode'],
-        'processingTimeMillis': !(0, runtime_1.exists)(json, 'processingTimeMillis') ? undefined : json['processingTimeMillis'],
-        'received': !(0, runtime_1.exists)(json, 'received') ? undefined : (json['received'] === null ? null : new Date(json['received'])),
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        messageId: json['messageId'],
+        webhookId: json['webhookId'],
+        eventName: json['eventName'],
+        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        id: json['id'],
+        userId: json['userId'],
+        sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
+        remoteMtaIp: !(0, runtime_1.exists)(json, 'remoteMtaIp') ? undefined : json['remoteMtaIp'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        reportingMta: !(0, runtime_1.exists)(json, 'reportingMta')
+            ? undefined
+            : json['reportingMta'],
+        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
+        smtpResponse: !(0, runtime_1.exists)(json, 'smtpResponse')
+            ? undefined
+            : json['smtpResponse'],
+        smtpStatusCode: !(0, runtime_1.exists)(json, 'smtpStatusCode')
+            ? undefined
+            : json['smtpStatusCode'],
+        processingTimeMillis: !(0, runtime_1.exists)(json, 'processingTimeMillis')
+            ? undefined
+            : json['processingTimeMillis'],
+        received: !(0, runtime_1.exists)(json, 'received')
+            ? undefined
+            : json['received'] === null
+                ? null
+                : new Date(json['received']),
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
     };
 }
 exports.WebhookDeliveryStatusPayloadFromJSONTyped = WebhookDeliveryStatusPayloadFromJSONTyped;
@@ -70,22 +82,26 @@ function WebhookDeliveryStatusPayloadToJSON(value) {
         return null;
     }
     return {
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'eventName': value.eventName,
-        'webhookName': value.webhookName,
-        'id': value.id,
-        'userId': value.userId,
-        'sentId': value.sentId,
-        'remoteMtaIp': value.remoteMtaIp,
-        'inboxId': value.inboxId,
-        'reportingMta': value.reportingMta,
-        'recipients': value.recipients,
-        'smtpResponse': value.smtpResponse,
-        'smtpStatusCode': value.smtpStatusCode,
-        'processingTimeMillis': value.processingTimeMillis,
-        'received': value.received === undefined ? undefined : (value.received === null ? null : value.received.toISOString()),
-        'subject': value.subject,
+        messageId: value.messageId,
+        webhookId: value.webhookId,
+        eventName: value.eventName,
+        webhookName: value.webhookName,
+        id: value.id,
+        userId: value.userId,
+        sentId: value.sentId,
+        remoteMtaIp: value.remoteMtaIp,
+        inboxId: value.inboxId,
+        reportingMta: value.reportingMta,
+        recipients: value.recipients,
+        smtpResponse: value.smtpResponse,
+        smtpStatusCode: value.smtpStatusCode,
+        processingTimeMillis: value.processingTimeMillis,
+        received: value.received === undefined
+            ? undefined
+            : value.received === null
+                ? null
+                : value.received.toISOString(),
+        subject: value.subject,
     };
 }
 exports.WebhookDeliveryStatusPayloadToJSON = WebhookDeliveryStatusPayloadToJSON;

@@ -20,18 +20,20 @@ function ComplaintFromJSON(json) {
 }
 exports.ComplaintFromJSON = ComplaintFromJSON;
 function ComplaintFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        'eventType': !(0, runtime_1.exists)(json, 'eventType') ? undefined : json['eventType'],
-        'mailSource': !(0, runtime_1.exists)(json, 'mailSource') ? undefined : json['mailSource'],
-        'mailMessageId': !(0, runtime_1.exists)(json, 'mailMessageId') ? undefined : json['mailMessageId'],
-        'complaintRecipient': json['complaintRecipient'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
+        id: json['id'],
+        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        eventType: !(0, runtime_1.exists)(json, 'eventType') ? undefined : json['eventType'],
+        mailSource: !(0, runtime_1.exists)(json, 'mailSource') ? undefined : json['mailSource'],
+        mailMessageId: !(0, runtime_1.exists)(json, 'mailMessageId')
+            ? undefined
+            : json['mailMessageId'],
+        complaintRecipient: json['complaintRecipient'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
     };
 }
 exports.ComplaintFromJSONTyped = ComplaintFromJSONTyped;
@@ -43,14 +45,14 @@ function ComplaintToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'userId': value.userId,
-        'eventType': value.eventType,
-        'mailSource': value.mailSource,
-        'mailMessageId': value.mailMessageId,
-        'complaintRecipient': value.complaintRecipient,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
+        id: value.id,
+        userId: value.userId,
+        eventType: value.eventType,
+        mailSource: value.mailSource,
+        mailMessageId: value.mailMessageId,
+        complaintRecipient: value.complaintRecipient,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
     };
 }
 exports.ComplaintToJSON = ComplaintToJSON;

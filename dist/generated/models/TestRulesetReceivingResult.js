@@ -19,11 +19,11 @@ function TestRulesetReceivingResultFromJSON(json) {
 }
 exports.TestRulesetReceivingResultFromJSON = TestRulesetReceivingResultFromJSON;
 function TestRulesetReceivingResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'canReceive': json['canReceive'],
+        canReceive: json['canReceive'],
     };
 }
 exports.TestRulesetReceivingResultFromJSONTyped = TestRulesetReceivingResultFromJSONTyped;
@@ -35,7 +35,7 @@ function TestRulesetReceivingResultToJSON(value) {
         return null;
     }
     return {
-        'canReceive': value.canReceive,
+        canReceive: value.canReceive,
     };
 }
 exports.TestRulesetReceivingResultToJSON = TestRulesetReceivingResultToJSON;

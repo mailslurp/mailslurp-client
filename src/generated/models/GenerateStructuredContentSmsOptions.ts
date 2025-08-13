@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    StructuredOutputSchema,
-    StructuredOutputSchemaFromJSON,
-    StructuredOutputSchemaFromJSONTyped,
-    StructuredOutputSchemaToJSON,
+  StructuredOutputSchema,
+  StructuredOutputSchemaFromJSON,
+  StructuredOutputSchemaFromJSONTyped,
+  StructuredOutputSchemaToJSON,
 } from './';
 
 /**
@@ -26,63 +26,70 @@ import {
  * @interface GenerateStructuredContentSmsOptions
  */
 export interface GenerateStructuredContentSmsOptions {
-    /**
-     * SMS ID to read and pass to AI
-     * @type {string}
-     * @memberof GenerateStructuredContentSmsOptions
-     */
-    smsId: string;
-    /**
-     * Optional instructions for the AI to follow. Try to be precise and clear. You can include examples and hints.
-     * @type {string}
-     * @memberof GenerateStructuredContentSmsOptions
-     */
-    instructions?: string | null;
-    /**
-     * 
-     * @type {StructuredOutputSchema}
-     * @memberof GenerateStructuredContentSmsOptions
-     */
-    outputSchema?: StructuredOutputSchema | null;
-    /**
-     * ID of transformer to apply
-     * @type {string}
-     * @memberof GenerateStructuredContentSmsOptions
-     */
-    transformId?: string | null;
+  /**
+   * SMS ID to read and pass to AI
+   * @type {string}
+   * @memberof GenerateStructuredContentSmsOptions
+   */
+  smsId: string;
+  /**
+   * Optional instructions for the AI to follow. Try to be precise and clear. You can include examples and hints.
+   * @type {string}
+   * @memberof GenerateStructuredContentSmsOptions
+   */
+  instructions?: string | null;
+  /**
+   *
+   * @type {StructuredOutputSchema}
+   * @memberof GenerateStructuredContentSmsOptions
+   */
+  outputSchema?: StructuredOutputSchema | null;
+  /**
+   * ID of transformer to apply
+   * @type {string}
+   * @memberof GenerateStructuredContentSmsOptions
+   */
+  transformId?: string | null;
 }
 
-export function GenerateStructuredContentSmsOptionsFromJSON(json: any): GenerateStructuredContentSmsOptions {
-    return GenerateStructuredContentSmsOptionsFromJSONTyped(json, false);
+export function GenerateStructuredContentSmsOptionsFromJSON(
+  json: any
+): GenerateStructuredContentSmsOptions {
+  return GenerateStructuredContentSmsOptionsFromJSONTyped(json, false);
 }
 
-export function GenerateStructuredContentSmsOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GenerateStructuredContentSmsOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'smsId': json['smsId'],
-        'instructions': !exists(json, 'instructions') ? undefined : json['instructions'],
-        'outputSchema': !exists(json, 'outputSchema') ? undefined : StructuredOutputSchemaFromJSON(json['outputSchema']),
-        'transformId': !exists(json, 'transformId') ? undefined : json['transformId'],
-    };
+export function GenerateStructuredContentSmsOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): GenerateStructuredContentSmsOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    smsId: json['smsId'],
+    instructions: !exists(json, 'instructions')
+      ? undefined
+      : json['instructions'],
+    outputSchema: !exists(json, 'outputSchema')
+      ? undefined
+      : StructuredOutputSchemaFromJSON(json['outputSchema']),
+    transformId: !exists(json, 'transformId') ? undefined : json['transformId'],
+  };
 }
 
-export function GenerateStructuredContentSmsOptionsToJSON(value?: GenerateStructuredContentSmsOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'smsId': value.smsId,
-        'instructions': value.instructions,
-        'outputSchema': StructuredOutputSchemaToJSON(value.outputSchema),
-        'transformId': value.transformId,
-    };
+export function GenerateStructuredContentSmsOptionsToJSON(
+  value?: GenerateStructuredContentSmsOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    smsId: value.smsId,
+    instructions: value.instructions,
+    outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
+    transformId: value.transformId,
+  };
 }
-
-

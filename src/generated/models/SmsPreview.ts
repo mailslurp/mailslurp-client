@@ -14,92 +14,91 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface SmsPreview
  */
 export interface SmsPreview {
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsPreview
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SmsPreview
-     */
-    userId: string;
-    /**
-     * TXT message content
-     * @type {string}
-     * @memberof SmsPreview
-     */
-    body: string;
-    /**
-     * ID of the phone number that received this SMS
-     * @type {string}
-     * @memberof SmsPreview
-     */
-    phoneNumber: string;
-    /**
-     * Sender number
-     * @type {string}
-     * @memberof SmsPreview
-     */
-    fromNumber: string;
-    /**
-     * Is the message read or unread
-     * @type {boolean}
-     * @memberof SmsPreview
-     */
-    read: boolean;
-    /**
-     * 
-     * @type {Date}
-     * @memberof SmsPreview
-     */
-    createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsPreview
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsPreview
+   */
+  userId: string;
+  /**
+   * TXT message content
+   * @type {string}
+   * @memberof SmsPreview
+   */
+  body: string;
+  /**
+   * ID of the phone number that received this SMS
+   * @type {string}
+   * @memberof SmsPreview
+   */
+  phoneNumber: string;
+  /**
+   * Sender number
+   * @type {string}
+   * @memberof SmsPreview
+   */
+  fromNumber: string;
+  /**
+   * Is the message read or unread
+   * @type {boolean}
+   * @memberof SmsPreview
+   */
+  read: boolean;
+  /**
+   *
+   * @type {Date}
+   * @memberof SmsPreview
+   */
+  createdAt: Date;
 }
 
 export function SmsPreviewFromJSON(json: any): SmsPreview {
-    return SmsPreviewFromJSONTyped(json, false);
+  return SmsPreviewFromJSONTyped(json, false);
 }
 
-export function SmsPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsPreview {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'userId': json['userId'],
-        'body': json['body'],
-        'phoneNumber': json['phoneNumber'],
-        'fromNumber': json['fromNumber'],
-        'read': json['read'],
-        'createdAt': (new Date(json['createdAt'])),
-    };
+export function SmsPreviewFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): SmsPreview {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    userId: json['userId'],
+    body: json['body'],
+    phoneNumber: json['phoneNumber'],
+    fromNumber: json['fromNumber'],
+    read: json['read'],
+    createdAt: new Date(json['createdAt']),
+  };
 }
 
 export function SmsPreviewToJSON(value?: SmsPreview | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'userId': value.userId,
-        'body': value.body,
-        'phoneNumber': value.phoneNumber,
-        'fromNumber': value.fromNumber,
-        'read': value.read,
-        'createdAt': (value.createdAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    userId: value.userId,
+    body: value.body,
+    phoneNumber: value.phoneNumber,
+    fromNumber: value.fromNumber,
+    read: value.read,
+    createdAt: value.createdAt.toISOString(),
+  };
 }
-
-

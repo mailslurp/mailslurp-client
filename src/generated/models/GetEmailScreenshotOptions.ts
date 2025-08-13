@@ -19,47 +19,50 @@ import { exists, mapValues } from '../runtime';
  * @interface GetEmailScreenshotOptions
  */
 export interface GetEmailScreenshotOptions {
-    /**
-     * Window height in pixels
-     * @type {number}
-     * @memberof GetEmailScreenshotOptions
-     */
-    height?: number | null;
-    /**
-     * Window width in pixels
-     * @type {number}
-     * @memberof GetEmailScreenshotOptions
-     */
-    width?: number | null;
+  /**
+   * Window height in pixels
+   * @type {number}
+   * @memberof GetEmailScreenshotOptions
+   */
+  height?: number | null;
+  /**
+   * Window width in pixels
+   * @type {number}
+   * @memberof GetEmailScreenshotOptions
+   */
+  width?: number | null;
 }
 
-export function GetEmailScreenshotOptionsFromJSON(json: any): GetEmailScreenshotOptions {
-    return GetEmailScreenshotOptionsFromJSONTyped(json, false);
+export function GetEmailScreenshotOptionsFromJSON(
+  json: any
+): GetEmailScreenshotOptions {
+  return GetEmailScreenshotOptionsFromJSONTyped(json, false);
 }
 
-export function GetEmailScreenshotOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetEmailScreenshotOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'height': !exists(json, 'height') ? undefined : json['height'],
-        'width': !exists(json, 'width') ? undefined : json['width'],
-    };
+export function GetEmailScreenshotOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): GetEmailScreenshotOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    height: !exists(json, 'height') ? undefined : json['height'],
+    width: !exists(json, 'width') ? undefined : json['width'],
+  };
 }
 
-export function GetEmailScreenshotOptionsToJSON(value?: GetEmailScreenshotOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'height': value.height,
-        'width': value.width,
-    };
+export function GetEmailScreenshotOptionsToJSON(
+  value?: GetEmailScreenshotOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    height: value.height,
+    width: value.width,
+  };
 }
-
-

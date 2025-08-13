@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    ServerEndpoints,
-    ServerEndpointsFromJSON,
-    ServerEndpointsFromJSONTyped,
-    ServerEndpointsToJSON,
+  ServerEndpoints,
+  ServerEndpointsFromJSON,
+  ServerEndpointsFromJSONTyped,
+  ServerEndpointsToJSON,
 } from './';
 
 /**
@@ -26,63 +26,66 @@ import {
  * @interface ImapSmtpAccessServers
  */
 export interface ImapSmtpAccessServers {
-    /**
-     * 
-     * @type {ServerEndpoints}
-     * @memberof ImapSmtpAccessServers
-     */
-    imapServer: ServerEndpoints;
-    /**
-     * 
-     * @type {ServerEndpoints}
-     * @memberof ImapSmtpAccessServers
-     */
-    secureImapServer: ServerEndpoints;
-    /**
-     * 
-     * @type {ServerEndpoints}
-     * @memberof ImapSmtpAccessServers
-     */
-    smtpServer: ServerEndpoints;
-    /**
-     * 
-     * @type {ServerEndpoints}
-     * @memberof ImapSmtpAccessServers
-     */
-    secureSmtpServer: ServerEndpoints;
+  /**
+   *
+   * @type {ServerEndpoints}
+   * @memberof ImapSmtpAccessServers
+   */
+  imapServer: ServerEndpoints;
+  /**
+   *
+   * @type {ServerEndpoints}
+   * @memberof ImapSmtpAccessServers
+   */
+  secureImapServer: ServerEndpoints;
+  /**
+   *
+   * @type {ServerEndpoints}
+   * @memberof ImapSmtpAccessServers
+   */
+  smtpServer: ServerEndpoints;
+  /**
+   *
+   * @type {ServerEndpoints}
+   * @memberof ImapSmtpAccessServers
+   */
+  secureSmtpServer: ServerEndpoints;
 }
 
-export function ImapSmtpAccessServersFromJSON(json: any): ImapSmtpAccessServers {
-    return ImapSmtpAccessServersFromJSONTyped(json, false);
+export function ImapSmtpAccessServersFromJSON(
+  json: any
+): ImapSmtpAccessServers {
+  return ImapSmtpAccessServersFromJSONTyped(json, false);
 }
 
-export function ImapSmtpAccessServersFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapSmtpAccessServers {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'imapServer': ServerEndpointsFromJSON(json['imapServer']),
-        'secureImapServer': ServerEndpointsFromJSON(json['secureImapServer']),
-        'smtpServer': ServerEndpointsFromJSON(json['smtpServer']),
-        'secureSmtpServer': ServerEndpointsFromJSON(json['secureSmtpServer']),
-    };
+export function ImapSmtpAccessServersFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ImapSmtpAccessServers {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    imapServer: ServerEndpointsFromJSON(json['imapServer']),
+    secureImapServer: ServerEndpointsFromJSON(json['secureImapServer']),
+    smtpServer: ServerEndpointsFromJSON(json['smtpServer']),
+    secureSmtpServer: ServerEndpointsFromJSON(json['secureSmtpServer']),
+  };
 }
 
-export function ImapSmtpAccessServersToJSON(value?: ImapSmtpAccessServers | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'imapServer': ServerEndpointsToJSON(value.imapServer),
-        'secureImapServer': ServerEndpointsToJSON(value.secureImapServer),
-        'smtpServer': ServerEndpointsToJSON(value.smtpServer),
-        'secureSmtpServer': ServerEndpointsToJSON(value.secureSmtpServer),
-    };
+export function ImapSmtpAccessServersToJSON(
+  value?: ImapSmtpAccessServers | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    imapServer: ServerEndpointsToJSON(value.imapServer),
+    secureImapServer: ServerEndpointsToJSON(value.secureImapServer),
+    smtpServer: ServerEndpointsToJSON(value.smtpServer),
+    secureSmtpServer: ServerEndpointsToJSON(value.secureSmtpServer),
+  };
 }
-
-

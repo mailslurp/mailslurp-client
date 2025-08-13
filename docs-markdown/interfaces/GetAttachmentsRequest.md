@@ -10,6 +10,7 @@
 - [emailId](GetAttachmentsRequest.md#emailid)
 - [fileNameFilter](GetAttachmentsRequest.md#filenamefilter)
 - [inboxId](GetAttachmentsRequest.md#inboxid)
+- [include](GetAttachmentsRequest.md#include)
 - [page](GetAttachmentsRequest.md#page)
 - [sentEmailId](GetAttachmentsRequest.md#sentemailid)
 - [since](GetAttachmentsRequest.md#since)
@@ -39,6 +40,12 @@ ___
 ### inboxId
 
 • `Optional` **inboxId**: `string`
+
+___
+
+### include
+
+• `Optional` **include**: `string`[]
 
 ___
 

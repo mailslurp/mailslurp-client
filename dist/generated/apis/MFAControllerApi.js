@@ -108,14 +108,15 @@ var MFAControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createTotpDeviceBase32SecretKeyOptions === null || requestParameters.createTotpDeviceBase32SecretKeyOptions === undefined) {
+                        if (requestParameters.createTotpDeviceBase32SecretKeyOptions === null ||
+                            requestParameters.createTotpDeviceBase32SecretKeyOptions === undefined) {
                             throw new runtime.RequiredError('createTotpDeviceBase32SecretKeyOptions', 'Required parameter requestParameters.createTotpDeviceBase32SecretKeyOptions was null or undefined when calling createTotpDeviceForBase32SecretKey.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mfa/totp/device/base32SecretKey",
@@ -126,7 +127,9 @@ var MFAControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -159,14 +162,15 @@ var MFAControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createTotpDeviceCustomOptions === null || requestParameters.createTotpDeviceCustomOptions === undefined) {
+                        if (requestParameters.createTotpDeviceCustomOptions === null ||
+                            requestParameters.createTotpDeviceCustomOptions === undefined) {
                             throw new runtime.RequiredError('createTotpDeviceCustomOptions', 'Required parameter requestParameters.createTotpDeviceCustomOptions was null or undefined when calling createTotpDeviceForCustom.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mfa/totp/device/custom",
@@ -177,7 +181,9 @@ var MFAControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -210,14 +216,15 @@ var MFAControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createTotpDeviceOtpAuthUrlOptions === null || requestParameters.createTotpDeviceOtpAuthUrlOptions === undefined) {
+                        if (requestParameters.createTotpDeviceOtpAuthUrlOptions === null ||
+                            requestParameters.createTotpDeviceOtpAuthUrlOptions === undefined) {
                             throw new runtime.RequiredError('createTotpDeviceOtpAuthUrlOptions', 'Required parameter requestParameters.createTotpDeviceOtpAuthUrlOptions was null or undefined when calling createTotpDeviceForOtpAuthUrl.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mfa/totp/device/otpAuthUrl",
@@ -228,7 +235,9 @@ var MFAControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -267,17 +276,19 @@ var MFAControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/mfa/totp/device/{id}".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/mfa/totp/device/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TotpDeviceDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -322,7 +333,7 @@ var MFAControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mfa/totp/device/by",
@@ -332,7 +343,9 @@ var MFAControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TotpDeviceOptionalDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TotpDeviceOptionalDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -373,21 +386,24 @@ var MFAControllerApi = /** @class */ (function (_super) {
                             queryParameters['at'] = requestParameters.at.toISOString();
                         }
                         if (requestParameters.minSecondsUntilExpire !== undefined) {
-                            queryParameters['minSecondsUntilExpire'] = requestParameters.minSecondsUntilExpire;
+                            queryParameters['minSecondsUntilExpire'] =
+                                requestParameters.minSecondsUntilExpire;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/mfa/totp/device/{id}/code".replace("{".concat("id", "}"), encodeURIComponent(String(requestParameters.id))),
+                                path: "/mfa/totp/device/{id}/code".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TotpDeviceCodeDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TotpDeviceCodeDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });

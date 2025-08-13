@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DNSLookupResultToJSON = exports.DNSLookupResultFromJSONTyped = exports.DNSLookupResultFromJSON = exports.DNSLookupResultRecordTypeEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var DNSLookupResultRecordTypeEnum;
 (function (DNSLookupResultRecordTypeEnum) {
     DNSLookupResultRecordTypeEnum["A"] = "A";
@@ -115,14 +115,14 @@ function DNSLookupResultFromJSON(json) {
 }
 exports.DNSLookupResultFromJSON = DNSLookupResultFromJSON;
 function DNSLookupResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'recordType': json['recordType'],
-        'ttl': json['ttl'],
-        'recordEntries': json['recordEntries'],
-        'name': json['name'],
+        recordType: json['recordType'],
+        ttl: json['ttl'],
+        recordEntries: json['recordEntries'],
+        name: json['name'],
     };
 }
 exports.DNSLookupResultFromJSONTyped = DNSLookupResultFromJSONTyped;
@@ -134,10 +134,10 @@ function DNSLookupResultToJSON(value) {
         return null;
     }
     return {
-        'recordType': value.recordType,
-        'ttl': value.ttl,
-        'recordEntries': value.recordEntries,
-        'name': value.name,
+        recordType: value.recordType,
+        ttl: value.ttl,
+        recordEntries: value.recordEntries,
+        name: value.name,
     };
 }
 exports.DNSLookupResultToJSON = DNSLookupResultToJSON;

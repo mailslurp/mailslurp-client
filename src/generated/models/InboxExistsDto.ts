@@ -19,55 +19,54 @@ import { exists, mapValues } from '../runtime';
  * @interface InboxExistsDto
  */
 export interface InboxExistsDto {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof InboxExistsDto
-     */
-    _exists: boolean;
-    /**
-     * Inbox is full or simulating a soft bounce via inbox replier or rulesets
-     * @type {boolean}
-     * @memberof InboxExistsDto
-     */
-    softBounce?: boolean | null;
-    /**
-     * Inbox is blocking receiving emails or simulating a hard bounce via inbox replier or rulesets
-     * @type {boolean}
-     * @memberof InboxExistsDto
-     */
-    hardBounce?: boolean | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof InboxExistsDto
+   */
+  _exists: boolean;
+  /**
+   * Inbox is full or simulating a soft bounce via inbox replier or rulesets
+   * @type {boolean}
+   * @memberof InboxExistsDto
+   */
+  softBounce?: boolean | null;
+  /**
+   * Inbox is blocking receiving emails or simulating a hard bounce via inbox replier or rulesets
+   * @type {boolean}
+   * @memberof InboxExistsDto
+   */
+  hardBounce?: boolean | null;
 }
 
 export function InboxExistsDtoFromJSON(json: any): InboxExistsDto {
-    return InboxExistsDtoFromJSONTyped(json, false);
+  return InboxExistsDtoFromJSONTyped(json, false);
 }
 
-export function InboxExistsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxExistsDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        '_exists': json['exists'],
-        'softBounce': !exists(json, 'softBounce') ? undefined : json['softBounce'],
-        'hardBounce': !exists(json, 'hardBounce') ? undefined : json['hardBounce'],
-    };
+export function InboxExistsDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): InboxExistsDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    _exists: json['exists'],
+    softBounce: !exists(json, 'softBounce') ? undefined : json['softBounce'],
+    hardBounce: !exists(json, 'hardBounce') ? undefined : json['hardBounce'],
+  };
 }
 
 export function InboxExistsDtoToJSON(value?: InboxExistsDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'exists': value._exists,
-        'softBounce': value.softBounce,
-        'hardBounce': value.hardBounce,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    exists: value._exists,
+    softBounce: value.softBounce,
+    hardBounce: value.hardBounce,
+  };
 }
-
-

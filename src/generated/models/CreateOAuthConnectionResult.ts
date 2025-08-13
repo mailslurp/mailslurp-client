@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateOAuthConnectionResult
  */
 export interface CreateOAuthConnectionResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateOAuthConnectionResult
-     */
-    url: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateOAuthConnectionResult
+   */
+  url: string;
 }
 
-export function CreateOAuthConnectionResultFromJSON(json: any): CreateOAuthConnectionResult {
-    return CreateOAuthConnectionResultFromJSONTyped(json, false);
+export function CreateOAuthConnectionResultFromJSON(
+  json: any
+): CreateOAuthConnectionResult {
+  return CreateOAuthConnectionResultFromJSONTyped(json, false);
 }
 
-export function CreateOAuthConnectionResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateOAuthConnectionResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'url': json['url'],
-    };
+export function CreateOAuthConnectionResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateOAuthConnectionResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    url: json['url'],
+  };
 }
 
-export function CreateOAuthConnectionResultToJSON(value?: CreateOAuthConnectionResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'url': value.url,
-    };
+export function CreateOAuthConnectionResultToJSON(
+  value?: CreateOAuthConnectionResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    url: value.url,
+  };
 }
-
-

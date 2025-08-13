@@ -14,51 +14,54 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    PhonePlanAvailabilityItem,
-    PhonePlanAvailabilityItemFromJSON,
-    PhonePlanAvailabilityItemFromJSONTyped,
-    PhonePlanAvailabilityItemToJSON,
+  PhonePlanAvailabilityItem,
+  PhonePlanAvailabilityItemFromJSON,
+  PhonePlanAvailabilityItemFromJSONTyped,
+  PhonePlanAvailabilityItemToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface PhonePlanAvailability
  */
 export interface PhonePlanAvailability {
-    /**
-     * 
-     * @type {Array<PhonePlanAvailabilityItem>}
-     * @memberof PhonePlanAvailability
-     */
-    items: Array<PhonePlanAvailabilityItem>;
+  /**
+   *
+   * @type {Array<PhonePlanAvailabilityItem>}
+   * @memberof PhonePlanAvailability
+   */
+  items: Array<PhonePlanAvailabilityItem>;
 }
 
-export function PhonePlanAvailabilityFromJSON(json: any): PhonePlanAvailability {
-    return PhonePlanAvailabilityFromJSONTyped(json, false);
+export function PhonePlanAvailabilityFromJSON(
+  json: any
+): PhonePlanAvailability {
+  return PhonePlanAvailabilityFromJSONTyped(json, false);
 }
 
-export function PhonePlanAvailabilityFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanAvailability {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'items': ((json['items'] as Array<any>).map(PhonePlanAvailabilityItemFromJSON)),
-    };
+export function PhonePlanAvailabilityFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PhonePlanAvailability {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    items: (json['items'] as Array<any>).map(PhonePlanAvailabilityItemFromJSON),
+  };
 }
 
-export function PhonePlanAvailabilityToJSON(value?: PhonePlanAvailability | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'items': ((value.items as Array<any>).map(PhonePlanAvailabilityItemToJSON)),
-    };
+export function PhonePlanAvailabilityToJSON(
+  value?: PhonePlanAvailability | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    items: (value.items as Array<any>).map(PhonePlanAvailabilityItemToJSON),
+  };
 }
-
-

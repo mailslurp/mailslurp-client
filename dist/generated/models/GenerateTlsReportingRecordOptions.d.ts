@@ -47,9 +47,9 @@ export interface GenerateTlsReportingRecordOptions {
     ttl: number;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum GenerateTlsReportingRecordOptionsVersionEnum {
     TLSRPTv1 = "TLSRPTv1"
 }

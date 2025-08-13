@@ -151,9 +151,9 @@ export interface StructuredOutputSchema {
     type?: StructuredOutputSchemaTypeEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum StructuredOutputSchemaTypeEnum {
     string = "string",
     number = "number",

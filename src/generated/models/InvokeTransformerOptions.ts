@@ -14,133 +14,149 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    StructuredOutputSchema,
-    StructuredOutputSchemaFromJSON,
-    StructuredOutputSchemaFromJSONTyped,
-    StructuredOutputSchemaToJSON,
+  StructuredOutputSchema,
+  StructuredOutputSchemaFromJSON,
+  StructuredOutputSchemaFromJSONTyped,
+  StructuredOutputSchemaToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface InvokeTransformerOptions
  */
 export interface InvokeTransformerOptions {
-    /**
-     * 
-     * @type {string}
-     * @memberof InvokeTransformerOptions
-     */
-    aiTransformId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof InvokeTransformerOptions
-     */
-    aiTransformMappingId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof InvokeTransformerOptions
-     */
-    rawInput?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof InvokeTransformerOptions
-     */
-    entityId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof InvokeTransformerOptions
-     */
-    entityType?: InvokeTransformerOptionsEntityTypeEnum;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof InvokeTransformerOptions
-     */
-    rawConditions?: Array<string>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof InvokeTransformerOptions
-     */
-    rawInstructions?: Array<string>;
-    /**
-     * 
-     * @type {StructuredOutputSchema}
-     * @memberof InvokeTransformerOptions
-     */
-    rawOutputSchema?: StructuredOutputSchema | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof InvokeTransformerOptions
-     */
-    contentSelector?: InvokeTransformerOptionsContentSelectorEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof InvokeTransformerOptions
+   */
+  aiTransformId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InvokeTransformerOptions
+   */
+  aiTransformMappingId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InvokeTransformerOptions
+   */
+  rawInput?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InvokeTransformerOptions
+   */
+  entityId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InvokeTransformerOptions
+   */
+  entityType?: InvokeTransformerOptionsEntityTypeEnum;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof InvokeTransformerOptions
+   */
+  rawConditions?: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof InvokeTransformerOptions
+   */
+  rawInstructions?: Array<string>;
+  /**
+   *
+   * @type {StructuredOutputSchema}
+   * @memberof InvokeTransformerOptions
+   */
+  rawOutputSchema?: StructuredOutputSchema | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InvokeTransformerOptions
+   */
+  contentSelector?: InvokeTransformerOptionsContentSelectorEnum;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum InvokeTransformerOptionsEntityTypeEnum {
-    EMAIL = 'EMAIL',
-    SMS = 'SMS',
-    ATTACHMENT = 'ATTACHMENT'
-}/**
-* @export
-* @enum {string}
-*/
+  EMAIL = 'EMAIL',
+  SMS = 'SMS',
+  ATTACHMENT = 'ATTACHMENT',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum InvokeTransformerOptionsContentSelectorEnum {
-    RAW = 'RAW',
-    BODY = 'BODY',
-    BODY_ATTACHMENTS = 'BODY_ATTACHMENTS'
+  RAW = 'RAW',
+  BODY = 'BODY',
+  BODY_ATTACHMENTS = 'BODY_ATTACHMENTS',
 }
 
-export function InvokeTransformerOptionsFromJSON(json: any): InvokeTransformerOptions {
-    return InvokeTransformerOptionsFromJSONTyped(json, false);
+export function InvokeTransformerOptionsFromJSON(
+  json: any
+): InvokeTransformerOptions {
+  return InvokeTransformerOptionsFromJSONTyped(json, false);
 }
 
-export function InvokeTransformerOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InvokeTransformerOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'aiTransformId': !exists(json, 'aiTransformId') ? undefined : json['aiTransformId'],
-        'aiTransformMappingId': !exists(json, 'aiTransformMappingId') ? undefined : json['aiTransformMappingId'],
-        'rawInput': !exists(json, 'rawInput') ? undefined : json['rawInput'],
-        'entityId': !exists(json, 'entityId') ? undefined : json['entityId'],
-        'entityType': !exists(json, 'entityType') ? undefined : json['entityType'],
-        'rawConditions': !exists(json, 'rawConditions') ? undefined : json['rawConditions'],
-        'rawInstructions': !exists(json, 'rawInstructions') ? undefined : json['rawInstructions'],
-        'rawOutputSchema': !exists(json, 'rawOutputSchema') ? undefined : StructuredOutputSchemaFromJSON(json['rawOutputSchema']),
-        'contentSelector': !exists(json, 'contentSelector') ? undefined : json['contentSelector'],
-    };
+export function InvokeTransformerOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): InvokeTransformerOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    aiTransformId: !exists(json, 'aiTransformId')
+      ? undefined
+      : json['aiTransformId'],
+    aiTransformMappingId: !exists(json, 'aiTransformMappingId')
+      ? undefined
+      : json['aiTransformMappingId'],
+    rawInput: !exists(json, 'rawInput') ? undefined : json['rawInput'],
+    entityId: !exists(json, 'entityId') ? undefined : json['entityId'],
+    entityType: !exists(json, 'entityType') ? undefined : json['entityType'],
+    rawConditions: !exists(json, 'rawConditions')
+      ? undefined
+      : json['rawConditions'],
+    rawInstructions: !exists(json, 'rawInstructions')
+      ? undefined
+      : json['rawInstructions'],
+    rawOutputSchema: !exists(json, 'rawOutputSchema')
+      ? undefined
+      : StructuredOutputSchemaFromJSON(json['rawOutputSchema']),
+    contentSelector: !exists(json, 'contentSelector')
+      ? undefined
+      : json['contentSelector'],
+  };
 }
 
-export function InvokeTransformerOptionsToJSON(value?: InvokeTransformerOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'aiTransformId': value.aiTransformId,
-        'aiTransformMappingId': value.aiTransformMappingId,
-        'rawInput': value.rawInput,
-        'entityId': value.entityId,
-        'entityType': value.entityType,
-        'rawConditions': value.rawConditions,
-        'rawInstructions': value.rawInstructions,
-        'rawOutputSchema': StructuredOutputSchemaToJSON(value.rawOutputSchema),
-        'contentSelector': value.contentSelector,
-    };
+export function InvokeTransformerOptionsToJSON(
+  value?: InvokeTransformerOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    aiTransformId: value.aiTransformId,
+    aiTransformMappingId: value.aiTransformMappingId,
+    rawInput: value.rawInput,
+    entityId: value.entityId,
+    entityType: value.entityType,
+    rawConditions: value.rawConditions,
+    rawInstructions: value.rawInstructions,
+    rawOutputSchema: StructuredOutputSchemaToJSON(value.rawOutputSchema),
+    contentSelector: value.contentSelector,
+  };
 }
-
-

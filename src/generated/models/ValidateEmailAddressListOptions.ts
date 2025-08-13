@@ -19,47 +19,52 @@ import { exists, mapValues } from '../runtime';
  * @interface ValidateEmailAddressListOptions
  */
 export interface ValidateEmailAddressListOptions {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ValidateEmailAddressListOptions
-     */
-    emailAddressList: Array<string>;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ValidateEmailAddressListOptions
-     */
-    ignoreOldResults?: boolean | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ValidateEmailAddressListOptions
+   */
+  emailAddressList: Array<string>;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ValidateEmailAddressListOptions
+   */
+  ignoreOldResults?: boolean | null;
 }
 
-export function ValidateEmailAddressListOptionsFromJSON(json: any): ValidateEmailAddressListOptions {
-    return ValidateEmailAddressListOptionsFromJSONTyped(json, false);
+export function ValidateEmailAddressListOptionsFromJSON(
+  json: any
+): ValidateEmailAddressListOptions {
+  return ValidateEmailAddressListOptionsFromJSONTyped(json, false);
 }
 
-export function ValidateEmailAddressListOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidateEmailAddressListOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'emailAddressList': json['emailAddressList'],
-        'ignoreOldResults': !exists(json, 'ignoreOldResults') ? undefined : json['ignoreOldResults'],
-    };
+export function ValidateEmailAddressListOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ValidateEmailAddressListOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    emailAddressList: json['emailAddressList'],
+    ignoreOldResults: !exists(json, 'ignoreOldResults')
+      ? undefined
+      : json['ignoreOldResults'],
+  };
 }
 
-export function ValidateEmailAddressListOptionsToJSON(value?: ValidateEmailAddressListOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'emailAddressList': value.emailAddressList,
-        'ignoreOldResults': value.ignoreOldResults,
-    };
+export function ValidateEmailAddressListOptionsToJSON(
+  value?: ValidateEmailAddressListOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    emailAddressList: value.emailAddressList,
+    ignoreOldResults: value.ignoreOldResults,
+  };
 }
-
-

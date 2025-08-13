@@ -53,9 +53,9 @@ export interface PhoneMessageThreadProjection {
     phoneNumberId: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum PhoneMessageThreadProjectionLastMessageDirectionEnum {
     OUTBOUND = "OUTBOUND",
     INBOUND = "INBOUND"

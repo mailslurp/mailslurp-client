@@ -14,18 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    PageableObject,
-    PageableObjectFromJSON,
-    PageableObjectFromJSONTyped,
-    PageableObjectToJSON,
-    SortObject,
-    SortObjectFromJSON,
-    SortObjectFromJSONTyped,
-    SortObjectToJSON,
-    WebhookResultDto,
-    WebhookResultDtoFromJSON,
-    WebhookResultDtoFromJSONTyped,
-    WebhookResultDtoToJSON,
+  PageableObject,
+  PageableObjectFromJSON,
+  PageableObjectFromJSONTyped,
+  PageableObjectToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
+  WebhookResultDto,
+  WebhookResultDtoFromJSON,
+  WebhookResultDtoFromJSONTyped,
+  WebhookResultDtoToJSON,
 } from './';
 
 /**
@@ -34,119 +34,127 @@ import {
  * @interface PageWebhookResult
  */
 export interface PageWebhookResult {
-    /**
-     * 
-     * @type {Array<WebhookResultDto>}
-     * @memberof PageWebhookResult
-     */
-    content?: Array<WebhookResultDto>;
-    /**
-     * 
-     * @type {PageableObject}
-     * @memberof PageWebhookResult
-     */
-    pageable?: PageableObject;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookResult
-     */
-    totalElements: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookResult
-     */
-    totalPages: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageWebhookResult
-     */
-    last?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookResult
-     */
-    numberOfElements?: number;
-    /**
-     * 
-     * @type {SortObject}
-     * @memberof PageWebhookResult
-     */
-    sort?: SortObject;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageWebhookResult
-     */
-    first?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookResult
-     */
-    size?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PageWebhookResult
-     */
-    number?: number;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PageWebhookResult
-     */
-    empty?: boolean;
+  /**
+   *
+   * @type {Array<WebhookResultDto>}
+   * @memberof PageWebhookResult
+   */
+  content?: Array<WebhookResultDto>;
+  /**
+   *
+   * @type {PageableObject}
+   * @memberof PageWebhookResult
+   */
+  pageable?: PageableObject;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookResult
+   */
+  totalElements: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookResult
+   */
+  totalPages: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageWebhookResult
+   */
+  last?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookResult
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageWebhookResult
+   */
+  sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageWebhookResult
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookResult
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageWebhookResult
+   */
+  number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageWebhookResult
+   */
+  empty?: boolean;
 }
 
 export function PageWebhookResultFromJSON(json: any): PageWebhookResult {
-    return PageWebhookResultFromJSONTyped(json, false);
+  return PageWebhookResultFromJSONTyped(json, false);
 }
 
-export function PageWebhookResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageWebhookResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'content': !exists(json, 'content') ? undefined : ((json['content'] as Array<any>).map(WebhookResultDtoFromJSON)),
-        'pageable': !exists(json, 'pageable') ? undefined : PageableObjectFromJSON(json['pageable']),
-        'totalElements': json['totalElements'],
-        'totalPages': json['totalPages'],
-        'last': !exists(json, 'last') ? undefined : json['last'],
-        'numberOfElements': !exists(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'sort': !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-        'first': !exists(json, 'first') ? undefined : json['first'],
-        'size': !exists(json, 'size') ? undefined : json['size'],
-        'number': !exists(json, 'number') ? undefined : json['number'],
-        'empty': !exists(json, 'empty') ? undefined : json['empty'],
-    };
+export function PageWebhookResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): PageWebhookResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(WebhookResultDtoFromJSON),
+    pageable: !exists(json, 'pageable')
+      ? undefined
+      : PageableObjectFromJSON(json['pageable']),
+    totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+  };
 }
 
 export function PageWebhookResultToJSON(value?: PageWebhookResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'content': value.content === undefined ? undefined : ((value.content as Array<any>).map(WebhookResultDtoToJSON)),
-        'pageable': PageableObjectToJSON(value.pageable),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
-        'last': value.last,
-        'numberOfElements': value.numberOfElements,
-        'sort': SortObjectToJSON(value.sort),
-        'first': value.first,
-        'size': value.size,
-        'number': value.number,
-        'empty': value.empty,
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(WebhookResultDtoToJSON),
+    pageable: PageableObjectToJSON(value.pageable),
+    totalElements: value.totalElements,
+    totalPages: value.totalPages,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
+    first: value.first,
+    size: value.size,
+    number: value.number,
+    empty: value.empty,
+  };
 }
-
-

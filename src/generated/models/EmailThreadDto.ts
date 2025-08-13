@@ -14,143 +14,146 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    EmailRecipients,
-    EmailRecipientsFromJSON,
-    EmailRecipientsFromJSONTyped,
-    EmailRecipientsToJSON,
-    Sender,
-    SenderFromJSON,
-    SenderFromJSONTyped,
-    SenderToJSON,
+  EmailRecipients,
+  EmailRecipientsFromJSON,
+  EmailRecipientsFromJSONTyped,
+  EmailRecipientsToJSON,
+  Sender,
+  SenderFromJSON,
+  SenderFromJSONTyped,
+  SenderToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface EmailThreadDto
  */
 export interface EmailThreadDto {
-    /**
-     * ID of email thread
-     * @type {string}
-     * @memberof EmailThreadDto
-     */
-    id: string;
-    /**
-     * User ID
-     * @type {string}
-     * @memberof EmailThreadDto
-     */
-    userId: string;
-    /**
-     * Inbox ID
-     * @type {string}
-     * @memberof EmailThreadDto
-     */
-    inboxId?: string;
-    /**
-     * From sender
-     * @type {string}
-     * @memberof EmailThreadDto
-     */
-    from?: string;
-    /**
-     * To recipients
-     * @type {Array<string>}
-     * @memberof EmailThreadDto
-     */
-    to: Array<string>;
-    /**
-     * CC recipients
-     * @type {Array<string>}
-     * @memberof EmailThreadDto
-     */
-    cc?: Array<string>;
-    /**
-     * BCC recipients
-     * @type {Array<string>}
-     * @memberof EmailThreadDto
-     */
-    bcc?: Array<string>;
-    /**
-     * 
-     * @type {Sender}
-     * @memberof EmailThreadDto
-     */
-    sender?: Sender | null;
-    /**
-     * 
-     * @type {EmailRecipients}
-     * @memberof EmailThreadDto
-     */
-    recipients?: EmailRecipients | null;
-    /**
-     * Thread topic subject
-     * @type {string}
-     * @memberof EmailThreadDto
-     */
-    subject?: string;
-    /**
-     * Created at DateTime
-     * @type {Date}
-     * @memberof EmailThreadDto
-     */
-    createdAt: Date;
-    /**
-     * Updated at DateTime
-     * @type {Date}
-     * @memberof EmailThreadDto
-     */
-    updatedAt: Date;
+  /**
+   * ID of email thread
+   * @type {string}
+   * @memberof EmailThreadDto
+   */
+  id: string;
+  /**
+   * User ID
+   * @type {string}
+   * @memberof EmailThreadDto
+   */
+  userId: string;
+  /**
+   * Inbox ID
+   * @type {string}
+   * @memberof EmailThreadDto
+   */
+  inboxId?: string;
+  /**
+   * From sender
+   * @type {string}
+   * @memberof EmailThreadDto
+   */
+  from?: string;
+  /**
+   * To recipients
+   * @type {Array<string>}
+   * @memberof EmailThreadDto
+   */
+  to: Array<string>;
+  /**
+   * CC recipients
+   * @type {Array<string>}
+   * @memberof EmailThreadDto
+   */
+  cc?: Array<string>;
+  /**
+   * BCC recipients
+   * @type {Array<string>}
+   * @memberof EmailThreadDto
+   */
+  bcc?: Array<string>;
+  /**
+   *
+   * @type {Sender}
+   * @memberof EmailThreadDto
+   */
+  sender?: Sender | null;
+  /**
+   *
+   * @type {EmailRecipients}
+   * @memberof EmailThreadDto
+   */
+  recipients?: EmailRecipients | null;
+  /**
+   * Thread topic subject
+   * @type {string}
+   * @memberof EmailThreadDto
+   */
+  subject?: string;
+  /**
+   * Created at DateTime
+   * @type {Date}
+   * @memberof EmailThreadDto
+   */
+  createdAt: Date;
+  /**
+   * Updated at DateTime
+   * @type {Date}
+   * @memberof EmailThreadDto
+   */
+  updatedAt: Date;
 }
 
 export function EmailThreadDtoFromJSON(json: any): EmailThreadDto {
-    return EmailThreadDtoFromJSONTyped(json, false);
+  return EmailThreadDtoFromJSONTyped(json, false);
 }
 
-export function EmailThreadDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailThreadDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'userId': json['userId'],
-        'inboxId': !exists(json, 'inboxId') ? undefined : json['inboxId'],
-        'from': !exists(json, 'from') ? undefined : json['from'],
-        'to': json['to'],
-        'cc': !exists(json, 'cc') ? undefined : json['cc'],
-        'bcc': !exists(json, 'bcc') ? undefined : json['bcc'],
-        'sender': !exists(json, 'sender') ? undefined : SenderFromJSON(json['sender']),
-        'recipients': !exists(json, 'recipients') ? undefined : EmailRecipientsFromJSON(json['recipients']),
-        'subject': !exists(json, 'subject') ? undefined : json['subject'],
-        'createdAt': (new Date(json['createdAt'])),
-        'updatedAt': (new Date(json['updatedAt'])),
-    };
+export function EmailThreadDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailThreadDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    userId: json['userId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    from: !exists(json, 'from') ? undefined : json['from'],
+    to: json['to'],
+    cc: !exists(json, 'cc') ? undefined : json['cc'],
+    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
+    recipients: !exists(json, 'recipients')
+      ? undefined
+      : EmailRecipientsFromJSON(json['recipients']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+  };
 }
 
 export function EmailThreadDtoToJSON(value?: EmailThreadDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'userId': value.userId,
-        'inboxId': value.inboxId,
-        'from': value.from,
-        'to': value.to,
-        'cc': value.cc,
-        'bcc': value.bcc,
-        'sender': SenderToJSON(value.sender),
-        'recipients': EmailRecipientsToJSON(value.recipients),
-        'subject': value.subject,
-        'createdAt': (value.createdAt.toISOString()),
-        'updatedAt': (value.updatedAt.toISOString()),
-    };
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    id: value.id,
+    userId: value.userId,
+    inboxId: value.inboxId,
+    from: value.from,
+    to: value.to,
+    cc: value.cc,
+    bcc: value.bcc,
+    sender: SenderToJSON(value.sender),
+    recipients: EmailRecipientsToJSON(value.recipients),
+    subject: value.subject,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+  };
 }
-
-

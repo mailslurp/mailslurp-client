@@ -14,92 +14,95 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface CreateTotpDeviceOtpAuthUrlOptions
  */
 export interface CreateTotpDeviceOtpAuthUrlOptions {
-    /**
-     * OTP Auth URI for connecting a TOTP device.
-     * @type {string}
-     * @memberof CreateTotpDeviceOtpAuthUrlOptions
-     */
-    otpAuthUrl: string;
-    /**
-     * Name for labeling the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceOtpAuthUrlOptions
-     */
-    name?: string | null;
-    /**
-     * Optional username for the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceOtpAuthUrlOptions
-     */
-    username?: string | null;
-    /**
-     * Optional issuer override for the TOTP device
-     * @type {string}
-     * @memberof CreateTotpDeviceOtpAuthUrlOptions
-     */
-    issuer?: string | null;
-    /**
-     * Optional number of digits in TOTP code
-     * @type {number}
-     * @memberof CreateTotpDeviceOtpAuthUrlOptions
-     */
-    digits?: number | null;
-    /**
-     * Optional period in seconds for TOTP code expiration
-     * @type {number}
-     * @memberof CreateTotpDeviceOtpAuthUrlOptions
-     */
-    period?: number | null;
-    /**
-     * Optional algorithm override
-     * @type {string}
-     * @memberof CreateTotpDeviceOtpAuthUrlOptions
-     */
-    algorithm?: string | null;
+  /**
+   * OTP Auth URI for connecting a TOTP device.
+   * @type {string}
+   * @memberof CreateTotpDeviceOtpAuthUrlOptions
+   */
+  otpAuthUrl: string;
+  /**
+   * Name for labeling the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceOtpAuthUrlOptions
+   */
+  name?: string | null;
+  /**
+   * Optional username for the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceOtpAuthUrlOptions
+   */
+  username?: string | null;
+  /**
+   * Optional issuer override for the TOTP device
+   * @type {string}
+   * @memberof CreateTotpDeviceOtpAuthUrlOptions
+   */
+  issuer?: string | null;
+  /**
+   * Optional number of digits in TOTP code
+   * @type {number}
+   * @memberof CreateTotpDeviceOtpAuthUrlOptions
+   */
+  digits?: number | null;
+  /**
+   * Optional period in seconds for TOTP code expiration
+   * @type {number}
+   * @memberof CreateTotpDeviceOtpAuthUrlOptions
+   */
+  period?: number | null;
+  /**
+   * Optional algorithm override
+   * @type {string}
+   * @memberof CreateTotpDeviceOtpAuthUrlOptions
+   */
+  algorithm?: string | null;
 }
 
-export function CreateTotpDeviceOtpAuthUrlOptionsFromJSON(json: any): CreateTotpDeviceOtpAuthUrlOptions {
-    return CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(json, false);
+export function CreateTotpDeviceOtpAuthUrlOptionsFromJSON(
+  json: any
+): CreateTotpDeviceOtpAuthUrlOptions {
+  return CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(json, false);
 }
 
-export function CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTotpDeviceOtpAuthUrlOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'otpAuthUrl': json['otpAuthUrl'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'username': !exists(json, 'username') ? undefined : json['username'],
-        'issuer': !exists(json, 'issuer') ? undefined : json['issuer'],
-        'digits': !exists(json, 'digits') ? undefined : json['digits'],
-        'period': !exists(json, 'period') ? undefined : json['period'],
-        'algorithm': !exists(json, 'algorithm') ? undefined : json['algorithm'],
-    };
+export function CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): CreateTotpDeviceOtpAuthUrlOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    otpAuthUrl: json['otpAuthUrl'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    username: !exists(json, 'username') ? undefined : json['username'],
+    issuer: !exists(json, 'issuer') ? undefined : json['issuer'],
+    digits: !exists(json, 'digits') ? undefined : json['digits'],
+    period: !exists(json, 'period') ? undefined : json['period'],
+    algorithm: !exists(json, 'algorithm') ? undefined : json['algorithm'],
+  };
 }
 
-export function CreateTotpDeviceOtpAuthUrlOptionsToJSON(value?: CreateTotpDeviceOtpAuthUrlOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'otpAuthUrl': value.otpAuthUrl,
-        'name': value.name,
-        'username': value.username,
-        'issuer': value.issuer,
-        'digits': value.digits,
-        'period': value.period,
-        'algorithm': value.algorithm,
-    };
+export function CreateTotpDeviceOtpAuthUrlOptionsToJSON(
+  value?: CreateTotpDeviceOtpAuthUrlOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    otpAuthUrl: value.otpAuthUrl,
+    name: value.name,
+    username: value.username,
+    issuer: value.issuer,
+    digits: value.digits,
+    period: value.period,
+    algorithm: value.algorithm,
+  };
 }
-
-

@@ -14,44 +14,47 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface NewFakeEmailAddressResult
  */
 export interface NewFakeEmailAddressResult {
-    /**
-     * 
-     * @type {string}
-     * @memberof NewFakeEmailAddressResult
-     */
-    emailAddress: string;
+  /**
+   *
+   * @type {string}
+   * @memberof NewFakeEmailAddressResult
+   */
+  emailAddress: string;
 }
 
-export function NewFakeEmailAddressResultFromJSON(json: any): NewFakeEmailAddressResult {
-    return NewFakeEmailAddressResultFromJSONTyped(json, false);
+export function NewFakeEmailAddressResultFromJSON(
+  json: any
+): NewFakeEmailAddressResult {
+  return NewFakeEmailAddressResultFromJSONTyped(json, false);
 }
 
-export function NewFakeEmailAddressResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewFakeEmailAddressResult {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'emailAddress': json['emailAddress'],
-    };
+export function NewFakeEmailAddressResultFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): NewFakeEmailAddressResult {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    emailAddress: json['emailAddress'],
+  };
 }
 
-export function NewFakeEmailAddressResultToJSON(value?: NewFakeEmailAddressResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'emailAddress': value.emailAddress,
-    };
+export function NewFakeEmailAddressResultToJSON(
+  value?: NewFakeEmailAddressResult | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    emailAddress: value.emailAddress,
+  };
 }
-
-

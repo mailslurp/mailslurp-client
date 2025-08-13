@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TemplateVariableToJSON = exports.TemplateVariableFromJSONTyped = exports.TemplateVariableFromJSON = exports.TemplateVariableVariableTypeEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var TemplateVariableVariableTypeEnum;
 (function (TemplateVariableVariableTypeEnum) {
     TemplateVariableVariableTypeEnum["STRING"] = "STRING";
@@ -27,12 +27,12 @@ function TemplateVariableFromJSON(json) {
 }
 exports.TemplateVariableFromJSON = TemplateVariableFromJSON;
 function TemplateVariableFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': json['name'],
-        'variableType': json['variableType'],
+        name: json['name'],
+        variableType: json['variableType'],
     };
 }
 exports.TemplateVariableFromJSONTyped = TemplateVariableFromJSONTyped;
@@ -44,8 +44,8 @@ function TemplateVariableToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'variableType': value.variableType,
+        name: value.name,
+        variableType: value.variableType,
     };
 }
 exports.TemplateVariableToJSON = TemplateVariableToJSON;

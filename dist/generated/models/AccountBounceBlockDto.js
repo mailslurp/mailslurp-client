@@ -19,16 +19,16 @@ function AccountBounceBlockDtoFromJSON(json) {
 }
 exports.AccountBounceBlockDtoFromJSON = AccountBounceBlockDtoFromJSON;
 function AccountBounceBlockDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'isFrozen': json['isFrozen'],
-        'isSendingBlocked': json['isSendingBlocked'],
-        'bounceCount': json['bounceCount'],
-        'bounceCountToday': json['bounceCountToday'],
-        'maximumDailyBounces': json['maximumDailyBounces'],
-        'maximumAccountBounces': json['maximumAccountBounces'],
+        isFrozen: json['isFrozen'],
+        isSendingBlocked: json['isSendingBlocked'],
+        bounceCount: json['bounceCount'],
+        bounceCountToday: json['bounceCountToday'],
+        maximumDailyBounces: json['maximumDailyBounces'],
+        maximumAccountBounces: json['maximumAccountBounces'],
     };
 }
 exports.AccountBounceBlockDtoFromJSONTyped = AccountBounceBlockDtoFromJSONTyped;
@@ -40,12 +40,12 @@ function AccountBounceBlockDtoToJSON(value) {
         return null;
     }
     return {
-        'isFrozen': value.isFrozen,
-        'isSendingBlocked': value.isSendingBlocked,
-        'bounceCount': value.bounceCount,
-        'bounceCountToday': value.bounceCountToday,
-        'maximumDailyBounces': value.maximumDailyBounces,
-        'maximumAccountBounces': value.maximumAccountBounces,
+        isFrozen: value.isFrozen,
+        isSendingBlocked: value.isSendingBlocked,
+        bounceCount: value.bounceCount,
+        bounceCountToday: value.bounceCountToday,
+        maximumDailyBounces: value.maximumDailyBounces,
+        maximumAccountBounces: value.maximumAccountBounces,
     };
 }
 exports.AccountBounceBlockDtoToJSON = AccountBounceBlockDtoToJSON;

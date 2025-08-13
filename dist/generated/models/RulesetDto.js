@@ -16,19 +16,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RulesetDtoToJSON = exports.RulesetDtoFromJSONTyped = exports.RulesetDtoFromJSON = exports.RulesetDtoHandlerEnum = exports.RulesetDtoActionEnum = exports.RulesetDtoScopeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var RulesetDtoScopeEnum;
 (function (RulesetDtoScopeEnum) {
     RulesetDtoScopeEnum["RECEIVING_EMAILS"] = "RECEIVING_EMAILS";
     RulesetDtoScopeEnum["SENDING_EMAILS"] = "SENDING_EMAILS";
     RulesetDtoScopeEnum["RECEIVING_SMS"] = "RECEIVING_SMS";
     RulesetDtoScopeEnum["SENDING_SMS"] = "SENDING_SMS";
-})(RulesetDtoScopeEnum = exports.RulesetDtoScopeEnum || (exports.RulesetDtoScopeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(RulesetDtoScopeEnum = exports.RulesetDtoScopeEnum || (exports.RulesetDtoScopeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var RulesetDtoActionEnum;
 (function (RulesetDtoActionEnum) {
     RulesetDtoActionEnum["BLOCK"] = "BLOCK";
@@ -36,10 +37,11 @@ var RulesetDtoActionEnum;
     RulesetDtoActionEnum["FILTER_REMOVE"] = "FILTER_REMOVE";
     RulesetDtoActionEnum["BOUNCE_SOFT"] = "BOUNCE_SOFT";
     RulesetDtoActionEnum["BOUNCE_HARD"] = "BOUNCE_HARD";
-})(RulesetDtoActionEnum = exports.RulesetDtoActionEnum || (exports.RulesetDtoActionEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(RulesetDtoActionEnum = exports.RulesetDtoActionEnum || (exports.RulesetDtoActionEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var RulesetDtoHandlerEnum;
 (function (RulesetDtoHandlerEnum) {
     RulesetDtoHandlerEnum["EXCEPTION"] = "EXCEPTION";
@@ -49,18 +51,18 @@ function RulesetDtoFromJSON(json) {
 }
 exports.RulesetDtoFromJSON = RulesetDtoFromJSON;
 function RulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'id': json['id'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'phoneId': !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
-        'scope': json['scope'],
-        'action': json['action'],
-        'target': json['target'],
-        'handler': json['handler'],
-        'createdAt': (new Date(json['createdAt'])),
+        id: json['id'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        scope: json['scope'],
+        action: json['action'],
+        target: json['target'],
+        handler: json['handler'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.RulesetDtoFromJSONTyped = RulesetDtoFromJSONTyped;
@@ -72,14 +74,14 @@ function RulesetDtoToJSON(value) {
         return null;
     }
     return {
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'phoneId': value.phoneId,
-        'scope': value.scope,
-        'action': value.action,
-        'target': value.target,
-        'handler': value.handler,
-        'createdAt': (value.createdAt.toISOString()),
+        id: value.id,
+        inboxId: value.inboxId,
+        phoneId: value.phoneId,
+        scope: value.scope,
+        action: value.action,
+        target: value.target,
+        handler: value.handler,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.RulesetDtoToJSON = RulesetDtoToJSON;

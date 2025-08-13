@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhoneNumberProjectionToJSON = exports.PhoneNumberProjectionFromJSONTyped = exports.PhoneNumberProjectionFromJSON = exports.PhoneNumberProjectionPhoneCountryEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var PhoneNumberProjectionPhoneCountryEnum;
 (function (PhoneNumberProjectionPhoneCountryEnum) {
     PhoneNumberProjectionPhoneCountryEnum["US"] = "US";
@@ -39,16 +39,16 @@ function PhoneNumberProjectionFromJSON(json) {
 }
 exports.PhoneNumberProjectionFromJSON = PhoneNumberProjectionFromJSON;
 function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'userId': json['userId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'phoneNumber': json['phoneNumber'],
-        'phoneCountry': json['phoneCountry'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'id': json['id'],
+        userId: json['userId'],
+        createdAt: new Date(json['createdAt']),
+        phoneNumber: json['phoneNumber'],
+        phoneCountry: json['phoneCountry'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.PhoneNumberProjectionFromJSONTyped = PhoneNumberProjectionFromJSONTyped;
@@ -60,12 +60,12 @@ function PhoneNumberProjectionToJSON(value) {
         return null;
     }
     return {
-        'userId': value.userId,
-        'createdAt': (value.createdAt.toISOString()),
-        'phoneNumber': value.phoneNumber,
-        'phoneCountry': value.phoneCountry,
-        'name': value.name,
-        'id': value.id,
+        userId: value.userId,
+        createdAt: value.createdAt.toISOString(),
+        phoneNumber: value.phoneNumber,
+        phoneCountry: value.phoneCountry,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.PhoneNumberProjectionToJSON = PhoneNumberProjectionToJSON;

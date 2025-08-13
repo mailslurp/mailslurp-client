@@ -13,6 +13,7 @@ AITransformProjection
 ### Properties
 
 - [conditions](AITransformProjection.md#conditions)
+- [createdAt](AITransformProjection.md#createdat)
 - [id](AITransformProjection.md#id)
 - [instructions](AITransformProjection.md#instructions)
 - [name](AITransformProjection.md#name)
@@ -23,6 +24,16 @@ AITransformProjection
 ### conditions
 
 • `Optional` **conditions**: `string`[]
+
+**`Memberof`**
+
+AITransformProjection
+
+___
+
+### createdAt
+
+• **createdAt**: `Date`
 
 **`Memberof`**
 

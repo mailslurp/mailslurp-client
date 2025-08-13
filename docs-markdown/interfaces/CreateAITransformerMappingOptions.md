@@ -44,7 +44,7 @@ ___
 
 ### entityId
 
-• **entityId**: `string`
+• `Optional` **entityId**: `string`
 
 **`Memberof`**
 
@@ -64,7 +64,7 @@ ___
 
 ### name
 
-• **name**: `string`
+• `Optional` **name**: `string`
 
 **`Memberof`**
 

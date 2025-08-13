@@ -20,12 +20,12 @@ function GuestPortalUserCreateDtoFromJSON(json) {
 }
 exports.GuestPortalUserCreateDtoFromJSON = GuestPortalUserCreateDtoFromJSON;
 function GuestPortalUserCreateDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'guest': (0, _1.GuestPortalUserDtoFromJSON)(json['guest']),
-        'password': json['password'],
+        guest: (0, _1.GuestPortalUserDtoFromJSON)(json['guest']),
+        password: json['password'],
     };
 }
 exports.GuestPortalUserCreateDtoFromJSONTyped = GuestPortalUserCreateDtoFromJSONTyped;
@@ -37,8 +37,8 @@ function GuestPortalUserCreateDtoToJSON(value) {
         return null;
     }
     return {
-        'guest': (0, _1.GuestPortalUserDtoToJSON)(value.guest),
-        'password': value.password,
+        guest: (0, _1.GuestPortalUserDtoToJSON)(value.guest),
+        password: value.password,
     };
 }
 exports.GuestPortalUserCreateDtoToJSON = GuestPortalUserCreateDtoToJSON;

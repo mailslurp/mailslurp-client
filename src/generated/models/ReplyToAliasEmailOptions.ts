@@ -19,119 +19,130 @@ import { exists, mapValues } from '../runtime';
  * @interface ReplyToAliasEmailOptions
  */
 export interface ReplyToAliasEmailOptions {
-    /**
-     * Body of the reply email you want to send
-     * @type {string}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    body: string;
-    /**
-     * Is the reply HTML
-     * @type {boolean}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    isHTML: boolean;
-    /**
-     * The charset that your message should be sent with. Optional. Default is UTF-8
-     * @type {string}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    charset?: string | null;
-    /**
-     * List of uploaded attachments to send with the reply. Optional.
-     * @type {Array<string>}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    attachments?: Array<string> | null;
-    /**
-     * Template variables if using a template
-     * @type {{ [key: string]: object; }}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    templateVariables?: { [key: string]: object; } | null;
-    /**
-     * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
-     * @type {string}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    template?: string | null;
-    /**
-     * How an email should be sent based on its recipients
-     * @type {string}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    sendStrategy?: ReplyToAliasEmailOptionsSendStrategyEnum;
-    /**
-     * Optional custom headers
-     * @type {{ [key: string]: string; }}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    customHeaders?: { [key: string]: string; } | null;
-    /**
-     * Optionally use inbox name as display name for sender email address
-     * @type {boolean}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    useInboxName?: boolean | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof ReplyToAliasEmailOptions
-     */
-    html?: boolean;
+  /**
+   * Body of the reply email you want to send
+   * @type {string}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  body: string;
+  /**
+   * Is the reply HTML
+   * @type {boolean}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  isHTML: boolean;
+  /**
+   * The charset that your message should be sent with. Optional. Default is UTF-8
+   * @type {string}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  charset?: string | null;
+  /**
+   * List of uploaded attachments to send with the reply. Optional.
+   * @type {Array<string>}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  attachments?: Array<string> | null;
+  /**
+   * Template variables if using a template
+   * @type {{ [key: string]: object; }}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  templateVariables?: { [key: string]: object } | null;
+  /**
+   * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
+   * @type {string}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  template?: string | null;
+  /**
+   * How an email should be sent based on its recipients
+   * @type {string}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  sendStrategy?: ReplyToAliasEmailOptionsSendStrategyEnum;
+  /**
+   * Optional custom headers
+   * @type {{ [key: string]: string; }}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  customHeaders?: { [key: string]: string } | null;
+  /**
+   * Optionally use inbox name as display name for sender email address
+   * @type {boolean}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  useInboxName?: boolean | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  html?: boolean;
 }
 
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export enum ReplyToAliasEmailOptionsSendStrategyEnum {
-    SINGLE_MESSAGE = 'SINGLE_MESSAGE'
+  SINGLE_MESSAGE = 'SINGLE_MESSAGE',
 }
 
-export function ReplyToAliasEmailOptionsFromJSON(json: any): ReplyToAliasEmailOptions {
-    return ReplyToAliasEmailOptionsFromJSONTyped(json, false);
+export function ReplyToAliasEmailOptionsFromJSON(
+  json: any
+): ReplyToAliasEmailOptions {
+  return ReplyToAliasEmailOptionsFromJSONTyped(json, false);
 }
 
-export function ReplyToAliasEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyToAliasEmailOptions {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'body': json['body'],
-        'isHTML': json['isHTML'],
-        'charset': !exists(json, 'charset') ? undefined : json['charset'],
-        'attachments': !exists(json, 'attachments') ? undefined : json['attachments'],
-        'templateVariables': !exists(json, 'templateVariables') ? undefined : json['templateVariables'],
-        'template': !exists(json, 'template') ? undefined : json['template'],
-        'sendStrategy': !exists(json, 'sendStrategy') ? undefined : json['sendStrategy'],
-        'customHeaders': !exists(json, 'customHeaders') ? undefined : json['customHeaders'],
-        'useInboxName': !exists(json, 'useInboxName') ? undefined : json['useInboxName'],
-        'html': !exists(json, 'html') ? undefined : json['html'],
-    };
+export function ReplyToAliasEmailOptionsFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): ReplyToAliasEmailOptions {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    body: json['body'],
+    isHTML: json['isHTML'],
+    charset: !exists(json, 'charset') ? undefined : json['charset'],
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    templateVariables: !exists(json, 'templateVariables')
+      ? undefined
+      : json['templateVariables'],
+    template: !exists(json, 'template') ? undefined : json['template'],
+    sendStrategy: !exists(json, 'sendStrategy')
+      ? undefined
+      : json['sendStrategy'],
+    customHeaders: !exists(json, 'customHeaders')
+      ? undefined
+      : json['customHeaders'],
+    useInboxName: !exists(json, 'useInboxName')
+      ? undefined
+      : json['useInboxName'],
+    html: !exists(json, 'html') ? undefined : json['html'],
+  };
 }
 
-export function ReplyToAliasEmailOptionsToJSON(value?: ReplyToAliasEmailOptions | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'body': value.body,
-        'isHTML': value.isHTML,
-        'charset': value.charset,
-        'attachments': value.attachments,
-        'templateVariables': value.templateVariables,
-        'template': value.template,
-        'sendStrategy': value.sendStrategy,
-        'customHeaders': value.customHeaders,
-        'useInboxName': value.useInboxName,
-        'html': value.html,
-    };
+export function ReplyToAliasEmailOptionsToJSON(
+  value?: ReplyToAliasEmailOptions | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    body: value.body,
+    isHTML: value.isHTML,
+    charset: value.charset,
+    attachments: value.attachments,
+    templateVariables: value.templateVariables,
+    template: value.template,
+    sendStrategy: value.sendStrategy,
+    customHeaders: value.customHeaders,
+    useInboxName: value.useInboxName,
+    html: value.html,
+  };
 }
-
-

@@ -20,13 +20,13 @@ function LookupMxRecordsResultsFromJSON(json) {
 }
 exports.LookupMxRecordsResultsFromJSON = LookupMxRecordsResultsFromJSON;
 function LookupMxRecordsResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'records': (json['records'].map(_1.DNSLookupResultFromJSON)),
-        'errors': json['errors'],
-        'warnings': json['warnings'],
+        records: json['records'].map(_1.DNSLookupResultFromJSON),
+        errors: json['errors'],
+        warnings: json['warnings'],
     };
 }
 exports.LookupMxRecordsResultsFromJSONTyped = LookupMxRecordsResultsFromJSONTyped;
@@ -38,9 +38,9 @@ function LookupMxRecordsResultsToJSON(value) {
         return null;
     }
     return {
-        'records': (value.records.map(_1.DNSLookupResultToJSON)),
-        'errors': value.errors,
-        'warnings': value.warnings,
+        records: value.records.map(_1.DNSLookupResultToJSON),
+        errors: value.errors,
+        warnings: value.warnings,
     };
 }
 exports.LookupMxRecordsResultsToJSON = LookupMxRecordsResultsToJSON;

@@ -14,51 +14,52 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    EmailThreadItem,
-    EmailThreadItemFromJSON,
-    EmailThreadItemFromJSONTyped,
-    EmailThreadItemToJSON,
+  EmailThreadItem,
+  EmailThreadItemFromJSON,
+  EmailThreadItemFromJSONTyped,
+  EmailThreadItemToJSON,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface EmailThreadItemsDto
  */
 export interface EmailThreadItemsDto {
-    /**
-     * 
-     * @type {Array<EmailThreadItem>}
-     * @memberof EmailThreadItemsDto
-     */
-    items: Array<EmailThreadItem>;
+  /**
+   *
+   * @type {Array<EmailThreadItem>}
+   * @memberof EmailThreadItemsDto
+   */
+  items: Array<EmailThreadItem>;
 }
 
 export function EmailThreadItemsDtoFromJSON(json: any): EmailThreadItemsDto {
-    return EmailThreadItemsDtoFromJSONTyped(json, false);
+  return EmailThreadItemsDtoFromJSONTyped(json, false);
 }
 
-export function EmailThreadItemsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailThreadItemsDto {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'items': ((json['items'] as Array<any>).map(EmailThreadItemFromJSON)),
-    };
+export function EmailThreadItemsDtoFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): EmailThreadItemsDto {
+  if (json === undefined || json === null) {
+    return json;
+  }
+  return {
+    items: (json['items'] as Array<any>).map(EmailThreadItemFromJSON),
+  };
 }
 
-export function EmailThreadItemsDtoToJSON(value?: EmailThreadItemsDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'items': ((value.items as Array<any>).map(EmailThreadItemToJSON)),
-    };
+export function EmailThreadItemsDtoToJSON(
+  value?: EmailThreadItemsDto | null
+): any {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  return {
+    items: (value.items as Array<any>).map(EmailThreadItemToJSON),
+  };
 }
-
-

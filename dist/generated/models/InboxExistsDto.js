@@ -20,13 +20,13 @@ function InboxExistsDtoFromJSON(json) {
 }
 exports.InboxExistsDtoFromJSON = InboxExistsDtoFromJSON;
 function InboxExistsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        '_exists': json['exists'],
-        'softBounce': !(0, runtime_1.exists)(json, 'softBounce') ? undefined : json['softBounce'],
-        'hardBounce': !(0, runtime_1.exists)(json, 'hardBounce') ? undefined : json['hardBounce'],
+        _exists: json['exists'],
+        softBounce: !(0, runtime_1.exists)(json, 'softBounce') ? undefined : json['softBounce'],
+        hardBounce: !(0, runtime_1.exists)(json, 'hardBounce') ? undefined : json['hardBounce'],
     };
 }
 exports.InboxExistsDtoFromJSONTyped = InboxExistsDtoFromJSONTyped;
@@ -38,9 +38,9 @@ function InboxExistsDtoToJSON(value) {
         return null;
     }
     return {
-        'exists': value._exists,
-        'softBounce': value.softBounce,
-        'hardBounce': value.hardBounce,
+        exists: value._exists,
+        softBounce: value.softBounce,
+        hardBounce: value.hardBounce,
     };
 }
 exports.InboxExistsDtoToJSON = InboxExistsDtoToJSON;

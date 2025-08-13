@@ -19,11 +19,11 @@ function RulesetTestOptionsFromJSON(json) {
 }
 exports.RulesetTestOptionsFromJSON = RulesetTestOptionsFromJSON;
 function RulesetTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'testTarget': json['testTarget'],
+        testTarget: json['testTarget'],
     };
 }
 exports.RulesetTestOptionsFromJSONTyped = RulesetTestOptionsFromJSONTyped;
@@ -35,7 +35,7 @@ function RulesetTestOptionsToJSON(value) {
         return null;
     }
     return {
-        'testTarget': value.testTarget,
+        testTarget: value.testTarget,
     };
 }
 exports.RulesetTestOptionsToJSON = RulesetTestOptionsToJSON;

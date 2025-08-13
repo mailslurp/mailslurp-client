@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailFeatureFamilyNameToJSON = exports.EmailFeatureFamilyNameFromJSONTyped = exports.EmailFeatureFamilyNameFromJSON = exports.EmailFeatureFamilyNameSlugEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var EmailFeatureFamilyNameSlugEnum;
 (function (EmailFeatureFamilyNameSlugEnum) {
     EmailFeatureFamilyNameSlugEnum["aol"] = "aol";
@@ -47,12 +47,12 @@ function EmailFeatureFamilyNameFromJSON(json) {
 }
 exports.EmailFeatureFamilyNameFromJSON = EmailFeatureFamilyNameFromJSON;
 function EmailFeatureFamilyNameFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'slug': json['slug'],
-        'name': json['name'],
+        slug: json['slug'],
+        name: json['name'],
     };
 }
 exports.EmailFeatureFamilyNameFromJSONTyped = EmailFeatureFamilyNameFromJSONTyped;
@@ -64,8 +64,8 @@ function EmailFeatureFamilyNameToJSON(value) {
         return null;
     }
     return {
-        'slug': value.slug,
-        'name': value.name,
+        slug: value.slug,
+        name: value.name,
     };
 }
 exports.EmailFeatureFamilyNameToJSON = EmailFeatureFamilyNameToJSON;
