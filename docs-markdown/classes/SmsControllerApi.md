@@ -38,6 +38,8 @@
 - [getSentSmsMessageRaw](SmsControllerApi.md#getsentsmsmessageraw)
 - [getSentSmsMessagesPaginated](SmsControllerApi.md#getsentsmsmessagespaginated)
 - [getSentSmsMessagesPaginatedRaw](SmsControllerApi.md#getsentsmsmessagespaginatedraw)
+- [getSmsCodes](SmsControllerApi.md#getsmscodes)
+- [getSmsCodesRaw](SmsControllerApi.md#getsmscodesraw)
 - [getSmsCount](SmsControllerApi.md#getsmscount)
 - [getSmsCountRaw](SmsControllerApi.md#getsmscountraw)
 - [getSmsMessage](SmsControllerApi.md#getsmsmessage)
@@ -432,6 +434,46 @@ Get all SMS messages in all phone numbers in paginated form. .
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentSmsProjection`](../interfaces/PageSentSmsProjection.md)\>\>
+
+___
+
+### getSmsCodes
+
+▸ **getSmsCodes**(`requestParameters`, `initOverrides?`): `Promise`<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>
+
+Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+Extract verification codes from an SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsCodesRequest`](../interfaces/GetSmsCodesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>
+
+___
+
+### getSmsCodesRaw
+
+▸ **getSmsCodesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>\>
+
+Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+Extract verification codes from an SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsCodesRequest`](../interfaces/GetSmsCodesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>\>
 
 ___
 

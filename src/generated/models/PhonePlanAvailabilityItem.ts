@@ -31,6 +31,12 @@ export interface PhonePlanAvailabilityItem {
    * @memberof PhonePlanAvailabilityItem
    */
   availabilityStatus: PhonePlanAvailabilityItemAvailabilityStatusEnum;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof PhonePlanAvailabilityItem
+   */
+  variants?: Array<PhonePlanAvailabilityItemVariantsEnum>;
 }
 
 /**
@@ -45,10 +51,10 @@ export enum PhonePlanAvailabilityItemPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
-  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
+  FI = 'FI',
   SE = 'SE',
 }
 /**
@@ -60,6 +66,15 @@ export enum PhonePlanAvailabilityItemAvailabilityStatusEnum {
   NON_MATCHING_SUBSCRIPTION_CURRENCY = 'NON_MATCHING_SUBSCRIPTION_CURRENCY',
   NON_MATCHING_SUBSCRIPTION_TYPE = 'NON_MATCHING_SUBSCRIPTION_TYPE',
   ALREADY_ASSIGNED = 'ALREADY_ASSIGNED',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum PhonePlanAvailabilityItemVariantsEnum {
+  LOCAL = 'LOCAL',
+  MOBILE = 'MOBILE',
+  TOLL_FREE = 'TOLL_FREE',
 }
 
 export function PhonePlanAvailabilityItemFromJSON(
@@ -78,6 +93,7 @@ export function PhonePlanAvailabilityItemFromJSONTyped(
   return {
     phoneCountry: json['phoneCountry'],
     availabilityStatus: json['availabilityStatus'],
+    variants: !exists(json, 'variants') ? undefined : json['variants'],
   };
 }
 
@@ -93,5 +109,6 @@ export function PhonePlanAvailabilityItemToJSON(
   return {
     phoneCountry: value.phoneCountry,
     availabilityStatus: value.availabilityStatus,
+    variants: value.variants,
   };
 }

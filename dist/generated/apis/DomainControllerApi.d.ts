@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateDomainOptions, DomainDto, DomainGroupsDto, DomainIssuesDto, DomainPreview, InboxDto, UpdateDomainOptions } from '../models';
+import { CreateDomainOptions, DomainDto, DomainGroupsDto, DomainIssuesDto, DomainPreview, DomainRegionGroupsDto, InboxDto, UpdateDomainOptions } from '../models';
 export interface AddDomainWildcardCatchAllRequest {
     id: string;
 }
@@ -19,6 +19,9 @@ export interface CreateDomainRequest {
 }
 export interface DeleteDomainRequest {
     id: string;
+}
+export interface GetAvailableDomainRegionsRequest {
+    inboxType?: GetAvailableDomainRegionsInboxTypeEnum;
 }
 export interface GetAvailableDomainsRequest {
     inboxType?: GetAvailableDomainsInboxTypeEnum;
@@ -71,6 +74,16 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      * Delete a domain
      */
     deleteDomain(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    /**
+     * List all domains available for use with email address creation, including account-region and create/send enablement flags.
+     * Get all usable domains with account region status
+     */
+    getAvailableDomainRegionsRaw(requestParameters: GetAvailableDomainRegionsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainRegionGroupsDto>>;
+    /**
+     * List all domains available for use with email address creation, including account-region and create/send enablement flags.
+     * Get all usable domains with account region status
+     */
+    getAvailableDomainRegions(requestParameters: GetAvailableDomainRegionsRequest, initOverrides?: RequestInit): Promise<DomainRegionGroupsDto>;
     /**
      * List all domains available for use with email address creation
      * Get all usable domains
@@ -141,6 +154,14 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      * Update a domain
      */
     updateDomain(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAvailableDomainRegionsInboxTypeEnum {
+    HTTP_INBOX = "HTTP_INBOX",
+    SMTP_INBOX = "SMTP_INBOX"
 }
 /**
  * @export

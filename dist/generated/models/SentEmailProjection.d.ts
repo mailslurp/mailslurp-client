@@ -27,18 +27,6 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
-    threadId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    inReplyTo?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
     from?: string | null;
     /**
      *
@@ -58,6 +46,18 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     subject?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    threadId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    inReplyTo?: string | null;
     /**
      *
      * @type {string}

@@ -40,6 +40,10 @@
 - [getListUnsubscribeRecipientsRaw](BounceControllerApi.md#getlistunsubscriberecipientsraw)
 - [getReputationItems](BounceControllerApi.md#getreputationitems)
 - [getReputationItemsRaw](BounceControllerApi.md#getreputationitemsraw)
+- [getTenantReputationFindings](BounceControllerApi.md#gettenantreputationfindings)
+- [getTenantReputationFindingsRaw](BounceControllerApi.md#gettenantreputationfindingsraw)
+- [getTenantReputationStatusSummary](BounceControllerApi.md#gettenantreputationstatussummary)
+- [getTenantReputationStatusSummaryRaw](BounceControllerApi.md#gettenantreputationstatussummaryraw)
 - [request](BounceControllerApi.md#request)
 - [withMiddleware](BounceControllerApi.md#withmiddleware)
 - [withPostMiddleware](BounceControllerApi.md#withpostmiddleware)
@@ -468,6 +472,86 @@ Get paginated list of reputation items.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageReputationItems`](../interfaces/PageReputationItems.md)\>\>
+
+___
+
+### getTenantReputationFindings
+
+▸ **getTenantReputationFindings**(`requestParameters`, `initOverrides?`): `Promise`<[`TenantReputationFindingsDto`](../interfaces/TenantReputationFindingsDto.md)\>
+
+Get SES tenant reputation recommendations/findings for this user.
+Get SES tenant reputation findings
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTenantReputationFindingsRequest`](../interfaces/GetTenantReputationFindingsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TenantReputationFindingsDto`](../interfaces/TenantReputationFindingsDto.md)\>
+
+___
+
+### getTenantReputationFindingsRaw
+
+▸ **getTenantReputationFindingsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TenantReputationFindingsDto`](../interfaces/TenantReputationFindingsDto.md)\>\>
+
+Get SES tenant reputation recommendations/findings for this user.
+Get SES tenant reputation findings
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTenantReputationFindingsRequest`](../interfaces/GetTenantReputationFindingsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TenantReputationFindingsDto`](../interfaces/TenantReputationFindingsDto.md)\>\>
+
+___
+
+### getTenantReputationStatusSummary
+
+▸ **getTenantReputationStatusSummary**(`requestParameters`, `initOverrides?`): `Promise`<[`TenantReputationStatusSummaryDto`](../interfaces/TenantReputationStatusSummaryDto.md)\>
+
+Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+Get SES tenant status summary
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTenantReputationStatusSummaryRequest`](../interfaces/GetTenantReputationStatusSummaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TenantReputationStatusSummaryDto`](../interfaces/TenantReputationStatusSummaryDto.md)\>
+
+___
+
+### getTenantReputationStatusSummaryRaw
+
+▸ **getTenantReputationStatusSummaryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TenantReputationStatusSummaryDto`](../interfaces/TenantReputationStatusSummaryDto.md)\>\>
+
+Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+Get SES tenant status summary
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTenantReputationStatusSummaryRequest`](../interfaces/GetTenantReputationStatusSummaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TenantReputationStatusSummaryDto`](../interfaces/TenantReputationStatusSummaryDto.md)\>\>
 
 ___
 

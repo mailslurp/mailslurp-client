@@ -26,6 +26,8 @@
 - [createDomainRaw](DomainControllerApi.md#createdomainraw)
 - [deleteDomain](DomainControllerApi.md#deletedomain)
 - [deleteDomainRaw](DomainControllerApi.md#deletedomainraw)
+- [getAvailableDomainRegions](DomainControllerApi.md#getavailabledomainregions)
+- [getAvailableDomainRegionsRaw](DomainControllerApi.md#getavailabledomainregionsraw)
 - [getAvailableDomains](DomainControllerApi.md#getavailabledomains)
 - [getAvailableDomainsRaw](DomainControllerApi.md#getavailabledomainsraw)
 - [getDomain](DomainControllerApi.md#getdomain)
@@ -190,6 +192,46 @@ Delete a domain
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+___
+
+### getAvailableDomainRegions
+
+▸ **getAvailableDomainRegions**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainRegionGroupsDto`](../interfaces/DomainRegionGroupsDto.md)\>
+
+List all domains available for use with email address creation, including account-region and create/send enablement flags.
+Get all usable domains with account region status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAvailableDomainRegionsRequest`](../interfaces/GetAvailableDomainRegionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainRegionGroupsDto`](../interfaces/DomainRegionGroupsDto.md)\>
+
+___
+
+### getAvailableDomainRegionsRaw
+
+▸ **getAvailableDomainRegionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainRegionGroupsDto`](../interfaces/DomainRegionGroupsDto.md)\>\>
+
+List all domains available for use with email address creation, including account-region and create/send enablement flags.
+Get all usable domains with account region status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAvailableDomainRegionsRequest`](../interfaces/GetAvailableDomainRegionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainRegionGroupsDto`](../interfaces/DomainRegionGroupsDto.md)\>\>
 
 ___
 

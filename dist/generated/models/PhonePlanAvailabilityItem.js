@@ -13,7 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePlanAvailabilityItemToJSON = exports.PhonePlanAvailabilityItemFromJSONTyped = exports.PhonePlanAvailabilityItemFromJSON = exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum = void 0;
+exports.PhonePlanAvailabilityItemToJSON = exports.PhonePlanAvailabilityItemFromJSONTyped = exports.PhonePlanAvailabilityItemFromJSON = exports.PhonePlanAvailabilityItemVariantsEnum = exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum = void 0;
+var runtime_1 = require("../runtime");
 /**
  * @export
  * @enum {string}
@@ -27,10 +28,10 @@ var PhonePlanAvailabilityItemPhoneCountryEnum;
     PhonePlanAvailabilityItemPhoneCountryEnum["EE"] = "EE";
     PhonePlanAvailabilityItemPhoneCountryEnum["HK"] = "HK";
     PhonePlanAvailabilityItemPhoneCountryEnum["PL"] = "PL";
-    PhonePlanAvailabilityItemPhoneCountryEnum["CH"] = "CH";
     PhonePlanAvailabilityItemPhoneCountryEnum["PT"] = "PT";
     PhonePlanAvailabilityItemPhoneCountryEnum["NL"] = "NL";
     PhonePlanAvailabilityItemPhoneCountryEnum["IL"] = "IL";
+    PhonePlanAvailabilityItemPhoneCountryEnum["FI"] = "FI";
     PhonePlanAvailabilityItemPhoneCountryEnum["SE"] = "SE";
 })(PhonePlanAvailabilityItemPhoneCountryEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum || (exports.PhonePlanAvailabilityItemPhoneCountryEnum = {}));
 /**
@@ -44,6 +45,16 @@ var PhonePlanAvailabilityItemAvailabilityStatusEnum;
     PhonePlanAvailabilityItemAvailabilityStatusEnum["NON_MATCHING_SUBSCRIPTION_TYPE"] = "NON_MATCHING_SUBSCRIPTION_TYPE";
     PhonePlanAvailabilityItemAvailabilityStatusEnum["ALREADY_ASSIGNED"] = "ALREADY_ASSIGNED";
 })(PhonePlanAvailabilityItemAvailabilityStatusEnum = exports.PhonePlanAvailabilityItemAvailabilityStatusEnum || (exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var PhonePlanAvailabilityItemVariantsEnum;
+(function (PhonePlanAvailabilityItemVariantsEnum) {
+    PhonePlanAvailabilityItemVariantsEnum["LOCAL"] = "LOCAL";
+    PhonePlanAvailabilityItemVariantsEnum["MOBILE"] = "MOBILE";
+    PhonePlanAvailabilityItemVariantsEnum["TOLL_FREE"] = "TOLL_FREE";
+})(PhonePlanAvailabilityItemVariantsEnum = exports.PhonePlanAvailabilityItemVariantsEnum || (exports.PhonePlanAvailabilityItemVariantsEnum = {}));
 function PhonePlanAvailabilityItemFromJSON(json) {
     return PhonePlanAvailabilityItemFromJSONTyped(json, false);
 }
@@ -55,6 +66,7 @@ function PhonePlanAvailabilityItemFromJSONTyped(json, ignoreDiscriminator) {
     return {
         phoneCountry: json['phoneCountry'],
         availabilityStatus: json['availabilityStatus'],
+        variants: !(0, runtime_1.exists)(json, 'variants') ? undefined : json['variants'],
     };
 }
 exports.PhonePlanAvailabilityItemFromJSONTyped = PhonePlanAvailabilityItemFromJSONTyped;
@@ -68,6 +80,7 @@ function PhonePlanAvailabilityItemToJSON(value) {
     return {
         phoneCountry: value.phoneCountry,
         availabilityStatus: value.availabilityStatus,
+        variants: value.variants,
     };
 }
 exports.PhonePlanAvailabilityItemToJSON = PhonePlanAvailabilityItemToJSON;

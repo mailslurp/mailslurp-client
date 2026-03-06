@@ -47,6 +47,12 @@ import {
   PageReputationItems,
   PageReputationItemsFromJSON,
   PageReputationItemsToJSON,
+  TenantReputationFindingsDto,
+  TenantReputationFindingsDtoFromJSON,
+  TenantReputationFindingsDtoToJSON,
+  TenantReputationStatusSummaryDto,
+  TenantReputationStatusSummaryDtoFromJSON,
+  TenantReputationStatusSummaryDtoToJSON,
 } from '../models';
 
 export interface FilterBouncedRecipientRequest {
@@ -102,6 +108,14 @@ export interface GetReputationItemsRequest {
   sort?: GetReputationItemsSortEnum;
   since?: Date;
   before?: Date;
+}
+
+export interface GetTenantReputationFindingsRequest {
+  accountRegion?: GetTenantReputationFindingsAccountRegionEnum;
+}
+
+export interface GetTenantReputationStatusSummaryRequest {
+  accountRegion?: GetTenantReputationStatusSummaryAccountRegionEnum;
 }
 
 /**
@@ -711,6 +725,106 @@ export class BounceControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * Get SES tenant reputation recommendations/findings for this user.
+   * Get SES tenant reputation findings
+   */
+  async getTenantReputationFindingsRaw(
+    requestParameters: GetTenantReputationFindingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TenantReputationFindingsDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.accountRegion !== undefined) {
+      queryParameters['accountRegion'] = requestParameters.accountRegion;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/tenant-findings`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TenantReputationFindingsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get SES tenant reputation recommendations/findings for this user.
+   * Get SES tenant reputation findings
+   */
+  async getTenantReputationFindings(
+    requestParameters: GetTenantReputationFindingsRequest,
+    initOverrides?: RequestInit
+  ): Promise<TenantReputationFindingsDto> {
+    const response = await this.getTenantReputationFindingsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+   * Get SES tenant status summary
+   */
+  async getTenantReputationStatusSummaryRaw(
+    requestParameters: GetTenantReputationStatusSummaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TenantReputationStatusSummaryDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.accountRegion !== undefined) {
+      queryParameters['accountRegion'] = requestParameters.accountRegion;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/tenant-status`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TenantReputationStatusSummaryDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+   * Get SES tenant status summary
+   */
+  async getTenantReputationStatusSummary(
+    requestParameters: GetTenantReputationStatusSummaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<TenantReputationStatusSummaryDto> {
+    const response = await this.getTenantReputationStatusSummaryRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
@@ -752,4 +866,40 @@ export enum GetListUnsubscribeRecipientsSortEnum {
 export enum GetReputationItemsSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTenantReputationFindingsAccountRegionEnum {
+  US_WEST_2_ACCOUNT_STAGING = 'US_WEST_2_ACCOUNT_STAGING',
+  US_EAST_1_ACCOUNT_STAGING = 'US_EAST_1_ACCOUNT_STAGING',
+  EU_WEST_1_ACCOUNT_STAGING = 'EU_WEST_1_ACCOUNT_STAGING',
+  US_WEST_2_ACCOUNT_SES_1 = 'US_WEST_2_ACCOUNT_SES_1',
+  EU_WEST_1_ACCOUNT_SES_1 = 'EU_WEST_1_ACCOUNT_SES_1',
+  US_WEST_2_ACCOUNT_SES_2 = 'US_WEST_2_ACCOUNT_SES_2',
+  EU_WEST_1_ACCOUNT_SES_2 = 'EU_WEST_1_ACCOUNT_SES_2',
+  US_WEST_2_ACCOUNT_BYTEWISE = 'US_WEST_2_ACCOUNT_BYTEWISE',
+  EU_WEST_1_ACCOUNT_BYTEWISE = 'EU_WEST_1_ACCOUNT_BYTEWISE',
+  US_WEST_2 = 'US_WEST_2',
+  EU_WEST_1 = 'EU_WEST_1',
+  US_EAST_1 = 'US_EAST_1',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTenantReputationStatusSummaryAccountRegionEnum {
+  US_WEST_2_ACCOUNT_STAGING = 'US_WEST_2_ACCOUNT_STAGING',
+  US_EAST_1_ACCOUNT_STAGING = 'US_EAST_1_ACCOUNT_STAGING',
+  EU_WEST_1_ACCOUNT_STAGING = 'EU_WEST_1_ACCOUNT_STAGING',
+  US_WEST_2_ACCOUNT_SES_1 = 'US_WEST_2_ACCOUNT_SES_1',
+  EU_WEST_1_ACCOUNT_SES_1 = 'EU_WEST_1_ACCOUNT_SES_1',
+  US_WEST_2_ACCOUNT_SES_2 = 'US_WEST_2_ACCOUNT_SES_2',
+  EU_WEST_1_ACCOUNT_SES_2 = 'EU_WEST_1_ACCOUNT_SES_2',
+  US_WEST_2_ACCOUNT_BYTEWISE = 'US_WEST_2_ACCOUNT_BYTEWISE',
+  EU_WEST_1_ACCOUNT_BYTEWISE = 'EU_WEST_1_ACCOUNT_BYTEWISE',
+  US_WEST_2 = 'US_WEST_2',
+  EU_WEST_1 = 'EU_WEST_1',
+  US_EAST_1 = 'US_EAST_1',
 }

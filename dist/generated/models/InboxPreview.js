@@ -44,7 +44,18 @@ var InboxPreviewFunctionsAsEnum;
  */
 var InboxPreviewAccountRegionEnum;
 (function (InboxPreviewAccountRegionEnum) {
+    InboxPreviewAccountRegionEnum["US_WEST_2_ACCOUNT_STAGING"] = "US_WEST_2_ACCOUNT_STAGING";
+    InboxPreviewAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
+    InboxPreviewAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
+    InboxPreviewAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    InboxPreviewAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
+    InboxPreviewAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
+    InboxPreviewAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    InboxPreviewAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
+    InboxPreviewAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
     InboxPreviewAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+    InboxPreviewAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
+    InboxPreviewAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
 })(InboxPreviewAccountRegionEnum = exports.InboxPreviewAccountRegionEnum || (exports.InboxPreviewAccountRegionEnum = {}));
 function InboxPreviewFromJSON(json) {
     return InboxPreviewFromJSONTyped(json, false);

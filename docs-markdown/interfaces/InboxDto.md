@@ -36,7 +36,7 @@ InboxDto
 
 ### accountRegion
 
-• `Optional` **accountRegion**: [`US_WEST_2`](../enums/InboxDtoAccountRegionEnum.md#us_west_2)
+• `Optional` **accountRegion**: [`InboxDtoAccountRegionEnum`](../enums/InboxDtoAccountRegionEnum.md)
 
 Region of the inbox
 

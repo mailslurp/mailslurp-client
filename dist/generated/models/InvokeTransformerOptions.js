@@ -66,6 +66,7 @@ function InvokeTransformerOptionsFromJSONTyped(json, ignoreDiscriminator) {
         contentSelector: !(0, runtime_1.exists)(json, 'contentSelector')
             ? undefined
             : json['contentSelector'],
+        saveResults: !(0, runtime_1.exists)(json, 'saveResults') ? undefined : json['saveResults'],
     };
 }
 exports.InvokeTransformerOptionsFromJSONTyped = InvokeTransformerOptionsFromJSONTyped;
@@ -86,6 +87,7 @@ function InvokeTransformerOptionsToJSON(value) {
         rawInstructions: value.rawInstructions,
         rawOutputSchema: (0, _1.StructuredOutputSchemaToJSON)(value.rawOutputSchema),
         contentSelector: value.contentSelector,
+        saveResults: value.saveResults,
     };
 }
 exports.InvokeTransformerOptionsToJSON = InvokeTransformerOptionsToJSON;

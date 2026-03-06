@@ -35,9 +35,10 @@ function PhoneMessageThreadItemProjectionFromJSONTyped(json, ignoreDiscriminator
         body: json['body'],
         phoneNumberId: json['phoneNumberId'],
         created: new Date(json['created']),
+        messageDirection: json['messageDirection'],
         fromPhoneNumber: json['fromPhoneNumber'],
         toPhoneNumber: json['toPhoneNumber'],
-        messageDirection: json['messageDirection'],
+        id: json['id'],
     };
 }
 exports.PhoneMessageThreadItemProjectionFromJSONTyped = PhoneMessageThreadItemProjectionFromJSONTyped;
@@ -52,9 +53,10 @@ function PhoneMessageThreadItemProjectionToJSON(value) {
         body: value.body,
         phoneNumberId: value.phoneNumberId,
         created: value.created.toISOString(),
+        messageDirection: value.messageDirection,
         fromPhoneNumber: value.fromPhoneNumber,
         toPhoneNumber: value.toPhoneNumber,
-        messageDirection: value.messageDirection,
+        id: value.id,
     };
 }
 exports.PhoneMessageThreadItemProjectionToJSON = PhoneMessageThreadItemProjectionToJSON;

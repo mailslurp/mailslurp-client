@@ -9,8 +9,10 @@
 - [aiTransformerId](GetAllWebhooksRequest.md#aitransformerid)
 - [before](GetAllWebhooksRequest.md#before)
 - [eventType](GetAllWebhooksRequest.md#eventtype)
+- [eventTypeSource](GetAllWebhooksRequest.md#eventtypesource)
 - [health](GetAllWebhooksRequest.md#health)
 - [inboxId](GetAllWebhooksRequest.md#inboxid)
+- [includeAccountWide](GetAllWebhooksRequest.md#includeaccountwide)
 - [page](GetAllWebhooksRequest.md#page)
 - [phoneId](GetAllWebhooksRequest.md#phoneid)
 - [searchFilter](GetAllWebhooksRequest.md#searchfilter)
@@ -39,6 +41,12 @@ ___
 
 ___
 
+### eventTypeSource
+
+• `Optional` **eventTypeSource**: [`GetAllWebhooksEventTypeSourceEnum`](../enums/GetAllWebhooksEventTypeSourceEnum.md)
+
+___
+
 ### health
 
 • `Optional` **health**: [`GetAllWebhooksHealthEnum`](../enums/GetAllWebhooksHealthEnum.md)
@@ -48,6 +56,12 @@ ___
 ### inboxId
 
 • `Optional` **inboxId**: `string`
+
+___
+
+### includeAccountWide
+
+• `Optional` **includeAccountWide**: `boolean`
 
 ___
 

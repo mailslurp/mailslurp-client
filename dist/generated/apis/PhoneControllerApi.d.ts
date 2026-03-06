@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ConsentStatusDto, CreateEmergencyAddressOptions, CreatePhoneNumberOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneMessageThreadItemProjection, PagePhoneMessageThreadProjection, PagePhoneNumberProjection, PageSentSmsProjection, PageSmsProjection, PhoneNumberDto, PhoneNumberValidationDto, PhonePlanAvailability, PhonePlanDto, SentSmsDto, SetPhoneFavouritedOptions, SmsSendOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions, ValidatePhoneNumberOptions } from '../models';
+import { ConsentStatusDto, CreateEmergencyAddressOptions, CreatePhoneNumberOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneMessageThreadItemProjection, PagePhoneMessageThreadProjection, PagePhoneNumberProjection, PagePhoneNumberReleaseProjection, PageSentSmsProjection, PageSmsProjection, PhoneNumberDto, PhoneNumberReleaseProjection, PhoneNumberValidationDto, PhonePlanAvailability, PhonePlanDto, PhoneSummaryDto, SentSmsDto, SetPhoneFavouritedOptions, SmsSendOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions, ValidatePhoneNumberOptions } from '../models';
 export interface CreateEmergencyAddressRequest {
     createEmergencyAddressOptions: CreateEmergencyAddressOptions;
 }
@@ -20,12 +20,21 @@ export interface CreatePhoneNumberRequest {
 export interface DeleteEmergencyAddressRequest {
     addressId: string;
 }
+export interface DeletePhoneMessageThreadItemsRequest {
+    phoneNumberId: string;
+    otherNumber: string;
+}
 export interface DeletePhoneNumberRequest {
     phoneNumberId: string;
 }
 export interface GetAllPhoneMessageThreadsRequest {
     page?: number;
     size?: number;
+}
+export interface GetAllPhoneNumberReleasesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllPhoneNumberReleasesSortEnum;
 }
 export interface GetEmergencyAddressRequest {
     addressId: string;
@@ -49,6 +58,9 @@ export interface GetPhoneNumberByNameRequest {
 }
 export interface GetPhoneNumberByPhoneNumberRequest {
     phoneNumber: string;
+}
+export interface GetPhoneNumberReleaseRequest {
+    releaseId: string;
 }
 export interface GetPhoneNumbersRequest {
     phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
@@ -80,6 +92,9 @@ export interface GetSmsByPhoneNumberRequest {
     before?: Date;
     search?: string;
     favourite?: boolean;
+}
+export interface ReassignPhoneNumberReleaseRequest {
+    releaseId: string;
 }
 export interface SendSmsFromPhoneNumberRequest {
     phoneNumberId: string;
@@ -129,6 +144,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     createPhoneNumber(requestParameters: CreatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
+     * Remove all phone number from account
+     * Delete all phone numbers
+     */
+    deleteAllPhoneNumberRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Remove all phone number from account
+     * Delete all phone numbers
+     */
+    deleteAllPhoneNumber(initOverrides?: RequestInit): Promise<void>;
+    /**
      * Delete an emergency address
      * Delete an emergency address
      */
@@ -138,6 +163,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Delete an emergency address
      */
     deleteEmergencyAddress(requestParameters: DeleteEmergencyAddressRequest, initOverrides?: RequestInit): Promise<EmptyResponseDto>;
+    /**
+     * Delete all messages in an SMS thread
+     * Delete messages in a phone thread
+     */
+    deletePhoneMessageThreadItemsRaw(requestParameters: DeletePhoneMessageThreadItemsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmptyResponseDto>>;
+    /**
+     * Delete all messages in an SMS thread
+     * Delete messages in a phone thread
+     */
+    deletePhoneMessageThreadItems(requestParameters: DeletePhoneMessageThreadItemsRequest, initOverrides?: RequestInit): Promise<EmptyResponseDto>;
     /**
      * Remove phone number from account
      * Delete a phone number
@@ -158,6 +193,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Get the latest messages for all phones
      */
     getAllPhoneMessageThreads(requestParameters: GetAllPhoneMessageThreadsRequest, initOverrides?: RequestInit): Promise<PagePhoneMessageThreadProjection>;
+    /**
+     * List released or deleted phone numbers
+     * Get all phone number releases
+     */
+    getAllPhoneNumberReleasesRaw(requestParameters: GetAllPhoneNumberReleasesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PagePhoneNumberReleaseProjection>>;
+    /**
+     * List released or deleted phone numbers
+     * Get all phone number releases
+     */
+    getAllPhoneNumberReleases(requestParameters: GetAllPhoneNumberReleasesRequest, initOverrides?: RequestInit): Promise<PagePhoneNumberReleaseProjection>;
     /**
      * Get the status of phone usage consent
      * Get consent status
@@ -239,6 +284,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     getPhoneNumberByPhoneNumber(requestParameters: GetPhoneNumberByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
+     * Get a released or deleted phone numbers
+     * Get phone number release
+     */
+    getPhoneNumberReleaseRaw(requestParameters: GetPhoneNumberReleaseRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberReleaseProjection>>;
+    /**
+     * Get a released or deleted phone numbers
+     * Get phone number release
+     */
+    getPhoneNumberRelease(requestParameters: GetPhoneNumberReleaseRequest, initOverrides?: RequestInit): Promise<PhoneNumberReleaseProjection>;
+    /**
      * List phone numbers for account
      * Get phone numbers
      */
@@ -267,6 +322,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     getPhonePlansAvailability(initOverrides?: RequestInit): Promise<PhonePlanAvailability>;
     /**
+     * Get overview of assigned phones
+     * Get phone summary
+     */
+    getPhoneSummaryRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneSummaryDto>>;
+    /**
+     * Get overview of assigned phones
+     * Get phone summary
+     */
+    getPhoneSummary(initOverrides?: RequestInit): Promise<PhoneSummaryDto>;
+    /**
      * Get sent SMS messages for a phone number
      * List sent TXT messages for a phone number
      */
@@ -286,6 +351,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * List SMS messages for a phone number
      */
     getSmsByPhoneNumber(requestParameters: GetSmsByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PageSmsProjection>;
+    /**
+     * Reassign phone number that was released or deleted
+     * Reassign phone number release
+     */
+    reassignPhoneNumberReleaseRaw(requestParameters: ReassignPhoneNumberReleaseRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Reassign phone number that was released or deleted
+     * Reassign phone number release
+     */
+    reassignPhoneNumberRelease(requestParameters: ReassignPhoneNumberReleaseRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
      * Send SMS from a phone number
      * Send TXT message from a phone number
@@ -317,12 +392,12 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     setPhoneFavourited(requestParameters: SetPhoneFavouritedRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
-     * Test a phone number by sending an SMS to it
+     * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
      * Test sending an SMS to a number
      */
     testPhoneNumberSendSmsRaw(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
-     * Test a phone number by sending an SMS to it
+     * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
      * Test sending an SMS to a number
      */
     testPhoneNumberSendSms(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<void>;
@@ -351,6 +426,14 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
  * @export
  * @enum {string}
  */
+export declare enum GetAllPhoneNumberReleasesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GetPhoneNumbersPhoneCountryEnum {
     US = "US",
     GB = "GB",
@@ -359,10 +442,10 @@ export declare enum GetPhoneNumbersPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
-    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",
+    FI = "FI",
     SE = "SE"
 }
 /**

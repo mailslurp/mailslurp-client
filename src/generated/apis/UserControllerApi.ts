@@ -14,6 +14,18 @@
 
 import * as runtime from '../runtime';
 import {
+  CreateInboxRetentionPolicyForAccountOptions,
+  CreateInboxRetentionPolicyForAccountOptionsFromJSON,
+  CreateInboxRetentionPolicyForAccountOptionsToJSON,
+  EmptyResponseDto,
+  EmptyResponseDtoFromJSON,
+  EmptyResponseDtoToJSON,
+  InboxRetentionPolicyDto,
+  InboxRetentionPolicyDtoFromJSON,
+  InboxRetentionPolicyDtoToJSON,
+  InboxRetentionPolicyOptionalDto,
+  InboxRetentionPolicyOptionalDtoFromJSON,
+  InboxRetentionPolicyOptionalDtoToJSON,
   PageEntityAutomationItems,
   PageEntityAutomationItemsFromJSON,
   PageEntityAutomationItemsToJSON,
@@ -27,6 +39,10 @@ import {
   UserInfoDtoFromJSON,
   UserInfoDtoToJSON,
 } from '../models';
+
+export interface CreateOrUpdateInboxRetentionPolicyForAccountRequest {
+  createInboxRetentionPolicyForAccountOptions: CreateInboxRetentionPolicyForAccountOptions;
+}
 
 export interface GetEntityAutomationsRequest {
   page?: number;
@@ -71,6 +87,107 @@ export interface GetJsonPropertyAsStringRequest {
  *
  */
 export class UserControllerApi extends runtime.BaseAPI {
+  /**
+   * Create inbox retention policy for your global account
+   */
+  async createOrUpdateInboxRetentionPolicyForAccountRaw(
+    requestParameters: CreateOrUpdateInboxRetentionPolicyForAccountRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>> {
+    if (
+      requestParameters.createInboxRetentionPolicyForAccountOptions === null ||
+      requestParameters.createInboxRetentionPolicyForAccountOptions ===
+        undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createInboxRetentionPolicyForAccountOptions',
+        'Required parameter requestParameters.createInboxRetentionPolicyForAccountOptions was null or undefined when calling createOrUpdateInboxRetentionPolicyForAccount.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies/account`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateInboxRetentionPolicyForAccountOptionsToJSON(
+          requestParameters.createInboxRetentionPolicyForAccountOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRetentionPolicyDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create inbox retention policy for your global account
+   */
+  async createOrUpdateInboxRetentionPolicyForAccount(
+    requestParameters: CreateOrUpdateInboxRetentionPolicyForAccountRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRetentionPolicyDto> {
+    const response = await this.createOrUpdateInboxRetentionPolicyForAccountRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Delete inbox retention policy for your global account
+   */
+  async deleteInboxRetentionPolicyForAccountRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmptyResponseDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies/account`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmptyResponseDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Delete inbox retention policy for your global account
+   */
+  async deleteInboxRetentionPolicyForAccount(
+    initOverrides?: RequestInit
+  ): Promise<EmptyResponseDto> {
+    const response = await this.deleteInboxRetentionPolicyForAccountRaw(
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    */
   async getEntityAutomationsRaw(
@@ -298,6 +415,47 @@ export class UserControllerApi extends runtime.BaseAPI {
   ): Promise<PageEntityFavouriteItems> {
     const response = await this.getEntityFavoritesRaw(
       requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get inbox retention policy for your global account
+   */
+  async getInboxRetentionPolicyForAccountRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRetentionPolicyOptionalDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies/account`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRetentionPolicyOptionalDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get inbox retention policy for your global account
+   */
+  async getInboxRetentionPolicyForAccount(
+    initOverrides?: RequestInit
+  ): Promise<InboxRetentionPolicyOptionalDto> {
+    const response = await this.getInboxRetentionPolicyForAccountRaw(
       initOverrides
     );
     return await response.value();

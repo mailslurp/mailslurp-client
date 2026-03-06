@@ -49,27 +49,40 @@ mailslurp.getEmails(inbox.id).then(emails => {
 
 - [aiController](MailSlurp.md#aicontroller)
 - [aliasController](MailSlurp.md#aliascontroller)
+- [apiAuditLogController](MailSlurp.md#apiauditlogcontroller)
 - [attachmentController](MailSlurp.md#attachmentcontroller)
 - [bounceController](MailSlurp.md#bouncecontroller)
 - [bulkController](MailSlurp.md#bulkcontroller)
+- [campaignProbeController](MailSlurp.md#campaignprobecontroller)
 - [commonController](MailSlurp.md#commoncontroller)
+- [connectorController](MailSlurp.md#connectorcontroller)
+- [consentController](MailSlurp.md#consentcontroller)
 - [contactController](MailSlurp.md#contactcontroller)
+- [deliverabilityTestController](MailSlurp.md#deliverabilitytestcontroller)
+- [devicePreviewsController](MailSlurp.md#devicepreviewscontroller)
 - [domainController](MailSlurp.md#domaincontroller)
+- [domainMonitorController](MailSlurp.md#domainmonitorcontroller)
 - [emailController](MailSlurp.md#emailcontroller)
 - [emailVerificationController](MailSlurp.md#emailverificationcontroller)
+- [expiredController](MailSlurp.md#expiredcontroller)
+- [exportController](MailSlurp.md#exportcontroller)
 - [formController](MailSlurp.md#formcontroller)
 - [groupController](MailSlurp.md#groupcontroller)
+- [guestPortalController](MailSlurp.md#guestportalcontroller)
+- [imapController](MailSlurp.md#imapcontroller)
 - [inboxController](MailSlurp.md#inboxcontroller)
 - [inboxForwarderController](MailSlurp.md#inboxforwardercontroller)
 - [inboxReplierController](MailSlurp.md#inboxrepliercontroller)
 - [mailServerController](MailSlurp.md#mailservercontroller)
 - [mfaController](MailSlurp.md#mfacontroller)
 - [missedEmailController](MailSlurp.md#missedemailcontroller)
+- [missedSmsController](MailSlurp.md#missedsmscontroller)
 - [phoneController](MailSlurp.md#phonecontroller)
 - [rulesetController](MailSlurp.md#rulesetcontroller)
 - [sentController](MailSlurp.md#sentcontroller)
 - [smsController](MailSlurp.md#smscontroller)
 - [templateController](MailSlurp.md#templatecontroller)
+- [toolsController](MailSlurp.md#toolscontroller)
 - [trackingController](MailSlurp.md#trackingcontroller)
 - [userController](MailSlurp.md#usercontroller)
 - [waitController](MailSlurp.md#waitcontroller)
@@ -134,6 +147,12 @@ ___
 
 ___
 
+### apiAuditLogController
+
+• `Readonly` **apiAuditLogController**: [`ApiAuditLogControllerApi`](ApiAuditLogControllerApi.md)
+
+___
+
 ### attachmentController
 
 • `Readonly` **attachmentController**: [`AttachmentControllerApi`](AttachmentControllerApi.md)
@@ -152,9 +171,27 @@ ___
 
 ___
 
+### campaignProbeController
+
+• `Readonly` **campaignProbeController**: [`CampaignProbeControllerApi`](CampaignProbeControllerApi.md)
+
+___
+
 ### commonController
 
 • `Readonly` **commonController**: [`CommonActionsControllerApi`](CommonActionsControllerApi.md)
+
+___
+
+### connectorController
+
+• `Readonly` **connectorController**: [`ConnectorControllerApi`](ConnectorControllerApi.md)
+
+___
+
+### consentController
+
+• `Readonly` **consentController**: [`ConsentControllerApi`](ConsentControllerApi.md)
 
 ___
 
@@ -164,9 +201,27 @@ ___
 
 ___
 
+### deliverabilityTestController
+
+• `Readonly` **deliverabilityTestController**: [`DeliverabilityTestControllerApi`](DeliverabilityTestControllerApi.md)
+
+___
+
+### devicePreviewsController
+
+• `Readonly` **devicePreviewsController**: [`DevicePreviewsControllerApi`](DevicePreviewsControllerApi.md)
+
+___
+
 ### domainController
 
 • `Readonly` **domainController**: [`DomainControllerApi`](DomainControllerApi.md)
+
+___
+
+### domainMonitorController
+
+• `Readonly` **domainMonitorController**: [`DomainMonitorControllerApi`](DomainMonitorControllerApi.md)
 
 ___
 
@@ -182,6 +237,18 @@ ___
 
 ___
 
+### expiredController
+
+• `Readonly` **expiredController**: [`ExpiredControllerApi`](ExpiredControllerApi.md)
+
+___
+
+### exportController
+
+• `Readonly` **exportController**: [`ExportControllerApi`](ExportControllerApi.md)
+
+___
+
 ### formController
 
 • `Readonly` **formController**: [`FormControllerApi`](FormControllerApi.md)
@@ -191,6 +258,18 @@ ___
 ### groupController
 
 • `Readonly` **groupController**: [`GroupControllerApi`](GroupControllerApi.md)
+
+___
+
+### guestPortalController
+
+• `Readonly` **guestPortalController**: [`GuestPortalControllerApi`](GuestPortalControllerApi.md)
+
+___
+
+### imapController
+
+• `Readonly` **imapController**: [`ImapControllerApi`](ImapControllerApi.md)
 
 ___
 
@@ -230,6 +309,12 @@ ___
 
 ___
 
+### missedSmsController
+
+• `Readonly` **missedSmsController**: [`MissedSmsControllerApi`](MissedSmsControllerApi.md)
+
+___
+
 ### phoneController
 
 • `Readonly` **phoneController**: [`PhoneControllerApi`](PhoneControllerApi.md)
@@ -257,6 +342,12 @@ ___
 ### templateController
 
 • `Readonly` **templateController**: [`TemplateControllerApi`](TemplateControllerApi.md)
+
+___
+
+### toolsController
+
+• `Readonly` **toolsController**: [`ToolsControllerApi`](ToolsControllerApi.md)
 
 ___
 

@@ -41,17 +41,17 @@ export interface EmailThreadProjection {
      */
     inboxId?: string;
     /**
-     * Created at DateTime
-     * @type {Date}
-     * @memberof EmailThreadProjection
-     */
-    createdAt: Date;
-    /**
      * Updated at DateTime
      * @type {Date}
      * @memberof EmailThreadProjection
      */
     updatedAt: Date;
+    /**
+     * Created at DateTime
+     * @type {Date}
+     * @memberof EmailThreadProjection
+     */
+    createdAt: Date;
     /**
      * To recipients
      * @type {Array<string>}

@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AITransformResultDtoToJSON = exports.AITransformResultDtoFromJSONTyped = exports.AITransformResultDtoFromJSON = exports.AITransformResultDtoEntityTypeEnum = void 0;
+var runtime_1 = require("../runtime");
 /**
  * @export
  * @enum {string}
@@ -35,10 +36,18 @@ function AITransformResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
         userId: json['userId'],
         aiTransformId: json['aiTransformId'],
-        aiTransformMappingId: json['aiTransformMappingId'],
-        value: json['value'],
-        entityId: json['entityId'],
-        entityType: json['entityType'],
+        aiTransformMappingId: !(0, runtime_1.exists)(json, 'aiTransformMappingId')
+            ? undefined
+            : json['aiTransformMappingId'],
+        value: !(0, runtime_1.exists)(json, 'value') ? undefined : json['value'],
+        entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
+        entityType: !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
+        columns: json['columns'],
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        smsId: !(0, runtime_1.exists)(json, 'smsId') ? undefined : json['smsId'],
+        attachmentId: !(0, runtime_1.exists)(json, 'attachmentId')
+            ? undefined
+            : json['attachmentId'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
     };
@@ -59,6 +68,10 @@ function AITransformResultDtoToJSON(value) {
         value: value.value,
         entityId: value.entityId,
         entityType: value.entityType,
+        columns: value.columns,
+        emailId: value.emailId,
+        smsId: value.smsId,
+        attachmentId: value.attachmentId,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
     };

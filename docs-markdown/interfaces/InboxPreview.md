@@ -34,7 +34,7 @@ InboxPreview
 
 ### accountRegion
 
-• `Optional` **accountRegion**: [`US_WEST_2`](../enums/InboxPreviewAccountRegionEnum.md#us_west_2)
+• `Optional` **accountRegion**: [`InboxPreviewAccountRegionEnum`](../enums/InboxPreviewAccountRegionEnum.md)
 
 Region of the inbox
 

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, Complaint, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients, PageReputationItems } from '../models';
+import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, Complaint, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients, PageReputationItems, TenantReputationFindingsDto, TenantReputationStatusSummaryDto } from '../models';
 export interface FilterBouncedRecipientRequest {
     filterBouncedRecipientsOptions: FilterBouncedRecipientsOptions;
 }
@@ -56,6 +56,12 @@ export interface GetReputationItemsRequest {
     sort?: GetReputationItemsSortEnum;
     since?: Date;
     before?: Date;
+}
+export interface GetTenantReputationFindingsRequest {
+    accountRegion?: GetTenantReputationFindingsAccountRegionEnum;
+}
+export interface GetTenantReputationStatusSummaryRequest {
+    accountRegion?: GetTenantReputationStatusSummaryAccountRegionEnum;
 }
 /**
  *
@@ -161,6 +167,26 @@ export declare class BounceControllerApi extends runtime.BaseAPI {
      * Get paginated list of reputation items.
      */
     getReputationItems(requestParameters: GetReputationItemsRequest, initOverrides?: RequestInit): Promise<PageReputationItems>;
+    /**
+     * Get SES tenant reputation recommendations/findings for this user.
+     * Get SES tenant reputation findings
+     */
+    getTenantReputationFindingsRaw(requestParameters: GetTenantReputationFindingsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TenantReputationFindingsDto>>;
+    /**
+     * Get SES tenant reputation recommendations/findings for this user.
+     * Get SES tenant reputation findings
+     */
+    getTenantReputationFindings(requestParameters: GetTenantReputationFindingsRequest, initOverrides?: RequestInit): Promise<TenantReputationFindingsDto>;
+    /**
+     * Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+     * Get SES tenant status summary
+     */
+    getTenantReputationStatusSummaryRaw(requestParameters: GetTenantReputationStatusSummaryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TenantReputationStatusSummaryDto>>;
+    /**
+     * Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+     * Get SES tenant status summary
+     */
+    getTenantReputationStatusSummary(requestParameters: GetTenantReputationStatusSummaryRequest, initOverrides?: RequestInit): Promise<TenantReputationStatusSummaryDto>;
 }
 /**
  * @export
@@ -201,4 +227,40 @@ export declare enum GetListUnsubscribeRecipientsSortEnum {
 export declare enum GetReputationItemsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetTenantReputationFindingsAccountRegionEnum {
+    US_WEST_2_ACCOUNT_STAGING = "US_WEST_2_ACCOUNT_STAGING",
+    US_EAST_1_ACCOUNT_STAGING = "US_EAST_1_ACCOUNT_STAGING",
+    EU_WEST_1_ACCOUNT_STAGING = "EU_WEST_1_ACCOUNT_STAGING",
+    US_WEST_2_ACCOUNT_SES_1 = "US_WEST_2_ACCOUNT_SES_1",
+    EU_WEST_1_ACCOUNT_SES_1 = "EU_WEST_1_ACCOUNT_SES_1",
+    US_WEST_2_ACCOUNT_SES_2 = "US_WEST_2_ACCOUNT_SES_2",
+    EU_WEST_1_ACCOUNT_SES_2 = "EU_WEST_1_ACCOUNT_SES_2",
+    US_WEST_2_ACCOUNT_BYTEWISE = "US_WEST_2_ACCOUNT_BYTEWISE",
+    EU_WEST_1_ACCOUNT_BYTEWISE = "EU_WEST_1_ACCOUNT_BYTEWISE",
+    US_WEST_2 = "US_WEST_2",
+    EU_WEST_1 = "EU_WEST_1",
+    US_EAST_1 = "US_EAST_1"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetTenantReputationStatusSummaryAccountRegionEnum {
+    US_WEST_2_ACCOUNT_STAGING = "US_WEST_2_ACCOUNT_STAGING",
+    US_EAST_1_ACCOUNT_STAGING = "US_EAST_1_ACCOUNT_STAGING",
+    EU_WEST_1_ACCOUNT_STAGING = "EU_WEST_1_ACCOUNT_STAGING",
+    US_WEST_2_ACCOUNT_SES_1 = "US_WEST_2_ACCOUNT_SES_1",
+    EU_WEST_1_ACCOUNT_SES_1 = "EU_WEST_1_ACCOUNT_SES_1",
+    US_WEST_2_ACCOUNT_SES_2 = "US_WEST_2_ACCOUNT_SES_2",
+    EU_WEST_1_ACCOUNT_SES_2 = "EU_WEST_1_ACCOUNT_SES_2",
+    US_WEST_2_ACCOUNT_BYTEWISE = "US_WEST_2_ACCOUNT_BYTEWISE",
+    EU_WEST_1_ACCOUNT_BYTEWISE = "EU_WEST_1_ACCOUNT_BYTEWISE",
+    US_WEST_2 = "US_WEST_2",
+    EU_WEST_1 = "EU_WEST_1",
+    US_EAST_1 = "US_EAST_1"
 }

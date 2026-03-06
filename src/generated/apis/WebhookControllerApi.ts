@@ -186,6 +186,8 @@ export interface GetAllWebhooksRequest {
   health?: GetAllWebhooksHealthEnum;
   eventType?: GetAllWebhooksEventTypeEnum;
   url?: string;
+  eventTypeSource?: GetAllWebhooksEventTypeSourceEnum;
+  includeAccountWide?: boolean;
 }
 
 export interface GetInboxWebhooksPaginatedRequest {
@@ -198,6 +200,7 @@ export interface GetInboxWebhooksPaginatedRequest {
   before?: Date;
   health?: GetInboxWebhooksPaginatedHealthEnum;
   eventType?: GetInboxWebhooksPaginatedEventTypeEnum;
+  includeAccountWide?: boolean;
 }
 
 export interface GetJsonSchemaForWebhookEventRequest {
@@ -218,6 +221,7 @@ export interface GetPhoneNumberWebhooksPaginatedRequest {
   eventType?: GetPhoneNumberWebhooksPaginatedEventTypeEnum;
   searchFilter?: string;
   health?: GetPhoneNumberWebhooksPaginatedHealthEnum;
+  includeAccountWide?: boolean;
 }
 
 export interface GetTestWebhookPayloadRequest {
@@ -1090,6 +1094,15 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       queryParameters['url'] = requestParameters.url;
     }
 
+    if (requestParameters.eventTypeSource !== undefined) {
+      queryParameters['eventTypeSource'] = requestParameters.eventTypeSource;
+    }
+
+    if (requestParameters.includeAccountWide !== undefined) {
+      queryParameters['includeAccountWide'] =
+        requestParameters.includeAccountWide;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -1177,6 +1190,11 @@ export class WebhookControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.eventType !== undefined) {
       queryParameters['eventType'] = requestParameters.eventType;
+    }
+
+    if (requestParameters.includeAccountWide !== undefined) {
+      queryParameters['includeAccountWide'] =
+        requestParameters.includeAccountWide;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1383,6 +1401,11 @@ export class WebhookControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.health !== undefined) {
       queryParameters['health'] = requestParameters.health;
+    }
+
+    if (requestParameters.includeAccountWide !== undefined) {
+      queryParameters['includeAccountWide'] =
+        requestParameters.includeAccountWide;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -2936,6 +2959,15 @@ export enum GetAllWebhooksEventTypeEnum {
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
   NEW_GUEST_USER = 'NEW_GUEST_USER',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllWebhooksEventTypeSourceEnum {
+  INBOX = 'INBOX',
+  PHONE = 'PHONE',
+  AI_TRANSFORMER = 'AI_TRANSFORMER',
 }
 /**
  * @export

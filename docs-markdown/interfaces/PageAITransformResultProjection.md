@@ -14,6 +14,7 @@ PageAITransformResultProjection
 
 ### Properties
 
+- [columns](PageAITransformResultProjection.md#columns)
 - [content](PageAITransformResultProjection.md#content)
 - [empty](PageAITransformResultProjection.md#empty)
 - [first](PageAITransformResultProjection.md#first)
@@ -27,6 +28,16 @@ PageAITransformResultProjection
 - [totalPages](PageAITransformResultProjection.md#totalpages)
 
 ## Properties
+
+### columns
+
+• **columns**: `string`[]
+
+**`Memberof`**
+
+PageAITransformResultProjection
+
+___
 
 ### content
 

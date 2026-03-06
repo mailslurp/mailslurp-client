@@ -14,6 +14,7 @@ PhonePlanAvailabilityItem
 
 - [availabilityStatus](PhonePlanAvailabilityItem.md#availabilitystatus)
 - [phoneCountry](PhonePlanAvailabilityItem.md#phonecountry)
+- [variants](PhonePlanAvailabilityItem.md#variants)
 
 ## Properties
 
@@ -30,6 +31,16 @@ ___
 ### phoneCountry
 
 • **phoneCountry**: [`PhonePlanAvailabilityItemPhoneCountryEnum`](../enums/PhonePlanAvailabilityItemPhoneCountryEnum.md)
+
+**`Memberof`**
+
+PhonePlanAvailabilityItem
+
+___
+
+### variants
+
+• `Optional` **variants**: [`PhonePlanAvailabilityItemVariantsEnum`](../enums/PhonePlanAvailabilityItemVariantsEnum.md)[]
 
 **`Memberof`**
 

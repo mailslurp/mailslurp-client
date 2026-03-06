@@ -56,6 +56,12 @@ export interface EmailProjection {
   inboxId: string;
   /**
    *
+   * @type {number}
+   * @memberof EmailProjection
+   */
+  sizeBytes?: number | null;
+  /**
+   *
    * @type {Date}
    * @memberof EmailProjection
    */
@@ -86,16 +92,16 @@ export interface EmailProjection {
   messageId?: string | null;
   /**
    *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  domainId?: string | null;
-  /**
-   *
    * @type {boolean}
    * @memberof EmailProjection
    */
   favourite?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  domainId?: string | null;
   /**
    *
    * @type {string}
@@ -107,7 +113,7 @@ export interface EmailProjection {
    * @type {number}
    * @memberof EmailProjection
    */
-  sizeBytes?: number | null;
+  imapUid?: number | null;
   /**
    *
    * @type {string}
@@ -196,15 +202,16 @@ export function EmailProjectionFromJSONTyped(
       : EmailRecipientsFromJSON(json['recipients']),
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
-    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+    imapUid: !exists(json, 'imapUid') ? undefined : json['imapUid'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     read: json['read'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
@@ -233,15 +240,16 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     recipients: EmailRecipientsToJSON(value.recipients),
     attachments: value.attachments,
     inboxId: value.inboxId,
+    sizeBytes: value.sizeBytes,
     createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,
     messageId: value.messageId,
-    domainId: value.domainId,
     favourite: value.favourite,
+    domainId: value.domainId,
     plusAddress: value.plusAddress,
-    sizeBytes: value.sizeBytes,
+    imapUid: value.imapUid,
     inReplyTo: value.inReplyTo,
     read: value.read,
     bodyExcerpt: value.bodyExcerpt,

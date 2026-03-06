@@ -10,6 +10,8 @@ MailSlurp JS
 
 ### Enumerations
 
+- [AIMappingMatchOptionFieldEnum](enums/AIMappingMatchOptionFieldEnum.md)
+- [AIMappingMatchOptionShouldEnum](enums/AIMappingMatchOptionShouldEnum.md)
 - [AITransformMappingDtoEntityTypeEnum](enums/AITransformMappingDtoEntityTypeEnum.md)
 - [AITransformMappingProjectionContentSelectorEnum](enums/AITransformMappingProjectionContentSelectorEnum.md)
 - [AITransformMappingProjectionEntityTypeEnum](enums/AITransformMappingProjectionEntityTypeEnum.md)
@@ -17,6 +19,12 @@ MailSlurp JS
 - [AITransformResultDtoEntityTypeEnum](enums/AITransformResultDtoEntityTypeEnum.md)
 - [AITransformResultProjectionDtoEntityTypeEnum](enums/AITransformResultProjectionDtoEntityTypeEnum.md)
 - [AbstractWebhookPayloadEventNameEnum](enums/AbstractWebhookPayloadEventNameEnum.md)
+- [CampaignProbeDtoLastRunStatusEnum](enums/CampaignProbeDtoLastRunStatusEnum.md)
+- [CampaignProbeRunDtoSourceEnum](enums/CampaignProbeRunDtoSourceEnum.md)
+- [CampaignProbeRunDtoStatusEnum](enums/CampaignProbeRunDtoStatusEnum.md)
+- [CampaignProbeRunDueResultTriggerSourceEnum](enums/CampaignProbeRunDueResultTriggerSourceEnum.md)
+- [CampaignProbeSeriesDtoBucketEnum](enums/CampaignProbeSeriesDtoBucketEnum.md)
+- [CodeCandidateMethodEnum](enums/CodeCandidateMethodEnum.md)
 - [ConditionOptionConditionEnum](enums/ConditionOptionConditionEnum.md)
 - [ConditionOptionValueEnum](enums/ConditionOptionValueEnum.md)
 - [ConnectorEventDtoEventTypeEnum](enums/ConnectorEventDtoEventTypeEnum.md)
@@ -28,6 +36,14 @@ MailSlurp JS
 - [CreateAITransformerMappingOptionsEntityTypeEnum](enums/CreateAITransformerMappingOptionsEntityTypeEnum.md)
 - [CreateAITransformerMappingOptionsTriggerSelectorEnum](enums/CreateAITransformerMappingOptionsTriggerSelectorEnum.md)
 - [CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum](enums/CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum.md)
+- [CreateDeliverabilityTestOptionsScopeEnum](enums/CreateDeliverabilityTestOptionsScopeEnum.md)
+- [CreateDevicePreviewFeedbackOptionsCategoryEnum](enums/CreateDevicePreviewFeedbackOptionsCategoryEnum.md)
+- [CreateDevicePreviewFeedbackOptionsProviderEnum](enums/CreateDevicePreviewFeedbackOptionsProviderEnum.md)
+- [CreateDevicePreviewFeedbackOptionsSourceEnum](enums/CreateDevicePreviewFeedbackOptionsSourceEnum.md)
+- [CreateDevicePreviewFeedbackOptionsStatusEnum](enums/CreateDevicePreviewFeedbackOptionsStatusEnum.md)
+- [CreateDevicePreviewOptionsProvidersEnum](enums/CreateDevicePreviewOptionsProvidersEnum.md)
+- [CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum](enums/CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum.md)
+- [CreateDomainMonitorAlertSinkOptionsTypeEnum](enums/CreateDomainMonitorAlertSinkOptionsTypeEnum.md)
 - [CreateDomainOptionsDomainTypeEnum](enums/CreateDomainOptionsDomainTypeEnum.md)
 - [CreateEmergencyAddressOptionsIsoCountryCodeEnum](enums/CreateEmergencyAddressOptionsIsoCountryCodeEnum.md)
 - [CreateInboxDtoInboxTypeEnum](enums/CreateInboxDtoInboxTypeEnum.md)
@@ -35,8 +51,8 @@ MailSlurp JS
 - [CreateInboxInboxTypeEnum](enums/CreateInboxInboxTypeEnum.md)
 - [CreateInboxReplierOptionsFieldEnum](enums/CreateInboxReplierOptionsFieldEnum.md)
 - [CreateNewEmailAddressInboxTypeEnum](enums/CreateNewEmailAddressInboxTypeEnum.md)
-- [CreateOAuthConnectionOAuthConnectionTypeEnum](enums/CreateOAuthConnectionOAuthConnectionTypeEnum.md)
 - [CreatePhoneNumberOptionsPhoneCountryEnum](enums/CreatePhoneNumberOptionsPhoneCountryEnum.md)
+- [CreatePhoneNumberOptionsPhoneNumberVariantEnum](enums/CreatePhoneNumberOptionsPhoneNumberVariantEnum.md)
 - [CreatePhoneNumberOptionsScheduleEnum](enums/CreatePhoneNumberOptionsScheduleEnum.md)
 - [CreateRandomInboxInboxTypeEnum](enums/CreateRandomInboxInboxTypeEnum.md)
 - [CreateRulesetOptionsActionEnum](enums/CreateRulesetOptionsActionEnum.md)
@@ -44,12 +60,54 @@ MailSlurp JS
 - [CreateWebhookOptionsEventNameEnum](enums/CreateWebhookOptionsEventNameEnum.md)
 - [DNSLookupOptionsRecordTypesEnum](enums/DNSLookupOptionsRecordTypesEnum.md)
 - [DNSLookupResultRecordTypeEnum](enums/DNSLookupResultRecordTypeEnum.md)
+- [DeleteResultStatusEnum](enums/DeleteResultStatusEnum.md)
+- [DeliverabilityAnalyticsRunDtoScopeEnum](enums/DeliverabilityAnalyticsRunDtoScopeEnum.md)
+- [DeliverabilityAnalyticsRunDtoStatusEnum](enums/DeliverabilityAnalyticsRunDtoStatusEnum.md)
+- [DeliverabilityAnalyticsRunDtoThresholdStatusEnum](enums/DeliverabilityAnalyticsRunDtoThresholdStatusEnum.md)
+- [DeliverabilityAnalyticsSeriesDtoBucketEnum](enums/DeliverabilityAnalyticsSeriesDtoBucketEnum.md)
+- [DeliverabilityAnalyticsSeriesDtoScopeEnum](enums/DeliverabilityAnalyticsSeriesDtoScopeEnum.md)
+- [DeliverabilityEntityResultDtoPhoneCountryEnum](enums/DeliverabilityEntityResultDtoPhoneCountryEnum.md)
+- [DeliverabilityEntityResultDtoPhoneVariantEnum](enums/DeliverabilityEntityResultDtoPhoneVariantEnum.md)
+- [DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum](enums/DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum.md)
+- [DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum](enums/DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum.md)
+- [DeliverabilityFailureEntityHotspotDtoScopeEnum](enums/DeliverabilityFailureEntityHotspotDtoScopeEnum.md)
+- [DeliverabilityFailureHotspotsDtoScopeEnum](enums/DeliverabilityFailureHotspotsDtoScopeEnum.md)
+- [DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum](enums/DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum.md)
+- [DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum](enums/DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum.md)
+- [DeliverabilitySelectorOptionsPhoneCountryEnum](enums/DeliverabilitySelectorOptionsPhoneCountryEnum.md)
+- [DeliverabilitySelectorOptionsTypeEnum](enums/DeliverabilitySelectorOptionsTypeEnum.md)
+- [DeliverabilitySimulationJobDtoScopeEnum](enums/DeliverabilitySimulationJobDtoScopeEnum.md)
+- [DeliverabilitySimulationJobDtoStatusEnum](enums/DeliverabilitySimulationJobDtoStatusEnum.md)
+- [DeliverabilitySimulationJobEventDtoEventTypeEnum](enums/DeliverabilitySimulationJobEventDtoEventTypeEnum.md)
+- [DeliverabilityTestDtoScopeEnum](enums/DeliverabilityTestDtoScopeEnum.md)
+- [DeliverabilityTestDtoStatusEnum](enums/DeliverabilityTestDtoStatusEnum.md)
+- [DeliverabilityTestDtoThresholdStatusEnum](enums/DeliverabilityTestDtoThresholdStatusEnum.md)
+- [DevicePreviewFeedbackDtoCategoryEnum](enums/DevicePreviewFeedbackDtoCategoryEnum.md)
+- [DevicePreviewFeedbackDtoProviderEnum](enums/DevicePreviewFeedbackDtoProviderEnum.md)
+- [DevicePreviewFeedbackDtoSourceEnum](enums/DevicePreviewFeedbackDtoSourceEnum.md)
+- [DevicePreviewFeedbackDtoStatusEnum](enums/DevicePreviewFeedbackDtoStatusEnum.md)
+- [DevicePreviewProviderProgressDtoProviderEnum](enums/DevicePreviewProviderProgressDtoProviderEnum.md)
+- [DevicePreviewProviderProgressDtoStatusEnum](enums/DevicePreviewProviderProgressDtoStatusEnum.md)
+- [DevicePreviewRunDtoImportedProvidersEnum](enums/DevicePreviewRunDtoImportedProvidersEnum.md)
+- [DevicePreviewRunDtoRequestedProvidersEnum](enums/DevicePreviewRunDtoRequestedProvidersEnum.md)
+- [DevicePreviewRunDtoStatusEnum](enums/DevicePreviewRunDtoStatusEnum.md)
+- [DevicePreviewTargetDtoStatusEnum](enums/DevicePreviewTargetDtoStatusEnum.md)
 - [DomainDtoDomainTypeEnum](enums/DomainDtoDomainTypeEnum.md)
 - [DomainGroupLabelEnum](enums/DomainGroupLabelEnum.md)
 - [DomainInformationDomainTypeEnum](enums/DomainInformationDomainTypeEnum.md)
+- [DomainMonitorAlertSinkDtoSeverityThresholdEnum](enums/DomainMonitorAlertSinkDtoSeverityThresholdEnum.md)
+- [DomainMonitorAlertSinkDtoTypeEnum](enums/DomainMonitorAlertSinkDtoTypeEnum.md)
+- [DomainMonitorDtoLastStatusEnum](enums/DomainMonitorDtoLastStatusEnum.md)
+- [DomainMonitorRunDtoStatusEnum](enums/DomainMonitorRunDtoStatusEnum.md)
+- [DomainMonitorRunDtoTriggerSourceEnum](enums/DomainMonitorRunDtoTriggerSourceEnum.md)
+- [DomainMonitorRunDueResultTriggerSourceEnum](enums/DomainMonitorRunDueResultTriggerSourceEnum.md)
+- [DomainMonitorSeriesDtoBucketEnum](enums/DomainMonitorSeriesDtoBucketEnum.md)
 - [DomainNameRecordLabelEnum](enums/DomainNameRecordLabelEnum.md)
 - [DomainNameRecordRecordTypeEnum](enums/DomainNameRecordRecordTypeEnum.md)
 - [DomainPreviewDomainTypeEnum](enums/DomainPreviewDomainTypeEnum.md)
+- [DomainRegionGroupLabelEnum](enums/DomainRegionGroupLabelEnum.md)
+- [DomainRegionInformationAccountRegionEnum](enums/DomainRegionInformationAccountRegionEnum.md)
+- [DomainRegionInformationDomainTypeEnum](enums/DomainRegionInformationDomainTypeEnum.md)
 - [EmailFeatureCategoryNameSlugEnum](enums/EmailFeatureCategoryNameSlugEnum.md)
 - [EmailFeatureFamilyNameSlugEnum](enums/EmailFeatureFamilyNameSlugEnum.md)
 - [EmailFeatureFamilyStatisticsFamilyEnum](enums/EmailFeatureFamilyStatisticsFamilyEnum.md)
@@ -72,6 +130,14 @@ MailSlurp JS
 - [ExportEntitiesExportTypeEnum](enums/ExportEntitiesExportTypeEnum.md)
 - [ExportEntitiesOutputFormatEnum](enums/ExportEntitiesOutputFormatEnum.md)
 - [ExportOptionsOutputFormatEnum](enums/ExportOptionsOutputFormatEnum.md)
+- [ExportTransformerOptionsFormatEnum](enums/ExportTransformerOptionsFormatEnum.md)
+- [ExportTransformerResponseStatusEnum](enums/ExportTransformerResponseStatusEnum.md)
+- [ExportTransformerResultJobDtoFormatEnum](enums/ExportTransformerResultJobDtoFormatEnum.md)
+- [ExportTransformerResultJobDtoStatusEnum](enums/ExportTransformerResultJobDtoStatusEnum.md)
+- [ExtractAttachmentTextOptionsMethodEnum](enums/ExtractAttachmentTextOptionsMethodEnum.md)
+- [ExtractAttachmentTextResultMethodUsedEnum](enums/ExtractAttachmentTextResultMethodUsedEnum.md)
+- [ExtractCodesOptionsMethodEnum](enums/ExtractCodesOptionsMethodEnum.md)
+- [ExtractCodesResultMethodUsedEnum](enums/ExtractCodesResultMethodUsedEnum.md)
 - [GenerateBimiRecordOptionsVersionEnum](enums/GenerateBimiRecordOptionsVersionEnum.md)
 - [GenerateBimiRecordResultsTypeEnum](enums/GenerateBimiRecordResultsTypeEnum.md)
 - [GenerateDmarcRecordOptionsAdkimEnum](enums/GenerateDmarcRecordOptionsAdkimEnum.md)
@@ -108,6 +174,8 @@ MailSlurp JS
 - [GetAllInboxesOffsetPaginatedSortEnum](enums/GetAllInboxesOffsetPaginatedSortEnum.md)
 - [GetAllInboxesSortEnum](enums/GetAllInboxesSortEnum.md)
 - [GetAllMissedEmailsSortEnum](enums/GetAllMissedEmailsSortEnum.md)
+- [GetAllMissedSmsMessagesSortEnum](enums/GetAllMissedSmsMessagesSortEnum.md)
+- [GetAllPhoneNumberReleasesSortEnum](enums/GetAllPhoneNumberReleasesSortEnum.md)
 - [GetAllPlusAddressesSortEnum](enums/GetAllPlusAddressesSortEnum.md)
 - [GetAllScheduledJobsSortEnum](enums/GetAllScheduledJobsSortEnum.md)
 - [GetAllSentTrackingPixelsSortEnum](enums/GetAllSentTrackingPixelsSortEnum.md)
@@ -122,17 +190,35 @@ MailSlurp JS
 - [GetAllWebhookResultsResultTypeEnum](enums/GetAllWebhookResultsResultTypeEnum.md)
 - [GetAllWebhookResultsSortEnum](enums/GetAllWebhookResultsSortEnum.md)
 - [GetAllWebhooksEventTypeEnum](enums/GetAllWebhooksEventTypeEnum.md)
+- [GetAllWebhooksEventTypeSourceEnum](enums/GetAllWebhooksEventTypeSourceEnum.md)
 - [GetAllWebhooksHealthEnum](enums/GetAllWebhooksHealthEnum.md)
 - [GetAllWebhooksSortEnum](enums/GetAllWebhooksSortEnum.md)
 - [GetAttachmentsSortEnum](enums/GetAttachmentsSortEnum.md)
+- [GetAvailableDomainRegionsInboxTypeEnum](enums/GetAvailableDomainRegionsInboxTypeEnum.md)
 - [GetAvailableDomainsInboxTypeEnum](enums/GetAvailableDomainsInboxTypeEnum.md)
 - [GetBouncedEmailsSortEnum](enums/GetBouncedEmailsSortEnum.md)
 - [GetBouncedRecipientsSortEnum](enums/GetBouncedRecipientsSortEnum.md)
+- [GetCampaignProbeRunsStatusEnum](enums/GetCampaignProbeRunsStatusEnum.md)
+- [GetCampaignProbeSeriesBucketEnum](enums/GetCampaignProbeSeriesBucketEnum.md)
 - [GetComplaintsSortEnum](enums/GetComplaintsSortEnum.md)
 - [GetConnectorEventsEventTypeEnum](enums/GetConnectorEventsEventTypeEnum.md)
 - [GetConnectorEventsSortEnum](enums/GetConnectorEventsSortEnum.md)
 - [GetConnectorsSortEnum](enums/GetConnectorsSortEnum.md)
+- [GetDeliverabilityAnalyticsSeriesBucketEnum](enums/GetDeliverabilityAnalyticsSeriesBucketEnum.md)
+- [GetDeliverabilityAnalyticsSeriesScopeEnum](enums/GetDeliverabilityAnalyticsSeriesScopeEnum.md)
+- [GetDeliverabilityFailureHotspotsScopeEnum](enums/GetDeliverabilityFailureHotspotsScopeEnum.md)
+- [GetDeliverabilitySimulationJobEventsSortEnum](enums/GetDeliverabilitySimulationJobEventsSortEnum.md)
+- [GetDeliverabilityTestResultsSortEnum](enums/GetDeliverabilityTestResultsSortEnum.md)
+- [GetDeliverabilityTestsSortEnum](enums/GetDeliverabilityTestsSortEnum.md)
 - [GetDeliveryStatusesByInboxIdSortEnum](enums/GetDeliveryStatusesByInboxIdSortEnum.md)
+- [GetDevicePreviewFeedbackItemsCategoryEnum](enums/GetDevicePreviewFeedbackItemsCategoryEnum.md)
+- [GetDevicePreviewFeedbackItemsProviderEnum](enums/GetDevicePreviewFeedbackItemsProviderEnum.md)
+- [GetDevicePreviewFeedbackItemsSourceEnum](enums/GetDevicePreviewFeedbackItemsSourceEnum.md)
+- [GetDevicePreviewFeedbackItemsStatusEnum](enums/GetDevicePreviewFeedbackItemsStatusEnum.md)
+- [GetDevicePreviewRunProviderProgressProviderEnum](enums/GetDevicePreviewRunProviderProgressProviderEnum.md)
+- [GetDevicePreviewRunsOffsetPaginatedSortEnum](enums/GetDevicePreviewRunsOffsetPaginatedSortEnum.md)
+- [GetDomainMonitorRunsStatusEnum](enums/GetDomainMonitorRunsStatusEnum.md)
+- [GetDomainMonitorSeriesBucketEnum](enums/GetDomainMonitorSeriesBucketEnum.md)
 - [GetEmailThreadItemsSortEnum](enums/GetEmailThreadItemsSortEnum.md)
 - [GetEmailThreadsSortEnum](enums/GetEmailThreadsSortEnum.md)
 - [GetEmailsOffsetPaginatedSortEnum](enums/GetEmailsOffsetPaginatedSortEnum.md)
@@ -188,12 +274,16 @@ MailSlurp JS
 - [GetSentSmsByPhoneNumberSortEnum](enums/GetSentSmsByPhoneNumberSortEnum.md)
 - [GetSentSmsMessagesPaginatedSortEnum](enums/GetSentSmsMessagesPaginatedSortEnum.md)
 - [GetSmsByPhoneNumberSortEnum](enums/GetSmsByPhoneNumberSortEnum.md)
+- [GetTenantReputationFindingsAccountRegionEnum](enums/GetTenantReputationFindingsAccountRegionEnum.md)
+- [GetTenantReputationStatusSummaryAccountRegionEnum](enums/GetTenantReputationStatusSummaryAccountRegionEnum.md)
 - [GetTestWebhookPayloadEventNameEnum](enums/GetTestWebhookPayloadEventNameEnum.md)
 - [GetThreadsPaginatedSortEnum](enums/GetThreadsPaginatedSortEnum.md)
 - [GetTransformerMappingsEntityTypeEnum](enums/GetTransformerMappingsEntityTypeEnum.md)
 - [GetTransformerMappingsSortEnum](enums/GetTransformerMappingsSortEnum.md)
 - [GetTransformerResultsEntityTypeEnum](enums/GetTransformerResultsEntityTypeEnum.md)
 - [GetTransformerResultsSortEnum](enums/GetTransformerResultsSortEnum.md)
+- [GetTransformerResultsTableEntityTypeEnum](enums/GetTransformerResultsTableEntityTypeEnum.md)
+- [GetTransformerResultsTableSortEnum](enums/GetTransformerResultsTableSortEnum.md)
 - [GetTransformersSortEnum](enums/GetTransformersSortEnum.md)
 - [GetValidationRequestsSortEnum](enums/GetValidationRequestsSortEnum.md)
 - [GetWebhookResultsEventNameEnum](enums/GetWebhookResultsEventNameEnum.md)
@@ -227,10 +317,19 @@ MailSlurp JS
 - [PhoneMessageThreadItemProjectionMessageDirectionEnum](enums/PhoneMessageThreadItemProjectionMessageDirectionEnum.md)
 - [PhoneMessageThreadProjectionLastMessageDirectionEnum](enums/PhoneMessageThreadProjectionLastMessageDirectionEnum.md)
 - [PhoneNumberDtoPhoneCountryEnum](enums/PhoneNumberDtoPhoneCountryEnum.md)
+- [PhoneNumberDtoPhoneVariantEnum](enums/PhoneNumberDtoPhoneVariantEnum.md)
 - [PhoneNumberProjectionPhoneCountryEnum](enums/PhoneNumberProjectionPhoneCountryEnum.md)
+- [PhoneNumberReleaseProjectionPhoneCountryEnum](enums/PhoneNumberReleaseProjectionPhoneCountryEnum.md)
+- [PhoneNumberReleaseProjectionPlanCurrencyEnum](enums/PhoneNumberReleaseProjectionPlanCurrencyEnum.md)
+- [PhoneNumberReleaseProjectionSubscriptionScheduleEnum](enums/PhoneNumberReleaseProjectionSubscriptionScheduleEnum.md)
+- [PhonePlanAvailabilityDisabledPhoneCountriesEnum](enums/PhonePlanAvailabilityDisabledPhoneCountriesEnum.md)
 - [PhonePlanAvailabilityItemAvailabilityStatusEnum](enums/PhonePlanAvailabilityItemAvailabilityStatusEnum.md)
 - [PhonePlanAvailabilityItemPhoneCountryEnum](enums/PhonePlanAvailabilityItemPhoneCountryEnum.md)
+- [PhonePlanAvailabilityItemVariantsEnum](enums/PhonePlanAvailabilityItemVariantsEnum.md)
 - [PhonePlanDtoPhoneCountryEnum](enums/PhonePlanDtoPhoneCountryEnum.md)
+- [PhoneSummaryCountryDtoPhoneCountryCodeEnum](enums/PhoneSummaryCountryDtoPhoneCountryCodeEnum.md)
+- [PlanSummaryDtoPhoneCountryEnum](enums/PlanSummaryDtoPhoneCountryEnum.md)
+- [PlanSummaryDtoSubscriptionScheduleEnum](enums/PlanSummaryDtoSubscriptionScheduleEnum.md)
 - [ProviderSettingsMailProviderEnum](enums/ProviderSettingsMailProviderEnum.md)
 - [ReplyToAliasEmailOptionsSendStrategyEnum](enums/ReplyToAliasEmailOptionsSendStrategyEnum.md)
 - [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
@@ -252,6 +351,9 @@ MailSlurp JS
 - [SpellingIssueSeverityEnum](enums/SpellingIssueSeverityEnum.md)
 - [StructuredOutputSchemaTypeEnum](enums/StructuredOutputSchemaTypeEnum.md)
 - [TemplateVariableVariableTypeEnum](enums/TemplateVariableVariableTypeEnum.md)
+- [TenantReputationFindingDtoAccountRegionEnum](enums/TenantReputationFindingDtoAccountRegionEnum.md)
+- [TenantReputationStatusRowDtoAccountRegionEnum](enums/TenantReputationStatusRowDtoAccountRegionEnum.md)
+- [UpdateDevicePreviewFeedbackOptionsStatusEnum](enums/UpdateDevicePreviewFeedbackOptionsStatusEnum.md)
 - [UpdateInboxReplierOptionsFieldEnum](enums/UpdateInboxReplierOptionsFieldEnum.md)
 - [UserInfoDtoAccountStateEnum](enums/UserInfoDtoAccountStateEnum.md)
 - [UserInfoDtoAccountTypeEnum](enums/UserInfoDtoAccountTypeEnum.md)
@@ -292,17 +394,22 @@ MailSlurp JS
 
 - [AIControllerApi](classes/AIControllerApi.md)
 - [AliasControllerApi](classes/AliasControllerApi.md)
+- [ApiAuditLogControllerApi](classes/ApiAuditLogControllerApi.md)
 - [AttachmentControllerApi](classes/AttachmentControllerApi.md)
 - [BaseAPI](classes/BaseAPI.md)
 - [BlobApiResponse](classes/BlobApiResponse.md)
 - [BounceControllerApi](classes/BounceControllerApi.md)
 - [BulkActionsControllerApi](classes/BulkActionsControllerApi.md)
+- [CampaignProbeControllerApi](classes/CampaignProbeControllerApi.md)
 - [CommonActionsControllerApi](classes/CommonActionsControllerApi.md)
 - [Configuration](classes/Configuration.md)
 - [ConnectorControllerApi](classes/ConnectorControllerApi.md)
 - [ConsentControllerApi](classes/ConsentControllerApi.md)
 - [ContactControllerApi](classes/ContactControllerApi.md)
+- [DeliverabilityTestControllerApi](classes/DeliverabilityTestControllerApi.md)
+- [DevicePreviewsControllerApi](classes/DevicePreviewsControllerApi.md)
 - [DomainControllerApi](classes/DomainControllerApi.md)
+- [DomainMonitorControllerApi](classes/DomainMonitorControllerApi.md)
 - [EmailControllerApi](classes/EmailControllerApi.md)
 - [EmailVerificationControllerApi](classes/EmailVerificationControllerApi.md)
 - [ExpiredControllerApi](classes/ExpiredControllerApi.md)
@@ -319,7 +426,7 @@ MailSlurp JS
 - [MailServerControllerApi](classes/MailServerControllerApi.md)
 - [MailSlurp](classes/MailSlurp.md)
 - [MissedEmailControllerApi](classes/MissedEmailControllerApi.md)
-- [OAuthConnectionApi](classes/OAuthConnectionApi.md)
+- [MissedSmsControllerApi](classes/MissedSmsControllerApi.md)
 - [PhoneControllerApi](classes/PhoneControllerApi.md)
 - [RequiredError](classes/RequiredError.md)
 - [RulesetControllerApi](classes/RulesetControllerApi.md)
@@ -336,9 +443,12 @@ MailSlurp JS
 
 ### Interfaces
 
+- [AIMappingMatchOption](interfaces/AIMappingMatchOption.md)
+- [AIMappingMatchOptions](interfaces/AIMappingMatchOptions.md)
 - [AITransformCreateOptions](interfaces/AITransformCreateOptions.md)
 - [AITransformDto](interfaces/AITransformDto.md)
 - [AITransformMappingDto](interfaces/AITransformMappingDto.md)
+- [AITransformMappingMatchResult](interfaces/AITransformMappingMatchResult.md)
 - [AITransformMappingProjection](interfaces/AITransformMappingProjection.md)
 - [AITransformProjection](interfaces/AITransformProjection.md)
 - [AITransformResultDto](interfaces/AITransformResultDto.md)
@@ -355,6 +465,9 @@ MailSlurp JS
 - [AttachmentEntityDto](interfaces/AttachmentEntityDto.md)
 - [AttachmentMetaData](interfaces/AttachmentMetaData.md)
 - [AttachmentProjection](interfaces/AttachmentProjection.md)
+- [AuditLogEventDto](interfaces/AuditLogEventDto.md)
+- [AuditLogPageDto](interfaces/AuditLogPageDto.md)
+- [AuditLogSearchOptions](interfaces/AuditLogSearchOptions.md)
 - [BasicAuthOptions](interfaces/BasicAuthOptions.md)
 - [BounceProjection](interfaces/BounceProjection.md)
 - [BounceRecipientProjection](interfaces/BounceRecipientProjection.md)
@@ -364,8 +477,19 @@ MailSlurp JS
 - [BulkDeleteInboxesRequest](interfaces/BulkDeleteInboxesRequest.md)
 - [BulkSendEmailOptions](interfaces/BulkSendEmailOptions.md)
 - [BulkSendEmailsRequest](interfaces/BulkSendEmailsRequest.md)
+- [CampaignProbeDto](interfaces/CampaignProbeDto.md)
+- [CampaignProbeInsightsDto](interfaces/CampaignProbeInsightsDto.md)
+- [CampaignProbeRunDto](interfaces/CampaignProbeRunDto.md)
+- [CampaignProbeRunDueResult](interfaces/CampaignProbeRunDueResult.md)
+- [CampaignProbeRunNowResult](interfaces/CampaignProbeRunNowResult.md)
+- [CampaignProbeSeriesDto](interfaces/CampaignProbeSeriesDto.md)
+- [CampaignProbeSeriesPointDto](interfaces/CampaignProbeSeriesPointDto.md)
 - [CanSendEmailResults](interfaces/CanSendEmailResults.md)
 - [CanSendRequest](interfaces/CanSendRequest.md)
+- [CancelDeliverabilitySimulationJobRequest](interfaces/CancelDeliverabilitySimulationJobRequest.md)
+- [CancelDevicePreviewRunOptions](interfaces/CancelDevicePreviewRunOptions.md)
+- [CancelDevicePreviewRunRequest](interfaces/CancelDevicePreviewRunRequest.md)
+- [CancelDevicePreviewRunResult](interfaces/CancelDevicePreviewRunResult.md)
 - [CancelScheduledJobRequest](interfaces/CancelScheduledJobRequest.md)
 - [CheckEmailBodyFeatureSupportRequest](interfaces/CheckEmailBodyFeatureSupportRequest.md)
 - [CheckEmailBodyFeatureSupportResults](interfaces/CheckEmailBodyFeatureSupportResults.md)
@@ -378,6 +502,7 @@ MailSlurp JS
 - [CheckEmailFeaturesClientSupportRequest](interfaces/CheckEmailFeaturesClientSupportRequest.md)
 - [CheckEmailFeaturesClientSupportResults](interfaces/CheckEmailFeaturesClientSupportResults.md)
 - [CheckSendingConsentForEmailAddressRequest](interfaces/CheckSendingConsentForEmailAddressRequest.md)
+- [CodeCandidate](interfaces/CodeCandidate.md)
 - [Complaint](interfaces/Complaint.md)
 - [ConditionOption](interfaces/ConditionOption.md)
 - [ConditionalStructuredContentResult](interfaces/ConditionalStructuredContentResult.md)
@@ -404,6 +529,9 @@ MailSlurp JS
 - [CreateAccountWebhookRequest](interfaces/CreateAccountWebhookRequest.md)
 - [CreateAliasOptions](interfaces/CreateAliasOptions.md)
 - [CreateAliasRequest](interfaces/CreateAliasRequest.md)
+- [CreateCampaignProbeOptions](interfaces/CreateCampaignProbeOptions.md)
+- [CreateCampaignProbeRequest](interfaces/CreateCampaignProbeRequest.md)
+- [CreateCampaignProbeRunOptions](interfaces/CreateCampaignProbeRunOptions.md)
 - [CreateConnectorImapConnectionOptions](interfaces/CreateConnectorImapConnectionOptions.md)
 - [CreateConnectorImapConnectionRequest](interfaces/CreateConnectorImapConnectionRequest.md)
 - [CreateConnectorOptions](interfaces/CreateConnectorOptions.md)
@@ -416,6 +544,19 @@ MailSlurp JS
 - [CreateConnectorWithOptionsRequest](interfaces/CreateConnectorWithOptionsRequest.md)
 - [CreateContactOptions](interfaces/CreateContactOptions.md)
 - [CreateContactRequest](interfaces/CreateContactRequest.md)
+- [CreateDeliverabilitySimulationJobOptions](interfaces/CreateDeliverabilitySimulationJobOptions.md)
+- [CreateDeliverabilitySimulationJobRequest](interfaces/CreateDeliverabilitySimulationJobRequest.md)
+- [CreateDeliverabilityTestOptions](interfaces/CreateDeliverabilityTestOptions.md)
+- [CreateDeliverabilityTestRequest](interfaces/CreateDeliverabilityTestRequest.md)
+- [CreateDevicePreviewFeedbackOptions](interfaces/CreateDevicePreviewFeedbackOptions.md)
+- [CreateDevicePreviewFeedbackRequest](interfaces/CreateDevicePreviewFeedbackRequest.md)
+- [CreateDevicePreviewOptions](interfaces/CreateDevicePreviewOptions.md)
+- [CreateDevicePreviewRunRequest](interfaces/CreateDevicePreviewRunRequest.md)
+- [CreateDevicePreviewRunResult](interfaces/CreateDevicePreviewRunResult.md)
+- [CreateDomainMonitorAlertSinkOptions](interfaces/CreateDomainMonitorAlertSinkOptions.md)
+- [CreateDomainMonitorAlertSinkRequest](interfaces/CreateDomainMonitorAlertSinkRequest.md)
+- [CreateDomainMonitorOptions](interfaces/CreateDomainMonitorOptions.md)
+- [CreateDomainMonitorRequest](interfaces/CreateDomainMonitorRequest.md)
 - [CreateDomainOptions](interfaces/CreateDomainOptions.md)
 - [CreateDomainRequest](interfaces/CreateDomainRequest.md)
 - [CreateEmergencyAddressOptions](interfaces/CreateEmergencyAddressOptions.md)
@@ -428,15 +569,14 @@ MailSlurp JS
 - [CreateInboxForwarderOptions](interfaces/CreateInboxForwarderOptions.md)
 - [CreateInboxReplierOptions](interfaces/CreateInboxReplierOptions.md)
 - [CreateInboxRequest](interfaces/CreateInboxRequest.md)
+- [CreateInboxRetentionPolicyForAccountOptions](interfaces/CreateInboxRetentionPolicyForAccountOptions.md)
 - [CreateInboxRulesetRequest](interfaces/CreateInboxRulesetRequest.md)
 - [CreateInboxWithOptionsRequest](interfaces/CreateInboxWithOptionsRequest.md)
 - [CreateNewEmailAddressRequest](interfaces/CreateNewEmailAddressRequest.md)
 - [CreateNewInboxForwarderRequest](interfaces/CreateNewInboxForwarderRequest.md)
 - [CreateNewInboxReplierRequest](interfaces/CreateNewInboxReplierRequest.md)
 - [CreateNewRulesetRequest](interfaces/CreateNewRulesetRequest.md)
-- [CreateOAuthConnectionRequest](interfaces/CreateOAuthConnectionRequest.md)
-- [CreateOAuthConnectionResult](interfaces/CreateOAuthConnectionResult.md)
-- [CreateOAuthExchangeResult](interfaces/CreateOAuthExchangeResult.md)
+- [CreateOrUpdateInboxRetentionPolicyForAccountRequest](interfaces/CreateOrUpdateInboxRetentionPolicyForAccountRequest.md)
 - [CreatePhoneNumberOptions](interfaces/CreatePhoneNumberOptions.md)
 - [CreatePhoneNumberRequest](interfaces/CreatePhoneNumberRequest.md)
 - [CreatePortalOptions](interfaces/CreatePortalOptions.md)
@@ -470,11 +610,17 @@ MailSlurp JS
 - [DeleteAllInboxesByTagRequest](interfaces/DeleteAllInboxesByTagRequest.md)
 - [DeleteAllWebhooksRequest](interfaces/DeleteAllWebhooksRequest.md)
 - [DeleteAttachmentRequest](interfaces/DeleteAttachmentRequest.md)
+- [DeleteCampaignProbeRequest](interfaces/DeleteCampaignProbeRequest.md)
 - [DeleteConnectorImapConnectionRequest](interfaces/DeleteConnectorImapConnectionRequest.md)
 - [DeleteConnectorRequest](interfaces/DeleteConnectorRequest.md)
 - [DeleteConnectorSmtpConnectionRequest](interfaces/DeleteConnectorSmtpConnectionRequest.md)
 - [DeleteConnectorSyncSettingsRequest](interfaces/DeleteConnectorSyncSettingsRequest.md)
 - [DeleteContactRequest](interfaces/DeleteContactRequest.md)
+- [DeleteDeliverabilityTestRequest](interfaces/DeleteDeliverabilityTestRequest.md)
+- [DeleteDevicePreviewRunRequest](interfaces/DeleteDevicePreviewRunRequest.md)
+- [DeleteDevicePreviewRunResult](interfaces/DeleteDevicePreviewRunResult.md)
+- [DeleteDomainMonitorAlertSinkRequest](interfaces/DeleteDomainMonitorAlertSinkRequest.md)
+- [DeleteDomainMonitorRequest](interfaces/DeleteDomainMonitorRequest.md)
 - [DeleteDomainRequest](interfaces/DeleteDomainRequest.md)
 - [DeleteEmailAddressRequest](interfaces/DeleteEmailAddressRequest.md)
 - [DeleteEmailRequest](interfaces/DeleteEmailRequest.md)
@@ -486,7 +632,9 @@ MailSlurp JS
 - [DeleteInboxRepliersRequest](interfaces/DeleteInboxRepliersRequest.md)
 - [DeleteInboxRequest](interfaces/DeleteInboxRequest.md)
 - [DeleteNewFakeEmailAddressRequest](interfaces/DeleteNewFakeEmailAddressRequest.md)
+- [DeletePhoneMessageThreadItemsRequest](interfaces/DeletePhoneMessageThreadItemsRequest.md)
 - [DeletePhoneNumberRequest](interfaces/DeletePhoneNumberRequest.md)
+- [DeleteResult](interfaces/DeleteResult.md)
 - [DeleteRulesetRequest](interfaces/DeleteRulesetRequest.md)
 - [DeleteRulesetsRequest](interfaces/DeleteRulesetsRequest.md)
 - [DeleteSentEmailRequest](interfaces/DeleteSentEmailRequest.md)
@@ -500,18 +648,59 @@ MailSlurp JS
 - [DeleteValidationRequestRequest](interfaces/DeleteValidationRequestRequest.md)
 - [DeleteWebhookByIdRequest](interfaces/DeleteWebhookByIdRequest.md)
 - [DeleteWebhookRequest](interfaces/DeleteWebhookRequest.md)
+- [DeliverabilityAnalyticsRunDto](interfaces/DeliverabilityAnalyticsRunDto.md)
+- [DeliverabilityAnalyticsSeriesDto](interfaces/DeliverabilityAnalyticsSeriesDto.md)
+- [DeliverabilityAnalyticsSeriesPointDto](interfaces/DeliverabilityAnalyticsSeriesPointDto.md)
+- [DeliverabilityAnalyticsSummaryDto](interfaces/DeliverabilityAnalyticsSummaryDto.md)
+- [DeliverabilityEntityResultDto](interfaces/DeliverabilityEntityResultDto.md)
+- [DeliverabilityEntityResultPageDto](interfaces/DeliverabilityEntityResultPageDto.md)
+- [DeliverabilityExpectation](interfaces/DeliverabilityExpectation.md)
+- [DeliverabilityExpectationResultDto](interfaces/DeliverabilityExpectationResultDto.md)
+- [DeliverabilityFailureEntityHotspotDto](interfaces/DeliverabilityFailureEntityHotspotDto.md)
+- [DeliverabilityFailureHotspotsDto](interfaces/DeliverabilityFailureHotspotsDto.md)
+- [DeliverabilityFailurePhoneDimensionHotspotDto](interfaces/DeliverabilityFailurePhoneDimensionHotspotDto.md)
+- [DeliverabilityPollStatusResultDto](interfaces/DeliverabilityPollStatusResultDto.md)
+- [DeliverabilitySelectorOptions](interfaces/DeliverabilitySelectorOptions.md)
+- [DeliverabilitySimulationEmailOptions](interfaces/DeliverabilitySimulationEmailOptions.md)
+- [DeliverabilitySimulationJobConfigDto](interfaces/DeliverabilitySimulationJobConfigDto.md)
+- [DeliverabilitySimulationJobDto](interfaces/DeliverabilitySimulationJobDto.md)
+- [DeliverabilitySimulationJobErrorSummaryDto](interfaces/DeliverabilitySimulationJobErrorSummaryDto.md)
+- [DeliverabilitySimulationJobEventDto](interfaces/DeliverabilitySimulationJobEventDto.md)
+- [DeliverabilitySimulationJobEventPageDto](interfaces/DeliverabilitySimulationJobEventPageDto.md)
+- [DeliverabilitySimulationJobTopErrorDto](interfaces/DeliverabilitySimulationJobTopErrorDto.md)
+- [DeliverabilitySimulationSmsOptions](interfaces/DeliverabilitySimulationSmsOptions.md)
+- [DeliverabilityTestDto](interfaces/DeliverabilityTestDto.md)
+- [DeliverabilityTestPageDto](interfaces/DeliverabilityTestPageDto.md)
 - [DeliveryStatusDto](interfaces/DeliveryStatusDto.md)
 - [DescribeDomainOptions](interfaces/DescribeDomainOptions.md)
 - [DescribeMailServerDomainRequest](interfaces/DescribeMailServerDomainRequest.md)
 - [DescribeMailServerDomainResult](interfaces/DescribeMailServerDomainResult.md)
+- [DevicePreviewFeedbackDto](interfaces/DevicePreviewFeedbackDto.md)
+- [DevicePreviewFeedbackListDto](interfaces/DevicePreviewFeedbackListDto.md)
+- [DevicePreviewProviderProgressDto](interfaces/DevicePreviewProviderProgressDto.md)
+- [DevicePreviewRunDto](interfaces/DevicePreviewRunDto.md)
+- [DevicePreviewRunResultsDto](interfaces/DevicePreviewRunResultsDto.md)
+- [DevicePreviewScreenshotDto](interfaces/DevicePreviewScreenshotDto.md)
+- [DevicePreviewTargetDto](interfaces/DevicePreviewTargetDto.md)
 - [DoesInboxExistRequest](interfaces/DoesInboxExistRequest.md)
 - [DomainDto](interfaces/DomainDto.md)
 - [DomainGroup](interfaces/DomainGroup.md)
 - [DomainGroupsDto](interfaces/DomainGroupsDto.md)
 - [DomainInformation](interfaces/DomainInformation.md)
 - [DomainIssuesDto](interfaces/DomainIssuesDto.md)
+- [DomainMonitorAlertSinkDto](interfaces/DomainMonitorAlertSinkDto.md)
+- [DomainMonitorDto](interfaces/DomainMonitorDto.md)
+- [DomainMonitorInsightsDto](interfaces/DomainMonitorInsightsDto.md)
+- [DomainMonitorRunDto](interfaces/DomainMonitorRunDto.md)
+- [DomainMonitorRunDueResult](interfaces/DomainMonitorRunDueResult.md)
+- [DomainMonitorRunNowResult](interfaces/DomainMonitorRunNowResult.md)
+- [DomainMonitorSeriesDto](interfaces/DomainMonitorSeriesDto.md)
+- [DomainMonitorSeriesPointDto](interfaces/DomainMonitorSeriesPointDto.md)
 - [DomainNameRecord](interfaces/DomainNameRecord.md)
 - [DomainPreview](interfaces/DomainPreview.md)
+- [DomainRegionGroup](interfaces/DomainRegionGroup.md)
+- [DomainRegionGroupsDto](interfaces/DomainRegionGroupsDto.md)
+- [DomainRegionInformation](interfaces/DomainRegionInformation.md)
 - [DownloadAttachmentAsBase64EncodedRequest](interfaces/DownloadAttachmentAsBase64EncodedRequest.md)
 - [DownloadAttachmentAsBytesRequest](interfaces/DownloadAttachmentAsBytesRequest.md)
 - [DownloadAttachmentBase64Request](interfaces/DownloadAttachmentBase64Request.md)
@@ -519,6 +708,7 @@ MailSlurp JS
 - [DownloadAttachmentRequest](interfaces/DownloadAttachmentRequest.md)
 - [DownloadBodyBytesRequest](interfaces/DownloadBodyBytesRequest.md)
 - [DownloadBodyRequest](interfaces/DownloadBodyRequest.md)
+- [DuplicateDeliverabilityTestRequest](interfaces/DuplicateDeliverabilityTestRequest.md)
 - [Email](interfaces/Email.md)
 - [EmailAnalysis](interfaces/EmailAnalysis.md)
 - [EmailAvailableResult](interfaces/EmailAvailableResult.md)
@@ -543,6 +733,8 @@ MailSlurp JS
 - [EmailRecipients](interfaces/EmailRecipients.md)
 - [EmailRecipientsProjection](interfaces/EmailRecipientsProjection.md)
 - [EmailScreenshotResult](interfaces/EmailScreenshotResult.md)
+- [EmailSignature](interfaces/EmailSignature.md)
+- [EmailSignatureParseResult](interfaces/EmailSignatureParseResult.md)
 - [EmailTextLinesResult](interfaces/EmailTextLinesResult.md)
 - [EmailThreadDto](interfaces/EmailThreadDto.md)
 - [EmailThreadItem](interfaces/EmailThreadItem.md)
@@ -554,16 +746,27 @@ MailSlurp JS
 - [EmergencyAddressDto](interfaces/EmergencyAddressDto.md)
 - [EmptyInboxRequest](interfaces/EmptyInboxRequest.md)
 - [EmptyResponseDto](interfaces/EmptyResponseDto.md)
+- [EnsureDevicePreviewRunRequest](interfaces/EnsureDevicePreviewRunRequest.md)
 - [EntityAutomationItemProjection](interfaces/EntityAutomationItemProjection.md)
 - [EntityEventItemProjection](interfaces/EntityEventItemProjection.md)
 - [EntityFavouriteItemProjection](interfaces/EntityFavouriteItemProjection.md)
-- [ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest](interfaces/ExchangeAuthorizationTokenAndCreateOrUpdateInboxRequest.md)
 - [ExpirationDefaults](interfaces/ExpirationDefaults.md)
 - [ExpiredInboxDto](interfaces/ExpiredInboxDto.md)
 - [ExpiredInboxRecordProjection](interfaces/ExpiredInboxRecordProjection.md)
+- [ExportDeliverabilityTestReportRequest](interfaces/ExportDeliverabilityTestReportRequest.md)
+- [ExportDeliverabilityTestResultsRequest](interfaces/ExportDeliverabilityTestResultsRequest.md)
 - [ExportEntitiesRequest](interfaces/ExportEntitiesRequest.md)
 - [ExportLink](interfaces/ExportLink.md)
 - [ExportOptions](interfaces/ExportOptions.md)
+- [ExportTransformerOptions](interfaces/ExportTransformerOptions.md)
+- [ExportTransformerResponse](interfaces/ExportTransformerResponse.md)
+- [ExportTransformerResultJobDto](interfaces/ExportTransformerResultJobDto.md)
+- [ExportTransformerResultsRequest](interfaces/ExportTransformerResultsRequest.md)
+- [ExtractAttachmentTextOptions](interfaces/ExtractAttachmentTextOptions.md)
+- [ExtractAttachmentTextRequest](interfaces/ExtractAttachmentTextRequest.md)
+- [ExtractAttachmentTextResult](interfaces/ExtractAttachmentTextResult.md)
+- [ExtractCodesOptions](interfaces/ExtractCodesOptions.md)
+- [ExtractCodesResult](interfaces/ExtractCodesResult.md)
 - [FakeEmailDto](interfaces/FakeEmailDto.md)
 - [FakeEmailPreview](interfaces/FakeEmailPreview.md)
 - [FakeEmailResult](interfaces/FakeEmailResult.md)
@@ -607,7 +810,9 @@ MailSlurp JS
 - [GetAllInboxesOffsetPaginatedRequest](interfaces/GetAllInboxesOffsetPaginatedRequest.md)
 - [GetAllInboxesRequest](interfaces/GetAllInboxesRequest.md)
 - [GetAllMissedEmailsRequest](interfaces/GetAllMissedEmailsRequest.md)
+- [GetAllMissedSmsMessagesRequest](interfaces/GetAllMissedSmsMessagesRequest.md)
 - [GetAllPhoneMessageThreadsRequest](interfaces/GetAllPhoneMessageThreadsRequest.md)
+- [GetAllPhoneNumberReleasesRequest](interfaces/GetAllPhoneNumberReleasesRequest.md)
 - [GetAllPlusAddressesRequest](interfaces/GetAllPlusAddressesRequest.md)
 - [GetAllScheduledJobsRequest](interfaces/GetAllScheduledJobsRequest.md)
 - [GetAllSentTrackingPixelsRequest](interfaces/GetAllSentTrackingPixelsRequest.md)
@@ -622,11 +827,18 @@ MailSlurp JS
 - [GetAttachmentMetaDataRequest](interfaces/GetAttachmentMetaDataRequest.md)
 - [GetAttachmentRequest](interfaces/GetAttachmentRequest.md)
 - [GetAttachmentsRequest](interfaces/GetAttachmentsRequest.md)
+- [GetAuditLogByEventIdRequest](interfaces/GetAuditLogByEventIdRequest.md)
+- [GetAuditLogsRequest](interfaces/GetAuditLogsRequest.md)
+- [GetAvailableDomainRegionsRequest](interfaces/GetAvailableDomainRegionsRequest.md)
 - [GetAvailableDomainsRequest](interfaces/GetAvailableDomainsRequest.md)
 - [GetBouncedEmailRequest](interfaces/GetBouncedEmailRequest.md)
 - [GetBouncedEmailsRequest](interfaces/GetBouncedEmailsRequest.md)
 - [GetBouncedRecipientRequest](interfaces/GetBouncedRecipientRequest.md)
 - [GetBouncedRecipientsRequest](interfaces/GetBouncedRecipientsRequest.md)
+- [GetCampaignProbeInsightsRequest](interfaces/GetCampaignProbeInsightsRequest.md)
+- [GetCampaignProbeRequest](interfaces/GetCampaignProbeRequest.md)
+- [GetCampaignProbeRunsRequest](interfaces/GetCampaignProbeRunsRequest.md)
+- [GetCampaignProbeSeriesRequest](interfaces/GetCampaignProbeSeriesRequest.md)
 - [GetComplaintRequest](interfaces/GetComplaintRequest.md)
 - [GetComplaintsRequest](interfaces/GetComplaintsRequest.md)
 - [GetConnectorByEmailAddressRequest](interfaces/GetConnectorByEmailAddressRequest.md)
@@ -641,12 +853,34 @@ MailSlurp JS
 - [GetConnectorsRequest](interfaces/GetConnectorsRequest.md)
 - [GetContactRequest](interfaces/GetContactRequest.md)
 - [GetContactVCardRequest](interfaces/GetContactVCardRequest.md)
+- [GetDeliverabilityAnalyticsSeriesRequest](interfaces/GetDeliverabilityAnalyticsSeriesRequest.md)
+- [GetDeliverabilityFailureHotspotsRequest](interfaces/GetDeliverabilityFailureHotspotsRequest.md)
+- [GetDeliverabilitySimulationJobEventsRequest](interfaces/GetDeliverabilitySimulationJobEventsRequest.md)
+- [GetDeliverabilitySimulationJobRequest](interfaces/GetDeliverabilitySimulationJobRequest.md)
+- [GetDeliverabilityTestRequest](interfaces/GetDeliverabilityTestRequest.md)
+- [GetDeliverabilityTestResultsRequest](interfaces/GetDeliverabilityTestResultsRequest.md)
+- [GetDeliverabilityTestsRequest](interfaces/GetDeliverabilityTestsRequest.md)
 - [GetDeliveryStatusesByInboxIdRequest](interfaces/GetDeliveryStatusesByInboxIdRequest.md)
+- [GetDevicePreviewFeedbackItemsRequest](interfaces/GetDevicePreviewFeedbackItemsRequest.md)
+- [GetDevicePreviewFeedbackRequest](interfaces/GetDevicePreviewFeedbackRequest.md)
+- [GetDevicePreviewRunProviderProgressRequest](interfaces/GetDevicePreviewRunProviderProgressRequest.md)
+- [GetDevicePreviewRunRequest](interfaces/GetDevicePreviewRunRequest.md)
+- [GetDevicePreviewRunResultsRequest](interfaces/GetDevicePreviewRunResultsRequest.md)
+- [GetDevicePreviewRunScreenshotRequest](interfaces/GetDevicePreviewRunScreenshotRequest.md)
+- [GetDevicePreviewRunsForAccountRequest](interfaces/GetDevicePreviewRunsForAccountRequest.md)
+- [GetDevicePreviewRunsOffsetPaginatedRequest](interfaces/GetDevicePreviewRunsOffsetPaginatedRequest.md)
+- [GetDevicePreviewRunsRequest](interfaces/GetDevicePreviewRunsRequest.md)
 - [GetDnsLookupRequest](interfaces/GetDnsLookupRequest.md)
 - [GetDnsLookupsRequest](interfaces/GetDnsLookupsRequest.md)
+- [GetDomainMonitorAlertSinksRequest](interfaces/GetDomainMonitorAlertSinksRequest.md)
+- [GetDomainMonitorInsightsRequest](interfaces/GetDomainMonitorInsightsRequest.md)
+- [GetDomainMonitorRequest](interfaces/GetDomainMonitorRequest.md)
+- [GetDomainMonitorRunsRequest](interfaces/GetDomainMonitorRunsRequest.md)
+- [GetDomainMonitorSeriesRequest](interfaces/GetDomainMonitorSeriesRequest.md)
 - [GetDomainRequest](interfaces/GetDomainRequest.md)
 - [GetDomainWildcardCatchAllInboxRequest](interfaces/GetDomainWildcardCatchAllInboxRequest.md)
 - [GetEmailAttachmentsRequest](interfaces/GetEmailAttachmentsRequest.md)
+- [GetEmailCodesRequest](interfaces/GetEmailCodesRequest.md)
 - [GetEmailContentMatchRequest](interfaces/GetEmailContentMatchRequest.md)
 - [GetEmailContentPartContentRequest](interfaces/GetEmailContentPartContentRequest.md)
 - [GetEmailContentPartRequest](interfaces/GetEmailContentPartRequest.md)
@@ -660,6 +894,7 @@ MailSlurp JS
 - [GetEmailScreenshotAsBase64Request](interfaces/GetEmailScreenshotAsBase64Request.md)
 - [GetEmailScreenshotAsBinaryRequest](interfaces/GetEmailScreenshotAsBinaryRequest.md)
 - [GetEmailScreenshotOptions](interfaces/GetEmailScreenshotOptions.md)
+- [GetEmailSignatureRequest](interfaces/GetEmailSignatureRequest.md)
 - [GetEmailSummaryRequest](interfaces/GetEmailSummaryRequest.md)
 - [GetEmailTextLinesRequest](interfaces/GetEmailTextLinesRequest.md)
 - [GetEmailThreadItemsRequest](interfaces/GetEmailThreadItemsRequest.md)
@@ -676,6 +911,7 @@ MailSlurp JS
 - [GetExpiredInboxRecordRequest](interfaces/GetExpiredInboxRecordRequest.md)
 - [GetExpiredInboxesRequest](interfaces/GetExpiredInboxesRequest.md)
 - [GetExportLinkRequest](interfaces/GetExportLinkRequest.md)
+- [GetExportTransformerResultsJobRequest](interfaces/GetExportTransformerResultsJobRequest.md)
 - [GetFakeEmailByEmailAddressRequest](interfaces/GetFakeEmailByEmailAddressRequest.md)
 - [GetFakeEmailByIdRequest](interfaces/GetFakeEmailByIdRequest.md)
 - [GetFakeEmailRawRequest](interfaces/GetFakeEmailRawRequest.md)
@@ -720,13 +956,17 @@ MailSlurp JS
 - [GetJsonPropertyAsStringRequest](interfaces/GetJsonPropertyAsStringRequest.md)
 - [GetJsonSchemaForWebhookEventRequest](interfaces/GetJsonSchemaForWebhookEventRequest.md)
 - [GetJsonSchemaForWebhookPayloadRequest](interfaces/GetJsonSchemaForWebhookPayloadRequest.md)
+- [GetLatestDeliverabilitySimulationJobRequest](interfaces/GetLatestDeliverabilitySimulationJobRequest.md)
 - [GetLatestEmailInInbox1Request](interfaces/GetLatestEmailInInbox1Request.md)
 - [GetLatestEmailInInboxRequest](interfaces/GetLatestEmailInInboxRequest.md)
 - [GetLatestEmailRequest](interfaces/GetLatestEmailRequest.md)
 - [GetListUnsubscribeRecipientsRequest](interfaces/GetListUnsubscribeRecipientsRequest.md)
 - [GetMailSlurpDomainsRequest](interfaces/GetMailSlurpDomainsRequest.md)
 - [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
+- [GetMissedSmsMessageRequest](interfaces/GetMissedSmsMessageRequest.md)
 - [GetOptInIdentitiesRequest](interfaces/GetOptInIdentitiesRequest.md)
+- [GetOrCreateInboxPlusAddressRequest](interfaces/GetOrCreateInboxPlusAddressRequest.md)
+- [GetOrCreatePlusAddressByFullAddressRequest](interfaces/GetOrCreatePlusAddressByFullAddressRequest.md)
 - [GetOrganizationEmailsPaginatedRequest](interfaces/GetOrganizationEmailsPaginatedRequest.md)
 - [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
 - [GetOutboxesRequest](interfaces/GetOutboxesRequest.md)
@@ -734,6 +974,7 @@ MailSlurp JS
 - [GetPhoneMessageThreadsRequest](interfaces/GetPhoneMessageThreadsRequest.md)
 - [GetPhoneNumberByNameRequest](interfaces/GetPhoneNumberByNameRequest.md)
 - [GetPhoneNumberByPhoneNumberRequest](interfaces/GetPhoneNumberByPhoneNumberRequest.md)
+- [GetPhoneNumberReleaseRequest](interfaces/GetPhoneNumberReleaseRequest.md)
 - [GetPhoneNumberRequest](interfaces/GetPhoneNumberRequest.md)
 - [GetPhoneNumberWebhooksPaginatedRequest](interfaces/GetPhoneNumberWebhooksPaginatedRequest.md)
 - [GetPhoneNumbersRequest](interfaces/GetPhoneNumbersRequest.md)
@@ -761,11 +1002,14 @@ MailSlurp JS
 - [GetSentSmsMessageRequest](interfaces/GetSentSmsMessageRequest.md)
 - [GetSentSmsMessagesPaginatedRequest](interfaces/GetSentSmsMessagesPaginatedRequest.md)
 - [GetSmsByPhoneNumberRequest](interfaces/GetSmsByPhoneNumberRequest.md)
+- [GetSmsCodesRequest](interfaces/GetSmsCodesRequest.md)
 - [GetSmsMessageRequest](interfaces/GetSmsMessageRequest.md)
 - [GetSmtpAccessRequest](interfaces/GetSmtpAccessRequest.md)
 - [GetTemplatePreviewHtmlRequest](interfaces/GetTemplatePreviewHtmlRequest.md)
 - [GetTemplatePreviewJsonRequest](interfaces/GetTemplatePreviewJsonRequest.md)
 - [GetTemplateRequest](interfaces/GetTemplateRequest.md)
+- [GetTenantReputationFindingsRequest](interfaces/GetTenantReputationFindingsRequest.md)
+- [GetTenantReputationStatusSummaryRequest](interfaces/GetTenantReputationStatusSummaryRequest.md)
 - [GetTestWebhookPayloadForWebhookRequest](interfaces/GetTestWebhookPayloadForWebhookRequest.md)
 - [GetTestWebhookPayloadRequest](interfaces/GetTestWebhookPayloadRequest.md)
 - [GetThreadRequest](interfaces/GetThreadRequest.md)
@@ -779,6 +1023,7 @@ MailSlurp JS
 - [GetTransformerRequest](interfaces/GetTransformerRequest.md)
 - [GetTransformerResultRequest](interfaces/GetTransformerResultRequest.md)
 - [GetTransformerResultsRequest](interfaces/GetTransformerResultsRequest.md)
+- [GetTransformerResultsTableRequest](interfaces/GetTransformerResultsTableRequest.md)
 - [GetTransformersRequest](interfaces/GetTransformersRequest.md)
 - [GetUnreadEmailCountRequest](interfaces/GetUnreadEmailCountRequest.md)
 - [GetValidationRequestsRequest](interfaces/GetValidationRequestsRequest.md)
@@ -836,6 +1081,8 @@ MailSlurp JS
 - [InboxPreview](interfaces/InboxPreview.md)
 - [InboxReplierDto](interfaces/InboxReplierDto.md)
 - [InboxReplierEventProjection](interfaces/InboxReplierEventProjection.md)
+- [InboxRetentionPolicyDto](interfaces/InboxRetentionPolicyDto.md)
+- [InboxRetentionPolicyOptionalDto](interfaces/InboxRetentionPolicyOptionalDto.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
 - [InlineObject1](interfaces/InlineObject1.md)
 - [InvokeTransformerOptions](interfaces/InvokeTransformerOptions.md)
@@ -868,6 +1115,8 @@ MailSlurp JS
 - [Middleware](interfaces/Middleware.md)
 - [MissedEmailDto](interfaces/MissedEmailDto.md)
 - [MissedEmailProjection](interfaces/MissedEmailProjection.md)
+- [MissedSmsDto](interfaces/MissedSmsDto.md)
+- [MissedSmsProjection](interfaces/MissedSmsProjection.md)
 - [NameServerRecord](interfaces/NameServerRecord.md)
 - [NewFakeEmailAddressResult](interfaces/NewFakeEmailAddressResult.md)
 - [OptInConsentOptions](interfaces/OptInConsentOptions.md)
@@ -892,6 +1141,7 @@ MailSlurp JS
 - [PageConnectorEvents](interfaces/PageConnectorEvents.md)
 - [PageContactProjection](interfaces/PageContactProjection.md)
 - [PageDeliveryStatus](interfaces/PageDeliveryStatus.md)
+- [PageDevicePreviewRunProjection](interfaces/PageDevicePreviewRunProjection.md)
 - [PageEmailPreview](interfaces/PageEmailPreview.md)
 - [PageEmailProjection](interfaces/PageEmailProjection.md)
 - [PageEmailThreadProjection](interfaces/PageEmailThreadProjection.md)
@@ -910,11 +1160,13 @@ MailSlurp JS
 - [PageInboxTags](interfaces/PageInboxTags.md)
 - [PageListUnsubscribeRecipients](interfaces/PageListUnsubscribeRecipients.md)
 - [PageMissedEmailProjection](interfaces/PageMissedEmailProjection.md)
+- [PageMissedSmsProjection](interfaces/PageMissedSmsProjection.md)
 - [PageOptInIdentityProjection](interfaces/PageOptInIdentityProjection.md)
 - [PageOrganizationInboxProjection](interfaces/PageOrganizationInboxProjection.md)
 - [PagePhoneMessageThreadItemProjection](interfaces/PagePhoneMessageThreadItemProjection.md)
 - [PagePhoneMessageThreadProjection](interfaces/PagePhoneMessageThreadProjection.md)
 - [PagePhoneNumberProjection](interfaces/PagePhoneNumberProjection.md)
+- [PagePhoneNumberReleaseProjection](interfaces/PagePhoneNumberReleaseProjection.md)
 - [PagePlusAddressProjection](interfaces/PagePlusAddressProjection.md)
 - [PageReputationItems](interfaces/PageReputationItems.md)
 - [PageRulesetDto](interfaces/PageRulesetDto.md)
@@ -923,6 +1175,7 @@ MailSlurp JS
 - [PageSentEmailWithQueueProjection](interfaces/PageSentEmailWithQueueProjection.md)
 - [PageSentSmsProjection](interfaces/PageSentSmsProjection.md)
 - [PageSmsProjection](interfaces/PageSmsProjection.md)
+- [PageTableData](interfaces/PageTableData.md)
 - [PageTemplateProjection](interfaces/PageTemplateProjection.md)
 - [PageTrackingPixelProjection](interfaces/PageTrackingPixelProjection.md)
 - [PageUnknownMissedEmailProjection](interfaces/PageUnknownMissedEmailProjection.md)
@@ -930,18 +1183,27 @@ MailSlurp JS
 - [PageWebhookProjection](interfaces/PageWebhookProjection.md)
 - [PageWebhookResult](interfaces/PageWebhookResult.md)
 - [PageableObject](interfaces/PageableObject.md)
+- [Pagination](interfaces/Pagination.md)
+- [PauseDeliverabilitySimulationJobRequest](interfaces/PauseDeliverabilitySimulationJobRequest.md)
+- [PauseDeliverabilityTestRequest](interfaces/PauseDeliverabilityTestRequest.md)
 - [PhoneMessageThreadItemProjection](interfaces/PhoneMessageThreadItemProjection.md)
 - [PhoneMessageThreadProjection](interfaces/PhoneMessageThreadProjection.md)
 - [PhoneNumberDto](interfaces/PhoneNumberDto.md)
 - [PhoneNumberProjection](interfaces/PhoneNumberProjection.md)
+- [PhoneNumberReleaseProjection](interfaces/PhoneNumberReleaseProjection.md)
 - [PhoneNumberValidationDto](interfaces/PhoneNumberValidationDto.md)
 - [PhonePlanAvailability](interfaces/PhonePlanAvailability.md)
 - [PhonePlanAvailabilityItem](interfaces/PhonePlanAvailabilityItem.md)
 - [PhonePlanDto](interfaces/PhonePlanDto.md)
+- [PhoneSummaryCountryDto](interfaces/PhoneSummaryCountryDto.md)
+- [PhoneSummaryDto](interfaces/PhoneSummaryDto.md)
+- [PlanSummaryDto](interfaces/PlanSummaryDto.md)
 - [PlusAddressDto](interfaces/PlusAddressDto.md)
 - [PlusAddressProjection](interfaces/PlusAddressProjection.md)
+- [PollDeliverabilityTestStatusRequest](interfaces/PollDeliverabilityTestStatusRequest.md)
 - [ProviderSettings](interfaces/ProviderSettings.md)
 - [RawEmailJson](interfaces/RawEmailJson.md)
+- [ReassignPhoneNumberReleaseRequest](interfaces/ReassignPhoneNumberReleaseRequest.md)
 - [Recipient](interfaces/Recipient.md)
 - [RecipientProjection](interfaces/RecipientProjection.md)
 - [RedriveWebhookResultRequest](interfaces/RedriveWebhookResultRequest.md)
@@ -958,11 +1220,17 @@ MailSlurp JS
 - [ResponseContext](interfaces/ResponseContext.md)
 - [ResponseTransformer](interfaces/ResponseTransformer.md)
 - [Result](interfaces/Result.md)
+- [ResumeDeliverabilitySimulationJobRequest](interfaces/ResumeDeliverabilitySimulationJobRequest.md)
 - [RevokeOptInConsentForEmailAddressRequest](interfaces/RevokeOptInConsentForEmailAddressRequest.md)
 - [RulesetDto](interfaces/RulesetDto.md)
 - [RulesetTestOptions](interfaces/RulesetTestOptions.md)
+- [RunCampaignProbeNowRequest](interfaces/RunCampaignProbeNowRequest.md)
+- [RunDomainMonitorNowRequest](interfaces/RunDomainMonitorNowRequest.md)
+- [RunDueCampaignProbesRequest](interfaces/RunDueCampaignProbesRequest.md)
+- [RunDueDomainMonitorsRequest](interfaces/RunDueDomainMonitorsRequest.md)
 - [ScheduledJob](interfaces/ScheduledJob.md)
 - [ScheduledJobDto](interfaces/ScheduledJobDto.md)
+- [SearchAuditLogsRequest](interfaces/SearchAuditLogsRequest.md)
 - [SearchEmailsOptions](interfaces/SearchEmailsOptions.md)
 - [SearchEmailsRequest](interfaces/SearchEmailsRequest.md)
 - [SearchInboxesOptions](interfaces/SearchInboxesOptions.md)
@@ -1011,6 +1279,8 @@ MailSlurp JS
 - [SmtpAccessDetails](interfaces/SmtpAccessDetails.md)
 - [SortObject](interfaces/SortObject.md)
 - [SpellingIssue](interfaces/SpellingIssue.md)
+- [StartDeliverabilityTestRequest](interfaces/StartDeliverabilityTestRequest.md)
+- [StopDeliverabilityTestRequest](interfaces/StopDeliverabilityTestRequest.md)
 - [StructuredContentResultDto](interfaces/StructuredContentResultDto.md)
 - [StructuredOutputSchema](interfaces/StructuredOutputSchema.md)
 - [StructuredOutputSchemaValidation](interfaces/StructuredOutputSchemaValidation.md)
@@ -1020,6 +1290,10 @@ MailSlurp JS
 - [TemplatePreview](interfaces/TemplatePreview.md)
 - [TemplateProjection](interfaces/TemplateProjection.md)
 - [TemplateVariable](interfaces/TemplateVariable.md)
+- [TenantReputationFindingDto](interfaces/TenantReputationFindingDto.md)
+- [TenantReputationFindingsDto](interfaces/TenantReputationFindingsDto.md)
+- [TenantReputationStatusRowDto](interfaces/TenantReputationStatusRowDto.md)
+- [TenantReputationStatusSummaryDto](interfaces/TenantReputationStatusSummaryDto.md)
 - [TestConnectorImapConnectionOptionsRequest](interfaces/TestConnectorImapConnectionOptionsRequest.md)
 - [TestConnectorImapConnectionRequest](interfaces/TestConnectorImapConnectionRequest.md)
 - [TestConnectorSmtpConnectionOptionsRequest](interfaces/TestConnectorSmtpConnectionOptionsRequest.md)
@@ -1040,6 +1314,7 @@ MailSlurp JS
 - [TestRulesetRequest](interfaces/TestRulesetRequest.md)
 - [TestRulesetSendingRequest](interfaces/TestRulesetSendingRequest.md)
 - [TestRulesetSendingResult](interfaces/TestRulesetSendingResult.md)
+- [TestTransformerMappingMatchRequest](interfaces/TestTransformerMappingMatchRequest.md)
 - [TotpDeviceCodeDto](interfaces/TotpDeviceCodeDto.md)
 - [TotpDeviceDto](interfaces/TotpDeviceDto.md)
 - [TotpDeviceOptionalDto](interfaces/TotpDeviceOptionalDto.md)
@@ -1050,9 +1325,17 @@ MailSlurp JS
 - [UnseenErrorCountDto](interfaces/UnseenErrorCountDto.md)
 - [UpdateAliasOptions](interfaces/UpdateAliasOptions.md)
 - [UpdateAliasRequest](interfaces/UpdateAliasRequest.md)
+- [UpdateCampaignProbeOptions](interfaces/UpdateCampaignProbeOptions.md)
+- [UpdateCampaignProbeRequest](interfaces/UpdateCampaignProbeRequest.md)
 - [UpdateConnectorImapConnectionRequest](interfaces/UpdateConnectorImapConnectionRequest.md)
 - [UpdateConnectorRequest](interfaces/UpdateConnectorRequest.md)
 - [UpdateConnectorSmtpConnectionRequest](interfaces/UpdateConnectorSmtpConnectionRequest.md)
+- [UpdateDeliverabilityTestOptions](interfaces/UpdateDeliverabilityTestOptions.md)
+- [UpdateDeliverabilityTestRequest](interfaces/UpdateDeliverabilityTestRequest.md)
+- [UpdateDevicePreviewFeedbackOptions](interfaces/UpdateDevicePreviewFeedbackOptions.md)
+- [UpdateDevicePreviewFeedbackRequest](interfaces/UpdateDevicePreviewFeedbackRequest.md)
+- [UpdateDomainMonitorOptions](interfaces/UpdateDomainMonitorOptions.md)
+- [UpdateDomainMonitorRequest](interfaces/UpdateDomainMonitorRequest.md)
 - [UpdateDomainOptions](interfaces/UpdateDomainOptions.md)
 - [UpdateDomainRequest](interfaces/UpdateDomainRequest.md)
 - [UpdateGroupContacts](interfaces/UpdateGroupContacts.md)
@@ -1144,6 +1427,12 @@ MailSlurp JS
 
 ### Functions
 
+- [AIMappingMatchOptionFromJSON](README.md#aimappingmatchoptionfromjson)
+- [AIMappingMatchOptionFromJSONTyped](README.md#aimappingmatchoptionfromjsontyped)
+- [AIMappingMatchOptionToJSON](README.md#aimappingmatchoptiontojson)
+- [AIMappingMatchOptionsFromJSON](README.md#aimappingmatchoptionsfromjson)
+- [AIMappingMatchOptionsFromJSONTyped](README.md#aimappingmatchoptionsfromjsontyped)
+- [AIMappingMatchOptionsToJSON](README.md#aimappingmatchoptionstojson)
 - [AITransformCreateOptionsFromJSON](README.md#aitransformcreateoptionsfromjson)
 - [AITransformCreateOptionsFromJSONTyped](README.md#aitransformcreateoptionsfromjsontyped)
 - [AITransformCreateOptionsToJSON](README.md#aitransformcreateoptionstojson)
@@ -1153,6 +1442,9 @@ MailSlurp JS
 - [AITransformMappingDtoFromJSON](README.md#aitransformmappingdtofromjson)
 - [AITransformMappingDtoFromJSONTyped](README.md#aitransformmappingdtofromjsontyped)
 - [AITransformMappingDtoToJSON](README.md#aitransformmappingdtotojson)
+- [AITransformMappingMatchResultFromJSON](README.md#aitransformmappingmatchresultfromjson)
+- [AITransformMappingMatchResultFromJSONTyped](README.md#aitransformmappingmatchresultfromjsontyped)
+- [AITransformMappingMatchResultToJSON](README.md#aitransformmappingmatchresulttojson)
 - [AITransformMappingProjectionFromJSON](README.md#aitransformmappingprojectionfromjson)
 - [AITransformMappingProjectionFromJSONTyped](README.md#aitransformmappingprojectionfromjsontyped)
 - [AITransformMappingProjectionToJSON](README.md#aitransformmappingprojectiontojson)
@@ -1189,6 +1481,15 @@ MailSlurp JS
 - [AttachmentProjectionFromJSON](README.md#attachmentprojectionfromjson)
 - [AttachmentProjectionFromJSONTyped](README.md#attachmentprojectionfromjsontyped)
 - [AttachmentProjectionToJSON](README.md#attachmentprojectiontojson)
+- [AuditLogEventDtoFromJSON](README.md#auditlogeventdtofromjson)
+- [AuditLogEventDtoFromJSONTyped](README.md#auditlogeventdtofromjsontyped)
+- [AuditLogEventDtoToJSON](README.md#auditlogeventdtotojson)
+- [AuditLogPageDtoFromJSON](README.md#auditlogpagedtofromjson)
+- [AuditLogPageDtoFromJSONTyped](README.md#auditlogpagedtofromjsontyped)
+- [AuditLogPageDtoToJSON](README.md#auditlogpagedtotojson)
+- [AuditLogSearchOptionsFromJSON](README.md#auditlogsearchoptionsfromjson)
+- [AuditLogSearchOptionsFromJSONTyped](README.md#auditlogsearchoptionsfromjsontyped)
+- [AuditLogSearchOptionsToJSON](README.md#auditlogsearchoptionstojson)
 - [BasicAuthOptionsFromJSON](README.md#basicauthoptionsfromjson)
 - [BasicAuthOptionsFromJSONTyped](README.md#basicauthoptionsfromjsontyped)
 - [BasicAuthOptionsToJSON](README.md#basicauthoptionstojson)
@@ -1207,9 +1508,36 @@ MailSlurp JS
 - [BulkSendEmailOptionsFromJSON](README.md#bulksendemailoptionsfromjson)
 - [BulkSendEmailOptionsFromJSONTyped](README.md#bulksendemailoptionsfromjsontyped)
 - [BulkSendEmailOptionsToJSON](README.md#bulksendemailoptionstojson)
+- [CampaignProbeDtoFromJSON](README.md#campaignprobedtofromjson)
+- [CampaignProbeDtoFromJSONTyped](README.md#campaignprobedtofromjsontyped)
+- [CampaignProbeDtoToJSON](README.md#campaignprobedtotojson)
+- [CampaignProbeInsightsDtoFromJSON](README.md#campaignprobeinsightsdtofromjson)
+- [CampaignProbeInsightsDtoFromJSONTyped](README.md#campaignprobeinsightsdtofromjsontyped)
+- [CampaignProbeInsightsDtoToJSON](README.md#campaignprobeinsightsdtotojson)
+- [CampaignProbeRunDtoFromJSON](README.md#campaignproberundtofromjson)
+- [CampaignProbeRunDtoFromJSONTyped](README.md#campaignproberundtofromjsontyped)
+- [CampaignProbeRunDtoToJSON](README.md#campaignproberundtotojson)
+- [CampaignProbeRunDueResultFromJSON](README.md#campaignproberundueresultfromjson)
+- [CampaignProbeRunDueResultFromJSONTyped](README.md#campaignproberundueresultfromjsontyped)
+- [CampaignProbeRunDueResultToJSON](README.md#campaignproberundueresulttojson)
+- [CampaignProbeRunNowResultFromJSON](README.md#campaignproberunnowresultfromjson)
+- [CampaignProbeRunNowResultFromJSONTyped](README.md#campaignproberunnowresultfromjsontyped)
+- [CampaignProbeRunNowResultToJSON](README.md#campaignproberunnowresulttojson)
+- [CampaignProbeSeriesDtoFromJSON](README.md#campaignprobeseriesdtofromjson)
+- [CampaignProbeSeriesDtoFromJSONTyped](README.md#campaignprobeseriesdtofromjsontyped)
+- [CampaignProbeSeriesDtoToJSON](README.md#campaignprobeseriesdtotojson)
+- [CampaignProbeSeriesPointDtoFromJSON](README.md#campaignprobeseriespointdtofromjson)
+- [CampaignProbeSeriesPointDtoFromJSONTyped](README.md#campaignprobeseriespointdtofromjsontyped)
+- [CampaignProbeSeriesPointDtoToJSON](README.md#campaignprobeseriespointdtotojson)
 - [CanSendEmailResultsFromJSON](README.md#cansendemailresultsfromjson)
 - [CanSendEmailResultsFromJSONTyped](README.md#cansendemailresultsfromjsontyped)
 - [CanSendEmailResultsToJSON](README.md#cansendemailresultstojson)
+- [CancelDevicePreviewRunOptionsFromJSON](README.md#canceldevicepreviewrunoptionsfromjson)
+- [CancelDevicePreviewRunOptionsFromJSONTyped](README.md#canceldevicepreviewrunoptionsfromjsontyped)
+- [CancelDevicePreviewRunOptionsToJSON](README.md#canceldevicepreviewrunoptionstojson)
+- [CancelDevicePreviewRunResultFromJSON](README.md#canceldevicepreviewrunresultfromjson)
+- [CancelDevicePreviewRunResultFromJSONTyped](README.md#canceldevicepreviewrunresultfromjsontyped)
+- [CancelDevicePreviewRunResultToJSON](README.md#canceldevicepreviewrunresulttojson)
 - [CheckEmailBodyFeatureSupportResultsFromJSON](README.md#checkemailbodyfeaturesupportresultsfromjson)
 - [CheckEmailBodyFeatureSupportResultsFromJSONTyped](README.md#checkemailbodyfeaturesupportresultsfromjsontyped)
 - [CheckEmailBodyFeatureSupportResultsToJSON](README.md#checkemailbodyfeaturesupportresultstojson)
@@ -1228,6 +1556,9 @@ MailSlurp JS
 - [CheckEmailFeaturesClientSupportResultsFromJSON](README.md#checkemailfeaturesclientsupportresultsfromjson)
 - [CheckEmailFeaturesClientSupportResultsFromJSONTyped](README.md#checkemailfeaturesclientsupportresultsfromjsontyped)
 - [CheckEmailFeaturesClientSupportResultsToJSON](README.md#checkemailfeaturesclientsupportresultstojson)
+- [CodeCandidateFromJSON](README.md#codecandidatefromjson)
+- [CodeCandidateFromJSONTyped](README.md#codecandidatefromjsontyped)
+- [CodeCandidateToJSON](README.md#codecandidatetojson)
 - [ComplaintFromJSON](README.md#complaintfromjson)
 - [ComplaintFromJSONTyped](README.md#complaintfromjsontyped)
 - [ComplaintToJSON](README.md#complainttojson)
@@ -1294,6 +1625,12 @@ MailSlurp JS
 - [CreateAliasOptionsFromJSON](README.md#createaliasoptionsfromjson)
 - [CreateAliasOptionsFromJSONTyped](README.md#createaliasoptionsfromjsontyped)
 - [CreateAliasOptionsToJSON](README.md#createaliasoptionstojson)
+- [CreateCampaignProbeOptionsFromJSON](README.md#createcampaignprobeoptionsfromjson)
+- [CreateCampaignProbeOptionsFromJSONTyped](README.md#createcampaignprobeoptionsfromjsontyped)
+- [CreateCampaignProbeOptionsToJSON](README.md#createcampaignprobeoptionstojson)
+- [CreateCampaignProbeRunOptionsFromJSON](README.md#createcampaignproberunoptionsfromjson)
+- [CreateCampaignProbeRunOptionsFromJSONTyped](README.md#createcampaignproberunoptionsfromjsontyped)
+- [CreateCampaignProbeRunOptionsToJSON](README.md#createcampaignproberunoptionstojson)
 - [CreateConnectorImapConnectionOptionsFromJSON](README.md#createconnectorimapconnectionoptionsfromjson)
 - [CreateConnectorImapConnectionOptionsFromJSONTyped](README.md#createconnectorimapconnectionoptionsfromjsontyped)
 - [CreateConnectorImapConnectionOptionsToJSON](README.md#createconnectorimapconnectionoptionstojson)
@@ -1312,6 +1649,27 @@ MailSlurp JS
 - [CreateContactOptionsFromJSON](README.md#createcontactoptionsfromjson)
 - [CreateContactOptionsFromJSONTyped](README.md#createcontactoptionsfromjsontyped)
 - [CreateContactOptionsToJSON](README.md#createcontactoptionstojson)
+- [CreateDeliverabilitySimulationJobOptionsFromJSON](README.md#createdeliverabilitysimulationjoboptionsfromjson)
+- [CreateDeliverabilitySimulationJobOptionsFromJSONTyped](README.md#createdeliverabilitysimulationjoboptionsfromjsontyped)
+- [CreateDeliverabilitySimulationJobOptionsToJSON](README.md#createdeliverabilitysimulationjoboptionstojson)
+- [CreateDeliverabilityTestOptionsFromJSON](README.md#createdeliverabilitytestoptionsfromjson)
+- [CreateDeliverabilityTestOptionsFromJSONTyped](README.md#createdeliverabilitytestoptionsfromjsontyped)
+- [CreateDeliverabilityTestOptionsToJSON](README.md#createdeliverabilitytestoptionstojson)
+- [CreateDevicePreviewFeedbackOptionsFromJSON](README.md#createdevicepreviewfeedbackoptionsfromjson)
+- [CreateDevicePreviewFeedbackOptionsFromJSONTyped](README.md#createdevicepreviewfeedbackoptionsfromjsontyped)
+- [CreateDevicePreviewFeedbackOptionsToJSON](README.md#createdevicepreviewfeedbackoptionstojson)
+- [CreateDevicePreviewOptionsFromJSON](README.md#createdevicepreviewoptionsfromjson)
+- [CreateDevicePreviewOptionsFromJSONTyped](README.md#createdevicepreviewoptionsfromjsontyped)
+- [CreateDevicePreviewOptionsToJSON](README.md#createdevicepreviewoptionstojson)
+- [CreateDevicePreviewRunResultFromJSON](README.md#createdevicepreviewrunresultfromjson)
+- [CreateDevicePreviewRunResultFromJSONTyped](README.md#createdevicepreviewrunresultfromjsontyped)
+- [CreateDevicePreviewRunResultToJSON](README.md#createdevicepreviewrunresulttojson)
+- [CreateDomainMonitorAlertSinkOptionsFromJSON](README.md#createdomainmonitoralertsinkoptionsfromjson)
+- [CreateDomainMonitorAlertSinkOptionsFromJSONTyped](README.md#createdomainmonitoralertsinkoptionsfromjsontyped)
+- [CreateDomainMonitorAlertSinkOptionsToJSON](README.md#createdomainmonitoralertsinkoptionstojson)
+- [CreateDomainMonitorOptionsFromJSON](README.md#createdomainmonitoroptionsfromjson)
+- [CreateDomainMonitorOptionsFromJSONTyped](README.md#createdomainmonitoroptionsfromjsontyped)
+- [CreateDomainMonitorOptionsToJSON](README.md#createdomainmonitoroptionstojson)
 - [CreateDomainOptionsFromJSON](README.md#createdomainoptionsfromjson)
 - [CreateDomainOptionsFromJSONTyped](README.md#createdomainoptionsfromjsontyped)
 - [CreateDomainOptionsToJSON](README.md#createdomainoptionstojson)
@@ -1330,12 +1688,9 @@ MailSlurp JS
 - [CreateInboxReplierOptionsFromJSON](README.md#createinboxreplieroptionsfromjson)
 - [CreateInboxReplierOptionsFromJSONTyped](README.md#createinboxreplieroptionsfromjsontyped)
 - [CreateInboxReplierOptionsToJSON](README.md#createinboxreplieroptionstojson)
-- [CreateOAuthConnectionResultFromJSON](README.md#createoauthconnectionresultfromjson)
-- [CreateOAuthConnectionResultFromJSONTyped](README.md#createoauthconnectionresultfromjsontyped)
-- [CreateOAuthConnectionResultToJSON](README.md#createoauthconnectionresulttojson)
-- [CreateOAuthExchangeResultFromJSON](README.md#createoauthexchangeresultfromjson)
-- [CreateOAuthExchangeResultFromJSONTyped](README.md#createoauthexchangeresultfromjsontyped)
-- [CreateOAuthExchangeResultToJSON](README.md#createoauthexchangeresulttojson)
+- [CreateInboxRetentionPolicyForAccountOptionsFromJSON](README.md#createinboxretentionpolicyforaccountoptionsfromjson)
+- [CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped](README.md#createinboxretentionpolicyforaccountoptionsfromjsontyped)
+- [CreateInboxRetentionPolicyForAccountOptionsToJSON](README.md#createinboxretentionpolicyforaccountoptionstojson)
 - [CreatePhoneNumberOptionsFromJSON](README.md#createphonenumberoptionsfromjson)
 - [CreatePhoneNumberOptionsFromJSONTyped](README.md#createphonenumberoptionsfromjsontyped)
 - [CreatePhoneNumberOptionsToJSON](README.md#createphonenumberoptionstojson)
@@ -1378,6 +1733,81 @@ MailSlurp JS
 - [DNSLookupsOptionsFromJSON](README.md#dnslookupsoptionsfromjson)
 - [DNSLookupsOptionsFromJSONTyped](README.md#dnslookupsoptionsfromjsontyped)
 - [DNSLookupsOptionsToJSON](README.md#dnslookupsoptionstojson)
+- [DeleteDevicePreviewRunResultFromJSON](README.md#deletedevicepreviewrunresultfromjson)
+- [DeleteDevicePreviewRunResultFromJSONTyped](README.md#deletedevicepreviewrunresultfromjsontyped)
+- [DeleteDevicePreviewRunResultToJSON](README.md#deletedevicepreviewrunresulttojson)
+- [DeleteResultFromJSON](README.md#deleteresultfromjson)
+- [DeleteResultFromJSONTyped](README.md#deleteresultfromjsontyped)
+- [DeleteResultToJSON](README.md#deleteresulttojson)
+- [DeliverabilityAnalyticsRunDtoFromJSON](README.md#deliverabilityanalyticsrundtofromjson)
+- [DeliverabilityAnalyticsRunDtoFromJSONTyped](README.md#deliverabilityanalyticsrundtofromjsontyped)
+- [DeliverabilityAnalyticsRunDtoToJSON](README.md#deliverabilityanalyticsrundtotojson)
+- [DeliverabilityAnalyticsSeriesDtoFromJSON](README.md#deliverabilityanalyticsseriesdtofromjson)
+- [DeliverabilityAnalyticsSeriesDtoFromJSONTyped](README.md#deliverabilityanalyticsseriesdtofromjsontyped)
+- [DeliverabilityAnalyticsSeriesDtoToJSON](README.md#deliverabilityanalyticsseriesdtotojson)
+- [DeliverabilityAnalyticsSeriesPointDtoFromJSON](README.md#deliverabilityanalyticsseriespointdtofromjson)
+- [DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped](README.md#deliverabilityanalyticsseriespointdtofromjsontyped)
+- [DeliverabilityAnalyticsSeriesPointDtoToJSON](README.md#deliverabilityanalyticsseriespointdtotojson)
+- [DeliverabilityAnalyticsSummaryDtoFromJSON](README.md#deliverabilityanalyticssummarydtofromjson)
+- [DeliverabilityAnalyticsSummaryDtoFromJSONTyped](README.md#deliverabilityanalyticssummarydtofromjsontyped)
+- [DeliverabilityAnalyticsSummaryDtoToJSON](README.md#deliverabilityanalyticssummarydtotojson)
+- [DeliverabilityEntityResultDtoFromJSON](README.md#deliverabilityentityresultdtofromjson)
+- [DeliverabilityEntityResultDtoFromJSONTyped](README.md#deliverabilityentityresultdtofromjsontyped)
+- [DeliverabilityEntityResultDtoToJSON](README.md#deliverabilityentityresultdtotojson)
+- [DeliverabilityEntityResultPageDtoFromJSON](README.md#deliverabilityentityresultpagedtofromjson)
+- [DeliverabilityEntityResultPageDtoFromJSONTyped](README.md#deliverabilityentityresultpagedtofromjsontyped)
+- [DeliverabilityEntityResultPageDtoToJSON](README.md#deliverabilityentityresultpagedtotojson)
+- [DeliverabilityExpectationFromJSON](README.md#deliverabilityexpectationfromjson)
+- [DeliverabilityExpectationFromJSONTyped](README.md#deliverabilityexpectationfromjsontyped)
+- [DeliverabilityExpectationResultDtoFromJSON](README.md#deliverabilityexpectationresultdtofromjson)
+- [DeliverabilityExpectationResultDtoFromJSONTyped](README.md#deliverabilityexpectationresultdtofromjsontyped)
+- [DeliverabilityExpectationResultDtoToJSON](README.md#deliverabilityexpectationresultdtotojson)
+- [DeliverabilityExpectationToJSON](README.md#deliverabilityexpectationtojson)
+- [DeliverabilityFailureEntityHotspotDtoFromJSON](README.md#deliverabilityfailureentityhotspotdtofromjson)
+- [DeliverabilityFailureEntityHotspotDtoFromJSONTyped](README.md#deliverabilityfailureentityhotspotdtofromjsontyped)
+- [DeliverabilityFailureEntityHotspotDtoToJSON](README.md#deliverabilityfailureentityhotspotdtotojson)
+- [DeliverabilityFailureHotspotsDtoFromJSON](README.md#deliverabilityfailurehotspotsdtofromjson)
+- [DeliverabilityFailureHotspotsDtoFromJSONTyped](README.md#deliverabilityfailurehotspotsdtofromjsontyped)
+- [DeliverabilityFailureHotspotsDtoToJSON](README.md#deliverabilityfailurehotspotsdtotojson)
+- [DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON](README.md#deliverabilityfailurephonedimensionhotspotdtofromjson)
+- [DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped](README.md#deliverabilityfailurephonedimensionhotspotdtofromjsontyped)
+- [DeliverabilityFailurePhoneDimensionHotspotDtoToJSON](README.md#deliverabilityfailurephonedimensionhotspotdtotojson)
+- [DeliverabilityPollStatusResultDtoFromJSON](README.md#deliverabilitypollstatusresultdtofromjson)
+- [DeliverabilityPollStatusResultDtoFromJSONTyped](README.md#deliverabilitypollstatusresultdtofromjsontyped)
+- [DeliverabilityPollStatusResultDtoToJSON](README.md#deliverabilitypollstatusresultdtotojson)
+- [DeliverabilitySelectorOptionsFromJSON](README.md#deliverabilityselectoroptionsfromjson)
+- [DeliverabilitySelectorOptionsFromJSONTyped](README.md#deliverabilityselectoroptionsfromjsontyped)
+- [DeliverabilitySelectorOptionsToJSON](README.md#deliverabilityselectoroptionstojson)
+- [DeliverabilitySimulationEmailOptionsFromJSON](README.md#deliverabilitysimulationemailoptionsfromjson)
+- [DeliverabilitySimulationEmailOptionsFromJSONTyped](README.md#deliverabilitysimulationemailoptionsfromjsontyped)
+- [DeliverabilitySimulationEmailOptionsToJSON](README.md#deliverabilitysimulationemailoptionstojson)
+- [DeliverabilitySimulationJobConfigDtoFromJSON](README.md#deliverabilitysimulationjobconfigdtofromjson)
+- [DeliverabilitySimulationJobConfigDtoFromJSONTyped](README.md#deliverabilitysimulationjobconfigdtofromjsontyped)
+- [DeliverabilitySimulationJobConfigDtoToJSON](README.md#deliverabilitysimulationjobconfigdtotojson)
+- [DeliverabilitySimulationJobDtoFromJSON](README.md#deliverabilitysimulationjobdtofromjson)
+- [DeliverabilitySimulationJobDtoFromJSONTyped](README.md#deliverabilitysimulationjobdtofromjsontyped)
+- [DeliverabilitySimulationJobDtoToJSON](README.md#deliverabilitysimulationjobdtotojson)
+- [DeliverabilitySimulationJobErrorSummaryDtoFromJSON](README.md#deliverabilitysimulationjoberrorsummarydtofromjson)
+- [DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped](README.md#deliverabilitysimulationjoberrorsummarydtofromjsontyped)
+- [DeliverabilitySimulationJobErrorSummaryDtoToJSON](README.md#deliverabilitysimulationjoberrorsummarydtotojson)
+- [DeliverabilitySimulationJobEventDtoFromJSON](README.md#deliverabilitysimulationjobeventdtofromjson)
+- [DeliverabilitySimulationJobEventDtoFromJSONTyped](README.md#deliverabilitysimulationjobeventdtofromjsontyped)
+- [DeliverabilitySimulationJobEventDtoToJSON](README.md#deliverabilitysimulationjobeventdtotojson)
+- [DeliverabilitySimulationJobEventPageDtoFromJSON](README.md#deliverabilitysimulationjobeventpagedtofromjson)
+- [DeliverabilitySimulationJobEventPageDtoFromJSONTyped](README.md#deliverabilitysimulationjobeventpagedtofromjsontyped)
+- [DeliverabilitySimulationJobEventPageDtoToJSON](README.md#deliverabilitysimulationjobeventpagedtotojson)
+- [DeliverabilitySimulationJobTopErrorDtoFromJSON](README.md#deliverabilitysimulationjobtoperrordtofromjson)
+- [DeliverabilitySimulationJobTopErrorDtoFromJSONTyped](README.md#deliverabilitysimulationjobtoperrordtofromjsontyped)
+- [DeliverabilitySimulationJobTopErrorDtoToJSON](README.md#deliverabilitysimulationjobtoperrordtotojson)
+- [DeliverabilitySimulationSmsOptionsFromJSON](README.md#deliverabilitysimulationsmsoptionsfromjson)
+- [DeliverabilitySimulationSmsOptionsFromJSONTyped](README.md#deliverabilitysimulationsmsoptionsfromjsontyped)
+- [DeliverabilitySimulationSmsOptionsToJSON](README.md#deliverabilitysimulationsmsoptionstojson)
+- [DeliverabilityTestDtoFromJSON](README.md#deliverabilitytestdtofromjson)
+- [DeliverabilityTestDtoFromJSONTyped](README.md#deliverabilitytestdtofromjsontyped)
+- [DeliverabilityTestDtoToJSON](README.md#deliverabilitytestdtotojson)
+- [DeliverabilityTestPageDtoFromJSON](README.md#deliverabilitytestpagedtofromjson)
+- [DeliverabilityTestPageDtoFromJSONTyped](README.md#deliverabilitytestpagedtofromjsontyped)
+- [DeliverabilityTestPageDtoToJSON](README.md#deliverabilitytestpagedtotojson)
 - [DeliveryStatusDtoFromJSON](README.md#deliverystatusdtofromjson)
 - [DeliveryStatusDtoFromJSONTyped](README.md#deliverystatusdtofromjsontyped)
 - [DeliveryStatusDtoToJSON](README.md#deliverystatusdtotojson)
@@ -1387,6 +1817,27 @@ MailSlurp JS
 - [DescribeMailServerDomainResultFromJSON](README.md#describemailserverdomainresultfromjson)
 - [DescribeMailServerDomainResultFromJSONTyped](README.md#describemailserverdomainresultfromjsontyped)
 - [DescribeMailServerDomainResultToJSON](README.md#describemailserverdomainresulttojson)
+- [DevicePreviewFeedbackDtoFromJSON](README.md#devicepreviewfeedbackdtofromjson)
+- [DevicePreviewFeedbackDtoFromJSONTyped](README.md#devicepreviewfeedbackdtofromjsontyped)
+- [DevicePreviewFeedbackDtoToJSON](README.md#devicepreviewfeedbackdtotojson)
+- [DevicePreviewFeedbackListDtoFromJSON](README.md#devicepreviewfeedbacklistdtofromjson)
+- [DevicePreviewFeedbackListDtoFromJSONTyped](README.md#devicepreviewfeedbacklistdtofromjsontyped)
+- [DevicePreviewFeedbackListDtoToJSON](README.md#devicepreviewfeedbacklistdtotojson)
+- [DevicePreviewProviderProgressDtoFromJSON](README.md#devicepreviewproviderprogressdtofromjson)
+- [DevicePreviewProviderProgressDtoFromJSONTyped](README.md#devicepreviewproviderprogressdtofromjsontyped)
+- [DevicePreviewProviderProgressDtoToJSON](README.md#devicepreviewproviderprogressdtotojson)
+- [DevicePreviewRunDtoFromJSON](README.md#devicepreviewrundtofromjson)
+- [DevicePreviewRunDtoFromJSONTyped](README.md#devicepreviewrundtofromjsontyped)
+- [DevicePreviewRunDtoToJSON](README.md#devicepreviewrundtotojson)
+- [DevicePreviewRunResultsDtoFromJSON](README.md#devicepreviewrunresultsdtofromjson)
+- [DevicePreviewRunResultsDtoFromJSONTyped](README.md#devicepreviewrunresultsdtofromjsontyped)
+- [DevicePreviewRunResultsDtoToJSON](README.md#devicepreviewrunresultsdtotojson)
+- [DevicePreviewScreenshotDtoFromJSON](README.md#devicepreviewscreenshotdtofromjson)
+- [DevicePreviewScreenshotDtoFromJSONTyped](README.md#devicepreviewscreenshotdtofromjsontyped)
+- [DevicePreviewScreenshotDtoToJSON](README.md#devicepreviewscreenshotdtotojson)
+- [DevicePreviewTargetDtoFromJSON](README.md#devicepreviewtargetdtofromjson)
+- [DevicePreviewTargetDtoFromJSONTyped](README.md#devicepreviewtargetdtofromjsontyped)
+- [DevicePreviewTargetDtoToJSON](README.md#devicepreviewtargetdtotojson)
 - [DomainDtoFromJSON](README.md#domaindtofromjson)
 - [DomainDtoFromJSONTyped](README.md#domaindtofromjsontyped)
 - [DomainDtoToJSON](README.md#domaindtotojson)
@@ -1402,12 +1853,45 @@ MailSlurp JS
 - [DomainIssuesDtoFromJSON](README.md#domainissuesdtofromjson)
 - [DomainIssuesDtoFromJSONTyped](README.md#domainissuesdtofromjsontyped)
 - [DomainIssuesDtoToJSON](README.md#domainissuesdtotojson)
+- [DomainMonitorAlertSinkDtoFromJSON](README.md#domainmonitoralertsinkdtofromjson)
+- [DomainMonitorAlertSinkDtoFromJSONTyped](README.md#domainmonitoralertsinkdtofromjsontyped)
+- [DomainMonitorAlertSinkDtoToJSON](README.md#domainmonitoralertsinkdtotojson)
+- [DomainMonitorDtoFromJSON](README.md#domainmonitordtofromjson)
+- [DomainMonitorDtoFromJSONTyped](README.md#domainmonitordtofromjsontyped)
+- [DomainMonitorDtoToJSON](README.md#domainmonitordtotojson)
+- [DomainMonitorInsightsDtoFromJSON](README.md#domainmonitorinsightsdtofromjson)
+- [DomainMonitorInsightsDtoFromJSONTyped](README.md#domainmonitorinsightsdtofromjsontyped)
+- [DomainMonitorInsightsDtoToJSON](README.md#domainmonitorinsightsdtotojson)
+- [DomainMonitorRunDtoFromJSON](README.md#domainmonitorrundtofromjson)
+- [DomainMonitorRunDtoFromJSONTyped](README.md#domainmonitorrundtofromjsontyped)
+- [DomainMonitorRunDtoToJSON](README.md#domainmonitorrundtotojson)
+- [DomainMonitorRunDueResultFromJSON](README.md#domainmonitorrundueresultfromjson)
+- [DomainMonitorRunDueResultFromJSONTyped](README.md#domainmonitorrundueresultfromjsontyped)
+- [DomainMonitorRunDueResultToJSON](README.md#domainmonitorrundueresulttojson)
+- [DomainMonitorRunNowResultFromJSON](README.md#domainmonitorrunnowresultfromjson)
+- [DomainMonitorRunNowResultFromJSONTyped](README.md#domainmonitorrunnowresultfromjsontyped)
+- [DomainMonitorRunNowResultToJSON](README.md#domainmonitorrunnowresulttojson)
+- [DomainMonitorSeriesDtoFromJSON](README.md#domainmonitorseriesdtofromjson)
+- [DomainMonitorSeriesDtoFromJSONTyped](README.md#domainmonitorseriesdtofromjsontyped)
+- [DomainMonitorSeriesDtoToJSON](README.md#domainmonitorseriesdtotojson)
+- [DomainMonitorSeriesPointDtoFromJSON](README.md#domainmonitorseriespointdtofromjson)
+- [DomainMonitorSeriesPointDtoFromJSONTyped](README.md#domainmonitorseriespointdtofromjsontyped)
+- [DomainMonitorSeriesPointDtoToJSON](README.md#domainmonitorseriespointdtotojson)
 - [DomainNameRecordFromJSON](README.md#domainnamerecordfromjson)
 - [DomainNameRecordFromJSONTyped](README.md#domainnamerecordfromjsontyped)
 - [DomainNameRecordToJSON](README.md#domainnamerecordtojson)
 - [DomainPreviewFromJSON](README.md#domainpreviewfromjson)
 - [DomainPreviewFromJSONTyped](README.md#domainpreviewfromjsontyped)
 - [DomainPreviewToJSON](README.md#domainpreviewtojson)
+- [DomainRegionGroupFromJSON](README.md#domainregiongroupfromjson)
+- [DomainRegionGroupFromJSONTyped](README.md#domainregiongroupfromjsontyped)
+- [DomainRegionGroupToJSON](README.md#domainregiongrouptojson)
+- [DomainRegionGroupsDtoFromJSON](README.md#domainregiongroupsdtofromjson)
+- [DomainRegionGroupsDtoFromJSONTyped](README.md#domainregiongroupsdtofromjsontyped)
+- [DomainRegionGroupsDtoToJSON](README.md#domainregiongroupsdtotojson)
+- [DomainRegionInformationFromJSON](README.md#domainregioninformationfromjson)
+- [DomainRegionInformationFromJSONTyped](README.md#domainregioninformationfromjsontyped)
+- [DomainRegionInformationToJSON](README.md#domainregioninformationtojson)
 - [DownloadAttachmentDtoFromJSON](README.md#downloadattachmentdtofromjson)
 - [DownloadAttachmentDtoFromJSONTyped](README.md#downloadattachmentdtofromjsontyped)
 - [DownloadAttachmentDtoToJSON](README.md#downloadattachmentdtotojson)
@@ -1482,6 +1966,12 @@ MailSlurp JS
 - [EmailScreenshotResultFromJSON](README.md#emailscreenshotresultfromjson)
 - [EmailScreenshotResultFromJSONTyped](README.md#emailscreenshotresultfromjsontyped)
 - [EmailScreenshotResultToJSON](README.md#emailscreenshotresulttojson)
+- [EmailSignatureFromJSON](README.md#emailsignaturefromjson)
+- [EmailSignatureFromJSONTyped](README.md#emailsignaturefromjsontyped)
+- [EmailSignatureParseResultFromJSON](README.md#emailsignatureparseresultfromjson)
+- [EmailSignatureParseResultFromJSONTyped](README.md#emailsignatureparseresultfromjsontyped)
+- [EmailSignatureParseResultToJSON](README.md#emailsignatureparseresulttojson)
+- [EmailSignatureToJSON](README.md#emailsignaturetojson)
 - [EmailTextLinesResultFromJSON](README.md#emailtextlinesresultfromjson)
 - [EmailTextLinesResultFromJSONTyped](README.md#emailtextlinesresultfromjsontyped)
 - [EmailTextLinesResultToJSON](README.md#emailtextlinesresulttojson)
@@ -1537,6 +2027,27 @@ MailSlurp JS
 - [ExportOptionsFromJSON](README.md#exportoptionsfromjson)
 - [ExportOptionsFromJSONTyped](README.md#exportoptionsfromjsontyped)
 - [ExportOptionsToJSON](README.md#exportoptionstojson)
+- [ExportTransformerOptionsFromJSON](README.md#exporttransformeroptionsfromjson)
+- [ExportTransformerOptionsFromJSONTyped](README.md#exporttransformeroptionsfromjsontyped)
+- [ExportTransformerOptionsToJSON](README.md#exporttransformeroptionstojson)
+- [ExportTransformerResponseFromJSON](README.md#exporttransformerresponsefromjson)
+- [ExportTransformerResponseFromJSONTyped](README.md#exporttransformerresponsefromjsontyped)
+- [ExportTransformerResponseToJSON](README.md#exporttransformerresponsetojson)
+- [ExportTransformerResultJobDtoFromJSON](README.md#exporttransformerresultjobdtofromjson)
+- [ExportTransformerResultJobDtoFromJSONTyped](README.md#exporttransformerresultjobdtofromjsontyped)
+- [ExportTransformerResultJobDtoToJSON](README.md#exporttransformerresultjobdtotojson)
+- [ExtractAttachmentTextOptionsFromJSON](README.md#extractattachmenttextoptionsfromjson)
+- [ExtractAttachmentTextOptionsFromJSONTyped](README.md#extractattachmenttextoptionsfromjsontyped)
+- [ExtractAttachmentTextOptionsToJSON](README.md#extractattachmenttextoptionstojson)
+- [ExtractAttachmentTextResultFromJSON](README.md#extractattachmenttextresultfromjson)
+- [ExtractAttachmentTextResultFromJSONTyped](README.md#extractattachmenttextresultfromjsontyped)
+- [ExtractAttachmentTextResultToJSON](README.md#extractattachmenttextresulttojson)
+- [ExtractCodesOptionsFromJSON](README.md#extractcodesoptionsfromjson)
+- [ExtractCodesOptionsFromJSONTyped](README.md#extractcodesoptionsfromjsontyped)
+- [ExtractCodesOptionsToJSON](README.md#extractcodesoptionstojson)
+- [ExtractCodesResultFromJSON](README.md#extractcodesresultfromjson)
+- [ExtractCodesResultFromJSONTyped](README.md#extractcodesresultfromjsontyped)
+- [ExtractCodesResultToJSON](README.md#extractcodesresulttojson)
 - [FakeEmailDtoFromJSON](README.md#fakeemaildtofromjson)
 - [FakeEmailDtoFromJSONTyped](README.md#fakeemaildtofromjsontyped)
 - [FakeEmailDtoToJSON](README.md#fakeemaildtotojson)
@@ -1720,6 +2231,12 @@ MailSlurp JS
 - [InboxReplierEventProjectionFromJSON](README.md#inboxrepliereventprojectionfromjson)
 - [InboxReplierEventProjectionFromJSONTyped](README.md#inboxrepliereventprojectionfromjsontyped)
 - [InboxReplierEventProjectionToJSON](README.md#inboxrepliereventprojectiontojson)
+- [InboxRetentionPolicyDtoFromJSON](README.md#inboxretentionpolicydtofromjson)
+- [InboxRetentionPolicyDtoFromJSONTyped](README.md#inboxretentionpolicydtofromjsontyped)
+- [InboxRetentionPolicyDtoToJSON](README.md#inboxretentionpolicydtotojson)
+- [InboxRetentionPolicyOptionalDtoFromJSON](README.md#inboxretentionpolicyoptionaldtofromjson)
+- [InboxRetentionPolicyOptionalDtoFromJSONTyped](README.md#inboxretentionpolicyoptionaldtofromjsontyped)
+- [InboxRetentionPolicyOptionalDtoToJSON](README.md#inboxretentionpolicyoptionaldtotojson)
 - [InboxRulesetTestResultFromJSON](README.md#inboxrulesettestresultfromjson)
 - [InboxRulesetTestResultFromJSONTyped](README.md#inboxrulesettestresultfromjsontyped)
 - [InboxRulesetTestResultToJSON](README.md#inboxrulesettestresulttojson)
@@ -1780,6 +2297,12 @@ MailSlurp JS
 - [MissedEmailProjectionFromJSON](README.md#missedemailprojectionfromjson)
 - [MissedEmailProjectionFromJSONTyped](README.md#missedemailprojectionfromjsontyped)
 - [MissedEmailProjectionToJSON](README.md#missedemailprojectiontojson)
+- [MissedSmsDtoFromJSON](README.md#missedsmsdtofromjson)
+- [MissedSmsDtoFromJSONTyped](README.md#missedsmsdtofromjsontyped)
+- [MissedSmsDtoToJSON](README.md#missedsmsdtotojson)
+- [MissedSmsProjectionFromJSON](README.md#missedsmsprojectionfromjson)
+- [MissedSmsProjectionFromJSONTyped](README.md#missedsmsprojectionfromjsontyped)
+- [MissedSmsProjectionToJSON](README.md#missedsmsprojectiontojson)
 - [NameServerRecordFromJSON](README.md#nameserverrecordfromjson)
 - [NameServerRecordFromJSONTyped](README.md#nameserverrecordfromjsontyped)
 - [NameServerRecordToJSON](README.md#nameserverrecordtojson)
@@ -1852,6 +2375,9 @@ MailSlurp JS
 - [PageDeliveryStatusFromJSON](README.md#pagedeliverystatusfromjson)
 - [PageDeliveryStatusFromJSONTyped](README.md#pagedeliverystatusfromjsontyped)
 - [PageDeliveryStatusToJSON](README.md#pagedeliverystatustojson)
+- [PageDevicePreviewRunProjectionFromJSON](README.md#pagedevicepreviewrunprojectionfromjson)
+- [PageDevicePreviewRunProjectionFromJSONTyped](README.md#pagedevicepreviewrunprojectionfromjsontyped)
+- [PageDevicePreviewRunProjectionToJSON](README.md#pagedevicepreviewrunprojectiontojson)
 - [PageEmailPreviewFromJSON](README.md#pageemailpreviewfromjson)
 - [PageEmailPreviewFromJSONTyped](README.md#pageemailpreviewfromjsontyped)
 - [PageEmailPreviewToJSON](README.md#pageemailpreviewtojson)
@@ -1906,6 +2432,9 @@ MailSlurp JS
 - [PageMissedEmailProjectionFromJSON](README.md#pagemissedemailprojectionfromjson)
 - [PageMissedEmailProjectionFromJSONTyped](README.md#pagemissedemailprojectionfromjsontyped)
 - [PageMissedEmailProjectionToJSON](README.md#pagemissedemailprojectiontojson)
+- [PageMissedSmsProjectionFromJSON](README.md#pagemissedsmsprojectionfromjson)
+- [PageMissedSmsProjectionFromJSONTyped](README.md#pagemissedsmsprojectionfromjsontyped)
+- [PageMissedSmsProjectionToJSON](README.md#pagemissedsmsprojectiontojson)
 - [PageOptInIdentityProjectionFromJSON](README.md#pageoptinidentityprojectionfromjson)
 - [PageOptInIdentityProjectionFromJSONTyped](README.md#pageoptinidentityprojectionfromjsontyped)
 - [PageOptInIdentityProjectionToJSON](README.md#pageoptinidentityprojectiontojson)
@@ -1921,6 +2450,9 @@ MailSlurp JS
 - [PagePhoneNumberProjectionFromJSON](README.md#pagephonenumberprojectionfromjson)
 - [PagePhoneNumberProjectionFromJSONTyped](README.md#pagephonenumberprojectionfromjsontyped)
 - [PagePhoneNumberProjectionToJSON](README.md#pagephonenumberprojectiontojson)
+- [PagePhoneNumberReleaseProjectionFromJSON](README.md#pagephonenumberreleaseprojectionfromjson)
+- [PagePhoneNumberReleaseProjectionFromJSONTyped](README.md#pagephonenumberreleaseprojectionfromjsontyped)
+- [PagePhoneNumberReleaseProjectionToJSON](README.md#pagephonenumberreleaseprojectiontojson)
 - [PagePlusAddressProjectionFromJSON](README.md#pageplusaddressprojectionfromjson)
 - [PagePlusAddressProjectionFromJSONTyped](README.md#pageplusaddressprojectionfromjsontyped)
 - [PagePlusAddressProjectionToJSON](README.md#pageplusaddressprojectiontojson)
@@ -1945,6 +2477,9 @@ MailSlurp JS
 - [PageSmsProjectionFromJSON](README.md#pagesmsprojectionfromjson)
 - [PageSmsProjectionFromJSONTyped](README.md#pagesmsprojectionfromjsontyped)
 - [PageSmsProjectionToJSON](README.md#pagesmsprojectiontojson)
+- [PageTableDataFromJSON](README.md#pagetabledatafromjson)
+- [PageTableDataFromJSONTyped](README.md#pagetabledatafromjsontyped)
+- [PageTableDataToJSON](README.md#pagetabledatatojson)
 - [PageTemplateProjectionFromJSON](README.md#pagetemplateprojectionfromjson)
 - [PageTemplateProjectionFromJSONTyped](README.md#pagetemplateprojectionfromjsontyped)
 - [PageTemplateProjectionToJSON](README.md#pagetemplateprojectiontojson)
@@ -1966,6 +2501,9 @@ MailSlurp JS
 - [PageableObjectFromJSON](README.md#pageableobjectfromjson)
 - [PageableObjectFromJSONTyped](README.md#pageableobjectfromjsontyped)
 - [PageableObjectToJSON](README.md#pageableobjecttojson)
+- [PaginationFromJSON](README.md#paginationfromjson)
+- [PaginationFromJSONTyped](README.md#paginationfromjsontyped)
+- [PaginationToJSON](README.md#paginationtojson)
 - [PhoneMessageThreadItemProjectionFromJSON](README.md#phonemessagethreaditemprojectionfromjson)
 - [PhoneMessageThreadItemProjectionFromJSONTyped](README.md#phonemessagethreaditemprojectionfromjsontyped)
 - [PhoneMessageThreadItemProjectionToJSON](README.md#phonemessagethreaditemprojectiontojson)
@@ -1978,6 +2516,9 @@ MailSlurp JS
 - [PhoneNumberProjectionFromJSON](README.md#phonenumberprojectionfromjson)
 - [PhoneNumberProjectionFromJSONTyped](README.md#phonenumberprojectionfromjsontyped)
 - [PhoneNumberProjectionToJSON](README.md#phonenumberprojectiontojson)
+- [PhoneNumberReleaseProjectionFromJSON](README.md#phonenumberreleaseprojectionfromjson)
+- [PhoneNumberReleaseProjectionFromJSONTyped](README.md#phonenumberreleaseprojectionfromjsontyped)
+- [PhoneNumberReleaseProjectionToJSON](README.md#phonenumberreleaseprojectiontojson)
 - [PhoneNumberValidationDtoFromJSON](README.md#phonenumbervalidationdtofromjson)
 - [PhoneNumberValidationDtoFromJSONTyped](README.md#phonenumbervalidationdtofromjsontyped)
 - [PhoneNumberValidationDtoToJSON](README.md#phonenumbervalidationdtotojson)
@@ -1990,6 +2531,15 @@ MailSlurp JS
 - [PhonePlanDtoFromJSON](README.md#phoneplandtofromjson)
 - [PhonePlanDtoFromJSONTyped](README.md#phoneplandtofromjsontyped)
 - [PhonePlanDtoToJSON](README.md#phoneplandtotojson)
+- [PhoneSummaryCountryDtoFromJSON](README.md#phonesummarycountrydtofromjson)
+- [PhoneSummaryCountryDtoFromJSONTyped](README.md#phonesummarycountrydtofromjsontyped)
+- [PhoneSummaryCountryDtoToJSON](README.md#phonesummarycountrydtotojson)
+- [PhoneSummaryDtoFromJSON](README.md#phonesummarydtofromjson)
+- [PhoneSummaryDtoFromJSONTyped](README.md#phonesummarydtofromjsontyped)
+- [PhoneSummaryDtoToJSON](README.md#phonesummarydtotojson)
+- [PlanSummaryDtoFromJSON](README.md#plansummarydtofromjson)
+- [PlanSummaryDtoFromJSONTyped](README.md#plansummarydtofromjsontyped)
+- [PlanSummaryDtoToJSON](README.md#plansummarydtotojson)
 - [PlusAddressDtoFromJSON](README.md#plusaddressdtofromjson)
 - [PlusAddressDtoFromJSONTyped](README.md#plusaddressdtofromjsontyped)
 - [PlusAddressDtoToJSON](README.md#plusaddressdtotojson)
@@ -2131,6 +2681,18 @@ MailSlurp JS
 - [TemplateVariableFromJSON](README.md#templatevariablefromjson)
 - [TemplateVariableFromJSONTyped](README.md#templatevariablefromjsontyped)
 - [TemplateVariableToJSON](README.md#templatevariabletojson)
+- [TenantReputationFindingDtoFromJSON](README.md#tenantreputationfindingdtofromjson)
+- [TenantReputationFindingDtoFromJSONTyped](README.md#tenantreputationfindingdtofromjsontyped)
+- [TenantReputationFindingDtoToJSON](README.md#tenantreputationfindingdtotojson)
+- [TenantReputationFindingsDtoFromJSON](README.md#tenantreputationfindingsdtofromjson)
+- [TenantReputationFindingsDtoFromJSONTyped](README.md#tenantreputationfindingsdtofromjsontyped)
+- [TenantReputationFindingsDtoToJSON](README.md#tenantreputationfindingsdtotojson)
+- [TenantReputationStatusRowDtoFromJSON](README.md#tenantreputationstatusrowdtofromjson)
+- [TenantReputationStatusRowDtoFromJSONTyped](README.md#tenantreputationstatusrowdtofromjsontyped)
+- [TenantReputationStatusRowDtoToJSON](README.md#tenantreputationstatusrowdtotojson)
+- [TenantReputationStatusSummaryDtoFromJSON](README.md#tenantreputationstatussummarydtofromjson)
+- [TenantReputationStatusSummaryDtoFromJSONTyped](README.md#tenantreputationstatussummarydtofromjsontyped)
+- [TenantReputationStatusSummaryDtoToJSON](README.md#tenantreputationstatussummarydtotojson)
 - [TestInboxRulesetSendingOptionsFromJSON](README.md#testinboxrulesetsendingoptionsfromjson)
 - [TestInboxRulesetSendingOptionsFromJSONTyped](README.md#testinboxrulesetsendingoptionsfromjsontyped)
 - [TestInboxRulesetSendingOptionsToJSON](README.md#testinboxrulesetsendingoptionstojson)
@@ -2179,6 +2741,18 @@ MailSlurp JS
 - [UpdateAliasOptionsFromJSON](README.md#updatealiasoptionsfromjson)
 - [UpdateAliasOptionsFromJSONTyped](README.md#updatealiasoptionsfromjsontyped)
 - [UpdateAliasOptionsToJSON](README.md#updatealiasoptionstojson)
+- [UpdateCampaignProbeOptionsFromJSON](README.md#updatecampaignprobeoptionsfromjson)
+- [UpdateCampaignProbeOptionsFromJSONTyped](README.md#updatecampaignprobeoptionsfromjsontyped)
+- [UpdateCampaignProbeOptionsToJSON](README.md#updatecampaignprobeoptionstojson)
+- [UpdateDeliverabilityTestOptionsFromJSON](README.md#updatedeliverabilitytestoptionsfromjson)
+- [UpdateDeliverabilityTestOptionsFromJSONTyped](README.md#updatedeliverabilitytestoptionsfromjsontyped)
+- [UpdateDeliverabilityTestOptionsToJSON](README.md#updatedeliverabilitytestoptionstojson)
+- [UpdateDevicePreviewFeedbackOptionsFromJSON](README.md#updatedevicepreviewfeedbackoptionsfromjson)
+- [UpdateDevicePreviewFeedbackOptionsFromJSONTyped](README.md#updatedevicepreviewfeedbackoptionsfromjsontyped)
+- [UpdateDevicePreviewFeedbackOptionsToJSON](README.md#updatedevicepreviewfeedbackoptionstojson)
+- [UpdateDomainMonitorOptionsFromJSON](README.md#updatedomainmonitoroptionsfromjson)
+- [UpdateDomainMonitorOptionsFromJSONTyped](README.md#updatedomainmonitoroptionsfromjsontyped)
+- [UpdateDomainMonitorOptionsToJSON](README.md#updatedomainmonitoroptionstojson)
 - [UpdateDomainOptionsFromJSON](README.md#updatedomainoptionsfromjson)
 - [UpdateDomainOptionsFromJSONTyped](README.md#updatedomainoptionsfromjsontyped)
 - [UpdateDomainOptionsToJSON](README.md#updatedomainoptionstojson)
@@ -2443,6 +3017,104 @@ ___
 
 ## Functions
 
+### AIMappingMatchOptionFromJSON
+
+▸ **AIMappingMatchOptionFromJSON**(`json`): [`AIMappingMatchOption`](interfaces/AIMappingMatchOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AIMappingMatchOption`](interfaces/AIMappingMatchOption.md)
+
+___
+
+### AIMappingMatchOptionFromJSONTyped
+
+▸ **AIMappingMatchOptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AIMappingMatchOption`](interfaces/AIMappingMatchOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AIMappingMatchOption`](interfaces/AIMappingMatchOption.md)
+
+___
+
+### AIMappingMatchOptionToJSON
+
+▸ **AIMappingMatchOptionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AIMappingMatchOption`](interfaces/AIMappingMatchOption.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AIMappingMatchOptionsFromJSON
+
+▸ **AIMappingMatchOptionsFromJSON**(`json`): [`AIMappingMatchOptions`](interfaces/AIMappingMatchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AIMappingMatchOptions`](interfaces/AIMappingMatchOptions.md)
+
+___
+
+### AIMappingMatchOptionsFromJSONTyped
+
+▸ **AIMappingMatchOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AIMappingMatchOptions`](interfaces/AIMappingMatchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AIMappingMatchOptions`](interfaces/AIMappingMatchOptions.md)
+
+___
+
+### AIMappingMatchOptionsToJSON
+
+▸ **AIMappingMatchOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AIMappingMatchOptions`](interfaces/AIMappingMatchOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### AITransformCreateOptionsFromJSON
 
 ▸ **AITransformCreateOptionsFromJSON**(`json`): [`AITransformCreateOptions`](interfaces/AITransformCreateOptions.md)
@@ -2583,6 +3255,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`AITransformMappingDto`](interfaces/AITransformMappingDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AITransformMappingMatchResultFromJSON
+
+▸ **AITransformMappingMatchResultFromJSON**(`json`): [`AITransformMappingMatchResult`](interfaces/AITransformMappingMatchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AITransformMappingMatchResult`](interfaces/AITransformMappingMatchResult.md)
+
+___
+
+### AITransformMappingMatchResultFromJSONTyped
+
+▸ **AITransformMappingMatchResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AITransformMappingMatchResult`](interfaces/AITransformMappingMatchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AITransformMappingMatchResult`](interfaces/AITransformMappingMatchResult.md)
+
+___
+
+### AITransformMappingMatchResultToJSON
+
+▸ **AITransformMappingMatchResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AITransformMappingMatchResult`](interfaces/AITransformMappingMatchResult.md) |
 
 #### Returns
 
@@ -3178,6 +3899,153 @@ ___
 
 ___
 
+### AuditLogEventDtoFromJSON
+
+▸ **AuditLogEventDtoFromJSON**(`json`): [`AuditLogEventDto`](interfaces/AuditLogEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AuditLogEventDto`](interfaces/AuditLogEventDto.md)
+
+___
+
+### AuditLogEventDtoFromJSONTyped
+
+▸ **AuditLogEventDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AuditLogEventDto`](interfaces/AuditLogEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AuditLogEventDto`](interfaces/AuditLogEventDto.md)
+
+___
+
+### AuditLogEventDtoToJSON
+
+▸ **AuditLogEventDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AuditLogEventDto`](interfaces/AuditLogEventDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AuditLogPageDtoFromJSON
+
+▸ **AuditLogPageDtoFromJSON**(`json`): [`AuditLogPageDto`](interfaces/AuditLogPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AuditLogPageDto`](interfaces/AuditLogPageDto.md)
+
+___
+
+### AuditLogPageDtoFromJSONTyped
+
+▸ **AuditLogPageDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AuditLogPageDto`](interfaces/AuditLogPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AuditLogPageDto`](interfaces/AuditLogPageDto.md)
+
+___
+
+### AuditLogPageDtoToJSON
+
+▸ **AuditLogPageDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AuditLogPageDto`](interfaces/AuditLogPageDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AuditLogSearchOptionsFromJSON
+
+▸ **AuditLogSearchOptionsFromJSON**(`json`): [`AuditLogSearchOptions`](interfaces/AuditLogSearchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AuditLogSearchOptions`](interfaces/AuditLogSearchOptions.md)
+
+___
+
+### AuditLogSearchOptionsFromJSONTyped
+
+▸ **AuditLogSearchOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AuditLogSearchOptions`](interfaces/AuditLogSearchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AuditLogSearchOptions`](interfaces/AuditLogSearchOptions.md)
+
+___
+
+### AuditLogSearchOptionsToJSON
+
+▸ **AuditLogSearchOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AuditLogSearchOptions`](interfaces/AuditLogSearchOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### BasicAuthOptionsFromJSON
 
 ▸ **BasicAuthOptionsFromJSON**(`json`): [`BasicAuthOptions`](interfaces/BasicAuthOptions.md)
@@ -3472,6 +4340,349 @@ ___
 
 ___
 
+### CampaignProbeDtoFromJSON
+
+▸ **CampaignProbeDtoFromJSON**(`json`): [`CampaignProbeDto`](interfaces/CampaignProbeDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CampaignProbeDto`](interfaces/CampaignProbeDto.md)
+
+___
+
+### CampaignProbeDtoFromJSONTyped
+
+▸ **CampaignProbeDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CampaignProbeDto`](interfaces/CampaignProbeDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CampaignProbeDto`](interfaces/CampaignProbeDto.md)
+
+___
+
+### CampaignProbeDtoToJSON
+
+▸ **CampaignProbeDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CampaignProbeDto`](interfaces/CampaignProbeDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CampaignProbeInsightsDtoFromJSON
+
+▸ **CampaignProbeInsightsDtoFromJSON**(`json`): [`CampaignProbeInsightsDto`](interfaces/CampaignProbeInsightsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CampaignProbeInsightsDto`](interfaces/CampaignProbeInsightsDto.md)
+
+___
+
+### CampaignProbeInsightsDtoFromJSONTyped
+
+▸ **CampaignProbeInsightsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CampaignProbeInsightsDto`](interfaces/CampaignProbeInsightsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CampaignProbeInsightsDto`](interfaces/CampaignProbeInsightsDto.md)
+
+___
+
+### CampaignProbeInsightsDtoToJSON
+
+▸ **CampaignProbeInsightsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CampaignProbeInsightsDto`](interfaces/CampaignProbeInsightsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CampaignProbeRunDtoFromJSON
+
+▸ **CampaignProbeRunDtoFromJSON**(`json`): [`CampaignProbeRunDto`](interfaces/CampaignProbeRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CampaignProbeRunDto`](interfaces/CampaignProbeRunDto.md)
+
+___
+
+### CampaignProbeRunDtoFromJSONTyped
+
+▸ **CampaignProbeRunDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CampaignProbeRunDto`](interfaces/CampaignProbeRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CampaignProbeRunDto`](interfaces/CampaignProbeRunDto.md)
+
+___
+
+### CampaignProbeRunDtoToJSON
+
+▸ **CampaignProbeRunDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CampaignProbeRunDto`](interfaces/CampaignProbeRunDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CampaignProbeRunDueResultFromJSON
+
+▸ **CampaignProbeRunDueResultFromJSON**(`json`): [`CampaignProbeRunDueResult`](interfaces/CampaignProbeRunDueResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CampaignProbeRunDueResult`](interfaces/CampaignProbeRunDueResult.md)
+
+___
+
+### CampaignProbeRunDueResultFromJSONTyped
+
+▸ **CampaignProbeRunDueResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CampaignProbeRunDueResult`](interfaces/CampaignProbeRunDueResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CampaignProbeRunDueResult`](interfaces/CampaignProbeRunDueResult.md)
+
+___
+
+### CampaignProbeRunDueResultToJSON
+
+▸ **CampaignProbeRunDueResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CampaignProbeRunDueResult`](interfaces/CampaignProbeRunDueResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CampaignProbeRunNowResultFromJSON
+
+▸ **CampaignProbeRunNowResultFromJSON**(`json`): [`CampaignProbeRunNowResult`](interfaces/CampaignProbeRunNowResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CampaignProbeRunNowResult`](interfaces/CampaignProbeRunNowResult.md)
+
+___
+
+### CampaignProbeRunNowResultFromJSONTyped
+
+▸ **CampaignProbeRunNowResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CampaignProbeRunNowResult`](interfaces/CampaignProbeRunNowResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CampaignProbeRunNowResult`](interfaces/CampaignProbeRunNowResult.md)
+
+___
+
+### CampaignProbeRunNowResultToJSON
+
+▸ **CampaignProbeRunNowResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CampaignProbeRunNowResult`](interfaces/CampaignProbeRunNowResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CampaignProbeSeriesDtoFromJSON
+
+▸ **CampaignProbeSeriesDtoFromJSON**(`json`): [`CampaignProbeSeriesDto`](interfaces/CampaignProbeSeriesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CampaignProbeSeriesDto`](interfaces/CampaignProbeSeriesDto.md)
+
+___
+
+### CampaignProbeSeriesDtoFromJSONTyped
+
+▸ **CampaignProbeSeriesDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CampaignProbeSeriesDto`](interfaces/CampaignProbeSeriesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CampaignProbeSeriesDto`](interfaces/CampaignProbeSeriesDto.md)
+
+___
+
+### CampaignProbeSeriesDtoToJSON
+
+▸ **CampaignProbeSeriesDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CampaignProbeSeriesDto`](interfaces/CampaignProbeSeriesDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CampaignProbeSeriesPointDtoFromJSON
+
+▸ **CampaignProbeSeriesPointDtoFromJSON**(`json`): [`CampaignProbeSeriesPointDto`](interfaces/CampaignProbeSeriesPointDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CampaignProbeSeriesPointDto`](interfaces/CampaignProbeSeriesPointDto.md)
+
+___
+
+### CampaignProbeSeriesPointDtoFromJSONTyped
+
+▸ **CampaignProbeSeriesPointDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CampaignProbeSeriesPointDto`](interfaces/CampaignProbeSeriesPointDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CampaignProbeSeriesPointDto`](interfaces/CampaignProbeSeriesPointDto.md)
+
+___
+
+### CampaignProbeSeriesPointDtoToJSON
+
+▸ **CampaignProbeSeriesPointDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CampaignProbeSeriesPointDto`](interfaces/CampaignProbeSeriesPointDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### CanSendEmailResultsFromJSON
 
 ▸ **CanSendEmailResultsFromJSON**(`json`): [`CanSendEmailResults`](interfaces/CanSendEmailResults.md)
@@ -3514,6 +4725,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CanSendEmailResults`](interfaces/CanSendEmailResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CancelDevicePreviewRunOptionsFromJSON
+
+▸ **CancelDevicePreviewRunOptionsFromJSON**(`json`): [`CancelDevicePreviewRunOptions`](interfaces/CancelDevicePreviewRunOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CancelDevicePreviewRunOptions`](interfaces/CancelDevicePreviewRunOptions.md)
+
+___
+
+### CancelDevicePreviewRunOptionsFromJSONTyped
+
+▸ **CancelDevicePreviewRunOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CancelDevicePreviewRunOptions`](interfaces/CancelDevicePreviewRunOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CancelDevicePreviewRunOptions`](interfaces/CancelDevicePreviewRunOptions.md)
+
+___
+
+### CancelDevicePreviewRunOptionsToJSON
+
+▸ **CancelDevicePreviewRunOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CancelDevicePreviewRunOptions`](interfaces/CancelDevicePreviewRunOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CancelDevicePreviewRunResultFromJSON
+
+▸ **CancelDevicePreviewRunResultFromJSON**(`json`): [`CancelDevicePreviewRunResult`](interfaces/CancelDevicePreviewRunResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CancelDevicePreviewRunResult`](interfaces/CancelDevicePreviewRunResult.md)
+
+___
+
+### CancelDevicePreviewRunResultFromJSONTyped
+
+▸ **CancelDevicePreviewRunResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CancelDevicePreviewRunResult`](interfaces/CancelDevicePreviewRunResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CancelDevicePreviewRunResult`](interfaces/CancelDevicePreviewRunResult.md)
+
+___
+
+### CancelDevicePreviewRunResultToJSON
+
+▸ **CancelDevicePreviewRunResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CancelDevicePreviewRunResult`](interfaces/CancelDevicePreviewRunResult.md) |
 
 #### Returns
 
@@ -3808,6 +5117,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CheckEmailFeaturesClientSupportResults`](interfaces/CheckEmailFeaturesClientSupportResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CodeCandidateFromJSON
+
+▸ **CodeCandidateFromJSON**(`json`): [`CodeCandidate`](interfaces/CodeCandidate.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CodeCandidate`](interfaces/CodeCandidate.md)
+
+___
+
+### CodeCandidateFromJSONTyped
+
+▸ **CodeCandidateFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CodeCandidate`](interfaces/CodeCandidate.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CodeCandidate`](interfaces/CodeCandidate.md)
+
+___
+
+### CodeCandidateToJSON
+
+▸ **CodeCandidateToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CodeCandidate`](interfaces/CodeCandidate.md) |
 
 #### Returns
 
@@ -4893,6 +6251,104 @@ ___
 
 ___
 
+### CreateCampaignProbeOptionsFromJSON
+
+▸ **CreateCampaignProbeOptionsFromJSON**(`json`): [`CreateCampaignProbeOptions`](interfaces/CreateCampaignProbeOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateCampaignProbeOptions`](interfaces/CreateCampaignProbeOptions.md)
+
+___
+
+### CreateCampaignProbeOptionsFromJSONTyped
+
+▸ **CreateCampaignProbeOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateCampaignProbeOptions`](interfaces/CreateCampaignProbeOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateCampaignProbeOptions`](interfaces/CreateCampaignProbeOptions.md)
+
+___
+
+### CreateCampaignProbeOptionsToJSON
+
+▸ **CreateCampaignProbeOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateCampaignProbeOptions`](interfaces/CreateCampaignProbeOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateCampaignProbeRunOptionsFromJSON
+
+▸ **CreateCampaignProbeRunOptionsFromJSON**(`json`): [`CreateCampaignProbeRunOptions`](interfaces/CreateCampaignProbeRunOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateCampaignProbeRunOptions`](interfaces/CreateCampaignProbeRunOptions.md)
+
+___
+
+### CreateCampaignProbeRunOptionsFromJSONTyped
+
+▸ **CreateCampaignProbeRunOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateCampaignProbeRunOptions`](interfaces/CreateCampaignProbeRunOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateCampaignProbeRunOptions`](interfaces/CreateCampaignProbeRunOptions.md)
+
+___
+
+### CreateCampaignProbeRunOptionsToJSON
+
+▸ **CreateCampaignProbeRunOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateCampaignProbeRunOptions`](interfaces/CreateCampaignProbeRunOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### CreateConnectorImapConnectionOptionsFromJSON
 
 ▸ **CreateConnectorImapConnectionOptionsFromJSON**(`json`): [`CreateConnectorImapConnectionOptions`](interfaces/CreateConnectorImapConnectionOptions.md)
@@ -5180,6 +6636,349 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateContactOptions`](interfaces/CreateContactOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDeliverabilitySimulationJobOptionsFromJSON
+
+▸ **CreateDeliverabilitySimulationJobOptionsFromJSON**(`json`): [`CreateDeliverabilitySimulationJobOptions`](interfaces/CreateDeliverabilitySimulationJobOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDeliverabilitySimulationJobOptions`](interfaces/CreateDeliverabilitySimulationJobOptions.md)
+
+___
+
+### CreateDeliverabilitySimulationJobOptionsFromJSONTyped
+
+▸ **CreateDeliverabilitySimulationJobOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDeliverabilitySimulationJobOptions`](interfaces/CreateDeliverabilitySimulationJobOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDeliverabilitySimulationJobOptions`](interfaces/CreateDeliverabilitySimulationJobOptions.md)
+
+___
+
+### CreateDeliverabilitySimulationJobOptionsToJSON
+
+▸ **CreateDeliverabilitySimulationJobOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDeliverabilitySimulationJobOptions`](interfaces/CreateDeliverabilitySimulationJobOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDeliverabilityTestOptionsFromJSON
+
+▸ **CreateDeliverabilityTestOptionsFromJSON**(`json`): [`CreateDeliverabilityTestOptions`](interfaces/CreateDeliverabilityTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDeliverabilityTestOptions`](interfaces/CreateDeliverabilityTestOptions.md)
+
+___
+
+### CreateDeliverabilityTestOptionsFromJSONTyped
+
+▸ **CreateDeliverabilityTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDeliverabilityTestOptions`](interfaces/CreateDeliverabilityTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDeliverabilityTestOptions`](interfaces/CreateDeliverabilityTestOptions.md)
+
+___
+
+### CreateDeliverabilityTestOptionsToJSON
+
+▸ **CreateDeliverabilityTestOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDeliverabilityTestOptions`](interfaces/CreateDeliverabilityTestOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDevicePreviewFeedbackOptionsFromJSON
+
+▸ **CreateDevicePreviewFeedbackOptionsFromJSON**(`json`): [`CreateDevicePreviewFeedbackOptions`](interfaces/CreateDevicePreviewFeedbackOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDevicePreviewFeedbackOptions`](interfaces/CreateDevicePreviewFeedbackOptions.md)
+
+___
+
+### CreateDevicePreviewFeedbackOptionsFromJSONTyped
+
+▸ **CreateDevicePreviewFeedbackOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDevicePreviewFeedbackOptions`](interfaces/CreateDevicePreviewFeedbackOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDevicePreviewFeedbackOptions`](interfaces/CreateDevicePreviewFeedbackOptions.md)
+
+___
+
+### CreateDevicePreviewFeedbackOptionsToJSON
+
+▸ **CreateDevicePreviewFeedbackOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDevicePreviewFeedbackOptions`](interfaces/CreateDevicePreviewFeedbackOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDevicePreviewOptionsFromJSON
+
+▸ **CreateDevicePreviewOptionsFromJSON**(`json`): [`CreateDevicePreviewOptions`](interfaces/CreateDevicePreviewOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDevicePreviewOptions`](interfaces/CreateDevicePreviewOptions.md)
+
+___
+
+### CreateDevicePreviewOptionsFromJSONTyped
+
+▸ **CreateDevicePreviewOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDevicePreviewOptions`](interfaces/CreateDevicePreviewOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDevicePreviewOptions`](interfaces/CreateDevicePreviewOptions.md)
+
+___
+
+### CreateDevicePreviewOptionsToJSON
+
+▸ **CreateDevicePreviewOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDevicePreviewOptions`](interfaces/CreateDevicePreviewOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDevicePreviewRunResultFromJSON
+
+▸ **CreateDevicePreviewRunResultFromJSON**(`json`): [`CreateDevicePreviewRunResult`](interfaces/CreateDevicePreviewRunResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDevicePreviewRunResult`](interfaces/CreateDevicePreviewRunResult.md)
+
+___
+
+### CreateDevicePreviewRunResultFromJSONTyped
+
+▸ **CreateDevicePreviewRunResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDevicePreviewRunResult`](interfaces/CreateDevicePreviewRunResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDevicePreviewRunResult`](interfaces/CreateDevicePreviewRunResult.md)
+
+___
+
+### CreateDevicePreviewRunResultToJSON
+
+▸ **CreateDevicePreviewRunResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDevicePreviewRunResult`](interfaces/CreateDevicePreviewRunResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDomainMonitorAlertSinkOptionsFromJSON
+
+▸ **CreateDomainMonitorAlertSinkOptionsFromJSON**(`json`): [`CreateDomainMonitorAlertSinkOptions`](interfaces/CreateDomainMonitorAlertSinkOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDomainMonitorAlertSinkOptions`](interfaces/CreateDomainMonitorAlertSinkOptions.md)
+
+___
+
+### CreateDomainMonitorAlertSinkOptionsFromJSONTyped
+
+▸ **CreateDomainMonitorAlertSinkOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDomainMonitorAlertSinkOptions`](interfaces/CreateDomainMonitorAlertSinkOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDomainMonitorAlertSinkOptions`](interfaces/CreateDomainMonitorAlertSinkOptions.md)
+
+___
+
+### CreateDomainMonitorAlertSinkOptionsToJSON
+
+▸ **CreateDomainMonitorAlertSinkOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDomainMonitorAlertSinkOptions`](interfaces/CreateDomainMonitorAlertSinkOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDomainMonitorOptionsFromJSON
+
+▸ **CreateDomainMonitorOptionsFromJSON**(`json`): [`CreateDomainMonitorOptions`](interfaces/CreateDomainMonitorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDomainMonitorOptions`](interfaces/CreateDomainMonitorOptions.md)
+
+___
+
+### CreateDomainMonitorOptionsFromJSONTyped
+
+▸ **CreateDomainMonitorOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDomainMonitorOptions`](interfaces/CreateDomainMonitorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDomainMonitorOptions`](interfaces/CreateDomainMonitorOptions.md)
+
+___
+
+### CreateDomainMonitorOptionsToJSON
+
+▸ **CreateDomainMonitorOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDomainMonitorOptions`](interfaces/CreateDomainMonitorOptions.md) |
 
 #### Returns
 
@@ -5481,58 +7280,9 @@ ___
 
 ___
 
-### CreateOAuthConnectionResultFromJSON
+### CreateInboxRetentionPolicyForAccountOptionsFromJSON
 
-▸ **CreateOAuthConnectionResultFromJSON**(`json`): [`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
-
-___
-
-### CreateOAuthConnectionResultFromJSONTyped
-
-▸ **CreateOAuthConnectionResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md)
-
-___
-
-### CreateOAuthConnectionResultToJSON
-
-▸ **CreateOAuthConnectionResultToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`CreateOAuthConnectionResult`](interfaces/CreateOAuthConnectionResult.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### CreateOAuthExchangeResultFromJSON
-
-▸ **CreateOAuthExchangeResultFromJSON**(`json`): [`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+▸ **CreateInboxRetentionPolicyForAccountOptionsFromJSON**(`json`): [`CreateInboxRetentionPolicyForAccountOptions`](interfaces/CreateInboxRetentionPolicyForAccountOptions.md)
 
 #### Parameters
 
@@ -5542,13 +7292,13 @@ ___
 
 #### Returns
 
-[`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+[`CreateInboxRetentionPolicyForAccountOptions`](interfaces/CreateInboxRetentionPolicyForAccountOptions.md)
 
 ___
 
-### CreateOAuthExchangeResultFromJSONTyped
+### CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped
 
-▸ **CreateOAuthExchangeResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+▸ **CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxRetentionPolicyForAccountOptions`](interfaces/CreateInboxRetentionPolicyForAccountOptions.md)
 
 #### Parameters
 
@@ -5559,19 +7309,19 @@ ___
 
 #### Returns
 
-[`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md)
+[`CreateInboxRetentionPolicyForAccountOptions`](interfaces/CreateInboxRetentionPolicyForAccountOptions.md)
 
 ___
 
-### CreateOAuthExchangeResultToJSON
+### CreateInboxRetentionPolicyForAccountOptionsToJSON
 
-▸ **CreateOAuthExchangeResultToJSON**(`value?`): `any`
+▸ **CreateInboxRetentionPolicyForAccountOptionsToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`CreateOAuthExchangeResult`](interfaces/CreateOAuthExchangeResult.md) |
+| `value?` | [`CreateInboxRetentionPolicyForAccountOptions`](interfaces/CreateInboxRetentionPolicyForAccountOptions.md) |
 
 #### Returns
 
@@ -6265,6 +8015,1231 @@ ___
 
 ___
 
+### DeleteDevicePreviewRunResultFromJSON
+
+▸ **DeleteDevicePreviewRunResultFromJSON**(`json`): [`DeleteDevicePreviewRunResult`](interfaces/DeleteDevicePreviewRunResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeleteDevicePreviewRunResult`](interfaces/DeleteDevicePreviewRunResult.md)
+
+___
+
+### DeleteDevicePreviewRunResultFromJSONTyped
+
+▸ **DeleteDevicePreviewRunResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeleteDevicePreviewRunResult`](interfaces/DeleteDevicePreviewRunResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeleteDevicePreviewRunResult`](interfaces/DeleteDevicePreviewRunResult.md)
+
+___
+
+### DeleteDevicePreviewRunResultToJSON
+
+▸ **DeleteDevicePreviewRunResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeleteDevicePreviewRunResult`](interfaces/DeleteDevicePreviewRunResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeleteResultFromJSON
+
+▸ **DeleteResultFromJSON**(`json`): [`DeleteResult`](interfaces/DeleteResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeleteResult`](interfaces/DeleteResult.md)
+
+___
+
+### DeleteResultFromJSONTyped
+
+▸ **DeleteResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeleteResult`](interfaces/DeleteResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeleteResult`](interfaces/DeleteResult.md)
+
+___
+
+### DeleteResultToJSON
+
+▸ **DeleteResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeleteResult`](interfaces/DeleteResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityAnalyticsRunDtoFromJSON
+
+▸ **DeliverabilityAnalyticsRunDtoFromJSON**(`json`): [`DeliverabilityAnalyticsRunDto`](interfaces/DeliverabilityAnalyticsRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsRunDto`](interfaces/DeliverabilityAnalyticsRunDto.md)
+
+___
+
+### DeliverabilityAnalyticsRunDtoFromJSONTyped
+
+▸ **DeliverabilityAnalyticsRunDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityAnalyticsRunDto`](interfaces/DeliverabilityAnalyticsRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsRunDto`](interfaces/DeliverabilityAnalyticsRunDto.md)
+
+___
+
+### DeliverabilityAnalyticsRunDtoToJSON
+
+▸ **DeliverabilityAnalyticsRunDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityAnalyticsRunDto`](interfaces/DeliverabilityAnalyticsRunDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityAnalyticsSeriesDtoFromJSON
+
+▸ **DeliverabilityAnalyticsSeriesDtoFromJSON**(`json`): [`DeliverabilityAnalyticsSeriesDto`](interfaces/DeliverabilityAnalyticsSeriesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsSeriesDto`](interfaces/DeliverabilityAnalyticsSeriesDto.md)
+
+___
+
+### DeliverabilityAnalyticsSeriesDtoFromJSONTyped
+
+▸ **DeliverabilityAnalyticsSeriesDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityAnalyticsSeriesDto`](interfaces/DeliverabilityAnalyticsSeriesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsSeriesDto`](interfaces/DeliverabilityAnalyticsSeriesDto.md)
+
+___
+
+### DeliverabilityAnalyticsSeriesDtoToJSON
+
+▸ **DeliverabilityAnalyticsSeriesDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityAnalyticsSeriesDto`](interfaces/DeliverabilityAnalyticsSeriesDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityAnalyticsSeriesPointDtoFromJSON
+
+▸ **DeliverabilityAnalyticsSeriesPointDtoFromJSON**(`json`): [`DeliverabilityAnalyticsSeriesPointDto`](interfaces/DeliverabilityAnalyticsSeriesPointDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsSeriesPointDto`](interfaces/DeliverabilityAnalyticsSeriesPointDto.md)
+
+___
+
+### DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped
+
+▸ **DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityAnalyticsSeriesPointDto`](interfaces/DeliverabilityAnalyticsSeriesPointDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsSeriesPointDto`](interfaces/DeliverabilityAnalyticsSeriesPointDto.md)
+
+___
+
+### DeliverabilityAnalyticsSeriesPointDtoToJSON
+
+▸ **DeliverabilityAnalyticsSeriesPointDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityAnalyticsSeriesPointDto`](interfaces/DeliverabilityAnalyticsSeriesPointDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityAnalyticsSummaryDtoFromJSON
+
+▸ **DeliverabilityAnalyticsSummaryDtoFromJSON**(`json`): [`DeliverabilityAnalyticsSummaryDto`](interfaces/DeliverabilityAnalyticsSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsSummaryDto`](interfaces/DeliverabilityAnalyticsSummaryDto.md)
+
+___
+
+### DeliverabilityAnalyticsSummaryDtoFromJSONTyped
+
+▸ **DeliverabilityAnalyticsSummaryDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityAnalyticsSummaryDto`](interfaces/DeliverabilityAnalyticsSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityAnalyticsSummaryDto`](interfaces/DeliverabilityAnalyticsSummaryDto.md)
+
+___
+
+### DeliverabilityAnalyticsSummaryDtoToJSON
+
+▸ **DeliverabilityAnalyticsSummaryDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityAnalyticsSummaryDto`](interfaces/DeliverabilityAnalyticsSummaryDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityEntityResultDtoFromJSON
+
+▸ **DeliverabilityEntityResultDtoFromJSON**(`json`): [`DeliverabilityEntityResultDto`](interfaces/DeliverabilityEntityResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityEntityResultDto`](interfaces/DeliverabilityEntityResultDto.md)
+
+___
+
+### DeliverabilityEntityResultDtoFromJSONTyped
+
+▸ **DeliverabilityEntityResultDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityEntityResultDto`](interfaces/DeliverabilityEntityResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityEntityResultDto`](interfaces/DeliverabilityEntityResultDto.md)
+
+___
+
+### DeliverabilityEntityResultDtoToJSON
+
+▸ **DeliverabilityEntityResultDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityEntityResultDto`](interfaces/DeliverabilityEntityResultDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityEntityResultPageDtoFromJSON
+
+▸ **DeliverabilityEntityResultPageDtoFromJSON**(`json`): [`DeliverabilityEntityResultPageDto`](interfaces/DeliverabilityEntityResultPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityEntityResultPageDto`](interfaces/DeliverabilityEntityResultPageDto.md)
+
+___
+
+### DeliverabilityEntityResultPageDtoFromJSONTyped
+
+▸ **DeliverabilityEntityResultPageDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityEntityResultPageDto`](interfaces/DeliverabilityEntityResultPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityEntityResultPageDto`](interfaces/DeliverabilityEntityResultPageDto.md)
+
+___
+
+### DeliverabilityEntityResultPageDtoToJSON
+
+▸ **DeliverabilityEntityResultPageDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityEntityResultPageDto`](interfaces/DeliverabilityEntityResultPageDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityExpectationFromJSON
+
+▸ **DeliverabilityExpectationFromJSON**(`json`): [`DeliverabilityExpectation`](interfaces/DeliverabilityExpectation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityExpectation`](interfaces/DeliverabilityExpectation.md)
+
+___
+
+### DeliverabilityExpectationFromJSONTyped
+
+▸ **DeliverabilityExpectationFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityExpectation`](interfaces/DeliverabilityExpectation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityExpectation`](interfaces/DeliverabilityExpectation.md)
+
+___
+
+### DeliverabilityExpectationResultDtoFromJSON
+
+▸ **DeliverabilityExpectationResultDtoFromJSON**(`json`): [`DeliverabilityExpectationResultDto`](interfaces/DeliverabilityExpectationResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityExpectationResultDto`](interfaces/DeliverabilityExpectationResultDto.md)
+
+___
+
+### DeliverabilityExpectationResultDtoFromJSONTyped
+
+▸ **DeliverabilityExpectationResultDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityExpectationResultDto`](interfaces/DeliverabilityExpectationResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityExpectationResultDto`](interfaces/DeliverabilityExpectationResultDto.md)
+
+___
+
+### DeliverabilityExpectationResultDtoToJSON
+
+▸ **DeliverabilityExpectationResultDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityExpectationResultDto`](interfaces/DeliverabilityExpectationResultDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityExpectationToJSON
+
+▸ **DeliverabilityExpectationToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityExpectation`](interfaces/DeliverabilityExpectation.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityFailureEntityHotspotDtoFromJSON
+
+▸ **DeliverabilityFailureEntityHotspotDtoFromJSON**(`json`): [`DeliverabilityFailureEntityHotspotDto`](interfaces/DeliverabilityFailureEntityHotspotDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityFailureEntityHotspotDto`](interfaces/DeliverabilityFailureEntityHotspotDto.md)
+
+___
+
+### DeliverabilityFailureEntityHotspotDtoFromJSONTyped
+
+▸ **DeliverabilityFailureEntityHotspotDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityFailureEntityHotspotDto`](interfaces/DeliverabilityFailureEntityHotspotDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityFailureEntityHotspotDto`](interfaces/DeliverabilityFailureEntityHotspotDto.md)
+
+___
+
+### DeliverabilityFailureEntityHotspotDtoToJSON
+
+▸ **DeliverabilityFailureEntityHotspotDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityFailureEntityHotspotDto`](interfaces/DeliverabilityFailureEntityHotspotDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityFailureHotspotsDtoFromJSON
+
+▸ **DeliverabilityFailureHotspotsDtoFromJSON**(`json`): [`DeliverabilityFailureHotspotsDto`](interfaces/DeliverabilityFailureHotspotsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityFailureHotspotsDto`](interfaces/DeliverabilityFailureHotspotsDto.md)
+
+___
+
+### DeliverabilityFailureHotspotsDtoFromJSONTyped
+
+▸ **DeliverabilityFailureHotspotsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityFailureHotspotsDto`](interfaces/DeliverabilityFailureHotspotsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityFailureHotspotsDto`](interfaces/DeliverabilityFailureHotspotsDto.md)
+
+___
+
+### DeliverabilityFailureHotspotsDtoToJSON
+
+▸ **DeliverabilityFailureHotspotsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityFailureHotspotsDto`](interfaces/DeliverabilityFailureHotspotsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON
+
+▸ **DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON**(`json`): [`DeliverabilityFailurePhoneDimensionHotspotDto`](interfaces/DeliverabilityFailurePhoneDimensionHotspotDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityFailurePhoneDimensionHotspotDto`](interfaces/DeliverabilityFailurePhoneDimensionHotspotDto.md)
+
+___
+
+### DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped
+
+▸ **DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityFailurePhoneDimensionHotspotDto`](interfaces/DeliverabilityFailurePhoneDimensionHotspotDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityFailurePhoneDimensionHotspotDto`](interfaces/DeliverabilityFailurePhoneDimensionHotspotDto.md)
+
+___
+
+### DeliverabilityFailurePhoneDimensionHotspotDtoToJSON
+
+▸ **DeliverabilityFailurePhoneDimensionHotspotDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityFailurePhoneDimensionHotspotDto`](interfaces/DeliverabilityFailurePhoneDimensionHotspotDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityPollStatusResultDtoFromJSON
+
+▸ **DeliverabilityPollStatusResultDtoFromJSON**(`json`): [`DeliverabilityPollStatusResultDto`](interfaces/DeliverabilityPollStatusResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityPollStatusResultDto`](interfaces/DeliverabilityPollStatusResultDto.md)
+
+___
+
+### DeliverabilityPollStatusResultDtoFromJSONTyped
+
+▸ **DeliverabilityPollStatusResultDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityPollStatusResultDto`](interfaces/DeliverabilityPollStatusResultDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityPollStatusResultDto`](interfaces/DeliverabilityPollStatusResultDto.md)
+
+___
+
+### DeliverabilityPollStatusResultDtoToJSON
+
+▸ **DeliverabilityPollStatusResultDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityPollStatusResultDto`](interfaces/DeliverabilityPollStatusResultDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySelectorOptionsFromJSON
+
+▸ **DeliverabilitySelectorOptionsFromJSON**(`json`): [`DeliverabilitySelectorOptions`](interfaces/DeliverabilitySelectorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySelectorOptions`](interfaces/DeliverabilitySelectorOptions.md)
+
+___
+
+### DeliverabilitySelectorOptionsFromJSONTyped
+
+▸ **DeliverabilitySelectorOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySelectorOptions`](interfaces/DeliverabilitySelectorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySelectorOptions`](interfaces/DeliverabilitySelectorOptions.md)
+
+___
+
+### DeliverabilitySelectorOptionsToJSON
+
+▸ **DeliverabilitySelectorOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySelectorOptions`](interfaces/DeliverabilitySelectorOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationEmailOptionsFromJSON
+
+▸ **DeliverabilitySimulationEmailOptionsFromJSON**(`json`): [`DeliverabilitySimulationEmailOptions`](interfaces/DeliverabilitySimulationEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationEmailOptions`](interfaces/DeliverabilitySimulationEmailOptions.md)
+
+___
+
+### DeliverabilitySimulationEmailOptionsFromJSONTyped
+
+▸ **DeliverabilitySimulationEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationEmailOptions`](interfaces/DeliverabilitySimulationEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationEmailOptions`](interfaces/DeliverabilitySimulationEmailOptions.md)
+
+___
+
+### DeliverabilitySimulationEmailOptionsToJSON
+
+▸ **DeliverabilitySimulationEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationEmailOptions`](interfaces/DeliverabilitySimulationEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationJobConfigDtoFromJSON
+
+▸ **DeliverabilitySimulationJobConfigDtoFromJSON**(`json`): [`DeliverabilitySimulationJobConfigDto`](interfaces/DeliverabilitySimulationJobConfigDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobConfigDto`](interfaces/DeliverabilitySimulationJobConfigDto.md)
+
+___
+
+### DeliverabilitySimulationJobConfigDtoFromJSONTyped
+
+▸ **DeliverabilitySimulationJobConfigDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationJobConfigDto`](interfaces/DeliverabilitySimulationJobConfigDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobConfigDto`](interfaces/DeliverabilitySimulationJobConfigDto.md)
+
+___
+
+### DeliverabilitySimulationJobConfigDtoToJSON
+
+▸ **DeliverabilitySimulationJobConfigDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationJobConfigDto`](interfaces/DeliverabilitySimulationJobConfigDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationJobDtoFromJSON
+
+▸ **DeliverabilitySimulationJobDtoFromJSON**(`json`): [`DeliverabilitySimulationJobDto`](interfaces/DeliverabilitySimulationJobDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobDto`](interfaces/DeliverabilitySimulationJobDto.md)
+
+___
+
+### DeliverabilitySimulationJobDtoFromJSONTyped
+
+▸ **DeliverabilitySimulationJobDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationJobDto`](interfaces/DeliverabilitySimulationJobDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobDto`](interfaces/DeliverabilitySimulationJobDto.md)
+
+___
+
+### DeliverabilitySimulationJobDtoToJSON
+
+▸ **DeliverabilitySimulationJobDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationJobDto`](interfaces/DeliverabilitySimulationJobDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationJobErrorSummaryDtoFromJSON
+
+▸ **DeliverabilitySimulationJobErrorSummaryDtoFromJSON**(`json`): [`DeliverabilitySimulationJobErrorSummaryDto`](interfaces/DeliverabilitySimulationJobErrorSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobErrorSummaryDto`](interfaces/DeliverabilitySimulationJobErrorSummaryDto.md)
+
+___
+
+### DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped
+
+▸ **DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationJobErrorSummaryDto`](interfaces/DeliverabilitySimulationJobErrorSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobErrorSummaryDto`](interfaces/DeliverabilitySimulationJobErrorSummaryDto.md)
+
+___
+
+### DeliverabilitySimulationJobErrorSummaryDtoToJSON
+
+▸ **DeliverabilitySimulationJobErrorSummaryDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationJobErrorSummaryDto`](interfaces/DeliverabilitySimulationJobErrorSummaryDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationJobEventDtoFromJSON
+
+▸ **DeliverabilitySimulationJobEventDtoFromJSON**(`json`): [`DeliverabilitySimulationJobEventDto`](interfaces/DeliverabilitySimulationJobEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobEventDto`](interfaces/DeliverabilitySimulationJobEventDto.md)
+
+___
+
+### DeliverabilitySimulationJobEventDtoFromJSONTyped
+
+▸ **DeliverabilitySimulationJobEventDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationJobEventDto`](interfaces/DeliverabilitySimulationJobEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobEventDto`](interfaces/DeliverabilitySimulationJobEventDto.md)
+
+___
+
+### DeliverabilitySimulationJobEventDtoToJSON
+
+▸ **DeliverabilitySimulationJobEventDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationJobEventDto`](interfaces/DeliverabilitySimulationJobEventDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationJobEventPageDtoFromJSON
+
+▸ **DeliverabilitySimulationJobEventPageDtoFromJSON**(`json`): [`DeliverabilitySimulationJobEventPageDto`](interfaces/DeliverabilitySimulationJobEventPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobEventPageDto`](interfaces/DeliverabilitySimulationJobEventPageDto.md)
+
+___
+
+### DeliverabilitySimulationJobEventPageDtoFromJSONTyped
+
+▸ **DeliverabilitySimulationJobEventPageDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationJobEventPageDto`](interfaces/DeliverabilitySimulationJobEventPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobEventPageDto`](interfaces/DeliverabilitySimulationJobEventPageDto.md)
+
+___
+
+### DeliverabilitySimulationJobEventPageDtoToJSON
+
+▸ **DeliverabilitySimulationJobEventPageDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationJobEventPageDto`](interfaces/DeliverabilitySimulationJobEventPageDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationJobTopErrorDtoFromJSON
+
+▸ **DeliverabilitySimulationJobTopErrorDtoFromJSON**(`json`): [`DeliverabilitySimulationJobTopErrorDto`](interfaces/DeliverabilitySimulationJobTopErrorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobTopErrorDto`](interfaces/DeliverabilitySimulationJobTopErrorDto.md)
+
+___
+
+### DeliverabilitySimulationJobTopErrorDtoFromJSONTyped
+
+▸ **DeliverabilitySimulationJobTopErrorDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationJobTopErrorDto`](interfaces/DeliverabilitySimulationJobTopErrorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationJobTopErrorDto`](interfaces/DeliverabilitySimulationJobTopErrorDto.md)
+
+___
+
+### DeliverabilitySimulationJobTopErrorDtoToJSON
+
+▸ **DeliverabilitySimulationJobTopErrorDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationJobTopErrorDto`](interfaces/DeliverabilitySimulationJobTopErrorDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilitySimulationSmsOptionsFromJSON
+
+▸ **DeliverabilitySimulationSmsOptionsFromJSON**(`json`): [`DeliverabilitySimulationSmsOptions`](interfaces/DeliverabilitySimulationSmsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilitySimulationSmsOptions`](interfaces/DeliverabilitySimulationSmsOptions.md)
+
+___
+
+### DeliverabilitySimulationSmsOptionsFromJSONTyped
+
+▸ **DeliverabilitySimulationSmsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilitySimulationSmsOptions`](interfaces/DeliverabilitySimulationSmsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilitySimulationSmsOptions`](interfaces/DeliverabilitySimulationSmsOptions.md)
+
+___
+
+### DeliverabilitySimulationSmsOptionsToJSON
+
+▸ **DeliverabilitySimulationSmsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilitySimulationSmsOptions`](interfaces/DeliverabilitySimulationSmsOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityTestDtoFromJSON
+
+▸ **DeliverabilityTestDtoFromJSON**(`json`): [`DeliverabilityTestDto`](interfaces/DeliverabilityTestDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityTestDto`](interfaces/DeliverabilityTestDto.md)
+
+___
+
+### DeliverabilityTestDtoFromJSONTyped
+
+▸ **DeliverabilityTestDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityTestDto`](interfaces/DeliverabilityTestDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityTestDto`](interfaces/DeliverabilityTestDto.md)
+
+___
+
+### DeliverabilityTestDtoToJSON
+
+▸ **DeliverabilityTestDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityTestDto`](interfaces/DeliverabilityTestDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DeliverabilityTestPageDtoFromJSON
+
+▸ **DeliverabilityTestPageDtoFromJSON**(`json`): [`DeliverabilityTestPageDto`](interfaces/DeliverabilityTestPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliverabilityTestPageDto`](interfaces/DeliverabilityTestPageDto.md)
+
+___
+
+### DeliverabilityTestPageDtoFromJSONTyped
+
+▸ **DeliverabilityTestPageDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliverabilityTestPageDto`](interfaces/DeliverabilityTestPageDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliverabilityTestPageDto`](interfaces/DeliverabilityTestPageDto.md)
+
+___
+
+### DeliverabilityTestPageDtoToJSON
+
+▸ **DeliverabilityTestPageDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliverabilityTestPageDto`](interfaces/DeliverabilityTestPageDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### DeliveryStatusDtoFromJSON
 
 ▸ **DeliveryStatusDtoFromJSON**(`json`): [`DeliveryStatusDto`](interfaces/DeliveryStatusDto.md)
@@ -6405,6 +9380,349 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DevicePreviewFeedbackDtoFromJSON
+
+▸ **DevicePreviewFeedbackDtoFromJSON**(`json`): [`DevicePreviewFeedbackDto`](interfaces/DevicePreviewFeedbackDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DevicePreviewFeedbackDto`](interfaces/DevicePreviewFeedbackDto.md)
+
+___
+
+### DevicePreviewFeedbackDtoFromJSONTyped
+
+▸ **DevicePreviewFeedbackDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DevicePreviewFeedbackDto`](interfaces/DevicePreviewFeedbackDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DevicePreviewFeedbackDto`](interfaces/DevicePreviewFeedbackDto.md)
+
+___
+
+### DevicePreviewFeedbackDtoToJSON
+
+▸ **DevicePreviewFeedbackDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DevicePreviewFeedbackDto`](interfaces/DevicePreviewFeedbackDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DevicePreviewFeedbackListDtoFromJSON
+
+▸ **DevicePreviewFeedbackListDtoFromJSON**(`json`): [`DevicePreviewFeedbackListDto`](interfaces/DevicePreviewFeedbackListDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DevicePreviewFeedbackListDto`](interfaces/DevicePreviewFeedbackListDto.md)
+
+___
+
+### DevicePreviewFeedbackListDtoFromJSONTyped
+
+▸ **DevicePreviewFeedbackListDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DevicePreviewFeedbackListDto`](interfaces/DevicePreviewFeedbackListDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DevicePreviewFeedbackListDto`](interfaces/DevicePreviewFeedbackListDto.md)
+
+___
+
+### DevicePreviewFeedbackListDtoToJSON
+
+▸ **DevicePreviewFeedbackListDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DevicePreviewFeedbackListDto`](interfaces/DevicePreviewFeedbackListDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DevicePreviewProviderProgressDtoFromJSON
+
+▸ **DevicePreviewProviderProgressDtoFromJSON**(`json`): [`DevicePreviewProviderProgressDto`](interfaces/DevicePreviewProviderProgressDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DevicePreviewProviderProgressDto`](interfaces/DevicePreviewProviderProgressDto.md)
+
+___
+
+### DevicePreviewProviderProgressDtoFromJSONTyped
+
+▸ **DevicePreviewProviderProgressDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DevicePreviewProviderProgressDto`](interfaces/DevicePreviewProviderProgressDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DevicePreviewProviderProgressDto`](interfaces/DevicePreviewProviderProgressDto.md)
+
+___
+
+### DevicePreviewProviderProgressDtoToJSON
+
+▸ **DevicePreviewProviderProgressDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DevicePreviewProviderProgressDto`](interfaces/DevicePreviewProviderProgressDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DevicePreviewRunDtoFromJSON
+
+▸ **DevicePreviewRunDtoFromJSON**(`json`): [`DevicePreviewRunDto`](interfaces/DevicePreviewRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DevicePreviewRunDto`](interfaces/DevicePreviewRunDto.md)
+
+___
+
+### DevicePreviewRunDtoFromJSONTyped
+
+▸ **DevicePreviewRunDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DevicePreviewRunDto`](interfaces/DevicePreviewRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DevicePreviewRunDto`](interfaces/DevicePreviewRunDto.md)
+
+___
+
+### DevicePreviewRunDtoToJSON
+
+▸ **DevicePreviewRunDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DevicePreviewRunDto`](interfaces/DevicePreviewRunDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DevicePreviewRunResultsDtoFromJSON
+
+▸ **DevicePreviewRunResultsDtoFromJSON**(`json`): [`DevicePreviewRunResultsDto`](interfaces/DevicePreviewRunResultsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DevicePreviewRunResultsDto`](interfaces/DevicePreviewRunResultsDto.md)
+
+___
+
+### DevicePreviewRunResultsDtoFromJSONTyped
+
+▸ **DevicePreviewRunResultsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DevicePreviewRunResultsDto`](interfaces/DevicePreviewRunResultsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DevicePreviewRunResultsDto`](interfaces/DevicePreviewRunResultsDto.md)
+
+___
+
+### DevicePreviewRunResultsDtoToJSON
+
+▸ **DevicePreviewRunResultsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DevicePreviewRunResultsDto`](interfaces/DevicePreviewRunResultsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DevicePreviewScreenshotDtoFromJSON
+
+▸ **DevicePreviewScreenshotDtoFromJSON**(`json`): [`DevicePreviewScreenshotDto`](interfaces/DevicePreviewScreenshotDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DevicePreviewScreenshotDto`](interfaces/DevicePreviewScreenshotDto.md)
+
+___
+
+### DevicePreviewScreenshotDtoFromJSONTyped
+
+▸ **DevicePreviewScreenshotDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DevicePreviewScreenshotDto`](interfaces/DevicePreviewScreenshotDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DevicePreviewScreenshotDto`](interfaces/DevicePreviewScreenshotDto.md)
+
+___
+
+### DevicePreviewScreenshotDtoToJSON
+
+▸ **DevicePreviewScreenshotDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DevicePreviewScreenshotDto`](interfaces/DevicePreviewScreenshotDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DevicePreviewTargetDtoFromJSON
+
+▸ **DevicePreviewTargetDtoFromJSON**(`json`): [`DevicePreviewTargetDto`](interfaces/DevicePreviewTargetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DevicePreviewTargetDto`](interfaces/DevicePreviewTargetDto.md)
+
+___
+
+### DevicePreviewTargetDtoFromJSONTyped
+
+▸ **DevicePreviewTargetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DevicePreviewTargetDto`](interfaces/DevicePreviewTargetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DevicePreviewTargetDto`](interfaces/DevicePreviewTargetDto.md)
+
+___
+
+### DevicePreviewTargetDtoToJSON
+
+▸ **DevicePreviewTargetDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DevicePreviewTargetDto`](interfaces/DevicePreviewTargetDto.md) |
 
 #### Returns
 
@@ -6657,6 +9975,398 @@ ___
 
 ___
 
+### DomainMonitorAlertSinkDtoFromJSON
+
+▸ **DomainMonitorAlertSinkDtoFromJSON**(`json`): [`DomainMonitorAlertSinkDto`](interfaces/DomainMonitorAlertSinkDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorAlertSinkDto`](interfaces/DomainMonitorAlertSinkDto.md)
+
+___
+
+### DomainMonitorAlertSinkDtoFromJSONTyped
+
+▸ **DomainMonitorAlertSinkDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorAlertSinkDto`](interfaces/DomainMonitorAlertSinkDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorAlertSinkDto`](interfaces/DomainMonitorAlertSinkDto.md)
+
+___
+
+### DomainMonitorAlertSinkDtoToJSON
+
+▸ **DomainMonitorAlertSinkDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorAlertSinkDto`](interfaces/DomainMonitorAlertSinkDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainMonitorDtoFromJSON
+
+▸ **DomainMonitorDtoFromJSON**(`json`): [`DomainMonitorDto`](interfaces/DomainMonitorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorDto`](interfaces/DomainMonitorDto.md)
+
+___
+
+### DomainMonitorDtoFromJSONTyped
+
+▸ **DomainMonitorDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorDto`](interfaces/DomainMonitorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorDto`](interfaces/DomainMonitorDto.md)
+
+___
+
+### DomainMonitorDtoToJSON
+
+▸ **DomainMonitorDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorDto`](interfaces/DomainMonitorDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainMonitorInsightsDtoFromJSON
+
+▸ **DomainMonitorInsightsDtoFromJSON**(`json`): [`DomainMonitorInsightsDto`](interfaces/DomainMonitorInsightsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorInsightsDto`](interfaces/DomainMonitorInsightsDto.md)
+
+___
+
+### DomainMonitorInsightsDtoFromJSONTyped
+
+▸ **DomainMonitorInsightsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorInsightsDto`](interfaces/DomainMonitorInsightsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorInsightsDto`](interfaces/DomainMonitorInsightsDto.md)
+
+___
+
+### DomainMonitorInsightsDtoToJSON
+
+▸ **DomainMonitorInsightsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorInsightsDto`](interfaces/DomainMonitorInsightsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainMonitorRunDtoFromJSON
+
+▸ **DomainMonitorRunDtoFromJSON**(`json`): [`DomainMonitorRunDto`](interfaces/DomainMonitorRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorRunDto`](interfaces/DomainMonitorRunDto.md)
+
+___
+
+### DomainMonitorRunDtoFromJSONTyped
+
+▸ **DomainMonitorRunDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorRunDto`](interfaces/DomainMonitorRunDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorRunDto`](interfaces/DomainMonitorRunDto.md)
+
+___
+
+### DomainMonitorRunDtoToJSON
+
+▸ **DomainMonitorRunDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorRunDto`](interfaces/DomainMonitorRunDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainMonitorRunDueResultFromJSON
+
+▸ **DomainMonitorRunDueResultFromJSON**(`json`): [`DomainMonitorRunDueResult`](interfaces/DomainMonitorRunDueResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorRunDueResult`](interfaces/DomainMonitorRunDueResult.md)
+
+___
+
+### DomainMonitorRunDueResultFromJSONTyped
+
+▸ **DomainMonitorRunDueResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorRunDueResult`](interfaces/DomainMonitorRunDueResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorRunDueResult`](interfaces/DomainMonitorRunDueResult.md)
+
+___
+
+### DomainMonitorRunDueResultToJSON
+
+▸ **DomainMonitorRunDueResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorRunDueResult`](interfaces/DomainMonitorRunDueResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainMonitorRunNowResultFromJSON
+
+▸ **DomainMonitorRunNowResultFromJSON**(`json`): [`DomainMonitorRunNowResult`](interfaces/DomainMonitorRunNowResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorRunNowResult`](interfaces/DomainMonitorRunNowResult.md)
+
+___
+
+### DomainMonitorRunNowResultFromJSONTyped
+
+▸ **DomainMonitorRunNowResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorRunNowResult`](interfaces/DomainMonitorRunNowResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorRunNowResult`](interfaces/DomainMonitorRunNowResult.md)
+
+___
+
+### DomainMonitorRunNowResultToJSON
+
+▸ **DomainMonitorRunNowResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorRunNowResult`](interfaces/DomainMonitorRunNowResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainMonitorSeriesDtoFromJSON
+
+▸ **DomainMonitorSeriesDtoFromJSON**(`json`): [`DomainMonitorSeriesDto`](interfaces/DomainMonitorSeriesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorSeriesDto`](interfaces/DomainMonitorSeriesDto.md)
+
+___
+
+### DomainMonitorSeriesDtoFromJSONTyped
+
+▸ **DomainMonitorSeriesDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorSeriesDto`](interfaces/DomainMonitorSeriesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorSeriesDto`](interfaces/DomainMonitorSeriesDto.md)
+
+___
+
+### DomainMonitorSeriesDtoToJSON
+
+▸ **DomainMonitorSeriesDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorSeriesDto`](interfaces/DomainMonitorSeriesDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainMonitorSeriesPointDtoFromJSON
+
+▸ **DomainMonitorSeriesPointDtoFromJSON**(`json`): [`DomainMonitorSeriesPointDto`](interfaces/DomainMonitorSeriesPointDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainMonitorSeriesPointDto`](interfaces/DomainMonitorSeriesPointDto.md)
+
+___
+
+### DomainMonitorSeriesPointDtoFromJSONTyped
+
+▸ **DomainMonitorSeriesPointDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainMonitorSeriesPointDto`](interfaces/DomainMonitorSeriesPointDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainMonitorSeriesPointDto`](interfaces/DomainMonitorSeriesPointDto.md)
+
+___
+
+### DomainMonitorSeriesPointDtoToJSON
+
+▸ **DomainMonitorSeriesPointDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainMonitorSeriesPointDto`](interfaces/DomainMonitorSeriesPointDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### DomainNameRecordFromJSON
 
 ▸ **DomainNameRecordFromJSON**(`json`): [`DomainNameRecord`](interfaces/DomainNameRecord.md)
@@ -6748,6 +10458,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`DomainPreview`](interfaces/DomainPreview.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainRegionGroupFromJSON
+
+▸ **DomainRegionGroupFromJSON**(`json`): [`DomainRegionGroup`](interfaces/DomainRegionGroup.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainRegionGroup`](interfaces/DomainRegionGroup.md)
+
+___
+
+### DomainRegionGroupFromJSONTyped
+
+▸ **DomainRegionGroupFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainRegionGroup`](interfaces/DomainRegionGroup.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainRegionGroup`](interfaces/DomainRegionGroup.md)
+
+___
+
+### DomainRegionGroupToJSON
+
+▸ **DomainRegionGroupToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainRegionGroup`](interfaces/DomainRegionGroup.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainRegionGroupsDtoFromJSON
+
+▸ **DomainRegionGroupsDtoFromJSON**(`json`): [`DomainRegionGroupsDto`](interfaces/DomainRegionGroupsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainRegionGroupsDto`](interfaces/DomainRegionGroupsDto.md)
+
+___
+
+### DomainRegionGroupsDtoFromJSONTyped
+
+▸ **DomainRegionGroupsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainRegionGroupsDto`](interfaces/DomainRegionGroupsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainRegionGroupsDto`](interfaces/DomainRegionGroupsDto.md)
+
+___
+
+### DomainRegionGroupsDtoToJSON
+
+▸ **DomainRegionGroupsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainRegionGroupsDto`](interfaces/DomainRegionGroupsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainRegionInformationFromJSON
+
+▸ **DomainRegionInformationFromJSON**(`json`): [`DomainRegionInformation`](interfaces/DomainRegionInformation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainRegionInformation`](interfaces/DomainRegionInformation.md)
+
+___
+
+### DomainRegionInformationFromJSONTyped
+
+▸ **DomainRegionInformationFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainRegionInformation`](interfaces/DomainRegionInformation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainRegionInformation`](interfaces/DomainRegionInformation.md)
+
+___
+
+### DomainRegionInformationToJSON
+
+▸ **DomainRegionInformationToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainRegionInformation`](interfaces/DomainRegionInformation.md) |
 
 #### Returns
 
@@ -7964,6 +11821,104 @@ ___
 
 ___
 
+### EmailSignatureFromJSON
+
+▸ **EmailSignatureFromJSON**(`json`): [`EmailSignature`](interfaces/EmailSignature.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailSignature`](interfaces/EmailSignature.md)
+
+___
+
+### EmailSignatureFromJSONTyped
+
+▸ **EmailSignatureFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailSignature`](interfaces/EmailSignature.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailSignature`](interfaces/EmailSignature.md)
+
+___
+
+### EmailSignatureParseResultFromJSON
+
+▸ **EmailSignatureParseResultFromJSON**(`json`): [`EmailSignatureParseResult`](interfaces/EmailSignatureParseResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailSignatureParseResult`](interfaces/EmailSignatureParseResult.md)
+
+___
+
+### EmailSignatureParseResultFromJSONTyped
+
+▸ **EmailSignatureParseResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailSignatureParseResult`](interfaces/EmailSignatureParseResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailSignatureParseResult`](interfaces/EmailSignatureParseResult.md)
+
+___
+
+### EmailSignatureParseResultToJSON
+
+▸ **EmailSignatureParseResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailSignatureParseResult`](interfaces/EmailSignatureParseResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailSignatureToJSON
+
+▸ **EmailSignatureToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailSignature`](interfaces/EmailSignature.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### EmailTextLinesResultFromJSON
 
 ▸ **EmailTextLinesResultFromJSON**(`json`): [`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)
@@ -8855,6 +12810,349 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ExportOptions`](interfaces/ExportOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExportTransformerOptionsFromJSON
+
+▸ **ExportTransformerOptionsFromJSON**(`json`): [`ExportTransformerOptions`](interfaces/ExportTransformerOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExportTransformerOptions`](interfaces/ExportTransformerOptions.md)
+
+___
+
+### ExportTransformerOptionsFromJSONTyped
+
+▸ **ExportTransformerOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExportTransformerOptions`](interfaces/ExportTransformerOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExportTransformerOptions`](interfaces/ExportTransformerOptions.md)
+
+___
+
+### ExportTransformerOptionsToJSON
+
+▸ **ExportTransformerOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExportTransformerOptions`](interfaces/ExportTransformerOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExportTransformerResponseFromJSON
+
+▸ **ExportTransformerResponseFromJSON**(`json`): [`ExportTransformerResponse`](interfaces/ExportTransformerResponse.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExportTransformerResponse`](interfaces/ExportTransformerResponse.md)
+
+___
+
+### ExportTransformerResponseFromJSONTyped
+
+▸ **ExportTransformerResponseFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExportTransformerResponse`](interfaces/ExportTransformerResponse.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExportTransformerResponse`](interfaces/ExportTransformerResponse.md)
+
+___
+
+### ExportTransformerResponseToJSON
+
+▸ **ExportTransformerResponseToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExportTransformerResponse`](interfaces/ExportTransformerResponse.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExportTransformerResultJobDtoFromJSON
+
+▸ **ExportTransformerResultJobDtoFromJSON**(`json`): [`ExportTransformerResultJobDto`](interfaces/ExportTransformerResultJobDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExportTransformerResultJobDto`](interfaces/ExportTransformerResultJobDto.md)
+
+___
+
+### ExportTransformerResultJobDtoFromJSONTyped
+
+▸ **ExportTransformerResultJobDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExportTransformerResultJobDto`](interfaces/ExportTransformerResultJobDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExportTransformerResultJobDto`](interfaces/ExportTransformerResultJobDto.md)
+
+___
+
+### ExportTransformerResultJobDtoToJSON
+
+▸ **ExportTransformerResultJobDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExportTransformerResultJobDto`](interfaces/ExportTransformerResultJobDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExtractAttachmentTextOptionsFromJSON
+
+▸ **ExtractAttachmentTextOptionsFromJSON**(`json`): [`ExtractAttachmentTextOptions`](interfaces/ExtractAttachmentTextOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExtractAttachmentTextOptions`](interfaces/ExtractAttachmentTextOptions.md)
+
+___
+
+### ExtractAttachmentTextOptionsFromJSONTyped
+
+▸ **ExtractAttachmentTextOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExtractAttachmentTextOptions`](interfaces/ExtractAttachmentTextOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExtractAttachmentTextOptions`](interfaces/ExtractAttachmentTextOptions.md)
+
+___
+
+### ExtractAttachmentTextOptionsToJSON
+
+▸ **ExtractAttachmentTextOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExtractAttachmentTextOptions`](interfaces/ExtractAttachmentTextOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExtractAttachmentTextResultFromJSON
+
+▸ **ExtractAttachmentTextResultFromJSON**(`json`): [`ExtractAttachmentTextResult`](interfaces/ExtractAttachmentTextResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExtractAttachmentTextResult`](interfaces/ExtractAttachmentTextResult.md)
+
+___
+
+### ExtractAttachmentTextResultFromJSONTyped
+
+▸ **ExtractAttachmentTextResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExtractAttachmentTextResult`](interfaces/ExtractAttachmentTextResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExtractAttachmentTextResult`](interfaces/ExtractAttachmentTextResult.md)
+
+___
+
+### ExtractAttachmentTextResultToJSON
+
+▸ **ExtractAttachmentTextResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExtractAttachmentTextResult`](interfaces/ExtractAttachmentTextResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExtractCodesOptionsFromJSON
+
+▸ **ExtractCodesOptionsFromJSON**(`json`): [`ExtractCodesOptions`](interfaces/ExtractCodesOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExtractCodesOptions`](interfaces/ExtractCodesOptions.md)
+
+___
+
+### ExtractCodesOptionsFromJSONTyped
+
+▸ **ExtractCodesOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExtractCodesOptions`](interfaces/ExtractCodesOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExtractCodesOptions`](interfaces/ExtractCodesOptions.md)
+
+___
+
+### ExtractCodesOptionsToJSON
+
+▸ **ExtractCodesOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExtractCodesOptions`](interfaces/ExtractCodesOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExtractCodesResultFromJSON
+
+▸ **ExtractCodesResultFromJSON**(`json`): [`ExtractCodesResult`](interfaces/ExtractCodesResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExtractCodesResult`](interfaces/ExtractCodesResult.md)
+
+___
+
+### ExtractCodesResultFromJSONTyped
+
+▸ **ExtractCodesResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExtractCodesResult`](interfaces/ExtractCodesResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExtractCodesResult`](interfaces/ExtractCodesResult.md)
+
+___
+
+### ExtractCodesResultToJSON
+
+▸ **ExtractCodesResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExtractCodesResult`](interfaces/ExtractCodesResult.md) |
 
 #### Returns
 
@@ -11851,6 +16149,104 @@ ___
 
 ___
 
+### InboxRetentionPolicyDtoFromJSON
+
+▸ **InboxRetentionPolicyDtoFromJSON**(`json`): [`InboxRetentionPolicyDto`](interfaces/InboxRetentionPolicyDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxRetentionPolicyDto`](interfaces/InboxRetentionPolicyDto.md)
+
+___
+
+### InboxRetentionPolicyDtoFromJSONTyped
+
+▸ **InboxRetentionPolicyDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRetentionPolicyDto`](interfaces/InboxRetentionPolicyDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxRetentionPolicyDto`](interfaces/InboxRetentionPolicyDto.md)
+
+___
+
+### InboxRetentionPolicyDtoToJSON
+
+▸ **InboxRetentionPolicyDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxRetentionPolicyDto`](interfaces/InboxRetentionPolicyDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxRetentionPolicyOptionalDtoFromJSON
+
+▸ **InboxRetentionPolicyOptionalDtoFromJSON**(`json`): [`InboxRetentionPolicyOptionalDto`](interfaces/InboxRetentionPolicyOptionalDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxRetentionPolicyOptionalDto`](interfaces/InboxRetentionPolicyOptionalDto.md)
+
+___
+
+### InboxRetentionPolicyOptionalDtoFromJSONTyped
+
+▸ **InboxRetentionPolicyOptionalDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRetentionPolicyOptionalDto`](interfaces/InboxRetentionPolicyOptionalDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxRetentionPolicyOptionalDto`](interfaces/InboxRetentionPolicyOptionalDto.md)
+
+___
+
+### InboxRetentionPolicyOptionalDtoToJSON
+
+▸ **InboxRetentionPolicyOptionalDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxRetentionPolicyOptionalDto`](interfaces/InboxRetentionPolicyOptionalDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### InboxRulesetTestResultFromJSON
 
 ▸ **InboxRulesetTestResultFromJSON**(`json`): [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
@@ -12824,6 +17220,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`MissedEmailProjection`](interfaces/MissedEmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### MissedSmsDtoFromJSON
+
+▸ **MissedSmsDtoFromJSON**(`json`): [`MissedSmsDto`](interfaces/MissedSmsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`MissedSmsDto`](interfaces/MissedSmsDto.md)
+
+___
+
+### MissedSmsDtoFromJSONTyped
+
+▸ **MissedSmsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedSmsDto`](interfaces/MissedSmsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`MissedSmsDto`](interfaces/MissedSmsDto.md)
+
+___
+
+### MissedSmsDtoToJSON
+
+▸ **MissedSmsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`MissedSmsDto`](interfaces/MissedSmsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### MissedSmsProjectionFromJSON
+
+▸ **MissedSmsProjectionFromJSON**(`json`): [`MissedSmsProjection`](interfaces/MissedSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`MissedSmsProjection`](interfaces/MissedSmsProjection.md)
+
+___
+
+### MissedSmsProjectionFromJSONTyped
+
+▸ **MissedSmsProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedSmsProjection`](interfaces/MissedSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`MissedSmsProjection`](interfaces/MissedSmsProjection.md)
+
+___
+
+### MissedSmsProjectionToJSON
+
+▸ **MissedSmsProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`MissedSmsProjection`](interfaces/MissedSmsProjection.md) |
 
 #### Returns
 
@@ -14007,6 +18501,55 @@ ___
 
 ___
 
+### PageDevicePreviewRunProjectionFromJSON
+
+▸ **PageDevicePreviewRunProjectionFromJSON**(`json`): [`PageDevicePreviewRunProjection`](interfaces/PageDevicePreviewRunProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageDevicePreviewRunProjection`](interfaces/PageDevicePreviewRunProjection.md)
+
+___
+
+### PageDevicePreviewRunProjectionFromJSONTyped
+
+▸ **PageDevicePreviewRunProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageDevicePreviewRunProjection`](interfaces/PageDevicePreviewRunProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageDevicePreviewRunProjection`](interfaces/PageDevicePreviewRunProjection.md)
+
+___
+
+### PageDevicePreviewRunProjectionToJSON
+
+▸ **PageDevicePreviewRunProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageDevicePreviewRunProjection`](interfaces/PageDevicePreviewRunProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PageEmailPreviewFromJSON
 
 ▸ **PageEmailPreviewFromJSON**(`json`): [`PageEmailPreview`](interfaces/PageEmailPreview.md)
@@ -14889,6 +19432,55 @@ ___
 
 ___
 
+### PageMissedSmsProjectionFromJSON
+
+▸ **PageMissedSmsProjectionFromJSON**(`json`): [`PageMissedSmsProjection`](interfaces/PageMissedSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageMissedSmsProjection`](interfaces/PageMissedSmsProjection.md)
+
+___
+
+### PageMissedSmsProjectionFromJSONTyped
+
+▸ **PageMissedSmsProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageMissedSmsProjection`](interfaces/PageMissedSmsProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageMissedSmsProjection`](interfaces/PageMissedSmsProjection.md)
+
+___
+
+### PageMissedSmsProjectionToJSON
+
+▸ **PageMissedSmsProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageMissedSmsProjection`](interfaces/PageMissedSmsProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PageOptInIdentityProjectionFromJSON
 
 ▸ **PageOptInIdentityProjectionFromJSON**(`json`): [`PageOptInIdentityProjection`](interfaces/PageOptInIdentityProjection.md)
@@ -15127,6 +19719,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PagePhoneNumberProjection`](interfaces/PagePhoneNumberProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PagePhoneNumberReleaseProjectionFromJSON
+
+▸ **PagePhoneNumberReleaseProjectionFromJSON**(`json`): [`PagePhoneNumberReleaseProjection`](interfaces/PagePhoneNumberReleaseProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PagePhoneNumberReleaseProjection`](interfaces/PagePhoneNumberReleaseProjection.md)
+
+___
+
+### PagePhoneNumberReleaseProjectionFromJSONTyped
+
+▸ **PagePhoneNumberReleaseProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PagePhoneNumberReleaseProjection`](interfaces/PagePhoneNumberReleaseProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PagePhoneNumberReleaseProjection`](interfaces/PagePhoneNumberReleaseProjection.md)
+
+___
+
+### PagePhoneNumberReleaseProjectionToJSON
+
+▸ **PagePhoneNumberReleaseProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PagePhoneNumberReleaseProjection`](interfaces/PagePhoneNumberReleaseProjection.md) |
 
 #### Returns
 
@@ -15526,6 +20167,55 @@ ___
 
 ___
 
+### PageTableDataFromJSON
+
+▸ **PageTableDataFromJSON**(`json`): [`PageTableData`](interfaces/PageTableData.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageTableData`](interfaces/PageTableData.md)
+
+___
+
+### PageTableDataFromJSONTyped
+
+▸ **PageTableDataFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageTableData`](interfaces/PageTableData.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageTableData`](interfaces/PageTableData.md)
+
+___
+
+### PageTableDataToJSON
+
+▸ **PageTableDataToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageTableData`](interfaces/PageTableData.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PageTemplateProjectionFromJSON
 
 ▸ **PageTemplateProjectionFromJSON**(`json`): [`PageTemplateProjection`](interfaces/PageTemplateProjection.md)
@@ -15869,6 +20559,55 @@ ___
 
 ___
 
+### PaginationFromJSON
+
+▸ **PaginationFromJSON**(`json`): [`Pagination`](interfaces/Pagination.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`Pagination`](interfaces/Pagination.md)
+
+___
+
+### PaginationFromJSONTyped
+
+▸ **PaginationFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Pagination`](interfaces/Pagination.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`Pagination`](interfaces/Pagination.md)
+
+___
+
+### PaginationToJSON
+
+▸ **PaginationToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`Pagination`](interfaces/Pagination.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PhoneMessageThreadItemProjectionFromJSON
 
 ▸ **PhoneMessageThreadItemProjectionFromJSON**(`json`): [`PhoneMessageThreadItemProjection`](interfaces/PhoneMessageThreadItemProjection.md)
@@ -16065,6 +20804,55 @@ ___
 
 ___
 
+### PhoneNumberReleaseProjectionFromJSON
+
+▸ **PhoneNumberReleaseProjectionFromJSON**(`json`): [`PhoneNumberReleaseProjection`](interfaces/PhoneNumberReleaseProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PhoneNumberReleaseProjection`](interfaces/PhoneNumberReleaseProjection.md)
+
+___
+
+### PhoneNumberReleaseProjectionFromJSONTyped
+
+▸ **PhoneNumberReleaseProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PhoneNumberReleaseProjection`](interfaces/PhoneNumberReleaseProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PhoneNumberReleaseProjection`](interfaces/PhoneNumberReleaseProjection.md)
+
+___
+
+### PhoneNumberReleaseProjectionToJSON
+
+▸ **PhoneNumberReleaseProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PhoneNumberReleaseProjection`](interfaces/PhoneNumberReleaseProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### PhoneNumberValidationDtoFromJSON
 
 ▸ **PhoneNumberValidationDtoFromJSON**(`json`): [`PhoneNumberValidationDto`](interfaces/PhoneNumberValidationDto.md)
@@ -16254,6 +21042,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PhonePlanDto`](interfaces/PhonePlanDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PhoneSummaryCountryDtoFromJSON
+
+▸ **PhoneSummaryCountryDtoFromJSON**(`json`): [`PhoneSummaryCountryDto`](interfaces/PhoneSummaryCountryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PhoneSummaryCountryDto`](interfaces/PhoneSummaryCountryDto.md)
+
+___
+
+### PhoneSummaryCountryDtoFromJSONTyped
+
+▸ **PhoneSummaryCountryDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PhoneSummaryCountryDto`](interfaces/PhoneSummaryCountryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PhoneSummaryCountryDto`](interfaces/PhoneSummaryCountryDto.md)
+
+___
+
+### PhoneSummaryCountryDtoToJSON
+
+▸ **PhoneSummaryCountryDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PhoneSummaryCountryDto`](interfaces/PhoneSummaryCountryDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PhoneSummaryDtoFromJSON
+
+▸ **PhoneSummaryDtoFromJSON**(`json`): [`PhoneSummaryDto`](interfaces/PhoneSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PhoneSummaryDto`](interfaces/PhoneSummaryDto.md)
+
+___
+
+### PhoneSummaryDtoFromJSONTyped
+
+▸ **PhoneSummaryDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PhoneSummaryDto`](interfaces/PhoneSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PhoneSummaryDto`](interfaces/PhoneSummaryDto.md)
+
+___
+
+### PhoneSummaryDtoToJSON
+
+▸ **PhoneSummaryDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PhoneSummaryDto`](interfaces/PhoneSummaryDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PlanSummaryDtoFromJSON
+
+▸ **PlanSummaryDtoFromJSON**(`json`): [`PlanSummaryDto`](interfaces/PlanSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PlanSummaryDto`](interfaces/PlanSummaryDto.md)
+
+___
+
+### PlanSummaryDtoFromJSONTyped
+
+▸ **PlanSummaryDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PlanSummaryDto`](interfaces/PlanSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PlanSummaryDto`](interfaces/PlanSummaryDto.md)
+
+___
+
+### PlanSummaryDtoToJSON
+
+▸ **PlanSummaryDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PlanSummaryDto`](interfaces/PlanSummaryDto.md) |
 
 #### Returns
 
@@ -18564,6 +23499,202 @@ ___
 
 ___
 
+### TenantReputationFindingDtoFromJSON
+
+▸ **TenantReputationFindingDtoFromJSON**(`json`): [`TenantReputationFindingDto`](interfaces/TenantReputationFindingDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TenantReputationFindingDto`](interfaces/TenantReputationFindingDto.md)
+
+___
+
+### TenantReputationFindingDtoFromJSONTyped
+
+▸ **TenantReputationFindingDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TenantReputationFindingDto`](interfaces/TenantReputationFindingDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TenantReputationFindingDto`](interfaces/TenantReputationFindingDto.md)
+
+___
+
+### TenantReputationFindingDtoToJSON
+
+▸ **TenantReputationFindingDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TenantReputationFindingDto`](interfaces/TenantReputationFindingDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TenantReputationFindingsDtoFromJSON
+
+▸ **TenantReputationFindingsDtoFromJSON**(`json`): [`TenantReputationFindingsDto`](interfaces/TenantReputationFindingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TenantReputationFindingsDto`](interfaces/TenantReputationFindingsDto.md)
+
+___
+
+### TenantReputationFindingsDtoFromJSONTyped
+
+▸ **TenantReputationFindingsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TenantReputationFindingsDto`](interfaces/TenantReputationFindingsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TenantReputationFindingsDto`](interfaces/TenantReputationFindingsDto.md)
+
+___
+
+### TenantReputationFindingsDtoToJSON
+
+▸ **TenantReputationFindingsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TenantReputationFindingsDto`](interfaces/TenantReputationFindingsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TenantReputationStatusRowDtoFromJSON
+
+▸ **TenantReputationStatusRowDtoFromJSON**(`json`): [`TenantReputationStatusRowDto`](interfaces/TenantReputationStatusRowDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TenantReputationStatusRowDto`](interfaces/TenantReputationStatusRowDto.md)
+
+___
+
+### TenantReputationStatusRowDtoFromJSONTyped
+
+▸ **TenantReputationStatusRowDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TenantReputationStatusRowDto`](interfaces/TenantReputationStatusRowDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TenantReputationStatusRowDto`](interfaces/TenantReputationStatusRowDto.md)
+
+___
+
+### TenantReputationStatusRowDtoToJSON
+
+▸ **TenantReputationStatusRowDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TenantReputationStatusRowDto`](interfaces/TenantReputationStatusRowDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TenantReputationStatusSummaryDtoFromJSON
+
+▸ **TenantReputationStatusSummaryDtoFromJSON**(`json`): [`TenantReputationStatusSummaryDto`](interfaces/TenantReputationStatusSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TenantReputationStatusSummaryDto`](interfaces/TenantReputationStatusSummaryDto.md)
+
+___
+
+### TenantReputationStatusSummaryDtoFromJSONTyped
+
+▸ **TenantReputationStatusSummaryDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TenantReputationStatusSummaryDto`](interfaces/TenantReputationStatusSummaryDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TenantReputationStatusSummaryDto`](interfaces/TenantReputationStatusSummaryDto.md)
+
+___
+
+### TenantReputationStatusSummaryDtoToJSON
+
+▸ **TenantReputationStatusSummaryDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TenantReputationStatusSummaryDto`](interfaces/TenantReputationStatusSummaryDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### TestInboxRulesetSendingOptionsFromJSON
 
 ▸ **TestInboxRulesetSendingOptionsFromJSON**(`json`): [`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md)
@@ -19341,6 +24472,202 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### UpdateCampaignProbeOptionsFromJSON
+
+▸ **UpdateCampaignProbeOptionsFromJSON**(`json`): [`UpdateCampaignProbeOptions`](interfaces/UpdateCampaignProbeOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UpdateCampaignProbeOptions`](interfaces/UpdateCampaignProbeOptions.md)
+
+___
+
+### UpdateCampaignProbeOptionsFromJSONTyped
+
+▸ **UpdateCampaignProbeOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateCampaignProbeOptions`](interfaces/UpdateCampaignProbeOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UpdateCampaignProbeOptions`](interfaces/UpdateCampaignProbeOptions.md)
+
+___
+
+### UpdateCampaignProbeOptionsToJSON
+
+▸ **UpdateCampaignProbeOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UpdateCampaignProbeOptions`](interfaces/UpdateCampaignProbeOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### UpdateDeliverabilityTestOptionsFromJSON
+
+▸ **UpdateDeliverabilityTestOptionsFromJSON**(`json`): [`UpdateDeliverabilityTestOptions`](interfaces/UpdateDeliverabilityTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UpdateDeliverabilityTestOptions`](interfaces/UpdateDeliverabilityTestOptions.md)
+
+___
+
+### UpdateDeliverabilityTestOptionsFromJSONTyped
+
+▸ **UpdateDeliverabilityTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateDeliverabilityTestOptions`](interfaces/UpdateDeliverabilityTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UpdateDeliverabilityTestOptions`](interfaces/UpdateDeliverabilityTestOptions.md)
+
+___
+
+### UpdateDeliverabilityTestOptionsToJSON
+
+▸ **UpdateDeliverabilityTestOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UpdateDeliverabilityTestOptions`](interfaces/UpdateDeliverabilityTestOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### UpdateDevicePreviewFeedbackOptionsFromJSON
+
+▸ **UpdateDevicePreviewFeedbackOptionsFromJSON**(`json`): [`UpdateDevicePreviewFeedbackOptions`](interfaces/UpdateDevicePreviewFeedbackOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UpdateDevicePreviewFeedbackOptions`](interfaces/UpdateDevicePreviewFeedbackOptions.md)
+
+___
+
+### UpdateDevicePreviewFeedbackOptionsFromJSONTyped
+
+▸ **UpdateDevicePreviewFeedbackOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateDevicePreviewFeedbackOptions`](interfaces/UpdateDevicePreviewFeedbackOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UpdateDevicePreviewFeedbackOptions`](interfaces/UpdateDevicePreviewFeedbackOptions.md)
+
+___
+
+### UpdateDevicePreviewFeedbackOptionsToJSON
+
+▸ **UpdateDevicePreviewFeedbackOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UpdateDevicePreviewFeedbackOptions`](interfaces/UpdateDevicePreviewFeedbackOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### UpdateDomainMonitorOptionsFromJSON
+
+▸ **UpdateDomainMonitorOptionsFromJSON**(`json`): [`UpdateDomainMonitorOptions`](interfaces/UpdateDomainMonitorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UpdateDomainMonitorOptions`](interfaces/UpdateDomainMonitorOptions.md)
+
+___
+
+### UpdateDomainMonitorOptionsFromJSONTyped
+
+▸ **UpdateDomainMonitorOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateDomainMonitorOptions`](interfaces/UpdateDomainMonitorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UpdateDomainMonitorOptions`](interfaces/UpdateDomainMonitorOptions.md)
+
+___
+
+### UpdateDomainMonitorOptionsToJSON
+
+▸ **UpdateDomainMonitorOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UpdateDomainMonitorOptions`](interfaces/UpdateDomainMonitorOptions.md) |
 
 #### Returns
 

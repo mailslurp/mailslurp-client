@@ -14,10 +14,13 @@ AITransformResultProjectionDto
 
 - [aiTransformId](AITransformResultProjectionDto.md#aitransformid)
 - [aiTransformMappingId](AITransformResultProjectionDto.md#aitransformmappingid)
+- [attachmentId](AITransformResultProjectionDto.md#attachmentid)
 - [createdAt](AITransformResultProjectionDto.md#createdat)
+- [emailId](AITransformResultProjectionDto.md#emailid)
 - [entityId](AITransformResultProjectionDto.md#entityid)
 - [entityType](AITransformResultProjectionDto.md#entitytype)
 - [id](AITransformResultProjectionDto.md#id)
+- [smsId](AITransformResultProjectionDto.md#smsid)
 - [userId](AITransformResultProjectionDto.md#userid)
 - [value](AITransformResultProjectionDto.md#value)
 
@@ -43,9 +46,29 @@ AITransformResultProjectionDto
 
 ___
 
+### attachmentId
+
+• `Optional` **attachmentId**: `string`
+
+**`Memberof`**
+
+AITransformResultProjectionDto
+
+___
+
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+AITransformResultProjectionDto
+
+___
+
+### emailId
+
+• `Optional` **emailId**: `string`
 
 **`Memberof`**
 
@@ -76,6 +99,16 @@ ___
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+AITransformResultProjectionDto
+
+___
+
+### smsId
+
+• `Optional` **smsId**: `string`
 
 **`Memberof`**
 

@@ -44,7 +44,18 @@ var OrganizationInboxProjectionFunctionsAsEnum;
  */
 var OrganizationInboxProjectionAccountRegionEnum;
 (function (OrganizationInboxProjectionAccountRegionEnum) {
+    OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_STAGING"] = "US_WEST_2_ACCOUNT_STAGING";
+    OrganizationInboxProjectionAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
+    OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
+    OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
+    OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
+    OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
+    OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+    OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
+    OrganizationInboxProjectionAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
 })(OrganizationInboxProjectionAccountRegionEnum = exports.OrganizationInboxProjectionAccountRegionEnum || (exports.OrganizationInboxProjectionAccountRegionEnum = {}));
 function OrganizationInboxProjectionFromJSON(json) {
     return OrganizationInboxProjectionFromJSONTyped(json, false);

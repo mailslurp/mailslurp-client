@@ -170,6 +170,19 @@ var MailSlurp = /** @class */ (function () {
         this.inboxReplierController = new (generated_1.InboxReplierControllerApi.bind.apply(generated_1.InboxReplierControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.apiAuditLogController = new (generated_1.ApiAuditLogControllerApi.bind.apply(generated_1.ApiAuditLogControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.campaignProbeController = new (generated_1.CampaignProbeControllerApi.bind.apply(generated_1.CampaignProbeControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.connectorController = new (generated_1.ConnectorControllerApi.bind.apply(generated_1.ConnectorControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.consentController = new (generated_1.ConsentControllerApi.bind.apply(generated_1.ConsentControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.deliverabilityTestController = new (generated_1.DeliverabilityTestControllerApi.bind.apply(generated_1.DeliverabilityTestControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.devicePreviewsController = new (generated_1.DevicePreviewsControllerApi.bind.apply(generated_1.DevicePreviewsControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.domainMonitorController = new (generated_1.DomainMonitorControllerApi.bind.apply(generated_1.DomainMonitorControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.expiredController = new (generated_1.ExpiredControllerApi.bind.apply(generated_1.ExpiredControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.exportController = new (generated_1.ExportControllerApi.bind.apply(generated_1.ExportControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.guestPortalController = new (generated_1.GuestPortalControllerApi.bind.apply(generated_1.GuestPortalControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.imapController = new (generated_1.ImapControllerApi.bind.apply(generated_1.ImapControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.missedSmsController = new (generated_1.MissedSmsControllerApi.bind.apply(generated_1.MissedSmsControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.toolsController = new (generated_1.ToolsControllerApi.bind.apply(generated_1.ToolsControllerApi, __spreadArray([void 0], __read(args), false)))();
     }
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.

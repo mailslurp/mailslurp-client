@@ -60,13 +60,19 @@ export interface WebhookProjection {
    * @type {Date}
    * @memberof WebhookProjection
    */
-  createdAt: Date;
+  updatedAt: Date;
   /**
    *
    * @type {Date}
    * @memberof WebhookProjection
    */
-  updatedAt: Date;
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  aiTransformId?: string;
   /**
    *
    * @type {string}
@@ -79,12 +85,6 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   aiTransformerId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  aiTransformId?: string;
   /**
    *
    * @type {string}
@@ -150,17 +150,17 @@ export function WebhookProjectionFromJSONTyped(
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
-    createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
+    aiTransformId: !exists(json, 'aiTransformId')
+      ? undefined
+      : json['aiTransformId'],
     healthStatus: !exists(json, 'healthStatus')
       ? undefined
       : json['healthStatus'],
     aiTransformerId: !exists(json, 'aiTransformerId')
       ? undefined
       : json['aiTransformerId'],
-    aiTransformId: !exists(json, 'aiTransformId')
-      ? undefined
-      : json['aiTransformId'],
     phoneNumberId: !exists(json, 'phoneNumberId')
       ? undefined
       : json['phoneNumberId'],
@@ -183,11 +183,11 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     userId: value.userId,
     inboxId: value.inboxId,
     eventName: value.eventName,
-    createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
+    aiTransformId: value.aiTransformId,
     healthStatus: value.healthStatus,
     aiTransformerId: value.aiTransformerId,
-    aiTransformId: value.aiTransformId,
     phoneNumberId: value.phoneNumberId,
     name: value.name,
     id: value.id,

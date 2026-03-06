@@ -10,6 +10,7 @@
 - [eventType](GetInboxWebhooksPaginatedRequest.md#eventtype)
 - [health](GetInboxWebhooksPaginatedRequest.md#health)
 - [inboxId](GetInboxWebhooksPaginatedRequest.md#inboxid)
+- [includeAccountWide](GetInboxWebhooksPaginatedRequest.md#includeaccountwide)
 - [page](GetInboxWebhooksPaginatedRequest.md#page)
 - [searchFilter](GetInboxWebhooksPaginatedRequest.md#searchfilter)
 - [since](GetInboxWebhooksPaginatedRequest.md#since)
@@ -39,6 +40,12 @@ ___
 ### inboxId
 
 • **inboxId**: `string`
+
+___
+
+### includeAccountWide
+
+• `Optional` **includeAccountWide**: `boolean`
 
 ___
 

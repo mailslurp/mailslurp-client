@@ -16,6 +16,7 @@ CreateAITransformerMappingOptions
 - [contentSelector](CreateAITransformerMappingOptions.md#contentselector)
 - [entityId](CreateAITransformerMappingOptions.md#entityid)
 - [entityType](CreateAITransformerMappingOptions.md#entitytype)
+- [matchOptions](CreateAITransformerMappingOptions.md#matchoptions)
 - [name](CreateAITransformerMappingOptions.md#name)
 - [spreadRootArray](CreateAITransformerMappingOptions.md#spreadrootarray)
 - [triggerSelector](CreateAITransformerMappingOptions.md#triggerselector)
@@ -55,6 +56,16 @@ ___
 ### entityType
 
 • **entityType**: [`CreateAITransformerMappingOptionsEntityTypeEnum`](../enums/CreateAITransformerMappingOptionsEntityTypeEnum.md)
+
+**`Memberof`**
+
+CreateAITransformerMappingOptions
+
+___
+
+### matchOptions
+
+• `Optional` **matchOptions**: [`AIMappingMatchOptions`](AIMappingMatchOptions.md)
 
 **`Memberof`**
 

@@ -17,6 +17,7 @@ AITransformMappingDto
 - [entityId](AITransformMappingDto.md#entityid)
 - [entityType](AITransformMappingDto.md#entitytype)
 - [id](AITransformMappingDto.md#id)
+- [matchOptions](AITransformMappingDto.md#matchoptions)
 - [name](AITransformMappingDto.md#name)
 - [userId](AITransformMappingDto.md#userid)
 
@@ -65,6 +66,16 @@ ___
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+AITransformMappingDto
+
+___
+
+### matchOptions
+
+• `Optional` **matchOptions**: [`AIMappingMatchOptions`](AIMappingMatchOptions.md)
 
 **`Memberof`**
 

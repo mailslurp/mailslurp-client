@@ -10,8 +10,8 @@
 
 - [AU](EmergencyAddressDtoPhoneCountryEnum.md#au)
 - [CA](EmergencyAddressDtoPhoneCountryEnum.md#ca)
-- [CH](EmergencyAddressDtoPhoneCountryEnum.md#ch)
 - [EE](EmergencyAddressDtoPhoneCountryEnum.md#ee)
+- [FI](EmergencyAddressDtoPhoneCountryEnum.md#fi)
 - [GB](EmergencyAddressDtoPhoneCountryEnum.md#gb)
 - [HK](EmergencyAddressDtoPhoneCountryEnum.md#hk)
 - [IL](EmergencyAddressDtoPhoneCountryEnum.md#il)
@@ -35,15 +35,15 @@ ___
 
 ___
 
-### CH
-
-• **CH** = ``"CH"``
-
-___
-
 ### EE
 
 • **EE** = ``"EE"``
+
+___
+
+### FI
+
+• **FI** = ``"FI"``
 
 ___
 

@@ -3,6 +3,7 @@ import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
 require('cross-fetch/polyfill');
 import {
   AIControllerApi,
+  ApiAuditLogControllerApi,
   MFAControllerApi,
   AliasControllerApi,
   UserControllerApi,
@@ -10,22 +11,32 @@ import {
   AttachmentMetaData,
   BounceControllerApi,
   BulkActionsControllerApi,
+  CampaignProbeControllerApi,
   CommonActionsControllerApi,
   Configuration,
+  ConnectorControllerApi,
+  ConsentControllerApi,
   ContactControllerApi,
   CreateInboxDto,
   CreateInboxInboxTypeEnum,
+  DeliverabilityTestControllerApi,
+  DevicePreviewsControllerApi,
   DomainControllerApi,
+  DomainMonitorControllerApi,
   Email,
   EmailControllerApi,
   EmailPreview,
   EmailVerificationControllerApi,
+  ExpiredControllerApi,
+  ExportControllerApi,
   FetchAPI,
   FormControllerApi,
   GetAllInboxesSortEnum,
   GetEmailsPaginatedSortEnum,
   GetEmailsSortEnum,
   GroupControllerApi,
+  GuestPortalControllerApi,
+  ImapControllerApi,
   ImapSmtpAccessDetails,
   InboxControllerApi,
   InboxDto,
@@ -34,6 +45,7 @@ import {
   MailServerControllerApi,
   MatchOptions,
   MissedEmailControllerApi,
+  MissedSmsControllerApi,
   PageInboxProjection,
   PhoneControllerApi,
   SendEmailOptions,
@@ -41,6 +53,7 @@ import {
   SentEmailsControllerApi,
   SmsControllerApi,
   TemplateControllerApi,
+  ToolsControllerApi,
   TrackingControllerApi,
   UploadAttachmentOptions,
   WaitForControllerApi,
@@ -109,6 +122,7 @@ export type Config = {
  * ```
  */
 export class MailSlurp {
+  // import and expose controllers
   public readonly emailController: EmailControllerApi;
   public readonly emailVerificationController: EmailVerificationControllerApi;
   public readonly inboxController: InboxControllerApi;
@@ -134,10 +148,23 @@ export class MailSlurp {
   public readonly webhookController: WebhookControllerApi;
   public readonly mailServerController: MailServerControllerApi;
   public readonly missedEmailController: MissedEmailControllerApi;
+  public readonly missedSmsController: MissedSmsControllerApi;
   public readonly rulesetController: RulesetControllerApi;
   public readonly inboxForwarderController: InboxForwarderControllerApi;
   public readonly trackingController: TrackingControllerApi;
   public readonly bounceController: BounceControllerApi;
+  public readonly apiAuditLogController: ApiAuditLogControllerApi;
+  public readonly campaignProbeController: CampaignProbeControllerApi;
+  public readonly connectorController: ConnectorControllerApi;
+  public readonly consentController: ConsentControllerApi;
+  public readonly deliverabilityTestController: DeliverabilityTestControllerApi;
+  public readonly devicePreviewsController: DevicePreviewsControllerApi;
+  public readonly domainMonitorController: DomainMonitorControllerApi;
+  public readonly expiredController: ExpiredControllerApi;
+  public readonly exportController: ExportControllerApi;
+  public readonly guestPortalController: GuestPortalControllerApi;
+  public readonly imapController: ImapControllerApi;
+  public readonly toolsController: ToolsControllerApi;
 
   /**
    * Create a new MailSlurp instance.
@@ -196,6 +223,21 @@ export class MailSlurp {
     this.inboxReplierController = new InboxReplierControllerApi(...args);
     this.trackingController = new TrackingControllerApi(...args);
     this.bounceController = new BounceControllerApi(...args);
+    this.apiAuditLogController = new ApiAuditLogControllerApi(...args);
+    this.campaignProbeController = new CampaignProbeControllerApi(...args);
+    this.connectorController = new ConnectorControllerApi(...args);
+    this.consentController = new ConsentControllerApi(...args);
+    this.deliverabilityTestController = new DeliverabilityTestControllerApi(
+      ...args
+    );
+    this.devicePreviewsController = new DevicePreviewsControllerApi(...args);
+    this.domainMonitorController = new DomainMonitorControllerApi(...args);
+    this.expiredController = new ExpiredControllerApi(...args);
+    this.exportController = new ExportControllerApi(...args);
+    this.guestPortalController = new GuestPortalControllerApi(...args);
+    this.imapController = new ImapControllerApi(...args);
+    this.missedSmsController = new MissedSmsControllerApi(...args);
+    this.toolsController = new ToolsControllerApi(...args);
   }
 
   /**

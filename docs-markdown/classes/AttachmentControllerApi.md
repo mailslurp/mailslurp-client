@@ -28,6 +28,8 @@
 - [downloadAttachmentAsBase64EncodedRaw](AttachmentControllerApi.md#downloadattachmentasbase64encodedraw)
 - [downloadAttachmentAsBytes](AttachmentControllerApi.md#downloadattachmentasbytes)
 - [downloadAttachmentAsBytesRaw](AttachmentControllerApi.md#downloadattachmentasbytesraw)
+- [extractAttachmentText](AttachmentControllerApi.md#extractattachmenttext)
+- [extractAttachmentTextRaw](AttachmentControllerApi.md#extractattachmenttextraw)
 - [getAttachment](AttachmentControllerApi.md#getattachment)
 - [getAttachmentInfo](AttachmentControllerApi.md#getattachmentinfo)
 - [getAttachmentInfoRaw](AttachmentControllerApi.md#getattachmentinforaw)
@@ -228,6 +230,46 @@ Download attachments. Get email attachment bytes. If you have trouble with byte 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### extractAttachmentText
+
+▸ **extractAttachmentText**(`requestParameters`, `initOverrides?`): `Promise`<[`ExtractAttachmentTextResult`](../interfaces/ExtractAttachmentTextResult.md)\>
+
+Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+Extract text from an attachment
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExtractAttachmentTextRequest`](../interfaces/ExtractAttachmentTextRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ExtractAttachmentTextResult`](../interfaces/ExtractAttachmentTextResult.md)\>
+
+___
+
+### extractAttachmentTextRaw
+
+▸ **extractAttachmentTextRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractAttachmentTextResult`](../interfaces/ExtractAttachmentTextResult.md)\>\>
+
+Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+Extract text from an attachment
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExtractAttachmentTextRequest`](../interfaces/ExtractAttachmentTextRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractAttachmentTextResult`](../interfaces/ExtractAttachmentTextResult.md)\>\>
 
 ___
 

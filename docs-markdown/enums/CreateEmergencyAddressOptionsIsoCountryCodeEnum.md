@@ -10,8 +10,8 @@
 
 - [AU](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#au)
 - [CA](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#ca)
-- [CH](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#ch)
 - [EE](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#ee)
+- [FI](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#fi)
 - [GB](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#gb)
 - [HK](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#hk)
 - [IL](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#il)
@@ -35,15 +35,15 @@ ___
 
 ___
 
-### CH
-
-• **CH** = ``"CH"``
-
-___
-
 ### EE
 
 • **EE** = ``"EE"``
+
+___
+
+### FI
+
+• **FI** = ``"FI"``
 
 ___
 

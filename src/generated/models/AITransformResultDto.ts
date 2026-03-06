@@ -42,25 +42,49 @@ export interface AITransformResultDto {
    * @type {string}
    * @memberof AITransformResultDto
    */
-  aiTransformMappingId: string;
+  aiTransformMappingId?: string | null;
   /**
    *
    * @type {object}
    * @memberof AITransformResultDto
    */
-  value: object;
+  value?: object | null;
   /**
    *
    * @type {string}
    * @memberof AITransformResultDto
    */
-  entityId: string;
+  entityId?: string | null;
   /**
    *
    * @type {string}
    * @memberof AITransformResultDto
    */
-  entityType: AITransformResultDtoEntityTypeEnum;
+  entityType?: AITransformResultDtoEntityTypeEnum;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof AITransformResultDto
+   */
+  columns: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformResultDto
+   */
+  emailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformResultDto
+   */
+  smsId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformResultDto
+   */
+  attachmentId?: string | null;
   /**
    *
    * @type {Date}
@@ -99,10 +123,18 @@ export function AITransformResultDtoFromJSONTyped(
     id: json['id'],
     userId: json['userId'],
     aiTransformId: json['aiTransformId'],
-    aiTransformMappingId: json['aiTransformMappingId'],
-    value: json['value'],
-    entityId: json['entityId'],
-    entityType: json['entityType'],
+    aiTransformMappingId: !exists(json, 'aiTransformMappingId')
+      ? undefined
+      : json['aiTransformMappingId'],
+    value: !exists(json, 'value') ? undefined : json['value'],
+    entityId: !exists(json, 'entityId') ? undefined : json['entityId'],
+    entityType: !exists(json, 'entityType') ? undefined : json['entityType'],
+    columns: json['columns'],
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    smsId: !exists(json, 'smsId') ? undefined : json['smsId'],
+    attachmentId: !exists(json, 'attachmentId')
+      ? undefined
+      : json['attachmentId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
   };
@@ -125,6 +157,10 @@ export function AITransformResultDtoToJSON(
     value: value.value,
     entityId: value.entityId,
     entityType: value.entityType,
+    columns: value.columns,
+    emailId: value.emailId,
+    smsId: value.smsId,
+    attachmentId: value.attachmentId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
   };

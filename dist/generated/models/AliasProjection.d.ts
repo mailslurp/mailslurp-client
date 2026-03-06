@@ -26,25 +26,25 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    inboxId: string;
+    emailAddress: string;
     /**
      *
      * @type {string}
      * @memberof AliasProjection
      */
-    emailAddress: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof AliasProjection
-     */
-    createdAt: Date;
+    inboxId: string;
     /**
      *
      * @type {Date}
      * @memberof AliasProjection
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof AliasProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {boolean}

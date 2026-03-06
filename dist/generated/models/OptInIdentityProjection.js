@@ -25,10 +25,10 @@ function OptInIdentityProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
-        verified: !(0, runtime_1.exists)(json, 'verified') ? undefined : json['verified'],
         emailAddress: json['emailAddress'],
-        createdAt: new Date(json['createdAt']),
+        verified: !(0, runtime_1.exists)(json, 'verified') ? undefined : json['verified'],
         updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.OptInIdentityProjectionFromJSONTyped = OptInIdentityProjectionFromJSONTyped;
@@ -41,10 +41,10 @@ function OptInIdentityProjectionToJSON(value) {
     }
     return {
         id: value.id,
-        verified: value.verified,
         emailAddress: value.emailAddress,
-        createdAt: value.createdAt.toISOString(),
+        verified: value.verified,
         updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.OptInIdentityProjectionToJSON = OptInIdentityProjectionToJSON;

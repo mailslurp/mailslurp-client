@@ -38,25 +38,49 @@ export interface AITransformResultDto {
      * @type {string}
      * @memberof AITransformResultDto
      */
-    aiTransformMappingId: string;
+    aiTransformMappingId?: string | null;
     /**
      *
      * @type {object}
      * @memberof AITransformResultDto
      */
-    value: object;
+    value?: object | null;
     /**
      *
      * @type {string}
      * @memberof AITransformResultDto
      */
-    entityId: string;
+    entityId?: string | null;
     /**
      *
      * @type {string}
      * @memberof AITransformResultDto
      */
-    entityType: AITransformResultDtoEntityTypeEnum;
+    entityType?: AITransformResultDtoEntityTypeEnum;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof AITransformResultDto
+     */
+    columns: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    emailId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    smsId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformResultDto
+     */
+    attachmentId?: string | null;
     /**
      *
      * @type {Date}

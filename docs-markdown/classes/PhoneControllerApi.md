@@ -24,12 +24,18 @@
 - [createEmergencyAddressRaw](PhoneControllerApi.md#createemergencyaddressraw)
 - [createPhoneNumber](PhoneControllerApi.md#createphonenumber)
 - [createPhoneNumberRaw](PhoneControllerApi.md#createphonenumberraw)
+- [deleteAllPhoneNumber](PhoneControllerApi.md#deleteallphonenumber)
+- [deleteAllPhoneNumberRaw](PhoneControllerApi.md#deleteallphonenumberraw)
 - [deleteEmergencyAddress](PhoneControllerApi.md#deleteemergencyaddress)
 - [deleteEmergencyAddressRaw](PhoneControllerApi.md#deleteemergencyaddressraw)
+- [deletePhoneMessageThreadItems](PhoneControllerApi.md#deletephonemessagethreaditems)
+- [deletePhoneMessageThreadItemsRaw](PhoneControllerApi.md#deletephonemessagethreaditemsraw)
 - [deletePhoneNumber](PhoneControllerApi.md#deletephonenumber)
 - [deletePhoneNumberRaw](PhoneControllerApi.md#deletephonenumberraw)
 - [getAllPhoneMessageThreads](PhoneControllerApi.md#getallphonemessagethreads)
 - [getAllPhoneMessageThreadsRaw](PhoneControllerApi.md#getallphonemessagethreadsraw)
+- [getAllPhoneNumberReleases](PhoneControllerApi.md#getallphonenumberreleases)
+- [getAllPhoneNumberReleasesRaw](PhoneControllerApi.md#getallphonenumberreleasesraw)
 - [getConsentStatus](PhoneControllerApi.md#getconsentstatus)
 - [getConsentStatusRaw](PhoneControllerApi.md#getconsentstatusraw)
 - [getEmergencyAddress](PhoneControllerApi.md#getemergencyaddress)
@@ -46,16 +52,22 @@
 - [getPhoneNumberByPhoneNumber](PhoneControllerApi.md#getphonenumberbyphonenumber)
 - [getPhoneNumberByPhoneNumberRaw](PhoneControllerApi.md#getphonenumberbyphonenumberraw)
 - [getPhoneNumberRaw](PhoneControllerApi.md#getphonenumberraw)
+- [getPhoneNumberRelease](PhoneControllerApi.md#getphonenumberrelease)
+- [getPhoneNumberReleaseRaw](PhoneControllerApi.md#getphonenumberreleaseraw)
 - [getPhoneNumbers](PhoneControllerApi.md#getphonenumbers)
 - [getPhoneNumbersRaw](PhoneControllerApi.md#getphonenumbersraw)
 - [getPhonePlans](PhoneControllerApi.md#getphoneplans)
 - [getPhonePlansAvailability](PhoneControllerApi.md#getphoneplansavailability)
 - [getPhonePlansAvailabilityRaw](PhoneControllerApi.md#getphoneplansavailabilityraw)
 - [getPhonePlansRaw](PhoneControllerApi.md#getphoneplansraw)
+- [getPhoneSummary](PhoneControllerApi.md#getphonesummary)
+- [getPhoneSummaryRaw](PhoneControllerApi.md#getphonesummaryraw)
 - [getSentSmsByPhoneNumber](PhoneControllerApi.md#getsentsmsbyphonenumber)
 - [getSentSmsByPhoneNumberRaw](PhoneControllerApi.md#getsentsmsbyphonenumberraw)
 - [getSmsByPhoneNumber](PhoneControllerApi.md#getsmsbyphonenumber)
 - [getSmsByPhoneNumberRaw](PhoneControllerApi.md#getsmsbyphonenumberraw)
+- [reassignPhoneNumberRelease](PhoneControllerApi.md#reassignphonenumberrelease)
+- [reassignPhoneNumberReleaseRaw](PhoneControllerApi.md#reassignphonenumberreleaseraw)
 - [request](PhoneControllerApi.md#request)
 - [sendSmsFromPhoneNumber](PhoneControllerApi.md#sendsmsfromphonenumber)
 - [sendSmsFromPhoneNumberRaw](PhoneControllerApi.md#sendsmsfromphonenumberraw)
@@ -181,6 +193,44 @@ Add phone number to your account. Only works if you have already added a plan an
 
 ___
 
+### deleteAllPhoneNumber
+
+▸ **deleteAllPhoneNumber**(`initOverrides?`): `Promise`<`void`\>
+
+Remove all phone number from account
+Delete all phone numbers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllPhoneNumberRaw
+
+▸ **deleteAllPhoneNumberRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Remove all phone number from account
+Delete all phone numbers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
 ### deleteEmergencyAddress
 
 ▸ **deleteEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
@@ -213,6 +263,46 @@ Delete an emergency address
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`DeleteEmergencyAddressRequest`](../interfaces/DeleteEmergencyAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>\>
+
+___
+
+### deletePhoneMessageThreadItems
+
+▸ **deletePhoneMessageThreadItems**(`requestParameters`, `initOverrides?`): `Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
+
+Delete all messages in an SMS thread
+Delete messages in a phone thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeletePhoneMessageThreadItemsRequest`](../interfaces/DeletePhoneMessageThreadItemsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
+
+___
+
+### deletePhoneMessageThreadItemsRaw
+
+▸ **deletePhoneMessageThreadItemsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>\>
+
+Delete all messages in an SMS thread
+Delete messages in a phone thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeletePhoneMessageThreadItemsRequest`](../interfaces/DeletePhoneMessageThreadItemsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -298,6 +388,46 @@ Get the latest messages for all phones
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>\>
+
+___
+
+### getAllPhoneNumberReleases
+
+▸ **getAllPhoneNumberReleases**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneNumberReleaseProjection`](../interfaces/PagePhoneNumberReleaseProjection.md)\>
+
+List released or deleted phone numbers
+Get all phone number releases
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllPhoneNumberReleasesRequest`](../interfaces/GetAllPhoneNumberReleasesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PagePhoneNumberReleaseProjection`](../interfaces/PagePhoneNumberReleaseProjection.md)\>
+
+___
+
+### getAllPhoneNumberReleasesRaw
+
+▸ **getAllPhoneNumberReleasesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneNumberReleaseProjection`](../interfaces/PagePhoneNumberReleaseProjection.md)\>\>
+
+List released or deleted phone numbers
+Get all phone number releases
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllPhoneNumberReleasesRequest`](../interfaces/GetAllPhoneNumberReleasesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneNumberReleaseProjection`](../interfaces/PagePhoneNumberReleaseProjection.md)\>\>
 
 ___
 
@@ -617,6 +747,46 @@ Get a phone number by ID
 
 ___
 
+### getPhoneNumberRelease
+
+▸ **getPhoneNumberRelease**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberReleaseProjection`](../interfaces/PhoneNumberReleaseProjection.md)\>
+
+Get a released or deleted phone numbers
+Get phone number release
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberReleaseRequest`](../interfaces/GetPhoneNumberReleaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberReleaseProjection`](../interfaces/PhoneNumberReleaseProjection.md)\>
+
+___
+
+### getPhoneNumberReleaseRaw
+
+▸ **getPhoneNumberReleaseRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberReleaseProjection`](../interfaces/PhoneNumberReleaseProjection.md)\>\>
+
+Get a released or deleted phone numbers
+Get phone number release
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberReleaseRequest`](../interfaces/GetPhoneNumberReleaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberReleaseProjection`](../interfaces/PhoneNumberReleaseProjection.md)\>\>
+
+___
+
 ### getPhoneNumbers
 
 ▸ **getPhoneNumbers**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneNumberProjection`](../interfaces/PagePhoneNumberProjection.md)\>
@@ -731,6 +901,44 @@ Get phone plans
 
 ___
 
+### getPhoneSummary
+
+▸ **getPhoneSummary**(`initOverrides?`): `Promise`<[`PhoneSummaryDto`](../interfaces/PhoneSummaryDto.md)\>
+
+Get overview of assigned phones
+Get phone summary
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneSummaryDto`](../interfaces/PhoneSummaryDto.md)\>
+
+___
+
+### getPhoneSummaryRaw
+
+▸ **getPhoneSummaryRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneSummaryDto`](../interfaces/PhoneSummaryDto.md)\>\>
+
+Get overview of assigned phones
+Get phone summary
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneSummaryDto`](../interfaces/PhoneSummaryDto.md)\>\>
+
+___
+
 ### getSentSmsByPhoneNumber
 
 ▸ **getSentSmsByPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentSmsProjection`](../interfaces/PageSentSmsProjection.md)\>
@@ -808,6 +1016,46 @@ List SMS messages for a phone number
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>\>
+
+___
+
+### reassignPhoneNumberRelease
+
+▸ **reassignPhoneNumberRelease**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Reassign phone number that was released or deleted
+Reassign phone number release
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReassignPhoneNumberReleaseRequest`](../interfaces/ReassignPhoneNumberReleaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### reassignPhoneNumberReleaseRaw
+
+▸ **reassignPhoneNumberReleaseRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Reassign phone number that was released or deleted
+Reassign phone number release
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReassignPhoneNumberReleaseRequest`](../interfaces/ReassignPhoneNumberReleaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
 
 ___
 
@@ -956,7 +1204,7 @@ ___
 
 ▸ **testPhoneNumberSendSms**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Test a phone number by sending an SMS to it
+Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
 Test sending an SMS to a number
 
 #### Parameters
@@ -976,7 +1224,7 @@ ___
 
 ▸ **testPhoneNumberSendSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Test a phone number by sending an SMS to it
+Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
 Test sending an SMS to a number
 
 #### Parameters

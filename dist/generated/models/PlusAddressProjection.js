@@ -25,8 +25,8 @@ function PlusAddressProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         userId: json['userId'],
         inboxId: json['inboxId'],
-        createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
         plusAddress: json['plusAddress'],
         fullAddress: json['fullAddress'],
         id: json['id'],
@@ -43,8 +43,8 @@ function PlusAddressProjectionToJSON(value) {
     return {
         userId: value.userId,
         inboxId: value.inboxId,
-        createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
         plusAddress: value.plusAddress,
         fullAddress: value.fullAddress,
         id: value.id,

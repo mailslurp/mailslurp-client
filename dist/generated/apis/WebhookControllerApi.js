@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetWebhooksSortEnum = exports.GetWebhookResultsEventNameEnum = exports.GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedHealthEnum = exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedEventTypeEnum = exports.GetInboxWebhooksPaginatedHealthEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksEventTypeEnum = exports.GetAllWebhooksHealthEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsSortEnum = exports.GetAllWebhookEndpointsEventTypeEnum = exports.GetAllWebhookEndpointsHealthEnum = exports.GetAllWebhookEndpointsSortEnum = exports.GetAllAccountWebhooksHealthEnum = exports.GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksSortEnum = exports.WebhookControllerApi = void 0;
+exports.GetWebhooksSortEnum = exports.GetWebhookResultsEventNameEnum = exports.GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedHealthEnum = exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedEventTypeEnum = exports.GetInboxWebhooksPaginatedHealthEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksEventTypeSourceEnum = exports.GetAllWebhooksEventTypeEnum = exports.GetAllWebhooksHealthEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsSortEnum = exports.GetAllWebhookEndpointsEventTypeEnum = exports.GetAllWebhookEndpointsHealthEnum = exports.GetAllWebhookEndpointsSortEnum = exports.GetAllAccountWebhooksHealthEnum = exports.GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksSortEnum = exports.WebhookControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -763,6 +763,13 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.url !== undefined) {
                             queryParameters['url'] = requestParameters.url;
                         }
+                        if (requestParameters.eventTypeSource !== undefined) {
+                            queryParameters['eventTypeSource'] = requestParameters.eventTypeSource;
+                        }
+                        if (requestParameters.includeAccountWide !== undefined) {
+                            queryParameters['includeAccountWide'] =
+                                requestParameters.includeAccountWide;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -837,6 +844,10 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.eventType !== undefined) {
                             queryParameters['eventType'] = requestParameters.eventType;
+                        }
+                        if (requestParameters.includeAccountWide !== undefined) {
+                            queryParameters['includeAccountWide'] =
+                                requestParameters.includeAccountWide;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -1014,6 +1025,10 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.health !== undefined) {
                             queryParameters['health'] = requestParameters.health;
+                        }
+                        if (requestParameters.includeAccountWide !== undefined) {
+                            queryParameters['includeAccountWide'] =
+                                requestParameters.includeAccountWide;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -2511,6 +2526,16 @@ var GetAllWebhooksEventTypeEnum;
     GetAllWebhooksEventTypeEnum["NEW_SMS"] = "NEW_SMS";
     GetAllWebhooksEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
 })(GetAllWebhooksEventTypeEnum = exports.GetAllWebhooksEventTypeEnum || (exports.GetAllWebhooksEventTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllWebhooksEventTypeSourceEnum;
+(function (GetAllWebhooksEventTypeSourceEnum) {
+    GetAllWebhooksEventTypeSourceEnum["INBOX"] = "INBOX";
+    GetAllWebhooksEventTypeSourceEnum["PHONE"] = "PHONE";
+    GetAllWebhooksEventTypeSourceEnum["AI_TRANSFORMER"] = "AI_TRANSFORMER";
+})(GetAllWebhooksEventTypeSourceEnum = exports.GetAllWebhooksEventTypeSourceEnum || (exports.GetAllWebhooksEventTypeSourceEnum = {}));
 /**
  * @export
  * @enum {string}

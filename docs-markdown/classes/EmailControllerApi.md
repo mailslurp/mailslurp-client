@@ -49,6 +49,8 @@
 - [getEmail](EmailControllerApi.md#getemail)
 - [getEmailAttachments](EmailControllerApi.md#getemailattachments)
 - [getEmailAttachmentsRaw](EmailControllerApi.md#getemailattachmentsraw)
+- [getEmailCodes](EmailControllerApi.md#getemailcodes)
+- [getEmailCodesRaw](EmailControllerApi.md#getemailcodesraw)
 - [getEmailContentMatch](EmailControllerApi.md#getemailcontentmatch)
 - [getEmailContentMatchRaw](EmailControllerApi.md#getemailcontentmatchraw)
 - [getEmailContentPart](EmailControllerApi.md#getemailcontentpart)
@@ -72,6 +74,8 @@
 - [getEmailScreenshotAsBase64Raw](EmailControllerApi.md#getemailscreenshotasbase64raw)
 - [getEmailScreenshotAsBinary](EmailControllerApi.md#getemailscreenshotasbinary)
 - [getEmailScreenshotAsBinaryRaw](EmailControllerApi.md#getemailscreenshotasbinaryraw)
+- [getEmailSignature](EmailControllerApi.md#getemailsignature)
+- [getEmailSignatureRaw](EmailControllerApi.md#getemailsignatureraw)
 - [getEmailSummary](EmailControllerApi.md#getemailsummary)
 - [getEmailSummaryRaw](EmailControllerApi.md#getemailsummaryraw)
 - [getEmailTextLines](EmailControllerApi.md#getemailtextlines)
@@ -151,7 +155,7 @@
 
 ▸ **applyImapFlagOperation**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
 
-Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+Applies RFC3501 IMAP flag operations on a message. Current implementation supports read/unread semantics via the `\\\\Seen` flag only.
 Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
 
 #### Parameters
@@ -171,7 +175,7 @@ ___
 
 ▸ **applyImapFlagOperationRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
 
-Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+Applies RFC3501 IMAP flag operations on a message. Current implementation supports read/unread semantics via the `\\\\Seen` flag only.
 Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
 
 #### Parameters
@@ -191,8 +195,8 @@ ___
 
 ▸ **canSend**(`requestParameters`, `initOverrides?`): `Promise`<[`CanSendEmailResults`](../interfaces/CanSendEmailResults.md)\>
 
-Can user send email to given recipient or is the recipient blocked
-Check if email can be sent and options are valid.
+Validates sender/inbox context and recipient eligibility before attempting a send. Useful for preflight checks in UI or test workflows.
+Check whether an email send would be accepted
 
 #### Parameters
 
@@ -211,8 +215,8 @@ ___
 
 ▸ **canSendRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CanSendEmailResults`](../interfaces/CanSendEmailResults.md)\>\>
 
-Can user send email to given recipient or is the recipient blocked
-Check if email can be sent and options are valid.
+Validates sender/inbox context and recipient eligibility before attempting a send. Useful for preflight checks in UI or test workflows.
+Check whether an email send would be accepted
 
 #### Parameters
 
@@ -231,8 +235,8 @@ ___
 
 ▸ **checkEmailBody**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailBodyResults`](../interfaces/CheckEmailBodyResults.md)\>
 
-Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
-Detect broken links, spelling, and images in email content
+Runs content quality checks against hydrated email body content. This endpoint performs outbound HTTP checks for linked resources, so avoid use with sensitive or stateful URLs.
+Check email body for broken links, images, and spelling issues
 
 #### Parameters
 
@@ -251,8 +255,8 @@ ___
 
 ▸ **checkEmailBodyFeatureSupport**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>
 
-Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
-Show which mail clients support the HTML and CSS features used in an email body.
+Detects HTML/CSS features in the target email body and reports compatibility across major email clients and devices.
+Check client support for features used in a stored email body
 
 #### Parameters
 
@@ -271,8 +275,8 @@ ___
 
 ▸ **checkEmailBodyFeatureSupportRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>\>
 
-Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
-Show which mail clients support the HTML and CSS features used in an email body.
+Detects HTML/CSS features in the target email body and reports compatibility across major email clients and devices.
+Check client support for features used in a stored email body
 
 #### Parameters
 
@@ -291,8 +295,8 @@ ___
 
 ▸ **checkEmailBodyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBodyResults`](../interfaces/CheckEmailBodyResults.md)\>\>
 
-Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
-Detect broken links, spelling, and images in email content
+Runs content quality checks against hydrated email body content. This endpoint performs outbound HTTP checks for linked resources, so avoid use with sensitive or stateful URLs.
+Check email body for broken links, images, and spelling issues
 
 #### Parameters
 
@@ -311,8 +315,8 @@ ___
 
 ▸ **checkEmailClientSupport**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailClientSupportResults`](../interfaces/CheckEmailClientSupportResults.md)\>
 
-Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
-Show which email programs and devices support the features used in an email body.
+Evaluates HTML/CSS features in the supplied body and reports support coverage across major email clients and platforms.
+Check email-client support for a provided HTML body
 
 #### Parameters
 
@@ -331,8 +335,8 @@ ___
 
 ▸ **checkEmailClientSupportRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailClientSupportResults`](../interfaces/CheckEmailClientSupportResults.md)\>\>
 
-Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
-Show which email programs and devices support the features used in an email body.
+Evaluates HTML/CSS features in the supplied body and reports support coverage across major email clients and platforms.
+Check email-client support for a provided HTML body
 
 #### Parameters
 
@@ -351,7 +355,7 @@ ___
 
 ▸ **deleteAllEmails**(`initOverrides?`): `Promise`<`void`\>
 
-Deletes all emails in your account. Be careful as emails cannot be recovered
+Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
 Delete all emails in all inboxes.
 
 #### Parameters
@@ -370,7 +374,7 @@ ___
 
 ▸ **deleteAllEmailsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Deletes all emails in your account. Be careful as emails cannot be recovered
+Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
 Delete all emails in all inboxes.
 
 #### Parameters
@@ -389,7 +393,7 @@ ___
 
 ▸ **deleteEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
+Deletes a single email from account scope. Operation is destructive and not reversible.
 Delete an email
 
 #### Parameters
@@ -409,7 +413,7 @@ ___
 
 ▸ **deleteEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
+Deletes a single email from account scope. Operation is destructive and not reversible.
 Delete an email
 
 #### Parameters
@@ -429,7 +433,7 @@ ___
 
 ▸ **downloadAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+Returns attachment bytes by attachment ID. Use attachment IDs from email payloads or attachment listing endpoints.
 Get email attachment bytes. Returned as `octet-stream` with content type header. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints and convert the base 64 encoded content to a file or string.
 
 #### Parameters
@@ -449,7 +453,7 @@ ___
 
 ▸ **downloadAttachmentBase64**(`requestParameters`, `initOverrides?`): `Promise`<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>
 
-Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+Returns attachment payload as base64 in JSON. Useful for clients that cannot reliably consume binary streaming responses.
 Get email attachment as base64 encoded string as an alternative to binary responses. Decode the `base64FileContents` as a `utf-8` encoded string or array of bytes depending on the `contentType`.
 
 #### Parameters
@@ -469,7 +473,7 @@ ___
 
 ▸ **downloadAttachmentBase64Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>\>
 
-Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+Returns attachment payload as base64 in JSON. Useful for clients that cannot reliably consume binary streaming responses.
 Get email attachment as base64 encoded string as an alternative to binary responses. Decode the `base64FileContents` as a `utf-8` encoded string or array of bytes depending on the `contentType`.
 
 #### Parameters
@@ -489,7 +493,7 @@ ___
 
 ▸ **downloadAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+Returns attachment bytes by attachment ID. Use attachment IDs from email payloads or attachment listing endpoints.
 Get email attachment bytes. Returned as `octet-stream` with content type header. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints and convert the base 64 encoded content to a file or string.
 
 #### Parameters
@@ -509,7 +513,7 @@ ___
 
 ▸ **downloadBody**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-Returns the specified email body for a given email as a string
+Returns hydrated email body text as a string with content type aligned to the underlying body format.
 Get email body as string. Returned as `plain/text` with content type header.
 
 #### Parameters
@@ -529,7 +533,7 @@ ___
 
 ▸ **downloadBodyBytes**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-Returns the specified email body for a given email as a stream / array of bytes.
+Streams hydrated email body bytes with content type derived from the message body format.
 Get email body in bytes. Returned as `octet-stream` with content type header.
 
 #### Parameters
@@ -549,7 +553,7 @@ ___
 
 ▸ **downloadBodyBytesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Returns the specified email body for a given email as a stream / array of bytes.
+Streams hydrated email body bytes with content type derived from the message body format.
 Get email body in bytes. Returned as `octet-stream` with content type header.
 
 #### Parameters
@@ -569,7 +573,7 @@ ___
 
 ▸ **downloadBodyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Returns the specified email body for a given email as a string
+Returns hydrated email body text as a string with content type aligned to the underlying body format.
 Get email body as string. Returned as `plain/text` with content type header.
 
 #### Parameters
@@ -589,7 +593,7 @@ ___
 
 ▸ **forwardEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
-Forward an existing email to new recipients. The sender of the email will be the inbox that received the email you are forwarding. You can override the sender with the `from` option. Note you must have access to the from address in MailSlurp to use the override. For more control consider fetching the email and sending it a new using the send email endpoints.
+Forwards an existing email to new recipients. Uses the owning inbox context unless overridden by allowed sender options.
 Forward email to recipients
 
 #### Parameters
@@ -609,7 +613,7 @@ ___
 
 ▸ **forwardEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
-Forward an existing email to new recipients. The sender of the email will be the inbox that received the email you are forwarding. You can override the sender with the `from` option. Note you must have access to the from address in MailSlurp to use the override. For more control consider fetching the email and sending it a new using the send email endpoints.
+Forwards an existing email to new recipients. Uses the owning inbox context unless overridden by allowed sender options.
 Forward email to recipients
 
 #### Parameters
@@ -629,7 +633,7 @@ ___
 
 ▸ **getAttachmentMetaData**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
 
-Returns the metadata such as name and content-type for a given attachment and email.
+Returns metadata for a specific attachment ID (name, content type, and size fields).
 Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
 
 #### Parameters
@@ -649,7 +653,7 @@ ___
 
 ▸ **getAttachmentMetaDataRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>\>
 
-Returns the metadata such as name and content-type for a given attachment and email.
+Returns metadata for a specific attachment ID (name, content type, and size fields).
 Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
 
 #### Parameters
@@ -669,8 +673,8 @@ ___
 
 ▸ **getEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
-Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
-Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+Returns parsed email content including headers and body fields. Accessing hydrated content may mark the email as read depending on read-state rules.
+Get hydrated email (headers and body)
 
 #### Parameters
 
@@ -689,8 +693,8 @@ ___
 
 ▸ **getEmailAttachments**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>
 
-Returns an array of attachment metadata such as name and content-type for a given email if present.
-Get all email attachment metadata. Metadata includes name and size of attachments.
+Returns metadata for all attachment IDs associated with the email (name, content type, size, and IDs).
+List attachment metadata for an email
 
 #### Parameters
 
@@ -709,8 +713,8 @@ ___
 
 ▸ **getEmailAttachmentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>\>
 
-Returns an array of attachment metadata such as name and content-type for a given email if present.
-Get all email attachment metadata. Metadata includes name and size of attachments.
+Returns metadata for all attachment IDs associated with the email (name, content type, size, and IDs).
+List attachment metadata for an email
 
 #### Parameters
 
@@ -725,12 +729,52 @@ Get all email attachment metadata. Metadata includes name and size of attachment
 
 ___
 
+### getEmailCodes
+
+▸ **getEmailCodes**(`requestParameters`, `initOverrides?`): `Promise`<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>
+
+Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+Extract verification codes from an email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailCodesRequest`](../interfaces/GetEmailCodesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>
+
+___
+
+### getEmailCodesRaw
+
+▸ **getEmailCodesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>\>
+
+Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+Extract verification codes from an email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailCodesRequest`](../interfaces/GetEmailCodesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>\>
+
+___
+
 ### getEmailContentMatch
 
 ▸ **getEmailContentMatch**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailContentMatchResult`](../interfaces/EmailContentMatchResult.md)\>
 
-Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `[\'code is: 123456\', \'123456\']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
-Get email content regex pattern match results. Runs regex against email body and returns match groups.
+Executes a Java regex pattern over hydrated email body text and returns the full match plus capture groups. Pattern syntax follows Java `Pattern` rules.
+Run regex against hydrated email body and return matches
 
 #### Parameters
 
@@ -749,8 +793,8 @@ ___
 
 ▸ **getEmailContentMatchRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentMatchResult`](../interfaces/EmailContentMatchResult.md)\>\>
 
-Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `[\'code is: 123456\', \'123456\']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
-Get email content regex pattern match results. Runs regex against email body and returns match groups.
+Executes a Java regex pattern over hydrated email body text and returns the full match plus capture groups. Pattern syntax follows Java `Pattern` rules.
+Run regex against hydrated email body and return matches
 
 #### Parameters
 
@@ -769,7 +813,7 @@ ___
 
 ▸ **getEmailContentPart**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailContentPartResult`](../interfaces/EmailContentPartResult.md)\>
 
-Get email body content parts from a multipart email message for a given content type
+Extracts one MIME body part by `contentType` and optional `index`, returned in a structured DTO with metadata.
 Get email content part by content type
 
 #### Parameters
@@ -789,8 +833,8 @@ ___
 
 ▸ **getEmailContentPartContent**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-Get email body content parts from a multipart email message for a given content type and return as response
-Get email content part by content type raw response
+Extracts one MIME body part by `contentType` and optional `index`, and returns raw content with matching response content type when valid.
+Get multipart content part as raw response
 
 #### Parameters
 
@@ -809,8 +853,8 @@ ___
 
 ▸ **getEmailContentPartContentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Get email body content parts from a multipart email message for a given content type and return as response
-Get email content part by content type raw response
+Extracts one MIME body part by `contentType` and optional `index`, and returns raw content with matching response content type when valid.
+Get multipart content part as raw response
 
 #### Parameters
 
@@ -829,7 +873,7 @@ ___
 
 ▸ **getEmailContentPartRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentPartResult`](../interfaces/EmailContentPartResult.md)\>\>
 
-Get email body content parts from a multipart email message for a given content type
+Extracts one MIME body part by `contentType` and optional `index`, returned in a structured DTO with metadata.
 Get email content part by content type
 
 #### Parameters
@@ -849,6 +893,7 @@ ___
 
 ▸ **getEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
 
+Returns total email count for the authenticated user, or count scoped to a specific inbox when `inboxId` is provided.
 Get email count
 
 #### Parameters
@@ -868,6 +913,7 @@ ___
 
 ▸ **getEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
+Returns total email count for the authenticated user, or count scoped to a specific inbox when `inboxId` is provided.
 Get email count
 
 #### Parameters
@@ -887,8 +933,8 @@ ___
 
 ▸ **getEmailHTML**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
-Get email content as HTML. For displaying emails in browser context.
+Returns hydrated HTML body directly with `text/html` content type. Supports temporary access/browser usage and optional CID replacement for inline asset rendering.
+Get hydrated email HTML for browser rendering
 
 #### Parameters
 
@@ -907,8 +953,8 @@ ___
 
 ▸ **getEmailHTMLJson**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailHtmlDto`](../interfaces/EmailHtmlDto.md)\>
 
-Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
-Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+Returns hydrated HTML body and subject in a JSON DTO. Useful for API clients that need structured response payloads instead of raw HTML responses.
+Get hydrated email HTML wrapped in JSON
 
 #### Parameters
 
@@ -927,8 +973,8 @@ ___
 
 ▸ **getEmailHTMLJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailHtmlDto`](../interfaces/EmailHtmlDto.md)\>\>
 
-Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
-Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+Returns hydrated HTML body and subject in a JSON DTO. Useful for API clients that need structured response payloads instead of raw HTML responses.
+Get hydrated email HTML wrapped in JSON
 
 #### Parameters
 
@@ -947,8 +993,8 @@ ___
 
 ▸ **getEmailHTMLQuery**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>
 
-Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
-Parse and return text from an email, stripping HTML and decoding encoded characters
+Applies a JSoup/CSS selector to hydrated HTML email body and returns matching text lines.
+Query hydrated HTML body and return matching text lines
 
 #### Parameters
 
@@ -967,8 +1013,8 @@ ___
 
 ▸ **getEmailHTMLQueryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>\>
 
-Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
-Parse and return text from an email, stripping HTML and decoding encoded characters
+Applies a JSoup/CSS selector to hydrated HTML email body and returns matching text lines.
+Query hydrated HTML body and return matching text lines
 
 #### Parameters
 
@@ -987,8 +1033,8 @@ ___
 
 ▸ **getEmailHTMLRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
-Get email content as HTML. For displaying emails in browser context.
+Returns hydrated HTML body directly with `text/html` content type. Supports temporary access/browser usage and optional CID replacement for inline asset rendering.
+Get hydrated email HTML for browser rendering
 
 #### Parameters
 
@@ -1007,8 +1053,8 @@ ___
 
 ▸ **getEmailLinks**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailLinksResult`](../interfaces/EmailLinksResult.md)\>
 
-HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
-Parse and return list of links found in an email (only works for HTML content)
+Parses HTML content and extracts link URLs (`href`). For non-HTML emails this endpoint returns a validation error.
+Extract links from an email HTML body
 
 #### Parameters
 
@@ -1027,8 +1073,8 @@ ___
 
 ▸ **getEmailLinksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailLinksResult`](../interfaces/EmailLinksResult.md)\>\>
 
-HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
-Parse and return list of links found in an email (only works for HTML content)
+Parses HTML content and extracts link URLs (`href`). For non-HTML emails this endpoint returns a validation error.
+Extract links from an email HTML body
 
 #### Parameters
 
@@ -1047,7 +1093,7 @@ ___
 
 ▸ **getEmailPreviewURLs**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>
 
-Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+Returns precomputed URLs for preview and raw message access for the specified email.
 Get email URLs for viewing in browser or downloading
 
 #### Parameters
@@ -1067,7 +1113,7 @@ ___
 
 ▸ **getEmailPreviewURLsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>\>
 
-Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+Returns precomputed URLs for preview and raw message access for the specified email.
 Get email URLs for viewing in browser or downloading
 
 #### Parameters
@@ -1087,8 +1133,8 @@ ___
 
 ▸ **getEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
-Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
-Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+Returns parsed email content including headers and body fields. Accessing hydrated content may mark the email as read depending on read-state rules.
+Get hydrated email (headers and body)
 
 #### Parameters
 
@@ -1107,7 +1153,7 @@ ___
 
 ▸ **getEmailScreenshotAsBase64**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailScreenshotResult`](../interfaces/EmailScreenshotResult.md)\>
 
-Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+Renders the email in a browser engine and returns PNG data as base64. Useful for APIs and dashboards that cannot easily stream binary responses.
 Take a screenshot of an email in a browser and return base64 encoded string
 
 #### Parameters
@@ -1127,7 +1173,7 @@ ___
 
 ▸ **getEmailScreenshotAsBase64Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailScreenshotResult`](../interfaces/EmailScreenshotResult.md)\>\>
 
-Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+Renders the email in a browser engine and returns PNG data as base64. Useful for APIs and dashboards that cannot easily stream binary responses.
 Take a screenshot of an email in a browser and return base64 encoded string
 
 #### Parameters
@@ -1147,7 +1193,7 @@ ___
 
 ▸ **getEmailScreenshotAsBinary**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Returns binary octet-stream of screenshot of the given email
+Renders the email in a browser engine and returns PNG bytes. Intended for visual QA and rendering regression checks.
 Take a screenshot of an email in a browser
 
 #### Parameters
@@ -1167,7 +1213,7 @@ ___
 
 ▸ **getEmailScreenshotAsBinaryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Returns binary octet-stream of screenshot of the given email
+Renders the email in a browser engine and returns PNG bytes. Intended for visual QA and rendering regression checks.
 Take a screenshot of an email in a browser
 
 #### Parameters
@@ -1183,12 +1229,52 @@ Take a screenshot of an email in a browser
 
 ___
 
+### getEmailSignature
+
+▸ **getEmailSignature**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailSignatureParseResult`](../interfaces/EmailSignatureParseResult.md)\>
+
+Attempts to parse a sender signature block from an email body. Uses raw MIME content parts when possible and falls back to hydrated body parsing. This is heuristic and may not be accurate for all email clients or formats.
+Extract signature from an inbound email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailSignatureRequest`](../interfaces/GetEmailSignatureRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailSignatureParseResult`](../interfaces/EmailSignatureParseResult.md)\>
+
+___
+
+### getEmailSignatureRaw
+
+▸ **getEmailSignatureRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailSignatureParseResult`](../interfaces/EmailSignatureParseResult.md)\>\>
+
+Attempts to parse a sender signature block from an email body. Uses raw MIME content parts when possible and falls back to hydrated body parsing. This is heuristic and may not be accurate for all email clients or formats.
+Extract signature from an inbound email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailSignatureRequest`](../interfaces/GetEmailSignatureRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailSignatureParseResult`](../interfaces/EmailSignatureParseResult.md)\>\>
+
+___
+
 ### getEmailSummary
 
 ▸ **getEmailSummary**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
 
-Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
-Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+Returns lightweight metadata and headers for an email. Use `getEmail` for hydrated body content or `getRawEmail` for original SMTP content.
+Get email summary (headers/metadata only)
 
 #### Parameters
 
@@ -1207,8 +1293,8 @@ ___
 
 ▸ **getEmailSummaryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
 
-Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
-Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+Returns lightweight metadata and headers for an email. Use `getEmail` for hydrated body content or `getRawEmail` for original SMTP content.
+Get email summary (headers/metadata only)
 
 #### Parameters
 
@@ -1227,8 +1313,8 @@ ___
 
 ▸ **getEmailTextLines**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>
 
-Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
-Parse and return text from an email, stripping HTML and decoding encoded characters
+Converts email body content to line-based plain text with optional HTML entity decoding and custom line separator.
+Extract normalized text lines from email body
 
 #### Parameters
 
@@ -1247,8 +1333,8 @@ ___
 
 ▸ **getEmailTextLinesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>\>
 
-Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
-Parse and return text from an email, stripping HTML and decoding encoded characters
+Converts email body content to line-based plain text with optional HTML entity decoding and custom line separator.
+Extract normalized text lines from email body
 
 #### Parameters
 
@@ -1267,8 +1353,8 @@ ___
 
 ▸ **getEmailThread**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailThreadDto`](../interfaces/EmailThreadDto.md)\>
 
-Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
-Return email thread information. Use items endpoints to get messages for thread.
+Returns thread metadata built from RFC 5322 `Message-ID`, `In-Reply-To`, and `References` headers. Use `getEmailThreadItems` to fetch the thread messages.
+Get email thread metadata by thread ID
 
 #### Parameters
 
@@ -1287,8 +1373,8 @@ ___
 
 ▸ **getEmailThreadItems**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailThreadItemsDto`](../interfaces/EmailThreadItemsDto.md)\>
 
-Return email thread messages based on Message-ID, In-Reply-To, and References header
-Return email thread items.
+Returns all messages in a thread ordered by `createdAt` using the requested sort direction.
+Get messages in a specific email thread
 
 #### Parameters
 
@@ -1307,8 +1393,8 @@ ___
 
 ▸ **getEmailThreadItemsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailThreadItemsDto`](../interfaces/EmailThreadItemsDto.md)\>\>
 
-Return email thread messages based on Message-ID, In-Reply-To, and References header
-Return email thread items.
+Returns all messages in a thread ordered by `createdAt` using the requested sort direction.
+Get messages in a specific email thread
 
 #### Parameters
 
@@ -1327,8 +1413,8 @@ ___
 
 ▸ **getEmailThreadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailThreadDto`](../interfaces/EmailThreadDto.md)\>\>
 
-Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
-Return email thread information. Use items endpoints to get messages for thread.
+Returns thread metadata built from RFC 5322 `Message-ID`, `In-Reply-To`, and `References` headers. Use `getEmailThreadItems` to fetch the thread messages.
+Get email thread metadata by thread ID
 
 #### Parameters
 
@@ -1347,8 +1433,8 @@ ___
 
 ▸ **getEmailThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailThreadProjection`](../interfaces/PageEmailThreadProjection.md)\>
 
-Return email message chains built from Message-ID, In-Reply-To, and References header.
-Return email threads in paginated form
+Lists conversation threads inferred from `Message-ID`, `In-Reply-To`, and `References`. Supports filtering by inbox, search text, and time range.
+List email threads in paginated form
 
 #### Parameters
 
@@ -1367,8 +1453,8 @@ ___
 
 ▸ **getEmailThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailThreadProjection`](../interfaces/PageEmailThreadProjection.md)\>\>
 
-Return email message chains built from Message-ID, In-Reply-To, and References header.
-Return email threads in paginated form
+Lists conversation threads inferred from `Message-ID`, `In-Reply-To`, and `References`. Supports filtering by inbox, search text, and time range.
+List email threads in paginated form
 
 #### Parameters
 
@@ -1387,7 +1473,7 @@ ___
 
 ▸ **getEmailsOffsetPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
-By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+Offset-style pagination endpoint for listing emails across inboxes. Supports inbox filters, unread-only, search, date boundaries, favourites, connector sync, plus-address filtering, and explicit include IDs.
 Get all emails in all inboxes in paginated form. Email API list all.
 
 #### Parameters
@@ -1407,7 +1493,7 @@ ___
 
 ▸ **getEmailsOffsetPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
-By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+Offset-style pagination endpoint for listing emails across inboxes. Supports inbox filters, unread-only, search, date boundaries, favourites, connector sync, plus-address filtering, and explicit include IDs.
 Get all emails in all inboxes in paginated form. Email API list all.
 
 #### Parameters
@@ -1427,7 +1513,7 @@ ___
 
 ▸ **getEmailsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
-By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+Primary paginated email listing endpoint. Returns emails across inboxes with support for inbox filters, unread-only, search, date boundaries, favourites, connector sync, and plus-address filtering.
 Get all emails in all inboxes in paginated form. Email API list all.
 
 #### Parameters
@@ -1447,7 +1533,7 @@ ___
 
 ▸ **getEmailsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
-By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+Primary paginated email listing endpoint. Returns emails across inboxes with support for inbox filters, unread-only, search, date boundaries, favourites, connector sync, and plus-address filtering.
 Get all emails in all inboxes in paginated form. Email API list all.
 
 #### Parameters
@@ -1467,7 +1553,8 @@ ___
 
 ▸ **getGravatarUrlForEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`GravatarUrl`](../interfaces/GravatarUrl.md)\>
 
-Get gravatar url for email address
+Builds a Gravatar image URL from the provided email address and optional size. This endpoint does not fetch image bytes; it only returns the computed URL.
+Get Gravatar URL for an email address
 
 #### Parameters
 
@@ -1486,7 +1573,8 @@ ___
 
 ▸ **getGravatarUrlForEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GravatarUrl`](../interfaces/GravatarUrl.md)\>\>
 
-Get gravatar url for email address
+Builds a Gravatar image URL from the provided email address and optional size. This endpoint does not fetch image bytes; it only returns the computed URL.
+Get Gravatar URL for an email address
 
 #### Parameters
 
@@ -1505,7 +1593,7 @@ ___
 
 ▸ **getLatestEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
-Get the newest email in all inboxes or in a passed set of inbox IDs
+Returns the most recently received email across all inboxes or an optional subset of inbox IDs.
 Get latest email in all inboxes. Most recently received.
 
 #### Parameters
@@ -1525,7 +1613,7 @@ ___
 
 ▸ **getLatestEmailInInbox1**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
-Get the newest email in all inboxes or in a passed set of inbox IDs
+Returns the newest email for the specified inbox ID. For polling/wait semantics use wait endpoints.
 Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
 
 #### Parameters
@@ -1545,7 +1633,7 @@ ___
 
 ▸ **getLatestEmailInInbox1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
-Get the newest email in all inboxes or in a passed set of inbox IDs
+Returns the newest email for the specified inbox ID. For polling/wait semantics use wait endpoints.
 Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
 
 #### Parameters
@@ -1565,7 +1653,7 @@ ___
 
 ▸ **getLatestEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
-Get the newest email in all inboxes or in a passed set of inbox IDs
+Returns the most recently received email across all inboxes or an optional subset of inbox IDs.
 Get latest email in all inboxes. Most recently received.
 
 #### Parameters
@@ -1585,8 +1673,8 @@ ___
 
 ▸ **getOrganizationEmailsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
-By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
-Get all organization emails. List team or shared test email accounts
+Returns paginated emails visible through organization/team access. Supports inbox filtering, unread-only filtering, search, favourites, plus-address filtering, and optional connector sync.
+List organization-visible emails
 
 #### Parameters
 
@@ -1605,8 +1693,8 @@ ___
 
 ▸ **getOrganizationEmailsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
-By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
-Get all organization emails. List team or shared test email accounts
+Returns paginated emails visible through organization/team access. Supports inbox filtering, unread-only filtering, search, favourites, plus-address filtering, and optional connector sync.
+List organization-visible emails
 
 #### Parameters
 
@@ -1625,7 +1713,7 @@ ___
 
 ▸ **getRawEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
+Returns the original unparsed SMTP/MIME message as `text/plain`. Use JSON variant if your client expects JSON transport.
 Get raw email string. Returns unparsed raw SMTP message with headers and body.
 
 #### Parameters
@@ -1645,7 +1733,7 @@ ___
 
 ▸ **getRawEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
+Returns the original unparsed SMTP/MIME message as `text/plain`. Use JSON variant if your client expects JSON transport.
 Get raw email string. Returns unparsed raw SMTP message with headers and body.
 
 #### Parameters
@@ -1665,7 +1753,7 @@ ___
 
 ▸ **getRawEmailJson**(`requestParameters`, `initOverrides?`): `Promise`<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>
 
-Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
+Returns the original unparsed SMTP/MIME message wrapped in a JSON DTO for API clients that avoid plain-text stream responses.
 Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
 
 #### Parameters
@@ -1685,7 +1773,7 @@ ___
 
 ▸ **getRawEmailJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>\>
 
-Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
+Returns the original unparsed SMTP/MIME message wrapped in a JSON DTO for API clients that avoid plain-text stream responses.
 Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
 
 #### Parameters
@@ -1705,7 +1793,7 @@ ___
 
 ▸ **getUnreadEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`UnreadCount`](../interfaces/UnreadCount.md)\>
 
-Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
+Returns unread email count. An email is considered read after dashboard/API retrieval depending on your read workflow.
 Get unread email count
 
 #### Parameters
@@ -1725,7 +1813,7 @@ ___
 
 ▸ **getUnreadEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
 
-Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
+Returns unread email count. An email is considered read after dashboard/API retrieval depending on your read workflow.
 Get unread email count
 
 #### Parameters
@@ -1745,7 +1833,7 @@ ___
 
 ▸ **markAllAsRead**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+Sets read state for all emails, optionally scoped to one inbox. Use `read=false` to reset unread state in bulk.
 Mark all emails as read or unread
 
 #### Parameters
@@ -1765,7 +1853,7 @@ ___
 
 ▸ **markAllAsReadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+Sets read state for all emails, optionally scoped to one inbox. Use `read=false` to reset unread state in bulk.
 Mark all emails as read or unread
 
 #### Parameters
@@ -1785,7 +1873,7 @@ ___
 
 ▸ **markAsRead**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
 
-Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+Sets read state for one email. Useful when implementing custom mailbox workflows that treat viewed messages as unread.
 Mark an email as read or unread
 
 #### Parameters
@@ -1805,7 +1893,7 @@ ___
 
 ▸ **markAsReadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
 
-Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+Sets read state for one email. Useful when implementing custom mailbox workflows that treat viewed messages as unread.
 Mark an email as read or unread
 
 #### Parameters
@@ -1825,7 +1913,7 @@ ___
 
 ▸ **replyToEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
-Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
+Sends a reply using the original conversation context (subject/thread headers). Reply target resolution honors sender/reply-to semantics.
 Reply to an email
 
 #### Parameters
@@ -1845,7 +1933,7 @@ ___
 
 ▸ **replyToEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
-Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
+Sends a reply using the original conversation context (subject/thread headers). Reply target resolution honors sender/reply-to semantics.
 Reply to an email
 
 #### Parameters
@@ -1886,7 +1974,7 @@ ___
 
 ▸ **searchEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
-Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
 Get all emails by search criteria. Return in paginated form.
 
 #### Parameters
@@ -1906,7 +1994,7 @@ ___
 
 ▸ **searchEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
-Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
 Get all emails by search criteria. Return in paginated form.
 
 #### Parameters
@@ -1926,7 +2014,7 @@ ___
 
 ▸ **sendEmailSourceOptional**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Alias for `InboxController.sendEmail` method - see original method for full details. Sends an email from a given inbox that you have created. If no inbox is supplied a random inbox will be created for you and used to send the email.
+Sends an email from an existing inbox, or creates a temporary inbox when `inboxId` is not provided. Supports `useDomainPool` and `virtualSend` inbox creation behavior for convenience sends.
 Send email
 
 #### Parameters
@@ -1946,7 +2034,7 @@ ___
 
 ▸ **sendEmailSourceOptionalRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Alias for `InboxController.sendEmail` method - see original method for full details. Sends an email from a given inbox that you have created. If no inbox is supplied a random inbox will be created for you and used to send the email.
+Sends an email from an existing inbox, or creates a temporary inbox when `inboxId` is not provided. Supports `useDomainPool` and `virtualSend` inbox creation behavior for convenience sends.
 Send email
 
 #### Parameters
@@ -1966,7 +2054,7 @@ ___
 
 ▸ **setEmailFavourited**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Set and return new favorite state for an email
+Sets favourite state for an email for dashboard/search workflows.
 Set email favourited state
 
 #### Parameters
@@ -1986,7 +2074,7 @@ ___
 
 ▸ **setEmailFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Set and return new favorite state for an email
+Sets favourite state for an email for dashboard/search workflows.
 Set email favourited state
 
 #### Parameters
@@ -2006,7 +2094,7 @@ ___
 
 ▸ **validateEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`ValidationDto`](../interfaces/ValidationDto.md)\>
 
-Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
+Runs HTML validation on the email body when HTML is present. Non-HTML emails are treated as valid for this check.
 Validate email HTML contents
 
 #### Parameters
@@ -2026,7 +2114,7 @@ ___
 
 ▸ **validateEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ValidationDto`](../interfaces/ValidationDto.md)\>\>
 
-Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
+Runs HTML validation on the email body when HTML is present. Non-HTML emails are treated as valid for this check.
 Validate email HTML contents
 
 #### Parameters

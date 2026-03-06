@@ -28,17 +28,17 @@ export interface AliasThreadProjection {
      */
     inboxId: string;
     /**
-     * Created at DateTime
-     * @type {Date}
-     * @memberof AliasThreadProjection
-     */
-    createdAt: Date;
-    /**
      * Updated at DateTime
      * @type {Date}
      * @memberof AliasThreadProjection
      */
     updatedAt: Date;
+    /**
+     * Created at DateTime
+     * @type {Date}
+     * @memberof AliasThreadProjection
+     */
+    createdAt: Date;
     /**
      * To recipients
      * @type {Array<string>}

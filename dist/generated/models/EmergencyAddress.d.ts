@@ -106,10 +106,10 @@ export declare enum EmergencyAddressPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
-    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",
+    FI = "FI",
     SE = "SE"
 }
 export declare function EmergencyAddressFromJSON(json: any): EmergencyAddress;

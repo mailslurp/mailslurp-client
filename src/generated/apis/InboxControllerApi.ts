@@ -382,6 +382,15 @@ export interface GetLatestEmailInInboxRequest {
   timeoutMillis: number;
 }
 
+export interface GetOrCreateInboxPlusAddressRequest {
+  inboxId: string;
+  fullAddress: string;
+}
+
+export interface GetOrCreatePlusAddressByFullAddressRequest {
+  fullAddress: string;
+}
+
 export interface GetOrganizationInboxesRequest {
   page?: number;
   size?: number;
@@ -3250,6 +3259,139 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Email> {
     const response = await this.getLatestEmailInInboxRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+   * Get or create a plus address by full address
+   */
+  async getOrCreateInboxPlusAddressRaw(
+    requestParameters: GetOrCreateInboxPlusAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PlusAddressDto>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getOrCreateInboxPlusAddress.'
+      );
+    }
+
+    if (
+      requestParameters.fullAddress === null ||
+      requestParameters.fullAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'fullAddress',
+        'Required parameter requestParameters.fullAddress was null or undefined when calling getOrCreateInboxPlusAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.fullAddress !== undefined) {
+      queryParameters['fullAddress'] = requestParameters.fullAddress;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/plus-addresses/get-or-create`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PlusAddressDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+   * Get or create a plus address by full address
+   */
+  async getOrCreateInboxPlusAddress(
+    requestParameters: GetOrCreateInboxPlusAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<PlusAddressDto> {
+    const response = await this.getOrCreateInboxPlusAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+   * Get or create a plus address by full address without inbox ID
+   */
+  async getOrCreatePlusAddressByFullAddressRaw(
+    requestParameters: GetOrCreatePlusAddressByFullAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PlusAddressDto>> {
+    if (
+      requestParameters.fullAddress === null ||
+      requestParameters.fullAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'fullAddress',
+        'Required parameter requestParameters.fullAddress was null or undefined when calling getOrCreatePlusAddressByFullAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.fullAddress !== undefined) {
+      queryParameters['fullAddress'] = requestParameters.fullAddress;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/get-or-create-plus-address`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PlusAddressDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+   * Get or create a plus address by full address without inbox ID
+   */
+  async getOrCreatePlusAddressByFullAddress(
+    requestParameters: GetOrCreatePlusAddressByFullAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<PlusAddressDto> {
+    const response = await this.getOrCreatePlusAddressByFullAddressRaw(
       requestParameters,
       initOverrides
     );

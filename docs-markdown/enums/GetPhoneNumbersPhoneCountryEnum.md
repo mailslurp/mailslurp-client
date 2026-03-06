@@ -10,8 +10,8 @@
 
 - [AU](GetPhoneNumbersPhoneCountryEnum.md#au)
 - [CA](GetPhoneNumbersPhoneCountryEnum.md#ca)
-- [CH](GetPhoneNumbersPhoneCountryEnum.md#ch)
 - [EE](GetPhoneNumbersPhoneCountryEnum.md#ee)
+- [FI](GetPhoneNumbersPhoneCountryEnum.md#fi)
 - [GB](GetPhoneNumbersPhoneCountryEnum.md#gb)
 - [HK](GetPhoneNumbersPhoneCountryEnum.md#hk)
 - [IL](GetPhoneNumbersPhoneCountryEnum.md#il)
@@ -35,15 +35,15 @@ ___
 
 ___
 
-### CH
-
-• **CH** = ``"CH"``
-
-___
-
 ### EE
 
 • **EE** = ``"EE"``
+
+___
+
+### FI
+
+• **FI** = ``"FI"``
 
 ___
 

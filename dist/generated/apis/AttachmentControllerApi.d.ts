@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, InlineObject1, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
+import { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, ExtractAttachmentTextOptions, ExtractAttachmentTextResult, InlineObject1, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
 export interface DeleteAttachmentRequest {
     attachmentId: string;
 }
@@ -19,6 +19,10 @@ export interface DownloadAttachmentAsBase64EncodedRequest {
 }
 export interface DownloadAttachmentAsBytesRequest {
     attachmentId: string;
+}
+export interface ExtractAttachmentTextRequest {
+    attachmentId: string;
+    extractAttachmentTextOptions?: ExtractAttachmentTextOptions;
 }
 export interface GetAttachmentRequest {
     attachmentId: string;
@@ -103,6 +107,16 @@ export declare class AttachmentControllerApi extends runtime.BaseAPI {
      * Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
      */
     downloadAttachmentAsBytes(requestParameters: DownloadAttachmentAsBytesRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+     * Extract text from an attachment
+     */
+    extractAttachmentTextRaw(requestParameters: ExtractAttachmentTextRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ExtractAttachmentTextResult>>;
+    /**
+     * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+     * Extract text from an attachment
+     */
+    extractAttachmentText(requestParameters: ExtractAttachmentTextRequest, initOverrides?: RequestInit): Promise<ExtractAttachmentTextResult>;
     /**
      * Get an attachment entity
      */

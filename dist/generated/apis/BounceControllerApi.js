@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetReputationItemsSortEnum = exports.GetListUnsubscribeRecipientsSortEnum = exports.GetComplaintsSortEnum = exports.GetBouncedRecipientsSortEnum = exports.GetBouncedEmailsSortEnum = exports.BounceControllerApi = void 0;
+exports.GetTenantReputationStatusSummaryAccountRegionEnum = exports.GetTenantReputationFindingsAccountRegionEnum = exports.GetReputationItemsSortEnum = exports.GetListUnsubscribeRecipientsSortEnum = exports.GetComplaintsSortEnum = exports.GetBouncedRecipientsSortEnum = exports.GetBouncedEmailsSortEnum = exports.BounceControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -665,6 +665,108 @@ var BounceControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Get SES tenant reputation recommendations/findings for this user.
+     * Get SES tenant reputation findings
+     */
+    BounceControllerApi.prototype.getTenantReputationFindingsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.accountRegion !== undefined) {
+                            queryParameters['accountRegion'] = requestParameters.accountRegion;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/bounce/tenant-findings",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TenantReputationFindingsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get SES tenant reputation recommendations/findings for this user.
+     * Get SES tenant reputation findings
+     */
+    BounceControllerApi.prototype.getTenantReputationFindings = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTenantReputationFindingsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+     * Get SES tenant status summary
+     */
+    BounceControllerApi.prototype.getTenantReputationStatusSummaryRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.accountRegion !== undefined) {
+                            queryParameters['accountRegion'] = requestParameters.accountRegion;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/bounce/tenant-status",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TenantReputationStatusSummaryDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get SES tenant sending and reputation status rows for this user. Includes complaint and bounce rates from CloudWatch.
+     * Get SES tenant status summary
+     */
+    BounceControllerApi.prototype.getTenantReputationStatusSummary = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTenantReputationStatusSummaryRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     return BounceControllerApi;
 }(runtime.BaseAPI));
 exports.BounceControllerApi = BounceControllerApi;
@@ -713,3 +815,41 @@ var GetReputationItemsSortEnum;
     GetReputationItemsSortEnum["ASC"] = "ASC";
     GetReputationItemsSortEnum["DESC"] = "DESC";
 })(GetReputationItemsSortEnum = exports.GetReputationItemsSortEnum || (exports.GetReputationItemsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTenantReputationFindingsAccountRegionEnum;
+(function (GetTenantReputationFindingsAccountRegionEnum) {
+    GetTenantReputationFindingsAccountRegionEnum["US_WEST_2_ACCOUNT_STAGING"] = "US_WEST_2_ACCOUNT_STAGING";
+    GetTenantReputationFindingsAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
+    GetTenantReputationFindingsAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
+    GetTenantReputationFindingsAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    GetTenantReputationFindingsAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
+    GetTenantReputationFindingsAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
+    GetTenantReputationFindingsAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    GetTenantReputationFindingsAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
+    GetTenantReputationFindingsAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
+    GetTenantReputationFindingsAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+    GetTenantReputationFindingsAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
+    GetTenantReputationFindingsAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
+})(GetTenantReputationFindingsAccountRegionEnum = exports.GetTenantReputationFindingsAccountRegionEnum || (exports.GetTenantReputationFindingsAccountRegionEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTenantReputationStatusSummaryAccountRegionEnum;
+(function (GetTenantReputationStatusSummaryAccountRegionEnum) {
+    GetTenantReputationStatusSummaryAccountRegionEnum["US_WEST_2_ACCOUNT_STAGING"] = "US_WEST_2_ACCOUNT_STAGING";
+    GetTenantReputationStatusSummaryAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
+    GetTenantReputationStatusSummaryAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
+    GetTenantReputationStatusSummaryAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    GetTenantReputationStatusSummaryAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
+    GetTenantReputationStatusSummaryAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
+    GetTenantReputationStatusSummaryAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    GetTenantReputationStatusSummaryAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
+    GetTenantReputationStatusSummaryAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
+    GetTenantReputationStatusSummaryAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+    GetTenantReputationStatusSummaryAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
+    GetTenantReputationStatusSummaryAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
+})(GetTenantReputationStatusSummaryAccountRegionEnum = exports.GetTenantReputationStatusSummaryAccountRegionEnum || (exports.GetTenantReputationStatusSummaryAccountRegionEnum = {}));

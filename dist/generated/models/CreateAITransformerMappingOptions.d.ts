@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { AIMappingMatchOptions } from './';
 /**
  *
  * @export
@@ -57,6 +58,12 @@ export interface CreateAITransformerMappingOptions {
      * @memberof CreateAITransformerMappingOptions
      */
     spreadRootArray?: boolean | null;
+    /**
+     *
+     * @type {AIMappingMatchOptions}
+     * @memberof CreateAITransformerMappingOptions
+     */
+    matchOptions?: AIMappingMatchOptions | null;
 }
 /**
  * @export

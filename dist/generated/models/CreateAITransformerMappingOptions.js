@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateAITransformerMappingOptionsToJSON = exports.CreateAITransformerMappingOptionsFromJSONTyped = exports.CreateAITransformerMappingOptionsFromJSON = exports.CreateAITransformerMappingOptionsTriggerSelectorEnum = exports.CreateAITransformerMappingOptionsContentSelectorEnum = exports.CreateAITransformerMappingOptionsEntityTypeEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -65,6 +66,9 @@ function CreateAITransformerMappingOptionsFromJSONTyped(json, ignoreDiscriminato
         spreadRootArray: !(0, runtime_1.exists)(json, 'spreadRootArray')
             ? undefined
             : json['spreadRootArray'],
+        matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
+            ? undefined
+            : (0, _1.AIMappingMatchOptionsFromJSON)(json['matchOptions']),
     };
 }
 exports.CreateAITransformerMappingOptionsFromJSONTyped = CreateAITransformerMappingOptionsFromJSONTyped;
@@ -83,6 +87,7 @@ function CreateAITransformerMappingOptionsToJSON(value) {
         contentSelector: value.contentSelector,
         triggerSelector: value.triggerSelector,
         spreadRootArray: value.spreadRootArray,
+        matchOptions: (0, _1.AIMappingMatchOptionsToJSON)(value.matchOptions),
     };
 }
 exports.CreateAITransformerMappingOptionsToJSON = CreateAITransformerMappingOptionsToJSON;

@@ -41,18 +41,6 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
-  threadId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  inReplyTo?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
   from?: string | null;
   /**
    *
@@ -72,6 +60,18 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  threadId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  inReplyTo?: string | null;
   /**
    *
    * @type {string}
@@ -159,8 +159,6 @@ export function SentEmailProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
-    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
-    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     from: !exists(json, 'from') ? undefined : json['from'],
     sender: !exists(json, 'sender')
       ? undefined
@@ -169,6 +167,8 @@ export function SentEmailProjectionFromJSONTyped(
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
     subject: !exists(json, 'subject') ? undefined : json['subject'],
+    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
+    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     userId: json['userId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
@@ -195,12 +195,12 @@ export function SentEmailProjectionToJSON(
   }
   return {
     id: value.id,
-    threadId: value.threadId,
-    inReplyTo: value.inReplyTo,
     from: value.from,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
     subject: value.subject,
+    threadId: value.threadId,
+    inReplyTo: value.inReplyTo,
     userId: value.userId,
     attachments: value.attachments,
     inboxId: value.inboxId,

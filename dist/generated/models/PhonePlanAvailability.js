@@ -13,8 +13,27 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePlanAvailabilityToJSON = exports.PhonePlanAvailabilityFromJSONTyped = exports.PhonePlanAvailabilityFromJSON = void 0;
+exports.PhonePlanAvailabilityToJSON = exports.PhonePlanAvailabilityFromJSONTyped = exports.PhonePlanAvailabilityFromJSON = exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum = void 0;
 var _1 = require("./");
+/**
+ * @export
+ * @enum {string}
+ */
+var PhonePlanAvailabilityDisabledPhoneCountriesEnum;
+(function (PhonePlanAvailabilityDisabledPhoneCountriesEnum) {
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["US"] = "US";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["GB"] = "GB";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["AU"] = "AU";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["CA"] = "CA";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["EE"] = "EE";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["HK"] = "HK";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["PL"] = "PL";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["PT"] = "PT";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["NL"] = "NL";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["IL"] = "IL";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["FI"] = "FI";
+    PhonePlanAvailabilityDisabledPhoneCountriesEnum["SE"] = "SE";
+})(PhonePlanAvailabilityDisabledPhoneCountriesEnum = exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum || (exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum = {}));
 function PhonePlanAvailabilityFromJSON(json) {
     return PhonePlanAvailabilityFromJSONTyped(json, false);
 }
@@ -25,6 +44,7 @@ function PhonePlanAvailabilityFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         items: json['items'].map(_1.PhonePlanAvailabilityItemFromJSON),
+        disabledPhoneCountries: json['disabledPhoneCountries'],
     };
 }
 exports.PhonePlanAvailabilityFromJSONTyped = PhonePlanAvailabilityFromJSONTyped;
@@ -37,6 +57,7 @@ function PhonePlanAvailabilityToJSON(value) {
     }
     return {
         items: value.items.map(_1.PhonePlanAvailabilityItemToJSON),
+        disabledPhoneCountries: value.disabledPhoneCountries,
     };
 }
 exports.PhonePlanAvailabilityToJSON = PhonePlanAvailabilityToJSON;

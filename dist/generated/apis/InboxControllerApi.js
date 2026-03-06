@@ -2612,6 +2612,120 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address
+     */
+    InboxControllerApi.prototype.getOrCreateInboxPlusAddressRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getOrCreateInboxPlusAddress.');
+                        }
+                        if (requestParameters.fullAddress === null ||
+                            requestParameters.fullAddress === undefined) {
+                            throw new runtime.RequiredError('fullAddress', 'Required parameter requestParameters.fullAddress was null or undefined when calling getOrCreateInboxPlusAddress.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.fullAddress !== undefined) {
+                            queryParameters['fullAddress'] = requestParameters.fullAddress;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/plus-addresses/get-or-create".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PlusAddressDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address
+     */
+    InboxControllerApi.prototype.getOrCreateInboxPlusAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getOrCreateInboxPlusAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address without inbox ID
+     */
+    InboxControllerApi.prototype.getOrCreatePlusAddressByFullAddressRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.fullAddress === null ||
+                            requestParameters.fullAddress === undefined) {
+                            throw new runtime.RequiredError('fullAddress', 'Required parameter requestParameters.fullAddress was null or undefined when calling getOrCreatePlusAddressByFullAddress.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.fullAddress !== undefined) {
+                            queryParameters['fullAddress'] = requestParameters.fullAddress;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/get-or-create-plus-address",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PlusAddressDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address without inbox ID
+     */
+    InboxControllerApi.prototype.getOrCreatePlusAddressByFullAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getOrCreatePlusAddressByFullAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * List Organization Inboxes Paginated
      */

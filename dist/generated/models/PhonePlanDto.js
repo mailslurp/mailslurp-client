@@ -27,10 +27,10 @@ var PhonePlanDtoPhoneCountryEnum;
     PhonePlanDtoPhoneCountryEnum["EE"] = "EE";
     PhonePlanDtoPhoneCountryEnum["HK"] = "HK";
     PhonePlanDtoPhoneCountryEnum["PL"] = "PL";
-    PhonePlanDtoPhoneCountryEnum["CH"] = "CH";
     PhonePlanDtoPhoneCountryEnum["PT"] = "PT";
     PhonePlanDtoPhoneCountryEnum["NL"] = "NL";
     PhonePlanDtoPhoneCountryEnum["IL"] = "IL";
+    PhonePlanDtoPhoneCountryEnum["FI"] = "FI";
     PhonePlanDtoPhoneCountryEnum["SE"] = "SE";
 })(PhonePlanDtoPhoneCountryEnum = exports.PhonePlanDtoPhoneCountryEnum || (exports.PhonePlanDtoPhoneCountryEnum = {}));
 function PhonePlanDtoFromJSON(json) {

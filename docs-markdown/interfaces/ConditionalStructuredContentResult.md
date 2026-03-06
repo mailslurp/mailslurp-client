@@ -14,6 +14,7 @@ ConditionalStructuredContentResult
 
 - [conditionsMatch](ConditionalStructuredContentResult.md#conditionsmatch)
 - [result](ConditionalStructuredContentResult.md#result)
+- [tokenCount](ConditionalStructuredContentResult.md#tokencount)
 
 ## Properties
 
@@ -30,6 +31,16 @@ ___
 ### result
 
 • `Optional` **result**: `object`
+
+**`Memberof`**
+
+ConditionalStructuredContentResult
+
+___
+
+### tokenCount
+
+• `Optional` **tokenCount**: `number`
 
 **`Memberof`**
 

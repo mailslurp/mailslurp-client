@@ -58,17 +58,17 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
+        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
+            ? undefined
+            : json['aiTransformId'],
         healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
             ? undefined
             : json['healthStatus'],
         aiTransformerId: !(0, runtime_1.exists)(json, 'aiTransformerId')
             ? undefined
             : json['aiTransformerId'],
-        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
-            ? undefined
-            : json['aiTransformId'],
         phoneNumberId: !(0, runtime_1.exists)(json, 'phoneNumberId')
             ? undefined
             : json['phoneNumberId'],
@@ -91,11 +91,11 @@ function WebhookProjectionToJSON(value) {
         userId: value.userId,
         inboxId: value.inboxId,
         eventName: value.eventName,
-        createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
+        aiTransformId: value.aiTransformId,
         healthStatus: value.healthStatus,
         aiTransformerId: value.aiTransformerId,
-        aiTransformId: value.aiTransformId,
         phoneNumberId: value.phoneNumberId,
         name: value.name,
         id: value.id,

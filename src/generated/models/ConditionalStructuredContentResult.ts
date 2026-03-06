@@ -31,6 +31,12 @@ export interface ConditionalStructuredContentResult {
    * @memberof ConditionalStructuredContentResult
    */
   conditionsMatch: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof ConditionalStructuredContentResult
+   */
+  tokenCount?: number;
 }
 
 export function ConditionalStructuredContentResultFromJSON(
@@ -49,6 +55,7 @@ export function ConditionalStructuredContentResultFromJSONTyped(
   return {
     result: !exists(json, 'result') ? undefined : json['result'],
     conditionsMatch: json['conditionsMatch'],
+    tokenCount: !exists(json, 'tokenCount') ? undefined : json['tokenCount'],
   };
 }
 
@@ -64,5 +71,6 @@ export function ConditionalStructuredContentResultToJSON(
   return {
     result: value.result,
     conditionsMatch: value.conditionsMatch,
+    tokenCount: value.tokenCount,
   };
 }

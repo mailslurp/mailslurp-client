@@ -55,17 +55,17 @@ export interface EmailThreadProjection {
    */
   inboxId?: string;
   /**
-   * Created at DateTime
-   * @type {Date}
-   * @memberof EmailThreadProjection
-   */
-  createdAt: Date;
-  /**
    * Updated at DateTime
    * @type {Date}
    * @memberof EmailThreadProjection
    */
   updatedAt: Date;
+  /**
+   * Created at DateTime
+   * @type {Date}
+   * @memberof EmailThreadProjection
+   */
+  createdAt: Date;
   /**
    * To recipients
    * @type {Array<string>}
@@ -174,8 +174,8 @@ export function EmailThreadProjectionFromJSONTyped(
       : EmailRecipientsProjectionFromJSON(json['recipients']),
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
@@ -215,8 +215,8 @@ export function EmailThreadProjectionToJSON(
     recipients: EmailRecipientsProjectionToJSON(value.recipients),
     userId: value.userId,
     inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,

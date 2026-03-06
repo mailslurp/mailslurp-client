@@ -114,7 +114,7 @@ ___
 
 • `Optional` **search**: `string`
 
-Optionally filter by search words partial matching ID, tags, name, and email address
+Optionally filter by search words partial matching name and email address
 
 **`Memberof`**
 

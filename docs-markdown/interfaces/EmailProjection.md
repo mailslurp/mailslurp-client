@@ -25,6 +25,7 @@ EmailProjection
 - [favourite](EmailProjection.md#favourite)
 - [from](EmailProjection.md#from)
 - [id](EmailProjection.md#id)
+- [imapUid](EmailProjection.md#imapuid)
 - [inReplyTo](EmailProjection.md#inreplyto)
 - [inboxId](EmailProjection.md#inboxid)
 - [messageId](EmailProjection.md#messageid)
@@ -144,6 +145,16 @@ ___
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
+### imapUid
+
+• `Optional` **imapUid**: `number`
 
 **`Memberof`**
 

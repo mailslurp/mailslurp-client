@@ -106,6 +106,10 @@
 - [getInboxesRaw](InboxControllerApi.md#getinboxesraw)
 - [getLatestEmailInInbox](InboxControllerApi.md#getlatestemailininbox)
 - [getLatestEmailInInboxRaw](InboxControllerApi.md#getlatestemailininboxraw)
+- [getOrCreateInboxPlusAddress](InboxControllerApi.md#getorcreateinboxplusaddress)
+- [getOrCreateInboxPlusAddressRaw](InboxControllerApi.md#getorcreateinboxplusaddressraw)
+- [getOrCreatePlusAddressByFullAddress](InboxControllerApi.md#getorcreateplusaddressbyfulladdress)
+- [getOrCreatePlusAddressByFullAddressRaw](InboxControllerApi.md#getorcreateplusaddressbyfulladdressraw)
 - [getOrganizationInboxes](InboxControllerApi.md#getorganizationinboxes)
 - [getOrganizationInboxesRaw](InboxControllerApi.md#getorganizationinboxesraw)
 - [getOutboxes](InboxControllerApi.md#getoutboxes)
@@ -1864,6 +1868,86 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
+
+___
+
+### getOrCreateInboxPlusAddress
+
+▸ **getOrCreateInboxPlusAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+Get or create a plus address by full address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrCreateInboxPlusAddressRequest`](../interfaces/GetOrCreateInboxPlusAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+___
+
+### getOrCreateInboxPlusAddressRaw
+
+▸ **getOrCreateInboxPlusAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
+
+Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+Get or create a plus address by full address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrCreateInboxPlusAddressRequest`](../interfaces/GetOrCreateInboxPlusAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
+
+___
+
+### getOrCreatePlusAddressByFullAddress
+
+▸ **getOrCreatePlusAddressByFullAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+Get or create a plus address by full address without inbox ID
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrCreatePlusAddressByFullAddressRequest`](../interfaces/GetOrCreatePlusAddressByFullAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>
+
+___
+
+### getOrCreatePlusAddressByFullAddressRaw
+
+▸ **getOrCreatePlusAddressByFullAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
+
+Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+Get or create a plus address by full address without inbox ID
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrCreatePlusAddressByFullAddressRequest`](../interfaces/GetOrCreatePlusAddressByFullAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PlusAddressDto`](../interfaces/PlusAddressDto.md)\>\>
 
 ___
 

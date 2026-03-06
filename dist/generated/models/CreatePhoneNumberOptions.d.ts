@@ -39,6 +39,18 @@ export interface CreatePhoneNumberOptions {
      * @memberof CreatePhoneNumberOptions
      */
     schedule?: CreatePhoneNumberOptionsScheduleEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    phoneNumberEndpointOverride?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    phoneNumberVariant?: CreatePhoneNumberOptionsPhoneNumberVariantEnum;
 }
 /**
  * @export
@@ -52,10 +64,10 @@ export declare enum CreatePhoneNumberOptionsPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
-    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",
+    FI = "FI",
     SE = "SE"
 }
 /**
@@ -65,6 +77,15 @@ export declare enum CreatePhoneNumberOptionsPhoneCountryEnum {
 export declare enum CreatePhoneNumberOptionsScheduleEnum {
     MONTHLY = "MONTHLY",
     YEARLY = "YEARLY"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreatePhoneNumberOptionsPhoneNumberVariantEnum {
+    LOCAL = "LOCAL",
+    MOBILE = "MOBILE",
+    TOLL_FREE = "TOLL_FREE"
 }
 export declare function CreatePhoneNumberOptionsFromJSON(json: any): CreatePhoneNumberOptions;
 export declare function CreatePhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreatePhoneNumberOptions;

@@ -90,6 +90,8 @@ export interface GetAllWebhooksRequest {
     health?: GetAllWebhooksHealthEnum;
     eventType?: GetAllWebhooksEventTypeEnum;
     url?: string;
+    eventTypeSource?: GetAllWebhooksEventTypeSourceEnum;
+    includeAccountWide?: boolean;
 }
 export interface GetInboxWebhooksPaginatedRequest {
     inboxId: string;
@@ -101,6 +103,7 @@ export interface GetInboxWebhooksPaginatedRequest {
     before?: Date;
     health?: GetInboxWebhooksPaginatedHealthEnum;
     eventType?: GetInboxWebhooksPaginatedEventTypeEnum;
+    includeAccountWide?: boolean;
 }
 export interface GetJsonSchemaForWebhookEventRequest {
     event: GetJsonSchemaForWebhookEventEventEnum;
@@ -118,6 +121,7 @@ export interface GetPhoneNumberWebhooksPaginatedRequest {
     eventType?: GetPhoneNumberWebhooksPaginatedEventTypeEnum;
     searchFilter?: string;
     health?: GetPhoneNumberWebhooksPaginatedHealthEnum;
+    includeAccountWide?: boolean;
 }
 export interface GetTestWebhookPayloadRequest {
     eventName?: GetTestWebhookPayloadEventNameEnum;
@@ -668,6 +672,15 @@ export declare enum GetAllWebhooksEventTypeEnum {
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS",
     NEW_GUEST_USER = "NEW_GUEST_USER"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllWebhooksEventTypeSourceEnum {
+    INBOX = "INBOX",
+    PHONE = "PHONE",
+    AI_TRANSFORMER = "AI_TRANSFORMER"
 }
 /**
  * @export

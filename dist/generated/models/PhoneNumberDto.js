@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberDtoToJSON = exports.PhoneNumberDtoFromJSONTyped = exports.PhoneNumberDtoFromJSON = exports.PhoneNumberDtoPhoneCountryEnum = void 0;
+exports.PhoneNumberDtoToJSON = exports.PhoneNumberDtoFromJSONTyped = exports.PhoneNumberDtoFromJSON = exports.PhoneNumberDtoPhoneVariantEnum = exports.PhoneNumberDtoPhoneCountryEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -28,12 +28,22 @@ var PhoneNumberDtoPhoneCountryEnum;
     PhoneNumberDtoPhoneCountryEnum["EE"] = "EE";
     PhoneNumberDtoPhoneCountryEnum["HK"] = "HK";
     PhoneNumberDtoPhoneCountryEnum["PL"] = "PL";
-    PhoneNumberDtoPhoneCountryEnum["CH"] = "CH";
     PhoneNumberDtoPhoneCountryEnum["PT"] = "PT";
     PhoneNumberDtoPhoneCountryEnum["NL"] = "NL";
     PhoneNumberDtoPhoneCountryEnum["IL"] = "IL";
+    PhoneNumberDtoPhoneCountryEnum["FI"] = "FI";
     PhoneNumberDtoPhoneCountryEnum["SE"] = "SE";
 })(PhoneNumberDtoPhoneCountryEnum = exports.PhoneNumberDtoPhoneCountryEnum || (exports.PhoneNumberDtoPhoneCountryEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var PhoneNumberDtoPhoneVariantEnum;
+(function (PhoneNumberDtoPhoneVariantEnum) {
+    PhoneNumberDtoPhoneVariantEnum["LOCAL"] = "LOCAL";
+    PhoneNumberDtoPhoneVariantEnum["MOBILE"] = "MOBILE";
+    PhoneNumberDtoPhoneVariantEnum["TOLL_FREE"] = "TOLL_FREE";
+})(PhoneNumberDtoPhoneVariantEnum = exports.PhoneNumberDtoPhoneVariantEnum || (exports.PhoneNumberDtoPhoneVariantEnum = {}));
 function PhoneNumberDtoFromJSON(json) {
     return PhoneNumberDtoFromJSONTyped(json, false);
 }
@@ -59,6 +69,9 @@ function PhoneNumberDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
         favourite: json['favourite'],
+        phoneVariant: !(0, runtime_1.exists)(json, 'phoneVariant')
+            ? undefined
+            : json['phoneVariant'],
     };
 }
 exports.PhoneNumberDtoFromJSONTyped = PhoneNumberDtoFromJSONTyped;
@@ -82,6 +95,7 @@ function PhoneNumberDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         favourite: value.favourite,
+        phoneVariant: value.phoneVariant,
     };
 }
 exports.PhoneNumberDtoToJSON = PhoneNumberDtoToJSON;

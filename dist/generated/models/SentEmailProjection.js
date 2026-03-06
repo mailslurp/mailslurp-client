@@ -26,8 +26,6 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
-        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
-        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         sender: !(0, runtime_1.exists)(json, 'sender')
             ? undefined
@@ -36,6 +34,8 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
+        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         userId: json['userId'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         inboxId: json['inboxId'],
@@ -60,12 +60,12 @@ function SentEmailProjectionToJSON(value) {
     }
     return {
         id: value.id,
-        threadId: value.threadId,
-        inReplyTo: value.inReplyTo,
         from: value.from,
         sender: (0, _1.SenderToJSON)(value.sender),
         recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
         subject: value.subject,
+        threadId: value.threadId,
+        inReplyTo: value.inReplyTo,
         userId: value.userId,
         attachments: value.attachments,
         inboxId: value.inboxId,

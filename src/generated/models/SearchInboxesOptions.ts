@@ -44,7 +44,7 @@ export interface SearchInboxesOptions {
    */
   favourite?: boolean | null;
   /**
-   * Optionally filter by search words partial matching ID, tags, name, and email address
+   * Optionally filter by search words partial matching name and email address
    * @type {string}
    * @memberof SearchInboxesOptions
    */

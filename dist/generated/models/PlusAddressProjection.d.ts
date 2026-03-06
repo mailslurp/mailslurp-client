@@ -32,13 +32,13 @@ export interface PlusAddressProjection {
      * @type {Date}
      * @memberof PlusAddressProjection
      */
-    createdAt: Date;
+    updatedAt: Date;
     /**
      *
      * @type {Date}
      * @memberof PlusAddressProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {string}

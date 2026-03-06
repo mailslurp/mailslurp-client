@@ -581,6 +581,60 @@ var SmsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+     * Extract verification codes from an SMS
+     */
+    SmsControllerApi.prototype.getSmsCodesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.smsId === null ||
+                            requestParameters.smsId === undefined) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling getSmsCodes.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/{smsId}/codes".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.ExtractCodesOptionsToJSON)(requestParameters.extractCodesOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExtractCodesResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+     * Extract verification codes from an SMS
+     */
+    SmsControllerApi.prototype.getSmsCodes = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSmsCodesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get number of SMS
      * Get SMS count
      */

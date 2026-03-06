@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { AIMappingMatchOptions } from './';
 /**
  *
  * @export
@@ -27,6 +28,12 @@ export interface AITransformMappingDto {
      * @memberof AITransformMappingDto
      */
     aiTransformId: string;
+    /**
+     *
+     * @type {AIMappingMatchOptions}
+     * @memberof AITransformMappingDto
+     */
+    matchOptions?: AIMappingMatchOptions | null;
     /**
      *
      * @type {string}

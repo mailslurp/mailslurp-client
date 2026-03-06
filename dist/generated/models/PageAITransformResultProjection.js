@@ -31,6 +31,7 @@ function PageAITransformResultProjectionFromJSONTyped(json, ignoreDiscriminator)
         pageable: !(0, runtime_1.exists)(json, 'pageable')
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
+        columns: json['columns'],
         totalElements: json['totalElements'],
         totalPages: json['totalPages'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
@@ -57,6 +58,7 @@ function PageAITransformResultProjectionToJSON(value) {
             ? undefined
             : value.content.map(_1.AITransformResultProjectionDtoToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
+        columns: value.columns,
         totalElements: value.totalElements,
         totalPages: value.totalPages,
         last: value.last,

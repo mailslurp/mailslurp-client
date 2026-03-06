@@ -24,12 +24,6 @@ export interface PageableObject {
     pageSize?: number;
     /**
      *
-     * @type {SortObject}
-     * @memberof PageableObject
-     */
-    sort?: SortObject;
-    /**
-     *
      * @type {boolean}
      * @memberof PageableObject
      */
@@ -40,6 +34,12 @@ export interface PageableObject {
      * @memberof PageableObject
      */
     pageNumber?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageableObject
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

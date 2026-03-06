@@ -12,9 +12,20 @@ PhonePlanAvailability
 
 ### Properties
 
+- [disabledPhoneCountries](PhonePlanAvailability.md#disabledphonecountries)
 - [items](PhonePlanAvailability.md#items)
 
 ## Properties
+
+### disabledPhoneCountries
+
+• **disabledPhoneCountries**: [`PhonePlanAvailabilityDisabledPhoneCountriesEnum`](../enums/PhonePlanAvailabilityDisabledPhoneCountriesEnum.md)[]
+
+**`Memberof`**
+
+PhonePlanAvailability
+
+___
 
 ### items
 

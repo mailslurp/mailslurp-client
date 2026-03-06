@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  AIMappingMatchOptions,
+  AIMappingMatchOptionsFromJSON,
+  AIMappingMatchOptionsFromJSONTyped,
+  AIMappingMatchOptionsToJSON,
+} from './';
+
 /**
  *
  * @export
@@ -61,6 +68,12 @@ export interface CreateAITransformerMappingOptions {
    * @memberof CreateAITransformerMappingOptions
    */
   spreadRootArray?: boolean | null;
+  /**
+   *
+   * @type {AIMappingMatchOptions}
+   * @memberof CreateAITransformerMappingOptions
+   */
+  matchOptions?: AIMappingMatchOptions | null;
 }
 
 /**
@@ -116,6 +129,9 @@ export function CreateAITransformerMappingOptionsFromJSONTyped(
     spreadRootArray: !exists(json, 'spreadRootArray')
       ? undefined
       : json['spreadRootArray'],
+    matchOptions: !exists(json, 'matchOptions')
+      ? undefined
+      : AIMappingMatchOptionsFromJSON(json['matchOptions']),
   };
 }
 
@@ -136,5 +152,6 @@ export function CreateAITransformerMappingOptionsToJSON(
     contentSelector: value.contentSelector,
     triggerSelector: value.triggerSelector,
     spreadRootArray: value.spreadRootArray,
+    matchOptions: AIMappingMatchOptionsToJSON(value.matchOptions),
   };
 }

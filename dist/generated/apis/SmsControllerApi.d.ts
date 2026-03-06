@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, PageSentSmsProjection, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, SmsSendOptions, UnreadCount } from '../models';
+import { CountDto, ExtractCodesOptions, ExtractCodesResult, PageSentSmsProjection, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, SmsSendOptions, UnreadCount } from '../models';
 export interface DeleteSentSmsMessageRequest {
     sentSmsId: string;
 }
@@ -48,6 +48,10 @@ export interface GetSentSmsMessagesPaginatedRequest {
     since?: Date;
     before?: Date;
     search?: string;
+}
+export interface GetSmsCodesRequest {
+    smsId: string;
+    extractCodesOptions?: ExtractCodesOptions;
 }
 export interface GetSmsMessageRequest {
     smsId: string;
@@ -155,6 +159,16 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get all SMS messages in all phone numbers in paginated form. .
      */
     getSentSmsMessagesPaginated(requestParameters: GetSentSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<PageSentSmsProjection>;
+    /**
+     * Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+     * Extract verification codes from an SMS
+     */
+    getSmsCodesRaw(requestParameters: GetSmsCodesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ExtractCodesResult>>;
+    /**
+     * Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+     * Extract verification codes from an SMS
+     */
+    getSmsCodes(requestParameters: GetSmsCodesRequest, initOverrides?: RequestInit): Promise<ExtractCodesResult>;
     /**
      * Get number of SMS
      * Get SMS count

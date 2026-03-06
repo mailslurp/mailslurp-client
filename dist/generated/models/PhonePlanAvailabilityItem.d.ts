@@ -27,6 +27,12 @@ export interface PhonePlanAvailabilityItem {
      * @memberof PhonePlanAvailabilityItem
      */
     availabilityStatus: PhonePlanAvailabilityItemAvailabilityStatusEnum;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof PhonePlanAvailabilityItem
+     */
+    variants?: Array<PhonePlanAvailabilityItemVariantsEnum>;
 }
 /**
  * @export
@@ -40,10 +46,10 @@ export declare enum PhonePlanAvailabilityItemPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
-    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",
+    FI = "FI",
     SE = "SE"
 }
 /**
@@ -55,6 +61,15 @@ export declare enum PhonePlanAvailabilityItemAvailabilityStatusEnum {
     NON_MATCHING_SUBSCRIPTION_CURRENCY = "NON_MATCHING_SUBSCRIPTION_CURRENCY",
     NON_MATCHING_SUBSCRIPTION_TYPE = "NON_MATCHING_SUBSCRIPTION_TYPE",
     ALREADY_ASSIGNED = "ALREADY_ASSIGNED"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum PhonePlanAvailabilityItemVariantsEnum {
+    LOCAL = "LOCAL",
+    MOBILE = "MOBILE",
+    TOLL_FREE = "TOLL_FREE"
 }
 export declare function PhonePlanAvailabilityItemFromJSON(json: any): PhonePlanAvailabilityItem;
 export declare function PhonePlanAvailabilityItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanAvailabilityItem;

@@ -22,6 +22,30 @@ export interface PhonePlanAvailability {
      * @memberof PhonePlanAvailability
      */
     items: Array<PhonePlanAvailabilityItem>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof PhonePlanAvailability
+     */
+    disabledPhoneCountries: Array<PhonePlanAvailabilityDisabledPhoneCountriesEnum>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum PhonePlanAvailabilityDisabledPhoneCountriesEnum {
+    US = "US",
+    GB = "GB",
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    FI = "FI",
+    SE = "SE"
 }
 export declare function PhonePlanAvailabilityFromJSON(json: any): PhonePlanAvailability;
 export declare function PhonePlanAvailabilityFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanAvailability;

@@ -91,6 +91,12 @@ export interface PhoneNumberDto {
    * @memberof PhoneNumberDto
    */
   favourite: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  phoneVariant?: PhoneNumberDtoPhoneVariantEnum;
 }
 
 /**
@@ -105,11 +111,20 @@ export enum PhoneNumberDtoPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
-  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
+  FI = 'FI',
   SE = 'SE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum PhoneNumberDtoPhoneVariantEnum {
+  LOCAL = 'LOCAL',
+  MOBILE = 'MOBILE',
+  TOLL_FREE = 'TOLL_FREE',
 }
 
 export function PhoneNumberDtoFromJSON(json: any): PhoneNumberDto {
@@ -140,6 +155,9 @@ export function PhoneNumberDtoFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     favourite: json['favourite'],
+    phoneVariant: !exists(json, 'phoneVariant')
+      ? undefined
+      : json['phoneVariant'],
   };
 }
 
@@ -163,5 +181,6 @@ export function PhoneNumberDtoToJSON(value?: PhoneNumberDto | null): any {
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     favourite: value.favourite,
+    phoneVariant: value.phoneVariant,
   };
 }

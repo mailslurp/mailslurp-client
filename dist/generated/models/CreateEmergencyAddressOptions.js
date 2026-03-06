@@ -28,10 +28,10 @@ var CreateEmergencyAddressOptionsIsoCountryCodeEnum;
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["EE"] = "EE";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["HK"] = "HK";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["PL"] = "PL";
-    CreateEmergencyAddressOptionsIsoCountryCodeEnum["CH"] = "CH";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["PT"] = "PT";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["NL"] = "NL";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["IL"] = "IL";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["FI"] = "FI";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["SE"] = "SE";
 })(CreateEmergencyAddressOptionsIsoCountryCodeEnum = exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum || (exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = {}));
 function CreateEmergencyAddressOptionsFromJSON(json) {

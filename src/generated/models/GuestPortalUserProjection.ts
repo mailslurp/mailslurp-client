@@ -36,25 +36,25 @@ export interface GuestPortalUserProjection {
    * @type {string}
    * @memberof GuestPortalUserProjection
    */
-  inboxId?: string;
+  emailAddress?: string;
   /**
    *
    * @type {string}
    * @memberof GuestPortalUserProjection
    */
-  emailAddress?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof GuestPortalUserProjection
-   */
-  createdAt: Date;
+  inboxId?: string;
   /**
    *
    * @type {Date}
    * @memberof GuestPortalUserProjection
    */
   updatedAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof GuestPortalUserProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -91,12 +91,12 @@ export function GuestPortalUserProjectionFromJSONTyped(
   return {
     username: json['username'],
     userId: json['userId'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
-    createdAt: new Date(json['createdAt']),
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     portalId: json['portalId'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
@@ -115,10 +115,10 @@ export function GuestPortalUserProjectionToJSON(
   return {
     username: value.username,
     userId: value.userId,
-    inboxId: value.inboxId,
     emailAddress: value.emailAddress,
-    createdAt: value.createdAt.toISOString(),
+    inboxId: value.inboxId,
     updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     portalId: value.portalId,
     name: value.name,
     id: value.id,

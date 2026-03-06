@@ -22,6 +22,7 @@ PhoneNumberDto
 - [phoneCountry](PhoneNumberDto.md#phonecountry)
 - [phoneNumber](PhoneNumberDto.md#phonenumber)
 - [phonePlan](PhoneNumberDto.md#phoneplan)
+- [phoneVariant](PhoneNumberDto.md#phonevariant)
 - [updatedAt](PhoneNumberDto.md#updatedat)
 - [userId](PhoneNumberDto.md#userid)
 
@@ -120,6 +121,16 @@ ___
 ### phonePlan
 
 • **phonePlan**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
+### phoneVariant
+
+• `Optional` **phoneVariant**: [`PhoneNumberDtoPhoneVariantEnum`](../enums/PhoneNumberDtoPhoneVariantEnum.md)
 
 **`Memberof`**
 

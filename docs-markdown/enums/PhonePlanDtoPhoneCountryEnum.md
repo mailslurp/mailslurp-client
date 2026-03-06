@@ -10,8 +10,8 @@
 
 - [AU](PhonePlanDtoPhoneCountryEnum.md#au)
 - [CA](PhonePlanDtoPhoneCountryEnum.md#ca)
-- [CH](PhonePlanDtoPhoneCountryEnum.md#ch)
 - [EE](PhonePlanDtoPhoneCountryEnum.md#ee)
+- [FI](PhonePlanDtoPhoneCountryEnum.md#fi)
 - [GB](PhonePlanDtoPhoneCountryEnum.md#gb)
 - [HK](PhonePlanDtoPhoneCountryEnum.md#hk)
 - [IL](PhonePlanDtoPhoneCountryEnum.md#il)
@@ -35,15 +35,15 @@ ___
 
 ___
 
-### CH
-
-• **CH** = ``"CH"``
-
-___
-
 ### EE
 
 • **EE** = ``"EE"``
+
+___
+
+### FI
+
+• **FI** = ``"FI"``
 
 ___
 

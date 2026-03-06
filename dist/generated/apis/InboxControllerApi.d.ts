@@ -229,6 +229,13 @@ export interface GetLatestEmailInInboxRequest {
     inboxId: string;
     timeoutMillis: number;
 }
+export interface GetOrCreateInboxPlusAddressRequest {
+    inboxId: string;
+    fullAddress: string;
+}
+export interface GetOrCreatePlusAddressByFullAddressRequest {
+    fullAddress: string;
+}
 export interface GetOrganizationInboxesRequest {
     page?: number;
     size?: number;
@@ -739,6 +746,26 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
     getLatestEmailInInbox(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit): Promise<Email>;
+    /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address
+     */
+    getOrCreateInboxPlusAddressRaw(requestParameters: GetOrCreateInboxPlusAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PlusAddressDto>>;
+    /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address
+     */
+    getOrCreateInboxPlusAddress(requestParameters: GetOrCreateInboxPlusAddressRequest, initOverrides?: RequestInit): Promise<PlusAddressDto>;
+    /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address without inbox ID
+     */
+    getOrCreatePlusAddressByFullAddressRaw(requestParameters: GetOrCreatePlusAddressByFullAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PlusAddressDto>>;
+    /**
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+     * Get or create a plus address by full address without inbox ID
+     */
+    getOrCreatePlusAddressByFullAddress(requestParameters: GetOrCreatePlusAddressByFullAddressRequest, initOverrides?: RequestInit): Promise<PlusAddressDto>;
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * List Organization Inboxes Paginated

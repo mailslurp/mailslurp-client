@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePhoneNumberOptionsToJSON = exports.CreatePhoneNumberOptionsFromJSONTyped = exports.CreatePhoneNumberOptionsFromJSON = exports.CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum = void 0;
+exports.CreatePhoneNumberOptionsToJSON = exports.CreatePhoneNumberOptionsFromJSONTyped = exports.CreatePhoneNumberOptionsFromJSON = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -28,10 +28,10 @@ var CreatePhoneNumberOptionsPhoneCountryEnum;
     CreatePhoneNumberOptionsPhoneCountryEnum["EE"] = "EE";
     CreatePhoneNumberOptionsPhoneCountryEnum["HK"] = "HK";
     CreatePhoneNumberOptionsPhoneCountryEnum["PL"] = "PL";
-    CreatePhoneNumberOptionsPhoneCountryEnum["CH"] = "CH";
     CreatePhoneNumberOptionsPhoneCountryEnum["PT"] = "PT";
     CreatePhoneNumberOptionsPhoneCountryEnum["NL"] = "NL";
     CreatePhoneNumberOptionsPhoneCountryEnum["IL"] = "IL";
+    CreatePhoneNumberOptionsPhoneCountryEnum["FI"] = "FI";
     CreatePhoneNumberOptionsPhoneCountryEnum["SE"] = "SE";
 })(CreatePhoneNumberOptionsPhoneCountryEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum || (exports.CreatePhoneNumberOptionsPhoneCountryEnum = {}));
 /**
@@ -43,6 +43,16 @@ var CreatePhoneNumberOptionsScheduleEnum;
     CreatePhoneNumberOptionsScheduleEnum["MONTHLY"] = "MONTHLY";
     CreatePhoneNumberOptionsScheduleEnum["YEARLY"] = "YEARLY";
 })(CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsScheduleEnum || (exports.CreatePhoneNumberOptionsScheduleEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var CreatePhoneNumberOptionsPhoneNumberVariantEnum;
+(function (CreatePhoneNumberOptionsPhoneNumberVariantEnum) {
+    CreatePhoneNumberOptionsPhoneNumberVariantEnum["LOCAL"] = "LOCAL";
+    CreatePhoneNumberOptionsPhoneNumberVariantEnum["MOBILE"] = "MOBILE";
+    CreatePhoneNumberOptionsPhoneNumberVariantEnum["TOLL_FREE"] = "TOLL_FREE";
+})(CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum || (exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = {}));
 function CreatePhoneNumberOptionsFromJSON(json) {
     return CreatePhoneNumberOptionsFromJSONTyped(json, false);
 }
@@ -56,6 +66,12 @@ function CreatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
         schedule: !(0, runtime_1.exists)(json, 'schedule') ? undefined : json['schedule'],
+        phoneNumberEndpointOverride: !(0, runtime_1.exists)(json, 'phoneNumberEndpointOverride')
+            ? undefined
+            : json['phoneNumberEndpointOverride'],
+        phoneNumberVariant: !(0, runtime_1.exists)(json, 'phoneNumberVariant')
+            ? undefined
+            : json['phoneNumberVariant'],
     };
 }
 exports.CreatePhoneNumberOptionsFromJSONTyped = CreatePhoneNumberOptionsFromJSONTyped;
@@ -71,6 +87,8 @@ function CreatePhoneNumberOptionsToJSON(value) {
         name: value.name,
         description: value.description,
         schedule: value.schedule,
+        phoneNumberEndpointOverride: value.phoneNumberEndpointOverride,
+        phoneNumberVariant: value.phoneNumberVariant,
     };
 }
 exports.CreatePhoneNumberOptionsToJSON = CreatePhoneNumberOptionsToJSON;

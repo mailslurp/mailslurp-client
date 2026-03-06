@@ -59,6 +59,24 @@ export interface AITransformResultProjectionDto {
     entityType?: AITransformResultProjectionDtoEntityTypeEnum;
     /**
      *
+     * @type {string}
+     * @memberof AITransformResultProjectionDto
+     */
+    smsId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformResultProjectionDto
+     */
+    emailId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformResultProjectionDto
+     */
+    attachmentId?: string | null;
+    /**
+     *
      * @type {Date}
      * @memberof AITransformResultProjectionDto
      */

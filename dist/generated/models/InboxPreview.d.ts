@@ -132,7 +132,18 @@ export declare enum InboxPreviewFunctionsAsEnum {
  * @enum {string}
  */
 export declare enum InboxPreviewAccountRegionEnum {
-    US_WEST_2 = "US_WEST_2"
+    US_WEST_2_ACCOUNT_STAGING = "US_WEST_2_ACCOUNT_STAGING",
+    US_EAST_1_ACCOUNT_STAGING = "US_EAST_1_ACCOUNT_STAGING",
+    EU_WEST_1_ACCOUNT_STAGING = "EU_WEST_1_ACCOUNT_STAGING",
+    US_WEST_2_ACCOUNT_SES_1 = "US_WEST_2_ACCOUNT_SES_1",
+    EU_WEST_1_ACCOUNT_SES_1 = "EU_WEST_1_ACCOUNT_SES_1",
+    US_WEST_2_ACCOUNT_SES_2 = "US_WEST_2_ACCOUNT_SES_2",
+    EU_WEST_1_ACCOUNT_SES_2 = "EU_WEST_1_ACCOUNT_SES_2",
+    US_WEST_2_ACCOUNT_BYTEWISE = "US_WEST_2_ACCOUNT_BYTEWISE",
+    EU_WEST_1_ACCOUNT_BYTEWISE = "EU_WEST_1_ACCOUNT_BYTEWISE",
+    US_WEST_2 = "US_WEST_2",
+    EU_WEST_1 = "EU_WEST_1",
+    US_EAST_1 = "US_EAST_1"
 }
 export declare function InboxPreviewFromJSON(json: any): InboxPreview;
 export declare function InboxPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxPreview;

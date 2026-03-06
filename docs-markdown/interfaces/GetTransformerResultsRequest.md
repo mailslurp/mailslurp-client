@@ -8,10 +8,13 @@
 
 - [aiTransformId](GetTransformerResultsRequest.md#aitransformid)
 - [aiTransformMappingId](GetTransformerResultsRequest.md#aitransformmappingid)
+- [attachmentId](GetTransformerResultsRequest.md#attachmentid)
+- [emailId](GetTransformerResultsRequest.md#emailid)
 - [entityId](GetTransformerResultsRequest.md#entityid)
 - [entityType](GetTransformerResultsRequest.md#entitytype)
 - [page](GetTransformerResultsRequest.md#page)
 - [size](GetTransformerResultsRequest.md#size)
+- [smsId](GetTransformerResultsRequest.md#smsid)
 - [sort](GetTransformerResultsRequest.md#sort)
 
 ## Properties
@@ -25,6 +28,18 @@ ___
 ### aiTransformMappingId
 
 • `Optional` **aiTransformMappingId**: `string`
+
+___
+
+### attachmentId
+
+• `Optional` **attachmentId**: `string`
+
+___
+
+### emailId
+
+• `Optional` **emailId**: `string`
 
 ___
 
@@ -49,6 +64,12 @@ ___
 ### size
 
 • `Optional` **size**: `number`
+
+___
+
+### smsId
+
+• `Optional` **smsId**: `string`
 
 ___
 

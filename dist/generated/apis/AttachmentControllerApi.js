@@ -293,6 +293,60 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+     * Extract text from an attachment
+     */
+    AttachmentControllerApi.prototype.extractAttachmentTextRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.attachmentId === null ||
+                            requestParameters.attachmentId === undefined) {
+                            throw new runtime.RequiredError('attachmentId', 'Required parameter requestParameters.attachmentId was null or undefined when calling extractAttachmentText.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/attachments/{attachmentId}/text".replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.ExtractAttachmentTextOptionsToJSON)(requestParameters.extractAttachmentTextOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExtractAttachmentTextResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+     * Extract text from an attachment
+     */
+    AttachmentControllerApi.prototype.extractAttachmentText = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.extractAttachmentTextRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get an attachment entity
      */
     AttachmentControllerApi.prototype.getAttachmentRaw = function (requestParameters, initOverrides) {

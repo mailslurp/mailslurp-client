@@ -63,6 +63,24 @@ export interface AITransformResultProjectionDto {
   entityType?: AITransformResultProjectionDtoEntityTypeEnum;
   /**
    *
+   * @type {string}
+   * @memberof AITransformResultProjectionDto
+   */
+  smsId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformResultProjectionDto
+   */
+  emailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformResultProjectionDto
+   */
+  attachmentId?: string | null;
+  /**
+   *
    * @type {Date}
    * @memberof AITransformResultProjectionDto
    */
@@ -101,6 +119,11 @@ export function AITransformResultProjectionDtoFromJSONTyped(
     value: !exists(json, 'value') ? undefined : json['value'],
     entityId: !exists(json, 'entityId') ? undefined : json['entityId'],
     entityType: !exists(json, 'entityType') ? undefined : json['entityType'],
+    smsId: !exists(json, 'smsId') ? undefined : json['smsId'],
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    attachmentId: !exists(json, 'attachmentId')
+      ? undefined
+      : json['attachmentId'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -122,6 +145,9 @@ export function AITransformResultProjectionDtoToJSON(
     value: value.value,
     entityId: value.entityId,
     entityType: value.entityType,
+    smsId: value.smsId,
+    emailId: value.emailId,
+    attachmentId: value.attachmentId,
     createdAt: value.createdAt.toISOString(),
   };
 }

@@ -99,7 +99,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+     * Applies RFC3501 IMAP flag operations on a message. Current implementation supports read/unread semantics via the `\\\\Seen` flag only.
      * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
      */
     EmailControllerApi.prototype.applyImapFlagOperationRaw = function (requestParameters, initOverrides) {
@@ -139,7 +139,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+     * Applies RFC3501 IMAP flag operations on a message. Current implementation supports read/unread semantics via the `\\\\Seen` flag only.
      * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
      */
     EmailControllerApi.prototype.applyImapFlagOperation = function (requestParameters, initOverrides) {
@@ -157,8 +157,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Can user send email to given recipient or is the recipient blocked
-     * Check if email can be sent and options are valid.
+     * Validates sender/inbox context and recipient eligibility before attempting a send. Useful for preflight checks in UI or test workflows.
+     * Check whether an email send would be accepted
      */
     EmailControllerApi.prototype.canSendRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -200,8 +200,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Can user send email to given recipient or is the recipient blocked
-     * Check if email can be sent and options are valid.
+     * Validates sender/inbox context and recipient eligibility before attempting a send. Useful for preflight checks in UI or test workflows.
+     * Check whether an email send would be accepted
      */
     EmailControllerApi.prototype.canSend = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -218,8 +218,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
-     * Detect broken links, spelling, and images in email content
+     * Runs content quality checks against hydrated email body content. This endpoint performs outbound HTTP checks for linked resources, so avoid use with sensitive or stateful URLs.
+     * Check email body for broken links, images, and spelling issues
      */
     EmailControllerApi.prototype.checkEmailBodyRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -252,8 +252,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
-     * Detect broken links, spelling, and images in email content
+     * Runs content quality checks against hydrated email body content. This endpoint performs outbound HTTP checks for linked resources, so avoid use with sensitive or stateful URLs.
+     * Check email body for broken links, images, and spelling issues
      */
     EmailControllerApi.prototype.checkEmailBody = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -270,8 +270,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
-     * Show which mail clients support the HTML and CSS features used in an email body.
+     * Detects HTML/CSS features in the target email body and reports compatibility across major email clients and devices.
+     * Check client support for features used in a stored email body
      */
     EmailControllerApi.prototype.checkEmailBodyFeatureSupportRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -304,8 +304,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
-     * Show which mail clients support the HTML and CSS features used in an email body.
+     * Detects HTML/CSS features in the target email body and reports compatibility across major email clients and devices.
+     * Check client support for features used in a stored email body
      */
     EmailControllerApi.prototype.checkEmailBodyFeatureSupport = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -322,8 +322,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
-     * Show which email programs and devices support the features used in an email body.
+     * Evaluates HTML/CSS features in the supplied body and reports support coverage across major email clients and platforms.
+     * Check email-client support for a provided HTML body
      */
     EmailControllerApi.prototype.checkEmailClientSupportRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -358,8 +358,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
-     * Show which email programs and devices support the features used in an email body.
+     * Evaluates HTML/CSS features in the supplied body and reports support coverage across major email clients and platforms.
+     * Check email-client support for a provided HTML body
      */
     EmailControllerApi.prototype.checkEmailClientSupport = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -376,7 +376,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Deletes all emails in your account. Be careful as emails cannot be recovered
+     * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
     EmailControllerApi.prototype.deleteAllEmailsRaw = function (initOverrides) {
@@ -404,7 +404,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Deletes all emails in your account. Be careful as emails cannot be recovered
+     * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
     EmailControllerApi.prototype.deleteAllEmails = function (initOverrides) {
@@ -420,7 +420,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
+     * Deletes a single email from account scope. Operation is destructive and not reversible.
      * Delete an email
      */
     EmailControllerApi.prototype.deleteEmailRaw = function (requestParameters, initOverrides) {
@@ -452,7 +452,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
+     * Deletes a single email from account scope. Operation is destructive and not reversible.
      * Delete an email
      */
     EmailControllerApi.prototype.deleteEmail = function (requestParameters, initOverrides) {
@@ -468,7 +468,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+     * Returns attachment bytes by attachment ID. Use attachment IDs from email payloads or attachment listing endpoints.
      * Get email attachment bytes. Returned as `octet-stream` with content type header. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints and convert the base 64 encoded content to a file or string.
      */
     EmailControllerApi.prototype.downloadAttachmentRaw = function (requestParameters, initOverrides) {
@@ -509,7 +509,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+     * Returns attachment bytes by attachment ID. Use attachment IDs from email payloads or attachment listing endpoints.
      * Get email attachment bytes. Returned as `octet-stream` with content type header. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints and convert the base 64 encoded content to a file or string.
      */
     EmailControllerApi.prototype.downloadAttachment = function (requestParameters, initOverrides) {
@@ -527,7 +527,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+     * Returns attachment payload as base64 in JSON. Useful for clients that cannot reliably consume binary streaming responses.
      * Get email attachment as base64 encoded string as an alternative to binary responses. Decode the `base64FileContents` as a `utf-8` encoded string or array of bytes depending on the `contentType`.
      */
     EmailControllerApi.prototype.downloadAttachmentBase64Raw = function (requestParameters, initOverrides) {
@@ -567,7 +567,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+     * Returns attachment payload as base64 in JSON. Useful for clients that cannot reliably consume binary streaming responses.
      * Get email attachment as base64 encoded string as an alternative to binary responses. Decode the `base64FileContents` as a `utf-8` encoded string or array of bytes depending on the `contentType`.
      */
     EmailControllerApi.prototype.downloadAttachmentBase64 = function (requestParameters, initOverrides) {
@@ -585,7 +585,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified email body for a given email as a string
+     * Returns hydrated email body text as a string with content type aligned to the underlying body format.
      * Get email body as string. Returned as `plain/text` with content type header.
      */
     EmailControllerApi.prototype.downloadBodyRaw = function (requestParameters, initOverrides) {
@@ -617,7 +617,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified email body for a given email as a string
+     * Returns hydrated email body text as a string with content type aligned to the underlying body format.
      * Get email body as string. Returned as `plain/text` with content type header.
      */
     EmailControllerApi.prototype.downloadBody = function (requestParameters, initOverrides) {
@@ -635,7 +635,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified email body for a given email as a stream / array of bytes.
+     * Streams hydrated email body bytes with content type derived from the message body format.
      * Get email body in bytes. Returned as `octet-stream` with content type header.
      */
     EmailControllerApi.prototype.downloadBodyBytesRaw = function (requestParameters, initOverrides) {
@@ -667,7 +667,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the specified email body for a given email as a stream / array of bytes.
+     * Streams hydrated email body bytes with content type derived from the message body format.
      * Get email body in bytes. Returned as `octet-stream` with content type header.
      */
     EmailControllerApi.prototype.downloadBodyBytes = function (requestParameters, initOverrides) {
@@ -685,7 +685,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Forward an existing email to new recipients. The sender of the email will be the inbox that received the email you are forwarding. You can override the sender with the `from` option. Note you must have access to the from address in MailSlurp to use the override. For more control consider fetching the email and sending it a new using the send email endpoints.
+     * Forwards an existing email to new recipients. Uses the owning inbox context unless overridden by allowed sender options.
      * Forward email to recipients
      */
     EmailControllerApi.prototype.forwardEmailRaw = function (requestParameters, initOverrides) {
@@ -725,7 +725,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Forward an existing email to new recipients. The sender of the email will be the inbox that received the email you are forwarding. You can override the sender with the `from` option. Note you must have access to the from address in MailSlurp to use the override. For more control consider fetching the email and sending it a new using the send email endpoints.
+     * Forwards an existing email to new recipients. Uses the owning inbox context unless overridden by allowed sender options.
      * Forward email to recipients
      */
     EmailControllerApi.prototype.forwardEmail = function (requestParameters, initOverrides) {
@@ -743,7 +743,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the metadata such as name and content-type for a given attachment and email.
+     * Returns metadata for a specific attachment ID (name, content type, and size fields).
      * Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
      */
     EmailControllerApi.prototype.getAttachmentMetaDataRaw = function (requestParameters, initOverrides) {
@@ -783,7 +783,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns the metadata such as name and content-type for a given attachment and email.
+     * Returns metadata for a specific attachment ID (name, content type, and size fields).
      * Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
      */
     EmailControllerApi.prototype.getAttachmentMetaData = function (requestParameters, initOverrides) {
@@ -801,8 +801,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
-     * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     * Returns parsed email content including headers and body fields. Accessing hydrated content may mark the email as read depending on read-state rules.
+     * Get hydrated email (headers and body)
      */
     EmailControllerApi.prototype.getEmailRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -835,8 +835,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
-     * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     * Returns parsed email content including headers and body fields. Accessing hydrated content may mark the email as read depending on read-state rules.
+     * Get hydrated email (headers and body)
      */
     EmailControllerApi.prototype.getEmail = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -853,8 +853,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns an array of attachment metadata such as name and content-type for a given email if present.
-     * Get all email attachment metadata. Metadata includes name and size of attachments.
+     * Returns metadata for all attachment IDs associated with the email (name, content type, size, and IDs).
+     * List attachment metadata for an email
      */
     EmailControllerApi.prototype.getEmailAttachmentsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -887,8 +887,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns an array of attachment metadata such as name and content-type for a given email if present.
-     * Get all email attachment metadata. Metadata includes name and size of attachments.
+     * Returns metadata for all attachment IDs associated with the email (name, content type, size, and IDs).
+     * List attachment metadata for an email
      */
     EmailControllerApi.prototype.getEmailAttachments = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -905,8 +905,62 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `[\'code is: 123456\', \'123456\']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
-     * Get email content regex pattern match results. Runs regex against email body and returns match groups.
+     * Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+     * Extract verification codes from an email
+     */
+    EmailControllerApi.prototype.getEmailCodesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailCodes.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/codes".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.ExtractCodesOptionsToJSON)(requestParameters.extractCodesOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExtractCodesResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+     * Extract verification codes from an email
+     */
+    EmailControllerApi.prototype.getEmailCodes = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailCodesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Executes a Java regex pattern over hydrated email body text and returns the full match plus capture groups. Pattern syntax follows Java `Pattern` rules.
+     * Run regex against hydrated email body and return matches
      */
     EmailControllerApi.prototype.getEmailContentMatchRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -945,8 +999,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `[\'code is: 123456\', \'123456\']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
-     * Get email content regex pattern match results. Runs regex against email body and returns match groups.
+     * Executes a Java regex pattern over hydrated email body text and returns the full match plus capture groups. Pattern syntax follows Java `Pattern` rules.
+     * Run regex against hydrated email body and return matches
      */
     EmailControllerApi.prototype.getEmailContentMatch = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -963,7 +1017,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get email body content parts from a multipart email message for a given content type
+     * Extracts one MIME body part by `contentType` and optional `index`, returned in a structured DTO with metadata.
      * Get email content part by content type
      */
     EmailControllerApi.prototype.getEmailContentPartRaw = function (requestParameters, initOverrides) {
@@ -1010,7 +1064,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get email body content parts from a multipart email message for a given content type
+     * Extracts one MIME body part by `contentType` and optional `index`, returned in a structured DTO with metadata.
      * Get email content part by content type
      */
     EmailControllerApi.prototype.getEmailContentPart = function (requestParameters, initOverrides) {
@@ -1028,8 +1082,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get email body content parts from a multipart email message for a given content type and return as response
-     * Get email content part by content type raw response
+     * Extracts one MIME body part by `contentType` and optional `index`, and returns raw content with matching response content type when valid.
+     * Get multipart content part as raw response
      */
     EmailControllerApi.prototype.getEmailContentPartContentRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1073,8 +1127,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get email body content parts from a multipart email message for a given content type and return as response
-     * Get email content part by content type raw response
+     * Extracts one MIME body part by `contentType` and optional `index`, and returns raw content with matching response content type when valid.
+     * Get multipart content part as raw response
      */
     EmailControllerApi.prototype.getEmailContentPartContent = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1091,6 +1145,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns total email count for the authenticated user, or count scoped to a specific inbox when `inboxId` is provided.
      * Get email count
      */
     EmailControllerApi.prototype.getEmailCountRaw = function (requestParameters, initOverrides) {
@@ -1123,6 +1178,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns total email count for the authenticated user, or count scoped to a specific inbox when `inboxId` is provided.
      * Get email count
      */
     EmailControllerApi.prototype.getEmailCount = function (requestParameters, initOverrides) {
@@ -1140,8 +1196,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
-     * Get email content as HTML. For displaying emails in browser context.
+     * Returns hydrated HTML body directly with `text/html` content type. Supports temporary access/browser usage and optional CID replacement for inline asset rendering.
+     * Get hydrated email HTML for browser rendering
      */
     EmailControllerApi.prototype.getEmailHTMLRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1175,8 +1231,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
-     * Get email content as HTML. For displaying emails in browser context.
+     * Returns hydrated HTML body directly with `text/html` content type. Supports temporary access/browser usage and optional CID replacement for inline asset rendering.
+     * Get hydrated email HTML for browser rendering
      */
     EmailControllerApi.prototype.getEmailHTML = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1193,8 +1249,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
-     * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+     * Returns hydrated HTML body and subject in a JSON DTO. Useful for API clients that need structured response payloads instead of raw HTML responses.
+     * Get hydrated email HTML wrapped in JSON
      */
     EmailControllerApi.prototype.getEmailHTMLJsonRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1230,8 +1286,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
-     * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+     * Returns hydrated HTML body and subject in a JSON DTO. Useful for API clients that need structured response payloads instead of raw HTML responses.
+     * Get hydrated email HTML wrapped in JSON
      */
     EmailControllerApi.prototype.getEmailHTMLJson = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1248,8 +1304,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
-     * Parse and return text from an email, stripping HTML and decoding encoded characters
+     * Applies a JSoup/CSS selector to hydrated HTML email body and returns matching text lines.
+     * Query hydrated HTML body and return matching text lines
      */
     EmailControllerApi.prototype.getEmailHTMLQueryRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1289,8 +1345,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
-     * Parse and return text from an email, stripping HTML and decoding encoded characters
+     * Applies a JSoup/CSS selector to hydrated HTML email body and returns matching text lines.
+     * Query hydrated HTML body and return matching text lines
      */
     EmailControllerApi.prototype.getEmailHTMLQuery = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1307,8 +1363,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
-     * Parse and return list of links found in an email (only works for HTML content)
+     * Parses HTML content and extracts link URLs (`href`). For non-HTML emails this endpoint returns a validation error.
+     * Extract links from an email HTML body
      */
     EmailControllerApi.prototype.getEmailLinksRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1344,8 +1400,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
-     * Parse and return list of links found in an email (only works for HTML content)
+     * Parses HTML content and extracts link URLs (`href`). For non-HTML emails this endpoint returns a validation error.
+     * Extract links from an email HTML body
      */
     EmailControllerApi.prototype.getEmailLinks = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1362,7 +1418,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Returns precomputed URLs for preview and raw message access for the specified email.
      * Get email URLs for viewing in browser or downloading
      */
     EmailControllerApi.prototype.getEmailPreviewURLsRaw = function (requestParameters, initOverrides) {
@@ -1396,7 +1452,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Returns precomputed URLs for preview and raw message access for the specified email.
      * Get email URLs for viewing in browser or downloading
      */
     EmailControllerApi.prototype.getEmailPreviewURLs = function (requestParameters, initOverrides) {
@@ -1414,7 +1470,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+     * Renders the email in a browser engine and returns PNG data as base64. Useful for APIs and dashboards that cannot easily stream binary responses.
      * Take a screenshot of an email in a browser and return base64 encoded string
      */
     EmailControllerApi.prototype.getEmailScreenshotAsBase64Raw = function (requestParameters, initOverrides) {
@@ -1454,7 +1510,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+     * Renders the email in a browser engine and returns PNG data as base64. Useful for APIs and dashboards that cannot easily stream binary responses.
      * Take a screenshot of an email in a browser and return base64 encoded string
      */
     EmailControllerApi.prototype.getEmailScreenshotAsBase64 = function (requestParameters, initOverrides) {
@@ -1472,7 +1528,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns binary octet-stream of screenshot of the given email
+     * Renders the email in a browser engine and returns PNG bytes. Intended for visual QA and rendering regression checks.
      * Take a screenshot of an email in a browser
      */
     EmailControllerApi.prototype.getEmailScreenshotAsBinaryRaw = function (requestParameters, initOverrides) {
@@ -1510,7 +1566,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns binary octet-stream of screenshot of the given email
+     * Renders the email in a browser engine and returns PNG bytes. Intended for visual QA and rendering regression checks.
      * Take a screenshot of an email in a browser
      */
     EmailControllerApi.prototype.getEmailScreenshotAsBinary = function (requestParameters, initOverrides) {
@@ -1526,8 +1582,60 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
-     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     * Attempts to parse a sender signature block from an email body. Uses raw MIME content parts when possible and falls back to hydrated body parsing. This is heuristic and may not be accurate for all email clients or formats.
+     * Extract signature from an inbound email
+     */
+    EmailControllerApi.prototype.getEmailSignatureRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailSignature.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/signature".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailSignatureParseResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Attempts to parse a sender signature block from an email body. Uses raw MIME content parts when possible and falls back to hydrated body parsing. This is heuristic and may not be accurate for all email clients or formats.
+     * Extract signature from an inbound email
+     */
+    EmailControllerApi.prototype.getEmailSignature = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailSignatureRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns lightweight metadata and headers for an email. Use `getEmail` for hydrated body content or `getRawEmail` for original SMTP content.
+     * Get email summary (headers/metadata only)
      */
     EmailControllerApi.prototype.getEmailSummaryRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1563,8 +1671,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a email summary object with headers. To retrieve the body see getEmail and to get raw unparsed email use the getRawEmail endpoints
-     * Get email data including headers but not body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
+     * Returns lightweight metadata and headers for an email. Use `getEmail` for hydrated body content or `getRawEmail` for original SMTP content.
+     * Get email summary (headers/metadata only)
      */
     EmailControllerApi.prototype.getEmailSummary = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1581,8 +1689,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
-     * Parse and return text from an email, stripping HTML and decoding encoded characters
+     * Converts email body content to line-based plain text with optional HTML entity decoding and custom line separator.
+     * Extract normalized text lines from email body
      */
     EmailControllerApi.prototype.getEmailTextLinesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1622,8 +1730,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
-     * Parse and return text from an email, stripping HTML and decoding encoded characters
+     * Converts email body content to line-based plain text with optional HTML entity decoding and custom line separator.
+     * Extract normalized text lines from email body
      */
     EmailControllerApi.prototype.getEmailTextLines = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1640,8 +1748,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
-     * Return email thread information. Use items endpoints to get messages for thread.
+     * Returns thread metadata built from RFC 5322 `Message-ID`, `In-Reply-To`, and `References` headers. Use `getEmailThreadItems` to fetch the thread messages.
+     * Get email thread metadata by thread ID
      */
     EmailControllerApi.prototype.getEmailThreadRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1674,8 +1782,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return email message thread summary from Message-ID, In-Reply-To, and References header. Get messages using items endpoint
-     * Return email thread information. Use items endpoints to get messages for thread.
+     * Returns thread metadata built from RFC 5322 `Message-ID`, `In-Reply-To`, and `References` headers. Use `getEmailThreadItems` to fetch the thread messages.
+     * Get email thread metadata by thread ID
      */
     EmailControllerApi.prototype.getEmailThread = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1692,8 +1800,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return email thread messages based on Message-ID, In-Reply-To, and References header
-     * Return email thread items.
+     * Returns all messages in a thread ordered by `createdAt` using the requested sort direction.
+     * Get messages in a specific email thread
      */
     EmailControllerApi.prototype.getEmailThreadItemsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1729,8 +1837,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return email thread messages based on Message-ID, In-Reply-To, and References header
-     * Return email thread items.
+     * Returns all messages in a thread ordered by `createdAt` using the requested sort direction.
+     * Get messages in a specific email thread
      */
     EmailControllerApi.prototype.getEmailThreadItems = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1747,8 +1855,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return email message chains built from Message-ID, In-Reply-To, and References header.
-     * Return email threads in paginated form
+     * Lists conversation threads inferred from `Message-ID`, `In-Reply-To`, and `References`. Supports filtering by inbox, search text, and time range.
+     * List email threads in paginated form
      */
     EmailControllerApi.prototype.getEmailThreadsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1798,8 +1906,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Return email message chains built from Message-ID, In-Reply-To, and References header.
-     * Return email threads in paginated form
+     * Lists conversation threads inferred from `Message-ID`, `In-Reply-To`, and `References`. Supports filtering by inbox, search text, and time range.
+     * List email threads in paginated form
      */
     EmailControllerApi.prototype.getEmailThreads = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1816,7 +1924,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Offset-style pagination endpoint for listing emails across inboxes. Supports inbox filters, unread-only, search, date boundaries, favourites, connector sync, plus-address filtering, and explicit include IDs.
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
     EmailControllerApi.prototype.getEmailsOffsetPaginatedRaw = function (requestParameters, initOverrides) {
@@ -1882,7 +1990,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Offset-style pagination endpoint for listing emails across inboxes. Supports inbox filters, unread-only, search, date boundaries, favourites, connector sync, plus-address filtering, and explicit include IDs.
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
     EmailControllerApi.prototype.getEmailsOffsetPaginated = function (requestParameters, initOverrides) {
@@ -1900,7 +2008,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Primary paginated email listing endpoint. Returns emails across inboxes with support for inbox filters, unread-only, search, date boundaries, favourites, connector sync, and plus-address filtering.
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
     EmailControllerApi.prototype.getEmailsPaginatedRaw = function (requestParameters, initOverrides) {
@@ -1963,7 +2071,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Primary paginated email listing endpoint. Returns emails across inboxes with support for inbox filters, unread-only, search, date boundaries, favourites, connector sync, and plus-address filtering.
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
     EmailControllerApi.prototype.getEmailsPaginated = function (requestParameters, initOverrides) {
@@ -1981,7 +2089,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get gravatar url for email address
+     * Builds a Gravatar image URL from the provided email address and optional size. This endpoint does not fetch image bytes; it only returns the computed URL.
+     * Get Gravatar URL for an email address
      */
     EmailControllerApi.prototype.getGravatarUrlForEmailAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -2020,7 +2129,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get gravatar url for email address
+     * Builds a Gravatar image URL from the provided email address and optional size. This endpoint does not fetch image bytes; it only returns the computed URL.
+     * Get Gravatar URL for an email address
      */
     EmailControllerApi.prototype.getGravatarUrlForEmailAddress = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -2037,7 +2147,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get the newest email in all inboxes or in a passed set of inbox IDs
+     * Returns the most recently received email across all inboxes or an optional subset of inbox IDs.
      * Get latest email in all inboxes. Most recently received.
      */
     EmailControllerApi.prototype.getLatestEmailRaw = function (requestParameters, initOverrides) {
@@ -2070,7 +2180,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get the newest email in all inboxes or in a passed set of inbox IDs
+     * Returns the most recently received email across all inboxes or an optional subset of inbox IDs.
      * Get latest email in all inboxes. Most recently received.
      */
     EmailControllerApi.prototype.getLatestEmail = function (requestParameters, initOverrides) {
@@ -2088,7 +2198,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get the newest email in all inboxes or in a passed set of inbox IDs
+     * Returns the newest email for the specified inbox ID. For polling/wait semantics use wait endpoints.
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
     EmailControllerApi.prototype.getLatestEmailInInbox1Raw = function (requestParameters, initOverrides) {
@@ -2125,7 +2235,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get the newest email in all inboxes or in a passed set of inbox IDs
+     * Returns the newest email for the specified inbox ID. For polling/wait semantics use wait endpoints.
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
     EmailControllerApi.prototype.getLatestEmailInInbox1 = function (requestParameters, initOverrides) {
@@ -2143,8 +2253,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
-     * Get all organization emails. List team or shared test email accounts
+     * Returns paginated emails visible through organization/team access. Supports inbox filtering, unread-only filtering, search, favourites, plus-address filtering, and optional connector sync.
+     * List organization-visible emails
      */
     EmailControllerApi.prototype.getOrganizationEmailsPaginatedRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -2206,8 +2316,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
-     * Get all organization emails. List team or shared test email accounts
+     * Returns paginated emails visible through organization/team access. Supports inbox filtering, unread-only filtering, search, favourites, plus-address filtering, and optional connector sync.
+     * List organization-visible emails
      */
     EmailControllerApi.prototype.getOrganizationEmailsPaginated = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -2224,7 +2334,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
+     * Returns the original unparsed SMTP/MIME message as `text/plain`. Use JSON variant if your client expects JSON transport.
      * Get raw email string. Returns unparsed raw SMTP message with headers and body.
      */
     EmailControllerApi.prototype.getRawEmailContentsRaw = function (requestParameters, initOverrides) {
@@ -2256,7 +2366,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
+     * Returns the original unparsed SMTP/MIME message as `text/plain`. Use JSON variant if your client expects JSON transport.
      * Get raw email string. Returns unparsed raw SMTP message with headers and body.
      */
     EmailControllerApi.prototype.getRawEmailContents = function (requestParameters, initOverrides) {
@@ -2272,7 +2382,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
+     * Returns the original unparsed SMTP/MIME message wrapped in a JSON DTO for API clients that avoid plain-text stream responses.
      * Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
      */
     EmailControllerApi.prototype.getRawEmailJsonRaw = function (requestParameters, initOverrides) {
@@ -2306,7 +2416,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
+     * Returns the original unparsed SMTP/MIME message wrapped in a JSON DTO for API clients that avoid plain-text stream responses.
      * Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
      */
     EmailControllerApi.prototype.getRawEmailJson = function (requestParameters, initOverrides) {
@@ -2324,7 +2434,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
+     * Returns unread email count. An email is considered read after dashboard/API retrieval depending on your read workflow.
      * Get unread email count
      */
     EmailControllerApi.prototype.getUnreadEmailCountRaw = function (requestParameters, initOverrides) {
@@ -2357,7 +2467,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
+     * Returns unread email count. An email is considered read after dashboard/API retrieval depending on your read workflow.
      * Get unread email count
      */
     EmailControllerApi.prototype.getUnreadEmailCount = function (requestParameters, initOverrides) {
@@ -2375,7 +2485,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * Sets read state for all emails, optionally scoped to one inbox. Use `read=false` to reset unread state in bulk.
      * Mark all emails as read or unread
      */
     EmailControllerApi.prototype.markAllAsReadRaw = function (requestParameters, initOverrides) {
@@ -2409,7 +2519,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * Sets read state for all emails, optionally scoped to one inbox. Use `read=false` to reset unread state in bulk.
      * Mark all emails as read or unread
      */
     EmailControllerApi.prototype.markAllAsRead = function (requestParameters, initOverrides) {
@@ -2425,7 +2535,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * Sets read state for one email. Useful when implementing custom mailbox workflows that treat viewed messages as unread.
      * Mark an email as read or unread
      */
     EmailControllerApi.prototype.markAsReadRaw = function (requestParameters, initOverrides) {
@@ -2462,7 +2572,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * Sets read state for one email. Useful when implementing custom mailbox workflows that treat viewed messages as unread.
      * Mark an email as read or unread
      */
     EmailControllerApi.prototype.markAsRead = function (requestParameters, initOverrides) {
@@ -2480,7 +2590,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
+     * Sends a reply using the original conversation context (subject/thread headers). Reply target resolution honors sender/reply-to semantics.
      * Reply to an email
      */
     EmailControllerApi.prototype.replyToEmailRaw = function (requestParameters, initOverrides) {
@@ -2520,7 +2630,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
+     * Sends a reply using the original conversation context (subject/thread headers). Reply target resolution honors sender/reply-to semantics.
      * Reply to an email
      */
     EmailControllerApi.prototype.replyToEmail = function (requestParameters, initOverrides) {
@@ -2538,7 +2648,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+     * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
      * Get all emails by search criteria. Return in paginated form.
      */
     EmailControllerApi.prototype.searchEmailsRaw = function (requestParameters, initOverrides) {
@@ -2583,7 +2693,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+     * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
      * Get all emails by search criteria. Return in paginated form.
      */
     EmailControllerApi.prototype.searchEmails = function (requestParameters, initOverrides) {
@@ -2601,7 +2711,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Alias for `InboxController.sendEmail` method - see original method for full details. Sends an email from a given inbox that you have created. If no inbox is supplied a random inbox will be created for you and used to send the email.
+     * Sends an email from an existing inbox, or creates a temporary inbox when `inboxId` is not provided. Supports `useDomainPool` and `virtualSend` inbox creation behavior for convenience sends.
      * Send email
      */
     EmailControllerApi.prototype.sendEmailSourceOptionalRaw = function (requestParameters, initOverrides) {
@@ -2644,7 +2754,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Alias for `InboxController.sendEmail` method - see original method for full details. Sends an email from a given inbox that you have created. If no inbox is supplied a random inbox will be created for you and used to send the email.
+     * Sends an email from an existing inbox, or creates a temporary inbox when `inboxId` is not provided. Supports `useDomainPool` and `virtualSend` inbox creation behavior for convenience sends.
      * Send email
      */
     EmailControllerApi.prototype.sendEmailSourceOptional = function (requestParameters, initOverrides) {
@@ -2660,7 +2770,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Set and return new favorite state for an email
+     * Sets favourite state for an email for dashboard/search workflows.
      * Set email favourited state
      */
     EmailControllerApi.prototype.setEmailFavouritedRaw = function (requestParameters, initOverrides) {
@@ -2699,7 +2809,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Set and return new favorite state for an email
+     * Sets favourite state for an email for dashboard/search workflows.
      * Set email favourited state
      */
     EmailControllerApi.prototype.setEmailFavourited = function (requestParameters, initOverrides) {
@@ -2715,7 +2825,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
+     * Runs HTML validation on the email body when HTML is present. Non-HTML emails are treated as valid for this check.
      * Validate email HTML contents
      */
     EmailControllerApi.prototype.validateEmailRaw = function (requestParameters, initOverrides) {
@@ -2749,7 +2859,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Validate the HTML content of email if HTML is found. Considered valid if no HTML is present.
+     * Runs HTML validation on the email body when HTML is present. Non-HTML emails are treated as valid for this check.
      * Validate email HTML contents
      */
     EmailControllerApi.prototype.validateEmail = function (requestParameters, initOverrides) {

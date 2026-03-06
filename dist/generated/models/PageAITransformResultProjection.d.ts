@@ -30,6 +30,12 @@ export interface PageAITransformResultProjection {
     pageable?: PageableObject;
     /**
      *
+     * @type {Array<string>}
+     * @memberof PageAITransformResultProjection
+     */
+    columns: Array<string>;
+    /**
+     *
      * @type {number}
      * @memberof PageAITransformResultProjection
      */

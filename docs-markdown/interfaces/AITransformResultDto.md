@@ -14,10 +14,14 @@ AITransformResultDto
 
 - [aiTransformId](AITransformResultDto.md#aitransformid)
 - [aiTransformMappingId](AITransformResultDto.md#aitransformmappingid)
+- [attachmentId](AITransformResultDto.md#attachmentid)
+- [columns](AITransformResultDto.md#columns)
 - [createdAt](AITransformResultDto.md#createdat)
+- [emailId](AITransformResultDto.md#emailid)
 - [entityId](AITransformResultDto.md#entityid)
 - [entityType](AITransformResultDto.md#entitytype)
 - [id](AITransformResultDto.md#id)
+- [smsId](AITransformResultDto.md#smsid)
 - [updatedAt](AITransformResultDto.md#updatedat)
 - [userId](AITransformResultDto.md#userid)
 - [value](AITransformResultDto.md#value)
@@ -36,7 +40,27 @@ ___
 
 ### aiTransformMappingId
 
-• **aiTransformMappingId**: `string`
+• `Optional` **aiTransformMappingId**: `string`
+
+**`Memberof`**
+
+AITransformResultDto
+
+___
+
+### attachmentId
+
+• `Optional` **attachmentId**: `string`
+
+**`Memberof`**
+
+AITransformResultDto
+
+___
+
+### columns
+
+• **columns**: `string`[]
 
 **`Memberof`**
 
@@ -54,9 +78,19 @@ AITransformResultDto
 
 ___
 
+### emailId
+
+• `Optional` **emailId**: `string`
+
+**`Memberof`**
+
+AITransformResultDto
+
+___
+
 ### entityId
 
-• **entityId**: `string`
+• `Optional` **entityId**: `string`
 
 **`Memberof`**
 
@@ -66,7 +100,7 @@ ___
 
 ### entityType
 
-• **entityType**: [`AITransformResultDtoEntityTypeEnum`](../enums/AITransformResultDtoEntityTypeEnum.md)
+• `Optional` **entityType**: [`AITransformResultDtoEntityTypeEnum`](../enums/AITransformResultDtoEntityTypeEnum.md)
 
 **`Memberof`**
 
@@ -77,6 +111,16 @@ ___
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+AITransformResultDto
+
+___
+
+### smsId
+
+• `Optional` **smsId**: `string`
 
 **`Memberof`**
 
@@ -106,7 +150,7 @@ ___
 
 ### value
 
-• **value**: `object`
+• `Optional` **value**: `object`
 
 **`Memberof`**
 

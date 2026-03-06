@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetTransformersSortEnum = exports.GetTransformerResultsSortEnum = exports.GetTransformerResultsEntityTypeEnum = exports.GetTransformerMappingsSortEnum = exports.GetTransformerMappingsEntityTypeEnum = exports.AIControllerApi = void 0;
+exports.GetTransformersSortEnum = exports.GetTransformerResultsTableSortEnum = exports.GetTransformerResultsTableEntityTypeEnum = exports.GetTransformerResultsSortEnum = exports.GetTransformerResultsEntityTypeEnum = exports.GetTransformerMappingsSortEnum = exports.GetTransformerMappingsEntityTypeEnum = exports.AIControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -389,6 +389,60 @@ var AIControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Export AI transformer results in formats such as Excel, CSV, XML etc.
+     * Export transformer results
+     */
+    AIControllerApi.prototype.exportTransformerResultsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.exportTransformerOptions === null ||
+                            requestParameters.exportTransformerOptions === undefined) {
+                            throw new runtime.RequiredError('exportTransformerOptions', 'Required parameter requestParameters.exportTransformerOptions was null or undefined when calling exportTransformerResults.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/results/export",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.ExportTransformerOptionsToJSON)(requestParameters.exportTransformerOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExportTransformerResponseFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Export AI transformer results in formats such as Excel, CSV, XML etc.
+     * Export transformer results
+     */
+    AIControllerApi.prototype.exportTransformerResults = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.exportTransformerResultsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Use output schemas to extract data from an attachment using AI
      * Generate structured content for an attachment
      */
@@ -542,6 +596,57 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.generateStructuredContentFromSmsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get the job status for an export
+     * Get export transformer results job
+     */
+    AIControllerApi.prototype.getExportTransformerResultsJobRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getExportTransformerResultsJob.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/results/export/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExportTransformerResultJobDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get the job status for an export
+     * Get export transformer results job
+     */
+    AIControllerApi.prototype.getExportTransformerResultsJob = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getExportTransformerResultsJobRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -780,6 +885,15 @@ var AIControllerApi = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.emailId !== undefined) {
+                            queryParameters['emailId'] = requestParameters.emailId;
+                        }
+                        if (requestParameters.smsId !== undefined) {
+                            queryParameters['smsId'] = requestParameters.smsId;
+                        }
+                        if (requestParameters.attachmentId !== undefined) {
+                            queryParameters['attachmentId'] = requestParameters.attachmentId;
+                        }
                         if (requestParameters.aiTransformId !== undefined) {
                             queryParameters['aiTransformId'] = requestParameters.aiTransformId;
                         }
@@ -831,6 +945,100 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getTransformerResultsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer results in table format
+     * Get transformer results table
+     */
+    AIControllerApi.prototype.getTransformerResultsTableRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.includeMetaData === null ||
+                            requestParameters.includeMetaData === undefined) {
+                            throw new runtime.RequiredError('includeMetaData', 'Required parameter requestParameters.includeMetaData was null or undefined when calling getTransformerResultsTable.');
+                        }
+                        if (requestParameters.flattenArraysToRows === null ||
+                            requestParameters.flattenArraysToRows === undefined) {
+                            throw new runtime.RequiredError('flattenArraysToRows', 'Required parameter requestParameters.flattenArraysToRows was null or undefined when calling getTransformerResultsTable.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.emailId !== undefined) {
+                            queryParameters['emailId'] = requestParameters.emailId;
+                        }
+                        if (requestParameters.smsId !== undefined) {
+                            queryParameters['smsId'] = requestParameters.smsId;
+                        }
+                        if (requestParameters.attachmentId !== undefined) {
+                            queryParameters['attachmentId'] = requestParameters.attachmentId;
+                        }
+                        if (requestParameters.aiTransformId !== undefined) {
+                            queryParameters['aiTransformId'] = requestParameters.aiTransformId;
+                        }
+                        if (requestParameters.aiTransformMappingId !== undefined) {
+                            queryParameters['aiTransformMappingId'] =
+                                requestParameters.aiTransformMappingId;
+                        }
+                        if (requestParameters.entityId !== undefined) {
+                            queryParameters['entityId'] = requestParameters.entityId;
+                        }
+                        if (requestParameters.entityType !== undefined) {
+                            queryParameters['entityType'] = requestParameters.entityType;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.includeMetaData !== undefined) {
+                            queryParameters['includeMetaData'] = requestParameters.includeMetaData;
+                        }
+                        if (requestParameters.flattenArraysToRows !== undefined) {
+                            queryParameters['flattenArraysToRows'] =
+                                requestParameters.flattenArraysToRows;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/results/table",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageTableDataFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get AI transformer results in table format
+     * Get transformer results table
+     */
+    AIControllerApi.prototype.getTransformerResultsTable = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTransformerResultsTableRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -954,6 +1162,66 @@ var AIControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Evaluate transform mapping match conditions for given email, sms, or attachment
+     * Test transformer mapping match result
+     */
+    AIControllerApi.prototype.testTransformerMappingMatchRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling testTransformerMappingMatch.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.emailId !== undefined) {
+                            queryParameters['emailId'] = requestParameters.emailId;
+                        }
+                        if (requestParameters.smsId !== undefined) {
+                            queryParameters['smsId'] = requestParameters.smsId;
+                        }
+                        if (requestParameters.attachmentId !== undefined) {
+                            queryParameters['attachmentId'] = requestParameters.attachmentId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/transformer/mappings/{id}/match".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AITransformMappingMatchResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Evaluate transform mapping match conditions for given email, sms, or attachment
+     * Test transformer mapping match result
+     */
+    AIControllerApi.prototype.testTransformerMappingMatch = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testTransformerMappingMatchRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Check if a schema is valid and can be used to extract data using AI
      * Validate structured content schema
      */
@@ -1046,6 +1314,24 @@ var GetTransformerResultsSortEnum;
     GetTransformerResultsSortEnum["ASC"] = "ASC";
     GetTransformerResultsSortEnum["DESC"] = "DESC";
 })(GetTransformerResultsSortEnum = exports.GetTransformerResultsSortEnum || (exports.GetTransformerResultsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTransformerResultsTableEntityTypeEnum;
+(function (GetTransformerResultsTableEntityTypeEnum) {
+    GetTransformerResultsTableEntityTypeEnum["INBOX"] = "INBOX";
+    GetTransformerResultsTableEntityTypeEnum["PHONE"] = "PHONE";
+})(GetTransformerResultsTableEntityTypeEnum = exports.GetTransformerResultsTableEntityTypeEnum || (exports.GetTransformerResultsTableEntityTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetTransformerResultsTableSortEnum;
+(function (GetTransformerResultsTableSortEnum) {
+    GetTransformerResultsTableSortEnum["ASC"] = "ASC";
+    GetTransformerResultsTableSortEnum["DESC"] = "DESC";
+})(GetTransformerResultsTableSortEnum = exports.GetTransformerResultsTableSortEnum || (exports.GetTransformerResultsTableSortEnum = {}));
 /**
  * @export
  * @enum {string}

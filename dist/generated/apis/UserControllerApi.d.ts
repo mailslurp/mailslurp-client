@@ -10,7 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageEntityAutomationItems, PageEntityEventItems, PageEntityFavouriteItems, UserInfoDto } from '../models';
+import { CreateInboxRetentionPolicyForAccountOptions, EmptyResponseDto, InboxRetentionPolicyDto, InboxRetentionPolicyOptionalDto, PageEntityAutomationItems, PageEntityEventItems, PageEntityFavouriteItems, UserInfoDto } from '../models';
+export interface CreateOrUpdateInboxRetentionPolicyForAccountRequest {
+    createInboxRetentionPolicyForAccountOptions: CreateInboxRetentionPolicyForAccountOptions;
+}
 export interface GetEntityAutomationsRequest {
     page?: number;
     size?: number;
@@ -51,6 +54,22 @@ export interface GetJsonPropertyAsStringRequest {
  */
 export declare class UserControllerApi extends runtime.BaseAPI {
     /**
+     * Create inbox retention policy for your global account
+     */
+    createOrUpdateInboxRetentionPolicyForAccountRaw(requestParameters: CreateOrUpdateInboxRetentionPolicyForAccountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>>;
+    /**
+     * Create inbox retention policy for your global account
+     */
+    createOrUpdateInboxRetentionPolicyForAccount(requestParameters: CreateOrUpdateInboxRetentionPolicyForAccountRequest, initOverrides?: RequestInit): Promise<InboxRetentionPolicyDto>;
+    /**
+     * Delete inbox retention policy for your global account
+     */
+    deleteInboxRetentionPolicyForAccountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmptyResponseDto>>;
+    /**
+     * Delete inbox retention policy for your global account
+     */
+    deleteInboxRetentionPolicyForAccount(initOverrides?: RequestInit): Promise<EmptyResponseDto>;
+    /**
      */
     getEntityAutomationsRaw(requestParameters: GetEntityAutomationsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEntityAutomationItems>>;
     /**
@@ -68,6 +87,14 @@ export declare class UserControllerApi extends runtime.BaseAPI {
     /**
      */
     getEntityFavorites(requestParameters: GetEntityFavoritesRequest, initOverrides?: RequestInit): Promise<PageEntityFavouriteItems>;
+    /**
+     * Get inbox retention policy for your global account
+     */
+    getInboxRetentionPolicyForAccountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPolicyOptionalDto>>;
+    /**
+     * Get inbox retention policy for your global account
+     */
+    getInboxRetentionPolicyForAccount(initOverrides?: RequestInit): Promise<InboxRetentionPolicyOptionalDto>;
     /**
      * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */

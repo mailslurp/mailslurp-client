@@ -36,13 +36,13 @@ export interface PhoneNumberProjection {
    * @type {string}
    * @memberof PhoneNumberProjection
    */
-  phoneNumber: string;
+  phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberProjection
    */
-  phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+  phoneNumber: string;
   /**
    *
    * @type {string}
@@ -69,10 +69,10 @@ export enum PhoneNumberProjectionPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
-  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
+  FI = 'FI',
   SE = 'SE',
 }
 
@@ -92,8 +92,8 @@ export function PhoneNumberProjectionFromJSONTyped(
   return {
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
-    phoneNumber: json['phoneNumber'],
     phoneCountry: json['phoneCountry'],
+    phoneNumber: json['phoneNumber'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
   };
@@ -111,8 +111,8 @@ export function PhoneNumberProjectionToJSON(
   return {
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
-    phoneNumber: value.phoneNumber,
     phoneCountry: value.phoneCountry,
+    phoneNumber: value.phoneNumber,
     name: value.name,
     id: value.id,
   };

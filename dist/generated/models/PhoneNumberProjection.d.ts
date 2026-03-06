@@ -32,13 +32,13 @@ export interface PhoneNumberProjection {
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    phoneNumber: string;
+    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    phoneNumber: string;
     /**
      *
      * @type {string}
@@ -64,10 +64,10 @@ export declare enum PhoneNumberProjectionPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
-    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",
+    FI = "FI",
     SE = "SE"
 }
 export declare function PhoneNumberProjectionFromJSON(json: any): PhoneNumberProjection;

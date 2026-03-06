@@ -56,13 +56,19 @@ export interface WebhookProjection {
      * @type {Date}
      * @memberof WebhookProjection
      */
-    createdAt: Date;
+    updatedAt: Date;
     /**
      *
      * @type {Date}
      * @memberof WebhookProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    aiTransformId?: string;
     /**
      *
      * @type {string}
@@ -75,12 +81,6 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     aiTransformerId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    aiTransformId?: string;
     /**
      *
      * @type {string}

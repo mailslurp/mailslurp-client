@@ -17,6 +17,12 @@ import {
   CountDto,
   CountDtoFromJSON,
   CountDtoToJSON,
+  ExtractCodesOptions,
+  ExtractCodesOptionsFromJSON,
+  ExtractCodesOptionsToJSON,
+  ExtractCodesResult,
+  ExtractCodesResultFromJSON,
+  ExtractCodesResultToJSON,
   PageSentSmsProjection,
   PageSentSmsProjectionFromJSON,
   PageSentSmsProjectionToJSON,
@@ -87,6 +93,11 @@ export interface GetSentSmsMessagesPaginatedRequest {
   since?: Date;
   before?: Date;
   search?: string;
+}
+
+export interface GetSmsCodesRequest {
+  smsId: string;
+  extractCodesOptions?: ExtractCodesOptions;
 }
 
 export interface GetSmsMessageRequest {
@@ -614,6 +625,68 @@ export class SmsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageSentSmsProjection> {
     const response = await this.getSentSmsMessagesPaginatedRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+   * Extract verification codes from an SMS
+   */
+  async getSmsCodesRaw(
+    requestParameters: GetSmsCodesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ExtractCodesResult>> {
+    if (
+      requestParameters.smsId === null ||
+      requestParameters.smsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsId',
+        'Required parameter requestParameters.smsId was null or undefined when calling getSmsCodes.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/{smsId}/codes`.replace(
+          `{${'smsId'}}`,
+          encodeURIComponent(String(requestParameters.smsId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ExtractCodesOptionsToJSON(requestParameters.extractCodesOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ExtractCodesResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Extract one-time passcodes and verification tokens from SMS body content. Deterministic `PATTERN` extraction is available now. Use method flags to control fallback behavior for QA.
+   * Extract verification codes from an SMS
+   */
+  async getSmsCodes(
+    requestParameters: GetSmsCodesRequest,
+    initOverrides?: RequestInit
+  ): Promise<ExtractCodesResult> {
+    const response = await this.getSmsCodesRaw(
       requestParameters,
       initOverrides
     );

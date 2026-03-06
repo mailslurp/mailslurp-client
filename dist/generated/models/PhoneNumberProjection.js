@@ -28,10 +28,10 @@ var PhoneNumberProjectionPhoneCountryEnum;
     PhoneNumberProjectionPhoneCountryEnum["EE"] = "EE";
     PhoneNumberProjectionPhoneCountryEnum["HK"] = "HK";
     PhoneNumberProjectionPhoneCountryEnum["PL"] = "PL";
-    PhoneNumberProjectionPhoneCountryEnum["CH"] = "CH";
     PhoneNumberProjectionPhoneCountryEnum["PT"] = "PT";
     PhoneNumberProjectionPhoneCountryEnum["NL"] = "NL";
     PhoneNumberProjectionPhoneCountryEnum["IL"] = "IL";
+    PhoneNumberProjectionPhoneCountryEnum["FI"] = "FI";
     PhoneNumberProjectionPhoneCountryEnum["SE"] = "SE";
 })(PhoneNumberProjectionPhoneCountryEnum = exports.PhoneNumberProjectionPhoneCountryEnum || (exports.PhoneNumberProjectionPhoneCountryEnum = {}));
 function PhoneNumberProjectionFromJSON(json) {
@@ -45,8 +45,8 @@ function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
-        phoneNumber: json['phoneNumber'],
         phoneCountry: json['phoneCountry'],
+        phoneNumber: json['phoneNumber'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
     };
@@ -62,8 +62,8 @@ function PhoneNumberProjectionToJSON(value) {
     return {
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
-        phoneNumber: value.phoneNumber,
         phoneCountry: value.phoneCountry,
+        phoneNumber: value.phoneNumber,
         name: value.name,
         id: value.id,
     };

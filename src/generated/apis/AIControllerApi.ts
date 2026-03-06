@@ -23,6 +23,9 @@ import {
   AITransformMappingDto,
   AITransformMappingDtoFromJSON,
   AITransformMappingDtoToJSON,
+  AITransformMappingMatchResult,
+  AITransformMappingMatchResultFromJSON,
+  AITransformMappingMatchResultToJSON,
   AITransformResultDto,
   AITransformResultDtoFromJSON,
   AITransformResultDtoToJSON,
@@ -32,6 +35,15 @@ import {
   CreateAITransformerMappingOptions,
   CreateAITransformerMappingOptionsFromJSON,
   CreateAITransformerMappingOptionsToJSON,
+  ExportTransformerOptions,
+  ExportTransformerOptionsFromJSON,
+  ExportTransformerOptionsToJSON,
+  ExportTransformerResponse,
+  ExportTransformerResponseFromJSON,
+  ExportTransformerResponseToJSON,
+  ExportTransformerResultJobDto,
+  ExportTransformerResultJobDtoFromJSON,
+  ExportTransformerResultJobDtoToJSON,
   GenerateStructuredContentAttachmentOptions,
   GenerateStructuredContentAttachmentOptionsFromJSON,
   GenerateStructuredContentAttachmentOptionsToJSON,
@@ -53,6 +65,9 @@ import {
   PageAITransformResultProjection,
   PageAITransformResultProjectionFromJSON,
   PageAITransformResultProjectionToJSON,
+  PageTableData,
+  PageTableDataFromJSON,
+  PageTableDataToJSON,
   StructuredContentResultDto,
   StructuredContentResultDtoFromJSON,
   StructuredContentResultDtoToJSON,
@@ -80,6 +95,10 @@ export interface DeleteTransformerMappingRequest {
   id: string;
 }
 
+export interface ExportTransformerResultsRequest {
+  exportTransformerOptions: ExportTransformerOptions;
+}
+
 export interface GenerateStructuredContentFromAttachmentRequest {
   generateStructuredContentAttachmentOptions: GenerateStructuredContentAttachmentOptions;
 }
@@ -90,6 +109,10 @@ export interface GenerateStructuredContentFromEmailRequest {
 
 export interface GenerateStructuredContentFromSmsRequest {
   generateStructuredContentSmsOptions: GenerateStructuredContentSmsOptions;
+}
+
+export interface GetExportTransformerResultsJobRequest {
+  id: string;
 }
 
 export interface GetTransformerRequest {
@@ -114,6 +137,9 @@ export interface GetTransformerResultRequest {
 }
 
 export interface GetTransformerResultsRequest {
+  emailId?: string;
+  smsId?: string;
+  attachmentId?: string;
   aiTransformId?: string;
   aiTransformMappingId?: string;
   entityId?: string;
@@ -121,6 +147,21 @@ export interface GetTransformerResultsRequest {
   page?: number;
   size?: number;
   sort?: GetTransformerResultsSortEnum;
+}
+
+export interface GetTransformerResultsTableRequest {
+  includeMetaData: boolean;
+  flattenArraysToRows: boolean;
+  emailId?: string;
+  smsId?: string;
+  attachmentId?: string;
+  aiTransformId?: string;
+  aiTransformMappingId?: string;
+  entityId?: string;
+  entityType?: GetTransformerResultsTableEntityTypeEnum;
+  page?: number;
+  size?: number;
+  sort?: GetTransformerResultsTableSortEnum;
 }
 
 export interface GetTransformersRequest {
@@ -132,6 +173,13 @@ export interface GetTransformersRequest {
 
 export interface InvokeTransformerRequest {
   invokeTransformerOptions: InvokeTransformerOptions;
+}
+
+export interface TestTransformerMappingMatchRequest {
+  id: string;
+  emailId?: string;
+  smsId?: string;
+  attachmentId?: string;
 }
 
 export interface ValidateStructuredOutputSchemaRequest {
@@ -439,6 +487,67 @@ export class AIControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Export AI transformer results in formats such as Excel, CSV, XML etc.
+   * Export transformer results
+   */
+  async exportTransformerResultsRaw(
+    requestParameters: ExportTransformerResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ExportTransformerResponse>> {
+    if (
+      requestParameters.exportTransformerOptions === null ||
+      requestParameters.exportTransformerOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'exportTransformerOptions',
+        'Required parameter requestParameters.exportTransformerOptions was null or undefined when calling exportTransformerResults.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/results/export`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ExportTransformerOptionsToJSON(
+          requestParameters.exportTransformerOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ExportTransformerResponseFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Export AI transformer results in formats such as Excel, CSV, XML etc.
+   * Export transformer results
+   */
+  async exportTransformerResults(
+    requestParameters: ExportTransformerResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<ExportTransformerResponse> {
+    const response = await this.exportTransformerResultsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Use output schemas to extract data from an attachment using AI
    * Generate structured content for an attachment
    */
@@ -615,6 +724,62 @@ export class AIControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<StructuredContentResultDto> {
     const response = await this.generateStructuredContentFromSmsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get the job status for an export
+   * Get export transformer results job
+   */
+  async getExportTransformerResultsJobRaw(
+    requestParameters: GetExportTransformerResultsJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ExportTransformerResultJobDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getExportTransformerResultsJob.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/results/export/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ExportTransformerResultJobDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get the job status for an export
+   * Get export transformer results job
+   */
+  async getExportTransformerResultsJob(
+    requestParameters: GetExportTransformerResultsJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<ExportTransformerResultJobDto> {
+    const response = await this.getExportTransformerResultsJobRaw(
       requestParameters,
       initOverrides
     );
@@ -869,6 +1034,18 @@ export class AIControllerApi extends runtime.BaseAPI {
   ): Promise<runtime.ApiResponse<PageAITransformResultProjection>> {
     const queryParameters: any = {};
 
+    if (requestParameters.emailId !== undefined) {
+      queryParameters['emailId'] = requestParameters.emailId;
+    }
+
+    if (requestParameters.smsId !== undefined) {
+      queryParameters['smsId'] = requestParameters.smsId;
+    }
+
+    if (requestParameters.attachmentId !== undefined) {
+      queryParameters['attachmentId'] = requestParameters.attachmentId;
+    }
+
     if (requestParameters.aiTransformId !== undefined) {
       queryParameters['aiTransformId'] = requestParameters.aiTransformId;
     }
@@ -928,6 +1105,122 @@ export class AIControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageAITransformResultProjection> {
     const response = await this.getTransformerResultsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get AI transformer results in table format
+   * Get transformer results table
+   */
+  async getTransformerResultsTableRaw(
+    requestParameters: GetTransformerResultsTableRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageTableData>> {
+    if (
+      requestParameters.includeMetaData === null ||
+      requestParameters.includeMetaData === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'includeMetaData',
+        'Required parameter requestParameters.includeMetaData was null or undefined when calling getTransformerResultsTable.'
+      );
+    }
+
+    if (
+      requestParameters.flattenArraysToRows === null ||
+      requestParameters.flattenArraysToRows === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'flattenArraysToRows',
+        'Required parameter requestParameters.flattenArraysToRows was null or undefined when calling getTransformerResultsTable.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.emailId !== undefined) {
+      queryParameters['emailId'] = requestParameters.emailId;
+    }
+
+    if (requestParameters.smsId !== undefined) {
+      queryParameters['smsId'] = requestParameters.smsId;
+    }
+
+    if (requestParameters.attachmentId !== undefined) {
+      queryParameters['attachmentId'] = requestParameters.attachmentId;
+    }
+
+    if (requestParameters.aiTransformId !== undefined) {
+      queryParameters['aiTransformId'] = requestParameters.aiTransformId;
+    }
+
+    if (requestParameters.aiTransformMappingId !== undefined) {
+      queryParameters['aiTransformMappingId'] =
+        requestParameters.aiTransformMappingId;
+    }
+
+    if (requestParameters.entityId !== undefined) {
+      queryParameters['entityId'] = requestParameters.entityId;
+    }
+
+    if (requestParameters.entityType !== undefined) {
+      queryParameters['entityType'] = requestParameters.entityType;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.includeMetaData !== undefined) {
+      queryParameters['includeMetaData'] = requestParameters.includeMetaData;
+    }
+
+    if (requestParameters.flattenArraysToRows !== undefined) {
+      queryParameters['flattenArraysToRows'] =
+        requestParameters.flattenArraysToRows;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/results/table`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageTableDataFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get AI transformer results in table format
+   * Get transformer results table
+   */
+  async getTransformerResultsTable(
+    requestParameters: GetTransformerResultsTableRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageTableData> {
+    const response = await this.getTransformerResultsTableRaw(
       requestParameters,
       initOverrides
     );
@@ -1058,6 +1351,74 @@ export class AIControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Evaluate transform mapping match conditions for given email, sms, or attachment
+   * Test transformer mapping match result
+   */
+  async testTransformerMappingMatchRaw(
+    requestParameters: TestTransformerMappingMatchRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AITransformMappingMatchResult>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling testTransformerMappingMatch.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.emailId !== undefined) {
+      queryParameters['emailId'] = requestParameters.emailId;
+    }
+
+    if (requestParameters.smsId !== undefined) {
+      queryParameters['smsId'] = requestParameters.smsId;
+    }
+
+    if (requestParameters.attachmentId !== undefined) {
+      queryParameters['attachmentId'] = requestParameters.attachmentId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/transformer/mappings/{id}/match`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AITransformMappingMatchResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Evaluate transform mapping match conditions for given email, sms, or attachment
+   * Test transformer mapping match result
+   */
+  async testTransformerMappingMatch(
+    requestParameters: TestTransformerMappingMatchRequest,
+    initOverrides?: RequestInit
+  ): Promise<AITransformMappingMatchResult> {
+    const response = await this.testTransformerMappingMatchRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Check if a schema is valid and can be used to extract data using AI
    * Validate structured content schema
    */
@@ -1148,6 +1509,22 @@ export enum GetTransformerResultsEntityTypeEnum {
  * @enum {string}
  */
 export enum GetTransformerResultsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTransformerResultsTableEntityTypeEnum {
+  INBOX = 'INBOX',
+  PHONE = 'PHONE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTransformerResultsTableSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

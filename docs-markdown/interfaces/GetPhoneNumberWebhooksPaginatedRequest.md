@@ -9,6 +9,7 @@
 - [before](GetPhoneNumberWebhooksPaginatedRequest.md#before)
 - [eventType](GetPhoneNumberWebhooksPaginatedRequest.md#eventtype)
 - [health](GetPhoneNumberWebhooksPaginatedRequest.md#health)
+- [includeAccountWide](GetPhoneNumberWebhooksPaginatedRequest.md#includeaccountwide)
 - [page](GetPhoneNumberWebhooksPaginatedRequest.md#page)
 - [phoneId](GetPhoneNumberWebhooksPaginatedRequest.md#phoneid)
 - [searchFilter](GetPhoneNumberWebhooksPaginatedRequest.md#searchfilter)
@@ -33,6 +34,12 @@ ___
 ### health
 
 • `Optional` **health**: [`GetPhoneNumberWebhooksPaginatedHealthEnum`](../enums/GetPhoneNumberWebhooksPaginatedHealthEnum.md)
+
+___
+
+### includeAccountWide
+
+• `Optional` **includeAccountWide**: `boolean`
 
 ___
 

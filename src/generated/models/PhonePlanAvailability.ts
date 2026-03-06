@@ -32,6 +32,31 @@ export interface PhonePlanAvailability {
    * @memberof PhonePlanAvailability
    */
   items: Array<PhonePlanAvailabilityItem>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof PhonePlanAvailability
+   */
+  disabledPhoneCountries: Array<PhonePlanAvailabilityDisabledPhoneCountriesEnum>;
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum PhonePlanAvailabilityDisabledPhoneCountriesEnum {
+  US = 'US',
+  GB = 'GB',
+  AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  FI = 'FI',
+  SE = 'SE',
 }
 
 export function PhonePlanAvailabilityFromJSON(
@@ -49,6 +74,7 @@ export function PhonePlanAvailabilityFromJSONTyped(
   }
   return {
     items: (json['items'] as Array<any>).map(PhonePlanAvailabilityItemFromJSON),
+    disabledPhoneCountries: json['disabledPhoneCountries'],
   };
 }
 
@@ -63,5 +89,6 @@ export function PhonePlanAvailabilityToJSON(
   }
   return {
     items: (value.items as Array<any>).map(PhonePlanAvailabilityItemToJSON),
+    disabledPhoneCountries: value.disabledPhoneCountries,
   };
 }

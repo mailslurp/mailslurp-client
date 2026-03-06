@@ -43,6 +43,18 @@ export interface CreatePhoneNumberOptions {
    * @memberof CreatePhoneNumberOptions
    */
   schedule?: CreatePhoneNumberOptionsScheduleEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePhoneNumberOptions
+   */
+  phoneNumberEndpointOverride?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePhoneNumberOptions
+   */
+  phoneNumberVariant?: CreatePhoneNumberOptionsPhoneNumberVariantEnum;
 }
 
 /**
@@ -57,10 +69,10 @@ export enum CreatePhoneNumberOptionsPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
-  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
+  FI = 'FI',
   SE = 'SE',
 }
 /**
@@ -70,6 +82,15 @@ export enum CreatePhoneNumberOptionsPhoneCountryEnum {
 export enum CreatePhoneNumberOptionsScheduleEnum {
   MONTHLY = 'MONTHLY',
   YEARLY = 'YEARLY',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreatePhoneNumberOptionsPhoneNumberVariantEnum {
+  LOCAL = 'LOCAL',
+  MOBILE = 'MOBILE',
+  TOLL_FREE = 'TOLL_FREE',
 }
 
 export function CreatePhoneNumberOptionsFromJSON(
@@ -90,6 +111,12 @@ export function CreatePhoneNumberOptionsFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     description: !exists(json, 'description') ? undefined : json['description'],
     schedule: !exists(json, 'schedule') ? undefined : json['schedule'],
+    phoneNumberEndpointOverride: !exists(json, 'phoneNumberEndpointOverride')
+      ? undefined
+      : json['phoneNumberEndpointOverride'],
+    phoneNumberVariant: !exists(json, 'phoneNumberVariant')
+      ? undefined
+      : json['phoneNumberVariant'],
   };
 }
 
@@ -107,5 +134,7 @@ export function CreatePhoneNumberOptionsToJSON(
     name: value.name,
     description: value.description,
     schedule: value.schedule,
+    phoneNumberEndpointOverride: value.phoneNumberEndpointOverride,
+    phoneNumberVariant: value.phoneNumberVariant,
   };
 }

@@ -48,6 +48,12 @@ export interface PageAITransformResultProjection {
   pageable?: PageableObject;
   /**
    *
+   * @type {Array<string>}
+   * @memberof PageAITransformResultProjection
+   */
+  columns: Array<string>;
+  /**
+   *
    * @type {number}
    * @memberof PageAITransformResultProjection
    */
@@ -124,6 +130,7 @@ export function PageAITransformResultProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
+    columns: json['columns'],
     totalElements: json['totalElements'],
     totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
@@ -155,6 +162,7 @@ export function PageAITransformResultProjectionToJSON(
             AITransformResultProjectionDtoToJSON
           ),
     pageable: PageableObjectToJSON(value.pageable),
+    columns: value.columns,
     totalElements: value.totalElements,
     totalPages: value.totalPages,
     last: value.last,

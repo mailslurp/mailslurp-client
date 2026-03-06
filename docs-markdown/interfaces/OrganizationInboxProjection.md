@@ -35,7 +35,7 @@ OrganizationInboxProjection
 
 ### accountRegion
 
-• `Optional` **accountRegion**: [`US_WEST_2`](../enums/OrganizationInboxProjectionAccountRegionEnum.md#us_west_2)
+• `Optional` **accountRegion**: [`OrganizationInboxProjectionAccountRegionEnum`](../enums/OrganizationInboxProjectionAccountRegionEnum.md)
 
 Region of the inbox
 

@@ -29,6 +29,9 @@ import {
   DomainPreview,
   DomainPreviewFromJSON,
   DomainPreviewToJSON,
+  DomainRegionGroupsDto,
+  DomainRegionGroupsDtoFromJSON,
+  DomainRegionGroupsDtoToJSON,
   InboxDto,
   InboxDtoFromJSON,
   InboxDtoToJSON,
@@ -47,6 +50,10 @@ export interface CreateDomainRequest {
 
 export interface DeleteDomainRequest {
   id: string;
+}
+
+export interface GetAvailableDomainRegionsRequest {
+  inboxType?: GetAvailableDomainRegionsInboxTypeEnum;
 }
 
 export interface GetAvailableDomainsRequest {
@@ -238,6 +245,56 @@ export class DomainControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Array<string>> {
     const response = await this.deleteDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List all domains available for use with email address creation, including account-region and create/send enablement flags.
+   * Get all usable domains with account region status
+   */
+  async getAvailableDomainRegionsRaw(
+    requestParameters: GetAvailableDomainRegionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainRegionGroupsDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxType !== undefined) {
+      queryParameters['inboxType'] = requestParameters.inboxType;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domains/available-domain-regions`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainRegionGroupsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List all domains available for use with email address creation, including account-region and create/send enablement flags.
+   * Get all usable domains with account region status
+   */
+  async getAvailableDomainRegions(
+    requestParameters: GetAvailableDomainRegionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainRegionGroupsDto> {
+    const response = await this.getAvailableDomainRegionsRaw(
       requestParameters,
       initOverrides
     );
@@ -605,6 +662,14 @@ export class DomainControllerApi extends runtime.BaseAPI {
   }
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAvailableDomainRegionsInboxTypeEnum {
+  HTTP_INBOX = 'HTTP_INBOX',
+  SMTP_INBOX = 'SMTP_INBOX',
+}
 /**
  * @export
  * @enum {string}

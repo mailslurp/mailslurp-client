@@ -26,6 +26,7 @@ function ConditionalStructuredContentResultFromJSONTyped(json, ignoreDiscriminat
     return {
         result: !(0, runtime_1.exists)(json, 'result') ? undefined : json['result'],
         conditionsMatch: json['conditionsMatch'],
+        tokenCount: !(0, runtime_1.exists)(json, 'tokenCount') ? undefined : json['tokenCount'],
     };
 }
 exports.ConditionalStructuredContentResultFromJSONTyped = ConditionalStructuredContentResultFromJSONTyped;
@@ -39,6 +40,7 @@ function ConditionalStructuredContentResultToJSON(value) {
     return {
         result: value.result,
         conditionsMatch: value.conditionsMatch,
+        tokenCount: value.tokenCount,
     };
 }
 exports.ConditionalStructuredContentResultToJSON = ConditionalStructuredContentResultToJSON;

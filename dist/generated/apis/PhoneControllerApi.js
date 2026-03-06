@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetSmsByPhoneNumberSortEnum = exports.GetSentSmsByPhoneNumberSortEnum = exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.PhoneControllerApi = void 0;
+exports.GetSmsByPhoneNumberSortEnum = exports.GetSentSmsByPhoneNumberSortEnum = exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.GetAllPhoneNumberReleasesSortEnum = exports.PhoneControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -207,6 +207,50 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Remove all phone number from account
+     * Delete all phone numbers
+     */
+    PhoneControllerApi.prototype.deleteAllPhoneNumberRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Remove all phone number from account
+     * Delete all phone numbers
+     */
+    PhoneControllerApi.prototype.deleteAllPhoneNumber = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteAllPhoneNumberRaw(initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Delete an emergency address
      * Delete an emergency address
      */
@@ -250,6 +294,64 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteEmergencyAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Delete all messages in an SMS thread
+     * Delete messages in a phone thread
+     */
+    PhoneControllerApi.prototype.deletePhoneMessageThreadItemsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling deletePhoneMessageThreadItems.');
+                        }
+                        if (requestParameters.otherNumber === null ||
+                            requestParameters.otherNumber === undefined) {
+                            throw new runtime.RequiredError('otherNumber', 'Required parameter requestParameters.otherNumber was null or undefined when calling deletePhoneMessageThreadItems.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/message-threads/{otherNumber}"
+                                    .replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId)))
+                                    .replace("{".concat('otherNumber', "}"), encodeURIComponent(String(requestParameters.otherNumber))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmptyResponseDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Delete all messages in an SMS thread
+     * Delete messages in a phone thread
+     */
+    PhoneControllerApi.prototype.deletePhoneMessageThreadItems = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deletePhoneMessageThreadItemsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -352,6 +454,63 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllPhoneMessageThreadsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List released or deleted phone numbers
+     * Get all phone number releases
+     */
+    PhoneControllerApi.prototype.getAllPhoneNumberReleasesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/releases",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PagePhoneNumberReleaseProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List released or deleted phone numbers
+     * Get all phone number releases
+     */
+    PhoneControllerApi.prototype.getAllPhoneNumberReleases = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllPhoneNumberReleasesRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -793,6 +952,58 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a released or deleted phone numbers
+     * Get phone number release
+     */
+    PhoneControllerApi.prototype.getPhoneNumberReleaseRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.releaseId === null ||
+                            requestParameters.releaseId === undefined) {
+                            throw new runtime.RequiredError('releaseId', 'Required parameter requestParameters.releaseId was null or undefined when calling getPhoneNumberRelease.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/releases/{releaseId}".replace("{".concat('releaseId', "}"), encodeURIComponent(String(requestParameters.releaseId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberReleaseProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a released or deleted phone numbers
+     * Get phone number release
+     */
+    PhoneControllerApi.prototype.getPhoneNumberRelease = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneNumberReleaseRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * List phone numbers for account
      * Get phone numbers
      */
@@ -962,6 +1173,54 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get overview of assigned phones
+     * Get phone summary
+     */
+    PhoneControllerApi.prototype.getPhoneSummaryRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/summary",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneSummaryDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get overview of assigned phones
+     * Get phone summary
+     */
+    PhoneControllerApi.prototype.getPhoneSummary = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneSummaryRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get sent SMS messages for a phone number
      * List sent TXT messages for a phone number
      */
@@ -1099,6 +1358,58 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getSmsByPhoneNumberRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Reassign phone number that was released or deleted
+     * Reassign phone number release
+     */
+    PhoneControllerApi.prototype.reassignPhoneNumberReleaseRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.releaseId === null ||
+                            requestParameters.releaseId === undefined) {
+                            throw new runtime.RequiredError('releaseId', 'Required parameter requestParameters.releaseId was null or undefined when calling reassignPhoneNumberRelease.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/releases/{releaseId}/reassign".replace("{".concat('releaseId', "}"), encodeURIComponent(String(requestParameters.releaseId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Reassign phone number that was released or deleted
+     * Reassign phone number release
+     */
+    PhoneControllerApi.prototype.reassignPhoneNumberRelease = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.reassignPhoneNumberReleaseRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1279,7 +1590,7 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Test a phone number by sending an SMS to it
+     * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
      * Test sending an SMS to a number
      */
     PhoneControllerApi.prototype.testPhoneNumberSendSmsRaw = function (requestParameters, initOverrides) {
@@ -1321,7 +1632,7 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Test a phone number by sending an SMS to it
+     * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
      * Test sending an SMS to a number
      */
     PhoneControllerApi.prototype.testPhoneNumberSendSms = function (requestParameters, initOverrides) {
@@ -1455,6 +1766,15 @@ exports.PhoneControllerApi = PhoneControllerApi;
  * @export
  * @enum {string}
  */
+var GetAllPhoneNumberReleasesSortEnum;
+(function (GetAllPhoneNumberReleasesSortEnum) {
+    GetAllPhoneNumberReleasesSortEnum["ASC"] = "ASC";
+    GetAllPhoneNumberReleasesSortEnum["DESC"] = "DESC";
+})(GetAllPhoneNumberReleasesSortEnum = exports.GetAllPhoneNumberReleasesSortEnum || (exports.GetAllPhoneNumberReleasesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var GetPhoneNumbersPhoneCountryEnum;
 (function (GetPhoneNumbersPhoneCountryEnum) {
     GetPhoneNumbersPhoneCountryEnum["US"] = "US";
@@ -1464,10 +1784,10 @@ var GetPhoneNumbersPhoneCountryEnum;
     GetPhoneNumbersPhoneCountryEnum["EE"] = "EE";
     GetPhoneNumbersPhoneCountryEnum["HK"] = "HK";
     GetPhoneNumbersPhoneCountryEnum["PL"] = "PL";
-    GetPhoneNumbersPhoneCountryEnum["CH"] = "CH";
     GetPhoneNumbersPhoneCountryEnum["PT"] = "PT";
     GetPhoneNumbersPhoneCountryEnum["NL"] = "NL";
     GetPhoneNumbersPhoneCountryEnum["IL"] = "IL";
+    GetPhoneNumbersPhoneCountryEnum["FI"] = "FI";
     GetPhoneNumbersPhoneCountryEnum["SE"] = "SE";
 })(GetPhoneNumbersPhoneCountryEnum = exports.GetPhoneNumbersPhoneCountryEnum || (exports.GetPhoneNumbersPhoneCountryEnum = {}));
 /**

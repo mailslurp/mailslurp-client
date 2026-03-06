@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetMailSlurpDomainsInboxTypeEnum = exports.GetAvailableDomainsInboxTypeEnum = exports.DomainControllerApi = void 0;
+exports.GetMailSlurpDomainsInboxTypeEnum = exports.GetAvailableDomainsInboxTypeEnum = exports.GetAvailableDomainRegionsInboxTypeEnum = exports.DomainControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -244,6 +244,57 @@ var DomainControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteDomainRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List all domains available for use with email address creation, including account-region and create/send enablement flags.
+     * Get all usable domains with account region status
+     */
+    DomainControllerApi.prototype.getAvailableDomainRegionsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.inboxType !== undefined) {
+                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domains/available-domain-regions",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainRegionGroupsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List all domains available for use with email address creation, including account-region and create/send enablement flags.
+     * Get all usable domains with account region status
+     */
+    DomainControllerApi.prototype.getAvailableDomainRegions = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAvailableDomainRegionsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -615,6 +666,15 @@ var DomainControllerApi = /** @class */ (function (_super) {
     return DomainControllerApi;
 }(runtime.BaseAPI));
 exports.DomainControllerApi = DomainControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAvailableDomainRegionsInboxTypeEnum;
+(function (GetAvailableDomainRegionsInboxTypeEnum) {
+    GetAvailableDomainRegionsInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
+    GetAvailableDomainRegionsInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
+})(GetAvailableDomainRegionsInboxTypeEnum = exports.GetAvailableDomainRegionsInboxTypeEnum || (exports.GetAvailableDomainRegionsInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}

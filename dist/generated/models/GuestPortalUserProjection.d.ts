@@ -32,25 +32,25 @@ export interface GuestPortalUserProjection {
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    inboxId?: string;
+    emailAddress?: string;
     /**
      *
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    emailAddress?: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof GuestPortalUserProjection
-     */
-    createdAt: Date;
+    inboxId?: string;
     /**
      *
      * @type {Date}
      * @memberof GuestPortalUserProjection
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof GuestPortalUserProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

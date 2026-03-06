@@ -47,6 +47,29 @@ describe('different ways to import and instantiate a MailSlurp client', () => {
     expect(emailController).toBeTruthy();
     expect(waitController).toBeTruthy();
   });
+
+  test('a standard client exposes newly generated controllers', () => {
+    const apiKey = process.env.API_KEY || 'your-api-key';
+    const client = new MailSlurp({ apiKey });
+    const newControllerFields: Array<keyof MailSlurp> = [
+      'apiAuditLogController',
+      'campaignProbeController',
+      'connectorController',
+      'consentController',
+      'deliverabilityTestController',
+      'devicePreviewsController',
+      'domainMonitorController',
+      'expiredController',
+      'exportController',
+      'guestPortalController',
+      'imapController',
+      'missedSmsController',
+      'toolsController',
+    ];
+    for (const field of newControllerFields) {
+      expect(client[field]).toBeTruthy();
+    }
+  });
 });
 describe('common usage patterns using default client', () => {
   integrationTest('can create inboxes', async (mailslurp: MailSlurp) => {

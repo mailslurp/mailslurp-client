@@ -42,6 +42,11 @@ function AITransformResultProjectionDtoFromJSONTyped(json, ignoreDiscriminator) 
         value: !(0, runtime_1.exists)(json, 'value') ? undefined : json['value'],
         entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
         entityType: !(0, runtime_1.exists)(json, 'entityType') ? undefined : json['entityType'],
+        smsId: !(0, runtime_1.exists)(json, 'smsId') ? undefined : json['smsId'],
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        attachmentId: !(0, runtime_1.exists)(json, 'attachmentId')
+            ? undefined
+            : json['attachmentId'],
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -61,6 +66,9 @@ function AITransformResultProjectionDtoToJSON(value) {
         value: value.value,
         entityId: value.entityId,
         entityType: value.entityType,
+        smsId: value.smsId,
+        emailId: value.emailId,
+        attachmentId: value.attachmentId,
         createdAt: value.createdAt.toISOString(),
     };
 }

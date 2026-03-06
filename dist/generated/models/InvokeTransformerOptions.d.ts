@@ -21,25 +21,25 @@ export interface InvokeTransformerOptions {
      * @type {string}
      * @memberof InvokeTransformerOptions
      */
-    aiTransformId?: string;
+    aiTransformId?: string | null;
     /**
      *
      * @type {string}
      * @memberof InvokeTransformerOptions
      */
-    aiTransformMappingId?: string;
+    aiTransformMappingId?: string | null;
     /**
      *
      * @type {string}
      * @memberof InvokeTransformerOptions
      */
-    rawInput?: string;
+    rawInput?: string | null;
     /**
      *
      * @type {string}
      * @memberof InvokeTransformerOptions
      */
-    entityId?: string;
+    entityId?: string | null;
     /**
      *
      * @type {string}
@@ -51,13 +51,13 @@ export interface InvokeTransformerOptions {
      * @type {Array<string>}
      * @memberof InvokeTransformerOptions
      */
-    rawConditions?: Array<string>;
+    rawConditions?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
      * @memberof InvokeTransformerOptions
      */
-    rawInstructions?: Array<string>;
+    rawInstructions?: Array<string> | null;
     /**
      *
      * @type {StructuredOutputSchema}
@@ -70,6 +70,12 @@ export interface InvokeTransformerOptions {
      * @memberof InvokeTransformerOptions
      */
     contentSelector?: InvokeTransformerOptionsContentSelectorEnum;
+    /**
+     *
+     * @type {boolean}
+     * @memberof InvokeTransformerOptions
+     */
+    saveResults?: boolean | null;
 }
 /**
  * @export

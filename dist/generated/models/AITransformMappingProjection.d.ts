@@ -32,6 +32,12 @@ export interface AITransformMappingProjection {
      * @type {string}
      * @memberof AITransformMappingProjection
      */
+    entityType: AITransformMappingProjectionEntityTypeEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
     aiTransformId: string;
     /**
      *
@@ -39,12 +45,6 @@ export interface AITransformMappingProjection {
      * @memberof AITransformMappingProjection
      */
     entityId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AITransformMappingProjection
-     */
-    entityType: AITransformMappingProjectionEntityTypeEnum;
     /**
      *
      * @type {string}

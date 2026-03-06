@@ -15,6 +15,7 @@ PhoneMessageThreadItemProjection
 - [body](PhoneMessageThreadItemProjection.md#body)
 - [created](PhoneMessageThreadItemProjection.md#created)
 - [fromPhoneNumber](PhoneMessageThreadItemProjection.md#fromphonenumber)
+- [id](PhoneMessageThreadItemProjection.md#id)
 - [messageDirection](PhoneMessageThreadItemProjection.md#messagedirection)
 - [phoneNumberId](PhoneMessageThreadItemProjection.md#phonenumberid)
 - [toPhoneNumber](PhoneMessageThreadItemProjection.md#tophonenumber)
@@ -44,6 +45,16 @@ ___
 ### fromPhoneNumber
 
 • **fromPhoneNumber**: `string`
+
+**`Memberof`**
+
+PhoneMessageThreadItemProjection
+
+___
+
+### id
+
+• **id**: `string`
 
 **`Memberof`**
 

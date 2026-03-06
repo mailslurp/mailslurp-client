@@ -32,13 +32,13 @@ export interface ConnectorProjection {
      * @type {string}
      * @memberof ConnectorProjection
      */
-    inboxId: string;
+    emailAddress?: string;
     /**
      *
      * @type {string}
      * @memberof ConnectorProjection
      */
-    emailAddress?: string;
+    inboxId: string;
     /**
      *
      * @type {Date}

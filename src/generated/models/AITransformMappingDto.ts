@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  AIMappingMatchOptions,
+  AIMappingMatchOptionsFromJSON,
+  AIMappingMatchOptionsFromJSONTyped,
+  AIMappingMatchOptionsToJSON,
+} from './';
+
 /**
  *
  * @export
@@ -31,6 +38,12 @@ export interface AITransformMappingDto {
    * @memberof AITransformMappingDto
    */
   aiTransformId: string;
+  /**
+   *
+   * @type {AIMappingMatchOptions}
+   * @memberof AITransformMappingDto
+   */
+  matchOptions?: AIMappingMatchOptions | null;
   /**
    *
    * @type {string}
@@ -88,6 +101,9 @@ export function AITransformMappingDtoFromJSONTyped(
   return {
     id: json['id'],
     aiTransformId: json['aiTransformId'],
+    matchOptions: !exists(json, 'matchOptions')
+      ? undefined
+      : AIMappingMatchOptionsFromJSON(json['matchOptions']),
     userId: json['userId'],
     name: !exists(json, 'name') ? undefined : json['name'],
     entityId: !exists(json, 'entityId') ? undefined : json['entityId'],
@@ -108,6 +124,7 @@ export function AITransformMappingDtoToJSON(
   return {
     id: value.id,
     aiTransformId: value.aiTransformId,
+    matchOptions: AIMappingMatchOptionsToJSON(value.matchOptions),
     userId: value.userId,
     name: value.name,
     entityId: value.entityId,

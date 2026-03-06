@@ -41,6 +41,9 @@ import {
   PagePhoneNumberProjection,
   PagePhoneNumberProjectionFromJSON,
   PagePhoneNumberProjectionToJSON,
+  PagePhoneNumberReleaseProjection,
+  PagePhoneNumberReleaseProjectionFromJSON,
+  PagePhoneNumberReleaseProjectionToJSON,
   PageSentSmsProjection,
   PageSentSmsProjectionFromJSON,
   PageSentSmsProjectionToJSON,
@@ -50,6 +53,9 @@ import {
   PhoneNumberDto,
   PhoneNumberDtoFromJSON,
   PhoneNumberDtoToJSON,
+  PhoneNumberReleaseProjection,
+  PhoneNumberReleaseProjectionFromJSON,
+  PhoneNumberReleaseProjectionToJSON,
   PhoneNumberValidationDto,
   PhoneNumberValidationDtoFromJSON,
   PhoneNumberValidationDtoToJSON,
@@ -59,6 +65,9 @@ import {
   PhonePlanDto,
   PhonePlanDtoFromJSON,
   PhonePlanDtoToJSON,
+  PhoneSummaryDto,
+  PhoneSummaryDtoFromJSON,
+  PhoneSummaryDtoToJSON,
   SentSmsDto,
   SentSmsDtoFromJSON,
   SentSmsDtoToJSON,
@@ -91,6 +100,11 @@ export interface DeleteEmergencyAddressRequest {
   addressId: string;
 }
 
+export interface DeletePhoneMessageThreadItemsRequest {
+  phoneNumberId: string;
+  otherNumber: string;
+}
+
 export interface DeletePhoneNumberRequest {
   phoneNumberId: string;
 }
@@ -98,6 +112,12 @@ export interface DeletePhoneNumberRequest {
 export interface GetAllPhoneMessageThreadsRequest {
   page?: number;
   size?: number;
+}
+
+export interface GetAllPhoneNumberReleasesRequest {
+  page?: number;
+  size?: number;
+  sort?: GetAllPhoneNumberReleasesSortEnum;
 }
 
 export interface GetEmergencyAddressRequest {
@@ -127,6 +147,10 @@ export interface GetPhoneNumberByNameRequest {
 
 export interface GetPhoneNumberByPhoneNumberRequest {
   phoneNumber: string;
+}
+
+export interface GetPhoneNumberReleaseRequest {
+  releaseId: string;
 }
 
 export interface GetPhoneNumbersRequest {
@@ -161,6 +185,10 @@ export interface GetSmsByPhoneNumberRequest {
   before?: Date;
   search?: string;
   favourite?: boolean;
+}
+
+export interface ReassignPhoneNumberReleaseRequest {
+  releaseId: string;
 }
 
 export interface SendSmsFromPhoneNumberRequest {
@@ -319,6 +347,42 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Remove all phone number from account
+   * Delete all phone numbers
+   */
+  async deleteAllPhoneNumberRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Remove all phone number from account
+   * Delete all phone numbers
+   */
+  async deleteAllPhoneNumber(initOverrides?: RequestInit): Promise<void> {
+    await this.deleteAllPhoneNumberRaw(initOverrides);
+  }
+
+  /**
    * Delete an emergency address
    * Delete an emergency address
    */
@@ -371,6 +435,80 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<EmptyResponseDto> {
     const response = await this.deleteEmergencyAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Delete all messages in an SMS thread
+   * Delete messages in a phone thread
+   */
+  async deletePhoneMessageThreadItemsRaw(
+    requestParameters: DeletePhoneMessageThreadItemsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmptyResponseDto>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling deletePhoneMessageThreadItems.'
+      );
+    }
+
+    if (
+      requestParameters.otherNumber === null ||
+      requestParameters.otherNumber === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'otherNumber',
+        'Required parameter requestParameters.otherNumber was null or undefined when calling deletePhoneMessageThreadItems.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/message-threads/{otherNumber}`
+          .replace(
+            `{${'phoneNumberId'}}`,
+            encodeURIComponent(String(requestParameters.phoneNumberId))
+          )
+          .replace(
+            `{${'otherNumber'}}`,
+            encodeURIComponent(String(requestParameters.otherNumber))
+          ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmptyResponseDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Delete all messages in an SMS thread
+   * Delete messages in a phone thread
+   */
+  async deletePhoneMessageThreadItems(
+    requestParameters: DeletePhoneMessageThreadItemsRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmptyResponseDto> {
+    const response = await this.deletePhoneMessageThreadItemsRaw(
       requestParameters,
       initOverrides
     );
@@ -478,6 +616,64 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PagePhoneMessageThreadProjection> {
     const response = await this.getAllPhoneMessageThreadsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List released or deleted phone numbers
+   * Get all phone number releases
+   */
+  async getAllPhoneNumberReleasesRaw(
+    requestParameters: GetAllPhoneNumberReleasesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PagePhoneNumberReleaseProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/releases`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PagePhoneNumberReleaseProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List released or deleted phone numbers
+   * Get all phone number releases
+   */
+  async getAllPhoneNumberReleases(
+    requestParameters: GetAllPhoneNumberReleasesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PagePhoneNumberReleaseProjection> {
+    const response = await this.getAllPhoneNumberReleasesRaw(
       requestParameters,
       initOverrides
     );
@@ -954,6 +1150,65 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get a released or deleted phone numbers
+   * Get phone number release
+   */
+  async getPhoneNumberReleaseRaw(
+    requestParameters: GetPhoneNumberReleaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberReleaseProjection>> {
+    if (
+      requestParameters.releaseId === null ||
+      requestParameters.releaseId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'releaseId',
+        'Required parameter requestParameters.releaseId was null or undefined when calling getPhoneNumberRelease.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/releases/{releaseId}`.replace(
+          `{${'releaseId'}}`,
+          encodeURIComponent(String(requestParameters.releaseId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberReleaseProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a released or deleted phone numbers
+   * Get phone number release
+   */
+  async getPhoneNumberRelease(
+    requestParameters: GetPhoneNumberReleaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberReleaseProjection> {
+    const response = await this.getPhoneNumberReleaseRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * List phone numbers for account
    * Get phone numbers
    */
@@ -1114,6 +1369,45 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PhonePlanAvailability> {
     const response = await this.getPhonePlansAvailabilityRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get overview of assigned phones
+   * Get phone summary
+   */
+  async getPhoneSummaryRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneSummaryDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/summary`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneSummaryDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get overview of assigned phones
+   * Get phone summary
+   */
+  async getPhoneSummary(initOverrides?: RequestInit): Promise<PhoneSummaryDto> {
+    const response = await this.getPhoneSummaryRaw(initOverrides);
     return await response.value();
   }
 
@@ -1289,6 +1583,65 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageSmsProjection> {
     const response = await this.getSmsByPhoneNumberRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Reassign phone number that was released or deleted
+   * Reassign phone number release
+   */
+  async reassignPhoneNumberReleaseRaw(
+    requestParameters: ReassignPhoneNumberReleaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+    if (
+      requestParameters.releaseId === null ||
+      requestParameters.releaseId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'releaseId',
+        'Required parameter requestParameters.releaseId was null or undefined when calling reassignPhoneNumberRelease.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/releases/{releaseId}/reassign`.replace(
+          `{${'releaseId'}}`,
+          encodeURIComponent(String(requestParameters.releaseId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Reassign phone number that was released or deleted
+   * Reassign phone number release
+   */
+  async reassignPhoneNumberRelease(
+    requestParameters: ReassignPhoneNumberReleaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberDto> {
+    const response = await this.reassignPhoneNumberReleaseRaw(
       requestParameters,
       initOverrides
     );
@@ -1502,7 +1855,7 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Test a phone number by sending an SMS to it
+   * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
    * Test sending an SMS to a number
    */
   async testPhoneNumberSendSmsRaw(
@@ -1566,7 +1919,7 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Test a phone number by sending an SMS to it
+   * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
    * Test sending an SMS to a number
    */
   async testPhoneNumberSendSms(
@@ -1716,6 +2069,14 @@ export class PhoneControllerApi extends runtime.BaseAPI {
  * @export
  * @enum {string}
  */
+export enum GetAllPhoneNumberReleasesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum GetPhoneNumbersPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
@@ -1724,10 +2085,10 @@ export enum GetPhoneNumbersPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
-  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
+  FI = 'FI',
   SE = 'SE',
 }
 /**

@@ -32,12 +32,16 @@
 - [deleteTransformerRaw](AIControllerApi.md#deletetransformerraw)
 - [deleteTransformers](AIControllerApi.md#deletetransformers)
 - [deleteTransformersRaw](AIControllerApi.md#deletetransformersraw)
+- [exportTransformerResults](AIControllerApi.md#exporttransformerresults)
+- [exportTransformerResultsRaw](AIControllerApi.md#exporttransformerresultsraw)
 - [generateStructuredContentFromAttachment](AIControllerApi.md#generatestructuredcontentfromattachment)
 - [generateStructuredContentFromAttachmentRaw](AIControllerApi.md#generatestructuredcontentfromattachmentraw)
 - [generateStructuredContentFromEmail](AIControllerApi.md#generatestructuredcontentfromemail)
 - [generateStructuredContentFromEmailRaw](AIControllerApi.md#generatestructuredcontentfromemailraw)
 - [generateStructuredContentFromSms](AIControllerApi.md#generatestructuredcontentfromsms)
 - [generateStructuredContentFromSmsRaw](AIControllerApi.md#generatestructuredcontentfromsmsraw)
+- [getExportTransformerResultsJob](AIControllerApi.md#getexporttransformerresultsjob)
+- [getExportTransformerResultsJobRaw](AIControllerApi.md#getexporttransformerresultsjobraw)
 - [getTransformer](AIControllerApi.md#gettransformer)
 - [getTransformerMapping](AIControllerApi.md#gettransformermapping)
 - [getTransformerMappingRaw](AIControllerApi.md#gettransformermappingraw)
@@ -48,11 +52,15 @@
 - [getTransformerResultRaw](AIControllerApi.md#gettransformerresultraw)
 - [getTransformerResults](AIControllerApi.md#gettransformerresults)
 - [getTransformerResultsRaw](AIControllerApi.md#gettransformerresultsraw)
+- [getTransformerResultsTable](AIControllerApi.md#gettransformerresultstable)
+- [getTransformerResultsTableRaw](AIControllerApi.md#gettransformerresultstableraw)
 - [getTransformers](AIControllerApi.md#gettransformers)
 - [getTransformersRaw](AIControllerApi.md#gettransformersraw)
 - [invokeTransformer](AIControllerApi.md#invoketransformer)
 - [invokeTransformerRaw](AIControllerApi.md#invoketransformerraw)
 - [request](AIControllerApi.md#request)
+- [testTransformerMappingMatch](AIControllerApi.md#testtransformermappingmatch)
+- [testTransformerMappingMatchRaw](AIControllerApi.md#testtransformermappingmatchraw)
 - [validateStructuredOutputSchema](AIControllerApi.md#validatestructuredoutputschema)
 - [validateStructuredOutputSchemaRaw](AIControllerApi.md#validatestructuredoutputschemaraw)
 - [withMiddleware](AIControllerApi.md#withmiddleware)
@@ -323,6 +331,46 @@ Delete all transformers
 
 ___
 
+### exportTransformerResults
+
+▸ **exportTransformerResults**(`requestParameters`, `initOverrides?`): `Promise`<[`ExportTransformerResponse`](../interfaces/ExportTransformerResponse.md)\>
+
+Export AI transformer results in formats such as Excel, CSV, XML etc.
+Export transformer results
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportTransformerResultsRequest`](../interfaces/ExportTransformerResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ExportTransformerResponse`](../interfaces/ExportTransformerResponse.md)\>
+
+___
+
+### exportTransformerResultsRaw
+
+▸ **exportTransformerResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportTransformerResponse`](../interfaces/ExportTransformerResponse.md)\>\>
+
+Export AI transformer results in formats such as Excel, CSV, XML etc.
+Export transformer results
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportTransformerResultsRequest`](../interfaces/ExportTransformerResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportTransformerResponse`](../interfaces/ExportTransformerResponse.md)\>\>
+
+___
+
 ### generateStructuredContentFromAttachment
 
 ▸ **generateStructuredContentFromAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`StructuredContentResultDto`](../interfaces/StructuredContentResultDto.md)\>
@@ -440,6 +488,46 @@ Generate structured content for a TXT message
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`StructuredContentResultDto`](../interfaces/StructuredContentResultDto.md)\>\>
+
+___
+
+### getExportTransformerResultsJob
+
+▸ **getExportTransformerResultsJob**(`requestParameters`, `initOverrides?`): `Promise`<[`ExportTransformerResultJobDto`](../interfaces/ExportTransformerResultJobDto.md)\>
+
+Get the job status for an export
+Get export transformer results job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetExportTransformerResultsJobRequest`](../interfaces/GetExportTransformerResultsJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ExportTransformerResultJobDto`](../interfaces/ExportTransformerResultJobDto.md)\>
+
+___
+
+### getExportTransformerResultsJobRaw
+
+▸ **getExportTransformerResultsJobRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportTransformerResultJobDto`](../interfaces/ExportTransformerResultJobDto.md)\>\>
+
+Get the job status for an export
+Get export transformer results job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetExportTransformerResultsJobRequest`](../interfaces/GetExportTransformerResultsJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportTransformerResultJobDto`](../interfaces/ExportTransformerResultJobDto.md)\>\>
 
 ___
 
@@ -643,6 +731,46 @@ Get transformer results
 
 ___
 
+### getTransformerResultsTable
+
+▸ **getTransformerResultsTable**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTableData`](../interfaces/PageTableData.md)\>
+
+Get AI transformer results in table format
+Get transformer results table
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTransformerResultsTableRequest`](../interfaces/GetTransformerResultsTableRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageTableData`](../interfaces/PageTableData.md)\>
+
+___
+
+### getTransformerResultsTableRaw
+
+▸ **getTransformerResultsTableRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTableData`](../interfaces/PageTableData.md)\>\>
+
+Get AI transformer results in table format
+Get transformer results table
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTransformerResultsTableRequest`](../interfaces/GetTransformerResultsTableRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTableData`](../interfaces/PageTableData.md)\>\>
+
+___
+
 ### getTransformers
 
 ▸ **getTransformers**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAITransformProjection`](../interfaces/PageAITransformProjection.md)\>
@@ -741,6 +869,46 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### testTransformerMappingMatch
+
+▸ **testTransformerMappingMatch**(`requestParameters`, `initOverrides?`): `Promise`<[`AITransformMappingMatchResult`](../interfaces/AITransformMappingMatchResult.md)\>
+
+Evaluate transform mapping match conditions for given email, sms, or attachment
+Test transformer mapping match result
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestTransformerMappingMatchRequest`](../interfaces/TestTransformerMappingMatchRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AITransformMappingMatchResult`](../interfaces/AITransformMappingMatchResult.md)\>
+
+___
+
+### testTransformerMappingMatchRaw
+
+▸ **testTransformerMappingMatchRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AITransformMappingMatchResult`](../interfaces/AITransformMappingMatchResult.md)\>\>
+
+Evaluate transform mapping match conditions for given email, sms, or attachment
+Test transformer mapping match result
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestTransformerMappingMatchRequest`](../interfaces/TestTransformerMappingMatchRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AITransformMappingMatchResult`](../interfaces/AITransformMappingMatchResult.md)\>\>
 
 ___
 

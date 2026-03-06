@@ -32,17 +32,17 @@ export interface AliasThreadProjection {
    */
   inboxId: string;
   /**
-   * Created at DateTime
-   * @type {Date}
-   * @memberof AliasThreadProjection
-   */
-  createdAt: Date;
-  /**
    * Updated at DateTime
    * @type {Date}
    * @memberof AliasThreadProjection
    */
   updatedAt: Date;
+  /**
+   * Created at DateTime
+   * @type {Date}
+   * @memberof AliasThreadProjection
+   */
+  createdAt: Date;
   /**
    * To recipients
    * @type {Array<string>}
@@ -103,8 +103,8 @@ export function AliasThreadProjectionFromJSONTyped(
   return {
     userId: json['userId'],
     inboxId: json['inboxId'],
-    createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
@@ -127,8 +127,8 @@ export function AliasThreadProjectionToJSON(
   return {
     userId: value.userId,
     inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,

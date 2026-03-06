@@ -54,9 +54,9 @@ function AITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
+        entityType: json['entityType'],
         aiTransformId: json['aiTransformId'],
         entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
-        entityType: json['entityType'],
         contentSelector: !(0, runtime_1.exists)(json, 'contentSelector')
             ? undefined
             : json['contentSelector'],
@@ -78,9 +78,9 @@ function AITransformMappingProjectionToJSON(value) {
     return {
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
+        entityType: value.entityType,
         aiTransformId: value.aiTransformId,
         entityId: value.entityId,
-        entityType: value.entityType,
         contentSelector: value.contentSelector,
         triggerSelector: value.triggerSelector,
         name: value.name,

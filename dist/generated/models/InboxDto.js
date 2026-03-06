@@ -44,7 +44,18 @@ var InboxDtoFunctionsAsEnum;
  */
 var InboxDtoAccountRegionEnum;
 (function (InboxDtoAccountRegionEnum) {
+    InboxDtoAccountRegionEnum["US_WEST_2_ACCOUNT_STAGING"] = "US_WEST_2_ACCOUNT_STAGING";
+    InboxDtoAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
+    InboxDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
+    InboxDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    InboxDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
+    InboxDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
+    InboxDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    InboxDtoAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
+    InboxDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
     InboxDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+    InboxDtoAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
+    InboxDtoAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
 })(InboxDtoAccountRegionEnum = exports.InboxDtoAccountRegionEnum || (exports.InboxDtoAccountRegionEnum = {}));
 function InboxDtoFromJSON(json) {
     return InboxDtoFromJSONTyped(json, false);

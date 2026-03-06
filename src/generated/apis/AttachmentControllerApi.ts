@@ -23,6 +23,12 @@ import {
   DownloadAttachmentDto,
   DownloadAttachmentDtoFromJSON,
   DownloadAttachmentDtoToJSON,
+  ExtractAttachmentTextOptions,
+  ExtractAttachmentTextOptionsFromJSON,
+  ExtractAttachmentTextOptionsToJSON,
+  ExtractAttachmentTextResult,
+  ExtractAttachmentTextResultFromJSON,
+  ExtractAttachmentTextResultToJSON,
   InlineObject1,
   InlineObject1FromJSON,
   InlineObject1ToJSON,
@@ -44,6 +50,11 @@ export interface DownloadAttachmentAsBase64EncodedRequest {
 
 export interface DownloadAttachmentAsBytesRequest {
   attachmentId: string;
+}
+
+export interface ExtractAttachmentTextRequest {
+  attachmentId: string;
+  extractAttachmentTextOptions?: ExtractAttachmentTextOptions;
 }
 
 export interface GetAttachmentRequest {
@@ -294,6 +305,70 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<string> {
     const response = await this.downloadAttachmentAsBytesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+   * Extract text from an attachment
+   */
+  async extractAttachmentTextRaw(
+    requestParameters: ExtractAttachmentTextRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ExtractAttachmentTextResult>> {
+    if (
+      requestParameters.attachmentId === null ||
+      requestParameters.attachmentId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'attachmentId',
+        'Required parameter requestParameters.attachmentId was null or undefined when calling extractAttachmentText.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/attachments/{attachmentId}/text`.replace(
+          `{${'attachmentId'}}`,
+          encodeURIComponent(String(requestParameters.attachmentId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ExtractAttachmentTextOptionsToJSON(
+          requestParameters.extractAttachmentTextOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ExtractAttachmentTextResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+   * Extract text from an attachment
+   */
+  async extractAttachmentText(
+    requestParameters: ExtractAttachmentTextRequest,
+    initOverrides?: RequestInit
+  ): Promise<ExtractAttachmentTextResult> {
+    const response = await this.extractAttachmentTextRaw(
       requestParameters,
       initOverrides
     );

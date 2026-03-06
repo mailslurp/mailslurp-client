@@ -27,10 +27,10 @@ var EmergencyAddressPhoneCountryEnum;
     EmergencyAddressPhoneCountryEnum["EE"] = "EE";
     EmergencyAddressPhoneCountryEnum["HK"] = "HK";
     EmergencyAddressPhoneCountryEnum["PL"] = "PL";
-    EmergencyAddressPhoneCountryEnum["CH"] = "CH";
     EmergencyAddressPhoneCountryEnum["PT"] = "PT";
     EmergencyAddressPhoneCountryEnum["NL"] = "NL";
     EmergencyAddressPhoneCountryEnum["IL"] = "IL";
+    EmergencyAddressPhoneCountryEnum["FI"] = "FI";
     EmergencyAddressPhoneCountryEnum["SE"] = "SE";
 })(EmergencyAddressPhoneCountryEnum = exports.EmergencyAddressPhoneCountryEnum || (exports.EmergencyAddressPhoneCountryEnum = {}));
 function EmergencyAddressFromJSON(json) {

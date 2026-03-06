@@ -26,10 +26,10 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
         userId: json['userId'],
-        inboxId: json['inboxId'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
+        inboxId: json['inboxId'],
         createdAt: new Date(json['createdAt']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
@@ -46,8 +46,8 @@ function ConnectorProjectionToJSON(value) {
     return {
         enabled: value.enabled,
         userId: value.userId,
-        inboxId: value.inboxId,
         emailAddress: value.emailAddress,
+        inboxId: value.inboxId,
         createdAt: value.createdAt.toISOString(),
         name: value.name,
         id: value.id,

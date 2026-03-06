@@ -87,6 +87,12 @@ export interface PhoneNumberDto {
      * @memberof PhoneNumberDto
      */
     favourite: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    phoneVariant?: PhoneNumberDtoPhoneVariantEnum;
 }
 /**
  * @export
@@ -100,11 +106,20 @@ export declare enum PhoneNumberDtoPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
-    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",
+    FI = "FI",
     SE = "SE"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum PhoneNumberDtoPhoneVariantEnum {
+    LOCAL = "LOCAL",
+    MOBILE = "MOBILE",
+    TOLL_FREE = "TOLL_FREE"
 }
 export declare function PhoneNumberDtoFromJSON(json: any): PhoneNumberDto;
 export declare function PhoneNumberDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberDto;

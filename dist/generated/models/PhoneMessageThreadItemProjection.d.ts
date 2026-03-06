@@ -38,6 +38,12 @@ export interface PhoneMessageThreadItemProjection {
      * @type {string}
      * @memberof PhoneMessageThreadItemProjection
      */
+    messageDirection: PhoneMessageThreadItemProjectionMessageDirectionEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadItemProjection
+     */
     fromPhoneNumber: string;
     /**
      *
@@ -50,7 +56,7 @@ export interface PhoneMessageThreadItemProjection {
      * @type {string}
      * @memberof PhoneMessageThreadItemProjection
      */
-    messageDirection: PhoneMessageThreadItemProjectionMessageDirectionEnum;
+    id: string;
 }
 /**
  * @export

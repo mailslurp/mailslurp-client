@@ -36,13 +36,13 @@ export interface AttachmentProjection {
    * @type {Date}
    * @memberof AttachmentProjection
    */
-  createdAt: Date;
+  updatedAt: Date;
   /**
    *
    * @type {Date}
    * @memberof AttachmentProjection
    */
-  updatedAt: Date;
+  createdAt: Date;
   /**
    * Content ID of attachment.
    * @type {string}
@@ -95,8 +95,8 @@ export function AttachmentProjectionFromJSONTyped(
   return {
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
     attachmentId: json['attachmentId'],
     name: !exists(json, 'name') ? undefined : json['name'],
@@ -120,8 +120,8 @@ export function AttachmentProjectionToJSON(
   return {
     userId: value.userId,
     inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     contentId: value.contentId,
     attachmentId: value.attachmentId,
     name: value.name,

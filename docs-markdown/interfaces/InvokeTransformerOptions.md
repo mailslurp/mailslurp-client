@@ -21,6 +21,7 @@ InvokeTransformerOptions
 - [rawInput](InvokeTransformerOptions.md#rawinput)
 - [rawInstructions](InvokeTransformerOptions.md#rawinstructions)
 - [rawOutputSchema](InvokeTransformerOptions.md#rawoutputschema)
+- [saveResults](InvokeTransformerOptions.md#saveresults)
 
 ## Properties
 
@@ -107,6 +108,16 @@ ___
 ### rawOutputSchema
 
 • `Optional` **rawOutputSchema**: [`StructuredOutputSchema`](StructuredOutputSchema.md)
+
+**`Memberof`**
+
+InvokeTransformerOptions
+
+___
+
+### saveResults
+
+• `Optional` **saveResults**: `boolean`
 
 **`Memberof`**
 

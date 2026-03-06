@@ -42,6 +42,12 @@ export interface EmailProjection {
     inboxId: string;
     /**
      *
+     * @type {number}
+     * @memberof EmailProjection
+     */
+    sizeBytes?: number | null;
+    /**
+     *
      * @type {Date}
      * @memberof EmailProjection
      */
@@ -72,16 +78,16 @@ export interface EmailProjection {
     messageId?: string | null;
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    domainId?: string | null;
-    /**
-     *
      * @type {boolean}
      * @memberof EmailProjection
      */
     favourite?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    domainId?: string | null;
     /**
      *
      * @type {string}
@@ -93,7 +99,7 @@ export interface EmailProjection {
      * @type {number}
      * @memberof EmailProjection
      */
-    sizeBytes?: number | null;
+    imapUid?: number | null;
     /**
      *
      * @type {string}

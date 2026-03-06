@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AITransformMappingDtoToJSON = exports.AITransformMappingDtoFromJSONTyped = exports.AITransformMappingDtoFromJSON = exports.AITransformMappingDtoEntityTypeEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -35,6 +36,9 @@ function AITransformMappingDtoFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         aiTransformId: json['aiTransformId'],
+        matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
+            ? undefined
+            : (0, _1.AIMappingMatchOptionsFromJSON)(json['matchOptions']),
         userId: json['userId'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         entityId: !(0, runtime_1.exists)(json, 'entityId') ? undefined : json['entityId'],
@@ -53,6 +57,7 @@ function AITransformMappingDtoToJSON(value) {
     return {
         id: value.id,
         aiTransformId: value.aiTransformId,
+        matchOptions: (0, _1.AIMappingMatchOptionsToJSON)(value.matchOptions),
         userId: value.userId,
         name: value.name,
         entityId: value.entityId,
