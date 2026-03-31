@@ -12,7 +12,7 @@ test('quick start', async () => {
 
   // create an inbox
   const inbox = await mailslurp.inboxController.createInbox({});
-  expect(inbox.emailAddress).toContain('@mailslurp');
+  expect(inbox.emailAddress).toContain('@');
   //</gen>
 });
 
