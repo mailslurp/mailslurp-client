@@ -25,14 +25,18 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        id: json['id'],
+        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
+        from: json['from'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         sender: !(0, runtime_1.exists)(json, 'sender')
             ? undefined
             : (0, _1.SenderFromJSON)(json['sender']),
         recipients: !(0, runtime_1.exists)(json, 'recipients')
             ? undefined
             : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         inboxId: json['inboxId'],
+        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
         createdAt: new Date(json['createdAt']),
         to: json['to'],
@@ -52,10 +56,6 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
             : json['bodyPartContentTypes'],
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         teamAccess: json['teamAccess'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        id: json['id'],
-        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
-        from: json['from'],
     };
 }
 exports.EmailProjectionFromJSONTyped = EmailProjectionFromJSONTyped;
@@ -67,10 +67,14 @@ function EmailProjectionToJSON(value) {
         return null;
     }
     return {
+        id: value.id,
+        threadId: value.threadId,
+        from: value.from,
+        subject: value.subject,
         sender: (0, _1.SenderToJSON)(value.sender),
         recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
-        attachments: value.attachments,
         inboxId: value.inboxId,
+        attachments: value.attachments,
         sizeBytes: value.sizeBytes,
         createdAt: value.createdAt.toISOString(),
         to: value.to,
@@ -88,10 +92,6 @@ function EmailProjectionToJSON(value) {
         bodyPartContentTypes: value.bodyPartContentTypes,
         bodyMD5Hash: value.bodyMD5Hash,
         teamAccess: value.teamAccess,
-        subject: value.subject,
-        id: value.id,
-        threadId: value.threadId,
-        from: value.from,
     };
 }
 exports.EmailProjectionToJSON = EmailProjectionToJSON;

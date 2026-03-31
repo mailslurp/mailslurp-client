@@ -243,13 +243,13 @@ export interface Email {
    * @type {boolean}
    * @memberof Email
    */
-  xampHtml?: boolean;
+  html?: boolean;
   /**
    *
    * @type {boolean}
    * @memberof Email
    */
-  html?: boolean;
+  xampHtml?: boolean;
 }
 
 export function EmailFromJSON(json: any): Email {
@@ -306,8 +306,8 @@ export function EmailFromJSONTyped(
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
     sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
-    xampHtml: !exists(json, 'xampHtml') ? undefined : json['xampHtml'],
     html: !exists(json, 'html') ? undefined : json['html'],
+    xampHtml: !exists(json, 'xampHtml') ? undefined : json['xampHtml'],
   };
 }
 
@@ -353,7 +353,7 @@ export function EmailToJSON(value?: Email | null): any {
     inReplyTo: value.inReplyTo,
     favourite: value.favourite,
     sizeBytes: value.sizeBytes,
-    xampHtml: value.xampHtml,
     html: value.html,
+    xampHtml: value.xampHtml,
   };
 }

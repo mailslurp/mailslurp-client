@@ -21,7 +21,25 @@ export interface PageableObject {
      * @type {number}
      * @memberof PageableObject
      */
+    offset?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageableObject
+     */
     pageSize?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageableObject
+     */
+    unpaged?: boolean;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageableObject
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}
@@ -34,24 +52,6 @@ export interface PageableObject {
      * @memberof PageableObject
      */
     pageNumber?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageableObject
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageableObject
-     */
-    unpaged?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageableObject
-     */
-    offset?: number;
 }
 export declare function PageableObjectFromJSON(json: any): PageableObject;
 export declare function PageableObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): PageableObject;

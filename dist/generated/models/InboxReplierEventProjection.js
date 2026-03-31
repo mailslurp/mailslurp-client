@@ -33,6 +33,9 @@ function InboxReplierEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
         recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
         userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
         emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
@@ -40,9 +43,6 @@ function InboxReplierEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
         sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
         replierId: !(0, runtime_1.exists)(json, 'replierId') ? undefined : json['replierId'],
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
     };
 }
 exports.InboxReplierEventProjectionFromJSONTyped = InboxReplierEventProjectionFromJSONTyped;
@@ -54,6 +54,9 @@ function InboxReplierEventProjectionToJSON(value) {
         return null;
     }
     return {
+        message: value.message,
+        id: value.id,
+        status: value.status,
         recipients: value.recipients,
         userId: value.userId,
         emailId: value.emailId,
@@ -61,9 +64,6 @@ function InboxReplierEventProjectionToJSON(value) {
         createdAt: value.createdAt.toISOString(),
         sentId: value.sentId,
         replierId: value.replierId,
-        message: value.message,
-        id: value.id,
-        status: value.status,
     };
 }
 exports.InboxReplierEventProjectionToJSON = InboxReplierEventProjectionToJSON;

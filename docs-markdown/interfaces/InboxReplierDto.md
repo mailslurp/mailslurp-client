@@ -23,8 +23,10 @@ InboxReplierDto
 - [inboxId](InboxReplierDto.md#inboxid)
 - [isHTML](InboxReplierDto.md#ishtml)
 - [match](InboxReplierDto.md#match)
+- [matchOptions](InboxReplierDto.md#matchoptions)
 - [name](InboxReplierDto.md#name)
 - [replyTo](InboxReplierDto.md#replyto)
+- [should](InboxReplierDto.md#should)
 - [subject](InboxReplierDto.md#subject)
 - [templateId](InboxReplierDto.md#templateid)
 - [templateVariables](InboxReplierDto.md#templatevariables)
@@ -53,7 +55,7 @@ ___
 
 ### field
 
-• **field**: [`InboxReplierDtoFieldEnum`](../enums/InboxReplierDtoFieldEnum.md)
+• `Optional` **field**: [`InboxReplierDtoFieldEnum`](../enums/InboxReplierDtoFieldEnum.md)
 
 **`Memberof`**
 
@@ -113,7 +115,17 @@ ___
 
 ### match
 
-• **match**: `string`
+• `Optional` **match**: `string`
+
+**`Memberof`**
+
+InboxReplierDto
+
+___
+
+### matchOptions
+
+• `Optional` **matchOptions**: [`InboxAutomationMatchOptions`](InboxAutomationMatchOptions.md)
 
 **`Memberof`**
 
@@ -134,6 +146,18 @@ ___
 ### replyTo
 
 • `Optional` **replyTo**: `string`
+
+**`Memberof`**
+
+InboxReplierDto
+
+___
+
+### should
+
+• `Optional` **should**: [`InboxReplierDtoShouldEnum`](../enums/InboxReplierDtoShouldEnum.md)
+
+Comparison mode for inbox automation matching.
 
 **`Memberof`**
 

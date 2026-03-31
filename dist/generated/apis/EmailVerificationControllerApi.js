@@ -190,6 +190,60 @@ var EmailVerificationControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+     * Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+     */
+    EmailVerificationControllerApi.prototype.getEmailIntelligenceRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailIntelligenceOptions === null ||
+                            requestParameters.emailIntelligenceOptions === undefined) {
+                            throw new runtime.RequiredError('emailIntelligenceOptions', 'Required parameter requestParameters.emailIntelligenceOptions was null or undefined when calling getEmailIntelligence.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/email-verification/intelligence",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.EmailIntelligenceOptionsToJSON)(requestParameters.emailIntelligenceOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailIntelligenceListResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+     * Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+     */
+    EmailVerificationControllerApi.prototype.getEmailIntelligence = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailIntelligenceRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * List email verification requests
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */

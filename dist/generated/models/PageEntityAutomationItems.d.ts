@@ -33,37 +33,19 @@ export interface PageEntityAutomationItems {
      * @type {number}
      * @memberof PageEntityAutomationItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageEntityAutomationItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageEntityAutomationItems
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEntityAutomationItems
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageEntityAutomationItems
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEntityAutomationItems
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageEntityAutomationItems {
      * @memberof PageEntityAutomationItems
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEntityAutomationItems
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEntityAutomationItems
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageEntityAutomationItems
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

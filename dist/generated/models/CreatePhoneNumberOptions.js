@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePhoneNumberOptionsToJSON = exports.CreatePhoneNumberOptionsFromJSONTyped = exports.CreatePhoneNumberOptionsFromJSON = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum = void 0;
+exports.CreatePhoneNumberOptionsToJSON = exports.CreatePhoneNumberOptionsFromJSONTyped = exports.CreatePhoneNumberOptionsFromJSON = exports.CreatePhoneNumberOptionsPhoneLineFilterEnum = exports.CreatePhoneNumberOptionsPhoneProviderEnum = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -53,6 +53,25 @@ var CreatePhoneNumberOptionsPhoneNumberVariantEnum;
     CreatePhoneNumberOptionsPhoneNumberVariantEnum["MOBILE"] = "MOBILE";
     CreatePhoneNumberOptionsPhoneNumberVariantEnum["TOLL_FREE"] = "TOLL_FREE";
 })(CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum || (exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var CreatePhoneNumberOptionsPhoneProviderEnum;
+(function (CreatePhoneNumberOptionsPhoneProviderEnum) {
+    CreatePhoneNumberOptionsPhoneProviderEnum["TWILIO"] = "TWILIO";
+    CreatePhoneNumberOptionsPhoneProviderEnum["TELNYX"] = "TELNYX";
+})(CreatePhoneNumberOptionsPhoneProviderEnum = exports.CreatePhoneNumberOptionsPhoneProviderEnum || (exports.CreatePhoneNumberOptionsPhoneProviderEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var CreatePhoneNumberOptionsPhoneLineFilterEnum;
+(function (CreatePhoneNumberOptionsPhoneLineFilterEnum) {
+    CreatePhoneNumberOptionsPhoneLineFilterEnum["ANY"] = "ANY";
+    CreatePhoneNumberOptionsPhoneLineFilterEnum["OTP_FRIENDLY"] = "OTP_FRIENDLY";
+    CreatePhoneNumberOptionsPhoneLineFilterEnum["NON_VOIP"] = "NON_VOIP";
+})(CreatePhoneNumberOptionsPhoneLineFilterEnum = exports.CreatePhoneNumberOptionsPhoneLineFilterEnum || (exports.CreatePhoneNumberOptionsPhoneLineFilterEnum = {}));
 function CreatePhoneNumberOptionsFromJSON(json) {
     return CreatePhoneNumberOptionsFromJSONTyped(json, false);
 }
@@ -65,6 +84,7 @@ function CreatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
         phoneCountry: json['phoneCountry'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
         schedule: !(0, runtime_1.exists)(json, 'schedule') ? undefined : json['schedule'],
         phoneNumberEndpointOverride: !(0, runtime_1.exists)(json, 'phoneNumberEndpointOverride')
             ? undefined
@@ -72,6 +92,12 @@ function CreatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
         phoneNumberVariant: !(0, runtime_1.exists)(json, 'phoneNumberVariant')
             ? undefined
             : json['phoneNumberVariant'],
+        phoneProvider: !(0, runtime_1.exists)(json, 'phoneProvider')
+            ? undefined
+            : json['phoneProvider'],
+        phoneLineFilter: !(0, runtime_1.exists)(json, 'phoneLineFilter')
+            ? undefined
+            : json['phoneLineFilter'],
     };
 }
 exports.CreatePhoneNumberOptionsFromJSONTyped = CreatePhoneNumberOptionsFromJSONTyped;
@@ -86,9 +112,12 @@ function CreatePhoneNumberOptionsToJSON(value) {
         phoneCountry: value.phoneCountry,
         name: value.name,
         description: value.description,
+        tags: value.tags,
         schedule: value.schedule,
         phoneNumberEndpointOverride: value.phoneNumberEndpointOverride,
         phoneNumberVariant: value.phoneNumberVariant,
+        phoneProvider: value.phoneProvider,
+        phoneLineFilter: value.phoneLineFilter,
     };
 }
 exports.CreatePhoneNumberOptionsToJSON = CreatePhoneNumberOptionsToJSON;

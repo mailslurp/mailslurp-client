@@ -24,6 +24,18 @@ export interface AITransformMappingProjection {
    * @type {string}
    * @memberof AITransformMappingProjection
    */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformMappingProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformMappingProjection
+   */
   userId: string;
   /**
    *
@@ -61,18 +73,6 @@ export interface AITransformMappingProjection {
    * @memberof AITransformMappingProjection
    */
   triggerSelector?: AITransformMappingProjectionTriggerSelectorEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  id: string;
 }
 
 /**
@@ -115,6 +115,8 @@ export function AITransformMappingProjectionFromJSONTyped(
     return json;
   }
   return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
     entityType: json['entityType'],
@@ -126,8 +128,6 @@ export function AITransformMappingProjectionFromJSONTyped(
     triggerSelector: !exists(json, 'triggerSelector')
       ? undefined
       : json['triggerSelector'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
   };
 }
 
@@ -141,6 +141,8 @@ export function AITransformMappingProjectionToJSON(
     return null;
   }
   return {
+    name: value.name,
+    id: value.id,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     entityType: value.entityType,
@@ -148,7 +150,5 @@ export function AITransformMappingProjectionToJSON(
     entityId: value.entityId,
     contentSelector: value.contentSelector,
     triggerSelector: value.triggerSelector,
-    name: value.name,
-    id: value.id,
   };
 }

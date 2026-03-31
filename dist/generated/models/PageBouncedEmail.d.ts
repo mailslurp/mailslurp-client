@@ -33,37 +33,19 @@ export interface PageBouncedEmail {
      * @type {number}
      * @memberof PageBouncedEmail
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageBouncedEmail
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageBouncedEmail
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageBouncedEmail
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageBouncedEmail
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageBouncedEmail
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageBouncedEmail {
      * @memberof PageBouncedEmail
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageBouncedEmail
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

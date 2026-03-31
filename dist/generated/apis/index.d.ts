@@ -13,6 +13,7 @@ export * from './DeliverabilityTestControllerApi';
 export * from './DevicePreviewsControllerApi';
 export * from './DomainControllerApi';
 export * from './DomainMonitorControllerApi';
+export * from './EmailAuditControllerApi';
 export * from './EmailControllerApi';
 export * from './EmailVerificationControllerApi';
 export * from './ExpiredControllerApi';

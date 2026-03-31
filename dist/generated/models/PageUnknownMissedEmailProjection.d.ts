@@ -33,37 +33,19 @@ export interface PageUnknownMissedEmailProjection {
      * @type {number}
      * @memberof PageUnknownMissedEmailProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageUnknownMissedEmailProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageUnknownMissedEmailProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageUnknownMissedEmailProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageUnknownMissedEmailProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageUnknownMissedEmailProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageUnknownMissedEmailProjection {
      * @memberof PageUnknownMissedEmailProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

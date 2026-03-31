@@ -33,37 +33,19 @@ export interface PageGuestPortalUsers {
      * @type {number}
      * @memberof PageGuestPortalUsers
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageGuestPortalUsers
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageGuestPortalUsers
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageGuestPortalUsers
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageGuestPortalUsers
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageGuestPortalUsers
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageGuestPortalUsers {
      * @memberof PageGuestPortalUsers
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageGuestPortalUsers
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageGuestPortalUsers
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageGuestPortalUsers
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

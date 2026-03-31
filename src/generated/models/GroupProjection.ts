@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface GroupProjection {
   /**
    *
-   * @type {Date}
-   * @memberof GroupProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof GroupProjection
    */
@@ -43,6 +37,12 @@ export interface GroupProjection {
    * @memberof GroupProjection
    */
   description?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof GroupProjection
+   */
+  createdAt: Date;
 }
 
 export function GroupProjectionFromJSON(json: any): GroupProjection {
@@ -57,10 +57,10 @@ export function GroupProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     name: json['name'],
     id: json['id'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    createdAt: new Date(json['createdAt']),
   };
 }
 
@@ -72,9 +72,9 @@ export function GroupProjectionToJSON(value?: GroupProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     name: value.name,
     id: value.id,
     description: value.description,
+    createdAt: value.createdAt.toISOString(),
   };
 }

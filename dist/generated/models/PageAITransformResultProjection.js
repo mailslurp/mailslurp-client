@@ -32,16 +32,16 @@ function PageAITransformResultProjectionFromJSONTyped(json, ignoreDiscriminator)
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
         columns: json['columns'],
-        totalElements: json['totalElements'],
         totalPages: json['totalPages'],
+        totalElements: json['totalElements'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
+        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
+        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
+        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
         numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
             ? undefined
             : json['numberOfElements'],
         sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
-        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
-        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
-        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
@@ -59,14 +59,14 @@ function PageAITransformResultProjectionToJSON(value) {
             : value.content.map(_1.AITransformResultProjectionDtoToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
         columns: value.columns,
-        totalElements: value.totalElements,
         totalPages: value.totalPages,
+        totalElements: value.totalElements,
         last: value.last,
-        numberOfElements: value.numberOfElements,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
-        first: value.first,
         size: value.size,
         number: value.number,
+        first: value.first,
+        numberOfElements: value.numberOfElements,
+        sort: (0, _1.SortObjectToJSON)(value.sort),
         empty: value.empty,
     };
 }

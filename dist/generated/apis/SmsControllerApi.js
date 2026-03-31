@@ -783,6 +783,111 @@ var SmsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+     * Mark all SMS messages as read or unread
+     */
+    SmsControllerApi.prototype.markAllSmsAsReadRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.read !== undefined) {
+                            queryParameters['read'] = requestParameters.read;
+                        }
+                        if (requestParameters.phoneNumberId !== undefined) {
+                            queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/read",
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+     * Mark all SMS messages as read or unread
+     */
+    SmsControllerApi.prototype.markAllSmsAsRead = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.markAllSmsAsReadRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+     * Mark an SMS as read or unread
+     */
+    SmsControllerApi.prototype.markSmsAsReadRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.smsId === null ||
+                            requestParameters.smsId === undefined) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling markSmsAsRead.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.read !== undefined) {
+                            queryParameters['read'] = requestParameters.read;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/{smsId}/read".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SmsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+     * Mark an SMS as read or unread
+     */
+    SmsControllerApi.prototype.markSmsAsRead = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.markSmsAsReadRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Reply to an SMS message.
      * Send a reply to a received SMS message. Replies are sent from the receiving number.
      */

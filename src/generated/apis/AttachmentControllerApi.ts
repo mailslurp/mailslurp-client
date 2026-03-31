@@ -29,9 +29,9 @@ import {
   ExtractAttachmentTextResult,
   ExtractAttachmentTextResultFromJSON,
   ExtractAttachmentTextResultToJSON,
-  InlineObject1,
-  InlineObject1FromJSON,
-  InlineObject1ToJSON,
+  InlineObject2,
+  InlineObject2FromJSON,
+  InlineObject2ToJSON,
   PageAttachmentEntity,
   PageAttachmentEntityFromJSON,
   PageAttachmentEntityToJSON,
@@ -99,7 +99,7 @@ export interface UploadMultipartFormRequest {
   xFilename?: string;
   xFilenameRaw?: string;
   xFilesize?: number;
-  inlineObject1?: InlineObject1;
+  inlineObject2?: InlineObject2;
 }
 
 /**
@@ -312,7 +312,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+   * Extract text content from an attachment using the requested method. `NATIVE` decoding supports text-like files, common Word and spreadsheet documents, and PDFs with embedded text.
    * Extract text from an attachment
    */
   async extractAttachmentTextRaw(
@@ -361,7 +361,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+   * Extract text content from an attachment using the requested method. `NATIVE` decoding supports text-like files, common Word and spreadsheet documents, and PDFs with embedded text.
    * Extract text from an attachment
    */
   async extractAttachmentText(
@@ -760,7 +760,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: InlineObject1ToJSON(requestParameters.inlineObject1),
+        body: InlineObject2ToJSON(requestParameters.inlineObject2),
       },
       initOverrides
     );

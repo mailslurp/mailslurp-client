@@ -20,6 +20,12 @@ export interface MissedSmsProjection {
      * @type {string}
      * @memberof MissedSmsProjection
      */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MissedSmsProjection
+     */
     userId: string;
     /**
      *
@@ -32,25 +38,19 @@ export interface MissedSmsProjection {
      * @type {string}
      * @memberof MissedSmsProjection
      */
-    sid: string;
-    /**
-     *
-     * @type {string}
-     * @memberof MissedSmsProjection
-     */
     phoneNumber: string;
     /**
      *
      * @type {string}
      * @memberof MissedSmsProjection
      */
-    fromNumber: string;
+    sid: string;
     /**
      *
      * @type {string}
      * @memberof MissedSmsProjection
      */
-    id: string;
+    fromNumber: string;
 }
 export declare function MissedSmsProjectionFromJSON(json: any): MissedSmsProjection;
 export declare function MissedSmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MissedSmsProjection;

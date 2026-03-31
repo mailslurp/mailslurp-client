@@ -51,37 +51,19 @@ export interface PageAITransformMappingProjection {
    * @type {number}
    * @memberof PageAITransformMappingProjection
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageAITransformMappingProjection
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
    * @memberof PageAITransformMappingProjection
    */
   last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAITransformMappingProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageAITransformMappingProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageAITransformMappingProjection
-   */
-  first?: boolean;
   /**
    *
    * @type {number}
@@ -94,6 +76,24 @@ export interface PageAITransformMappingProjection {
    * @memberof PageAITransformMappingProjection
    */
   number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAITransformMappingProjection
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAITransformMappingProjection
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageAITransformMappingProjection
+   */
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -124,16 +124,16 @@ export function PageAITransformMappingProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -153,14 +153,14 @@ export function PageAITransformMappingProjectionToJSON(
         ? undefined
         : (value.content as Array<any>).map(AITransformMappingProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
-    numberOfElements: value.numberOfElements,
-    sort: SortObjectToJSON(value.sort),
-    first: value.first,
     size: value.size,
     number: value.number,
+    first: value.first,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };
 }

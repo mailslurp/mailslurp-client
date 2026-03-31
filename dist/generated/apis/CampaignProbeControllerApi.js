@@ -99,6 +99,67 @@ var CampaignProbeControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Compare two campaign probe runs
+     */
+    CampaignProbeControllerApi.prototype.compareCampaignProbeRunsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.probeId === null ||
+                            requestParameters.probeId === undefined) {
+                            throw new runtime.RequiredError('probeId', 'Required parameter requestParameters.probeId was null or undefined when calling compareCampaignProbeRuns.');
+                        }
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling compareCampaignProbeRuns.');
+                        }
+                        if (requestParameters.otherRunId === null ||
+                            requestParameters.otherRunId === undefined) {
+                            throw new runtime.RequiredError('otherRunId', 'Required parameter requestParameters.otherRunId was null or undefined when calling compareCampaignProbeRuns.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/campaign-probe/probes/{probeId}/runs/{runId}/compare/{otherRunId}"
+                                    .replace("{".concat('probeId', "}"), encodeURIComponent(String(requestParameters.probeId)))
+                                    .replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId)))
+                                    .replace("{".concat('otherRunId', "}"), encodeURIComponent(String(requestParameters.otherRunId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CampaignProbeRunComparisonDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Compare two campaign probe runs
+     */
+    CampaignProbeControllerApi.prototype.compareCampaignProbeRuns = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.compareCampaignProbeRunsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Create campaign probe
      */
     CampaignProbeControllerApi.prototype.createCampaignProbeRaw = function (requestParameters, initOverrides) {
@@ -294,6 +355,62 @@ var CampaignProbeControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getCampaignProbeInsightsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get campaign probe run
+     */
+    CampaignProbeControllerApi.prototype.getCampaignProbeRunRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.probeId === null ||
+                            requestParameters.probeId === undefined) {
+                            throw new runtime.RequiredError('probeId', 'Required parameter requestParameters.probeId was null or undefined when calling getCampaignProbeRun.');
+                        }
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling getCampaignProbeRun.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/campaign-probe/probes/{probeId}/runs/{runId}"
+                                    .replace("{".concat('probeId', "}"), encodeURIComponent(String(requestParameters.probeId)))
+                                    .replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CampaignProbeRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get campaign probe run
+     */
+    CampaignProbeControllerApi.prototype.getCampaignProbeRun = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getCampaignProbeRunRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

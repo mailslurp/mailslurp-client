@@ -33,37 +33,19 @@ export interface PagePlusAddressProjection {
      * @type {number}
      * @memberof PagePlusAddressProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PagePlusAddressProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PagePlusAddressProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PagePlusAddressProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PagePlusAddressProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PagePlusAddressProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PagePlusAddressProjection {
      * @memberof PagePlusAddressProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePlusAddressProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PagePlusAddressProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PagePlusAddressProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

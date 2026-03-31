@@ -38,6 +38,8 @@ This is the base class for all generated API classes.
 
   ↳ [`DomainMonitorControllerApi`](DomainMonitorControllerApi.md)
 
+  ↳ [`EmailAuditControllerApi`](EmailAuditControllerApi.md)
+
   ↳ [`EmailControllerApi`](EmailControllerApi.md)
 
   ↳ [`EmailVerificationControllerApi`](EmailVerificationControllerApi.md)

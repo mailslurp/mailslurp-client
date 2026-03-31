@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { InboxAutomationMatchOptions } from './';
 /**
  * Options for creating an inbox replier. Repliers can be attached to inboxes and send automated responses when an inbound email matches given criteria.
  * @export
@@ -32,13 +33,13 @@ export interface CreateInboxReplierOptions {
      * @type {string}
      * @memberof CreateInboxReplierOptions
      */
-    field: CreateInboxReplierOptionsFieldEnum;
+    field?: CreateInboxReplierOptionsFieldEnum;
     /**
      * String or wildcard style match for field specified when evaluating reply rules. Use `*` to match anything.
      * @type {string}
      * @memberof CreateInboxReplierOptions
      */
-    match: string;
+    match?: string | null;
     /**
      * Reply-to email address when sending replying
      * @type {string}
@@ -95,6 +96,18 @@ export interface CreateInboxReplierOptions {
     templateVariables?: {
         [key: string]: object;
     } | null;
+    /**
+     * Comparison mode for inbox automation matching.
+     * @type {string}
+     * @memberof CreateInboxReplierOptions
+     */
+    should?: CreateInboxReplierOptionsShouldEnum;
+    /**
+     *
+     * @type {InboxAutomationMatchOptions}
+     * @memberof CreateInboxReplierOptions
+     */
+    matchOptions?: InboxAutomationMatchOptions | null;
 }
 /**
  * @export
@@ -104,7 +117,19 @@ export declare enum CreateInboxReplierOptionsFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",
     SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
+    ATTACHMENTS = "ATTACHMENTS",
+    ATTACHMENT_FILENAME = "ATTACHMENT_FILENAME",
+    ATTACHMENT_TEXT = "ATTACHMENT_TEXT"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreateInboxReplierOptionsShouldEnum {
+    WILDCARD = "WILDCARD",
+    MATCH = "MATCH",
+    CONTAIN = "CONTAIN",
+    EQUAL = "EQUAL"
 }
 export declare function CreateInboxReplierOptionsFromJSON(json: any): CreateInboxReplierOptions;
 export declare function CreateInboxReplierOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxReplierOptions;

@@ -36,11 +36,11 @@ function EntityFavouriteItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        entityType: json['entityType'],
         name: json['name'],
         id: json['id'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        createdAt: new Date(json['createdAt']),
+        entityType: json['entityType'],
     };
 }
 exports.EntityFavouriteItemProjectionFromJSONTyped = EntityFavouriteItemProjectionFromJSONTyped;
@@ -52,11 +52,11 @@ function EntityFavouriteItemProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        entityType: value.entityType,
         name: value.name,
         id: value.id,
         description: value.description,
+        createdAt: value.createdAt.toISOString(),
+        entityType: value.entityType,
     };
 }
 exports.EntityFavouriteItemProjectionToJSON = EntityFavouriteItemProjectionToJSON;

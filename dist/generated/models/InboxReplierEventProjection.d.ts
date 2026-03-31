@@ -17,6 +17,24 @@
 export interface InboxReplierEventProjection {
     /**
      *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    message?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    id?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    status?: InboxReplierEventProjectionStatusEnum;
+    /**
+     *
      * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
@@ -57,24 +75,6 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     replierId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    message?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    id?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    status?: InboxReplierEventProjectionStatusEnum;
 }
 /**
  * @export

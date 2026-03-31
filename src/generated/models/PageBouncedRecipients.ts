@@ -51,37 +51,19 @@ export interface PageBouncedRecipients {
    * @type {number}
    * @memberof PageBouncedRecipients
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageBouncedRecipients
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
    * @memberof PageBouncedRecipients
    */
   last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageBouncedRecipients
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageBouncedRecipients
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageBouncedRecipients
-   */
-  first?: boolean;
   /**
    *
    * @type {number}
@@ -94,6 +76,24 @@ export interface PageBouncedRecipients {
    * @memberof PageBouncedRecipients
    */
   number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageBouncedRecipients
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageBouncedRecipients
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageBouncedRecipients
+   */
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -122,16 +122,16 @@ export function PageBouncedRecipientsFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -151,14 +151,14 @@ export function PageBouncedRecipientsToJSON(
         ? undefined
         : (value.content as Array<any>).map(BounceRecipientProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
-    numberOfElements: value.numberOfElements,
-    sort: SortObjectToJSON(value.sort),
-    first: value.first,
     size: value.size,
     number: value.number,
+    first: value.first,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };
 }

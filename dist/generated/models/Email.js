@@ -67,8 +67,8 @@ function EmailFromJSONTyped(json, ignoreDiscriminator) {
         inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
         sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
-        xampHtml: !(0, runtime_1.exists)(json, 'xampHtml') ? undefined : json['xampHtml'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
+        xampHtml: !(0, runtime_1.exists)(json, 'xampHtml') ? undefined : json['xampHtml'],
     };
 }
 exports.EmailFromJSONTyped = EmailFromJSONTyped;
@@ -114,8 +114,8 @@ function EmailToJSON(value) {
         inReplyTo: value.inReplyTo,
         favourite: value.favourite,
         sizeBytes: value.sizeBytes,
-        xampHtml: value.xampHtml,
         html: value.html,
+        xampHtml: value.xampHtml,
     };
 }
 exports.EmailToJSON = EmailToJSON;

@@ -24,6 +24,12 @@ export interface SentSmsProjection {
    * @type {string}
    * @memberof SentSmsProjection
    */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SentSmsProjection
+   */
   body: string;
   /**
    *
@@ -61,12 +67,6 @@ export interface SentSmsProjection {
    * @memberof SentSmsProjection
    */
   replyToId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
-  id: string;
 }
 
 export function SentSmsProjectionFromJSON(json: any): SentSmsProjection {
@@ -81,6 +81,7 @@ export function SentSmsProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
     body: json['body'],
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
@@ -88,7 +89,6 @@ export function SentSmsProjectionFromJSONTyped(
     fromNumber: json['fromNumber'],
     toNumber: json['toNumber'],
     replyToId: !exists(json, 'replyToId') ? undefined : json['replyToId'],
-    id: json['id'],
   };
 }
 
@@ -100,6 +100,7 @@ export function SentSmsProjectionToJSON(value?: SentSmsProjection | null): any {
     return null;
   }
   return {
+    id: value.id,
     body: value.body,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
@@ -107,6 +108,5 @@ export function SentSmsProjectionToJSON(value?: SentSmsProjection | null): any {
     fromNumber: value.fromNumber,
     toNumber: value.toNumber,
     replyToId: value.replyToId,
-    id: value.id,
   };
 }

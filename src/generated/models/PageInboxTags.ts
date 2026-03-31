@@ -47,37 +47,19 @@ export interface PageInboxTags {
    * @type {number}
    * @memberof PageInboxTags
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageInboxTags
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
    * @memberof PageInboxTags
    */
   last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxTags
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageInboxTags
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxTags
-   */
-  first?: boolean;
   /**
    *
    * @type {number}
@@ -90,6 +72,24 @@ export interface PageInboxTags {
    * @memberof PageInboxTags
    */
   number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageInboxTags
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageInboxTags
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageInboxTags
+   */
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -114,16 +114,16 @@ export function PageInboxTagsFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -138,14 +138,14 @@ export function PageInboxTagsToJSON(value?: PageInboxTags | null): any {
   return {
     content: value.content,
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
-    numberOfElements: value.numberOfElements,
-    sort: SortObjectToJSON(value.sort),
-    first: value.first,
     size: value.size,
     number: value.number,
+    first: value.first,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };
 }

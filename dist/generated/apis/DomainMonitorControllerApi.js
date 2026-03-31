@@ -99,6 +99,67 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Compare two monitor runs
+     */
+    DomainMonitorControllerApi.prototype.compareDomainMonitorRunsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling compareDomainMonitorRuns.');
+                        }
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling compareDomainMonitorRuns.');
+                        }
+                        if (requestParameters.otherRunId === null ||
+                            requestParameters.otherRunId === undefined) {
+                            throw new runtime.RequiredError('otherRunId', 'Required parameter requestParameters.otherRunId was null or undefined when calling compareDomainMonitorRuns.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/runs/{runId}/compare/{otherRunId}"
+                                    .replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId)))
+                                    .replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId)))
+                                    .replace("{".concat('otherRunId', "}"), encodeURIComponent(String(requestParameters.otherRunId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainMonitorRunComparisonDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Compare two monitor runs
+     */
+    DomainMonitorControllerApi.prototype.compareDomainMonitorRuns = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.compareDomainMonitorRunsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Create domain monitor
      */
     DomainMonitorControllerApi.prototype.createDomainMonitorRaw = function (requestParameters, initOverrides) {
@@ -405,6 +466,59 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get current auth stack for monitor domain
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorAuthStackRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorAuthStack.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.dkimSelector !== undefined) {
+                            queryParameters['dkimSelector'] = requestParameters.dkimSelector;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/auth-stack".replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckEmailAuthStackResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get current auth stack for monitor domain
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorAuthStack = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDomainMonitorAuthStackRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get monitor insights
      */
     DomainMonitorControllerApi.prototype.getDomainMonitorInsightsRaw = function (requestParameters, initOverrides) {
@@ -452,6 +566,62 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getDomainMonitorInsightsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get monitor run
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorRunRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorRun.');
+                        }
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling getDomainMonitorRun.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/runs/{runId}"
+                                    .replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId)))
+                                    .replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainMonitorRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get monitor run
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorRun = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDomainMonitorRunRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -573,6 +743,59 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getDomainMonitorSeriesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get domain monitor summary
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorSummaryRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorSummary.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.dkimSelector !== undefined) {
+                            queryParameters['dkimSelector'] = requestParameters.dkimSelector;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/summary".replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainMonitorSummaryDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get domain monitor summary
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorSummary = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDomainMonitorSummaryRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

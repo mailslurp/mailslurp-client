@@ -24,10 +24,10 @@ function GroupProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
         name: json['name'],
         id: json['id'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.GroupProjectionFromJSONTyped = GroupProjectionFromJSONTyped;
@@ -39,10 +39,10 @@ function GroupProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
         name: value.name,
         id: value.id,
         description: value.description,
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.GroupProjectionToJSON = GroupProjectionToJSON;

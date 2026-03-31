@@ -24,19 +24,31 @@ export interface PhoneNumberReleaseProjection {
    * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
-  userId: string;
+  name?: string;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
-  createdAt: Date;
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberReleaseProjection
+   */
+  userId: string;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
   phoneCountry: PhoneNumberReleaseProjectionPhoneCountryEnum;
+  /**
+   *
+   * @type {Date}
+   * @memberof PhoneNumberReleaseProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -55,18 +67,6 @@ export interface PhoneNumberReleaseProjection {
    * @memberof PhoneNumberReleaseProjection
    */
   planCurrency?: PhoneNumberReleaseProjectionPlanCurrencyEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberReleaseProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberReleaseProjection
-   */
-  id: string;
 }
 
 /**
@@ -126,9 +126,11 @@ export function PhoneNumberReleaseProjectionFromJSONTyped(
     return json;
   }
   return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
     userId: json['userId'],
-    createdAt: new Date(json['createdAt']),
     phoneCountry: json['phoneCountry'],
+    createdAt: new Date(json['createdAt']),
     phoneNumber: !exists(json, 'phoneNumber') ? undefined : json['phoneNumber'],
     subscriptionSchedule: !exists(json, 'subscriptionSchedule')
       ? undefined
@@ -136,8 +138,6 @@ export function PhoneNumberReleaseProjectionFromJSONTyped(
     planCurrency: !exists(json, 'planCurrency')
       ? undefined
       : json['planCurrency'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
   };
 }
 
@@ -151,13 +151,13 @@ export function PhoneNumberReleaseProjectionToJSON(
     return null;
   }
   return {
+    name: value.name,
+    id: value.id,
     userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
     phoneCountry: value.phoneCountry,
+    createdAt: value.createdAt.toISOString(),
     phoneNumber: value.phoneNumber,
     subscriptionSchedule: value.subscriptionSchedule,
     planCurrency: value.planCurrency,
-    name: value.name,
-    id: value.id,
   };
 }

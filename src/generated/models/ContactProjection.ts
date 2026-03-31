@@ -24,6 +24,18 @@ export interface ContactProjection {
    * @type {string}
    * @memberof ContactProjection
    */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactProjection
+   */
+  groupId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactProjection
+   */
   emailAddress?: string | null;
   /**
    *
@@ -61,18 +73,6 @@ export interface ContactProjection {
    * @memberof ContactProjection
    */
   optOut?: boolean | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  groupId?: string | null;
 }
 
 export function ContactProjectionFromJSON(json: any): ContactProjection {
@@ -87,6 +87,8 @@ export function ContactProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
+    groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
@@ -98,8 +100,6 @@ export function ContactProjectionFromJSONTyped(
     lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
     company: !exists(json, 'company') ? undefined : json['company'],
     optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
-    id: json['id'],
-    groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
   };
 }
 
@@ -111,6 +111,8 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
     return null;
   }
   return {
+    id: value.id,
+    groupId: value.groupId,
     emailAddress: value.emailAddress,
     createdAt: value.createdAt.toISOString(),
     emailAddresses: value.emailAddresses,
@@ -118,7 +120,5 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
     lastName: value.lastName,
     company: value.company,
     optOut: value.optOut,
-    id: value.id,
-    groupId: value.groupId,
   };
 }

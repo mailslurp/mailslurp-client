@@ -10,7 +10,31 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupMxRecordsOptions, LookupMxRecordsResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult } from '../models';
+import { AnalyzeDmarcReportOptions, AnalyzeDmarcReportResults, AnalyzeEmailHeadersOptions, AnalyzeEmailHeadersResults, CheckCampaignProbeOptions, CheckCampaignProbeResults, CheckDnsPropagationOptions, CheckDnsPropagationResults, CheckDomainMonitorOptions, CheckDomainMonitorResults, CheckEmailAuditOptions, CheckEmailAuthStackOptions, CheckEmailAuthStackResults, CheckEmailBlacklistOptions, CheckEmailBlacklistResults, CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, EmailAuditAnalysisResult, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateSpfRecordOptions, GenerateSpfRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDkimDomainOptions, LookupDkimDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupMxRecordsOptions, LookupMxRecordsResults, LookupPtrOptions, LookupPtrResults, LookupSpfDomainOptions, LookupSpfDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult, TestSmtpServerOptions, TestSmtpServerResults } from '../models';
+export interface AnalyzeDmarcReportRequest {
+    analyzeDmarcReportOptions: AnalyzeDmarcReportOptions;
+}
+export interface AnalyzeEmailHeadersRequest {
+    analyzeEmailHeadersOptions: AnalyzeEmailHeadersOptions;
+}
+export interface CheckCampaignProbeRequest {
+    checkCampaignProbeOptions: CheckCampaignProbeOptions;
+}
+export interface CheckDnsPropagationRequest {
+    checkDnsPropagationOptions: CheckDnsPropagationOptions;
+}
+export interface CheckDomainMonitorRequest {
+    checkDomainMonitorOptions: CheckDomainMonitorOptions;
+}
+export interface CheckEmailAuditRequest {
+    checkEmailAuditOptions: CheckEmailAuditOptions;
+}
+export interface CheckEmailAuthStackRequest {
+    checkEmailAuthStackOptions: CheckEmailAuthStackOptions;
+}
+export interface CheckEmailBlacklistRequest {
+    checkEmailBlacklistOptions: CheckEmailBlacklistOptions;
+}
 export interface CheckEmailFeaturesClientSupportRequest {
     checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
 }
@@ -25,6 +49,9 @@ export interface GenerateDmarcRecordRequest {
 }
 export interface GenerateMtaStsRecordRequest {
     generateMtaStsRecordOptions: GenerateMtaStsRecordOptions;
+}
+export interface GenerateSpfRecordRequest {
+    generateSpfRecordOptions: GenerateSpfRecordOptions;
 }
 export interface GenerateTlsReportingRecordRequest {
     generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
@@ -45,6 +72,9 @@ export interface GetFakeEmailsForAddressRequest {
 export interface LookupBimiDomainRequest {
     lookupBimiDomainOptions: LookupBimiDomainOptions;
 }
+export interface LookupDkimDomainRequest {
+    lookupDkimDomainOptions: LookupDkimDomainOptions;
+}
 export interface LookupDmarcDomainRequest {
     lookupDmarcDomainOptions: LookupDmarcDomainOptions;
 }
@@ -54,13 +84,86 @@ export interface LookupMtaStsDomainRequest {
 export interface LookupMxRecordRequest {
     lookupMxRecordsOptions: LookupMxRecordsOptions;
 }
+export interface LookupPtrRequest {
+    lookupPtrOptions: LookupPtrOptions;
+}
+export interface LookupSpfDomainRequest {
+    lookupSpfDomainOptions: LookupSpfDomainOptions;
+}
 export interface LookupTlsReportingDomainRequest {
     lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
+}
+export interface TestSmtpServerRequest {
+    testSmtpServerOptions: TestSmtpServerOptions;
 }
 /**
  *
  */
 export declare class ToolsControllerApi extends runtime.BaseAPI {
+    /**
+     * Parse and summarize a DMARC aggregate XML report
+     */
+    analyzeDmarcReportRaw(requestParameters: AnalyzeDmarcReportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AnalyzeDmarcReportResults>>;
+    /**
+     * Parse and summarize a DMARC aggregate XML report
+     */
+    analyzeDmarcReport(requestParameters: AnalyzeDmarcReportRequest, initOverrides?: RequestInit): Promise<AnalyzeDmarcReportResults>;
+    /**
+     * Analyze email headers for auth results and delivery path
+     */
+    analyzeEmailHeadersRaw(requestParameters: AnalyzeEmailHeadersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AnalyzeEmailHeadersResults>>;
+    /**
+     * Analyze email headers for auth results and delivery path
+     */
+    analyzeEmailHeaders(requestParameters: AnalyzeEmailHeadersRequest, initOverrides?: RequestInit): Promise<AnalyzeEmailHeadersResults>;
+    /**
+     * Run a one-shot free campaign probe preflight check
+     */
+    checkCampaignProbeRaw(requestParameters: CheckCampaignProbeRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckCampaignProbeResults>>;
+    /**
+     * Run a one-shot free campaign probe preflight check
+     */
+    checkCampaignProbe(requestParameters: CheckCampaignProbeRequest, initOverrides?: RequestInit): Promise<CheckCampaignProbeResults>;
+    /**
+     * Check DNS propagation for a host and record type across configured resolvers
+     */
+    checkDnsPropagationRaw(requestParameters: CheckDnsPropagationRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckDnsPropagationResults>>;
+    /**
+     * Check DNS propagation for a host and record type across configured resolvers
+     */
+    checkDnsPropagation(requestParameters: CheckDnsPropagationRequest, initOverrides?: RequestInit): Promise<CheckDnsPropagationResults>;
+    /**
+     * Run a one-shot free domain monitor posture check
+     */
+    checkDomainMonitorRaw(requestParameters: CheckDomainMonitorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckDomainMonitorResults>>;
+    /**
+     * Run a one-shot free domain monitor posture check
+     */
+    checkDomainMonitor(requestParameters: CheckDomainMonitorRequest, initOverrides?: RequestInit): Promise<CheckDomainMonitorResults>;
+    /**
+     * Run a one-shot free email audit across links, images, HTML, and client support
+     */
+    checkEmailAuditRaw(requestParameters: CheckEmailAuditRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailAuditAnalysisResult>>;
+    /**
+     * Run a one-shot free email audit across links, images, HTML, and client support
+     */
+    checkEmailAudit(requestParameters: CheckEmailAuditRequest, initOverrides?: RequestInit): Promise<EmailAuditAnalysisResult>;
+    /**
+     * Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+     */
+    checkEmailAuthStackRaw(requestParameters: CheckEmailAuthStackRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailAuthStackResults>>;
+    /**
+     * Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+     */
+    checkEmailAuthStack(requestParameters: CheckEmailAuthStackRequest, initOverrides?: RequestInit): Promise<CheckEmailAuthStackResults>;
+    /**
+     * Check whether a domain or IP appears on configured DNS blacklists
+     */
+    checkEmailBlacklistRaw(requestParameters: CheckEmailBlacklistRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailBlacklistResults>>;
+    /**
+     * Check whether a domain or IP appears on configured DNS blacklists
+     */
+    checkEmailBlacklist(requestParameters: CheckEmailBlacklistRequest, initOverrides?: RequestInit): Promise<CheckEmailBlacklistResults>;
     /**
      * Check email client support for email HTML and CSS features
      */
@@ -111,6 +214,14 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Create a TLS reporting record policy
      */
     generateMtaStsRecord(requestParameters: GenerateMtaStsRecordRequest, initOverrides?: RequestInit): Promise<GenerateMtaStsRecordResults>;
+    /**
+     * Create an SPF record
+     */
+    generateSpfRecordRaw(requestParameters: GenerateSpfRecordRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GenerateSpfRecordResults>>;
+    /**
+     * Create an SPF record
+     */
+    generateSpfRecord(requestParameters: GenerateSpfRecordRequest, initOverrides?: RequestInit): Promise<GenerateSpfRecordResults>;
     /**
      * Create a TLS reporting record policy
      */
@@ -164,6 +275,14 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      */
     lookupBimiDomain(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit): Promise<LookupBimiDomainResults>;
     /**
+     * Lookup and validate a DKIM record
+     */
+    lookupDkimDomainRaw(requestParameters: LookupDkimDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupDkimDomainResults>>;
+    /**
+     * Lookup and validate a DKIM record
+     */
+    lookupDkimDomain(requestParameters: LookupDkimDomainRequest, initOverrides?: RequestInit): Promise<LookupDkimDomainResults>;
+    /**
      * Lookup a DMARC record policy
      */
     lookupDmarcDomainRaw(requestParameters: LookupDmarcDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupDmarcDomainResults>>;
@@ -188,6 +307,22 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      */
     lookupMxRecord(requestParameters: LookupMxRecordRequest, initOverrides?: RequestInit): Promise<LookupMxRecordsResults>;
     /**
+     * Lookup PTR records for an IP address
+     */
+    lookupPtrRaw(requestParameters: LookupPtrRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupPtrResults>>;
+    /**
+     * Lookup PTR records for an IP address
+     */
+    lookupPtr(requestParameters: LookupPtrRequest, initOverrides?: RequestInit): Promise<LookupPtrResults>;
+    /**
+     * Lookup and validate an SPF record
+     */
+    lookupSpfDomainRaw(requestParameters: LookupSpfDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupSpfDomainResults>>;
+    /**
+     * Lookup and validate an SPF record
+     */
+    lookupSpfDomain(requestParameters: LookupSpfDomainRequest, initOverrides?: RequestInit): Promise<LookupSpfDomainResults>;
+    /**
      * Lookup a TLS reporting domain policy
      */
     lookupTlsReportingDomainRaw(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupTlsReportingDomainResults>>;
@@ -195,4 +330,12 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Lookup a TLS reporting domain policy
      */
     lookupTlsReportingDomain(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<LookupTlsReportingDomainResults>;
+    /**
+     * Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+     */
+    testSmtpServerRaw(requestParameters: TestSmtpServerRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TestSmtpServerResults>>;
+    /**
+     * Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+     */
+    testSmtpServer(requestParameters: TestSmtpServerRequest, initOverrides?: RequestInit): Promise<TestSmtpServerResults>;
 }

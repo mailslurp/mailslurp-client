@@ -20,6 +20,18 @@ export interface EntityAutomationItemProjection {
      * @type {string}
      * @memberof EntityAutomationItemProjection
      */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
     inboxId?: string;
     /**
      *
@@ -39,18 +51,6 @@ export interface EntityAutomationItemProjection {
      * @memberof EntityAutomationItemProjection
      */
     automationType: EntityAutomationItemProjectionAutomationTypeEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityAutomationItemProjection
-     */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityAutomationItemProjection
-     */
-    id: string;
 }
 /**
  * @export

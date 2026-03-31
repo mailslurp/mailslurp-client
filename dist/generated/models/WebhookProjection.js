@@ -52,6 +52,8 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
         url: json['url'],
         password: !(0, runtime_1.exists)(json, 'password') ? undefined : json['password'],
         username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
@@ -60,20 +62,18 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
         updatedAt: new Date(json['updatedAt']),
         createdAt: new Date(json['createdAt']),
-        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
-            ? undefined
-            : json['aiTransformId'],
         healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
             ? undefined
             : json['healthStatus'],
         aiTransformerId: !(0, runtime_1.exists)(json, 'aiTransformerId')
             ? undefined
             : json['aiTransformerId'],
+        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
+            ? undefined
+            : json['aiTransformId'],
         phoneNumberId: !(0, runtime_1.exists)(json, 'phoneNumberId')
             ? undefined
             : json['phoneNumberId'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
     };
 }
 exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
@@ -85,6 +85,8 @@ function WebhookProjectionToJSON(value) {
         return null;
     }
     return {
+        name: value.name,
+        id: value.id,
         url: value.url,
         password: value.password,
         username: value.username,
@@ -93,12 +95,10 @@ function WebhookProjectionToJSON(value) {
         eventName: value.eventName,
         updatedAt: value.updatedAt.toISOString(),
         createdAt: value.createdAt.toISOString(),
-        aiTransformId: value.aiTransformId,
         healthStatus: value.healthStatus,
         aiTransformerId: value.aiTransformerId,
+        aiTransformId: value.aiTransformId,
         phoneNumberId: value.phoneNumberId,
-        name: value.name,
-        id: value.id,
     };
 }
 exports.WebhookProjectionToJSON = WebhookProjectionToJSON;

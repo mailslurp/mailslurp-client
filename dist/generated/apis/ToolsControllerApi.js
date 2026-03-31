@@ -99,6 +99,422 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Parse and summarize a DMARC aggregate XML report
+     */
+    ToolsControllerApi.prototype.analyzeDmarcReportRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.analyzeDmarcReportOptions === null ||
+                            requestParameters.analyzeDmarcReportOptions === undefined) {
+                            throw new runtime.RequiredError('analyzeDmarcReportOptions', 'Required parameter requestParameters.analyzeDmarcReportOptions was null or undefined when calling analyzeDmarcReport.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/analyze-dmarc-report",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.AnalyzeDmarcReportOptionsToJSON)(requestParameters.analyzeDmarcReportOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AnalyzeDmarcReportResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Parse and summarize a DMARC aggregate XML report
+     */
+    ToolsControllerApi.prototype.analyzeDmarcReport = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.analyzeDmarcReportRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Analyze email headers for auth results and delivery path
+     */
+    ToolsControllerApi.prototype.analyzeEmailHeadersRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.analyzeEmailHeadersOptions === null ||
+                            requestParameters.analyzeEmailHeadersOptions === undefined) {
+                            throw new runtime.RequiredError('analyzeEmailHeadersOptions', 'Required parameter requestParameters.analyzeEmailHeadersOptions was null or undefined when calling analyzeEmailHeaders.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/analyze-email-headers",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.AnalyzeEmailHeadersOptionsToJSON)(requestParameters.analyzeEmailHeadersOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AnalyzeEmailHeadersResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Analyze email headers for auth results and delivery path
+     */
+    ToolsControllerApi.prototype.analyzeEmailHeaders = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.analyzeEmailHeadersRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot free campaign probe preflight check
+     */
+    ToolsControllerApi.prototype.checkCampaignProbeRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.checkCampaignProbeOptions === null ||
+                            requestParameters.checkCampaignProbeOptions === undefined) {
+                            throw new runtime.RequiredError('checkCampaignProbeOptions', 'Required parameter requestParameters.checkCampaignProbeOptions was null or undefined when calling checkCampaignProbe.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/check-campaign-probe",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CheckCampaignProbeOptionsToJSON)(requestParameters.checkCampaignProbeOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckCampaignProbeResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot free campaign probe preflight check
+     */
+    ToolsControllerApi.prototype.checkCampaignProbe = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkCampaignProbeRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Check DNS propagation for a host and record type across configured resolvers
+     */
+    ToolsControllerApi.prototype.checkDnsPropagationRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.checkDnsPropagationOptions === null ||
+                            requestParameters.checkDnsPropagationOptions === undefined) {
+                            throw new runtime.RequiredError('checkDnsPropagationOptions', 'Required parameter requestParameters.checkDnsPropagationOptions was null or undefined when calling checkDnsPropagation.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/check-dns-propagation",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CheckDnsPropagationOptionsToJSON)(requestParameters.checkDnsPropagationOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckDnsPropagationResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Check DNS propagation for a host and record type across configured resolvers
+     */
+    ToolsControllerApi.prototype.checkDnsPropagation = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkDnsPropagationRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot free domain monitor posture check
+     */
+    ToolsControllerApi.prototype.checkDomainMonitorRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.checkDomainMonitorOptions === null ||
+                            requestParameters.checkDomainMonitorOptions === undefined) {
+                            throw new runtime.RequiredError('checkDomainMonitorOptions', 'Required parameter requestParameters.checkDomainMonitorOptions was null or undefined when calling checkDomainMonitor.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/check-domain-monitor",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CheckDomainMonitorOptionsToJSON)(requestParameters.checkDomainMonitorOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckDomainMonitorResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot free domain monitor posture check
+     */
+    ToolsControllerApi.prototype.checkDomainMonitor = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkDomainMonitorRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot free email audit across links, images, HTML, and client support
+     */
+    ToolsControllerApi.prototype.checkEmailAuditRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.checkEmailAuditOptions === null ||
+                            requestParameters.checkEmailAuditOptions === undefined) {
+                            throw new runtime.RequiredError('checkEmailAuditOptions', 'Required parameter requestParameters.checkEmailAuditOptions was null or undefined when calling checkEmailAudit.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/check-email-audit",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CheckEmailAuditOptionsToJSON)(requestParameters.checkEmailAuditOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailAuditAnalysisResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot free email audit across links, images, HTML, and client support
+     */
+    ToolsControllerApi.prototype.checkEmailAudit = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkEmailAuditRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+     */
+    ToolsControllerApi.prototype.checkEmailAuthStackRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.checkEmailAuthStackOptions === null ||
+                            requestParameters.checkEmailAuthStackOptions === undefined) {
+                            throw new runtime.RequiredError('checkEmailAuthStackOptions', 'Required parameter requestParameters.checkEmailAuthStackOptions was null or undefined when calling checkEmailAuthStack.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/check-email-auth-stack",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CheckEmailAuthStackOptionsToJSON)(requestParameters.checkEmailAuthStackOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckEmailAuthStackResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+     */
+    ToolsControllerApi.prototype.checkEmailAuthStack = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkEmailAuthStackRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Check whether a domain or IP appears on configured DNS blacklists
+     */
+    ToolsControllerApi.prototype.checkEmailBlacklistRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.checkEmailBlacklistOptions === null ||
+                            requestParameters.checkEmailBlacklistOptions === undefined) {
+                            throw new runtime.RequiredError('checkEmailBlacklistOptions', 'Required parameter requestParameters.checkEmailBlacklistOptions was null or undefined when calling checkEmailBlacklist.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/check-email-blacklists",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CheckEmailBlacklistOptionsToJSON)(requestParameters.checkEmailBlacklistOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckEmailBlacklistResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Check whether a domain or IP appears on configured DNS blacklists
+     */
+    ToolsControllerApi.prototype.checkEmailBlacklist = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkEmailBlacklistRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Check email client support for email HTML and CSS features
      */
     ToolsControllerApi.prototype.checkEmailFeaturesClientSupportRaw = function (requestParameters, initOverrides) {
@@ -395,6 +811,58 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.generateMtaStsRecordRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Create an SPF record
+     */
+    ToolsControllerApi.prototype.generateSpfRecordRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.generateSpfRecordOptions === null ||
+                            requestParameters.generateSpfRecordOptions === undefined) {
+                            throw new runtime.RequiredError('generateSpfRecordOptions', 'Required parameter requestParameters.generateSpfRecordOptions was null or undefined when calling generateSpfRecord.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/generate-spf-record",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.GenerateSpfRecordOptionsToJSON)(requestParameters.generateSpfRecordOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.GenerateSpfRecordResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create an SPF record
+     */
+    ToolsControllerApi.prototype.generateSpfRecord = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.generateSpfRecordRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -723,6 +1191,58 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Lookup and validate a DKIM record
+     */
+    ToolsControllerApi.prototype.lookupDkimDomainRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.lookupDkimDomainOptions === null ||
+                            requestParameters.lookupDkimDomainOptions === undefined) {
+                            throw new runtime.RequiredError('lookupDkimDomainOptions', 'Required parameter requestParameters.lookupDkimDomainOptions was null or undefined when calling lookupDkimDomain.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/lookup-dkim-domain",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.LookupDkimDomainOptionsToJSON)(requestParameters.lookupDkimDomainOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.LookupDkimDomainResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Lookup and validate a DKIM record
+     */
+    ToolsControllerApi.prototype.lookupDkimDomain = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.lookupDkimDomainRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Lookup a DMARC record policy
      */
     ToolsControllerApi.prototype.lookupDmarcDomainRaw = function (requestParameters, initOverrides) {
@@ -879,6 +1399,110 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Lookup PTR records for an IP address
+     */
+    ToolsControllerApi.prototype.lookupPtrRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.lookupPtrOptions === null ||
+                            requestParameters.lookupPtrOptions === undefined) {
+                            throw new runtime.RequiredError('lookupPtrOptions', 'Required parameter requestParameters.lookupPtrOptions was null or undefined when calling lookupPtr.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/lookup-ptr",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.LookupPtrOptionsToJSON)(requestParameters.lookupPtrOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.LookupPtrResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Lookup PTR records for an IP address
+     */
+    ToolsControllerApi.prototype.lookupPtr = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.lookupPtrRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Lookup and validate an SPF record
+     */
+    ToolsControllerApi.prototype.lookupSpfDomainRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.lookupSpfDomainOptions === null ||
+                            requestParameters.lookupSpfDomainOptions === undefined) {
+                            throw new runtime.RequiredError('lookupSpfDomainOptions', 'Required parameter requestParameters.lookupSpfDomainOptions was null or undefined when calling lookupSpfDomain.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/lookup-spf-domain",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.LookupSpfDomainOptionsToJSON)(requestParameters.lookupSpfDomainOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.LookupSpfDomainResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Lookup and validate an SPF record
+     */
+    ToolsControllerApi.prototype.lookupSpfDomain = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.lookupSpfDomainRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Lookup a TLS reporting domain policy
      */
     ToolsControllerApi.prototype.lookupTlsReportingDomainRaw = function (requestParameters, initOverrides) {
@@ -922,6 +1546,58 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.lookupTlsReportingDomainRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+     */
+    ToolsControllerApi.prototype.testSmtpServerRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.testSmtpServerOptions === null ||
+                            requestParameters.testSmtpServerOptions === undefined) {
+                            throw new runtime.RequiredError('testSmtpServerOptions', 'Required parameter requestParameters.testSmtpServerOptions was null or undefined when calling testSmtpServer.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/test-smtp-server",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.TestSmtpServerOptionsToJSON)(requestParameters.testSmtpServerOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TestSmtpServerResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+     */
+    ToolsControllerApi.prototype.testSmtpServer = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testSmtpServerRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

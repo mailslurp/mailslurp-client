@@ -24,12 +24,16 @@
 - [applyImapFlagOperationRaw](EmailControllerApi.md#applyimapflagoperationraw)
 - [canSend](EmailControllerApi.md#cansend)
 - [canSendRaw](EmailControllerApi.md#cansendraw)
+- [checkEmailAudit1](EmailControllerApi.md#checkemailaudit1)
+- [checkEmailAudit1Raw](EmailControllerApi.md#checkemailaudit1raw)
 - [checkEmailBody](EmailControllerApi.md#checkemailbody)
 - [checkEmailBodyFeatureSupport](EmailControllerApi.md#checkemailbodyfeaturesupport)
 - [checkEmailBodyFeatureSupportRaw](EmailControllerApi.md#checkemailbodyfeaturesupportraw)
 - [checkEmailBodyRaw](EmailControllerApi.md#checkemailbodyraw)
 - [checkEmailClientSupport](EmailControllerApi.md#checkemailclientsupport)
 - [checkEmailClientSupportRaw](EmailControllerApi.md#checkemailclientsupportraw)
+- [createEmailAuditForEmail](EmailControllerApi.md#createemailauditforemail)
+- [createEmailAuditForEmailRaw](EmailControllerApi.md#createemailauditforemailraw)
 - [deleteAllEmails](EmailControllerApi.md#deleteallemails)
 - [deleteAllEmailsRaw](EmailControllerApi.md#deleteallemailsraw)
 - [deleteEmail](EmailControllerApi.md#deleteemail)
@@ -231,6 +235,46 @@ Check whether an email send would be accepted
 
 ___
 
+### checkEmailAudit1
+
+▸ **checkEmailAudit1**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>
+
+Runs the same message-level audit bundle used by the email audit dashboard in one request. Combines content checks, HTML validation, compatibility analysis, and reputation verdict rollup when available.
+Run aggregate email audit for a stored email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailAudit1Request`](../interfaces/CheckEmailAudit1Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>
+
+___
+
+### checkEmailAudit1Raw
+
+▸ **checkEmailAudit1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>\>
+
+Runs the same message-level audit bundle used by the email audit dashboard in one request. Combines content checks, HTML validation, compatibility analysis, and reputation verdict rollup when available.
+Run aggregate email audit for a stored email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailAudit1Request`](../interfaces/CheckEmailAudit1Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>\>
+
+___
+
 ### checkEmailBody
 
 ▸ **checkEmailBody**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailBodyResults`](../interfaces/CheckEmailBodyResults.md)\>
@@ -348,6 +392,46 @@ Check email-client support for a provided HTML body
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailClientSupportResults`](../interfaces/CheckEmailClientSupportResults.md)\>\>
+
+___
+
+### createEmailAuditForEmail
+
+▸ **createEmailAuditForEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailAuditDto`](../interfaces/EmailAuditDto.md)\>
+
+Runs the aggregate audit bundle for the target email and stores the resulting audit record for later review and history tracking.
+Persist aggregate email audit for a stored email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateEmailAuditForEmailRequest`](../interfaces/CreateEmailAuditForEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailAuditDto`](../interfaces/EmailAuditDto.md)\>
+
+___
+
+### createEmailAuditForEmailRaw
+
+▸ **createEmailAuditForEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAuditDto`](../interfaces/EmailAuditDto.md)\>\>
+
+Runs the aggregate audit bundle for the target email and stores the resulting audit record for later review and history tracking.
+Persist aggregate email audit for a stored email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateEmailAuditForEmailRequest`](../interfaces/CreateEmailAuditForEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAuditDto`](../interfaces/EmailAuditDto.md)\>\>
 
 ___
 
@@ -733,7 +817,7 @@ ___
 
 ▸ **getEmailCodes**(`requestParameters`, `initOverrides?`): `Promise`<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>
 
-Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+Extracts one-time passcodes and similar tokens from email content using the selected extraction method and fallback options.
 Extract verification codes from an email
 
 #### Parameters
@@ -753,7 +837,7 @@ ___
 
 ▸ **getEmailCodesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractCodesResult`](../interfaces/ExtractCodesResult.md)\>\>
 
-Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+Extracts one-time passcodes and similar tokens from email content using the selected extraction method and fallback options.
 Extract verification codes from an email
 
 #### Parameters

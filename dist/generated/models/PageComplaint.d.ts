@@ -33,37 +33,19 @@ export interface PageComplaint {
      * @type {number}
      * @memberof PageComplaint
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageComplaint
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageComplaint
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageComplaint
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageComplaint
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageComplaint
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageComplaint {
      * @memberof PageComplaint
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageComplaint
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageComplaint
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

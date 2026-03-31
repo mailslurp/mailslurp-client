@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { InboxAutomationMatchOptions } from './';
 /**
  * Options for updating an inbox replier
  * @export
@@ -32,13 +33,13 @@ export interface UpdateInboxReplierOptions {
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    field: UpdateInboxReplierOptionsFieldEnum;
+    field?: UpdateInboxReplierOptionsFieldEnum;
     /**
      * String or wildcard style match for field specified when evaluating reply rules
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    match: string;
+    match?: string | null;
     /**
      * Reply-to email address when sending replying
      * @type {string}
@@ -95,6 +96,18 @@ export interface UpdateInboxReplierOptions {
     templateVariables?: {
         [key: string]: object;
     } | null;
+    /**
+     * Comparison mode for inbox automation matching.
+     * @type {string}
+     * @memberof UpdateInboxReplierOptions
+     */
+    should?: UpdateInboxReplierOptionsShouldEnum;
+    /**
+     *
+     * @type {InboxAutomationMatchOptions}
+     * @memberof UpdateInboxReplierOptions
+     */
+    matchOptions?: InboxAutomationMatchOptions | null;
 }
 /**
  * @export
@@ -104,7 +117,19 @@ export declare enum UpdateInboxReplierOptionsFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",
     SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
+    ATTACHMENTS = "ATTACHMENTS",
+    ATTACHMENT_FILENAME = "ATTACHMENT_FILENAME",
+    ATTACHMENT_TEXT = "ATTACHMENT_TEXT"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum UpdateInboxReplierOptionsShouldEnum {
+    WILDCARD = "WILDCARD",
+    MATCH = "MATCH",
+    CONTAIN = "CONTAIN",
+    EQUAL = "EQUAL"
 }
 export declare function UpdateInboxReplierOptionsFromJSON(json: any): UpdateInboxReplierOptions;
 export declare function UpdateInboxReplierOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateInboxReplierOptions;

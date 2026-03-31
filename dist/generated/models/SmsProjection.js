@@ -23,13 +23,13 @@ function SmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        id: json['id'],
         body: json['body'],
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
         phoneNumber: json['phoneNumber'],
         fromNumber: json['fromNumber'],
         read: json['read'],
-        id: json['id'],
     };
 }
 exports.SmsProjectionFromJSONTyped = SmsProjectionFromJSONTyped;
@@ -41,13 +41,13 @@ function SmsProjectionToJSON(value) {
         return null;
     }
     return {
+        id: value.id,
         body: value.body,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
         phoneNumber: value.phoneNumber,
         fromNumber: value.fromNumber,
         read: value.read,
-        id: value.id,
     };
 }
 exports.SmsProjectionToJSON = SmsProjectionToJSON;

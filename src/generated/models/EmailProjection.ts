@@ -32,6 +32,30 @@ import {
 export interface EmailProjection {
   /**
    *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  threadId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  from: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  subject?: string | null;
+  /**
+   *
    * @type {Sender}
    * @memberof EmailProjection
    */
@@ -44,16 +68,16 @@ export interface EmailProjection {
   recipients?: EmailRecipients | null;
   /**
    *
-   * @type {Array<string>}
-   * @memberof EmailProjection
-   */
-  attachments?: Array<string> | null;
-  /**
-   *
    * @type {string}
    * @memberof EmailProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  attachments?: Array<string> | null;
   /**
    *
    * @type {number}
@@ -156,30 +180,6 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   teamAccess: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  threadId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  from: string | null;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -194,14 +194,18 @@ export function EmailProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
+    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
+    from: json['from'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     sender: !exists(json, 'sender')
       ? undefined
       : SenderFromJSON(json['sender']),
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
-    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     createdAt: new Date(json['createdAt']),
     to: json['to'],
@@ -221,10 +225,6 @@ export function EmailProjectionFromJSONTyped(
       : json['bodyPartContentTypes'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     teamAccess: json['teamAccess'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    id: json['id'],
-    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
-    from: json['from'],
   };
 }
 
@@ -236,10 +236,14 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     return null;
   }
   return {
+    id: value.id,
+    threadId: value.threadId,
+    from: value.from,
+    subject: value.subject,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
-    attachments: value.attachments,
     inboxId: value.inboxId,
+    attachments: value.attachments,
     sizeBytes: value.sizeBytes,
     createdAt: value.createdAt.toISOString(),
     to: value.to,
@@ -257,9 +261,5 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     bodyPartContentTypes: value.bodyPartContentTypes,
     bodyMD5Hash: value.bodyMD5Hash,
     teamAccess: value.teamAccess,
-    subject: value.subject,
-    id: value.id,
-    threadId: value.threadId,
-    from: value.from,
   };
 }

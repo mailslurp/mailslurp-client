@@ -46,6 +46,10 @@
 - [getSmsMessageRaw](SmsControllerApi.md#getsmsmessageraw)
 - [getUnreadSmsCount](SmsControllerApi.md#getunreadsmscount)
 - [getUnreadSmsCountRaw](SmsControllerApi.md#getunreadsmscountraw)
+- [markAllSmsAsRead](SmsControllerApi.md#markallsmsasread)
+- [markAllSmsAsReadRaw](SmsControllerApi.md#markallsmsasreadraw)
+- [markSmsAsRead](SmsControllerApi.md#marksmsasread)
+- [markSmsAsReadRaw](SmsControllerApi.md#marksmsasreadraw)
 - [replyToSmsMessage](SmsControllerApi.md#replytosmsmessage)
 - [replyToSmsMessageRaw](SmsControllerApi.md#replytosmsmessageraw)
 - [request](SmsControllerApi.md#request)
@@ -590,6 +594,86 @@ Get unread SMS count
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
+
+___
+
+### markAllSmsAsRead
+
+▸ **markAllSmsAsRead**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+Mark all SMS messages as read or unread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`MarkAllSmsAsReadRequest`](../interfaces/MarkAllSmsAsReadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### markAllSmsAsReadRaw
+
+▸ **markAllSmsAsReadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+Mark all SMS messages as read or unread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`MarkAllSmsAsReadRequest`](../interfaces/MarkAllSmsAsReadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### markSmsAsRead
+
+▸ **markSmsAsRead**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
+
+Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+Mark an SMS as read or unread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`MarkSmsAsReadRequest`](../interfaces/MarkSmsAsReadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
+
+___
+
+### markSmsAsReadRaw
+
+▸ **markSmsAsReadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
+
+Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+Mark an SMS as read or unread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`MarkSmsAsReadRequest`](../interfaces/MarkSmsAsReadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
 
 ___
 

@@ -9,6 +9,8 @@
 ### Enumeration Members
 
 - [ATTACHMENTS](CreateInboxReplierOptionsFieldEnum.md#attachments)
+- [ATTACHMENT\_FILENAME](CreateInboxReplierOptionsFieldEnum.md#attachment_filename)
+- [ATTACHMENT\_TEXT](CreateInboxReplierOptionsFieldEnum.md#attachment_text)
 - [RECIPIENTS](CreateInboxReplierOptionsFieldEnum.md#recipients)
 - [SENDER](CreateInboxReplierOptionsFieldEnum.md#sender)
 - [SUBJECT](CreateInboxReplierOptionsFieldEnum.md#subject)
@@ -18,6 +20,18 @@
 ### ATTACHMENTS
 
 • **ATTACHMENTS** = ``"ATTACHMENTS"``
+
+___
+
+### ATTACHMENT\_FILENAME
+
+• **ATTACHMENT\_FILENAME** = ``"ATTACHMENT_FILENAME"``
+
+___
+
+### ATTACHMENT\_TEXT
+
+• **ATTACHMENT\_TEXT** = ``"ATTACHMENT_TEXT"``
 
 ___
 

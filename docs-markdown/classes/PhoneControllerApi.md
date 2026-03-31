@@ -20,10 +20,22 @@
 
 ### Methods
 
+- [acquirePhonePoolLease](PhoneControllerApi.md#acquirephonepoollease)
+- [acquirePhonePoolLeaseRaw](PhoneControllerApi.md#acquirephonepoolleaseraw)
+- [addAllPhoneNumbersToPhonePool](PhoneControllerApi.md#addallphonenumberstophonepool)
+- [addAllPhoneNumbersToPhonePoolRaw](PhoneControllerApi.md#addallphonenumberstophonepoolraw)
+- [addPhoneNumberTags](PhoneControllerApi.md#addphonenumbertags)
+- [addPhoneNumberTagsRaw](PhoneControllerApi.md#addphonenumbertagsraw)
+- [addPhoneNumbersToPhonePool](PhoneControllerApi.md#addphonenumberstophonepool)
+- [addPhoneNumbersToPhonePoolRaw](PhoneControllerApi.md#addphonenumberstophonepoolraw)
 - [createEmergencyAddress](PhoneControllerApi.md#createemergencyaddress)
 - [createEmergencyAddressRaw](PhoneControllerApi.md#createemergencyaddressraw)
 - [createPhoneNumber](PhoneControllerApi.md#createphonenumber)
 - [createPhoneNumberRaw](PhoneControllerApi.md#createphonenumberraw)
+- [createPhonePool](PhoneControllerApi.md#createphonepool)
+- [createPhonePoolRaw](PhoneControllerApi.md#createphonepoolraw)
+- [createPhoneProvisioningJob](PhoneControllerApi.md#createphoneprovisioningjob)
+- [createPhoneProvisioningJobRaw](PhoneControllerApi.md#createphoneprovisioningjobraw)
 - [deleteAllPhoneNumber](PhoneControllerApi.md#deleteallphonenumber)
 - [deleteAllPhoneNumberRaw](PhoneControllerApi.md#deleteallphonenumberraw)
 - [deleteEmergencyAddress](PhoneControllerApi.md#deleteemergencyaddress)
@@ -32,6 +44,8 @@
 - [deletePhoneMessageThreadItemsRaw](PhoneControllerApi.md#deletephonemessagethreaditemsraw)
 - [deletePhoneNumber](PhoneControllerApi.md#deletephonenumber)
 - [deletePhoneNumberRaw](PhoneControllerApi.md#deletephonenumberraw)
+- [deletePhonePool](PhoneControllerApi.md#deletephonepool)
+- [deletePhonePoolRaw](PhoneControllerApi.md#deletephonepoolraw)
 - [getAllPhoneMessageThreads](PhoneControllerApi.md#getallphonemessagethreads)
 - [getAllPhoneMessageThreadsRaw](PhoneControllerApi.md#getallphonemessagethreadsraw)
 - [getAllPhoneNumberReleases](PhoneControllerApi.md#getallphonenumberreleases)
@@ -42,6 +56,8 @@
 - [getEmergencyAddressRaw](PhoneControllerApi.md#getemergencyaddressraw)
 - [getEmergencyAddresses](PhoneControllerApi.md#getemergencyaddresses)
 - [getEmergencyAddressesRaw](PhoneControllerApi.md#getemergencyaddressesraw)
+- [getOrCreatePhonePool](PhoneControllerApi.md#getorcreatephonepool)
+- [getOrCreatePhonePoolRaw](PhoneControllerApi.md#getorcreatephonepoolraw)
 - [getPhoneMessageThreadItems](PhoneControllerApi.md#getphonemessagethreaditems)
 - [getPhoneMessageThreadItemsRaw](PhoneControllerApi.md#getphonemessagethreaditemsraw)
 - [getPhoneMessageThreads](PhoneControllerApi.md#getphonemessagethreads)
@@ -51,34 +67,66 @@
 - [getPhoneNumberByNameRaw](PhoneControllerApi.md#getphonenumberbynameraw)
 - [getPhoneNumberByPhoneNumber](PhoneControllerApi.md#getphonenumberbyphonenumber)
 - [getPhoneNumberByPhoneNumberRaw](PhoneControllerApi.md#getphonenumberbyphonenumberraw)
+- [getPhoneNumberLineTypeIntelligence](PhoneControllerApi.md#getphonenumberlinetypeintelligence)
+- [getPhoneNumberLineTypeIntelligenceRaw](PhoneControllerApi.md#getphonenumberlinetypeintelligenceraw)
 - [getPhoneNumberRaw](PhoneControllerApi.md#getphonenumberraw)
 - [getPhoneNumberRelease](PhoneControllerApi.md#getphonenumberrelease)
 - [getPhoneNumberReleaseRaw](PhoneControllerApi.md#getphonenumberreleaseraw)
+- [getPhoneNumberTags](PhoneControllerApi.md#getphonenumbertags)
+- [getPhoneNumberTagsRaw](PhoneControllerApi.md#getphonenumbertagsraw)
 - [getPhoneNumbers](PhoneControllerApi.md#getphonenumbers)
 - [getPhoneNumbersRaw](PhoneControllerApi.md#getphonenumbersraw)
 - [getPhonePlans](PhoneControllerApi.md#getphoneplans)
 - [getPhonePlansAvailability](PhoneControllerApi.md#getphoneplansavailability)
 - [getPhonePlansAvailabilityRaw](PhoneControllerApi.md#getphoneplansavailabilityraw)
 - [getPhonePlansRaw](PhoneControllerApi.md#getphoneplansraw)
+- [getPhonePool](PhoneControllerApi.md#getphonepool)
+- [getPhonePoolByName](PhoneControllerApi.md#getphonepoolbyname)
+- [getPhonePoolByNameRaw](PhoneControllerApi.md#getphonepoolbynameraw)
+- [getPhonePoolRaw](PhoneControllerApi.md#getphonepoolraw)
+- [getPhonePools](PhoneControllerApi.md#getphonepools)
+- [getPhonePoolsRaw](PhoneControllerApi.md#getphonepoolsraw)
+- [getPhoneProvisioningCapabilities](PhoneControllerApi.md#getphoneprovisioningcapabilities)
+- [getPhoneProvisioningCapabilitiesRaw](PhoneControllerApi.md#getphoneprovisioningcapabilitiesraw)
+- [getPhoneProvisioningJob](PhoneControllerApi.md#getphoneprovisioningjob)
+- [getPhoneProvisioningJobRaw](PhoneControllerApi.md#getphoneprovisioningjobraw)
+- [getPhoneSmsPrepaidCredit](PhoneControllerApi.md#getphonesmsprepaidcredit)
+- [getPhoneSmsPrepaidCreditRaw](PhoneControllerApi.md#getphonesmsprepaidcreditraw)
+- [getPhoneSmsPrepaidCredits](PhoneControllerApi.md#getphonesmsprepaidcredits)
+- [getPhoneSmsPrepaidCreditsRaw](PhoneControllerApi.md#getphonesmsprepaidcreditsraw)
 - [getPhoneSummary](PhoneControllerApi.md#getphonesummary)
 - [getPhoneSummaryRaw](PhoneControllerApi.md#getphonesummaryraw)
+- [getPhoneTags](PhoneControllerApi.md#getphonetags)
+- [getPhoneTagsRaw](PhoneControllerApi.md#getphonetagsraw)
 - [getSentSmsByPhoneNumber](PhoneControllerApi.md#getsentsmsbyphonenumber)
 - [getSentSmsByPhoneNumberRaw](PhoneControllerApi.md#getsentsmsbyphonenumberraw)
 - [getSmsByPhoneNumber](PhoneControllerApi.md#getsmsbyphonenumber)
 - [getSmsByPhoneNumberRaw](PhoneControllerApi.md#getsmsbyphonenumberraw)
 - [reassignPhoneNumberRelease](PhoneControllerApi.md#reassignphonenumberrelease)
 - [reassignPhoneNumberReleaseRaw](PhoneControllerApi.md#reassignphonenumberreleaseraw)
+- [releasePhonePoolLease](PhoneControllerApi.md#releasephonepoollease)
+- [releasePhonePoolLeaseRaw](PhoneControllerApi.md#releasephonepoolleaseraw)
+- [removePhoneNumberFromPhonePool](PhoneControllerApi.md#removephonenumberfromphonepool)
+- [removePhoneNumberFromPhonePoolRaw](PhoneControllerApi.md#removephonenumberfromphonepoolraw)
+- [removePhoneNumberTags](PhoneControllerApi.md#removephonenumbertags)
+- [removePhoneNumberTagsRaw](PhoneControllerApi.md#removephonenumbertagsraw)
 - [request](PhoneControllerApi.md#request)
+- [searchAvailablePhoneNumbers](PhoneControllerApi.md#searchavailablephonenumbers)
+- [searchAvailablePhoneNumbersRaw](PhoneControllerApi.md#searchavailablephonenumbersraw)
 - [sendSmsFromPhoneNumber](PhoneControllerApi.md#sendsmsfromphonenumber)
 - [sendSmsFromPhoneNumberRaw](PhoneControllerApi.md#sendsmsfromphonenumberraw)
 - [setConsentStatus](PhoneControllerApi.md#setconsentstatus)
 - [setConsentStatusRaw](PhoneControllerApi.md#setconsentstatusraw)
 - [setPhoneFavourited](PhoneControllerApi.md#setphonefavourited)
 - [setPhoneFavouritedRaw](PhoneControllerApi.md#setphonefavouritedraw)
+- [setPhoneNumberTags](PhoneControllerApi.md#setphonenumbertags)
+- [setPhoneNumberTagsRaw](PhoneControllerApi.md#setphonenumbertagsraw)
 - [testPhoneNumberSendSms](PhoneControllerApi.md#testphonenumbersendsms)
 - [testPhoneNumberSendSmsRaw](PhoneControllerApi.md#testphonenumbersendsmsraw)
 - [updatePhoneNumber](PhoneControllerApi.md#updatephonenumber)
 - [updatePhoneNumberRaw](PhoneControllerApi.md#updatephonenumberraw)
+- [updatePhonePool](PhoneControllerApi.md#updatephonepool)
+- [updatePhonePoolRaw](PhoneControllerApi.md#updatephonepoolraw)
 - [validatePhoneNumber](PhoneControllerApi.md#validatephonenumber)
 - [validatePhoneNumberRaw](PhoneControllerApi.md#validatephonenumberraw)
 - [withMiddleware](PhoneControllerApi.md#withmiddleware)
@@ -112,6 +160,166 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### acquirePhonePoolLease
+
+▸ **acquirePhonePoolLease**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolLeaseDto`](../interfaces/PhonePoolLeaseDto.md)\>
+
+Acquire an available phone number from the pool and mark it leased
+Acquire phone pool lease
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AcquirePhonePoolLeaseRequest`](../interfaces/AcquirePhonePoolLeaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolLeaseDto`](../interfaces/PhonePoolLeaseDto.md)\>
+
+___
+
+### acquirePhonePoolLeaseRaw
+
+▸ **acquirePhonePoolLeaseRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolLeaseDto`](../interfaces/PhonePoolLeaseDto.md)\>\>
+
+Acquire an available phone number from the pool and mark it leased
+Acquire phone pool lease
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AcquirePhonePoolLeaseRequest`](../interfaces/AcquirePhonePoolLeaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolLeaseDto`](../interfaces/PhonePoolLeaseDto.md)\>\>
+
+___
+
+### addAllPhoneNumbersToPhonePool
+
+▸ **addAllPhoneNumbersToPhonePool**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+Add all active owned phone numbers to a pool
+Add all phone numbers to phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AddAllPhoneNumbersToPhonePoolRequest`](../interfaces/AddAllPhoneNumbersToPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+___
+
+### addAllPhoneNumbersToPhonePoolRaw
+
+▸ **addAllPhoneNumbersToPhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+Add all active owned phone numbers to a pool
+Add all phone numbers to phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AddAllPhoneNumbersToPhonePoolRequest`](../interfaces/AddAllPhoneNumbersToPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+___
+
+### addPhoneNumberTags
+
+▸ **addPhoneNumberTags**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Add one or more tags to a phone number
+Add phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AddPhoneNumberTagsRequest`](../interfaces/AddPhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### addPhoneNumberTagsRaw
+
+▸ **addPhoneNumberTagsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Add one or more tags to a phone number
+Add phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AddPhoneNumberTagsRequest`](../interfaces/AddPhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
+### addPhoneNumbersToPhonePool
+
+▸ **addPhoneNumbersToPhonePool**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+Add one or more owned phone numbers to a pool
+Add phone numbers to phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AddPhoneNumbersToPhonePoolRequest`](../interfaces/AddPhoneNumbersToPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+___
+
+### addPhoneNumbersToPhonePoolRaw
+
+▸ **addPhoneNumbersToPhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+Add one or more owned phone numbers to a pool
+Add phone numbers to phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AddPhoneNumbersToPhonePoolRequest`](../interfaces/AddPhoneNumbersToPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+___
 
 ### createEmergencyAddress
 
@@ -190,6 +398,86 @@ Add phone number to your account. Only works if you have already added a plan an
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
+### createPhonePool
+
+▸ **createPhonePool**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+Create a reusable pool of phone numbers for coordinated leasing
+Create phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePhonePoolRequest`](../interfaces/CreatePhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+___
+
+### createPhonePoolRaw
+
+▸ **createPhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+Create a reusable pool of phone numbers for coordinated leasing
+Create phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePhonePoolRequest`](../interfaces/CreatePhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+___
+
+### createPhoneProvisioningJob
+
+▸ **createPhoneProvisioningJob**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>
+
+Create an advanced phone provisioning job from shortlisted numbers
+Create a phone provisioning job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePhoneProvisioningJobRequest`](../interfaces/CreatePhoneProvisioningJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>
+
+___
+
+### createPhoneProvisioningJobRaw
+
+▸ **createPhoneProvisioningJobRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>\>
+
+Create an advanced phone provisioning job from shortlisted numbers
+Create a phone provisioning job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePhoneProvisioningJobRequest`](../interfaces/CreatePhoneProvisioningJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>\>
 
 ___
 
@@ -343,6 +631,46 @@ Delete a phone number
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`DeletePhoneNumberRequest`](../interfaces/DeletePhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### deletePhonePool
+
+▸ **deletePhonePool**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete a phone pool and release any active leases from that pool
+Delete phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeletePhonePoolRequest`](../interfaces/DeletePhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deletePhonePoolRaw
+
+▸ **deletePhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete a phone pool and release any active leases from that pool
+Delete phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeletePhonePoolRequest`](../interfaces/DeletePhonePoolRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -547,6 +875,46 @@ Get emergency addresses
 
 ___
 
+### getOrCreatePhonePool
+
+▸ **getOrCreatePhonePool**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+Get a phone pool by name or create it if it does not exist
+Get or create phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrCreatePhonePoolRequest`](../interfaces/GetOrCreatePhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+___
+
+### getOrCreatePhonePoolRaw
+
+▸ **getOrCreatePhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+Get a phone pool by name or create it if it does not exist
+Get or create phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrCreatePhonePoolRequest`](../interfaces/GetOrCreatePhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+___
+
 ### getPhoneMessageThreadItems
 
 ▸ **getPhoneMessageThreadItems**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneMessageThreadItemProjection`](../interfaces/PagePhoneMessageThreadItemProjection.md)\>
@@ -727,6 +1095,46 @@ Get a phone number by phone number
 
 ___
 
+### getPhoneNumberLineTypeIntelligence
+
+▸ **getPhoneNumberLineTypeIntelligence**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberLineTypeLookupDto`](../interfaces/PhoneNumberLineTypeLookupDto.md)\>
+
+Lookup line type intelligence for a phone number
+Get line type intelligence for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberLineTypeIntelligenceRequest`](../interfaces/GetPhoneNumberLineTypeIntelligenceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberLineTypeLookupDto`](../interfaces/PhoneNumberLineTypeLookupDto.md)\>
+
+___
+
+### getPhoneNumberLineTypeIntelligenceRaw
+
+▸ **getPhoneNumberLineTypeIntelligenceRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberLineTypeLookupDto`](../interfaces/PhoneNumberLineTypeLookupDto.md)\>\>
+
+Lookup line type intelligence for a phone number
+Get line type intelligence for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberLineTypeIntelligenceRequest`](../interfaces/GetPhoneNumberLineTypeIntelligenceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberLineTypeLookupDto`](../interfaces/PhoneNumberLineTypeLookupDto.md)\>\>
+
+___
+
 ### getPhoneNumberRaw
 
 ▸ **getPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
@@ -784,6 +1192,46 @@ Get phone number release
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberReleaseProjection`](../interfaces/PhoneNumberReleaseProjection.md)\>\>
+
+___
+
+### getPhoneNumberTags
+
+▸ **getPhoneNumberTags**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
+
+Get tags for a specific phone number
+Get phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberTagsRequest`](../interfaces/GetPhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`[]\>
+
+___
+
+### getPhoneNumberTagsRaw
+
+▸ **getPhoneNumberTagsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+Get tags for a specific phone number
+Get phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberTagsRequest`](../interfaces/GetPhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
 ___
 
@@ -901,6 +1349,282 @@ Get phone plans
 
 ___
 
+### getPhonePool
+
+▸ **getPhonePool**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+Get phone pool details by ID
+Get phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhonePoolRequest`](../interfaces/GetPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+___
+
+### getPhonePoolByName
+
+▸ **getPhonePoolByName**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+Get phone pool details by name
+Get phone pool by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhonePoolByNameRequest`](../interfaces/GetPhonePoolByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+___
+
+### getPhonePoolByNameRaw
+
+▸ **getPhonePoolByNameRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+Get phone pool details by name
+Get phone pool by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhonePoolByNameRequest`](../interfaces/GetPhonePoolByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+___
+
+### getPhonePoolRaw
+
+▸ **getPhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+Get phone pool details by ID
+Get phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhonePoolRequest`](../interfaces/GetPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+___
+
+### getPhonePools
+
+▸ **getPhonePools**(`initOverrides?`): `Promise`<[`PhonePoolDto`](../interfaces/PhonePoolDto.md)[]\>
+
+List phone pools for the authenticated user
+Get phone pools
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDto`](../interfaces/PhonePoolDto.md)[]\>
+
+___
+
+### getPhonePoolsRaw
+
+▸ **getPhonePoolsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDto`](../interfaces/PhonePoolDto.md)[]\>\>
+
+List phone pools for the authenticated user
+Get phone pools
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDto`](../interfaces/PhonePoolDto.md)[]\>\>
+
+___
+
+### getPhoneProvisioningCapabilities
+
+▸ **getPhoneProvisioningCapabilities**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneProviderCapabilitiesResult`](../interfaces/PhoneProviderCapabilitiesResult.md)\>
+
+Get supported provider-country variant capabilities for advanced provisioning
+Get phone provisioning capabilities
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneProvisioningCapabilitiesRequest`](../interfaces/GetPhoneProvisioningCapabilitiesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneProviderCapabilitiesResult`](../interfaces/PhoneProviderCapabilitiesResult.md)\>
+
+___
+
+### getPhoneProvisioningCapabilitiesRaw
+
+▸ **getPhoneProvisioningCapabilitiesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneProviderCapabilitiesResult`](../interfaces/PhoneProviderCapabilitiesResult.md)\>\>
+
+Get supported provider-country variant capabilities for advanced provisioning
+Get phone provisioning capabilities
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneProvisioningCapabilitiesRequest`](../interfaces/GetPhoneProvisioningCapabilitiesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneProviderCapabilitiesResult`](../interfaces/PhoneProviderCapabilitiesResult.md)\>\>
+
+___
+
+### getPhoneProvisioningJob
+
+▸ **getPhoneProvisioningJob**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>
+
+Get advanced phone provisioning job status
+Get phone provisioning job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneProvisioningJobRequest`](../interfaces/GetPhoneProvisioningJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>
+
+___
+
+### getPhoneProvisioningJobRaw
+
+▸ **getPhoneProvisioningJobRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>\>
+
+Get advanced phone provisioning job status
+Get phone provisioning job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneProvisioningJobRequest`](../interfaces/GetPhoneProvisioningJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneProvisioningJobDto`](../interfaces/PhoneProvisioningJobDto.md)\>\>
+
+___
+
+### getPhoneSmsPrepaidCredit
+
+▸ **getPhoneSmsPrepaidCredit**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneSmsPrepaidCreditDto`](../interfaces/PhoneSmsPrepaidCreditDto.md)\>
+
+Get a specific SMS prepaid credit balance for the authenticated account
+Get SMS prepaid credit
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneSmsPrepaidCreditRequest`](../interfaces/GetPhoneSmsPrepaidCreditRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneSmsPrepaidCreditDto`](../interfaces/PhoneSmsPrepaidCreditDto.md)\>
+
+___
+
+### getPhoneSmsPrepaidCreditRaw
+
+▸ **getPhoneSmsPrepaidCreditRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneSmsPrepaidCreditDto`](../interfaces/PhoneSmsPrepaidCreditDto.md)\>\>
+
+Get a specific SMS prepaid credit balance for the authenticated account
+Get SMS prepaid credit
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneSmsPrepaidCreditRequest`](../interfaces/GetPhoneSmsPrepaidCreditRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneSmsPrepaidCreditDto`](../interfaces/PhoneSmsPrepaidCreditDto.md)\>\>
+
+___
+
+### getPhoneSmsPrepaidCredits
+
+▸ **getPhoneSmsPrepaidCredits**(`initOverrides?`): `Promise`<[`PhoneSmsPrepaidCreditsDto`](../interfaces/PhoneSmsPrepaidCreditsDto.md)\>
+
+List SMS prepaid credits for the authenticated account
+Get SMS prepaid credits
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneSmsPrepaidCreditsDto`](../interfaces/PhoneSmsPrepaidCreditsDto.md)\>
+
+___
+
+### getPhoneSmsPrepaidCreditsRaw
+
+▸ **getPhoneSmsPrepaidCreditsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneSmsPrepaidCreditsDto`](../interfaces/PhoneSmsPrepaidCreditsDto.md)\>\>
+
+List SMS prepaid credits for the authenticated account
+Get SMS prepaid credits
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneSmsPrepaidCreditsDto`](../interfaces/PhoneSmsPrepaidCreditsDto.md)\>\>
+
+___
+
 ### getPhoneSummary
 
 ▸ **getPhoneSummary**(`initOverrides?`): `Promise`<[`PhoneSummaryDto`](../interfaces/PhoneSummaryDto.md)\>
@@ -936,6 +1660,46 @@ Get phone summary
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneSummaryDto`](../interfaces/PhoneSummaryDto.md)\>\>
+
+___
+
+### getPhoneTags
+
+▸ **getPhoneTags**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
+
+List all unique tags used by your phone numbers
+Get phone tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneTagsRequest`](../interfaces/GetPhoneTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`[]\>
+
+___
+
+### getPhoneTagsRaw
+
+▸ **getPhoneTagsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+List all unique tags used by your phone numbers
+Get phone tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneTagsRequest`](../interfaces/GetPhoneTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
 ___
 
@@ -1059,6 +1823,126 @@ Reassign phone number release
 
 ___
 
+### releasePhonePoolLease
+
+▸ **releasePhonePoolLease**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Release an active phone pool lease
+Release phone pool lease
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReleasePhonePoolLeaseRequest`](../interfaces/ReleasePhonePoolLeaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### releasePhonePoolLeaseRaw
+
+▸ **releasePhonePoolLeaseRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Release an active phone pool lease
+Release phone pool lease
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReleasePhonePoolLeaseRequest`](../interfaces/ReleasePhonePoolLeaseRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### removePhoneNumberFromPhonePool
+
+▸ **removePhoneNumberFromPhonePool**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+Remove phone number from phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`RemovePhoneNumberFromPhonePoolRequest`](../interfaces/RemovePhoneNumberFromPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### removePhoneNumberFromPhonePoolRaw
+
+▸ **removePhoneNumberFromPhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+Remove phone number from phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`RemovePhoneNumberFromPhonePoolRequest`](../interfaces/RemovePhoneNumberFromPhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### removePhoneNumberTags
+
+▸ **removePhoneNumberTags**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Remove one or more tags from a phone number
+Remove phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`RemovePhoneNumberTagsRequest`](../interfaces/RemovePhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### removePhoneNumberTagsRaw
+
+▸ **removePhoneNumberTagsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Remove one or more tags from a phone number
+Remove phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`RemovePhoneNumberTagsRequest`](../interfaces/RemovePhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
 ### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
@@ -1077,6 +1961,46 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### searchAvailablePhoneNumbers
+
+▸ **searchAvailablePhoneNumbers**(`requestParameters`, `initOverrides?`): `Promise`<[`AvailablePhoneNumbersResult`](../interfaces/AvailablePhoneNumbersResult.md)\>
+
+Search available numbers for advanced provisioning
+Search available phone numbers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SearchAvailablePhoneNumbersRequest`](../interfaces/SearchAvailablePhoneNumbersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AvailablePhoneNumbersResult`](../interfaces/AvailablePhoneNumbersResult.md)\>
+
+___
+
+### searchAvailablePhoneNumbersRaw
+
+▸ **searchAvailablePhoneNumbersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AvailablePhoneNumbersResult`](../interfaces/AvailablePhoneNumbersResult.md)\>\>
+
+Search available numbers for advanced provisioning
+Search available phone numbers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SearchAvailablePhoneNumbersRequest`](../interfaces/SearchAvailablePhoneNumbersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AvailablePhoneNumbersResult`](../interfaces/AvailablePhoneNumbersResult.md)\>\>
 
 ___
 
@@ -1200,6 +2124,46 @@ Set phone favourited state
 
 ___
 
+### setPhoneNumberTags
+
+▸ **setPhoneNumberTags**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+Replace all tags on a phone number
+Set phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetPhoneNumberTagsRequest`](../interfaces/SetPhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
+
+___
+
+### setPhoneNumberTagsRaw
+
+▸ **setPhoneNumberTagsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+Replace all tags on a phone number
+Set phone number tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetPhoneNumberTagsRequest`](../interfaces/SetPhoneNumberTagsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
 ### testPhoneNumberSendSms
 
 ▸ **testPhoneNumberSendSms**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
@@ -1277,6 +2241,46 @@ Update a phone number
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
+
+___
+
+### updatePhonePool
+
+▸ **updatePhonePool**(`requestParameters`, `initOverrides?`): `Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+Update phone pool metadata such as name or description
+Update phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdatePhonePoolRequest`](../interfaces/UpdatePhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>
+
+___
+
+### updatePhonePoolRaw
+
+▸ **updatePhonePoolRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
+
+Update phone pool metadata such as name or description
+Update phone pool
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdatePhonePoolRequest`](../interfaces/UpdatePhonePoolRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePoolDetailDto`](../interfaces/PhonePoolDetailDto.md)\>\>
 
 ___
 

@@ -27,7 +27,7 @@ export interface ValidationDto {
      * @type {HTMLValidationResult}
      * @memberof ValidationDto
      */
-    html: HTMLValidationResult;
+    html: HTMLValidationResult | null;
 }
 export declare function ValidationDtoFromJSON(json: any): ValidationDto;
 export declare function ValidationDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationDto;

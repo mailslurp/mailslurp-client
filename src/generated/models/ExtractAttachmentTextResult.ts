@@ -32,7 +32,7 @@ export interface ExtractAttachmentTextResult {
    */
   text?: string | null;
   /**
-   * Method for extracting text from attachments. OCR/LLM methods are reserved for advanced extraction.
+   * Method for extracting text from attachments.
    * @type {string}
    * @memberof ExtractAttachmentTextResult
    */

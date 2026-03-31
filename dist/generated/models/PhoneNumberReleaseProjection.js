@@ -69,9 +69,11 @@ function PhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
         userId: json['userId'],
-        createdAt: new Date(json['createdAt']),
         phoneCountry: json['phoneCountry'],
+        createdAt: new Date(json['createdAt']),
         phoneNumber: !(0, runtime_1.exists)(json, 'phoneNumber') ? undefined : json['phoneNumber'],
         subscriptionSchedule: !(0, runtime_1.exists)(json, 'subscriptionSchedule')
             ? undefined
@@ -79,8 +81,6 @@ function PhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator) {
         planCurrency: !(0, runtime_1.exists)(json, 'planCurrency')
             ? undefined
             : json['planCurrency'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
     };
 }
 exports.PhoneNumberReleaseProjectionFromJSONTyped = PhoneNumberReleaseProjectionFromJSONTyped;
@@ -92,14 +92,14 @@ function PhoneNumberReleaseProjectionToJSON(value) {
         return null;
     }
     return {
+        name: value.name,
+        id: value.id,
         userId: value.userId,
-        createdAt: value.createdAt.toISOString(),
         phoneCountry: value.phoneCountry,
+        createdAt: value.createdAt.toISOString(),
         phoneNumber: value.phoneNumber,
         subscriptionSchedule: value.subscriptionSchedule,
         planCurrency: value.planCurrency,
-        name: value.name,
-        id: value.id,
     };
 }
 exports.PhoneNumberReleaseProjectionToJSON = PhoneNumberReleaseProjectionToJSON;

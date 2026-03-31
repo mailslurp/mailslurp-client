@@ -39,6 +39,12 @@ export interface CreatePhoneNumberOptions {
   description?: string;
   /**
    *
+   * @type {Array<string>}
+   * @memberof CreatePhoneNumberOptions
+   */
+  tags?: Array<string>;
+  /**
+   *
    * @type {string}
    * @memberof CreatePhoneNumberOptions
    */
@@ -55,6 +61,18 @@ export interface CreatePhoneNumberOptions {
    * @memberof CreatePhoneNumberOptions
    */
   phoneNumberVariant?: CreatePhoneNumberOptionsPhoneNumberVariantEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePhoneNumberOptions
+   */
+  phoneProvider?: CreatePhoneNumberOptionsPhoneProviderEnum;
+  /**
+   * Line-quality preference for simple phone number provisioning
+   * @type {string}
+   * @memberof CreatePhoneNumberOptions
+   */
+  phoneLineFilter?: CreatePhoneNumberOptionsPhoneLineFilterEnum;
 }
 
 /**
@@ -92,6 +110,23 @@ export enum CreatePhoneNumberOptionsPhoneNumberVariantEnum {
   MOBILE = 'MOBILE',
   TOLL_FREE = 'TOLL_FREE',
 }
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreatePhoneNumberOptionsPhoneProviderEnum {
+  TWILIO = 'TWILIO',
+  TELNYX = 'TELNYX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreatePhoneNumberOptionsPhoneLineFilterEnum {
+  ANY = 'ANY',
+  OTP_FRIENDLY = 'OTP_FRIENDLY',
+  NON_VOIP = 'NON_VOIP',
+}
 
 export function CreatePhoneNumberOptionsFromJSON(
   json: any
@@ -110,6 +145,7 @@ export function CreatePhoneNumberOptionsFromJSONTyped(
     phoneCountry: json['phoneCountry'],
     name: !exists(json, 'name') ? undefined : json['name'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    tags: !exists(json, 'tags') ? undefined : json['tags'],
     schedule: !exists(json, 'schedule') ? undefined : json['schedule'],
     phoneNumberEndpointOverride: !exists(json, 'phoneNumberEndpointOverride')
       ? undefined
@@ -117,6 +153,12 @@ export function CreatePhoneNumberOptionsFromJSONTyped(
     phoneNumberVariant: !exists(json, 'phoneNumberVariant')
       ? undefined
       : json['phoneNumberVariant'],
+    phoneProvider: !exists(json, 'phoneProvider')
+      ? undefined
+      : json['phoneProvider'],
+    phoneLineFilter: !exists(json, 'phoneLineFilter')
+      ? undefined
+      : json['phoneLineFilter'],
   };
 }
 
@@ -133,8 +175,11 @@ export function CreatePhoneNumberOptionsToJSON(
     phoneCountry: value.phoneCountry,
     name: value.name,
     description: value.description,
+    tags: value.tags,
     schedule: value.schedule,
     phoneNumberEndpointOverride: value.phoneNumberEndpointOverride,
     phoneNumberVariant: value.phoneNumberVariant,
+    phoneProvider: value.phoneProvider,
+    phoneLineFilter: value.phoneLineFilter,
   };
 }

@@ -10,12 +10,33 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ConsentStatusDto, CreateEmergencyAddressOptions, CreatePhoneNumberOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneMessageThreadItemProjection, PagePhoneMessageThreadProjection, PagePhoneNumberProjection, PagePhoneNumberReleaseProjection, PageSentSmsProjection, PageSmsProjection, PhoneNumberDto, PhoneNumberReleaseProjection, PhoneNumberValidationDto, PhonePlanAvailability, PhonePlanDto, PhoneSummaryDto, SentSmsDto, SetPhoneFavouritedOptions, SmsSendOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions, ValidatePhoneNumberOptions } from '../models';
+import { AcquirePhonePoolLeaseOptions, AddPhonePoolNumbersOptions, AvailablePhoneNumbersResult, ConsentStatusDto, CreateEmergencyAddressOptions, CreatePhoneNumberOptions, CreatePhonePoolOptions, CreatePhoneProvisioningJobOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, GetOrCreatePhonePoolOptions, PagePhoneMessageThreadItemProjection, PagePhoneMessageThreadProjection, PagePhoneNumberProjection, PagePhoneNumberReleaseProjection, PageSentSmsProjection, PageSmsProjection, PhoneNumberDto, PhoneNumberLineTypeLookupDto, PhoneNumberReleaseProjection, PhoneNumberTagsOptions, PhoneNumberValidationDto, PhonePlanAvailability, PhonePlanDto, PhonePoolDetailDto, PhonePoolDto, PhonePoolLeaseDto, PhoneProviderCapabilitiesResult, PhoneProvisioningJobDto, PhoneSmsPrepaidCreditDto, PhoneSmsPrepaidCreditsDto, PhoneSummaryDto, SearchAvailablePhoneNumbersOptions, SentSmsDto, SetPhoneFavouritedOptions, SmsSendOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions, UpdatePhonePoolOptions, ValidatePhoneNumberOptions } from '../models';
+export interface AcquirePhonePoolLeaseRequest {
+    poolId: string;
+    acquirePhonePoolLeaseOptions: AcquirePhonePoolLeaseOptions;
+}
+export interface AddAllPhoneNumbersToPhonePoolRequest {
+    poolId: string;
+}
+export interface AddPhoneNumberTagsRequest {
+    phoneNumberId: string;
+    phoneNumberTagsOptions: PhoneNumberTagsOptions;
+}
+export interface AddPhoneNumbersToPhonePoolRequest {
+    poolId: string;
+    addPhonePoolNumbersOptions: AddPhonePoolNumbersOptions;
+}
 export interface CreateEmergencyAddressRequest {
     createEmergencyAddressOptions: CreateEmergencyAddressOptions;
 }
 export interface CreatePhoneNumberRequest {
     createPhoneNumberOptions: CreatePhoneNumberOptions;
+}
+export interface CreatePhonePoolRequest {
+    createPhonePoolOptions: CreatePhonePoolOptions;
+}
+export interface CreatePhoneProvisioningJobRequest {
+    createPhoneProvisioningJobOptions: CreatePhoneProvisioningJobOptions;
 }
 export interface DeleteEmergencyAddressRequest {
     addressId: string;
@@ -26,6 +47,9 @@ export interface DeletePhoneMessageThreadItemsRequest {
 }
 export interface DeletePhoneNumberRequest {
     phoneNumberId: string;
+}
+export interface DeletePhonePoolRequest {
+    poolId: string;
 }
 export interface GetAllPhoneMessageThreadsRequest {
     page?: number;
@@ -38,6 +62,9 @@ export interface GetAllPhoneNumberReleasesRequest {
 }
 export interface GetEmergencyAddressRequest {
     addressId: string;
+}
+export interface GetOrCreatePhonePoolRequest {
+    getOrCreatePhonePoolOptions: GetOrCreatePhonePoolOptions;
 }
 export interface GetPhoneMessageThreadItemsRequest {
     phoneNumberId: string;
@@ -59,19 +86,50 @@ export interface GetPhoneNumberByNameRequest {
 export interface GetPhoneNumberByPhoneNumberRequest {
     phoneNumber: string;
 }
+export interface GetPhoneNumberLineTypeIntelligenceRequest {
+    validatePhoneNumberOptions: ValidatePhoneNumberOptions;
+}
 export interface GetPhoneNumberReleaseRequest {
     releaseId: string;
 }
+export interface GetPhoneNumberTagsRequest {
+    phoneNumberId: string;
+}
 export interface GetPhoneNumbersRequest {
     phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
+    lineType?: string;
+    carrierName?: string;
+    mobileCountryCode?: string;
+    mobileNetworkCode?: string;
+    providerLabel?: string;
     page?: number;
     size?: number;
     sort?: GetPhoneNumbersSortEnum;
     since?: Date;
     before?: Date;
     search?: string;
+    tag?: Array<string>;
     include?: Array<string>;
     favourite?: boolean;
+}
+export interface GetPhonePoolRequest {
+    poolId: string;
+}
+export interface GetPhonePoolByNameRequest {
+    name: string;
+}
+export interface GetPhoneProvisioningCapabilitiesRequest {
+    phoneCountry: GetPhoneProvisioningCapabilitiesPhoneCountryEnum;
+    providerLabel?: string;
+}
+export interface GetPhoneProvisioningJobRequest {
+    jobId: string;
+}
+export interface GetPhoneSmsPrepaidCreditRequest {
+    creditId: string;
+}
+export interface GetPhoneTagsRequest {
+    search?: string;
 }
 export interface GetSentSmsByPhoneNumberRequest {
     phoneNumberId: string;
@@ -96,6 +154,21 @@ export interface GetSmsByPhoneNumberRequest {
 export interface ReassignPhoneNumberReleaseRequest {
     releaseId: string;
 }
+export interface ReleasePhonePoolLeaseRequest {
+    poolId: string;
+    leaseId: string;
+}
+export interface RemovePhoneNumberFromPhonePoolRequest {
+    poolId: string;
+    phoneNumberId: string;
+}
+export interface RemovePhoneNumberTagsRequest {
+    phoneNumberId: string;
+    phoneNumberTagsOptions: PhoneNumberTagsOptions;
+}
+export interface SearchAvailablePhoneNumbersRequest {
+    searchAvailablePhoneNumbersOptions: SearchAvailablePhoneNumbersOptions;
+}
 export interface SendSmsFromPhoneNumberRequest {
     phoneNumberId: string;
     smsSendOptions: SmsSendOptions;
@@ -107,6 +180,10 @@ export interface SetPhoneFavouritedRequest {
     phoneNumberId: string;
     setPhoneFavouritedOptions: SetPhoneFavouritedOptions;
 }
+export interface SetPhoneNumberTagsRequest {
+    phoneNumberId: string;
+    phoneNumberTagsOptions: PhoneNumberTagsOptions;
+}
 export interface TestPhoneNumberSendSmsRequest {
     phoneNumberId: string;
     testPhoneNumberOptions: TestPhoneNumberOptions;
@@ -116,6 +193,10 @@ export interface UpdatePhoneNumberRequest {
     phoneNumberId: string;
     updatePhoneNumberOptions: UpdatePhoneNumberOptions;
 }
+export interface UpdatePhonePoolRequest {
+    poolId: string;
+    updatePhonePoolOptions: UpdatePhonePoolOptions;
+}
 export interface ValidatePhoneNumberRequest {
     validatePhoneNumberOptions: ValidatePhoneNumberOptions;
 }
@@ -123,6 +204,46 @@ export interface ValidatePhoneNumberRequest {
  *
  */
 export declare class PhoneControllerApi extends runtime.BaseAPI {
+    /**
+     * Acquire an available phone number from the pool and mark it leased
+     * Acquire phone pool lease
+     */
+    acquirePhonePoolLeaseRaw(requestParameters: AcquirePhonePoolLeaseRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolLeaseDto>>;
+    /**
+     * Acquire an available phone number from the pool and mark it leased
+     * Acquire phone pool lease
+     */
+    acquirePhonePoolLease(requestParameters: AcquirePhonePoolLeaseRequest, initOverrides?: RequestInit): Promise<PhonePoolLeaseDto>;
+    /**
+     * Add all active owned phone numbers to a pool
+     * Add all phone numbers to phone pool
+     */
+    addAllPhoneNumbersToPhonePoolRaw(requestParameters: AddAllPhoneNumbersToPhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolDetailDto>>;
+    /**
+     * Add all active owned phone numbers to a pool
+     * Add all phone numbers to phone pool
+     */
+    addAllPhoneNumbersToPhonePool(requestParameters: AddAllPhoneNumbersToPhonePoolRequest, initOverrides?: RequestInit): Promise<PhonePoolDetailDto>;
+    /**
+     * Add one or more tags to a phone number
+     * Add phone number tags
+     */
+    addPhoneNumberTagsRaw(requestParameters: AddPhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Add one or more tags to a phone number
+     * Add phone number tags
+     */
+    addPhoneNumberTags(requestParameters: AddPhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
+     * Add one or more owned phone numbers to a pool
+     * Add phone numbers to phone pool
+     */
+    addPhoneNumbersToPhonePoolRaw(requestParameters: AddPhoneNumbersToPhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolDetailDto>>;
+    /**
+     * Add one or more owned phone numbers to a pool
+     * Add phone numbers to phone pool
+     */
+    addPhoneNumbersToPhonePool(requestParameters: AddPhoneNumbersToPhonePoolRequest, initOverrides?: RequestInit): Promise<PhonePoolDetailDto>;
     /**
      * Add an emergency address to a phone number
      * Create an emergency address
@@ -143,6 +264,26 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Add phone number to your account. Only works if you have already added a plan and an initial phone number in your account and acknowledged the pricing and terms of service by enabling API phone creation.
      */
     createPhoneNumber(requestParameters: CreatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
+     * Create a reusable pool of phone numbers for coordinated leasing
+     * Create phone pool
+     */
+    createPhonePoolRaw(requestParameters: CreatePhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolDetailDto>>;
+    /**
+     * Create a reusable pool of phone numbers for coordinated leasing
+     * Create phone pool
+     */
+    createPhonePool(requestParameters: CreatePhonePoolRequest, initOverrides?: RequestInit): Promise<PhonePoolDetailDto>;
+    /**
+     * Create an advanced phone provisioning job from shortlisted numbers
+     * Create a phone provisioning job
+     */
+    createPhoneProvisioningJobRaw(requestParameters: CreatePhoneProvisioningJobRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneProvisioningJobDto>>;
+    /**
+     * Create an advanced phone provisioning job from shortlisted numbers
+     * Create a phone provisioning job
+     */
+    createPhoneProvisioningJob(requestParameters: CreatePhoneProvisioningJobRequest, initOverrides?: RequestInit): Promise<PhoneProvisioningJobDto>;
     /**
      * Remove all phone number from account
      * Delete all phone numbers
@@ -183,6 +324,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Delete a phone number
      */
     deletePhoneNumber(requestParameters: DeletePhoneNumberRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete a phone pool and release any active leases from that pool
+     * Delete phone pool
+     */
+    deletePhonePoolRaw(requestParameters: DeletePhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a phone pool and release any active leases from that pool
+     * Delete phone pool
+     */
+    deletePhonePool(requestParameters: DeletePhonePoolRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * List all message threads for all phones
      * Get the latest messages for all phones
@@ -234,6 +385,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     getEmergencyAddresses(initOverrides?: RequestInit): Promise<Array<EmergencyAddressDto>>;
     /**
+     * Get a phone pool by name or create it if it does not exist
+     * Get or create phone pool
+     */
+    getOrCreatePhonePoolRaw(requestParameters: GetOrCreatePhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolDetailDto>>;
+    /**
+     * Get a phone pool by name or create it if it does not exist
+     * Get or create phone pool
+     */
+    getOrCreatePhonePool(requestParameters: GetOrCreatePhonePoolRequest, initOverrides?: RequestInit): Promise<PhonePoolDetailDto>;
+    /**
      * List message thread messages for a phone message thread
      * Get messages in a phone thread
      */
@@ -284,6 +445,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     getPhoneNumberByPhoneNumber(requestParameters: GetPhoneNumberByPhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
+     * Lookup line type intelligence for a phone number
+     * Get line type intelligence for a phone number
+     */
+    getPhoneNumberLineTypeIntelligenceRaw(requestParameters: GetPhoneNumberLineTypeIntelligenceRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberLineTypeLookupDto>>;
+    /**
+     * Lookup line type intelligence for a phone number
+     * Get line type intelligence for a phone number
+     */
+    getPhoneNumberLineTypeIntelligence(requestParameters: GetPhoneNumberLineTypeIntelligenceRequest, initOverrides?: RequestInit): Promise<PhoneNumberLineTypeLookupDto>;
+    /**
      * Get a released or deleted phone numbers
      * Get phone number release
      */
@@ -293,6 +464,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Get phone number release
      */
     getPhoneNumberRelease(requestParameters: GetPhoneNumberReleaseRequest, initOverrides?: RequestInit): Promise<PhoneNumberReleaseProjection>;
+    /**
+     * Get tags for a specific phone number
+     * Get phone number tags
+     */
+    getPhoneNumberTagsRaw(requestParameters: GetPhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    /**
+     * Get tags for a specific phone number
+     * Get phone number tags
+     */
+    getPhoneNumberTags(requestParameters: GetPhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<Array<string>>;
     /**
      * List phone numbers for account
      * Get phone numbers
@@ -322,6 +503,76 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     getPhonePlansAvailability(initOverrides?: RequestInit): Promise<PhonePlanAvailability>;
     /**
+     * Get phone pool details by ID
+     * Get phone pool
+     */
+    getPhonePoolRaw(requestParameters: GetPhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolDetailDto>>;
+    /**
+     * Get phone pool details by ID
+     * Get phone pool
+     */
+    getPhonePool(requestParameters: GetPhonePoolRequest, initOverrides?: RequestInit): Promise<PhonePoolDetailDto>;
+    /**
+     * Get phone pool details by name
+     * Get phone pool by name
+     */
+    getPhonePoolByNameRaw(requestParameters: GetPhonePoolByNameRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolDetailDto>>;
+    /**
+     * Get phone pool details by name
+     * Get phone pool by name
+     */
+    getPhonePoolByName(requestParameters: GetPhonePoolByNameRequest, initOverrides?: RequestInit): Promise<PhonePoolDetailDto>;
+    /**
+     * List phone pools for the authenticated user
+     * Get phone pools
+     */
+    getPhonePoolsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<PhonePoolDto>>>;
+    /**
+     * List phone pools for the authenticated user
+     * Get phone pools
+     */
+    getPhonePools(initOverrides?: RequestInit): Promise<Array<PhonePoolDto>>;
+    /**
+     * Get supported provider-country variant capabilities for advanced provisioning
+     * Get phone provisioning capabilities
+     */
+    getPhoneProvisioningCapabilitiesRaw(requestParameters: GetPhoneProvisioningCapabilitiesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneProviderCapabilitiesResult>>;
+    /**
+     * Get supported provider-country variant capabilities for advanced provisioning
+     * Get phone provisioning capabilities
+     */
+    getPhoneProvisioningCapabilities(requestParameters: GetPhoneProvisioningCapabilitiesRequest, initOverrides?: RequestInit): Promise<PhoneProviderCapabilitiesResult>;
+    /**
+     * Get advanced phone provisioning job status
+     * Get phone provisioning job
+     */
+    getPhoneProvisioningJobRaw(requestParameters: GetPhoneProvisioningJobRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneProvisioningJobDto>>;
+    /**
+     * Get advanced phone provisioning job status
+     * Get phone provisioning job
+     */
+    getPhoneProvisioningJob(requestParameters: GetPhoneProvisioningJobRequest, initOverrides?: RequestInit): Promise<PhoneProvisioningJobDto>;
+    /**
+     * Get a specific SMS prepaid credit balance for the authenticated account
+     * Get SMS prepaid credit
+     */
+    getPhoneSmsPrepaidCreditRaw(requestParameters: GetPhoneSmsPrepaidCreditRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneSmsPrepaidCreditDto>>;
+    /**
+     * Get a specific SMS prepaid credit balance for the authenticated account
+     * Get SMS prepaid credit
+     */
+    getPhoneSmsPrepaidCredit(requestParameters: GetPhoneSmsPrepaidCreditRequest, initOverrides?: RequestInit): Promise<PhoneSmsPrepaidCreditDto>;
+    /**
+     * List SMS prepaid credits for the authenticated account
+     * Get SMS prepaid credits
+     */
+    getPhoneSmsPrepaidCreditsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneSmsPrepaidCreditsDto>>;
+    /**
+     * List SMS prepaid credits for the authenticated account
+     * Get SMS prepaid credits
+     */
+    getPhoneSmsPrepaidCredits(initOverrides?: RequestInit): Promise<PhoneSmsPrepaidCreditsDto>;
+    /**
      * Get overview of assigned phones
      * Get phone summary
      */
@@ -331,6 +582,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Get phone summary
      */
     getPhoneSummary(initOverrides?: RequestInit): Promise<PhoneSummaryDto>;
+    /**
+     * List all unique tags used by your phone numbers
+     * Get phone tags
+     */
+    getPhoneTagsRaw(requestParameters: GetPhoneTagsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    /**
+     * List all unique tags used by your phone numbers
+     * Get phone tags
+     */
+    getPhoneTags(requestParameters: GetPhoneTagsRequest, initOverrides?: RequestInit): Promise<Array<string>>;
     /**
      * Get sent SMS messages for a phone number
      * List sent TXT messages for a phone number
@@ -362,6 +623,46 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     reassignPhoneNumberRelease(requestParameters: ReassignPhoneNumberReleaseRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
+     * Release an active phone pool lease
+     * Release phone pool lease
+     */
+    releasePhonePoolLeaseRaw(requestParameters: ReleasePhonePoolLeaseRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Release an active phone pool lease
+     * Release phone pool lease
+     */
+    releasePhonePoolLease(requestParameters: ReleasePhonePoolLeaseRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+     * Remove phone number from phone pool
+     */
+    removePhoneNumberFromPhonePoolRaw(requestParameters: RemovePhoneNumberFromPhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+     * Remove phone number from phone pool
+     */
+    removePhoneNumberFromPhonePool(requestParameters: RemovePhoneNumberFromPhonePoolRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Remove one or more tags from a phone number
+     * Remove phone number tags
+     */
+    removePhoneNumberTagsRaw(requestParameters: RemovePhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Remove one or more tags from a phone number
+     * Remove phone number tags
+     */
+    removePhoneNumberTags(requestParameters: RemovePhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
+     * Search available numbers for advanced provisioning
+     * Search available phone numbers
+     */
+    searchAvailablePhoneNumbersRaw(requestParameters: SearchAvailablePhoneNumbersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AvailablePhoneNumbersResult>>;
+    /**
+     * Search available numbers for advanced provisioning
+     * Search available phone numbers
+     */
+    searchAvailablePhoneNumbers(requestParameters: SearchAvailablePhoneNumbersRequest, initOverrides?: RequestInit): Promise<AvailablePhoneNumbersResult>;
+    /**
      * Send SMS from a phone number
      * Send TXT message from a phone number
      */
@@ -392,6 +693,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     setPhoneFavourited(requestParameters: SetPhoneFavouritedRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
     /**
+     * Replace all tags on a phone number
+     * Set phone number tags
+     */
+    setPhoneNumberTagsRaw(requestParameters: SetPhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhoneNumberDto>>;
+    /**
+     * Replace all tags on a phone number
+     * Set phone number tags
+     */
+    setPhoneNumberTags(requestParameters: SetPhoneNumberTagsRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
      * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
      * Test sending an SMS to a number
      */
@@ -411,6 +722,16 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Update a phone number
      */
     updatePhoneNumber(requestParameters: UpdatePhoneNumberRequest, initOverrides?: RequestInit): Promise<PhoneNumberDto>;
+    /**
+     * Update phone pool metadata such as name or description
+     * Update phone pool
+     */
+    updatePhonePoolRaw(requestParameters: UpdatePhonePoolRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PhonePoolDetailDto>>;
+    /**
+     * Update phone pool metadata such as name or description
+     * Update phone pool
+     */
+    updatePhonePool(requestParameters: UpdatePhonePoolRequest, initOverrides?: RequestInit): Promise<PhonePoolDetailDto>;
     /**
      * Validate a phone number
      * Verify validity of a phone number
@@ -455,6 +776,24 @@ export declare enum GetPhoneNumbersPhoneCountryEnum {
 export declare enum GetPhoneNumbersSortEnum {
     ASC = "ASC",
     DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetPhoneProvisioningCapabilitiesPhoneCountryEnum {
+    US = "US",
+    GB = "GB",
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    FI = "FI",
+    SE = "SE"
 }
 /**
  * @export

@@ -25,6 +25,9 @@ function EmailThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        id: json['id'],
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         sender: !(0, runtime_1.exists)(json, 'sender')
             ? undefined
             : (0, _1.SenderProjectionFromJSON)(json['sender']),
@@ -54,9 +57,6 @@ function EmailThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         lastSender: !(0, runtime_1.exists)(json, 'lastSender')
             ? undefined
             : (0, _1.SenderProjectionFromJSON)(json['lastSender']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        id: json['id'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
     };
 }
 exports.EmailThreadProjectionFromJSONTyped = EmailThreadProjectionFromJSONTyped;
@@ -68,6 +68,9 @@ function EmailThreadProjectionToJSON(value) {
         return null;
     }
     return {
+        id: value.id,
+        from: value.from,
+        subject: value.subject,
         sender: (0, _1.SenderProjectionToJSON)(value.sender),
         recipients: (0, _1.EmailRecipientsProjectionToJSON)(value.recipients),
         userId: value.userId,
@@ -87,9 +90,6 @@ function EmailThreadProjectionToJSON(value) {
             : value.lastCreatedAt.toISOString(),
         lastFrom: value.lastFrom,
         lastSender: (0, _1.SenderProjectionToJSON)(value.lastSender),
-        subject: value.subject,
-        id: value.id,
-        from: value.from,
     };
 }
 exports.EmailThreadProjectionToJSON = EmailThreadProjectionToJSON;

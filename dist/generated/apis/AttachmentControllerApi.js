@@ -293,7 +293,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+     * Extract text content from an attachment using the requested method. `NATIVE` decoding supports text-like files, common Word and spreadsheet documents, and PDFs with embedded text.
      * Extract text from an attachment
      */
     AttachmentControllerApi.prototype.extractAttachmentTextRaw = function (requestParameters, initOverrides) {
@@ -329,7 +329,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+     * Extract text content from an attachment using the requested method. `NATIVE` decoding supports text-like files, common Word and spreadsheet documents, and PDFs with embedded text.
      * Extract text from an attachment
      */
     AttachmentControllerApi.prototype.extractAttachmentText = function (requestParameters, initOverrides) {
@@ -682,7 +682,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
-                                body: (0, models_1.InlineObject1ToJSON)(requestParameters.inlineObject1),
+                                body: (0, models_1.InlineObject2ToJSON)(requestParameters.inlineObject2),
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();

@@ -20,6 +20,18 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
     url: string;
     /**
      *
@@ -68,12 +80,6 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    aiTransformId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
     healthStatus?: WebhookProjectionHealthStatusEnum;
     /**
      *
@@ -86,19 +92,13 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
+    aiTransformId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
     phoneNumberId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    id: string;
 }
 /**
  * @export

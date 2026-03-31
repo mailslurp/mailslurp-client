@@ -33,37 +33,19 @@ export interface PageDeliveryStatus {
      * @type {number}
      * @memberof PageDeliveryStatus
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageDeliveryStatus
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageDeliveryStatus
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageDeliveryStatus {
      * @memberof PageDeliveryStatus
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDeliveryStatus
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageDeliveryStatus
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageDeliveryStatus
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

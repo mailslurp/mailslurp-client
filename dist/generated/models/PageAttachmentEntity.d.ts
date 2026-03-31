@@ -33,37 +33,19 @@ export interface PageAttachmentEntity {
      * @type {number}
      * @memberof PageAttachmentEntity
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageAttachmentEntity
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageAttachmentEntity
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAttachmentEntity
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageAttachmentEntity
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageAttachmentEntity
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageAttachmentEntity {
      * @memberof PageAttachmentEntity
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAttachmentEntity
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageAttachmentEntity
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageAttachmentEntity
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

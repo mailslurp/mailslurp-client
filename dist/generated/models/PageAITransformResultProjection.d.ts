@@ -39,37 +39,19 @@ export interface PageAITransformResultProjection {
      * @type {number}
      * @memberof PageAITransformResultProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageAITransformResultProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageAITransformResultProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAITransformResultProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageAITransformResultProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageAITransformResultProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -82,6 +64,24 @@ export interface PageAITransformResultProjection {
      * @memberof PageAITransformResultProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAITransformResultProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageAITransformResultProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageAITransformResultProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

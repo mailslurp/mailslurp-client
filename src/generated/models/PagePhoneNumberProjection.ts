@@ -51,37 +51,19 @@ export interface PagePhoneNumberProjection {
    * @type {number}
    * @memberof PagePhoneNumberProjection
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PagePhoneNumberProjection
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
    * @memberof PagePhoneNumberProjection
    */
   last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PagePhoneNumberProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PagePhoneNumberProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PagePhoneNumberProjection
-   */
-  first?: boolean;
   /**
    *
    * @type {number}
@@ -94,6 +76,24 @@ export interface PagePhoneNumberProjection {
    * @memberof PagePhoneNumberProjection
    */
   number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PagePhoneNumberProjection
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PagePhoneNumberProjection
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PagePhoneNumberProjection
+   */
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -122,16 +122,16 @@ export function PagePhoneNumberProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -151,14 +151,14 @@ export function PagePhoneNumberProjectionToJSON(
         ? undefined
         : (value.content as Array<any>).map(PhoneNumberProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
-    numberOfElements: value.numberOfElements,
-    sort: SortObjectToJSON(value.sort),
-    first: value.first,
     size: value.size,
     number: value.number,
+    first: value.first,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };
 }

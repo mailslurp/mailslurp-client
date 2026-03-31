@@ -52,6 +52,8 @@ function AITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
         entityType: json['entityType'],
@@ -63,8 +65,6 @@ function AITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator) {
         triggerSelector: !(0, runtime_1.exists)(json, 'triggerSelector')
             ? undefined
             : json['triggerSelector'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
     };
 }
 exports.AITransformMappingProjectionFromJSONTyped = AITransformMappingProjectionFromJSONTyped;
@@ -76,6 +76,8 @@ function AITransformMappingProjectionToJSON(value) {
         return null;
     }
     return {
+        name: value.name,
+        id: value.id,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
         entityType: value.entityType,
@@ -83,8 +85,6 @@ function AITransformMappingProjectionToJSON(value) {
         entityId: value.entityId,
         contentSelector: value.contentSelector,
         triggerSelector: value.triggerSelector,
-        name: value.name,
-        id: value.id,
     };
 }
 exports.AITransformMappingProjectionToJSON = AITransformMappingProjectionToJSON;

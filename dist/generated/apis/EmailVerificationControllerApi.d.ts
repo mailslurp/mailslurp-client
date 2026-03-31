@@ -10,9 +10,12 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageEmailValidationRequest, ValidateEmailAddressListOptions, ValidateEmailAddressListResult } from '../models';
+import { EmailIntelligenceListResult, EmailIntelligenceOptions, PageEmailValidationRequest, ValidateEmailAddressListOptions, ValidateEmailAddressListResult } from '../models';
 export interface DeleteValidationRequestRequest {
     id: string;
+}
+export interface GetEmailIntelligenceRequest {
+    emailIntelligenceOptions: EmailIntelligenceOptions;
 }
 export interface GetValidationRequestsRequest {
     page?: number;
@@ -50,6 +53,16 @@ export declare class EmailVerificationControllerApi extends runtime.BaseAPI {
      * Delete a validation record
      */
     deleteValidationRequest(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+     * Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+     */
+    getEmailIntelligenceRaw(requestParameters: GetEmailIntelligenceRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailIntelligenceListResult>>;
+    /**
+     * Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+     * Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+     */
+    getEmailIntelligence(requestParameters: GetEmailIntelligenceRequest, initOverrides?: RequestInit): Promise<EmailIntelligenceListResult>;
     /**
      * List email verification requests
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.

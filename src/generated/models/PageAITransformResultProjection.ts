@@ -57,37 +57,19 @@ export interface PageAITransformResultProjection {
    * @type {number}
    * @memberof PageAITransformResultProjection
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageAITransformResultProjection
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
    * @memberof PageAITransformResultProjection
    */
   last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAITransformResultProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageAITransformResultProjection
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageAITransformResultProjection
-   */
-  first?: boolean;
   /**
    *
    * @type {number}
@@ -100,6 +82,24 @@ export interface PageAITransformResultProjection {
    * @memberof PageAITransformResultProjection
    */
   number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageAITransformResultProjection
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAITransformResultProjection
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageAITransformResultProjection
+   */
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -131,16 +131,16 @@ export function PageAITransformResultProjectionFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     columns: json['columns'],
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -163,14 +163,14 @@ export function PageAITransformResultProjectionToJSON(
           ),
     pageable: PageableObjectToJSON(value.pageable),
     columns: value.columns,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
-    numberOfElements: value.numberOfElements,
-    sort: SortObjectToJSON(value.sort),
-    first: value.first,
     size: value.size,
     number: value.number,
+    first: value.first,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };
 }

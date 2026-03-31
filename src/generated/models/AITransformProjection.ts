@@ -28,6 +28,18 @@ import {
 export interface AITransformProjection {
   /**
    *
+   * @type {string}
+   * @memberof AITransformProjection
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformProjection
+   */
+  id: string;
+  /**
+   *
    * @type {Date}
    * @memberof AITransformProjection
    */
@@ -50,18 +62,6 @@ export interface AITransformProjection {
    * @memberof AITransformProjection
    */
   outputSchema?: StructuredOutputSchema | null;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformProjection
-   */
-  id: string;
 }
 
 export function AITransformProjectionFromJSON(
@@ -78,6 +78,8 @@ export function AITransformProjectionFromJSONTyped(
     return json;
   }
   return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
     createdAt: new Date(json['createdAt']),
     conditions: !exists(json, 'conditions') ? undefined : json['conditions'],
     instructions: !exists(json, 'instructions')
@@ -86,8 +88,6 @@ export function AITransformProjectionFromJSONTyped(
     outputSchema: !exists(json, 'outputSchema')
       ? undefined
       : StructuredOutputSchemaFromJSON(json['outputSchema']),
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
   };
 }
 
@@ -101,11 +101,11 @@ export function AITransformProjectionToJSON(
     return null;
   }
   return {
+    name: value.name,
+    id: value.id,
     createdAt: value.createdAt.toISOString(),
     conditions: value.conditions,
     instructions: value.instructions,
     outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
-    name: value.name,
-    id: value.id,
   };
 }

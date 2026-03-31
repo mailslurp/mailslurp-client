@@ -33,37 +33,19 @@ export interface PageEmailThreadProjection {
      * @type {number}
      * @memberof PageEmailThreadProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailThreadProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageEmailThreadProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEmailThreadProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageEmailThreadProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEmailThreadProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageEmailThreadProjection {
      * @memberof PageEmailThreadProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEmailThreadProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEmailThreadProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageEmailThreadProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

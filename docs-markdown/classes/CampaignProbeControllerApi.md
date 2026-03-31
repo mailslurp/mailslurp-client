@@ -20,6 +20,8 @@
 
 ### Methods
 
+- [compareCampaignProbeRuns](CampaignProbeControllerApi.md#comparecampaignproberuns)
+- [compareCampaignProbeRunsRaw](CampaignProbeControllerApi.md#comparecampaignproberunsraw)
 - [createCampaignProbe](CampaignProbeControllerApi.md#createcampaignprobe)
 - [createCampaignProbeRaw](CampaignProbeControllerApi.md#createcampaignproberaw)
 - [deleteCampaignProbe](CampaignProbeControllerApi.md#deletecampaignprobe)
@@ -28,6 +30,8 @@
 - [getCampaignProbeInsights](CampaignProbeControllerApi.md#getcampaignprobeinsights)
 - [getCampaignProbeInsightsRaw](CampaignProbeControllerApi.md#getcampaignprobeinsightsraw)
 - [getCampaignProbeRaw](CampaignProbeControllerApi.md#getcampaignproberaw)
+- [getCampaignProbeRun](CampaignProbeControllerApi.md#getcampaignproberun)
+- [getCampaignProbeRunRaw](CampaignProbeControllerApi.md#getcampaignproberunraw)
 - [getCampaignProbeRuns](CampaignProbeControllerApi.md#getcampaignproberuns)
 - [getCampaignProbeRunsRaw](CampaignProbeControllerApi.md#getcampaignproberunsraw)
 - [getCampaignProbeSeries](CampaignProbeControllerApi.md#getcampaignprobeseries)
@@ -72,6 +76,44 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### compareCampaignProbeRuns
+
+▸ **compareCampaignProbeRuns**(`requestParameters`, `initOverrides?`): `Promise`<[`CampaignProbeRunComparisonDto`](../interfaces/CampaignProbeRunComparisonDto.md)\>
+
+Compare two campaign probe runs
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CompareCampaignProbeRunsRequest`](../interfaces/CompareCampaignProbeRunsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CampaignProbeRunComparisonDto`](../interfaces/CampaignProbeRunComparisonDto.md)\>
+
+___
+
+### compareCampaignProbeRunsRaw
+
+▸ **compareCampaignProbeRunsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CampaignProbeRunComparisonDto`](../interfaces/CampaignProbeRunComparisonDto.md)\>\>
+
+Compare two campaign probe runs
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CompareCampaignProbeRunsRequest`](../interfaces/CompareCampaignProbeRunsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CampaignProbeRunComparisonDto`](../interfaces/CampaignProbeRunComparisonDto.md)\>\>
+
+___
 
 ### createCampaignProbe
 
@@ -222,6 +264,44 @@ Get campaign probe
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CampaignProbeDto`](../interfaces/CampaignProbeDto.md)\>\>
+
+___
+
+### getCampaignProbeRun
+
+▸ **getCampaignProbeRun**(`requestParameters`, `initOverrides?`): `Promise`<[`CampaignProbeRunDto`](../interfaces/CampaignProbeRunDto.md)\>
+
+Get campaign probe run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetCampaignProbeRunRequest`](../interfaces/GetCampaignProbeRunRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CampaignProbeRunDto`](../interfaces/CampaignProbeRunDto.md)\>
+
+___
+
+### getCampaignProbeRunRaw
+
+▸ **getCampaignProbeRunRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CampaignProbeRunDto`](../interfaces/CampaignProbeRunDto.md)\>\>
+
+Get campaign probe run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetCampaignProbeRunRequest`](../interfaces/GetCampaignProbeRunRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CampaignProbeRunDto`](../interfaces/CampaignProbeRunDto.md)\>\>
 
 ___
 

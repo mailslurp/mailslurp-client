@@ -24,6 +24,18 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
   url: string;
   /**
    *
@@ -72,12 +84,6 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
-  aiTransformId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
   healthStatus?: WebhookProjectionHealthStatusEnum;
   /**
    *
@@ -90,19 +96,13 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
+  aiTransformId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
   phoneNumberId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  id: string;
 }
 
 /**
@@ -144,6 +144,8 @@ export function WebhookProjectionFromJSONTyped(
     return json;
   }
   return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
     url: json['url'],
     password: !exists(json, 'password') ? undefined : json['password'],
     username: !exists(json, 'username') ? undefined : json['username'],
@@ -152,20 +154,18 @@ export function WebhookProjectionFromJSONTyped(
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
-    aiTransformId: !exists(json, 'aiTransformId')
-      ? undefined
-      : json['aiTransformId'],
     healthStatus: !exists(json, 'healthStatus')
       ? undefined
       : json['healthStatus'],
     aiTransformerId: !exists(json, 'aiTransformerId')
       ? undefined
       : json['aiTransformerId'],
+    aiTransformId: !exists(json, 'aiTransformId')
+      ? undefined
+      : json['aiTransformId'],
     phoneNumberId: !exists(json, 'phoneNumberId')
       ? undefined
       : json['phoneNumberId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
   };
 }
 
@@ -177,6 +177,8 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     return null;
   }
   return {
+    name: value.name,
+    id: value.id,
     url: value.url,
     password: value.password,
     username: value.username,
@@ -185,11 +187,9 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     eventName: value.eventName,
     updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
-    aiTransformId: value.aiTransformId,
     healthStatus: value.healthStatus,
     aiTransformerId: value.aiTransformerId,
+    aiTransformId: value.aiTransformId,
     phoneNumberId: value.phoneNumberId,
-    name: value.name,
-    id: value.id,
   };
 }

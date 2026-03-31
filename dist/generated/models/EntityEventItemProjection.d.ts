@@ -20,6 +20,18 @@ export interface EntityEventItemProjection {
      * @type {string}
      * @memberof EntityEventItemProjection
      */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityEventItemProjection
+     */
+    severity: EntityEventItemProjectionSeverityEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityEventItemProjection
+     */
     eventType: EntityEventItemProjectionEventTypeEnum;
     /**
      *
@@ -33,18 +45,16 @@ export interface EntityEventItemProjection {
      * @memberof EntityEventItemProjection
      */
     phoneId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    severity: EntityEventItemProjectionSeverityEnum;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum EntityEventItemProjectionSeverityEnum {
+    INFO = "INFO",
+    SUCCESS = "SUCCESS",
+    WARNING = "WARNING",
+    DANGER = "DANGER"
 }
 /**
  * @export
@@ -56,16 +66,6 @@ export declare enum EntityEventItemProjectionEventTypeEnum {
     INBOX_REPLIER_EVENT = "INBOX_REPLIER_EVENT",
     INBOX_RULESET_EVENT = "INBOX_RULESET_EVENT",
     ALIAS_EVENT = "ALIAS_EVENT"
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum EntityEventItemProjectionSeverityEnum {
-    INFO = "INFO",
-    SUCCESS = "SUCCESS",
-    WARNING = "WARNING",
-    DANGER = "DANGER"
 }
 export declare function EntityEventItemProjectionFromJSON(json: any): EntityEventItemProjection;
 export declare function EntityEventItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EntityEventItemProjection;

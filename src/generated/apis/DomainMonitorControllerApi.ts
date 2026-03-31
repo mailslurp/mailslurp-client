@@ -14,6 +14,9 @@
 
 import * as runtime from '../runtime';
 import {
+  CheckEmailAuthStackResults,
+  CheckEmailAuthStackResultsFromJSON,
+  CheckEmailAuthStackResultsToJSON,
   CreateDomainMonitorAlertSinkOptions,
   CreateDomainMonitorAlertSinkOptionsFromJSON,
   CreateDomainMonitorAlertSinkOptionsToJSON,
@@ -29,6 +32,9 @@ import {
   DomainMonitorInsightsDto,
   DomainMonitorInsightsDtoFromJSON,
   DomainMonitorInsightsDtoToJSON,
+  DomainMonitorRunComparisonDto,
+  DomainMonitorRunComparisonDtoFromJSON,
+  DomainMonitorRunComparisonDtoToJSON,
   DomainMonitorRunDto,
   DomainMonitorRunDtoFromJSON,
   DomainMonitorRunDtoToJSON,
@@ -41,10 +47,19 @@ import {
   DomainMonitorSeriesDto,
   DomainMonitorSeriesDtoFromJSON,
   DomainMonitorSeriesDtoToJSON,
+  DomainMonitorSummaryDto,
+  DomainMonitorSummaryDtoFromJSON,
+  DomainMonitorSummaryDtoToJSON,
   UpdateDomainMonitorOptions,
   UpdateDomainMonitorOptionsFromJSON,
   UpdateDomainMonitorOptionsToJSON,
 } from '../models';
+
+export interface CompareDomainMonitorRunsRequest {
+  monitorId: string;
+  runId: string;
+  otherRunId: string;
+}
 
 export interface CreateDomainMonitorRequest {
   createDomainMonitorOptions: CreateDomainMonitorOptions;
@@ -72,10 +87,20 @@ export interface GetDomainMonitorAlertSinksRequest {
   monitorId: string;
 }
 
+export interface GetDomainMonitorAuthStackRequest {
+  monitorId: string;
+  dkimSelector?: string;
+}
+
 export interface GetDomainMonitorInsightsRequest {
   monitorId: string;
   since?: Date;
   before?: Date;
+}
+
+export interface GetDomainMonitorRunRequest {
+  monitorId: string;
+  runId: string;
 }
 
 export interface GetDomainMonitorRunsRequest {
@@ -91,6 +116,11 @@ export interface GetDomainMonitorSeriesRequest {
   since?: Date;
   before?: Date;
   bucket?: GetDomainMonitorSeriesBucketEnum;
+}
+
+export interface GetDomainMonitorSummaryRequest {
+  monitorId: string;
+  dkimSelector?: string;
 }
 
 export interface RunDomainMonitorNowRequest {
@@ -110,6 +140,92 @@ export interface UpdateDomainMonitorRequest {
  *
  */
 export class DomainMonitorControllerApi extends runtime.BaseAPI {
+  /**
+   * Compare two monitor runs
+   */
+  async compareDomainMonitorRunsRaw(
+    requestParameters: CompareDomainMonitorRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainMonitorRunComparisonDto>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling compareDomainMonitorRuns.'
+      );
+    }
+
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling compareDomainMonitorRuns.'
+      );
+    }
+
+    if (
+      requestParameters.otherRunId === null ||
+      requestParameters.otherRunId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'otherRunId',
+        'Required parameter requestParameters.otherRunId was null or undefined when calling compareDomainMonitorRuns.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/runs/{runId}/compare/{otherRunId}`
+          .replace(
+            `{${'monitorId'}}`,
+            encodeURIComponent(String(requestParameters.monitorId))
+          )
+          .replace(
+            `{${'runId'}}`,
+            encodeURIComponent(String(requestParameters.runId))
+          )
+          .replace(
+            `{${'otherRunId'}}`,
+            encodeURIComponent(String(requestParameters.otherRunId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainMonitorRunComparisonDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Compare two monitor runs
+   */
+  async compareDomainMonitorRuns(
+    requestParameters: CompareDomainMonitorRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainMonitorRunComparisonDto> {
+    const response = await this.compareDomainMonitorRunsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Create domain monitor
    */
@@ -476,6 +592,67 @@ export class DomainMonitorControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get current auth stack for monitor domain
+   */
+  async getDomainMonitorAuthStackRaw(
+    requestParameters: GetDomainMonitorAuthStackRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckEmailAuthStackResults>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorAuthStack.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.dkimSelector !== undefined) {
+      queryParameters['dkimSelector'] = requestParameters.dkimSelector;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/auth-stack`.replace(
+          `{${'monitorId'}}`,
+          encodeURIComponent(String(requestParameters.monitorId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckEmailAuthStackResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get current auth stack for monitor domain
+   */
+  async getDomainMonitorAuthStack(
+    requestParameters: GetDomainMonitorAuthStackRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckEmailAuthStackResults> {
+    const response = await this.getDomainMonitorAuthStackRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get monitor insights
    */
   async getDomainMonitorInsightsRaw(
@@ -536,6 +713,78 @@ export class DomainMonitorControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<DomainMonitorInsightsDto> {
     const response = await this.getDomainMonitorInsightsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get monitor run
+   */
+  async getDomainMonitorRunRaw(
+    requestParameters: GetDomainMonitorRunRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainMonitorRunDto>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorRun.'
+      );
+    }
+
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling getDomainMonitorRun.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/runs/{runId}`
+          .replace(
+            `{${'monitorId'}}`,
+            encodeURIComponent(String(requestParameters.monitorId))
+          )
+          .replace(
+            `{${'runId'}}`,
+            encodeURIComponent(String(requestParameters.runId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainMonitorRunDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get monitor run
+   */
+  async getDomainMonitorRun(
+    requestParameters: GetDomainMonitorRunRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainMonitorRunDto> {
+    const response = await this.getDomainMonitorRunRaw(
       requestParameters,
       initOverrides
     );
@@ -682,6 +931,67 @@ export class DomainMonitorControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<DomainMonitorSeriesDto> {
     const response = await this.getDomainMonitorSeriesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get domain monitor summary
+   */
+  async getDomainMonitorSummaryRaw(
+    requestParameters: GetDomainMonitorSummaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainMonitorSummaryDto>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorSummary.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.dkimSelector !== undefined) {
+      queryParameters['dkimSelector'] = requestParameters.dkimSelector;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/summary`.replace(
+          `{${'monitorId'}}`,
+          encodeURIComponent(String(requestParameters.monitorId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainMonitorSummaryDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get domain monitor summary
+   */
+  async getDomainMonitorSummary(
+    requestParameters: GetDomainMonitorSummaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainMonitorSummaryDto> {
+    const response = await this.getDomainMonitorSummaryRaw(
       requestParameters,
       initOverrides
     );

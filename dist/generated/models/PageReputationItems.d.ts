@@ -33,37 +33,19 @@ export interface PageReputationItems {
      * @type {number}
      * @memberof PageReputationItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageReputationItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageReputationItems
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageReputationItems
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageReputationItems
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageReputationItems
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageReputationItems {
      * @memberof PageReputationItems
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageReputationItems
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageReputationItems
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageReputationItems
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

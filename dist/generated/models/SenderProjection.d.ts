@@ -20,6 +20,12 @@ export interface SenderProjection {
      * @type {string}
      * @memberof SenderProjection
      */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SenderProjection
+     */
     emailAddress: string;
     /**
      *
@@ -27,12 +33,6 @@ export interface SenderProjection {
      * @memberof SenderProjection
      */
     rawValue: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SenderProjection
-     */
-    name?: string;
 }
 export declare function SenderProjectionFromJSON(json: any): SenderProjection;
 export declare function SenderProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SenderProjection;

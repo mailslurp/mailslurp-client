@@ -10,7 +10,12 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CampaignProbeDto, CampaignProbeInsightsDto, CampaignProbeRunDto, CampaignProbeRunDueResult, CampaignProbeRunNowResult, CampaignProbeSeriesDto, CreateCampaignProbeOptions, CreateCampaignProbeRunOptions, UpdateCampaignProbeOptions } from '../models';
+import { CampaignProbeDto, CampaignProbeInsightsDto, CampaignProbeRunComparisonDto, CampaignProbeRunDto, CampaignProbeRunDueResult, CampaignProbeRunNowResult, CampaignProbeSeriesDto, CreateCampaignProbeOptions, CreateCampaignProbeRunOptions, UpdateCampaignProbeOptions } from '../models';
+export interface CompareCampaignProbeRunsRequest {
+    probeId: string;
+    runId: string;
+    otherRunId: string;
+}
 export interface CreateCampaignProbeRequest {
     createCampaignProbeOptions: CreateCampaignProbeOptions;
 }
@@ -24,6 +29,10 @@ export interface GetCampaignProbeInsightsRequest {
     probeId: string;
     since?: Date;
     before?: Date;
+}
+export interface GetCampaignProbeRunRequest {
+    probeId: string;
+    runId: string;
 }
 export interface GetCampaignProbeRunsRequest {
     probeId: string;
@@ -53,6 +62,14 @@ export interface UpdateCampaignProbeRequest {
  *
  */
 export declare class CampaignProbeControllerApi extends runtime.BaseAPI {
+    /**
+     * Compare two campaign probe runs
+     */
+    compareCampaignProbeRunsRaw(requestParameters: CompareCampaignProbeRunsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CampaignProbeRunComparisonDto>>;
+    /**
+     * Compare two campaign probe runs
+     */
+    compareCampaignProbeRuns(requestParameters: CompareCampaignProbeRunsRequest, initOverrides?: RequestInit): Promise<CampaignProbeRunComparisonDto>;
     /**
      * Create campaign probe
      */
@@ -85,6 +102,14 @@ export declare class CampaignProbeControllerApi extends runtime.BaseAPI {
      * Get campaign probe insights
      */
     getCampaignProbeInsights(requestParameters: GetCampaignProbeInsightsRequest, initOverrides?: RequestInit): Promise<CampaignProbeInsightsDto>;
+    /**
+     * Get campaign probe run
+     */
+    getCampaignProbeRunRaw(requestParameters: GetCampaignProbeRunRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CampaignProbeRunDto>>;
+    /**
+     * Get campaign probe run
+     */
+    getCampaignProbeRun(requestParameters: GetCampaignProbeRunRequest, initOverrides?: RequestInit): Promise<CampaignProbeRunDto>;
     /**
      * List campaign probe runs
      */

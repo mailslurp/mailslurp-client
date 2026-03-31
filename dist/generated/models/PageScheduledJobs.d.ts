@@ -33,37 +33,19 @@ export interface PageScheduledJobs {
      * @type {number}
      * @memberof PageScheduledJobs
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageScheduledJobs
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageScheduledJobs
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageScheduledJobs
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageScheduledJobs
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageScheduledJobs
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageScheduledJobs {
      * @memberof PageScheduledJobs
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageScheduledJobs
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageScheduledJobs
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

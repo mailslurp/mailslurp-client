@@ -10,7 +10,12 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateDomainMonitorAlertSinkOptions, CreateDomainMonitorOptions, DomainMonitorAlertSinkDto, DomainMonitorDto, DomainMonitorInsightsDto, DomainMonitorRunDto, DomainMonitorRunDueResult, DomainMonitorRunNowResult, DomainMonitorSeriesDto, UpdateDomainMonitorOptions } from '../models';
+import { CheckEmailAuthStackResults, CreateDomainMonitorAlertSinkOptions, CreateDomainMonitorOptions, DomainMonitorAlertSinkDto, DomainMonitorDto, DomainMonitorInsightsDto, DomainMonitorRunComparisonDto, DomainMonitorRunDto, DomainMonitorRunDueResult, DomainMonitorRunNowResult, DomainMonitorSeriesDto, DomainMonitorSummaryDto, UpdateDomainMonitorOptions } from '../models';
+export interface CompareDomainMonitorRunsRequest {
+    monitorId: string;
+    runId: string;
+    otherRunId: string;
+}
 export interface CreateDomainMonitorRequest {
     createDomainMonitorOptions: CreateDomainMonitorOptions;
 }
@@ -31,10 +36,18 @@ export interface GetDomainMonitorRequest {
 export interface GetDomainMonitorAlertSinksRequest {
     monitorId: string;
 }
+export interface GetDomainMonitorAuthStackRequest {
+    monitorId: string;
+    dkimSelector?: string;
+}
 export interface GetDomainMonitorInsightsRequest {
     monitorId: string;
     since?: Date;
     before?: Date;
+}
+export interface GetDomainMonitorRunRequest {
+    monitorId: string;
+    runId: string;
 }
 export interface GetDomainMonitorRunsRequest {
     monitorId: string;
@@ -48,6 +61,10 @@ export interface GetDomainMonitorSeriesRequest {
     since?: Date;
     before?: Date;
     bucket?: GetDomainMonitorSeriesBucketEnum;
+}
+export interface GetDomainMonitorSummaryRequest {
+    monitorId: string;
+    dkimSelector?: string;
 }
 export interface RunDomainMonitorNowRequest {
     monitorId: string;
@@ -63,6 +80,14 @@ export interface UpdateDomainMonitorRequest {
  *
  */
 export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
+    /**
+     * Compare two monitor runs
+     */
+    compareDomainMonitorRunsRaw(requestParameters: CompareDomainMonitorRunsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainMonitorRunComparisonDto>>;
+    /**
+     * Compare two monitor runs
+     */
+    compareDomainMonitorRuns(requestParameters: CompareDomainMonitorRunsRequest, initOverrides?: RequestInit): Promise<DomainMonitorRunComparisonDto>;
     /**
      * Create domain monitor
      */
@@ -112,6 +137,14 @@ export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
      */
     getDomainMonitorAlertSinks(requestParameters: GetDomainMonitorAlertSinksRequest, initOverrides?: RequestInit): Promise<Array<DomainMonitorAlertSinkDto>>;
     /**
+     * Get current auth stack for monitor domain
+     */
+    getDomainMonitorAuthStackRaw(requestParameters: GetDomainMonitorAuthStackRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailAuthStackResults>>;
+    /**
+     * Get current auth stack for monitor domain
+     */
+    getDomainMonitorAuthStack(requestParameters: GetDomainMonitorAuthStackRequest, initOverrides?: RequestInit): Promise<CheckEmailAuthStackResults>;
+    /**
      * Get monitor insights
      */
     getDomainMonitorInsightsRaw(requestParameters: GetDomainMonitorInsightsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainMonitorInsightsDto>>;
@@ -119,6 +152,14 @@ export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
      * Get monitor insights
      */
     getDomainMonitorInsights(requestParameters: GetDomainMonitorInsightsRequest, initOverrides?: RequestInit): Promise<DomainMonitorInsightsDto>;
+    /**
+     * Get monitor run
+     */
+    getDomainMonitorRunRaw(requestParameters: GetDomainMonitorRunRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainMonitorRunDto>>;
+    /**
+     * Get monitor run
+     */
+    getDomainMonitorRun(requestParameters: GetDomainMonitorRunRequest, initOverrides?: RequestInit): Promise<DomainMonitorRunDto>;
     /**
      * List monitor runs
      */
@@ -135,6 +176,14 @@ export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
      * Get monitor trend series
      */
     getDomainMonitorSeries(requestParameters: GetDomainMonitorSeriesRequest, initOverrides?: RequestInit): Promise<DomainMonitorSeriesDto>;
+    /**
+     * Get domain monitor summary
+     */
+    getDomainMonitorSummaryRaw(requestParameters: GetDomainMonitorSummaryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainMonitorSummaryDto>>;
+    /**
+     * Get domain monitor summary
+     */
+    getDomainMonitorSummary(requestParameters: GetDomainMonitorSummaryRequest, initOverrides?: RequestInit): Promise<DomainMonitorSummaryDto>;
     /**
      * List domain monitors
      */

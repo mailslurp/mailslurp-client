@@ -20,6 +20,22 @@
 
 ### Methods
 
+- [analyzeDmarcReport](ToolsControllerApi.md#analyzedmarcreport)
+- [analyzeDmarcReportRaw](ToolsControllerApi.md#analyzedmarcreportraw)
+- [analyzeEmailHeaders](ToolsControllerApi.md#analyzeemailheaders)
+- [analyzeEmailHeadersRaw](ToolsControllerApi.md#analyzeemailheadersraw)
+- [checkCampaignProbe](ToolsControllerApi.md#checkcampaignprobe)
+- [checkCampaignProbeRaw](ToolsControllerApi.md#checkcampaignproberaw)
+- [checkDnsPropagation](ToolsControllerApi.md#checkdnspropagation)
+- [checkDnsPropagationRaw](ToolsControllerApi.md#checkdnspropagationraw)
+- [checkDomainMonitor](ToolsControllerApi.md#checkdomainmonitor)
+- [checkDomainMonitorRaw](ToolsControllerApi.md#checkdomainmonitorraw)
+- [checkEmailAudit](ToolsControllerApi.md#checkemailaudit)
+- [checkEmailAuditRaw](ToolsControllerApi.md#checkemailauditraw)
+- [checkEmailAuthStack](ToolsControllerApi.md#checkemailauthstack)
+- [checkEmailAuthStackRaw](ToolsControllerApi.md#checkemailauthstackraw)
+- [checkEmailBlacklist](ToolsControllerApi.md#checkemailblacklist)
+- [checkEmailBlacklistRaw](ToolsControllerApi.md#checkemailblacklistraw)
 - [checkEmailFeaturesClientSupport](ToolsControllerApi.md#checkemailfeaturesclientsupport)
 - [checkEmailFeaturesClientSupportRaw](ToolsControllerApi.md#checkemailfeaturesclientsupportraw)
 - [createNewFakeEmailAddress](ToolsControllerApi.md#createnewfakeemailaddress)
@@ -32,6 +48,8 @@
 - [generateDmarcRecordRaw](ToolsControllerApi.md#generatedmarcrecordraw)
 - [generateMtaStsRecord](ToolsControllerApi.md#generatemtastsrecord)
 - [generateMtaStsRecordRaw](ToolsControllerApi.md#generatemtastsrecordraw)
+- [generateSpfRecord](ToolsControllerApi.md#generatespfrecord)
+- [generateSpfRecordRaw](ToolsControllerApi.md#generatespfrecordraw)
 - [generateTlsReportingRecord](ToolsControllerApi.md#generatetlsreportingrecord)
 - [generateTlsReportingRecordRaw](ToolsControllerApi.md#generatetlsreportingrecordraw)
 - [getFakeEmailByEmailAddress](ToolsControllerApi.md#getfakeemailbyemailaddress)
@@ -44,15 +62,23 @@
 - [getFakeEmailsForAddressRaw](ToolsControllerApi.md#getfakeemailsforaddressraw)
 - [lookupBimiDomain](ToolsControllerApi.md#lookupbimidomain)
 - [lookupBimiDomainRaw](ToolsControllerApi.md#lookupbimidomainraw)
+- [lookupDkimDomain](ToolsControllerApi.md#lookupdkimdomain)
+- [lookupDkimDomainRaw](ToolsControllerApi.md#lookupdkimdomainraw)
 - [lookupDmarcDomain](ToolsControllerApi.md#lookupdmarcdomain)
 - [lookupDmarcDomainRaw](ToolsControllerApi.md#lookupdmarcdomainraw)
 - [lookupMtaStsDomain](ToolsControllerApi.md#lookupmtastsdomain)
 - [lookupMtaStsDomainRaw](ToolsControllerApi.md#lookupmtastsdomainraw)
 - [lookupMxRecord](ToolsControllerApi.md#lookupmxrecord)
 - [lookupMxRecordRaw](ToolsControllerApi.md#lookupmxrecordraw)
+- [lookupPtr](ToolsControllerApi.md#lookupptr)
+- [lookupPtrRaw](ToolsControllerApi.md#lookupptrraw)
+- [lookupSpfDomain](ToolsControllerApi.md#lookupspfdomain)
+- [lookupSpfDomainRaw](ToolsControllerApi.md#lookupspfdomainraw)
 - [lookupTlsReportingDomain](ToolsControllerApi.md#lookuptlsreportingdomain)
 - [lookupTlsReportingDomainRaw](ToolsControllerApi.md#lookuptlsreportingdomainraw)
 - [request](ToolsControllerApi.md#request)
+- [testSmtpServer](ToolsControllerApi.md#testsmtpserver)
+- [testSmtpServerRaw](ToolsControllerApi.md#testsmtpserverraw)
 - [withMiddleware](ToolsControllerApi.md#withmiddleware)
 - [withPostMiddleware](ToolsControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](ToolsControllerApi.md#withpremiddleware)
@@ -84,6 +110,310 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### analyzeDmarcReport
+
+▸ **analyzeDmarcReport**(`requestParameters`, `initOverrides?`): `Promise`<[`AnalyzeDmarcReportResults`](../interfaces/AnalyzeDmarcReportResults.md)\>
+
+Parse and summarize a DMARC aggregate XML report
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AnalyzeDmarcReportRequest`](../interfaces/AnalyzeDmarcReportRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AnalyzeDmarcReportResults`](../interfaces/AnalyzeDmarcReportResults.md)\>
+
+___
+
+### analyzeDmarcReportRaw
+
+▸ **analyzeDmarcReportRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AnalyzeDmarcReportResults`](../interfaces/AnalyzeDmarcReportResults.md)\>\>
+
+Parse and summarize a DMARC aggregate XML report
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AnalyzeDmarcReportRequest`](../interfaces/AnalyzeDmarcReportRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AnalyzeDmarcReportResults`](../interfaces/AnalyzeDmarcReportResults.md)\>\>
+
+___
+
+### analyzeEmailHeaders
+
+▸ **analyzeEmailHeaders**(`requestParameters`, `initOverrides?`): `Promise`<[`AnalyzeEmailHeadersResults`](../interfaces/AnalyzeEmailHeadersResults.md)\>
+
+Analyze email headers for auth results and delivery path
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AnalyzeEmailHeadersRequest`](../interfaces/AnalyzeEmailHeadersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AnalyzeEmailHeadersResults`](../interfaces/AnalyzeEmailHeadersResults.md)\>
+
+___
+
+### analyzeEmailHeadersRaw
+
+▸ **analyzeEmailHeadersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AnalyzeEmailHeadersResults`](../interfaces/AnalyzeEmailHeadersResults.md)\>\>
+
+Analyze email headers for auth results and delivery path
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AnalyzeEmailHeadersRequest`](../interfaces/AnalyzeEmailHeadersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AnalyzeEmailHeadersResults`](../interfaces/AnalyzeEmailHeadersResults.md)\>\>
+
+___
+
+### checkCampaignProbe
+
+▸ **checkCampaignProbe**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckCampaignProbeResults`](../interfaces/CheckCampaignProbeResults.md)\>
+
+Run a one-shot free campaign probe preflight check
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckCampaignProbeRequest`](../interfaces/CheckCampaignProbeRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckCampaignProbeResults`](../interfaces/CheckCampaignProbeResults.md)\>
+
+___
+
+### checkCampaignProbeRaw
+
+▸ **checkCampaignProbeRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckCampaignProbeResults`](../interfaces/CheckCampaignProbeResults.md)\>\>
+
+Run a one-shot free campaign probe preflight check
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckCampaignProbeRequest`](../interfaces/CheckCampaignProbeRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckCampaignProbeResults`](../interfaces/CheckCampaignProbeResults.md)\>\>
+
+___
+
+### checkDnsPropagation
+
+▸ **checkDnsPropagation**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckDnsPropagationResults`](../interfaces/CheckDnsPropagationResults.md)\>
+
+Check DNS propagation for a host and record type across configured resolvers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckDnsPropagationRequest`](../interfaces/CheckDnsPropagationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckDnsPropagationResults`](../interfaces/CheckDnsPropagationResults.md)\>
+
+___
+
+### checkDnsPropagationRaw
+
+▸ **checkDnsPropagationRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckDnsPropagationResults`](../interfaces/CheckDnsPropagationResults.md)\>\>
+
+Check DNS propagation for a host and record type across configured resolvers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckDnsPropagationRequest`](../interfaces/CheckDnsPropagationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckDnsPropagationResults`](../interfaces/CheckDnsPropagationResults.md)\>\>
+
+___
+
+### checkDomainMonitor
+
+▸ **checkDomainMonitor**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckDomainMonitorResults`](../interfaces/CheckDomainMonitorResults.md)\>
+
+Run a one-shot free domain monitor posture check
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckDomainMonitorRequest`](../interfaces/CheckDomainMonitorRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckDomainMonitorResults`](../interfaces/CheckDomainMonitorResults.md)\>
+
+___
+
+### checkDomainMonitorRaw
+
+▸ **checkDomainMonitorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckDomainMonitorResults`](../interfaces/CheckDomainMonitorResults.md)\>\>
+
+Run a one-shot free domain monitor posture check
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckDomainMonitorRequest`](../interfaces/CheckDomainMonitorRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckDomainMonitorResults`](../interfaces/CheckDomainMonitorResults.md)\>\>
+
+___
+
+### checkEmailAudit
+
+▸ **checkEmailAudit**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>
+
+Run a one-shot free email audit across links, images, HTML, and client support
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailAuditRequest`](../interfaces/CheckEmailAuditRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>
+
+___
+
+### checkEmailAuditRaw
+
+▸ **checkEmailAuditRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>\>
+
+Run a one-shot free email audit across links, images, HTML, and client support
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailAuditRequest`](../interfaces/CheckEmailAuditRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailAuditAnalysisResult`](../interfaces/EmailAuditAnalysisResult.md)\>\>
+
+___
+
+### checkEmailAuthStack
+
+▸ **checkEmailAuthStack**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>
+
+Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailAuthStackRequest`](../interfaces/CheckEmailAuthStackRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>
+
+___
+
+### checkEmailAuthStackRaw
+
+▸ **checkEmailAuthStackRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>\>
+
+Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailAuthStackRequest`](../interfaces/CheckEmailAuthStackRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>\>
+
+___
+
+### checkEmailBlacklist
+
+▸ **checkEmailBlacklist**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailBlacklistResults`](../interfaces/CheckEmailBlacklistResults.md)\>
+
+Check whether a domain or IP appears on configured DNS blacklists
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailBlacklistRequest`](../interfaces/CheckEmailBlacklistRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckEmailBlacklistResults`](../interfaces/CheckEmailBlacklistResults.md)\>
+
+___
+
+### checkEmailBlacklistRaw
+
+▸ **checkEmailBlacklistRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBlacklistResults`](../interfaces/CheckEmailBlacklistResults.md)\>\>
+
+Check whether a domain or IP appears on configured DNS blacklists
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailBlacklistRequest`](../interfaces/CheckEmailBlacklistRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBlacklistResults`](../interfaces/CheckEmailBlacklistResults.md)\>\>
+
+___
 
 ### checkEmailFeaturesClientSupport
 
@@ -310,6 +640,44 @@ Create a TLS reporting record policy
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GenerateMtaStsRecordResults`](../interfaces/GenerateMtaStsRecordResults.md)\>\>
+
+___
+
+### generateSpfRecord
+
+▸ **generateSpfRecord**(`requestParameters`, `initOverrides?`): `Promise`<[`GenerateSpfRecordResults`](../interfaces/GenerateSpfRecordResults.md)\>
+
+Create an SPF record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GenerateSpfRecordRequest`](../interfaces/GenerateSpfRecordRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`GenerateSpfRecordResults`](../interfaces/GenerateSpfRecordResults.md)\>
+
+___
+
+### generateSpfRecordRaw
+
+▸ **generateSpfRecordRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GenerateSpfRecordResults`](../interfaces/GenerateSpfRecordResults.md)\>\>
+
+Create an SPF record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GenerateSpfRecordRequest`](../interfaces/GenerateSpfRecordRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GenerateSpfRecordResults`](../interfaces/GenerateSpfRecordResults.md)\>\>
 
 ___
 
@@ -543,6 +911,44 @@ Lookup a BIMI record policy
 
 ___
 
+### lookupDkimDomain
+
+▸ **lookupDkimDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`LookupDkimDomainResults`](../interfaces/LookupDkimDomainResults.md)\>
+
+Lookup and validate a DKIM record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupDkimDomainRequest`](../interfaces/LookupDkimDomainRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`LookupDkimDomainResults`](../interfaces/LookupDkimDomainResults.md)\>
+
+___
+
+### lookupDkimDomainRaw
+
+▸ **lookupDkimDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupDkimDomainResults`](../interfaces/LookupDkimDomainResults.md)\>\>
+
+Lookup and validate a DKIM record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupDkimDomainRequest`](../interfaces/LookupDkimDomainRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupDkimDomainResults`](../interfaces/LookupDkimDomainResults.md)\>\>
+
+___
+
 ### lookupDmarcDomain
 
 ▸ **lookupDmarcDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`LookupDmarcDomainResults`](../interfaces/LookupDmarcDomainResults.md)\>
@@ -657,6 +1063,82 @@ Lookup a MX records for a domain
 
 ___
 
+### lookupPtr
+
+▸ **lookupPtr**(`requestParameters`, `initOverrides?`): `Promise`<[`LookupPtrResults`](../interfaces/LookupPtrResults.md)\>
+
+Lookup PTR records for an IP address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupPtrRequest`](../interfaces/LookupPtrRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`LookupPtrResults`](../interfaces/LookupPtrResults.md)\>
+
+___
+
+### lookupPtrRaw
+
+▸ **lookupPtrRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupPtrResults`](../interfaces/LookupPtrResults.md)\>\>
+
+Lookup PTR records for an IP address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupPtrRequest`](../interfaces/LookupPtrRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupPtrResults`](../interfaces/LookupPtrResults.md)\>\>
+
+___
+
+### lookupSpfDomain
+
+▸ **lookupSpfDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`LookupSpfDomainResults`](../interfaces/LookupSpfDomainResults.md)\>
+
+Lookup and validate an SPF record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupSpfDomainRequest`](../interfaces/LookupSpfDomainRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`LookupSpfDomainResults`](../interfaces/LookupSpfDomainResults.md)\>
+
+___
+
+### lookupSpfDomainRaw
+
+▸ **lookupSpfDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupSpfDomainResults`](../interfaces/LookupSpfDomainResults.md)\>\>
+
+Lookup and validate an SPF record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`LookupSpfDomainRequest`](../interfaces/LookupSpfDomainRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`LookupSpfDomainResults`](../interfaces/LookupSpfDomainResults.md)\>\>
+
+___
+
 ### lookupTlsReportingDomain
 
 ▸ **lookupTlsReportingDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`LookupTlsReportingDomainResults`](../interfaces/LookupTlsReportingDomainResults.md)\>
@@ -713,6 +1195,44 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### testSmtpServer
+
+▸ **testSmtpServer**(`requestParameters`, `initOverrides?`): `Promise`<[`TestSmtpServerResults`](../interfaces/TestSmtpServerResults.md)\>
+
+Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestSmtpServerRequest`](../interfaces/TestSmtpServerRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TestSmtpServerResults`](../interfaces/TestSmtpServerResults.md)\>
+
+___
+
+### testSmtpServerRaw
+
+▸ **testSmtpServerRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TestSmtpServerResults`](../interfaces/TestSmtpServerResults.md)\>\>
+
+Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestSmtpServerRequest`](../interfaces/TestSmtpServerRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TestSmtpServerResults`](../interfaces/TestSmtpServerResults.md)\>\>
 
 ___
 

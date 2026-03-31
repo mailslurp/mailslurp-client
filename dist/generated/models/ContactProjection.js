@@ -24,6 +24,8 @@ function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        id: json['id'],
+        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
@@ -35,8 +37,6 @@ function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
         lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
         company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
         optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
-        id: json['id'],
-        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
     };
 }
 exports.ContactProjectionFromJSONTyped = ContactProjectionFromJSONTyped;
@@ -48,6 +48,8 @@ function ContactProjectionToJSON(value) {
         return null;
     }
     return {
+        id: value.id,
+        groupId: value.groupId,
         emailAddress: value.emailAddress,
         createdAt: value.createdAt.toISOString(),
         emailAddresses: value.emailAddresses,
@@ -55,8 +57,6 @@ function ContactProjectionToJSON(value) {
         lastName: value.lastName,
         company: value.company,
         optOut: value.optOut,
-        id: value.id,
-        groupId: value.groupId,
     };
 }
 exports.ContactProjectionToJSON = ContactProjectionToJSON;

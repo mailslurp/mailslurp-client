@@ -39,6 +39,12 @@ export interface PhoneNumberDto {
   description?: string;
   /**
    *
+   * @type {Array<string>}
+   * @memberof PhoneNumberDto
+   */
+  tags: Array<string>;
+  /**
+   *
    * @type {string}
    * @memberof PhoneNumberDto
    */
@@ -97,6 +103,36 @@ export interface PhoneNumberDto {
    * @memberof PhoneNumberDto
    */
   phoneVariant?: PhoneNumberDtoPhoneVariantEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  lineType?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  carrierName?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  mobileCountryCode?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  mobileNetworkCode?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberDto
+   */
+  providerLabel?: string;
 }
 
 /**
@@ -142,6 +178,7 @@ export function PhoneNumberDtoFromJSONTyped(
     id: json['id'],
     name: !exists(json, 'name') ? undefined : json['name'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    tags: json['tags'],
     userId: json['userId'],
     complianceAddress: !exists(json, 'complianceAddress')
       ? undefined
@@ -158,6 +195,17 @@ export function PhoneNumberDtoFromJSONTyped(
     phoneVariant: !exists(json, 'phoneVariant')
       ? undefined
       : json['phoneVariant'],
+    lineType: !exists(json, 'lineType') ? undefined : json['lineType'],
+    carrierName: !exists(json, 'carrierName') ? undefined : json['carrierName'],
+    mobileCountryCode: !exists(json, 'mobileCountryCode')
+      ? undefined
+      : json['mobileCountryCode'],
+    mobileNetworkCode: !exists(json, 'mobileNetworkCode')
+      ? undefined
+      : json['mobileNetworkCode'],
+    providerLabel: !exists(json, 'providerLabel')
+      ? undefined
+      : json['providerLabel'],
   };
 }
 
@@ -172,6 +220,7 @@ export function PhoneNumberDtoToJSON(value?: PhoneNumberDto | null): any {
     id: value.id,
     name: value.name,
     description: value.description,
+    tags: value.tags,
     userId: value.userId,
     complianceAddress: value.complianceAddress,
     emergencyAddress: value.emergencyAddress,
@@ -182,5 +231,10 @@ export function PhoneNumberDtoToJSON(value?: PhoneNumberDto | null): any {
     updatedAt: value.updatedAt.toISOString(),
     favourite: value.favourite,
     phoneVariant: value.phoneVariant,
+    lineType: value.lineType,
+    carrierName: value.carrierName,
+    mobileCountryCode: value.mobileCountryCode,
+    mobileNetworkCode: value.mobileNetworkCode,
+    providerLabel: value.providerLabel,
   };
 }

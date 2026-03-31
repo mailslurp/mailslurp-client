@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  InboxAutomationMatchOptions,
+  InboxAutomationMatchOptionsFromJSON,
+  InboxAutomationMatchOptionsFromJSONTyped,
+  InboxAutomationMatchOptionsToJSON,
+} from './';
+
 /**
  * Inbox replier. Will automatically reply to inbound emails that match given field for an inbox.
  * @export
@@ -42,13 +49,13 @@ export interface InboxReplierDto {
    * @type {string}
    * @memberof InboxReplierDto
    */
-  field: InboxReplierDtoFieldEnum;
+  field?: InboxReplierDtoFieldEnum;
   /**
    *
    * @type {string}
    * @memberof InboxReplierDto
    */
-  match: string;
+  match?: string | null;
   /**
    *
    * @type {string}
@@ -103,6 +110,18 @@ export interface InboxReplierDto {
    * @memberof InboxReplierDto
    */
   createdAt: Date;
+  /**
+   * Comparison mode for inbox automation matching.
+   * @type {string}
+   * @memberof InboxReplierDto
+   */
+  should?: InboxReplierDtoShouldEnum;
+  /**
+   *
+   * @type {InboxAutomationMatchOptions}
+   * @memberof InboxReplierDto
+   */
+  matchOptions?: InboxAutomationMatchOptions | null;
 }
 
 /**
@@ -114,6 +133,18 @@ export enum InboxReplierDtoFieldEnum {
   SENDER = 'SENDER',
   SUBJECT = 'SUBJECT',
   ATTACHMENTS = 'ATTACHMENTS',
+  ATTACHMENT_FILENAME = 'ATTACHMENT_FILENAME',
+  ATTACHMENT_TEXT = 'ATTACHMENT_TEXT',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxReplierDtoShouldEnum {
+  WILDCARD = 'WILDCARD',
+  MATCH = 'MATCH',
+  CONTAIN = 'CONTAIN',
+  EQUAL = 'EQUAL',
 }
 
 export function InboxReplierDtoFromJSON(json: any): InboxReplierDto {
@@ -131,8 +162,8 @@ export function InboxReplierDtoFromJSONTyped(
     id: json['id'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
+    field: !exists(json, 'field') ? undefined : json['field'],
+    match: !exists(json, 'match') ? undefined : json['match'],
     replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     from: !exists(json, 'from') ? undefined : json['from'],
@@ -144,6 +175,10 @@ export function InboxReplierDtoFromJSONTyped(
       : json['templateVariables'],
     ignoreReplyTo: json['ignoreReplyTo'],
     createdAt: new Date(json['createdAt']),
+    should: !exists(json, 'should') ? undefined : json['should'],
+    matchOptions: !exists(json, 'matchOptions')
+      ? undefined
+      : InboxAutomationMatchOptionsFromJSON(json['matchOptions']),
   };
 }
 
@@ -169,5 +204,7 @@ export function InboxReplierDtoToJSON(value?: InboxReplierDto | null): any {
     templateVariables: value.templateVariables,
     ignoreReplyTo: value.ignoreReplyTo,
     createdAt: value.createdAt.toISOString(),
+    should: value.should,
+    matchOptions: InboxAutomationMatchOptionsToJSON(value.matchOptions),
   };
 }

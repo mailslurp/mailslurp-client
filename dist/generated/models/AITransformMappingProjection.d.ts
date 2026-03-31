@@ -20,6 +20,18 @@ export interface AITransformMappingProjection {
      * @type {string}
      * @memberof AITransformMappingProjection
      */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
     userId: string;
     /**
      *
@@ -57,18 +69,6 @@ export interface AITransformMappingProjection {
      * @memberof AITransformMappingProjection
      */
     triggerSelector?: AITransformMappingProjectionTriggerSelectorEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof AITransformMappingProjection
-     */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AITransformMappingProjection
-     */
-    id: string;
 }
 /**
  * @export

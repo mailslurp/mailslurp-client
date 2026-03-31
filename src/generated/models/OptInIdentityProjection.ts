@@ -27,16 +27,16 @@ export interface OptInIdentityProjection {
   id: string;
   /**
    *
-   * @type {string}
-   * @memberof OptInIdentityProjection
-   */
-  emailAddress: string;
-  /**
-   *
    * @type {boolean}
    * @memberof OptInIdentityProjection
    */
   verified?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof OptInIdentityProjection
+   */
+  emailAddress: string;
   /**
    *
    * @type {Date}
@@ -66,8 +66,8 @@ export function OptInIdentityProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
-    emailAddress: json['emailAddress'],
     verified: !exists(json, 'verified') ? undefined : json['verified'],
+    emailAddress: json['emailAddress'],
     updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
   };
@@ -84,8 +84,8 @@ export function OptInIdentityProjectionToJSON(
   }
   return {
     id: value.id,
-    emailAddress: value.emailAddress,
     verified: value.verified,
+    emailAddress: value.emailAddress,
     updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
   };

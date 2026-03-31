@@ -33,37 +33,19 @@ export interface PagePhoneNumberProjection {
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PagePhoneNumberProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PagePhoneNumberProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PagePhoneNumberProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PagePhoneNumberProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PagePhoneNumberProjection {
      * @memberof PagePhoneNumberProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PagePhoneNumberProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PagePhoneNumberProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -33,37 +33,19 @@ export interface PageTemplateProjection {
      * @type {number}
      * @memberof PageTemplateProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageTemplateProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageTemplateProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageTemplateProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageTemplateProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageTemplateProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageTemplateProjection {
      * @memberof PageTemplateProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTemplateProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageTemplateProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageTemplateProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -24,9 +24,9 @@ function RecipientProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         emailAddress: json['emailAddress'],
         rawValue: json['rawValue'],
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
 exports.RecipientProjectionFromJSONTyped = RecipientProjectionFromJSONTyped;
@@ -38,9 +38,9 @@ function RecipientProjectionToJSON(value) {
         return null;
     }
     return {
+        name: value.name,
         emailAddress: value.emailAddress,
         rawValue: value.rawValue,
-        name: value.name,
     };
 }
 exports.RecipientProjectionToJSON = RecipientProjectionToJSON;

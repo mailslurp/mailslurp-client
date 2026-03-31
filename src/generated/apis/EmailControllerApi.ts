@@ -44,6 +44,12 @@ import {
   Email,
   EmailFromJSON,
   EmailToJSON,
+  EmailAuditAnalysisResult,
+  EmailAuditAnalysisResultFromJSON,
+  EmailAuditAnalysisResultToJSON,
+  EmailAuditDto,
+  EmailAuditDtoFromJSON,
+  EmailAuditDtoToJSON,
   EmailContentMatchResult,
   EmailContentMatchResultFromJSON,
   EmailContentMatchResultToJSON,
@@ -134,6 +140,10 @@ export interface CanSendRequest {
   sendEmailOptions: SendEmailOptions;
 }
 
+export interface CheckEmailAudit1Request {
+  emailId: string;
+}
+
 export interface CheckEmailBodyRequest {
   emailId: string;
 }
@@ -144,6 +154,10 @@ export interface CheckEmailBodyFeatureSupportRequest {
 
 export interface CheckEmailClientSupportRequest {
   checkEmailClientSupportOptions: CheckEmailClientSupportOptions;
+}
+
+export interface CreateEmailAuditForEmailRequest {
+  emailId: string;
 }
 
 export interface DeleteEmailRequest {
@@ -538,6 +552,65 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Runs the same message-level audit bundle used by the email audit dashboard in one request. Combines content checks, HTML validation, compatibility analysis, and reputation verdict rollup when available.
+   * Run aggregate email audit for a stored email
+   */
+  async checkEmailAudit1Raw(
+    requestParameters: CheckEmailAudit1Request,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailAuditAnalysisResult>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling checkEmailAudit1.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/check-email-audit`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailAuditAnalysisResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Runs the same message-level audit bundle used by the email audit dashboard in one request. Combines content checks, HTML validation, compatibility analysis, and reputation verdict rollup when available.
+   * Run aggregate email audit for a stored email
+   */
+  async checkEmailAudit1(
+    requestParameters: CheckEmailAudit1Request,
+    initOverrides?: RequestInit
+  ): Promise<EmailAuditAnalysisResult> {
+    const response = await this.checkEmailAudit1Raw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Runs content quality checks against hydrated email body content. This endpoint performs outbound HTTP checks for linked resources, so avoid use with sensitive or stateful URLs.
    * Check email body for broken links, images, and spelling issues
    */
@@ -710,6 +783,65 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<CheckEmailClientSupportResults> {
     const response = await this.checkEmailClientSupportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Runs the aggregate audit bundle for the target email and stores the resulting audit record for later review and history tracking.
+   * Persist aggregate email audit for a stored email
+   */
+  async createEmailAuditForEmailRaw(
+    requestParameters: CreateEmailAuditForEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailAuditDto>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling createEmailAuditForEmail.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/audit`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailAuditDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Runs the aggregate audit bundle for the target email and stores the resulting audit record for later review and history tracking.
+   * Persist aggregate email audit for a stored email
+   */
+  async createEmailAuditForEmail(
+    requestParameters: CreateEmailAuditForEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailAuditDto> {
+    const response = await this.createEmailAuditForEmailRaw(
       requestParameters,
       initOverrides
     );
@@ -1331,7 +1463,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+   * Extracts one-time passcodes and similar tokens from email content using the selected extraction method and fallback options.
    * Extract verification codes from an email
    */
   async getEmailCodesRaw(
@@ -1378,7 +1510,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+   * Extracts one-time passcodes and similar tokens from email content using the selected extraction method and fallback options.
    * Extract verification codes from an email
    */
   async getEmailCodes(

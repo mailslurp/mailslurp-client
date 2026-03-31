@@ -43,10 +43,10 @@ function AbstractWebhookPayloadFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        eventName: json['eventName'],
-        messageId: json['messageId'],
-        webhookId: json['webhookId'],
         webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        eventName: json['eventName'],
+        webhookId: json['webhookId'],
+        messageId: json['messageId'],
     };
 }
 exports.AbstractWebhookPayloadFromJSONTyped = AbstractWebhookPayloadFromJSONTyped;
@@ -58,10 +58,10 @@ function AbstractWebhookPayloadToJSON(value) {
         return null;
     }
     return {
-        eventName: value.eventName,
-        messageId: value.messageId,
-        webhookId: value.webhookId,
         webhookName: value.webhookName,
+        eventName: value.eventName,
+        webhookId: value.webhookId,
+        messageId: value.messageId,
     };
 }
 exports.AbstractWebhookPayloadToJSON = AbstractWebhookPayloadToJSON;

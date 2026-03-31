@@ -20,6 +20,9 @@ import {
   CampaignProbeInsightsDto,
   CampaignProbeInsightsDtoFromJSON,
   CampaignProbeInsightsDtoToJSON,
+  CampaignProbeRunComparisonDto,
+  CampaignProbeRunComparisonDtoFromJSON,
+  CampaignProbeRunComparisonDtoToJSON,
   CampaignProbeRunDto,
   CampaignProbeRunDtoFromJSON,
   CampaignProbeRunDtoToJSON,
@@ -43,6 +46,12 @@ import {
   UpdateCampaignProbeOptionsToJSON,
 } from '../models';
 
+export interface CompareCampaignProbeRunsRequest {
+  probeId: string;
+  runId: string;
+  otherRunId: string;
+}
+
 export interface CreateCampaignProbeRequest {
   createCampaignProbeOptions: CreateCampaignProbeOptions;
 }
@@ -59,6 +68,11 @@ export interface GetCampaignProbeInsightsRequest {
   probeId: string;
   since?: Date;
   before?: Date;
+}
+
+export interface GetCampaignProbeRunRequest {
+  probeId: string;
+  runId: string;
 }
 
 export interface GetCampaignProbeRunsRequest {
@@ -94,6 +108,92 @@ export interface UpdateCampaignProbeRequest {
  *
  */
 export class CampaignProbeControllerApi extends runtime.BaseAPI {
+  /**
+   * Compare two campaign probe runs
+   */
+  async compareCampaignProbeRunsRaw(
+    requestParameters: CompareCampaignProbeRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CampaignProbeRunComparisonDto>> {
+    if (
+      requestParameters.probeId === null ||
+      requestParameters.probeId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'probeId',
+        'Required parameter requestParameters.probeId was null or undefined when calling compareCampaignProbeRuns.'
+      );
+    }
+
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling compareCampaignProbeRuns.'
+      );
+    }
+
+    if (
+      requestParameters.otherRunId === null ||
+      requestParameters.otherRunId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'otherRunId',
+        'Required parameter requestParameters.otherRunId was null or undefined when calling compareCampaignProbeRuns.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/campaign-probe/probes/{probeId}/runs/{runId}/compare/{otherRunId}`
+          .replace(
+            `{${'probeId'}}`,
+            encodeURIComponent(String(requestParameters.probeId))
+          )
+          .replace(
+            `{${'runId'}}`,
+            encodeURIComponent(String(requestParameters.runId))
+          )
+          .replace(
+            `{${'otherRunId'}}`,
+            encodeURIComponent(String(requestParameters.otherRunId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CampaignProbeRunComparisonDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Compare two campaign probe runs
+   */
+  async compareCampaignProbeRuns(
+    requestParameters: CompareCampaignProbeRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<CampaignProbeRunComparisonDto> {
+    const response = await this.compareCampaignProbeRunsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Create campaign probe
    */
@@ -322,6 +422,78 @@ export class CampaignProbeControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<CampaignProbeInsightsDto> {
     const response = await this.getCampaignProbeInsightsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get campaign probe run
+   */
+  async getCampaignProbeRunRaw(
+    requestParameters: GetCampaignProbeRunRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CampaignProbeRunDto>> {
+    if (
+      requestParameters.probeId === null ||
+      requestParameters.probeId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'probeId',
+        'Required parameter requestParameters.probeId was null or undefined when calling getCampaignProbeRun.'
+      );
+    }
+
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling getCampaignProbeRun.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/campaign-probe/probes/{probeId}/runs/{runId}`
+          .replace(
+            `{${'probeId'}}`,
+            encodeURIComponent(String(requestParameters.probeId))
+          )
+          .replace(
+            `{${'runId'}}`,
+            encodeURIComponent(String(requestParameters.runId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CampaignProbeRunDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get campaign probe run
+   */
+  async getCampaignProbeRun(
+    requestParameters: GetCampaignProbeRunRequest,
+    initOverrides?: RequestInit
+  ): Promise<CampaignProbeRunDto> {
+    const response = await this.getCampaignProbeRunRaw(
       requestParameters,
       initOverrides
     );

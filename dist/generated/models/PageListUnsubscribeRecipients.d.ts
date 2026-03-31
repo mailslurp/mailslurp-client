@@ -33,37 +33,19 @@ export interface PageListUnsubscribeRecipients {
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageListUnsubscribeRecipients
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageListUnsubscribeRecipients {
      * @memberof PageListUnsubscribeRecipients
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

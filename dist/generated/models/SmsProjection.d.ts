@@ -20,6 +20,12 @@ export interface SmsProjection {
      * @type {string}
      * @memberof SmsProjection
      */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SmsProjection
+     */
     body: string;
     /**
      *
@@ -51,12 +57,6 @@ export interface SmsProjection {
      * @memberof SmsProjection
      */
     read: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    id: string;
 }
 export declare function SmsProjectionFromJSON(json: any): SmsProjection;
 export declare function SmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsProjection;

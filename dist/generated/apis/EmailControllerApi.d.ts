@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailSignatureParseResult, EmailTextLinesResult, EmailThreadDto, EmailThreadItemsDto, ExtractCodesOptions, ExtractCodesResult, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, PageEmailThreadProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailAuditAnalysisResult, EmailAuditDto, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailSignatureParseResult, EmailTextLinesResult, EmailThreadDto, EmailThreadItemsDto, ExtractCodesOptions, ExtractCodesResult, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, PageEmailThreadProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -18,6 +18,9 @@ export interface ApplyImapFlagOperationRequest {
 export interface CanSendRequest {
     inboxId: string;
     sendEmailOptions: SendEmailOptions;
+}
+export interface CheckEmailAudit1Request {
+    emailId: string;
 }
 export interface CheckEmailBodyRequest {
     emailId: string;
@@ -27,6 +30,9 @@ export interface CheckEmailBodyFeatureSupportRequest {
 }
 export interface CheckEmailClientSupportRequest {
     checkEmailClientSupportOptions: CheckEmailClientSupportOptions;
+}
+export interface CreateEmailAuditForEmailRequest {
+    emailId: string;
 }
 export interface DeleteEmailRequest {
     emailId: string;
@@ -253,6 +259,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     canSend(requestParameters: CanSendRequest, initOverrides?: RequestInit): Promise<CanSendEmailResults>;
     /**
+     * Runs the same message-level audit bundle used by the email audit dashboard in one request. Combines content checks, HTML validation, compatibility analysis, and reputation verdict rollup when available.
+     * Run aggregate email audit for a stored email
+     */
+    checkEmailAudit1Raw(requestParameters: CheckEmailAudit1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailAuditAnalysisResult>>;
+    /**
+     * Runs the same message-level audit bundle used by the email audit dashboard in one request. Combines content checks, HTML validation, compatibility analysis, and reputation verdict rollup when available.
+     * Run aggregate email audit for a stored email
+     */
+    checkEmailAudit1(requestParameters: CheckEmailAudit1Request, initOverrides?: RequestInit): Promise<EmailAuditAnalysisResult>;
+    /**
      * Runs content quality checks against hydrated email body content. This endpoint performs outbound HTTP checks for linked resources, so avoid use with sensitive or stateful URLs.
      * Check email body for broken links, images, and spelling issues
      */
@@ -282,6 +298,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Check email-client support for a provided HTML body
      */
     checkEmailClientSupport(requestParameters: CheckEmailClientSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailClientSupportResults>;
+    /**
+     * Runs the aggregate audit bundle for the target email and stores the resulting audit record for later review and history tracking.
+     * Persist aggregate email audit for a stored email
+     */
+    createEmailAuditForEmailRaw(requestParameters: CreateEmailAuditForEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailAuditDto>>;
+    /**
+     * Runs the aggregate audit bundle for the target email and stores the resulting audit record for later review and history tracking.
+     * Persist aggregate email audit for a stored email
+     */
+    createEmailAuditForEmail(requestParameters: CreateEmailAuditForEmailRequest, initOverrides?: RequestInit): Promise<EmailAuditDto>;
     /**
      * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
@@ -383,12 +409,12 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     getEmailAttachments(requestParameters: GetEmailAttachmentsRequest, initOverrides?: RequestInit): Promise<Array<AttachmentMetaData>>;
     /**
-     * Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+     * Extracts one-time passcodes and similar tokens from email content using the selected extraction method and fallback options.
      * Extract verification codes from an email
      */
     getEmailCodesRaw(requestParameters: GetEmailCodesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ExtractCodesResult>>;
     /**
-     * Extracts one-time passcodes and similar tokens from email content. Supports deterministic extraction now with method/fallback flags (`AUTO`, `PATTERN`, `LLM`, `OCR`, `OCR_THEN_LLM`) for QA and future advanced pipelines.
+     * Extracts one-time passcodes and similar tokens from email content using the selected extraction method and fallback options.
      * Extract verification codes from an email
      */
     getEmailCodes(requestParameters: GetEmailCodesRequest, initOverrides?: RequestInit): Promise<ExtractCodesResult>;

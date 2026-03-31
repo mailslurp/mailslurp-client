@@ -14,6 +14,15 @@
 
 import * as runtime from '../runtime';
 import {
+  AcquirePhonePoolLeaseOptions,
+  AcquirePhonePoolLeaseOptionsFromJSON,
+  AcquirePhonePoolLeaseOptionsToJSON,
+  AddPhonePoolNumbersOptions,
+  AddPhonePoolNumbersOptionsFromJSON,
+  AddPhonePoolNumbersOptionsToJSON,
+  AvailablePhoneNumbersResult,
+  AvailablePhoneNumbersResultFromJSON,
+  AvailablePhoneNumbersResultToJSON,
   ConsentStatusDto,
   ConsentStatusDtoFromJSON,
   ConsentStatusDtoToJSON,
@@ -23,6 +32,12 @@ import {
   CreatePhoneNumberOptions,
   CreatePhoneNumberOptionsFromJSON,
   CreatePhoneNumberOptionsToJSON,
+  CreatePhonePoolOptions,
+  CreatePhonePoolOptionsFromJSON,
+  CreatePhonePoolOptionsToJSON,
+  CreatePhoneProvisioningJobOptions,
+  CreatePhoneProvisioningJobOptionsFromJSON,
+  CreatePhoneProvisioningJobOptionsToJSON,
   EmergencyAddress,
   EmergencyAddressFromJSON,
   EmergencyAddressToJSON,
@@ -32,6 +47,9 @@ import {
   EmptyResponseDto,
   EmptyResponseDtoFromJSON,
   EmptyResponseDtoToJSON,
+  GetOrCreatePhonePoolOptions,
+  GetOrCreatePhonePoolOptionsFromJSON,
+  GetOrCreatePhonePoolOptionsToJSON,
   PagePhoneMessageThreadItemProjection,
   PagePhoneMessageThreadItemProjectionFromJSON,
   PagePhoneMessageThreadItemProjectionToJSON,
@@ -53,9 +71,15 @@ import {
   PhoneNumberDto,
   PhoneNumberDtoFromJSON,
   PhoneNumberDtoToJSON,
+  PhoneNumberLineTypeLookupDto,
+  PhoneNumberLineTypeLookupDtoFromJSON,
+  PhoneNumberLineTypeLookupDtoToJSON,
   PhoneNumberReleaseProjection,
   PhoneNumberReleaseProjectionFromJSON,
   PhoneNumberReleaseProjectionToJSON,
+  PhoneNumberTagsOptions,
+  PhoneNumberTagsOptionsFromJSON,
+  PhoneNumberTagsOptionsToJSON,
   PhoneNumberValidationDto,
   PhoneNumberValidationDtoFromJSON,
   PhoneNumberValidationDtoToJSON,
@@ -65,9 +89,33 @@ import {
   PhonePlanDto,
   PhonePlanDtoFromJSON,
   PhonePlanDtoToJSON,
+  PhonePoolDetailDto,
+  PhonePoolDetailDtoFromJSON,
+  PhonePoolDetailDtoToJSON,
+  PhonePoolDto,
+  PhonePoolDtoFromJSON,
+  PhonePoolDtoToJSON,
+  PhonePoolLeaseDto,
+  PhonePoolLeaseDtoFromJSON,
+  PhonePoolLeaseDtoToJSON,
+  PhoneProviderCapabilitiesResult,
+  PhoneProviderCapabilitiesResultFromJSON,
+  PhoneProviderCapabilitiesResultToJSON,
+  PhoneProvisioningJobDto,
+  PhoneProvisioningJobDtoFromJSON,
+  PhoneProvisioningJobDtoToJSON,
+  PhoneSmsPrepaidCreditDto,
+  PhoneSmsPrepaidCreditDtoFromJSON,
+  PhoneSmsPrepaidCreditDtoToJSON,
+  PhoneSmsPrepaidCreditsDto,
+  PhoneSmsPrepaidCreditsDtoFromJSON,
+  PhoneSmsPrepaidCreditsDtoToJSON,
   PhoneSummaryDto,
   PhoneSummaryDtoFromJSON,
   PhoneSummaryDtoToJSON,
+  SearchAvailablePhoneNumbersOptions,
+  SearchAvailablePhoneNumbersOptionsFromJSON,
+  SearchAvailablePhoneNumbersOptionsToJSON,
   SentSmsDto,
   SentSmsDtoFromJSON,
   SentSmsDtoToJSON,
@@ -83,10 +131,32 @@ import {
   UpdatePhoneNumberOptions,
   UpdatePhoneNumberOptionsFromJSON,
   UpdatePhoneNumberOptionsToJSON,
+  UpdatePhonePoolOptions,
+  UpdatePhonePoolOptionsFromJSON,
+  UpdatePhonePoolOptionsToJSON,
   ValidatePhoneNumberOptions,
   ValidatePhoneNumberOptionsFromJSON,
   ValidatePhoneNumberOptionsToJSON,
 } from '../models';
+
+export interface AcquirePhonePoolLeaseRequest {
+  poolId: string;
+  acquirePhonePoolLeaseOptions: AcquirePhonePoolLeaseOptions;
+}
+
+export interface AddAllPhoneNumbersToPhonePoolRequest {
+  poolId: string;
+}
+
+export interface AddPhoneNumberTagsRequest {
+  phoneNumberId: string;
+  phoneNumberTagsOptions: PhoneNumberTagsOptions;
+}
+
+export interface AddPhoneNumbersToPhonePoolRequest {
+  poolId: string;
+  addPhonePoolNumbersOptions: AddPhonePoolNumbersOptions;
+}
 
 export interface CreateEmergencyAddressRequest {
   createEmergencyAddressOptions: CreateEmergencyAddressOptions;
@@ -94,6 +164,14 @@ export interface CreateEmergencyAddressRequest {
 
 export interface CreatePhoneNumberRequest {
   createPhoneNumberOptions: CreatePhoneNumberOptions;
+}
+
+export interface CreatePhonePoolRequest {
+  createPhonePoolOptions: CreatePhonePoolOptions;
+}
+
+export interface CreatePhoneProvisioningJobRequest {
+  createPhoneProvisioningJobOptions: CreatePhoneProvisioningJobOptions;
 }
 
 export interface DeleteEmergencyAddressRequest {
@@ -109,6 +187,10 @@ export interface DeletePhoneNumberRequest {
   phoneNumberId: string;
 }
 
+export interface DeletePhonePoolRequest {
+  poolId: string;
+}
+
 export interface GetAllPhoneMessageThreadsRequest {
   page?: number;
   size?: number;
@@ -122,6 +204,10 @@ export interface GetAllPhoneNumberReleasesRequest {
 
 export interface GetEmergencyAddressRequest {
   addressId: string;
+}
+
+export interface GetOrCreatePhonePoolRequest {
+  getOrCreatePhonePoolOptions: GetOrCreatePhonePoolOptions;
 }
 
 export interface GetPhoneMessageThreadItemsRequest {
@@ -149,20 +235,59 @@ export interface GetPhoneNumberByPhoneNumberRequest {
   phoneNumber: string;
 }
 
+export interface GetPhoneNumberLineTypeIntelligenceRequest {
+  validatePhoneNumberOptions: ValidatePhoneNumberOptions;
+}
+
 export interface GetPhoneNumberReleaseRequest {
   releaseId: string;
 }
 
+export interface GetPhoneNumberTagsRequest {
+  phoneNumberId: string;
+}
+
 export interface GetPhoneNumbersRequest {
   phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
+  lineType?: string;
+  carrierName?: string;
+  mobileCountryCode?: string;
+  mobileNetworkCode?: string;
+  providerLabel?: string;
   page?: number;
   size?: number;
   sort?: GetPhoneNumbersSortEnum;
   since?: Date;
   before?: Date;
   search?: string;
+  tag?: Array<string>;
   include?: Array<string>;
   favourite?: boolean;
+}
+
+export interface GetPhonePoolRequest {
+  poolId: string;
+}
+
+export interface GetPhonePoolByNameRequest {
+  name: string;
+}
+
+export interface GetPhoneProvisioningCapabilitiesRequest {
+  phoneCountry: GetPhoneProvisioningCapabilitiesPhoneCountryEnum;
+  providerLabel?: string;
+}
+
+export interface GetPhoneProvisioningJobRequest {
+  jobId: string;
+}
+
+export interface GetPhoneSmsPrepaidCreditRequest {
+  creditId: string;
+}
+
+export interface GetPhoneTagsRequest {
+  search?: string;
 }
 
 export interface GetSentSmsByPhoneNumberRequest {
@@ -191,6 +316,25 @@ export interface ReassignPhoneNumberReleaseRequest {
   releaseId: string;
 }
 
+export interface ReleasePhonePoolLeaseRequest {
+  poolId: string;
+  leaseId: string;
+}
+
+export interface RemovePhoneNumberFromPhonePoolRequest {
+  poolId: string;
+  phoneNumberId: string;
+}
+
+export interface RemovePhoneNumberTagsRequest {
+  phoneNumberId: string;
+  phoneNumberTagsOptions: PhoneNumberTagsOptions;
+}
+
+export interface SearchAvailablePhoneNumbersRequest {
+  searchAvailablePhoneNumbersOptions: SearchAvailablePhoneNumbersOptions;
+}
+
 export interface SendSmsFromPhoneNumberRequest {
   phoneNumberId: string;
   smsSendOptions: SmsSendOptions;
@@ -205,6 +349,11 @@ export interface SetPhoneFavouritedRequest {
   setPhoneFavouritedOptions: SetPhoneFavouritedOptions;
 }
 
+export interface SetPhoneNumberTagsRequest {
+  phoneNumberId: string;
+  phoneNumberTagsOptions: PhoneNumberTagsOptions;
+}
+
 export interface TestPhoneNumberSendSmsRequest {
   phoneNumberId: string;
   testPhoneNumberOptions: TestPhoneNumberOptions;
@@ -216,6 +365,11 @@ export interface UpdatePhoneNumberRequest {
   updatePhoneNumberOptions: UpdatePhoneNumberOptions;
 }
 
+export interface UpdatePhonePoolRequest {
+  poolId: string;
+  updatePhonePoolOptions: UpdatePhonePoolOptions;
+}
+
 export interface ValidatePhoneNumberRequest {
   validatePhoneNumberOptions: ValidatePhoneNumberOptions;
 }
@@ -224,6 +378,287 @@ export interface ValidatePhoneNumberRequest {
  *
  */
 export class PhoneControllerApi extends runtime.BaseAPI {
+  /**
+   * Acquire an available phone number from the pool and mark it leased
+   * Acquire phone pool lease
+   */
+  async acquirePhonePoolLeaseRaw(
+    requestParameters: AcquirePhonePoolLeaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolLeaseDto>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling acquirePhonePoolLease.'
+      );
+    }
+
+    if (
+      requestParameters.acquirePhonePoolLeaseOptions === null ||
+      requestParameters.acquirePhonePoolLeaseOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'acquirePhonePoolLeaseOptions',
+        'Required parameter requestParameters.acquirePhonePoolLeaseOptions was null or undefined when calling acquirePhonePoolLease.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}/leases`.replace(
+          `{${'poolId'}}`,
+          encodeURIComponent(String(requestParameters.poolId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: AcquirePhonePoolLeaseOptionsToJSON(
+          requestParameters.acquirePhonePoolLeaseOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolLeaseDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Acquire an available phone number from the pool and mark it leased
+   * Acquire phone pool lease
+   */
+  async acquirePhonePoolLease(
+    requestParameters: AcquirePhonePoolLeaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolLeaseDto> {
+    const response = await this.acquirePhonePoolLeaseRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Add all active owned phone numbers to a pool
+   * Add all phone numbers to phone pool
+   */
+  async addAllPhoneNumbersToPhonePoolRaw(
+    requestParameters: AddAllPhoneNumbersToPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolDetailDto>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling addAllPhoneNumbersToPhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}/numbers/add-all`.replace(
+          `{${'poolId'}}`,
+          encodeURIComponent(String(requestParameters.poolId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolDetailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Add all active owned phone numbers to a pool
+   * Add all phone numbers to phone pool
+   */
+  async addAllPhoneNumbersToPhonePool(
+    requestParameters: AddAllPhoneNumbersToPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolDetailDto> {
+    const response = await this.addAllPhoneNumbersToPhonePoolRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Add one or more tags to a phone number
+   * Add phone number tags
+   */
+  async addPhoneNumberTagsRaw(
+    requestParameters: AddPhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling addPhoneNumberTags.'
+      );
+    }
+
+    if (
+      requestParameters.phoneNumberTagsOptions === null ||
+      requestParameters.phoneNumberTagsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberTagsOptions',
+        'Required parameter requestParameters.phoneNumberTagsOptions was null or undefined when calling addPhoneNumberTags.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/tags`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: PhoneNumberTagsOptionsToJSON(
+          requestParameters.phoneNumberTagsOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Add one or more tags to a phone number
+   * Add phone number tags
+   */
+  async addPhoneNumberTags(
+    requestParameters: AddPhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberDto> {
+    const response = await this.addPhoneNumberTagsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Add one or more owned phone numbers to a pool
+   * Add phone numbers to phone pool
+   */
+  async addPhoneNumbersToPhonePoolRaw(
+    requestParameters: AddPhoneNumbersToPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolDetailDto>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling addPhoneNumbersToPhonePool.'
+      );
+    }
+
+    if (
+      requestParameters.addPhonePoolNumbersOptions === null ||
+      requestParameters.addPhonePoolNumbersOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'addPhonePoolNumbersOptions',
+        'Required parameter requestParameters.addPhonePoolNumbersOptions was null or undefined when calling addPhoneNumbersToPhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}/numbers`.replace(
+          `{${'poolId'}}`,
+          encodeURIComponent(String(requestParameters.poolId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: AddPhonePoolNumbersOptionsToJSON(
+          requestParameters.addPhonePoolNumbersOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolDetailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Add one or more owned phone numbers to a pool
+   * Add phone numbers to phone pool
+   */
+  async addPhoneNumbersToPhonePool(
+    requestParameters: AddPhoneNumbersToPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolDetailDto> {
+    const response = await this.addPhoneNumbersToPhonePoolRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Add an emergency address to a phone number
    * Create an emergency address
@@ -340,6 +775,128 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PhoneNumberDto> {
     const response = await this.createPhoneNumberRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a reusable pool of phone numbers for coordinated leasing
+   * Create phone pool
+   */
+  async createPhonePoolRaw(
+    requestParameters: CreatePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolDetailDto>> {
+    if (
+      requestParameters.createPhonePoolOptions === null ||
+      requestParameters.createPhonePoolOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createPhonePoolOptions',
+        'Required parameter requestParameters.createPhonePoolOptions was null or undefined when calling createPhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreatePhonePoolOptionsToJSON(
+          requestParameters.createPhonePoolOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolDetailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a reusable pool of phone numbers for coordinated leasing
+   * Create phone pool
+   */
+  async createPhonePool(
+    requestParameters: CreatePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolDetailDto> {
+    const response = await this.createPhonePoolRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create an advanced phone provisioning job from shortlisted numbers
+   * Create a phone provisioning job
+   */
+  async createPhoneProvisioningJobRaw(
+    requestParameters: CreatePhoneProvisioningJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneProvisioningJobDto>> {
+    if (
+      requestParameters.createPhoneProvisioningJobOptions === null ||
+      requestParameters.createPhoneProvisioningJobOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createPhoneProvisioningJobOptions',
+        'Required parameter requestParameters.createPhoneProvisioningJobOptions was null or undefined when calling createPhoneProvisioningJob.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/provisioning/jobs`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreatePhoneProvisioningJobOptionsToJSON(
+          requestParameters.createPhoneProvisioningJobOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneProvisioningJobDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create an advanced phone provisioning job from shortlisted numbers
+   * Create a phone provisioning job
+   */
+  async createPhoneProvisioningJob(
+    requestParameters: CreatePhoneProvisioningJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneProvisioningJobDto> {
+    const response = await this.createPhoneProvisioningJobRaw(
       requestParameters,
       initOverrides
     );
@@ -566,6 +1123,59 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deletePhoneNumberRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Delete a phone pool and release any active leases from that pool
+   * Delete phone pool
+   */
+  async deletePhonePoolRaw(
+    requestParameters: DeletePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling deletePhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}`.replace(
+          `{${'poolId'}}`,
+          encodeURIComponent(String(requestParameters.poolId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete a phone pool and release any active leases from that pool
+   * Delete phone pool
+   */
+  async deletePhonePool(
+    requestParameters: DeletePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deletePhonePoolRaw(requestParameters, initOverrides);
   }
 
   /**
@@ -818,6 +1428,67 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Array<EmergencyAddressDto>> {
     const response = await this.getEmergencyAddressesRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get a phone pool by name or create it if it does not exist
+   * Get or create phone pool
+   */
+  async getOrCreatePhonePoolRaw(
+    requestParameters: GetOrCreatePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolDetailDto>> {
+    if (
+      requestParameters.getOrCreatePhonePoolOptions === null ||
+      requestParameters.getOrCreatePhonePoolOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'getOrCreatePhonePoolOptions',
+        'Required parameter requestParameters.getOrCreatePhonePoolOptions was null or undefined when calling getOrCreatePhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/get-or-create`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GetOrCreatePhonePoolOptionsToJSON(
+          requestParameters.getOrCreatePhonePoolOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolDetailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a phone pool by name or create it if it does not exist
+   * Get or create phone pool
+   */
+  async getOrCreatePhonePool(
+    requestParameters: GetOrCreatePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolDetailDto> {
+    const response = await this.getOrCreatePhonePoolRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -1150,6 +1821,67 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Lookup line type intelligence for a phone number
+   * Get line type intelligence for a phone number
+   */
+  async getPhoneNumberLineTypeIntelligenceRaw(
+    requestParameters: GetPhoneNumberLineTypeIntelligenceRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberLineTypeLookupDto>> {
+    if (
+      requestParameters.validatePhoneNumberOptions === null ||
+      requestParameters.validatePhoneNumberOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'validatePhoneNumberOptions',
+        'Required parameter requestParameters.validatePhoneNumberOptions was null or undefined when calling getPhoneNumberLineTypeIntelligence.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/validate/line-type-intelligence`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ValidatePhoneNumberOptionsToJSON(
+          requestParameters.validatePhoneNumberOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberLineTypeLookupDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup line type intelligence for a phone number
+   * Get line type intelligence for a phone number
+   */
+  async getPhoneNumberLineTypeIntelligence(
+    requestParameters: GetPhoneNumberLineTypeIntelligenceRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberLineTypeLookupDto> {
+    const response = await this.getPhoneNumberLineTypeIntelligenceRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get a released or deleted phone numbers
    * Get phone number release
    */
@@ -1209,6 +1941,63 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get tags for a specific phone number
+   * Get phone number tags
+   */
+  async getPhoneNumberTagsRaw(
+    requestParameters: GetPhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<string>>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneNumberTags.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/tags`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse<any>(response);
+  }
+
+  /**
+   * Get tags for a specific phone number
+   * Get phone number tags
+   */
+  async getPhoneNumberTags(
+    requestParameters: GetPhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<string>> {
+    const response = await this.getPhoneNumberTagsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * List phone numbers for account
    * Get phone numbers
    */
@@ -1220,6 +2009,28 @@ export class PhoneControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.phoneCountry !== undefined) {
       queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+    }
+
+    if (requestParameters.lineType !== undefined) {
+      queryParameters['lineType'] = requestParameters.lineType;
+    }
+
+    if (requestParameters.carrierName !== undefined) {
+      queryParameters['carrierName'] = requestParameters.carrierName;
+    }
+
+    if (requestParameters.mobileCountryCode !== undefined) {
+      queryParameters['mobileCountryCode'] =
+        requestParameters.mobileCountryCode;
+    }
+
+    if (requestParameters.mobileNetworkCode !== undefined) {
+      queryParameters['mobileNetworkCode'] =
+        requestParameters.mobileNetworkCode;
+    }
+
+    if (requestParameters.providerLabel !== undefined) {
+      queryParameters['providerLabel'] = requestParameters.providerLabel;
     }
 
     if (requestParameters.page !== undefined) {
@@ -1246,6 +2057,10 @@ export class PhoneControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.search !== undefined) {
       queryParameters['search'] = requestParameters.search;
+    }
+
+    if (requestParameters.tag) {
+      queryParameters['tag'] = requestParameters.tag;
     }
 
     if (requestParameters.include) {
@@ -1373,6 +2188,389 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get phone pool details by ID
+   * Get phone pool
+   */
+  async getPhonePoolRaw(
+    requestParameters: GetPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolDetailDto>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling getPhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}`.replace(
+          `{${'poolId'}}`,
+          encodeURIComponent(String(requestParameters.poolId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolDetailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get phone pool details by ID
+   * Get phone pool
+   */
+  async getPhonePool(
+    requestParameters: GetPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolDetailDto> {
+    const response = await this.getPhonePoolRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get phone pool details by name
+   * Get phone pool by name
+   */
+  async getPhonePoolByNameRaw(
+    requestParameters: GetPhonePoolByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolDetailDto>> {
+    if (
+      requestParameters.name === null ||
+      requestParameters.name === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'name',
+        'Required parameter requestParameters.name was null or undefined when calling getPhonePoolByName.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.name !== undefined) {
+      queryParameters['name'] = requestParameters.name;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/by-name`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolDetailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get phone pool details by name
+   * Get phone pool by name
+   */
+  async getPhonePoolByName(
+    requestParameters: GetPhonePoolByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolDetailDto> {
+    const response = await this.getPhonePoolByNameRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List phone pools for the authenticated user
+   * Get phone pools
+   */
+  async getPhonePoolsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<PhonePoolDto>>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(PhonePoolDtoFromJSON)
+    );
+  }
+
+  /**
+   * List phone pools for the authenticated user
+   * Get phone pools
+   */
+  async getPhonePools(
+    initOverrides?: RequestInit
+  ): Promise<Array<PhonePoolDto>> {
+    const response = await this.getPhonePoolsRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get supported provider-country variant capabilities for advanced provisioning
+   * Get phone provisioning capabilities
+   */
+  async getPhoneProvisioningCapabilitiesRaw(
+    requestParameters: GetPhoneProvisioningCapabilitiesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneProviderCapabilitiesResult>> {
+    if (
+      requestParameters.phoneCountry === null ||
+      requestParameters.phoneCountry === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneCountry',
+        'Required parameter requestParameters.phoneCountry was null or undefined when calling getPhoneProvisioningCapabilities.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.phoneCountry !== undefined) {
+      queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+    }
+
+    if (requestParameters.providerLabel !== undefined) {
+      queryParameters['providerLabel'] = requestParameters.providerLabel;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/provisioning/capabilities`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneProviderCapabilitiesResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get supported provider-country variant capabilities for advanced provisioning
+   * Get phone provisioning capabilities
+   */
+  async getPhoneProvisioningCapabilities(
+    requestParameters: GetPhoneProvisioningCapabilitiesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneProviderCapabilitiesResult> {
+    const response = await this.getPhoneProvisioningCapabilitiesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get advanced phone provisioning job status
+   * Get phone provisioning job
+   */
+  async getPhoneProvisioningJobRaw(
+    requestParameters: GetPhoneProvisioningJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneProvisioningJobDto>> {
+    if (
+      requestParameters.jobId === null ||
+      requestParameters.jobId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'jobId',
+        'Required parameter requestParameters.jobId was null or undefined when calling getPhoneProvisioningJob.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/provisioning/jobs/{jobId}`.replace(
+          `{${'jobId'}}`,
+          encodeURIComponent(String(requestParameters.jobId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneProvisioningJobDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get advanced phone provisioning job status
+   * Get phone provisioning job
+   */
+  async getPhoneProvisioningJob(
+    requestParameters: GetPhoneProvisioningJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneProvisioningJobDto> {
+    const response = await this.getPhoneProvisioningJobRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a specific SMS prepaid credit balance for the authenticated account
+   * Get SMS prepaid credit
+   */
+  async getPhoneSmsPrepaidCreditRaw(
+    requestParameters: GetPhoneSmsPrepaidCreditRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneSmsPrepaidCreditDto>> {
+    if (
+      requestParameters.creditId === null ||
+      requestParameters.creditId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'creditId',
+        'Required parameter requestParameters.creditId was null or undefined when calling getPhoneSmsPrepaidCredit.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/sms-prepaid-credits/{creditId}`.replace(
+          `{${'creditId'}}`,
+          encodeURIComponent(String(requestParameters.creditId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneSmsPrepaidCreditDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a specific SMS prepaid credit balance for the authenticated account
+   * Get SMS prepaid credit
+   */
+  async getPhoneSmsPrepaidCredit(
+    requestParameters: GetPhoneSmsPrepaidCreditRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneSmsPrepaidCreditDto> {
+    const response = await this.getPhoneSmsPrepaidCreditRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List SMS prepaid credits for the authenticated account
+   * Get SMS prepaid credits
+   */
+  async getPhoneSmsPrepaidCreditsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneSmsPrepaidCreditsDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/sms-prepaid-credits`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneSmsPrepaidCreditsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List SMS prepaid credits for the authenticated account
+   * Get SMS prepaid credits
+   */
+  async getPhoneSmsPrepaidCredits(
+    initOverrides?: RequestInit
+  ): Promise<PhoneSmsPrepaidCreditsDto> {
+    const response = await this.getPhoneSmsPrepaidCreditsRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
    * Get overview of assigned phones
    * Get phone summary
    */
@@ -1408,6 +2606,54 @@ export class PhoneControllerApi extends runtime.BaseAPI {
    */
   async getPhoneSummary(initOverrides?: RequestInit): Promise<PhoneSummaryDto> {
     const response = await this.getPhoneSummaryRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * List all unique tags used by your phone numbers
+   * Get phone tags
+   */
+  async getPhoneTagsRaw(
+    requestParameters: GetPhoneTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<string>>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/tags`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse<any>(response);
+  }
+
+  /**
+   * List all unique tags used by your phone numbers
+   * Get phone tags
+   */
+  async getPhoneTags(
+    requestParameters: GetPhoneTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<string>> {
+    const response = await this.getPhoneTagsRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -1649,6 +2895,280 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Release an active phone pool lease
+   * Release phone pool lease
+   */
+  async releasePhonePoolLeaseRaw(
+    requestParameters: ReleasePhonePoolLeaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling releasePhonePoolLease.'
+      );
+    }
+
+    if (
+      requestParameters.leaseId === null ||
+      requestParameters.leaseId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'leaseId',
+        'Required parameter requestParameters.leaseId was null or undefined when calling releasePhonePoolLease.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}/leases/{leaseId}`
+          .replace(
+            `{${'poolId'}}`,
+            encodeURIComponent(String(requestParameters.poolId))
+          )
+          .replace(
+            `{${'leaseId'}}`,
+            encodeURIComponent(String(requestParameters.leaseId))
+          ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Release an active phone pool lease
+   * Release phone pool lease
+   */
+  async releasePhonePoolLease(
+    requestParameters: ReleasePhonePoolLeaseRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.releasePhonePoolLeaseRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+   * Remove phone number from phone pool
+   */
+  async removePhoneNumberFromPhonePoolRaw(
+    requestParameters: RemovePhoneNumberFromPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling removePhoneNumberFromPhonePool.'
+      );
+    }
+
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling removePhoneNumberFromPhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}/numbers/{phoneNumberId}`
+          .replace(
+            `{${'poolId'}}`,
+            encodeURIComponent(String(requestParameters.poolId))
+          )
+          .replace(
+            `{${'phoneNumberId'}}`,
+            encodeURIComponent(String(requestParameters.phoneNumberId))
+          ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+   * Remove phone number from phone pool
+   */
+  async removePhoneNumberFromPhonePool(
+    requestParameters: RemovePhoneNumberFromPhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.removePhoneNumberFromPhonePoolRaw(
+      requestParameters,
+      initOverrides
+    );
+  }
+
+  /**
+   * Remove one or more tags from a phone number
+   * Remove phone number tags
+   */
+  async removePhoneNumberTagsRaw(
+    requestParameters: RemovePhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling removePhoneNumberTags.'
+      );
+    }
+
+    if (
+      requestParameters.phoneNumberTagsOptions === null ||
+      requestParameters.phoneNumberTagsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberTagsOptions',
+        'Required parameter requestParameters.phoneNumberTagsOptions was null or undefined when calling removePhoneNumberTags.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/tags`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+        body: PhoneNumberTagsOptionsToJSON(
+          requestParameters.phoneNumberTagsOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Remove one or more tags from a phone number
+   * Remove phone number tags
+   */
+  async removePhoneNumberTags(
+    requestParameters: RemovePhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberDto> {
+    const response = await this.removePhoneNumberTagsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Search available numbers for advanced provisioning
+   * Search available phone numbers
+   */
+  async searchAvailablePhoneNumbersRaw(
+    requestParameters: SearchAvailablePhoneNumbersRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AvailablePhoneNumbersResult>> {
+    if (
+      requestParameters.searchAvailablePhoneNumbersOptions === null ||
+      requestParameters.searchAvailablePhoneNumbersOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'searchAvailablePhoneNumbersOptions',
+        'Required parameter requestParameters.searchAvailablePhoneNumbersOptions was null or undefined when calling searchAvailablePhoneNumbers.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/provisioning/search`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SearchAvailablePhoneNumbersOptionsToJSON(
+          requestParameters.searchAvailablePhoneNumbersOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AvailablePhoneNumbersResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Search available numbers for advanced provisioning
+   * Search available phone numbers
+   */
+  async searchAvailablePhoneNumbers(
+    requestParameters: SearchAvailablePhoneNumbersRequest,
+    initOverrides?: RequestInit
+  ): Promise<AvailablePhoneNumbersResult> {
+    const response = await this.searchAvailablePhoneNumbersRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Send SMS from a phone number
    * Send TXT message from a phone number
    */
@@ -1855,6 +3375,80 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Replace all tags on a phone number
+   * Set phone number tags
+   */
+  async setPhoneNumberTagsRaw(
+    requestParameters: SetPhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhoneNumberDto>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling setPhoneNumberTags.'
+      );
+    }
+
+    if (
+      requestParameters.phoneNumberTagsOptions === null ||
+      requestParameters.phoneNumberTagsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberTagsOptions',
+        'Required parameter requestParameters.phoneNumberTagsOptions was null or undefined when calling setPhoneNumberTags.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/tags`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: PhoneNumberTagsOptionsToJSON(
+          requestParameters.phoneNumberTagsOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhoneNumberDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Replace all tags on a phone number
+   * Set phone number tags
+   */
+  async setPhoneNumberTags(
+    requestParameters: SetPhoneNumberTagsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhoneNumberDto> {
+    const response = await this.setPhoneNumberTagsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
    * Test sending an SMS to a number
    */
@@ -2004,6 +3598,80 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Update phone pool metadata such as name or description
+   * Update phone pool
+   */
+  async updatePhonePoolRaw(
+    requestParameters: UpdatePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PhonePoolDetailDto>> {
+    if (
+      requestParameters.poolId === null ||
+      requestParameters.poolId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'poolId',
+        'Required parameter requestParameters.poolId was null or undefined when calling updatePhonePool.'
+      );
+    }
+
+    if (
+      requestParameters.updatePhonePoolOptions === null ||
+      requestParameters.updatePhonePoolOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updatePhonePoolOptions',
+        'Required parameter requestParameters.updatePhonePoolOptions was null or undefined when calling updatePhonePool.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/pools/{poolId}`.replace(
+          `{${'poolId'}}`,
+          encodeURIComponent(String(requestParameters.poolId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdatePhonePoolOptionsToJSON(
+          requestParameters.updatePhonePoolOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PhonePoolDetailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update phone pool metadata such as name or description
+   * Update phone pool
+   */
+  async updatePhonePool(
+    requestParameters: UpdatePhonePoolRequest,
+    initOverrides?: RequestInit
+  ): Promise<PhonePoolDetailDto> {
+    const response = await this.updatePhonePoolRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Validate a phone number
    * Verify validity of a phone number
    */
@@ -2098,6 +3766,24 @@ export enum GetPhoneNumbersPhoneCountryEnum {
 export enum GetPhoneNumbersSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetPhoneProvisioningCapabilitiesPhoneCountryEnum {
+  US = 'US',
+  GB = 'GB',
+  AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  FI = 'FI',
+  SE = 'SE',
 }
 /**
  * @export

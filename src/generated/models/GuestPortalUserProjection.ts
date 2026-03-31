@@ -24,6 +24,18 @@ export interface GuestPortalUserProjection {
    * @type {string}
    * @memberof GuestPortalUserProjection
    */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalUserProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GuestPortalUserProjection
+   */
   username: string;
   /**
    *
@@ -61,18 +73,6 @@ export interface GuestPortalUserProjection {
    * @memberof GuestPortalUserProjection
    */
   portalId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GuestPortalUserProjection
-   */
-  id: string;
 }
 
 export function GuestPortalUserProjectionFromJSON(
@@ -89,6 +89,8 @@ export function GuestPortalUserProjectionFromJSONTyped(
     return json;
   }
   return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
     username: json['username'],
     userId: json['userId'],
     emailAddress: !exists(json, 'emailAddress')
@@ -98,8 +100,6 @@ export function GuestPortalUserProjectionFromJSONTyped(
     updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
     portalId: json['portalId'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
   };
 }
 
@@ -113,6 +113,8 @@ export function GuestPortalUserProjectionToJSON(
     return null;
   }
   return {
+    name: value.name,
+    id: value.id,
     username: value.username,
     userId: value.userId,
     emailAddress: value.emailAddress,
@@ -120,7 +122,5 @@ export function GuestPortalUserProjectionToJSON(
     updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
     portalId: value.portalId,
-    name: value.name,
-    id: value.id,
   };
 }

@@ -31,6 +31,7 @@ __exportStar(require("./DeliverabilityTestControllerApi"), exports);
 __exportStar(require("./DevicePreviewsControllerApi"), exports);
 __exportStar(require("./DomainControllerApi"), exports);
 __exportStar(require("./DomainMonitorControllerApi"), exports);
+__exportStar(require("./EmailAuditControllerApi"), exports);
 __exportStar(require("./EmailControllerApi"), exports);
 __exportStar(require("./EmailVerificationControllerApi"), exports);
 __exportStar(require("./ExpiredControllerApi"), exports);

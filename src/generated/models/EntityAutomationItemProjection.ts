@@ -24,6 +24,18 @@ export interface EntityAutomationItemProjection {
    * @type {string}
    * @memberof EntityAutomationItemProjection
    */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityAutomationItemProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityAutomationItemProjection
+   */
   inboxId?: string;
   /**
    *
@@ -43,18 +55,6 @@ export interface EntityAutomationItemProjection {
    * @memberof EntityAutomationItemProjection
    */
   automationType: EntityAutomationItemProjectionAutomationTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityAutomationItemProjection
-   */
-  id: string;
 }
 
 /**
@@ -81,12 +81,12 @@ export function EntityAutomationItemProjectionFromJSONTyped(
     return json;
   }
   return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
     action: !exists(json, 'action') ? undefined : json['action'],
     automationType: json['automationType'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
   };
 }
 
@@ -100,11 +100,11 @@ export function EntityAutomationItemProjectionToJSON(
     return null;
   }
   return {
+    name: value.name,
+    id: value.id,
     inboxId: value.inboxId,
     phoneId: value.phoneId,
     action: value.action,
     automationType: value.automationType,
-    name: value.name,
-    id: value.id,
   };
 }

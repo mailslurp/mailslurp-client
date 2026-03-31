@@ -33,37 +33,19 @@ export interface PageInboxTags {
      * @type {number}
      * @memberof PageInboxTags
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxTags
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageInboxTags
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxTags
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageInboxTags
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxTags
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageInboxTags {
      * @memberof PageInboxTags
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxTags
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxTags
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageInboxTags
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

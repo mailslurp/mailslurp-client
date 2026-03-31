@@ -20,6 +20,24 @@ import { exists, mapValues } from '../runtime';
  */
 export interface AliasThreadProjection {
   /**
+   * Name of thread
+   * @type {string}
+   * @memberof AliasThreadProjection
+   */
+  name?: string;
+  /**
+   * ID of email thread
+   * @type {string}
+   * @memberof AliasThreadProjection
+   */
+  id: string;
+  /**
+   * Thread subject
+   * @type {string}
+   * @memberof AliasThreadProjection
+   */
+  subject?: string;
+  /**
    * User ID
    * @type {string}
    * @memberof AliasThreadProjection
@@ -67,24 +85,6 @@ export interface AliasThreadProjection {
    * @memberof AliasThreadProjection
    */
   aliasId: string;
-  /**
-   * Thread subject
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  subject?: string;
-  /**
-   * Name of thread
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  name?: string;
-  /**
-   * ID of email thread
-   * @type {string}
-   * @memberof AliasThreadProjection
-   */
-  id: string;
 }
 
 export function AliasThreadProjectionFromJSON(
@@ -101,6 +101,9 @@ export function AliasThreadProjectionFromJSONTyped(
     return json;
   }
   return {
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     userId: json['userId'],
     inboxId: json['inboxId'],
     updatedAt: new Date(json['updatedAt']),
@@ -109,9 +112,6 @@ export function AliasThreadProjectionFromJSONTyped(
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     aliasId: json['aliasId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
   };
 }
 
@@ -125,6 +125,9 @@ export function AliasThreadProjectionToJSON(
     return null;
   }
   return {
+    name: value.name,
+    id: value.id,
+    subject: value.subject,
     userId: value.userId,
     inboxId: value.inboxId,
     updatedAt: value.updatedAt.toISOString(),
@@ -133,8 +136,5 @@ export function AliasThreadProjectionToJSON(
     cc: value.cc,
     bcc: value.bcc,
     aliasId: value.aliasId,
-    subject: value.subject,
-    name: value.name,
-    id: value.id,
   };
 }

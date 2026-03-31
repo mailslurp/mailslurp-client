@@ -15,7 +15,7 @@ test: node_modules
 	API_KEY=$(API_KEY) npm run integration
 
 spec:
-	aws s3 cp s3://api-spec.mailslurp.com/swagger.json $(SPEC_URL)
+	op plugin run aws -- s3 cp s3://api-spec.mailslurp.com/swagger.json $(SPEC_URL)
 
 generate: spec bin/openapi-generator-cli.jar
 	sudo rm -rf src/generated

@@ -33,37 +33,19 @@ export interface PageAlias {
      * @type {number}
      * @memberof PageAlias
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageAlias
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageAlias
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAlias
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageAlias
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageAlias
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageAlias {
      * @memberof PageAlias
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAlias
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageAlias
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageAlias
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -18,6 +18,30 @@ import { EmailRecipients, Sender } from './';
 export interface EmailProjection {
     /**
      *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    threadId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    from: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    subject?: string | null;
+    /**
+     *
      * @type {Sender}
      * @memberof EmailProjection
      */
@@ -30,16 +54,16 @@ export interface EmailProjection {
     recipients?: EmailRecipients | null;
     /**
      *
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    attachments?: Array<string> | null;
-    /**
-     *
      * @type {string}
      * @memberof EmailProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    attachments?: Array<string> | null;
     /**
      *
      * @type {number}
@@ -142,30 +166,6 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     teamAccess: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    subject?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    threadId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    from: string | null;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

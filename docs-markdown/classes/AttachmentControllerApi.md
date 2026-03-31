@@ -237,7 +237,7 @@ ___
 
 ▸ **extractAttachmentText**(`requestParameters`, `initOverrides?`): `Promise`<[`ExtractAttachmentTextResult`](../interfaces/ExtractAttachmentTextResult.md)\>
 
-Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+Extract text content from an attachment using the requested method. `NATIVE` decoding supports text-like files, common Word and spreadsheet documents, and PDFs with embedded text.
 Extract text from an attachment
 
 #### Parameters
@@ -257,7 +257,7 @@ ___
 
 ▸ **extractAttachmentTextRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExtractAttachmentTextResult`](../interfaces/ExtractAttachmentTextResult.md)\>\>
 
-Extract text content from an attachment using the requested method. `NATIVE` decoding is available now for text-like files. OCR/LLM methods are wired for future use and may return not implemented unless fallback is enabled.
+Extract text content from an attachment using the requested method. `NATIVE` decoding supports text-like files, common Word and spreadsheet documents, and PDFs with embedded text.
 Extract text from an attachment
 
 #### Parameters

@@ -12,21 +12,37 @@ PhoneNumberDto
 
 ### Properties
 
+- [carrierName](PhoneNumberDto.md#carriername)
 - [complianceAddress](PhoneNumberDto.md#complianceaddress)
 - [createdAt](PhoneNumberDto.md#createdat)
 - [description](PhoneNumberDto.md#description)
 - [emergencyAddress](PhoneNumberDto.md#emergencyaddress)
 - [favourite](PhoneNumberDto.md#favourite)
 - [id](PhoneNumberDto.md#id)
+- [lineType](PhoneNumberDto.md#linetype)
+- [mobileCountryCode](PhoneNumberDto.md#mobilecountrycode)
+- [mobileNetworkCode](PhoneNumberDto.md#mobilenetworkcode)
 - [name](PhoneNumberDto.md#name)
 - [phoneCountry](PhoneNumberDto.md#phonecountry)
 - [phoneNumber](PhoneNumberDto.md#phonenumber)
 - [phonePlan](PhoneNumberDto.md#phoneplan)
 - [phoneVariant](PhoneNumberDto.md#phonevariant)
+- [providerLabel](PhoneNumberDto.md#providerlabel)
+- [tags](PhoneNumberDto.md#tags)
 - [updatedAt](PhoneNumberDto.md#updatedat)
 - [userId](PhoneNumberDto.md#userid)
 
 ## Properties
+
+### carrierName
+
+• `Optional` **carrierName**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
 
 ### complianceAddress
 
@@ -88,6 +104,36 @@ PhoneNumberDto
 
 ___
 
+### lineType
+
+• `Optional` **lineType**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
+### mobileCountryCode
+
+• `Optional` **mobileCountryCode**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
+### mobileNetworkCode
+
+• `Optional` **mobileNetworkCode**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
 ### name
 
 • `Optional` **name**: `string`
@@ -131,6 +177,26 @@ ___
 ### phoneVariant
 
 • `Optional` **phoneVariant**: [`PhoneNumberDtoPhoneVariantEnum`](../enums/PhoneNumberDtoPhoneVariantEnum.md)
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
+### providerLabel
+
+• `Optional` **providerLabel**: `string`
+
+**`Memberof`**
+
+PhoneNumberDto
+
+___
+
+### tags
+
+• **tags**: `string`[]
 
 **`Memberof`**
 

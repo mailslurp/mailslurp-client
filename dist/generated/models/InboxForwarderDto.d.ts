@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { InboxAutomationMatchOptions } from './';
 /**
  * Inbox forwarder. Describes how an inbox will forward matching emails to designated recipients.
  * @export
@@ -38,13 +39,13 @@ export interface InboxForwarderDto {
      * @type {string}
      * @memberof InboxForwarderDto
      */
-    field: InboxForwarderDtoFieldEnum;
+    field?: InboxForwarderDtoFieldEnum;
     /**
-     * Wild-card type pattern to apply to field
+     * Pattern to apply to field
      * @type {string}
      * @memberof InboxForwarderDto
      */
-    match: string;
+    match?: string | null;
     /**
      * Who to send forwarded email to
      * @type {Array<string>}
@@ -57,6 +58,24 @@ export interface InboxForwarderDto {
      * @memberof InboxForwarderDto
      */
     createdAt: Date;
+    /**
+     * Comparison mode for inbox automation matching.
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    should?: InboxForwarderDtoShouldEnum;
+    /**
+     *
+     * @type {InboxAutomationMatchOptions}
+     * @memberof InboxForwarderDto
+     */
+    matchOptions?: InboxAutomationMatchOptions | null;
+    /**
+     * Method for extracting text from attachments.
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    attachmentTextExtractionMethod?: InboxForwarderDtoAttachmentTextExtractionMethodEnum;
 }
 /**
  * @export
@@ -66,7 +85,30 @@ export declare enum InboxForwarderDtoFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",
     SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
+    ATTACHMENTS = "ATTACHMENTS",
+    ATTACHMENT_FILENAME = "ATTACHMENT_FILENAME",
+    ATTACHMENT_TEXT = "ATTACHMENT_TEXT"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxForwarderDtoShouldEnum {
+    WILDCARD = "WILDCARD",
+    MATCH = "MATCH",
+    CONTAIN = "CONTAIN",
+    EQUAL = "EQUAL"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxForwarderDtoAttachmentTextExtractionMethodEnum {
+    AUTO = "AUTO",
+    NATIVE = "NATIVE",
+    OCR = "OCR",
+    LLM = "LLM",
+    OCR_THEN_LLM = "OCR_THEN_LLM"
 }
 export declare function InboxForwarderDtoFromJSON(json: any): InboxForwarderDto;
 export declare function InboxForwarderDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderDto;

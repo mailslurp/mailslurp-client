@@ -21,24 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface ReputationItemProjection {
   /**
    *
-   * @type {Date}
-   * @memberof ReputationItemProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ReputationItemProjection
-   */
-  recipient?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ReputationItemProjection
-   */
-  reputationType: ReputationItemProjectionReputationTypeEnum;
-  /**
-   *
    * @type {string}
    * @memberof ReputationItemProjection
    */
@@ -55,16 +37,26 @@ export interface ReputationItemProjection {
    * @memberof ReputationItemProjection
    */
   source?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof ReputationItemProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof ReputationItemProjection
+   */
+  recipient?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ReputationItemProjection
+   */
+  reputationType: ReputationItemProjectionReputationTypeEnum;
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum ReputationItemProjectionReputationTypeEnum {
-  COMPLAINT = 'COMPLAINT',
-  BOUNCE = 'BOUNCE',
-}
 /**
  * @export
  * @enum {string}
@@ -73,6 +65,14 @@ export enum ReputationItemProjectionSeverityEnum {
   INFO = 'INFO',
   WARNING = 'WARNING',
   DANGER = 'DANGER',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum ReputationItemProjectionReputationTypeEnum {
+  COMPLAINT = 'COMPLAINT',
+  BOUNCE = 'BOUNCE',
 }
 
 export function ReputationItemProjectionFromJSON(
@@ -89,12 +89,12 @@ export function ReputationItemProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
-    reputationType: json['reputationType'],
     id: json['id'],
     severity: json['severity'],
     source: !exists(json, 'source') ? undefined : json['source'],
+    createdAt: new Date(json['createdAt']),
+    recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
+    reputationType: json['reputationType'],
   };
 }
 
@@ -108,11 +108,11 @@ export function ReputationItemProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    recipient: value.recipient,
-    reputationType: value.reputationType,
     id: value.id,
     severity: value.severity,
     source: value.source,
+    createdAt: value.createdAt.toISOString(),
+    recipient: value.recipient,
+    reputationType: value.reputationType,
   };
 }

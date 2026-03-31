@@ -27,7 +27,19 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
+    threadId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
     from?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {Sender}
@@ -45,37 +57,19 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
-    subject?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    threadId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    inReplyTo?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
     userId: string;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    attachments?: Array<string> | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    attachments?: Array<string> | null;
     /**
      *
      * @type {Date}
@@ -106,6 +100,12 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     messageId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    inReplyTo?: string | null;
     /**
      *
      * @type {boolean}

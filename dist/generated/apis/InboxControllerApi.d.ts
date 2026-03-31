@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateRulesetOptions, Email, EmailAvailableResult, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxTags, PageOrganizationInboxProjection, PagePlusAddressProjection, PageRulesetDto, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, PlusAddressDto, RulesetDto, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateImapAccessOptions, UpdateInboxOptions, UpdateSmtpAccessOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateRulesetOptions, Email, EmailAvailableResult, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, ImportEmailOptions, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxTags, PageOrganizationInboxProjection, PagePlusAddressProjection, PageRulesetDto, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, PlusAddressDto, RulesetDto, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateImapAccessOptions, UpdateInboxOptions, UpdateSmtpAccessOptions } from '../models';
 export interface CancelScheduledJobRequest {
     jobId: string;
 }
@@ -262,6 +262,24 @@ export interface GetScheduledJobsByInboxIdRequest {
 }
 export interface GetSmtpAccessRequest {
     inboxId?: string;
+}
+export interface ImportEmailIntoInboxRequest {
+    inboxId: string;
+    importEmailOptions: ImportEmailOptions;
+}
+export interface ImportEmailIntoInboxBytesRequest {
+    inboxId: string;
+    body: string;
+    externalId?: string;
+    runPipeline?: boolean;
+    overrideMessageId?: boolean;
+}
+export interface ImportEmailIntoInboxMultipartRequest {
+    inboxId: string;
+    file: Blob;
+    externalId?: string;
+    runPipeline?: boolean;
+    overrideMessageId?: boolean;
 }
 export interface IsEmailAddressAvailableRequest {
     emailAddress: string;
@@ -747,22 +765,22 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getLatestEmailInInbox(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit): Promise<Email>;
     /**
-     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
      * Get or create a plus address by full address
      */
     getOrCreateInboxPlusAddressRaw(requestParameters: GetOrCreateInboxPlusAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PlusAddressDto>>;
     /**
-     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
      * Get or create a plus address by full address
      */
     getOrCreateInboxPlusAddress(requestParameters: GetOrCreateInboxPlusAddressRequest, initOverrides?: RequestInit): Promise<PlusAddressDto>;
     /**
-     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
      * Get or create a plus address by full address without inbox ID
      */
     getOrCreatePlusAddressByFullAddressRaw(requestParameters: GetOrCreatePlusAddressByFullAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PlusAddressDto>>;
     /**
-     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+     * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
      * Get or create a plus address by full address without inbox ID
      */
     getOrCreatePlusAddressByFullAddress(requestParameters: GetOrCreatePlusAddressByFullAddressRequest, initOverrides?: RequestInit): Promise<PlusAddressDto>;
@@ -814,6 +832,36 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get SMTP access usernames and passwords
      */
     getSmtpAccess(requestParameters: GetSmtpAccessRequest, initOverrides?: RequestInit): Promise<SmtpAccessDetails>;
+    /**
+     * Imports a raw RFC822/MIME email into the specified inbox regardless of the original `To` header. V1 accepts MIME-family formats such as `.eml`, `message/rfc822`, and raw MIME bytes only. Outlook `.msg`, `mbox`, and `maildir` are not supported in V1. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes. Set `runPipeline=true` to run the normal inbound receive pipeline after persistence.
+     * Import email into inbox from base64 MIME
+     */
+    importEmailIntoInboxRaw(requestParameters: ImportEmailIntoInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    /**
+     * Imports a raw RFC822/MIME email into the specified inbox regardless of the original `To` header. V1 accepts MIME-family formats such as `.eml`, `message/rfc822`, and raw MIME bytes only. Outlook `.msg`, `mbox`, and `maildir` are not supported in V1. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes. Set `runPipeline=true` to run the normal inbound receive pipeline after persistence.
+     * Import email into inbox from base64 MIME
+     */
+    importEmailIntoInbox(requestParameters: ImportEmailIntoInboxRequest, initOverrides?: RequestInit): Promise<Email>;
+    /**
+     * Imports a raw RFC822/MIME email stream into the specified inbox regardless of the original `To` header. Supports `message/rfc822` and `application/octet-stream`. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+     * Import email into inbox from raw MIME bytes
+     */
+    importEmailIntoInboxBytesRaw(requestParameters: ImportEmailIntoInboxBytesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    /**
+     * Imports a raw RFC822/MIME email stream into the specified inbox regardless of the original `To` header. Supports `message/rfc822` and `application/octet-stream`. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+     * Import email into inbox from raw MIME bytes
+     */
+    importEmailIntoInboxBytes(requestParameters: ImportEmailIntoInboxBytesRequest, initOverrides?: RequestInit): Promise<Email>;
+    /**
+     * Imports an uploaded RFC822/MIME file into the specified inbox regardless of the original `To` header. Intended for `.eml` uploads and other MIME-family raw email files. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+     * Import email into inbox from multipart EML upload
+     */
+    importEmailIntoInboxMultipartRaw(requestParameters: ImportEmailIntoInboxMultipartRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    /**
+     * Imports an uploaded RFC822/MIME file into the specified inbox regardless of the original `To` header. Intended for `.eml` uploads and other MIME-family raw email files. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+     * Import email into inbox from multipart EML upload
+     */
+    importEmailIntoInboxMultipart(requestParameters: ImportEmailIntoInboxMultipartRequest, initOverrides?: RequestInit): Promise<Email>;
     /**
      * Returns whether an email address is available
      * Is email address available

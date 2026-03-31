@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  InboxAutomationMatchOptions,
+  InboxAutomationMatchOptionsFromJSON,
+  InboxAutomationMatchOptionsFromJSONTyped,
+  InboxAutomationMatchOptionsToJSON,
+} from './';
+
 /**
  * Options for creating an inbox forwarder
  * @export
@@ -24,19 +31,37 @@ export interface CreateInboxForwarderOptions {
    * @type {string}
    * @memberof CreateInboxForwarderOptions
    */
-  field: CreateInboxForwarderOptionsFieldEnum;
+  field?: CreateInboxForwarderOptionsFieldEnum;
   /**
    * String or wildcard style match for field specified when evaluating forwarding rules
    * @type {string}
    * @memberof CreateInboxForwarderOptions
    */
-  match: string;
+  match?: string | null;
   /**
    * Email addresses to forward an email to if it matches the field and match criteria of the forwarder
    * @type {Array<string>}
    * @memberof CreateInboxForwarderOptions
    */
   forwardToRecipients: Array<string>;
+  /**
+   * Comparison mode for inbox automation matching.
+   * @type {string}
+   * @memberof CreateInboxForwarderOptions
+   */
+  should?: CreateInboxForwarderOptionsShouldEnum;
+  /**
+   *
+   * @type {InboxAutomationMatchOptions}
+   * @memberof CreateInboxForwarderOptions
+   */
+  matchOptions?: InboxAutomationMatchOptions | null;
+  /**
+   * Method for extracting text from attachments.
+   * @type {string}
+   * @memberof CreateInboxForwarderOptions
+   */
+  attachmentTextExtractionMethod?: CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum;
 }
 
 /**
@@ -48,6 +73,29 @@ export enum CreateInboxForwarderOptionsFieldEnum {
   SENDER = 'SENDER',
   SUBJECT = 'SUBJECT',
   ATTACHMENTS = 'ATTACHMENTS',
+  ATTACHMENT_FILENAME = 'ATTACHMENT_FILENAME',
+  ATTACHMENT_TEXT = 'ATTACHMENT_TEXT',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreateInboxForwarderOptionsShouldEnum {
+  WILDCARD = 'WILDCARD',
+  MATCH = 'MATCH',
+  CONTAIN = 'CONTAIN',
+  EQUAL = 'EQUAL',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum {
+  AUTO = 'AUTO',
+  NATIVE = 'NATIVE',
+  OCR = 'OCR',
+  LLM = 'LLM',
+  OCR_THEN_LLM = 'OCR_THEN_LLM',
 }
 
 export function CreateInboxForwarderOptionsFromJSON(
@@ -64,9 +112,19 @@ export function CreateInboxForwarderOptionsFromJSONTyped(
     return json;
   }
   return {
-    field: json['field'],
-    match: json['match'],
+    field: !exists(json, 'field') ? undefined : json['field'],
+    match: !exists(json, 'match') ? undefined : json['match'],
     forwardToRecipients: json['forwardToRecipients'],
+    should: !exists(json, 'should') ? undefined : json['should'],
+    matchOptions: !exists(json, 'matchOptions')
+      ? undefined
+      : InboxAutomationMatchOptionsFromJSON(json['matchOptions']),
+    attachmentTextExtractionMethod: !exists(
+      json,
+      'attachmentTextExtractionMethod'
+    )
+      ? undefined
+      : json['attachmentTextExtractionMethod'],
   };
 }
 
@@ -83,5 +141,8 @@ export function CreateInboxForwarderOptionsToJSON(
     field: value.field,
     match: value.match,
     forwardToRecipients: value.forwardToRecipients,
+    should: value.should,
+    matchOptions: InboxAutomationMatchOptionsToJSON(value.matchOptions),
+    attachmentTextExtractionMethod: value.attachmentTextExtractionMethod,
   };
 }

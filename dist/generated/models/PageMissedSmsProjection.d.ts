@@ -33,37 +33,19 @@ export interface PageMissedSmsProjection {
      * @type {number}
      * @memberof PageMissedSmsProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageMissedSmsProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageMissedSmsProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageMissedSmsProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageMissedSmsProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageMissedSmsProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageMissedSmsProjection {
      * @memberof PageMissedSmsProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageMissedSmsProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageMissedSmsProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageMissedSmsProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

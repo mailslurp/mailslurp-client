@@ -22,8 +22,10 @@ CreateInboxReplierOptions
 - [inboxId](CreateInboxReplierOptions.md#inboxid)
 - [isHTML](CreateInboxReplierOptions.md#ishtml)
 - [match](CreateInboxReplierOptions.md#match)
+- [matchOptions](CreateInboxReplierOptions.md#matchoptions)
 - [name](CreateInboxReplierOptions.md#name)
 - [replyTo](CreateInboxReplierOptions.md#replyto)
+- [should](CreateInboxReplierOptions.md#should)
 - [subject](CreateInboxReplierOptions.md#subject)
 - [templateId](CreateInboxReplierOptions.md#templateid)
 - [templateVariables](CreateInboxReplierOptions.md#templatevariables)
@@ -56,7 +58,7 @@ ___
 
 ### field
 
-• **field**: [`CreateInboxReplierOptionsFieldEnum`](../enums/CreateInboxReplierOptionsFieldEnum.md)
+• `Optional` **field**: [`CreateInboxReplierOptionsFieldEnum`](../enums/CreateInboxReplierOptionsFieldEnum.md)
 
 Field to match against to trigger inbox replier for inbound email
 
@@ -116,9 +118,19 @@ ___
 
 ### match
 
-• **match**: `string`
+• `Optional` **match**: `string`
 
 String or wildcard style match for field specified when evaluating reply rules. Use `*` to match anything.
+
+**`Memberof`**
+
+CreateInboxReplierOptions
+
+___
+
+### matchOptions
+
+• `Optional` **matchOptions**: [`InboxAutomationMatchOptions`](InboxAutomationMatchOptions.md)
 
 **`Memberof`**
 
@@ -143,6 +155,18 @@ ___
 • `Optional` **replyTo**: `string`
 
 Reply-to email address when sending replying
+
+**`Memberof`**
+
+CreateInboxReplierOptions
+
+___
+
+### should
+
+• `Optional` **should**: [`CreateInboxReplierOptionsShouldEnum`](../enums/CreateInboxReplierOptionsShouldEnum.md)
+
+Comparison mode for inbox automation matching.
 
 **`Memberof`**
 

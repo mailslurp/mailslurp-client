@@ -20,6 +20,30 @@ export interface AttachmentProjection {
      * @type {string}
      * @memberof AttachmentProjection
      */
+    name?: string | null;
+    /**
+     * ID
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    id: string;
+    /**
+     * Content length of attachment in bytes
+     * @type {number}
+     * @memberof AttachmentProjection
+     */
+    contentLength?: number | null;
+    /**
+     * Content type of attachment.
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    contentType?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
     userId: string;
     /**
      * Inbox ID
@@ -51,30 +75,6 @@ export interface AttachmentProjection {
      * @memberof AttachmentProjection
      */
     attachmentId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    name?: string | null;
-    /**
-     * ID
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    id: string;
-    /**
-     * Content length of attachment in bytes
-     * @type {number}
-     * @memberof AttachmentProjection
-     */
-    contentLength?: number | null;
-    /**
-     * Content type of attachment.
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    contentType?: string | null;
 }
 export declare function AttachmentProjectionFromJSON(json: any): AttachmentProjection;
 export declare function AttachmentProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentProjection;

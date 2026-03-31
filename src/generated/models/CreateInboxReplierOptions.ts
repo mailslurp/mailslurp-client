@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  InboxAutomationMatchOptions,
+  InboxAutomationMatchOptionsFromJSON,
+  InboxAutomationMatchOptionsFromJSONTyped,
+  InboxAutomationMatchOptionsToJSON,
+} from './';
+
 /**
  * Options for creating an inbox replier. Repliers can be attached to inboxes and send automated responses when an inbound email matches given criteria.
  * @export
@@ -36,13 +43,13 @@ export interface CreateInboxReplierOptions {
    * @type {string}
    * @memberof CreateInboxReplierOptions
    */
-  field: CreateInboxReplierOptionsFieldEnum;
+  field?: CreateInboxReplierOptionsFieldEnum;
   /**
    * String or wildcard style match for field specified when evaluating reply rules. Use `*` to match anything.
    * @type {string}
    * @memberof CreateInboxReplierOptions
    */
-  match: string;
+  match?: string | null;
   /**
    * Reply-to email address when sending replying
    * @type {string}
@@ -97,6 +104,18 @@ export interface CreateInboxReplierOptions {
    * @memberof CreateInboxReplierOptions
    */
   templateVariables?: { [key: string]: object } | null;
+  /**
+   * Comparison mode for inbox automation matching.
+   * @type {string}
+   * @memberof CreateInboxReplierOptions
+   */
+  should?: CreateInboxReplierOptionsShouldEnum;
+  /**
+   *
+   * @type {InboxAutomationMatchOptions}
+   * @memberof CreateInboxReplierOptions
+   */
+  matchOptions?: InboxAutomationMatchOptions | null;
 }
 
 /**
@@ -108,6 +127,18 @@ export enum CreateInboxReplierOptionsFieldEnum {
   SENDER = 'SENDER',
   SUBJECT = 'SUBJECT',
   ATTACHMENTS = 'ATTACHMENTS',
+  ATTACHMENT_FILENAME = 'ATTACHMENT_FILENAME',
+  ATTACHMENT_TEXT = 'ATTACHMENT_TEXT',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreateInboxReplierOptionsShouldEnum {
+  WILDCARD = 'WILDCARD',
+  MATCH = 'MATCH',
+  CONTAIN = 'CONTAIN',
+  EQUAL = 'EQUAL',
 }
 
 export function CreateInboxReplierOptionsFromJSON(
@@ -126,8 +157,8 @@ export function CreateInboxReplierOptionsFromJSONTyped(
   return {
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
+    field: !exists(json, 'field') ? undefined : json['field'],
+    match: !exists(json, 'match') ? undefined : json['match'],
     replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     from: !exists(json, 'from') ? undefined : json['from'],
@@ -141,6 +172,10 @@ export function CreateInboxReplierOptionsFromJSONTyped(
     templateVariables: !exists(json, 'templateVariables')
       ? undefined
       : json['templateVariables'],
+    should: !exists(json, 'should') ? undefined : json['should'],
+    matchOptions: !exists(json, 'matchOptions')
+      ? undefined
+      : InboxAutomationMatchOptionsFromJSON(json['matchOptions']),
   };
 }
 
@@ -167,5 +202,7 @@ export function CreateInboxReplierOptionsToJSON(
     body: value.body,
     templateId: value.templateId,
     templateVariables: value.templateVariables,
+    should: value.should,
+    matchOptions: InboxAutomationMatchOptionsToJSON(value.matchOptions),
   };
 }

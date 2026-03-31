@@ -33,37 +33,19 @@ export interface PageDevicePreviewRunProjection {
      * @type {number}
      * @memberof PageDevicePreviewRunProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageDevicePreviewRunProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageDevicePreviewRunProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageDevicePreviewRunProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageDevicePreviewRunProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageDevicePreviewRunProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageDevicePreviewRunProjection {
      * @memberof PageDevicePreviewRunProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDevicePreviewRunProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageDevicePreviewRunProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageDevicePreviewRunProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

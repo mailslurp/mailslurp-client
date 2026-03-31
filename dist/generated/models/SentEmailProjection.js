@@ -26,24 +26,24 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         sender: !(0, runtime_1.exists)(json, 'sender')
             ? undefined
             : (0, _1.SenderFromJSON)(json['sender']),
         recipients: !(0, runtime_1.exists)(json, 'recipients')
             ? undefined
             : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
-        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         userId: json['userId'],
-        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         inboxId: json['inboxId'],
+        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         createdAt: new Date(json['createdAt']),
         to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         virtualSend: json['virtualSend'],
         bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
         textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
@@ -60,20 +60,20 @@ function SentEmailProjectionToJSON(value) {
     }
     return {
         id: value.id,
+        threadId: value.threadId,
         from: value.from,
+        subject: value.subject,
         sender: (0, _1.SenderToJSON)(value.sender),
         recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
-        subject: value.subject,
-        threadId: value.threadId,
-        inReplyTo: value.inReplyTo,
         userId: value.userId,
-        attachments: value.attachments,
         inboxId: value.inboxId,
+        attachments: value.attachments,
         createdAt: value.createdAt.toISOString(),
         to: value.to,
         cc: value.cc,
         bcc: value.bcc,
         messageId: value.messageId,
+        inReplyTo: value.inReplyTo,
         virtualSend: value.virtualSend,
         bodyExcerpt: value.bodyExcerpt,
         textExcerpt: value.textExcerpt,

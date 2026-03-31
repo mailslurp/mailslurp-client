@@ -21,6 +21,24 @@ import { exists, mapValues } from '../runtime';
 export interface InboxReplierEventProjection {
   /**
    *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  message?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  id?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  status?: InboxReplierEventProjectionStatusEnum;
+  /**
+   *
    * @type {Array<string>}
    * @memberof InboxReplierEventProjection
    */
@@ -61,24 +79,6 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   replierId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  message?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  id?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  status?: InboxReplierEventProjectionStatusEnum;
 }
 
 /**
@@ -104,6 +104,9 @@ export function InboxReplierEventProjectionFromJSONTyped(
     return json;
   }
   return {
+    message: !exists(json, 'message') ? undefined : json['message'],
+    id: !exists(json, 'id') ? undefined : json['id'],
+    status: !exists(json, 'status') ? undefined : json['status'],
     recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
@@ -111,9 +114,6 @@ export function InboxReplierEventProjectionFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
-    message: !exists(json, 'message') ? undefined : json['message'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-    status: !exists(json, 'status') ? undefined : json['status'],
   };
 }
 
@@ -127,6 +127,9 @@ export function InboxReplierEventProjectionToJSON(
     return null;
   }
   return {
+    message: value.message,
+    id: value.id,
+    status: value.status,
     recipients: value.recipients,
     userId: value.userId,
     emailId: value.emailId,
@@ -134,8 +137,5 @@ export function InboxReplierEventProjectionToJSON(
     createdAt: value.createdAt.toISOString(),
     sentId: value.sentId,
     replierId: value.replierId,
-    message: value.message,
-    id: value.id,
-    status: value.status,
   };
 }

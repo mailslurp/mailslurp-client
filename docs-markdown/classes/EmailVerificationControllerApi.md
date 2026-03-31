@@ -24,6 +24,8 @@
 - [deleteAllValidationRequestsRaw](EmailVerificationControllerApi.md#deleteallvalidationrequestsraw)
 - [deleteValidationRequest](EmailVerificationControllerApi.md#deletevalidationrequest)
 - [deleteValidationRequestRaw](EmailVerificationControllerApi.md#deletevalidationrequestraw)
+- [getEmailIntelligence](EmailVerificationControllerApi.md#getemailintelligence)
+- [getEmailIntelligenceRaw](EmailVerificationControllerApi.md#getemailintelligenceraw)
 - [getValidationRequests](EmailVerificationControllerApi.md#getvalidationrequests)
 - [getValidationRequestsRaw](EmailVerificationControllerApi.md#getvalidationrequestsraw)
 - [request](EmailVerificationControllerApi.md#request)
@@ -136,6 +138,46 @@ Delete a validation record
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### getEmailIntelligence
+
+▸ **getEmailIntelligence**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailIntelligenceListResult`](../interfaces/EmailIntelligenceListResult.md)\>
+
+Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailIntelligenceRequest`](../interfaces/GetEmailIntelligenceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailIntelligenceListResult`](../interfaces/EmailIntelligenceListResult.md)\>
+
+___
+
+### getEmailIntelligenceRaw
+
+▸ **getEmailIntelligenceRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailIntelligenceListResult`](../interfaces/EmailIntelligenceListResult.md)\>\>
+
+Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailIntelligenceRequest`](../interfaces/GetEmailIntelligenceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailIntelligenceListResult`](../interfaces/EmailIntelligenceListResult.md)\>\>
 
 ___
 

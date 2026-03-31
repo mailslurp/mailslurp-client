@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  InboxAutomationMatchOptions,
+  InboxAutomationMatchOptionsFromJSON,
+  InboxAutomationMatchOptionsFromJSONTyped,
+  InboxAutomationMatchOptionsToJSON,
+} from './';
+
 /**
  * Inbox forwarder. Describes how an inbox will forward matching emails to designated recipients.
  * @export
@@ -42,13 +49,13 @@ export interface InboxForwarderDto {
    * @type {string}
    * @memberof InboxForwarderDto
    */
-  field: InboxForwarderDtoFieldEnum;
+  field?: InboxForwarderDtoFieldEnum;
   /**
-   * Wild-card type pattern to apply to field
+   * Pattern to apply to field
    * @type {string}
    * @memberof InboxForwarderDto
    */
-  match: string;
+  match?: string | null;
   /**
    * Who to send forwarded email to
    * @type {Array<string>}
@@ -61,6 +68,24 @@ export interface InboxForwarderDto {
    * @memberof InboxForwarderDto
    */
   createdAt: Date;
+  /**
+   * Comparison mode for inbox automation matching.
+   * @type {string}
+   * @memberof InboxForwarderDto
+   */
+  should?: InboxForwarderDtoShouldEnum;
+  /**
+   *
+   * @type {InboxAutomationMatchOptions}
+   * @memberof InboxForwarderDto
+   */
+  matchOptions?: InboxAutomationMatchOptions | null;
+  /**
+   * Method for extracting text from attachments.
+   * @type {string}
+   * @memberof InboxForwarderDto
+   */
+  attachmentTextExtractionMethod?: InboxForwarderDtoAttachmentTextExtractionMethodEnum;
 }
 
 /**
@@ -72,6 +97,29 @@ export enum InboxForwarderDtoFieldEnum {
   SENDER = 'SENDER',
   SUBJECT = 'SUBJECT',
   ATTACHMENTS = 'ATTACHMENTS',
+  ATTACHMENT_FILENAME = 'ATTACHMENT_FILENAME',
+  ATTACHMENT_TEXT = 'ATTACHMENT_TEXT',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxForwarderDtoShouldEnum {
+  WILDCARD = 'WILDCARD',
+  MATCH = 'MATCH',
+  CONTAIN = 'CONTAIN',
+  EQUAL = 'EQUAL',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxForwarderDtoAttachmentTextExtractionMethodEnum {
+  AUTO = 'AUTO',
+  NATIVE = 'NATIVE',
+  OCR = 'OCR',
+  LLM = 'LLM',
+  OCR_THEN_LLM = 'OCR_THEN_LLM',
 }
 
 export function InboxForwarderDtoFromJSON(json: any): InboxForwarderDto {
@@ -89,10 +137,20 @@ export function InboxForwarderDtoFromJSONTyped(
     id: json['id'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    field: json['field'],
-    match: json['match'],
+    field: !exists(json, 'field') ? undefined : json['field'],
+    match: !exists(json, 'match') ? undefined : json['match'],
     forwardToRecipients: json['forwardToRecipients'],
     createdAt: new Date(json['createdAt']),
+    should: !exists(json, 'should') ? undefined : json['should'],
+    matchOptions: !exists(json, 'matchOptions')
+      ? undefined
+      : InboxAutomationMatchOptionsFromJSON(json['matchOptions']),
+    attachmentTextExtractionMethod: !exists(
+      json,
+      'attachmentTextExtractionMethod'
+    )
+      ? undefined
+      : json['attachmentTextExtractionMethod'],
   };
 }
 
@@ -111,5 +169,8 @@ export function InboxForwarderDtoToJSON(value?: InboxForwarderDto | null): any {
     match: value.match,
     forwardToRecipients: value.forwardToRecipients,
     createdAt: value.createdAt.toISOString(),
+    should: value.should,
+    matchOptions: InboxAutomationMatchOptionsToJSON(value.matchOptions),
+    attachmentTextExtractionMethod: value.attachmentTextExtractionMethod,
   };
 }

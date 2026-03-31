@@ -35,6 +35,12 @@ export interface CreatePhoneNumberOptions {
     description?: string;
     /**
      *
+     * @type {Array<string>}
+     * @memberof CreatePhoneNumberOptions
+     */
+    tags?: Array<string>;
+    /**
+     *
      * @type {string}
      * @memberof CreatePhoneNumberOptions
      */
@@ -51,6 +57,18 @@ export interface CreatePhoneNumberOptions {
      * @memberof CreatePhoneNumberOptions
      */
     phoneNumberVariant?: CreatePhoneNumberOptionsPhoneNumberVariantEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    phoneProvider?: CreatePhoneNumberOptionsPhoneProviderEnum;
+    /**
+     * Line-quality preference for simple phone number provisioning
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    phoneLineFilter?: CreatePhoneNumberOptionsPhoneLineFilterEnum;
 }
 /**
  * @export
@@ -86,6 +104,23 @@ export declare enum CreatePhoneNumberOptionsPhoneNumberVariantEnum {
     LOCAL = "LOCAL",
     MOBILE = "MOBILE",
     TOLL_FREE = "TOLL_FREE"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreatePhoneNumberOptionsPhoneProviderEnum {
+    TWILIO = "TWILIO",
+    TELNYX = "TELNYX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreatePhoneNumberOptionsPhoneLineFilterEnum {
+    ANY = "ANY",
+    OTP_FRIENDLY = "OTP_FRIENDLY",
+    NON_VOIP = "NON_VOIP"
 }
 export declare function CreatePhoneNumberOptionsFromJSON(json: any): CreatePhoneNumberOptions;
 export declare function CreatePhoneNumberOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreatePhoneNumberOptions;

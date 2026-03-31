@@ -35,6 +35,12 @@ export interface PhoneNumberDto {
     description?: string;
     /**
      *
+     * @type {Array<string>}
+     * @memberof PhoneNumberDto
+     */
+    tags: Array<string>;
+    /**
+     *
      * @type {string}
      * @memberof PhoneNumberDto
      */
@@ -93,6 +99,36 @@ export interface PhoneNumberDto {
      * @memberof PhoneNumberDto
      */
     phoneVariant?: PhoneNumberDtoPhoneVariantEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    lineType?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    carrierName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    mobileCountryCode?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    mobileNetworkCode?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberDto
+     */
+    providerLabel?: string;
 }
 /**
  * @export

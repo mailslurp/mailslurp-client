@@ -24,6 +24,12 @@ export interface MissedSmsProjection {
    * @type {string}
    * @memberof MissedSmsProjection
    */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof MissedSmsProjection
+   */
   userId: string;
   /**
    *
@@ -36,25 +42,19 @@ export interface MissedSmsProjection {
    * @type {string}
    * @memberof MissedSmsProjection
    */
-  sid: string;
-  /**
-   *
-   * @type {string}
-   * @memberof MissedSmsProjection
-   */
   phoneNumber: string;
   /**
    *
    * @type {string}
    * @memberof MissedSmsProjection
    */
-  fromNumber: string;
+  sid: string;
   /**
    *
    * @type {string}
    * @memberof MissedSmsProjection
    */
-  id: string;
+  fromNumber: string;
 }
 
 export function MissedSmsProjectionFromJSON(json: any): MissedSmsProjection {
@@ -69,12 +69,12 @@ export function MissedSmsProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
-    sid: json['sid'],
     phoneNumber: json['phoneNumber'],
+    sid: json['sid'],
     fromNumber: json['fromNumber'],
-    id: json['id'],
   };
 }
 
@@ -88,11 +88,11 @@ export function MissedSmsProjectionToJSON(
     return null;
   }
   return {
+    id: value.id,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
-    sid: value.sid,
     phoneNumber: value.phoneNumber,
+    sid: value.sid,
     fromNumber: value.fromNumber,
-    id: value.id,
   };
 }

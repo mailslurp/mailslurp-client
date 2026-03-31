@@ -33,37 +33,19 @@ export interface PageExpiredInboxRecordProjection {
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageExpiredInboxRecordProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageExpiredInboxRecordProjection {
      * @memberof PageExpiredInboxRecordProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

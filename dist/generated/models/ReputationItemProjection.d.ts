@@ -17,24 +17,6 @@
 export interface ReputationItemProjection {
     /**
      *
-     * @type {Date}
-     * @memberof ReputationItemProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof ReputationItemProjection
-     */
-    recipient?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ReputationItemProjection
-     */
-    reputationType: ReputationItemProjectionReputationTypeEnum;
-    /**
-     *
      * @type {string}
      * @memberof ReputationItemProjection
      */
@@ -51,14 +33,24 @@ export interface ReputationItemProjection {
      * @memberof ReputationItemProjection
      */
     source?: string;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum ReputationItemProjectionReputationTypeEnum {
-    COMPLAINT = "COMPLAINT",
-    BOUNCE = "BOUNCE"
+    /**
+     *
+     * @type {Date}
+     * @memberof ReputationItemProjection
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof ReputationItemProjection
+     */
+    recipient?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ReputationItemProjection
+     */
+    reputationType: ReputationItemProjectionReputationTypeEnum;
 }
 /**
  * @export
@@ -68,6 +60,14 @@ export declare enum ReputationItemProjectionSeverityEnum {
     INFO = "INFO",
     WARNING = "WARNING",
     DANGER = "DANGER"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum ReputationItemProjectionReputationTypeEnum {
+    COMPLAINT = "COMPLAINT",
+    BOUNCE = "BOUNCE"
 }
 export declare function ReputationItemProjectionFromJSON(json: any): ReputationItemProjection;
 export declare function ReputationItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReputationItemProjection;

@@ -16,6 +16,24 @@
  */
 export interface AliasThreadProjection {
     /**
+     * Name of thread
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    name?: string;
+    /**
+     * ID of email thread
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    id: string;
+    /**
+     * Thread subject
+     * @type {string}
+     * @memberof AliasThreadProjection
+     */
+    subject?: string;
+    /**
      * User ID
      * @type {string}
      * @memberof AliasThreadProjection
@@ -63,24 +81,6 @@ export interface AliasThreadProjection {
      * @memberof AliasThreadProjection
      */
     aliasId: string;
-    /**
-     * Thread subject
-     * @type {string}
-     * @memberof AliasThreadProjection
-     */
-    subject?: string;
-    /**
-     * Name of thread
-     * @type {string}
-     * @memberof AliasThreadProjection
-     */
-    name?: string;
-    /**
-     * ID of email thread
-     * @type {string}
-     * @memberof AliasThreadProjection
-     */
-    id: string;
 }
 export declare function AliasThreadProjectionFromJSON(json: any): AliasThreadProjection;
 export declare function AliasThreadProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasThreadProjection;

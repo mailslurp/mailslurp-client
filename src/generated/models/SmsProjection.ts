@@ -24,6 +24,12 @@ export interface SmsProjection {
    * @type {string}
    * @memberof SmsProjection
    */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsProjection
+   */
   body: string;
   /**
    *
@@ -55,12 +61,6 @@ export interface SmsProjection {
    * @memberof SmsProjection
    */
   read: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof SmsProjection
-   */
-  id: string;
 }
 
 export function SmsProjectionFromJSON(json: any): SmsProjection {
@@ -75,13 +75,13 @@ export function SmsProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
     body: json['body'],
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
     phoneNumber: json['phoneNumber'],
     fromNumber: json['fromNumber'],
     read: json['read'],
-    id: json['id'],
   };
 }
 
@@ -93,12 +93,12 @@ export function SmsProjectionToJSON(value?: SmsProjection | null): any {
     return null;
   }
   return {
+    id: value.id,
     body: value.body,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     phoneNumber: value.phoneNumber,
     fromNumber: value.fromNumber,
     read: value.read,
-    id: value.id,
   };
 }

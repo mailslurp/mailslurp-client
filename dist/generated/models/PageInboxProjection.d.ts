@@ -33,37 +33,19 @@ export interface PageInboxProjection {
      * @type {number}
      * @memberof PageInboxProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageInboxProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageInboxProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageInboxProjection {
      * @memberof PageInboxProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageInboxProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

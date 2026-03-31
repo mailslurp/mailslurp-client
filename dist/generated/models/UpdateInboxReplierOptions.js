@@ -13,8 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateInboxReplierOptionsToJSON = exports.UpdateInboxReplierOptionsFromJSONTyped = exports.UpdateInboxReplierOptionsFromJSON = exports.UpdateInboxReplierOptionsFieldEnum = void 0;
+exports.UpdateInboxReplierOptionsToJSON = exports.UpdateInboxReplierOptionsFromJSONTyped = exports.UpdateInboxReplierOptionsFromJSON = exports.UpdateInboxReplierOptionsShouldEnum = exports.UpdateInboxReplierOptionsFieldEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -25,7 +26,20 @@ var UpdateInboxReplierOptionsFieldEnum;
     UpdateInboxReplierOptionsFieldEnum["SENDER"] = "SENDER";
     UpdateInboxReplierOptionsFieldEnum["SUBJECT"] = "SUBJECT";
     UpdateInboxReplierOptionsFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
+    UpdateInboxReplierOptionsFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
+    UpdateInboxReplierOptionsFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
 })(UpdateInboxReplierOptionsFieldEnum = exports.UpdateInboxReplierOptionsFieldEnum || (exports.UpdateInboxReplierOptionsFieldEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var UpdateInboxReplierOptionsShouldEnum;
+(function (UpdateInboxReplierOptionsShouldEnum) {
+    UpdateInboxReplierOptionsShouldEnum["WILDCARD"] = "WILDCARD";
+    UpdateInboxReplierOptionsShouldEnum["MATCH"] = "MATCH";
+    UpdateInboxReplierOptionsShouldEnum["CONTAIN"] = "CONTAIN";
+    UpdateInboxReplierOptionsShouldEnum["EQUAL"] = "EQUAL";
+})(UpdateInboxReplierOptionsShouldEnum = exports.UpdateInboxReplierOptionsShouldEnum || (exports.UpdateInboxReplierOptionsShouldEnum = {}));
 function UpdateInboxReplierOptionsFromJSON(json) {
     return UpdateInboxReplierOptionsFromJSONTyped(json, false);
 }
@@ -37,8 +51,8 @@ function UpdateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
     return {
         inboxId: json['inboxId'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        field: json['field'],
-        match: json['match'],
+        field: !(0, runtime_1.exists)(json, 'field') ? undefined : json['field'],
+        match: !(0, runtime_1.exists)(json, 'match') ? undefined : json['match'],
         replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
@@ -52,6 +66,10 @@ function UpdateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
         templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
             ? undefined
             : json['templateVariables'],
+        should: !(0, runtime_1.exists)(json, 'should') ? undefined : json['should'],
+        matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
+            ? undefined
+            : (0, _1.InboxAutomationMatchOptionsFromJSON)(json['matchOptions']),
     };
 }
 exports.UpdateInboxReplierOptionsFromJSONTyped = UpdateInboxReplierOptionsFromJSONTyped;
@@ -76,6 +94,8 @@ function UpdateInboxReplierOptionsToJSON(value) {
         body: value.body,
         templateId: value.templateId,
         templateVariables: value.templateVariables,
+        should: value.should,
+        matchOptions: (0, _1.InboxAutomationMatchOptionsToJSON)(value.matchOptions),
     };
 }
 exports.UpdateInboxReplierOptionsToJSON = UpdateInboxReplierOptionsToJSON;

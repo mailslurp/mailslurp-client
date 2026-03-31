@@ -33,37 +33,19 @@ export interface PagePhoneMessageThreadProjection {
      * @type {number}
      * @memberof PagePhoneMessageThreadProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PagePhoneMessageThreadProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PagePhoneMessageThreadProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PagePhoneMessageThreadProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PagePhoneMessageThreadProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PagePhoneMessageThreadProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PagePhoneMessageThreadProjection {
      * @memberof PagePhoneMessageThreadProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneMessageThreadProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PagePhoneMessageThreadProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PagePhoneMessageThreadProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

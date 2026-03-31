@@ -33,14 +33,14 @@ function PhoneMessageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        phoneNumber: !(0, runtime_1.exists)(json, 'phoneNumber') ? undefined : json['phoneNumber'],
+        phoneNumberId: json['phoneNumberId'],
         otherPhoneNumber: !(0, runtime_1.exists)(json, 'otherPhoneNumber')
             ? undefined
             : json['otherPhoneNumber'],
         lastMessageDirection: json['lastMessageDirection'],
         lastBody: json['lastBody'],
         lastCreated: new Date(json['lastCreated']),
-        phoneNumber: !(0, runtime_1.exists)(json, 'phoneNumber') ? undefined : json['phoneNumber'],
-        phoneNumberId: json['phoneNumberId'],
     };
 }
 exports.PhoneMessageThreadProjectionFromJSONTyped = PhoneMessageThreadProjectionFromJSONTyped;
@@ -52,12 +52,12 @@ function PhoneMessageThreadProjectionToJSON(value) {
         return null;
     }
     return {
+        phoneNumber: value.phoneNumber,
+        phoneNumberId: value.phoneNumberId,
         otherPhoneNumber: value.otherPhoneNumber,
         lastMessageDirection: value.lastMessageDirection,
         lastBody: value.lastBody,
         lastCreated: value.lastCreated.toISOString(),
-        phoneNumber: value.phoneNumber,
-        phoneNumberId: value.phoneNumberId,
     };
 }
 exports.PhoneMessageThreadProjectionToJSON = PhoneMessageThreadProjectionToJSON;

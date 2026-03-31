@@ -31,6 +31,24 @@ import {
  */
 export interface EmailThreadProjection {
   /**
+   * ID of email thread
+   * @type {string}
+   * @memberof EmailThreadProjection
+   */
+  id: string;
+  /**
+   * From sender
+   * @type {string}
+   * @memberof EmailThreadProjection
+   */
+  from?: string;
+  /**
+   * Thread topic subject
+   * @type {string}
+   * @memberof EmailThreadProjection
+   */
+  subject?: string;
+  /**
    *
    * @type {SenderProjection}
    * @memberof EmailThreadProjection
@@ -132,24 +150,6 @@ export interface EmailThreadProjection {
    * @memberof EmailThreadProjection
    */
   lastSender?: SenderProjection;
-  /**
-   * Thread topic subject
-   * @type {string}
-   * @memberof EmailThreadProjection
-   */
-  subject?: string;
-  /**
-   * ID of email thread
-   * @type {string}
-   * @memberof EmailThreadProjection
-   */
-  id: string;
-  /**
-   * From sender
-   * @type {string}
-   * @memberof EmailThreadProjection
-   */
-  from?: string;
 }
 
 export function EmailThreadProjectionFromJSON(
@@ -166,6 +166,9 @@ export function EmailThreadProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
+    from: !exists(json, 'from') ? undefined : json['from'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     sender: !exists(json, 'sender')
       ? undefined
       : SenderProjectionFromJSON(json['sender']),
@@ -195,9 +198,6 @@ export function EmailThreadProjectionFromJSONTyped(
     lastSender: !exists(json, 'lastSender')
       ? undefined
       : SenderProjectionFromJSON(json['lastSender']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    id: json['id'],
-    from: !exists(json, 'from') ? undefined : json['from'],
   };
 }
 
@@ -211,6 +211,9 @@ export function EmailThreadProjectionToJSON(
     return null;
   }
   return {
+    id: value.id,
+    from: value.from,
+    subject: value.subject,
     sender: SenderProjectionToJSON(value.sender),
     recipients: EmailRecipientsProjectionToJSON(value.recipients),
     userId: value.userId,
@@ -231,8 +234,5 @@ export function EmailThreadProjectionToJSON(
         : value.lastCreatedAt.toISOString(),
     lastFrom: value.lastFrom,
     lastSender: SenderProjectionToJSON(value.lastSender),
-    subject: value.subject,
-    id: value.id,
-    from: value.from,
   };
 }

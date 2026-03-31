@@ -20,6 +20,18 @@ export interface PhoneMessageThreadProjection {
      * @type {string}
      * @memberof PhoneMessageThreadProjection
      */
+    phoneNumber?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
+    phoneNumberId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadProjection
+     */
     otherPhoneNumber?: string;
     /**
      *
@@ -39,18 +51,6 @@ export interface PhoneMessageThreadProjection {
      * @memberof PhoneMessageThreadProjection
      */
     lastCreated: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneMessageThreadProjection
-     */
-    phoneNumber?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneMessageThreadProjection
-     */
-    phoneNumberId: string;
 }
 /**
  * @export

@@ -14,15 +14,30 @@ InboxForwarderDto
 
 ### Properties
 
+- [attachmentTextExtractionMethod](InboxForwarderDto.md#attachmenttextextractionmethod)
 - [createdAt](InboxForwarderDto.md#createdat)
 - [field](InboxForwarderDto.md#field)
 - [forwardToRecipients](InboxForwarderDto.md#forwardtorecipients)
 - [id](InboxForwarderDto.md#id)
 - [inboxId](InboxForwarderDto.md#inboxid)
 - [match](InboxForwarderDto.md#match)
+- [matchOptions](InboxForwarderDto.md#matchoptions)
 - [name](InboxForwarderDto.md#name)
+- [should](InboxForwarderDto.md#should)
 
 ## Properties
+
+### attachmentTextExtractionMethod
+
+• `Optional` **attachmentTextExtractionMethod**: [`InboxForwarderDtoAttachmentTextExtractionMethodEnum`](../enums/InboxForwarderDtoAttachmentTextExtractionMethodEnum.md)
+
+Method for extracting text from attachments.
+
+**`Memberof`**
+
+InboxForwarderDto
+
+___
 
 ### createdAt
 
@@ -36,7 +51,7 @@ ___
 
 ### field
 
-• **field**: [`InboxForwarderDtoFieldEnum`](../enums/InboxForwarderDtoFieldEnum.md)
+• `Optional` **field**: [`InboxForwarderDtoFieldEnum`](../enums/InboxForwarderDtoFieldEnum.md)
 
 Which field to match against
 
@@ -80,9 +95,19 @@ ___
 
 ### match
 
-• **match**: `string`
+• `Optional` **match**: `string`
 
-Wild-card type pattern to apply to field
+Pattern to apply to field
+
+**`Memberof`**
+
+InboxForwarderDto
+
+___
+
+### matchOptions
+
+• `Optional` **matchOptions**: [`InboxAutomationMatchOptions`](InboxAutomationMatchOptions.md)
 
 **`Memberof`**
 
@@ -95,6 +120,18 @@ ___
 • `Optional` **name**: `string`
 
 Name of inbox forwarder
+
+**`Memberof`**
+
+InboxForwarderDto
+
+___
+
+### should
+
+• `Optional` **should**: [`InboxForwarderDtoShouldEnum`](../enums/InboxForwarderDtoShouldEnum.md)
+
+Comparison mode for inbox automation matching.
 
 **`Memberof`**
 

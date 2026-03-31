@@ -21,18 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface EntityFavouriteItemProjection {
   /**
    *
-   * @type {Date}
-   * @memberof EntityFavouriteItemProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityFavouriteItemProjection
-   */
-  entityType: EntityFavouriteItemProjectionEntityTypeEnum;
-  /**
-   *
    * @type {string}
    * @memberof EntityFavouriteItemProjection
    */
@@ -49,6 +37,18 @@ export interface EntityFavouriteItemProjection {
    * @memberof EntityFavouriteItemProjection
    */
   description?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof EntityFavouriteItemProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityFavouriteItemProjection
+   */
+  entityType: EntityFavouriteItemProjectionEntityTypeEnum;
 }
 
 /**
@@ -77,11 +77,11 @@ export function EntityFavouriteItemProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    entityType: json['entityType'],
     name: json['name'],
     id: json['id'],
     description: !exists(json, 'description') ? undefined : json['description'],
+    createdAt: new Date(json['createdAt']),
+    entityType: json['entityType'],
   };
 }
 
@@ -95,10 +95,10 @@ export function EntityFavouriteItemProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    entityType: value.entityType,
     name: value.name,
     id: value.id,
     description: value.description,
+    createdAt: value.createdAt.toISOString(),
+    entityType: value.entityType,
   };
 }

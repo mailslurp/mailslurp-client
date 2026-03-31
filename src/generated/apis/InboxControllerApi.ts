@@ -44,6 +44,9 @@ import {
   ImapSmtpAccessServers,
   ImapSmtpAccessServersFromJSON,
   ImapSmtpAccessServersToJSON,
+  ImportEmailOptions,
+  ImportEmailOptionsFromJSON,
+  ImportEmailOptionsToJSON,
   InboxByEmailAddressResult,
   InboxByEmailAddressResultFromJSON,
   InboxByEmailAddressResultToJSON,
@@ -421,6 +424,27 @@ export interface GetScheduledJobsByInboxIdRequest {
 
 export interface GetSmtpAccessRequest {
   inboxId?: string;
+}
+
+export interface ImportEmailIntoInboxRequest {
+  inboxId: string;
+  importEmailOptions: ImportEmailOptions;
+}
+
+export interface ImportEmailIntoInboxBytesRequest {
+  inboxId: string;
+  body: string;
+  externalId?: string;
+  runPipeline?: boolean;
+  overrideMessageId?: boolean;
+}
+
+export interface ImportEmailIntoInboxMultipartRequest {
+  inboxId: string;
+  file: Blob;
+  externalId?: string;
+  runPipeline?: boolean;
+  overrideMessageId?: boolean;
 }
 
 export interface IsEmailAddressAvailableRequest {
@@ -3266,7 +3290,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
    * Get or create a plus address by full address
    */
   async getOrCreateInboxPlusAddressRaw(
@@ -3324,7 +3348,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one.
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
    * Get or create a plus address by full address
    */
   async getOrCreateInboxPlusAddress(
@@ -3339,7 +3363,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
    * Get or create a plus address by full address without inbox ID
    */
   async getOrCreatePlusAddressByFullAddressRaw(
@@ -3384,7 +3408,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one.
+   * Looks up an inbox plus address using a full email address like `inbox+alias@domain.com`. Resolves the base inbox from the full address for the authenticated user, then returns an existing plus address if found, otherwise creates one. Rejects the request if the full address is already assigned to a real inbox.
    * Get or create a plus address by full address without inbox ID
    */
   async getOrCreatePlusAddressByFullAddress(
@@ -3710,6 +3734,266 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<SmtpAccessDetails> {
     const response = await this.getSmtpAccessRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Imports a raw RFC822/MIME email into the specified inbox regardless of the original `To` header. V1 accepts MIME-family formats such as `.eml`, `message/rfc822`, and raw MIME bytes only. Outlook `.msg`, `mbox`, and `maildir` are not supported in V1. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes. Set `runPipeline=true` to run the normal inbound receive pipeline after persistence.
+   * Import email into inbox from base64 MIME
+   */
+  async importEmailIntoInboxRaw(
+    requestParameters: ImportEmailIntoInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Email>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling importEmailIntoInbox.'
+      );
+    }
+
+    if (
+      requestParameters.importEmailOptions === null ||
+      requestParameters.importEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'importEmailOptions',
+        'Required parameter requestParameters.importEmailOptions was null or undefined when calling importEmailIntoInbox.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/emails/import`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ImportEmailOptionsToJSON(requestParameters.importEmailOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Imports a raw RFC822/MIME email into the specified inbox regardless of the original `To` header. V1 accepts MIME-family formats such as `.eml`, `message/rfc822`, and raw MIME bytes only. Outlook `.msg`, `mbox`, and `maildir` are not supported in V1. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes. Set `runPipeline=true` to run the normal inbound receive pipeline after persistence.
+   * Import email into inbox from base64 MIME
+   */
+  async importEmailIntoInbox(
+    requestParameters: ImportEmailIntoInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<Email> {
+    const response = await this.importEmailIntoInboxRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Imports a raw RFC822/MIME email stream into the specified inbox regardless of the original `To` header. Supports `message/rfc822` and `application/octet-stream`. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+   * Import email into inbox from raw MIME bytes
+   */
+  async importEmailIntoInboxBytesRaw(
+    requestParameters: ImportEmailIntoInboxBytesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Email>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling importEmailIntoInboxBytes.'
+      );
+    }
+
+    if (
+      requestParameters.body === null ||
+      requestParameters.body === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'body',
+        'Required parameter requestParameters.body was null or undefined when calling importEmailIntoInboxBytes.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.externalId !== undefined) {
+      queryParameters['externalId'] = requestParameters.externalId;
+    }
+
+    if (requestParameters.runPipeline !== undefined) {
+      queryParameters['runPipeline'] = requestParameters.runPipeline;
+    }
+
+    if (requestParameters.overrideMessageId !== undefined) {
+      queryParameters['overrideMessageId'] =
+        requestParameters.overrideMessageId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/octet-stream';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/emails/import/raw`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: requestParameters.body as any,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Imports a raw RFC822/MIME email stream into the specified inbox regardless of the original `To` header. Supports `message/rfc822` and `application/octet-stream`. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+   * Import email into inbox from raw MIME bytes
+   */
+  async importEmailIntoInboxBytes(
+    requestParameters: ImportEmailIntoInboxBytesRequest,
+    initOverrides?: RequestInit
+  ): Promise<Email> {
+    const response = await this.importEmailIntoInboxBytesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Imports an uploaded RFC822/MIME file into the specified inbox regardless of the original `To` header. Intended for `.eml` uploads and other MIME-family raw email files. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+   * Import email into inbox from multipart EML upload
+   */
+  async importEmailIntoInboxMultipartRaw(
+    requestParameters: ImportEmailIntoInboxMultipartRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Email>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling importEmailIntoInboxMultipart.'
+      );
+    }
+
+    if (
+      requestParameters.file === null ||
+      requestParameters.file === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'file',
+        'Required parameter requestParameters.file was null or undefined when calling importEmailIntoInboxMultipart.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.externalId !== undefined) {
+      queryParameters['externalId'] = requestParameters.externalId;
+    }
+
+    if (requestParameters.runPipeline !== undefined) {
+      queryParameters['runPipeline'] = requestParameters.runPipeline;
+    }
+
+    if (requestParameters.overrideMessageId !== undefined) {
+      queryParameters['overrideMessageId'] =
+        requestParameters.overrideMessageId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const consumes: runtime.Consume[] = [
+      { contentType: 'multipart/form-data' },
+    ];
+    // @ts-ignore: canConsumeForm may be unused
+    const canConsumeForm = runtime.canConsumeForm(consumes);
+
+    let formParams: { append(param: string, value: any): any };
+    let useForm = false;
+    // use FormData to transmit files using content-type "multipart/form-data"
+    useForm = canConsumeForm;
+    if (useForm) {
+      formParams = new FormData();
+    } else {
+      formParams = new URLSearchParams();
+    }
+
+    if (requestParameters.file !== undefined) {
+      formParams.append('file', requestParameters.file as any);
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/emails/import/multipart`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: formParams,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Imports an uploaded RFC822/MIME file into the specified inbox regardless of the original `To` header. Intended for `.eml` uploads and other MIME-family raw email files. V1 does not support Outlook `.msg`, `mbox`, or `maildir`. By default MailSlurp rewrites the MIME `Message-ID` header to avoid imported message identity clashes.
+   * Import email into inbox from multipart EML upload
+   */
+  async importEmailIntoInboxMultipart(
+    requestParameters: ImportEmailIntoInboxMultipartRequest,
+    initOverrides?: RequestInit
+  ): Promise<Email> {
+    const response = await this.importEmailIntoInboxMultipartRaw(
       requestParameters,
       initOverrides
     );

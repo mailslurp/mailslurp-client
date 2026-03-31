@@ -13,8 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderDtoToJSON = exports.InboxForwarderDtoFromJSONTyped = exports.InboxForwarderDtoFromJSON = exports.InboxForwarderDtoFieldEnum = void 0;
+exports.InboxForwarderDtoToJSON = exports.InboxForwarderDtoFromJSONTyped = exports.InboxForwarderDtoFromJSON = exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum = exports.InboxForwarderDtoShouldEnum = exports.InboxForwarderDtoFieldEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -25,7 +26,32 @@ var InboxForwarderDtoFieldEnum;
     InboxForwarderDtoFieldEnum["SENDER"] = "SENDER";
     InboxForwarderDtoFieldEnum["SUBJECT"] = "SUBJECT";
     InboxForwarderDtoFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
+    InboxForwarderDtoFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
+    InboxForwarderDtoFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
 })(InboxForwarderDtoFieldEnum = exports.InboxForwarderDtoFieldEnum || (exports.InboxForwarderDtoFieldEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxForwarderDtoShouldEnum;
+(function (InboxForwarderDtoShouldEnum) {
+    InboxForwarderDtoShouldEnum["WILDCARD"] = "WILDCARD";
+    InboxForwarderDtoShouldEnum["MATCH"] = "MATCH";
+    InboxForwarderDtoShouldEnum["CONTAIN"] = "CONTAIN";
+    InboxForwarderDtoShouldEnum["EQUAL"] = "EQUAL";
+})(InboxForwarderDtoShouldEnum = exports.InboxForwarderDtoShouldEnum || (exports.InboxForwarderDtoShouldEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxForwarderDtoAttachmentTextExtractionMethodEnum;
+(function (InboxForwarderDtoAttachmentTextExtractionMethodEnum) {
+    InboxForwarderDtoAttachmentTextExtractionMethodEnum["AUTO"] = "AUTO";
+    InboxForwarderDtoAttachmentTextExtractionMethodEnum["NATIVE"] = "NATIVE";
+    InboxForwarderDtoAttachmentTextExtractionMethodEnum["OCR"] = "OCR";
+    InboxForwarderDtoAttachmentTextExtractionMethodEnum["LLM"] = "LLM";
+    InboxForwarderDtoAttachmentTextExtractionMethodEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
+})(InboxForwarderDtoAttachmentTextExtractionMethodEnum = exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum || (exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum = {}));
 function InboxForwarderDtoFromJSON(json) {
     return InboxForwarderDtoFromJSONTyped(json, false);
 }
@@ -38,10 +64,17 @@ function InboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        field: json['field'],
-        match: json['match'],
+        field: !(0, runtime_1.exists)(json, 'field') ? undefined : json['field'],
+        match: !(0, runtime_1.exists)(json, 'match') ? undefined : json['match'],
         forwardToRecipients: json['forwardToRecipients'],
         createdAt: new Date(json['createdAt']),
+        should: !(0, runtime_1.exists)(json, 'should') ? undefined : json['should'],
+        matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
+            ? undefined
+            : (0, _1.InboxAutomationMatchOptionsFromJSON)(json['matchOptions']),
+        attachmentTextExtractionMethod: !(0, runtime_1.exists)(json, 'attachmentTextExtractionMethod')
+            ? undefined
+            : json['attachmentTextExtractionMethod'],
     };
 }
 exports.InboxForwarderDtoFromJSONTyped = InboxForwarderDtoFromJSONTyped;
@@ -60,6 +93,9 @@ function InboxForwarderDtoToJSON(value) {
         match: value.match,
         forwardToRecipients: value.forwardToRecipients,
         createdAt: value.createdAt.toISOString(),
+        should: value.should,
+        matchOptions: (0, _1.InboxAutomationMatchOptionsToJSON)(value.matchOptions),
+        attachmentTextExtractionMethod: value.attachmentTextExtractionMethod,
     };
 }
 exports.InboxForwarderDtoToJSON = InboxForwarderDtoToJSON;

@@ -20,19 +20,31 @@ export interface PhoneNumberReleaseProjection {
      * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
-    userId: string;
+    name?: string;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
-    createdAt: Date;
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberReleaseProjection
+     */
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
     phoneCountry: PhoneNumberReleaseProjectionPhoneCountryEnum;
+    /**
+     *
+     * @type {Date}
+     * @memberof PhoneNumberReleaseProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -51,18 +63,6 @@ export interface PhoneNumberReleaseProjection {
      * @memberof PhoneNumberReleaseProjection
      */
     planCurrency?: PhoneNumberReleaseProjectionPlanCurrencyEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberReleaseProjection
-     */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberReleaseProjection
-     */
-    id: string;
 }
 /**
  * @export

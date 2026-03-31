@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxForwarderOptionsToJSON = exports.CreateInboxForwarderOptionsFromJSONTyped = exports.CreateInboxForwarderOptionsFromJSON = exports.CreateInboxForwarderOptionsFieldEnum = void 0;
+exports.CreateInboxForwarderOptionsToJSON = exports.CreateInboxForwarderOptionsFromJSONTyped = exports.CreateInboxForwarderOptionsFromJSON = exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = exports.CreateInboxForwarderOptionsShouldEnum = exports.CreateInboxForwarderOptionsFieldEnum = void 0;
+var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -24,7 +26,32 @@ var CreateInboxForwarderOptionsFieldEnum;
     CreateInboxForwarderOptionsFieldEnum["SENDER"] = "SENDER";
     CreateInboxForwarderOptionsFieldEnum["SUBJECT"] = "SUBJECT";
     CreateInboxForwarderOptionsFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
+    CreateInboxForwarderOptionsFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
+    CreateInboxForwarderOptionsFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
 })(CreateInboxForwarderOptionsFieldEnum = exports.CreateInboxForwarderOptionsFieldEnum || (exports.CreateInboxForwarderOptionsFieldEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var CreateInboxForwarderOptionsShouldEnum;
+(function (CreateInboxForwarderOptionsShouldEnum) {
+    CreateInboxForwarderOptionsShouldEnum["WILDCARD"] = "WILDCARD";
+    CreateInboxForwarderOptionsShouldEnum["MATCH"] = "MATCH";
+    CreateInboxForwarderOptionsShouldEnum["CONTAIN"] = "CONTAIN";
+    CreateInboxForwarderOptionsShouldEnum["EQUAL"] = "EQUAL";
+})(CreateInboxForwarderOptionsShouldEnum = exports.CreateInboxForwarderOptionsShouldEnum || (exports.CreateInboxForwarderOptionsShouldEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum;
+(function (CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum) {
+    CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["AUTO"] = "AUTO";
+    CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["NATIVE"] = "NATIVE";
+    CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["OCR"] = "OCR";
+    CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["LLM"] = "LLM";
+    CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
+})(CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum || (exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = {}));
 function CreateInboxForwarderOptionsFromJSON(json) {
     return CreateInboxForwarderOptionsFromJSONTyped(json, false);
 }
@@ -34,9 +61,16 @@ function CreateInboxForwarderOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        field: json['field'],
-        match: json['match'],
+        field: !(0, runtime_1.exists)(json, 'field') ? undefined : json['field'],
+        match: !(0, runtime_1.exists)(json, 'match') ? undefined : json['match'],
         forwardToRecipients: json['forwardToRecipients'],
+        should: !(0, runtime_1.exists)(json, 'should') ? undefined : json['should'],
+        matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
+            ? undefined
+            : (0, _1.InboxAutomationMatchOptionsFromJSON)(json['matchOptions']),
+        attachmentTextExtractionMethod: !(0, runtime_1.exists)(json, 'attachmentTextExtractionMethod')
+            ? undefined
+            : json['attachmentTextExtractionMethod'],
     };
 }
 exports.CreateInboxForwarderOptionsFromJSONTyped = CreateInboxForwarderOptionsFromJSONTyped;
@@ -51,6 +85,9 @@ function CreateInboxForwarderOptionsToJSON(value) {
         field: value.field,
         match: value.match,
         forwardToRecipients: value.forwardToRecipients,
+        should: value.should,
+        matchOptions: (0, _1.InboxAutomationMatchOptionsToJSON)(value.matchOptions),
+        attachmentTextExtractionMethod: value.attachmentTextExtractionMethod,
     };
 }
 exports.CreateInboxForwarderOptionsToJSON = CreateInboxForwarderOptionsToJSON;

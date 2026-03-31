@@ -23,16 +23,16 @@ export interface OptInIdentityProjection {
     id: string;
     /**
      *
-     * @type {string}
-     * @memberof OptInIdentityProjection
-     */
-    emailAddress: string;
-    /**
-     *
      * @type {boolean}
      * @memberof OptInIdentityProjection
      */
     verified?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof OptInIdentityProjection
+     */
+    emailAddress: string;
     /**
      *
      * @type {Date}

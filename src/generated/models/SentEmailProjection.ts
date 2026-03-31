@@ -41,7 +41,19 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
+  threadId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
   from?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  subject?: string | null;
   /**
    *
    * @type {Sender}
@@ -59,37 +71,19 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  threadId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  inReplyTo?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
   userId: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  attachments?: Array<string> | null;
   /**
    *
    * @type {string}
    * @memberof SentEmailProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  attachments?: Array<string> | null;
   /**
    *
    * @type {Date}
@@ -120,6 +114,12 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   messageId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  inReplyTo?: string | null;
   /**
    *
    * @type {boolean}
@@ -159,24 +159,24 @@ export function SentEmailProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
+    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
     from: !exists(json, 'from') ? undefined : json['from'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     sender: !exists(json, 'sender')
       ? undefined
       : SenderFromJSON(json['sender']),
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
-    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     userId: json['userId'],
-    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     createdAt: new Date(json['createdAt']),
     to: !exists(json, 'to') ? undefined : json['to'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
+    inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     virtualSend: json['virtualSend'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
@@ -195,20 +195,20 @@ export function SentEmailProjectionToJSON(
   }
   return {
     id: value.id,
+    threadId: value.threadId,
     from: value.from,
+    subject: value.subject,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
-    subject: value.subject,
-    threadId: value.threadId,
-    inReplyTo: value.inReplyTo,
     userId: value.userId,
-    attachments: value.attachments,
     inboxId: value.inboxId,
+    attachments: value.attachments,
     createdAt: value.createdAt.toISOString(),
     to: value.to,
     cc: value.cc,
     bcc: value.bcc,
     messageId: value.messageId,
+    inReplyTo: value.inReplyTo,
     virtualSend: value.virtualSend,
     bodyExcerpt: value.bodyExcerpt,
     textExcerpt: value.textExcerpt,

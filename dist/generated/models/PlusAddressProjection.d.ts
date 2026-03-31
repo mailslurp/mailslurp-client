@@ -20,6 +20,12 @@ export interface PlusAddressProjection {
      * @type {string}
      * @memberof PlusAddressProjection
      */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PlusAddressProjection
+     */
     userId: string;
     /**
      *
@@ -51,12 +57,6 @@ export interface PlusAddressProjection {
      * @memberof PlusAddressProjection
      */
     fullAddress: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PlusAddressProjection
-     */
-    id: string;
 }
 export declare function PlusAddressProjectionFromJSON(json: any): PlusAddressProjection;
 export declare function PlusAddressProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlusAddressProjection;

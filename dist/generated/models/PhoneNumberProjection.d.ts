@@ -20,7 +20,25 @@ export interface PhoneNumberProjection {
      * @type {string}
      * @memberof PhoneNumberProjection
      */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
     userId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
     /**
      *
      * @type {Date}
@@ -32,25 +50,37 @@ export interface PhoneNumberProjection {
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    providerLabel?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    lineType?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    carrierName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    mobileCountryCode?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    mobileNetworkCode?: string;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
     phoneNumber: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    id: string;
 }
 /**
  * @export

@@ -33,37 +33,19 @@ export interface PageAliasThreadProjection {
      * @type {number}
      * @memberof PageAliasThreadProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageAliasThreadProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageAliasThreadProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAliasThreadProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageAliasThreadProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageAliasThreadProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageAliasThreadProjection {
      * @memberof PageAliasThreadProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAliasThreadProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageAliasThreadProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageAliasThreadProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

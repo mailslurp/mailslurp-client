@@ -56,6 +56,7 @@ function PhoneNumberDtoFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        tags: json['tags'],
         userId: json['userId'],
         complianceAddress: !(0, runtime_1.exists)(json, 'complianceAddress')
             ? undefined
@@ -72,6 +73,17 @@ function PhoneNumberDtoFromJSONTyped(json, ignoreDiscriminator) {
         phoneVariant: !(0, runtime_1.exists)(json, 'phoneVariant')
             ? undefined
             : json['phoneVariant'],
+        lineType: !(0, runtime_1.exists)(json, 'lineType') ? undefined : json['lineType'],
+        carrierName: !(0, runtime_1.exists)(json, 'carrierName') ? undefined : json['carrierName'],
+        mobileCountryCode: !(0, runtime_1.exists)(json, 'mobileCountryCode')
+            ? undefined
+            : json['mobileCountryCode'],
+        mobileNetworkCode: !(0, runtime_1.exists)(json, 'mobileNetworkCode')
+            ? undefined
+            : json['mobileNetworkCode'],
+        providerLabel: !(0, runtime_1.exists)(json, 'providerLabel')
+            ? undefined
+            : json['providerLabel'],
     };
 }
 exports.PhoneNumberDtoFromJSONTyped = PhoneNumberDtoFromJSONTyped;
@@ -86,6 +98,7 @@ function PhoneNumberDtoToJSON(value) {
         id: value.id,
         name: value.name,
         description: value.description,
+        tags: value.tags,
         userId: value.userId,
         complianceAddress: value.complianceAddress,
         emergencyAddress: value.emergencyAddress,
@@ -96,6 +109,11 @@ function PhoneNumberDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
         favourite: value.favourite,
         phoneVariant: value.phoneVariant,
+        lineType: value.lineType,
+        carrierName: value.carrierName,
+        mobileCountryCode: value.mobileCountryCode,
+        mobileNetworkCode: value.mobileNetworkCode,
+        providerLabel: value.providerLabel,
     };
 }
 exports.PhoneNumberDtoToJSON = PhoneNumberDtoToJSON;

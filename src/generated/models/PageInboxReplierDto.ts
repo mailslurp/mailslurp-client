@@ -51,37 +51,19 @@ export interface PageInboxReplierDto {
    * @type {number}
    * @memberof PageInboxReplierDto
    */
-  totalElements: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageInboxReplierDto
    */
-  totalPages: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
    * @memberof PageInboxReplierDto
    */
   last?: boolean;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxReplierDto
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {SortObject}
-   * @memberof PageInboxReplierDto
-   */
-  sort?: SortObject;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageInboxReplierDto
-   */
-  first?: boolean;
   /**
    *
    * @type {number}
@@ -94,6 +76,24 @@ export interface PageInboxReplierDto {
    * @memberof PageInboxReplierDto
    */
   number?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageInboxReplierDto
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageInboxReplierDto
+   */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageInboxReplierDto
+   */
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -120,16 +120,16 @@ export function PageInboxReplierDtoFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -149,14 +149,14 @@ export function PageInboxReplierDtoToJSON(
         ? undefined
         : (value.content as Array<any>).map(InboxReplierDtoToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
-    numberOfElements: value.numberOfElements,
-    sort: SortObjectToJSON(value.sort),
-    first: value.first,
     size: value.size,
     number: value.number,
+    first: value.first,
+    numberOfElements: value.numberOfElements,
+    sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };
 }

@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { InboxAutomationMatchOptions } from './';
 /**
  * Options for creating an inbox forwarder
  * @export
@@ -20,19 +21,37 @@ export interface CreateInboxForwarderOptions {
      * @type {string}
      * @memberof CreateInboxForwarderOptions
      */
-    field: CreateInboxForwarderOptionsFieldEnum;
+    field?: CreateInboxForwarderOptionsFieldEnum;
     /**
      * String or wildcard style match for field specified when evaluating forwarding rules
      * @type {string}
      * @memberof CreateInboxForwarderOptions
      */
-    match: string;
+    match?: string | null;
     /**
      * Email addresses to forward an email to if it matches the field and match criteria of the forwarder
      * @type {Array<string>}
      * @memberof CreateInboxForwarderOptions
      */
     forwardToRecipients: Array<string>;
+    /**
+     * Comparison mode for inbox automation matching.
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    should?: CreateInboxForwarderOptionsShouldEnum;
+    /**
+     *
+     * @type {InboxAutomationMatchOptions}
+     * @memberof CreateInboxForwarderOptions
+     */
+    matchOptions?: InboxAutomationMatchOptions | null;
+    /**
+     * Method for extracting text from attachments.
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    attachmentTextExtractionMethod?: CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum;
 }
 /**
  * @export
@@ -42,7 +61,30 @@ export declare enum CreateInboxForwarderOptionsFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",
     SUBJECT = "SUBJECT",
-    ATTACHMENTS = "ATTACHMENTS"
+    ATTACHMENTS = "ATTACHMENTS",
+    ATTACHMENT_FILENAME = "ATTACHMENT_FILENAME",
+    ATTACHMENT_TEXT = "ATTACHMENT_TEXT"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreateInboxForwarderOptionsShouldEnum {
+    WILDCARD = "WILDCARD",
+    MATCH = "MATCH",
+    CONTAIN = "CONTAIN",
+    EQUAL = "EQUAL"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum {
+    AUTO = "AUTO",
+    NATIVE = "NATIVE",
+    OCR = "OCR",
+    LLM = "LLM",
+    OCR_THEN_LLM = "OCR_THEN_LLM"
 }
 export declare function CreateInboxForwarderOptionsFromJSON(json: any): CreateInboxForwarderOptions;
 export declare function CreateInboxForwarderOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInboxForwarderOptions;

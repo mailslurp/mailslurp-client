@@ -20,19 +20,25 @@ export interface PhoneMessageThreadItemProjection {
      * @type {string}
      * @memberof PhoneMessageThreadItemProjection
      */
-    body: string;
+    id: string;
     /**
      *
      * @type {string}
      * @memberof PhoneMessageThreadItemProjection
      */
-    phoneNumberId: string;
+    body: string;
     /**
      *
      * @type {Date}
      * @memberof PhoneMessageThreadItemProjection
      */
     created: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadItemProjection
+     */
+    phoneNumberId: string;
     /**
      *
      * @type {string}
@@ -51,12 +57,6 @@ export interface PhoneMessageThreadItemProjection {
      * @memberof PhoneMessageThreadItemProjection
      */
     toPhoneNumber: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneMessageThreadItemProjection
-     */
-    id: string;
 }
 /**
  * @export

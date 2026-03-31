@@ -24,6 +24,18 @@ export interface EntityEventItemProjection {
    * @type {string}
    * @memberof EntityEventItemProjection
    */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityEventItemProjection
+   */
+  severity: EntityEventItemProjectionSeverityEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityEventItemProjection
+   */
   eventType: EntityEventItemProjectionEventTypeEnum;
   /**
    *
@@ -37,20 +49,18 @@ export interface EntityEventItemProjection {
    * @memberof EntityEventItemProjection
    */
   phoneId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityEventItemProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityEventItemProjection
-   */
-  severity: EntityEventItemProjectionSeverityEnum;
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum EntityEventItemProjectionSeverityEnum {
+  INFO = 'INFO',
+  SUCCESS = 'SUCCESS',
+  WARNING = 'WARNING',
+  DANGER = 'DANGER',
+}
 /**
  * @export
  * @enum {string}
@@ -61,16 +71,6 @@ export enum EntityEventItemProjectionEventTypeEnum {
   INBOX_REPLIER_EVENT = 'INBOX_REPLIER_EVENT',
   INBOX_RULESET_EVENT = 'INBOX_RULESET_EVENT',
   ALIAS_EVENT = 'ALIAS_EVENT',
-}
-/**
- * @export
- * @enum {string}
- */
-export enum EntityEventItemProjectionSeverityEnum {
-  INFO = 'INFO',
-  SUCCESS = 'SUCCESS',
-  WARNING = 'WARNING',
-  DANGER = 'DANGER',
 }
 
 export function EntityEventItemProjectionFromJSON(
@@ -87,11 +87,11 @@ export function EntityEventItemProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
+    severity: json['severity'],
     eventType: json['eventType'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
-    id: json['id'],
-    severity: json['severity'],
   };
 }
 
@@ -105,10 +105,10 @@ export function EntityEventItemProjectionToJSON(
     return null;
   }
   return {
+    id: value.id,
+    severity: value.severity,
     eventType: value.eventType,
     inboxId: value.inboxId,
     phoneId: value.phoneId,
-    id: value.id,
-    severity: value.severity,
   };
 }

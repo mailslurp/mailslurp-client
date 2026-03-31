@@ -20,30 +20,6 @@ export interface ConnectorEventProjection {
      * @type {string}
      * @memberof ConnectorEventProjection
      */
-    eventType: ConnectorEventProjectionEventTypeEnum;
-    /**
-     *
-     * @type {Date}
-     * @memberof ConnectorEventProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorEventProjection
-     */
-    connectorId: string;
-    /**
-     *
-     * @type {boolean}
-     * @memberof ConnectorEventProjection
-     */
-    seen?: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorEventProjection
-     */
     message?: string;
     /**
      *
@@ -63,14 +39,30 @@ export interface ConnectorEventProjection {
      * @memberof ConnectorEventProjection
      */
     status: ConnectorEventProjectionStatusEnum;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum ConnectorEventProjectionEventTypeEnum {
-    SEND = "SEND",
-    SYNC = "SYNC"
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorEventProjection
+     */
+    eventType: ConnectorEventProjectionEventTypeEnum;
+    /**
+     *
+     * @type {Date}
+     * @memberof ConnectorEventProjection
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorEventProjection
+     */
+    connectorId: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorEventProjection
+     */
+    seen?: boolean;
 }
 /**
  * @export
@@ -82,6 +74,14 @@ export declare enum ConnectorEventProjectionStatusEnum {
     SUBSCRIPTION_ERROR = "SUBSCRIPTION_ERROR",
     CONNECTION_ERROR = "CONNECTION_ERROR",
     NOT_FOUND = "NOT_FOUND"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum ConnectorEventProjectionEventTypeEnum {
+    SEND = "SEND",
+    SYNC = "SYNC"
 }
 export declare function ConnectorEventProjectionFromJSON(json: any): ConnectorEventProjection;
 export declare function ConnectorEventProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorEventProjection;

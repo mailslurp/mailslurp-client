@@ -14,12 +14,60 @@
 
 import * as runtime from '../runtime';
 import {
+  AnalyzeDmarcReportOptions,
+  AnalyzeDmarcReportOptionsFromJSON,
+  AnalyzeDmarcReportOptionsToJSON,
+  AnalyzeDmarcReportResults,
+  AnalyzeDmarcReportResultsFromJSON,
+  AnalyzeDmarcReportResultsToJSON,
+  AnalyzeEmailHeadersOptions,
+  AnalyzeEmailHeadersOptionsFromJSON,
+  AnalyzeEmailHeadersOptionsToJSON,
+  AnalyzeEmailHeadersResults,
+  AnalyzeEmailHeadersResultsFromJSON,
+  AnalyzeEmailHeadersResultsToJSON,
+  CheckCampaignProbeOptions,
+  CheckCampaignProbeOptionsFromJSON,
+  CheckCampaignProbeOptionsToJSON,
+  CheckCampaignProbeResults,
+  CheckCampaignProbeResultsFromJSON,
+  CheckCampaignProbeResultsToJSON,
+  CheckDnsPropagationOptions,
+  CheckDnsPropagationOptionsFromJSON,
+  CheckDnsPropagationOptionsToJSON,
+  CheckDnsPropagationResults,
+  CheckDnsPropagationResultsFromJSON,
+  CheckDnsPropagationResultsToJSON,
+  CheckDomainMonitorOptions,
+  CheckDomainMonitorOptionsFromJSON,
+  CheckDomainMonitorOptionsToJSON,
+  CheckDomainMonitorResults,
+  CheckDomainMonitorResultsFromJSON,
+  CheckDomainMonitorResultsToJSON,
+  CheckEmailAuditOptions,
+  CheckEmailAuditOptionsFromJSON,
+  CheckEmailAuditOptionsToJSON,
+  CheckEmailAuthStackOptions,
+  CheckEmailAuthStackOptionsFromJSON,
+  CheckEmailAuthStackOptionsToJSON,
+  CheckEmailAuthStackResults,
+  CheckEmailAuthStackResultsFromJSON,
+  CheckEmailAuthStackResultsToJSON,
+  CheckEmailBlacklistOptions,
+  CheckEmailBlacklistOptionsFromJSON,
+  CheckEmailBlacklistOptionsToJSON,
+  CheckEmailBlacklistResults,
+  CheckEmailBlacklistResultsFromJSON,
+  CheckEmailBlacklistResultsToJSON,
   CheckEmailFeaturesClientSupportOptions,
   CheckEmailFeaturesClientSupportOptionsFromJSON,
   CheckEmailFeaturesClientSupportOptionsToJSON,
   CheckEmailFeaturesClientSupportResults,
   CheckEmailFeaturesClientSupportResultsFromJSON,
   CheckEmailFeaturesClientSupportResultsToJSON,
+  EmailAuditAnalysisResult,
+  EmailAuditAnalysisResultFromJSON,
+  EmailAuditAnalysisResultToJSON,
   FakeEmailPreview,
   FakeEmailPreviewFromJSON,
   FakeEmailPreviewToJSON,
@@ -44,6 +92,12 @@ import {
   GenerateMtaStsRecordResults,
   GenerateMtaStsRecordResultsFromJSON,
   GenerateMtaStsRecordResultsToJSON,
+  GenerateSpfRecordOptions,
+  GenerateSpfRecordOptionsFromJSON,
+  GenerateSpfRecordOptionsToJSON,
+  GenerateSpfRecordResults,
+  GenerateSpfRecordResultsFromJSON,
+  GenerateSpfRecordResultsToJSON,
   GenerateTlsReportingRecordOptions,
   GenerateTlsReportingRecordOptionsFromJSON,
   GenerateTlsReportingRecordOptionsToJSON,
@@ -56,6 +110,12 @@ import {
   LookupBimiDomainResults,
   LookupBimiDomainResultsFromJSON,
   LookupBimiDomainResultsToJSON,
+  LookupDkimDomainOptions,
+  LookupDkimDomainOptionsFromJSON,
+  LookupDkimDomainOptionsToJSON,
+  LookupDkimDomainResults,
+  LookupDkimDomainResultsFromJSON,
+  LookupDkimDomainResultsToJSON,
   LookupDmarcDomainOptions,
   LookupDmarcDomainOptionsFromJSON,
   LookupDmarcDomainOptionsToJSON,
@@ -74,6 +134,18 @@ import {
   LookupMxRecordsResults,
   LookupMxRecordsResultsFromJSON,
   LookupMxRecordsResultsToJSON,
+  LookupPtrOptions,
+  LookupPtrOptionsFromJSON,
+  LookupPtrOptionsToJSON,
+  LookupPtrResults,
+  LookupPtrResultsFromJSON,
+  LookupPtrResultsToJSON,
+  LookupSpfDomainOptions,
+  LookupSpfDomainOptionsFromJSON,
+  LookupSpfDomainOptionsToJSON,
+  LookupSpfDomainResults,
+  LookupSpfDomainResultsFromJSON,
+  LookupSpfDomainResultsToJSON,
   LookupTlsReportingDomainOptions,
   LookupTlsReportingDomainOptionsFromJSON,
   LookupTlsReportingDomainOptionsToJSON,
@@ -83,7 +155,45 @@ import {
   NewFakeEmailAddressResult,
   NewFakeEmailAddressResultFromJSON,
   NewFakeEmailAddressResultToJSON,
+  TestSmtpServerOptions,
+  TestSmtpServerOptionsFromJSON,
+  TestSmtpServerOptionsToJSON,
+  TestSmtpServerResults,
+  TestSmtpServerResultsFromJSON,
+  TestSmtpServerResultsToJSON,
 } from '../models';
+
+export interface AnalyzeDmarcReportRequest {
+  analyzeDmarcReportOptions: AnalyzeDmarcReportOptions;
+}
+
+export interface AnalyzeEmailHeadersRequest {
+  analyzeEmailHeadersOptions: AnalyzeEmailHeadersOptions;
+}
+
+export interface CheckCampaignProbeRequest {
+  checkCampaignProbeOptions: CheckCampaignProbeOptions;
+}
+
+export interface CheckDnsPropagationRequest {
+  checkDnsPropagationOptions: CheckDnsPropagationOptions;
+}
+
+export interface CheckDomainMonitorRequest {
+  checkDomainMonitorOptions: CheckDomainMonitorOptions;
+}
+
+export interface CheckEmailAuditRequest {
+  checkEmailAuditOptions: CheckEmailAuditOptions;
+}
+
+export interface CheckEmailAuthStackRequest {
+  checkEmailAuthStackOptions: CheckEmailAuthStackOptions;
+}
+
+export interface CheckEmailBlacklistRequest {
+  checkEmailBlacklistOptions: CheckEmailBlacklistOptions;
+}
 
 export interface CheckEmailFeaturesClientSupportRequest {
   checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
@@ -103,6 +213,10 @@ export interface GenerateDmarcRecordRequest {
 
 export interface GenerateMtaStsRecordRequest {
   generateMtaStsRecordOptions: GenerateMtaStsRecordOptions;
+}
+
+export interface GenerateSpfRecordRequest {
+  generateSpfRecordOptions: GenerateSpfRecordOptions;
 }
 
 export interface GenerateTlsReportingRecordRequest {
@@ -130,6 +244,10 @@ export interface LookupBimiDomainRequest {
   lookupBimiDomainOptions: LookupBimiDomainOptions;
 }
 
+export interface LookupDkimDomainRequest {
+  lookupDkimDomainOptions: LookupDkimDomainOptions;
+}
+
 export interface LookupDmarcDomainRequest {
   lookupDmarcDomainOptions: LookupDmarcDomainOptions;
 }
@@ -142,14 +260,498 @@ export interface LookupMxRecordRequest {
   lookupMxRecordsOptions: LookupMxRecordsOptions;
 }
 
+export interface LookupPtrRequest {
+  lookupPtrOptions: LookupPtrOptions;
+}
+
+export interface LookupSpfDomainRequest {
+  lookupSpfDomainOptions: LookupSpfDomainOptions;
+}
+
 export interface LookupTlsReportingDomainRequest {
   lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
+}
+
+export interface TestSmtpServerRequest {
+  testSmtpServerOptions: TestSmtpServerOptions;
 }
 
 /**
  *
  */
 export class ToolsControllerApi extends runtime.BaseAPI {
+  /**
+   * Parse and summarize a DMARC aggregate XML report
+   */
+  async analyzeDmarcReportRaw(
+    requestParameters: AnalyzeDmarcReportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AnalyzeDmarcReportResults>> {
+    if (
+      requestParameters.analyzeDmarcReportOptions === null ||
+      requestParameters.analyzeDmarcReportOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'analyzeDmarcReportOptions',
+        'Required parameter requestParameters.analyzeDmarcReportOptions was null or undefined when calling analyzeDmarcReport.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/analyze-dmarc-report`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: AnalyzeDmarcReportOptionsToJSON(
+          requestParameters.analyzeDmarcReportOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AnalyzeDmarcReportResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Parse and summarize a DMARC aggregate XML report
+   */
+  async analyzeDmarcReport(
+    requestParameters: AnalyzeDmarcReportRequest,
+    initOverrides?: RequestInit
+  ): Promise<AnalyzeDmarcReportResults> {
+    const response = await this.analyzeDmarcReportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Analyze email headers for auth results and delivery path
+   */
+  async analyzeEmailHeadersRaw(
+    requestParameters: AnalyzeEmailHeadersRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AnalyzeEmailHeadersResults>> {
+    if (
+      requestParameters.analyzeEmailHeadersOptions === null ||
+      requestParameters.analyzeEmailHeadersOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'analyzeEmailHeadersOptions',
+        'Required parameter requestParameters.analyzeEmailHeadersOptions was null or undefined when calling analyzeEmailHeaders.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/analyze-email-headers`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: AnalyzeEmailHeadersOptionsToJSON(
+          requestParameters.analyzeEmailHeadersOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AnalyzeEmailHeadersResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Analyze email headers for auth results and delivery path
+   */
+  async analyzeEmailHeaders(
+    requestParameters: AnalyzeEmailHeadersRequest,
+    initOverrides?: RequestInit
+  ): Promise<AnalyzeEmailHeadersResults> {
+    const response = await this.analyzeEmailHeadersRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Run a one-shot free campaign probe preflight check
+   */
+  async checkCampaignProbeRaw(
+    requestParameters: CheckCampaignProbeRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckCampaignProbeResults>> {
+    if (
+      requestParameters.checkCampaignProbeOptions === null ||
+      requestParameters.checkCampaignProbeOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkCampaignProbeOptions',
+        'Required parameter requestParameters.checkCampaignProbeOptions was null or undefined when calling checkCampaignProbe.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/check-campaign-probe`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckCampaignProbeOptionsToJSON(
+          requestParameters.checkCampaignProbeOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckCampaignProbeResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Run a one-shot free campaign probe preflight check
+   */
+  async checkCampaignProbe(
+    requestParameters: CheckCampaignProbeRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckCampaignProbeResults> {
+    const response = await this.checkCampaignProbeRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Check DNS propagation for a host and record type across configured resolvers
+   */
+  async checkDnsPropagationRaw(
+    requestParameters: CheckDnsPropagationRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckDnsPropagationResults>> {
+    if (
+      requestParameters.checkDnsPropagationOptions === null ||
+      requestParameters.checkDnsPropagationOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkDnsPropagationOptions',
+        'Required parameter requestParameters.checkDnsPropagationOptions was null or undefined when calling checkDnsPropagation.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/check-dns-propagation`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckDnsPropagationOptionsToJSON(
+          requestParameters.checkDnsPropagationOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckDnsPropagationResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Check DNS propagation for a host and record type across configured resolvers
+   */
+  async checkDnsPropagation(
+    requestParameters: CheckDnsPropagationRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckDnsPropagationResults> {
+    const response = await this.checkDnsPropagationRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Run a one-shot free domain monitor posture check
+   */
+  async checkDomainMonitorRaw(
+    requestParameters: CheckDomainMonitorRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckDomainMonitorResults>> {
+    if (
+      requestParameters.checkDomainMonitorOptions === null ||
+      requestParameters.checkDomainMonitorOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkDomainMonitorOptions',
+        'Required parameter requestParameters.checkDomainMonitorOptions was null or undefined when calling checkDomainMonitor.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/check-domain-monitor`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckDomainMonitorOptionsToJSON(
+          requestParameters.checkDomainMonitorOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckDomainMonitorResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Run a one-shot free domain monitor posture check
+   */
+  async checkDomainMonitor(
+    requestParameters: CheckDomainMonitorRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckDomainMonitorResults> {
+    const response = await this.checkDomainMonitorRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Run a one-shot free email audit across links, images, HTML, and client support
+   */
+  async checkEmailAuditRaw(
+    requestParameters: CheckEmailAuditRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailAuditAnalysisResult>> {
+    if (
+      requestParameters.checkEmailAuditOptions === null ||
+      requestParameters.checkEmailAuditOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkEmailAuditOptions',
+        'Required parameter requestParameters.checkEmailAuditOptions was null or undefined when calling checkEmailAudit.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/check-email-audit`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckEmailAuditOptionsToJSON(
+          requestParameters.checkEmailAuditOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailAuditAnalysisResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Run a one-shot free email audit across links, images, HTML, and client support
+   */
+  async checkEmailAudit(
+    requestParameters: CheckEmailAuditRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailAuditAnalysisResult> {
+    const response = await this.checkEmailAuditRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+   */
+  async checkEmailAuthStackRaw(
+    requestParameters: CheckEmailAuthStackRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckEmailAuthStackResults>> {
+    if (
+      requestParameters.checkEmailAuthStackOptions === null ||
+      requestParameters.checkEmailAuthStackOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkEmailAuthStackOptions',
+        'Required parameter requestParameters.checkEmailAuthStackOptions was null or undefined when calling checkEmailAuthStack.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/check-email-auth-stack`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckEmailAuthStackOptionsToJSON(
+          requestParameters.checkEmailAuthStackOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckEmailAuthStackResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Run a one-shot combined SPF, DKIM, DMARC, BIMI, MX, MTA-STS, and TLS-RPT check
+   */
+  async checkEmailAuthStack(
+    requestParameters: CheckEmailAuthStackRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckEmailAuthStackResults> {
+    const response = await this.checkEmailAuthStackRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Check whether a domain or IP appears on configured DNS blacklists
+   */
+  async checkEmailBlacklistRaw(
+    requestParameters: CheckEmailBlacklistRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckEmailBlacklistResults>> {
+    if (
+      requestParameters.checkEmailBlacklistOptions === null ||
+      requestParameters.checkEmailBlacklistOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkEmailBlacklistOptions',
+        'Required parameter requestParameters.checkEmailBlacklistOptions was null or undefined when calling checkEmailBlacklist.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/check-email-blacklists`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckEmailBlacklistOptionsToJSON(
+          requestParameters.checkEmailBlacklistOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckEmailBlacklistResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Check whether a domain or IP appears on configured DNS blacklists
+   */
+  async checkEmailBlacklist(
+    requestParameters: CheckEmailBlacklistRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckEmailBlacklistResults> {
+    const response = await this.checkEmailBlacklistRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Check email client support for email HTML and CSS features
    */
@@ -473,6 +1075,65 @@ export class ToolsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<GenerateMtaStsRecordResults> {
     const response = await this.generateMtaStsRecordRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create an SPF record
+   */
+  async generateSpfRecordRaw(
+    requestParameters: GenerateSpfRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<GenerateSpfRecordResults>> {
+    if (
+      requestParameters.generateSpfRecordOptions === null ||
+      requestParameters.generateSpfRecordOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'generateSpfRecordOptions',
+        'Required parameter requestParameters.generateSpfRecordOptions was null or undefined when calling generateSpfRecord.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/generate-spf-record`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GenerateSpfRecordOptionsToJSON(
+          requestParameters.generateSpfRecordOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GenerateSpfRecordResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create an SPF record
+   */
+  async generateSpfRecord(
+    requestParameters: GenerateSpfRecordRequest,
+    initOverrides?: RequestInit
+  ): Promise<GenerateSpfRecordResults> {
+    const response = await this.generateSpfRecordRaw(
       requestParameters,
       initOverrides
     );
@@ -830,6 +1491,65 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Lookup and validate a DKIM record
+   */
+  async lookupDkimDomainRaw(
+    requestParameters: LookupDkimDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<LookupDkimDomainResults>> {
+    if (
+      requestParameters.lookupDkimDomainOptions === null ||
+      requestParameters.lookupDkimDomainOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'lookupDkimDomainOptions',
+        'Required parameter requestParameters.lookupDkimDomainOptions was null or undefined when calling lookupDkimDomain.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/lookup-dkim-domain`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: LookupDkimDomainOptionsToJSON(
+          requestParameters.lookupDkimDomainOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LookupDkimDomainResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup and validate a DKIM record
+   */
+  async lookupDkimDomain(
+    requestParameters: LookupDkimDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<LookupDkimDomainResults> {
+    const response = await this.lookupDkimDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Lookup a DMARC record policy
    */
   async lookupDmarcDomainRaw(
@@ -1007,6 +1727,119 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Lookup PTR records for an IP address
+   */
+  async lookupPtrRaw(
+    requestParameters: LookupPtrRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<LookupPtrResults>> {
+    if (
+      requestParameters.lookupPtrOptions === null ||
+      requestParameters.lookupPtrOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'lookupPtrOptions',
+        'Required parameter requestParameters.lookupPtrOptions was null or undefined when calling lookupPtr.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/lookup-ptr`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: LookupPtrOptionsToJSON(requestParameters.lookupPtrOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LookupPtrResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup PTR records for an IP address
+   */
+  async lookupPtr(
+    requestParameters: LookupPtrRequest,
+    initOverrides?: RequestInit
+  ): Promise<LookupPtrResults> {
+    const response = await this.lookupPtrRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Lookup and validate an SPF record
+   */
+  async lookupSpfDomainRaw(
+    requestParameters: LookupSpfDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<LookupSpfDomainResults>> {
+    if (
+      requestParameters.lookupSpfDomainOptions === null ||
+      requestParameters.lookupSpfDomainOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'lookupSpfDomainOptions',
+        'Required parameter requestParameters.lookupSpfDomainOptions was null or undefined when calling lookupSpfDomain.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/lookup-spf-domain`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: LookupSpfDomainOptionsToJSON(
+          requestParameters.lookupSpfDomainOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LookupSpfDomainResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup and validate an SPF record
+   */
+  async lookupSpfDomain(
+    requestParameters: LookupSpfDomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<LookupSpfDomainResults> {
+    const response = await this.lookupSpfDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Lookup a TLS reporting domain policy
    */
   async lookupTlsReportingDomainRaw(
@@ -1059,6 +1892,65 @@ export class ToolsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<LookupTlsReportingDomainResults> {
     const response = await this.lookupTlsReportingDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+   */
+  async testSmtpServerRaw(
+    requestParameters: TestSmtpServerRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TestSmtpServerResults>> {
+    if (
+      requestParameters.testSmtpServerOptions === null ||
+      requestParameters.testSmtpServerOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'testSmtpServerOptions',
+        'Required parameter requestParameters.testSmtpServerOptions was null or undefined when calling testSmtpServer.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/test-smtp-server`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: TestSmtpServerOptionsToJSON(
+          requestParameters.testSmtpServerOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TestSmtpServerResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
+   */
+  async testSmtpServer(
+    requestParameters: TestSmtpServerRequest,
+    initOverrides?: RequestInit
+  ): Promise<TestSmtpServerResults> {
+    const response = await this.testSmtpServerRaw(
       requestParameters,
       initOverrides
     );

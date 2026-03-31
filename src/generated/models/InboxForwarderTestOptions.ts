@@ -20,11 +20,17 @@ import { exists, mapValues } from '../runtime';
  */
 export interface InboxForwarderTestOptions {
   /**
-   *
+   * Simple value to test against the forwarder's simple field/match rule. Required when emailId is not provided.
    * @type {string}
    * @memberof InboxForwarderTestOptions
    */
-  testValue: string;
+  testValue?: string | null;
+  /**
+   * Optional email ID to evaluate the forwarder using full inbound email content (headers, recipients, and attachments).
+   * @type {string}
+   * @memberof InboxForwarderTestOptions
+   */
+  emailId?: string | null;
 }
 
 export function InboxForwarderTestOptionsFromJSON(
@@ -41,7 +47,8 @@ export function InboxForwarderTestOptionsFromJSONTyped(
     return json;
   }
   return {
-    testValue: json['testValue'],
+    testValue: !exists(json, 'testValue') ? undefined : json['testValue'],
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
   };
 }
 
@@ -56,5 +63,6 @@ export function InboxForwarderTestOptionsToJSON(
   }
   return {
     testValue: value.testValue,
+    emailId: value.emailId,
   };
 }

@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetSmsByPhoneNumberSortEnum = exports.GetSentSmsByPhoneNumberSortEnum = exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.GetAllPhoneNumberReleasesSortEnum = exports.PhoneControllerApi = void 0;
+exports.GetSmsByPhoneNumberSortEnum = exports.GetSentSmsByPhoneNumberSortEnum = exports.GetPhoneProvisioningCapabilitiesPhoneCountryEnum = exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.GetAllPhoneNumberReleasesSortEnum = exports.PhoneControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -98,6 +98,232 @@ var PhoneControllerApi = /** @class */ (function (_super) {
     function PhoneControllerApi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    /**
+     * Acquire an available phone number from the pool and mark it leased
+     * Acquire phone pool lease
+     */
+    PhoneControllerApi.prototype.acquirePhonePoolLeaseRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling acquirePhonePoolLease.');
+                        }
+                        if (requestParameters.acquirePhonePoolLeaseOptions === null ||
+                            requestParameters.acquirePhonePoolLeaseOptions === undefined) {
+                            throw new runtime.RequiredError('acquirePhonePoolLeaseOptions', 'Required parameter requestParameters.acquirePhonePoolLeaseOptions was null or undefined when calling acquirePhonePoolLease.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}/leases".replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.AcquirePhonePoolLeaseOptionsToJSON)(requestParameters.acquirePhonePoolLeaseOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolLeaseDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Acquire an available phone number from the pool and mark it leased
+     * Acquire phone pool lease
+     */
+    PhoneControllerApi.prototype.acquirePhonePoolLease = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.acquirePhonePoolLeaseRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Add all active owned phone numbers to a pool
+     * Add all phone numbers to phone pool
+     */
+    PhoneControllerApi.prototype.addAllPhoneNumbersToPhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling addAllPhoneNumbersToPhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}/numbers/add-all".replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolDetailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Add all active owned phone numbers to a pool
+     * Add all phone numbers to phone pool
+     */
+    PhoneControllerApi.prototype.addAllPhoneNumbersToPhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.addAllPhoneNumbersToPhonePoolRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Add one or more tags to a phone number
+     * Add phone number tags
+     */
+    PhoneControllerApi.prototype.addPhoneNumberTagsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling addPhoneNumberTags.');
+                        }
+                        if (requestParameters.phoneNumberTagsOptions === null ||
+                            requestParameters.phoneNumberTagsOptions === undefined) {
+                            throw new runtime.RequiredError('phoneNumberTagsOptions', 'Required parameter requestParameters.phoneNumberTagsOptions was null or undefined when calling addPhoneNumberTags.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/tags".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.PhoneNumberTagsOptionsToJSON)(requestParameters.phoneNumberTagsOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Add one or more tags to a phone number
+     * Add phone number tags
+     */
+    PhoneControllerApi.prototype.addPhoneNumberTags = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.addPhoneNumberTagsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Add one or more owned phone numbers to a pool
+     * Add phone numbers to phone pool
+     */
+    PhoneControllerApi.prototype.addPhoneNumbersToPhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling addPhoneNumbersToPhonePool.');
+                        }
+                        if (requestParameters.addPhonePoolNumbersOptions === null ||
+                            requestParameters.addPhonePoolNumbersOptions === undefined) {
+                            throw new runtime.RequiredError('addPhonePoolNumbersOptions', 'Required parameter requestParameters.addPhonePoolNumbersOptions was null or undefined when calling addPhoneNumbersToPhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}/numbers".replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.AddPhonePoolNumbersOptionsToJSON)(requestParameters.addPhonePoolNumbersOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolDetailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Add one or more owned phone numbers to a pool
+     * Add phone numbers to phone pool
+     */
+    PhoneControllerApi.prototype.addPhoneNumbersToPhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.addPhoneNumbersToPhonePoolRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     /**
      * Add an emergency address to a phone number
      * Create an emergency address
@@ -198,6 +424,114 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.createPhoneNumberRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Create a reusable pool of phone numbers for coordinated leasing
+     * Create phone pool
+     */
+    PhoneControllerApi.prototype.createPhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createPhonePoolOptions === null ||
+                            requestParameters.createPhonePoolOptions === undefined) {
+                            throw new runtime.RequiredError('createPhonePoolOptions', 'Required parameter requestParameters.createPhonePoolOptions was null or undefined when calling createPhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreatePhonePoolOptionsToJSON)(requestParameters.createPhonePoolOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolDetailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create a reusable pool of phone numbers for coordinated leasing
+     * Create phone pool
+     */
+    PhoneControllerApi.prototype.createPhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createPhonePoolRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Create an advanced phone provisioning job from shortlisted numbers
+     * Create a phone provisioning job
+     */
+    PhoneControllerApi.prototype.createPhoneProvisioningJobRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createPhoneProvisioningJobOptions === null ||
+                            requestParameters.createPhoneProvisioningJobOptions === undefined) {
+                            throw new runtime.RequiredError('createPhoneProvisioningJobOptions', 'Required parameter requestParameters.createPhoneProvisioningJobOptions was null or undefined when calling createPhoneProvisioningJob.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/provisioning/jobs",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreatePhoneProvisioningJobOptionsToJSON)(requestParameters.createPhoneProvisioningJobOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneProvisioningJobDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create an advanced phone provisioning job from shortlisted numbers
+     * Create a phone provisioning job
+     */
+    PhoneControllerApi.prototype.createPhoneProvisioningJob = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createPhoneProvisioningJobRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -401,6 +735,54 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deletePhoneNumberRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete a phone pool and release any active leases from that pool
+     * Delete phone pool
+     */
+    PhoneControllerApi.prototype.deletePhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling deletePhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}".replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete a phone pool and release any active leases from that pool
+     * Delete phone pool
+     */
+    PhoneControllerApi.prototype.deletePhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deletePhonePoolRaw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
@@ -659,6 +1041,60 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getEmergencyAddressesRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get a phone pool by name or create it if it does not exist
+     * Get or create phone pool
+     */
+    PhoneControllerApi.prototype.getOrCreatePhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.getOrCreatePhonePoolOptions === null ||
+                            requestParameters.getOrCreatePhonePoolOptions === undefined) {
+                            throw new runtime.RequiredError('getOrCreatePhonePoolOptions', 'Required parameter requestParameters.getOrCreatePhonePoolOptions was null or undefined when calling getOrCreatePhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/get-or-create",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.GetOrCreatePhonePoolOptionsToJSON)(requestParameters.getOrCreatePhonePoolOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolDetailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a phone pool by name or create it if it does not exist
+     * Get or create phone pool
+     */
+    PhoneControllerApi.prototype.getOrCreatePhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getOrCreatePhonePoolRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -952,6 +1388,60 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Lookup line type intelligence for a phone number
+     * Get line type intelligence for a phone number
+     */
+    PhoneControllerApi.prototype.getPhoneNumberLineTypeIntelligenceRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.validatePhoneNumberOptions === null ||
+                            requestParameters.validatePhoneNumberOptions === undefined) {
+                            throw new runtime.RequiredError('validatePhoneNumberOptions', 'Required parameter requestParameters.validatePhoneNumberOptions was null or undefined when calling getPhoneNumberLineTypeIntelligence.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/validate/line-type-intelligence",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.ValidatePhoneNumberOptionsToJSON)(requestParameters.validatePhoneNumberOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberLineTypeLookupDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Lookup line type intelligence for a phone number
+     * Get line type intelligence for a phone number
+     */
+    PhoneControllerApi.prototype.getPhoneNumberLineTypeIntelligence = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneNumberLineTypeIntelligenceRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get a released or deleted phone numbers
      * Get phone number release
      */
@@ -1004,6 +1494,56 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get tags for a specific phone number
+     * Get phone number tags
+     */
+    PhoneControllerApi.prototype.getPhoneNumberTagsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneNumberTags.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/tags".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Get tags for a specific phone number
+     * Get phone number tags
+     */
+    PhoneControllerApi.prototype.getPhoneNumberTags = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneNumberTagsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * List phone numbers for account
      * Get phone numbers
      */
@@ -1016,6 +1556,23 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         if (requestParameters.phoneCountry !== undefined) {
                             queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+                        }
+                        if (requestParameters.lineType !== undefined) {
+                            queryParameters['lineType'] = requestParameters.lineType;
+                        }
+                        if (requestParameters.carrierName !== undefined) {
+                            queryParameters['carrierName'] = requestParameters.carrierName;
+                        }
+                        if (requestParameters.mobileCountryCode !== undefined) {
+                            queryParameters['mobileCountryCode'] =
+                                requestParameters.mobileCountryCode;
+                        }
+                        if (requestParameters.mobileNetworkCode !== undefined) {
+                            queryParameters['mobileNetworkCode'] =
+                                requestParameters.mobileNetworkCode;
+                        }
+                        if (requestParameters.providerLabel !== undefined) {
+                            queryParameters['providerLabel'] = requestParameters.providerLabel;
                         }
                         if (requestParameters.page !== undefined) {
                             queryParameters['page'] = requestParameters.page;
@@ -1034,6 +1591,9 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.search !== undefined) {
                             queryParameters['search'] = requestParameters.search;
+                        }
+                        if (requestParameters.tag) {
+                            queryParameters['tag'] = requestParameters.tag;
                         }
                         if (requestParameters.include) {
                             queryParameters['include'] = requestParameters.include;
@@ -1173,6 +1733,371 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get phone pool details by ID
+     * Get phone pool
+     */
+    PhoneControllerApi.prototype.getPhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling getPhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}".replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolDetailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get phone pool details by ID
+     * Get phone pool
+     */
+    PhoneControllerApi.prototype.getPhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhonePoolRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get phone pool details by name
+     * Get phone pool by name
+     */
+    PhoneControllerApi.prototype.getPhonePoolByNameRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.name === null ||
+                            requestParameters.name === undefined) {
+                            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling getPhonePoolByName.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.name !== undefined) {
+                            queryParameters['name'] = requestParameters.name;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/by-name",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolDetailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get phone pool details by name
+     * Get phone pool by name
+     */
+    PhoneControllerApi.prototype.getPhonePoolByName = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhonePoolByNameRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List phone pools for the authenticated user
+     * Get phone pools
+     */
+    PhoneControllerApi.prototype.getPhonePoolsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.PhonePoolDtoFromJSON);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List phone pools for the authenticated user
+     * Get phone pools
+     */
+    PhoneControllerApi.prototype.getPhonePools = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhonePoolsRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get supported provider-country variant capabilities for advanced provisioning
+     * Get phone provisioning capabilities
+     */
+    PhoneControllerApi.prototype.getPhoneProvisioningCapabilitiesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneCountry === null ||
+                            requestParameters.phoneCountry === undefined) {
+                            throw new runtime.RequiredError('phoneCountry', 'Required parameter requestParameters.phoneCountry was null or undefined when calling getPhoneProvisioningCapabilities.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.phoneCountry !== undefined) {
+                            queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+                        }
+                        if (requestParameters.providerLabel !== undefined) {
+                            queryParameters['providerLabel'] = requestParameters.providerLabel;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/provisioning/capabilities",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneProviderCapabilitiesResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get supported provider-country variant capabilities for advanced provisioning
+     * Get phone provisioning capabilities
+     */
+    PhoneControllerApi.prototype.getPhoneProvisioningCapabilities = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneProvisioningCapabilitiesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get advanced phone provisioning job status
+     * Get phone provisioning job
+     */
+    PhoneControllerApi.prototype.getPhoneProvisioningJobRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.jobId === null ||
+                            requestParameters.jobId === undefined) {
+                            throw new runtime.RequiredError('jobId', 'Required parameter requestParameters.jobId was null or undefined when calling getPhoneProvisioningJob.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/provisioning/jobs/{jobId}".replace("{".concat('jobId', "}"), encodeURIComponent(String(requestParameters.jobId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneProvisioningJobDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get advanced phone provisioning job status
+     * Get phone provisioning job
+     */
+    PhoneControllerApi.prototype.getPhoneProvisioningJob = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneProvisioningJobRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get a specific SMS prepaid credit balance for the authenticated account
+     * Get SMS prepaid credit
+     */
+    PhoneControllerApi.prototype.getPhoneSmsPrepaidCreditRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.creditId === null ||
+                            requestParameters.creditId === undefined) {
+                            throw new runtime.RequiredError('creditId', 'Required parameter requestParameters.creditId was null or undefined when calling getPhoneSmsPrepaidCredit.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/sms-prepaid-credits/{creditId}".replace("{".concat('creditId', "}"), encodeURIComponent(String(requestParameters.creditId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneSmsPrepaidCreditDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a specific SMS prepaid credit balance for the authenticated account
+     * Get SMS prepaid credit
+     */
+    PhoneControllerApi.prototype.getPhoneSmsPrepaidCredit = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneSmsPrepaidCreditRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List SMS prepaid credits for the authenticated account
+     * Get SMS prepaid credits
+     */
+    PhoneControllerApi.prototype.getPhoneSmsPrepaidCreditsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/sms-prepaid-credits",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneSmsPrepaidCreditsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List SMS prepaid credits for the authenticated account
+     * Get SMS prepaid credits
+     */
+    PhoneControllerApi.prototype.getPhoneSmsPrepaidCredits = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneSmsPrepaidCreditsRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get overview of assigned phones
      * Get phone summary
      */
@@ -1212,6 +2137,55 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getPhoneSummaryRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List all unique tags used by your phone numbers
+     * Get phone tags
+     */
+    PhoneControllerApi.prototype.getPhoneTagsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/tags",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * List all unique tags used by your phone numbers
+     * Get phone tags
+     */
+    PhoneControllerApi.prototype.getPhoneTags = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneTagsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1419,6 +2393,226 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Release an active phone pool lease
+     * Release phone pool lease
+     */
+    PhoneControllerApi.prototype.releasePhonePoolLeaseRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling releasePhonePoolLease.');
+                        }
+                        if (requestParameters.leaseId === null ||
+                            requestParameters.leaseId === undefined) {
+                            throw new runtime.RequiredError('leaseId', 'Required parameter requestParameters.leaseId was null or undefined when calling releasePhonePoolLease.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}/leases/{leaseId}"
+                                    .replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId)))
+                                    .replace("{".concat('leaseId', "}"), encodeURIComponent(String(requestParameters.leaseId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Release an active phone pool lease
+     * Release phone pool lease
+     */
+    PhoneControllerApi.prototype.releasePhonePoolLease = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.releasePhonePoolLeaseRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+     * Remove phone number from phone pool
+     */
+    PhoneControllerApi.prototype.removePhoneNumberFromPhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling removePhoneNumberFromPhonePool.');
+                        }
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling removePhoneNumberFromPhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}/numbers/{phoneNumberId}"
+                                    .replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId)))
+                                    .replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Remove a phone number from a pool. If the number is leased from this pool the lease is released.
+     * Remove phone number from phone pool
+     */
+    PhoneControllerApi.prototype.removePhoneNumberFromPhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.removePhoneNumberFromPhonePoolRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Remove one or more tags from a phone number
+     * Remove phone number tags
+     */
+    PhoneControllerApi.prototype.removePhoneNumberTagsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling removePhoneNumberTags.');
+                        }
+                        if (requestParameters.phoneNumberTagsOptions === null ||
+                            requestParameters.phoneNumberTagsOptions === undefined) {
+                            throw new runtime.RequiredError('phoneNumberTagsOptions', 'Required parameter requestParameters.phoneNumberTagsOptions was null or undefined when calling removePhoneNumberTags.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/tags".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.PhoneNumberTagsOptionsToJSON)(requestParameters.phoneNumberTagsOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Remove one or more tags from a phone number
+     * Remove phone number tags
+     */
+    PhoneControllerApi.prototype.removePhoneNumberTags = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.removePhoneNumberTagsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Search available numbers for advanced provisioning
+     * Search available phone numbers
+     */
+    PhoneControllerApi.prototype.searchAvailablePhoneNumbersRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.searchAvailablePhoneNumbersOptions === null ||
+                            requestParameters.searchAvailablePhoneNumbersOptions === undefined) {
+                            throw new runtime.RequiredError('searchAvailablePhoneNumbersOptions', 'Required parameter requestParameters.searchAvailablePhoneNumbersOptions was null or undefined when calling searchAvailablePhoneNumbers.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/provisioning/search",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SearchAvailablePhoneNumbersOptionsToJSON)(requestParameters.searchAvailablePhoneNumbersOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AvailablePhoneNumbersResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Search available numbers for advanced provisioning
+     * Search available phone numbers
+     */
+    PhoneControllerApi.prototype.searchAvailablePhoneNumbers = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.searchAvailablePhoneNumbersRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Send SMS from a phone number
      * Send TXT message from a phone number
      */
@@ -1590,6 +2784,64 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Replace all tags on a phone number
+     * Set phone number tags
+     */
+    PhoneControllerApi.prototype.setPhoneNumberTagsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling setPhoneNumberTags.');
+                        }
+                        if (requestParameters.phoneNumberTagsOptions === null ||
+                            requestParameters.phoneNumberTagsOptions === undefined) {
+                            throw new runtime.RequiredError('phoneNumberTagsOptions', 'Required parameter requestParameters.phoneNumberTagsOptions was null or undefined when calling setPhoneNumberTags.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/tags".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'PUT',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.PhoneNumberTagsOptionsToJSON)(requestParameters.phoneNumberTagsOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhoneNumberDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Replace all tags on a phone number
+     * Set phone number tags
+     */
+    PhoneControllerApi.prototype.setPhoneNumberTags = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.setPhoneNumberTagsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Test a phone number by sending an SMS to it. NOTE this is only for internal use to check that a phone number is working. For end-to-end phone testing see https://docs.mailslurp.com/txt-sms/
      * Test sending an SMS to a number
      */
@@ -1706,6 +2958,64 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Update phone pool metadata such as name or description
+     * Update phone pool
+     */
+    PhoneControllerApi.prototype.updatePhonePoolRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.poolId === null ||
+                            requestParameters.poolId === undefined) {
+                            throw new runtime.RequiredError('poolId', 'Required parameter requestParameters.poolId was null or undefined when calling updatePhonePool.');
+                        }
+                        if (requestParameters.updatePhonePoolOptions === null ||
+                            requestParameters.updatePhonePoolOptions === undefined) {
+                            throw new runtime.RequiredError('updatePhonePoolOptions', 'Required parameter requestParameters.updatePhonePoolOptions was null or undefined when calling updatePhonePool.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/pools/{poolId}".replace("{".concat('poolId', "}"), encodeURIComponent(String(requestParameters.poolId))),
+                                method: 'PUT',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.UpdatePhonePoolOptionsToJSON)(requestParameters.updatePhonePoolOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PhonePoolDetailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Update phone pool metadata such as name or description
+     * Update phone pool
+     */
+    PhoneControllerApi.prototype.updatePhonePool = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updatePhonePoolRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Validate a phone number
      * Verify validity of a phone number
      */
@@ -1799,6 +3109,25 @@ var GetPhoneNumbersSortEnum;
     GetPhoneNumbersSortEnum["ASC"] = "ASC";
     GetPhoneNumbersSortEnum["DESC"] = "DESC";
 })(GetPhoneNumbersSortEnum = exports.GetPhoneNumbersSortEnum || (exports.GetPhoneNumbersSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetPhoneProvisioningCapabilitiesPhoneCountryEnum;
+(function (GetPhoneProvisioningCapabilitiesPhoneCountryEnum) {
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["US"] = "US";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["GB"] = "GB";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["AU"] = "AU";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["CA"] = "CA";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["EE"] = "EE";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["HK"] = "HK";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["PL"] = "PL";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["PT"] = "PT";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["NL"] = "NL";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["IL"] = "IL";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["FI"] = "FI";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["SE"] = "SE";
+})(GetPhoneProvisioningCapabilitiesPhoneCountryEnum = exports.GetPhoneProvisioningCapabilitiesPhoneCountryEnum || (exports.GetPhoneProvisioningCapabilitiesPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}

@@ -56,6 +56,14 @@ export interface GetSmsCodesRequest {
 export interface GetSmsMessageRequest {
     smsId: string;
 }
+export interface MarkAllSmsAsReadRequest {
+    read?: boolean;
+    phoneNumberId?: string;
+}
+export interface MarkSmsAsReadRequest {
+    smsId: string;
+    read?: boolean;
+}
 export interface ReplyToSmsMessageRequest {
     smsId: string;
     smsReplyOptions: SmsReplyOptions;
@@ -199,6 +207,26 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get unread SMS count
      */
     getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount>;
+    /**
+     * Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+     * Mark all SMS messages as read or unread
+     */
+    markAllSmsAsReadRaw(requestParameters: MarkAllSmsAsReadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+     * Mark all SMS messages as read or unread
+     */
+    markAllSmsAsRead(requestParameters: MarkAllSmsAsReadRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+     * Mark an SMS as read or unread
+     */
+    markSmsAsReadRaw(requestParameters: MarkSmsAsReadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>>;
+    /**
+     * Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+     * Mark an SMS as read or unread
+     */
+    markSmsAsRead(requestParameters: MarkSmsAsReadRequest, initOverrides?: RequestInit): Promise<SmsDto>;
     /**
      * Reply to an SMS message.
      * Send a reply to a received SMS message. Replies are sent from the receiving number.

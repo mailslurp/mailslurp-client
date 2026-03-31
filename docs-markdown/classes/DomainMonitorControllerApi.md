@@ -20,6 +20,8 @@
 
 ### Methods
 
+- [compareDomainMonitorRuns](DomainMonitorControllerApi.md#comparedomainmonitorruns)
+- [compareDomainMonitorRunsRaw](DomainMonitorControllerApi.md#comparedomainmonitorrunsraw)
 - [createDomainMonitor](DomainMonitorControllerApi.md#createdomainmonitor)
 - [createDomainMonitorAlertSink](DomainMonitorControllerApi.md#createdomainmonitoralertsink)
 - [createDomainMonitorAlertSinkRaw](DomainMonitorControllerApi.md#createdomainmonitoralertsinkraw)
@@ -31,13 +33,19 @@
 - [getDomainMonitor](DomainMonitorControllerApi.md#getdomainmonitor)
 - [getDomainMonitorAlertSinks](DomainMonitorControllerApi.md#getdomainmonitoralertsinks)
 - [getDomainMonitorAlertSinksRaw](DomainMonitorControllerApi.md#getdomainmonitoralertsinksraw)
+- [getDomainMonitorAuthStack](DomainMonitorControllerApi.md#getdomainmonitorauthstack)
+- [getDomainMonitorAuthStackRaw](DomainMonitorControllerApi.md#getdomainmonitorauthstackraw)
 - [getDomainMonitorInsights](DomainMonitorControllerApi.md#getdomainmonitorinsights)
 - [getDomainMonitorInsightsRaw](DomainMonitorControllerApi.md#getdomainmonitorinsightsraw)
 - [getDomainMonitorRaw](DomainMonitorControllerApi.md#getdomainmonitorraw)
+- [getDomainMonitorRun](DomainMonitorControllerApi.md#getdomainmonitorrun)
+- [getDomainMonitorRunRaw](DomainMonitorControllerApi.md#getdomainmonitorrunraw)
 - [getDomainMonitorRuns](DomainMonitorControllerApi.md#getdomainmonitorruns)
 - [getDomainMonitorRunsRaw](DomainMonitorControllerApi.md#getdomainmonitorrunsraw)
 - [getDomainMonitorSeries](DomainMonitorControllerApi.md#getdomainmonitorseries)
 - [getDomainMonitorSeriesRaw](DomainMonitorControllerApi.md#getdomainmonitorseriesraw)
+- [getDomainMonitorSummary](DomainMonitorControllerApi.md#getdomainmonitorsummary)
+- [getDomainMonitorSummaryRaw](DomainMonitorControllerApi.md#getdomainmonitorsummaryraw)
 - [getDomainMonitors](DomainMonitorControllerApi.md#getdomainmonitors)
 - [getDomainMonitorsRaw](DomainMonitorControllerApi.md#getdomainmonitorsraw)
 - [request](DomainMonitorControllerApi.md#request)
@@ -78,6 +86,44 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### compareDomainMonitorRuns
+
+▸ **compareDomainMonitorRuns**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorRunComparisonDto`](../interfaces/DomainMonitorRunComparisonDto.md)\>
+
+Compare two monitor runs
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CompareDomainMonitorRunsRequest`](../interfaces/CompareDomainMonitorRunsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainMonitorRunComparisonDto`](../interfaces/DomainMonitorRunComparisonDto.md)\>
+
+___
+
+### compareDomainMonitorRunsRaw
+
+▸ **compareDomainMonitorRunsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorRunComparisonDto`](../interfaces/DomainMonitorRunComparisonDto.md)\>\>
+
+Compare two monitor runs
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CompareDomainMonitorRunsRequest`](../interfaces/CompareDomainMonitorRunsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorRunComparisonDto`](../interfaces/DomainMonitorRunComparisonDto.md)\>\>
+
+___
 
 ### createDomainMonitor
 
@@ -288,6 +334,44 @@ List alert sinks for monitor
 
 ___
 
+### getDomainMonitorAuthStack
+
+▸ **getDomainMonitorAuthStack**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>
+
+Get current auth stack for monitor domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorAuthStackRequest`](../interfaces/GetDomainMonitorAuthStackRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>
+
+___
+
+### getDomainMonitorAuthStackRaw
+
+▸ **getDomainMonitorAuthStackRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>\>
+
+Get current auth stack for monitor domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorAuthStackRequest`](../interfaces/GetDomainMonitorAuthStackRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailAuthStackResults`](../interfaces/CheckEmailAuthStackResults.md)\>\>
+
+___
+
 ### getDomainMonitorInsights
 
 ▸ **getDomainMonitorInsights**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorInsightsDto`](../interfaces/DomainMonitorInsightsDto.md)\>
@@ -342,6 +426,44 @@ Get domain monitor
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorDto`](../interfaces/DomainMonitorDto.md)\>\>
+
+___
+
+### getDomainMonitorRun
+
+▸ **getDomainMonitorRun**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorRunDto`](../interfaces/DomainMonitorRunDto.md)\>
+
+Get monitor run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorRunRequest`](../interfaces/GetDomainMonitorRunRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainMonitorRunDto`](../interfaces/DomainMonitorRunDto.md)\>
+
+___
+
+### getDomainMonitorRunRaw
+
+▸ **getDomainMonitorRunRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorRunDto`](../interfaces/DomainMonitorRunDto.md)\>\>
+
+Get monitor run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorRunRequest`](../interfaces/GetDomainMonitorRunRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorRunDto`](../interfaces/DomainMonitorRunDto.md)\>\>
 
 ___
 
@@ -418,6 +540,44 @@ Get monitor trend series
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorSeriesDto`](../interfaces/DomainMonitorSeriesDto.md)\>\>
+
+___
+
+### getDomainMonitorSummary
+
+▸ **getDomainMonitorSummary**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorSummaryDto`](../interfaces/DomainMonitorSummaryDto.md)\>
+
+Get domain monitor summary
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorSummaryRequest`](../interfaces/GetDomainMonitorSummaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainMonitorSummaryDto`](../interfaces/DomainMonitorSummaryDto.md)\>
+
+___
+
+### getDomainMonitorSummaryRaw
+
+▸ **getDomainMonitorSummaryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorSummaryDto`](../interfaces/DomainMonitorSummaryDto.md)\>\>
+
+Get domain monitor summary
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorSummaryRequest`](../interfaces/GetDomainMonitorSummaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorSummaryDto`](../interfaces/DomainMonitorSummaryDto.md)\>\>
 
 ___
 

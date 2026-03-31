@@ -33,37 +33,19 @@ export interface PagePhoneNumberReleaseProjection {
      * @type {number}
      * @memberof PagePhoneNumberReleaseProjection
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PagePhoneNumberReleaseProjection
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PagePhoneNumberReleaseProjection
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PagePhoneNumberReleaseProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PagePhoneNumberReleaseProjection
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PagePhoneNumberReleaseProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PagePhoneNumberReleaseProjection {
      * @memberof PagePhoneNumberReleaseProjection
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneNumberReleaseProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PagePhoneNumberReleaseProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PagePhoneNumberReleaseProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

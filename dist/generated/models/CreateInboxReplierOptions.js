@@ -13,8 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxReplierOptionsToJSON = exports.CreateInboxReplierOptionsFromJSONTyped = exports.CreateInboxReplierOptionsFromJSON = exports.CreateInboxReplierOptionsFieldEnum = void 0;
+exports.CreateInboxReplierOptionsToJSON = exports.CreateInboxReplierOptionsFromJSONTyped = exports.CreateInboxReplierOptionsFromJSON = exports.CreateInboxReplierOptionsShouldEnum = exports.CreateInboxReplierOptionsFieldEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -25,7 +26,20 @@ var CreateInboxReplierOptionsFieldEnum;
     CreateInboxReplierOptionsFieldEnum["SENDER"] = "SENDER";
     CreateInboxReplierOptionsFieldEnum["SUBJECT"] = "SUBJECT";
     CreateInboxReplierOptionsFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
+    CreateInboxReplierOptionsFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
+    CreateInboxReplierOptionsFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
 })(CreateInboxReplierOptionsFieldEnum = exports.CreateInboxReplierOptionsFieldEnum || (exports.CreateInboxReplierOptionsFieldEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var CreateInboxReplierOptionsShouldEnum;
+(function (CreateInboxReplierOptionsShouldEnum) {
+    CreateInboxReplierOptionsShouldEnum["WILDCARD"] = "WILDCARD";
+    CreateInboxReplierOptionsShouldEnum["MATCH"] = "MATCH";
+    CreateInboxReplierOptionsShouldEnum["CONTAIN"] = "CONTAIN";
+    CreateInboxReplierOptionsShouldEnum["EQUAL"] = "EQUAL";
+})(CreateInboxReplierOptionsShouldEnum = exports.CreateInboxReplierOptionsShouldEnum || (exports.CreateInboxReplierOptionsShouldEnum = {}));
 function CreateInboxReplierOptionsFromJSON(json) {
     return CreateInboxReplierOptionsFromJSONTyped(json, false);
 }
@@ -37,8 +51,8 @@ function CreateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
     return {
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        field: json['field'],
-        match: json['match'],
+        field: !(0, runtime_1.exists)(json, 'field') ? undefined : json['field'],
+        match: !(0, runtime_1.exists)(json, 'match') ? undefined : json['match'],
         replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
@@ -52,6 +66,10 @@ function CreateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
         templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
             ? undefined
             : json['templateVariables'],
+        should: !(0, runtime_1.exists)(json, 'should') ? undefined : json['should'],
+        matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
+            ? undefined
+            : (0, _1.InboxAutomationMatchOptionsFromJSON)(json['matchOptions']),
     };
 }
 exports.CreateInboxReplierOptionsFromJSONTyped = CreateInboxReplierOptionsFromJSONTyped;
@@ -76,6 +94,8 @@ function CreateInboxReplierOptionsToJSON(value) {
         body: value.body,
         templateId: value.templateId,
         templateVariables: value.templateVariables,
+        should: value.should,
+        matchOptions: (0, _1.InboxAutomationMatchOptionsToJSON)(value.matchOptions),
     };
 }
 exports.CreateInboxReplierOptionsToJSON = CreateInboxReplierOptionsToJSON;

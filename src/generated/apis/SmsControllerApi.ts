@@ -104,6 +104,16 @@ export interface GetSmsMessageRequest {
   smsId: string;
 }
 
+export interface MarkAllSmsAsReadRequest {
+  read?: boolean;
+  phoneNumberId?: string;
+}
+
+export interface MarkSmsAsReadRequest {
+  smsId: string;
+  read?: boolean;
+}
+
 export interface ReplyToSmsMessageRequest {
   smsId: string;
   smsReplyOptions: SmsReplyOptions;
@@ -827,6 +837,117 @@ export class SmsControllerApi extends runtime.BaseAPI {
    */
   async getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount> {
     const response = await this.getUnreadSmsCountRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+   * Mark all SMS messages as read or unread
+   */
+  async markAllSmsAsReadRaw(
+    requestParameters: MarkAllSmsAsReadRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.read !== undefined) {
+      queryParameters['read'] = requestParameters.read;
+    }
+
+    if (requestParameters.phoneNumberId !== undefined) {
+      queryParameters['phoneNumberId'] = requestParameters.phoneNumberId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/read`,
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Sets read state for all SMS messages, optionally scoped to a single phone number. Use `read=false` to reset unread state in bulk.
+   * Mark all SMS messages as read or unread
+   */
+  async markAllSmsAsRead(
+    requestParameters: MarkAllSmsAsReadRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.markAllSmsAsReadRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+   * Mark an SMS as read or unread
+   */
+  async markSmsAsReadRaw(
+    requestParameters: MarkSmsAsReadRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SmsDto>> {
+    if (
+      requestParameters.smsId === null ||
+      requestParameters.smsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsId',
+        'Required parameter requestParameters.smsId was null or undefined when calling markSmsAsRead.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.read !== undefined) {
+      queryParameters['read'] = requestParameters.read;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/{smsId}/read`.replace(
+          `{${'smsId'}}`,
+          encodeURIComponent(String(requestParameters.smsId))
+        ),
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SmsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Sets read state for one SMS message. Useful when building custom inbox flows that need to restore unread state after inspection.
+   * Mark an SMS as read or unread
+   */
+  async markSmsAsRead(
+    requestParameters: MarkSmsAsReadRequest,
+    initOverrides?: RequestInit
+  ): Promise<SmsDto> {
+    const response = await this.markSmsAsReadRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 

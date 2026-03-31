@@ -33,37 +33,19 @@ export interface PageEntityFavouriteItems {
      * @type {number}
      * @memberof PageEntityFavouriteItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageEntityFavouriteItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageEntityFavouriteItems
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEntityFavouriteItems
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageEntityFavouriteItems
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEntityFavouriteItems
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageEntityFavouriteItems {
      * @memberof PageEntityFavouriteItems
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEntityFavouriteItems
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEntityFavouriteItems
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageEntityFavouriteItems
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

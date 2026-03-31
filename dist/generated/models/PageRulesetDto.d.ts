@@ -33,37 +33,19 @@ export interface PageRulesetDto {
      * @type {number}
      * @memberof PageRulesetDto
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageRulesetDto
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageRulesetDto
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageRulesetDto
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageRulesetDto
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageRulesetDto
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageRulesetDto {
      * @memberof PageRulesetDto
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageRulesetDto
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageRulesetDto
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageRulesetDto
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -24,19 +24,25 @@ export interface PhoneMessageThreadItemProjection {
    * @type {string}
    * @memberof PhoneMessageThreadItemProjection
    */
-  body: string;
+  id: string;
   /**
    *
    * @type {string}
    * @memberof PhoneMessageThreadItemProjection
    */
-  phoneNumberId: string;
+  body: string;
   /**
    *
    * @type {Date}
    * @memberof PhoneMessageThreadItemProjection
    */
   created: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneMessageThreadItemProjection
+   */
+  phoneNumberId: string;
   /**
    *
    * @type {string}
@@ -55,12 +61,6 @@ export interface PhoneMessageThreadItemProjection {
    * @memberof PhoneMessageThreadItemProjection
    */
   toPhoneNumber: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneMessageThreadItemProjection
-   */
-  id: string;
 }
 
 /**
@@ -86,13 +86,13 @@ export function PhoneMessageThreadItemProjectionFromJSONTyped(
     return json;
   }
   return {
+    id: json['id'],
     body: json['body'],
-    phoneNumberId: json['phoneNumberId'],
     created: new Date(json['created']),
+    phoneNumberId: json['phoneNumberId'],
     messageDirection: json['messageDirection'],
     fromPhoneNumber: json['fromPhoneNumber'],
     toPhoneNumber: json['toPhoneNumber'],
-    id: json['id'],
   };
 }
 
@@ -106,12 +106,12 @@ export function PhoneMessageThreadItemProjectionToJSON(
     return null;
   }
   return {
+    id: value.id,
     body: value.body,
-    phoneNumberId: value.phoneNumberId,
     created: value.created.toISOString(),
+    phoneNumberId: value.phoneNumberId,
     messageDirection: value.messageDirection,
     fromPhoneNumber: value.fromPhoneNumber,
     toPhoneNumber: value.toPhoneNumber,
-    id: value.id,
   };
 }

@@ -23,12 +23,12 @@ function MissedSmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        id: json['id'],
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
-        sid: json['sid'],
         phoneNumber: json['phoneNumber'],
+        sid: json['sid'],
         fromNumber: json['fromNumber'],
-        id: json['id'],
     };
 }
 exports.MissedSmsProjectionFromJSONTyped = MissedSmsProjectionFromJSONTyped;
@@ -40,12 +40,12 @@ function MissedSmsProjectionToJSON(value) {
         return null;
     }
     return {
+        id: value.id,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
-        sid: value.sid,
         phoneNumber: value.phoneNumber,
+        sid: value.sid,
         fromNumber: value.fromNumber,
-        id: value.id,
     };
 }
 exports.MissedSmsProjectionToJSON = MissedSmsProjectionToJSON;

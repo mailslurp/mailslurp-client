@@ -33,37 +33,19 @@ export interface PageEntityEventItems {
      * @type {number}
      * @memberof PageEntityEventItems
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageEntityEventItems
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageEntityEventItems
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEntityEventItems
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageEntityEventItems
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEntityEventItems
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageEntityEventItems {
      * @memberof PageEntityEventItems
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEntityEventItems
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEntityEventItems
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageEntityEventItems
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

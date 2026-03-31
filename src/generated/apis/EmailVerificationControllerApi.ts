@@ -14,6 +14,12 @@
 
 import * as runtime from '../runtime';
 import {
+  EmailIntelligenceListResult,
+  EmailIntelligenceListResultFromJSON,
+  EmailIntelligenceListResultToJSON,
+  EmailIntelligenceOptions,
+  EmailIntelligenceOptionsFromJSON,
+  EmailIntelligenceOptionsToJSON,
   PageEmailValidationRequest,
   PageEmailValidationRequestFromJSON,
   PageEmailValidationRequestToJSON,
@@ -27,6 +33,10 @@ import {
 
 export interface DeleteValidationRequestRequest {
   id: string;
+}
+
+export interface GetEmailIntelligenceRequest {
+  emailIntelligenceOptions: EmailIntelligenceOptions;
 }
 
 export interface GetValidationRequestsRequest {
@@ -133,6 +143,67 @@ export class EmailVerificationControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deleteValidationRequestRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+   * Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+   */
+  async getEmailIntelligenceRaw(
+    requestParameters: GetEmailIntelligenceRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailIntelligenceListResult>> {
+    if (
+      requestParameters.emailIntelligenceOptions === null ||
+      requestParameters.emailIntelligenceOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailIntelligenceOptions',
+        'Required parameter requestParameters.emailIntelligenceOptions was null or undefined when calling getEmailIntelligence.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/email-verification/intelligence`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: EmailIntelligenceOptionsToJSON(
+          requestParameters.emailIntelligenceOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailIntelligenceListResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Run email intelligence scoring for one or more email addresses or domains. Submitting a single target in the list supports one-off checks.
+   * Get intelligence score and breakdown for email/domain targets. Per unit billing for non-cached evaluations.
+   */
+  async getEmailIntelligence(
+    requestParameters: GetEmailIntelligenceRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailIntelligenceListResult> {
+    const response = await this.getEmailIntelligenceRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
   }
 
   /**

@@ -17,6 +17,24 @@ import { EmailRecipientsProjection, SenderProjection } from './';
  */
 export interface EmailThreadProjection {
     /**
+     * ID of email thread
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    id: string;
+    /**
+     * From sender
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    from?: string;
+    /**
+     * Thread topic subject
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    subject?: string;
+    /**
      *
      * @type {SenderProjection}
      * @memberof EmailThreadProjection
@@ -118,24 +136,6 @@ export interface EmailThreadProjection {
      * @memberof EmailThreadProjection
      */
     lastSender?: SenderProjection;
-    /**
-     * Thread topic subject
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    subject?: string;
-    /**
-     * ID of email thread
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    id: string;
-    /**
-     * From sender
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    from?: string;
 }
 export declare function EmailThreadProjectionFromJSON(json: any): EmailThreadProjection;
 export declare function EmailThreadProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailThreadProjection;

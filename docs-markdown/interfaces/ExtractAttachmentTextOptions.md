@@ -48,7 +48,7 @@ ___
 
 • `Optional` **method**: [`ExtractAttachmentTextOptionsMethodEnum`](../enums/ExtractAttachmentTextOptionsMethodEnum.md)
 
-Method for extracting text from attachments. OCR/LLM methods are reserved for advanced extraction.
+Method for extracting text from attachments.
 
 **`Memberof`**
 

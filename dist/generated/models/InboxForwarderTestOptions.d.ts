@@ -16,11 +16,17 @@
  */
 export interface InboxForwarderTestOptions {
     /**
-     *
+     * Simple value to test against the forwarder's simple field/match rule. Required when emailId is not provided.
      * @type {string}
      * @memberof InboxForwarderTestOptions
      */
-    testValue: string;
+    testValue?: string | null;
+    /**
+     * Optional email ID to evaluate the forwarder using full inbound email content (headers, recipients, and attachments).
+     * @type {string}
+     * @memberof InboxForwarderTestOptions
+     */
+    emailId?: string | null;
 }
 export declare function InboxForwarderTestOptionsFromJSON(json: any): InboxForwarderTestOptions;
 export declare function InboxForwarderTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxForwarderTestOptions;

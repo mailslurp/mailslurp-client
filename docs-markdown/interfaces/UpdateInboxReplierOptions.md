@@ -22,8 +22,10 @@ UpdateInboxReplierOptions
 - [inboxId](UpdateInboxReplierOptions.md#inboxid)
 - [isHTML](UpdateInboxReplierOptions.md#ishtml)
 - [match](UpdateInboxReplierOptions.md#match)
+- [matchOptions](UpdateInboxReplierOptions.md#matchoptions)
 - [name](UpdateInboxReplierOptions.md#name)
 - [replyTo](UpdateInboxReplierOptions.md#replyto)
+- [should](UpdateInboxReplierOptions.md#should)
 - [subject](UpdateInboxReplierOptions.md#subject)
 - [templateId](UpdateInboxReplierOptions.md#templateid)
 - [templateVariables](UpdateInboxReplierOptions.md#templatevariables)
@@ -56,7 +58,7 @@ ___
 
 ### field
 
-• **field**: [`UpdateInboxReplierOptionsFieldEnum`](../enums/UpdateInboxReplierOptionsFieldEnum.md)
+• `Optional` **field**: [`UpdateInboxReplierOptionsFieldEnum`](../enums/UpdateInboxReplierOptionsFieldEnum.md)
 
 Field to match against to trigger inbox replier for inbound email
 
@@ -116,9 +118,19 @@ ___
 
 ### match
 
-• **match**: `string`
+• `Optional` **match**: `string`
 
 String or wildcard style match for field specified when evaluating reply rules
+
+**`Memberof`**
+
+UpdateInboxReplierOptions
+
+___
+
+### matchOptions
+
+• `Optional` **matchOptions**: [`InboxAutomationMatchOptions`](InboxAutomationMatchOptions.md)
 
 **`Memberof`**
 
@@ -143,6 +155,18 @@ ___
 • `Optional` **replyTo**: `string`
 
 Reply-to email address when sending replying
+
+**`Memberof`**
+
+UpdateInboxReplierOptions
+
+___
+
+### should
+
+• `Optional` **should**: [`UpdateInboxReplierOptionsShouldEnum`](../enums/UpdateInboxReplierOptionsShouldEnum.md)
+
+Comparison mode for inbox automation matching.
 
 **`Memberof`**
 

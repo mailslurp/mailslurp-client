@@ -33,37 +33,19 @@ export interface PageInboxReplierEvents {
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
-    totalElements: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
-    totalPages: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}
      * @memberof PageInboxReplierEvents
      */
     last?: boolean;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxReplierEvents
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {SortObject}
-     * @memberof PageInboxReplierEvents
-     */
-    sort?: SortObject;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxReplierEvents
-     */
-    first?: boolean;
     /**
      *
      * @type {number}
@@ -76,6 +58,24 @@ export interface PageInboxReplierEvents {
      * @memberof PageInboxReplierEvents
      */
     number?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxReplierEvents
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageInboxReplierEvents
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

@@ -17,18 +17,6 @@
 export interface EntityFavouriteItemProjection {
     /**
      *
-     * @type {Date}
-     * @memberof EntityFavouriteItemProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityFavouriteItemProjection
-     */
-    entityType: EntityFavouriteItemProjectionEntityTypeEnum;
-    /**
-     *
      * @type {string}
      * @memberof EntityFavouriteItemProjection
      */
@@ -45,6 +33,18 @@ export interface EntityFavouriteItemProjection {
      * @memberof EntityFavouriteItemProjection
      */
     description?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof EntityFavouriteItemProjection
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityFavouriteItemProjection
+     */
+    entityType: EntityFavouriteItemProjectionEntityTypeEnum;
 }
 /**
  * @export

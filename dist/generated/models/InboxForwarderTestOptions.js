@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxForwarderTestOptionsToJSON = exports.InboxForwarderTestOptionsFromJSONTyped = exports.InboxForwarderTestOptionsFromJSON = void 0;
+var runtime_1 = require("../runtime");
 function InboxForwarderTestOptionsFromJSON(json) {
     return InboxForwarderTestOptionsFromJSONTyped(json, false);
 }
@@ -23,7 +24,8 @@ function InboxForwarderTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        testValue: json['testValue'],
+        testValue: !(0, runtime_1.exists)(json, 'testValue') ? undefined : json['testValue'],
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
     };
 }
 exports.InboxForwarderTestOptionsFromJSONTyped = InboxForwarderTestOptionsFromJSONTyped;
@@ -36,6 +38,7 @@ function InboxForwarderTestOptionsToJSON(value) {
     }
     return {
         testValue: value.testValue,
+        emailId: value.emailId,
     };
 }
 exports.InboxForwarderTestOptionsToJSON = InboxForwarderTestOptionsToJSON;
