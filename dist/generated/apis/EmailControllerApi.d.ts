@@ -34,6 +34,10 @@ export interface CheckEmailClientSupportRequest {
 export interface CreateEmailAuditForEmailRequest {
     emailId: string;
 }
+export interface DeleteAllEmailsRequest {
+    createdAtSince?: Date;
+    createdAtBefore?: Date;
+}
 export interface DeleteEmailRequest {
     emailId: string;
 }
@@ -137,6 +141,7 @@ export interface GetEmailThreadItemsRequest {
 }
 export interface GetEmailThreadsRequest {
     htmlSelector?: string;
+    inboxId?: string;
     page?: number;
     size?: number;
     sort?: GetEmailThreadsSortEnum;
@@ -312,12 +317,12 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
-    deleteAllEmailsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllEmailsRaw(requestParameters: DeleteAllEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
-    deleteAllEmails(initOverrides?: RequestInit): Promise<void>;
+    deleteAllEmails(requestParameters: DeleteAllEmailsRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Deletes a single email from account scope. Operation is destructive and not reversible.
      * Delete an email

@@ -160,6 +160,11 @@ export interface CreateEmailAuditForEmailRequest {
   emailId: string;
 }
 
+export interface DeleteAllEmailsRequest {
+  createdAtSince?: Date;
+  createdAtBefore?: Date;
+}
+
 export interface DeleteEmailRequest {
   emailId: string;
 }
@@ -289,6 +294,7 @@ export interface GetEmailThreadItemsRequest {
 
 export interface GetEmailThreadsRequest {
   htmlSelector?: string;
+  inboxId?: string;
   page?: number;
   size?: number;
   sort?: GetEmailThreadsSortEnum;
@@ -853,9 +859,22 @@ export class EmailControllerApi extends runtime.BaseAPI {
    * Delete all emails in all inboxes.
    */
   async deleteAllEmailsRaw(
+    requestParameters: DeleteAllEmailsRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<void>> {
     const queryParameters: any = {};
+
+    if (requestParameters.createdAtSince !== undefined) {
+      queryParameters['createdAtSince'] = (
+        requestParameters.createdAtSince as any
+      ).toISOString();
+    }
+
+    if (requestParameters.createdAtBefore !== undefined) {
+      queryParameters['createdAtBefore'] = (
+        requestParameters.createdAtBefore as any
+      ).toISOString();
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -880,8 +899,11 @@ export class EmailControllerApi extends runtime.BaseAPI {
    * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
    * Delete all emails in all inboxes.
    */
-  async deleteAllEmails(initOverrides?: RequestInit): Promise<void> {
-    await this.deleteAllEmailsRaw(initOverrides);
+  async deleteAllEmails(
+    requestParameters: DeleteAllEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllEmailsRaw(requestParameters, initOverrides);
   }
 
   /**
@@ -2591,6 +2613,10 @@ export class EmailControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.htmlSelector !== undefined) {
       queryParameters['htmlSelector'] = requestParameters.htmlSelector;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
     if (requestParameters.page !== undefined) {

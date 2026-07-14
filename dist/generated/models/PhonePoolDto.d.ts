@@ -38,7 +38,7 @@ export interface PhonePoolDto {
      * @type {string}
      * @memberof PhonePoolDto
      */
-    description?: string;
+    description?: string | null;
     /**
      *
      * @type {Date}

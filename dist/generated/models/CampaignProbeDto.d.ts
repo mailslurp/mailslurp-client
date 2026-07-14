@@ -32,7 +32,7 @@ export interface CampaignProbeDto {
      * @type {string}
      * @memberof CampaignProbeDto
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -56,7 +56,7 @@ export interface CampaignProbeDto {
      * @type {number}
      * @memberof CampaignProbeDto
      */
-    intervalSeconds?: number;
+    intervalSeconds?: number | null;
     /**
      *
      * @type {boolean}
@@ -68,7 +68,7 @@ export interface CampaignProbeDto {
      * @type {Date}
      * @memberof CampaignProbeDto
      */
-    nextRunAt?: Date;
+    nextRunAt?: Date | null;
     /**
      *
      * @type {string}
@@ -80,13 +80,13 @@ export interface CampaignProbeDto {
      * @type {number}
      * @memberof CampaignProbeDto
      */
-    lastHealthScore?: number;
+    lastHealthScore?: number | null;
     /**
      *
      * @type {Date}
      * @memberof CampaignProbeDto
      */
-    lastIngestAt?: Date;
+    lastIngestAt?: Date | null;
     /**
      *
      * @type {number}

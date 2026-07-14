@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * How entities are selected for a deliverability test
+ * How entities are selected for a load test
  * @export
  * @interface DeliverabilitySelectorOptions
  */
@@ -49,6 +49,12 @@ export interface DeliverabilitySelectorOptions {
    * @memberof DeliverabilitySelectorOptions
    */
   excludeEntityIds?: Array<string> | null;
+  /**
+   * Optional tags to filter selected entities by. Matching is case-insensitive and an entity must contain all provided tags.
+   * @type {Array<string>}
+   * @memberof DeliverabilitySelectorOptions
+   */
+  tags?: Array<string> | null;
 }
 
 /**
@@ -72,6 +78,7 @@ export enum DeliverabilitySelectorOptionsPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
@@ -102,6 +109,7 @@ export function DeliverabilitySelectorOptionsFromJSONTyped(
     excludeEntityIds: !exists(json, 'excludeEntityIds')
       ? undefined
       : json['excludeEntityIds'],
+    tags: !exists(json, 'tags') ? undefined : json['tags'],
   };
 }
 
@@ -120,5 +128,6 @@ export function DeliverabilitySelectorOptionsToJSON(
     phoneCountry: value.phoneCountry,
     entityIds: value.entityIds,
     excludeEntityIds: value.excludeEntityIds,
+    tags: value.tags,
   };
 }

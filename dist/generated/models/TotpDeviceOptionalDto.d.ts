@@ -21,7 +21,7 @@ export interface TotpDeviceOptionalDto {
      * @type {TotpDeviceDto}
      * @memberof TotpDeviceOptionalDto
      */
-    device?: TotpDeviceDto;
+    device?: TotpDeviceDto | null;
 }
 export declare function TotpDeviceOptionalDtoFromJSON(json: any): TotpDeviceOptionalDto;
 export declare function TotpDeviceOptionalDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): TotpDeviceOptionalDto;

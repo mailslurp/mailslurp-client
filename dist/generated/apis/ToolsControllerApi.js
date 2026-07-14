@@ -613,6 +613,114 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Creates an unauthenticated free email render test and returns a short-lived generated email address.
+     * Create a public email render test
+     */
+    ToolsControllerApi.prototype.createPublicDeviceRenderTestRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createPublicDeviceRenderTestOptions === null ||
+                            requestParameters.createPublicDeviceRenderTestOptions === undefined) {
+                            throw new runtime.RequiredError('createPublicDeviceRenderTestOptions', 'Required parameter requestParameters.createPublicDeviceRenderTestOptions was null or undefined when calling createPublicDeviceRenderTest.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/device-render-test",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreatePublicDeviceRenderTestOptionsToJSON)(requestParameters.createPublicDeviceRenderTestOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PublicDeviceRenderTestDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Creates an unauthenticated free email render test and returns a short-lived generated email address.
+     * Create a public email render test
+     */
+    ToolsControllerApi.prototype.createPublicDeviceRenderTest = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createPublicDeviceRenderTestRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+     * Create a public spam test
+     */
+    ToolsControllerApi.prototype.createPublicSpamTestRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createPublicSpamTestOptions === null ||
+                            requestParameters.createPublicSpamTestOptions === undefined) {
+                            throw new runtime.RequiredError('createPublicSpamTestOptions', 'Required parameter requestParameters.createPublicSpamTestOptions was null or undefined when calling createPublicSpamTest.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/spam-test",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreatePublicSpamTestOptionsToJSON)(requestParameters.createPublicSpamTestOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PublicSpamTestRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+     * Create a public spam test
+     */
+    ToolsControllerApi.prototype.createPublicSpamTest = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createPublicSpamTestRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Delete a fake email address using the fake email domains
      * Delete a fake email address using the fake email domains
      */
@@ -1139,6 +1247,159 @@ var ToolsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns status for a free email render test and the public share redirect when the render run is ready.
+     * Get a public email render test
+     */
+    ToolsControllerApi.prototype.getPublicDeviceRenderTestRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getPublicDeviceRenderTest.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/device-render-test/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PublicDeviceRenderTestDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns status for a free email render test and the public share redirect when the render run is ready.
+     * Get a public email render test
+     */
+    ToolsControllerApi.prototype.getPublicDeviceRenderTest = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPublicDeviceRenderTestRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns public spam test run status, token, seed addresses, and free-limit state.
+     * Get a public spam test run
+     */
+    ToolsControllerApi.prototype.getPublicSpamTestRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getPublicSpamTest.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/spam-test/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PublicSpamTestRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns public spam test run status, token, seed addresses, and free-limit state.
+     * Get a public spam test run
+     */
+    ToolsControllerApi.prototype.getPublicSpamTest = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPublicSpamTestRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns public spam test run status and any available inbox placement results.
+     * Get public spam test results
+     */
+    ToolsControllerApi.prototype.getPublicSpamTestResultsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getPublicSpamTestResults.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/spam-test/{id}/results".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PublicSpamTestResultsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns public spam test run status and any available inbox placement results.
+     * Get public spam test results
+     */
+    ToolsControllerApi.prototype.getPublicSpamTestResults = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPublicSpamTestResultsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Lookup a BIMI record policy
      */
     ToolsControllerApi.prototype.lookupBimiDomainRaw = function (requestParameters, initOverrides) {
@@ -1546,6 +1807,63 @@ var ToolsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.lookupTlsReportingDomainRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+     * Mark a public spam test as submitted
+     */
+    ToolsControllerApi.prototype.submitPublicSpamTestRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling submitPublicSpamTest.');
+                        }
+                        if (requestParameters.submitPublicSpamTestOptions === null ||
+                            requestParameters.submitPublicSpamTestOptions === undefined) {
+                            throw new runtime.RequiredError('submitPublicSpamTestOptions', 'Required parameter requestParameters.submitPublicSpamTestOptions was null or undefined when calling submitPublicSpamTest.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/tools/spam-test/{id}/submit".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SubmitPublicSpamTestOptionsToJSON)(requestParameters.submitPublicSpamTestOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PublicSpamTestRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+     * Mark a public spam test as submitted
+     */
+    ToolsControllerApi.prototype.submitPublicSpamTest = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.submitPublicSpamTestRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  SmsMessageMediaDto,
+  SmsMessageMediaDtoFromJSON,
+  SmsMessageMediaDtoFromJSONTyped,
+  SmsMessageMediaDtoToJSON,
+} from './';
+
 /**
  *
  * @export
@@ -48,7 +55,7 @@ export interface SmsDto {
    * @type {string}
    * @memberof SmsDto
    */
-  toNumber?: string;
+  toNumber?: string | null;
   /**
    *
    * @type {boolean}
@@ -79,6 +86,12 @@ export interface SmsDto {
    * @memberof SmsDto
    */
   updatedAt: Date;
+  /**
+   *
+   * @type {Array<SmsMessageMediaDto>}
+   * @memberof SmsDto
+   */
+  media: Array<SmsMessageMediaDto>;
 }
 
 export function SmsDtoFromJSON(json: any): SmsDto {
@@ -103,6 +116,7 @@ export function SmsDtoFromJSONTyped(
     read: json['read'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    media: (json['media'] as Array<any>).map(SmsMessageMediaDtoFromJSON),
   };
 }
 
@@ -124,5 +138,6 @@ export function SmsDtoToJSON(value?: SmsDto | null): any {
     read: value.read,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    media: (value.media as Array<any>).map(SmsMessageMediaDtoToJSON),
   };
 }

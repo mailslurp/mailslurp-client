@@ -165,6 +165,11 @@ export interface DeleteAllInboxEmailsRequest {
   inboxId: string;
 }
 
+export interface DeleteAllInboxesRequest {
+  createdAtSince?: Date;
+  createdAtBefore?: Date;
+}
+
 export interface DeleteAllInboxesByDescriptionRequest {
   description: string;
 }
@@ -929,9 +934,22 @@ export class InboxControllerApi extends runtime.BaseAPI {
    * Delete all inboxes
    */
   async deleteAllInboxesRaw(
+    requestParameters: DeleteAllInboxesRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<void>> {
     const queryParameters: any = {};
+
+    if (requestParameters.createdAtSince !== undefined) {
+      queryParameters['createdAtSince'] = (
+        requestParameters.createdAtSince as any
+      ).toISOString();
+    }
+
+    if (requestParameters.createdAtBefore !== undefined) {
+      queryParameters['createdAtBefore'] = (
+        requestParameters.createdAtBefore as any
+      ).toISOString();
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -956,8 +974,11 @@ export class InboxControllerApi extends runtime.BaseAPI {
    * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
    * Delete all inboxes
    */
-  async deleteAllInboxes(initOverrides?: RequestInit): Promise<void> {
-    await this.deleteAllInboxesRaw(initOverrides);
+  async deleteAllInboxes(
+    requestParameters: DeleteAllInboxesRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllInboxesRaw(requestParameters, initOverrides);
   }
 
   /**

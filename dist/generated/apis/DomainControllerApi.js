@@ -409,6 +409,57 @@ var DomainControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List recent health events for a custom domain using MailSlurp domain-health terminology.
+     * Get domain health events
+     */
+    DomainControllerApi.prototype.getDomainHealthEventsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getDomainHealthEvents.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domains/{id}/health-events".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.DomainHealthEventDtoFromJSON);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List recent health events for a custom domain using MailSlurp domain-health terminology.
+     * Get domain health events
+     */
+    DomainControllerApi.prototype.getDomainHealthEvents = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDomainHealthEventsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * List domain issues for domains you have created
      * Get domain issues
      */

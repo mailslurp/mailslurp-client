@@ -37,7 +37,7 @@ export interface OptionalConnectorSmtpConnectionDto {
    * @type {ConnectorSmtpConnectionDto}
    * @memberof OptionalConnectorSmtpConnectionDto
    */
-  result?: ConnectorSmtpConnectionDto;
+  result?: ConnectorSmtpConnectionDto | null;
 }
 
 export function OptionalConnectorSmtpConnectionDtoFromJSON(

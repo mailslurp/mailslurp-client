@@ -24,7 +24,7 @@ export interface ConnectorImapConnectionTestResult {
    * @type {string}
    * @memberof ConnectorImapConnectionTestResult
    */
-  error?: string;
+  error?: string | null;
   /**
    *
    * @type {boolean}
@@ -36,13 +36,13 @@ export interface ConnectorImapConnectionTestResult {
    * @type {string}
    * @memberof ConnectorImapConnectionTestResult
    */
-  message?: string;
+  message?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof ConnectorImapConnectionTestResult
    */
-  logs?: Array<string>;
+  logs?: Array<string> | null;
 }
 
 export function ConnectorImapConnectionTestResultFromJSON(

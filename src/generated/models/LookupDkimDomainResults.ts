@@ -30,31 +30,31 @@ export interface LookupDkimDomainResults {
    * @type {string}
    * @memberof LookupDkimDomainResults
    */
-  queriedName?: string;
+  queriedName?: string | null;
   /**
    *
    * @type {string}
    * @memberof LookupDkimDomainResults
    */
-  selector?: string;
+  selector?: string | null;
   /**
    *
    * @type {string}
    * @memberof LookupDkimDomainResults
    */
-  record?: string;
+  record?: string | null;
   /**
    *
    * @type {string}
    * @memberof LookupDkimDomainResults
    */
-  algorithm?: string;
+  algorithm?: string | null;
   /**
    *
    * @type {number}
    * @memberof LookupDkimDomainResults
    */
-  keyLength?: number;
+  keyLength?: number | null;
   /**
    *
    * @type {Array<string>}

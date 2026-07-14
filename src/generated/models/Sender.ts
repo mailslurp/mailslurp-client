@@ -36,7 +36,7 @@ export interface Sender {
    * @type {string}
    * @memberof Sender
    */
-  name?: string;
+  name?: string | null;
 }
 
 export function SenderFromJSON(json: any): Sender {

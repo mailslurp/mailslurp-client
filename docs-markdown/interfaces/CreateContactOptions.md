@@ -84,6 +84,8 @@ ___
 
 • `Optional` **metaData**: `object`
 
+User metadata key value pairs to save for this contact. Can be any values you like.
+
 **`Memberof`**
 
 CreateContactOptions

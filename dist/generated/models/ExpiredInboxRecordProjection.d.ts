@@ -29,16 +29,16 @@ export interface ExpiredInboxRecordProjection {
     userId: string;
     /**
      *
-     * @type {string}
-     * @memberof ExpiredInboxRecordProjection
-     */
-    emailAddress: string;
-    /**
-     *
      * @type {Date}
      * @memberof ExpiredInboxRecordProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof ExpiredInboxRecordProjection
+     */
+    emailAddress: string;
 }
 export declare function ExpiredInboxRecordProjectionFromJSON(json: any): ExpiredInboxRecordProjection;
 export declare function ExpiredInboxRecordProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxRecordProjection;

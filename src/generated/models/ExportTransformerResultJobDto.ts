@@ -42,13 +42,13 @@ export interface ExportTransformerResultJobDto {
    * @type {string}
    * @memberof ExportTransformerResultJobDto
    */
-  fileName?: string;
+  fileName?: string | null;
   /**
    *
    * @type {string}
    * @memberof ExportTransformerResultJobDto
    */
-  downloadUrl?: string;
+  downloadUrl?: string | null;
   /**
    *
    * @type {Date}

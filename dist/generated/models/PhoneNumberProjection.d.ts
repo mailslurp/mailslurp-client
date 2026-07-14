@@ -20,7 +20,7 @@ export interface PhoneNumberProjection {
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -29,16 +29,16 @@ export interface PhoneNumberProjection {
     id: string;
     /**
      *
-     * @type {string}
+     * @type {Array<string>}
      * @memberof PhoneNumberProjection
      */
-    userId: string;
+    tags?: Array<string> | null;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    userId: string;
     /**
      *
      * @type {Date}
@@ -50,31 +50,37 @@ export interface PhoneNumberProjection {
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    providerLabel?: string;
+    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    lineType?: string;
+    providerLabel?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    carrierName?: string;
+    lineType?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    mobileCountryCode?: string;
+    carrierName?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    mobileNetworkCode?: string;
+    mobileCountryCode?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    mobileNetworkCode?: string | null;
     /**
      *
      * @type {string}
@@ -94,6 +100,7 @@ export declare enum PhoneNumberProjectionPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",

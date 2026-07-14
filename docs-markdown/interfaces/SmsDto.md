@@ -17,6 +17,7 @@ SmsDto
 - [favourite](SmsDto.md#favourite)
 - [fromNumber](SmsDto.md#fromnumber)
 - [id](SmsDto.md#id)
+- [media](SmsDto.md#media)
 - [phoneNumber](SmsDto.md#phonenumber)
 - [read](SmsDto.md#read)
 - [toNumber](SmsDto.md#tonumber)
@@ -68,6 +69,16 @@ ___
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+SmsDto
+
+___
+
+### media
+
+• **media**: [`SmsMessageMediaDto`](SmsMessageMediaDto.md)[]
 
 **`Memberof`**
 

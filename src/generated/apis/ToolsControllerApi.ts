@@ -65,6 +65,12 @@ import {
   CheckEmailFeaturesClientSupportResults,
   CheckEmailFeaturesClientSupportResultsFromJSON,
   CheckEmailFeaturesClientSupportResultsToJSON,
+  CreatePublicDeviceRenderTestOptions,
+  CreatePublicDeviceRenderTestOptionsFromJSON,
+  CreatePublicDeviceRenderTestOptionsToJSON,
+  CreatePublicSpamTestOptions,
+  CreatePublicSpamTestOptionsFromJSON,
+  CreatePublicSpamTestOptionsToJSON,
   EmailAuditAnalysisResult,
   EmailAuditAnalysisResultFromJSON,
   EmailAuditAnalysisResultToJSON,
@@ -155,6 +161,18 @@ import {
   NewFakeEmailAddressResult,
   NewFakeEmailAddressResultFromJSON,
   NewFakeEmailAddressResultToJSON,
+  PublicDeviceRenderTestDto,
+  PublicDeviceRenderTestDtoFromJSON,
+  PublicDeviceRenderTestDtoToJSON,
+  PublicSpamTestResultsDto,
+  PublicSpamTestResultsDtoFromJSON,
+  PublicSpamTestResultsDtoToJSON,
+  PublicSpamTestRunDto,
+  PublicSpamTestRunDtoFromJSON,
+  PublicSpamTestRunDtoToJSON,
+  SubmitPublicSpamTestOptions,
+  SubmitPublicSpamTestOptionsFromJSON,
+  SubmitPublicSpamTestOptionsToJSON,
   TestSmtpServerOptions,
   TestSmtpServerOptionsFromJSON,
   TestSmtpServerOptionsToJSON,
@@ -199,6 +217,14 @@ export interface CheckEmailFeaturesClientSupportRequest {
   checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
 }
 
+export interface CreatePublicDeviceRenderTestRequest {
+  createPublicDeviceRenderTestOptions: CreatePublicDeviceRenderTestOptions;
+}
+
+export interface CreatePublicSpamTestRequest {
+  createPublicSpamTestOptions: CreatePublicSpamTestOptions;
+}
+
 export interface DeleteNewFakeEmailAddressRequest {
   emailAddress: string;
 }
@@ -240,6 +266,18 @@ export interface GetFakeEmailsForAddressRequest {
   page?: number;
 }
 
+export interface GetPublicDeviceRenderTestRequest {
+  id: string;
+}
+
+export interface GetPublicSpamTestRequest {
+  id: string;
+}
+
+export interface GetPublicSpamTestResultsRequest {
+  id: string;
+}
+
 export interface LookupBimiDomainRequest {
   lookupBimiDomainOptions: LookupBimiDomainOptions;
 }
@@ -270,6 +308,11 @@ export interface LookupSpfDomainRequest {
 
 export interface LookupTlsReportingDomainRequest {
   lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
+}
+
+export interface SubmitPublicSpamTestRequest {
+  id: string;
+  submitPublicSpamTestOptions: SubmitPublicSpamTestOptions;
 }
 
 export interface TestSmtpServerRequest {
@@ -847,6 +890,128 @@ export class ToolsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<NewFakeEmailAddressResult> {
     const response = await this.createNewFakeEmailAddressRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Creates an unauthenticated free email render test and returns a short-lived generated email address.
+   * Create a public email render test
+   */
+  async createPublicDeviceRenderTestRaw(
+    requestParameters: CreatePublicDeviceRenderTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>> {
+    if (
+      requestParameters.createPublicDeviceRenderTestOptions === null ||
+      requestParameters.createPublicDeviceRenderTestOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createPublicDeviceRenderTestOptions',
+        'Required parameter requestParameters.createPublicDeviceRenderTestOptions was null or undefined when calling createPublicDeviceRenderTest.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/device-render-test`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreatePublicDeviceRenderTestOptionsToJSON(
+          requestParameters.createPublicDeviceRenderTestOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicDeviceRenderTestDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Creates an unauthenticated free email render test and returns a short-lived generated email address.
+   * Create a public email render test
+   */
+  async createPublicDeviceRenderTest(
+    requestParameters: CreatePublicDeviceRenderTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicDeviceRenderTestDto> {
+    const response = await this.createPublicDeviceRenderTestRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+   * Create a public spam test
+   */
+  async createPublicSpamTestRaw(
+    requestParameters: CreatePublicSpamTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicSpamTestRunDto>> {
+    if (
+      requestParameters.createPublicSpamTestOptions === null ||
+      requestParameters.createPublicSpamTestOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createPublicSpamTestOptions',
+        'Required parameter requestParameters.createPublicSpamTestOptions was null or undefined when calling createPublicSpamTest.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/spam-test`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreatePublicSpamTestOptionsToJSON(
+          requestParameters.createPublicSpamTestOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicSpamTestRunDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+   * Create a public spam test
+   */
+  async createPublicSpamTest(
+    requestParameters: CreatePublicSpamTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicSpamTestRunDto> {
+    const response = await this.createPublicSpamTestRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -1432,6 +1597,174 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Returns status for a free email render test and the public share redirect when the render run is ready.
+   * Get a public email render test
+   */
+  async getPublicDeviceRenderTestRaw(
+    requestParameters: GetPublicDeviceRenderTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getPublicDeviceRenderTest.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/device-render-test/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicDeviceRenderTestDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns status for a free email render test and the public share redirect when the render run is ready.
+   * Get a public email render test
+   */
+  async getPublicDeviceRenderTest(
+    requestParameters: GetPublicDeviceRenderTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicDeviceRenderTestDto> {
+    const response = await this.getPublicDeviceRenderTestRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns public spam test run status, token, seed addresses, and free-limit state.
+   * Get a public spam test run
+   */
+  async getPublicSpamTestRaw(
+    requestParameters: GetPublicSpamTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicSpamTestRunDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getPublicSpamTest.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/spam-test/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicSpamTestRunDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns public spam test run status, token, seed addresses, and free-limit state.
+   * Get a public spam test run
+   */
+  async getPublicSpamTest(
+    requestParameters: GetPublicSpamTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicSpamTestRunDto> {
+    const response = await this.getPublicSpamTestRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns public spam test run status and any available inbox placement results.
+   * Get public spam test results
+   */
+  async getPublicSpamTestResultsRaw(
+    requestParameters: GetPublicSpamTestResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicSpamTestResultsDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getPublicSpamTestResults.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/spam-test/{id}/results`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicSpamTestResultsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns public spam test run status and any available inbox placement results.
+   * Get public spam test results
+   */
+  async getPublicSpamTestResults(
+    requestParameters: GetPublicSpamTestResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicSpamTestResultsDto> {
+    const response = await this.getPublicSpamTestResultsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Lookup a BIMI record policy
    */
   async lookupBimiDomainRaw(
@@ -1892,6 +2225,77 @@ export class ToolsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<LookupTlsReportingDomainResults> {
     const response = await this.lookupTlsReportingDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+   * Mark a public spam test as submitted
+   */
+  async submitPublicSpamTestRaw(
+    requestParameters: SubmitPublicSpamTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicSpamTestRunDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling submitPublicSpamTest.'
+      );
+    }
+
+    if (
+      requestParameters.submitPublicSpamTestOptions === null ||
+      requestParameters.submitPublicSpamTestOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'submitPublicSpamTestOptions',
+        'Required parameter requestParameters.submitPublicSpamTestOptions was null or undefined when calling submitPublicSpamTest.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/spam-test/{id}/submit`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SubmitPublicSpamTestOptionsToJSON(
+          requestParameters.submitPublicSpamTestOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicSpamTestRunDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+   * Mark a public spam test as submitted
+   */
+  async submitPublicSpamTest(
+    requestParameters: SubmitPublicSpamTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicSpamTestRunDto> {
+    const response = await this.submitPublicSpamTestRaw(
       requestParameters,
       initOverrides
     );

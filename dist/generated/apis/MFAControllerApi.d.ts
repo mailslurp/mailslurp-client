@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateTotpDeviceBase32SecretKeyOptions, CreateTotpDeviceCustomOptions, CreateTotpDeviceOtpAuthUrlOptions, TotpDeviceCodeDto, TotpDeviceDto, TotpDeviceOptionalDto } from '../models';
+import { CreateTotpDeviceBase32SecretKeyOptions, CreateTotpDeviceCustomOptions, CreateTotpDeviceOtpAuthUrlOptions, PageTotpDeviceProjection, TotpDeviceCodeDto, TotpDeviceDto, TotpDeviceOptionalDto, UpdateTotpDeviceOptions } from '../models';
 export interface CreateTotpDeviceForBase32SecretKeyRequest {
     createTotpDeviceBase32SecretKeyOptions: CreateTotpDeviceBase32SecretKeyOptions;
 }
@@ -19,6 +19,9 @@ export interface CreateTotpDeviceForCustomRequest {
 }
 export interface CreateTotpDeviceForOtpAuthUrlRequest {
     createTotpDeviceOtpAuthUrlOptions: CreateTotpDeviceOtpAuthUrlOptions;
+}
+export interface DeleteTotpDeviceRequest {
+    id: string;
 }
 export interface GetTotpDeviceRequest {
     id: string;
@@ -31,7 +34,18 @@ export interface GetTotpDeviceByRequest {
 export interface GetTotpDeviceCodeRequest {
     id: string;
     at?: Date;
-    minSecondsUntilExpire?: number;
+    minSecondsUntilExpire?: number | null;
+}
+export interface GetTotpDevicesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetTotpDevicesSortEnum;
+    issuer?: string;
+    username?: string;
+}
+export interface UpdateTotpDeviceRequest {
+    id: string;
+    updateTotpDeviceOptions: UpdateTotpDeviceOptions;
 }
 /**
  *
@@ -68,6 +82,16 @@ export declare class MFAControllerApi extends runtime.BaseAPI {
      */
     createTotpDeviceForOtpAuthUrl(requestParameters: CreateTotpDeviceForOtpAuthUrlRequest, initOverrides?: RequestInit): Promise<TotpDeviceDto>;
     /**
+     * Delete a Time-Based One-Time Password (TOTP) device by ID.
+     * Delete a TOTP device
+     */
+    deleteTotpDeviceRaw(requestParameters: DeleteTotpDeviceRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a Time-Based One-Time Password (TOTP) device by ID.
+     * Delete a TOTP device
+     */
+    deleteTotpDevice(requestParameters: DeleteTotpDeviceRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
      * Get Time-Based One-Time Password (TOTP) device by its ID.
      * Get a TOTP device by ID
      */
@@ -97,4 +121,32 @@ export declare class MFAControllerApi extends runtime.BaseAPI {
      * Get a TOTP device code by device ID
      */
     getTotpDeviceCode(requestParameters: GetTotpDeviceCodeRequest, initOverrides?: RequestInit): Promise<TotpDeviceCodeDto>;
+    /**
+     * List Time-Based One-Time Password (TOTP) devices for the calling account.
+     * List TOTP devices
+     */
+    getTotpDevicesRaw(requestParameters: GetTotpDevicesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTotpDeviceProjection>>;
+    /**
+     * List Time-Based One-Time Password (TOTP) devices for the calling account.
+     * List TOTP devices
+     */
+    getTotpDevices(requestParameters: GetTotpDevicesRequest, initOverrides?: RequestInit): Promise<PageTotpDeviceProjection>;
+    /**
+     * Update stored metadata and TOTP settings for a device by ID.
+     * Update a TOTP device
+     */
+    updateTotpDeviceRaw(requestParameters: UpdateTotpDeviceRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TotpDeviceDto>>;
+    /**
+     * Update stored metadata and TOTP settings for a device by ID.
+     * Update a TOTP device
+     */
+    updateTotpDevice(requestParameters: UpdateTotpDeviceRequest, initOverrides?: RequestInit): Promise<TotpDeviceDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetTotpDevicesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }

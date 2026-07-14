@@ -49,7 +49,7 @@ export interface CancelDevicePreviewRunResult {
    * @type {string}
    * @memberof CancelDevicePreviewRunResult
    */
-  warning?: string;
+  warning?: string | null;
 }
 
 export function CancelDevicePreviewRunResultFromJSON(

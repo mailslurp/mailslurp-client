@@ -12,28 +12,15 @@ CreateDevicePreviewOptions
 
 ### Properties
 
-- [includeAllConfiguredProviders](CreateDevicePreviewOptions.md#includeallconfiguredproviders)
-- [providers](CreateDevicePreviewOptions.md#providers)
+- [nativeTargets](CreateDevicePreviewOptions.md#nativetargets)
 
 ## Properties
 
-### includeAllConfiguredProviders
+### nativeTargets
 
-• `Optional` **includeAllConfiguredProviders**: `boolean`
+• `Optional` **nativeTargets**: `string`[]
 
-Optional flag to request all configured providers in ESP. Defaults to false when omitted
-
-**`Memberof`**
-
-CreateDevicePreviewOptions
-
-___
-
-### providers
-
-• `Optional` **providers**: [`CreateDevicePreviewOptionsProvidersEnum`](../enums/CreateDevicePreviewOptionsProvidersEnum.md)[]
-
-Optional providers to request for rendering. Defaults to ESP_DEFAULT_PROVIDERS when set, otherwise GMAIL and OUTLOOK.
+Optional native mail-client target keys to request for rendering. Null leaves native target selection to ESP configuration. Values are forwarded to ESP so newly deployed ESP targets can be used before this API's enum list is updated.
 
 **`Memberof`**
 

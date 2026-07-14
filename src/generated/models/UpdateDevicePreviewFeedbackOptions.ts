@@ -30,49 +30,49 @@ export interface UpdateDevicePreviewFeedbackOptions {
    * @type {number}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  rating?: number;
+  rating?: number | null;
   /**
    *
    * @type {string}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  title?: string;
+  title?: string | null;
   /**
    *
    * @type {string}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  comment?: string;
+  comment?: string | null;
   /**
    *
    * @type {string}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  internalNote?: string;
+  internalNote?: string | null;
   /**
    *
    * @type {boolean}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  appendInternalNote?: boolean;
+  appendInternalNote?: boolean | null;
   /**
    *
    * @type {string}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  sessionId?: string;
+  sessionId?: string | null;
   /**
    *
    * @type {string}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  liveViewUrl?: string;
+  liveViewUrl?: string | null;
   /**
    *
    * @type {{ [key: string]: string; }}
    * @memberof UpdateDevicePreviewFeedbackOptions
    */
-  metadata?: { [key: string]: string };
+  metadata?: { [key: string]: string } | null;
 }
 
 /**

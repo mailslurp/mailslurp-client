@@ -26,13 +26,13 @@ export interface SpfMechanismResult {
      * @type {string}
      * @memberof SpfMechanismResult
      */
-    value?: string;
+    value?: string | null;
     /**
      *
      * @type {string}
      * @memberof SpfMechanismResult
      */
-    qualifier?: string;
+    qualifier?: string | null;
 }
 export declare function SpfMechanismResultFromJSON(json: any): SpfMechanismResult;
 export declare function SpfMechanismResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): SpfMechanismResult;

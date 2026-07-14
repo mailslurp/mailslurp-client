@@ -20,7 +20,7 @@ export interface PhoneNumberReleaseProjection {
      * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -35,12 +35,6 @@ export interface PhoneNumberReleaseProjection {
     userId: string;
     /**
      *
-     * @type {string}
-     * @memberof PhoneNumberReleaseProjection
-     */
-    phoneCountry: PhoneNumberReleaseProjectionPhoneCountryEnum;
-    /**
-     *
      * @type {Date}
      * @memberof PhoneNumberReleaseProjection
      */
@@ -50,7 +44,13 @@ export interface PhoneNumberReleaseProjection {
      * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
-    phoneNumber?: string;
+    phoneCountry: PhoneNumberReleaseProjectionPhoneCountryEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberReleaseProjection
+     */
+    phoneNumber?: string | null;
     /**
      *
      * @type {string}
@@ -76,6 +76,7 @@ export declare enum PhoneNumberReleaseProjectionPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",

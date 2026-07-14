@@ -37,13 +37,13 @@ export interface OptInConsentOptions {
    * @type {string}
    * @memberof OptInConsentOptions
    */
-  companyName?: string;
+  companyName?: string | null;
   /**
    *
    * @type {SendOptInConsentEmailOptions}
    * @memberof OptInConsentOptions
    */
-  sendOptInOptions?: SendOptInConsentEmailOptions;
+  sendOptInOptions?: SendOptInConsentEmailOptions | null;
 }
 
 export function OptInConsentOptionsFromJSON(json: any): OptInConsentOptions {

@@ -14,6 +14,7 @@ DomainMonitorDto
 
 - [createdAt](DomainMonitorDto.md#createdat)
 - [domain](DomainMonitorDto.md#domain)
+- [emailVerification](DomainMonitorDto.md#emailverification)
 - [enabled](DomainMonitorDto.md#enabled)
 - [healthScore](DomainMonitorDto.md#healthscore)
 - [id](DomainMonitorDto.md#id)
@@ -41,6 +42,16 @@ ___
 ### domain
 
 • **domain**: `string`
+
+**`Memberof`**
+
+DomainMonitorDto
+
+___
+
+### emailVerification
+
+• `Optional` **emailVerification**: [`DomainMonitorEmailVerificationDto`](DomainMonitorEmailVerificationDto.md)
 
 **`Memberof`**
 

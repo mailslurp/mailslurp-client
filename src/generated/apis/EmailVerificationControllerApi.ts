@@ -14,6 +14,12 @@
 
 import * as runtime from '../runtime';
 import {
+  EmailDomainReputationOptions,
+  EmailDomainReputationOptionsFromJSON,
+  EmailDomainReputationOptionsToJSON,
+  EmailDomainReputationResult,
+  EmailDomainReputationResultFromJSON,
+  EmailDomainReputationResultToJSON,
   EmailIntelligenceListResult,
   EmailIntelligenceListResultFromJSON,
   EmailIntelligenceListResultToJSON,
@@ -30,6 +36,10 @@ import {
   ValidateEmailAddressListResultFromJSON,
   ValidateEmailAddressListResultToJSON,
 } from '../models';
+
+export interface CheckEmailDomainReputationRequest {
+  emailDomainReputationOptions: EmailDomainReputationOptions;
+}
 
 export interface DeleteValidationRequestRequest {
   id: string;
@@ -57,6 +67,67 @@ export interface ValidateEmailAddressListRequest {
  *
  */
 export class EmailVerificationControllerApi extends runtime.BaseAPI {
+  /**
+   * Run reputation-oriented checks for an email address, domain, IP address, or MX host. This is separate from address validation.
+   * Check email/domain reputation signals including configured DNS blacklists.
+   */
+  async checkEmailDomainReputationRaw(
+    requestParameters: CheckEmailDomainReputationRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailDomainReputationResult>> {
+    if (
+      requestParameters.emailDomainReputationOptions === null ||
+      requestParameters.emailDomainReputationOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailDomainReputationOptions',
+        'Required parameter requestParameters.emailDomainReputationOptions was null or undefined when calling checkEmailDomainReputation.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/email-verification/domain-reputation`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: EmailDomainReputationOptionsToJSON(
+          requestParameters.emailDomainReputationOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailDomainReputationResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Run reputation-oriented checks for an email address, domain, IP address, or MX host. This is separate from address validation.
+   * Check email/domain reputation signals including configured DNS blacklists.
+   */
+  async checkEmailDomainReputation(
+    requestParameters: CheckEmailDomainReputationRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailDomainReputationResult> {
+    const response = await this.checkEmailDomainReputationRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Remove validation requests
    * Delete all validation requests

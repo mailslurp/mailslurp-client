@@ -483,13 +483,19 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
-    EmailControllerApi.prototype.deleteAllEmailsRaw = function (initOverrides) {
+    EmailControllerApi.prototype.deleteAllEmailsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.createdAtSince !== undefined) {
+                            queryParameters['createdAtSince'] = requestParameters.createdAtSince.toISOString();
+                        }
+                        if (requestParameters.createdAtBefore !== undefined) {
+                            queryParameters['createdAtBefore'] = requestParameters.createdAtBefore.toISOString();
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -511,11 +517,11 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
-    EmailControllerApi.prototype.deleteAllEmails = function (initOverrides) {
+    EmailControllerApi.prototype.deleteAllEmails = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deleteAllEmailsRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.deleteAllEmailsRaw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
@@ -1971,6 +1977,9 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         if (requestParameters.htmlSelector !== undefined) {
                             queryParameters['htmlSelector'] = requestParameters.htmlSelector;
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
                         }
                         if (requestParameters.page !== undefined) {
                             queryParameters['page'] = requestParameters.page;

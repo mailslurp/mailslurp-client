@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, ExtractAttachmentTextOptions, ExtractAttachmentTextResult, InlineObject2, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
+import { AttachmentEntityDto, AttachmentMetaData, DownloadAttachmentDto, ExtractAttachmentTextOptions, ExtractAttachmentTextResult, InlineObject3, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
 export interface DeleteAttachmentRequest {
     attachmentId: string;
 }
@@ -61,7 +61,7 @@ export interface UploadMultipartFormRequest {
     xFilename?: string;
     xFilenameRaw?: string;
     xFilesize?: number;
-    inlineObject2?: InlineObject2;
+    inlineObject3?: InlineObject3;
 }
 /**
  *

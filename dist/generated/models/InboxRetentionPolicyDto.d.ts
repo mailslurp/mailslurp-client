@@ -26,7 +26,7 @@ export interface InboxRetentionPolicyDto {
      * @type {string}
      * @memberof InboxRetentionPolicyDto
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {number}

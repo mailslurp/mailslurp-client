@@ -49,7 +49,7 @@ export interface PhonePoolDetailDto {
    * @type {string}
    * @memberof PhonePoolDetailDto
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {Date}

@@ -28,6 +28,7 @@ var TenantReputationFindingDtoAccountRegionEnum;
     TenantReputationFindingDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
     TenantReputationFindingDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
     TenantReputationFindingDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    TenantReputationFindingDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_3"] = "US_WEST_2_ACCOUNT_SES_3";
     TenantReputationFindingDtoAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
     TenantReputationFindingDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
     TenantReputationFindingDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
@@ -52,10 +53,14 @@ function TenantReputationFindingDtoFromJSONTyped(json, ignoreDiscriminator) {
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
         createdTimestamp: !(0, runtime_1.exists)(json, 'createdTimestamp')
             ? undefined
-            : new Date(json['createdTimestamp']),
+            : json['createdTimestamp'] === null
+                ? null
+                : new Date(json['createdTimestamp']),
         lastUpdatedTimestamp: !(0, runtime_1.exists)(json, 'lastUpdatedTimestamp')
             ? undefined
-            : new Date(json['lastUpdatedTimestamp']),
+            : json['lastUpdatedTimestamp'] === null
+                ? null
+                : new Date(json['lastUpdatedTimestamp']),
     };
 }
 exports.TenantReputationFindingDtoFromJSONTyped = TenantReputationFindingDtoFromJSONTyped;
@@ -76,10 +81,14 @@ function TenantReputationFindingDtoToJSON(value) {
         description: value.description,
         createdTimestamp: value.createdTimestamp === undefined
             ? undefined
-            : value.createdTimestamp.toISOString(),
+            : value.createdTimestamp === null
+                ? null
+                : value.createdTimestamp.toISOString(),
         lastUpdatedTimestamp: value.lastUpdatedTimestamp === undefined
             ? undefined
-            : value.lastUpdatedTimestamp.toISOString(),
+            : value.lastUpdatedTimestamp === null
+                ? null
+                : value.lastUpdatedTimestamp.toISOString(),
     };
 }
 exports.TenantReputationFindingDtoToJSON = TenantReputationFindingDtoToJSON;

@@ -27,13 +27,19 @@ function EmailRecipientsFromJSONTyped(json, ignoreDiscriminator) {
     return {
         to: !(0, runtime_1.exists)(json, 'to')
             ? undefined
-            : json['to'].map(_1.RecipientFromJSON),
+            : json['to'] === null
+                ? null
+                : json['to'].map(_1.RecipientFromJSON),
         cc: !(0, runtime_1.exists)(json, 'cc')
             ? undefined
-            : json['cc'].map(_1.RecipientFromJSON),
+            : json['cc'] === null
+                ? null
+                : json['cc'].map(_1.RecipientFromJSON),
         bcc: !(0, runtime_1.exists)(json, 'bcc')
             ? undefined
-            : json['bcc'].map(_1.RecipientFromJSON),
+            : json['bcc'] === null
+                ? null
+                : json['bcc'].map(_1.RecipientFromJSON),
     };
 }
 exports.EmailRecipientsFromJSONTyped = EmailRecipientsFromJSONTyped;
@@ -47,13 +53,19 @@ function EmailRecipientsToJSON(value) {
     return {
         to: value.to === undefined
             ? undefined
-            : value.to.map(_1.RecipientToJSON),
+            : value.to === null
+                ? null
+                : value.to.map(_1.RecipientToJSON),
         cc: value.cc === undefined
             ? undefined
-            : value.cc.map(_1.RecipientToJSON),
+            : value.cc === null
+                ? null
+                : value.cc.map(_1.RecipientToJSON),
         bcc: value.bcc === undefined
             ? undefined
-            : value.bcc.map(_1.RecipientToJSON),
+            : value.bcc === null
+                ? null
+                : value.bcc.map(_1.RecipientToJSON),
     };
 }
 exports.EmailRecipientsToJSON = EmailRecipientsToJSON;

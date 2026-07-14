@@ -26,25 +26,25 @@ export interface Complaint {
      * @type {string}
      * @memberof Complaint
      */
-    userId?: string;
+    userId?: string | null;
     /**
      *
      * @type {string}
      * @memberof Complaint
      */
-    eventType?: string;
+    eventType?: string | null;
     /**
      *
      * @type {string}
      * @memberof Complaint
      */
-    mailSource?: string;
+    mailSource?: string | null;
     /**
      *
      * @type {string}
      * @memberof Complaint
      */
-    mailMessageId?: string;
+    mailMessageId?: string | null;
     /**
      *
      * @type {string}

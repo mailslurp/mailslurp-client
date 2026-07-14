@@ -27,6 +27,7 @@ var EmergencyAddressPhoneCountryEnum;
     EmergencyAddressPhoneCountryEnum["EE"] = "EE";
     EmergencyAddressPhoneCountryEnum["HK"] = "HK";
     EmergencyAddressPhoneCountryEnum["PL"] = "PL";
+    EmergencyAddressPhoneCountryEnum["CH"] = "CH";
     EmergencyAddressPhoneCountryEnum["PT"] = "PT";
     EmergencyAddressPhoneCountryEnum["NL"] = "NL";
     EmergencyAddressPhoneCountryEnum["IL"] = "IL";

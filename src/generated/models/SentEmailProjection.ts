@@ -50,12 +50,6 @@ export interface SentEmailProjection {
   from?: string | null;
   /**
    *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
    * @type {Sender}
    * @memberof SentEmailProjection
    */
@@ -66,6 +60,12 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   recipients?: EmailRecipients | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  subject?: string | null;
   /**
    *
    * @type {string}
@@ -86,6 +86,24 @@ export interface SentEmailProjection {
   attachments?: Array<string> | null;
   /**
    *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  textExcerpt?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  bodyExcerpt?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  to?: Array<string> | null;
+  /**
+   *
    * @type {Date}
    * @memberof SentEmailProjection
    */
@@ -95,19 +113,13 @@ export interface SentEmailProjection {
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
-  to?: Array<string>;
+  cc?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
-  cc?: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  bcc?: Array<string>;
+  bcc?: Array<string> | null;
   /**
    *
    * @type {string}
@@ -131,18 +143,6 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
-  bodyExcerpt?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  textExcerpt?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
   bodyMD5Hash?: string | null;
 }
 
@@ -161,25 +161,25 @@ export function SentEmailProjectionFromJSONTyped(
     id: json['id'],
     threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
     from: !exists(json, 'from') ? undefined : json['from'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     sender: !exists(json, 'sender')
       ? undefined
       : SenderFromJSON(json['sender']),
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     userId: json['userId'],
     inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
-    createdAt: new Date(json['createdAt']),
+    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     to: !exists(json, 'to') ? undefined : json['to'],
+    createdAt: new Date(json['createdAt']),
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     virtualSend: json['virtualSend'],
-    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
   };
 }
@@ -197,21 +197,21 @@ export function SentEmailProjectionToJSON(
     id: value.id,
     threadId: value.threadId,
     from: value.from,
-    subject: value.subject,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
+    subject: value.subject,
     userId: value.userId,
     inboxId: value.inboxId,
     attachments: value.attachments,
-    createdAt: value.createdAt.toISOString(),
+    textExcerpt: value.textExcerpt,
+    bodyExcerpt: value.bodyExcerpt,
     to: value.to,
+    createdAt: value.createdAt.toISOString(),
     cc: value.cc,
     bcc: value.bcc,
     messageId: value.messageId,
     inReplyTo: value.inReplyTo,
     virtualSend: value.virtualSend,
-    bodyExcerpt: value.bodyExcerpt,
-    textExcerpt: value.textExcerpt,
     bodyMD5Hash: value.bodyMD5Hash,
   };
 }

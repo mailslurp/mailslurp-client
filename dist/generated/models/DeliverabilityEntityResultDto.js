@@ -29,6 +29,7 @@ var DeliverabilityEntityResultDtoPhoneCountryEnum;
     DeliverabilityEntityResultDtoPhoneCountryEnum["EE"] = "EE";
     DeliverabilityEntityResultDtoPhoneCountryEnum["HK"] = "HK";
     DeliverabilityEntityResultDtoPhoneCountryEnum["PL"] = "PL";
+    DeliverabilityEntityResultDtoPhoneCountryEnum["CH"] = "CH";
     DeliverabilityEntityResultDtoPhoneCountryEnum["PT"] = "PT";
     DeliverabilityEntityResultDtoPhoneCountryEnum["NL"] = "NL";
     DeliverabilityEntityResultDtoPhoneCountryEnum["IL"] = "IL";

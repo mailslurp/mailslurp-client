@@ -20,13 +20,13 @@ export interface EmailHtmlDto {
      * @type {string}
      * @memberof EmailHtmlDto
      */
-    subject?: string;
+    subject?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHtmlDto
      */
-    body?: string;
+    body?: string | null;
 }
 export declare function EmailHtmlDtoFromJSON(json: any): EmailHtmlDto;
 export declare function EmailHtmlDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailHtmlDto;

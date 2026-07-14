@@ -32,19 +32,19 @@ export interface EntityEventItemProjection {
      * @type {string}
      * @memberof EntityEventItemProjection
      */
+    inboxId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityEventItemProjection
+     */
+    phoneId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityEventItemProjection
+     */
     eventType: EntityEventItemProjectionEventTypeEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    inboxId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityEventItemProjection
-     */
-    phoneId?: string;
 }
 /**
  * @export

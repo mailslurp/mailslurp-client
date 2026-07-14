@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { DomainMonitorEmailVerificationDto } from './';
 /**
  *
  * @export
@@ -38,13 +39,13 @@ export interface DomainMonitorDto {
      * @type {string}
      * @memberof DomainMonitorDto
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {number}
      * @memberof DomainMonitorDto
      */
-    intervalSeconds?: number;
+    intervalSeconds?: number | null;
     /**
      *
      * @type {boolean}
@@ -68,19 +69,25 @@ export interface DomainMonitorDto {
      * @type {number}
      * @memberof DomainMonitorDto
      */
-    healthScore?: number;
+    healthScore?: number | null;
     /**
      *
      * @type {Date}
      * @memberof DomainMonitorDto
      */
-    lastRunAt?: Date;
+    lastRunAt?: Date | null;
     /**
      *
      * @type {Date}
      * @memberof DomainMonitorDto
      */
-    nextRunAt?: Date;
+    nextRunAt?: Date | null;
+    /**
+     *
+     * @type {DomainMonitorEmailVerificationDto}
+     * @memberof DomainMonitorDto
+     */
+    emailVerification?: DomainMonitorEmailVerificationDto | null;
     /**
      *
      * @type {Date}

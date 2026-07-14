@@ -20,13 +20,13 @@ export interface ConnectorEventProjection {
      * @type {string}
      * @memberof ConnectorEventProjection
      */
-    message?: string;
+    message?: string | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorEventProjection
      */
-    id?: string;
+    id?: string | null;
     /**
      *
      * @type {number}
@@ -39,12 +39,6 @@ export interface ConnectorEventProjection {
      * @memberof ConnectorEventProjection
      */
     status: ConnectorEventProjectionStatusEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorEventProjection
-     */
-    eventType: ConnectorEventProjectionEventTypeEnum;
     /**
      *
      * @type {Date}
@@ -62,7 +56,13 @@ export interface ConnectorEventProjection {
      * @type {boolean}
      * @memberof ConnectorEventProjection
      */
-    seen?: boolean;
+    seen?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorEventProjection
+     */
+    eventType: ConnectorEventProjectionEventTypeEnum;
 }
 /**
  * @export

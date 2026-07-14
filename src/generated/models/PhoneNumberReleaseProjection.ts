@@ -24,7 +24,7 @@ export interface PhoneNumberReleaseProjection {
    * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -39,12 +39,6 @@ export interface PhoneNumberReleaseProjection {
   userId: string;
   /**
    *
-   * @type {string}
-   * @memberof PhoneNumberReleaseProjection
-   */
-  phoneCountry: PhoneNumberReleaseProjectionPhoneCountryEnum;
-  /**
-   *
    * @type {Date}
    * @memberof PhoneNumberReleaseProjection
    */
@@ -54,7 +48,13 @@ export interface PhoneNumberReleaseProjection {
    * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
-  phoneNumber?: string;
+  phoneCountry: PhoneNumberReleaseProjectionPhoneCountryEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberReleaseProjection
+   */
+  phoneNumber?: string | null;
   /**
    *
    * @type {string}
@@ -81,6 +81,7 @@ export enum PhoneNumberReleaseProjectionPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
@@ -129,8 +130,8 @@ export function PhoneNumberReleaseProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     userId: json['userId'],
-    phoneCountry: json['phoneCountry'],
     createdAt: new Date(json['createdAt']),
+    phoneCountry: json['phoneCountry'],
     phoneNumber: !exists(json, 'phoneNumber') ? undefined : json['phoneNumber'],
     subscriptionSchedule: !exists(json, 'subscriptionSchedule')
       ? undefined
@@ -154,8 +155,8 @@ export function PhoneNumberReleaseProjectionToJSON(
     name: value.name,
     id: value.id,
     userId: value.userId,
-    phoneCountry: value.phoneCountry,
     createdAt: value.createdAt.toISOString(),
+    phoneCountry: value.phoneCountry,
     phoneNumber: value.phoneNumber,
     subscriptionSchedule: value.subscriptionSchedule,
     planCurrency: value.planCurrency,

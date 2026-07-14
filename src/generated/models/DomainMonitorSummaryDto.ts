@@ -49,7 +49,7 @@ export interface DomainMonitorSummaryDto {
    * @type {DomainMonitorRunDto}
    * @memberof DomainMonitorSummaryDto
    */
-  latestRun?: DomainMonitorRunDto;
+  latestRun?: DomainMonitorRunDto | null;
   /**
    *
    * @type {DomainMonitorInsightsDto}

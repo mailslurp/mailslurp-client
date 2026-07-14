@@ -33,7 +33,7 @@ export interface AvailablePhoneNumbersResult {
      * @type {string}
      * @memberof AvailablePhoneNumbersResult
      */
-    warning?: string;
+    warning?: string | null;
 }
 export declare function AvailablePhoneNumbersResultFromJSON(json: any): AvailablePhoneNumbersResult;
 export declare function AvailablePhoneNumbersResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): AvailablePhoneNumbersResult;

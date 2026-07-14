@@ -28,6 +28,7 @@ var SearchAvailablePhoneNumbersOptionsPhoneCountryEnum;
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["EE"] = "EE";
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["HK"] = "HK";
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["PL"] = "PL";
+    SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["CH"] = "CH";
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["PT"] = "PT";
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["NL"] = "NL";
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["IL"] = "IL";

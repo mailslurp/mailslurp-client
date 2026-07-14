@@ -243,7 +243,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+   * Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
    * Create deliverability simulation job
    */
   async createDeliverabilitySimulationJobRaw(
@@ -302,7 +302,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+   * Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
    * Create deliverability simulation job
    */
   async createDeliverabilitySimulationJob(
@@ -317,8 +317,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-   * Create deliverability/load test
+   * Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+   * Create load test
    */
   async createDeliverabilityTestRaw(
     requestParameters: CreateDeliverabilityTestRequest,
@@ -363,8 +363,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-   * Create deliverability/load test
+   * Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+   * Create load test
    */
   async createDeliverabilityTest(
     requestParameters: CreateDeliverabilityTestRequest,
@@ -379,7 +379,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Delete test and all persisted entity-level results.
-   * Delete deliverability/load test
+   * Delete load test
    */
   async deleteDeliverabilityTestRaw(
     requestParameters: DeleteDeliverabilityTestRequest,
@@ -423,7 +423,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Delete test and all persisted entity-level results.
-   * Delete deliverability/load test
+   * Delete load test
    */
   async deleteDeliverabilityTest(
     requestParameters: DeleteDeliverabilityTestRequest,
@@ -437,8 +437,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-   * Duplicate deliverability/load test
+   * Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+   * Duplicate load test
    */
   async duplicateDeliverabilityTestRaw(
     requestParameters: DuplicateDeliverabilityTestRequest,
@@ -481,8 +481,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-   * Duplicate deliverability/load test
+   * Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+   * Duplicate load test
    */
   async duplicateDeliverabilityTest(
     requestParameters: DuplicateDeliverabilityTestRequest,
@@ -496,8 +496,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-   * Export deliverability/load test report as PDF
+   * Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+   * Export load-test report as PDF
    */
   async exportDeliverabilityTestReportRaw(
     requestParameters: ExportDeliverabilityTestReportRequest,
@@ -538,8 +538,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-   * Export deliverability/load test report as PDF
+   * Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+   * Export load-test report as PDF
    */
   async exportDeliverabilityTestReport(
     requestParameters: ExportDeliverabilityTestReportRequest,
@@ -553,7 +553,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-   * Export deliverability/load test entity results as CSV
+   * Export load-test entity results as CSV
    */
   async exportDeliverabilityTestResultsRaw(
     requestParameters: ExportDeliverabilityTestResultsRequest,
@@ -599,7 +599,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-   * Export deliverability/load test entity results as CSV
+   * Export load-test entity results as CSV
    */
   async exportDeliverabilityTestResults(
     requestParameters: ExportDeliverabilityTestResultsRequest,
@@ -904,8 +904,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get deliverability test configuration and latest progress counters.
-   * Get deliverability/load test
+   * Get load-test configuration and latest progress counters.
+   * Get load test
    */
   async getDeliverabilityTestRaw(
     requestParameters: GetDeliverabilityTestRequest,
@@ -948,8 +948,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get deliverability test configuration and latest progress counters.
-   * Get deliverability/load test
+   * Get load-test configuration and latest progress counters.
+   * Get load test
    */
   async getDeliverabilityTest(
     requestParameters: GetDeliverabilityTestRequest,
@@ -964,7 +964,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Get paged per-entity expectation results with optional matched/unmatched filtering.
-   * Get deliverability/load test entity results
+   * Get load-test entity results
    */
   async getDeliverabilityTestResultsRaw(
     requestParameters: GetDeliverabilityTestResultsRequest,
@@ -1024,7 +1024,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Get paged per-entity expectation results with optional matched/unmatched filtering.
-   * Get deliverability/load test entity results
+   * Get load-test entity results
    */
   async getDeliverabilityTestResults(
     requestParameters: GetDeliverabilityTestResultsRequest,
@@ -1038,8 +1038,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * List deliverability tests for the authenticated account.
-   * List deliverability/load tests
+   * List load tests for the authenticated account.
+   * List load tests
    */
   async getDeliverabilityTestsRaw(
     requestParameters: GetDeliverabilityTestsRequest,
@@ -1081,8 +1081,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * List deliverability tests for the authenticated account.
-   * List deliverability/load tests
+   * List load tests for the authenticated account.
+   * List load tests
    */
   async getDeliverabilityTests(
     requestParameters: GetDeliverabilityTestsRequest,
@@ -1096,7 +1096,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get the most recent simulation job for a deliverability test.
+   * Get the most recent simulation job for a load test.
    * Get latest deliverability simulation job
    */
   async getLatestDeliverabilitySimulationJobRaw(
@@ -1140,7 +1140,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get the most recent simulation job for a deliverability test.
+   * Get the most recent simulation job for a load test.
    * Get latest deliverability simulation job
    */
   async getLatestDeliverabilitySimulationJob(
@@ -1229,8 +1229,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Pause a RUNNING or SCHEDULED deliverability test.
-   * Pause deliverability/load test
+   * Pause a RUNNING or SCHEDULED load test.
+   * Pause load test
    */
   async pauseDeliverabilityTestRaw(
     requestParameters: PauseDeliverabilityTestRequest,
@@ -1273,8 +1273,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Pause a RUNNING or SCHEDULED deliverability test.
-   * Pause deliverability/load test
+   * Pause a RUNNING or SCHEDULED load test.
+   * Pause load test
    */
   async pauseDeliverabilityTest(
     requestParameters: PauseDeliverabilityTestRequest,
@@ -1289,7 +1289,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-   * Poll deliverability/load test status
+   * Poll load-test status
    */
   async pollDeliverabilityTestStatusRaw(
     requestParameters: PollDeliverabilityTestStatusRequest,
@@ -1333,7 +1333,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-   * Poll deliverability/load test status
+   * Poll load-test status
    */
   async pollDeliverabilityTestStatus(
     requestParameters: PollDeliverabilityTestStatusRequest,
@@ -1422,7 +1422,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Start a CREATED test or resume a PAUSED/SCHEDULED test.
-   * Start or resume deliverability/load test
+   * Start or resume load test
    */
   async startDeliverabilityTestRaw(
     requestParameters: StartDeliverabilityTestRequest,
@@ -1466,7 +1466,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Start a CREATED test or resume a PAUSED/SCHEDULED test.
-   * Start or resume deliverability/load test
+   * Start or resume load test
    */
   async startDeliverabilityTest(
     requestParameters: StartDeliverabilityTestRequest,
@@ -1480,8 +1480,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Stop a deliverability test and mark it terminal.
-   * Stop deliverability/load test
+   * Stop a load test and mark it terminal.
+   * Stop load test
    */
   async stopDeliverabilityTestRaw(
     requestParameters: StopDeliverabilityTestRequest,
@@ -1524,8 +1524,8 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Stop a deliverability test and mark it terminal.
-   * Stop deliverability/load test
+   * Stop a load test and mark it terminal.
+   * Stop load test
    */
   async stopDeliverabilityTest(
     requestParameters: StopDeliverabilityTestRequest,
@@ -1540,7 +1540,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Update metadata, timeout, and expectations for a non-running non-terminal test.
-   * Update deliverability/load test
+   * Update load test
    */
   async updateDeliverabilityTestRaw(
     requestParameters: UpdateDeliverabilityTestRequest,
@@ -1599,7 +1599,7 @@ export class DeliverabilityTestControllerApi extends runtime.BaseAPI {
 
   /**
    * Update metadata, timeout, and expectations for a non-running non-terminal test.
-   * Update deliverability/load test
+   * Update load test
    */
   async updateDeliverabilityTest(
     requestParameters: UpdateDeliverabilityTestRequest,

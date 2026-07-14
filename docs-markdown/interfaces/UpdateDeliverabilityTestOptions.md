@@ -2,7 +2,7 @@
 
 # Interface: UpdateDeliverabilityTestOptions
 
-Update a deliverability/load test
+Update a load test
 
 **`Export`**
 

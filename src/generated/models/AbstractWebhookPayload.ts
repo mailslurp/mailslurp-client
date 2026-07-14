@@ -24,7 +24,7 @@ export interface AbstractWebhookPayload {
    * @type {string}
    * @memberof AbstractWebhookPayload
    */
-  webhookName?: string;
+  webhookName?: string | null;
   /**
    *
    * @type {string}
@@ -36,13 +36,13 @@ export interface AbstractWebhookPayload {
    * @type {string}
    * @memberof AbstractWebhookPayload
    */
-  webhookId: string;
+  messageId: string;
   /**
    *
    * @type {string}
    * @memberof AbstractWebhookPayload
    */
-  messageId: string;
+  webhookId: string;
 }
 
 /**
@@ -80,8 +80,8 @@ export function AbstractWebhookPayloadFromJSONTyped(
   return {
     webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
     eventName: json['eventName'],
-    webhookId: json['webhookId'],
     messageId: json['messageId'],
+    webhookId: json['webhookId'],
   };
 }
 
@@ -97,7 +97,7 @@ export function AbstractWebhookPayloadToJSON(
   return {
     webhookName: value.webhookName,
     eventName: value.eventName,
-    webhookId: value.webhookId,
     messageId: value.messageId,
+    webhookId: value.webhookId,
   };
 }

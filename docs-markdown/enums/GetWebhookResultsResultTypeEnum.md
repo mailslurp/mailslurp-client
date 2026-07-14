@@ -10,6 +10,7 @@
 
 - [BAD\_RESPONSE](GetWebhookResultsResultTypeEnum.md#bad_response)
 - [EXCEPTION](GetWebhookResultsResultTypeEnum.md#exception)
+- [EXHAUSTED](GetWebhookResultsResultTypeEnum.md#exhausted)
 - [REDRIVEN](GetWebhookResultsResultTypeEnum.md#redriven)
 - [SUCCESS](GetWebhookResultsResultTypeEnum.md#success)
 
@@ -24,6 +25,12 @@ ___
 ### EXCEPTION
 
 • **EXCEPTION** = ``"EXCEPTION"``
+
+___
+
+### EXHAUSTED
+
+• **EXHAUSTED** = ``"EXHAUSTED"``
 
 ___
 

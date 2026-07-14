@@ -6,9 +6,16 @@
 
 ### Properties
 
+- [hydrateThumbnail](GetDevicePreviewRunsForAccountRequest.md#hydratethumbnail)
 - [limit](GetDevicePreviewRunsForAccountRequest.md#limit)
 
 ## Properties
+
+### hydrateThumbnail
+
+• `Optional` **hydrateThumbnail**: `boolean`
+
+___
 
 ### limit
 

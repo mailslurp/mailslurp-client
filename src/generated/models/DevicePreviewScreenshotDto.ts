@@ -36,25 +36,25 @@ export interface DevicePreviewScreenshotDto {
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  targetId?: string;
+  targetId?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  variant?: string;
+  variant?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  title?: string;
+  title?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {boolean}
@@ -72,49 +72,85 @@ export interface DevicePreviewScreenshotDto {
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  storageKey?: string;
+  storageKey?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  accessUrl?: string;
+  storageProvider?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  liveViewUrl?: string;
+  storageBucket?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  sessionId?: string;
+  storageObjectKey?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  browserContextId?: string;
+  storageRegion?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewScreenshotDto
    */
-  deepLinkUrl?: string;
+  storageEndpoint?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewScreenshotDto
+   */
+  storagePublicBaseUrl?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewScreenshotDto
+   */
+  accessUrl?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewScreenshotDto
+   */
+  liveViewUrl?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewScreenshotDto
+   */
+  sessionId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewScreenshotDto
+   */
+  browserContextId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewScreenshotDto
+   */
+  deepLinkUrl?: string | null;
   /**
    *
    * @type {number}
    * @memberof DevicePreviewScreenshotDto
    */
-  width?: number;
+  width?: number | null;
   /**
    *
    * @type {number}
    * @memberof DevicePreviewScreenshotDto
    */
-  height?: number;
+  height?: number | null;
   /**
    *
    * @type {Date}
@@ -152,6 +188,24 @@ export function DevicePreviewScreenshotDtoFromJSONTyped(
     isPrimary: json['isPrimary'],
     displayOrder: json['displayOrder'],
     storageKey: !exists(json, 'storageKey') ? undefined : json['storageKey'],
+    storageProvider: !exists(json, 'storageProvider')
+      ? undefined
+      : json['storageProvider'],
+    storageBucket: !exists(json, 'storageBucket')
+      ? undefined
+      : json['storageBucket'],
+    storageObjectKey: !exists(json, 'storageObjectKey')
+      ? undefined
+      : json['storageObjectKey'],
+    storageRegion: !exists(json, 'storageRegion')
+      ? undefined
+      : json['storageRegion'],
+    storageEndpoint: !exists(json, 'storageEndpoint')
+      ? undefined
+      : json['storageEndpoint'],
+    storagePublicBaseUrl: !exists(json, 'storagePublicBaseUrl')
+      ? undefined
+      : json['storagePublicBaseUrl'],
     accessUrl: !exists(json, 'accessUrl') ? undefined : json['accessUrl'],
     liveViewUrl: !exists(json, 'liveViewUrl') ? undefined : json['liveViewUrl'],
     sessionId: !exists(json, 'sessionId') ? undefined : json['sessionId'],
@@ -185,6 +239,12 @@ export function DevicePreviewScreenshotDtoToJSON(
     isPrimary: value.isPrimary,
     displayOrder: value.displayOrder,
     storageKey: value.storageKey,
+    storageProvider: value.storageProvider,
+    storageBucket: value.storageBucket,
+    storageObjectKey: value.storageObjectKey,
+    storageRegion: value.storageRegion,
+    storageEndpoint: value.storageEndpoint,
+    storagePublicBaseUrl: value.storagePublicBaseUrl,
     accessUrl: value.accessUrl,
     liveViewUrl: value.liveViewUrl,
     sessionId: value.sessionId,

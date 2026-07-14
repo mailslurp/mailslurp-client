@@ -41,6 +41,10 @@ export interface CreateInboxWithOptionsRequest {
 export interface DeleteAllInboxEmailsRequest {
     inboxId: string;
 }
+export interface DeleteAllInboxesRequest {
+    createdAtSince?: Date;
+    createdAtBefore?: Date;
+}
 export interface DeleteAllInboxesByDescriptionRequest {
     description: string;
 }
@@ -414,12 +418,12 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
      * Delete all inboxes
      */
-    deleteAllInboxesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllInboxesRaw(requestParameters: DeleteAllInboxesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
      * Delete all inboxes
      */
-    deleteAllInboxes(initOverrides?: RequestInit): Promise<void>;
+    deleteAllInboxes(requestParameters: DeleteAllInboxesRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Permanently delete all inboxes by description
      * Delete inboxes by description

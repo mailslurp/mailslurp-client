@@ -32,7 +32,7 @@ export interface ConditionalStructuredContentResult {
      * @type {number}
      * @memberof ConditionalStructuredContentResult
      */
-    tokenCount?: number;
+    tokenCount?: number | null;
 }
 export declare function ConditionalStructuredContentResultFromJSON(json: any): ConditionalStructuredContentResult;
 export declare function ConditionalStructuredContentResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConditionalStructuredContentResult;

@@ -77,6 +77,48 @@ export interface CheckDomainMonitorResults {
     mxOk: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof CheckDomainMonitorResults
+     */
+    dkimOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CheckDomainMonitorResults
+     */
+    bimiOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CheckDomainMonitorResults
+     */
+    mtaStsOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CheckDomainMonitorResults
+     */
+    tlsReportingOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CheckDomainMonitorResults
+     */
+    blacklistChecked: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CheckDomainMonitorResults
+     */
+    blacklistOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CheckDomainMonitorResults
+     */
+    blacklistListed: boolean;
+    /**
+     *
      * @type {Array<string>}
      * @memberof CheckDomainMonitorResults
      */

@@ -59,7 +59,7 @@ export interface CreateWebhookOptions {
    * @type {WebhookHeaders}
    * @memberof CreateWebhookOptions
    */
-  includeHeaders?: WebhookHeaders;
+  includeHeaders?: WebhookHeaders | null;
   /**
    * Template for the JSON body of the webhook request that will be sent to your server. Use Moustache style `{{variableName}}` templating to use parts of the standard webhook payload for the given event.
    * @type {string}

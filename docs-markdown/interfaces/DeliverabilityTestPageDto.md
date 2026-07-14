@@ -2,7 +2,7 @@
 
 # Interface: DeliverabilityTestPageDto
 
-Paged list of deliverability tests
+Paged list of load tests
 
 **`Export`**
 

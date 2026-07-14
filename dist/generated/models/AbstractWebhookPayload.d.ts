@@ -20,7 +20,7 @@ export interface AbstractWebhookPayload {
      * @type {string}
      * @memberof AbstractWebhookPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
      *
      * @type {string}
@@ -32,13 +32,13 @@ export interface AbstractWebhookPayload {
      * @type {string}
      * @memberof AbstractWebhookPayload
      */
-    webhookId: string;
+    messageId: string;
     /**
      *
      * @type {string}
      * @memberof AbstractWebhookPayload
      */
-    messageId: string;
+    webhookId: string;
 }
 /**
  * @export

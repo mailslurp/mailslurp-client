@@ -88,6 +88,36 @@ export interface DomainMonitorRunComparisonDto {
   mxChanged: boolean;
   /**
    *
+   * @type {boolean}
+   * @memberof DomainMonitorRunComparisonDto
+   */
+  dkimChanged: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunComparisonDto
+   */
+  bimiChanged: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunComparisonDto
+   */
+  mtaStsChanged: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunComparisonDto
+   */
+  tlsReportingChanged: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunComparisonDto
+   */
+  blacklistChanged: boolean;
+  /**
+   *
    * @type {Array<string>}
    * @memberof DomainMonitorRunComparisonDto
    */
@@ -124,6 +154,11 @@ export function DomainMonitorRunComparisonDtoFromJSONTyped(
     dmarcChanged: json['dmarcChanged'],
     dmarcEnforcedChanged: json['dmarcEnforcedChanged'],
     mxChanged: json['mxChanged'],
+    dkimChanged: json['dkimChanged'],
+    bimiChanged: json['bimiChanged'],
+    mtaStsChanged: json['mtaStsChanged'],
+    tlsReportingChanged: json['tlsReportingChanged'],
+    blacklistChanged: json['blacklistChanged'],
     addedInsights: json['addedInsights'],
     removedInsights: json['removedInsights'],
   };
@@ -149,6 +184,11 @@ export function DomainMonitorRunComparisonDtoToJSON(
     dmarcChanged: value.dmarcChanged,
     dmarcEnforcedChanged: value.dmarcEnforcedChanged,
     mxChanged: value.mxChanged,
+    dkimChanged: value.dkimChanged,
+    bimiChanged: value.bimiChanged,
+    mtaStsChanged: value.mtaStsChanged,
+    tlsReportingChanged: value.tlsReportingChanged,
+    blacklistChanged: value.blacklistChanged,
     addedInsights: value.addedInsights,
     removedInsights: value.removedInsights,
   };

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Simulation options for SMS deliverability tests
+ * Simulation options for SMS load tests
  * @export
  * @interface DeliverabilitySimulationSmsOptions
  */

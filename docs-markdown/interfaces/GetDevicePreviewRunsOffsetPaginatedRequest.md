@@ -7,6 +7,7 @@
 ### Properties
 
 - [emailId](GetDevicePreviewRunsOffsetPaginatedRequest.md#emailid)
+- [hydrateThumbnail](GetDevicePreviewRunsOffsetPaginatedRequest.md#hydratethumbnail)
 - [page](GetDevicePreviewRunsOffsetPaginatedRequest.md#page)
 - [size](GetDevicePreviewRunsOffsetPaginatedRequest.md#size)
 - [sort](GetDevicePreviewRunsOffsetPaginatedRequest.md#sort)
@@ -16,6 +17,12 @@
 ### emailId
 
 • **emailId**: `string`
+
+___
+
+### hydrateThumbnail
+
+• `Optional` **hydrateThumbnail**: `boolean`
 
 ___
 

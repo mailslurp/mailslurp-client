@@ -244,7 +244,9 @@ function EmailFeatureOverviewFromJSONTyped(json, ignoreDiscriminator) {
             : json['notesNumbers'],
         featureStatistics: !(0, runtime_1.exists)(json, 'featureStatistics')
             ? undefined
-            : json['featureStatistics'].map(_1.EmailFeatureFamilyStatisticsFromJSON),
+            : json['featureStatistics'] === null
+                ? null
+                : json['featureStatistics'].map(_1.EmailFeatureFamilyStatisticsFromJSON),
         statuses: json['statuses'],
     };
 }
@@ -265,7 +267,9 @@ function EmailFeatureOverviewToJSON(value) {
         notesNumbers: value.notesNumbers,
         featureStatistics: value.featureStatistics === undefined
             ? undefined
-            : value.featureStatistics.map(_1.EmailFeatureFamilyStatisticsToJSON),
+            : value.featureStatistics === null
+                ? null
+                : value.featureStatistics.map(_1.EmailFeatureFamilyStatisticsToJSON),
         statuses: value.statuses,
     };
 }

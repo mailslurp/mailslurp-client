@@ -49,10 +49,10 @@ function ConnectorEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         size: json['size'],
         status: json['status'],
-        eventType: json['eventType'],
         createdAt: new Date(json['createdAt']),
         connectorId: json['connectorId'],
         seen: !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
+        eventType: json['eventType'],
     };
 }
 exports.ConnectorEventProjectionFromJSONTyped = ConnectorEventProjectionFromJSONTyped;
@@ -68,10 +68,10 @@ function ConnectorEventProjectionToJSON(value) {
         id: value.id,
         size: value.size,
         status: value.status,
-        eventType: value.eventType,
         createdAt: value.createdAt.toISOString(),
         connectorId: value.connectorId,
         seen: value.seen,
+        eventType: value.eventType,
     };
 }
 exports.ConnectorEventProjectionToJSON = ConnectorEventProjectionToJSON;

@@ -38,25 +38,25 @@ export interface CreateDevicePreviewFeedbackOptions {
      * @type {number}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    rating?: number;
+    rating?: number | null;
     /**
      *
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    runId?: string;
+    runId?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    targetId?: string;
+    targetId?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    screenshotId?: string;
+    screenshotId?: string | null;
     /**
      *
      * @type {string}
@@ -68,31 +68,31 @@ export interface CreateDevicePreviewFeedbackOptions {
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    title?: string;
+    title?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    comment?: string;
+    comment?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    internalNote?: string;
+    internalNote?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreateDevicePreviewFeedbackOptions
      */
-    liveViewUrl?: string;
+    liveViewUrl?: string | null;
     /**
      *
      * @type {{ [key: string]: string; }}
@@ -100,7 +100,7 @@ export interface CreateDevicePreviewFeedbackOptions {
      */
     metadata?: {
         [key: string]: string;
-    };
+    } | null;
 }
 /**
  * @export

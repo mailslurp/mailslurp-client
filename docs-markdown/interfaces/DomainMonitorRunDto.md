@@ -12,7 +12,12 @@ DomainMonitorRunDto
 
 ### Properties
 
+- [bimiOk](DomainMonitorRunDto.md#bimiok)
+- [blacklistChecked](DomainMonitorRunDto.md#blacklistchecked)
+- [blacklistListed](DomainMonitorRunDto.md#blacklistlisted)
+- [blacklistOk](DomainMonitorRunDto.md#blacklistok)
 - [createdAt](DomainMonitorRunDto.md#createdat)
+- [dkimOk](DomainMonitorRunDto.md#dkimok)
 - [dmarcEnforced](DomainMonitorRunDto.md#dmarcenforced)
 - [dmarcOk](DomainMonitorRunDto.md#dmarcok)
 - [domain](DomainMonitorRunDto.md#domain)
@@ -22,10 +27,12 @@ DomainMonitorRunDto
 - [id](DomainMonitorRunDto.md#id)
 - [insights](DomainMonitorRunDto.md#insights)
 - [monitorId](DomainMonitorRunDto.md#monitorid)
+- [mtaStsOk](DomainMonitorRunDto.md#mtastsok)
 - [mxOk](DomainMonitorRunDto.md#mxok)
 - [passingChecks](DomainMonitorRunDto.md#passingchecks)
 - [spfOk](DomainMonitorRunDto.md#spfok)
 - [status](DomainMonitorRunDto.md#status)
+- [tlsReportingOk](DomainMonitorRunDto.md#tlsreportingok)
 - [totalChecks](DomainMonitorRunDto.md#totalchecks)
 - [triggerSource](DomainMonitorRunDto.md#triggersource)
 - [updatedAt](DomainMonitorRunDto.md#updatedat)
@@ -33,9 +40,59 @@ DomainMonitorRunDto
 
 ## Properties
 
+### bimiOk
+
+• **bimiOk**: `boolean`
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
+### blacklistChecked
+
+• **blacklistChecked**: `boolean`
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
+### blacklistListed
+
+• **blacklistListed**: `boolean`
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
+### blacklistOk
+
+• **blacklistOk**: `boolean`
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
+### dkimOk
+
+• **dkimOk**: `boolean`
 
 **`Memberof`**
 
@@ -133,6 +190,16 @@ DomainMonitorRunDto
 
 ___
 
+### mtaStsOk
+
+• **mtaStsOk**: `boolean`
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
 ### mxOk
 
 • **mxOk**: `boolean`
@@ -166,6 +233,16 @@ ___
 ### status
 
 • **status**: [`DomainMonitorRunDtoStatusEnum`](../enums/DomainMonitorRunDtoStatusEnum.md)
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
+### tlsReportingOk
+
+• **tlsReportingOk**: `boolean`
 
 **`Memberof`**
 

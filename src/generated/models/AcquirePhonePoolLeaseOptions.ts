@@ -24,25 +24,25 @@ export interface AcquirePhonePoolLeaseOptions {
    * @type {string}
    * @memberof AcquirePhonePoolLeaseOptions
    */
-  leaseName?: string;
+  leaseName?: string | null;
   /**
    *
    * @type {string}
    * @memberof AcquirePhonePoolLeaseOptions
    */
-  leaseOwner?: string;
+  leaseOwner?: string | null;
   /**
    *
    * @type {number}
    * @memberof AcquirePhonePoolLeaseOptions
    */
-  leaseDurationMillis?: number;
+  leaseDurationMillis?: number | null;
   /**
    *
    * @type {number}
    * @memberof AcquirePhonePoolLeaseOptions
    */
-  acquireTimeoutMillis?: number;
+  acquireTimeoutMillis?: number | null;
 }
 
 export function AcquirePhonePoolLeaseOptionsFromJSON(

@@ -24,6 +24,7 @@ PhoneNumberProjection
 - [phoneCountry](PhoneNumberProjection.md#phonecountry)
 - [phoneNumber](PhoneNumberProjection.md#phonenumber)
 - [providerLabel](PhoneNumberProjection.md#providerlabel)
+- [tags](PhoneNumberProjection.md#tags)
 - [userId](PhoneNumberProjection.md#userid)
 
 ## Properties
@@ -121,6 +122,16 @@ ___
 ### providerLabel
 
 • `Optional` **providerLabel**: `string`
+
+**`Memberof`**
+
+PhoneNumberProjection
+
+___
+
+### tags
+
+• `Optional` **tags**: `string`[]
 
 **`Memberof`**
 

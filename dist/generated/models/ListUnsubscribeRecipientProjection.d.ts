@@ -23,16 +23,16 @@ export interface ListUnsubscribeRecipientProjection {
     id: string;
     /**
      *
-     * @type {string}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    emailAddress: string;
-    /**
-     *
      * @type {Date}
      * @memberof ListUnsubscribeRecipientProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof ListUnsubscribeRecipientProjection
+     */
+    emailAddress: string;
     /**
      *
      * @type {string}

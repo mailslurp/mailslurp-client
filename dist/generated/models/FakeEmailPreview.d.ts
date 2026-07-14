@@ -51,13 +51,13 @@ export interface FakeEmailPreview {
      * @type {string}
      * @memberof FakeEmailPreview
      */
-    subject?: string;
+    subject?: string | null;
     /**
      *
      * @type {string}
      * @memberof FakeEmailPreview
      */
-    preview?: string;
+    preview?: string | null;
     /**
      *
      * @type {Date}

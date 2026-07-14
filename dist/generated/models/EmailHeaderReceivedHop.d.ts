@@ -20,31 +20,31 @@ export interface EmailHeaderReceivedHop {
      * @type {string}
      * @memberof EmailHeaderReceivedHop
      */
-    from?: string;
+    from?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHeaderReceivedHop
      */
-    by?: string;
+    by?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHeaderReceivedHop
      */
-    withValue?: string;
+    withValue?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHeaderReceivedHop
      */
-    timestamp?: string;
+    timestamp?: string | null;
     /**
      *
      * @type {number}
      * @memberof EmailHeaderReceivedHop
      */
-    delayMs?: number;
+    delayMs?: number | null;
 }
 export declare function EmailHeaderReceivedHopFromJSON(json: any): EmailHeaderReceivedHop;
 export declare function EmailHeaderReceivedHopFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailHeaderReceivedHop;

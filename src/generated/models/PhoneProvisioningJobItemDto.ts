@@ -36,7 +36,7 @@ export interface PhoneProvisioningJobItemDto {
    * @type {string}
    * @memberof PhoneProvisioningJobItemDto
    */
-  providerLabel?: string;
+  providerLabel?: string | null;
   /**
    *
    * @type {string}
@@ -48,37 +48,37 @@ export interface PhoneProvisioningJobItemDto {
    * @type {string}
    * @memberof PhoneProvisioningJobItemDto
    */
-  lineType?: string;
+  lineType?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneProvisioningJobItemDto
    */
-  carrierName?: string;
+  carrierName?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneProvisioningJobItemDto
    */
-  mobileCountryCode?: string;
+  mobileCountryCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneProvisioningJobItemDto
    */
-  mobileNetworkCode?: string;
+  mobileNetworkCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneProvisioningJobItemDto
    */
-  phoneNumberId?: string;
+  phoneNumberId?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneProvisioningJobItemDto
    */
-  failureMessage?: string;
+  failureMessage?: string | null;
 }
 
 /**

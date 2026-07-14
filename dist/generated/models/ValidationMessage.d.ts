@@ -26,7 +26,7 @@ export interface ValidationMessage {
      * @type {string}
      * @memberof ValidationMessage
      */
-    message?: string;
+    message?: string | null;
 }
 export declare function ValidationMessageFromJSON(json: any): ValidationMessage;
 export declare function ValidationMessageFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidationMessage;

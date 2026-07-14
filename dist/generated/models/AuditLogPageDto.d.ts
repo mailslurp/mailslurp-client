@@ -27,7 +27,7 @@ export interface AuditLogPageDto {
      * @type {string}
      * @memberof AuditLogPageDto
      */
-    nextCursor?: string;
+    nextCursor?: string | null;
 }
 export declare function AuditLogPageDtoFromJSON(json: any): AuditLogPageDto;
 export declare function AuditLogPageDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuditLogPageDto;

@@ -24,7 +24,7 @@ export interface TrackingPixelProjection {
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -42,13 +42,13 @@ export interface TrackingPixelProjection {
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    *
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  sentEmailId?: string;
+  sentEmailId?: string | null;
   /**
    *
    * @type {Date}
@@ -60,7 +60,7 @@ export interface TrackingPixelProjection {
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  recipient?: string;
+  recipient?: string | null;
   /**
    *
    * @type {boolean}
@@ -72,7 +72,7 @@ export interface TrackingPixelProjection {
    * @type {Date}
    * @memberof TrackingPixelProjection
    */
-  seenAt?: Date;
+  seenAt?: Date | null;
 }
 
 export function TrackingPixelProjectionFromJSON(
@@ -97,7 +97,11 @@ export function TrackingPixelProjectionFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
     seen: json['seen'],
-    seenAt: !exists(json, 'seenAt') ? undefined : new Date(json['seenAt']),
+    seenAt: !exists(json, 'seenAt')
+      ? undefined
+      : json['seenAt'] === null
+      ? null
+      : new Date(json['seenAt']),
   };
 }
 
@@ -119,6 +123,11 @@ export function TrackingPixelProjectionToJSON(
     createdAt: value.createdAt.toISOString(),
     recipient: value.recipient,
     seen: value.seen,
-    seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
+    seenAt:
+      value.seenAt === undefined
+        ? undefined
+        : value.seenAt === null
+        ? null
+        : value.seenAt.toISOString(),
   };
 }

@@ -31,7 +31,7 @@ export interface ImapServerGetResult {
    * @type {ImapEmailProjection}
    * @memberof ImapServerGetResult
    */
-  result?: ImapEmailProjection;
+  result?: ImapEmailProjection | null;
 }
 
 export function ImapServerGetResultFromJSON(json: any): ImapServerGetResult {

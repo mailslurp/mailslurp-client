@@ -17,6 +17,7 @@ WebhookProjection
 - [aiTransformId](WebhookProjection.md#aitransformid)
 - [aiTransformerId](WebhookProjection.md#aitransformerid)
 - [createdAt](WebhookProjection.md#createdat)
+- [enabled](WebhookProjection.md#enabled)
 - [eventName](WebhookProjection.md#eventname)
 - [healthStatus](WebhookProjection.md#healthstatus)
 - [id](WebhookProjection.md#id)
@@ -54,6 +55,16 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+WebhookProjection
+
+___
+
+### enabled
+
+• `Optional` **enabled**: `boolean`
 
 **`Memberof`**
 

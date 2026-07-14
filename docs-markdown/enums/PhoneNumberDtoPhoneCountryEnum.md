@@ -10,6 +10,7 @@
 
 - [AU](PhoneNumberDtoPhoneCountryEnum.md#au)
 - [CA](PhoneNumberDtoPhoneCountryEnum.md#ca)
+- [CH](PhoneNumberDtoPhoneCountryEnum.md#ch)
 - [EE](PhoneNumberDtoPhoneCountryEnum.md#ee)
 - [FI](PhoneNumberDtoPhoneCountryEnum.md#fi)
 - [GB](PhoneNumberDtoPhoneCountryEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

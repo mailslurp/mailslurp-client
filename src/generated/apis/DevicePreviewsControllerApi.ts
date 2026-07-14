@@ -23,21 +23,63 @@ import {
   CreateDevicePreviewFeedbackOptions,
   CreateDevicePreviewFeedbackOptionsFromJSON,
   CreateDevicePreviewFeedbackOptionsToJSON,
+  CreateDevicePreviewHtmlImportOptions,
+  CreateDevicePreviewHtmlImportOptionsFromJSON,
+  CreateDevicePreviewHtmlImportOptionsToJSON,
+  CreateDevicePreviewImportOptions,
+  CreateDevicePreviewImportOptionsFromJSON,
+  CreateDevicePreviewImportOptionsToJSON,
+  CreateDevicePreviewIngestAddressOptions,
+  CreateDevicePreviewIngestAddressOptionsFromJSON,
+  CreateDevicePreviewIngestAddressOptionsToJSON,
   CreateDevicePreviewOptions,
   CreateDevicePreviewOptionsFromJSON,
   CreateDevicePreviewOptionsToJSON,
+  CreateDevicePreviewProfileOptions,
+  CreateDevicePreviewProfileOptionsFromJSON,
+  CreateDevicePreviewProfileOptionsToJSON,
   CreateDevicePreviewRunResult,
   CreateDevicePreviewRunResultFromJSON,
   CreateDevicePreviewRunResultToJSON,
+  CreateDevicePreviewShareLinkOptions,
+  CreateDevicePreviewShareLinkOptionsFromJSON,
+  CreateDevicePreviewShareLinkOptionsToJSON,
+  DeleteDevicePreviewProfileResult,
+  DeleteDevicePreviewProfileResultFromJSON,
+  DeleteDevicePreviewProfileResultToJSON,
   DeleteDevicePreviewRunResult,
   DeleteDevicePreviewRunResultFromJSON,
   DeleteDevicePreviewRunResultToJSON,
+  DeleteDevicePreviewShareLinkResult,
+  DeleteDevicePreviewShareLinkResultFromJSON,
+  DeleteDevicePreviewShareLinkResultToJSON,
+  DevicePreviewAccountSettingsDto,
+  DevicePreviewAccountSettingsDtoFromJSON,
+  DevicePreviewAccountSettingsDtoToJSON,
+  DevicePreviewEmailSubmissionDto,
+  DevicePreviewEmailSubmissionDtoFromJSON,
+  DevicePreviewEmailSubmissionDtoToJSON,
+  DevicePreviewEmailSubmissionWaitResult,
+  DevicePreviewEmailSubmissionWaitResultFromJSON,
+  DevicePreviewEmailSubmissionWaitResultToJSON,
   DevicePreviewFeedbackDto,
   DevicePreviewFeedbackDtoFromJSON,
   DevicePreviewFeedbackDtoToJSON,
   DevicePreviewFeedbackListDto,
   DevicePreviewFeedbackListDtoFromJSON,
   DevicePreviewFeedbackListDtoToJSON,
+  DevicePreviewIngestAddressDto,
+  DevicePreviewIngestAddressDtoFromJSON,
+  DevicePreviewIngestAddressDtoToJSON,
+  DevicePreviewIngestRunWaitResult,
+  DevicePreviewIngestRunWaitResultFromJSON,
+  DevicePreviewIngestRunWaitResultToJSON,
+  DevicePreviewNativeTargetAvailabilityListDto,
+  DevicePreviewNativeTargetAvailabilityListDtoFromJSON,
+  DevicePreviewNativeTargetAvailabilityListDtoToJSON,
+  DevicePreviewProfileDto,
+  DevicePreviewProfileDtoFromJSON,
+  DevicePreviewProfileDtoToJSON,
   DevicePreviewProviderProgressDto,
   DevicePreviewProviderProgressDtoFromJSON,
   DevicePreviewProviderProgressDtoToJSON,
@@ -47,12 +89,33 @@ import {
   DevicePreviewRunResultsDto,
   DevicePreviewRunResultsDtoFromJSON,
   DevicePreviewRunResultsDtoToJSON,
+  DevicePreviewRunWaitResult,
+  DevicePreviewRunWaitResultFromJSON,
+  DevicePreviewRunWaitResultToJSON,
+  DevicePreviewShareLinkDto,
+  DevicePreviewShareLinkDtoFromJSON,
+  DevicePreviewShareLinkDtoToJSON,
+  DevicePreviewSharedResultDto,
+  DevicePreviewSharedResultDtoFromJSON,
+  DevicePreviewSharedResultDtoToJSON,
   PageDevicePreviewRunProjection,
   PageDevicePreviewRunProjectionFromJSON,
   PageDevicePreviewRunProjectionToJSON,
+  RerunDevicePreviewTargetsOptions,
+  RerunDevicePreviewTargetsOptionsFromJSON,
+  RerunDevicePreviewTargetsOptionsToJSON,
+  RerunDevicePreviewTargetsResult,
+  RerunDevicePreviewTargetsResultFromJSON,
+  RerunDevicePreviewTargetsResultToJSON,
   UpdateDevicePreviewFeedbackOptions,
   UpdateDevicePreviewFeedbackOptionsFromJSON,
   UpdateDevicePreviewFeedbackOptionsToJSON,
+  UpdateDevicePreviewIngestDomainOptions,
+  UpdateDevicePreviewIngestDomainOptionsFromJSON,
+  UpdateDevicePreviewIngestDomainOptionsToJSON,
+  UpdateDevicePreviewProfileOptions,
+  UpdateDevicePreviewProfileOptionsFromJSON,
+  UpdateDevicePreviewProfileOptionsToJSON,
 } from '../models';
 
 export interface CancelDevicePreviewRunRequest {
@@ -64,18 +127,77 @@ export interface CreateDevicePreviewFeedbackRequest {
   createDevicePreviewFeedbackOptions: CreateDevicePreviewFeedbackOptions;
 }
 
+export interface CreateDevicePreviewImportAddressRequest {
+  createDevicePreviewIngestAddressOptions?: CreateDevicePreviewIngestAddressOptions;
+}
+
+export interface CreateDevicePreviewProfileRequest {
+  createDevicePreviewProfileOptions: CreateDevicePreviewProfileOptions;
+}
+
 export interface CreateDevicePreviewRunRequest {
   emailId: string;
   createDevicePreviewOptions?: CreateDevicePreviewOptions;
+}
+
+export interface CreateDevicePreviewRunFromHtmlImportRequest {
+  createDevicePreviewHtmlImportOptions: CreateDevicePreviewHtmlImportOptions;
+}
+
+export interface CreateDevicePreviewRunFromImportRequest {
+  createDevicePreviewImportOptions: CreateDevicePreviewImportOptions;
+}
+
+export interface CreateDevicePreviewRunFromMultipartImportRequest {
+  file: Blob;
+  sourceAlias?: string;
+  externalId?: string;
+  nativeTargets?: Array<string>;
+}
+
+export interface CreateDevicePreviewRunFromRawImportRequest {
+  sourceAlias?: string;
+  externalId?: string;
+  nativeTargets?: Array<string>;
+}
+
+export interface CreateDevicePreviewShareLinkRequest {
+  runId: string;
+  createDevicePreviewShareLinkOptions?: CreateDevicePreviewShareLinkOptions;
+}
+
+export interface DeleteDevicePreviewProfileRequest {
+  profileId: string;
 }
 
 export interface DeleteDevicePreviewRunRequest {
   runId: string;
 }
 
+export interface DeleteDevicePreviewShareLinkRequest {
+  shareLinkId: string;
+}
+
 export interface EnsureDevicePreviewRunRequest {
   emailId: string;
   createDevicePreviewOptions?: CreateDevicePreviewOptions;
+}
+
+export interface GetDevicePreviewEmailRunsRequest {
+  since: Date;
+  emailDomainId?: string;
+  profileId?: string;
+  localPart?: string;
+  limit?: number;
+  hydrateThumbnail?: boolean;
+}
+
+export interface GetDevicePreviewEmailSubmissionsRequest {
+  since: Date;
+  emailDomainId?: string;
+  profileId?: string;
+  localPart?: string;
+  limit?: number;
 }
 
 export interface GetDevicePreviewFeedbackRequest {
@@ -91,6 +213,14 @@ export interface GetDevicePreviewFeedbackItemsRequest {
   provider?: GetDevicePreviewFeedbackItemsProviderEnum;
   category?: GetDevicePreviewFeedbackItemsCategoryEnum;
   search?: string;
+}
+
+export interface GetDevicePreviewImportAddressRequest {
+  sessionId: string;
+}
+
+export interface GetDevicePreviewProfileRequest {
+  profileId: string;
 }
 
 export interface GetDevicePreviewRunRequest {
@@ -114,10 +244,19 @@ export interface GetDevicePreviewRunScreenshotRequest {
 export interface GetDevicePreviewRunsRequest {
   emailId: string;
   limit?: number;
+  hydrateThumbnail?: boolean;
 }
 
 export interface GetDevicePreviewRunsForAccountRequest {
   limit?: number;
+  hydrateThumbnail?: boolean;
+}
+
+export interface GetDevicePreviewRunsForAccountOffsetPaginatedRequest {
+  page?: number;
+  size?: number;
+  sort?: GetDevicePreviewRunsForAccountOffsetPaginatedSortEnum;
+  hydrateThumbnail?: boolean;
 }
 
 export interface GetDevicePreviewRunsOffsetPaginatedRequest {
@@ -125,11 +264,66 @@ export interface GetDevicePreviewRunsOffsetPaginatedRequest {
   page?: number;
   size?: number;
   sort?: GetDevicePreviewRunsOffsetPaginatedSortEnum;
+  hydrateThumbnail?: boolean;
+}
+
+export interface GetDevicePreviewShareLinksRequest {
+  runId: string;
+}
+
+export interface GetDevicePreviewSharedResultRequest {
+  shareToken: string;
+}
+
+export interface GetDevicePreviewSharedResultScreenshotRequest {
+  shareToken: string;
+  screenshotId: string;
+}
+
+export interface RerunDevicePreviewTargetsRequest {
+  runId: string;
+  rerunDevicePreviewTargetsOptions: RerunDevicePreviewTargetsOptions;
+}
+
+export interface UpdateDevicePreviewEmailDomainSubdomainRequest {
+  updateDevicePreviewIngestDomainOptions: UpdateDevicePreviewIngestDomainOptions;
 }
 
 export interface UpdateDevicePreviewFeedbackRequest {
   feedbackId: string;
   updateDevicePreviewFeedbackOptions: UpdateDevicePreviewFeedbackOptions;
+}
+
+export interface UpdateDevicePreviewProfileRequest {
+  profileId: string;
+  updateDevicePreviewProfileOptions: UpdateDevicePreviewProfileOptions;
+}
+
+export interface WaitForDevicePreviewEmailRunsRequest {
+  since: Date;
+  emailDomainId?: string;
+  profileId?: string;
+  localPart?: string;
+  limit?: number;
+  timeoutMillis?: number;
+  pollIntervalMillis?: number;
+  hydrateThumbnail?: boolean;
+}
+
+export interface WaitForDevicePreviewEmailSubmissionsRequest {
+  since: Date;
+  emailDomainId?: string;
+  profileId?: string;
+  localPart?: string;
+  limit?: number;
+  timeoutMillis?: number;
+  pollIntervalMillis?: number;
+}
+
+export interface WaitForDevicePreviewRunRequest {
+  runId: string;
+  timeoutMillis?: number;
+  pollIntervalMillis?: number;
 }
 
 /**
@@ -258,6 +452,114 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Create a temporary email address for device preview import
+   */
+  async createDevicePreviewImportAddressRaw(
+    requestParameters: CreateDevicePreviewImportAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewIngestAddressDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/import-addresses`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateDevicePreviewIngestAddressOptionsToJSON(
+          requestParameters.createDevicePreviewIngestAddressOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewIngestAddressDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a temporary email address for device preview import
+   */
+  async createDevicePreviewImportAddress(
+    requestParameters: CreateDevicePreviewImportAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewIngestAddressDto> {
+    const response = await this.createDevicePreviewImportAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a device preview profile
+   */
+  async createDevicePreviewProfileRaw(
+    requestParameters: CreateDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewProfileDto>> {
+    if (
+      requestParameters.createDevicePreviewProfileOptions === null ||
+      requestParameters.createDevicePreviewProfileOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createDevicePreviewProfileOptions',
+        'Required parameter requestParameters.createDevicePreviewProfileOptions was null or undefined when calling createDevicePreviewProfile.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/profiles`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateDevicePreviewProfileOptionsToJSON(
+          requestParameters.createDevicePreviewProfileOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewProfileDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a device preview profile
+   */
+  async createDevicePreviewProfile(
+    requestParameters: CreateDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewProfileDto> {
+    const response = await this.createDevicePreviewProfileRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Create a new device preview run for an email
    */
   async createDevicePreviewRunRaw(
@@ -313,6 +615,386 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<CreateDevicePreviewRunResult> {
     const response = await this.createDevicePreviewRunRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a device preview run from HTML
+   */
+  async createDevicePreviewRunFromHtmlImportRaw(
+    requestParameters: CreateDevicePreviewRunFromHtmlImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>> {
+    if (
+      requestParameters.createDevicePreviewHtmlImportOptions === null ||
+      requestParameters.createDevicePreviewHtmlImportOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createDevicePreviewHtmlImportOptions',
+        'Required parameter requestParameters.createDevicePreviewHtmlImportOptions was null or undefined when calling createDevicePreviewRunFromHtmlImport.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/import/html`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateDevicePreviewHtmlImportOptionsToJSON(
+          requestParameters.createDevicePreviewHtmlImportOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CreateDevicePreviewRunResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a device preview run from HTML
+   */
+  async createDevicePreviewRunFromHtmlImport(
+    requestParameters: CreateDevicePreviewRunFromHtmlImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<CreateDevicePreviewRunResult> {
+    const response = await this.createDevicePreviewRunFromHtmlImportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a device preview run from imported raw MIME
+   */
+  async createDevicePreviewRunFromImportRaw(
+    requestParameters: CreateDevicePreviewRunFromImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>> {
+    if (
+      requestParameters.createDevicePreviewImportOptions === null ||
+      requestParameters.createDevicePreviewImportOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createDevicePreviewImportOptions',
+        'Required parameter requestParameters.createDevicePreviewImportOptions was null or undefined when calling createDevicePreviewRunFromImport.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/import`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateDevicePreviewImportOptionsToJSON(
+          requestParameters.createDevicePreviewImportOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CreateDevicePreviewRunResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a device preview run from imported raw MIME
+   */
+  async createDevicePreviewRunFromImport(
+    requestParameters: CreateDevicePreviewRunFromImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<CreateDevicePreviewRunResult> {
+    const response = await this.createDevicePreviewRunFromImportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a device preview run from multipart EML upload
+   */
+  async createDevicePreviewRunFromMultipartImportRaw(
+    requestParameters: CreateDevicePreviewRunFromMultipartImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>> {
+    if (
+      requestParameters.file === null ||
+      requestParameters.file === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'file',
+        'Required parameter requestParameters.file was null or undefined when calling createDevicePreviewRunFromMultipartImport.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.sourceAlias !== undefined) {
+      queryParameters['sourceAlias'] = requestParameters.sourceAlias;
+    }
+
+    if (requestParameters.externalId !== undefined) {
+      queryParameters['externalId'] = requestParameters.externalId;
+    }
+
+    if (requestParameters.nativeTargets) {
+      queryParameters['nativeTargets'] = requestParameters.nativeTargets;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const consumes: runtime.Consume[] = [
+      { contentType: 'multipart/form-data' },
+    ];
+    // @ts-ignore: canConsumeForm may be unused
+    const canConsumeForm = runtime.canConsumeForm(consumes);
+
+    let formParams: { append(param: string, value: any): any };
+    let useForm = false;
+    // use FormData to transmit files using content-type "multipart/form-data"
+    useForm = canConsumeForm;
+    if (useForm) {
+      formParams = new FormData();
+    } else {
+      formParams = new URLSearchParams();
+    }
+
+    if (requestParameters.file !== undefined) {
+      formParams.append('file', requestParameters.file as any);
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/import/multipart`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: formParams,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CreateDevicePreviewRunResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a device preview run from multipart EML upload
+   */
+  async createDevicePreviewRunFromMultipartImport(
+    requestParameters: CreateDevicePreviewRunFromMultipartImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<CreateDevicePreviewRunResult> {
+    const response = await this.createDevicePreviewRunFromMultipartImportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a device preview run from raw MIME bytes
+   */
+  async createDevicePreviewRunFromRawImportRaw(
+    requestParameters: CreateDevicePreviewRunFromRawImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.sourceAlias !== undefined) {
+      queryParameters['sourceAlias'] = requestParameters.sourceAlias;
+    }
+
+    if (requestParameters.externalId !== undefined) {
+      queryParameters['externalId'] = requestParameters.externalId;
+    }
+
+    if (requestParameters.nativeTargets) {
+      queryParameters['nativeTargets'] = requestParameters.nativeTargets;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/import/raw`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CreateDevicePreviewRunResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a device preview run from raw MIME bytes
+   */
+  async createDevicePreviewRunFromRawImport(
+    requestParameters: CreateDevicePreviewRunFromRawImportRequest,
+    initOverrides?: RequestInit
+  ): Promise<CreateDevicePreviewRunResult> {
+    const response = await this.createDevicePreviewRunFromRawImportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Create a share link for a device preview run
+   */
+  async createDevicePreviewShareLinkRaw(
+    requestParameters: CreateDevicePreviewShareLinkRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewShareLinkDto>> {
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling createDevicePreviewShareLink.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/{runId}/share-links`.replace(
+          `{${'runId'}}`,
+          encodeURIComponent(String(requestParameters.runId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateDevicePreviewShareLinkOptionsToJSON(
+          requestParameters.createDevicePreviewShareLinkOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewShareLinkDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a share link for a device preview run
+   */
+  async createDevicePreviewShareLink(
+    requestParameters: CreateDevicePreviewShareLinkRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewShareLinkDto> {
+    const response = await this.createDevicePreviewShareLinkRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Delete a device preview profile
+   */
+  async deleteDevicePreviewProfileRaw(
+    requestParameters: DeleteDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DeleteDevicePreviewProfileResult>> {
+    if (
+      requestParameters.profileId === null ||
+      requestParameters.profileId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'profileId',
+        'Required parameter requestParameters.profileId was null or undefined when calling deleteDevicePreviewProfile.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/profiles/{profileId}`.replace(
+          `{${'profileId'}}`,
+          encodeURIComponent(String(requestParameters.profileId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DeleteDevicePreviewProfileResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Delete a device preview profile
+   */
+  async deleteDevicePreviewProfile(
+    requestParameters: DeleteDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<DeleteDevicePreviewProfileResult> {
+    const response = await this.deleteDevicePreviewProfileRaw(
       requestParameters,
       initOverrides
     );
@@ -377,6 +1059,63 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Revoke a device preview share link
+   */
+  async deleteDevicePreviewShareLinkRaw(
+    requestParameters: DeleteDevicePreviewShareLinkRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DeleteDevicePreviewShareLinkResult>> {
+    if (
+      requestParameters.shareLinkId === null ||
+      requestParameters.shareLinkId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'shareLinkId',
+        'Required parameter requestParameters.shareLinkId was null or undefined when calling deleteDevicePreviewShareLink.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/share-links/{shareLinkId}`.replace(
+          `{${'shareLinkId'}}`,
+          encodeURIComponent(String(requestParameters.shareLinkId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DeleteDevicePreviewShareLinkResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Revoke a device preview share link
+   */
+  async deleteDevicePreviewShareLink(
+    requestParameters: DeleteDevicePreviewShareLinkRequest,
+    initOverrides?: RequestInit
+  ): Promise<DeleteDevicePreviewShareLinkResult> {
+    const response = await this.deleteDevicePreviewShareLinkRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Return active run for email or create one when none exists
    */
   async ensureDevicePreviewRunRaw(
@@ -432,6 +1171,199 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<CreateDevicePreviewRunResult> {
     const response = await this.ensureDevicePreviewRunRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Return account device preview email domain setup or create one
+   */
+  async getDevicePreviewEmailDomainOrCreateRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewAccountSettingsDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-domain`,
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewAccountSettingsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Return account device preview email domain setup or create one
+   */
+  async getDevicePreviewEmailDomainOrCreate(
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewAccountSettingsDto> {
+    const response = await this.getDevicePreviewEmailDomainOrCreateRaw(
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List device preview runs created from account email domains
+   */
+  async getDevicePreviewEmailRunsRaw(
+    requestParameters: GetDevicePreviewEmailRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<DevicePreviewRunDto>>> {
+    if (
+      requestParameters.since === null ||
+      requestParameters.since === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'since',
+        'Required parameter requestParameters.since was null or undefined when calling getDevicePreviewEmailRuns.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.emailDomainId !== undefined) {
+      queryParameters['emailDomainId'] = requestParameters.emailDomainId;
+    }
+
+    if (requestParameters.profileId !== undefined) {
+      queryParameters['profileId'] = requestParameters.profileId;
+    }
+
+    if (requestParameters.localPart !== undefined) {
+      queryParameters['localPart'] = requestParameters.localPart;
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit;
+    }
+
+    if (requestParameters.hydrateThumbnail !== undefined) {
+      queryParameters['hydrateThumbnail'] = requestParameters.hydrateThumbnail;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-runs`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(DevicePreviewRunDtoFromJSON)
+    );
+  }
+
+  /**
+   * List device preview runs created from account email domains
+   */
+  async getDevicePreviewEmailRuns(
+    requestParameters: GetDevicePreviewEmailRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<DevicePreviewRunDto>> {
+    const response = await this.getDevicePreviewEmailRunsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List received device preview email submissions
+   */
+  async getDevicePreviewEmailSubmissionsRaw(
+    requestParameters: GetDevicePreviewEmailSubmissionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<DevicePreviewEmailSubmissionDto>>> {
+    if (
+      requestParameters.since === null ||
+      requestParameters.since === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'since',
+        'Required parameter requestParameters.since was null or undefined when calling getDevicePreviewEmailSubmissions.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.emailDomainId !== undefined) {
+      queryParameters['emailDomainId'] = requestParameters.emailDomainId;
+    }
+
+    if (requestParameters.profileId !== undefined) {
+      queryParameters['profileId'] = requestParameters.profileId;
+    }
+
+    if (requestParameters.localPart !== undefined) {
+      queryParameters['localPart'] = requestParameters.localPart;
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-submissions`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(DevicePreviewEmailSubmissionDtoFromJSON)
+    );
+  }
+
+  /**
+   * List received device preview email submissions
+   */
+  async getDevicePreviewEmailSubmissions(
+    requestParameters: GetDevicePreviewEmailSubmissionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<DevicePreviewEmailSubmissionDto>> {
+    const response = await this.getDevicePreviewEmailSubmissionsRaw(
       requestParameters,
       initOverrides
     );
@@ -568,6 +1500,202 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Get temporary device preview import address status
+   */
+  async getDevicePreviewImportAddressRaw(
+    requestParameters: GetDevicePreviewImportAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewIngestAddressDto>> {
+    if (
+      requestParameters.sessionId === null ||
+      requestParameters.sessionId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sessionId',
+        'Required parameter requestParameters.sessionId was null or undefined when calling getDevicePreviewImportAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/import-addresses/{sessionId}`.replace(
+          `{${'sessionId'}}`,
+          encodeURIComponent(String(requestParameters.sessionId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewIngestAddressDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get temporary device preview import address status
+   */
+  async getDevicePreviewImportAddress(
+    requestParameters: GetDevicePreviewImportAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewIngestAddressDto> {
+    const response = await this.getDevicePreviewImportAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get native device preview target availability
+   */
+  async getDevicePreviewNativeTargetAvailabilityRaw(
+    initOverrides?: RequestInit
+  ): Promise<
+    runtime.ApiResponse<DevicePreviewNativeTargetAvailabilityListDto>
+  > {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/native-targets/availability`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewNativeTargetAvailabilityListDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get native device preview target availability
+   */
+  async getDevicePreviewNativeTargetAvailability(
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewNativeTargetAvailabilityListDto> {
+    const response = await this.getDevicePreviewNativeTargetAvailabilityRaw(
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a device preview profile
+   */
+  async getDevicePreviewProfileRaw(
+    requestParameters: GetDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewProfileDto>> {
+    if (
+      requestParameters.profileId === null ||
+      requestParameters.profileId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'profileId',
+        'Required parameter requestParameters.profileId was null or undefined when calling getDevicePreviewProfile.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/profiles/{profileId}`.replace(
+          `{${'profileId'}}`,
+          encodeURIComponent(String(requestParameters.profileId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewProfileDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a device preview profile
+   */
+  async getDevicePreviewProfile(
+    requestParameters: GetDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewProfileDto> {
+    const response = await this.getDevicePreviewProfileRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List device preview profiles
+   */
+  async getDevicePreviewProfilesRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<DevicePreviewProfileDto>>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/profiles`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(DevicePreviewProfileDtoFromJSON)
+    );
+  }
+
+  /**
+   * List device preview profiles
+   */
+  async getDevicePreviewProfiles(
+    initOverrides?: RequestInit
+  ): Promise<Array<DevicePreviewProfileDto>> {
+    const response = await this.getDevicePreviewProfilesRaw(initOverrides);
     return await response.value();
   }
 
@@ -758,7 +1886,7 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get a seeded device preview screenshot image
+   * Get a device preview screenshot image
    */
   async getDevicePreviewRunScreenshotRaw(
     requestParameters: GetDevicePreviewRunScreenshotRequest,
@@ -814,7 +1942,7 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get a seeded device preview screenshot image
+   * Get a device preview screenshot image
    */
   async getDevicePreviewRunScreenshot(
     requestParameters: GetDevicePreviewRunScreenshotRequest,
@@ -848,6 +1976,10 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.limit !== undefined) {
       queryParameters['limit'] = requestParameters.limit;
+    }
+
+    if (requestParameters.hydrateThumbnail !== undefined) {
+      queryParameters['hydrateThumbnail'] = requestParameters.hydrateThumbnail;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -901,6 +2033,10 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
       queryParameters['limit'] = requestParameters.limit;
     }
 
+    if (requestParameters.hydrateThumbnail !== undefined) {
+      queryParameters['hydrateThumbnail'] = requestParameters.hydrateThumbnail;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -937,6 +2073,67 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List previous device preview runs for account in paginated form
+   */
+  async getDevicePreviewRunsForAccountOffsetPaginatedRaw(
+    requestParameters: GetDevicePreviewRunsForAccountOffsetPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageDevicePreviewRunProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.hydrateThumbnail !== undefined) {
+      queryParameters['hydrateThumbnail'] = requestParameters.hydrateThumbnail;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/offset-paginated`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageDevicePreviewRunProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List previous device preview runs for account in paginated form
+   */
+  async getDevicePreviewRunsForAccountOffsetPaginated(
+    requestParameters: GetDevicePreviewRunsForAccountOffsetPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageDevicePreviewRunProjection> {
+    const response =
+      await this.getDevicePreviewRunsForAccountOffsetPaginatedRaw(
+        requestParameters,
+        initOverrides
+      );
+    return await response.value();
+  }
+
+  /**
    * List previous device preview runs for an email in paginated form
    */
   async getDevicePreviewRunsOffsetPaginatedRaw(
@@ -965,6 +2162,10 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.sort !== undefined) {
       queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.hydrateThumbnail !== undefined) {
+      queryParameters['hydrateThumbnail'] = requestParameters.hydrateThumbnail;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -999,6 +2200,321 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageDevicePreviewRunProjection> {
     const response = await this.getDevicePreviewRunsOffsetPaginatedRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List share links for a device preview run
+   */
+  async getDevicePreviewShareLinksRaw(
+    requestParameters: GetDevicePreviewShareLinksRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<DevicePreviewShareLinkDto>>> {
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling getDevicePreviewShareLinks.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/{runId}/share-links`.replace(
+          `{${'runId'}}`,
+          encodeURIComponent(String(requestParameters.runId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(DevicePreviewShareLinkDtoFromJSON)
+    );
+  }
+
+  /**
+   * List share links for a device preview run
+   */
+  async getDevicePreviewShareLinks(
+    requestParameters: GetDevicePreviewShareLinksRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<DevicePreviewShareLinkDto>> {
+    const response = await this.getDevicePreviewShareLinksRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a public shared device preview result
+   */
+  async getDevicePreviewSharedResultRaw(
+    requestParameters: GetDevicePreviewSharedResultRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewSharedResultDto>> {
+    if (
+      requestParameters.shareToken === null ||
+      requestParameters.shareToken === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'shareToken',
+        'Required parameter requestParameters.shareToken was null or undefined when calling getDevicePreviewSharedResult.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/share/{shareToken}`.replace(
+          `{${'shareToken'}}`,
+          encodeURIComponent(String(requestParameters.shareToken))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewSharedResultDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a public shared device preview result
+   */
+  async getDevicePreviewSharedResult(
+    requestParameters: GetDevicePreviewSharedResultRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewSharedResultDto> {
+    const response = await this.getDevicePreviewSharedResultRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a public shared device preview screenshot image
+   */
+  async getDevicePreviewSharedResultScreenshotRaw(
+    requestParameters: GetDevicePreviewSharedResultScreenshotRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    if (
+      requestParameters.shareToken === null ||
+      requestParameters.shareToken === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'shareToken',
+        'Required parameter requestParameters.shareToken was null or undefined when calling getDevicePreviewSharedResultScreenshot.'
+      );
+    }
+
+    if (
+      requestParameters.screenshotId === null ||
+      requestParameters.screenshotId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'screenshotId',
+        'Required parameter requestParameters.screenshotId was null or undefined when calling getDevicePreviewSharedResultScreenshot.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/share/{shareToken}/screenshots/{screenshotId}/image`
+          .replace(
+            `{${'shareToken'}}`,
+            encodeURIComponent(String(requestParameters.shareToken))
+          )
+          .replace(
+            `{${'screenshotId'}}`,
+            encodeURIComponent(String(requestParameters.screenshotId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * Get a public shared device preview screenshot image
+   */
+  async getDevicePreviewSharedResultScreenshot(
+    requestParameters: GetDevicePreviewSharedResultScreenshotRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.getDevicePreviewSharedResultScreenshotRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Rerun selected failed device preview targets in the same run
+   */
+  async rerunDevicePreviewTargetsRaw(
+    requestParameters: RerunDevicePreviewTargetsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<RerunDevicePreviewTargetsResult>> {
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling rerunDevicePreviewTargets.'
+      );
+    }
+
+    if (
+      requestParameters.rerunDevicePreviewTargetsOptions === null ||
+      requestParameters.rerunDevicePreviewTargetsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'rerunDevicePreviewTargetsOptions',
+        'Required parameter requestParameters.rerunDevicePreviewTargetsOptions was null or undefined when calling rerunDevicePreviewTargets.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/{runId}/targets/rerun`.replace(
+          `{${'runId'}}`,
+          encodeURIComponent(String(requestParameters.runId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: RerunDevicePreviewTargetsOptionsToJSON(
+          requestParameters.rerunDevicePreviewTargetsOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      RerunDevicePreviewTargetsResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Rerun selected failed device preview targets in the same run
+   */
+  async rerunDevicePreviewTargets(
+    requestParameters: RerunDevicePreviewTargetsRequest,
+    initOverrides?: RequestInit
+  ): Promise<RerunDevicePreviewTargetsResult> {
+    const response = await this.rerunDevicePreviewTargetsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update account device preview email subdomain
+   */
+  async updateDevicePreviewEmailDomainSubdomainRaw(
+    requestParameters: UpdateDevicePreviewEmailDomainSubdomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewAccountSettingsDto>> {
+    if (
+      requestParameters.updateDevicePreviewIngestDomainOptions === null ||
+      requestParameters.updateDevicePreviewIngestDomainOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateDevicePreviewIngestDomainOptions',
+        'Required parameter requestParameters.updateDevicePreviewIngestDomainOptions was null or undefined when calling updateDevicePreviewEmailDomainSubdomain.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-domain/subdomain`,
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateDevicePreviewIngestDomainOptionsToJSON(
+          requestParameters.updateDevicePreviewIngestDomainOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewAccountSettingsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update account device preview email subdomain
+   */
+  async updateDevicePreviewEmailDomainSubdomain(
+    requestParameters: UpdateDevicePreviewEmailDomainSubdomainRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewAccountSettingsDto> {
+    const response = await this.updateDevicePreviewEmailDomainSubdomainRaw(
       requestParameters,
       initOverrides
     );
@@ -1076,6 +2592,314 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * Update a device preview profile
+   */
+  async updateDevicePreviewProfileRaw(
+    requestParameters: UpdateDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewProfileDto>> {
+    if (
+      requestParameters.profileId === null ||
+      requestParameters.profileId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'profileId',
+        'Required parameter requestParameters.profileId was null or undefined when calling updateDevicePreviewProfile.'
+      );
+    }
+
+    if (
+      requestParameters.updateDevicePreviewProfileOptions === null ||
+      requestParameters.updateDevicePreviewProfileOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateDevicePreviewProfileOptions',
+        'Required parameter requestParameters.updateDevicePreviewProfileOptions was null or undefined when calling updateDevicePreviewProfile.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/profiles/{profileId}`.replace(
+          `{${'profileId'}}`,
+          encodeURIComponent(String(requestParameters.profileId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateDevicePreviewProfileOptionsToJSON(
+          requestParameters.updateDevicePreviewProfileOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewProfileDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update a device preview profile
+   */
+  async updateDevicePreviewProfile(
+    requestParameters: UpdateDevicePreviewProfileRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewProfileDto> {
+    const response = await this.updateDevicePreviewProfileRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait for device preview runs created from account email domains
+   */
+  async waitForDevicePreviewEmailRunsRaw(
+    requestParameters: WaitForDevicePreviewEmailRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewIngestRunWaitResult>> {
+    if (
+      requestParameters.since === null ||
+      requestParameters.since === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'since',
+        'Required parameter requestParameters.since was null or undefined when calling waitForDevicePreviewEmailRuns.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.emailDomainId !== undefined) {
+      queryParameters['emailDomainId'] = requestParameters.emailDomainId;
+    }
+
+    if (requestParameters.profileId !== undefined) {
+      queryParameters['profileId'] = requestParameters.profileId;
+    }
+
+    if (requestParameters.localPart !== undefined) {
+      queryParameters['localPart'] = requestParameters.localPart;
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit;
+    }
+
+    if (requestParameters.timeoutMillis !== undefined) {
+      queryParameters['timeoutMillis'] = requestParameters.timeoutMillis;
+    }
+
+    if (requestParameters.pollIntervalMillis !== undefined) {
+      queryParameters['pollIntervalMillis'] =
+        requestParameters.pollIntervalMillis;
+    }
+
+    if (requestParameters.hydrateThumbnail !== undefined) {
+      queryParameters['hydrateThumbnail'] = requestParameters.hydrateThumbnail;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-runs/wait`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewIngestRunWaitResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait for device preview runs created from account email domains
+   */
+  async waitForDevicePreviewEmailRuns(
+    requestParameters: WaitForDevicePreviewEmailRunsRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewIngestRunWaitResult> {
+    const response = await this.waitForDevicePreviewEmailRunsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait for received device preview email submissions
+   */
+  async waitForDevicePreviewEmailSubmissionsRaw(
+    requestParameters: WaitForDevicePreviewEmailSubmissionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewEmailSubmissionWaitResult>> {
+    if (
+      requestParameters.since === null ||
+      requestParameters.since === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'since',
+        'Required parameter requestParameters.since was null or undefined when calling waitForDevicePreviewEmailSubmissions.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.emailDomainId !== undefined) {
+      queryParameters['emailDomainId'] = requestParameters.emailDomainId;
+    }
+
+    if (requestParameters.profileId !== undefined) {
+      queryParameters['profileId'] = requestParameters.profileId;
+    }
+
+    if (requestParameters.localPart !== undefined) {
+      queryParameters['localPart'] = requestParameters.localPart;
+    }
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit;
+    }
+
+    if (requestParameters.timeoutMillis !== undefined) {
+      queryParameters['timeoutMillis'] = requestParameters.timeoutMillis;
+    }
+
+    if (requestParameters.pollIntervalMillis !== undefined) {
+      queryParameters['pollIntervalMillis'] =
+        requestParameters.pollIntervalMillis;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-submissions/wait`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewEmailSubmissionWaitResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait for received device preview email submissions
+   */
+  async waitForDevicePreviewEmailSubmissions(
+    requestParameters: WaitForDevicePreviewEmailSubmissionsRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewEmailSubmissionWaitResult> {
+    const response = await this.waitForDevicePreviewEmailSubmissionsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait for device preview run to complete
+   */
+  async waitForDevicePreviewRunRaw(
+    requestParameters: WaitForDevicePreviewRunRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewRunWaitResult>> {
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling waitForDevicePreviewRun.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.timeoutMillis !== undefined) {
+      queryParameters['timeoutMillis'] = requestParameters.timeoutMillis;
+    }
+
+    if (requestParameters.pollIntervalMillis !== undefined) {
+      queryParameters['pollIntervalMillis'] =
+        requestParameters.pollIntervalMillis;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/{runId}/wait`.replace(
+          `{${'runId'}}`,
+          encodeURIComponent(String(requestParameters.runId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewRunWaitResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait for device preview run to complete
+   */
+  async waitForDevicePreviewRun(
+    requestParameters: WaitForDevicePreviewRunRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewRunWaitResult> {
+    const response = await this.waitForDevicePreviewRunRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
@@ -1128,6 +2952,14 @@ export enum GetDevicePreviewRunProviderProgressProviderEnum {
   GMAIL = 'GMAIL',
   OUTLOOK = 'OUTLOOK',
   YAHOO = 'YAHOO',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetDevicePreviewRunsForAccountOffsetPaginatedSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 /**
  * @export

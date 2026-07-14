@@ -30,7 +30,7 @@ export interface CanSendEmailResults {
    * @type {string}
    * @memberof CanSendEmailResults
    */
-  message?: string;
+  message?: string | null;
 }
 
 export function CanSendEmailResultsFromJSON(json: any): CanSendEmailResults {

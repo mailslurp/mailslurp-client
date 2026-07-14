@@ -44,7 +44,9 @@ function DeliveryStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['processingTimeMillis'],
         received: !(0, runtime_1.exists)(json, 'received')
             ? undefined
-            : new Date(json['received']),
+            : json['received'] === null
+                ? null
+                : new Date(json['received']),
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
@@ -69,7 +71,11 @@ function DeliveryStatusDtoToJSON(value) {
         smtpResponse: value.smtpResponse,
         smtpStatusCode: value.smtpStatusCode,
         processingTimeMillis: value.processingTimeMillis,
-        received: value.received === undefined ? undefined : value.received.toISOString(),
+        received: value.received === undefined
+            ? undefined
+            : value.received === null
+                ? null
+                : value.received.toISOString(),
         subject: value.subject,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),

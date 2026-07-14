@@ -30,7 +30,7 @@ export interface ImageIssue {
    * @type {number}
    * @memberof ImageIssue
    */
-  responseStatus?: number;
+  responseStatus?: number | null;
   /**
    *
    * @type {string}

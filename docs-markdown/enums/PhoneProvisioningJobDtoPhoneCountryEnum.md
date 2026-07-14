@@ -10,6 +10,7 @@
 
 - [AU](PhoneProvisioningJobDtoPhoneCountryEnum.md#au)
 - [CA](PhoneProvisioningJobDtoPhoneCountryEnum.md#ca)
+- [CH](PhoneProvisioningJobDtoPhoneCountryEnum.md#ch)
 - [EE](PhoneProvisioningJobDtoPhoneCountryEnum.md#ee)
 - [FI](PhoneProvisioningJobDtoPhoneCountryEnum.md#fi)
 - [GB](PhoneProvisioningJobDtoPhoneCountryEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

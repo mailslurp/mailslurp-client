@@ -24,13 +24,13 @@ export interface UpdatePhonePoolOptions {
    * @type {string}
    * @memberof UpdatePhonePoolOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof UpdatePhonePoolOptions
    */
-  description?: string;
+  description?: string | null;
 }
 
 export function UpdatePhonePoolOptionsFromJSON(

@@ -37,19 +37,19 @@ export interface AITransformDto {
    * @type {string}
    * @memberof AITransformDto
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof AITransformDto
    */
-  conditions?: Array<string>;
+  conditions?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof AITransformDto
    */
-  instructions?: Array<string>;
+  instructions?: Array<string> | null;
   /**
    *
    * @type {StructuredOutputSchema}

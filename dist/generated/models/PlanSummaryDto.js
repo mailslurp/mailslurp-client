@@ -37,6 +37,7 @@ var PlanSummaryDtoPhoneCountryEnum;
     PlanSummaryDtoPhoneCountryEnum["EE"] = "EE";
     PlanSummaryDtoPhoneCountryEnum["HK"] = "HK";
     PlanSummaryDtoPhoneCountryEnum["PL"] = "PL";
+    PlanSummaryDtoPhoneCountryEnum["CH"] = "CH";
     PlanSummaryDtoPhoneCountryEnum["PT"] = "PT";
     PlanSummaryDtoPhoneCountryEnum["NL"] = "NL";
     PlanSummaryDtoPhoneCountryEnum["IL"] = "IL";

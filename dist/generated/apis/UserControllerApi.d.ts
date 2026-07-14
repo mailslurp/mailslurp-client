@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxRetentionPolicyForAccountOptions, EmptyResponseDto, InboxRetentionPolicyDto, InboxRetentionPolicyOptionalDto, PageEntityAutomationItems, PageEntityEventItems, PageEntityFavouriteItems, UserInfoDto } from '../models';
+import { CreateInboxRetentionPolicyForAccountOptions, EmptyResponseDto, InboxRetentionPolicyDto, InboxRetentionPolicyOptionalDto, InboxRetentionPolicyRunDto, JsonNode, PageEntityAutomationItems, PageEntityEventItems, PageEntityFavouriteItems, PageInboxRetentionPolicyRunProjection, UserInfoDto } from '../models';
 export interface CreateOrUpdateInboxRetentionPolicyForAccountRequest {
     createInboxRetentionPolicyForAccountOptions: CreateInboxRetentionPolicyForAccountOptions;
 }
@@ -45,14 +45,30 @@ export interface GetEntityFavoritesRequest {
     before?: Date;
     filter?: GetEntityFavoritesFilterEnum;
 }
+export interface GetInboxRetentionPolicyRunRequest {
+    runId: string;
+}
+export interface GetInboxRetentionPolicyRunsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetInboxRetentionPolicyRunsSortEnum;
+}
 export interface GetJsonPropertyAsStringRequest {
     property: string;
-    body: object | null;
+    jsonNode: JsonNode;
 }
 /**
  *
  */
 export declare class UserControllerApi extends runtime.BaseAPI {
+    /**
+     * Start an asynchronous inbox retention policy run for your account
+     */
+    createInboxRetentionPolicyRunRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPolicyRunDto>>;
+    /**
+     * Start an asynchronous inbox retention policy run for your account
+     */
+    createInboxRetentionPolicyRun(initOverrides?: RequestInit): Promise<InboxRetentionPolicyRunDto>;
     /**
      * Create inbox retention policy for your global account
      */
@@ -95,6 +111,22 @@ export declare class UserControllerApi extends runtime.BaseAPI {
      * Get inbox retention policy for your global account
      */
     getInboxRetentionPolicyForAccount(initOverrides?: RequestInit): Promise<InboxRetentionPolicyOptionalDto>;
+    /**
+     * Get a previously submitted inbox retention policy run for your account
+     */
+    getInboxRetentionPolicyRunRaw(requestParameters: GetInboxRetentionPolicyRunRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPolicyRunDto>>;
+    /**
+     * Get a previously submitted inbox retention policy run for your account
+     */
+    getInboxRetentionPolicyRun(requestParameters: GetInboxRetentionPolicyRunRequest, initOverrides?: RequestInit): Promise<InboxRetentionPolicyRunDto>;
+    /**
+     * List recent inbox retention policy runs for your account
+     */
+    getInboxRetentionPolicyRunsRaw(requestParameters: GetInboxRetentionPolicyRunsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxRetentionPolicyRunProjection>>;
+    /**
+     * List recent inbox retention policy runs for your account
+     */
+    getInboxRetentionPolicyRuns(requestParameters: GetInboxRetentionPolicyRunsRequest, initOverrides?: RequestInit): Promise<PageInboxRetentionPolicyRunProjection>;
     /**
      * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
@@ -166,4 +198,12 @@ export declare enum GetEntityFavoritesFilterEnum {
     ATTACHMENT = "ATTACHMENT",
     PHONE = "PHONE",
     SMS = "SMS"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetInboxRetentionPolicyRunsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }

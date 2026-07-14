@@ -30,19 +30,19 @@ export interface CreatePhoneNumberOptions {
    * @type {string}
    * @memberof CreatePhoneNumberOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreatePhoneNumberOptions
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof CreatePhoneNumberOptions
    */
-  tags?: Array<string>;
+  tags?: Array<string> | null;
   /**
    *
    * @type {string}
@@ -54,7 +54,7 @@ export interface CreatePhoneNumberOptions {
    * @type {string}
    * @memberof CreatePhoneNumberOptions
    */
-  phoneNumberEndpointOverride?: string;
+  phoneNumberEndpointOverride?: string | null;
   /**
    *
    * @type {string}
@@ -87,6 +87,7 @@ export enum CreatePhoneNumberOptionsPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
@@ -115,8 +116,8 @@ export enum CreatePhoneNumberOptionsPhoneNumberVariantEnum {
  * @enum {string}
  */
 export enum CreatePhoneNumberOptionsPhoneProviderEnum {
-  TWILIO = 'TWILIO',
-  TELNYX = 'TELNYX',
+  T1 = 'T1',
+  T2 = 'T2',
 }
 /**
  * @export

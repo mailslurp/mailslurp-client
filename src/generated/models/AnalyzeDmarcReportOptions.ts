@@ -30,7 +30,7 @@ export interface AnalyzeDmarcReportOptions {
    * @type {string}
    * @memberof AnalyzeDmarcReportOptions
    */
-  captchaToken?: string;
+  captchaToken?: string | null;
 }
 
 export function AnalyzeDmarcReportOptionsFromJSON(

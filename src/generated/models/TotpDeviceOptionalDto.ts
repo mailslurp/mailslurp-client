@@ -31,7 +31,7 @@ export interface TotpDeviceOptionalDto {
    * @type {TotpDeviceDto}
    * @memberof TotpDeviceOptionalDto
    */
-  device?: TotpDeviceDto;
+  device?: TotpDeviceDto | null;
 }
 
 export function TotpDeviceOptionalDtoFromJSON(

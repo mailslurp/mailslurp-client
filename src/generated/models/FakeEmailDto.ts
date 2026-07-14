@@ -65,13 +65,13 @@ export interface FakeEmailDto {
    * @type {string}
    * @memberof FakeEmailDto
    */
-  subject?: string;
+  subject?: string | null;
   /**
    *
    * @type {string}
    * @memberof FakeEmailDto
    */
-  preview?: string;
+  preview?: string | null;
   /**
    * use read content endpoints instead
    * @type {string}

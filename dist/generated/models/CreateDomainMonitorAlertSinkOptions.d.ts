@@ -38,7 +38,7 @@ export interface CreateDomainMonitorAlertSinkOptions {
      * @type {boolean}
      * @memberof CreateDomainMonitorAlertSinkOptions
      */
-    enabled?: boolean;
+    enabled?: boolean | null;
 }
 /**
  * @export

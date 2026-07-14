@@ -2,7 +2,7 @@
 
 # Interface: DeliverabilityPollStatusResultDto
 
-Polling response for deliverability test progress
+Polling response for load-test progress
 
 **`Export`**
 

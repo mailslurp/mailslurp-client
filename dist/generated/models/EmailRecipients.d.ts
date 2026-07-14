@@ -21,19 +21,19 @@ export interface EmailRecipients {
      * @type {Array<Recipient>}
      * @memberof EmailRecipients
      */
-    to?: Array<Recipient>;
+    to?: Array<Recipient> | null;
     /**
      *
      * @type {Array<Recipient>}
      * @memberof EmailRecipients
      */
-    cc?: Array<Recipient>;
+    cc?: Array<Recipient> | null;
     /**
      *
      * @type {Array<Recipient>}
      * @memberof EmailRecipients
      */
-    bcc?: Array<Recipient>;
+    bcc?: Array<Recipient> | null;
 }
 export declare function EmailRecipientsFromJSON(json: any): EmailRecipients;
 export declare function EmailRecipientsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailRecipients;

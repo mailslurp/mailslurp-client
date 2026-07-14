@@ -268,6 +268,56 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Create or rotate domain monitor email verification address
+     */
+    DomainMonitorControllerApi.prototype.createDomainMonitorEmailVerificationAddressRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling createDomainMonitorEmailVerificationAddress.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/email-verification-address".replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainMonitorEmailVerificationDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create or rotate domain monitor email verification address
+     */
+    DomainMonitorControllerApi.prototype.createDomainMonitorEmailVerificationAddress = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createDomainMonitorEmailVerificationAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Delete domain monitor
      */
     DomainMonitorControllerApi.prototype.deleteDomainMonitorRaw = function (requestParameters, initOverrides) {
@@ -358,6 +408,112 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteDomainMonitorAlertSinkRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete domain monitor observed authentication sample
+     */
+    DomainMonitorControllerApi.prototype.deleteDomainMonitorObservedAuthSampleRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling deleteDomainMonitorObservedAuthSample.');
+                        }
+                        if (requestParameters.sampleId === null ||
+                            requestParameters.sampleId === undefined) {
+                            throw new runtime.RequiredError('sampleId', 'Required parameter requestParameters.sampleId was null or undefined when calling deleteDomainMonitorObservedAuthSample.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/observed-auth-samples/{sampleId}"
+                                    .replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId)))
+                                    .replace("{".concat('sampleId', "}"), encodeURIComponent(String(requestParameters.sampleId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete domain monitor observed authentication sample
+     */
+    DomainMonitorControllerApi.prototype.deleteDomainMonitorObservedAuthSample = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteDomainMonitorObservedAuthSampleRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+     * Export monitor run results as CSV
+     */
+    DomainMonitorControllerApi.prototype.exportDomainMonitorRunResultsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling exportDomainMonitorRunResults.');
+                        }
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling exportDomainMonitorRunResults.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/runs/{runId}/results/export"
+                                    .replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId)))
+                                    .replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+     * Export monitor run results as CSV
+     */
+    DomainMonitorControllerApi.prototype.exportDomainMonitorRunResults = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.exportDomainMonitorRunResultsRaw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
@@ -519,6 +675,56 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get domain monitor email verification setup
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorEmailVerificationRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorEmailVerification.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/email-verification".replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainMonitorEmailVerificationDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get domain monitor email verification setup
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorEmailVerification = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDomainMonitorEmailVerificationRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get monitor insights
      */
     DomainMonitorControllerApi.prototype.getDomainMonitorInsightsRaw = function (requestParameters, initOverrides) {
@@ -566,6 +772,56 @@ var DomainMonitorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getDomainMonitorInsightsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List domain monitor observed authentication samples
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorObservedAuthSamplesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.monitorId === null ||
+                            requestParameters.monitorId === undefined) {
+                            throw new runtime.RequiredError('monitorId', 'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorObservedAuthSamples.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domain-monitor/monitors/{monitorId}/observed-auth-samples".replace("{".concat('monitorId', "}"), encodeURIComponent(String(requestParameters.monitorId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.DomainMonitorObservedAuthSampleDtoFromJSON);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List domain monitor observed authentication samples
+     */
+    DomainMonitorControllerApi.prototype.getDomainMonitorObservedAuthSamples = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDomainMonitorObservedAuthSamplesRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

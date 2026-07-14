@@ -29,9 +29,15 @@ import {
   DomainMonitorDto,
   DomainMonitorDtoFromJSON,
   DomainMonitorDtoToJSON,
+  DomainMonitorEmailVerificationDto,
+  DomainMonitorEmailVerificationDtoFromJSON,
+  DomainMonitorEmailVerificationDtoToJSON,
   DomainMonitorInsightsDto,
   DomainMonitorInsightsDtoFromJSON,
   DomainMonitorInsightsDtoToJSON,
+  DomainMonitorObservedAuthSampleDto,
+  DomainMonitorObservedAuthSampleDtoFromJSON,
+  DomainMonitorObservedAuthSampleDtoToJSON,
   DomainMonitorRunComparisonDto,
   DomainMonitorRunComparisonDtoFromJSON,
   DomainMonitorRunComparisonDtoToJSON,
@@ -70,6 +76,10 @@ export interface CreateDomainMonitorAlertSinkRequest {
   createDomainMonitorAlertSinkOptions: CreateDomainMonitorAlertSinkOptions;
 }
 
+export interface CreateDomainMonitorEmailVerificationAddressRequest {
+  monitorId: string;
+}
+
 export interface DeleteDomainMonitorRequest {
   monitorId: string;
 }
@@ -77,6 +87,16 @@ export interface DeleteDomainMonitorRequest {
 export interface DeleteDomainMonitorAlertSinkRequest {
   monitorId: string;
   sinkId: string;
+}
+
+export interface DeleteDomainMonitorObservedAuthSampleRequest {
+  monitorId: string;
+  sampleId: string;
+}
+
+export interface ExportDomainMonitorRunResultsRequest {
+  monitorId: string;
+  runId: string;
 }
 
 export interface GetDomainMonitorRequest {
@@ -92,10 +112,18 @@ export interface GetDomainMonitorAuthStackRequest {
   dkimSelector?: string;
 }
 
+export interface GetDomainMonitorEmailVerificationRequest {
+  monitorId: string;
+}
+
 export interface GetDomainMonitorInsightsRequest {
   monitorId: string;
   since?: Date;
   before?: Date;
+}
+
+export interface GetDomainMonitorObservedAuthSamplesRequest {
+  monitorId: string;
 }
 
 export interface GetDomainMonitorRunRequest {
@@ -358,6 +386,63 @@ export class DomainMonitorControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Create or rotate domain monitor email verification address
+   */
+  async createDomainMonitorEmailVerificationAddressRaw(
+    requestParameters: CreateDomainMonitorEmailVerificationAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainMonitorEmailVerificationDto>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling createDomainMonitorEmailVerificationAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/email-verification-address`.replace(
+          `{${'monitorId'}}`,
+          encodeURIComponent(String(requestParameters.monitorId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainMonitorEmailVerificationDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create or rotate domain monitor email verification address
+   */
+  async createDomainMonitorEmailVerificationAddress(
+    requestParameters: CreateDomainMonitorEmailVerificationAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainMonitorEmailVerificationDto> {
+    const response = await this.createDomainMonitorEmailVerificationAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Delete domain monitor
    */
   async deleteDomainMonitorRaw(
@@ -472,6 +557,146 @@ export class DomainMonitorControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deleteDomainMonitorAlertSinkRaw(
+      requestParameters,
+      initOverrides
+    );
+  }
+
+  /**
+   * Delete domain monitor observed authentication sample
+   */
+  async deleteDomainMonitorObservedAuthSampleRaw(
+    requestParameters: DeleteDomainMonitorObservedAuthSampleRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling deleteDomainMonitorObservedAuthSample.'
+      );
+    }
+
+    if (
+      requestParameters.sampleId === null ||
+      requestParameters.sampleId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sampleId',
+        'Required parameter requestParameters.sampleId was null or undefined when calling deleteDomainMonitorObservedAuthSample.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/observed-auth-samples/{sampleId}`
+          .replace(
+            `{${'monitorId'}}`,
+            encodeURIComponent(String(requestParameters.monitorId))
+          )
+          .replace(
+            `{${'sampleId'}}`,
+            encodeURIComponent(String(requestParameters.sampleId))
+          ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete domain monitor observed authentication sample
+   */
+  async deleteDomainMonitorObservedAuthSample(
+    requestParameters: DeleteDomainMonitorObservedAuthSampleRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteDomainMonitorObservedAuthSampleRaw(
+      requestParameters,
+      initOverrides
+    );
+  }
+
+  /**
+   * Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+   * Export monitor run results as CSV
+   */
+  async exportDomainMonitorRunResultsRaw(
+    requestParameters: ExportDomainMonitorRunResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling exportDomainMonitorRunResults.'
+      );
+    }
+
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling exportDomainMonitorRunResults.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/runs/{runId}/results/export`
+          .replace(
+            `{${'monitorId'}}`,
+            encodeURIComponent(String(requestParameters.monitorId))
+          )
+          .replace(
+            `{${'runId'}}`,
+            encodeURIComponent(String(requestParameters.runId))
+          ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+   * Export monitor run results as CSV
+   */
+  async exportDomainMonitorRunResults(
+    requestParameters: ExportDomainMonitorRunResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.exportDomainMonitorRunResultsRaw(
       requestParameters,
       initOverrides
     );
@@ -653,6 +878,63 @@ export class DomainMonitorControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get domain monitor email verification setup
+   */
+  async getDomainMonitorEmailVerificationRaw(
+    requestParameters: GetDomainMonitorEmailVerificationRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainMonitorEmailVerificationDto>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorEmailVerification.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/email-verification`.replace(
+          `{${'monitorId'}}`,
+          encodeURIComponent(String(requestParameters.monitorId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainMonitorEmailVerificationDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get domain monitor email verification setup
+   */
+  async getDomainMonitorEmailVerification(
+    requestParameters: GetDomainMonitorEmailVerificationRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainMonitorEmailVerificationDto> {
+    const response = await this.getDomainMonitorEmailVerificationRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get monitor insights
    */
   async getDomainMonitorInsightsRaw(
@@ -713,6 +995,63 @@ export class DomainMonitorControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<DomainMonitorInsightsDto> {
     const response = await this.getDomainMonitorInsightsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List domain monitor observed authentication samples
+   */
+  async getDomainMonitorObservedAuthSamplesRaw(
+    requestParameters: GetDomainMonitorObservedAuthSamplesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<DomainMonitorObservedAuthSampleDto>>> {
+    if (
+      requestParameters.monitorId === null ||
+      requestParameters.monitorId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'monitorId',
+        'Required parameter requestParameters.monitorId was null or undefined when calling getDomainMonitorObservedAuthSamples.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domain-monitor/monitors/{monitorId}/observed-auth-samples`.replace(
+          `{${'monitorId'}}`,
+          encodeURIComponent(String(requestParameters.monitorId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(DomainMonitorObservedAuthSampleDtoFromJSON)
+    );
+  }
+
+  /**
+   * List domain monitor observed authentication samples
+   */
+  async getDomainMonitorObservedAuthSamples(
+    requestParameters: GetDomainMonitorObservedAuthSamplesRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<DomainMonitorObservedAuthSampleDto>> {
+    const response = await this.getDomainMonitorObservedAuthSamplesRaw(
       requestParameters,
       initOverrides
     );

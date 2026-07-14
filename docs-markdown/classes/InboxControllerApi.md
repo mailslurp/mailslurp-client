@@ -425,7 +425,7 @@ ___
 
 ### deleteAllInboxes
 
-▸ **deleteAllInboxes**(`initOverrides?`): `Promise`<`void`\>
+▸ **deleteAllInboxes**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
 Delete all inboxes
@@ -434,6 +434,7 @@ Delete all inboxes
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesRequest`](../interfaces/DeleteAllInboxesRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -564,7 +565,7 @@ ___
 
 ### deleteAllInboxesRaw
 
-▸ **deleteAllInboxesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+▸ **deleteAllInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
 Delete all inboxes
@@ -573,6 +574,7 @@ Delete all inboxes
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesRequest`](../interfaces/DeleteAllInboxesRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

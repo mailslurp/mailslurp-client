@@ -24,31 +24,31 @@ export interface PhoneNumberLineTypeIntelligenceDto {
    * @type {string}
    * @memberof PhoneNumberLineTypeIntelligenceDto
    */
-  type?: string;
+  type?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberLineTypeIntelligenceDto
    */
-  carrierName?: string;
+  carrierName?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberLineTypeIntelligenceDto
    */
-  mobileCountryCode?: string;
+  mobileCountryCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberLineTypeIntelligenceDto
    */
-  mobileNetworkCode?: string;
+  mobileNetworkCode?: string | null;
   /**
    *
    * @type {number}
    * @memberof PhoneNumberLineTypeIntelligenceDto
    */
-  errorCode?: number;
+  errorCode?: number | null;
 }
 
 export function PhoneNumberLineTypeIntelligenceDtoFromJSON(

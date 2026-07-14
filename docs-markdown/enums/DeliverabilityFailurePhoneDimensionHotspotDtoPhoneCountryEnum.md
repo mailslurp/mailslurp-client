@@ -10,6 +10,7 @@
 
 - [AU](DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum.md#au)
 - [CA](DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum.md#ca)
+- [CH](DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum.md#ch)
 - [EE](DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum.md#ee)
 - [FI](DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum.md#fi)
 - [GB](DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

@@ -24,85 +24,85 @@ export interface AuditLogSearchOptions {
    * @type {Date}
    * @memberof AuditLogSearchOptions
    */
-  since?: Date;
+  since?: Date | null;
   /**
    *
    * @type {Date}
    * @memberof AuditLogSearchOptions
    */
-  before?: Date;
+  before?: Date | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  action?: string;
+  action?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  userId?: string;
+  userId?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  actorUserId?: string;
+  actorUserId?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  targetUserId?: string;
+  targetUserId?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  resourceType?: string;
+  resourceType?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  resourceId?: string;
+  resourceId?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  outcome?: string;
+  outcome?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  requestId?: string;
+  requestId?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  ipAddress?: string;
+  ipAddress?: string | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  eventId?: string;
+  eventId?: string | null;
   /**
    *
    * @type {number}
    * @memberof AuditLogSearchOptions
    */
-  pageSize?: number;
+  pageSize?: number | null;
   /**
    *
    * @type {string}
    * @memberof AuditLogSearchOptions
    */
-  cursor?: string;
+  cursor?: string | null;
 }
 
 export function AuditLogSearchOptionsFromJSON(
@@ -119,8 +119,16 @@ export function AuditLogSearchOptionsFromJSONTyped(
     return json;
   }
   return {
-    since: !exists(json, 'since') ? undefined : new Date(json['since']),
-    before: !exists(json, 'before') ? undefined : new Date(json['before']),
+    since: !exists(json, 'since')
+      ? undefined
+      : json['since'] === null
+      ? null
+      : new Date(json['since']),
+    before: !exists(json, 'before')
+      ? undefined
+      : json['before'] === null
+      ? null
+      : new Date(json['before']),
     action: !exists(json, 'action') ? undefined : json['action'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     actorUserId: !exists(json, 'actorUserId') ? undefined : json['actorUserId'],
@@ -150,8 +158,18 @@ export function AuditLogSearchOptionsToJSON(
     return null;
   }
   return {
-    since: value.since === undefined ? undefined : value.since.toISOString(),
-    before: value.before === undefined ? undefined : value.before.toISOString(),
+    since:
+      value.since === undefined
+        ? undefined
+        : value.since === null
+        ? null
+        : value.since.toISOString(),
+    before:
+      value.before === undefined
+        ? undefined
+        : value.before === null
+        ? null
+        : value.before.toISOString(),
     action: value.action,
     userId: value.userId,
     actorUserId: value.actorUserId,

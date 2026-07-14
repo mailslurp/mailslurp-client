@@ -109,7 +109,7 @@ export interface WebhookDto {
    * @type {WebhookHeaders}
    * @memberof WebhookDto
    */
-  requestHeaders?: WebhookHeaders;
+  requestHeaders?: WebhookHeaders | null;
   /**
    * ID of AI transformer for payload
    * @type {string}
@@ -134,6 +134,12 @@ export interface WebhookDto {
    * @memberof WebhookDto
    */
   healthStatus?: WebhookDtoHealthStatusEnum;
+  /**
+   * Whether the webhook is enabled. Null means legacy/default-enabled.
+   * @type {boolean}
+   * @memberof WebhookDto
+   */
+  enabled?: boolean | null;
 }
 
 /**
@@ -222,6 +228,7 @@ export function WebhookDtoFromJSONTyped(
     healthStatus: !exists(json, 'healthStatus')
       ? undefined
       : json['healthStatus'],
+    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
   };
 }
 
@@ -251,5 +258,6 @@ export function WebhookDtoToJSON(value?: WebhookDto | null): any {
     ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
     useStaticIpRange: value.useStaticIpRange,
     healthStatus: value.healthStatus,
+    enabled: value.enabled,
   };
 }

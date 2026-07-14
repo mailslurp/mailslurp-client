@@ -42,7 +42,7 @@ export interface GuestPortalUserDto {
    * @type {string}
    * @memberof GuestPortalUserDto
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -54,13 +54,13 @@ export interface GuestPortalUserDto {
    * @type {string}
    * @memberof GuestPortalUserDto
    */
-  emailAddress?: string;
+  emailAddress?: string | null;
   /**
    *
    * @type {string}
    * @memberof GuestPortalUserDto
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    *
    * @type {string}

@@ -31,7 +31,7 @@ export interface ReplyForSms {
    * @type {SentSmsDto}
    * @memberof ReplyForSms
    */
-  reply?: SentSmsDto;
+  reply?: SentSmsDto | null;
 }
 
 export function ReplyForSmsFromJSON(json: any): ReplyForSms {

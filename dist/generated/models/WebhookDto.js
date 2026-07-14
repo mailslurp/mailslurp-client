@@ -98,6 +98,7 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
             ? undefined
             : json['healthStatus'],
+        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
     };
 }
 exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
@@ -127,6 +128,7 @@ function WebhookDtoToJSON(value) {
         ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
         useStaticIpRange: value.useStaticIpRange,
         healthStatus: value.healthStatus,
+        enabled: value.enabled,
     };
 }
 exports.WebhookDtoToJSON = WebhookDtoToJSON;

@@ -84,6 +84,7 @@ export declare enum DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",

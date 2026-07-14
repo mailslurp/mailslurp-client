@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CancelDevicePreviewRunOptions, CancelDevicePreviewRunResult, CreateDevicePreviewFeedbackOptions, CreateDevicePreviewOptions, CreateDevicePreviewRunResult, DeleteDevicePreviewRunResult, DevicePreviewFeedbackDto, DevicePreviewFeedbackListDto, DevicePreviewProviderProgressDto, DevicePreviewRunDto, DevicePreviewRunResultsDto, PageDevicePreviewRunProjection, UpdateDevicePreviewFeedbackOptions } from '../models';
+import { CancelDevicePreviewRunOptions, CancelDevicePreviewRunResult, CreateDevicePreviewFeedbackOptions, CreateDevicePreviewHtmlImportOptions, CreateDevicePreviewImportOptions, CreateDevicePreviewIngestAddressOptions, CreateDevicePreviewOptions, CreateDevicePreviewProfileOptions, CreateDevicePreviewRunResult, CreateDevicePreviewShareLinkOptions, DeleteDevicePreviewProfileResult, DeleteDevicePreviewRunResult, DeleteDevicePreviewShareLinkResult, DevicePreviewAccountSettingsDto, DevicePreviewEmailSubmissionDto, DevicePreviewEmailSubmissionWaitResult, DevicePreviewFeedbackDto, DevicePreviewFeedbackListDto, DevicePreviewIngestAddressDto, DevicePreviewIngestRunWaitResult, DevicePreviewNativeTargetAvailabilityListDto, DevicePreviewProfileDto, DevicePreviewProviderProgressDto, DevicePreviewRunDto, DevicePreviewRunResultsDto, DevicePreviewRunWaitResult, DevicePreviewShareLinkDto, DevicePreviewSharedResultDto, PageDevicePreviewRunProjection, RerunDevicePreviewTargetsOptions, RerunDevicePreviewTargetsResult, UpdateDevicePreviewFeedbackOptions, UpdateDevicePreviewIngestDomainOptions, UpdateDevicePreviewProfileOptions } from '../models';
 export interface CancelDevicePreviewRunRequest {
     runId: string;
     cancelDevicePreviewRunOptions?: CancelDevicePreviewRunOptions;
@@ -18,16 +18,64 @@ export interface CancelDevicePreviewRunRequest {
 export interface CreateDevicePreviewFeedbackRequest {
     createDevicePreviewFeedbackOptions: CreateDevicePreviewFeedbackOptions;
 }
+export interface CreateDevicePreviewImportAddressRequest {
+    createDevicePreviewIngestAddressOptions?: CreateDevicePreviewIngestAddressOptions;
+}
+export interface CreateDevicePreviewProfileRequest {
+    createDevicePreviewProfileOptions: CreateDevicePreviewProfileOptions;
+}
 export interface CreateDevicePreviewRunRequest {
     emailId: string;
     createDevicePreviewOptions?: CreateDevicePreviewOptions;
 }
+export interface CreateDevicePreviewRunFromHtmlImportRequest {
+    createDevicePreviewHtmlImportOptions: CreateDevicePreviewHtmlImportOptions;
+}
+export interface CreateDevicePreviewRunFromImportRequest {
+    createDevicePreviewImportOptions: CreateDevicePreviewImportOptions;
+}
+export interface CreateDevicePreviewRunFromMultipartImportRequest {
+    file: Blob;
+    sourceAlias?: string;
+    externalId?: string;
+    nativeTargets?: Array<string>;
+}
+export interface CreateDevicePreviewRunFromRawImportRequest {
+    sourceAlias?: string;
+    externalId?: string;
+    nativeTargets?: Array<string>;
+}
+export interface CreateDevicePreviewShareLinkRequest {
+    runId: string;
+    createDevicePreviewShareLinkOptions?: CreateDevicePreviewShareLinkOptions;
+}
+export interface DeleteDevicePreviewProfileRequest {
+    profileId: string;
+}
 export interface DeleteDevicePreviewRunRequest {
     runId: string;
+}
+export interface DeleteDevicePreviewShareLinkRequest {
+    shareLinkId: string;
 }
 export interface EnsureDevicePreviewRunRequest {
     emailId: string;
     createDevicePreviewOptions?: CreateDevicePreviewOptions;
+}
+export interface GetDevicePreviewEmailRunsRequest {
+    since: Date;
+    emailDomainId?: string;
+    profileId?: string;
+    localPart?: string;
+    limit?: number;
+    hydrateThumbnail?: boolean;
+}
+export interface GetDevicePreviewEmailSubmissionsRequest {
+    since: Date;
+    emailDomainId?: string;
+    profileId?: string;
+    localPart?: string;
+    limit?: number;
 }
 export interface GetDevicePreviewFeedbackRequest {
     feedbackId: string;
@@ -41,6 +89,12 @@ export interface GetDevicePreviewFeedbackItemsRequest {
     provider?: GetDevicePreviewFeedbackItemsProviderEnum;
     category?: GetDevicePreviewFeedbackItemsCategoryEnum;
     search?: string;
+}
+export interface GetDevicePreviewImportAddressRequest {
+    sessionId: string;
+}
+export interface GetDevicePreviewProfileRequest {
+    profileId: string;
 }
 export interface GetDevicePreviewRunRequest {
     runId: string;
@@ -59,19 +113,73 @@ export interface GetDevicePreviewRunScreenshotRequest {
 export interface GetDevicePreviewRunsRequest {
     emailId: string;
     limit?: number;
+    hydrateThumbnail?: boolean;
 }
 export interface GetDevicePreviewRunsForAccountRequest {
     limit?: number;
+    hydrateThumbnail?: boolean;
+}
+export interface GetDevicePreviewRunsForAccountOffsetPaginatedRequest {
+    page?: number;
+    size?: number;
+    sort?: GetDevicePreviewRunsForAccountOffsetPaginatedSortEnum;
+    hydrateThumbnail?: boolean;
 }
 export interface GetDevicePreviewRunsOffsetPaginatedRequest {
     emailId: string;
     page?: number;
     size?: number;
     sort?: GetDevicePreviewRunsOffsetPaginatedSortEnum;
+    hydrateThumbnail?: boolean;
+}
+export interface GetDevicePreviewShareLinksRequest {
+    runId: string;
+}
+export interface GetDevicePreviewSharedResultRequest {
+    shareToken: string;
+}
+export interface GetDevicePreviewSharedResultScreenshotRequest {
+    shareToken: string;
+    screenshotId: string;
+}
+export interface RerunDevicePreviewTargetsRequest {
+    runId: string;
+    rerunDevicePreviewTargetsOptions: RerunDevicePreviewTargetsOptions;
+}
+export interface UpdateDevicePreviewEmailDomainSubdomainRequest {
+    updateDevicePreviewIngestDomainOptions: UpdateDevicePreviewIngestDomainOptions;
 }
 export interface UpdateDevicePreviewFeedbackRequest {
     feedbackId: string;
     updateDevicePreviewFeedbackOptions: UpdateDevicePreviewFeedbackOptions;
+}
+export interface UpdateDevicePreviewProfileRequest {
+    profileId: string;
+    updateDevicePreviewProfileOptions: UpdateDevicePreviewProfileOptions;
+}
+export interface WaitForDevicePreviewEmailRunsRequest {
+    since: Date;
+    emailDomainId?: string;
+    profileId?: string;
+    localPart?: string;
+    limit?: number;
+    timeoutMillis?: number;
+    pollIntervalMillis?: number;
+    hydrateThumbnail?: boolean;
+}
+export interface WaitForDevicePreviewEmailSubmissionsRequest {
+    since: Date;
+    emailDomainId?: string;
+    profileId?: string;
+    localPart?: string;
+    limit?: number;
+    timeoutMillis?: number;
+    pollIntervalMillis?: number;
+}
+export interface WaitForDevicePreviewRunRequest {
+    runId: string;
+    timeoutMillis?: number;
+    pollIntervalMillis?: number;
 }
 /**
  *
@@ -94,6 +202,22 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      */
     createDevicePreviewFeedback(requestParameters: CreateDevicePreviewFeedbackRequest, initOverrides?: RequestInit): Promise<DevicePreviewFeedbackDto>;
     /**
+     * Create a temporary email address for device preview import
+     */
+    createDevicePreviewImportAddressRaw(requestParameters: CreateDevicePreviewImportAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewIngestAddressDto>>;
+    /**
+     * Create a temporary email address for device preview import
+     */
+    createDevicePreviewImportAddress(requestParameters: CreateDevicePreviewImportAddressRequest, initOverrides?: RequestInit): Promise<DevicePreviewIngestAddressDto>;
+    /**
+     * Create a device preview profile
+     */
+    createDevicePreviewProfileRaw(requestParameters: CreateDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewProfileDto>>;
+    /**
+     * Create a device preview profile
+     */
+    createDevicePreviewProfile(requestParameters: CreateDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<DevicePreviewProfileDto>;
+    /**
      * Create a new device preview run for an email
      */
     createDevicePreviewRunRaw(requestParameters: CreateDevicePreviewRunRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>>;
@@ -101,6 +225,54 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      * Create a new device preview run for an email
      */
     createDevicePreviewRun(requestParameters: CreateDevicePreviewRunRequest, initOverrides?: RequestInit): Promise<CreateDevicePreviewRunResult>;
+    /**
+     * Create a device preview run from HTML
+     */
+    createDevicePreviewRunFromHtmlImportRaw(requestParameters: CreateDevicePreviewRunFromHtmlImportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>>;
+    /**
+     * Create a device preview run from HTML
+     */
+    createDevicePreviewRunFromHtmlImport(requestParameters: CreateDevicePreviewRunFromHtmlImportRequest, initOverrides?: RequestInit): Promise<CreateDevicePreviewRunResult>;
+    /**
+     * Create a device preview run from imported raw MIME
+     */
+    createDevicePreviewRunFromImportRaw(requestParameters: CreateDevicePreviewRunFromImportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>>;
+    /**
+     * Create a device preview run from imported raw MIME
+     */
+    createDevicePreviewRunFromImport(requestParameters: CreateDevicePreviewRunFromImportRequest, initOverrides?: RequestInit): Promise<CreateDevicePreviewRunResult>;
+    /**
+     * Create a device preview run from multipart EML upload
+     */
+    createDevicePreviewRunFromMultipartImportRaw(requestParameters: CreateDevicePreviewRunFromMultipartImportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>>;
+    /**
+     * Create a device preview run from multipart EML upload
+     */
+    createDevicePreviewRunFromMultipartImport(requestParameters: CreateDevicePreviewRunFromMultipartImportRequest, initOverrides?: RequestInit): Promise<CreateDevicePreviewRunResult>;
+    /**
+     * Create a device preview run from raw MIME bytes
+     */
+    createDevicePreviewRunFromRawImportRaw(requestParameters: CreateDevicePreviewRunFromRawImportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>>;
+    /**
+     * Create a device preview run from raw MIME bytes
+     */
+    createDevicePreviewRunFromRawImport(requestParameters: CreateDevicePreviewRunFromRawImportRequest, initOverrides?: RequestInit): Promise<CreateDevicePreviewRunResult>;
+    /**
+     * Create a share link for a device preview run
+     */
+    createDevicePreviewShareLinkRaw(requestParameters: CreateDevicePreviewShareLinkRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewShareLinkDto>>;
+    /**
+     * Create a share link for a device preview run
+     */
+    createDevicePreviewShareLink(requestParameters: CreateDevicePreviewShareLinkRequest, initOverrides?: RequestInit): Promise<DevicePreviewShareLinkDto>;
+    /**
+     * Delete a device preview profile
+     */
+    deleteDevicePreviewProfileRaw(requestParameters: DeleteDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeleteDevicePreviewProfileResult>>;
+    /**
+     * Delete a device preview profile
+     */
+    deleteDevicePreviewProfile(requestParameters: DeleteDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<DeleteDevicePreviewProfileResult>;
     /**
      * Delete local device preview run data
      */
@@ -110,6 +282,14 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      */
     deleteDevicePreviewRun(requestParameters: DeleteDevicePreviewRunRequest, initOverrides?: RequestInit): Promise<DeleteDevicePreviewRunResult>;
     /**
+     * Revoke a device preview share link
+     */
+    deleteDevicePreviewShareLinkRaw(requestParameters: DeleteDevicePreviewShareLinkRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeleteDevicePreviewShareLinkResult>>;
+    /**
+     * Revoke a device preview share link
+     */
+    deleteDevicePreviewShareLink(requestParameters: DeleteDevicePreviewShareLinkRequest, initOverrides?: RequestInit): Promise<DeleteDevicePreviewShareLinkResult>;
+    /**
      * Return active run for email or create one when none exists
      */
     ensureDevicePreviewRunRaw(requestParameters: EnsureDevicePreviewRunRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>>;
@@ -117,6 +297,30 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      * Return active run for email or create one when none exists
      */
     ensureDevicePreviewRun(requestParameters: EnsureDevicePreviewRunRequest, initOverrides?: RequestInit): Promise<CreateDevicePreviewRunResult>;
+    /**
+     * Return account device preview email domain setup or create one
+     */
+    getDevicePreviewEmailDomainOrCreateRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewAccountSettingsDto>>;
+    /**
+     * Return account device preview email domain setup or create one
+     */
+    getDevicePreviewEmailDomainOrCreate(initOverrides?: RequestInit): Promise<DevicePreviewAccountSettingsDto>;
+    /**
+     * List device preview runs created from account email domains
+     */
+    getDevicePreviewEmailRunsRaw(requestParameters: GetDevicePreviewEmailRunsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<DevicePreviewRunDto>>>;
+    /**
+     * List device preview runs created from account email domains
+     */
+    getDevicePreviewEmailRuns(requestParameters: GetDevicePreviewEmailRunsRequest, initOverrides?: RequestInit): Promise<Array<DevicePreviewRunDto>>;
+    /**
+     * List received device preview email submissions
+     */
+    getDevicePreviewEmailSubmissionsRaw(requestParameters: GetDevicePreviewEmailSubmissionsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<DevicePreviewEmailSubmissionDto>>>;
+    /**
+     * List received device preview email submissions
+     */
+    getDevicePreviewEmailSubmissions(requestParameters: GetDevicePreviewEmailSubmissionsRequest, initOverrides?: RequestInit): Promise<Array<DevicePreviewEmailSubmissionDto>>;
     /**
      * Get a single device preview feedback item
      */
@@ -133,6 +337,38 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      * List device preview feedback
      */
     getDevicePreviewFeedbackItems(requestParameters: GetDevicePreviewFeedbackItemsRequest, initOverrides?: RequestInit): Promise<DevicePreviewFeedbackListDto>;
+    /**
+     * Get temporary device preview import address status
+     */
+    getDevicePreviewImportAddressRaw(requestParameters: GetDevicePreviewImportAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewIngestAddressDto>>;
+    /**
+     * Get temporary device preview import address status
+     */
+    getDevicePreviewImportAddress(requestParameters: GetDevicePreviewImportAddressRequest, initOverrides?: RequestInit): Promise<DevicePreviewIngestAddressDto>;
+    /**
+     * Get native device preview target availability
+     */
+    getDevicePreviewNativeTargetAvailabilityRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewNativeTargetAvailabilityListDto>>;
+    /**
+     * Get native device preview target availability
+     */
+    getDevicePreviewNativeTargetAvailability(initOverrides?: RequestInit): Promise<DevicePreviewNativeTargetAvailabilityListDto>;
+    /**
+     * Get a device preview profile
+     */
+    getDevicePreviewProfileRaw(requestParameters: GetDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewProfileDto>>;
+    /**
+     * Get a device preview profile
+     */
+    getDevicePreviewProfile(requestParameters: GetDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<DevicePreviewProfileDto>;
+    /**
+     * List device preview profiles
+     */
+    getDevicePreviewProfilesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<DevicePreviewProfileDto>>>;
+    /**
+     * List device preview profiles
+     */
+    getDevicePreviewProfiles(initOverrides?: RequestInit): Promise<Array<DevicePreviewProfileDto>>;
     /**
      * Get device preview run status
      */
@@ -158,11 +394,11 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      */
     getDevicePreviewRunResults(requestParameters: GetDevicePreviewRunResultsRequest, initOverrides?: RequestInit): Promise<DevicePreviewRunResultsDto>;
     /**
-     * Get a seeded device preview screenshot image
+     * Get a device preview screenshot image
      */
     getDevicePreviewRunScreenshotRaw(requestParameters: GetDevicePreviewRunScreenshotRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
     /**
-     * Get a seeded device preview screenshot image
+     * Get a device preview screenshot image
      */
     getDevicePreviewRunScreenshot(requestParameters: GetDevicePreviewRunScreenshotRequest, initOverrides?: RequestInit): Promise<string>;
     /**
@@ -182,6 +418,14 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      */
     getDevicePreviewRunsForAccount(requestParameters: GetDevicePreviewRunsForAccountRequest, initOverrides?: RequestInit): Promise<Array<DevicePreviewRunDto>>;
     /**
+     * List previous device preview runs for account in paginated form
+     */
+    getDevicePreviewRunsForAccountOffsetPaginatedRaw(requestParameters: GetDevicePreviewRunsForAccountOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageDevicePreviewRunProjection>>;
+    /**
+     * List previous device preview runs for account in paginated form
+     */
+    getDevicePreviewRunsForAccountOffsetPaginated(requestParameters: GetDevicePreviewRunsForAccountOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<PageDevicePreviewRunProjection>;
+    /**
      * List previous device preview runs for an email in paginated form
      */
     getDevicePreviewRunsOffsetPaginatedRaw(requestParameters: GetDevicePreviewRunsOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageDevicePreviewRunProjection>>;
@@ -190,6 +434,46 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      */
     getDevicePreviewRunsOffsetPaginated(requestParameters: GetDevicePreviewRunsOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<PageDevicePreviewRunProjection>;
     /**
+     * List share links for a device preview run
+     */
+    getDevicePreviewShareLinksRaw(requestParameters: GetDevicePreviewShareLinksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<DevicePreviewShareLinkDto>>>;
+    /**
+     * List share links for a device preview run
+     */
+    getDevicePreviewShareLinks(requestParameters: GetDevicePreviewShareLinksRequest, initOverrides?: RequestInit): Promise<Array<DevicePreviewShareLinkDto>>;
+    /**
+     * Get a public shared device preview result
+     */
+    getDevicePreviewSharedResultRaw(requestParameters: GetDevicePreviewSharedResultRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewSharedResultDto>>;
+    /**
+     * Get a public shared device preview result
+     */
+    getDevicePreviewSharedResult(requestParameters: GetDevicePreviewSharedResultRequest, initOverrides?: RequestInit): Promise<DevicePreviewSharedResultDto>;
+    /**
+     * Get a public shared device preview screenshot image
+     */
+    getDevicePreviewSharedResultScreenshotRaw(requestParameters: GetDevicePreviewSharedResultScreenshotRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Get a public shared device preview screenshot image
+     */
+    getDevicePreviewSharedResultScreenshot(requestParameters: GetDevicePreviewSharedResultScreenshotRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Rerun selected failed device preview targets in the same run
+     */
+    rerunDevicePreviewTargetsRaw(requestParameters: RerunDevicePreviewTargetsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<RerunDevicePreviewTargetsResult>>;
+    /**
+     * Rerun selected failed device preview targets in the same run
+     */
+    rerunDevicePreviewTargets(requestParameters: RerunDevicePreviewTargetsRequest, initOverrides?: RequestInit): Promise<RerunDevicePreviewTargetsResult>;
+    /**
+     * Update account device preview email subdomain
+     */
+    updateDevicePreviewEmailDomainSubdomainRaw(requestParameters: UpdateDevicePreviewEmailDomainSubdomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewAccountSettingsDto>>;
+    /**
+     * Update account device preview email subdomain
+     */
+    updateDevicePreviewEmailDomainSubdomain(requestParameters: UpdateDevicePreviewEmailDomainSubdomainRequest, initOverrides?: RequestInit): Promise<DevicePreviewAccountSettingsDto>;
+    /**
      * Update device preview feedback
      */
     updateDevicePreviewFeedbackRaw(requestParameters: UpdateDevicePreviewFeedbackRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewFeedbackDto>>;
@@ -197,6 +481,38 @@ export declare class DevicePreviewsControllerApi extends runtime.BaseAPI {
      * Update device preview feedback
      */
     updateDevicePreviewFeedback(requestParameters: UpdateDevicePreviewFeedbackRequest, initOverrides?: RequestInit): Promise<DevicePreviewFeedbackDto>;
+    /**
+     * Update a device preview profile
+     */
+    updateDevicePreviewProfileRaw(requestParameters: UpdateDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewProfileDto>>;
+    /**
+     * Update a device preview profile
+     */
+    updateDevicePreviewProfile(requestParameters: UpdateDevicePreviewProfileRequest, initOverrides?: RequestInit): Promise<DevicePreviewProfileDto>;
+    /**
+     * Wait for device preview runs created from account email domains
+     */
+    waitForDevicePreviewEmailRunsRaw(requestParameters: WaitForDevicePreviewEmailRunsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewIngestRunWaitResult>>;
+    /**
+     * Wait for device preview runs created from account email domains
+     */
+    waitForDevicePreviewEmailRuns(requestParameters: WaitForDevicePreviewEmailRunsRequest, initOverrides?: RequestInit): Promise<DevicePreviewIngestRunWaitResult>;
+    /**
+     * Wait for received device preview email submissions
+     */
+    waitForDevicePreviewEmailSubmissionsRaw(requestParameters: WaitForDevicePreviewEmailSubmissionsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewEmailSubmissionWaitResult>>;
+    /**
+     * Wait for received device preview email submissions
+     */
+    waitForDevicePreviewEmailSubmissions(requestParameters: WaitForDevicePreviewEmailSubmissionsRequest, initOverrides?: RequestInit): Promise<DevicePreviewEmailSubmissionWaitResult>;
+    /**
+     * Wait for device preview run to complete
+     */
+    waitForDevicePreviewRunRaw(requestParameters: WaitForDevicePreviewRunRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DevicePreviewRunWaitResult>>;
+    /**
+     * Wait for device preview run to complete
+     */
+    waitForDevicePreviewRun(requestParameters: WaitForDevicePreviewRunRequest, initOverrides?: RequestInit): Promise<DevicePreviewRunWaitResult>;
 }
 /**
  * @export
@@ -248,6 +564,14 @@ export declare enum GetDevicePreviewRunProviderProgressProviderEnum {
     GMAIL = "GMAIL",
     OUTLOOK = "OUTLOOK",
     YAHOO = "YAHOO"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetDevicePreviewRunsForAccountOffsetPaginatedSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }
 /**
  * @export

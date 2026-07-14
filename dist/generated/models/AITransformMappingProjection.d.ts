@@ -20,7 +20,7 @@ export interface AITransformMappingProjection {
      * @type {string}
      * @memberof AITransformMappingProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -44,6 +44,12 @@ export interface AITransformMappingProjection {
      * @type {string}
      * @memberof AITransformMappingProjection
      */
+    entityId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformMappingProjection
+     */
     entityType: AITransformMappingProjectionEntityTypeEnum;
     /**
      *
@@ -51,12 +57,6 @@ export interface AITransformMappingProjection {
      * @memberof AITransformMappingProjection
      */
     aiTransformId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AITransformMappingProjection
-     */
-    entityId?: string;
     /**
      *
      * @type {string}

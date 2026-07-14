@@ -34,6 +34,11 @@ function DomainMonitorRunComparisonDtoFromJSONTyped(json, ignoreDiscriminator) {
         dmarcChanged: json['dmarcChanged'],
         dmarcEnforcedChanged: json['dmarcEnforcedChanged'],
         mxChanged: json['mxChanged'],
+        dkimChanged: json['dkimChanged'],
+        bimiChanged: json['bimiChanged'],
+        mtaStsChanged: json['mtaStsChanged'],
+        tlsReportingChanged: json['tlsReportingChanged'],
+        blacklistChanged: json['blacklistChanged'],
         addedInsights: json['addedInsights'],
         removedInsights: json['removedInsights'],
     };
@@ -57,6 +62,11 @@ function DomainMonitorRunComparisonDtoToJSON(value) {
         dmarcChanged: value.dmarcChanged,
         dmarcEnforcedChanged: value.dmarcEnforcedChanged,
         mxChanged: value.mxChanged,
+        dkimChanged: value.dkimChanged,
+        bimiChanged: value.bimiChanged,
+        mtaStsChanged: value.mtaStsChanged,
+        tlsReportingChanged: value.tlsReportingChanged,
+        blacklistChanged: value.blacklistChanged,
         addedInsights: value.addedInsights,
         removedInsights: value.removedInsights,
     };

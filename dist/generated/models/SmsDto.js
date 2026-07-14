@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SmsDtoToJSON = exports.SmsDtoFromJSONTyped = exports.SmsDtoFromJSON = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 function SmsDtoFromJSON(json) {
     return SmsDtoFromJSONTyped(json, false);
 }
@@ -34,6 +35,7 @@ function SmsDtoFromJSONTyped(json, ignoreDiscriminator) {
         read: json['read'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
+        media: json['media'].map(_1.SmsMessageMediaDtoFromJSON),
     };
 }
 exports.SmsDtoFromJSONTyped = SmsDtoFromJSONTyped;
@@ -55,6 +57,7 @@ function SmsDtoToJSON(value) {
         read: value.read,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
+        media: value.media.map(_1.SmsMessageMediaDtoToJSON),
     };
 }
 exports.SmsDtoToJSON = SmsDtoToJSON;

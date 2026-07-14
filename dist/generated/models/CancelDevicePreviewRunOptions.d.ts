@@ -20,7 +20,7 @@ export interface CancelDevicePreviewRunOptions {
      * @type {string}
      * @memberof CancelDevicePreviewRunOptions
      */
-    reason?: string;
+    reason?: string | null;
 }
 export declare function CancelDevicePreviewRunOptionsFromJSON(json: any): CancelDevicePreviewRunOptions;
 export declare function CancelDevicePreviewRunOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CancelDevicePreviewRunOptions;

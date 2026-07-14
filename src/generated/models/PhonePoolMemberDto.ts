@@ -61,7 +61,7 @@ export interface PhonePoolMemberDto {
    * @type {string}
    * @memberof PhonePoolMemberDto
    */
-  phoneName?: string;
+  phoneName?: string | null;
   /**
    *
    * @type {Date}
@@ -73,7 +73,7 @@ export interface PhonePoolMemberDto {
    * @type {PhonePoolLeaseDto}
    * @memberof PhonePoolMemberDto
    */
-  activeLease?: PhonePoolLeaseDto;
+  activeLease?: PhonePoolLeaseDto | null;
 }
 
 /**
@@ -88,6 +88,7 @@ export enum PhonePoolMemberDtoPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',

@@ -31,19 +31,19 @@ export interface ConnectorSyncRequestResult {
    * @type {ConnectorSyncResult}
    * @memberof ConnectorSyncRequestResult
    */
-  syncResult?: ConnectorSyncResult;
+  syncResult?: ConnectorSyncResult | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorSyncRequestResult
    */
-  exception?: string;
+  exception?: string | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorSyncRequestResult
    */
-  eventId?: string;
+  eventId?: string | null;
 }
 
 export function ConnectorSyncRequestResultFromJSON(

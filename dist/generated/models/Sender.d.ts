@@ -32,7 +32,7 @@ export interface Sender {
      * @type {string}
      * @memberof Sender
      */
-    name?: string;
+    name?: string | null;
 }
 export declare function SenderFromJSON(json: any): Sender;
 export declare function SenderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sender;

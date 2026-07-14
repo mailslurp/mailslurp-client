@@ -36,12 +36,6 @@ export interface EmailProjection {
     from: string | null;
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    subject?: string | null;
-    /**
-     *
      * @type {Sender}
      * @memberof EmailProjection
      */
@@ -57,6 +51,12 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
+    subject?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
     inboxId: string;
     /**
      *
@@ -66,22 +66,28 @@ export interface EmailProjection {
     attachments?: Array<string> | null;
     /**
      *
-     * @type {number}
+     * @type {string}
      * @memberof EmailProjection
      */
-    sizeBytes?: number | null;
+    textExcerpt?: string | null;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof EmailProjection
      */
-    createdAt: Date;
+    bodyExcerpt?: string | null;
     /**
      *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
     to: Array<string>;
+    /**
+     *
+     * @type {Date}
+     * @memberof EmailProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}
@@ -102,16 +108,40 @@ export interface EmailProjection {
     messageId?: string | null;
     /**
      *
-     * @type {boolean}
+     * @type {string}
      * @memberof EmailProjection
      */
-    favourite?: boolean | null;
+    inReplyTo?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof EmailProjection
+     */
+    sizeBytes?: number | null;
     /**
      *
      * @type {string}
      * @memberof EmailProjection
      */
     domainId?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    read: boolean;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    bodyPartContentTypes?: Array<string> | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    favourite?: boolean | null;
     /**
      *
      * @type {string}
@@ -124,36 +154,6 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     imapUid?: number | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    inReplyTo?: string | null;
-    /**
-     *
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    read: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyExcerpt?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    textExcerpt?: string | null;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    bodyPartContentTypes?: Array<string> | null;
     /**
      *
      * @type {string}

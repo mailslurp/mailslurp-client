@@ -51,6 +51,7 @@ var OrganizationInboxProjectionAccountRegionEnum;
     OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
     OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_SES_3"] = "US_WEST_2_ACCOUNT_SES_3";
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
     OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2"] = "US_WEST_2";

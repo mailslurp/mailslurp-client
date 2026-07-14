@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainMonitorDtoToJSON = exports.DomainMonitorDtoFromJSONTyped = exports.DomainMonitorDtoFromJSON = exports.DomainMonitorDtoLastStatusEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -48,10 +49,17 @@ function DomainMonitorDtoFromJSONTyped(json, ignoreDiscriminator) {
         healthScore: !(0, runtime_1.exists)(json, 'healthScore') ? undefined : json['healthScore'],
         lastRunAt: !(0, runtime_1.exists)(json, 'lastRunAt')
             ? undefined
-            : new Date(json['lastRunAt']),
+            : json['lastRunAt'] === null
+                ? null
+                : new Date(json['lastRunAt']),
         nextRunAt: !(0, runtime_1.exists)(json, 'nextRunAt')
             ? undefined
-            : new Date(json['nextRunAt']),
+            : json['nextRunAt'] === null
+                ? null
+                : new Date(json['nextRunAt']),
+        emailVerification: !(0, runtime_1.exists)(json, 'emailVerification')
+            ? undefined
+            : (0, _1.DomainMonitorEmailVerificationDtoFromJSON)(json['emailVerification']),
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
     };
@@ -74,8 +82,17 @@ function DomainMonitorDtoToJSON(value) {
         schedulingEnabled: value.schedulingEnabled,
         lastStatus: value.lastStatus,
         healthScore: value.healthScore,
-        lastRunAt: value.lastRunAt === undefined ? undefined : value.lastRunAt.toISOString(),
-        nextRunAt: value.nextRunAt === undefined ? undefined : value.nextRunAt.toISOString(),
+        lastRunAt: value.lastRunAt === undefined
+            ? undefined
+            : value.lastRunAt === null
+                ? null
+                : value.lastRunAt.toISOString(),
+        nextRunAt: value.nextRunAt === undefined
+            ? undefined
+            : value.nextRunAt === null
+                ? null
+                : value.nextRunAt.toISOString(),
+        emailVerification: (0, _1.DomainMonitorEmailVerificationDtoToJSON)(value.emailVerification),
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
     };

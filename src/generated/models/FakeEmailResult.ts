@@ -31,7 +31,7 @@ export interface FakeEmailResult {
    * @type {FakeEmailDto}
    * @memberof FakeEmailResult
    */
-  email?: FakeEmailDto;
+  email?: FakeEmailDto | null;
 }
 
 export function FakeEmailResultFromJSON(json: any): FakeEmailResult {

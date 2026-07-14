@@ -36,37 +36,37 @@ export interface TenantReputationStatusRowDto {
    * @type {string}
    * @memberof TenantReputationStatusRowDto
    */
-  tenantArn?: string;
+  tenantArn?: string | null;
   /**
    *
    * @type {string}
    * @memberof TenantReputationStatusRowDto
    */
-  sendingStatus?: string;
+  sendingStatus?: string | null;
   /**
    *
    * @type {string}
    * @memberof TenantReputationStatusRowDto
    */
-  reputationStatus?: string;
+  reputationStatus?: string | null;
   /**
    *
    * @type {string}
    * @memberof TenantReputationStatusRowDto
    */
-  reputationPolicy?: string;
+  reputationPolicy?: string | null;
   /**
    *
    * @type {string}
    * @memberof TenantReputationStatusRowDto
    */
-  customerManagedSendingStatus?: string;
+  customerManagedSendingStatus?: string | null;
   /**
    *
    * @type {string}
    * @memberof TenantReputationStatusRowDto
    */
-  awsManagedSendingStatus?: string;
+  awsManagedSendingStatus?: string | null;
   /**
    *
    * @type {number}
@@ -78,31 +78,31 @@ export interface TenantReputationStatusRowDto {
    * @type {number}
    * @memberof TenantReputationStatusRowDto
    */
-  bounceRate?: number;
+  bounceRate?: number | null;
   /**
    *
    * @type {number}
    * @memberof TenantReputationStatusRowDto
    */
-  complaintRate?: number;
+  complaintRate?: number | null;
   /**
    *
    * @type {number}
    * @memberof TenantReputationStatusRowDto
    */
-  sendLastHour?: number;
+  sendLastHour?: number | null;
   /**
    *
    * @type {Date}
    * @memberof TenantReputationStatusRowDto
    */
-  metricTimestamp?: Date;
+  metricTimestamp?: Date | null;
   /**
    *
    * @type {string}
    * @memberof TenantReputationStatusRowDto
    */
-  error?: string;
+  error?: string | null;
 }
 
 /**
@@ -117,6 +117,7 @@ export enum TenantReputationStatusRowDtoAccountRegionEnum {
   EU_WEST_1_ACCOUNT_SES_1 = 'EU_WEST_1_ACCOUNT_SES_1',
   US_WEST_2_ACCOUNT_SES_2 = 'US_WEST_2_ACCOUNT_SES_2',
   EU_WEST_1_ACCOUNT_SES_2 = 'EU_WEST_1_ACCOUNT_SES_2',
+  US_WEST_2_ACCOUNT_SES_3 = 'US_WEST_2_ACCOUNT_SES_3',
   US_WEST_2_ACCOUNT_BYTEWISE = 'US_WEST_2_ACCOUNT_BYTEWISE',
   EU_WEST_1_ACCOUNT_BYTEWISE = 'EU_WEST_1_ACCOUNT_BYTEWISE',
   US_WEST_2 = 'US_WEST_2',
@@ -166,6 +167,8 @@ export function TenantReputationStatusRowDtoFromJSONTyped(
       : json['sendLastHour'],
     metricTimestamp: !exists(json, 'metricTimestamp')
       ? undefined
+      : json['metricTimestamp'] === null
+      ? null
       : new Date(json['metricTimestamp']),
     error: !exists(json, 'error') ? undefined : json['error'],
   };
@@ -196,6 +199,8 @@ export function TenantReputationStatusRowDtoToJSON(
     metricTimestamp:
       value.metricTimestamp === undefined
         ? undefined
+        : value.metricTimestamp === null
+        ? null
         : value.metricTimestamp.toISOString(),
     error: value.error,
   };

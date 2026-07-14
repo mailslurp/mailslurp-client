@@ -43,13 +43,13 @@ export interface LookupSpfDomainResults {
    * @type {string}
    * @memberof LookupSpfDomainResults
    */
-  record?: string;
+  record?: string | null;
   /**
    *
    * @type {string}
    * @memberof LookupSpfDomainResults
    */
-  flattenedRecord?: string;
+  flattenedRecord?: string | null;
   /**
    *
    * @type {number}

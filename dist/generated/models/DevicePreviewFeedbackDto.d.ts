@@ -50,25 +50,25 @@ export interface DevicePreviewFeedbackDto {
      * @type {number}
      * @memberof DevicePreviewFeedbackDto
      */
-    rating?: number;
+    rating?: number | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    runId?: string;
+    runId?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    targetId?: string;
+    targetId?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    screenshotId?: string;
+    screenshotId?: string | null;
     /**
      *
      * @type {string}
@@ -80,31 +80,31 @@ export interface DevicePreviewFeedbackDto {
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    title?: string;
+    title?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    comment?: string;
+    comment?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    internalNote?: string;
+    internalNote?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewFeedbackDto
      */
-    liveViewUrl?: string;
+    liveViewUrl?: string | null;
     /**
      *
      * @type {{ [key: string]: string; }}
@@ -112,19 +112,19 @@ export interface DevicePreviewFeedbackDto {
      */
     metadata?: {
         [key: string]: string;
-    };
+    } | null;
     /**
      *
      * @type {Date}
      * @memberof DevicePreviewFeedbackDto
      */
-    createdAt?: Date;
+    createdAt?: Date | null;
     /**
      *
      * @type {Date}
      * @memberof DevicePreviewFeedbackDto
      */
-    updatedAt?: Date;
+    updatedAt?: Date | null;
 }
 /**
  * @export

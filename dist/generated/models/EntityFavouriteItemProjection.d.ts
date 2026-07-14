@@ -32,7 +32,7 @@ export interface EntityFavouriteItemProjection {
      * @type {string}
      * @memberof EntityFavouriteItemProjection
      */
-    description?: string;
+    description?: string | null;
     /**
      *
      * @type {Date}

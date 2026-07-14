@@ -618,6 +618,7 @@ export declare enum GetAllWebhookResultsSortEnum {
 export declare enum GetAllWebhookResultsResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
+    EXHAUSTED = "EXHAUSTED",
     SUCCESS = "SUCCESS",
     REDRIVEN = "REDRIVEN"
 }
@@ -801,6 +802,7 @@ export declare enum GetWebhookResultsSortEnum {
 export declare enum GetWebhookResultsResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
+    EXHAUSTED = "EXHAUSTED",
     SUCCESS = "SUCCESS",
     REDRIVEN = "REDRIVEN"
 }

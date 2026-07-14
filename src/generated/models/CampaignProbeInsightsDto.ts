@@ -115,7 +115,7 @@ export interface CampaignProbeInsightsDto {
    * @type {CampaignProbeRunDto}
    * @memberof CampaignProbeInsightsDto
    */
-  latestRun?: CampaignProbeRunDto;
+  latestRun?: CampaignProbeRunDto | null;
 }
 
 export function CampaignProbeInsightsDtoFromJSON(

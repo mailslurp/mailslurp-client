@@ -36,7 +36,7 @@ export interface SendOptInConsentEmailOptions {
    * @type {string}
    * @memberof SendOptInConsentEmailOptions
    */
-  senderInbox?: string;
+  senderInbox?: string | null;
 }
 
 export function SendOptInConsentEmailOptionsFromJSON(

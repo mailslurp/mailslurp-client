@@ -20,7 +20,7 @@ export interface RecipientProjection {
      * @type {string}
      * @memberof RecipientProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}

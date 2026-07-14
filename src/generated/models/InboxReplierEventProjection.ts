@@ -33,16 +33,16 @@ export interface InboxReplierEventProjection {
   id?: string | null;
   /**
    *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  status?: InboxReplierEventProjectionStatusEnum;
-  /**
-   *
    * @type {Array<string>}
    * @memberof InboxReplierEventProjection
    */
   recipients?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  status?: InboxReplierEventProjectionStatusEnum;
   /**
    *
    * @type {string}
@@ -106,8 +106,8 @@ export function InboxReplierEventProjectionFromJSONTyped(
   return {
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    status: !exists(json, 'status') ? undefined : json['status'],
     recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
+    status: !exists(json, 'status') ? undefined : json['status'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
@@ -129,8 +129,8 @@ export function InboxReplierEventProjectionToJSON(
   return {
     message: value.message,
     id: value.id,
-    status: value.status,
     recipients: value.recipients,
+    status: value.status,
     userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,

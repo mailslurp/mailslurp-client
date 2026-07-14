@@ -36,19 +36,19 @@ export interface WaitForSingleSmsOptions {
    * @type {boolean}
    * @memberof WaitForSingleSmsOptions
    */
-  unreadOnly?: boolean;
+  unreadOnly?: boolean | null;
   /**
    *
    * @type {Date}
    * @memberof WaitForSingleSmsOptions
    */
-  before?: Date;
+  before?: Date | null;
   /**
    *
    * @type {Date}
    * @memberof WaitForSingleSmsOptions
    */
-  since?: Date;
+  since?: Date | null;
   /**
    *
    * @type {string}
@@ -60,7 +60,7 @@ export interface WaitForSingleSmsOptions {
    * @type {number}
    * @memberof WaitForSingleSmsOptions
    */
-  delay?: number;
+  delay?: number | null;
 }
 
 /**
@@ -89,8 +89,16 @@ export function WaitForSingleSmsOptionsFromJSONTyped(
     phoneNumberId: json['phoneNumberId'],
     timeout: json['timeout'],
     unreadOnly: !exists(json, 'unreadOnly') ? undefined : json['unreadOnly'],
-    before: !exists(json, 'before') ? undefined : new Date(json['before']),
-    since: !exists(json, 'since') ? undefined : new Date(json['since']),
+    before: !exists(json, 'before')
+      ? undefined
+      : json['before'] === null
+      ? null
+      : new Date(json['before']),
+    since: !exists(json, 'since')
+      ? undefined
+      : json['since'] === null
+      ? null
+      : new Date(json['since']),
     sortDirection: !exists(json, 'sortDirection')
       ? undefined
       : json['sortDirection'],
@@ -111,8 +119,18 @@ export function WaitForSingleSmsOptionsToJSON(
     phoneNumberId: value.phoneNumberId,
     timeout: value.timeout,
     unreadOnly: value.unreadOnly,
-    before: value.before === undefined ? undefined : value.before.toISOString(),
-    since: value.since === undefined ? undefined : value.since.toISOString(),
+    before:
+      value.before === undefined
+        ? undefined
+        : value.before === null
+        ? null
+        : value.before.toISOString(),
+    since:
+      value.since === undefined
+        ? undefined
+        : value.since === null
+        ? null
+        : value.since.toISOString(),
     sortDirection: value.sortDirection,
     delay: value.delay,
   };

@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  DevicePreviewRunThumbnailDto,
+  DevicePreviewRunThumbnailDtoFromJSON,
+  DevicePreviewRunThumbnailDtoFromJSONTyped,
+  DevicePreviewRunThumbnailDtoToJSON,
+} from './';
+
 /**
  *
  * @export
@@ -30,7 +37,133 @@ export interface DevicePreviewRunDto {
    * @type {string}
    * @memberof DevicePreviewRunDto
    */
-  emailId: string;
+  emailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceType: DevicePreviewRunDtoSourceTypeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceInboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceAlias?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceExternalId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceFrom?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceTo?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceSubject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceMessageId?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceSizeBytes?: number | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceStorageProvider?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceStorageBucket?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceStorageObjectKey?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceStorageRegion?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceStorageEndpoint?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceStoragePublicBaseUrl?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceRecipientEmailAddress?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceRecipientLocalPart?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceIngestDomainId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceProfileId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceProfileLocalPart?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  sourceProfileDisplayName?: string | null;
   /**
    *
    * @type {string}
@@ -42,31 +175,37 @@ export interface DevicePreviewRunDto {
    * @type {string}
    * @memberof DevicePreviewRunDto
    */
-  primaryScreenshotId?: string;
+  primaryScreenshotId?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof DevicePreviewRunDto
    */
-  requestedProviders?: Array<DevicePreviewRunDtoRequestedProvidersEnum>;
+  requestedProviders?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof DevicePreviewRunDto
    */
-  importedProviders?: Array<DevicePreviewRunDtoImportedProvidersEnum>;
+  importedProviders?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof DevicePreviewRunDto
    */
-  warnings?: Array<string>;
+  warnings?: Array<string> | null;
   /**
    *
    * @type {{ [key: string]: string; }}
    * @memberof DevicePreviewRunDto
    */
-  providerMessageIds?: { [key: string]: string };
+  providerMessageIds?: { [key: string]: string } | null;
+  /**
+   * Latest run-level error, if the preview run was blocked or failed after creation.
+   * @type {string}
+   * @memberof DevicePreviewRunDto
+   */
+  latestError?: string | null;
   /**
    *
    * @type {number}
@@ -91,8 +230,24 @@ export interface DevicePreviewRunDto {
    * @memberof DevicePreviewRunDto
    */
   updatedAt: Date;
+  /**
+   *
+   * @type {DevicePreviewRunThumbnailDto}
+   * @memberof DevicePreviewRunDto
+   */
+  thumbnail?: DevicePreviewRunThumbnailDto | null;
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum DevicePreviewRunDtoSourceTypeEnum {
+  STORED_EMAIL = 'STORED_EMAIL',
+  RAW_UPLOAD = 'RAW_UPLOAD',
+  DEVICE_PREVIEW_INGEST = 'DEVICE_PREVIEW_INGEST',
+  PUBLIC_FREE_TEST = 'PUBLIC_FREE_TEST',
+}
 /**
  * @export
  * @enum {string}
@@ -104,24 +259,6 @@ export enum DevicePreviewRunDtoStatusEnum {
   PARTIAL_COMPLETE = 'PARTIAL_COMPLETE',
   COMPLETE = 'COMPLETE',
   FAILED = 'FAILED',
-}
-/**
- * @export
- * @enum {string}
- */
-export enum DevicePreviewRunDtoRequestedProvidersEnum {
-  GMAIL = 'GMAIL',
-  OUTLOOK = 'OUTLOOK',
-  YAHOO = 'YAHOO',
-}
-/**
- * @export
- * @enum {string}
- */
-export enum DevicePreviewRunDtoImportedProvidersEnum {
-  GMAIL = 'GMAIL',
-  OUTLOOK = 'OUTLOOK',
-  YAHOO = 'YAHOO',
 }
 
 export function DevicePreviewRunDtoFromJSON(json: any): DevicePreviewRunDto {
@@ -137,7 +274,62 @@ export function DevicePreviewRunDtoFromJSONTyped(
   }
   return {
     runId: json['runId'],
-    emailId: json['emailId'],
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    sourceType: json['sourceType'],
+    sourceInboxId: !exists(json, 'sourceInboxId')
+      ? undefined
+      : json['sourceInboxId'],
+    sourceAlias: !exists(json, 'sourceAlias') ? undefined : json['sourceAlias'],
+    sourceExternalId: !exists(json, 'sourceExternalId')
+      ? undefined
+      : json['sourceExternalId'],
+    sourceFrom: !exists(json, 'sourceFrom') ? undefined : json['sourceFrom'],
+    sourceTo: !exists(json, 'sourceTo') ? undefined : json['sourceTo'],
+    sourceSubject: !exists(json, 'sourceSubject')
+      ? undefined
+      : json['sourceSubject'],
+    sourceMessageId: !exists(json, 'sourceMessageId')
+      ? undefined
+      : json['sourceMessageId'],
+    sourceSizeBytes: !exists(json, 'sourceSizeBytes')
+      ? undefined
+      : json['sourceSizeBytes'],
+    sourceStorageProvider: !exists(json, 'sourceStorageProvider')
+      ? undefined
+      : json['sourceStorageProvider'],
+    sourceStorageBucket: !exists(json, 'sourceStorageBucket')
+      ? undefined
+      : json['sourceStorageBucket'],
+    sourceStorageObjectKey: !exists(json, 'sourceStorageObjectKey')
+      ? undefined
+      : json['sourceStorageObjectKey'],
+    sourceStorageRegion: !exists(json, 'sourceStorageRegion')
+      ? undefined
+      : json['sourceStorageRegion'],
+    sourceStorageEndpoint: !exists(json, 'sourceStorageEndpoint')
+      ? undefined
+      : json['sourceStorageEndpoint'],
+    sourceStoragePublicBaseUrl: !exists(json, 'sourceStoragePublicBaseUrl')
+      ? undefined
+      : json['sourceStoragePublicBaseUrl'],
+    sourceRecipientEmailAddress: !exists(json, 'sourceRecipientEmailAddress')
+      ? undefined
+      : json['sourceRecipientEmailAddress'],
+    sourceRecipientLocalPart: !exists(json, 'sourceRecipientLocalPart')
+      ? undefined
+      : json['sourceRecipientLocalPart'],
+    sourceIngestDomainId: !exists(json, 'sourceIngestDomainId')
+      ? undefined
+      : json['sourceIngestDomainId'],
+    sourceProfileId: !exists(json, 'sourceProfileId')
+      ? undefined
+      : json['sourceProfileId'],
+    sourceProfileLocalPart: !exists(json, 'sourceProfileLocalPart')
+      ? undefined
+      : json['sourceProfileLocalPart'],
+    sourceProfileDisplayName: !exists(json, 'sourceProfileDisplayName')
+      ? undefined
+      : json['sourceProfileDisplayName'],
     status: json['status'],
     primaryScreenshotId: !exists(json, 'primaryScreenshotId')
       ? undefined
@@ -152,10 +344,14 @@ export function DevicePreviewRunDtoFromJSONTyped(
     providerMessageIds: !exists(json, 'providerMessageIds')
       ? undefined
       : json['providerMessageIds'],
+    latestError: !exists(json, 'latestError') ? undefined : json['latestError'],
     targetCount: json['targetCount'],
     screenshotCount: json['screenshotCount'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    thumbnail: !exists(json, 'thumbnail')
+      ? undefined
+      : DevicePreviewRunThumbnailDtoFromJSON(json['thumbnail']),
   };
 }
 
@@ -171,15 +367,38 @@ export function DevicePreviewRunDtoToJSON(
   return {
     runId: value.runId,
     emailId: value.emailId,
+    sourceType: value.sourceType,
+    sourceInboxId: value.sourceInboxId,
+    sourceAlias: value.sourceAlias,
+    sourceExternalId: value.sourceExternalId,
+    sourceFrom: value.sourceFrom,
+    sourceTo: value.sourceTo,
+    sourceSubject: value.sourceSubject,
+    sourceMessageId: value.sourceMessageId,
+    sourceSizeBytes: value.sourceSizeBytes,
+    sourceStorageProvider: value.sourceStorageProvider,
+    sourceStorageBucket: value.sourceStorageBucket,
+    sourceStorageObjectKey: value.sourceStorageObjectKey,
+    sourceStorageRegion: value.sourceStorageRegion,
+    sourceStorageEndpoint: value.sourceStorageEndpoint,
+    sourceStoragePublicBaseUrl: value.sourceStoragePublicBaseUrl,
+    sourceRecipientEmailAddress: value.sourceRecipientEmailAddress,
+    sourceRecipientLocalPart: value.sourceRecipientLocalPart,
+    sourceIngestDomainId: value.sourceIngestDomainId,
+    sourceProfileId: value.sourceProfileId,
+    sourceProfileLocalPart: value.sourceProfileLocalPart,
+    sourceProfileDisplayName: value.sourceProfileDisplayName,
     status: value.status,
     primaryScreenshotId: value.primaryScreenshotId,
     requestedProviders: value.requestedProviders,
     importedProviders: value.importedProviders,
     warnings: value.warnings,
     providerMessageIds: value.providerMessageIds,
+    latestError: value.latestError,
     targetCount: value.targetCount,
     screenshotCount: value.screenshotCount,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    thumbnail: DevicePreviewRunThumbnailDtoToJSON(value.thumbnail),
   };
 }

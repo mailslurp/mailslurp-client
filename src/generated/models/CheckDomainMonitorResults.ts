@@ -81,6 +81,48 @@ export interface CheckDomainMonitorResults {
   mxOk: boolean;
   /**
    *
+   * @type {boolean}
+   * @memberof CheckDomainMonitorResults
+   */
+  dkimOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CheckDomainMonitorResults
+   */
+  bimiOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CheckDomainMonitorResults
+   */
+  mtaStsOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CheckDomainMonitorResults
+   */
+  tlsReportingOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CheckDomainMonitorResults
+   */
+  blacklistChecked: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CheckDomainMonitorResults
+   */
+  blacklistOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof CheckDomainMonitorResults
+   */
+  blacklistListed: boolean;
+  /**
+   *
    * @type {Array<string>}
    * @memberof CheckDomainMonitorResults
    */
@@ -128,6 +170,13 @@ export function CheckDomainMonitorResultsFromJSONTyped(
     dmarcOk: json['dmarcOk'],
     dmarcEnforced: json['dmarcEnforced'],
     mxOk: json['mxOk'],
+    dkimOk: json['dkimOk'],
+    bimiOk: json['bimiOk'],
+    mtaStsOk: json['mtaStsOk'],
+    tlsReportingOk: json['tlsReportingOk'],
+    blacklistChecked: json['blacklistChecked'],
+    blacklistOk: json['blacklistOk'],
+    blacklistListed: json['blacklistListed'],
     insights: json['insights'],
     errorMessage: !exists(json, 'errorMessage')
       ? undefined
@@ -155,6 +204,13 @@ export function CheckDomainMonitorResultsToJSON(
     dmarcOk: value.dmarcOk,
     dmarcEnforced: value.dmarcEnforced,
     mxOk: value.mxOk,
+    dkimOk: value.dkimOk,
+    bimiOk: value.bimiOk,
+    mtaStsOk: value.mtaStsOk,
+    tlsReportingOk: value.tlsReportingOk,
+    blacklistChecked: value.blacklistChecked,
+    blacklistOk: value.blacklistOk,
+    blacklistListed: value.blacklistListed,
     insights: value.insights,
     errorMessage: value.errorMessage,
   };

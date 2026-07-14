@@ -92,7 +92,7 @@ export interface WebhookNewContactPayload {
    */
   tags: Array<string>;
   /**
-   *
+   * Meta data for contact
    * @type {object}
    * @memberof WebhookNewContactPayload
    */

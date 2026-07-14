@@ -40,6 +40,10 @@
 - [checkEmailFeaturesClientSupportRaw](ToolsControllerApi.md#checkemailfeaturesclientsupportraw)
 - [createNewFakeEmailAddress](ToolsControllerApi.md#createnewfakeemailaddress)
 - [createNewFakeEmailAddressRaw](ToolsControllerApi.md#createnewfakeemailaddressraw)
+- [createPublicDeviceRenderTest](ToolsControllerApi.md#createpublicdevicerendertest)
+- [createPublicDeviceRenderTestRaw](ToolsControllerApi.md#createpublicdevicerendertestraw)
+- [createPublicSpamTest](ToolsControllerApi.md#createpublicspamtest)
+- [createPublicSpamTestRaw](ToolsControllerApi.md#createpublicspamtestraw)
 - [deleteNewFakeEmailAddress](ToolsControllerApi.md#deletenewfakeemailaddress)
 - [deleteNewFakeEmailAddressRaw](ToolsControllerApi.md#deletenewfakeemailaddressraw)
 - [generateBimiRecord](ToolsControllerApi.md#generatebimirecord)
@@ -60,6 +64,12 @@
 - [getFakeEmailRawRaw](ToolsControllerApi.md#getfakeemailrawraw)
 - [getFakeEmailsForAddress](ToolsControllerApi.md#getfakeemailsforaddress)
 - [getFakeEmailsForAddressRaw](ToolsControllerApi.md#getfakeemailsforaddressraw)
+- [getPublicDeviceRenderTest](ToolsControllerApi.md#getpublicdevicerendertest)
+- [getPublicDeviceRenderTestRaw](ToolsControllerApi.md#getpublicdevicerendertestraw)
+- [getPublicSpamTest](ToolsControllerApi.md#getpublicspamtest)
+- [getPublicSpamTestRaw](ToolsControllerApi.md#getpublicspamtestraw)
+- [getPublicSpamTestResults](ToolsControllerApi.md#getpublicspamtestresults)
+- [getPublicSpamTestResultsRaw](ToolsControllerApi.md#getpublicspamtestresultsraw)
 - [lookupBimiDomain](ToolsControllerApi.md#lookupbimidomain)
 - [lookupBimiDomainRaw](ToolsControllerApi.md#lookupbimidomainraw)
 - [lookupDkimDomain](ToolsControllerApi.md#lookupdkimdomain)
@@ -77,6 +87,8 @@
 - [lookupTlsReportingDomain](ToolsControllerApi.md#lookuptlsreportingdomain)
 - [lookupTlsReportingDomainRaw](ToolsControllerApi.md#lookuptlsreportingdomainraw)
 - [request](ToolsControllerApi.md#request)
+- [submitPublicSpamTest](ToolsControllerApi.md#submitpublicspamtest)
+- [submitPublicSpamTestRaw](ToolsControllerApi.md#submitpublicspamtestraw)
 - [testSmtpServer](ToolsControllerApi.md#testsmtpserver)
 - [testSmtpServerRaw](ToolsControllerApi.md#testsmtpserverraw)
 - [withMiddleware](ToolsControllerApi.md#withmiddleware)
@@ -489,6 +501,86 @@ Create a new email address using the fake email domains
 
 ___
 
+### createPublicDeviceRenderTest
+
+▸ **createPublicDeviceRenderTest**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+Creates an unauthenticated free email render test and returns a short-lived generated email address.
+Create a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePublicDeviceRenderTestRequest`](../interfaces/CreatePublicDeviceRenderTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+___
+
+### createPublicDeviceRenderTestRaw
+
+▸ **createPublicDeviceRenderTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+Creates an unauthenticated free email render test and returns a short-lived generated email address.
+Create a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePublicDeviceRenderTestRequest`](../interfaces/CreatePublicDeviceRenderTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+___
+
+### createPublicSpamTest
+
+▸ **createPublicSpamTest**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>
+
+Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+Create a public spam test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePublicSpamTestRequest`](../interfaces/CreatePublicSpamTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>
+
+___
+
+### createPublicSpamTestRaw
+
+▸ **createPublicSpamTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>\>
+
+Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+Create a public spam test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreatePublicSpamTestRequest`](../interfaces/CreatePublicSpamTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>\>
+
+___
+
 ### deleteNewFakeEmailAddress
 
 ▸ **deleteNewFakeEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
@@ -873,6 +965,126 @@ Get fake emails for an address
 
 ___
 
+### getPublicDeviceRenderTest
+
+▸ **getPublicDeviceRenderTest**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+Returns status for a free email render test and the public share redirect when the render run is ready.
+Get a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicDeviceRenderTestRequest`](../interfaces/GetPublicDeviceRenderTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+___
+
+### getPublicDeviceRenderTestRaw
+
+▸ **getPublicDeviceRenderTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+Returns status for a free email render test and the public share redirect when the render run is ready.
+Get a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicDeviceRenderTestRequest`](../interfaces/GetPublicDeviceRenderTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+___
+
+### getPublicSpamTest
+
+▸ **getPublicSpamTest**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>
+
+Returns public spam test run status, token, seed addresses, and free-limit state.
+Get a public spam test run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicSpamTestRequest`](../interfaces/GetPublicSpamTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>
+
+___
+
+### getPublicSpamTestRaw
+
+▸ **getPublicSpamTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>\>
+
+Returns public spam test run status, token, seed addresses, and free-limit state.
+Get a public spam test run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicSpamTestRequest`](../interfaces/GetPublicSpamTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>\>
+
+___
+
+### getPublicSpamTestResults
+
+▸ **getPublicSpamTestResults**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicSpamTestResultsDto`](../interfaces/PublicSpamTestResultsDto.md)\>
+
+Returns public spam test run status and any available inbox placement results.
+Get public spam test results
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicSpamTestResultsRequest`](../interfaces/GetPublicSpamTestResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicSpamTestResultsDto`](../interfaces/PublicSpamTestResultsDto.md)\>
+
+___
+
+### getPublicSpamTestResultsRaw
+
+▸ **getPublicSpamTestResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestResultsDto`](../interfaces/PublicSpamTestResultsDto.md)\>\>
+
+Returns public spam test run status and any available inbox placement results.
+Get public spam test results
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicSpamTestResultsRequest`](../interfaces/GetPublicSpamTestResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestResultsDto`](../interfaces/PublicSpamTestResultsDto.md)\>\>
+
+___
+
 ### lookupBimiDomain
 
 ▸ **lookupBimiDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`LookupBimiDomainResults`](../interfaces/LookupBimiDomainResults.md)\>
@@ -1195,6 +1407,46 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### submitPublicSpamTest
+
+▸ **submitPublicSpamTest**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>
+
+Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+Mark a public spam test as submitted
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicSpamTestRequest`](../interfaces/SubmitPublicSpamTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>
+
+___
+
+### submitPublicSpamTestRaw
+
+▸ **submitPublicSpamTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>\>
+
+Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+Mark a public spam test as submitted
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicSpamTestRequest`](../interfaces/SubmitPublicSpamTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicSpamTestRunDto`](../interfaces/PublicSpamTestRunDto.md)\>\>
 
 ___
 

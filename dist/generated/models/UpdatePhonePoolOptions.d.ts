@@ -20,13 +20,13 @@ export interface UpdatePhonePoolOptions {
      * @type {string}
      * @memberof UpdatePhonePoolOptions
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
      * @memberof UpdatePhonePoolOptions
      */
-    description?: string;
+    description?: string | null;
 }
 export declare function UpdatePhonePoolOptionsFromJSON(json: any): UpdatePhonePoolOptions;
 export declare function UpdatePhonePoolOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdatePhonePoolOptions;

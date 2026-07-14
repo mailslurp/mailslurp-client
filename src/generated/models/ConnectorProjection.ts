@@ -24,7 +24,7 @@ export interface ConnectorProjection {
    * @type {string}
    * @memberof ConnectorProjection
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -36,19 +36,13 @@ export interface ConnectorProjection {
    * @type {boolean}
    * @memberof ConnectorProjection
    */
-  enabled?: boolean;
+  enabled?: boolean | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorProjection
    */
   userId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  emailAddress?: string;
   /**
    *
    * @type {string}
@@ -61,6 +55,12 @@ export interface ConnectorProjection {
    * @memberof ConnectorProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  emailAddress?: string | null;
 }
 
 export function ConnectorProjectionFromJSON(json: any): ConnectorProjection {
@@ -79,11 +79,11 @@ export function ConnectorProjectionFromJSONTyped(
     id: json['id'],
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
     userId: json['userId'],
+    inboxId: json['inboxId'],
+    createdAt: new Date(json['createdAt']),
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
-    inboxId: json['inboxId'],
-    createdAt: new Date(json['createdAt']),
   };
 }
 
@@ -101,8 +101,8 @@ export function ConnectorProjectionToJSON(
     id: value.id,
     enabled: value.enabled,
     userId: value.userId,
-    emailAddress: value.emailAddress,
     inboxId: value.inboxId,
     createdAt: value.createdAt.toISOString(),
+    emailAddress: value.emailAddress,
   };
 }

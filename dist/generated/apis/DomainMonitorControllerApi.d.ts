@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CheckEmailAuthStackResults, CreateDomainMonitorAlertSinkOptions, CreateDomainMonitorOptions, DomainMonitorAlertSinkDto, DomainMonitorDto, DomainMonitorInsightsDto, DomainMonitorRunComparisonDto, DomainMonitorRunDto, DomainMonitorRunDueResult, DomainMonitorRunNowResult, DomainMonitorSeriesDto, DomainMonitorSummaryDto, UpdateDomainMonitorOptions } from '../models';
+import { CheckEmailAuthStackResults, CreateDomainMonitorAlertSinkOptions, CreateDomainMonitorOptions, DomainMonitorAlertSinkDto, DomainMonitorDto, DomainMonitorEmailVerificationDto, DomainMonitorInsightsDto, DomainMonitorObservedAuthSampleDto, DomainMonitorRunComparisonDto, DomainMonitorRunDto, DomainMonitorRunDueResult, DomainMonitorRunNowResult, DomainMonitorSeriesDto, DomainMonitorSummaryDto, UpdateDomainMonitorOptions } from '../models';
 export interface CompareDomainMonitorRunsRequest {
     monitorId: string;
     runId: string;
@@ -23,12 +23,23 @@ export interface CreateDomainMonitorAlertSinkRequest {
     monitorId: string;
     createDomainMonitorAlertSinkOptions: CreateDomainMonitorAlertSinkOptions;
 }
+export interface CreateDomainMonitorEmailVerificationAddressRequest {
+    monitorId: string;
+}
 export interface DeleteDomainMonitorRequest {
     monitorId: string;
 }
 export interface DeleteDomainMonitorAlertSinkRequest {
     monitorId: string;
     sinkId: string;
+}
+export interface DeleteDomainMonitorObservedAuthSampleRequest {
+    monitorId: string;
+    sampleId: string;
+}
+export interface ExportDomainMonitorRunResultsRequest {
+    monitorId: string;
+    runId: string;
 }
 export interface GetDomainMonitorRequest {
     monitorId: string;
@@ -40,10 +51,16 @@ export interface GetDomainMonitorAuthStackRequest {
     monitorId: string;
     dkimSelector?: string;
 }
+export interface GetDomainMonitorEmailVerificationRequest {
+    monitorId: string;
+}
 export interface GetDomainMonitorInsightsRequest {
     monitorId: string;
     since?: Date;
     before?: Date;
+}
+export interface GetDomainMonitorObservedAuthSamplesRequest {
+    monitorId: string;
 }
 export interface GetDomainMonitorRunRequest {
     monitorId: string;
@@ -105,6 +122,14 @@ export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
      */
     createDomainMonitorAlertSink(requestParameters: CreateDomainMonitorAlertSinkRequest, initOverrides?: RequestInit): Promise<DomainMonitorAlertSinkDto>;
     /**
+     * Create or rotate domain monitor email verification address
+     */
+    createDomainMonitorEmailVerificationAddressRaw(requestParameters: CreateDomainMonitorEmailVerificationAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainMonitorEmailVerificationDto>>;
+    /**
+     * Create or rotate domain monitor email verification address
+     */
+    createDomainMonitorEmailVerificationAddress(requestParameters: CreateDomainMonitorEmailVerificationAddressRequest, initOverrides?: RequestInit): Promise<DomainMonitorEmailVerificationDto>;
+    /**
      * Delete domain monitor
      */
     deleteDomainMonitorRaw(requestParameters: DeleteDomainMonitorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
@@ -120,6 +145,24 @@ export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
      * Delete monitor alert sink
      */
     deleteDomainMonitorAlertSink(requestParameters: DeleteDomainMonitorAlertSinkRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete domain monitor observed authentication sample
+     */
+    deleteDomainMonitorObservedAuthSampleRaw(requestParameters: DeleteDomainMonitorObservedAuthSampleRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete domain monitor observed authentication sample
+     */
+    deleteDomainMonitorObservedAuthSample(requestParameters: DeleteDomainMonitorObservedAuthSampleRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+     * Export monitor run results as CSV
+     */
+    exportDomainMonitorRunResultsRaw(requestParameters: ExportDomainMonitorRunResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+     * Export monitor run results as CSV
+     */
+    exportDomainMonitorRunResults(requestParameters: ExportDomainMonitorRunResultsRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Get domain monitor
      */
@@ -145,6 +188,14 @@ export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
      */
     getDomainMonitorAuthStack(requestParameters: GetDomainMonitorAuthStackRequest, initOverrides?: RequestInit): Promise<CheckEmailAuthStackResults>;
     /**
+     * Get domain monitor email verification setup
+     */
+    getDomainMonitorEmailVerificationRaw(requestParameters: GetDomainMonitorEmailVerificationRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainMonitorEmailVerificationDto>>;
+    /**
+     * Get domain monitor email verification setup
+     */
+    getDomainMonitorEmailVerification(requestParameters: GetDomainMonitorEmailVerificationRequest, initOverrides?: RequestInit): Promise<DomainMonitorEmailVerificationDto>;
+    /**
      * Get monitor insights
      */
     getDomainMonitorInsightsRaw(requestParameters: GetDomainMonitorInsightsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainMonitorInsightsDto>>;
@@ -152,6 +203,14 @@ export declare class DomainMonitorControllerApi extends runtime.BaseAPI {
      * Get monitor insights
      */
     getDomainMonitorInsights(requestParameters: GetDomainMonitorInsightsRequest, initOverrides?: RequestInit): Promise<DomainMonitorInsightsDto>;
+    /**
+     * List domain monitor observed authentication samples
+     */
+    getDomainMonitorObservedAuthSamplesRaw(requestParameters: GetDomainMonitorObservedAuthSamplesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<DomainMonitorObservedAuthSampleDto>>>;
+    /**
+     * List domain monitor observed authentication samples
+     */
+    getDomainMonitorObservedAuthSamples(requestParameters: GetDomainMonitorObservedAuthSamplesRequest, initOverrides?: RequestInit): Promise<Array<DomainMonitorObservedAuthSampleDto>>;
     /**
      * Get monitor run
      */

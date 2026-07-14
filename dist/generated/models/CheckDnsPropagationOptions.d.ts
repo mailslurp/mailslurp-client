@@ -32,13 +32,13 @@ export interface CheckDnsPropagationOptions {
      * @type {string}
      * @memberof CheckDnsPropagationOptions
      */
-    expectedValue?: string;
+    expectedValue?: string | null;
     /**
      *
      * @type {string}
      * @memberof CheckDnsPropagationOptions
      */
-    captchaToken?: string;
+    captchaToken?: string | null;
 }
 /**
  * @export

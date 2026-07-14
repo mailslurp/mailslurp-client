@@ -151,7 +151,7 @@ export interface EmailAuditAnalysisResult {
    * @type {EmailFeatureSupportResult}
    * @memberof EmailAuditAnalysisResult
    */
-  featureSupport?: EmailFeatureSupportResult;
+  featureSupport?: EmailFeatureSupportResult | null;
   /**
    *
    * @type {number}

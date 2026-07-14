@@ -26,11 +26,11 @@ function PageableObjectFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         offset: !(0, runtime_1.exists)(json, 'offset') ? undefined : json['offset'],
-        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
         unpaged: !(0, runtime_1.exists)(json, 'unpaged') ? undefined : json['unpaged'],
         sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
         paged: !(0, runtime_1.exists)(json, 'paged') ? undefined : json['paged'],
         pageNumber: !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
+        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
     };
 }
 exports.PageableObjectFromJSONTyped = PageableObjectFromJSONTyped;
@@ -43,11 +43,11 @@ function PageableObjectToJSON(value) {
     }
     return {
         offset: value.offset,
-        pageSize: value.pageSize,
         unpaged: value.unpaged,
         sort: (0, _1.SortObjectToJSON)(value.sort),
         paged: value.paged,
         pageNumber: value.pageNumber,
+        pageSize: value.pageSize,
     };
 }
 exports.PageableObjectToJSON = PageableObjectToJSON;

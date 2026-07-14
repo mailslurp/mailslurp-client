@@ -20,13 +20,13 @@ export interface PhoneNumberValidationDto {
      * @type {string}
      * @memberof PhoneNumberValidationDto
      */
-    countryCode?: string;
+    countryCode?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberValidationDto
      */
-    countryPrefix?: string;
+    countryPrefix?: string | null;
     /**
      *
      * @type {string}
@@ -44,7 +44,7 @@ export interface PhoneNumberValidationDto {
      * @type {Array<string>}
      * @memberof PhoneNumberValidationDto
      */
-    validationErrors?: Array<string>;
+    validationErrors?: Array<string> | null;
 }
 export declare function PhoneNumberValidationDtoFromJSON(json: any): PhoneNumberValidationDto;
 export declare function PhoneNumberValidationDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberValidationDto;

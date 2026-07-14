@@ -28,6 +28,7 @@ var PhonePoolLeaseDtoPhoneCountryEnum;
     PhonePoolLeaseDtoPhoneCountryEnum["EE"] = "EE";
     PhonePoolLeaseDtoPhoneCountryEnum["HK"] = "HK";
     PhonePoolLeaseDtoPhoneCountryEnum["PL"] = "PL";
+    PhonePoolLeaseDtoPhoneCountryEnum["CH"] = "CH";
     PhonePoolLeaseDtoPhoneCountryEnum["PT"] = "PT";
     PhonePoolLeaseDtoPhoneCountryEnum["NL"] = "NL";
     PhonePoolLeaseDtoPhoneCountryEnum["IL"] = "IL";
@@ -54,7 +55,9 @@ function PhonePoolLeaseDtoFromJSONTyped(json, ignoreDiscriminator) {
         leasedAt: new Date(json['leasedAt']),
         expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
             ? undefined
-            : new Date(json['expiresAt']),
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
     };
 }
 exports.PhonePoolLeaseDtoFromJSONTyped = PhonePoolLeaseDtoFromJSONTyped;
@@ -75,7 +78,11 @@ function PhonePoolLeaseDtoToJSON(value) {
         leaseName: value.leaseName,
         leaseOwner: value.leaseOwner,
         leasedAt: value.leasedAt.toISOString(),
-        expiresAt: value.expiresAt === undefined ? undefined : value.expiresAt.toISOString(),
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
     };
 }
 exports.PhonePoolLeaseDtoToJSON = PhonePoolLeaseDtoToJSON;

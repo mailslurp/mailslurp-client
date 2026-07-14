@@ -42,7 +42,7 @@ export interface PhoneProviderCapabilitiesResult {
    * @type {string}
    * @memberof PhoneProviderCapabilitiesResult
    */
-  warning?: string;
+  warning?: string | null;
 }
 
 /**
@@ -57,6 +57,7 @@ export enum PhoneProviderCapabilitiesResultPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',

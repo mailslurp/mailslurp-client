@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Simulation options for email deliverability tests
+ * Simulation options for email load tests
  * @export
  * @interface DeliverabilitySimulationEmailOptions
  */

@@ -66,7 +66,7 @@ export interface SentSmsProjection {
    * @type {string}
    * @memberof SentSmsProjection
    */
-  replyToId?: string;
+  replyToId?: string | null;
 }
 
 export function SentSmsProjectionFromJSON(json: any): SentSmsProjection {

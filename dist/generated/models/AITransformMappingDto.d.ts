@@ -45,13 +45,13 @@ export interface AITransformMappingDto {
      * @type {string}
      * @memberof AITransformMappingDto
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
      * @memberof AITransformMappingDto
      */
-    entityId?: string;
+    entityId?: string | null;
     /**
      *
      * @type {string}

@@ -32,19 +32,19 @@ export interface WaitForSingleSmsOptions {
      * @type {boolean}
      * @memberof WaitForSingleSmsOptions
      */
-    unreadOnly?: boolean;
+    unreadOnly?: boolean | null;
     /**
      *
      * @type {Date}
      * @memberof WaitForSingleSmsOptions
      */
-    before?: Date;
+    before?: Date | null;
     /**
      *
      * @type {Date}
      * @memberof WaitForSingleSmsOptions
      */
-    since?: Date;
+    since?: Date | null;
     /**
      *
      * @type {string}
@@ -56,7 +56,7 @@ export interface WaitForSingleSmsOptions {
      * @type {number}
      * @memberof WaitForSingleSmsOptions
      */
-    delay?: number;
+    delay?: number | null;
 }
 /**
  * @export

@@ -20,6 +20,8 @@
 
 ### Methods
 
+- [checkEmailDomainReputation](EmailVerificationControllerApi.md#checkemaildomainreputation)
+- [checkEmailDomainReputationRaw](EmailVerificationControllerApi.md#checkemaildomainreputationraw)
 - [deleteAllValidationRequests](EmailVerificationControllerApi.md#deleteallvalidationrequests)
 - [deleteAllValidationRequestsRaw](EmailVerificationControllerApi.md#deleteallvalidationrequestsraw)
 - [deleteValidationRequest](EmailVerificationControllerApi.md#deletevalidationrequest)
@@ -62,6 +64,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### checkEmailDomainReputation
+
+▸ **checkEmailDomainReputation**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailDomainReputationResult`](../interfaces/EmailDomainReputationResult.md)\>
+
+Run reputation-oriented checks for an email address, domain, IP address, or MX host. This is separate from address validation.
+Check email/domain reputation signals including configured DNS blacklists.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailDomainReputationRequest`](../interfaces/CheckEmailDomainReputationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailDomainReputationResult`](../interfaces/EmailDomainReputationResult.md)\>
+
+___
+
+### checkEmailDomainReputationRaw
+
+▸ **checkEmailDomainReputationRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDomainReputationResult`](../interfaces/EmailDomainReputationResult.md)\>\>
+
+Run reputation-oriented checks for an email address, domain, IP address, or MX host. This is separate from address validation.
+Check email/domain reputation signals including configured DNS blacklists.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailDomainReputationRequest`](../interfaces/CheckEmailDomainReputationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDomainReputationResult`](../interfaces/EmailDomainReputationResult.md)\>\>
+
+___
 
 ### deleteAllValidationRequests
 

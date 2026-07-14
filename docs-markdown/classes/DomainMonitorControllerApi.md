@@ -25,18 +25,28 @@
 - [createDomainMonitor](DomainMonitorControllerApi.md#createdomainmonitor)
 - [createDomainMonitorAlertSink](DomainMonitorControllerApi.md#createdomainmonitoralertsink)
 - [createDomainMonitorAlertSinkRaw](DomainMonitorControllerApi.md#createdomainmonitoralertsinkraw)
+- [createDomainMonitorEmailVerificationAddress](DomainMonitorControllerApi.md#createdomainmonitoremailverificationaddress)
+- [createDomainMonitorEmailVerificationAddressRaw](DomainMonitorControllerApi.md#createdomainmonitoremailverificationaddressraw)
 - [createDomainMonitorRaw](DomainMonitorControllerApi.md#createdomainmonitorraw)
 - [deleteDomainMonitor](DomainMonitorControllerApi.md#deletedomainmonitor)
 - [deleteDomainMonitorAlertSink](DomainMonitorControllerApi.md#deletedomainmonitoralertsink)
 - [deleteDomainMonitorAlertSinkRaw](DomainMonitorControllerApi.md#deletedomainmonitoralertsinkraw)
+- [deleteDomainMonitorObservedAuthSample](DomainMonitorControllerApi.md#deletedomainmonitorobservedauthsample)
+- [deleteDomainMonitorObservedAuthSampleRaw](DomainMonitorControllerApi.md#deletedomainmonitorobservedauthsampleraw)
 - [deleteDomainMonitorRaw](DomainMonitorControllerApi.md#deletedomainmonitorraw)
+- [exportDomainMonitorRunResults](DomainMonitorControllerApi.md#exportdomainmonitorrunresults)
+- [exportDomainMonitorRunResultsRaw](DomainMonitorControllerApi.md#exportdomainmonitorrunresultsraw)
 - [getDomainMonitor](DomainMonitorControllerApi.md#getdomainmonitor)
 - [getDomainMonitorAlertSinks](DomainMonitorControllerApi.md#getdomainmonitoralertsinks)
 - [getDomainMonitorAlertSinksRaw](DomainMonitorControllerApi.md#getdomainmonitoralertsinksraw)
 - [getDomainMonitorAuthStack](DomainMonitorControllerApi.md#getdomainmonitorauthstack)
 - [getDomainMonitorAuthStackRaw](DomainMonitorControllerApi.md#getdomainmonitorauthstackraw)
+- [getDomainMonitorEmailVerification](DomainMonitorControllerApi.md#getdomainmonitoremailverification)
+- [getDomainMonitorEmailVerificationRaw](DomainMonitorControllerApi.md#getdomainmonitoremailverificationraw)
 - [getDomainMonitorInsights](DomainMonitorControllerApi.md#getdomainmonitorinsights)
 - [getDomainMonitorInsightsRaw](DomainMonitorControllerApi.md#getdomainmonitorinsightsraw)
+- [getDomainMonitorObservedAuthSamples](DomainMonitorControllerApi.md#getdomainmonitorobservedauthsamples)
+- [getDomainMonitorObservedAuthSamplesRaw](DomainMonitorControllerApi.md#getdomainmonitorobservedauthsamplesraw)
 - [getDomainMonitorRaw](DomainMonitorControllerApi.md#getdomainmonitorraw)
 - [getDomainMonitorRun](DomainMonitorControllerApi.md#getdomainmonitorrun)
 - [getDomainMonitorRunRaw](DomainMonitorControllerApi.md#getdomainmonitorrunraw)
@@ -182,6 +192,44 @@ Create alert sink for monitor
 
 ___
 
+### createDomainMonitorEmailVerificationAddress
+
+▸ **createDomainMonitorEmailVerificationAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>
+
+Create or rotate domain monitor email verification address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateDomainMonitorEmailVerificationAddressRequest`](../interfaces/CreateDomainMonitorEmailVerificationAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>
+
+___
+
+### createDomainMonitorEmailVerificationAddressRaw
+
+▸ **createDomainMonitorEmailVerificationAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>\>
+
+Create or rotate domain monitor email verification address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateDomainMonitorEmailVerificationAddressRequest`](../interfaces/CreateDomainMonitorEmailVerificationAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>\>
+
+___
+
 ### createDomainMonitorRaw
 
 ▸ **createDomainMonitorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorDto`](../interfaces/DomainMonitorDto.md)\>\>
@@ -258,6 +306,44 @@ Delete monitor alert sink
 
 ___
 
+### deleteDomainMonitorObservedAuthSample
+
+▸ **deleteDomainMonitorObservedAuthSample**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete domain monitor observed authentication sample
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteDomainMonitorObservedAuthSampleRequest`](../interfaces/DeleteDomainMonitorObservedAuthSampleRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteDomainMonitorObservedAuthSampleRaw
+
+▸ **deleteDomainMonitorObservedAuthSampleRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete domain monitor observed authentication sample
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteDomainMonitorObservedAuthSampleRequest`](../interfaces/DeleteDomainMonitorObservedAuthSampleRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
 ### deleteDomainMonitorRaw
 
 ▸ **deleteDomainMonitorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
@@ -269,6 +355,46 @@ Delete domain monitor
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`DeleteDomainMonitorRequest`](../interfaces/DeleteDomainMonitorRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### exportDomainMonitorRunResults
+
+▸ **exportDomainMonitorRunResults**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+Export monitor run results as CSV
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportDomainMonitorRunResultsRequest`](../interfaces/ExportDomainMonitorRunResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### exportDomainMonitorRunResultsRaw
+
+▸ **exportDomainMonitorRunResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Export one row per domain monitor check, including run-level score metadata and per-check pass, fail, or not-checked status.
+Export monitor run results as CSV
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportDomainMonitorRunResultsRequest`](../interfaces/ExportDomainMonitorRunResultsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -372,6 +498,44 @@ Get current auth stack for monitor domain
 
 ___
 
+### getDomainMonitorEmailVerification
+
+▸ **getDomainMonitorEmailVerification**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>
+
+Get domain monitor email verification setup
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorEmailVerificationRequest`](../interfaces/GetDomainMonitorEmailVerificationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>
+
+___
+
+### getDomainMonitorEmailVerificationRaw
+
+▸ **getDomainMonitorEmailVerificationRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>\>
+
+Get domain monitor email verification setup
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorEmailVerificationRequest`](../interfaces/GetDomainMonitorEmailVerificationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorEmailVerificationDto`](../interfaces/DomainMonitorEmailVerificationDto.md)\>\>
+
+___
+
 ### getDomainMonitorInsights
 
 ▸ **getDomainMonitorInsights**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorInsightsDto`](../interfaces/DomainMonitorInsightsDto.md)\>
@@ -407,6 +571,44 @@ Get monitor insights
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorInsightsDto`](../interfaces/DomainMonitorInsightsDto.md)\>\>
+
+___
+
+### getDomainMonitorObservedAuthSamples
+
+▸ **getDomainMonitorObservedAuthSamples**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainMonitorObservedAuthSampleDto`](../interfaces/DomainMonitorObservedAuthSampleDto.md)[]\>
+
+List domain monitor observed authentication samples
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorObservedAuthSamplesRequest`](../interfaces/GetDomainMonitorObservedAuthSamplesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainMonitorObservedAuthSampleDto`](../interfaces/DomainMonitorObservedAuthSampleDto.md)[]\>
+
+___
+
+### getDomainMonitorObservedAuthSamplesRaw
+
+▸ **getDomainMonitorObservedAuthSamplesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorObservedAuthSampleDto`](../interfaces/DomainMonitorObservedAuthSampleDto.md)[]\>\>
+
+List domain monitor observed authentication samples
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainMonitorObservedAuthSamplesRequest`](../interfaces/GetDomainMonitorObservedAuthSamplesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainMonitorObservedAuthSampleDto`](../interfaces/DomainMonitorObservedAuthSampleDto.md)[]\>\>
 
 ___
 

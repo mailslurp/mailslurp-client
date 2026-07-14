@@ -24,25 +24,25 @@ export interface CreatePortalOptions {
    * @type {string}
    * @memberof CreatePortalOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreatePortalOptions
    */
-  domainId?: string;
+  domainId?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreatePortalOptions
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreatePortalOptions
    */
-  linkHelp?: string;
+  linkHelp?: string | null;
 }
 
 export function CreatePortalOptionsFromJSON(json: any): CreatePortalOptions {

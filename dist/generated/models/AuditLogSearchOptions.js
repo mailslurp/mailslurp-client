@@ -24,8 +24,16 @@ function AuditLogSearchOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        since: !(0, runtime_1.exists)(json, 'since') ? undefined : new Date(json['since']),
-        before: !(0, runtime_1.exists)(json, 'before') ? undefined : new Date(json['before']),
+        since: !(0, runtime_1.exists)(json, 'since')
+            ? undefined
+            : json['since'] === null
+                ? null
+                : new Date(json['since']),
+        before: !(0, runtime_1.exists)(json, 'before')
+            ? undefined
+            : json['before'] === null
+                ? null
+                : new Date(json['before']),
         action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
         userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
         actorUserId: !(0, runtime_1.exists)(json, 'actorUserId') ? undefined : json['actorUserId'],
@@ -53,8 +61,16 @@ function AuditLogSearchOptionsToJSON(value) {
         return null;
     }
     return {
-        since: value.since === undefined ? undefined : value.since.toISOString(),
-        before: value.before === undefined ? undefined : value.before.toISOString(),
+        since: value.since === undefined
+            ? undefined
+            : value.since === null
+                ? null
+                : value.since.toISOString(),
+        before: value.before === undefined
+            ? undefined
+            : value.before === null
+                ? null
+                : value.before.toISOString(),
         action: value.action,
         userId: value.userId,
         actorUserId: value.actorUserId,

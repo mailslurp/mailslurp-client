@@ -24,13 +24,13 @@ export interface UpdatePhoneNumberOptions {
    * @type {string}
    * @memberof UpdatePhoneNumberOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof UpdatePhoneNumberOptions
    */
-  description?: string;
+  description?: string | null;
 }
 
 export function UpdatePhoneNumberOptionsFromJSON(

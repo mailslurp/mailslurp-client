@@ -32,25 +32,25 @@ export interface DevicePreviewScreenshotDto {
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    targetId?: string;
+    targetId?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    variant?: string;
+    variant?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    title?: string;
+    title?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    description?: string;
+    description?: string | null;
     /**
      *
      * @type {boolean}
@@ -68,49 +68,85 @@ export interface DevicePreviewScreenshotDto {
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    storageKey?: string;
+    storageKey?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    accessUrl?: string;
+    storageProvider?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    liveViewUrl?: string;
+    storageBucket?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    sessionId?: string;
+    storageObjectKey?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    browserContextId?: string;
+    storageRegion?: string | null;
     /**
      *
      * @type {string}
      * @memberof DevicePreviewScreenshotDto
      */
-    deepLinkUrl?: string;
+    storageEndpoint?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewScreenshotDto
+     */
+    storagePublicBaseUrl?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewScreenshotDto
+     */
+    accessUrl?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewScreenshotDto
+     */
+    liveViewUrl?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewScreenshotDto
+     */
+    sessionId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewScreenshotDto
+     */
+    browserContextId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewScreenshotDto
+     */
+    deepLinkUrl?: string | null;
     /**
      *
      * @type {number}
      * @memberof DevicePreviewScreenshotDto
      */
-    width?: number;
+    width?: number | null;
     /**
      *
      * @type {number}
      * @memberof DevicePreviewScreenshotDto
      */
-    height?: number;
+    height?: number | null;
     /**
      *
      * @type {Date}

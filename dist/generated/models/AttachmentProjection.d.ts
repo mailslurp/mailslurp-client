@@ -34,12 +34,6 @@ export interface AttachmentProjection {
      */
     contentLength?: number | null;
     /**
-     * Content type of attachment.
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    contentType?: string | null;
-    /**
      *
      * @type {string}
      * @memberof AttachmentProjection
@@ -50,13 +44,7 @@ export interface AttachmentProjection {
      * @type {string}
      * @memberof AttachmentProjection
      */
-    inboxId?: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
-    updatedAt: Date;
+    inboxId?: string | null;
     /**
      *
      * @type {Date}
@@ -70,11 +58,23 @@ export interface AttachmentProjection {
      */
     contentId?: string | null;
     /**
+     *
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    updatedAt: Date;
+    /**
      * Attachment ID
      * @type {string}
      * @memberof AttachmentProjection
      */
     attachmentId: string;
+    /**
+     * Content type of attachment.
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    contentType?: string | null;
 }
 export declare function AttachmentProjectionFromJSON(json: any): AttachmentProjection;
 export declare function AttachmentProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentProjection;

@@ -48,7 +48,7 @@ export interface ProviderSettings {
    * @type {boolean}
    * @memberof ProviderSettings
    */
-  imapStartTls?: boolean;
+  imapStartTls?: boolean | null;
   /**
    *
    * @type {string}
@@ -72,7 +72,7 @@ export interface ProviderSettings {
    * @type {boolean}
    * @memberof ProviderSettings
    */
-  smtpStartTls?: boolean;
+  smtpStartTls?: boolean | null;
 }
 
 /**

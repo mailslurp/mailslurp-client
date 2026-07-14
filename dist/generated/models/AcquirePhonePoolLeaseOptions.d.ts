@@ -20,25 +20,25 @@ export interface AcquirePhonePoolLeaseOptions {
      * @type {string}
      * @memberof AcquirePhonePoolLeaseOptions
      */
-    leaseName?: string;
+    leaseName?: string | null;
     /**
      *
      * @type {string}
      * @memberof AcquirePhonePoolLeaseOptions
      */
-    leaseOwner?: string;
+    leaseOwner?: string | null;
     /**
      *
      * @type {number}
      * @memberof AcquirePhonePoolLeaseOptions
      */
-    leaseDurationMillis?: number;
+    leaseDurationMillis?: number | null;
     /**
      *
      * @type {number}
      * @memberof AcquirePhonePoolLeaseOptions
      */
-    acquireTimeoutMillis?: number;
+    acquireTimeoutMillis?: number | null;
 }
 export declare function AcquirePhonePoolLeaseOptionsFromJSON(json: any): AcquirePhonePoolLeaseOptions;
 export declare function AcquirePhonePoolLeaseOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AcquirePhonePoolLeaseOptions;

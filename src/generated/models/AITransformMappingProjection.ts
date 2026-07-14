@@ -24,7 +24,7 @@ export interface AITransformMappingProjection {
    * @type {string}
    * @memberof AITransformMappingProjection
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -48,6 +48,12 @@ export interface AITransformMappingProjection {
    * @type {string}
    * @memberof AITransformMappingProjection
    */
+  entityId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformMappingProjection
+   */
   entityType: AITransformMappingProjectionEntityTypeEnum;
   /**
    *
@@ -55,12 +61,6 @@ export interface AITransformMappingProjection {
    * @memberof AITransformMappingProjection
    */
   aiTransformId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformMappingProjection
-   */
-  entityId?: string;
   /**
    *
    * @type {string}
@@ -119,9 +119,9 @@ export function AITransformMappingProjectionFromJSONTyped(
     id: json['id'],
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
+    entityId: !exists(json, 'entityId') ? undefined : json['entityId'],
     entityType: json['entityType'],
     aiTransformId: json['aiTransformId'],
-    entityId: !exists(json, 'entityId') ? undefined : json['entityId'],
     contentSelector: !exists(json, 'contentSelector')
       ? undefined
       : json['contentSelector'],
@@ -145,9 +145,9 @@ export function AITransformMappingProjectionToJSON(
     id: value.id,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
+    entityId: value.entityId,
     entityType: value.entityType,
     aiTransformId: value.aiTransformId,
-    entityId: value.entityId,
     contentSelector: value.contentSelector,
     triggerSelector: value.triggerSelector,
   };

@@ -21,19 +21,19 @@ export interface ConnectorSyncRequestResult {
      * @type {ConnectorSyncResult}
      * @memberof ConnectorSyncRequestResult
      */
-    syncResult?: ConnectorSyncResult;
+    syncResult?: ConnectorSyncResult | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorSyncRequestResult
      */
-    exception?: string;
+    exception?: string | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorSyncRequestResult
      */
-    eventId?: string;
+    eventId?: string | null;
 }
 export declare function ConnectorSyncRequestResultFromJSON(json: any): ConnectorSyncRequestResult;
 export declare function ConnectorSyncRequestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSyncRequestResult;

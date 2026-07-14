@@ -157,7 +157,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+     * Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
      * Create deliverability simulation job
      */
     DeliverabilityTestControllerApi.prototype.createDeliverabilitySimulationJobRaw = function (requestParameters, initOverrides) {
@@ -197,7 +197,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+     * Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
      * Create deliverability simulation job
      */
     DeliverabilityTestControllerApi.prototype.createDeliverabilitySimulationJob = function (requestParameters, initOverrides) {
@@ -215,8 +215,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-     * Create deliverability/load test
+     * Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+     * Create load test
      */
     DeliverabilityTestControllerApi.prototype.createDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -251,8 +251,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-     * Create deliverability/load test
+     * Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+     * Create load test
      */
     DeliverabilityTestControllerApi.prototype.createDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -270,7 +270,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Delete test and all persisted entity-level results.
-     * Delete deliverability/load test
+     * Delete load test
      */
     DeliverabilityTestControllerApi.prototype.deleteDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -304,7 +304,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Delete test and all persisted entity-level results.
-     * Delete deliverability/load test
+     * Delete load test
      */
     DeliverabilityTestControllerApi.prototype.deleteDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -321,8 +321,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-     * Duplicate deliverability/load test
+     * Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+     * Duplicate load test
      */
     DeliverabilityTestControllerApi.prototype.duplicateDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -355,8 +355,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-     * Duplicate deliverability/load test
+     * Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+     * Duplicate load test
      */
     DeliverabilityTestControllerApi.prototype.duplicateDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -373,8 +373,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-     * Export deliverability/load test report as PDF
+     * Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+     * Export load-test report as PDF
      */
     DeliverabilityTestControllerApi.prototype.exportDeliverabilityTestReportRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -405,8 +405,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-     * Export deliverability/load test report as PDF
+     * Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+     * Export load-test report as PDF
      */
     DeliverabilityTestControllerApi.prototype.exportDeliverabilityTestReport = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -422,7 +422,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-     * Export deliverability/load test entity results as CSV
+     * Export load-test entity results as CSV
      */
     DeliverabilityTestControllerApi.prototype.exportDeliverabilityTestResultsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -457,7 +457,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-     * Export deliverability/load test entity results as CSV
+     * Export load-test entity results as CSV
      */
     DeliverabilityTestControllerApi.prototype.exportDeliverabilityTestResults = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -720,8 +720,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get deliverability test configuration and latest progress counters.
-     * Get deliverability/load test
+     * Get load-test configuration and latest progress counters.
+     * Get load test
      */
     DeliverabilityTestControllerApi.prototype.getDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -754,8 +754,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get deliverability test configuration and latest progress counters.
-     * Get deliverability/load test
+     * Get load-test configuration and latest progress counters.
+     * Get load test
      */
     DeliverabilityTestControllerApi.prototype.getDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -773,7 +773,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Get paged per-entity expectation results with optional matched/unmatched filtering.
-     * Get deliverability/load test entity results
+     * Get load-test entity results
      */
     DeliverabilityTestControllerApi.prototype.getDeliverabilityTestResultsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -819,7 +819,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Get paged per-entity expectation results with optional matched/unmatched filtering.
-     * Get deliverability/load test entity results
+     * Get load-test entity results
      */
     DeliverabilityTestControllerApi.prototype.getDeliverabilityTestResults = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -836,8 +836,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * List deliverability tests for the authenticated account.
-     * List deliverability/load tests
+     * List load tests for the authenticated account.
+     * List load tests
      */
     DeliverabilityTestControllerApi.prototype.getDeliverabilityTestsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -875,8 +875,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * List deliverability tests for the authenticated account.
-     * List deliverability/load tests
+     * List load tests for the authenticated account.
+     * List load tests
      */
     DeliverabilityTestControllerApi.prototype.getDeliverabilityTests = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -893,7 +893,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get the most recent simulation job for a deliverability test.
+     * Get the most recent simulation job for a load test.
      * Get latest deliverability simulation job
      */
     DeliverabilityTestControllerApi.prototype.getLatestDeliverabilitySimulationJobRaw = function (requestParameters, initOverrides) {
@@ -927,7 +927,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get the most recent simulation job for a deliverability test.
+     * Get the most recent simulation job for a load test.
      * Get latest deliverability simulation job
      */
     DeliverabilityTestControllerApi.prototype.getLatestDeliverabilitySimulationJob = function (requestParameters, initOverrides) {
@@ -1003,8 +1003,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Pause a RUNNING or SCHEDULED deliverability test.
-     * Pause deliverability/load test
+     * Pause a RUNNING or SCHEDULED load test.
+     * Pause load test
      */
     DeliverabilityTestControllerApi.prototype.pauseDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1037,8 +1037,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Pause a RUNNING or SCHEDULED deliverability test.
-     * Pause deliverability/load test
+     * Pause a RUNNING or SCHEDULED load test.
+     * Pause load test
      */
     DeliverabilityTestControllerApi.prototype.pauseDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1056,7 +1056,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-     * Poll deliverability/load test status
+     * Poll load-test status
      */
     DeliverabilityTestControllerApi.prototype.pollDeliverabilityTestStatusRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1090,7 +1090,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-     * Poll deliverability/load test status
+     * Poll load-test status
      */
     DeliverabilityTestControllerApi.prototype.pollDeliverabilityTestStatus = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1166,7 +1166,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Start a CREATED test or resume a PAUSED/SCHEDULED test.
-     * Start or resume deliverability/load test
+     * Start or resume load test
      */
     DeliverabilityTestControllerApi.prototype.startDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1200,7 +1200,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Start a CREATED test or resume a PAUSED/SCHEDULED test.
-     * Start or resume deliverability/load test
+     * Start or resume load test
      */
     DeliverabilityTestControllerApi.prototype.startDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1217,8 +1217,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Stop a deliverability test and mark it terminal.
-     * Stop deliverability/load test
+     * Stop a load test and mark it terminal.
+     * Stop load test
      */
     DeliverabilityTestControllerApi.prototype.stopDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1251,8 +1251,8 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Stop a deliverability test and mark it terminal.
-     * Stop deliverability/load test
+     * Stop a load test and mark it terminal.
+     * Stop load test
      */
     DeliverabilityTestControllerApi.prototype.stopDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1270,7 +1270,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Update metadata, timeout, and expectations for a non-running non-terminal test.
-     * Update deliverability/load test
+     * Update load test
      */
     DeliverabilityTestControllerApi.prototype.updateDeliverabilityTestRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1310,7 +1310,7 @@ var DeliverabilityTestControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Update metadata, timeout, and expectations for a non-running non-terminal test.
-     * Update deliverability/load test
+     * Update load test
      */
     DeliverabilityTestControllerApi.prototype.updateDeliverabilityTest = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, ExtractCodesOptions, ExtractCodesResult, PageSentSmsProjection, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, SmsSendOptions, UnreadCount } from '../models';
+import { CountDto, ExtractCodesOptions, ExtractCodesResult, PageSentSmsProjection, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsMessageMediaDto, SmsReplyOptions, SmsSendOptions, UnreadCount } from '../models';
 export interface DeleteSentSmsMessageRequest {
     sentSmsId: string;
 }
@@ -22,6 +22,12 @@ export interface DeleteSmsMessageRequest {
 }
 export interface DeleteSmsMessagesRequest {
     phoneNumberId?: string;
+}
+export interface DownloadSmsMediaRequest {
+    mediaId: string;
+}
+export interface DownloadSmsMediaBase64Request {
+    mediaId: string;
 }
 export interface GetAllSmsMessagesRequest {
     phoneNumber?: string;
@@ -52,6 +58,12 @@ export interface GetSentSmsMessagesPaginatedRequest {
 export interface GetSmsCodesRequest {
     smsId: string;
     extractCodesOptions?: ExtractCodesOptions;
+}
+export interface GetSmsMediaRequest {
+    smsId: string;
+}
+export interface GetSmsMediaByIdRequest {
+    mediaId: string;
 }
 export interface GetSmsMessageRequest {
     smsId: string;
@@ -123,6 +135,18 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
     deleteSmsMessages(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      */
+    downloadSmsMediaRaw(requestParameters: DownloadSmsMediaRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     */
+    downloadSmsMedia(requestParameters: DownloadSmsMediaRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     */
+    downloadSmsMediaBase64Raw(requestParameters: DownloadSmsMediaBase64Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     */
+    downloadSmsMediaBase64(requestParameters: DownloadSmsMediaBase64Request, initOverrides?: RequestInit): Promise<void>;
+    /**
+     */
     getAllSmsMessagesRaw(requestParameters: GetAllSmsMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsProjection>>;
     /**
      */
@@ -187,6 +211,18 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get SMS count
      */
     getSmsCount(initOverrides?: RequestInit): Promise<CountDto>;
+    /**
+     */
+    getSmsMediaRaw(requestParameters: GetSmsMediaRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<SmsMessageMediaDto>>>;
+    /**
+     */
+    getSmsMedia(requestParameters: GetSmsMediaRequest, initOverrides?: RequestInit): Promise<Array<SmsMessageMediaDto>>;
+    /**
+     */
+    getSmsMediaByIdRaw(requestParameters: GetSmsMediaByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsMessageMediaDto>>;
+    /**
+     */
+    getSmsMediaById(requestParameters: GetSmsMediaByIdRequest, initOverrides?: RequestInit): Promise<SmsMessageMediaDto>;
     /**
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.

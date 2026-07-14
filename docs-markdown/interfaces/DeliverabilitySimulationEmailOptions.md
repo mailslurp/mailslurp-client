@@ -2,7 +2,7 @@
 
 # Interface: DeliverabilitySimulationEmailOptions
 
-Simulation options for email deliverability tests
+Simulation options for email load tests
 
 **`Export`**
 

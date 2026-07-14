@@ -27,20 +27,24 @@ function EmailThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         sender: !(0, runtime_1.exists)(json, 'sender')
             ? undefined
             : (0, _1.SenderProjectionFromJSON)(json['sender']),
         recipients: !(0, runtime_1.exists)(json, 'recipients')
             ? undefined
             : (0, _1.EmailRecipientsProjectionFromJSON)(json['recipients']),
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        updatedAt: new Date(json['updatedAt']),
-        createdAt: new Date(json['createdAt']),
         to: json['to'],
+        createdAt: new Date(json['createdAt']),
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        updatedAt: new Date(json['updatedAt']),
+        lastSender: !(0, runtime_1.exists)(json, 'lastSender')
+            ? undefined
+            : (0, _1.SenderProjectionFromJSON)(json['lastSender']),
+        lastFrom: !(0, runtime_1.exists)(json, 'lastFrom') ? undefined : json['lastFrom'],
         hasAttachments: json['hasAttachments'],
         unread: json['unread'],
         messageCount: json['messageCount'],
@@ -52,11 +56,9 @@ function EmailThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
             : json['lastTextExcerpt'],
         lastCreatedAt: !(0, runtime_1.exists)(json, 'lastCreatedAt')
             ? undefined
-            : new Date(json['lastCreatedAt']),
-        lastFrom: !(0, runtime_1.exists)(json, 'lastFrom') ? undefined : json['lastFrom'],
-        lastSender: !(0, runtime_1.exists)(json, 'lastSender')
-            ? undefined
-            : (0, _1.SenderProjectionFromJSON)(json['lastSender']),
+            : json['lastCreatedAt'] === null
+                ? null
+                : new Date(json['lastCreatedAt']),
     };
 }
 exports.EmailThreadProjectionFromJSONTyped = EmailThreadProjectionFromJSONTyped;
@@ -70,16 +72,18 @@ function EmailThreadProjectionToJSON(value) {
     return {
         id: value.id,
         from: value.from,
-        subject: value.subject,
         sender: (0, _1.SenderProjectionToJSON)(value.sender),
         recipients: (0, _1.EmailRecipientsProjectionToJSON)(value.recipients),
+        subject: value.subject,
         userId: value.userId,
         inboxId: value.inboxId,
-        updatedAt: value.updatedAt.toISOString(),
-        createdAt: value.createdAt.toISOString(),
         to: value.to,
+        createdAt: value.createdAt.toISOString(),
         cc: value.cc,
         bcc: value.bcc,
+        updatedAt: value.updatedAt.toISOString(),
+        lastSender: (0, _1.SenderProjectionToJSON)(value.lastSender),
+        lastFrom: value.lastFrom,
         hasAttachments: value.hasAttachments,
         unread: value.unread,
         messageCount: value.messageCount,
@@ -87,9 +91,9 @@ function EmailThreadProjectionToJSON(value) {
         lastTextExcerpt: value.lastTextExcerpt,
         lastCreatedAt: value.lastCreatedAt === undefined
             ? undefined
-            : value.lastCreatedAt.toISOString(),
-        lastFrom: value.lastFrom,
-        lastSender: (0, _1.SenderProjectionToJSON)(value.lastSender),
+            : value.lastCreatedAt === null
+                ? null
+                : value.lastCreatedAt.toISOString(),
     };
 }
 exports.EmailThreadProjectionToJSON = EmailThreadProjectionToJSON;

@@ -24,7 +24,13 @@ DevicePreviewScreenshotDto
 - [runId](DevicePreviewScreenshotDto.md#runid)
 - [screenshotId](DevicePreviewScreenshotDto.md#screenshotid)
 - [sessionId](DevicePreviewScreenshotDto.md#sessionid)
+- [storageBucket](DevicePreviewScreenshotDto.md#storagebucket)
+- [storageEndpoint](DevicePreviewScreenshotDto.md#storageendpoint)
 - [storageKey](DevicePreviewScreenshotDto.md#storagekey)
+- [storageObjectKey](DevicePreviewScreenshotDto.md#storageobjectkey)
+- [storageProvider](DevicePreviewScreenshotDto.md#storageprovider)
+- [storagePublicBaseUrl](DevicePreviewScreenshotDto.md#storagepublicbaseurl)
+- [storageRegion](DevicePreviewScreenshotDto.md#storageregion)
 - [targetId](DevicePreviewScreenshotDto.md#targetid)
 - [title](DevicePreviewScreenshotDto.md#title)
 - [updatedAt](DevicePreviewScreenshotDto.md#updatedat)
@@ -153,9 +159,69 @@ DevicePreviewScreenshotDto
 
 ___
 
+### storageBucket
+
+• `Optional` **storageBucket**: `string`
+
+**`Memberof`**
+
+DevicePreviewScreenshotDto
+
+___
+
+### storageEndpoint
+
+• `Optional` **storageEndpoint**: `string`
+
+**`Memberof`**
+
+DevicePreviewScreenshotDto
+
+___
+
 ### storageKey
 
 • `Optional` **storageKey**: `string`
+
+**`Memberof`**
+
+DevicePreviewScreenshotDto
+
+___
+
+### storageObjectKey
+
+• `Optional` **storageObjectKey**: `string`
+
+**`Memberof`**
+
+DevicePreviewScreenshotDto
+
+___
+
+### storageProvider
+
+• `Optional` **storageProvider**: `string`
+
+**`Memberof`**
+
+DevicePreviewScreenshotDto
+
+___
+
+### storagePublicBaseUrl
+
+• `Optional` **storagePublicBaseUrl**: `string`
+
+**`Memberof`**
+
+DevicePreviewScreenshotDto
+
+___
+
+### storageRegion
+
+• `Optional` **storageRegion**: `string`
 
 **`Memberof`**
 

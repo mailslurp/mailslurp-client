@@ -27,7 +27,7 @@ export interface OptionalConnectorSmtpConnectionDto {
      * @type {ConnectorSmtpConnectionDto}
      * @memberof OptionalConnectorSmtpConnectionDto
      */
-    result?: ConnectorSmtpConnectionDto;
+    result?: ConnectorSmtpConnectionDto | null;
 }
 export declare function OptionalConnectorSmtpConnectionDtoFromJSON(json: any): OptionalConnectorSmtpConnectionDto;
 export declare function OptionalConnectorSmtpConnectionDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptionalConnectorSmtpConnectionDto;

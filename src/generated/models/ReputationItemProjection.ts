@@ -36,7 +36,7 @@ export interface ReputationItemProjection {
    * @type {string}
    * @memberof ReputationItemProjection
    */
-  source?: string;
+  source?: string | null;
   /**
    *
    * @type {Date}
@@ -48,7 +48,7 @@ export interface ReputationItemProjection {
    * @type {string}
    * @memberof ReputationItemProjection
    */
-  recipient?: string;
+  recipient?: string | null;
   /**
    *
    * @type {string}

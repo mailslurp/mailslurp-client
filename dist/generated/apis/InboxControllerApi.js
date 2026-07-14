@@ -453,13 +453,19 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
      * Delete all inboxes
      */
-    InboxControllerApi.prototype.deleteAllInboxesRaw = function (initOverrides) {
+    InboxControllerApi.prototype.deleteAllInboxesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.createdAtSince !== undefined) {
+                            queryParameters['createdAtSince'] = requestParameters.createdAtSince.toISOString();
+                        }
+                        if (requestParameters.createdAtBefore !== undefined) {
+                            queryParameters['createdAtBefore'] = requestParameters.createdAtBefore.toISOString();
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -481,11 +487,11 @@ var InboxControllerApi = /** @class */ (function (_super) {
      * Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
      * Delete all inboxes
      */
-    InboxControllerApi.prototype.deleteAllInboxes = function (initOverrides) {
+    InboxControllerApi.prototype.deleteAllInboxes = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deleteAllInboxesRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.deleteAllInboxesRaw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];

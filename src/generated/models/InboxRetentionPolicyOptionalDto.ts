@@ -31,7 +31,7 @@ export interface InboxRetentionPolicyOptionalDto {
    * @type {InboxRetentionPolicyDto}
    * @memberof InboxRetentionPolicyOptionalDto
    */
-  policy?: InboxRetentionPolicyDto;
+  policy?: InboxRetentionPolicyDto | null;
 }
 
 export function InboxRetentionPolicyOptionalDtoFromJSON(

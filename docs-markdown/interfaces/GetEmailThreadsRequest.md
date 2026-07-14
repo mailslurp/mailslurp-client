@@ -8,6 +8,7 @@
 
 - [before](GetEmailThreadsRequest.md#before)
 - [htmlSelector](GetEmailThreadsRequest.md#htmlselector)
+- [inboxId](GetEmailThreadsRequest.md#inboxid)
 - [page](GetEmailThreadsRequest.md#page)
 - [searchFilter](GetEmailThreadsRequest.md#searchfilter)
 - [since](GetEmailThreadsRequest.md#since)
@@ -25,6 +26,12 @@ ___
 ### htmlSelector
 
 • `Optional` **htmlSelector**: `string`
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
 
 ___
 

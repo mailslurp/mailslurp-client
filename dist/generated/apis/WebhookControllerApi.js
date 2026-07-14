@@ -2467,6 +2467,7 @@ var GetAllWebhookResultsResultTypeEnum;
 (function (GetAllWebhookResultsResultTypeEnum) {
     GetAllWebhookResultsResultTypeEnum["BAD_RESPONSE"] = "BAD_RESPONSE";
     GetAllWebhookResultsResultTypeEnum["EXCEPTION"] = "EXCEPTION";
+    GetAllWebhookResultsResultTypeEnum["EXHAUSTED"] = "EXHAUSTED";
     GetAllWebhookResultsResultTypeEnum["SUCCESS"] = "SUCCESS";
     GetAllWebhookResultsResultTypeEnum["REDRIVEN"] = "REDRIVEN";
 })(GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsResultTypeEnum || (exports.GetAllWebhookResultsResultTypeEnum = {}));
@@ -2665,6 +2666,7 @@ var GetWebhookResultsResultTypeEnum;
 (function (GetWebhookResultsResultTypeEnum) {
     GetWebhookResultsResultTypeEnum["BAD_RESPONSE"] = "BAD_RESPONSE";
     GetWebhookResultsResultTypeEnum["EXCEPTION"] = "EXCEPTION";
+    GetWebhookResultsResultTypeEnum["EXHAUSTED"] = "EXHAUSTED";
     GetWebhookResultsResultTypeEnum["SUCCESS"] = "SUCCESS";
     GetWebhookResultsResultTypeEnum["REDRIVEN"] = "REDRIVEN";
 })(GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsResultTypeEnum || (exports.GetWebhookResultsResultTypeEnum = {}));

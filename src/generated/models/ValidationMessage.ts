@@ -30,7 +30,7 @@ export interface ValidationMessage {
    * @type {string}
    * @memberof ValidationMessage
    */
-  message?: string;
+  message?: string | null;
 }
 
 export function ValidationMessageFromJSON(json: any): ValidationMessage {

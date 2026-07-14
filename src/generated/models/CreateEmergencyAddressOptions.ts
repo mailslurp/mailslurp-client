@@ -60,7 +60,7 @@ export interface CreateEmergencyAddressOptions {
    * @type {string}
    * @memberof CreateEmergencyAddressOptions
    */
-  displayName?: string;
+  displayName?: string | null;
 }
 
 /**
@@ -75,6 +75,7 @@ export enum CreateEmergencyAddressOptionsIsoCountryCodeEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',

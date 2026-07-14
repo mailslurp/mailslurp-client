@@ -13,6 +13,9 @@
 - [NEEDS\_INTERVENTION](DevicePreviewTargetDtoStatusEnum.md#needs_intervention)
 - [READY](DevicePreviewTargetDtoStatusEnum.md#ready)
 - [READY\_TO\_CAPTURE](DevicePreviewTargetDtoStatusEnum.md#ready_to_capture)
+- [SETUP\_REQUIRED](DevicePreviewTargetDtoStatusEnum.md#setup_required)
+- [SKIPPED\_OFFLINE](DevicePreviewTargetDtoStatusEnum.md#skipped_offline)
+- [TIMED\_OUT](DevicePreviewTargetDtoStatusEnum.md#timed_out)
 - [WAITING](DevicePreviewTargetDtoStatusEnum.md#waiting)
 
 ## Enumeration Members
@@ -44,6 +47,24 @@ ___
 ### READY\_TO\_CAPTURE
 
 • **READY\_TO\_CAPTURE** = ``"READY_TO_CAPTURE"``
+
+___
+
+### SETUP\_REQUIRED
+
+• **SETUP\_REQUIRED** = ``"SETUP_REQUIRED"``
+
+___
+
+### SKIPPED\_OFFLINE
+
+• **SKIPPED\_OFFLINE** = ``"SKIPPED_OFFLINE"``
+
+___
+
+### TIMED\_OUT
+
+• **TIMED\_OUT** = ``"TIMED_OUT"``
 
 ___
 

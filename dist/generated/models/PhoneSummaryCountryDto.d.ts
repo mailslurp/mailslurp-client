@@ -46,6 +46,7 @@ export declare enum PhoneSummaryCountryDtoPhoneCountryCodeEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",

@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SmsMessageMediaDto } from './';
 /**
  * NEW_SMS webhook payload. Sent to your webhook url endpoint via HTTP POST when an sms is received by the phone number that your webhook is attached to. Use the SMS ID to fetch the full SMS details.
  * @export
@@ -81,6 +82,12 @@ export interface WebhookNewSmsPayload {
      * @memberof WebhookNewSmsPayload
      */
     read: boolean;
+    /**
+     * Media attachments for inbound MMS messages
+     * @type {Array<SmsMessageMediaDto>}
+     * @memberof WebhookNewSmsPayload
+     */
+    media: Array<SmsMessageMediaDto>;
 }
 /**
  * @export

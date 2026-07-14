@@ -42,13 +42,13 @@ export interface PlusAddressProjection {
    * @type {Date}
    * @memberof PlusAddressProjection
    */
-  updatedAt: Date;
+  createdAt: Date;
   /**
    *
    * @type {Date}
    * @memberof PlusAddressProjection
    */
-  createdAt: Date;
+  updatedAt: Date;
   /**
    *
    * @type {string}
@@ -80,8 +80,8 @@ export function PlusAddressProjectionFromJSONTyped(
     id: json['id'],
     userId: json['userId'],
     inboxId: json['inboxId'],
-    updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     plusAddress: json['plusAddress'],
     fullAddress: json['fullAddress'],
   };
@@ -100,8 +100,8 @@ export function PlusAddressProjectionToJSON(
     id: value.id,
     userId: value.userId,
     inboxId: value.inboxId,
-    updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
     plusAddress: value.plusAddress,
     fullAddress: value.fullAddress,
   };

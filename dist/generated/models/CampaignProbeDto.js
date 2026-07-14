@@ -46,7 +46,9 @@ function CampaignProbeDtoFromJSONTyped(json, ignoreDiscriminator) {
         schedulingEnabled: json['schedulingEnabled'],
         nextRunAt: !(0, runtime_1.exists)(json, 'nextRunAt')
             ? undefined
-            : new Date(json['nextRunAt']),
+            : json['nextRunAt'] === null
+                ? null
+                : new Date(json['nextRunAt']),
         lastRunStatus: !(0, runtime_1.exists)(json, 'lastRunStatus')
             ? undefined
             : json['lastRunStatus'],
@@ -55,7 +57,9 @@ function CampaignProbeDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['lastHealthScore'],
         lastIngestAt: !(0, runtime_1.exists)(json, 'lastIngestAt')
             ? undefined
-            : new Date(json['lastIngestAt']),
+            : json['lastIngestAt'] === null
+                ? null
+                : new Date(json['lastIngestAt']),
         totalIngestCount: json['totalIngestCount'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
@@ -78,12 +82,18 @@ function CampaignProbeDtoToJSON(value) {
         enabled: value.enabled,
         intervalSeconds: value.intervalSeconds,
         schedulingEnabled: value.schedulingEnabled,
-        nextRunAt: value.nextRunAt === undefined ? undefined : value.nextRunAt.toISOString(),
+        nextRunAt: value.nextRunAt === undefined
+            ? undefined
+            : value.nextRunAt === null
+                ? null
+                : value.nextRunAt.toISOString(),
         lastRunStatus: value.lastRunStatus,
         lastHealthScore: value.lastHealthScore,
         lastIngestAt: value.lastIngestAt === undefined
             ? undefined
-            : value.lastIngestAt.toISOString(),
+            : value.lastIngestAt === null
+                ? null
+                : value.lastIngestAt.toISOString(),
         totalIngestCount: value.totalIngestCount,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),

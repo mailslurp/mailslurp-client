@@ -20,7 +20,7 @@ export interface EntityAutomationItemProjection {
      * @type {string}
      * @memberof EntityAutomationItemProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -32,19 +32,19 @@ export interface EntityAutomationItemProjection {
      * @type {string}
      * @memberof EntityAutomationItemProjection
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
      * @memberof EntityAutomationItemProjection
      */
-    phoneId?: string;
+    action?: string | null;
     /**
      *
      * @type {string}
      * @memberof EntityAutomationItemProjection
      */
-    action?: string;
+    phoneId?: string | null;
     /**
      *
      * @type {string}

@@ -437,7 +437,7 @@ ___
 
 ### deleteAllEmails
 
-▸ **deleteAllEmails**(`initOverrides?`): `Promise`<`void`\>
+▸ **deleteAllEmails**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
 Delete all emails in all inboxes.
@@ -446,6 +446,7 @@ Delete all emails in all inboxes.
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`DeleteAllEmailsRequest`](../interfaces/DeleteAllEmailsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -456,7 +457,7 @@ ___
 
 ### deleteAllEmailsRaw
 
-▸ **deleteAllEmailsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+▸ **deleteAllEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
 Delete all emails in all inboxes.
@@ -465,6 +466,7 @@ Delete all emails in all inboxes.
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`DeleteAllEmailsRequest`](../interfaces/DeleteAllEmailsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

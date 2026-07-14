@@ -57,6 +57,7 @@ var WebhookResultDtoResultTypeEnum;
 (function (WebhookResultDtoResultTypeEnum) {
     WebhookResultDtoResultTypeEnum["BAD_RESPONSE"] = "BAD_RESPONSE";
     WebhookResultDtoResultTypeEnum["EXCEPTION"] = "EXCEPTION";
+    WebhookResultDtoResultTypeEnum["EXHAUSTED"] = "EXHAUSTED";
     WebhookResultDtoResultTypeEnum["SUCCESS"] = "SUCCESS";
     WebhookResultDtoResultTypeEnum["REDRIVEN"] = "REDRIVEN";
 })(WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoResultTypeEnum || (exports.WebhookResultDtoResultTypeEnum = {}));

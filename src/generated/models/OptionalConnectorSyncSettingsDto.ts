@@ -37,7 +37,7 @@ export interface OptionalConnectorSyncSettingsDto {
    * @type {ConnectorSyncSettingsDto}
    * @memberof OptionalConnectorSyncSettingsDto
    */
-  result?: ConnectorSyncSettingsDto;
+  result?: ConnectorSyncSettingsDto | null;
 }
 
 export function OptionalConnectorSyncSettingsDtoFromJSON(

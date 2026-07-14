@@ -38,6 +38,7 @@ var DeliverabilitySelectorOptionsPhoneCountryEnum;
     DeliverabilitySelectorOptionsPhoneCountryEnum["EE"] = "EE";
     DeliverabilitySelectorOptionsPhoneCountryEnum["HK"] = "HK";
     DeliverabilitySelectorOptionsPhoneCountryEnum["PL"] = "PL";
+    DeliverabilitySelectorOptionsPhoneCountryEnum["CH"] = "CH";
     DeliverabilitySelectorOptionsPhoneCountryEnum["PT"] = "PT";
     DeliverabilitySelectorOptionsPhoneCountryEnum["NL"] = "NL";
     DeliverabilitySelectorOptionsPhoneCountryEnum["IL"] = "IL";
@@ -62,6 +63,7 @@ function DeliverabilitySelectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
         excludeEntityIds: !(0, runtime_1.exists)(json, 'excludeEntityIds')
             ? undefined
             : json['excludeEntityIds'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
     };
 }
 exports.DeliverabilitySelectorOptionsFromJSONTyped = DeliverabilitySelectorOptionsFromJSONTyped;
@@ -78,6 +80,7 @@ function DeliverabilitySelectorOptionsToJSON(value) {
         phoneCountry: value.phoneCountry,
         entityIds: value.entityIds,
         excludeEntityIds: value.excludeEntityIds,
+        tags: value.tags,
     };
 }
 exports.DeliverabilitySelectorOptionsToJSON = DeliverabilitySelectorOptionsToJSON;

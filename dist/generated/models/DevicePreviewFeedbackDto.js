@@ -92,10 +92,14 @@ function DevicePreviewFeedbackDtoFromJSONTyped(json, ignoreDiscriminator) {
         metadata: !(0, runtime_1.exists)(json, 'metadata') ? undefined : json['metadata'],
         createdAt: !(0, runtime_1.exists)(json, 'createdAt')
             ? undefined
-            : new Date(json['createdAt']),
+            : json['createdAt'] === null
+                ? null
+                : new Date(json['createdAt']),
         updatedAt: !(0, runtime_1.exists)(json, 'updatedAt')
             ? undefined
-            : new Date(json['updatedAt']),
+            : json['updatedAt'] === null
+                ? null
+                : new Date(json['updatedAt']),
     };
 }
 exports.DevicePreviewFeedbackDtoFromJSONTyped = DevicePreviewFeedbackDtoFromJSONTyped;
@@ -123,8 +127,16 @@ function DevicePreviewFeedbackDtoToJSON(value) {
         sessionId: value.sessionId,
         liveViewUrl: value.liveViewUrl,
         metadata: value.metadata,
-        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
-        updatedAt: value.updatedAt === undefined ? undefined : value.updatedAt.toISOString(),
+        createdAt: value.createdAt === undefined
+            ? undefined
+            : value.createdAt === null
+                ? null
+                : value.createdAt.toISOString(),
+        updatedAt: value.updatedAt === undefined
+            ? undefined
+            : value.updatedAt === null
+                ? null
+                : value.updatedAt.toISOString(),
     };
 }
 exports.DevicePreviewFeedbackDtoToJSON = DevicePreviewFeedbackDtoToJSON;

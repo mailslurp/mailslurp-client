@@ -6,14 +6,14 @@
 
 ### Properties
 
-- [body](GetJsonPropertyAsStringRequest.md#body)
+- [jsonNode](GetJsonPropertyAsStringRequest.md#jsonnode)
 - [property](GetJsonPropertyAsStringRequest.md#property)
 
 ## Properties
 
-### body
+### jsonNode
 
-• **body**: `object`
+• **jsonNode**: [`JsonNode`](JsonNode.md)
 
 ___
 

@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SmsMessageMediaDto } from './';
 /**
  *
  * @export
@@ -44,7 +45,7 @@ export interface SmsDto {
      * @type {string}
      * @memberof SmsDto
      */
-    toNumber?: string;
+    toNumber?: string | null;
     /**
      *
      * @type {boolean}
@@ -75,6 +76,12 @@ export interface SmsDto {
      * @memberof SmsDto
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {Array<SmsMessageMediaDto>}
+     * @memberof SmsDto
+     */
+    media: Array<SmsMessageMediaDto>;
 }
 export declare function SmsDtoFromJSON(json: any): SmsDto;
 export declare function SmsDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SmsDto;

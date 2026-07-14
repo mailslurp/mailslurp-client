@@ -2,7 +2,7 @@
 
 # Interface: CreateDeliverabilitySimulationJobOptions
 
-Create a simulation job for a deliverability test
+Create a simulation job for a load test
 
 **`Export`**
 

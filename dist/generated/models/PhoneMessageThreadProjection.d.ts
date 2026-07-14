@@ -20,7 +20,7 @@ export interface PhoneMessageThreadProjection {
      * @type {string}
      * @memberof PhoneMessageThreadProjection
      */
-    phoneNumber?: string;
+    phoneNumber?: string | null;
     /**
      *
      * @type {string}
@@ -32,7 +32,7 @@ export interface PhoneMessageThreadProjection {
      * @type {string}
      * @memberof PhoneMessageThreadProjection
      */
-    otherPhoneNumber?: string;
+    otherPhoneNumber?: string | null;
     /**
      *
      * @type {string}

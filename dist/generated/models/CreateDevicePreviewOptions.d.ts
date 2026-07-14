@@ -16,26 +16,11 @@
  */
 export interface CreateDevicePreviewOptions {
     /**
-     * Optional providers to request for rendering. Defaults to ESP_DEFAULT_PROVIDERS when set, otherwise GMAIL and OUTLOOK.
+     * Optional native mail-client target keys to request for rendering. Null leaves native target selection to ESP configuration. Values are forwarded to ESP so newly deployed ESP targets can be used before this API's enum list is updated.
      * @type {Array<string>}
      * @memberof CreateDevicePreviewOptions
      */
-    providers?: Array<CreateDevicePreviewOptionsProvidersEnum>;
-    /**
-     * Optional flag to request all configured providers in ESP. Defaults to false when omitted
-     * @type {boolean}
-     * @memberof CreateDevicePreviewOptions
-     */
-    includeAllConfiguredProviders?: boolean;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum CreateDevicePreviewOptionsProvidersEnum {
-    GMAIL = "GMAIL",
-    OUTLOOK = "OUTLOOK",
-    YAHOO = "YAHOO"
+    nativeTargets?: Array<string> | null;
 }
 export declare function CreateDevicePreviewOptionsFromJSON(json: any): CreateDevicePreviewOptions;
 export declare function CreateDevicePreviewOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateDevicePreviewOptions;

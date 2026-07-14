@@ -20,7 +20,7 @@ export interface ConnectorImapConnectionTestResult {
      * @type {string}
      * @memberof ConnectorImapConnectionTestResult
      */
-    error?: string;
+    error?: string | null;
     /**
      *
      * @type {boolean}
@@ -32,13 +32,13 @@ export interface ConnectorImapConnectionTestResult {
      * @type {string}
      * @memberof ConnectorImapConnectionTestResult
      */
-    message?: string;
+    message?: string | null;
     /**
      *
      * @type {Array<string>}
      * @memberof ConnectorImapConnectionTestResult
      */
-    logs?: Array<string>;
+    logs?: Array<string> | null;
 }
 export declare function ConnectorImapConnectionTestResultFromJSON(json: any): ConnectorImapConnectionTestResult;
 export declare function ConnectorImapConnectionTestResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorImapConnectionTestResult;

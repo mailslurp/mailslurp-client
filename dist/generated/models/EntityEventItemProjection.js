@@ -49,9 +49,9 @@ function EntityEventItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         severity: json['severity'],
-        eventType: json['eventType'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        eventType: json['eventType'],
     };
 }
 exports.EntityEventItemProjectionFromJSONTyped = EntityEventItemProjectionFromJSONTyped;
@@ -65,9 +65,9 @@ function EntityEventItemProjectionToJSON(value) {
     return {
         id: value.id,
         severity: value.severity,
-        eventType: value.eventType,
         inboxId: value.inboxId,
         phoneId: value.phoneId,
+        eventType: value.eventType,
     };
 }
 exports.EntityEventItemProjectionToJSON = EntityEventItemProjectionToJSON;

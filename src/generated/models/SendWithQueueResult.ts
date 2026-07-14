@@ -36,13 +36,13 @@ export interface SendWithQueueResult {
    * @type {string}
    * @memberof SendWithQueueResult
    */
-  subject?: string;
+  subject?: string | null;
   /**
    *
    * @type {string}
    * @memberof SendWithQueueResult
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    *
    * @type {string}
@@ -60,13 +60,13 @@ export interface SendWithQueueResult {
    * @type {string}
    * @memberof SendWithQueueResult
    */
-  exceptionName?: string;
+  exceptionName?: string | null;
   /**
    *
    * @type {string}
    * @memberof SendWithQueueResult
    */
-  message?: string;
+  message?: string | null;
   /**
    *
    * @type {Date}

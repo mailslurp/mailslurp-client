@@ -24,31 +24,31 @@ export interface EmailHeaderAnalysisSummary {
    * @type {string}
    * @memberof EmailHeaderAnalysisSummary
    */
-  spf?: string;
+  spf?: string | null;
   /**
    *
    * @type {string}
    * @memberof EmailHeaderAnalysisSummary
    */
-  dkim?: string;
+  dkim?: string | null;
   /**
    *
    * @type {string}
    * @memberof EmailHeaderAnalysisSummary
    */
-  dmarc?: string;
+  dmarc?: string | null;
   /**
    *
    * @type {string}
    * @memberof EmailHeaderAnalysisSummary
    */
-  fromDomain?: string;
+  fromDomain?: string | null;
   /**
    *
    * @type {string}
    * @memberof EmailHeaderAnalysisSummary
    */
-  returnPathDomain?: string;
+  returnPathDomain?: string | null;
 }
 
 export function EmailHeaderAnalysisSummaryFromJSON(

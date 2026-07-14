@@ -27,19 +27,19 @@ export interface PhoneNumberLineTypeLookupDto {
      * @type {string}
      * @memberof PhoneNumberLineTypeLookupDto
      */
-    nationalFormat?: string;
+    nationalFormat?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberLineTypeLookupDto
      */
-    countryCode?: string;
+    countryCode?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberLineTypeLookupDto
      */
-    countryPrefix?: string;
+    countryPrefix?: string | null;
     /**
      *
      * @type {boolean}
@@ -51,13 +51,13 @@ export interface PhoneNumberLineTypeLookupDto {
      * @type {Array<string>}
      * @memberof PhoneNumberLineTypeLookupDto
      */
-    validationErrors?: Array<string>;
+    validationErrors?: Array<string> | null;
     /**
      *
      * @type {PhoneNumberLineTypeIntelligenceDto}
      * @memberof PhoneNumberLineTypeLookupDto
      */
-    lineTypeIntelligence?: PhoneNumberLineTypeIntelligenceDto;
+    lineTypeIntelligence?: PhoneNumberLineTypeIntelligenceDto | null;
     /**
      *
      * @type {boolean}

@@ -36,8 +36,16 @@ function WaitForSingleSmsOptionsFromJSONTyped(json, ignoreDiscriminator) {
         phoneNumberId: json['phoneNumberId'],
         timeout: json['timeout'],
         unreadOnly: !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
-        before: !(0, runtime_1.exists)(json, 'before') ? undefined : new Date(json['before']),
-        since: !(0, runtime_1.exists)(json, 'since') ? undefined : new Date(json['since']),
+        before: !(0, runtime_1.exists)(json, 'before')
+            ? undefined
+            : json['before'] === null
+                ? null
+                : new Date(json['before']),
+        since: !(0, runtime_1.exists)(json, 'since')
+            ? undefined
+            : json['since'] === null
+                ? null
+                : new Date(json['since']),
         sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
             ? undefined
             : json['sortDirection'],
@@ -56,8 +64,16 @@ function WaitForSingleSmsOptionsToJSON(value) {
         phoneNumberId: value.phoneNumberId,
         timeout: value.timeout,
         unreadOnly: value.unreadOnly,
-        before: value.before === undefined ? undefined : value.before.toISOString(),
-        since: value.since === undefined ? undefined : value.since.toISOString(),
+        before: value.before === undefined
+            ? undefined
+            : value.before === null
+                ? null
+                : value.before.toISOString(),
+        since: value.since === undefined
+            ? undefined
+            : value.since === null
+                ? null
+                : value.since.toISOString(),
         sortDirection: value.sortDirection,
         delay: value.delay,
     };

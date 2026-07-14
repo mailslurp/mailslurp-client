@@ -27,13 +27,13 @@ export interface OptInConsentOptions {
      * @type {string}
      * @memberof OptInConsentOptions
      */
-    companyName?: string;
+    companyName?: string | null;
     /**
      *
      * @type {SendOptInConsentEmailOptions}
      * @memberof OptInConsentOptions
      */
-    sendOptInOptions?: SendOptInConsentEmailOptions;
+    sendOptInOptions?: SendOptInConsentEmailOptions | null;
 }
 export declare function OptInConsentOptionsFromJSON(json: any): OptInConsentOptions;
 export declare function OptInConsentOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptInConsentOptions;

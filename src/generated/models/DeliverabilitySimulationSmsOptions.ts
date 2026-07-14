@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Simulation options for SMS deliverability tests
+ * Simulation options for SMS load tests
  * @export
  * @interface DeliverabilitySimulationSmsOptions
  */

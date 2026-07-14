@@ -17,6 +17,7 @@ WebhookNewSmsPayload
 - [body](WebhookNewSmsPayload.md#body)
 - [eventName](WebhookNewSmsPayload.md#eventname)
 - [fromNumber](WebhookNewSmsPayload.md#fromnumber)
+- [media](WebhookNewSmsPayload.md#media)
 - [messageId](WebhookNewSmsPayload.md#messageid)
 - [phoneNumber](WebhookNewSmsPayload.md#phonenumber)
 - [read](WebhookNewSmsPayload.md#read)
@@ -57,6 +58,18 @@ ___
 • **fromNumber**: `string`
 
 Sender phone number
+
+**`Memberof`**
+
+WebhookNewSmsPayload
+
+___
+
+### media
+
+• **media**: [`SmsMessageMediaDto`](SmsMessageMediaDto.md)[]
+
+Media attachments for inbound MMS messages
 
 **`Memberof`**
 

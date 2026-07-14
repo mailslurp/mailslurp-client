@@ -14,6 +14,8 @@ This is the base class for all generated API classes.
 
   ↳ [`ApiAuditLogControllerApi`](ApiAuditLogControllerApi.md)
 
+  ↳ [`ApiInboxPlacementTestControllerApi`](ApiInboxPlacementTestControllerApi.md)
+
   ↳ [`AttachmentControllerApi`](AttachmentControllerApi.md)
 
   ↳ [`BounceControllerApi`](BounceControllerApi.md)
@@ -37,6 +39,8 @@ This is the base class for all generated API classes.
   ↳ [`DomainControllerApi`](DomainControllerApi.md)
 
   ↳ [`DomainMonitorControllerApi`](DomainMonitorControllerApi.md)
+
+  ↳ [`DomainMonitorPostmasterControllerApi`](DomainMonitorPostmasterControllerApi.md)
 
   ↳ [`EmailAuditControllerApi`](EmailAuditControllerApi.md)
 
@@ -77,6 +81,8 @@ This is the base class for all generated API classes.
   ↳ [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
 
   ↳ [`SmsControllerApi`](SmsControllerApi.md)
+
+  ↳ [`SpamEmailControllerApi`](SpamEmailControllerApi.md)
 
   ↳ [`TemplateControllerApi`](TemplateControllerApi.md)
 

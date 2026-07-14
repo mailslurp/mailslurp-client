@@ -26,7 +26,7 @@ export interface AnalyzeDmarcReportOptions {
      * @type {string}
      * @memberof AnalyzeDmarcReportOptions
      */
-    captchaToken?: string;
+    captchaToken?: string | null;
 }
 export declare function AnalyzeDmarcReportOptionsFromJSON(json: any): AnalyzeDmarcReportOptions;
 export declare function AnalyzeDmarcReportOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AnalyzeDmarcReportOptions;

@@ -21,7 +21,7 @@ export interface ImapServerGetResult {
      * @type {ImapEmailProjection}
      * @memberof ImapServerGetResult
      */
-    result?: ImapEmailProjection;
+    result?: ImapEmailProjection | null;
 }
 export declare function ImapServerGetResultFromJSON(json: any): ImapServerGetResult;
 export declare function ImapServerGetResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapServerGetResult;

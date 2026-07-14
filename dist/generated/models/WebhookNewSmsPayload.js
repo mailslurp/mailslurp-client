@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookNewSmsPayloadToJSON = exports.WebhookNewSmsPayloadFromJSONTyped = exports.WebhookNewSmsPayloadFromJSON = exports.WebhookNewSmsPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -54,6 +55,7 @@ function WebhookNewSmsPayloadFromJSONTyped(json, ignoreDiscriminator) {
         fromNumber: json['fromNumber'],
         body: json['body'],
         read: json['read'],
+        media: json['media'].map(_1.SmsMessageMediaDtoFromJSON),
     };
 }
 exports.WebhookNewSmsPayloadFromJSONTyped = WebhookNewSmsPayloadFromJSONTyped;
@@ -76,6 +78,7 @@ function WebhookNewSmsPayloadToJSON(value) {
         fromNumber: value.fromNumber,
         body: value.body,
         read: value.read,
+        media: value.media.map(_1.SmsMessageMediaDtoToJSON),
     };
 }
 exports.WebhookNewSmsPayloadToJSON = WebhookNewSmsPayloadToJSON;

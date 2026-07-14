@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  DomainMonitorEmailVerificationDto,
+  DomainMonitorEmailVerificationDtoFromJSON,
+  DomainMonitorEmailVerificationDtoFromJSONTyped,
+  DomainMonitorEmailVerificationDtoToJSON,
+} from './';
+
 /**
  *
  * @export
@@ -42,13 +49,13 @@ export interface DomainMonitorDto {
    * @type {string}
    * @memberof DomainMonitorDto
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {number}
    * @memberof DomainMonitorDto
    */
-  intervalSeconds?: number;
+  intervalSeconds?: number | null;
   /**
    *
    * @type {boolean}
@@ -72,19 +79,25 @@ export interface DomainMonitorDto {
    * @type {number}
    * @memberof DomainMonitorDto
    */
-  healthScore?: number;
+  healthScore?: number | null;
   /**
    *
    * @type {Date}
    * @memberof DomainMonitorDto
    */
-  lastRunAt?: Date;
+  lastRunAt?: Date | null;
   /**
    *
    * @type {Date}
    * @memberof DomainMonitorDto
    */
-  nextRunAt?: Date;
+  nextRunAt?: Date | null;
+  /**
+   *
+   * @type {DomainMonitorEmailVerificationDto}
+   * @memberof DomainMonitorDto
+   */
+  emailVerification?: DomainMonitorEmailVerificationDto | null;
   /**
    *
    * @type {Date}
@@ -135,10 +148,17 @@ export function DomainMonitorDtoFromJSONTyped(
     healthScore: !exists(json, 'healthScore') ? undefined : json['healthScore'],
     lastRunAt: !exists(json, 'lastRunAt')
       ? undefined
+      : json['lastRunAt'] === null
+      ? null
       : new Date(json['lastRunAt']),
     nextRunAt: !exists(json, 'nextRunAt')
       ? undefined
+      : json['nextRunAt'] === null
+      ? null
       : new Date(json['nextRunAt']),
+    emailVerification: !exists(json, 'emailVerification')
+      ? undefined
+      : DomainMonitorEmailVerificationDtoFromJSON(json['emailVerification']),
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
   };
@@ -162,9 +182,20 @@ export function DomainMonitorDtoToJSON(value?: DomainMonitorDto | null): any {
     lastStatus: value.lastStatus,
     healthScore: value.healthScore,
     lastRunAt:
-      value.lastRunAt === undefined ? undefined : value.lastRunAt.toISOString(),
+      value.lastRunAt === undefined
+        ? undefined
+        : value.lastRunAt === null
+        ? null
+        : value.lastRunAt.toISOString(),
     nextRunAt:
-      value.nextRunAt === undefined ? undefined : value.nextRunAt.toISOString(),
+      value.nextRunAt === undefined
+        ? undefined
+        : value.nextRunAt === null
+        ? null
+        : value.nextRunAt.toISOString(),
+    emailVerification: DomainMonitorEmailVerificationDtoToJSON(
+      value.emailVerification
+    ),
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
   };

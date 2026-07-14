@@ -24,13 +24,13 @@ export interface ConnectorEventProjection {
    * @type {string}
    * @memberof ConnectorEventProjection
    */
-  message?: string;
+  message?: string | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorEventProjection
    */
-  id?: string;
+  id?: string | null;
   /**
    *
    * @type {number}
@@ -43,12 +43,6 @@ export interface ConnectorEventProjection {
    * @memberof ConnectorEventProjection
    */
   status: ConnectorEventProjectionStatusEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorEventProjection
-   */
-  eventType: ConnectorEventProjectionEventTypeEnum;
   /**
    *
    * @type {Date}
@@ -66,7 +60,13 @@ export interface ConnectorEventProjection {
    * @type {boolean}
    * @memberof ConnectorEventProjection
    */
-  seen?: boolean;
+  seen?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorEventProjection
+   */
+  eventType: ConnectorEventProjectionEventTypeEnum;
 }
 
 /**
@@ -107,10 +107,10 @@ export function ConnectorEventProjectionFromJSONTyped(
     id: !exists(json, 'id') ? undefined : json['id'],
     size: json['size'],
     status: json['status'],
-    eventType: json['eventType'],
     createdAt: new Date(json['createdAt']),
     connectorId: json['connectorId'],
     seen: !exists(json, 'seen') ? undefined : json['seen'],
+    eventType: json['eventType'],
   };
 }
 
@@ -128,9 +128,9 @@ export function ConnectorEventProjectionToJSON(
     id: value.id,
     size: value.size,
     status: value.status,
-    eventType: value.eventType,
     createdAt: value.createdAt.toISOString(),
     connectorId: value.connectorId,
     seen: value.seen,
+    eventType: value.eventType,
   };
 }

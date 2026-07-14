@@ -26,7 +26,7 @@ export interface EmailFeatureSupportFlags {
      * @type {Set<string>}
      * @memberof EmailFeatureSupportFlags
      */
-    notes?: Set<string>;
+    notes?: Set<string> | null;
 }
 /**
  * @export

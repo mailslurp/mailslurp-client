@@ -21,7 +21,7 @@ import {
 } from './';
 
 /**
- * Polling response for deliverability test progress
+ * Polling response for load-test progress
  * @export
  * @interface DeliverabilityPollStatusResultDto
  */

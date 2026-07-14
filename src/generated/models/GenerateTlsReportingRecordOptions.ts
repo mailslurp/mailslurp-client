@@ -30,7 +30,7 @@ export interface GenerateTlsReportingRecordOptions {
    * @type {string}
    * @memberof GenerateTlsReportingRecordOptions
    */
-  reportingUrl?: string;
+  reportingUrl?: string | null;
   /**
    *
    * @type {string}

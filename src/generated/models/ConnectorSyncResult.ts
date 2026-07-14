@@ -30,13 +30,13 @@ export interface ConnectorSyncResult {
    * @type {Array<string>}
    * @memberof ConnectorSyncResult
    */
-  logs?: Array<string>;
+  logs?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof ConnectorSyncResult
    */
-  emailIds?: Array<string>;
+  emailIds?: Array<string> | null;
 }
 
 export function ConnectorSyncResultFromJSON(json: any): ConnectorSyncResult {

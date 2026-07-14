@@ -20,7 +20,7 @@ export interface ConnectorProjection {
      * @type {string}
      * @memberof ConnectorProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -32,19 +32,13 @@ export interface ConnectorProjection {
      * @type {boolean}
      * @memberof ConnectorProjection
      */
-    enabled?: boolean;
+    enabled?: boolean | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorProjection
      */
     userId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    emailAddress?: string;
     /**
      *
      * @type {string}
@@ -57,6 +51,12 @@ export interface ConnectorProjection {
      * @memberof ConnectorProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    emailAddress?: string | null;
 }
 export declare function ConnectorProjectionFromJSON(json: any): ConnectorProjection;
 export declare function ConnectorProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorProjection;

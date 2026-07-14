@@ -23,6 +23,9 @@ import {
   CreateTotpDeviceOtpAuthUrlOptions,
   CreateTotpDeviceOtpAuthUrlOptionsFromJSON,
   CreateTotpDeviceOtpAuthUrlOptionsToJSON,
+  PageTotpDeviceProjection,
+  PageTotpDeviceProjectionFromJSON,
+  PageTotpDeviceProjectionToJSON,
   TotpDeviceCodeDto,
   TotpDeviceCodeDtoFromJSON,
   TotpDeviceCodeDtoToJSON,
@@ -32,6 +35,9 @@ import {
   TotpDeviceOptionalDto,
   TotpDeviceOptionalDtoFromJSON,
   TotpDeviceOptionalDtoToJSON,
+  UpdateTotpDeviceOptions,
+  UpdateTotpDeviceOptionsFromJSON,
+  UpdateTotpDeviceOptionsToJSON,
 } from '../models';
 
 export interface CreateTotpDeviceForBase32SecretKeyRequest {
@@ -44,6 +50,10 @@ export interface CreateTotpDeviceForCustomRequest {
 
 export interface CreateTotpDeviceForOtpAuthUrlRequest {
   createTotpDeviceOtpAuthUrlOptions: CreateTotpDeviceOtpAuthUrlOptions;
+}
+
+export interface DeleteTotpDeviceRequest {
+  id: string;
 }
 
 export interface GetTotpDeviceRequest {
@@ -59,7 +69,20 @@ export interface GetTotpDeviceByRequest {
 export interface GetTotpDeviceCodeRequest {
   id: string;
   at?: Date;
-  minSecondsUntilExpire?: number;
+  minSecondsUntilExpire?: number | null;
+}
+
+export interface GetTotpDevicesRequest {
+  page?: number;
+  size?: number;
+  sort?: GetTotpDevicesSortEnum;
+  issuer?: string;
+  username?: string;
+}
+
+export interface UpdateTotpDeviceRequest {
+  id: string;
+  updateTotpDeviceOptions: UpdateTotpDeviceOptions;
 }
 
 /**
@@ -250,6 +273,56 @@ export class MFAControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Delete a Time-Based One-Time Password (TOTP) device by ID.
+   * Delete a TOTP device
+   */
+  async deleteTotpDeviceRaw(
+    requestParameters: DeleteTotpDeviceRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteTotpDevice.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete a Time-Based One-Time Password (TOTP) device by ID.
+   * Delete a TOTP device
+   */
+  async deleteTotpDevice(
+    requestParameters: DeleteTotpDeviceRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteTotpDeviceRaw(requestParameters, initOverrides);
+  }
+
+  /**
    * Get Time-Based One-Time Password (TOTP) device by its ID.
    * Get a TOTP device by ID
    */
@@ -427,4 +500,150 @@ export class MFAControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * List Time-Based One-Time Password (TOTP) devices for the calling account.
+   * List TOTP devices
+   */
+  async getTotpDevicesRaw(
+    requestParameters: GetTotpDevicesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageTotpDeviceProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.issuer !== undefined) {
+      queryParameters['issuer'] = requestParameters.issuer;
+    }
+
+    if (requestParameters.username !== undefined) {
+      queryParameters['username'] = requestParameters.username;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageTotpDeviceProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List Time-Based One-Time Password (TOTP) devices for the calling account.
+   * List TOTP devices
+   */
+  async getTotpDevices(
+    requestParameters: GetTotpDevicesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageTotpDeviceProjection> {
+    const response = await this.getTotpDevicesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update stored metadata and TOTP settings for a device by ID.
+   * Update a TOTP device
+   */
+  async updateTotpDeviceRaw(
+    requestParameters: UpdateTotpDeviceRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TotpDeviceDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling updateTotpDevice.'
+      );
+    }
+
+    if (
+      requestParameters.updateTotpDeviceOptions === null ||
+      requestParameters.updateTotpDeviceOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateTotpDeviceOptions',
+        'Required parameter requestParameters.updateTotpDeviceOptions was null or undefined when calling updateTotpDevice.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/mfa/totp/device/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateTotpDeviceOptionsToJSON(
+          requestParameters.updateTotpDeviceOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TotpDeviceDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update stored metadata and TOTP settings for a device by ID.
+   * Update a TOTP device
+   */
+  async updateTotpDevice(
+    requestParameters: UpdateTotpDeviceRequest,
+    initOverrides?: RequestInit
+  ): Promise<TotpDeviceDto> {
+    const response = await this.updateTotpDeviceRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetTotpDevicesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
 }

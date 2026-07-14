@@ -50,12 +50,6 @@ export interface EmailProjection {
   from: string | null;
   /**
    *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
    * @type {Sender}
    * @memberof EmailProjection
    */
@@ -71,6 +65,12 @@ export interface EmailProjection {
    * @type {string}
    * @memberof EmailProjection
    */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
   inboxId: string;
   /**
    *
@@ -80,22 +80,28 @@ export interface EmailProjection {
   attachments?: Array<string> | null;
   /**
    *
-   * @type {number}
+   * @type {string}
    * @memberof EmailProjection
    */
-  sizeBytes?: number | null;
+  textExcerpt?: string | null;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof EmailProjection
    */
-  createdAt: Date;
+  bodyExcerpt?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
   to: Array<string>;
+  /**
+   *
+   * @type {Date}
+   * @memberof EmailProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -116,16 +122,40 @@ export interface EmailProjection {
   messageId?: string | null;
   /**
    *
-   * @type {boolean}
+   * @type {string}
    * @memberof EmailProjection
    */
-  favourite?: boolean | null;
+  inReplyTo?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof EmailProjection
+   */
+  sizeBytes?: number | null;
   /**
    *
    * @type {string}
    * @memberof EmailProjection
    */
   domainId?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  read: boolean;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  bodyPartContentTypes?: Array<string> | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  favourite?: boolean | null;
   /**
    *
    * @type {string}
@@ -138,36 +168,6 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   imapUid?: number | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  inReplyTo?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailProjection
-   */
-  read: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  bodyExcerpt?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  textExcerpt?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailProjection
-   */
-  bodyPartContentTypes?: Array<string> | null;
   /**
    *
    * @type {string}
@@ -197,32 +197,32 @@ export function EmailProjectionFromJSONTyped(
     id: json['id'],
     threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
     from: json['from'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     sender: !exists(json, 'sender')
       ? undefined
       : SenderFromJSON(json['sender']),
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
-    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
-    createdAt: new Date(json['createdAt']),
+    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     to: json['to'],
+    createdAt: new Date(json['createdAt']),
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
-    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
-    imapUid: !exists(json, 'imapUid') ? undefined : json['imapUid'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     read: json['read'],
-    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     bodyPartContentTypes: !exists(json, 'bodyPartContentTypes')
       ? undefined
       : json['bodyPartContentTypes'],
+    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
+    imapUid: !exists(json, 'imapUid') ? undefined : json['imapUid'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     teamAccess: json['teamAccess'],
   };
@@ -239,26 +239,26 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     id: value.id,
     threadId: value.threadId,
     from: value.from,
-    subject: value.subject,
     sender: SenderToJSON(value.sender),
     recipients: EmailRecipientsToJSON(value.recipients),
+    subject: value.subject,
     inboxId: value.inboxId,
     attachments: value.attachments,
-    sizeBytes: value.sizeBytes,
-    createdAt: value.createdAt.toISOString(),
+    textExcerpt: value.textExcerpt,
+    bodyExcerpt: value.bodyExcerpt,
     to: value.to,
+    createdAt: value.createdAt.toISOString(),
     cc: value.cc,
     bcc: value.bcc,
     messageId: value.messageId,
-    favourite: value.favourite,
+    inReplyTo: value.inReplyTo,
+    sizeBytes: value.sizeBytes,
     domainId: value.domainId,
+    read: value.read,
+    bodyPartContentTypes: value.bodyPartContentTypes,
+    favourite: value.favourite,
     plusAddress: value.plusAddress,
     imapUid: value.imapUid,
-    inReplyTo: value.inReplyTo,
-    read: value.read,
-    bodyExcerpt: value.bodyExcerpt,
-    textExcerpt: value.textExcerpt,
-    bodyPartContentTypes: value.bodyPartContentTypes,
     bodyMD5Hash: value.bodyMD5Hash,
     teamAccess: value.teamAccess,
   };

@@ -10,6 +10,7 @@
 
 - [AU](DeliverabilityEntityResultDtoPhoneCountryEnum.md#au)
 - [CA](DeliverabilityEntityResultDtoPhoneCountryEnum.md#ca)
+- [CH](DeliverabilityEntityResultDtoPhoneCountryEnum.md#ch)
 - [EE](DeliverabilityEntityResultDtoPhoneCountryEnum.md#ee)
 - [FI](DeliverabilityEntityResultDtoPhoneCountryEnum.md#fi)
 - [GB](DeliverabilityEntityResultDtoPhoneCountryEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

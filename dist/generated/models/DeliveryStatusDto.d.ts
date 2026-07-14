@@ -32,61 +32,61 @@ export interface DeliveryStatusDto {
      * @type {string}
      * @memberof DeliveryStatusDto
      */
-    sentId?: string;
+    sentId?: string | null;
     /**
      *
      * @type {string}
      * @memberof DeliveryStatusDto
      */
-    remoteMtaIp?: string;
+    remoteMtaIp?: string | null;
     /**
      *
      * @type {string}
      * @memberof DeliveryStatusDto
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
      * @memberof DeliveryStatusDto
      */
-    reportingMta?: string;
+    reportingMta?: string | null;
     /**
      *
      * @type {Array<string>}
      * @memberof DeliveryStatusDto
      */
-    recipients?: Array<string>;
+    recipients?: Array<string> | null;
     /**
      *
      * @type {string}
      * @memberof DeliveryStatusDto
      */
-    smtpResponse?: string;
+    smtpResponse?: string | null;
     /**
      *
      * @type {number}
      * @memberof DeliveryStatusDto
      */
-    smtpStatusCode?: number;
+    smtpStatusCode?: number | null;
     /**
      *
      * @type {number}
      * @memberof DeliveryStatusDto
      */
-    processingTimeMillis?: number;
+    processingTimeMillis?: number | null;
     /**
      *
      * @type {Date}
      * @memberof DeliveryStatusDto
      */
-    received?: Date;
+    received?: Date | null;
     /**
      *
      * @type {string}
      * @memberof DeliveryStatusDto
      */
-    subject?: string;
+    subject?: string | null;
     /**
      *
      * @type {Date}

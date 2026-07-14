@@ -20,7 +20,7 @@ export interface EmptyResponseDto {
      * @type {string}
      * @memberof EmptyResponseDto
      */
-    message?: string;
+    message?: string | null;
 }
 export declare function EmptyResponseDtoFromJSON(json: any): EmptyResponseDto;
 export declare function EmptyResponseDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmptyResponseDto;

@@ -37,7 +37,7 @@ export interface AuditLogPageDto {
    * @type {string}
    * @memberof AuditLogPageDto
    */
-  nextCursor?: string;
+  nextCursor?: string | null;
 }
 
 export function AuditLogPageDtoFromJSON(json: any): AuditLogPageDto {

@@ -13,18 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewOptionsToJSON = exports.CreateDevicePreviewOptionsFromJSONTyped = exports.CreateDevicePreviewOptionsFromJSON = exports.CreateDevicePreviewOptionsProvidersEnum = void 0;
+exports.CreateDevicePreviewOptionsToJSON = exports.CreateDevicePreviewOptionsFromJSONTyped = exports.CreateDevicePreviewOptionsFromJSON = void 0;
 var runtime_1 = require("../runtime");
-/**
- * @export
- * @enum {string}
- */
-var CreateDevicePreviewOptionsProvidersEnum;
-(function (CreateDevicePreviewOptionsProvidersEnum) {
-    CreateDevicePreviewOptionsProvidersEnum["GMAIL"] = "GMAIL";
-    CreateDevicePreviewOptionsProvidersEnum["OUTLOOK"] = "OUTLOOK";
-    CreateDevicePreviewOptionsProvidersEnum["YAHOO"] = "YAHOO";
-})(CreateDevicePreviewOptionsProvidersEnum = exports.CreateDevicePreviewOptionsProvidersEnum || (exports.CreateDevicePreviewOptionsProvidersEnum = {}));
 function CreateDevicePreviewOptionsFromJSON(json) {
     return CreateDevicePreviewOptionsFromJSONTyped(json, false);
 }
@@ -34,10 +24,9 @@ function CreateDevicePreviewOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        providers: !(0, runtime_1.exists)(json, 'providers') ? undefined : json['providers'],
-        includeAllConfiguredProviders: !(0, runtime_1.exists)(json, 'includeAllConfiguredProviders')
+        nativeTargets: !(0, runtime_1.exists)(json, 'nativeTargets')
             ? undefined
-            : json['includeAllConfiguredProviders'],
+            : json['nativeTargets'],
     };
 }
 exports.CreateDevicePreviewOptionsFromJSONTyped = CreateDevicePreviewOptionsFromJSONTyped;
@@ -49,8 +38,7 @@ function CreateDevicePreviewOptionsToJSON(value) {
         return null;
     }
     return {
-        providers: value.providers,
-        includeAllConfiguredProviders: value.includeAllConfiguredProviders,
+        nativeTargets: value.nativeTargets,
     };
 }
 exports.CreateDevicePreviewOptionsToJSON = CreateDevicePreviewOptionsToJSON;

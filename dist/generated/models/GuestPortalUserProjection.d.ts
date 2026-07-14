@@ -20,7 +20,7 @@ export interface GuestPortalUserProjection {
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -44,13 +44,13 @@ export interface GuestPortalUserProjection {
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    emailAddress?: string;
+    inboxId?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof GuestPortalUserProjection
      */
-    inboxId?: string;
+    createdAt: Date;
     /**
      *
      * @type {Date}
@@ -59,10 +59,10 @@ export interface GuestPortalUserProjection {
     updatedAt: Date;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    createdAt: Date;
+    emailAddress?: string | null;
     /**
      *
      * @type {string}

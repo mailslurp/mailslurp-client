@@ -24,7 +24,7 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -42,13 +42,19 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
-  password?: string;
+  username?: string | null;
   /**
    *
    * @type {string}
    * @memberof WebhookProjection
    */
-  username?: string;
+  password?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof WebhookProjection
+   */
+  enabled?: boolean | null;
   /**
    *
    * @type {string}
@@ -60,7 +66,7 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    *
    * @type {string}
@@ -72,37 +78,37 @@ export interface WebhookProjection {
    * @type {Date}
    * @memberof WebhookProjection
    */
-  updatedAt: Date;
+  createdAt: Date;
   /**
    *
    * @type {Date}
    * @memberof WebhookProjection
    */
-  createdAt: Date;
+  updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  aiTransformerId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  aiTransformId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  phoneNumberId?: string | null;
   /**
    *
    * @type {string}
    * @memberof WebhookProjection
    */
   healthStatus?: WebhookProjectionHealthStatusEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  aiTransformerId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  aiTransformId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  phoneNumberId?: string;
 }
 
 /**
@@ -147,16 +153,14 @@ export function WebhookProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     url: json['url'],
-    password: !exists(json, 'password') ? undefined : json['password'],
     username: !exists(json, 'username') ? undefined : json['username'],
+    password: !exists(json, 'password') ? undefined : json['password'],
+    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
-    updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
-    healthStatus: !exists(json, 'healthStatus')
-      ? undefined
-      : json['healthStatus'],
+    updatedAt: new Date(json['updatedAt']),
     aiTransformerId: !exists(json, 'aiTransformerId')
       ? undefined
       : json['aiTransformerId'],
@@ -166,6 +170,9 @@ export function WebhookProjectionFromJSONTyped(
     phoneNumberId: !exists(json, 'phoneNumberId')
       ? undefined
       : json['phoneNumberId'],
+    healthStatus: !exists(json, 'healthStatus')
+      ? undefined
+      : json['healthStatus'],
   };
 }
 
@@ -180,16 +187,17 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     name: value.name,
     id: value.id,
     url: value.url,
-    password: value.password,
     username: value.username,
+    password: value.password,
+    enabled: value.enabled,
     userId: value.userId,
     inboxId: value.inboxId,
     eventName: value.eventName,
-    updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
-    healthStatus: value.healthStatus,
+    updatedAt: value.updatedAt.toISOString(),
     aiTransformerId: value.aiTransformerId,
     aiTransformId: value.aiTransformId,
     phoneNumberId: value.phoneNumberId,
+    healthStatus: value.healthStatus,
   };
 }

@@ -42,31 +42,31 @@ export interface AvailablePhoneNumberDto {
    * @type {string}
    * @memberof AvailablePhoneNumberDto
    */
-  lineType?: string;
+  lineType?: string | null;
   /**
    *
    * @type {string}
    * @memberof AvailablePhoneNumberDto
    */
-  carrierName?: string;
+  carrierName?: string | null;
   /**
    *
    * @type {string}
    * @memberof AvailablePhoneNumberDto
    */
-  mobileCountryCode?: string;
+  mobileCountryCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof AvailablePhoneNumberDto
    */
-  mobileNetworkCode?: string;
+  mobileNetworkCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof AvailablePhoneNumberDto
    */
-  providerLabel?: string;
+  providerLabel?: string | null;
 }
 
 /**
@@ -81,6 +81,7 @@ export enum AvailablePhoneNumberDtoPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',

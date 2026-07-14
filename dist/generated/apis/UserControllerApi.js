@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetEntityFavoritesFilterEnum = exports.GetEntityFavoritesSortEnum = exports.GetEntityEventsFilterEnum = exports.GetEntityEventsSortEnum = exports.GetEntityAutomationsFilterEnum = exports.GetEntityAutomationsSortEnum = exports.UserControllerApi = void 0;
+exports.GetInboxRetentionPolicyRunsSortEnum = exports.GetEntityFavoritesFilterEnum = exports.GetEntityFavoritesSortEnum = exports.GetEntityEventsFilterEnum = exports.GetEntityEventsSortEnum = exports.GetEntityAutomationsFilterEnum = exports.GetEntityAutomationsSortEnum = exports.UserControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -98,6 +98,52 @@ var UserControllerApi = /** @class */ (function (_super) {
     function UserControllerApi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    /**
+     * Start an asynchronous inbox retention policy run for your account
+     */
+    UserControllerApi.prototype.createInboxRetentionPolicyRunRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/user/inbox-retention-policies/account/run",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxRetentionPolicyRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Start an asynchronous inbox retention policy run for your account
+     */
+    UserControllerApi.prototype.createInboxRetentionPolicyRun = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createInboxRetentionPolicyRunRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     /**
      * Create inbox retention policy for your global account
      */
@@ -451,6 +497,111 @@ var UserControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a previously submitted inbox retention policy run for your account
+     */
+    UserControllerApi.prototype.getInboxRetentionPolicyRunRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling getInboxRetentionPolicyRun.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/user/inbox-retention-policies/runs/{runId}".replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxRetentionPolicyRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a previously submitted inbox retention policy run for your account
+     */
+    UserControllerApi.prototype.getInboxRetentionPolicyRun = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxRetentionPolicyRunRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List recent inbox retention policy runs for your account
+     */
+    UserControllerApi.prototype.getInboxRetentionPolicyRunsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/user/inbox-retention-policies/runs",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxRetentionPolicyRunProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List recent inbox retention policy runs for your account
+     */
+    UserControllerApi.prototype.getInboxRetentionPolicyRuns = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxRetentionPolicyRunsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
     UserControllerApi.prototype.getJsonPropertyAsStringRaw = function (requestParameters, initOverrides) {
@@ -463,9 +614,9 @@ var UserControllerApi = /** @class */ (function (_super) {
                             requestParameters.property === undefined) {
                             throw new runtime.RequiredError('property', 'Required parameter requestParameters.property was null or undefined when calling getJsonPropertyAsString.');
                         }
-                        if (requestParameters.body === null ||
-                            requestParameters.body === undefined) {
-                            throw new runtime.RequiredError('body', 'Required parameter requestParameters.body was null or undefined when calling getJsonPropertyAsString.');
+                        if (requestParameters.jsonNode === null ||
+                            requestParameters.jsonNode === undefined) {
+                            throw new runtime.RequiredError('jsonNode', 'Required parameter requestParameters.jsonNode was null or undefined when calling getJsonPropertyAsString.');
                         }
                         queryParameters = {};
                         if (requestParameters.property !== undefined) {
@@ -481,7 +632,7 @@ var UserControllerApi = /** @class */ (function (_super) {
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
-                                body: requestParameters.body,
+                                body: (0, models_1.JsonNodeToJSON)(requestParameters.jsonNode),
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
@@ -617,3 +768,12 @@ var GetEntityFavoritesFilterEnum;
     GetEntityFavoritesFilterEnum["PHONE"] = "PHONE";
     GetEntityFavoritesFilterEnum["SMS"] = "SMS";
 })(GetEntityFavoritesFilterEnum = exports.GetEntityFavoritesFilterEnum || (exports.GetEntityFavoritesFilterEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetInboxRetentionPolicyRunsSortEnum;
+(function (GetInboxRetentionPolicyRunsSortEnum) {
+    GetInboxRetentionPolicyRunsSortEnum["ASC"] = "ASC";
+    GetInboxRetentionPolicyRunsSortEnum["DESC"] = "DESC";
+})(GetInboxRetentionPolicyRunsSortEnum = exports.GetInboxRetentionPolicyRunsSortEnum || (exports.GetInboxRetentionPolicyRunsSortEnum = {}));

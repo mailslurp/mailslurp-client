@@ -30,13 +30,13 @@ export interface PhoneNumberDto {
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {Array<string>}
@@ -54,13 +54,13 @@ export interface PhoneNumberDto {
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  complianceAddress?: string;
+  complianceAddress?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  emergencyAddress?: string;
+  emergencyAddress?: string | null;
   /**
    *
    * @type {string}
@@ -108,31 +108,31 @@ export interface PhoneNumberDto {
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  lineType?: string;
+  lineType?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  carrierName?: string;
+  carrierName?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  mobileCountryCode?: string;
+  mobileCountryCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  mobileNetworkCode?: string;
+  mobileNetworkCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberDto
    */
-  providerLabel?: string;
+  providerLabel?: string | null;
 }
 
 /**
@@ -147,6 +147,7 @@ export enum PhoneNumberDtoPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',

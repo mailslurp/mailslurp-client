@@ -26,13 +26,19 @@
 - [createTotpDeviceForCustomRaw](MFAControllerApi.md#createtotpdeviceforcustomraw)
 - [createTotpDeviceForOtpAuthUrl](MFAControllerApi.md#createtotpdeviceforotpauthurl)
 - [createTotpDeviceForOtpAuthUrlRaw](MFAControllerApi.md#createtotpdeviceforotpauthurlraw)
+- [deleteTotpDevice](MFAControllerApi.md#deletetotpdevice)
+- [deleteTotpDeviceRaw](MFAControllerApi.md#deletetotpdeviceraw)
 - [getTotpDevice](MFAControllerApi.md#gettotpdevice)
 - [getTotpDeviceBy](MFAControllerApi.md#gettotpdeviceby)
 - [getTotpDeviceByRaw](MFAControllerApi.md#gettotpdevicebyraw)
 - [getTotpDeviceCode](MFAControllerApi.md#gettotpdevicecode)
 - [getTotpDeviceCodeRaw](MFAControllerApi.md#gettotpdevicecoderaw)
 - [getTotpDeviceRaw](MFAControllerApi.md#gettotpdeviceraw)
+- [getTotpDevices](MFAControllerApi.md#gettotpdevices)
+- [getTotpDevicesRaw](MFAControllerApi.md#gettotpdevicesraw)
 - [request](MFAControllerApi.md#request)
+- [updateTotpDevice](MFAControllerApi.md#updatetotpdevice)
+- [updateTotpDeviceRaw](MFAControllerApi.md#updatetotpdeviceraw)
 - [withMiddleware](MFAControllerApi.md#withmiddleware)
 - [withPostMiddleware](MFAControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](MFAControllerApi.md#withpremiddleware)
@@ -185,6 +191,46 @@ Create a TOTP device from an OTP Auth URL
 
 ___
 
+### deleteTotpDevice
+
+▸ **deleteTotpDevice**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete a Time-Based One-Time Password (TOTP) device by ID.
+Delete a TOTP device
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteTotpDeviceRequest`](../interfaces/DeleteTotpDeviceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteTotpDeviceRaw
+
+▸ **deleteTotpDeviceRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete a Time-Based One-Time Password (TOTP) device by ID.
+Delete a TOTP device
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteTotpDeviceRequest`](../interfaces/DeleteTotpDeviceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
 ### getTotpDevice
 
 ▸ **getTotpDevice**(`requestParameters`, `initOverrides?`): `Promise`<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>
@@ -305,6 +351,46 @@ Get a TOTP device by ID
 
 ___
 
+### getTotpDevices
+
+▸ **getTotpDevices**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTotpDeviceProjection`](../interfaces/PageTotpDeviceProjection.md)\>
+
+List Time-Based One-Time Password (TOTP) devices for the calling account.
+List TOTP devices
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTotpDevicesRequest`](../interfaces/GetTotpDevicesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageTotpDeviceProjection`](../interfaces/PageTotpDeviceProjection.md)\>
+
+___
+
+### getTotpDevicesRaw
+
+▸ **getTotpDevicesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTotpDeviceProjection`](../interfaces/PageTotpDeviceProjection.md)\>\>
+
+List Time-Based One-Time Password (TOTP) devices for the calling account.
+List TOTP devices
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTotpDevicesRequest`](../interfaces/GetTotpDevicesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTotpDeviceProjection`](../interfaces/PageTotpDeviceProjection.md)\>\>
+
+___
+
 ### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
@@ -323,6 +409,46 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### updateTotpDevice
+
+▸ **updateTotpDevice**(`requestParameters`, `initOverrides?`): `Promise`<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>
+
+Update stored metadata and TOTP settings for a device by ID.
+Update a TOTP device
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateTotpDeviceRequest`](../interfaces/UpdateTotpDeviceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>
+
+___
+
+### updateTotpDeviceRaw
+
+▸ **updateTotpDeviceRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>\>
+
+Update stored metadata and TOTP settings for a device by ID.
+Update a TOTP device
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateTotpDeviceRequest`](../interfaces/UpdateTotpDeviceRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TotpDeviceDto`](../interfaces/TotpDeviceDto.md)\>\>
 
 ___
 

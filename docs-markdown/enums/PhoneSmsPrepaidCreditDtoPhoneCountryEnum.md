@@ -10,6 +10,7 @@
 
 - [AU](PhoneSmsPrepaidCreditDtoPhoneCountryEnum.md#au)
 - [CA](PhoneSmsPrepaidCreditDtoPhoneCountryEnum.md#ca)
+- [CH](PhoneSmsPrepaidCreditDtoPhoneCountryEnum.md#ch)
 - [EE](PhoneSmsPrepaidCreditDtoPhoneCountryEnum.md#ee)
 - [FI](PhoneSmsPrepaidCreditDtoPhoneCountryEnum.md#fi)
 - [GB](PhoneSmsPrepaidCreditDtoPhoneCountryEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

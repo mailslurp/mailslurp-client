@@ -33,13 +33,13 @@ export interface EmailThreadDto {
      * @type {string}
      * @memberof EmailThreadDto
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      * From sender
      * @type {string}
      * @memberof EmailThreadDto
      */
-    from?: string;
+    from?: string | null;
     /**
      * To recipients
      * @type {Array<string>}
@@ -51,13 +51,13 @@ export interface EmailThreadDto {
      * @type {Array<string>}
      * @memberof EmailThreadDto
      */
-    cc?: Array<string>;
+    cc?: Array<string> | null;
     /**
      * BCC recipients
      * @type {Array<string>}
      * @memberof EmailThreadDto
      */
-    bcc?: Array<string>;
+    bcc?: Array<string> | null;
     /**
      *
      * @type {Sender}
@@ -75,7 +75,7 @@ export interface EmailThreadDto {
      * @type {string}
      * @memberof EmailThreadDto
      */
-    subject?: string;
+    subject?: string | null;
     /**
      * Created at DateTime
      * @type {Date}

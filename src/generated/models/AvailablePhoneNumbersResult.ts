@@ -43,7 +43,7 @@ export interface AvailablePhoneNumbersResult {
    * @type {string}
    * @memberof AvailablePhoneNumbersResult
    */
-  warning?: string;
+  warning?: string | null;
 }
 
 export function AvailablePhoneNumbersResultFromJSON(

@@ -29,6 +29,7 @@ var PhonePoolMemberDtoPhoneCountryEnum;
     PhonePoolMemberDtoPhoneCountryEnum["EE"] = "EE";
     PhonePoolMemberDtoPhoneCountryEnum["HK"] = "HK";
     PhonePoolMemberDtoPhoneCountryEnum["PL"] = "PL";
+    PhonePoolMemberDtoPhoneCountryEnum["CH"] = "CH";
     PhonePoolMemberDtoPhoneCountryEnum["PT"] = "PT";
     PhonePoolMemberDtoPhoneCountryEnum["NL"] = "NL";
     PhonePoolMemberDtoPhoneCountryEnum["IL"] = "IL";

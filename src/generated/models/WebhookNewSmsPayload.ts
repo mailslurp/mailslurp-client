@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  SmsMessageMediaDto,
+  SmsMessageMediaDtoFromJSON,
+  SmsMessageMediaDtoFromJSONTyped,
+  SmsMessageMediaDtoToJSON,
+} from './';
+
 /**
  * NEW_SMS webhook payload. Sent to your webhook url endpoint via HTTP POST when an sms is received by the phone number that your webhook is attached to. Use the SMS ID to fetch the full SMS details.
  * @export
@@ -85,6 +92,12 @@ export interface WebhookNewSmsPayload {
    * @memberof WebhookNewSmsPayload
    */
   read: boolean;
+  /**
+   * Media attachments for inbound MMS messages
+   * @type {Array<SmsMessageMediaDto>}
+   * @memberof WebhookNewSmsPayload
+   */
+  media: Array<SmsMessageMediaDto>;
 }
 
 /**
@@ -129,6 +142,7 @@ export function WebhookNewSmsPayloadFromJSONTyped(
     fromNumber: json['fromNumber'],
     body: json['body'],
     read: json['read'],
+    media: (json['media'] as Array<any>).map(SmsMessageMediaDtoFromJSON),
   };
 }
 
@@ -153,5 +167,6 @@ export function WebhookNewSmsPayloadToJSON(
     fromNumber: value.fromNumber,
     body: value.body,
     read: value.read,
+    media: (value.media as Array<any>).map(SmsMessageMediaDtoToJSON),
   };
 }

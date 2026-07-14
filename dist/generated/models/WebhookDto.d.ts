@@ -99,7 +99,7 @@ export interface WebhookDto {
      * @type {WebhookHeaders}
      * @memberof WebhookDto
      */
-    requestHeaders?: WebhookHeaders;
+    requestHeaders?: WebhookHeaders | null;
     /**
      * ID of AI transformer for payload
      * @type {string}
@@ -124,6 +124,12 @@ export interface WebhookDto {
      * @memberof WebhookDto
      */
     healthStatus?: WebhookDtoHealthStatusEnum;
+    /**
+     * Whether the webhook is enabled. Null means legacy/default-enabled.
+     * @type {boolean}
+     * @memberof WebhookDto
+     */
+    enabled?: boolean | null;
 }
 /**
  * @export

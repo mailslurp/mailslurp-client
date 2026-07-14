@@ -37,6 +37,7 @@ var DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum;
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["EE"] = "EE";
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["HK"] = "HK";
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["PL"] = "PL";
+    DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["CH"] = "CH";
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["PT"] = "PT";
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["NL"] = "NL";
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["IL"] = "IL";

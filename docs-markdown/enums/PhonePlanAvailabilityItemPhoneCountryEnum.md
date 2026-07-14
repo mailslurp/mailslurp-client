@@ -10,6 +10,7 @@
 
 - [AU](PhonePlanAvailabilityItemPhoneCountryEnum.md#au)
 - [CA](PhonePlanAvailabilityItemPhoneCountryEnum.md#ca)
+- [CH](PhonePlanAvailabilityItemPhoneCountryEnum.md#ch)
 - [EE](PhonePlanAvailabilityItemPhoneCountryEnum.md#ee)
 - [FI](PhonePlanAvailabilityItemPhoneCountryEnum.md#fi)
 - [GB](PhonePlanAvailabilityItemPhoneCountryEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

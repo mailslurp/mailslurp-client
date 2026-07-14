@@ -26,7 +26,7 @@ export interface CanSendEmailResults {
      * @type {string}
      * @memberof CanSendEmailResults
      */
-    message?: string;
+    message?: string | null;
 }
 export declare function CanSendEmailResultsFromJSON(json: any): CanSendEmailResults;
 export declare function CanSendEmailResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CanSendEmailResults;

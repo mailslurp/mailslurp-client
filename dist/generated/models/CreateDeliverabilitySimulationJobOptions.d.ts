@@ -11,7 +11,7 @@
  */
 import { DeliverabilitySimulationEmailOptions, DeliverabilitySimulationSmsOptions } from './';
 /**
- * Create a simulation job for a deliverability test
+ * Create a simulation job for a load test
  * @export
  * @interface CreateDeliverabilitySimulationJobOptions
  */

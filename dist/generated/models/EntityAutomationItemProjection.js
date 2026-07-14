@@ -37,8 +37,8 @@ function EntityAutomationItemProjectionFromJSONTyped(json, ignoreDiscriminator) 
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
         action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
+        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
         automationType: json['automationType'],
     };
 }
@@ -54,8 +54,8 @@ function EntityAutomationItemProjectionToJSON(value) {
         name: value.name,
         id: value.id,
         inboxId: value.inboxId,
-        phoneId: value.phoneId,
         action: value.action,
+        phoneId: value.phoneId,
         automationType: value.automationType,
     };
 }

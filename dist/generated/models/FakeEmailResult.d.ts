@@ -21,7 +21,7 @@ export interface FakeEmailResult {
      * @type {FakeEmailDto}
      * @memberof FakeEmailResult
      */
-    email?: FakeEmailDto;
+    email?: FakeEmailDto | null;
 }
 export declare function FakeEmailResultFromJSON(json: any): FakeEmailResult;
 export declare function FakeEmailResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): FakeEmailResult;

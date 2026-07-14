@@ -28,6 +28,7 @@ var CreatePhoneNumberOptionsPhoneCountryEnum;
     CreatePhoneNumberOptionsPhoneCountryEnum["EE"] = "EE";
     CreatePhoneNumberOptionsPhoneCountryEnum["HK"] = "HK";
     CreatePhoneNumberOptionsPhoneCountryEnum["PL"] = "PL";
+    CreatePhoneNumberOptionsPhoneCountryEnum["CH"] = "CH";
     CreatePhoneNumberOptionsPhoneCountryEnum["PT"] = "PT";
     CreatePhoneNumberOptionsPhoneCountryEnum["NL"] = "NL";
     CreatePhoneNumberOptionsPhoneCountryEnum["IL"] = "IL";
@@ -59,8 +60,8 @@ var CreatePhoneNumberOptionsPhoneNumberVariantEnum;
  */
 var CreatePhoneNumberOptionsPhoneProviderEnum;
 (function (CreatePhoneNumberOptionsPhoneProviderEnum) {
-    CreatePhoneNumberOptionsPhoneProviderEnum["TWILIO"] = "TWILIO";
-    CreatePhoneNumberOptionsPhoneProviderEnum["TELNYX"] = "TELNYX";
+    CreatePhoneNumberOptionsPhoneProviderEnum["T1"] = "T1";
+    CreatePhoneNumberOptionsPhoneProviderEnum["T2"] = "T2";
 })(CreatePhoneNumberOptionsPhoneProviderEnum = exports.CreatePhoneNumberOptionsPhoneProviderEnum || (exports.CreatePhoneNumberOptionsPhoneProviderEnum = {}));
 /**
  * @export

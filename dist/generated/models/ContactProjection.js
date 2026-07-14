@@ -26,10 +26,10 @@ function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        createdAt: new Date(json['createdAt']),
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
-        createdAt: new Date(json['createdAt']),
         emailAddresses: !(0, runtime_1.exists)(json, 'emailAddresses')
             ? undefined
             : json['emailAddresses'],
@@ -50,8 +50,8 @@ function ContactProjectionToJSON(value) {
     return {
         id: value.id,
         groupId: value.groupId,
-        emailAddress: value.emailAddress,
         createdAt: value.createdAt.toISOString(),
+        emailAddress: value.emailAddress,
         emailAddresses: value.emailAddresses,
         firstName: value.firstName,
         lastName: value.lastName,

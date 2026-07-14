@@ -20,19 +20,19 @@ export interface SearchEmailsOptions {
      * @type {Array<string>}
      * @memberof SearchEmailsOptions
      */
-    inboxIds?: Array<string>;
+    inboxIds?: Array<string> | null;
     /**
      * Optional page index in email list pagination
      * @type {number}
      * @memberof SearchEmailsOptions
      */
-    pageIndex?: number;
+    pageIndex?: number | null;
     /**
      * Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @type {number}
      * @memberof SearchEmailsOptions
      */
-    pageSize?: number;
+    pageSize?: number | null;
     /**
      * Optional createdAt sort direction ASC or DESC
      * @type {string}
@@ -44,25 +44,25 @@ export interface SearchEmailsOptions {
      * @type {boolean}
      * @memberof SearchEmailsOptions
      */
-    unreadOnly?: boolean;
+    unreadOnly?: boolean | null;
     /**
      * Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
      * @type {string}
      * @memberof SearchEmailsOptions
      */
-    searchFilter?: string;
+    searchFilter?: string | null;
     /**
      * Optional filter emails received after given date time
      * @type {Date}
      * @memberof SearchEmailsOptions
      */
-    since?: Date;
+    since?: Date | null;
     /**
      * Optional filter emails received before given date time
      * @type {Date}
      * @memberof SearchEmailsOptions
      */
-    before?: Date;
+    before?: Date | null;
 }
 /**
  * @export

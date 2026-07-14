@@ -25,8 +25,8 @@ function SortObjectFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
-        unsorted: !(0, runtime_1.exists)(json, 'unsorted') ? undefined : json['unsorted'],
         sorted: !(0, runtime_1.exists)(json, 'sorted') ? undefined : json['sorted'],
+        unsorted: !(0, runtime_1.exists)(json, 'unsorted') ? undefined : json['unsorted'],
     };
 }
 exports.SortObjectFromJSONTyped = SortObjectFromJSONTyped;
@@ -39,8 +39,8 @@ function SortObjectToJSON(value) {
     }
     return {
         empty: value.empty,
-        unsorted: value.unsorted,
         sorted: value.sorted,
+        unsorted: value.unsorted,
     };
 }
 exports.SortObjectToJSON = SortObjectToJSON;

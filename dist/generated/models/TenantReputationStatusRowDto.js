@@ -28,6 +28,7 @@ var TenantReputationStatusRowDtoAccountRegionEnum;
     TenantReputationStatusRowDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
     TenantReputationStatusRowDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
     TenantReputationStatusRowDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    TenantReputationStatusRowDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_3"] = "US_WEST_2_ACCOUNT_SES_3";
     TenantReputationStatusRowDtoAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
     TenantReputationStatusRowDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
     TenantReputationStatusRowDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
@@ -71,7 +72,9 @@ function TenantReputationStatusRowDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['sendLastHour'],
         metricTimestamp: !(0, runtime_1.exists)(json, 'metricTimestamp')
             ? undefined
-            : new Date(json['metricTimestamp']),
+            : json['metricTimestamp'] === null
+                ? null
+                : new Date(json['metricTimestamp']),
         error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
     };
 }
@@ -98,7 +101,9 @@ function TenantReputationStatusRowDtoToJSON(value) {
         sendLastHour: value.sendLastHour,
         metricTimestamp: value.metricTimestamp === undefined
             ? undefined
-            : value.metricTimestamp.toISOString(),
+            : value.metricTimestamp === null
+                ? null
+                : value.metricTimestamp.toISOString(),
         error: value.error,
     };
 }

@@ -2,7 +2,7 @@
 
 # Interface: DeliverabilityTestDto
 
-Deliverability test configuration and progress summary
+Load test configuration and progress summary
 
 **`Export`**
 

@@ -26,7 +26,7 @@ export interface AuditLogEventDto {
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    dt?: string;
+    dt?: string | null;
     /**
      *
      * @type {string}
@@ -50,55 +50,55 @@ export interface AuditLogEventDto {
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    userId?: string;
+    userId?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    actorUserId?: string;
+    actorUserId?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    targetUserId?: string;
+    targetUserId?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    resourceType?: string;
+    resourceType?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    resourceId?: string;
+    resourceId?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    outcome?: string;
+    outcome?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    requestId?: string;
+    requestId?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    ipAddress?: string;
+    ipAddress?: string | null;
     /**
      *
      * @type {string}
      * @memberof AuditLogEventDto
      */
-    metadataJson?: string;
+    metadataJson?: string | null;
 }
 export declare function AuditLogEventDtoFromJSON(json: any): AuditLogEventDto;
 export declare function AuditLogEventDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuditLogEventDto;

@@ -21,7 +21,7 @@ export interface InboxRetentionPolicyOptionalDto {
      * @type {InboxRetentionPolicyDto}
      * @memberof InboxRetentionPolicyOptionalDto
      */
-    policy?: InboxRetentionPolicyDto;
+    policy?: InboxRetentionPolicyDto | null;
 }
 export declare function InboxRetentionPolicyOptionalDtoFromJSON(json: any): InboxRetentionPolicyOptionalDto;
 export declare function InboxRetentionPolicyOptionalDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRetentionPolicyOptionalDto;

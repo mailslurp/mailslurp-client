@@ -33,40 +33,46 @@ export interface DevicePreviewTargetDto {
   runId: string;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof DevicePreviewTargetDto
    */
-  provider?: string;
+  creditCost: number;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewTargetDto
    */
-  clientProfile?: string;
+  provider?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewTargetDto
    */
-  deviceType?: string;
+  clientProfile?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewTargetDto
    */
-  browserFamily?: string;
+  deviceType?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewTargetDto
    */
-  platform?: string;
+  browserFamily?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewTargetDto
    */
-  colorScheme?: string;
+  platform?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewTargetDto
+   */
+  colorScheme?: string | null;
   /**
    *
    * @type {string}
@@ -78,13 +84,13 @@ export interface DevicePreviewTargetDto {
    * @type {string}
    * @memberof DevicePreviewTargetDto
    */
-  failureCode?: string;
+  failureCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewTargetDto
    */
-  primaryScreenshotId?: string;
+  primaryScreenshotId?: string | null;
   /**
    *
    * @type {Date}
@@ -110,6 +116,9 @@ export enum DevicePreviewTargetDtoStatusEnum {
   READY = 'READY',
   FAILED = 'FAILED',
   NEEDS_INTERVENTION = 'NEEDS_INTERVENTION',
+  TIMED_OUT = 'TIMED_OUT',
+  SKIPPED_OFFLINE = 'SKIPPED_OFFLINE',
+  SETUP_REQUIRED = 'SETUP_REQUIRED',
 }
 
 export function DevicePreviewTargetDtoFromJSON(
@@ -128,6 +137,7 @@ export function DevicePreviewTargetDtoFromJSONTyped(
   return {
     id: json['id'],
     runId: json['runId'],
+    creditCost: json['creditCost'],
     provider: !exists(json, 'provider') ? undefined : json['provider'],
     clientProfile: !exists(json, 'clientProfile')
       ? undefined
@@ -160,6 +170,7 @@ export function DevicePreviewTargetDtoToJSON(
   return {
     id: value.id,
     runId: value.runId,
+    creditCost: value.creditCost,
     provider: value.provider,
     clientProfile: value.clientProfile,
     deviceType: value.deviceType,

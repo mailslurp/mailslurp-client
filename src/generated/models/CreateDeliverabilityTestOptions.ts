@@ -25,7 +25,7 @@ import {
 } from './';
 
 /**
- * Create a new deliverability/load test
+ * Create a new load test
  * @export
  * @interface CreateDeliverabilityTestOptions
  */

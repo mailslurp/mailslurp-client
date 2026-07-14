@@ -46,6 +46,12 @@
 - [deletePhoneNumberRaw](PhoneControllerApi.md#deletephonenumberraw)
 - [deletePhonePool](PhoneControllerApi.md#deletephonepool)
 - [deletePhonePoolRaw](PhoneControllerApi.md#deletephonepoolraw)
+- [downloadPhoneNumberMedia](PhoneControllerApi.md#downloadphonenumbermedia)
+- [downloadPhoneNumberMediaBase64](PhoneControllerApi.md#downloadphonenumbermediabase64)
+- [downloadPhoneNumberMediaBase64Raw](PhoneControllerApi.md#downloadphonenumbermediabase64raw)
+- [downloadPhoneNumberMediaRaw](PhoneControllerApi.md#downloadphonenumbermediaraw)
+- [exportPhoneNumbersCsv](PhoneControllerApi.md#exportphonenumberscsv)
+- [exportPhoneNumbersCsvRaw](PhoneControllerApi.md#exportphonenumberscsvraw)
 - [getAllPhoneMessageThreads](PhoneControllerApi.md#getallphonemessagethreads)
 - [getAllPhoneMessageThreadsRaw](PhoneControllerApi.md#getallphonemessagethreadsraw)
 - [getAllPhoneNumberReleases](PhoneControllerApi.md#getallphonenumberreleases)
@@ -69,6 +75,12 @@
 - [getPhoneNumberByPhoneNumberRaw](PhoneControllerApi.md#getphonenumberbyphonenumberraw)
 - [getPhoneNumberLineTypeIntelligence](PhoneControllerApi.md#getphonenumberlinetypeintelligence)
 - [getPhoneNumberLineTypeIntelligenceRaw](PhoneControllerApi.md#getphonenumberlinetypeintelligenceraw)
+- [getPhoneNumberMedia](PhoneControllerApi.md#getphonenumbermedia)
+- [getPhoneNumberMedia1](PhoneControllerApi.md#getphonenumbermedia1)
+- [getPhoneNumberMedia1Raw](PhoneControllerApi.md#getphonenumbermedia1raw)
+- [getPhoneNumberMediaById](PhoneControllerApi.md#getphonenumbermediabyid)
+- [getPhoneNumberMediaByIdRaw](PhoneControllerApi.md#getphonenumbermediabyidraw)
+- [getPhoneNumberMediaRaw](PhoneControllerApi.md#getphonenumbermediaraw)
 - [getPhoneNumberRaw](PhoneControllerApi.md#getphonenumberraw)
 - [getPhoneNumberRelease](PhoneControllerApi.md#getphonenumberrelease)
 - [getPhoneNumberReleaseRaw](PhoneControllerApi.md#getphonenumberreleaseraw)
@@ -679,6 +691,112 @@ Delete phone pool
 
 ___
 
+### downloadPhoneNumberMedia
+
+▸ **downloadPhoneNumberMedia**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadPhoneNumberMediaRequest`](../interfaces/DownloadPhoneNumberMediaRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### downloadPhoneNumberMediaBase64
+
+▸ **downloadPhoneNumberMediaBase64**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadPhoneNumberMediaBase64Request`](../interfaces/DownloadPhoneNumberMediaBase64Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### downloadPhoneNumberMediaBase64Raw
+
+▸ **downloadPhoneNumberMediaBase64Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadPhoneNumberMediaBase64Request`](../interfaces/DownloadPhoneNumberMediaBase64Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### downloadPhoneNumberMediaRaw
+
+▸ **downloadPhoneNumberMediaRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadPhoneNumberMediaRequest`](../interfaces/DownloadPhoneNumberMediaRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### exportPhoneNumbersCsv
+
+▸ **exportPhoneNumbersCsv**(`initOverrides?`): `Promise`<`void`\>
+
+Download all active phone numbers for account as CSV
+Export phone numbers CSV
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### exportPhoneNumbersCsvRaw
+
+▸ **exportPhoneNumbersCsvRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Download all active phone numbers for account as CSV
+Export phone numbers CSV
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
 ### getAllPhoneMessageThreads
 
 ▸ **getAllPhoneMessageThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneMessageThreadProjection`](../interfaces/PagePhoneMessageThreadProjection.md)\>
@@ -1132,6 +1250,108 @@ Get line type intelligence for a phone number
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberLineTypeLookupDto`](../interfaces/PhoneNumberLineTypeLookupDto.md)\>\>
+
+___
+
+### getPhoneNumberMedia
+
+▸ **getPhoneNumberMedia**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberMediaRequest`](../interfaces/GetPhoneNumberMediaRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>
+
+___
+
+### getPhoneNumberMedia1
+
+▸ **getPhoneNumberMedia1**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberMedia1Request`](../interfaces/GetPhoneNumberMedia1Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>
+
+___
+
+### getPhoneNumberMedia1Raw
+
+▸ **getPhoneNumberMedia1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberMedia1Request`](../interfaces/GetPhoneNumberMedia1Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>\>
+
+___
+
+### getPhoneNumberMediaById
+
+▸ **getPhoneNumberMediaById**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberMediaByIdRequest`](../interfaces/GetPhoneNumberMediaByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>
+
+___
+
+### getPhoneNumberMediaByIdRaw
+
+▸ **getPhoneNumberMediaByIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberMediaByIdRequest`](../interfaces/GetPhoneNumberMediaByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>\>
+
+___
+
+### getPhoneNumberMediaRaw
+
+▸ **getPhoneNumberMediaRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberMediaRequest`](../interfaces/GetPhoneNumberMediaRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsMessageMedia`](../interfaces/PageSmsMessageMedia.md)\>\>
 
 ___
 

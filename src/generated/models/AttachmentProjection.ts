@@ -38,12 +38,6 @@ export interface AttachmentProjection {
    */
   contentLength?: number | null;
   /**
-   * Content type of attachment.
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  contentType?: string | null;
-  /**
    *
    * @type {string}
    * @memberof AttachmentProjection
@@ -54,13 +48,7 @@ export interface AttachmentProjection {
    * @type {string}
    * @memberof AttachmentProjection
    */
-  inboxId?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  updatedAt: Date;
+  inboxId?: string | null;
   /**
    *
    * @type {Date}
@@ -74,11 +62,23 @@ export interface AttachmentProjection {
    */
   contentId?: string | null;
   /**
+   *
+   * @type {Date}
+   * @memberof AttachmentProjection
+   */
+  updatedAt: Date;
+  /**
    * Attachment ID
    * @type {string}
    * @memberof AttachmentProjection
    */
   attachmentId: string;
+  /**
+   * Content type of attachment.
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  contentType?: string | null;
 }
 
 export function AttachmentProjectionFromJSON(json: any): AttachmentProjection {
@@ -98,13 +98,13 @@ export function AttachmentProjectionFromJSONTyped(
     contentLength: !exists(json, 'contentLength')
       ? undefined
       : json['contentLength'],
-    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
     contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
+    updatedAt: new Date(json['updatedAt']),
     attachmentId: json['attachmentId'],
+    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
   };
 }
 
@@ -121,12 +121,12 @@ export function AttachmentProjectionToJSON(
     name: value.name,
     id: value.id,
     contentLength: value.contentLength,
-    contentType: value.contentType,
     userId: value.userId,
     inboxId: value.inboxId,
-    updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
     contentId: value.contentId,
+    updatedAt: value.updatedAt.toISOString(),
     attachmentId: value.attachmentId,
+    contentType: value.contentType,
   };
 }

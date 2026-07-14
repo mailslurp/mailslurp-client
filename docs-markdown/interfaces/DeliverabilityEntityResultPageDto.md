@@ -2,7 +2,7 @@
 
 # Interface: DeliverabilityEntityResultPageDto
 
-Paged entity results for a deliverability test
+Paged entity results for a load test
 
 **`Export`**
 

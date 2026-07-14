@@ -36,7 +36,7 @@ export interface CampaignProbeDto {
    * @type {string}
    * @memberof CampaignProbeDto
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -60,7 +60,7 @@ export interface CampaignProbeDto {
    * @type {number}
    * @memberof CampaignProbeDto
    */
-  intervalSeconds?: number;
+  intervalSeconds?: number | null;
   /**
    *
    * @type {boolean}
@@ -72,7 +72,7 @@ export interface CampaignProbeDto {
    * @type {Date}
    * @memberof CampaignProbeDto
    */
-  nextRunAt?: Date;
+  nextRunAt?: Date | null;
   /**
    *
    * @type {string}
@@ -84,13 +84,13 @@ export interface CampaignProbeDto {
    * @type {number}
    * @memberof CampaignProbeDto
    */
-  lastHealthScore?: number;
+  lastHealthScore?: number | null;
   /**
    *
    * @type {Date}
    * @memberof CampaignProbeDto
    */
-  lastIngestAt?: Date;
+  lastIngestAt?: Date | null;
   /**
    *
    * @type {number}
@@ -145,6 +145,8 @@ export function CampaignProbeDtoFromJSONTyped(
     schedulingEnabled: json['schedulingEnabled'],
     nextRunAt: !exists(json, 'nextRunAt')
       ? undefined
+      : json['nextRunAt'] === null
+      ? null
       : new Date(json['nextRunAt']),
     lastRunStatus: !exists(json, 'lastRunStatus')
       ? undefined
@@ -154,6 +156,8 @@ export function CampaignProbeDtoFromJSONTyped(
       : json['lastHealthScore'],
     lastIngestAt: !exists(json, 'lastIngestAt')
       ? undefined
+      : json['lastIngestAt'] === null
+      ? null
       : new Date(json['lastIngestAt']),
     totalIngestCount: json['totalIngestCount'],
     createdAt: new Date(json['createdAt']),
@@ -178,12 +182,18 @@ export function CampaignProbeDtoToJSON(value?: CampaignProbeDto | null): any {
     intervalSeconds: value.intervalSeconds,
     schedulingEnabled: value.schedulingEnabled,
     nextRunAt:
-      value.nextRunAt === undefined ? undefined : value.nextRunAt.toISOString(),
+      value.nextRunAt === undefined
+        ? undefined
+        : value.nextRunAt === null
+        ? null
+        : value.nextRunAt.toISOString(),
     lastRunStatus: value.lastRunStatus,
     lastHealthScore: value.lastHealthScore,
     lastIngestAt:
       value.lastIngestAt === undefined
         ? undefined
+        : value.lastIngestAt === null
+        ? null
         : value.lastIngestAt.toISOString(),
     totalIngestCount: value.totalIngestCount,
     createdAt: value.createdAt.toISOString(),

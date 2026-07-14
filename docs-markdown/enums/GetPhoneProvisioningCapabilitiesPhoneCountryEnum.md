@@ -10,6 +10,7 @@
 
 - [AU](GetPhoneProvisioningCapabilitiesPhoneCountryEnum.md#au)
 - [CA](GetPhoneProvisioningCapabilitiesPhoneCountryEnum.md#ca)
+- [CH](GetPhoneProvisioningCapabilitiesPhoneCountryEnum.md#ch)
 - [EE](GetPhoneProvisioningCapabilitiesPhoneCountryEnum.md#ee)
 - [FI](GetPhoneProvisioningCapabilitiesPhoneCountryEnum.md#fi)
 - [GB](GetPhoneProvisioningCapabilitiesPhoneCountryEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

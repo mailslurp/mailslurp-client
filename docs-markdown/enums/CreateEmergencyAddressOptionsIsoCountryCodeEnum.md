@@ -10,6 +10,7 @@
 
 - [AU](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#au)
 - [CA](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#ca)
+- [CH](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#ch)
 - [EE](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#ee)
 - [FI](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#fi)
 - [GB](CreateEmergencyAddressOptionsIsoCountryCodeEnum.md#gb)
@@ -32,6 +33,12 @@ ___
 ### CA
 
 • **CA** = ``"CA"``
+
+___
+
+### CH
+
+• **CH** = ``"CH"``
 
 ___
 

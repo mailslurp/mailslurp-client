@@ -2,7 +2,7 @@
 
 # Interface: DeliverabilitySelectorOptions
 
-How entities are selected for a deliverability test
+How entities are selected for a load test
 
 **`Export`**
 
@@ -18,6 +18,7 @@ DeliverabilitySelectorOptions
 - [excludeEntityIds](DeliverabilitySelectorOptions.md#excludeentityids)
 - [pattern](DeliverabilitySelectorOptions.md#pattern)
 - [phoneCountry](DeliverabilitySelectorOptions.md#phonecountry)
+- [tags](DeliverabilitySelectorOptions.md#tags)
 - [type](DeliverabilitySelectorOptions.md#type)
 
 ## Properties
@@ -63,6 +64,18 @@ ___
 • `Optional` **phoneCountry**: [`DeliverabilitySelectorOptionsPhoneCountryEnum`](../enums/DeliverabilitySelectorOptionsPhoneCountryEnum.md)
 
 Optional phone-country filter for PHONE scope selection (e.g. ALL phones in US). Must be null for INBOX scope.
+
+**`Memberof`**
+
+DeliverabilitySelectorOptions
+
+___
+
+### tags
+
+• `Optional` **tags**: `string`[]
+
+Optional tags to filter selected entities by. Matching is case-insensitive and an entity must contain all provided tags.
 
 **`Memberof`**
 

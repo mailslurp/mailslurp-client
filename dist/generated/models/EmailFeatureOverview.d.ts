@@ -27,13 +27,13 @@ export interface EmailFeatureOverview {
      * @type {string}
      * @memberof EmailFeatureOverview
      */
-    title?: string;
+    title?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailFeatureOverview
      */
-    description?: string;
+    description?: string | null;
     /**
      *
      * @type {string}
@@ -45,7 +45,7 @@ export interface EmailFeatureOverview {
      * @type {string}
      * @memberof EmailFeatureOverview
      */
-    notes?: string;
+    notes?: string | null;
     /**
      *
      * @type {{ [key: string]: string; }}
@@ -53,13 +53,13 @@ export interface EmailFeatureOverview {
      */
     notesNumbers?: {
         [key: string]: string;
-    };
+    } | null;
     /**
      *
      * @type {Array<EmailFeatureFamilyStatistics>}
      * @memberof EmailFeatureOverview
      */
-    featureStatistics?: Array<EmailFeatureFamilyStatistics>;
+    featureStatistics?: Array<EmailFeatureFamilyStatistics> | null;
     /**
      *
      * @type {Set<string>}

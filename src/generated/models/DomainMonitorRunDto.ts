@@ -105,6 +105,48 @@ export interface DomainMonitorRunDto {
   mxOk: boolean;
   /**
    *
+   * @type {boolean}
+   * @memberof DomainMonitorRunDto
+   */
+  dkimOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunDto
+   */
+  bimiOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunDto
+   */
+  mtaStsOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunDto
+   */
+  tlsReportingOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunDto
+   */
+  blacklistChecked: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunDto
+   */
+  blacklistOk: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainMonitorRunDto
+   */
+  blacklistListed: boolean;
+  /**
+   *
    * @type {Array<string>}
    * @memberof DomainMonitorRunDto
    */
@@ -114,7 +156,7 @@ export interface DomainMonitorRunDto {
    * @type {string}
    * @memberof DomainMonitorRunDto
    */
-  errorMessage?: string;
+  errorMessage?: string | null;
   /**
    *
    * @type {Date}
@@ -176,6 +218,13 @@ export function DomainMonitorRunDtoFromJSONTyped(
     dmarcOk: json['dmarcOk'],
     dmarcEnforced: json['dmarcEnforced'],
     mxOk: json['mxOk'],
+    dkimOk: json['dkimOk'],
+    bimiOk: json['bimiOk'],
+    mtaStsOk: json['mtaStsOk'],
+    tlsReportingOk: json['tlsReportingOk'],
+    blacklistChecked: json['blacklistChecked'],
+    blacklistOk: json['blacklistOk'],
+    blacklistListed: json['blacklistListed'],
     insights: json['insights'],
     errorMessage: !exists(json, 'errorMessage')
       ? undefined
@@ -209,6 +258,13 @@ export function DomainMonitorRunDtoToJSON(
     dmarcOk: value.dmarcOk,
     dmarcEnforced: value.dmarcEnforced,
     mxOk: value.mxOk,
+    dkimOk: value.dkimOk,
+    bimiOk: value.bimiOk,
+    mtaStsOk: value.mtaStsOk,
+    tlsReportingOk: value.tlsReportingOk,
+    blacklistChecked: value.blacklistChecked,
+    blacklistOk: value.blacklistOk,
+    blacklistListed: value.blacklistListed,
     insights: value.insights,
     errorMessage: value.errorMessage,
     createdAt: value.createdAt.toISOString(),

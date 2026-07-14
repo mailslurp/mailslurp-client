@@ -30,7 +30,7 @@ export interface GetOrCreatePhonePoolOptions {
    * @type {string}
    * @memberof GetOrCreatePhonePoolOptions
    */
-  description?: string;
+  description?: string | null;
 }
 
 export function GetOrCreatePhonePoolOptionsFromJSON(

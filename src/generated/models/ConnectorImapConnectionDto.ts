@@ -36,91 +36,91 @@ export interface ConnectorImapConnectionDto {
    * @type {number}
    * @memberof ConnectorImapConnectionDto
    */
-  imapPort?: number;
+  imapPort?: number | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  imapUsername?: string;
+  imapUsername?: string | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  imapPassword?: string;
+  imapPassword?: string | null;
   /**
    *
    * @type {boolean}
    * @memberof ConnectorImapConnectionDto
    */
-  imapSsl?: boolean;
+  imapSsl?: boolean | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  selectFolder?: string;
+  selectFolder?: string | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  searchTerms?: string;
+  searchTerms?: string | null;
   /**
    *
    * @type {boolean}
    * @memberof ConnectorImapConnectionDto
    */
-  startTls?: boolean;
+  startTls?: boolean | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  proxyHost?: string;
+  proxyHost?: string | null;
   /**
    *
    * @type {number}
    * @memberof ConnectorImapConnectionDto
    */
-  proxyPort?: number;
+  proxyPort?: number | null;
   /**
    *
    * @type {boolean}
    * @memberof ConnectorImapConnectionDto
    */
-  proxyEnabled?: boolean;
+  proxyEnabled?: boolean | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  localHostName?: string;
+  localHostName?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof ConnectorImapConnectionDto
    */
-  mechanisms?: Array<string>;
+  mechanisms?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof ConnectorImapConnectionDto
    */
-  sslProtocols?: Array<string>;
+  sslProtocols?: Array<string> | null;
   /**
    *
    * @type {string}
    * @memberof ConnectorImapConnectionDto
    */
-  sslTrust?: string;
+  sslTrust?: string | null;
   /**
    *
    * @type {boolean}
    * @memberof ConnectorImapConnectionDto
    */
-  enabled?: boolean;
+  enabled?: boolean | null;
   /**
    *
    * @type {Date}

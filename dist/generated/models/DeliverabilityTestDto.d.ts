@@ -11,7 +11,7 @@
  */
 import { DeliverabilityExpectation, DeliverabilitySelectorOptions } from './';
 /**
- * Deliverability test configuration and progress summary
+ * Load test configuration and progress summary
  * @export
  * @interface DeliverabilityTestDto
  */

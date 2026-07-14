@@ -26,31 +26,31 @@ export interface CreatePhoneProvisioningJobItemOptions {
      * @type {string}
      * @memberof CreatePhoneProvisioningJobItemOptions
      */
-    providerLabel?: string;
+    providerLabel?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreatePhoneProvisioningJobItemOptions
      */
-    lineType?: string;
+    lineType?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreatePhoneProvisioningJobItemOptions
      */
-    carrierName?: string;
+    carrierName?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreatePhoneProvisioningJobItemOptions
      */
-    mobileCountryCode?: string;
+    mobileCountryCode?: string | null;
     /**
      *
      * @type {string}
      * @memberof CreatePhoneProvisioningJobItemOptions
      */
-    mobileNetworkCode?: string;
+    mobileNetworkCode?: string | null;
 }
 export declare function CreatePhoneProvisioningJobItemOptionsFromJSON(json: any): CreatePhoneProvisioningJobItemOptions;
 export declare function CreatePhoneProvisioningJobItemOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreatePhoneProvisioningJobItemOptions;

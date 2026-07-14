@@ -36,13 +36,13 @@ export interface TemplateProjection {
    * @type {Date}
    * @memberof TemplateProjection
    */
-  updatedAt: Date;
+  createdAt: Date;
   /**
    *
    * @type {Date}
    * @memberof TemplateProjection
    */
-  createdAt: Date;
+  updatedAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -65,8 +65,8 @@ export function TemplateProjectionFromJSONTyped(
   return {
     name: json['name'],
     id: json['id'],
-    updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     variables: json['variables'],
   };
 }
@@ -83,8 +83,8 @@ export function TemplateProjectionToJSON(
   return {
     name: value.name,
     id: value.id,
-    updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
     variables: value.variables,
   };
 }

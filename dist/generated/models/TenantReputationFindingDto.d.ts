@@ -32,43 +32,43 @@ export interface TenantReputationFindingDto {
      * @type {string}
      * @memberof TenantReputationFindingDto
      */
-    tenantArn?: string;
+    tenantArn?: string | null;
     /**
      *
      * @type {string}
      * @memberof TenantReputationFindingDto
      */
-    type?: string;
+    type?: string | null;
     /**
      *
      * @type {string}
      * @memberof TenantReputationFindingDto
      */
-    impact?: string;
+    impact?: string | null;
     /**
      *
      * @type {string}
      * @memberof TenantReputationFindingDto
      */
-    status?: string;
+    status?: string | null;
     /**
      *
      * @type {string}
      * @memberof TenantReputationFindingDto
      */
-    description?: string;
+    description?: string | null;
     /**
      *
      * @type {Date}
      * @memberof TenantReputationFindingDto
      */
-    createdTimestamp?: Date;
+    createdTimestamp?: Date | null;
     /**
      *
      * @type {Date}
      * @memberof TenantReputationFindingDto
      */
-    lastUpdatedTimestamp?: Date;
+    lastUpdatedTimestamp?: Date | null;
 }
 /**
  * @export
@@ -82,6 +82,7 @@ export declare enum TenantReputationFindingDtoAccountRegionEnum {
     EU_WEST_1_ACCOUNT_SES_1 = "EU_WEST_1_ACCOUNT_SES_1",
     US_WEST_2_ACCOUNT_SES_2 = "US_WEST_2_ACCOUNT_SES_2",
     EU_WEST_1_ACCOUNT_SES_2 = "EU_WEST_1_ACCOUNT_SES_2",
+    US_WEST_2_ACCOUNT_SES_3 = "US_WEST_2_ACCOUNT_SES_3",
     US_WEST_2_ACCOUNT_BYTEWISE = "US_WEST_2_ACCOUNT_BYTEWISE",
     EU_WEST_1_ACCOUNT_BYTEWISE = "EU_WEST_1_ACCOUNT_BYTEWISE",
     US_WEST_2 = "US_WEST_2",

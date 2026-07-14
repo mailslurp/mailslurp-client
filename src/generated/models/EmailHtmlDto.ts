@@ -24,13 +24,13 @@ export interface EmailHtmlDto {
    * @type {string}
    * @memberof EmailHtmlDto
    */
-  subject?: string;
+  subject?: string | null;
   /**
    *
    * @type {string}
    * @memberof EmailHtmlDto
    */
-  body?: string;
+  body?: string | null;
 }
 
 export function EmailHtmlDtoFromJSON(json: any): EmailHtmlDto {

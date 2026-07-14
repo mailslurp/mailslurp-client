@@ -28,6 +28,7 @@ var AvailablePhoneNumberDtoPhoneCountryEnum;
     AvailablePhoneNumberDtoPhoneCountryEnum["EE"] = "EE";
     AvailablePhoneNumberDtoPhoneCountryEnum["HK"] = "HK";
     AvailablePhoneNumberDtoPhoneCountryEnum["PL"] = "PL";
+    AvailablePhoneNumberDtoPhoneCountryEnum["CH"] = "CH";
     AvailablePhoneNumberDtoPhoneCountryEnum["PT"] = "PT";
     AvailablePhoneNumberDtoPhoneCountryEnum["NL"] = "NL";
     AvailablePhoneNumberDtoPhoneCountryEnum["IL"] = "IL";

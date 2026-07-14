@@ -43,6 +43,8 @@ StructuredOutputSchema
 
 • `Optional` **\_default**: `object`
 
+Optionally provide a default value for when no value can be found.
+
 **`Memberof`**
 
 StructuredOutputSchema
@@ -86,6 +88,8 @@ ___
 ### example
 
 • `Optional` **example**: `object`
+
+Pass example values to help the AI understand the schema.
 
 **`Memberof`**
 

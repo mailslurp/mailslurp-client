@@ -24,7 +24,7 @@ export interface EmptyResponseDto {
    * @type {string}
    * @memberof EmptyResponseDto
    */
-  message?: string;
+  message?: string | null;
 }
 
 export function EmptyResponseDtoFromJSON(json: any): EmptyResponseDto {

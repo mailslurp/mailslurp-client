@@ -2,7 +2,7 @@
 
 # Interface: CreateDeliverabilityTestOptions
 
-Create a new deliverability/load test
+Create a new load test
 
 **`Export`**
 

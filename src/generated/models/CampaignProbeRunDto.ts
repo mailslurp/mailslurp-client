@@ -156,43 +156,43 @@ export interface CampaignProbeRunDto {
    * @type {string}
    * @memberof CampaignProbeRunDto
    */
-  errorMessage?: string;
+  errorMessage?: string | null;
   /**
    *
    * @type {string}
    * @memberof CampaignProbeRunDto
    */
-  fromAddress?: string;
+  fromAddress?: string | null;
   /**
    *
    * @type {string}
    * @memberof CampaignProbeRunDto
    */
-  recipient?: string;
+  recipient?: string | null;
   /**
    *
    * @type {string}
    * @memberof CampaignProbeRunDto
    */
-  subject?: string;
+  subject?: string | null;
   /**
    *
    * @type {string}
    * @memberof CampaignProbeRunDto
    */
-  messageId?: string;
+  messageId?: string | null;
   /**
    *
    * @type {string}
    * @memberof CampaignProbeRunDto
    */
-  sourceMessageId?: string;
+  sourceMessageId?: string | null;
   /**
    *
    * @type {number}
    * @memberof CampaignProbeRunDto
    */
-  processingMs?: number;
+  processingMs?: number | null;
   /**
    *
    * @type {Date}

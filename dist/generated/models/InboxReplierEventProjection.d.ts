@@ -29,16 +29,16 @@ export interface InboxReplierEventProjection {
     id?: string | null;
     /**
      *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    status?: InboxReplierEventProjectionStatusEnum;
-    /**
-     *
      * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
     recipients?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    status?: InboxReplierEventProjectionStatusEnum;
     /**
      *
      * @type {string}

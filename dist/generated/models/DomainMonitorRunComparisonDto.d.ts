@@ -78,6 +78,36 @@ export interface DomainMonitorRunComparisonDto {
     mxChanged: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof DomainMonitorRunComparisonDto
+     */
+    dkimChanged: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunComparisonDto
+     */
+    bimiChanged: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunComparisonDto
+     */
+    mtaStsChanged: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunComparisonDto
+     */
+    tlsReportingChanged: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunComparisonDto
+     */
+    blacklistChanged: boolean;
+    /**
+     *
      * @type {Array<string>}
      * @memberof DomainMonitorRunComparisonDto
      */

@@ -8,17 +8,17 @@
 
 ### Enumeration Members
 
-- [TELNYX](CreatePhoneNumberOptionsPhoneProviderEnum.md#telnyx)
-- [TWILIO](CreatePhoneNumberOptionsPhoneProviderEnum.md#twilio)
+- [T1](CreatePhoneNumberOptionsPhoneProviderEnum.md#t1)
+- [T2](CreatePhoneNumberOptionsPhoneProviderEnum.md#t2)
 
 ## Enumeration Members
 
-### TELNYX
+### T1
 
-• **TELNYX** = ``"TELNYX"``
+• **T1** = ``"T1"``
 
 ___
 
-### TWILIO
+### T2
 
-• **TWILIO** = ``"TWILIO"``
+• **T2** = ``"T2"``

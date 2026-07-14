@@ -21,7 +21,7 @@ import {
 } from './';
 
 /**
- * Paged list of deliverability tests
+ * Paged list of load tests
  * @export
  * @interface DeliverabilityTestPageDto
  */

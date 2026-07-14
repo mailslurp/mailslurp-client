@@ -26,7 +26,7 @@ export interface CreatePhonePoolOptions {
      * @type {string}
      * @memberof CreatePhonePoolOptions
      */
-    description?: string;
+    description?: string | null;
 }
 export declare function CreatePhonePoolOptionsFromJSON(json: any): CreatePhonePoolOptions;
 export declare function CreatePhonePoolOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreatePhonePoolOptions;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AcquirePhonePoolLeaseOptions, AddPhonePoolNumbersOptions, AvailablePhoneNumbersResult, ConsentStatusDto, CreateEmergencyAddressOptions, CreatePhoneNumberOptions, CreatePhonePoolOptions, CreatePhoneProvisioningJobOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, GetOrCreatePhonePoolOptions, PagePhoneMessageThreadItemProjection, PagePhoneMessageThreadProjection, PagePhoneNumberProjection, PagePhoneNumberReleaseProjection, PageSentSmsProjection, PageSmsProjection, PhoneNumberDto, PhoneNumberLineTypeLookupDto, PhoneNumberReleaseProjection, PhoneNumberTagsOptions, PhoneNumberValidationDto, PhonePlanAvailability, PhonePlanDto, PhonePoolDetailDto, PhonePoolDto, PhonePoolLeaseDto, PhoneProviderCapabilitiesResult, PhoneProvisioningJobDto, PhoneSmsPrepaidCreditDto, PhoneSmsPrepaidCreditsDto, PhoneSummaryDto, SearchAvailablePhoneNumbersOptions, SentSmsDto, SetPhoneFavouritedOptions, SmsSendOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions, UpdatePhonePoolOptions, ValidatePhoneNumberOptions } from '../models';
+import { AcquirePhonePoolLeaseOptions, AddPhonePoolNumbersOptions, AvailablePhoneNumbersResult, ConsentStatusDto, CreateEmergencyAddressOptions, CreatePhoneNumberOptions, CreatePhonePoolOptions, CreatePhoneProvisioningJobOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, GetOrCreatePhonePoolOptions, PagePhoneMessageThreadItemProjection, PagePhoneMessageThreadProjection, PagePhoneNumberProjection, PagePhoneNumberReleaseProjection, PageSentSmsProjection, PageSmsMessageMedia, PageSmsProjection, PhoneNumberDto, PhoneNumberLineTypeLookupDto, PhoneNumberReleaseProjection, PhoneNumberTagsOptions, PhoneNumberValidationDto, PhonePlanAvailability, PhonePlanDto, PhonePoolDetailDto, PhonePoolDto, PhonePoolLeaseDto, PhoneProviderCapabilitiesResult, PhoneProvisioningJobDto, PhoneSmsPrepaidCreditDto, PhoneSmsPrepaidCreditsDto, PhoneSummaryDto, SearchAvailablePhoneNumbersOptions, SentSmsDto, SetPhoneFavouritedOptions, SmsMessageMediaDto, SmsSendOptions, TestPhoneNumberOptions, UpdatePhoneNumberOptions, UpdatePhonePoolOptions, ValidatePhoneNumberOptions } from '../models';
 export interface AcquirePhonePoolLeaseRequest {
     poolId: string;
     acquirePhonePoolLeaseOptions: AcquirePhonePoolLeaseOptions;
@@ -51,6 +51,12 @@ export interface DeletePhoneNumberRequest {
 export interface DeletePhonePoolRequest {
     poolId: string;
 }
+export interface DownloadPhoneNumberMediaRequest {
+    mediaId: string;
+}
+export interface DownloadPhoneNumberMediaBase64Request {
+    mediaId: string;
+}
 export interface GetAllPhoneMessageThreadsRequest {
     page?: number;
     size?: number;
@@ -88,6 +94,26 @@ export interface GetPhoneNumberByPhoneNumberRequest {
 }
 export interface GetPhoneNumberLineTypeIntelligenceRequest {
     validatePhoneNumberOptions: ValidatePhoneNumberOptions;
+}
+export interface GetPhoneNumberMediaRequest {
+    phoneNumberId: string;
+    page?: number;
+    size?: number;
+    sort?: GetPhoneNumberMediaSortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
+}
+export interface GetPhoneNumberMedia1Request {
+    page?: number;
+    size?: number;
+    sort?: GetPhoneNumberMedia1SortEnum;
+    since?: Date;
+    before?: Date;
+    search?: string;
+}
+export interface GetPhoneNumberMediaByIdRequest {
+    mediaId: string;
 }
 export interface GetPhoneNumberReleaseRequest {
     releaseId: string;
@@ -335,6 +361,28 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      */
     deletePhonePool(requestParameters: DeletePhonePoolRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     */
+    downloadPhoneNumberMediaRaw(requestParameters: DownloadPhoneNumberMediaRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     */
+    downloadPhoneNumberMedia(requestParameters: DownloadPhoneNumberMediaRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     */
+    downloadPhoneNumberMediaBase64Raw(requestParameters: DownloadPhoneNumberMediaBase64Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     */
+    downloadPhoneNumberMediaBase64(requestParameters: DownloadPhoneNumberMediaBase64Request, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Download all active phone numbers for account as CSV
+     * Export phone numbers CSV
+     */
+    exportPhoneNumbersCsvRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Download all active phone numbers for account as CSV
+     * Export phone numbers CSV
+     */
+    exportPhoneNumbersCsv(initOverrides?: RequestInit): Promise<void>;
+    /**
      * List all message threads for all phones
      * Get the latest messages for all phones
      */
@@ -454,6 +502,24 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
      * Get line type intelligence for a phone number
      */
     getPhoneNumberLineTypeIntelligence(requestParameters: GetPhoneNumberLineTypeIntelligenceRequest, initOverrides?: RequestInit): Promise<PhoneNumberLineTypeLookupDto>;
+    /**
+     */
+    getPhoneNumberMediaRaw(requestParameters: GetPhoneNumberMediaRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsMessageMedia>>;
+    /**
+     */
+    getPhoneNumberMedia(requestParameters: GetPhoneNumberMediaRequest, initOverrides?: RequestInit): Promise<PageSmsMessageMedia>;
+    /**
+     */
+    getPhoneNumberMedia1Raw(requestParameters: GetPhoneNumberMedia1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSmsMessageMedia>>;
+    /**
+     */
+    getPhoneNumberMedia1(requestParameters: GetPhoneNumberMedia1Request, initOverrides?: RequestInit): Promise<PageSmsMessageMedia>;
+    /**
+     */
+    getPhoneNumberMediaByIdRaw(requestParameters: GetPhoneNumberMediaByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsMessageMediaDto>>;
+    /**
+     */
+    getPhoneNumberMediaById(requestParameters: GetPhoneNumberMediaByIdRequest, initOverrides?: RequestInit): Promise<SmsMessageMediaDto>;
     /**
      * Get a released or deleted phone numbers
      * Get phone number release
@@ -755,6 +821,22 @@ export declare enum GetAllPhoneNumberReleasesSortEnum {
  * @export
  * @enum {string}
  */
+export declare enum GetPhoneNumberMediaSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetPhoneNumberMedia1SortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GetPhoneNumbersPhoneCountryEnum {
     US = "US",
     GB = "GB",
@@ -763,6 +845,7 @@ export declare enum GetPhoneNumbersPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",
@@ -789,6 +872,7 @@ export declare enum GetPhoneProvisioningCapabilitiesPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",

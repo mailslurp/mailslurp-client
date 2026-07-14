@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateDomainOptions, DomainDto, DomainGroupsDto, DomainIssuesDto, DomainPreview, DomainRegionGroupsDto, InboxDto, UpdateDomainOptions } from '../models';
+import { CreateDomainOptions, DomainDto, DomainGroupsDto, DomainHealthEventDto, DomainIssuesDto, DomainPreview, DomainRegionGroupsDto, InboxDto, UpdateDomainOptions } from '../models';
 export interface AddDomainWildcardCatchAllRequest {
     id: string;
 }
@@ -29,6 +29,9 @@ export interface GetAvailableDomainsRequest {
 export interface GetDomainRequest {
     id: string;
     checkForErrors?: boolean;
+}
+export interface GetDomainHealthEventsRequest {
+    id: string;
 }
 export interface GetDomainWildcardCatchAllInboxRequest {
     id: string;
@@ -104,6 +107,16 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      * Get a domain
      */
     getDomain(requestParameters: GetDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+    /**
+     * List recent health events for a custom domain using MailSlurp domain-health terminology.
+     * Get domain health events
+     */
+    getDomainHealthEventsRaw(requestParameters: GetDomainHealthEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<DomainHealthEventDto>>>;
+    /**
+     * List recent health events for a custom domain using MailSlurp domain-health terminology.
+     * Get domain health events
+     */
+    getDomainHealthEvents(requestParameters: GetDomainHealthEventsRequest, initOverrides?: RequestInit): Promise<Array<DomainHealthEventDto>>;
     /**
      * List domain issues for domains you have created
      * Get domain issues

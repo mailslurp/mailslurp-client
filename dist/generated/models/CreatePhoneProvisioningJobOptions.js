@@ -29,6 +29,7 @@ var CreatePhoneProvisioningJobOptionsPhoneCountryEnum;
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["EE"] = "EE";
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["HK"] = "HK";
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["PL"] = "PL";
+    CreatePhoneProvisioningJobOptionsPhoneCountryEnum["CH"] = "CH";
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["PT"] = "PT";
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["NL"] = "NL";
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["IL"] = "IL";

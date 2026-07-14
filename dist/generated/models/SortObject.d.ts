@@ -26,13 +26,13 @@ export interface SortObject {
      * @type {boolean}
      * @memberof SortObject
      */
-    unsorted?: boolean;
+    sorted?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof SortObject
      */
-    sorted?: boolean;
+    unsorted?: boolean;
 }
 export declare function SortObjectFromJSON(json: any): SortObject;
 export declare function SortObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): SortObject;

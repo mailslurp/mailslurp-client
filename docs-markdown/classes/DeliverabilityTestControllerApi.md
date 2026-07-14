@@ -141,7 +141,7 @@ ___
 
 ▸ **createDeliverabilitySimulationJob**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilitySimulationJobDto`](../interfaces/DeliverabilitySimulationJobDto.md)\>
 
-Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
 Create deliverability simulation job
 
 #### Parameters
@@ -161,7 +161,7 @@ ___
 
 ▸ **createDeliverabilitySimulationJobRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilitySimulationJobDto`](../interfaces/DeliverabilitySimulationJobDto.md)\>\>
 
-Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
 Create deliverability simulation job
 
 #### Parameters
@@ -181,8 +181,8 @@ ___
 
 ▸ **createDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>
 
-Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-Create deliverability/load test
+Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+Create load test
 
 #### Parameters
 
@@ -201,8 +201,8 @@ ___
 
 ▸ **createDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>\>
 
-Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-Create deliverability/load test
+Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+Create load test
 
 #### Parameters
 
@@ -222,7 +222,7 @@ ___
 ▸ **deleteDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeleteResult`](../interfaces/DeleteResult.md)\>
 
 Delete test and all persisted entity-level results.
-Delete deliverability/load test
+Delete load test
 
 #### Parameters
 
@@ -242,7 +242,7 @@ ___
 ▸ **deleteDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeleteResult`](../interfaces/DeleteResult.md)\>\>
 
 Delete test and all persisted entity-level results.
-Delete deliverability/load test
+Delete load test
 
 #### Parameters
 
@@ -261,8 +261,8 @@ ___
 
 ▸ **duplicateDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>
 
-Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-Duplicate deliverability/load test
+Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+Duplicate load test
 
 #### Parameters
 
@@ -281,8 +281,8 @@ ___
 
 ▸ **duplicateDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>\>
 
-Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-Duplicate deliverability/load test
+Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+Duplicate load test
 
 #### Parameters
 
@@ -301,8 +301,8 @@ ___
 
 ▸ **exportDeliverabilityTestReport**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-Export deliverability/load test report as PDF
+Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+Export load-test report as PDF
 
 #### Parameters
 
@@ -321,8 +321,8 @@ ___
 
 ▸ **exportDeliverabilityTestReportRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-Export deliverability/load test report as PDF
+Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+Export load-test report as PDF
 
 #### Parameters
 
@@ -342,7 +342,7 @@ ___
 ▸ **exportDeliverabilityTestResults**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-Export deliverability/load test entity results as CSV
+Export load-test entity results as CSV
 
 #### Parameters
 
@@ -362,7 +362,7 @@ ___
 ▸ **exportDeliverabilityTestResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-Export deliverability/load test entity results as CSV
+Export load-test entity results as CSV
 
 #### Parameters
 
@@ -541,8 +541,8 @@ ___
 
 ▸ **getDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>
 
-Get deliverability test configuration and latest progress counters.
-Get deliverability/load test
+Get load-test configuration and latest progress counters.
+Get load test
 
 #### Parameters
 
@@ -561,8 +561,8 @@ ___
 
 ▸ **getDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>\>
 
-Get deliverability test configuration and latest progress counters.
-Get deliverability/load test
+Get load-test configuration and latest progress counters.
+Get load test
 
 #### Parameters
 
@@ -582,7 +582,7 @@ ___
 ▸ **getDeliverabilityTestResults**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityEntityResultPageDto`](../interfaces/DeliverabilityEntityResultPageDto.md)\>
 
 Get paged per-entity expectation results with optional matched/unmatched filtering.
-Get deliverability/load test entity results
+Get load-test entity results
 
 #### Parameters
 
@@ -602,7 +602,7 @@ ___
 ▸ **getDeliverabilityTestResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityEntityResultPageDto`](../interfaces/DeliverabilityEntityResultPageDto.md)\>\>
 
 Get paged per-entity expectation results with optional matched/unmatched filtering.
-Get deliverability/load test entity results
+Get load-test entity results
 
 #### Parameters
 
@@ -621,8 +621,8 @@ ___
 
 ▸ **getDeliverabilityTests**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestPageDto`](../interfaces/DeliverabilityTestPageDto.md)\>
 
-List deliverability tests for the authenticated account.
-List deliverability/load tests
+List load tests for the authenticated account.
+List load tests
 
 #### Parameters
 
@@ -641,8 +641,8 @@ ___
 
 ▸ **getDeliverabilityTestsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestPageDto`](../interfaces/DeliverabilityTestPageDto.md)\>\>
 
-List deliverability tests for the authenticated account.
-List deliverability/load tests
+List load tests for the authenticated account.
+List load tests
 
 #### Parameters
 
@@ -661,7 +661,7 @@ ___
 
 ▸ **getLatestDeliverabilitySimulationJob**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilitySimulationJobDto`](../interfaces/DeliverabilitySimulationJobDto.md)\>
 
-Get the most recent simulation job for a deliverability test.
+Get the most recent simulation job for a load test.
 Get latest deliverability simulation job
 
 #### Parameters
@@ -681,7 +681,7 @@ ___
 
 ▸ **getLatestDeliverabilitySimulationJobRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilitySimulationJobDto`](../interfaces/DeliverabilitySimulationJobDto.md)\>\>
 
-Get the most recent simulation job for a deliverability test.
+Get the most recent simulation job for a load test.
 Get latest deliverability simulation job
 
 #### Parameters
@@ -741,8 +741,8 @@ ___
 
 ▸ **pauseDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>
 
-Pause a RUNNING or SCHEDULED deliverability test.
-Pause deliverability/load test
+Pause a RUNNING or SCHEDULED load test.
+Pause load test
 
 #### Parameters
 
@@ -761,8 +761,8 @@ ___
 
 ▸ **pauseDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>\>
 
-Pause a RUNNING or SCHEDULED deliverability test.
-Pause deliverability/load test
+Pause a RUNNING or SCHEDULED load test.
+Pause load test
 
 #### Parameters
 
@@ -782,7 +782,7 @@ ___
 ▸ **pollDeliverabilityTestStatus**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityPollStatusResultDto`](../interfaces/DeliverabilityPollStatusResultDto.md)\>
 
 Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-Poll deliverability/load test status
+Poll load-test status
 
 #### Parameters
 
@@ -802,7 +802,7 @@ ___
 ▸ **pollDeliverabilityTestStatusRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityPollStatusResultDto`](../interfaces/DeliverabilityPollStatusResultDto.md)\>\>
 
 Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-Poll deliverability/load test status
+Poll load-test status
 
 #### Parameters
 
@@ -883,7 +883,7 @@ ___
 ▸ **startDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>
 
 Start a CREATED test or resume a PAUSED/SCHEDULED test.
-Start or resume deliverability/load test
+Start or resume load test
 
 #### Parameters
 
@@ -903,7 +903,7 @@ ___
 ▸ **startDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>\>
 
 Start a CREATED test or resume a PAUSED/SCHEDULED test.
-Start or resume deliverability/load test
+Start or resume load test
 
 #### Parameters
 
@@ -922,8 +922,8 @@ ___
 
 ▸ **stopDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>
 
-Stop a deliverability test and mark it terminal.
-Stop deliverability/load test
+Stop a load test and mark it terminal.
+Stop load test
 
 #### Parameters
 
@@ -942,8 +942,8 @@ ___
 
 ▸ **stopDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>\>
 
-Stop a deliverability test and mark it terminal.
-Stop deliverability/load test
+Stop a load test and mark it terminal.
+Stop load test
 
 #### Parameters
 
@@ -963,7 +963,7 @@ ___
 ▸ **updateDeliverabilityTest**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>
 
 Update metadata, timeout, and expectations for a non-running non-terminal test.
-Update deliverability/load test
+Update load test
 
 #### Parameters
 
@@ -983,7 +983,7 @@ ___
 ▸ **updateDeliverabilityTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliverabilityTestDto`](../interfaces/DeliverabilityTestDto.md)\>\>
 
 Update metadata, timeout, and expectations for a non-running non-terminal test.
-Update deliverability/load test
+Update load test
 
 #### Parameters
 

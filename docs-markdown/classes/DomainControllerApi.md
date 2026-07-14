@@ -31,6 +31,8 @@
 - [getAvailableDomains](DomainControllerApi.md#getavailabledomains)
 - [getAvailableDomainsRaw](DomainControllerApi.md#getavailabledomainsraw)
 - [getDomain](DomainControllerApi.md#getdomain)
+- [getDomainHealthEvents](DomainControllerApi.md#getdomainhealthevents)
+- [getDomainHealthEventsRaw](DomainControllerApi.md#getdomainhealtheventsraw)
 - [getDomainIssues](DomainControllerApi.md#getdomainissues)
 - [getDomainIssuesRaw](DomainControllerApi.md#getdomainissuesraw)
 - [getDomainRaw](DomainControllerApi.md#getdomainraw)
@@ -292,6 +294,46 @@ Get a domain
 #### Returns
 
 `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
+
+___
+
+### getDomainHealthEvents
+
+▸ **getDomainHealthEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainHealthEventDto`](../interfaces/DomainHealthEventDto.md)[]\>
+
+List recent health events for a custom domain using MailSlurp domain-health terminology.
+Get domain health events
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainHealthEventsRequest`](../interfaces/GetDomainHealthEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainHealthEventDto`](../interfaces/DomainHealthEventDto.md)[]\>
+
+___
+
+### getDomainHealthEventsRaw
+
+▸ **getDomainHealthEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainHealthEventDto`](../interfaces/DomainHealthEventDto.md)[]\>\>
+
+List recent health events for a custom domain using MailSlurp domain-health terminology.
+Get domain health events
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainHealthEventsRequest`](../interfaces/GetDomainHealthEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainHealthEventDto`](../interfaces/DomainHealthEventDto.md)[]\>\>
 
 ___
 

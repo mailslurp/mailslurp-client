@@ -17,6 +17,7 @@ WebhookDto
 - [aiTransformId](WebhookDto.md#aitransformid)
 - [basicAuth](WebhookDto.md#basicauth)
 - [createdAt](WebhookDto.md#createdat)
+- [enabled](WebhookDto.md#enabled)
 - [eventName](WebhookDto.md#eventname)
 - [healthStatus](WebhookDto.md#healthstatus)
 - [id](WebhookDto.md#id)
@@ -64,6 +65,18 @@ ___
 • **createdAt**: `Date`
 
 When the webhook was created
+
+**`Memberof`**
+
+WebhookDto
+
+___
+
+### enabled
+
+• `Optional` **enabled**: `boolean`
+
+Whether the webhook is enabled. Null means legacy/default-enabled.
 
 **`Memberof`**
 

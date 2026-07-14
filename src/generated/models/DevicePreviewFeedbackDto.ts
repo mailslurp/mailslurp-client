@@ -54,25 +54,25 @@ export interface DevicePreviewFeedbackDto {
    * @type {number}
    * @memberof DevicePreviewFeedbackDto
    */
-  rating?: number;
+  rating?: number | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  runId?: string;
+  runId?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  targetId?: string;
+  targetId?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  screenshotId?: string;
+  screenshotId?: string | null;
   /**
    *
    * @type {string}
@@ -84,49 +84,49 @@ export interface DevicePreviewFeedbackDto {
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  title?: string;
+  title?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  comment?: string;
+  comment?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  internalNote?: string;
+  internalNote?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  sessionId?: string;
+  sessionId?: string | null;
   /**
    *
    * @type {string}
    * @memberof DevicePreviewFeedbackDto
    */
-  liveViewUrl?: string;
+  liveViewUrl?: string | null;
   /**
    *
    * @type {{ [key: string]: string; }}
    * @memberof DevicePreviewFeedbackDto
    */
-  metadata?: { [key: string]: string };
+  metadata?: { [key: string]: string } | null;
   /**
    *
    * @type {Date}
    * @memberof DevicePreviewFeedbackDto
    */
-  createdAt?: Date;
+  createdAt?: Date | null;
   /**
    *
    * @type {Date}
    * @memberof DevicePreviewFeedbackDto
    */
-  updatedAt?: Date;
+  updatedAt?: Date | null;
 }
 
 /**
@@ -208,9 +208,13 @@ export function DevicePreviewFeedbackDtoFromJSONTyped(
     metadata: !exists(json, 'metadata') ? undefined : json['metadata'],
     createdAt: !exists(json, 'createdAt')
       ? undefined
+      : json['createdAt'] === null
+      ? null
       : new Date(json['createdAt']),
     updatedAt: !exists(json, 'updatedAt')
       ? undefined
+      : json['updatedAt'] === null
+      ? null
       : new Date(json['updatedAt']),
   };
 }
@@ -242,8 +246,16 @@ export function DevicePreviewFeedbackDtoToJSON(
     liveViewUrl: value.liveViewUrl,
     metadata: value.metadata,
     createdAt:
-      value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+      value.createdAt === undefined
+        ? undefined
+        : value.createdAt === null
+        ? null
+        : value.createdAt.toISOString(),
     updatedAt:
-      value.updatedAt === undefined ? undefined : value.updatedAt.toISOString(),
+      value.updatedAt === undefined
+        ? undefined
+        : value.updatedAt === null
+        ? null
+        : value.updatedAt.toISOString(),
   };
 }

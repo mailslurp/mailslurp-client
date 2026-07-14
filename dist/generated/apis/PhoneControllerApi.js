@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetSmsByPhoneNumberSortEnum = exports.GetSentSmsByPhoneNumberSortEnum = exports.GetPhoneProvisioningCapabilitiesPhoneCountryEnum = exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.GetAllPhoneNumberReleasesSortEnum = exports.PhoneControllerApi = void 0;
+exports.GetSmsByPhoneNumberSortEnum = exports.GetSentSmsByPhoneNumberSortEnum = exports.GetPhoneProvisioningCapabilitiesPhoneCountryEnum = exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.GetPhoneNumberMedia1SortEnum = exports.GetPhoneNumberMediaSortEnum = exports.GetAllPhoneNumberReleasesSortEnum = exports.PhoneControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -791,6 +791,138 @@ var PhoneControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     */
+    PhoneControllerApi.prototype.downloadPhoneNumberMediaRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.mediaId === null ||
+                            requestParameters.mediaId === undefined) {
+                            throw new runtime.RequiredError('mediaId', 'Required parameter requestParameters.mediaId was null or undefined when calling downloadPhoneNumberMedia.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/media/{mediaId}/bytes".replace("{".concat('mediaId', "}"), encodeURIComponent(String(requestParameters.mediaId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.downloadPhoneNumberMedia = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.downloadPhoneNumberMediaRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.downloadPhoneNumberMediaBase64Raw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.mediaId === null ||
+                            requestParameters.mediaId === undefined) {
+                            throw new runtime.RequiredError('mediaId', 'Required parameter requestParameters.mediaId was null or undefined when calling downloadPhoneNumberMediaBase64.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/media/{mediaId}/base64".replace("{".concat('mediaId', "}"), encodeURIComponent(String(requestParameters.mediaId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.downloadPhoneNumberMediaBase64 = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.downloadPhoneNumberMediaBase64Raw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Download all active phone numbers for account as CSV
+     * Export phone numbers CSV
+     */
+    PhoneControllerApi.prototype.exportPhoneNumbersCsvRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/csv",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Download all active phone numbers for account as CSV
+     * Export phone numbers CSV
+     */
+    PhoneControllerApi.prototype.exportPhoneNumbersCsv = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.exportPhoneNumbersCsvRaw(initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * List all message threads for all phones
      * Get the latest messages for all phones
      */
@@ -1433,6 +1565,182 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getPhoneNumberLineTypeIntelligenceRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.getPhoneNumberMediaRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneNumberMedia.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/{phoneNumberId}/media".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageSmsMessageMediaFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.getPhoneNumberMedia = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneNumberMediaRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.getPhoneNumberMedia1Raw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/media",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageSmsMessageMediaFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.getPhoneNumberMedia1 = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneNumberMedia1Raw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.getPhoneNumberMediaByIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.mediaId === null ||
+                            requestParameters.mediaId === undefined) {
+                            throw new runtime.RequiredError('mediaId', 'Required parameter requestParameters.mediaId was null or undefined when calling getPhoneNumberMediaById.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/media/{mediaId}".replace("{".concat('mediaId', "}"), encodeURIComponent(String(requestParameters.mediaId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SmsMessageMediaDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.getPhoneNumberMediaById = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneNumberMediaByIdRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -3085,6 +3393,24 @@ var GetAllPhoneNumberReleasesSortEnum;
  * @export
  * @enum {string}
  */
+var GetPhoneNumberMediaSortEnum;
+(function (GetPhoneNumberMediaSortEnum) {
+    GetPhoneNumberMediaSortEnum["ASC"] = "ASC";
+    GetPhoneNumberMediaSortEnum["DESC"] = "DESC";
+})(GetPhoneNumberMediaSortEnum = exports.GetPhoneNumberMediaSortEnum || (exports.GetPhoneNumberMediaSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetPhoneNumberMedia1SortEnum;
+(function (GetPhoneNumberMedia1SortEnum) {
+    GetPhoneNumberMedia1SortEnum["ASC"] = "ASC";
+    GetPhoneNumberMedia1SortEnum["DESC"] = "DESC";
+})(GetPhoneNumberMedia1SortEnum = exports.GetPhoneNumberMedia1SortEnum || (exports.GetPhoneNumberMedia1SortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var GetPhoneNumbersPhoneCountryEnum;
 (function (GetPhoneNumbersPhoneCountryEnum) {
     GetPhoneNumbersPhoneCountryEnum["US"] = "US";
@@ -3094,6 +3420,7 @@ var GetPhoneNumbersPhoneCountryEnum;
     GetPhoneNumbersPhoneCountryEnum["EE"] = "EE";
     GetPhoneNumbersPhoneCountryEnum["HK"] = "HK";
     GetPhoneNumbersPhoneCountryEnum["PL"] = "PL";
+    GetPhoneNumbersPhoneCountryEnum["CH"] = "CH";
     GetPhoneNumbersPhoneCountryEnum["PT"] = "PT";
     GetPhoneNumbersPhoneCountryEnum["NL"] = "NL";
     GetPhoneNumbersPhoneCountryEnum["IL"] = "IL";
@@ -3122,6 +3449,7 @@ var GetPhoneProvisioningCapabilitiesPhoneCountryEnum;
     GetPhoneProvisioningCapabilitiesPhoneCountryEnum["EE"] = "EE";
     GetPhoneProvisioningCapabilitiesPhoneCountryEnum["HK"] = "HK";
     GetPhoneProvisioningCapabilitiesPhoneCountryEnum["PL"] = "PL";
+    GetPhoneProvisioningCapabilitiesPhoneCountryEnum["CH"] = "CH";
     GetPhoneProvisioningCapabilitiesPhoneCountryEnum["PT"] = "PT";
     GetPhoneProvisioningCapabilitiesPhoneCountryEnum["NL"] = "NL";
     GetPhoneProvisioningCapabilitiesPhoneCountryEnum["IL"] = "IL";

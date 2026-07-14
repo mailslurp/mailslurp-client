@@ -28,6 +28,7 @@ var PhoneNumberReleaseProjectionPhoneCountryEnum;
     PhoneNumberReleaseProjectionPhoneCountryEnum["EE"] = "EE";
     PhoneNumberReleaseProjectionPhoneCountryEnum["HK"] = "HK";
     PhoneNumberReleaseProjectionPhoneCountryEnum["PL"] = "PL";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["CH"] = "CH";
     PhoneNumberReleaseProjectionPhoneCountryEnum["PT"] = "PT";
     PhoneNumberReleaseProjectionPhoneCountryEnum["NL"] = "NL";
     PhoneNumberReleaseProjectionPhoneCountryEnum["IL"] = "IL";
@@ -72,8 +73,8 @@ function PhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
         userId: json['userId'],
-        phoneCountry: json['phoneCountry'],
         createdAt: new Date(json['createdAt']),
+        phoneCountry: json['phoneCountry'],
         phoneNumber: !(0, runtime_1.exists)(json, 'phoneNumber') ? undefined : json['phoneNumber'],
         subscriptionSchedule: !(0, runtime_1.exists)(json, 'subscriptionSchedule')
             ? undefined
@@ -95,8 +96,8 @@ function PhoneNumberReleaseProjectionToJSON(value) {
         name: value.name,
         id: value.id,
         userId: value.userId,
-        phoneCountry: value.phoneCountry,
         createdAt: value.createdAt.toISOString(),
+        phoneCountry: value.phoneCountry,
         phoneNumber: value.phoneNumber,
         subscriptionSchedule: value.subscriptionSchedule,
         planCurrency: value.planCurrency,

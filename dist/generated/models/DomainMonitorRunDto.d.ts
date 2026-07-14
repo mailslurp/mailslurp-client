@@ -101,6 +101,48 @@ export interface DomainMonitorRunDto {
     mxOk: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof DomainMonitorRunDto
+     */
+    dkimOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunDto
+     */
+    bimiOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunDto
+     */
+    mtaStsOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunDto
+     */
+    tlsReportingOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunDto
+     */
+    blacklistChecked: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunDto
+     */
+    blacklistOk: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainMonitorRunDto
+     */
+    blacklistListed: boolean;
+    /**
+     *
      * @type {Array<string>}
      * @memberof DomainMonitorRunDto
      */
@@ -110,7 +152,7 @@ export interface DomainMonitorRunDto {
      * @type {string}
      * @memberof DomainMonitorRunDto
      */
-    errorMessage?: string;
+    errorMessage?: string | null;
     /**
      *
      * @type {Date}

@@ -31,19 +31,19 @@ export interface EmailRecipientsProjection {
    * @type {Array<RecipientProjection>}
    * @memberof EmailRecipientsProjection
    */
-  to?: Array<RecipientProjection>;
+  to?: Array<RecipientProjection> | null;
   /**
    *
    * @type {Array<RecipientProjection>}
    * @memberof EmailRecipientsProjection
    */
-  cc?: Array<RecipientProjection>;
+  cc?: Array<RecipientProjection> | null;
   /**
    *
    * @type {Array<RecipientProjection>}
    * @memberof EmailRecipientsProjection
    */
-  bcc?: Array<RecipientProjection>;
+  bcc?: Array<RecipientProjection> | null;
 }
 
 export function EmailRecipientsProjectionFromJSON(
@@ -62,12 +62,18 @@ export function EmailRecipientsProjectionFromJSONTyped(
   return {
     to: !exists(json, 'to')
       ? undefined
+      : json['to'] === null
+      ? null
       : (json['to'] as Array<any>).map(RecipientProjectionFromJSON),
     cc: !exists(json, 'cc')
       ? undefined
+      : json['cc'] === null
+      ? null
       : (json['cc'] as Array<any>).map(RecipientProjectionFromJSON),
     bcc: !exists(json, 'bcc')
       ? undefined
+      : json['bcc'] === null
+      ? null
       : (json['bcc'] as Array<any>).map(RecipientProjectionFromJSON),
   };
 }
@@ -85,14 +91,20 @@ export function EmailRecipientsProjectionToJSON(
     to:
       value.to === undefined
         ? undefined
+        : value.to === null
+        ? null
         : (value.to as Array<any>).map(RecipientProjectionToJSON),
     cc:
       value.cc === undefined
         ? undefined
+        : value.cc === null
+        ? null
         : (value.cc as Array<any>).map(RecipientProjectionToJSON),
     bcc:
       value.bcc === undefined
         ? undefined
+        : value.bcc === null
+        ? null
         : (value.bcc as Array<any>).map(RecipientProjectionToJSON),
   };
 }

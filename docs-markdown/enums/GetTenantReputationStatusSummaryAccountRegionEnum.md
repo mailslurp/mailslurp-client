@@ -19,6 +19,7 @@
 - [US\_WEST\_2\_ACCOUNT\_BYTEWISE](GetTenantReputationStatusSummaryAccountRegionEnum.md#us_west_2_account_bytewise)
 - [US\_WEST\_2\_ACCOUNT\_SES\_1](GetTenantReputationStatusSummaryAccountRegionEnum.md#us_west_2_account_ses_1)
 - [US\_WEST\_2\_ACCOUNT\_SES\_2](GetTenantReputationStatusSummaryAccountRegionEnum.md#us_west_2_account_ses_2)
+- [US\_WEST\_2\_ACCOUNT\_SES\_3](GetTenantReputationStatusSummaryAccountRegionEnum.md#us_west_2_account_ses_3)
 - [US\_WEST\_2\_ACCOUNT\_STAGING](GetTenantReputationStatusSummaryAccountRegionEnum.md#us_west_2_account_staging)
 
 ## Enumeration Members
@@ -86,6 +87,12 @@ ___
 ### US\_WEST\_2\_ACCOUNT\_SES\_2
 
 • **US\_WEST\_2\_ACCOUNT\_SES\_2** = ``"US_WEST_2_ACCOUNT_SES_2"``
+
+___
+
+### US\_WEST\_2\_ACCOUNT\_SES\_3
+
+• **US\_WEST\_2\_ACCOUNT\_SES\_3** = ``"US_WEST_2_ACCOUNT_SES_3"``
 
 ___
 

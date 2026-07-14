@@ -22,7 +22,7 @@ export interface StructuredOutputSchema {
      */
     anyOf?: Array<StructuredOutputSchema> | null;
     /**
-     *
+     * Optionally provide a default value for when no value can be found.
      * @type {object}
      * @memberof StructuredOutputSchema
      */
@@ -40,7 +40,7 @@ export interface StructuredOutputSchema {
      */
     enumValues?: Array<string> | null;
     /**
-     *
+     * Pass example values to help the AI understand the schema.
      * @type {object}
      * @memberof StructuredOutputSchema
      */

@@ -27,16 +27,10 @@ export interface OptInIdentityProjection {
   id: string;
   /**
    *
-   * @type {boolean}
+   * @type {Date}
    * @memberof OptInIdentityProjection
    */
-  verified?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof OptInIdentityProjection
-   */
-  emailAddress: string;
+  createdAt: Date;
   /**
    *
    * @type {Date}
@@ -45,10 +39,16 @@ export interface OptInIdentityProjection {
   updatedAt: Date;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof OptInIdentityProjection
    */
-  createdAt: Date;
+  emailAddress: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof OptInIdentityProjection
+   */
+  verified?: boolean | null;
 }
 
 export function OptInIdentityProjectionFromJSON(
@@ -66,10 +66,10 @@ export function OptInIdentityProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
-    verified: !exists(json, 'verified') ? undefined : json['verified'],
-    emailAddress: json['emailAddress'],
-    updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+    emailAddress: json['emailAddress'],
+    verified: !exists(json, 'verified') ? undefined : json['verified'],
   };
 }
 
@@ -84,9 +84,9 @@ export function OptInIdentityProjectionToJSON(
   }
   return {
     id: value.id,
-    verified: value.verified,
-    emailAddress: value.emailAddress,
-    updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+    emailAddress: value.emailAddress,
+    verified: value.verified,
   };
 }

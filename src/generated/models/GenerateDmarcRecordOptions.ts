@@ -48,19 +48,19 @@ export interface GenerateDmarcRecordOptions {
    * @type {Array<string>}
    * @memberof GenerateDmarcRecordOptions
    */
-  reportEmailAddress?: Array<string>;
+  reportEmailAddress?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof GenerateDmarcRecordOptions
    */
-  forensicEmailAddress?: Array<string>;
+  forensicEmailAddress?: Array<string> | null;
   /**
    *
    * @type {number}
    * @memberof GenerateDmarcRecordOptions
    */
-  percentage?: number;
+  percentage?: number | null;
   /**
    *
    * @type {string}
@@ -72,7 +72,7 @@ export interface GenerateDmarcRecordOptions {
    * @type {number}
    * @memberof GenerateDmarcRecordOptions
    */
-  secondsBetweenReports?: number;
+  secondsBetweenReports?: number | null;
   /**
    *
    * @type {string}

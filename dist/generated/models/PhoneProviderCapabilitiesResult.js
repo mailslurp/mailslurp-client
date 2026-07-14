@@ -28,6 +28,7 @@ var PhoneProviderCapabilitiesResultPhoneCountryEnum;
     PhoneProviderCapabilitiesResultPhoneCountryEnum["EE"] = "EE";
     PhoneProviderCapabilitiesResultPhoneCountryEnum["HK"] = "HK";
     PhoneProviderCapabilitiesResultPhoneCountryEnum["PL"] = "PL";
+    PhoneProviderCapabilitiesResultPhoneCountryEnum["CH"] = "CH";
     PhoneProviderCapabilitiesResultPhoneCountryEnum["PT"] = "PT";
     PhoneProviderCapabilitiesResultPhoneCountryEnum["NL"] = "NL";
     PhoneProviderCapabilitiesResultPhoneCountryEnum["IL"] = "IL";

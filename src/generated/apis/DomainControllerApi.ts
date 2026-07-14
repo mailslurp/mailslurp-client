@@ -23,6 +23,9 @@ import {
   DomainGroupsDto,
   DomainGroupsDtoFromJSON,
   DomainGroupsDtoToJSON,
+  DomainHealthEventDto,
+  DomainHealthEventDtoFromJSON,
+  DomainHealthEventDtoToJSON,
   DomainIssuesDto,
   DomainIssuesDtoFromJSON,
   DomainIssuesDtoToJSON,
@@ -63,6 +66,10 @@ export interface GetAvailableDomainsRequest {
 export interface GetDomainRequest {
   id: string;
   checkForErrors?: boolean;
+}
+
+export interface GetDomainHealthEventsRequest {
+  id: string;
 }
 
 export interface GetDomainWildcardCatchAllInboxRequest {
@@ -405,6 +412,62 @@ export class DomainControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<DomainDto> {
     const response = await this.getDomainRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * List recent health events for a custom domain using MailSlurp domain-health terminology.
+   * Get domain health events
+   */
+  async getDomainHealthEventsRaw(
+    requestParameters: GetDomainHealthEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<DomainHealthEventDto>>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getDomainHealthEvents.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domains/{id}/health-events`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(DomainHealthEventDtoFromJSON)
+    );
+  }
+
+  /**
+   * List recent health events for a custom domain using MailSlurp domain-health terminology.
+   * Get domain health events
+   */
+  async getDomainHealthEvents(
+    requestParameters: GetDomainHealthEventsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<DomainHealthEventDto>> {
+    const response = await this.getDomainHealthEventsRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 

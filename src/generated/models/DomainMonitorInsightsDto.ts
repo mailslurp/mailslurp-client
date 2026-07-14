@@ -121,7 +121,7 @@ export interface DomainMonitorInsightsDto {
    * @type {DomainMonitorRunDto}
    * @memberof DomainMonitorInsightsDto
    */
-  latestRun?: DomainMonitorRunDto;
+  latestRun?: DomainMonitorRunDto | null;
 }
 
 export function DomainMonitorInsightsDtoFromJSON(

@@ -27,7 +27,7 @@ export interface OptionalConnectorDto {
      * @type {ConnectorDto}
      * @memberof OptionalConnectorDto
      */
-    result?: ConnectorDto;
+    result?: ConnectorDto | null;
 }
 export declare function OptionalConnectorDtoFromJSON(json: any): OptionalConnectorDto;
 export declare function OptionalConnectorDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): OptionalConnectorDto;

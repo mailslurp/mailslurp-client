@@ -30,7 +30,7 @@ export interface GuestPortalDto {
    * @type {string}
    * @memberof GuestPortalDto
    */
-  domainId?: string;
+  domainId?: string | null;
   /**
    *
    * @type {string}
@@ -42,19 +42,19 @@ export interface GuestPortalDto {
    * @type {string}
    * @memberof GuestPortalDto
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof GuestPortalDto
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {string}
    * @memberof GuestPortalDto
    */
-  linkHelp?: string;
+  linkHelp?: string | null;
   /**
    *
    * @type {Date}

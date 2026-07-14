@@ -144,6 +144,8 @@ ___
 
 • `Optional` **metaData**: `object`
 
+Meta data for contact
+
 **`Memberof`**
 
 WebhookNewContactPayload

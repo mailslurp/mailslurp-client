@@ -116,63 +116,63 @@ export declare class DeliverabilityTestControllerApi extends runtime.BaseAPI {
      */
     cancelDeliverabilitySimulationJob(requestParameters: CancelDeliverabilitySimulationJobRequest, initOverrides?: RequestInit): Promise<DeliverabilitySimulationJobDto>;
     /**
-     * Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+     * Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
      * Create deliverability simulation job
      */
     createDeliverabilitySimulationJobRaw(requestParameters: CreateDeliverabilitySimulationJobRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilitySimulationJobDto>>;
     /**
-     * Create and start a simulation job for a running deliverability test. Only one active simulation job is allowed per user.
+     * Create and start a simulation job for a running load test. Only one active simulation job is allowed per user.
      * Create deliverability simulation job
      */
     createDeliverabilitySimulationJob(requestParameters: CreateDeliverabilitySimulationJobRequest, initOverrides?: RequestInit): Promise<DeliverabilitySimulationJobDto>;
     /**
-     * Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-     * Create deliverability/load test
+     * Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+     * Create load test
      */
     createDeliverabilityTestRaw(requestParameters: CreateDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestDto>>;
     /**
-     * Create a deliverability test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
-     * Create deliverability/load test
+     * Create a load test for inboxes or phone numbers using ALL, PATTERN, or EXPLICIT selector scope.
+     * Create load test
      */
     createDeliverabilityTest(requestParameters: CreateDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestDto>;
     /**
      * Delete test and all persisted entity-level results.
-     * Delete deliverability/load test
+     * Delete load test
      */
     deleteDeliverabilityTestRaw(requestParameters: DeleteDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeleteResult>>;
     /**
      * Delete test and all persisted entity-level results.
-     * Delete deliverability/load test
+     * Delete load test
      */
     deleteDeliverabilityTest(requestParameters: DeleteDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeleteResult>;
     /**
-     * Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-     * Duplicate deliverability/load test
+     * Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+     * Duplicate load test
      */
     duplicateDeliverabilityTestRaw(requestParameters: DuplicateDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestDto>>;
     /**
-     * Create a fresh deliverability test using an existing test configuration, including selector scope, exclusions, and expectations.
-     * Duplicate deliverability/load test
+     * Create a fresh load test using an existing test configuration, including selector scope, exclusions, and expectations.
+     * Duplicate load test
      */
     duplicateDeliverabilityTest(requestParameters: DuplicateDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestDto>;
     /**
-     * Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-     * Export deliverability/load test report as PDF
+     * Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+     * Export load-test report as PDF
      */
     exportDeliverabilityTestReportRaw(requestParameters: ExportDeliverabilityTestReportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
-     * Export a PDF report for a terminal deliverability test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
-     * Export deliverability/load test report as PDF
+     * Export a PDF report for a terminal load test (COMPLETE, FAILED, or STOPPED), including configuration, summary outcomes, and detailed entity-level results.
+     * Export load-test report as PDF
      */
     exportDeliverabilityTestReport(requestParameters: ExportDeliverabilityTestReportRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-     * Export deliverability/load test entity results as CSV
+     * Export load-test entity results as CSV
      */
     exportDeliverabilityTestResultsRaw(requestParameters: ExportDeliverabilityTestResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Export per-entity deliverability results including expectation-level pass/fail counts. The latest status is evaluated with the same polling safeguards before export.
-     * Export deliverability/load test entity results as CSV
+     * Export load-test entity results as CSV
      */
     exportDeliverabilityTestResults(requestParameters: ExportDeliverabilityTestResultsRequest, initOverrides?: RequestInit): Promise<void>;
     /**
@@ -216,42 +216,42 @@ export declare class DeliverabilityTestControllerApi extends runtime.BaseAPI {
      */
     getDeliverabilitySimulationJobEvents(requestParameters: GetDeliverabilitySimulationJobEventsRequest, initOverrides?: RequestInit): Promise<DeliverabilitySimulationJobEventPageDto>;
     /**
-     * Get deliverability test configuration and latest progress counters.
-     * Get deliverability/load test
+     * Get load-test configuration and latest progress counters.
+     * Get load test
      */
     getDeliverabilityTestRaw(requestParameters: GetDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestDto>>;
     /**
-     * Get deliverability test configuration and latest progress counters.
-     * Get deliverability/load test
+     * Get load-test configuration and latest progress counters.
+     * Get load test
      */
     getDeliverabilityTest(requestParameters: GetDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestDto>;
     /**
      * Get paged per-entity expectation results with optional matched/unmatched filtering.
-     * Get deliverability/load test entity results
+     * Get load-test entity results
      */
     getDeliverabilityTestResultsRaw(requestParameters: GetDeliverabilityTestResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityEntityResultPageDto>>;
     /**
      * Get paged per-entity expectation results with optional matched/unmatched filtering.
-     * Get deliverability/load test entity results
+     * Get load-test entity results
      */
     getDeliverabilityTestResults(requestParameters: GetDeliverabilityTestResultsRequest, initOverrides?: RequestInit): Promise<DeliverabilityEntityResultPageDto>;
     /**
-     * List deliverability tests for the authenticated account.
-     * List deliverability/load tests
+     * List load tests for the authenticated account.
+     * List load tests
      */
     getDeliverabilityTestsRaw(requestParameters: GetDeliverabilityTestsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestPageDto>>;
     /**
-     * List deliverability tests for the authenticated account.
-     * List deliverability/load tests
+     * List load tests for the authenticated account.
+     * List load tests
      */
     getDeliverabilityTests(requestParameters: GetDeliverabilityTestsRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestPageDto>;
     /**
-     * Get the most recent simulation job for a deliverability test.
+     * Get the most recent simulation job for a load test.
      * Get latest deliverability simulation job
      */
     getLatestDeliverabilitySimulationJobRaw(requestParameters: GetLatestDeliverabilitySimulationJobRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilitySimulationJobDto>>;
     /**
-     * Get the most recent simulation job for a deliverability test.
+     * Get the most recent simulation job for a load test.
      * Get latest deliverability simulation job
      */
     getLatestDeliverabilitySimulationJob(requestParameters: GetLatestDeliverabilitySimulationJobRequest, initOverrides?: RequestInit): Promise<DeliverabilitySimulationJobDto>;
@@ -266,23 +266,23 @@ export declare class DeliverabilityTestControllerApi extends runtime.BaseAPI {
      */
     pauseDeliverabilitySimulationJob(requestParameters: PauseDeliverabilitySimulationJobRequest, initOverrides?: RequestInit): Promise<DeliverabilitySimulationJobDto>;
     /**
-     * Pause a RUNNING or SCHEDULED deliverability test.
-     * Pause deliverability/load test
+     * Pause a RUNNING or SCHEDULED load test.
+     * Pause load test
      */
     pauseDeliverabilityTestRaw(requestParameters: PauseDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestDto>>;
     /**
-     * Pause a RUNNING or SCHEDULED deliverability test.
-     * Pause deliverability/load test
+     * Pause a RUNNING or SCHEDULED load test.
+     * Pause load test
      */
     pauseDeliverabilityTest(requestParameters: PauseDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestDto>;
     /**
      * Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-     * Poll deliverability/load test status
+     * Poll load-test status
      */
     pollDeliverabilityTestStatusRaw(requestParameters: PollDeliverabilityTestStatusRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityPollStatusResultDto>>;
     /**
      * Poll test progress. Evaluation is throttled with a 5-second cache window to protect backing data stores.
-     * Poll deliverability/load test status
+     * Poll load-test status
      */
     pollDeliverabilityTestStatus(requestParameters: PollDeliverabilityTestStatusRequest, initOverrides?: RequestInit): Promise<DeliverabilityPollStatusResultDto>;
     /**
@@ -297,32 +297,32 @@ export declare class DeliverabilityTestControllerApi extends runtime.BaseAPI {
     resumeDeliverabilitySimulationJob(requestParameters: ResumeDeliverabilitySimulationJobRequest, initOverrides?: RequestInit): Promise<DeliverabilitySimulationJobDto>;
     /**
      * Start a CREATED test or resume a PAUSED/SCHEDULED test.
-     * Start or resume deliverability/load test
+     * Start or resume load test
      */
     startDeliverabilityTestRaw(requestParameters: StartDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestDto>>;
     /**
      * Start a CREATED test or resume a PAUSED/SCHEDULED test.
-     * Start or resume deliverability/load test
+     * Start or resume load test
      */
     startDeliverabilityTest(requestParameters: StartDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestDto>;
     /**
-     * Stop a deliverability test and mark it terminal.
-     * Stop deliverability/load test
+     * Stop a load test and mark it terminal.
+     * Stop load test
      */
     stopDeliverabilityTestRaw(requestParameters: StopDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestDto>>;
     /**
-     * Stop a deliverability test and mark it terminal.
-     * Stop deliverability/load test
+     * Stop a load test and mark it terminal.
+     * Stop load test
      */
     stopDeliverabilityTest(requestParameters: StopDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestDto>;
     /**
      * Update metadata, timeout, and expectations for a non-running non-terminal test.
-     * Update deliverability/load test
+     * Update load test
      */
     updateDeliverabilityTestRaw(requestParameters: UpdateDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliverabilityTestDto>>;
     /**
      * Update metadata, timeout, and expectations for a non-running non-terminal test.
-     * Update deliverability/load test
+     * Update load test
      */
     updateDeliverabilityTest(requestParameters: UpdateDeliverabilityTestRequest, initOverrides?: RequestInit): Promise<DeliverabilityTestDto>;
 }

@@ -30,13 +30,13 @@ export interface CheckEmailAuthStackOptions {
    * @type {string}
    * @memberof CheckEmailAuthStackOptions
    */
-  dkimSelector?: string;
+  dkimSelector?: string | null;
   /**
    *
    * @type {string}
    * @memberof CheckEmailAuthStackOptions
    */
-  captchaToken?: string;
+  captchaToken?: string | null;
 }
 
 export function CheckEmailAuthStackOptionsFromJSON(

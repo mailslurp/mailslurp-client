@@ -28,6 +28,7 @@ var PhoneSmsPrepaidCreditDtoPhoneCountryEnum;
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["EE"] = "EE";
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["HK"] = "HK";
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["PL"] = "PL";
+    PhoneSmsPrepaidCreditDtoPhoneCountryEnum["CH"] = "CH";
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["PT"] = "PT";
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["NL"] = "NL";
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["IL"] = "IL";

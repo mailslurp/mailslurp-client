@@ -31,19 +31,19 @@ export interface EmailRecipients {
    * @type {Array<Recipient>}
    * @memberof EmailRecipients
    */
-  to?: Array<Recipient>;
+  to?: Array<Recipient> | null;
   /**
    *
    * @type {Array<Recipient>}
    * @memberof EmailRecipients
    */
-  cc?: Array<Recipient>;
+  cc?: Array<Recipient> | null;
   /**
    *
    * @type {Array<Recipient>}
    * @memberof EmailRecipients
    */
-  bcc?: Array<Recipient>;
+  bcc?: Array<Recipient> | null;
 }
 
 export function EmailRecipientsFromJSON(json: any): EmailRecipients {
@@ -60,12 +60,18 @@ export function EmailRecipientsFromJSONTyped(
   return {
     to: !exists(json, 'to')
       ? undefined
+      : json['to'] === null
+      ? null
       : (json['to'] as Array<any>).map(RecipientFromJSON),
     cc: !exists(json, 'cc')
       ? undefined
+      : json['cc'] === null
+      ? null
       : (json['cc'] as Array<any>).map(RecipientFromJSON),
     bcc: !exists(json, 'bcc')
       ? undefined
+      : json['bcc'] === null
+      ? null
       : (json['bcc'] as Array<any>).map(RecipientFromJSON),
   };
 }
@@ -81,14 +87,20 @@ export function EmailRecipientsToJSON(value?: EmailRecipients | null): any {
     to:
       value.to === undefined
         ? undefined
+        : value.to === null
+        ? null
         : (value.to as Array<any>).map(RecipientToJSON),
     cc:
       value.cc === undefined
         ? undefined
+        : value.cc === null
+        ? null
         : (value.cc as Array<any>).map(RecipientToJSON),
     bcc:
       value.bcc === undefined
         ? undefined
+        : value.bcc === null
+        ? null
         : (value.bcc as Array<any>).map(RecipientToJSON),
   };
 }

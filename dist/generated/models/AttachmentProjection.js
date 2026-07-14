@@ -29,13 +29,13 @@ function AttachmentProjectionFromJSONTyped(json, ignoreDiscriminator) {
         contentLength: !(0, runtime_1.exists)(json, 'contentLength')
             ? undefined
             : json['contentLength'],
-        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        updatedAt: new Date(json['updatedAt']),
         createdAt: new Date(json['createdAt']),
         contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
+        updatedAt: new Date(json['updatedAt']),
         attachmentId: json['attachmentId'],
+        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
     };
 }
 exports.AttachmentProjectionFromJSONTyped = AttachmentProjectionFromJSONTyped;
@@ -50,13 +50,13 @@ function AttachmentProjectionToJSON(value) {
         name: value.name,
         id: value.id,
         contentLength: value.contentLength,
-        contentType: value.contentType,
         userId: value.userId,
         inboxId: value.inboxId,
-        updatedAt: value.updatedAt.toISOString(),
         createdAt: value.createdAt.toISOString(),
         contentId: value.contentId,
+        updatedAt: value.updatedAt.toISOString(),
         attachmentId: value.attachmentId,
+        contentType: value.contentType,
     };
 }
 exports.AttachmentProjectionToJSON = AttachmentProjectionToJSON;

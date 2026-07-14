@@ -38,6 +38,9 @@ import {
   SmsDto,
   SmsDtoFromJSON,
   SmsDtoToJSON,
+  SmsMessageMediaDto,
+  SmsMessageMediaDtoFromJSON,
+  SmsMessageMediaDtoToJSON,
   SmsReplyOptions,
   SmsReplyOptionsFromJSON,
   SmsReplyOptionsToJSON,
@@ -63,6 +66,14 @@ export interface DeleteSmsMessageRequest {
 
 export interface DeleteSmsMessagesRequest {
   phoneNumberId?: string;
+}
+
+export interface DownloadSmsMediaRequest {
+  mediaId: string;
+}
+
+export interface DownloadSmsMediaBase64Request {
+  mediaId: string;
 }
 
 export interface GetAllSmsMessagesRequest {
@@ -98,6 +109,14 @@ export interface GetSentSmsMessagesPaginatedRequest {
 export interface GetSmsCodesRequest {
   smsId: string;
   extractCodesOptions?: ExtractCodesOptions;
+}
+
+export interface GetSmsMediaRequest {
+  smsId: string;
+}
+
+export interface GetSmsMediaByIdRequest {
+  mediaId: string;
 }
 
 export interface GetSmsMessageRequest {
@@ -326,6 +345,104 @@ export class SmsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deleteSmsMessagesRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   */
+  async downloadSmsMediaRaw(
+    requestParameters: DownloadSmsMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.mediaId === null ||
+      requestParameters.mediaId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'mediaId',
+        'Required parameter requestParameters.mediaId was null or undefined when calling downloadSmsMedia.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/media/{mediaId}/bytes`.replace(
+          `{${'mediaId'}}`,
+          encodeURIComponent(String(requestParameters.mediaId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   */
+  async downloadSmsMedia(
+    requestParameters: DownloadSmsMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.downloadSmsMediaRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   */
+  async downloadSmsMediaBase64Raw(
+    requestParameters: DownloadSmsMediaBase64Request,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.mediaId === null ||
+      requestParameters.mediaId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'mediaId',
+        'Required parameter requestParameters.mediaId was null or undefined when calling downloadSmsMediaBase64.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/media/{mediaId}/base64`.replace(
+          `{${'mediaId'}}`,
+          encodeURIComponent(String(requestParameters.mediaId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   */
+  async downloadSmsMediaBase64(
+    requestParameters: DownloadSmsMediaBase64Request,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.downloadSmsMediaBase64Raw(requestParameters, initOverrides);
   }
 
   /**
@@ -739,6 +856,116 @@ export class SmsControllerApi extends runtime.BaseAPI {
    */
   async getSmsCount(initOverrides?: RequestInit): Promise<CountDto> {
     const response = await this.getSmsCountRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   */
+  async getSmsMediaRaw(
+    requestParameters: GetSmsMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<SmsMessageMediaDto>>> {
+    if (
+      requestParameters.smsId === null ||
+      requestParameters.smsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsId',
+        'Required parameter requestParameters.smsId was null or undefined when calling getSmsMedia.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/{smsId}/media`.replace(
+          `{${'smsId'}}`,
+          encodeURIComponent(String(requestParameters.smsId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(SmsMessageMediaDtoFromJSON)
+    );
+  }
+
+  /**
+   */
+  async getSmsMedia(
+    requestParameters: GetSmsMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<SmsMessageMediaDto>> {
+    const response = await this.getSmsMediaRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getSmsMediaByIdRaw(
+    requestParameters: GetSmsMediaByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SmsMessageMediaDto>> {
+    if (
+      requestParameters.mediaId === null ||
+      requestParameters.mediaId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'mediaId',
+        'Required parameter requestParameters.mediaId was null or undefined when calling getSmsMediaById.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/media/{mediaId}`.replace(
+          `{${'mediaId'}}`,
+          encodeURIComponent(String(requestParameters.mediaId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SmsMessageMediaDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getSmsMediaById(
+    requestParameters: GetSmsMediaByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<SmsMessageMediaDto> {
+    const response = await this.getSmsMediaByIdRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 

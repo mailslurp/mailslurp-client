@@ -36,12 +36,6 @@ export interface SentEmailProjection {
     from?: string | null;
     /**
      *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    subject?: string | null;
-    /**
-     *
      * @type {Sender}
      * @memberof SentEmailProjection
      */
@@ -52,6 +46,12 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     recipients?: EmailRecipients | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {string}
@@ -72,6 +72,24 @@ export interface SentEmailProjection {
     attachments?: Array<string> | null;
     /**
      *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    textExcerpt?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyExcerpt?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    to?: Array<string> | null;
+    /**
+     *
      * @type {Date}
      * @memberof SentEmailProjection
      */
@@ -81,19 +99,13 @@ export interface SentEmailProjection {
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    to?: Array<string>;
+    cc?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    cc?: Array<string>;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    bcc?: Array<string>;
+    bcc?: Array<string> | null;
     /**
      *
      * @type {string}
@@ -112,18 +124,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     virtualSend: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    bodyExcerpt?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    textExcerpt?: string | null;
     /**
      *
      * @type {string}

@@ -20,19 +20,19 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    id?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof BounceProjection
-     */
-    subject?: string | null;
+    id?: string | null;
     /**
      *
      * @type {string}
      * @memberof BounceProjection
      */
     sender: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {Date}

@@ -62,7 +62,7 @@ export interface SentSmsProjection {
      * @type {string}
      * @memberof SentSmsProjection
      */
-    replyToId?: string;
+    replyToId?: string | null;
 }
 export declare function SentSmsProjectionFromJSON(json: any): SentSmsProjection;
 export declare function SentSmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentSmsProjection;

@@ -50,19 +50,19 @@ export interface PhonePoolLeaseDto {
      * @type {string}
      * @memberof PhonePoolLeaseDto
      */
-    phoneName?: string;
+    phoneName?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhonePoolLeaseDto
      */
-    leaseName?: string;
+    leaseName?: string | null;
     /**
      *
      * @type {string}
      * @memberof PhonePoolLeaseDto
      */
-    leaseOwner?: string;
+    leaseOwner?: string | null;
     /**
      *
      * @type {Date}
@@ -74,7 +74,7 @@ export interface PhonePoolLeaseDto {
      * @type {Date}
      * @memberof PhonePoolLeaseDto
      */
-    expiresAt?: Date;
+    expiresAt?: Date | null;
 }
 /**
  * @export
@@ -88,6 +88,7 @@ export declare enum PhonePoolLeaseDtoPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",

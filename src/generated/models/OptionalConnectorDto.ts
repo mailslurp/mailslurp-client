@@ -37,7 +37,7 @@ export interface OptionalConnectorDto {
    * @type {ConnectorDto}
    * @memberof OptionalConnectorDto
    */
-  result?: ConnectorDto;
+  result?: ConnectorDto | null;
 }
 
 export function OptionalConnectorDtoFromJSON(json: any): OptionalConnectorDto {

@@ -42,7 +42,7 @@ export interface GenerateBimiRecordOptions {
    * @type {string}
    * @memberof GenerateBimiRecordOptions
    */
-  vmcUrl?: string;
+  vmcUrl?: string | null;
 }
 
 /**

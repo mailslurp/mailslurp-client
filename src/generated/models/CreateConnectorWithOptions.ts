@@ -49,19 +49,19 @@ export interface CreateConnectorWithOptions {
    * @type {CreateConnectorImapConnectionOptions}
    * @memberof CreateConnectorWithOptions
    */
-  createConnectorImapConnectionOptions?: CreateConnectorImapConnectionOptions;
+  createConnectorImapConnectionOptions?: CreateConnectorImapConnectionOptions | null;
   /**
    *
    * @type {CreateConnectorSmtpConnectionOptions}
    * @memberof CreateConnectorWithOptions
    */
-  createConnectorSmtpConnectionOptions?: CreateConnectorSmtpConnectionOptions;
+  createConnectorSmtpConnectionOptions?: CreateConnectorSmtpConnectionOptions | null;
   /**
    *
    * @type {CreateConnectorSyncSettingsOptions}
    * @memberof CreateConnectorWithOptions
    */
-  createConnectorSyncSettingsOptions?: CreateConnectorSyncSettingsOptions;
+  createConnectorSyncSettingsOptions?: CreateConnectorSyncSettingsOptions | null;
 }
 
 export function CreateConnectorWithOptionsFromJSON(

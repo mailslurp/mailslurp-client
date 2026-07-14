@@ -27,6 +27,7 @@ var PhoneSummaryCountryDtoPhoneCountryCodeEnum;
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["EE"] = "EE";
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["HK"] = "HK";
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["PL"] = "PL";
+    PhoneSummaryCountryDtoPhoneCountryCodeEnum["CH"] = "CH";
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["PT"] = "PT";
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["NL"] = "NL";
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["IL"] = "IL";

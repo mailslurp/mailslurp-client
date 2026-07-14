@@ -20,7 +20,7 @@ export interface AliasThreadProjection {
      * @type {string}
      * @memberof AliasThreadProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      * ID of email thread
      * @type {string}
@@ -32,7 +32,7 @@ export interface AliasThreadProjection {
      * @type {string}
      * @memberof AliasThreadProjection
      */
-    subject?: string;
+    subject?: string | null;
     /**
      * User ID
      * @type {string}
@@ -46,11 +46,11 @@ export interface AliasThreadProjection {
      */
     inboxId: string;
     /**
-     * Updated at DateTime
-     * @type {Date}
+     * To recipients
+     * @type {Array<string>}
      * @memberof AliasThreadProjection
      */
-    updatedAt: Date;
+    to: Array<string>;
     /**
      * Created at DateTime
      * @type {Date}
@@ -58,23 +58,23 @@ export interface AliasThreadProjection {
      */
     createdAt: Date;
     /**
-     * To recipients
-     * @type {Array<string>}
-     * @memberof AliasThreadProjection
-     */
-    to: Array<string>;
-    /**
      * CC recipients
      * @type {Array<string>}
      * @memberof AliasThreadProjection
      */
-    cc?: Array<string>;
+    cc?: Array<string> | null;
     /**
      * BCC recipients
      * @type {Array<string>}
      * @memberof AliasThreadProjection
      */
-    bcc?: Array<string>;
+    bcc?: Array<string> | null;
+    /**
+     * Updated at DateTime
+     * @type {Date}
+     * @memberof AliasThreadProjection
+     */
+    updatedAt: Date;
     /**
      * Alias ID
      * @type {string}

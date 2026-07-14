@@ -7,6 +7,7 @@
 ### Properties
 
 - [emailId](GetDevicePreviewRunsRequest.md#emailid)
+- [hydrateThumbnail](GetDevicePreviewRunsRequest.md#hydratethumbnail)
 - [limit](GetDevicePreviewRunsRequest.md#limit)
 
 ## Properties
@@ -14,6 +15,12 @@
 ### emailId
 
 • **emailId**: `string`
+
+___
+
+### hydrateThumbnail
+
+• `Optional` **hydrateThumbnail**: `boolean`
 
 ___
 

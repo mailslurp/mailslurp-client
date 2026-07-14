@@ -55,16 +55,14 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
         url: json['url'],
-        password: !(0, runtime_1.exists)(json, 'password') ? undefined : json['password'],
         username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
+        password: !(0, runtime_1.exists)(json, 'password') ? undefined : json['password'],
+        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        updatedAt: new Date(json['updatedAt']),
         createdAt: new Date(json['createdAt']),
-        healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
-            ? undefined
-            : json['healthStatus'],
+        updatedAt: new Date(json['updatedAt']),
         aiTransformerId: !(0, runtime_1.exists)(json, 'aiTransformerId')
             ? undefined
             : json['aiTransformerId'],
@@ -74,6 +72,9 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         phoneNumberId: !(0, runtime_1.exists)(json, 'phoneNumberId')
             ? undefined
             : json['phoneNumberId'],
+        healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
+            ? undefined
+            : json['healthStatus'],
     };
 }
 exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
@@ -88,17 +89,18 @@ function WebhookProjectionToJSON(value) {
         name: value.name,
         id: value.id,
         url: value.url,
-        password: value.password,
         username: value.username,
+        password: value.password,
+        enabled: value.enabled,
         userId: value.userId,
         inboxId: value.inboxId,
         eventName: value.eventName,
-        updatedAt: value.updatedAt.toISOString(),
         createdAt: value.createdAt.toISOString(),
-        healthStatus: value.healthStatus,
+        updatedAt: value.updatedAt.toISOString(),
         aiTransformerId: value.aiTransformerId,
         aiTransformId: value.aiTransformId,
         phoneNumberId: value.phoneNumberId,
+        healthStatus: value.healthStatus,
     };
 }
 exports.WebhookProjectionToJSON = WebhookProjectionToJSON;

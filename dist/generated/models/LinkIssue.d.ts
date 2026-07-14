@@ -26,7 +26,7 @@ export interface LinkIssue {
      * @type {number}
      * @memberof LinkIssue
      */
-    responseStatus?: number;
+    responseStatus?: number | null;
     /**
      *
      * @type {string}

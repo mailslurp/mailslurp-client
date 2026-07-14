@@ -65,6 +65,9 @@ import {
   PageSentSmsProjection,
   PageSentSmsProjectionFromJSON,
   PageSentSmsProjectionToJSON,
+  PageSmsMessageMedia,
+  PageSmsMessageMediaFromJSON,
+  PageSmsMessageMediaToJSON,
   PageSmsProjection,
   PageSmsProjectionFromJSON,
   PageSmsProjectionToJSON,
@@ -122,6 +125,9 @@ import {
   SetPhoneFavouritedOptions,
   SetPhoneFavouritedOptionsFromJSON,
   SetPhoneFavouritedOptionsToJSON,
+  SmsMessageMediaDto,
+  SmsMessageMediaDtoFromJSON,
+  SmsMessageMediaDtoToJSON,
   SmsSendOptions,
   SmsSendOptionsFromJSON,
   SmsSendOptionsToJSON,
@@ -191,6 +197,14 @@ export interface DeletePhonePoolRequest {
   poolId: string;
 }
 
+export interface DownloadPhoneNumberMediaRequest {
+  mediaId: string;
+}
+
+export interface DownloadPhoneNumberMediaBase64Request {
+  mediaId: string;
+}
+
 export interface GetAllPhoneMessageThreadsRequest {
   page?: number;
   size?: number;
@@ -237,6 +251,29 @@ export interface GetPhoneNumberByPhoneNumberRequest {
 
 export interface GetPhoneNumberLineTypeIntelligenceRequest {
   validatePhoneNumberOptions: ValidatePhoneNumberOptions;
+}
+
+export interface GetPhoneNumberMediaRequest {
+  phoneNumberId: string;
+  page?: number;
+  size?: number;
+  sort?: GetPhoneNumberMediaSortEnum;
+  since?: Date;
+  before?: Date;
+  search?: string;
+}
+
+export interface GetPhoneNumberMedia1Request {
+  page?: number;
+  size?: number;
+  sort?: GetPhoneNumberMedia1SortEnum;
+  since?: Date;
+  before?: Date;
+  search?: string;
+}
+
+export interface GetPhoneNumberMediaByIdRequest {
+  mediaId: string;
 }
 
 export interface GetPhoneNumberReleaseRequest {
@@ -1179,6 +1216,143 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   */
+  async downloadPhoneNumberMediaRaw(
+    requestParameters: DownloadPhoneNumberMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.mediaId === null ||
+      requestParameters.mediaId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'mediaId',
+        'Required parameter requestParameters.mediaId was null or undefined when calling downloadPhoneNumberMedia.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/media/{mediaId}/bytes`.replace(
+          `{${'mediaId'}}`,
+          encodeURIComponent(String(requestParameters.mediaId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   */
+  async downloadPhoneNumberMedia(
+    requestParameters: DownloadPhoneNumberMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.downloadPhoneNumberMediaRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   */
+  async downloadPhoneNumberMediaBase64Raw(
+    requestParameters: DownloadPhoneNumberMediaBase64Request,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.mediaId === null ||
+      requestParameters.mediaId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'mediaId',
+        'Required parameter requestParameters.mediaId was null or undefined when calling downloadPhoneNumberMediaBase64.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/media/{mediaId}/base64`.replace(
+          `{${'mediaId'}}`,
+          encodeURIComponent(String(requestParameters.mediaId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   */
+  async downloadPhoneNumberMediaBase64(
+    requestParameters: DownloadPhoneNumberMediaBase64Request,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.downloadPhoneNumberMediaBase64Raw(
+      requestParameters,
+      initOverrides
+    );
+  }
+
+  /**
+   * Download all active phone numbers for account as CSV
+   * Export phone numbers CSV
+   */
+  async exportPhoneNumbersCsvRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/csv`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Download all active phone numbers for account as CSV
+   * Export phone numbers CSV
+   */
+  async exportPhoneNumbersCsv(initOverrides?: RequestInit): Promise<void> {
+    await this.exportPhoneNumbersCsvRaw(initOverrides);
+  }
+
+  /**
    * List all message threads for all phones
    * Get the latest messages for all phones
    */
@@ -1875,6 +2049,210 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PhoneNumberLineTypeLookupDto> {
     const response = await this.getPhoneNumberLineTypeIntelligenceRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getPhoneNumberMediaRaw(
+    requestParameters: GetPhoneNumberMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageSmsMessageMedia>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling getPhoneNumberMedia.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/{phoneNumberId}/media`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageSmsMessageMediaFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getPhoneNumberMedia(
+    requestParameters: GetPhoneNumberMediaRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageSmsMessageMedia> {
+    const response = await this.getPhoneNumberMediaRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getPhoneNumberMedia1Raw(
+    requestParameters: GetPhoneNumberMedia1Request,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageSmsMessageMedia>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/media`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageSmsMessageMediaFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getPhoneNumberMedia1(
+    requestParameters: GetPhoneNumberMedia1Request,
+    initOverrides?: RequestInit
+  ): Promise<PageSmsMessageMedia> {
+    const response = await this.getPhoneNumberMedia1Raw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getPhoneNumberMediaByIdRaw(
+    requestParameters: GetPhoneNumberMediaByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SmsMessageMediaDto>> {
+    if (
+      requestParameters.mediaId === null ||
+      requestParameters.mediaId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'mediaId',
+        'Required parameter requestParameters.mediaId was null or undefined when calling getPhoneNumberMediaById.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/media/{mediaId}`.replace(
+          `{${'mediaId'}}`,
+          encodeURIComponent(String(requestParameters.mediaId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SmsMessageMediaDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getPhoneNumberMediaById(
+    requestParameters: GetPhoneNumberMediaByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<SmsMessageMediaDto> {
+    const response = await this.getPhoneNumberMediaByIdRaw(
       requestParameters,
       initOverrides
     );
@@ -3745,6 +4123,22 @@ export enum GetAllPhoneNumberReleasesSortEnum {
  * @export
  * @enum {string}
  */
+export enum GetPhoneNumberMediaSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetPhoneNumberMedia1SortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum GetPhoneNumbersPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
@@ -3753,6 +4147,7 @@ export enum GetPhoneNumbersPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',
@@ -3779,6 +4174,7 @@ export enum GetPhoneProvisioningCapabilitiesPhoneCountryEnum {
   EE = 'EE',
   HK = 'HK',
   PL = 'PL',
+  CH = 'CH',
   PT = 'PT',
   NL = 'NL',
   IL = 'IL',

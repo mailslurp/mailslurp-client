@@ -33,6 +33,24 @@ function DevicePreviewScreenshotDtoFromJSONTyped(json, ignoreDiscriminator) {
         isPrimary: json['isPrimary'],
         displayOrder: json['displayOrder'],
         storageKey: !(0, runtime_1.exists)(json, 'storageKey') ? undefined : json['storageKey'],
+        storageProvider: !(0, runtime_1.exists)(json, 'storageProvider')
+            ? undefined
+            : json['storageProvider'],
+        storageBucket: !(0, runtime_1.exists)(json, 'storageBucket')
+            ? undefined
+            : json['storageBucket'],
+        storageObjectKey: !(0, runtime_1.exists)(json, 'storageObjectKey')
+            ? undefined
+            : json['storageObjectKey'],
+        storageRegion: !(0, runtime_1.exists)(json, 'storageRegion')
+            ? undefined
+            : json['storageRegion'],
+        storageEndpoint: !(0, runtime_1.exists)(json, 'storageEndpoint')
+            ? undefined
+            : json['storageEndpoint'],
+        storagePublicBaseUrl: !(0, runtime_1.exists)(json, 'storagePublicBaseUrl')
+            ? undefined
+            : json['storagePublicBaseUrl'],
         accessUrl: !(0, runtime_1.exists)(json, 'accessUrl') ? undefined : json['accessUrl'],
         liveViewUrl: !(0, runtime_1.exists)(json, 'liveViewUrl') ? undefined : json['liveViewUrl'],
         sessionId: !(0, runtime_1.exists)(json, 'sessionId') ? undefined : json['sessionId'],
@@ -64,6 +82,12 @@ function DevicePreviewScreenshotDtoToJSON(value) {
         isPrimary: value.isPrimary,
         displayOrder: value.displayOrder,
         storageKey: value.storageKey,
+        storageProvider: value.storageProvider,
+        storageBucket: value.storageBucket,
+        storageObjectKey: value.storageObjectKey,
+        storageRegion: value.storageRegion,
+        storageEndpoint: value.storageEndpoint,
+        storagePublicBaseUrl: value.storagePublicBaseUrl,
         accessUrl: value.accessUrl,
         liveViewUrl: value.liveViewUrl,
         sessionId: value.sessionId,

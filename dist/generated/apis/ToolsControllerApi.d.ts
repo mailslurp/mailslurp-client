@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AnalyzeDmarcReportOptions, AnalyzeDmarcReportResults, AnalyzeEmailHeadersOptions, AnalyzeEmailHeadersResults, CheckCampaignProbeOptions, CheckCampaignProbeResults, CheckDnsPropagationOptions, CheckDnsPropagationResults, CheckDomainMonitorOptions, CheckDomainMonitorResults, CheckEmailAuditOptions, CheckEmailAuthStackOptions, CheckEmailAuthStackResults, CheckEmailBlacklistOptions, CheckEmailBlacklistResults, CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, EmailAuditAnalysisResult, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateSpfRecordOptions, GenerateSpfRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDkimDomainOptions, LookupDkimDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupMxRecordsOptions, LookupMxRecordsResults, LookupPtrOptions, LookupPtrResults, LookupSpfDomainOptions, LookupSpfDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult, TestSmtpServerOptions, TestSmtpServerResults } from '../models';
+import { AnalyzeDmarcReportOptions, AnalyzeDmarcReportResults, AnalyzeEmailHeadersOptions, AnalyzeEmailHeadersResults, CheckCampaignProbeOptions, CheckCampaignProbeResults, CheckDnsPropagationOptions, CheckDnsPropagationResults, CheckDomainMonitorOptions, CheckDomainMonitorResults, CheckEmailAuditOptions, CheckEmailAuthStackOptions, CheckEmailAuthStackResults, CheckEmailBlacklistOptions, CheckEmailBlacklistResults, CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, CreatePublicDeviceRenderTestOptions, CreatePublicSpamTestOptions, EmailAuditAnalysisResult, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateSpfRecordOptions, GenerateSpfRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDkimDomainOptions, LookupDkimDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupMxRecordsOptions, LookupMxRecordsResults, LookupPtrOptions, LookupPtrResults, LookupSpfDomainOptions, LookupSpfDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult, PublicDeviceRenderTestDto, PublicSpamTestResultsDto, PublicSpamTestRunDto, SubmitPublicSpamTestOptions, TestSmtpServerOptions, TestSmtpServerResults } from '../models';
 export interface AnalyzeDmarcReportRequest {
     analyzeDmarcReportOptions: AnalyzeDmarcReportOptions;
 }
@@ -37,6 +37,12 @@ export interface CheckEmailBlacklistRequest {
 }
 export interface CheckEmailFeaturesClientSupportRequest {
     checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
+}
+export interface CreatePublicDeviceRenderTestRequest {
+    createPublicDeviceRenderTestOptions: CreatePublicDeviceRenderTestOptions;
+}
+export interface CreatePublicSpamTestRequest {
+    createPublicSpamTestOptions: CreatePublicSpamTestOptions;
 }
 export interface DeleteNewFakeEmailAddressRequest {
     emailAddress: string;
@@ -69,6 +75,15 @@ export interface GetFakeEmailsForAddressRequest {
     emailAddress: string;
     page?: number;
 }
+export interface GetPublicDeviceRenderTestRequest {
+    id: string;
+}
+export interface GetPublicSpamTestRequest {
+    id: string;
+}
+export interface GetPublicSpamTestResultsRequest {
+    id: string;
+}
 export interface LookupBimiDomainRequest {
     lookupBimiDomainOptions: LookupBimiDomainOptions;
 }
@@ -92,6 +107,10 @@ export interface LookupSpfDomainRequest {
 }
 export interface LookupTlsReportingDomainRequest {
     lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
+}
+export interface SubmitPublicSpamTestRequest {
+    id: string;
+    submitPublicSpamTestOptions: SubmitPublicSpamTestOptions;
 }
 export interface TestSmtpServerRequest {
     testSmtpServerOptions: TestSmtpServerOptions;
@@ -181,6 +200,26 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      */
     createNewFakeEmailAddress(initOverrides?: RequestInit): Promise<NewFakeEmailAddressResult>;
     /**
+     * Creates an unauthenticated free email render test and returns a short-lived generated email address.
+     * Create a public email render test
+     */
+    createPublicDeviceRenderTestRaw(requestParameters: CreatePublicDeviceRenderTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>>;
+    /**
+     * Creates an unauthenticated free email render test and returns a short-lived generated email address.
+     * Create a public email render test
+     */
+    createPublicDeviceRenderTest(requestParameters: CreatePublicDeviceRenderTestRequest, initOverrides?: RequestInit): Promise<PublicDeviceRenderTestDto>;
+    /**
+     * Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+     * Create a public spam test
+     */
+    createPublicSpamTestRaw(requestParameters: CreatePublicSpamTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicSpamTestRunDto>>;
+    /**
+     * Create an unauthenticated inbox placement run for public tools users. Returns seed addresses and a tracking token immediately.
+     * Create a public spam test
+     */
+    createPublicSpamTest(requestParameters: CreatePublicSpamTestRequest, initOverrides?: RequestInit): Promise<PublicSpamTestRunDto>;
+    /**
      * Delete a fake email address using the fake email domains
      * Delete a fake email address using the fake email domains
      */
@@ -267,6 +306,36 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      */
     getFakeEmailsForAddress(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<Array<FakeEmailPreview>>;
     /**
+     * Returns status for a free email render test and the public share redirect when the render run is ready.
+     * Get a public email render test
+     */
+    getPublicDeviceRenderTestRaw(requestParameters: GetPublicDeviceRenderTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>>;
+    /**
+     * Returns status for a free email render test and the public share redirect when the render run is ready.
+     * Get a public email render test
+     */
+    getPublicDeviceRenderTest(requestParameters: GetPublicDeviceRenderTestRequest, initOverrides?: RequestInit): Promise<PublicDeviceRenderTestDto>;
+    /**
+     * Returns public spam test run status, token, seed addresses, and free-limit state.
+     * Get a public spam test run
+     */
+    getPublicSpamTestRaw(requestParameters: GetPublicSpamTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicSpamTestRunDto>>;
+    /**
+     * Returns public spam test run status, token, seed addresses, and free-limit state.
+     * Get a public spam test run
+     */
+    getPublicSpamTest(requestParameters: GetPublicSpamTestRequest, initOverrides?: RequestInit): Promise<PublicSpamTestRunDto>;
+    /**
+     * Returns public spam test run status and any available inbox placement results.
+     * Get public spam test results
+     */
+    getPublicSpamTestResultsRaw(requestParameters: GetPublicSpamTestResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicSpamTestResultsDto>>;
+    /**
+     * Returns public spam test run status and any available inbox placement results.
+     * Get public spam test results
+     */
+    getPublicSpamTestResults(requestParameters: GetPublicSpamTestResultsRequest, initOverrides?: RequestInit): Promise<PublicSpamTestResultsDto>;
+    /**
      * Lookup a BIMI record policy
      */
     lookupBimiDomainRaw(requestParameters: LookupBimiDomainRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<LookupBimiDomainResults>>;
@@ -330,6 +399,16 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Lookup a TLS reporting domain policy
      */
     lookupTlsReportingDomain(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<LookupTlsReportingDomainResults>;
+    /**
+     * Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+     * Mark a public spam test as submitted
+     */
+    submitPublicSpamTestRaw(requestParameters: SubmitPublicSpamTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicSpamTestRunDto>>;
+    /**
+     * Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
+     * Mark a public spam test as submitted
+     */
+    submitPublicSpamTest(requestParameters: SubmitPublicSpamTestRequest, initOverrides?: RequestInit): Promise<PublicSpamTestRunDto>;
     /**
      * Run a conservative SMTP connectivity, TLS, and AUTH diagnostic
      */

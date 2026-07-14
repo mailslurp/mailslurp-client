@@ -16,6 +16,7 @@ DevicePreviewTargetDto
 - [clientProfile](DevicePreviewTargetDto.md#clientprofile)
 - [colorScheme](DevicePreviewTargetDto.md#colorscheme)
 - [createdAt](DevicePreviewTargetDto.md#createdat)
+- [creditCost](DevicePreviewTargetDto.md#creditcost)
 - [deviceType](DevicePreviewTargetDto.md#devicetype)
 - [failureCode](DevicePreviewTargetDto.md#failurecode)
 - [id](DevicePreviewTargetDto.md#id)
@@ -61,6 +62,16 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+DevicePreviewTargetDto
+
+___
+
+### creditCost
+
+• **creditCost**: `number`
 
 **`Memberof`**
 

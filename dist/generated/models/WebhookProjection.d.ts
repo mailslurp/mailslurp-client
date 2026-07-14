@@ -20,7 +20,7 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      *
      * @type {string}
@@ -38,13 +38,19 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    password?: string;
+    username?: string | null;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
-    username?: string;
+    password?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof WebhookProjection
+     */
+    enabled?: boolean | null;
     /**
      *
      * @type {string}
@@ -56,7 +62,7 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
@@ -68,37 +74,37 @@ export interface WebhookProjection {
      * @type {Date}
      * @memberof WebhookProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof WebhookProjection
      */
-    createdAt: Date;
+    updatedAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    aiTransformerId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    aiTransformId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    phoneNumberId?: string | null;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
     healthStatus?: WebhookProjectionHealthStatusEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    aiTransformerId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    aiTransformId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    phoneNumberId?: string;
 }
 /**
  * @export

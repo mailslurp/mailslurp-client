@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * How entities are selected for a deliverability test
+ * How entities are selected for a load test
  * @export
  * @interface DeliverabilitySelectorOptions
  */
@@ -45,6 +45,12 @@ export interface DeliverabilitySelectorOptions {
      * @memberof DeliverabilitySelectorOptions
      */
     excludeEntityIds?: Array<string> | null;
+    /**
+     * Optional tags to filter selected entities by. Matching is case-insensitive and an entity must contain all provided tags.
+     * @type {Array<string>}
+     * @memberof DeliverabilitySelectorOptions
+     */
+    tags?: Array<string> | null;
 }
 /**
  * @export
@@ -67,6 +73,7 @@ export declare enum DeliverabilitySelectorOptionsPhoneCountryEnum {
     EE = "EE",
     HK = "HK",
     PL = "PL",
+    CH = "CH",
     PT = "PT",
     NL = "NL",
     IL = "IL",

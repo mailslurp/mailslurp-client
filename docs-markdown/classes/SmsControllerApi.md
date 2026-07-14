@@ -28,6 +28,10 @@
 - [deleteSmsMessageRaw](SmsControllerApi.md#deletesmsmessageraw)
 - [deleteSmsMessages](SmsControllerApi.md#deletesmsmessages)
 - [deleteSmsMessagesRaw](SmsControllerApi.md#deletesmsmessagesraw)
+- [downloadSmsMedia](SmsControllerApi.md#downloadsmsmedia)
+- [downloadSmsMediaBase64](SmsControllerApi.md#downloadsmsmediabase64)
+- [downloadSmsMediaBase64Raw](SmsControllerApi.md#downloadsmsmediabase64raw)
+- [downloadSmsMediaRaw](SmsControllerApi.md#downloadsmsmediaraw)
 - [getAllSmsMessages](SmsControllerApi.md#getallsmsmessages)
 - [getAllSmsMessagesRaw](SmsControllerApi.md#getallsmsmessagesraw)
 - [getReplyForSmsMessage](SmsControllerApi.md#getreplyforsmsmessage)
@@ -42,6 +46,10 @@
 - [getSmsCodesRaw](SmsControllerApi.md#getsmscodesraw)
 - [getSmsCount](SmsControllerApi.md#getsmscount)
 - [getSmsCountRaw](SmsControllerApi.md#getsmscountraw)
+- [getSmsMedia](SmsControllerApi.md#getsmsmedia)
+- [getSmsMediaById](SmsControllerApi.md#getsmsmediabyid)
+- [getSmsMediaByIdRaw](SmsControllerApi.md#getsmsmediabyidraw)
+- [getSmsMediaRaw](SmsControllerApi.md#getsmsmediaraw)
 - [getSmsMessage](SmsControllerApi.md#getsmsmessage)
 - [getSmsMessageRaw](SmsControllerApi.md#getsmsmessageraw)
 - [getUnreadSmsCount](SmsControllerApi.md#getunreadsmscount)
@@ -241,6 +249,74 @@ Delete all SMS messages
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`DeleteSmsMessagesRequest`](../interfaces/DeleteSmsMessagesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### downloadSmsMedia
+
+▸ **downloadSmsMedia**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadSmsMediaRequest`](../interfaces/DownloadSmsMediaRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### downloadSmsMediaBase64
+
+▸ **downloadSmsMediaBase64**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadSmsMediaBase64Request`](../interfaces/DownloadSmsMediaBase64Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### downloadSmsMediaBase64Raw
+
+▸ **downloadSmsMediaBase64Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadSmsMediaBase64Request`](../interfaces/DownloadSmsMediaBase64Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### downloadSmsMediaRaw
+
+▸ **downloadSmsMediaRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadSmsMediaRequest`](../interfaces/DownloadSmsMediaRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -516,6 +592,74 @@ Get SMS count
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+___
+
+### getSmsMedia
+
+▸ **getSmsMedia**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)[]\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsMediaRequest`](../interfaces/GetSmsMediaRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)[]\>
+
+___
+
+### getSmsMediaById
+
+▸ **getSmsMediaById**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsMediaByIdRequest`](../interfaces/GetSmsMediaByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>
+
+___
+
+### getSmsMediaByIdRaw
+
+▸ **getSmsMediaByIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsMediaByIdRequest`](../interfaces/GetSmsMediaByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)\>\>
+
+___
+
+### getSmsMediaRaw
+
+▸ **getSmsMediaRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)[]\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmsMediaRequest`](../interfaces/GetSmsMediaRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessageMediaDto`](../interfaces/SmsMessageMediaDto.md)[]\>\>
 
 ___
 

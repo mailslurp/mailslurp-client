@@ -27,6 +27,9 @@ var DevicePreviewTargetDtoStatusEnum;
     DevicePreviewTargetDtoStatusEnum["READY"] = "READY";
     DevicePreviewTargetDtoStatusEnum["FAILED"] = "FAILED";
     DevicePreviewTargetDtoStatusEnum["NEEDS_INTERVENTION"] = "NEEDS_INTERVENTION";
+    DevicePreviewTargetDtoStatusEnum["TIMED_OUT"] = "TIMED_OUT";
+    DevicePreviewTargetDtoStatusEnum["SKIPPED_OFFLINE"] = "SKIPPED_OFFLINE";
+    DevicePreviewTargetDtoStatusEnum["SETUP_REQUIRED"] = "SETUP_REQUIRED";
 })(DevicePreviewTargetDtoStatusEnum = exports.DevicePreviewTargetDtoStatusEnum || (exports.DevicePreviewTargetDtoStatusEnum = {}));
 function DevicePreviewTargetDtoFromJSON(json) {
     return DevicePreviewTargetDtoFromJSONTyped(json, false);
@@ -39,6 +42,7 @@ function DevicePreviewTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         runId: json['runId'],
+        creditCost: json['creditCost'],
         provider: !(0, runtime_1.exists)(json, 'provider') ? undefined : json['provider'],
         clientProfile: !(0, runtime_1.exists)(json, 'clientProfile')
             ? undefined
@@ -69,6 +73,7 @@ function DevicePreviewTargetDtoToJSON(value) {
     return {
         id: value.id,
         runId: value.runId,
+        creditCost: value.creditCost,
         provider: value.provider,
         clientProfile: value.clientProfile,
         deviceType: value.deviceType,

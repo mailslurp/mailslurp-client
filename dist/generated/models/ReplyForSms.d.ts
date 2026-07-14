@@ -21,7 +21,7 @@ export interface ReplyForSms {
      * @type {SentSmsDto}
      * @memberof ReplyForSms
      */
-    reply?: SentSmsDto;
+    reply?: SentSmsDto | null;
 }
 export declare function ReplyForSmsFromJSON(json: any): ReplyForSms;
 export declare function ReplyForSmsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReplyForSms;

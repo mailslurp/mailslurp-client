@@ -31,37 +31,37 @@ export interface CreatePortalUserOptions {
    * @type {string}
    * @memberof CreatePortalUserOptions
    */
-  password?: string;
+  password?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreatePortalUserOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreatePortalUserOptions
    */
-  username?: string;
+  username?: string | null;
   /**
    *
    * @type {boolean}
    * @memberof CreatePortalUserOptions
    */
-  skipInboxCreation?: boolean;
+  skipInboxCreation?: boolean | null;
   /**
    *
    * @type {string}
    * @memberof CreatePortalUserOptions
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    *
    * @type {CreateInboxDto}
    * @memberof CreatePortalUserOptions
    */
-  createInboxOptions?: CreateInboxDto;
+  createInboxOptions?: CreateInboxDto | null;
 }
 
 export function CreatePortalUserOptionsFromJSON(

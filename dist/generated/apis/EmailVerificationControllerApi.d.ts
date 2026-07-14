@@ -10,7 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { EmailIntelligenceListResult, EmailIntelligenceOptions, PageEmailValidationRequest, ValidateEmailAddressListOptions, ValidateEmailAddressListResult } from '../models';
+import { EmailDomainReputationOptions, EmailDomainReputationResult, EmailIntelligenceListResult, EmailIntelligenceOptions, PageEmailValidationRequest, ValidateEmailAddressListOptions, ValidateEmailAddressListResult } from '../models';
+export interface CheckEmailDomainReputationRequest {
+    emailDomainReputationOptions: EmailDomainReputationOptions;
+}
 export interface DeleteValidationRequestRequest {
     id: string;
 }
@@ -33,6 +36,16 @@ export interface ValidateEmailAddressListRequest {
  *
  */
 export declare class EmailVerificationControllerApi extends runtime.BaseAPI {
+    /**
+     * Run reputation-oriented checks for an email address, domain, IP address, or MX host. This is separate from address validation.
+     * Check email/domain reputation signals including configured DNS blacklists.
+     */
+    checkEmailDomainReputationRaw(requestParameters: CheckEmailDomainReputationRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailDomainReputationResult>>;
+    /**
+     * Run reputation-oriented checks for an email address, domain, IP address, or MX host. This is separate from address validation.
+     * Check email/domain reputation signals including configured DNS blacklists.
+     */
+    checkEmailDomainReputation(requestParameters: CheckEmailDomainReputationRequest, initOverrides?: RequestInit): Promise<EmailDomainReputationResult>;
     /**
      * Remove validation requests
      * Delete all validation requests

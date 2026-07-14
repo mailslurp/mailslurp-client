@@ -31,7 +31,7 @@ export interface AITransformProjection {
    * @type {string}
    * @memberof AITransformProjection
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -49,13 +49,13 @@ export interface AITransformProjection {
    * @type {Array<string>}
    * @memberof AITransformProjection
    */
-  conditions?: Array<string>;
+  conditions?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
    * @memberof AITransformProjection
    */
-  instructions?: Array<string>;
+  instructions?: Array<string> | null;
   /**
    *
    * @type {StructuredOutputSchema}

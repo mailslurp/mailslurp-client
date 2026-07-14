@@ -13,8 +13,20 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewRunDtoToJSON = exports.DevicePreviewRunDtoFromJSONTyped = exports.DevicePreviewRunDtoFromJSON = exports.DevicePreviewRunDtoImportedProvidersEnum = exports.DevicePreviewRunDtoRequestedProvidersEnum = exports.DevicePreviewRunDtoStatusEnum = void 0;
+exports.DevicePreviewRunDtoToJSON = exports.DevicePreviewRunDtoFromJSONTyped = exports.DevicePreviewRunDtoFromJSON = exports.DevicePreviewRunDtoStatusEnum = exports.DevicePreviewRunDtoSourceTypeEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
+/**
+ * @export
+ * @enum {string}
+ */
+var DevicePreviewRunDtoSourceTypeEnum;
+(function (DevicePreviewRunDtoSourceTypeEnum) {
+    DevicePreviewRunDtoSourceTypeEnum["STORED_EMAIL"] = "STORED_EMAIL";
+    DevicePreviewRunDtoSourceTypeEnum["RAW_UPLOAD"] = "RAW_UPLOAD";
+    DevicePreviewRunDtoSourceTypeEnum["DEVICE_PREVIEW_INGEST"] = "DEVICE_PREVIEW_INGEST";
+    DevicePreviewRunDtoSourceTypeEnum["PUBLIC_FREE_TEST"] = "PUBLIC_FREE_TEST";
+})(DevicePreviewRunDtoSourceTypeEnum = exports.DevicePreviewRunDtoSourceTypeEnum || (exports.DevicePreviewRunDtoSourceTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -28,26 +40,6 @@ var DevicePreviewRunDtoStatusEnum;
     DevicePreviewRunDtoStatusEnum["COMPLETE"] = "COMPLETE";
     DevicePreviewRunDtoStatusEnum["FAILED"] = "FAILED";
 })(DevicePreviewRunDtoStatusEnum = exports.DevicePreviewRunDtoStatusEnum || (exports.DevicePreviewRunDtoStatusEnum = {}));
-/**
- * @export
- * @enum {string}
- */
-var DevicePreviewRunDtoRequestedProvidersEnum;
-(function (DevicePreviewRunDtoRequestedProvidersEnum) {
-    DevicePreviewRunDtoRequestedProvidersEnum["GMAIL"] = "GMAIL";
-    DevicePreviewRunDtoRequestedProvidersEnum["OUTLOOK"] = "OUTLOOK";
-    DevicePreviewRunDtoRequestedProvidersEnum["YAHOO"] = "YAHOO";
-})(DevicePreviewRunDtoRequestedProvidersEnum = exports.DevicePreviewRunDtoRequestedProvidersEnum || (exports.DevicePreviewRunDtoRequestedProvidersEnum = {}));
-/**
- * @export
- * @enum {string}
- */
-var DevicePreviewRunDtoImportedProvidersEnum;
-(function (DevicePreviewRunDtoImportedProvidersEnum) {
-    DevicePreviewRunDtoImportedProvidersEnum["GMAIL"] = "GMAIL";
-    DevicePreviewRunDtoImportedProvidersEnum["OUTLOOK"] = "OUTLOOK";
-    DevicePreviewRunDtoImportedProvidersEnum["YAHOO"] = "YAHOO";
-})(DevicePreviewRunDtoImportedProvidersEnum = exports.DevicePreviewRunDtoImportedProvidersEnum || (exports.DevicePreviewRunDtoImportedProvidersEnum = {}));
 function DevicePreviewRunDtoFromJSON(json) {
     return DevicePreviewRunDtoFromJSONTyped(json, false);
 }
@@ -58,7 +50,62 @@ function DevicePreviewRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         runId: json['runId'],
-        emailId: json['emailId'],
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        sourceType: json['sourceType'],
+        sourceInboxId: !(0, runtime_1.exists)(json, 'sourceInboxId')
+            ? undefined
+            : json['sourceInboxId'],
+        sourceAlias: !(0, runtime_1.exists)(json, 'sourceAlias') ? undefined : json['sourceAlias'],
+        sourceExternalId: !(0, runtime_1.exists)(json, 'sourceExternalId')
+            ? undefined
+            : json['sourceExternalId'],
+        sourceFrom: !(0, runtime_1.exists)(json, 'sourceFrom') ? undefined : json['sourceFrom'],
+        sourceTo: !(0, runtime_1.exists)(json, 'sourceTo') ? undefined : json['sourceTo'],
+        sourceSubject: !(0, runtime_1.exists)(json, 'sourceSubject')
+            ? undefined
+            : json['sourceSubject'],
+        sourceMessageId: !(0, runtime_1.exists)(json, 'sourceMessageId')
+            ? undefined
+            : json['sourceMessageId'],
+        sourceSizeBytes: !(0, runtime_1.exists)(json, 'sourceSizeBytes')
+            ? undefined
+            : json['sourceSizeBytes'],
+        sourceStorageProvider: !(0, runtime_1.exists)(json, 'sourceStorageProvider')
+            ? undefined
+            : json['sourceStorageProvider'],
+        sourceStorageBucket: !(0, runtime_1.exists)(json, 'sourceStorageBucket')
+            ? undefined
+            : json['sourceStorageBucket'],
+        sourceStorageObjectKey: !(0, runtime_1.exists)(json, 'sourceStorageObjectKey')
+            ? undefined
+            : json['sourceStorageObjectKey'],
+        sourceStorageRegion: !(0, runtime_1.exists)(json, 'sourceStorageRegion')
+            ? undefined
+            : json['sourceStorageRegion'],
+        sourceStorageEndpoint: !(0, runtime_1.exists)(json, 'sourceStorageEndpoint')
+            ? undefined
+            : json['sourceStorageEndpoint'],
+        sourceStoragePublicBaseUrl: !(0, runtime_1.exists)(json, 'sourceStoragePublicBaseUrl')
+            ? undefined
+            : json['sourceStoragePublicBaseUrl'],
+        sourceRecipientEmailAddress: !(0, runtime_1.exists)(json, 'sourceRecipientEmailAddress')
+            ? undefined
+            : json['sourceRecipientEmailAddress'],
+        sourceRecipientLocalPart: !(0, runtime_1.exists)(json, 'sourceRecipientLocalPart')
+            ? undefined
+            : json['sourceRecipientLocalPart'],
+        sourceIngestDomainId: !(0, runtime_1.exists)(json, 'sourceIngestDomainId')
+            ? undefined
+            : json['sourceIngestDomainId'],
+        sourceProfileId: !(0, runtime_1.exists)(json, 'sourceProfileId')
+            ? undefined
+            : json['sourceProfileId'],
+        sourceProfileLocalPart: !(0, runtime_1.exists)(json, 'sourceProfileLocalPart')
+            ? undefined
+            : json['sourceProfileLocalPart'],
+        sourceProfileDisplayName: !(0, runtime_1.exists)(json, 'sourceProfileDisplayName')
+            ? undefined
+            : json['sourceProfileDisplayName'],
         status: json['status'],
         primaryScreenshotId: !(0, runtime_1.exists)(json, 'primaryScreenshotId')
             ? undefined
@@ -73,10 +120,14 @@ function DevicePreviewRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         providerMessageIds: !(0, runtime_1.exists)(json, 'providerMessageIds')
             ? undefined
             : json['providerMessageIds'],
+        latestError: !(0, runtime_1.exists)(json, 'latestError') ? undefined : json['latestError'],
         targetCount: json['targetCount'],
         screenshotCount: json['screenshotCount'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
+        thumbnail: !(0, runtime_1.exists)(json, 'thumbnail')
+            ? undefined
+            : (0, _1.DevicePreviewRunThumbnailDtoFromJSON)(json['thumbnail']),
     };
 }
 exports.DevicePreviewRunDtoFromJSONTyped = DevicePreviewRunDtoFromJSONTyped;
@@ -90,16 +141,39 @@ function DevicePreviewRunDtoToJSON(value) {
     return {
         runId: value.runId,
         emailId: value.emailId,
+        sourceType: value.sourceType,
+        sourceInboxId: value.sourceInboxId,
+        sourceAlias: value.sourceAlias,
+        sourceExternalId: value.sourceExternalId,
+        sourceFrom: value.sourceFrom,
+        sourceTo: value.sourceTo,
+        sourceSubject: value.sourceSubject,
+        sourceMessageId: value.sourceMessageId,
+        sourceSizeBytes: value.sourceSizeBytes,
+        sourceStorageProvider: value.sourceStorageProvider,
+        sourceStorageBucket: value.sourceStorageBucket,
+        sourceStorageObjectKey: value.sourceStorageObjectKey,
+        sourceStorageRegion: value.sourceStorageRegion,
+        sourceStorageEndpoint: value.sourceStorageEndpoint,
+        sourceStoragePublicBaseUrl: value.sourceStoragePublicBaseUrl,
+        sourceRecipientEmailAddress: value.sourceRecipientEmailAddress,
+        sourceRecipientLocalPart: value.sourceRecipientLocalPart,
+        sourceIngestDomainId: value.sourceIngestDomainId,
+        sourceProfileId: value.sourceProfileId,
+        sourceProfileLocalPart: value.sourceProfileLocalPart,
+        sourceProfileDisplayName: value.sourceProfileDisplayName,
         status: value.status,
         primaryScreenshotId: value.primaryScreenshotId,
         requestedProviders: value.requestedProviders,
         importedProviders: value.importedProviders,
         warnings: value.warnings,
         providerMessageIds: value.providerMessageIds,
+        latestError: value.latestError,
         targetCount: value.targetCount,
         screenshotCount: value.screenshotCount,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
+        thumbnail: (0, _1.DevicePreviewRunThumbnailDtoToJSON)(value.thumbnail),
     };
 }
 exports.DevicePreviewRunDtoToJSON = DevicePreviewRunDtoToJSON;

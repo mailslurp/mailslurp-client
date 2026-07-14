@@ -46,7 +46,7 @@ export interface CreateContactOptions {
      */
     tags?: Array<string> | null;
     /**
-     *
+     * User metadata key value pairs to save for this contact. Can be any values you like.
      * @type {object}
      * @memberof CreateContactOptions
      */

@@ -37,13 +37,13 @@ export interface EmailFeatureOverview {
    * @type {string}
    * @memberof EmailFeatureOverview
    */
-  title?: string;
+  title?: string | null;
   /**
    *
    * @type {string}
    * @memberof EmailFeatureOverview
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {string}
@@ -55,19 +55,19 @@ export interface EmailFeatureOverview {
    * @type {string}
    * @memberof EmailFeatureOverview
    */
-  notes?: string;
+  notes?: string | null;
   /**
    *
    * @type {{ [key: string]: string; }}
    * @memberof EmailFeatureOverview
    */
-  notesNumbers?: { [key: string]: string };
+  notesNumbers?: { [key: string]: string } | null;
   /**
    *
    * @type {Array<EmailFeatureFamilyStatistics>}
    * @memberof EmailFeatureOverview
    */
-  featureStatistics?: Array<EmailFeatureFamilyStatistics>;
+  featureStatistics?: Array<EmailFeatureFamilyStatistics> | null;
   /**
    *
    * @type {Set<string>}
@@ -305,6 +305,8 @@ export function EmailFeatureOverviewFromJSONTyped(
       : json['notesNumbers'],
     featureStatistics: !exists(json, 'featureStatistics')
       ? undefined
+      : json['featureStatistics'] === null
+      ? null
       : (json['featureStatistics'] as Array<any>).map(
           EmailFeatureFamilyStatisticsFromJSON
         ),
@@ -331,6 +333,8 @@ export function EmailFeatureOverviewToJSON(
     featureStatistics:
       value.featureStatistics === undefined
         ? undefined
+        : value.featureStatistics === null
+        ? null
         : (value.featureStatistics as Array<any>).map(
             EmailFeatureFamilyStatisticsToJSON
           ),

@@ -181,6 +181,7 @@ export declare enum WebhookResultDtoWebhookEventEnum {
 export declare enum WebhookResultDtoResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
+    EXHAUSTED = "EXHAUSTED",
     SUCCESS = "SUCCESS",
     REDRIVEN = "REDRIVEN"
 }

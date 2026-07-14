@@ -50,19 +50,19 @@ export interface ConnectorEventDto {
      * @type {string}
      * @memberof ConnectorEventDto
      */
-    message?: string;
+    message?: string | null;
     /**
      *
      * @type {string}
      * @memberof ConnectorEventDto
      */
-    logs?: string;
+    logs?: string | null;
     /**
      *
      * @type {boolean}
      * @memberof ConnectorEventDto
      */
-    seen?: boolean;
+    seen?: boolean | null;
     /**
      *
      * @type {Date}

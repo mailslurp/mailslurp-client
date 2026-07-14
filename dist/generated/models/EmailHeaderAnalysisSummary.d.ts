@@ -20,31 +20,31 @@ export interface EmailHeaderAnalysisSummary {
      * @type {string}
      * @memberof EmailHeaderAnalysisSummary
      */
-    spf?: string;
+    spf?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHeaderAnalysisSummary
      */
-    dkim?: string;
+    dkim?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHeaderAnalysisSummary
      */
-    dmarc?: string;
+    dmarc?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHeaderAnalysisSummary
      */
-    fromDomain?: string;
+    fromDomain?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailHeaderAnalysisSummary
      */
-    returnPathDomain?: string;
+    returnPathDomain?: string | null;
 }
 export declare function EmailHeaderAnalysisSummaryFromJSON(json: any): EmailHeaderAnalysisSummary;
 export declare function EmailHeaderAnalysisSummaryFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailHeaderAnalysisSummary;

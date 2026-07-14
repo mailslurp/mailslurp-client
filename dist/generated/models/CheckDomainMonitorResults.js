@@ -45,6 +45,13 @@ function CheckDomainMonitorResultsFromJSONTyped(json, ignoreDiscriminator) {
         dmarcOk: json['dmarcOk'],
         dmarcEnforced: json['dmarcEnforced'],
         mxOk: json['mxOk'],
+        dkimOk: json['dkimOk'],
+        bimiOk: json['bimiOk'],
+        mtaStsOk: json['mtaStsOk'],
+        tlsReportingOk: json['tlsReportingOk'],
+        blacklistChecked: json['blacklistChecked'],
+        blacklistOk: json['blacklistOk'],
+        blacklistListed: json['blacklistListed'],
         insights: json['insights'],
         errorMessage: !(0, runtime_1.exists)(json, 'errorMessage')
             ? undefined
@@ -70,6 +77,13 @@ function CheckDomainMonitorResultsToJSON(value) {
         dmarcOk: value.dmarcOk,
         dmarcEnforced: value.dmarcEnforced,
         mxOk: value.mxOk,
+        dkimOk: value.dkimOk,
+        bimiOk: value.bimiOk,
+        mtaStsOk: value.mtaStsOk,
+        tlsReportingOk: value.tlsReportingOk,
+        blacklistChecked: value.blacklistChecked,
+        blacklistOk: value.blacklistOk,
+        blacklistListed: value.blacklistListed,
         insights: value.insights,
         errorMessage: value.errorMessage,
     };

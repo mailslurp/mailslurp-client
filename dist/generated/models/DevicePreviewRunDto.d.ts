@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { DevicePreviewRunThumbnailDto } from './';
 /**
  *
  * @export
@@ -26,7 +27,133 @@ export interface DevicePreviewRunDto {
      * @type {string}
      * @memberof DevicePreviewRunDto
      */
-    emailId: string;
+    emailId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceType: DevicePreviewRunDtoSourceTypeEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceInboxId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceAlias?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceExternalId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceFrom?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceTo?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceSubject?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceMessageId?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceSizeBytes?: number | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceStorageProvider?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceStorageBucket?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceStorageObjectKey?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceStorageRegion?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceStorageEndpoint?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceStoragePublicBaseUrl?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceRecipientEmailAddress?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceRecipientLocalPart?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceIngestDomainId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceProfileId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceProfileLocalPart?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    sourceProfileDisplayName?: string | null;
     /**
      *
      * @type {string}
@@ -38,25 +165,25 @@ export interface DevicePreviewRunDto {
      * @type {string}
      * @memberof DevicePreviewRunDto
      */
-    primaryScreenshotId?: string;
+    primaryScreenshotId?: string | null;
     /**
      *
      * @type {Array<string>}
      * @memberof DevicePreviewRunDto
      */
-    requestedProviders?: Array<DevicePreviewRunDtoRequestedProvidersEnum>;
+    requestedProviders?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
      * @memberof DevicePreviewRunDto
      */
-    importedProviders?: Array<DevicePreviewRunDtoImportedProvidersEnum>;
+    importedProviders?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
      * @memberof DevicePreviewRunDto
      */
-    warnings?: Array<string>;
+    warnings?: Array<string> | null;
     /**
      *
      * @type {{ [key: string]: string; }}
@@ -64,7 +191,13 @@ export interface DevicePreviewRunDto {
      */
     providerMessageIds?: {
         [key: string]: string;
-    };
+    } | null;
+    /**
+     * Latest run-level error, if the preview run was blocked or failed after creation.
+     * @type {string}
+     * @memberof DevicePreviewRunDto
+     */
+    latestError?: string | null;
     /**
      *
      * @type {number}
@@ -89,6 +222,22 @@ export interface DevicePreviewRunDto {
      * @memberof DevicePreviewRunDto
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {DevicePreviewRunThumbnailDto}
+     * @memberof DevicePreviewRunDto
+     */
+    thumbnail?: DevicePreviewRunThumbnailDto | null;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum DevicePreviewRunDtoSourceTypeEnum {
+    STORED_EMAIL = "STORED_EMAIL",
+    RAW_UPLOAD = "RAW_UPLOAD",
+    DEVICE_PREVIEW_INGEST = "DEVICE_PREVIEW_INGEST",
+    PUBLIC_FREE_TEST = "PUBLIC_FREE_TEST"
 }
 /**
  * @export
@@ -101,24 +250,6 @@ export declare enum DevicePreviewRunDtoStatusEnum {
     PARTIAL_COMPLETE = "PARTIAL_COMPLETE",
     COMPLETE = "COMPLETE",
     FAILED = "FAILED"
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum DevicePreviewRunDtoRequestedProvidersEnum {
-    GMAIL = "GMAIL",
-    OUTLOOK = "OUTLOOK",
-    YAHOO = "YAHOO"
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum DevicePreviewRunDtoImportedProvidersEnum {
-    GMAIL = "GMAIL",
-    OUTLOOK = "OUTLOOK",
-    YAHOO = "YAHOO"
 }
 export declare function DevicePreviewRunDtoFromJSON(json: any): DevicePreviewRunDto;
 export declare function DevicePreviewRunDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DevicePreviewRunDto;
